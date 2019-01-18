@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ToolButton is a clickable image without a caption (typically, a toolbar button). -->
+	<block name="ToolbarButton" inherits="ToolbarControl">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ToolbarButton</property>
+			<property name="cssClass">ToolbarButton</property>
+			<property name="cmds">Pressed||model/toolbarHelper</property>
+		</assignments>
+	</block>

@@ -1,0 +1,73 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <div class="mstrPanelTitleBar">
+        <span class="mstrPanelTitle">
+            <mstrlayout:render name="title"/>
+        </span>
+    </div>
+    <div class="mstrPanelBody">
+      <table cellspacing="0" cellpadding="0" class="preferenceList">
+        <tr>
+          <td valign="top" colspan="2">
+            <mstrlayout:render name="MacroPulldown"/>
+            <br /><br />
+          </td>
+        </tr>
+        
+		<tr>
+          <td valign="top" colspan="2">
+            <span class="prefs-content-bold-text">
+              <mstrlayout:render name="descriptor">  <!-- Project Header: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.4397"/>
+              </mstrlayout:render>
+            </span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="width:1%">&nbsp;</td>
+          <td valign="top" >
+            <mstrlayout:render name="AdminExportHeader"/>
+          </td>
+        </tr>
+        
+        <tr>
+          <td valign="top" colspan="3">
+            <br /><br /><br />
+          </td>
+        </tr>
+        
+        <tr>
+          <td valign="top" colspan="2">
+            <span class="prefs-content-bold-text">
+              <mstrlayout:render name="descriptor">  <!-- Project Footer: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.4398"/>
+              </mstrlayout:render>
+            </span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="width:1%">&nbsp;</td>
+          <td valign="top" >
+            <mstrlayout:render name="AdminExportFooter"/>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+    <div class="mstrPanelButtonBar">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td valign="top">
+            <mstrlayout:render name="ApplyChanges"/>
+         
+            <mstrlayout:render name="CancelButton"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</mstrlayout:layout>

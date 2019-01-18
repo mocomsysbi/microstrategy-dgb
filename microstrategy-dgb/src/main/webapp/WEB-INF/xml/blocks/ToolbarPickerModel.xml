@@ -1,0 +1,26 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarPickerModel" inherits="ToolbarListModel">
+		<definition>
+			<!-- These properties are pushed to the view -->           
+			<property name="useDynamicBtnImg" type="Boolean" />
+			<property name="showLastSelection" type="Boolean" />
+			<property name="popup|id" type="String" />
+			<property name="popup|ignoreSelection" type="Boolean" />
+			<property name="popup|multiSelect" type="Boolean" />
+			<property name="popup|isCheckList" type="Boolean" />
+            <property name="popup|nudge" type="Boolean" />
+			
+			<!-- An optional tooltip used by the ToolbarPickerButton that renders this model. -->
+			<property name="tooltip" type="String" />
+
+			<!-- This property tells the toolbar helper whether to re-sent already selected entries to the target.  -->
+			<property name="updateOnClick" type="Boolean" />
+			
+			<!-- This property is used to store the index of the most recent selection. -->
+			<property name="lastSelection" type="Integer" />
+        </definition>
+        <assignments>
+        	<property name="scriptClass">mstr.models.ToolbarPickerListModel</property>
+			<property name="type">PICKERBUTTON</property>
+		</assignments>
+	</block>

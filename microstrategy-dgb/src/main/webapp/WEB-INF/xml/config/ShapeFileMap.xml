@@ -1,0 +1,13 @@
+<ShapeFileMaps>
+    <ShapeFileMap shapeKey="WorldImageMapCoords" shapeType="Polygon" role="Country" name="Countries of the world" descWeb="mstrWeb.9229" descFlash="mstr.1622" descDesktop="26973" shapeFile="VisFramework/map/WorldImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="USAMapCoords" shapeType="Polygon" role="State" name="States of USA" descWeb="mstrWeb.9228" descFlash="mstr.1623" descDesktop="26974" shapeFile="VisFramework/map/USAMapCoords.html"/>
+    <ShapeFileMap shapeKey="BrazilImageMapCoords" shapeType="Polygon" role="State" name="States of Brazil" descWeb="mstrWeb.9220" descFlash="mstr.1625" descDesktop="26975" shapeFile="VisFramework/map/BrazilImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="EnglandImageMapCoords" shapeType="Polygon" role="State" name="Regions of England" descWeb="mstrWeb.9221" descFlash="mstr.1626" descDesktop="26976" shapeFile="VisFramework/map/EnglandImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="EuropeImageMapCoords" shapeType="Polygon" role="Country" name="Countries of Europe" descWeb="mstrWeb.9222" descFlash="mstr.1627" descDesktop="26977" shapeFile="VisFramework/map/EuropeImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="FranceImageMapCoords" shapeType="Polygon" role="State" name="Regions of France" descWeb="mstrWeb.9223" descFlash="mstr.1628" descDesktop="26978" shapeFile="VisFramework/map/FranceImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="ItalyImageMapCoords" shapeType="Polygon" role="State" name="Regions of Italy" descWeb="mstrWeb.9224" descFlash="mstr.1629" descDesktop="26979" shapeFile="VisFramework/map/ItalyImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="JapanImageMapCoords" shapeType="Polygon" role="State" name="Regions of Japan" descWeb="mstrWeb.9225" descFlash="mstr.1630" descDesktop="26980" shapeFile="VisFramework/map/JapanImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="PolandImageMapCoords" shapeType="Polygon" role="State" name="Regions of Poland" descWeb="mstrWeb.9226" descFlash="mstr.1631" descDesktop="26981" shapeFile="VisFramework/map/PolandImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="SingaporeImageMapCoords" shapeType="Polygon" role="State" name="Regions of Singapore" descWeb="mstrWeb.9227" descFlash="mstr.1632" descDesktop="26982" shapeFile="VisFramework/map/SingaporeImageMapCoords.html"/>
+    <ShapeFileMap shapeKey="USAMarkerMapCoords" shapeType="Point" role="State" name="State markers of USA" descWeb="mstrWeb.9230" descFlash="mstr.1633" descDesktop="26983" shapeFile="VisFramework/map/USAMarkerMapCoords.html"/>
+</ShapeFileMaps>

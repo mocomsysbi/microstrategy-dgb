@@ -1,0 +1,177 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <div class="mstrPanelTitleBar">
+      <span class="mstrPanelTitle">
+        <mstrlayout:render name="title" />
+      </span>
+    </div>
+    <div class="mstrPanelBody">
+      <div class="exportLeftBlock">
+        <div class="exportOptsElemWider">
+          <mstrlayout:render name="ExportSection" />
+        </div>
+        <div class="exportOptsElemWider">
+          <mstrlayout:render name="Scaling" />
+        </div>
+        <mstrlayout:if name="isGridGraphOptions">
+          <mstrlayout:then>
+            <div class="exportOptsElemWider">
+              <mstrlayout:render name="GridGraphSamePage" />
+            </div>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <div class="exportOptsElemWider">
+          <mstrlayout:render name="Orientation" />
+        </div>
+        <br />
+        <mstrlayout:if name="isReportPageByNotEmpty">
+          <mstrlayout:then>
+            <div class="exportOptsElemWider">
+              <mstrlayout:render name="ExpandPageBy" />
+            </div>
+          </mstrlayout:then>
+        </mstrlayout:if>
+      </div>
+      <div>
+        <div class="prefs-content-text">
+          <mstrlayout:render name="descriptor">
+            <!-- Page Header and Footer: -->
+            <mstrlayout:argument type="String" value="mstrWeb.5110" />
+          </mstrlayout:render>
+          <mstrlayout:render name="HeaderAndFooterButton">
+            <mstrlayout:argument value="printHeaderFooter" />
+          </mstrlayout:render>
+        </div>
+        <div class="prefs-content-text">
+          <mstrlayout:render name="descriptor">
+            <!-- Report Header: -->
+            <mstrlayout:argument type="String" value="mstrWeb.5163" />
+          </mstrlayout:render>
+          <mstrlayout:render name="PDFReportHeaderButton" />
+        </div>
+        <div class="exportOptsElem">
+          <mstrlayout:render name="CoverPageFilterDetails" />
+        </div>
+        <table>
+          <tr>
+            <td>&#160;</td>
+            <td>
+              
+                <mstrlayout:render name="CoverPageDetailsContents" />
+                <div class="prefs-content-text" style="padding-top:6px">
+                  <mstrlayout:render name="descriptor">
+                    <!-- Cover page location: -->
+                    <mstrlayout:argument type="String" value="mstrWeb.5115" />
+                  </mstrlayout:render>
+                </div>
+                <div class="exportOptsElem">
+                  <mstrlayout:render name="CoverPageLocation" />
+                </div>
+              
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="exportClearingBlock"></div>
+      <table cellspacing="0" cellpadding="0" class="preferenceList">
+        <mstrlayout:if name="isDhtml">
+          <mstrlayout:then>
+            <tr>
+              <td>
+                <mstrlayout:render name="AdvancedPDFButton" />
+              </td>
+            </tr>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <tr>
+          <td>
+            <div id="divPDFAdvancedOptions">
+              <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td>
+                    <mstrlayout:render name="PaperSize" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mstrlayout:render name="MarginTitle" />
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>&#160;&#160;&#160;</td>
+                        <td align="center">
+                          <mstrlayout:render name="MarginLeft" />
+                        </td>
+                        <td>&#160;&#160;&#160;</td>
+                        <td align="center">
+                          <mstrlayout:render name="MarginRight" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>&#160;&#160;&#160;</td>
+                        <td align="center">
+                          <mstrlayout:render name="MarginTop" />
+                        </td>
+                        <td>&#160;&#160;&#160;</td>
+                        <td align="center">
+                          <mstrlayout:render name="MarginBottom" />
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table border="0" cellspacing="0" cellpadding="0" id="max-header-footer">
+                      <tr>
+                        <td>
+                          <mstrlayout:render name="MaxHeaderSize" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mstrlayout:render name="MaxFooterSize" />
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <mstrlayout:if name="isGraphOptions">
+                  <mstrlayout:then>
+                    <tr>
+                      <td>
+                        <mstrlayout:render name="UseBMPGraphs" />
+                      </td>
+                    </tr>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+                <tr>
+                  <td>
+                    <mstrlayout:render name="EmbedFonts" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="mstrPanelButtonBar">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td valign="top">
+            <mstrlayout:if name="isFeatureAvailable">
+              <mstrlayout:argument type="string" value="preferences"/>
+              <mstrlayout:then>
+                <mstrlayout:render name="DoNotPrompt" />
+              </mstrlayout:then>
+            </mstrlayout:if>                
+          </td>
+          <td valign="top" align="right">
+            <mstrlayout:render name="ExportButton" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</mstrlayout:layout>

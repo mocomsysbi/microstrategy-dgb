@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about a Constant Prompt.
+-->
+<block name="ConstantPrompt" inherits="Prompt">
+    <definition>
+        <!-- The underlying data type. See com.microstrategy.webapi.EnumDSSXMLDataType -->
+        <property name="datatp" type="Integer" />
+    </definition>
+</block>

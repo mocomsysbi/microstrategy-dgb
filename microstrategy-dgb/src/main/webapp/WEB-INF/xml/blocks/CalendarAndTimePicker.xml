@@ -1,0 +1,48 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- CalendarAndTimePicker is a component with a Calendar popup and time picker pulldowns, used to pick a date and time. --> 
+    <block name="CalendarAndTimePicker" inherits="TextBox">
+      <definition>
+        <property name="popup" type="Block"/>   
+        <property name="timePicker" type="Block"/>
+        
+        <!-- Determines when the view should write its value back to its model.
+        	 0 = off, 1 = onblur, 2 = onkeypress. -->
+        <property name="autoWriteBack" type="Integer" />     
+
+        <!-- Determines when the view should ask its model to validate its contents.
+        	 0 = off, 1 = onblur, 2 = onkeypress, 3 = use application default. -->
+        <property name="autoValidate" type="Integer" />
+        
+        <!-- Determines when the view should call its model to format its contents.
+        	 0 = off, 1 = onblur, 2 = onkeypress, 3 = use application default. -->
+        <property name="autoFormat" type="Integer" />
+        
+        <!-- size for the INPUT box that holds the Date/Time string.-->
+        <property name="size" type="Integer" />
+        
+        <!-- css width for the INPUT box that holds the Date/Time string.-->
+        <property name="width" type="String" />
+      </definition>
+      <assignments>
+      	<property name="scriptClass">mstr.views.TextInput</property>
+        <property name="cssClass">CalendarAndTimePicker</property>      
+        <property name="layoutClass">mstr.layouts.CalendarAndTimePicker</property>
+        <property name="autoWriteBack">2</property>
+        <property name="autoValidate">3</property>
+        <property name="autoFormat">3</property>
+        <property name="size">22</property>
+        <!-- The calendar popup. -->
+        <property name="popup"> 
+          <block name="CalendarView">
+            <property name="visible">true</property>
+			<property name="popOrientation">1</property>	<!-- Indicates that this popup is vertically oriented. -->
+			<property name="nudge" type="Boolean">true</property> <!-- Indicates that this popup should be nudged to fit into browser. -->
+          </block>      
+        </property> 
+        <property name="timePicker">
+          <block name="TimePickerView">
+            <property name="visible">true</property>                     	
+          </block>	
+        </property>        
+      </assignments>
+    </block>  

@@ -1,0 +1,77 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptToolbarModel" name="ReportHomeToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1272" name="ToolbarButtonModel">
+          <property name="id">tbAddToHistoryList</property>
+          <property name="tooltip">{desc:mstrWeb.1982|Add to History List}</property>
+          <property name="cmdid">addToHistoryList</property>
+          <property name="visibleFeatures">is-viewable-report;add-history-list</property>
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="rptTbCtPersonalView" name="ToolbarButtonModel">
+          <property name="id">tbCreatePersonalView</property>
+          <property name="tooltip">{desc:mstrWeb.9173|Create Personal View}</property>
+          <property name="cmdid">createPersonalView</property>
+        </block>
+         <block listElementKey="rptShareURL" name="ToolbarButtonModel">
+          <property name="id">tbShareURL</property>
+          <property name="tooltip">{desc:mstrWeb.8101|Share}</property>
+          <property name="cmdid">ShowSharingEditor</property>
+          <property name="visibleFeatures">scheduling</property>
+        </block>
+        <block listElementKey="K1274" name="ToolbarButtonModel">
+          <property name="id">tbPrint</property>
+          <property name="tooltip">{desc:mstrWeb.314|Print}</property>
+          <property name="cmdid">printPDF</property>
+          <property name="visibleFeatures">is-viewable-report;pdf;enable-pdf</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1275" name="ToolbarButtonModel">
+          <property name="id">tbSend</property>
+          <property name="tooltip">{desc:mstrWeb.2331|Send Now}</property>
+          <property name="cmdid">ncSendNow</property>
+          <property name="visibleFeatures">is-viewable-report;use-immediate-delivery</property>
+        </block>
+        <block listElementKey="K1276" name="ToolbarButtonModel">
+          <property name="id">tbScheduled</property>
+          <property name="tooltip">{desc:mstrWeb.4675|Schedule delivery to History List}</property>
+          <property name="cmdid">subs</property>
+          <property name="visibleFeatures">scheduling</property>
+        </block>
+        <block listElementKey="K1277" name="ToolbarButtonModel">
+          <property name="id">tbExport</property>
+          <property name="tooltip">{desc:mstrWeb.246|Export}</property>
+          <property name="cmdid">export</property>
+          <property name="visibleFeatures">enable-export;show-report-export-tool</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1278" name="ToolbarButtonModel">
+          <property name="id">tbPDF</property>
+          <property name="tooltip">{desc:mstrWeb.1877|PDF}</property>
+          <property name="cmdid">buttonPDF</property>
+          <property name="visibleFeatures">is-viewable-report;show-report-pdf-toolbar-button</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1279" name="BaseBlock"/>
+        <block listElementKey="K1280" name="ToolbarRefreshButton">
+          <property name="visibleFeatures">quicklinks-refresh;page-full-screen-mode</property>
+          <property name="listenerMethods">onScreenModeChange</property>
+        </block>
+        <block listElementKey="K1281" name="ToolbarReExecuteRptButton">
+          <property name="listenerMethods">onScreenModeChange</property>
+        </block>
+        <block listElementKey="K1282" name="ToolbarRepromptButton">
+          <property name="visibleFeatures">reprompt</property>
+        </block>
+        <block listElementKey="K1283" name="BaseBlock"/>
+        <block listElementKey="K1285" name="ToolbarNormalModeButton">
+            <property name="visibleFeatures">page-full-screen-mode;!optimized-report-page</property>
+        </block>
+        <block listElementKey="K1286" name="ToolbarFullScreenButton"/>
+        <block listElementKey="K1287" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

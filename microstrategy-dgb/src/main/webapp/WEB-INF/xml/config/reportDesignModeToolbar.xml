@@ -1,0 +1,98 @@
+<shortcut-list-set javascript-file="dmToolbar.js" name="reportDesignModeToolbar" feature-id="dhtml;" script-class="mstrDMToolbarImpl" version="1.0">
+  <attributes>
+    <attribute name="at" value="UniqueReportID"/>
+    <attribute name="ty" value="tool" />
+    <attribute name="dg" value="3" />
+    <attribute name="or" value="1" />
+    <attribute name="ors" value="3" />
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="exec">
+    <attributes>
+      <attribute name="ty" value="btng" />
+    <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="[Run Report]" desc-id="mstrWeb.3649" name="tbRunReport" type="button" dhtml-enabled="false">
+      <attributes>
+        <attribute name="cmdtp" value="1" />
+        <attribute name="cmdid" value="dmRun" />
+      </attributes>
+    </shortcut>
+    <shortcut desc="[Cancel]" type="button" desc-id="mstrWeb.221" name="tbCancelReport">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventDesignModeProcess">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentDesignModeCancel" value="1"/>
+      </event>
+    </shortcut>
+    <shortcut desc="[Save]" desc-id="mstrWeb.118" feature-id="save-report;enable-save-report" name="tbSaveReport" type="button">
+      <attributes>
+        <attribute name="cmdtp" value="1" />
+        <attribute name="cmdid" value="menuDirectSave" />
+      </attributes>
+    </shortcut>
+    <shortcut desc="[Save As]" desc-id="mstrWeb.628" feature-id="save-report;enable-save-report" name="tbSaveAs" type="button">
+      <attributes>
+        <attribute name="cmdtp" value="1" />
+        <attribute name="cmdid" value="dmSaveAs" />
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="filters" >
+    <attributes>
+        <attribute name="ty" value="btng" />
+        <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="[Filter]" name="tbFilters1" type="button" desc-id="mstrWeb.1281" feature-id="" check-feature-id="check-design-mode-filters">
+      <attributes>
+        <attribute name="cmdtp" value="2" />
+        <attribute name="cmdid" value="dmFilters" />
+        <attribute name="cmdvl" value="1" />
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="view">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="rb" check-feature-id="check-grid-mode" desc="[Grid]" desc-id="mstrWeb.114" enable-feature-id="enable-grid-mode" feature-id="menu-grid-mode" name="tbGrid" type="button" iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_CHANGE_VIEW_MODE">
+        <argument enumname="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid" name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_VIEW_MODE" source="enum"/>
+        <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_APPLY_NOW" value="false"/>		  
+      </event>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-graph-mode" desc="[Graph]" desc-id="mstrWeb.115" enable-feature-id="enable-graph-mode" feature-id="menu-graph-mode" name="tbGraph" type="button" iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_CHANGE_VIEW_MODE">
+        <argument enumname="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGraph" name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_VIEW_MODE" source="enum"/>
+        <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_APPLY_NOW" value="false"/>		  		  
+      </event>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-grid-graph-mode" desc="[Grid and Graph]" desc-id="mstrWeb.1904" enable-feature-id="enable-grid-graph-mode" feature-id="menu-grid-graph-mode" name="tbGraphGrid" type="button" iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_CHANGE_VIEW_MODE">
+        <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_APPLY_NOW" value="false"/>		  		  
+        <argument enumname="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeBoth" name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_VIEW_MODE" source="enum"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="sort" >
+    <attributes>
+        <attribute name="ty" value="btng" />
+        <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="[Sort Grid]" name="tbSort" type="button" desc-id="mstrWeb.1888" feature-id="web-sort" >
+      <attributes>
+        <attribute name="cmdid" value="sort" />
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="QueryBuilder" feature-id="xda-customsql-report">
+    <attributes>
+      <attribute name="ty" value="btng" />
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Query Builder" desc-id="" name="tbQueryBuilder" type="button">
+      <attributes>
+        <attribute name="cmdtp" source="const" value="1"/>
+        <attribute name="cmdid" source="const" value="dmQB"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

@@ -1,0 +1,54 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- CrosstabBrowser is a container for a view of a CrosstabModel, with optional views
+		for incremental fetch of the  CrosstabModel's rows and columns.-->
+	<block name="CrosstabBrowser" inherits="BaseView">
+		<definition>
+			<!-- The view Block that displays the CrosstabModel's data, typically a CrosstabView. -->
+			<property name="contentsView" type="Block" />
+
+			<!-- Optional view Block that displays previews of additional CrosstabModel data, typically a CrosstabView. -->
+			<property name="preview" type="Block" />
+
+			<!-- Optional view for incremental fetching of rows.-->
+			<property name="rowFetchView" type="Block" />
+			
+			<!-- Optional view for incremental fetching of columns.-->
+			<property name="columnFetchView" type="Block" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.CrosstabBrowser</property>
+			<property name="layoutClass">mstr.layouts.CrosstabBrowser</property>
+			<property name="cssClass">CrosstabBrowser</property>
+			<property name="contentsView">
+				<block name="CrosstabView">
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="preview">
+				<block name="CrosstabView">
+					<property name="layoutClass">mstr.layouts.CrosstabPreview</property>
+					<property name="cssClass">CrosstabPreview</property>
+					<property name="modelPath">parent/model/getPreviewModel()</property>
+					<property name="visible">false</property>
+				</block>
+			</property>
+			<property name="rowFetchView">
+				<block name="FetchPreview">
+					<property name="modelPath">parent/model/getRowFetchModel()</property>
+					<property name="cmds">FetchRowBlock||parent/model</property>
+					<property name="captionSuffix"> data rows:</property>
+					<property name="showPreviewCmds">ShowPreview||parent</property>
+					<property name="hidePreviewCmds">HidePreview||parent</property>
+				</block>
+			</property>
+			<property name="columnFetchView">
+				<block name="FetchPreview">
+					<property name="modelPath">parent/model/getColumnFetchModel()</property>
+					<property name="cmds">FetchColumnBlock||parent/model</property>
+					<property name="captionSuffix"> data columns:</property>
+					<property name="showPreviewCmds">Hide||parent/contentsView;ShowChild|"preview"|parent;FetchColumnBlock||parent/preview/model</property>
+					<property name="hidePreviewCmds">Hide||parent/preview;Show||parent/contentsView</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

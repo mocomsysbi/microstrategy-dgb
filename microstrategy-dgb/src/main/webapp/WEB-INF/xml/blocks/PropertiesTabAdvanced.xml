@@ -1,0 +1,114 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabAdvanced">
+  <assignments>
+    <property name="title">{desc:mstrWeb.434|Properties} - {desc:mstrWeb.702|Advanced}</property>
+    <property name="modelPath">parent/model/items/7</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">true</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K951" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4728|Selector}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K956" name="TextLabel">
+                <property name="value">{desc:mstrWeb.6190|The information shown here might be out of date due to unapplied changes that have been made to the document.  To ensure that this information is current, please click the Apply button on the toolbar.}</property>
+                <!-- DESCRIPTOR: The information shown here might be out of date due to unapplied changes that have been made to the document.  To ensure that this information is current, please click the Apply button on the toolbar.-->
+                <property name="cssText">font-weight:bold;white-space:normal</property>
+                <property name="modelPath" type="String">parent/model</property>
+                <property name="visibleField">model/showFlushMsg</property>
+              </block>
+              <block listElementKey="K952" name="ListUpDown">
+                <property name="modelPath" type="String">parent/model/getDynamicListModel("getControlGroupByList","ControlGroupByList")</property>
+                <property name="caption">{desc:mstrWeb.6028|This object is targeted by the following attributes}:</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="advancedExportFS" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5592|Export}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/isPanelStack</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K954" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.7491|Clip contents of Panel Stack when exporting}</property>
+                <property name="valueField">ClipOnExport</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+
+              <block listElementKey="expandPanelsOptions" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.8992|Expand Panels:}</property>
+                <property name="modelPath">parent/model/expandPanels</property>
+                <property name="enabledField">parent/model/ClipOnExport</property>
+              </block>
+              <block listElementKey="panelOverflowSpacing" name="HTextBox">
+                <property name="valueField">panelOverflowSpacing</property>
+                <property name="caption">{desc:mstrWeb.5666|Spacing:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">parent/model/panelOverflowSpacingEnabled</property>
+                <property name="totalSize">6</property>
+                <property name="cssText">width:195px</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">7</property>
+                    <property name="min">0</property>
+                    <property name="max">9999</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+              <block listElementKey="allowPanelsToSplitAcrossPages" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8993|Allow Panels to split across pages}</property>
+                <property name="valueField">allowPanelsToSplitAcrossPages</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">parent/model/ClipOnExport</property>
+                <property name="visibleField">parent/model/expandPanels/selectedIndices:1</property>
+              </block>
+
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1017" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4903|Transition} {desc:mstrWeb.4875|(Flash only)}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showTransition</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1018" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4940|Selected Transition:}</property>
+                <property name="modelPath">parent/model/setTransition</property>
+              </block>
+              <block listElementKey="K1019" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4941|Speed:}</property>
+                <property name="modelPath">parent/model/setTransDuration</property>
+                <property name="enabledField">!parent/model/setTransition/selectedIndices:0</property>
+              </block>
+              <block listElementKey="K2167" name="TextLabel">
+                <property name="value">{desc:mstrWeb.7751|Transitions do not apply to widgets}</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="JoinBehaviorFS" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4571|Join Behavior}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showJoinBehavior</property>
+          <property name="children">
+              <list>
+                <block listElementKey="JoinTypeJBT" name="JoinBehaviorTable">
+                    <property name="valueField">gridJoinType</property>
+                    <property name="modelPath" type="String">parent/model</property>
+                </block>
+              </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+        PropertiesTabAdvanced is the "Properties - Advanced" tab of the properties editor.
+    -->

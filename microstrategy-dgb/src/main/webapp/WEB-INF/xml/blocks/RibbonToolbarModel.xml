@@ -1,0 +1,49 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="RibbonToolbarModel" inherits="ListModel">
+	<definition>
+		<!-- The beanPath to use for ribbon events.  --> 
+		<property name="beanPath" type="String" />
+		
+		<!-- The feature to use for checking menu popup behavior.  --> 
+		<property name="featurePopMenus" type="String" />
+		
+		<!-- Optional -->
+		<property name="features" type="String" />
+		
+		<!-- A block that holds the model for the notes icon. -->
+		<property name="NotesIconModel" type="Block" />
+		
+		<!-- The valueForm value of the selected toolbar. -->
+		<property name="selectedToolbar" type="String" />
+		
+		<!-- A ListModel containing the collection of ToolbarModels   -->
+		<property name="toolbarModels" type="Block" />
+		
+		<!-- The default path for control targets. -->
+		<property name="targetPath" type="String" />
+		
+		<!-- Optional style defined on the styleCatalog used to load the menu in the case the tab contains one -->
+		<property name="menuStyle" type="String"/>
+		
+		<!-- The name of the ribbon-list this toolbar is contained in -->
+		<property name="ribbonListName" type="String"/>
+		
+	</definition>
+	<assignments>
+		<property name="scriptClass">mstr.models.RibbonToolbarModel</property>
+		<property name="valueForm">dssid</property>
+		<property name="selectedIndicesList">0</property>
+		<property name="selectedToolbar">0</property>
+		<property name="featurePopMenus">click-menu</property>
+		<property name="NotesIconModel">
+			<block name="NotesIconModel" />
+		</property>
+		<property name="toolbarModels">
+			<block name="ListModel">
+				<property name="valueForm">dssid</property>
+				<property name="selectedIndicesList">0</property>
+			</block>
+		</property>
+		<property name="menuStyle">MenuBlockLoader</property>
+	</assignments>
+</block>

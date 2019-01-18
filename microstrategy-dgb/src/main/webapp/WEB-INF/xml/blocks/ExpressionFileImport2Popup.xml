@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ExpressionFileImport2Popup" inherits="ExpressionFileImport1Popup">
+		<assignments>
+			<property name="id">ExpressionFileImport2Popup1</property>
+			<property name="modelPath">opener/model/answer/getConstant2CloneModel(opener.model)</property>
+			<property name="okButton/cmds">Unpop||parent;EditConditionConstant2|parent/model/valueString|parent/opener/model</property>
+		</assignments>
+	</block>

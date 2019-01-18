@@ -1,0 +1,21 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    scrollArea="return rootTag"
+    on_win_resize="if (view &amp;&amp; view.onScroll) view.onScroll()"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div title="{@tooltip}"
+       style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <mstrlayout:wIterate name="views"
+                         id="view">
+      <mstrlayout:wRender name="view">
+        <div class="{@cssPrefix}PromptQuestion">
+          <div class="{@cssPrefix}PromptQuestionTitleBar">
+            <span class="{@cssPrefix}PromptQuestionTitleBarTitle">{@descriptors/loading}</span>
+          </div>
+          <div class="{@cssPrefix}PromptQuestionMeaning">{@descriptors/pwait}</div>
+        </div>
+      </mstrlayout:wRender>
+    </mstrlayout:wIterate>
+  </div>
+</mstrlayout:layout>

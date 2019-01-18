@@ -1,0 +1,105 @@
+<shortcut-list-set name="reportStandardToolbar" version="1.0">
+  <attributes>
+    <attribute name="at" value="UniqueReportID"/>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  
+  <shortcut-list name="file2" config-src="/WEB-INF/xml/config/reportSaveControl.xml"/>
+  <shortcut-list name="edit1" config-src="/WEB-INF/xml/config/reportEdit1Controls.xml"/>
+  <shortcut-list name="viewMode" config-src="/WEB-INF/xml/config/reportViewModeControls.xml"/>
+
+  <shortcut-list name="Data">
+  	<attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+	<shortcut desc="Refresh" desc-id="mstrWeb.773" feature-id="!dhtml;quicklinks-refresh" name="tbRefresh" type="button">
+	  <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_REFRESH">
+	    <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_REPROMPT" value="false"/>
+	    <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_REEXECUTE_FRESH" value="false"/>
+	  </event>
+	  <attributes>
+	      <attribute name="src" feature-id="accessibility" value="tbRefreshAcc.gif"/>
+	  </attributes>
+	</shortcut>
+	<shortcut desc="[Re-run report]" desc-id="mstrWeb.3757" enable-feature-id="enable-reexecute" feature-id="!dhtml;reexecute" name="tbReExecute" type="button">
+	  <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_REFRESH">
+	    <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_REPROMPT" value="false"/>
+	    <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_REEXECUTE_FRESH" value="true"/>
+	  </event>
+	  <attributes>
+	      <attribute name="src" feature-id="accessibility" value="tbRefreshAccD.gif"/>
+	      <attribute name="src" feature-id="accessibility;enable-reexecute" value="tbRefreshAcc.gif"/>
+	  </attributes>
+	</shortcut>
+	<shortcut base-bean="rb" desc="Re-prompt" desc-id="mstrWeb.119" feature-id="!dhtml;reprompt" name="tbReprompt" type="button">
+	  <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_REFRESH">
+	    <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_REPROMPT" value="true"/>
+	  </event>
+	  <attributes>
+	      <attribute name="src" feature-id="accessibility" value="tbRepromptAcc.gif"/>
+	  </attributes>
+	</shortcut>
+  </shortcut-list>
+
+  <shortcut-list name="exportGroup" feature-id="is-viewable-report">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut append-state="true" base-bean="rb" desc="Print" desc-id="mstrWeb.314" feature-id="!dhtml;is-viewable-report;pdf;enable-pdf" extra-url="&amp;pdfPrint=true" name="tbPrintPDF" onclick="submitExportForm(this.href,this.target);return false" target="mstrExportWindow" type="button">
+      <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPDFOptionsFromReport">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentPreferenceGroup" value="pdfPrint"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbPrintAcc.gif"/>
+      </attributes>
+    </shortcut>
+	<shortcut append-state="true" base-bean="rb" desc="Export" desc-id="mstrWeb.246" feature-id="!dhtml;not-datamart;any-export;enable-export" name="tbExport" onclick="submitExportForm(this.href,this.target);return false" target="mstrExportWindow" type="button">
+      <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenExportOptionsFromReport">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentPreferenceTransform" value="export"/>
+        <argument base-bean="rb" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentReportViewMode" sys-bean="com.microstrategy.web.beans.ReportBean" value="viewMode"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbExportAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rb" desc="PDF" desc-id="mstrWeb.1877" feature-id="!dhtml;not-datamart;web-export-to-pdf;enable-pdf;" name="tbPDF" onclick="submitExportForm(this.href,this.target);return false" target="mstrExportWindow" type="button">
+      <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPDFOptionsFromReport">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentPreferenceGroup" value="pdf"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbPDFAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  
+  <shortcut-list name="fullscreen" feature-id="!is-non-viewable-report">
+    <shortcut append-state="true" base-bean="frame" desc-id="mstrWeb.1898" desc="Browse Parent Folder" feature-id="!dhtml;page-full-screen-mode" name="tbBrowseParentFSM" type="button">
+      <event XMLmerge_id="1" base-bean="frame" event-id="com.microstrategy.web.app.beans.EnumFrameEvents.WebEventBrowseParentFolder">
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbReturnAcc.gif"/>
+      </attributes>
+    </shortcut>
+  	<shortcut base-bean="frame" desc-id="mstrWeb.4665" desc="Restore Normal Screen Mode" feature-id="check-execute-mode;page-full-screen-mode" name="tbNormalMode" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSwitchScreenMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentScreenMode" value="1"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbNormalModeAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="frame" desc-id="mstrWeb.4664" desc="Full Screen Mode" feature-id="check-execute-mode;!page-full-screen-mode" onclick="return toggleScreenMode();" name="tbFullMode" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSwitchScreenMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentScreenMode" value="2"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbFullScreenAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  
+</shortcut-list-set>

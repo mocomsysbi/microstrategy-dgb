@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides "data" information about a single subsection in a RWD.
+--> 
+<block name="RWSubsection" inherits="RWUnit">
+    <definition>
+        <!-- A List of objects in this subsection. Each Block is of type RWObject -->
+        <property name="objects" type="List" />
+    </definition>
+</block>

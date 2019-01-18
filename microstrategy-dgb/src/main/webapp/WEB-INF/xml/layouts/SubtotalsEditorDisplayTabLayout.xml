@@ -1,0 +1,62 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <fieldset class="displaySec" id="rowSec">
+	<legend class="displayTitle">
+        <mstrlayout:render name="descriptor">
+            <mstrlayout:argument type="string" value="mstrWeb.4077"/><!--Subtotal positions by row -->
+        </mstrlayout:render>	    
+	</legend>
+	<table>
+		<tr>
+            <td rowspan="2"><div class="subTotalDisplayIcon subTotalRowDisplay"></div></td>
+            <td><mstrlayout:render name="displayRowOption1"></mstrlayout:render></td>
+		</tr>
+		<tr>
+		    <td><mstrlayout:render name="displayRowOption2"></mstrlayout:render></td>
+		</tr>
+	</table>
+	<div class="undefinedSec"> 
+      <mstrlayout:render name="undefinedRowSectionDisplayTab"/>
+    </div>
+  </fieldset>
+  <br/>
+  <fieldset class="displaySec" id="colSec">
+	<legend class="displayTitle">
+        <mstrlayout:render name="descriptor">
+            <mstrlayout:argument type="string" value="mstrWeb.4078"/><!-- Subtotal positions by column -->
+        </mstrlayout:render>	    
+    </legend>
+	<table>
+		<tr> 
+		    <td rowspan="2"><div class="subTotalDisplayIcon subTotalColumnDisplay"></div></td>
+		    <td><mstrlayout:render name="displayColumnOption1"></mstrlayout:render></td>
+		</tr>
+		<tr>
+            <td><mstrlayout:render name="displayColumnOption2"></mstrlayout:render></td>
+		</tr>
+	</table>
+	<div class="undefinedSec"> 
+      <mstrlayout:render name="undefinedColSectionDisplayTab"/>
+    </div>
+  </fieldset>
+  <br/>
+  <fieldset class="displaySec" id="pageSec">
+	<legend class="displayTitle">
+        <mstrlayout:render name="descriptor">
+            <mstrlayout:argument type="string" value="mstrWeb.4079"/><!-- Subtotal positions by page -->
+        </mstrlayout:render>	    
+    </legend>      
+	<table>
+		<tr>
+		    <td rowspan="2"><div class="subTotalDisplayIcon subTotalPageDisplay"></div></td>		    
+		    <td><mstrlayout:render name="displayPageOption1"></mstrlayout:render></td>
+		</tr>
+		<tr>
+		    <td><mstrlayout:render name="displayPageOption2"></mstrlayout:render></td>
+		</tr>
+	</table>
+	<div class="undefinedSec"> 
+      <mstrlayout:render name="undefinedPageSectionDisplayTab"/>
+    </div>	
+  </fieldset>
+</mstrlayout:layout>

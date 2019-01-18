@@ -1,0 +1,166 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- rendering a WebObjectInfo (named as FolderObject) into a FolderWidgetItem widget
+need transform support following methods:
+getSelf(Object)
+getCssName(WebObjectInfo)
+includeOwnerInfo()
+includeTimeInfo()
+isNull(Object)
+getAttForms(WebAttribute)
+-->
+<mstrlayout:layout>
+  <!-- for shortcut type, we need to render some information about the target instead of the shortcut -->
+  <mstrlayout:if method="com.microstrategy.web.objects.WebObjectInfo#getType" base="FolderObject" value="18">
+    <!-- shortcut type -->
+    <mstrlayout:then>
+      <mstrlayout:base id="deSCFolderObject" method="getTarget" base="FolderObject"/>
+    </mstrlayout:then>
+    <mstrlayout:else>
+      <mstrlayout:base id="deSCFolderObject" base="FolderObject"/>
+    </mstrlayout:else>
+  </mstrlayout:if>
+  
+  <!-- Create a new MSTRFolderItem Widget-->
+  <mstrlayout:block name="ItemInfo">
+    <!-- Set all of the scalar properties on this item. -->
+    <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebObjectInfo#getID" base="deSCFolderObject"/>
+
+    <mstrlayout:if method="com.microstrategy.web.objects.WebObjectInfo#getType" base="FolderObject" value="18">
+      <mstrlayout:then>
+        <mstrlayout:bSetProperty path="did" method="com.microstrategy.web.objects.WebObjectInfo#getID" base="FolderObject" />
+      </mstrlayout:then>
+    </mstrlayout:if>
+
+    <mstrlayout:bSetProperty path="n" method="getDisplayName">
+      <mstrlayout:argument list="FolderObject" type="com.microstrategy.web.objects.WebObjectInfo"/>
+    </mstrlayout:bSetProperty>    
+    
+    <mstrlayout:bSetProperty path="desc" method="com.microstrategy.web.objects.WebObjectInfo#getDescription" base="deSCFolderObject"/>
+    <mstrlayout:bSetProperty path="icon" method="getCssName">
+      <mstrlayout:argument list="FolderObject" type="com.microstrategy.web.objects.WebObjectInfo"/>
+    </mstrlayout:bSetProperty>
+    
+    <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebObjectInfo#getType" base="deSCFolderObject"/>
+    <mstrlayout:bSetProperty path="stp" method="com.microstrategy.web.objects.WebObjectInfo#getSubType" base="deSCFolderObject"/>
+    <mstrlayout:bSetProperty path="acg" method="com.microstrategy.web.objects.WebObjectInfo#getAccessGranted" base="deSCFolderObject"/>
+   
+	 <mstrlayout:if name="isShowObjectTags">
+			<mstrlayout:then>
+   					    		<mstrlayout:bSetProperty path="tgs" method="setObjectTagList">
+							    			 <mstrlayout:argument list="FolderObject" type="com.microstrategy.web.objects.WebObjectInfo"/>
+					     		</mstrlayout:bSetProperty>	
+			</mstrlayout:then>
+	</mstrlayout:if>
+   
+    
+  
+    <!--					<mstrlayout:bSetProperty path="otp" method="getType" base="deSCFolderObject"/> -->
+
+    <mstrlayout:if method="includeOwnerInfo">
+      <mstrlayout:then>
+        <mstrlayout:base id="owner" method="getOwner" base="deSCFolderObject"/>
+        <mstrlayout:bSetProperty path="own" method="getDisplayName" base="owner"/>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if method="includeTimeInfo">
+      <mstrlayout:then>
+        <mstrlayout:bSetProperty path="mod" method="getModificationTime" base="deSCFolderObject"/>
+      </mstrlayout:then>
+    </mstrlayout:if>
+
+    <mstrlayout:if method="com.microstrategy.web.objects.WebObjectInfo#getType" value="12" base="deSCFolderObject"> <!-- attribute -->
+      <mstrlayout:then>
+        <!-- locked? -->
+        <mstrlayout:base id="dimAtt" method="getDimensionAttribute" base="deSCFolderObject">
+          <mstrlayout:onexception/>
+        </mstrlayout:base>
+        <mstrlayout:if operator="isNull" base="dimAtt">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="locked" value="false"/>
+          </mstrlayout:then>
+          <mstrlayout:else>
+            <mstrlayout:if method="getLockType" value="2" base="dimAtt">
+              <mstrlayout:then> <!-- Custom -->
+                <mstrlayout:bSetProperty path="locked" value="true"/>
+              </mstrlayout:then>
+              <mstrlayout:else>
+                <mstrlayout:bSetProperty path="locked" value="false"/>
+              </mstrlayout:else>
+            </mstrlayout:if>
+            <!-- filters -->
+            <mstrlayout:base id="filterList" method="getFilters" base="dimAtt"/>
+            <mstrlayout:if method="size" value="0" base="filterList">
+            	<mstrlayout:else>   <!-- not empty -->
+		            <mstrlayout:list id="filter" method="elements" base="filterList">
+		            	<mstrlayout:bSetProperty path="filters">
+						  <mstrlayout:block name="ItemInfo">
+						    <!-- Set all of the scalar properties on this item. -->
+						    <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebObjectInfo#getID" base="filter"/>
+						    <mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebObjectInfo#getDisplayName" base="filter"/>
+						    <mstrlayout:bSetProperty path="desc" method="com.microstrategy.web.objects.WebObjectInfo#getDescription" base="filter"/>
+						    <mstrlayout:bSetProperty path="icon" method="getCssName">
+						      <mstrlayout:argument list="filter" type="com.microstrategy.web.objects.WebObjectInfo"/>
+						    </mstrlayout:bSetProperty>
+						    <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebObjectInfo#getType" base="filter"/>
+						    <mstrlayout:bSetProperty path="stp" method="com.microstrategy.web.objects.WebObjectInfo#getSubType" base="filter"/>
+						  </mstrlayout:block>
+					  	</mstrlayout:bSetProperty>
+		            </mstrlayout:list>
+            	</mstrlayout:else>
+            </mstrlayout:if>
+          </mstrlayout:else>
+        </mstrlayout:if>
+        <!-- forms -->
+        <mstrlayout:base id="allFormsCollection" method="getAttForms" base="transform">
+          <mstrlayout:argument base="deSCFolderObject" type="com.microstrategy.web.objects.WebAttribute"/>
+        </mstrlayout:base>
+        <mstrlayout:base id="browseForms" method="getBrowseForms" base="deSCFolderObject"/>
+		<mstrlayout:list id="attForm" base="allFormsCollection">
+		  <mstrlayout:argument base="deSCFolderObject" type="com.microstrategy.web.objects.WebAttribute"/>
+		  
+		  <!-- only show forms have base attribute form -->
+		  <mstrlayout:if method="hasBaseAttributeForm" base="attForm">
+			<mstrlayout:then>
+              <mstrlayout:if method="canBeUsedInReportLimits" base="attForm">
+                <mstrlayout:then>
+			  <mstrlayout:bSetProperty path="dssforms">
+				
+				<!-- Create a new MSTRFolderItem Widget-->
+				<mstrlayout:block name="ItemInfo">
+				  
+				  <!-- Set all of the scalar properties on this item. -->
+				  <mstrlayout:bSetProperty path="dssid" method="getID" base="attForm"/>
+				  <mstrlayout:bSetProperty path="n" method="getDisplayName" base="attForm"/>
+				  <mstrlayout:bSetProperty path="desc" method="getUseDescription" base="attForm"/>
+				  <mstrlayout:bSetProperty path="icon" method="getCssName">
+					<mstrlayout:argument list="attForm" type="com.microstrategy.web.objects.WebObjectInfo"/>
+					
+				  </mstrlayout:bSetProperty>
+				  <mstrlayout:bSetProperty path="tp" method="getType" base="attForm"/>
+				  <mstrlayout:bSetProperty path="stp" method="getSubType" base="attForm"/>
+				  <!--														<mstrlayout:bSetProperty path="otp"	method="getType" base="attForm"/> -->
+				  <mstrlayout:bSetProperty path="dtp" method="getBaseAttributeFormDataType" base="attForm"/>
+                  <mstrlayout:if operator="isNull" base="browseForms">
+                    <mstrlayout:else>
+				    <mstrlayout:if method="contains" base="browseForms">
+						<mstrlayout:argument base="attForm" type="com.microstrategy.web.objects.WebAttributeForm"/>
+						<mstrlayout:then>
+						  <mstrlayout:bSetProperty path="isBrowseForm" value="true"/>
+						</mstrlayout:then>
+						<mstrlayout:else>
+						  <mstrlayout:bSetProperty path="isBrowseForm" value="false"/>
+						</mstrlayout:else>
+					  </mstrlayout:if>
+					</mstrlayout:else>
+				  </mstrlayout:if>	
+				</mstrlayout:block>
+			  </mstrlayout:bSetProperty>
+              </mstrlayout:then>
+            </mstrlayout:if>
+			</mstrlayout:then>
+		  </mstrlayout:if>
+		</mstrlayout:list>
+      </mstrlayout:then>
+    </mstrlayout:if>
+  </mstrlayout:block>
+</mstrlayout:layout>

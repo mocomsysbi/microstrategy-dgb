@@ -1,0 +1,84 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		PopupEditor.
+	-->
+	<block name="FloatingEditor" inherits="BaseView">
+		<definition>
+			<!-- The contents of the editor. -->
+			<property name="contentView" type="Block" />
+			
+			<!-- The List of buttons to appear in the title bar -->
+			<property name="titleButtons" type="List" />
+
+			<!-- The List of buttons to appear at the bottom of the editor -->
+			<property name="cmdButtons" type="List" />
+
+			<!-- The title that will appear in the popup window -->
+			<property name="title" type="String" />
+			
+			<!-- A boolean indicating whether the editor should be modal or not -->
+			<property name="isModal" type="Boolean" />
+			
+			<!-- A boolean indicating whether the editor can be dragged -->
+			<property name="isDraggable" type="Boolean" />
+			
+			<!-- An integer value specifying the z-index of the root tag.  Used for layering editors on top
+				of each other. -->
+			<property name="zIndex" type="Integer" />
+			
+			<!-- A String containing commands to be executed when the view initially loads. -->
+			<property name="loadCmds" type="String" />
+			
+			<!-- A String containing commands to be executed when the view reloads (is shown after being closed).  
+				It's used for setting and reinitializing models. -->
+			<property name="reloadCmds" type="String" />
+			
+			<!-- A String value that will appear in the message section below the title but above the contents. -->
+			<property name="message" type="String" />
+			
+			<!-- A boolean indicating whether the editor can show help files. -->
+			<property name="CommandEnabledShowHelp" type="Boolean" />
+
+			<!-- A boolean indicating whether the editor can clear it's validation status. -->
+			<property name="CommandEnabledResetValidationStatus" type="Boolean" />
+
+			<!-- A boolean indicating whether the editor can check it's validation status. -->
+			<property name="CommandEnabledCheckValidationStatus" type="Boolean" />
+			
+			<!-- The help path for the help button -->
+			<property name="helpPath" type="String" />
+			
+			<!-- The topic to show for the help button -->
+			<property name="helpTopic" type="String" />
+			
+			<!-- A boolean to indicate whether the editor should avoid cache -->
+			<property name="avoidCache" type="Boolean" />
+			
+			<!-- descriptors for validation message -->
+            <property name="descriptors" type="Block" />
+			
+			<!-- A boolean to indicate whether the editor HTML will be moved directly under the body tag when rendering -->
+			<property name="moveToBody" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="id">FloatingEditor1</property>
+			<property name="scriptClass">mstr.views.FloatingEditor</property>
+			<property name="layoutClass">mstr.layouts.FloatingEditor</property>
+			<property name="cssClass">FloatingEditor</property>
+			<property name="zIndex">1000</property>
+			<property name="isModal" >true</property>
+			<property name="isDraggable">true</property>
+			<property name="moveToBody">false</property>
+			<property name="message"></property>
+			<property name="CommandEnabledShowHelp">true</property>					
+			<property name="CommandEnabledUnpop" type="Boolean">true</property>
+			<property name="CommandEnabledResetValidationStatus">false</property>
+			<property name="CommandEnabledCheckValidationStatus">true</property>
+			<property name="avoidCache">false</property>
+			<property name="descriptors">
+                <block name="BaseBlock">
+	               <property name="ALERT" type="String">{desc:mstrWeb.6103|Please fix any invalid data.}</property>       <!-- DESCRIPTOR: Please fix any invalid data.-->
+                </block>
+            </property>
+		</assignments>
+	</block>

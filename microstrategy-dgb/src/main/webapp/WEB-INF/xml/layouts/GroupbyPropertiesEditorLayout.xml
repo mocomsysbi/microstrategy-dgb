@@ -1,0 +1,6 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:render name="keepTogether"/>
+    <mstrlayout:render name="pageBreak"/>
+    <mstrlayout:render name="pageRestart"/>
+</mstrlayout:layout>

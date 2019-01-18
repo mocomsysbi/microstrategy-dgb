@@ -1,0 +1,139 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if method="isDhtml">
+        <mstrlayout:then>
+    <mstrlayout:bContext defaultContentType="JSON" />
+    <mstrlayout:block name="GridModel">    
+        <mstrlayout:bSetProperty path="afw" method="isFitToWindow">
+        </mstrlayout:bSetProperty>     
+        <mstrlayout:bSetProperty path="afc" method="isFitToContents">
+        </mstrlayout:bSetProperty>     
+        <mstrlayout:bSetProperty path="rh" method="getRowHeight">
+        </mstrlayout:bSetProperty>     
+        <mstrlayout:bSetProperty path="co" method="isClipOverflowSet">
+        </mstrlayout:bSetProperty>     
+        <mstrlayout:bSetProperty path="lhv" method="getLockHeadersValue">
+        </mstrlayout:bSetProperty>     
+        <!-- data -->
+        <mstrlayout:bSetProperty path="gvs">
+            <mstrlayout:block name="GridDataModel">
+                 <mstrlayout:list id="widths" method="getHeaderWidths">
+                    <mstrlayout:bSetProperty path="cws">
+                           <mstrlayout:block name="ColumnWidthModel">
+                                <mstrlayout:bSetProperty path="w" method="getWidth">
+                                     <mstrlayout:argument type="com.microstrategy.web.objects.WebColumn" base="widths" />
+                                </mstrlayout:bSetProperty>   
+                           </mstrlayout:block> <!-- GridValueModel -->
+                    </mstrlayout:bSetProperty>
+                 </mstrlayout:list> <!-- widths -->
+                <mstrlayout:list id="valueRows" method="getValueRows">
+                    <mstrlayout:bSetProperty path = "items">
+                        <mstrlayout:block name="GridValuesModel">
+                             <mstrlayout:list id="values" method="getValues">
+                                   <mstrlayout:argument type="com.microstrategy.web.objects.WebRow" base="valueRows" />
+                                   <mstrlayout:bAppendList path = "items" method="getValueBlock">
+                                   		<mstrlayout:argument type="com.microstrategy.web.objects.WebRowValue" base="values" />
+                                   </mstrlayout:bAppendList>     <!-- items -->
+                             </mstrlayout:list> <!-- getValues -->
+                        </mstrlayout:block> <!-- GridValuesModel -->
+                    </mstrlayout:bSetProperty> <!-- rows -->
+                </mstrlayout:list>  <!-- valueRows -->
+               <mstrlayout:bSetProperty path="show" method="isVisible">
+                   <mstrlayout:argument type="int" value="4" />
+               </mstrlayout:bSetProperty>   
+            </mstrlayout:block> <!-- GridDataModel -->
+        </mstrlayout:bSetProperty>
+        <!-- headers -->
+        <mstrlayout:bSetProperty path="ghs">
+            <mstrlayout:block name="GridHeadersModel">
+                <mstrlayout:bSetProperty path="rhs">
+                    <mstrlayout:block name="HeadersListModel">
+                         <mstrlayout:list id="widths" method="getTitleWidths">
+                            <mstrlayout:bSetProperty path="cws">
+                                   <mstrlayout:block name="ColumnWidthModel">
+                                        <mstrlayout:bSetProperty path="w" method="getWidth">
+                                             <mstrlayout:argument type="com.microstrategy.web.objects.WebColumn" base="widths" />
+                                        </mstrlayout:bSetProperty>   
+                                   </mstrlayout:block> <!-- GridValueModel -->
+                            </mstrlayout:bSetProperty>
+                         </mstrlayout:list> <!-- widths -->
+                        <mstrlayout:list id="headersList" method="getHeadersList">
+                                <!-- row axis -->
+                            <mstrlayout:argument type="int" value="1" />
+                            <mstrlayout:bSetProperty path = "items">
+								<mstrlayout:include file="/WEB-INF/xml/layouts/MojoHeadersLayout.xml"/>
+                            </mstrlayout:bSetProperty> <!-- items -->
+                        </mstrlayout:list>  <!-- headersList -->                                            
+                       <mstrlayout:bSetProperty path="show" method="isVisible">
+                           <mstrlayout:argument type="int" value="3" />
+                       </mstrlayout:bSetProperty>   
+                    </mstrlayout:block> <!-- HeadersListModel -->
+                </mstrlayout:bSetProperty> <!-- row -->
+                <mstrlayout:bSetProperty path="chs">
+                    <mstrlayout:block name="HeadersListModel">
+                         <mstrlayout:list id="widths" method="getHeaderWidths">
+                            <mstrlayout:bSetProperty path="cws">
+                                   <mstrlayout:block name="ColumnWidthModel">
+                                        <mstrlayout:bSetProperty path="w" method="getWidth">
+                                             <mstrlayout:argument type="com.microstrategy.web.objects.WebColumn" base="widths" />
+                                        </mstrlayout:bSetProperty>   
+                                   </mstrlayout:block> <!-- GridValueModel -->
+                            </mstrlayout:bSetProperty>
+                         </mstrlayout:list> <!-- widths -->
+                        <mstrlayout:list id="headersList" method="getHeadersList">
+                                <!-- row axis -->
+                            <mstrlayout:argument type="int" value="2" />
+                            <mstrlayout:bSetProperty path = "items">
+								<mstrlayout:include file="/WEB-INF/xml/layouts/MojoHeadersLayout.xml"/>
+                            </mstrlayout:bSetProperty> <!-- items -->
+                        </mstrlayout:list> <!-- headers list -->                                                 
+                       <mstrlayout:bSetProperty path="show" method="isVisible">
+                           <mstrlayout:argument type="int" value="2" />
+                       </mstrlayout:bSetProperty>   
+                    </mstrlayout:block> <!-- HeadersListModel -->
+                </mstrlayout:bSetProperty>
+            </mstrlayout:block>
+        </mstrlayout:bSetProperty>
+        <!-- titles -->
+        <mstrlayout:bSetProperty path="gts">
+            <mstrlayout:block name="GridTitlesModel">
+                    <mstrlayout:bSetProperty path="rec" method="removeExtraColumn">
+                    </mstrlayout:bSetProperty>     
+                   <mstrlayout:bSetProperty path="show" method="isVisible">
+                       <mstrlayout:argument type="int" value="1" />
+                   </mstrlayout:bSetProperty>   
+                   <mstrlayout:bSetProperty path="rowSubPos" method="getSubtotalsPosition">
+                       <mstrlayout:argument type="int" value="1" />
+                   </mstrlayout:bSetProperty>   
+                   <mstrlayout:bSetProperty path="colSubPos" method="getSubtotalsPosition">
+                       <mstrlayout:argument type="int" value="2" />
+                   </mstrlayout:bSetProperty>   
+                 <mstrlayout:list id="widths" method="getTitleWidths">
+                    <mstrlayout:bSetProperty path="cws">
+                           <mstrlayout:block name="ColumnWidthModel">
+                                <mstrlayout:bSetProperty path="w" method="getWidth">
+                                     <mstrlayout:argument type="com.microstrategy.web.objects.WebColumn" base="widths" />
+                                </mstrlayout:bSetProperty>   
+                           </mstrlayout:block> <!-- GridValueModel -->
+                    </mstrlayout:bSetProperty>
+                 </mstrlayout:list> <!-- widths -->
+                <mstrlayout:list id="titleUnit" method="getGridTitles">
+                    <mstrlayout:argument type="int" value="1" />
+                     <!-- row axis -->
+                    <mstrlayout:bSetProperty path="row">
+            			<mstrlayout:include file="/WEB-INF/xml/layouts/MojoTitleUnitLayout.xml"/>
+                    </mstrlayout:bSetProperty> <!-- row -->
+                 </mstrlayout:list>                                                 
+                <mstrlayout:list id="titleUnit" method="getGridTitles">
+                    <mstrlayout:argument type="int" value="2" />
+                     <!-- row axis -->
+                    <mstrlayout:bSetProperty path="col">
+                    	<mstrlayout:include file="/WEB-INF/xml/layouts/MojoTitleUnitLayout.xml"/>
+                    </mstrlayout:bSetProperty> <!-- col -->
+                 </mstrlayout:list>                                                 
+            </mstrlayout:block>
+        </mstrlayout:bSetProperty>
+    </mstrlayout:block>
+        </mstrlayout:then>
+    </mstrlayout:if>
+</mstrlayout:layout>

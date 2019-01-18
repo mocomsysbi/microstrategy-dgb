@@ -1,0 +1,43 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="DualExpressionCartProperties" inherits="BaseBlock">
+		<definition>
+			<property name="newIncludeButton" type="Block" />
+			<property name="deleteIncludesButton" type="Block" />
+			<property name="newExcludeButton" type="Block" />
+			<property name="deleteExcludesButton" type="Block" />
+		</definition>
+		<assignments>
+			<property name="newIncludeButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.5893|New Condition}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbNew.gif)</property>
+					<property name="cmds">AddCondition||parent/model/getSelectedIncludesModel()</property>
+					<property name="modelPath">parent/model/getSelectedIncludesModel()</property>
+				</block>
+			</property>
+			<property name="deleteIncludesButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.5894|Delete Conditions}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbDelete.gif)</property>
+					<property name="cmds">Delete||parent/model/getSelectedIncludesModel()</property>
+					<property name="modelPath">parent/model/getSelectedIncludesModel()</property>
+				</block>
+			</property>
+			<property name="newExcludeButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.5893|New Condition}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbNew.gif)</property>
+					<property name="cmds">AddCondition||parent/model/getSelectedExcludesModel()</property>
+					<property name="modelPath">parent/model/getSelectedExcludesModel()</property>
+				</block>
+			</property>
+			<property name="deleteExcludesButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.5894|Delete Conditions}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbDelete.gif)</property>
+					<property name="cmds">Delete||parent/model/getSelectedExcludesModel()</property>
+					<property name="modelPath">parent/model/getSelectedExcludesModel()</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

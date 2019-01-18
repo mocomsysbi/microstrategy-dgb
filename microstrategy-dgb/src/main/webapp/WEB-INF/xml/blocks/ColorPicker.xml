@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ListPulldown is a rich pulldown which pops open a ListView. Typically the popup
+		 shares the same model (a ListModel) as the ListPulldown.  -->
+	<block name="ColorPicker" inherits="ListPulldown">
+		<assignments>
+			<property name="itemRendererClass">mstr.itemrenderers.ColorPickerView</property>
+			<property name="CommandEnabledOpenModalPopup" type="Boolean">true</property>
+			<property name="modelPushedProps">popup|viewFlags</property>
+			<property name="popup">
+				<block name="ColorPickerPopup" />
+			</property>
+		</assignments>
+	</block>

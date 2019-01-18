@@ -1,0 +1,11 @@
+<!ELEMENT beanfactory-config (bean-mappings?,bean-packages?)>
+<!ELEMENT bean-mappings (bean-mapping+)>
+<!ELEMENT bean-packages (bean-package+)>
+<!ELEMENT bean-mapping EMPTY>
+    <!ATTLIST bean-mapping bean-name NMTOKEN #REQUIRED>
+    <!ATTLIST bean-mapping bean-class CDATA #REQUIRED>
+    <!ATTLIST bean-mapping deleted (1) #IMPLIED>
+<!ELEMENT bean-package EMPTY>
+    <!ATTLIST bean-package package-name CDATA #REQUIRED>
+    <!ATTLIST bean-package local-factory CDATA #IMPLIED>
+    <!ATTLIST bean-package position NMTOKEN #IMPLIED>

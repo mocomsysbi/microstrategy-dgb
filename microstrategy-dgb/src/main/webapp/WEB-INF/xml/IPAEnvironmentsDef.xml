@@ -1,0 +1,18 @@
+<IPAEnvironmentsDef>
+  <config n="EM" t="g" v="off"/>
+  <config n="GR" t="g" v="on"/>
+  <config n="UE" t="g" v="on"/>
+  <config n="UT" t="c" v="on"/>
+  <config n="AL" t="c" v="on"/>
+  <config n="MU" t="c" v="on"/>
+  <config n="CU" t="c" v="on"/>
+  <config n="SM" t="c" v="on"/>
+  <config n="SC" t="c" v="on"/>
+  <config n="OS" t="c" v="on"/>
+  <config n="RC" t="c" v="on"/>
+  <config n="NS" t="c" v="on"/>
+  <config n="DI" t="c" v="off"/>
+  <config n="MI" t="c" v="off"/>
+  <config n="NIO" t="c" v="on"/>
+  <config n="DO" t="c" v="off"/>
+</IPAEnvironmentsDef>

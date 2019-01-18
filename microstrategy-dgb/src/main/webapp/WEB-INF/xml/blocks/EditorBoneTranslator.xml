@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- EditorBoneTranslator is a model used for each "Tab" in an editor. -->
+	<block name="EditorBoneTranslator" inherits="BoneTranslator">
+		<definition>
+			<!-- The categoryText is the text to appear as the main header in the list on the left side of the
+				editor (e.g., Properties, Format, etc). -->
+			<property name="categoryText" type="String" />
+
+			<!-- The titleText is the individual title of this tab and will appear below the categoryText. -->
+			<property name="titleText" type="String" />
+			
+			<!-- We use titleField to dynamically change the title we display -->
+            <property name="titleField" type="String" />
+			
+			<!-- A list of commands that do not support preview, forcing the preview button to be disabled once you modify them -->
+			<property name="previewDisabledFields" type="Block"/>
+		</definition>
+	</block>

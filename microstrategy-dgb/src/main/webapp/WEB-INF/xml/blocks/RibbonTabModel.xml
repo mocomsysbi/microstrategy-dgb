@@ -1,0 +1,35 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="RibbonTabModel" inherits="BaseBlock">
+	<definition>
+		<!-- The id of the toolbar (stored in preference). -->
+		<property name="dssid" type="String" />
+		
+		<!-- The name displayed in the toolbar tab. -->
+		<property name="n" type="String" />
+		
+		<!-- A String value containing the style catalog style name to use to render the menu. -->
+		<property name="menuStyle" type="String" />
+
+		<!-- The name of the toolbar (sent when requesting the toolbar). -->
+		<property name="toolbarName" type="String" />
+		
+		<!-- A semi-colon list of features that determine if this tab is visible  -->
+		<property name="visibleFeatures" type="String" />
+		
+		<!-- A semi-colon list of features that determine if this tab is enabled  -->
+		<property name="enabledFeatures" type="String" />
+		
+		<!-- Whether the tab should be visible or not. -->
+		<property name="visible" type="Boolean" />
+		
+		<!-- Optional  menuModel name used load the menu -->
+		<property name="menuModel" type="String"/>
+		
+		<!-- The optional set of layouts that will be called during the block transformation on the transform-->
+		<property name="menuLayouts" type="String"/>
+
+	</definition>	
+	<assignments>
+		<property name="visible">true</property>
+	</assignments>
+</block>

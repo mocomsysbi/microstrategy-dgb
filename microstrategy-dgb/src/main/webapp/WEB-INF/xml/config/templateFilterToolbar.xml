@@ -1,0 +1,13 @@
+<shortcut-list-set name="templateFilterToolbar" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="fTemplateFilter" use-container="true" use-default="false">
+    <attributes>
+      <attribute name="class" source="const" type="string" value="mstrToolbarGroup"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut append-state="true" desc="Template Filter Element" desc-id="" href="" iframe="false" name="tfe" type="bean"/>
+  </shortcut-list>
+</shortcut-list-set>

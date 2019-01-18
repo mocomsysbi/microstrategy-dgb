@@ -1,0 +1,20 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="mstrFormulaFields">
+        <div class="group">
+            <div>
+                <mstrlayout:render name="errorMessage"/>
+            </div>
+            <div>
+                <mstrlayout:render name="formulaUnitsTitle"/>
+                <mstrlayout:render name="formulaUnitsList"/>
+            </div>
+            <div>
+                <mstrlayout:render name="formulaNameTitle"/>
+                <mstrlayout:render name="formulaNameText"/>
+                <mstrlayout:render name="formulaDynamicAliasTitle"/>
+                <mstrlayout:render name="formulaDynamicAliasInput"/>
+            </div>
+        </div>
+    </div>
+</mstrlayout:layout>

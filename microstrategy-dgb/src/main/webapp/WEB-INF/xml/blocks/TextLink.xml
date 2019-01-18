@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="TextLink" inherits="BaseView">
+		<definition>
+			<!-- The text to display on the TextButton's GUI. -->
+			<property name="caption" type="String" />
+
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.TextLink</property>
+			<property name="cssClass">TextLink</property>
+		</assignments>
+	</block>

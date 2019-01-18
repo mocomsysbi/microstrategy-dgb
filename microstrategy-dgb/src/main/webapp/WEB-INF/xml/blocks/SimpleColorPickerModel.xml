@@ -1,0 +1,174 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ColorPickerModel" name="SimpleColorPickerModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1454" name="ItemInfo">
+          <property name="dssid">#000000</property>
+          <property name="n">{desc:mstrWeb.2266}</property>
+        </block>
+        <block listElementKey="K1455" name="ItemInfo">
+          <property name="dssid">#993300</property>
+          <property name="n">{desc:mstrWeb.2287}</property>
+        </block>
+        <block listElementKey="K1456" name="ItemInfo">
+          <property name="dssid">#333300</property>
+          <property name="n">{desc:mstrWeb.2496}</property>
+        </block>
+        <block listElementKey="K1457" name="ItemInfo">
+          <property name="dssid">#003300</property>
+          <property name="n">{desc:mstrWeb.2496}</property>
+        </block>
+        <block listElementKey="K1458" name="ItemInfo">
+          <property name="dssid">#003366</property>
+          <property name="n">{desc:mstrWeb.2493}</property>
+        </block>
+        <block listElementKey="K1459" name="ItemInfo">
+          <property name="dssid">#000080</property>
+          <property name="n">{desc:mstrWeb.2493}</property>
+        </block>
+        <block listElementKey="K1460" name="ItemInfo">
+          <property name="dssid">#333399</property>
+          <property name="n">{desc:mstrWeb.2498}</property>
+        </block>
+        <block listElementKey="K1461" name="ItemInfo">
+          <property name="dssid">#333333</property>
+          <property name="n">{desc:mstrWeb.2500}</property>
+        </block>
+        <block listElementKey="K1462" name="ItemInfo">
+          <property name="dssid">#800000</property>
+          <property name="n">{desc:mstrWeb.2279}</property>
+        </block>
+        <block listElementKey="K1463" name="ItemInfo">
+          <property name="dssid">#ff6600</property>
+          <property name="n">{desc:mstrWeb.2491}</property>
+        </block>
+        <block listElementKey="K1464" name="ItemInfo">
+          <property name="dssid">#808000</property>
+          <property name="n">{desc:mstrWeb.2476}</property>
+        </block>
+        <block listElementKey="K1465" name="ItemInfo">
+          <property name="dssid">#008000</property>
+          <property name="n">{desc:mstrWeb.2271}</property>
+        </block>
+        <block listElementKey="K1466" name="ItemInfo">
+          <property name="dssid">#008080</property>
+          <property name="n">{desc:mstrWeb.2478}</property>
+        </block>
+        <block listElementKey="K1467" name="ItemInfo">
+          <property name="dssid">#0000ff</property>
+          <property name="n">{desc:mstrWeb.2268}</property>
+        </block>
+        <block listElementKey="K1468" name="ItemInfo">
+          <property name="dssid">#666699</property>
+          <property name="n">{desc:mstrWeb.2492}</property>
+        </block>
+        <block listElementKey="K1469" name="ItemInfo">
+          <property name="dssid">#808080</property>
+          <property name="n">{desc:mstrWeb.2273}</property>
+        </block>
+        <block listElementKey="K1470" name="ItemInfo">
+          <property name="dssid">#ff0000</property>
+          <property name="n">{desc:mstrWeb.2280}</property>
+        </block>
+        <block listElementKey="K1471" name="ItemInfo">
+          <property name="dssid">#ff9900</property>
+          <property name="n">{desc:mstrWeb.2490}</property>
+        </block>
+        <block listElementKey="K1472" name="ItemInfo">
+          <property name="dssid">#99cc00</property>
+          <property name="n">{desc:mstrWeb.2488}</property>
+        </block>
+        <block listElementKey="K1473" name="ItemInfo">
+          <property name="dssid">#339966</property>
+          <property name="n">{desc:mstrWeb.2494}</property>
+        </block>
+        <block listElementKey="K1474" name="ItemInfo">
+          <property name="dssid">#33cccc</property>
+          <property name="n">{desc:mstrWeb.2487}</property>
+        </block>
+        <block listElementKey="K1475" name="ItemInfo">
+          <property name="dssid">#3366ff</property>
+          <property name="n">{desc:mstrWeb.2269}</property>
+        </block>
+        <block listElementKey="K1476" name="ItemInfo">
+          <property name="dssid">#800080</property>
+          <property name="n">{desc:mstrWeb.2477}</property>
+        </block>
+        <block listElementKey="K1477" name="ItemInfo">
+          <property name="dssid">#969696</property>
+          <property name="n">{desc:mstrWeb.2499}</property>
+        </block>
+        <block listElementKey="K1478" name="ItemInfo">
+          <property name="dssid">#ff00ff</property>
+          <property name="n">{desc:mstrWeb.2292}</property>
+        </block>
+        <block listElementKey="K1479" name="ItemInfo">
+          <property name="dssid">#ffcc00</property>
+          <property name="n">{desc:mstrWeb.2489}</property>
+        </block>
+        <block listElementKey="K1480" name="ItemInfo">
+          <property name="dssid">#ffff00</property>
+          <property name="n">{desc:mstrWeb.2281}</property>
+        </block>
+        <block listElementKey="K1481" name="ItemInfo">
+          <property name="dssid">#00ff00</property>
+          <property name="n">{desc:mstrWeb.2484}</property>
+        </block>
+        <block listElementKey="K1482" name="ItemInfo">
+          <property name="dssid">#00ffff</property>
+          <property name="n">{desc:mstrWeb.2483}</property>
+        </block>
+        <block listElementKey="K1483" name="ItemInfo">
+          <property name="dssid">#00ccff</property>
+          <property name="n">{desc:mstrWeb.2480}</property>
+        </block>
+        <block listElementKey="K1484" name="ItemInfo">
+          <property name="dssid">#993366</property>
+          <property name="n">{desc:mstrWeb.2497}</property>
+        </block>
+        <block listElementKey="K1485" name="ItemInfo">
+          <property name="dssid">#c0c0c0</property>
+          <property name="n">{desc:mstrWeb.2274}</property>
+        </block>
+        <block listElementKey="K1486" name="ItemInfo">
+          <property name="dssid">#ff99cc</property>
+          <property name="n">{desc:mstrWeb.2485}</property>
+        </block>
+        <block listElementKey="K1487" name="ItemInfo">
+          <property name="dssid">#ffcc99</property>
+          <property name="n">{desc:mstrWeb.2486}</property>
+        </block>
+        <block listElementKey="K1488" name="ItemInfo">
+          <property name="dssid">#ffff99</property>
+          <property name="n">{desc:mstrWeb.2282}</property>
+        </block>
+        <block listElementKey="K1489" name="ItemInfo">
+          <property name="dssid">#ccffcc</property>
+          <property name="n">{desc:mstrWeb.2481}</property>
+        </block>
+        <block listElementKey="K1490" name="ItemInfo">
+          <property name="dssid">#ccffff</property>
+          <property name="n">{desc:mstrWeb.2479}</property>
+        </block>
+        <block listElementKey="K1491" name="ItemInfo">
+          <property name="dssid">#99ccff</property>
+          <property name="n">{desc:mstrWeb.2482}</property>
+        </block>
+        <block listElementKey="K1492" name="ItemInfo">
+          <property name="dssid">#cc99ff</property>
+          <property name="n">{desc:mstrWeb.2290}</property>
+        </block>
+        <block listElementKey="K1493" name="ItemInfo">
+          <property name="dssid">#ffffff</property>
+          <property name="n">{desc:mstrWeb.2293}</property>
+        </block>
+        <block listElementKey="K1494" name="ItemInfo">
+          <property name="dssid">transparent</property>
+          <property name="n">{desc:mstrWeb.5774}</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- Used for any editor that contains a simple color picker -->

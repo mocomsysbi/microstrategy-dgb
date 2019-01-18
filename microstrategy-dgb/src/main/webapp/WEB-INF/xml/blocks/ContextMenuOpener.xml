@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ContextMenuOpener" inherits="ToolbarControl">
+		<definition>
+			<!-- This boolean property indicates whether the picker button should extract the class of the 
+				selected item in it's ListView (used for buttons that show the icon of the current selected item).-->
+			<property name="useDynamicBtnImg" type="Boolean" />
+			
+			<!-- If this property is true the picker button will show the value of the last selected item.  -->
+			<property name="showLastSelection" type="Boolean" />
+            
+            <property name="cssBaseIcon" type="String" />
+		</definition>
+		<assignments>
+            <property name="cssBaseIcon">mstrToolbarList mstrListBlockItem T52_</property>
+            <property name="cmds">Pressed||model/toolbarHelper</property>
+            <property name="cssClass">ListPulldown</property>
+			<property name="layoutClass">mstr.layouts.ContextMenuOpener</property>
+			<property name="modelPushedProps"></property>
+		</assignments>
+	</block>

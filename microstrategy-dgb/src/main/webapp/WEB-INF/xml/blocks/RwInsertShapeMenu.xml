@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwInsertShapeMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1747" name="MenuControlModel">
+          <property name="htmlId">mnuInsertRct</property>
+          <property name="text">{desc:mstrWeb.3196|Rectangle}</property>
+          <property name="cmdid">101|0</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1748" name="MenuControlModel">
+          <property name="htmlId">mnuInsertRRct</property>
+          <property name="text">{desc:mstrWeb.4726|Rounded rectangle}</property>
+          <property name="cmdid">101|1</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

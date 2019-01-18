@@ -1,0 +1,112 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwToolbarModel" name="DocumentFormatToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K117" name="ToolbarDynamicListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="cmdid">RwdUnits</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K118" name="ToolbarFormatUnitList">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K119" name="ToolbarFormatValueList">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K120" name="BaseBlock"/>
+        <block listElementKey="fontFamily" name="ToolbarFontFamilyList">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="fontSize" name="ToolbarFontSizeList">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K121" name="BaseBlock"/>
+        <block listElementKey="K122" name="ToolbarBoldButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K123" name="ToolbarItalicButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K124" name="ToolbarUnderlineButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K125" name="BaseBlock"/>
+        <block listElementKey="K126" name="ToolbarTextAlignList">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K127" name="ToolbarListModel">
+          <property name="valueForm">dssid</property>
+          <property name="type">RADIOBUTTONS</property>
+          <property name="cmdid">GridHorizontal</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready</property>
+          <property name="width">113px</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K128" name="ToolbarListItemInfo">
+                <property name="id">tbTextAlignLeft</property>
+                <property name="dssid">2</property>
+                <property name="n">{desc:mstrWeb.2194|Left}</property>
+              </block>
+              <block listElementKey="K129" name="ToolbarListItemInfo">
+                <property name="id">tbTextAlignCenter</property>
+                <property name="dssid">3</property>
+                <property name="n">{desc:mstrWeb.2193|Center}</property>
+              </block>
+              <block listElementKey="K130" name="ToolbarListItemInfo">
+                <property name="id">tbTextAlignRight</property>
+                <property name="dssid">4</property>
+                <property name="n">{desc:mstrWeb.2195|Right}</property>
+              </block>
+              <block listElementKey="K144" name="ToolbarListItemInfo">
+                <property name="id">tbTextAlignJustify</property>
+                <property name="dssid">6</property>
+                <property name="n">{desc:mstrWeb.2068|Justify}</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K131" name="BaseBlock"/>
+        <block listElementKey="K132" name="ToolbarCurrencyButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K133" name="ToolbarIntlCurrencyButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K134" name="ToolbarPercentButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K135" name="ToolbarCommaButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K136" name="BaseBlock"/>
+        <block listElementKey="K137" name="ToolbarIncreaseDecimalButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K138" name="ToolbarDecreaseDecimalButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K139" name="BaseBlock"/>
+        <block listElementKey="fillColor" name="ToolbarFillColorPicker">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="lineColor" name="ToolbarLineColorPicker">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="fontColor" name="ToolbarFontColorPicker">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K140" name="BaseBlock"/>
+        <block listElementKey="K141" name="ToolbarBorderPicker">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready,onBorderStyleChange</property>
+        </block>
+        <block listElementKey="K142" name="ToolbarLineStylePicker">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,ongridformatready</property>
+        </block>
+        <block listElementKey="K143" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

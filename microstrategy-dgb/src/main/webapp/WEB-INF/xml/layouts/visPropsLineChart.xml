@@ -1,0 +1,45 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+ <table>
+ 	<tr>
+		<td>
+			<mstrlayout:render name="descriptor">
+				<mstrlayout:argument type="string" value="mstrWeb.8123"/>
+			</mstrlayout:render>
+		</td>
+		<td>
+			<mstrlayout:render name="ColorPicker">
+				<mstrlayout:argument type="String" value="thc" /> <!-- prop name -->
+				<mstrlayout:argument type="String" value="#000000" /> <!-- default val -->
+			</mstrlayout:render>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<mstrlayout:render name="descriptor"> 
+				<mstrlayout:argument type="string" value="mstrWeb.2128"/> <!--  Mode --> 
+			</mstrlayout:render>
+		</td>
+		<td>
+			<mstrlayout:render name="SelectBox">
+				<mstrlayout:argument type="String" value="mc" /> <!-- prop name -->
+				<mstrlayout:argument type="String" value="0^mstrWeb.3440|1^mstrWeb.8124" /> <!-- selectBox elements -->
+				<mstrlayout:argument type="String" value="" /> <!-- extra att -->
+				<mstrlayout:argument type="String" value="0" /> <!-- default val -->
+			</mstrlayout:render>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<mstrlayout:render name="checkbox">
+				<mstrlayout:argument type="String" value="shl" /> <!-- prop name -->
+				<mstrlayout:argument type="String" value="" /> <!-- extra att -->
+				<mstrlayout:argument type="String" value="1" /> <!-- default val -->
+			</mstrlayout:render>
+			<mstrlayout:render name="descriptor">
+				<mstrlayout:argument type="string" value="mstrWeb.8125"/>
+			</mstrlayout:render>
+		</td>		
+	</tr>
+ </table>
+</mstrlayout:layout>

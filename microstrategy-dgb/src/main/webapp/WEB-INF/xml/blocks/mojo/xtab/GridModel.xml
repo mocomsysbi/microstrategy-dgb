@@ -1,0 +1,62 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<block name="GridModel" inherits="BaseBlock,RWTemplate">
+	<definition>
+			<!--  cache info -->
+			<property name="ci" type="Block" />
+	
+      <!-- grid headers -->
+			<property name="ghs" type="Block" />
+
+      <!-- grid titles -->
+      <property name="gts" type="Block" />
+
+      <!-- grid values -->
+      <property name="gvs" type="Block" />
+
+      <!-- auto fit contents -->
+      <property name="afc" type="Boolean" />
+
+      <!-- auto fit window -->
+      <property name="afw" type="Boolean" />
+
+      <!-- merged header -->
+      <property name="mgh" type="Integer" />
+
+			<!--  clip overflow ? -->
+			<property name="co" type="Boolean" />
+	
+			<!--  row height. todo0 - marked as String currently so that we can render empty value. Eventually, we should render this conditionally - which would need programmatic rendering-->
+			<property name="rh" type="String" />
+
+			<!--  lockHeadersValue, 0-OFF, 1-ROW, 2-COL, 3-BOTH -->
+			<property name="lhv" type="Integer" />
+			
+			<!-- css name list -->
+			<property name="css" type="List"/>
+
+			<!--  Row Result Window. Currently represents Rows Only as a block of type ResultWindow -->
+			<property name="rw" type="Block" />
+			
+			<!-- Report message ID -->
+			<property name="mid" type="String" />
+			
+			
+			<!-- css string -->
+			<property name="cssString" type="String"/>
+			
+			<!-- name of the report (only for report cases) -->
+			<property name="n" type="String"/>
+			
+			<!-- Description of report. -->
+			<property name="dsc" type="String" />
+			
+			<!--  threshold value list -->
+			<property name="th" type="List" />
+			
+			<!-- The transaction changes allowed on this object -->
+			<property name="tca" type="Integer" />
+			
+			<!--  Visualization properties -->
+			<property name="vp" type="Block" />
+	</definition>
+</block>

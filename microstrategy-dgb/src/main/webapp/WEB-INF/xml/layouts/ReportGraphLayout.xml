@@ -1,0 +1,55 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if method="isDhtml">
+        <mstrlayout:then>
+	<mstrlayout:bContext defaultContentType="JSON" />
+	<![CDATA[
+	  <textarea id="json1" class="mstrJSON">
+	    ]]>
+	<mstrlayout:block name="ContextMenuProcessingView">
+	</mstrlayout:block>
+	<![CDATA[
+		</textarea>
+		]]>
+
+	<![CDATA[
+	    <textarea id="json2" class="mstrJSON">
+	    ]]>
+	<mstrlayout:block name="ContextMenuModel"></mstrlayout:block>
+	<![CDATA[
+		</textarea>
+		]]>
+
+	<!-- Register this JSON object with the factory -->
+	<script type="text/javascript">
+		mstr.$register('json1', self); mstr.$register('json2', self);
+	</script>
+        </mstrlayout:then>
+    </mstrlayout:if>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%"
+		id="tblReportLayout">
+		<tr>
+			<td id="tdReportLayoutCenter" colspan="1" rowspan="1">
+				<div class="graph-center">
+					<mstrlayout:if name="isGraphAvailable">
+						<mstrlayout:then>
+							<mstrlayout:render name="graph" />
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<mstrlayout:render name="graphError" />
+						</mstrlayout:else>
+					</mstrlayout:if>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td colspan="1" rowspan="1">
+				<div class="report-bottom">
+					<mstrlayout:render name="rowsIncrementalFetch" />
+				</div>
+			</td>
+		</tr>
+	</table>
+</mstrlayout:layout>

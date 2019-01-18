@@ -1,0 +1,13 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <table border="0" cellpadding="0" cellspacing="5" class="filterLayout" width="100%" >
+    <tr>
+      <td class="filterLayoutRight" colspan="1" rowspan="1">
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="fltb"/>
+          <mstrlayout:argument value="FilterStyle"/>
+        </mstrlayout:render>
+      </td>
+    </tr>
+  </table>
+</mstrlayout:layout>

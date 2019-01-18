@@ -1,0 +1,6 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarTilePulldown" inherits="ToolbarControl,TilePulldown">
+        <assignments>
+            <property name="modelPushedProps">!popup|id,!descriptors|emptyText,!showIcons</property>
+        </assignments>
+	</block>

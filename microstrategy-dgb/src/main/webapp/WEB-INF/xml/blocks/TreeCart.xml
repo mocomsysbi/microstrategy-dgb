@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TreeCart is similar to ListCart, except that the available list is replaced by a tree. -->
+	<block name="TreeCart" inherits="ListCart">
+		<assignments>
+			<property name="availableView">
+				<block name="TreeView">
+					<property name="caption">{desc:mstrWeb.1408|Available:}</property>
+					<property name="modelPath">parent/model/available</property>
+					<property name="multiSelect">true</property>
+					<property name="hideRootNodeTypes"></property>
+					<property name="width">99%</property>
+                    <property name="cmdsDblClick">Add||parent/model</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

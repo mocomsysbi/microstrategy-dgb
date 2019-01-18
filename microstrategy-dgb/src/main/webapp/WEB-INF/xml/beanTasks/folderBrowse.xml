@@ -1,0 +1,49 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.FolderBrowseTask">
+	<!-- 
+		This information is used to provide "metadata" about this task. In general, it includes
+		names, descriptions and whether the parameters are required or not. 
+	-->
+	<basicInfo desc="This Task browses through folders in MicroStrategy Metadata. It includes the ability to perform incremental fetch.">
+		<parameter name="folderID" desc="The DSS ID of the Folder to inspect.  If omitted, then the 'systemFolder' is evaluated." required="false"/>
+		<parameter name="systemFolder" desc="The numeric ID of the System Folder to inspect.  Values correspond to the fields of the EnumDSSXMLFolderNames interface.  If omitted, then the Shared Reports folder ('7') is used." required="false" defvalue="7"/>
+		<parameter name="folderBlockBegin" desc="The index (starting at 1) of the first element to begin browsing." required="false" defvalue="1"/>
+		<parameter name="folderBlockCount" desc="The number of elements to return in this fetch. A value of -1 indicates that all blocks should be collected." required="false" defvalue="-1"/>
+		<parameter name="sortKey" desc="How the elements of the folder are sorted. Sort keys are specified as integers, as described by the EnumWebObjectSort interface.  If omitted, then WebObjectSortObjectNameFoldersFirst is used." required="false" defvalue="6" type="int"/>
+		<parameter name="asc" desc="Whether elements of the list are sorted in ascending order or not.  Values are either 'true' or 'false'." required="false" defvalue="true" type="boolean"/>
+		<parameter name="typeRestriction" desc="What subtype of objects we want to return within the list of validObjectTypes. A comma-separated list of values from EnumDSSXMLObjectSubTypes." required="false" defvalue="2048,768,769,774,14081" type="simplestring"/>
+		<parameter name="styleName" desc="The name of the style to use for this task" required="false" defvalue="FolderXMLStyle" type="simplestring"/>
+		<parameter name="juil" desc="Whether the Block tree is being constructed for the Javascript UI Library" required="false" defvalue="false" type="boolean"/>
+		<parameter name="dereferenceShortcuts" desc="Determine whether the shortcuts should be converted to their targets." required="false" defvalue="true" type="boolean"/>
+		<parameter name="includeObjectDesc" desc="Indicates whether it is need to output object description." required="false" defvalue="false"  type="boolean"/>
+		<parameter name="useEncoding" desc="Indicates whether it is need to encode object name and description." required="false" defvalue="false" type="boolean"/>
+		<parameter name="validObjectTypes" desc="What subtype of objects we want to limit the output to. A comma-separated list of values from EnumDSSXMLObjectSubTypes. This parameter can only be modified via the folderBrowse.xml file." required="false" defvalue="1,2,3,4,8,10,11,12,13,14,18,39,43,47,55,256,257,259,768,769,774,776,778,779,1024,1025,1026,1027,2048,3072,3585,3587,14080,14081,17153" hidden="true"/>
+		<parameter name="execFlags" desc="The execuation flag used for this task" required="false" defvalue="268453447"/>
+		<parameter name="showObjectTags" desc="Indicates whether we need to provide object tags" required="false" defvalue="false" type="boolean"/>
+		
+	</basicInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing 
+		Event. "2001" is the EnumFolderBeanEvents.FOLDER_EVENT_BROWSE Event.
+	-->
+	<eventInfo eventID="2001">
+		<argument name="executionFlags" value="execFlags" source="parameter"/>
+	</eventInfo>
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean. The name of the bean is 'fb'. 
+	-->
+	<beanInfo name="fb" bean-type="FolderBean">
+		<!-- Add the style supplied with the call to this bean. -->
+		<style name="styleName" source="parameter">
+			<!-- Override the actual parameters associated with this style with values
+			     from URL (or form data) parameters. -->
+			<actualParameter name="sortField" value="sortKey" source="parameter"/>
+			<actualParameter name="sortAscending" value="asc" source="parameter"/>
+			<actualParameter name="includeObjectDesc" value="includeObjectDesc" source="parameter"/>
+			<actualParameter name="useEncoding" value="useEncoding" source="parameter"/>
+			<actualParameter name="showObjectTags" value="showObjectTags" source="parameter"/>
+		</style>
+	</beanInfo>
+</beanTask>

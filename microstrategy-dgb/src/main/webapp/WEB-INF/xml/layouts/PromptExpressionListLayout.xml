@@ -1,0 +1,34 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:include file="/WEB-INF/xml/layouts/PromptObjectLayout.xml">
+        <mstrlayout:replace slot="s1">
+          <div class="prmExpressionNonCart">
+            <table class="singleExpression">
+              <tr>
+                <td>
+                  <div class="listHeader">
+                    <mstrlayout:render name="availableLabel"/>
+                  </div>
+                  <div class="list">
+                    <mstrlayout:render name="available"/>
+                  </div>
+                </td>
+                <td>
+                  <div class="operator">
+                    <div><mstrlayout:render name="operatorLabel"/></div>
+                    <mstrlayout:render name="operators"/>
+                  </div>
+                  <div class="value">
+                    <div><mstrlayout:render name="inputLabel"/></div>
+                    <mstrlayout:render name="input"/>
+                  </div>
+                  <div class="level">
+                    <mstrlayout:render name="editContentBelowInput"/>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+    </mstrlayout:replace>
+    </mstrlayout:include>
+</mstrlayout:layout>

@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Relation Object
+-->
+<block name="Relationship">
+    <definition>
+        <!-- The guide object, which is an object used to guide the relationship. -->
+        <property name="guide" type="Block" />
+        
+        <!-- Relationship type -->
+        <property name="rsTp" type="Integer" />
+        
+        <!-- Join Type -->
+        <property name="joTp" type="Integer" />
+        
+        <!-- Partial type -->
+        <property name="paTp" type="Integer" />
+        
+        <!-- The current entity-relationship type -->
+        <property name="erTp" type="Integer" />
+        
+        <!--  The expression used in the pseudo-dimensionality context -->
+        <property name="exp" type="Block" />
+        
+        <!--  The join attributes set on the relationship -->
+        <property name="joAttrs" type="Block" />
+    </definition>
+</block>

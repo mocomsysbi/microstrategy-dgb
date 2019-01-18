@@ -1,0 +1,189 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorAlignmentModel">
+  <definition>
+    <property name="alignmentTabEnabled" type="Boolean"/>
+    <property name="unitSelectorChange" type="String"/>
+    <property name="tabName" type="String"/>
+    <property name="Horizontal" type="Block"/>
+    <property name="GridHorizontal" type="Block"/>
+    <property name="Vertical" type="Block"/>
+    <property name="Vertical2" type="Block"/>
+    <property name="SelectorVertical" type="Block"/>
+    <property name="TextDirection" type="Block"/>
+    <property name="TextDirectionGrid" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="categoryText">{desc:mstrWeb.1918|Format}</property>
+    <property name="titleText">{desc:mstrWeb.3435|Alignment}</property>
+    <property name="scriptClass">mstr.bones.editors.FormatEditingBoneTranslator</property>
+    <property name="fields">isText|isOneGrid|isSelector|showTextControl|showPadding|enableHorizontal|Horizontal|GridHorizontal|Vertical|Vertical2|SelectorVertical|TextWrap|TextDirection|TextDirectionGrid|LeftPadding|RightPadding|TopPadding|BottomPadding</property>
+    <property name="visibleField">alignmentTabEnabled</property>
+    <property name="alignmentTabEnabled">true</property>
+    <property name="unitSelectorChange">|Grid|</property>
+    <property name="tabName">align</property>
+    <property name="Horizontal">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K845" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2194|Left}</property>
+            </block>
+            <block listElementKey="K846" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2193|Center}</property>
+            </block>
+            <block listElementKey="K847" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2195|Right}</property>
+            </block>
+            <block listElementKey="K869" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.2068|Justify}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="GridHorizontal">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K848" name="ItemInfo">
+              <property name="dssid">-2</property>
+              <property name="n">{desc:mstrWeb.2296|Use Default}</property>
+            </block>
+            <block listElementKey="K849" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2194|Left}</property>
+            </block>
+            <block listElementKey="K850" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.2193|Center}</property>
+            </block>
+            <block listElementKey="K851" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.2195|Right}</property>
+            </block>
+            <block listElementKey="K852" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.2068|Justify}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="Vertical">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K853" name="ItemInfo">
+              <property name="dssid">-2</property>
+              <property name="n">{desc:mstrWeb.2296|Use Default}</property>
+            </block>
+            <block listElementKey="K854" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2256|Top}</property>
+            </block>
+            <block listElementKey="K855" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2067|Center}</property>
+            </block>
+            <block listElementKey="K856" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2257|Bottom}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="Vertical2">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K857" name="ItemInfo">
+              <property name="dssid">-2</property>
+              <property name="n">{desc:mstrWeb.2296|Use Default}</property>
+            </block>
+            <block listElementKey="K858" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2256|Top}</property>
+            </block>
+            <block listElementKey="K859" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2067|Center}</property>
+            </block>
+            <block listElementKey="K860" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.2257|Bottom}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="SelectorVertical">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K861" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2256|Top}</property>
+            </block>
+            <block listElementKey="K862" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2067|Center}</property>
+            </block>
+            <block listElementKey="K863" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2257|Bottom}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="TextDirection">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K864" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.5157|Horizontal}</property>
+            </block>
+            <block listElementKey="K865" name="ItemInfo">
+              <property name="dssid">90</property>
+              <property name="n">{desc:mstrWeb.5155|90 Degrees}</property>
+            </block>
+            <block listElementKey="K866" name="ItemInfo">
+              <property name="dssid">-90</property>
+              <property name="n">{desc:mstrWeb.5156|-90 Degrees}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="TextDirectionGrid">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K867" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.5157|Horizontal}</property>
+            </block>
+            <block listElementKey="K868" name="ItemInfo">
+              <property name="dssid">-90</property>
+              <property name="n">{desc:mstrWeb.5156|-90 Degrees}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Alignment' tab of the Report Services properties editor. -->

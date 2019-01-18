@@ -1,0 +1,207 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptAnsId, then this tab's id is tabPromptAnsId -->
+<mstrlayout:layout>
+
+<!-- div for date data type -->
+	<mstrlayout:if name="isDatePrompt">
+		<mstrlayout:then>
+			<mstrlayout:render name="text">
+				<mstrlayout:argument value="&lt;div id='vp_default_date' style='display:block'&gt;"/>
+			</mstrlayout:render>
+		</mstrlayout:then>
+		<mstrlayout:else>
+			<mstrlayout:render name="text">
+				<mstrlayout:argument value="&lt;div id='vp_default_date' style='display:none'&gt;"/>
+			</mstrlayout:render>
+		</mstrlayout:else>
+	</mstrlayout:if>
+		<table width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr>
+				<td>
+				
+					<mstrlayout:if name="hasDefault">
+						<mstrlayout:argument value="14" type="int"/>
+						<mstrlayout:then>
+							<input type="checkbox" name="vp_d_hasDefault" id="vp_d_hasDefault" cmdid="setHasDefault" onclick="microstrategy.bone('tabPromptAnsId').updateCheck(this);microstrategy.bone('tabPromptAnsId').updateList(getObj('vp_d_default'))" checked="checked"/> *Default Value
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="vp_d_hasDefault" id="vp_d_hasDefault" cmdid="setHasDefault" onclick="microstrategy.bone('tabPromptAnsId').updateCheck(this);microstrategy.bone('tabPromptAnsId').updateList(getObj('vp_d_default'))"/> *Default Value
+						</mstrlayout:else>
+					</mstrlayout:if>
+<!-- 					<label for="p_hasDefault">*Default Value</label> ??????? -->
+				</td>
+				<td>
+						<input type="text" name="vp_d_default" id="vp_d_default" cmdid="setDefaultValue" onkeyup="microstrategy.bone('tabPromptAnsId').updateText(this);microstrategy.bone('tabPromptAnsId').updateCheckByName('vp_d_hasDefault', true);">
+							<mstrlayout:attr name="addDefaultValueAttr">
+								<mstrlayout:argument value="14" type="int"/>
+							</mstrlayout:attr>
+						</input>
+						<mstrlayout:render name="calendar">
+							<mstrlayout:argument value="vp_d_default"/> <!-- text box name -->
+							<mstrlayout:argument value="vp_d_default_calendar"/> <!-- calendar button name -->
+							<mstrlayout:argument value="vp_d_max_value"/> <!-- max restriction -->
+							<mstrlayout:argument value="vp_d_min_value"/> <!-- min restriction -->
+						</mstrlayout:render>
+<!--						<select size="1" name="vp_d_default" id="vp_d_default" cmdid="setDefaultValue" onchange="microstrategy.bone('tabPromptAnsId').updateList(this);microstrategy.bone('tabPromptAnsId').updateCheckByName('vp_d_hasDefault', true);">
+							<mstrlayout:list id="default" name="getDefaultList">
+								<option>
+									<mstrlayout:attr name="addOptionAttr">
+										<mstrlayout:argument list="default"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+									</mstrlayout:attr>
+									<mstrlayout:render name="optionText">
+										<mstrlayout:argument list="default"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+									</mstrlayout:render>
+								</option>
+							</mstrlayout:list>
+						</select>
+-->
+					</td>
+				</tr>
+			</table>
+		<mstrlayout:render name="text">
+			<mstrlayout:argument value="&lt;/div&gt;"/>
+		</mstrlayout:render>
+<!-- div for num -->
+	<mstrlayout:if name="isNumericPrompt">
+		<mstrlayout:then>
+			<mstrlayout:render name="text">
+				<mstrlayout:argument value="&lt;div id='vp_default_num' style='display:block'&gt;"/>
+			</mstrlayout:render>
+		</mstrlayout:then>
+		<mstrlayout:else>
+			<mstrlayout:render name="text">
+				<mstrlayout:argument value="&lt;div id='vp_default_num' style='display:none'&gt;"/>
+			</mstrlayout:render>
+		</mstrlayout:else>
+	</mstrlayout:if>
+		<table width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr>
+				<td>
+				
+					<mstrlayout:if name="hasDefault">
+						<mstrlayout:argument value="6" type="int"/>
+						<mstrlayout:then>
+							<input type="checkbox" name="vp_num_hasDefault" id="vp_num_hasDefault" cmdid="setHasDefault" onclick="microstrategy.bone('tabPromptAnsId').updateCheck(this);microstrategy.bone('tabPromptAnsId').updateList(getObj('vp_num_default'))" checked="checked"/> *Default Value
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="vp_num_hasDefault" id="vp_num_hasDefault" cmdid="setHasDefault" onclick="microstrategy.bone('tabPromptAnsId').updateCheck(this);microstrategy.bone('tabPromptAnsId').updateList(getObj('vp_num_default'))"/> *Default Value
+						</mstrlayout:else>
+					</mstrlayout:if>
+<!-- 					<label for="p_hasDefault">*Default Value</label> ??????? -->
+				</td>
+				<td>
+				
+						<input type="text" name="vp_num_default" id="vp_num_default" cmdid="setDefaultValue" onkeyup="microstrategy.bone('tabPromptAnsId').updateText(this);microstrategy.bone('tabPromptAnsId').updateCheckByName('vp_num_hasDefault', true);">
+							<mstrlayout:attr name="addDefaultValueAttr">
+								<mstrlayout:argument value="6" type="int"/>
+							</mstrlayout:attr>
+						</input>
+				</td>
+			</tr>
+		</table>
+	<mstrlayout:render name="text">
+		<mstrlayout:argument value="&lt;/div&gt;"/>
+	</mstrlayout:render>
+	
+	
+<!-- text -->	
+	<mstrlayout:if name="isTextPrompt">
+		<mstrlayout:then>
+			<mstrlayout:render name="text">
+				<mstrlayout:argument value="&lt;div id='vp_default_text' style='display:block'&gt;"/>
+			</mstrlayout:render>
+		</mstrlayout:then>
+		<mstrlayout:else>
+			<mstrlayout:render name="text">
+				<mstrlayout:argument value="&lt;div id='vp_default_text' style='display:none'&gt;"/>
+			</mstrlayout:render>
+		</mstrlayout:else>
+	</mstrlayout:if>
+		<table width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr>
+				<td>
+				
+					<mstrlayout:if name="hasDefault">
+						<mstrlayout:argument value="8" type="int"/>
+						<mstrlayout:then>
+							<input type="checkbox" name="vp_text_hasDefault" id="vp_text_hasDefault" cmdid="setHasDefault" onclick="microstrategy.bone('tabPromptAnsId').updateCheck(this);microstrategy.bone('tabPromptAnsId').updateList(getObj('vp_text_default'))" checked="checked"/> *Default Value
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="vp_text_hasDefault" id="vp_text_hasDefault" cmdid="setHasDefault" onclick="microstrategy.bone('tabPromptAnsId').updateCheck(this);microstrategy.bone('tabPromptAnsId').updateList(getObj('vp_text_default'))"/> *Default Value
+						</mstrlayout:else>
+					</mstrlayout:if>
+<!-- 					<label for="p_hasDefault">*Default Value</label> ??????? -->
+				</td>
+				<td>
+				
+						<input type="text" name="vp_text_default" id="vp_text_default" cmdid="setDefaultValue" onkeyup="microstrategy.bone('tabPromptAnsId').updateText(this);microstrategy.bone('tabPromptAnsId').updateCheckByName('vp_text_hasDefault', true);">
+							<mstrlayout:attr name="addDefaultValueAttr">
+								<mstrlayout:argument value="8" type="int"/>
+							</mstrlayout:attr>
+						</input>
+				</td>
+			</tr>
+		</table>
+	<mstrlayout:render name="text">
+		<mstrlayout:argument value="&lt;/div&gt;"/>
+	</mstrlayout:render>
+
+<!-- big dec -->
+	<mstrlayout:if name="isBigDecPrompt">
+		<mstrlayout:then>
+			<mstrlayout:render name="text">
+				<mstrlayout:argument value="&lt;div id='vp_default_bigdec' style='display:block'&gt;"/>
+			</mstrlayout:render>
+		</mstrlayout:then>
+		<mstrlayout:else>
+			<mstrlayout:render name="text">
+				<mstrlayout:argument value="&lt;div id='vp_default_bigdec' style='display:none'&gt;"/>
+			</mstrlayout:render>
+		</mstrlayout:else>
+	</mstrlayout:if>
+		<table width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr>
+				<td>
+				
+					<mstrlayout:if name="hasDefault">
+						<mstrlayout:argument value="30" type="int"/>
+						<mstrlayout:then>
+							<input type="checkbox" name="vp_bigdec_hasDefault" id="vp_bigdec_hasDefault" cmdid="setHasDefault" onclick="microstrategy.bone('tabPromptAnsId').updateCheck(this);microstrategy.bone('tabPromptAnsId').updateList(getObj('vp_bigdec_default'))" checked="checked"/> *Default Value
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="vp_bigdec_hasDefault" id="vp_bigdec_hasDefault" cmdid="setHasDefault" onclick="microstrategy.bone('tabPromptAnsId').updateCheck(this);microstrategy.bone('tabPromptAnsId').updateList(getObj('vp_bigdec_default'))"/> *Default Value
+						</mstrlayout:else>
+					</mstrlayout:if>
+<!-- 					<label for="p_hasDefault">*Default Value</label> ??????? -->
+				</td>
+				<td>
+				
+						<input type="text" name="vp_bigdec_default" id="vp_bigdec_default" cmdid="setDefaultValue" onkeyup="microstrategy.bone('tabPromptAnsId').updateText(this);microstrategy.bone('tabPromptAnsId').updateCheckByName('vp_bigdec_hasDefault', true);">
+							<mstrlayout:attr name="addDefaultValueAttr">
+								<mstrlayout:argument value="30" type="int"/>
+							</mstrlayout:attr>
+						</input>
+				</td>
+			</tr>
+		</table>
+	<mstrlayout:render name="text">
+		<mstrlayout:argument value="&lt;/div&gt;"/>
+	</mstrlayout:render>
+
+</mstrlayout:layout>

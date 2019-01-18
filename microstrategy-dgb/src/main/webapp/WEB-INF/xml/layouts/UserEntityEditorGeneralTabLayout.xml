@@ -1,0 +1,148 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+    <table cellpadding="0" cellspacing="3">
+
+        <mstrlayout:if name="isUser">
+            <mstrlayout:then>
+                <tr>
+                    <td>
+                        <mstrlayout:render name="loginLabel" />
+                    </td>
+                    <td>
+                        <mstrlayout:render name="loginField" />
+                    </td>
+                </tr>
+            </mstrlayout:then>
+        </mstrlayout:if>
+
+        <tr>
+            <td>
+                <mstrlayout:render name="fullNameLabel" />
+            </td>
+            <td>
+                <mstrlayout:render name="fullNameField" />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td valign="top">
+                <mstrlayout:render name="descriptionLabel" />
+            </td>
+            <td>
+                <mstrlayout:render name="descriptionField" />
+            </td>
+        </tr>
+
+        <mstrlayout:if name="isUser">
+            <mstrlayout:then>
+
+                <mstrlayout:if name="isFeatureAvailable">
+                    <mstrlayout:argument type="string" value="reset-user-passwords" />
+                    <mstrlayout:then>
+
+                        <tr>
+                            <td>
+                                <mstrlayout:render name="passwordLabel" />
+                            </td>
+                            <td>
+                                <mstrlayout:render name="passwordField" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mstrlayout:render name="passwordConfirmationLabel" />
+                            </td>
+                            <td>
+                                <mstrlayout:render name="passwordConfirmationField" />
+                            </td>
+                        </tr>
+                    </mstrlayout:then>
+                </mstrlayout:if>
+
+                <mstrlayout:if name="isFeatureAvailable">
+                    <mstrlayout:argument type="string" value="view-user-properties" />
+                    <mstrlayout:then>
+
+
+                        <tr>
+                            <td colspan="2">
+                                <mstrlayout:render name="isPasswordModifiableField" />
+                                <mstrlayout:render name="isPasswordModifiableLabel" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <mstrlayout:render name="requiresNewPasswordField" />
+                                <mstrlayout:render name="requiresNewPasswordLabel" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2" valign="top">
+                                <mstrlayout:render name="passwordExpirationLabel" />
+                            </td>
+                            <td>
+                                <mstrlayout:render name="passwordNeverExpiresField" />
+                                <mstrlayout:render name="passwordNeverExpiresLabel" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpadding="0" cellspacing="3">
+                                    <tr>
+                                        <td valign="top">
+                                            <mstrlayout:render name="passwordExpiresField" />
+                                            <mstrlayout:render name="passwordExpiresLabel" />
+                                        </td>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="3">
+                                                <tr>
+                                                    <td align="right">
+                                                        <mstrlayout:render name="passwordExpirationDateLabel" />
+                                                    </td>
+                                                    <td>
+                                                        <mstrlayout:render name="passwordExpirationDateField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <mstrlayout:render name="passwordExpirationCountLabel" />
+                                                    </td>
+                                                    <td>
+                                                        <mstrlayout:render name="passwordExpirationCountField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <mstrlayout:render name="passwordExpirationFrequencyLabel" />
+                                                    </td>
+                                                    <td>
+                                                        <mstrlayout:render name="passwordExpirationFrequencyField" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                    </mstrlayout:then>
+                </mstrlayout:if>
+
+                <tr>
+                    <td colspan="2">
+                        <mstrlayout:render name="isAccountEnabledField" />
+                        <mstrlayout:render name="isAccountEnabledLabel" />
+                    </td>
+                </tr>
+            </mstrlayout:then>
+        </mstrlayout:if>
+
+    </table>
+
+</mstrlayout:layout>

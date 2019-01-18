@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for PlaceHolder defined on a node
+-->
+<block name="PlaceHolder">
+    <definition>
+        <!-- Unique index to identify this place holder  -->
+        <property name="idx" type="Integer" />
+
+        <!-- display name -->
+        <property name="n" type="String"/>    
+             
+    </definition>
+</block>

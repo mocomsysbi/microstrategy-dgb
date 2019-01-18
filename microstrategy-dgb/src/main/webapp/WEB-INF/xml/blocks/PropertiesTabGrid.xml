@@ -1,0 +1,236 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabGrid">
+  <assignments>
+    <property name="title">{desc:mstrWeb.434|Properties} - {desc:mstrWeb.3478|Grid}</property>
+    <property name="modelPath">parent/model/items/4</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Grid.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1044" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2967|Headers}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1045" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1046" name="VBox">
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K1047" name="TextDiv">
+                            <property name="caption">{desc:mstrWeb.2968|Rows}</property>
+                            <property name="cssClass">none</property>
+                          </block>
+                          <block listElementKey="K1048" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.2969|Show}</property>
+                            <property name="valueField">RHS</property>
+                            <property name="visibleField">model/isShowHeadersAvailable</property>
+                            <property name="enabledField" type="String">!parent/parent/parent/parent/parent/model/items/1/Shortcut</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                            <property name="cssText">width:190px</property>
+                          </block>
+                          <block listElementKey="K1049" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.1095|Merge}</property>
+                            <property name="valueField">RHM</property>
+                            <property name="visibleField">model/isMergeHeadersAvailable</property>
+                            <property name="enabledField" type="String">!parent/parent/parent/parent/parent/model/items/1/Shortcut</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                            <property name="cssText">width:190px</property>
+                          </block>
+                          <block listElementKey="K1050" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.2970|Lock}</property>
+                            <property name="valueField">RHL</property>
+                            <property name="visibleField">model/isLockHeadersAvailable</property>
+                            <property name="enabledField" type="String">!parent/parent/parent/parent/parent/model/items/1/Shortcut</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                            <property name="cssText">width:190px</property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K1051" name="VBox">
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K1052" name="TextDiv">
+                            <property name="caption">{desc:mstrWeb.122|Columns}</property>
+                            <property name="cssClass">none</property>
+                          </block>
+                          <block listElementKey="K1053" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.2969|Show}</property>
+                            <property name="valueField">CHS</property>
+                            <property name="visibleField">model/isShowHeadersAvailable</property>
+                            <property name="enabledField" type="String">!parent/parent/parent/parent/parent/model/items/1/Shortcut</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                          </block>
+                          <block listElementKey="K1054" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.1095|Merge}</property>
+                            <property name="valueField">CHM</property>
+                            <property name="visibleField">model/isMergeHeadersAvailable</property>
+                            <property name="enabledField" type="String">!parent/parent/parent/parent/parent/model/items/1/Shortcut</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                          </block>
+                          <block listElementKey="K1055" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.2970|Lock}</property>
+                            <property name="valueField">CHL</property>
+                            <property name="visibleField">model/isLockHeadersAvailable</property>
+                            <property name="enabledField" type="String">!parent/parent/parent/parent/parent/model/items/1/Shortcut</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1056" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.1900|View}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1057" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.1074|Outline}</property>
+                <property name="valueField">Outline</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField" type="String">!parent/parent/parent/model/items/1/Shortcut</property>
+              </block>
+              <block listElementKey="K1058" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.2137|Show banding}</property>
+                <property name="valueField">Banding</property>
+                <property name="visibleField">model/isGridFormattingEnabled</property>
+                <property name="enabledField" type="String">!parent/parent/parent/model/items/1/Shortcut</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1059" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.8503|Show attribute form names:}</property>
+                <property name="visibleField">parent/model/enableAttForms</property>
+                <property name="enabledField" type="String">!parent/parent/parent/model/items/1/Shortcut</property>
+                <property name="modelPath">parent/model/AttForms</property>
+              </block>
+              <block listElementKey="K1060" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3602|Show thresholds}</property>
+                <property name="valueField">ShowThreshold</property>
+                <property name="enabledField" type="String">!parent/parent/parent/model/items/1/Shortcut</property>
+                <property name="visibleField">model/enableThresholds</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1061" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5101|Remove extra column}</property>
+                <property name="valueField">TitleOverlap</property>
+                <property name="enabledField" type="String">!parent/parent/parent/model/items/1/Shortcut</property>
+                <property name="visibleField">model/allowRemoveExtraColumn</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="hideNulls" name="HBox">
+              	<property name="children">
+					<list>
+             		<block listElementKey="ShowAllRows" name="CheckBox">
+                		<property name="caption">{desc:mstrWeb.9843|Hide Null/Zero Toggle Behavior}</property>
+                		<property name="valueField">HideNullsOrZeros</property>
+                		<property name="enabledField" type="String">!parent/parent/parent/parent/model/items/1/Shortcut</property>
+                		<property name="modelPath">parent/parent/model</property>
+                		<property name="cssText">margin: 5px 5px 0 0;</property>
+              		</block>
+              		<block listElementKey="HideZeroOrNulls" name="ListPulldown">
+                		<property name="enabledField" type="String">parent/parent/model/HideNullsOrZeros</property>
+                		<property name="modelPath">parent/parent/model/HideNullZeroValues</property>
+              		</block>
+					</list>
+              	</property>
+              </block>              
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1062" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.839|Drilling}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">parent/model/ShowDrillingOptions</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1063" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.148|Drill options:}</property>
+                <property name="enabledField" type="String">!parent/parent/parent/model/items/1/Shortcut</property>
+                <property name="modelPath">parent/model/DrillOptions</property>
+              </block>
+              <block listElementKey="K2205" name="TextDiv">
+                <property name="caption">{desc:mstrWeb.8975|Synchronize the following templates with this object}:</property>
+                <property name="cssClass">none</property>
+                <property name="visibleField">parent/model/showSyncDrillingOpt</property>
+              </block>
+              <block listElementKey="K2206" name="SimpleListCart">
+                <property name="modelPath">parent/model/getDynamicCartModel("availAssoNodes","assoNodesDrill")</property>
+                <property name="showMoveButtons">false</property>
+                <property name="availableView/height">110px</property>
+                <property name="availableView/width">200px</property>
+                <property name="selectedView/height">110px</property>
+                <property name="selectedView/width">200px</property>
+                <property name="enabledField">model/isOneGrid</property>
+                <property name="visibleField">parent/model/showSyncDrillingOpt</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K953" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5618|Incremental Fetch}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K954" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.6115|Enable incremental fetch in Grid}</property>
+                <property name="valueField">gridIfEnabled</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K955" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.9671|Count by:}</property>
+                <property name="enabledField">parent/model/gridIfEnabled</property>
+                <property name="modelPath">parent/model/gridIfRowMode</property>
+              </block>
+              <block listElementKey="K956" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.9676|Rows per page:}</property>
+                <property name="valueField">gridIfMaxRows</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/gridIfEnabled</property>
+          		<property name="visibleField">model/gridIfRowMode/selectedIndices:0</property>
+                <property name="totalSize">6</property>
+                <!-- property name="cssText">width:195px</property-->
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">1</property>
+                    <property name="min">1</property>
+                    <property name="max">999999</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+              <block listElementKey="K957" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.9678|Blocks per page:}</property>
+                <property name="valueField">gridIfMaxRows</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/gridIfEnabled</property>
+          		<property name="visibleField">model/gridIfRowMode/selectedIndices:1</property>
+                <property name="totalSize">6</property>
+                <!-- property name="cssText">width:195px</property-->
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">1</property>
+                    <property name="min">1</property>
+                    <property name="max">999999</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+              </list>
+          </property>
+        </block>
+        </list>
+    </property>
+  </assignments>
+</block>
+<!--
+        PropertiesTabGrid is the "Properties - Grid" tab of the properties editor.
+    -->

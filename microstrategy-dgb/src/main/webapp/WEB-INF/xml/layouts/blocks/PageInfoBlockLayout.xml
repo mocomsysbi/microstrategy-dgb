@@ -1,0 +1,40 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isIFrameRequest">
+	<mstrlayout:else>
+      <![CDATA[
+        <textarea id="mstrPageInfo" class="mstrJSON">
+      ]]>
+      <mstrlayout:bContext defaultContentType="JSON" />
+      <mstrlayout:block name="PageInfo">
+		<mstrlayout:bSetProperty path="userPalette"> 
+			<mstrlayout:block name="ColorPickerModel">
+				<mstrlayout:bSetProperty path="valueForm" value="dssid" />
+				<mstrlayout:bSetProperty path="maxSize" value="8" />
+				<mstrlayout:list id="ucList" method="getUserPalette">
+					<mstrlayout:bSetProperty path="items">
+						<mstrlayout:block name="ItemInfo">
+							<mstrlayout:bSetProperty path="dssid" base="ucList" />
+							<mstrlayout:bSetProperty path="n" method="getCustomColorDescriptor">
+								<mstrlayout:argument type="String" base="ucList" />
+							</mstrlayout:bSetProperty>
+						</mstrlayout:block>
+					</mstrlayout:bSetProperty>
+				</mstrlayout:list>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	    <mstrlayout:base id="targetBean" method="getTargetBean" base="bean"/>
+	  	<mstrlayout:bSetProperty path="messageID" method="getMessageID" base="targetBean" />
+	  	<mstrlayout:bSetProperty path="beanPath" method="getPath" base="targetBean" />
+	  	<mstrlayout:bSetProperty path="userInfo/decimalSeparator" method="getDecimalSeparator" />
+	  	<mstrlayout:bSetProperty path="userInfo/dpi" method="getUserDpi" />
+	  </mstrlayout:block>
+      <![CDATA[
+	   </textarea>
+      ]]>
+      <script type="text/javascript">
+	      mstr.$register('mstrPageInfo', self);
+      </script>
+    </mstrlayout:else>
+  </mstrlayout:if>	
+</mstrlayout:layout>

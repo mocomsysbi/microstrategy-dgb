@@ -1,0 +1,172 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+	<mstrlayout:block name="BlockContainer">
+        <mstrlayout:bSetProperty path="models">
+            <mstrlayout:block name="GraphFormatEditorModel">
+				<mstrlayout:bSetProperty path="targetPath" method="getRequestParameterValue">
+					<mstrlayout:argument type="String" value="targetPath" />
+					<mstrlayout:argument type="String" value="#rwb_viewer" />
+				</mstrlayout:bSetProperty>			    
+			    <!-- Format tab -->
+                <mstrlayout:bSetProperty path="items[format]/fontName"> 
+                    <mstrlayout:block name="ListModel">
+                        <mstrlayout:bSetProperty path="valueForm" value="n" />
+                        <mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+                        <mstrlayout:list id="ffList" method="getPickerList">
+                            <mstrlayout:argument type="String" value="fontPicker" />
+                            <mstrlayout:bSetProperty path="items">
+                                <mstrlayout:block name="ItemInfo">
+                                    <mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="ffList" />
+                                    </mstrlayout:bSetProperty>
+                                </mstrlayout:block>
+                            </mstrlayout:bSetProperty>
+                        </mstrlayout:list>
+                    </mstrlayout:block>
+                </mstrlayout:bSetProperty>	
+                
+                <mstrlayout:bSetProperty path="items[format]/textBoldItalic"> 
+                    <mstrlayout:block name="ListModel">
+                        <mstrlayout:bSetProperty path="valueForm" value="dssid" />
+                        <mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+                        <mstrlayout:list id="fsList" method="getPickerList">
+                            <mstrlayout:argument type="String" value="stylePicker" />
+                            <mstrlayout:bSetProperty path="items">
+                                <mstrlayout:block name="ItemInfo">
+                                    <mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fsList" />
+                                    </mstrlayout:bSetProperty>
+                                    <mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fsList" />
+                                        <mstrlayout:argument type="String" value="value::const" />
+                                    </mstrlayout:bSetProperty>
+                                </mstrlayout:block>
+                            </mstrlayout:bSetProperty>
+                        </mstrlayout:list>
+                    </mstrlayout:block>
+                </mstrlayout:bSetProperty>
+                
+                <mstrlayout:bSetProperty path="items[format]/fontSize"> 
+                    <mstrlayout:block name="ListModel">
+                        <mstrlayout:bSetProperty path="valueForm" value="n" />
+                        <mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+                        <mstrlayout:list id="fzList" method="getPickerList">
+                            <mstrlayout:argument type="String" value="sizePicker" />
+                            <mstrlayout:bSetProperty path="items">
+                                <mstrlayout:block name="ItemInfo">
+                                    <mstrlayout:bSetProperty path="n" method="getListAttribute">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fzList" />
+                                        <mstrlayout:argument type="String" value="value::const" />
+                                    </mstrlayout:bSetProperty>
+                                </mstrlayout:block>
+                            </mstrlayout:bSetProperty>
+                        </mstrlayout:list>
+                    </mstrlayout:block>
+                </mstrlayout:bSetProperty>
+                
+                <mstrlayout:bSetProperty path="items[format]/fontColor"> 
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+                </mstrlayout:bSetProperty>   
+                
+                <mstrlayout:bSetProperty path="items[format]/fillColor"> 
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+                </mstrlayout:bSetProperty>
+                
+                <mstrlayout:bSetProperty path="items[format]/lineColor"> 
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+                </mstrlayout:bSetProperty>    
+				
+                <mstrlayout:bSetProperty path="items[format]/seriesLineColor"> 
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+                </mstrlayout:bSetProperty>
+				
+				<mstrlayout:bSetProperty path="items[format]/markerColor"> 
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+                </mstrlayout:bSetProperty>
+				
+				<mstrlayout:bSetProperty path="items[format]/markerBorderColor"> 
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+                </mstrlayout:bSetProperty> 
+                
+                <!-- hichert -->
+                <mstrlayout:bSetProperty path="items[format]/increfillColor"> 
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+                </mstrlayout:bSetProperty> 
+                
+                <mstrlayout:bSetProperty path="items[format]/decreFillColor"> 
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+                </mstrlayout:bSetProperty> 
+
+                <!-- Number Tab Model -->
+                <mstrlayout:bSetProperty path="items[number]/gfnDate"> 
+                    <mstrlayout:block name="ListModel">
+                        <mstrlayout:bSetProperty path="valueForm" value="dssid" />
+                        <mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+                        <mstrlayout:list id="dateList" method="getPickerList">
+                            <mstrlayout:argument type="String" value="datePicker" />
+                            <mstrlayout:bSetProperty path="items">
+                                <mstrlayout:block name="ItemInfo">
+                                    <mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="dateList" />
+                                    </mstrlayout:bSetProperty>
+                                    <mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="dateList" />
+                                        <mstrlayout:argument type="String" value="value::const" />
+                                    </mstrlayout:bSetProperty>
+                                </mstrlayout:block>
+                            </mstrlayout:bSetProperty>
+                        </mstrlayout:list>
+                    </mstrlayout:block>
+                </mstrlayout:bSetProperty>
+                <mstrlayout:bSetProperty path="items[number]/gfnTime"> 
+                    <mstrlayout:block name="ListModel">
+                        <mstrlayout:bSetProperty path="valueForm" value="dssid" />
+                        <mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+                        <mstrlayout:list id="timeList" method="getPickerList">
+                            <mstrlayout:argument type="String" value="timePicker" />
+                            <mstrlayout:bSetProperty path="items">
+                                <mstrlayout:block name="ItemInfo">
+                                    <mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="timeList" />
+                                    </mstrlayout:bSetProperty>
+                                    <mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="timeList" />
+                                        <mstrlayout:argument type="String" value="value::const" />
+                                    </mstrlayout:bSetProperty>
+                                </mstrlayout:block>
+                            </mstrlayout:bSetProperty>
+                        </mstrlayout:list>
+                    </mstrlayout:block>
+                </mstrlayout:bSetProperty>
+                <mstrlayout:bSetProperty path="items[number]/gfnFraction"> 
+                    <mstrlayout:block name="ListModel">
+                        <mstrlayout:bSetProperty path="valueForm" value="dssid" />
+                        <mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+                        <mstrlayout:list id="fractionList" method="getPickerList">
+                            <mstrlayout:argument type="String" value="graphFractionPicker" />
+                            <mstrlayout:bSetProperty path="items">
+                                <mstrlayout:block name="ItemInfo">
+                                    <mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fractionList" />
+                                    </mstrlayout:bSetProperty>
+                                    <mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+                                        <mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fractionList" />
+                                        <mstrlayout:argument type="String" value="value::const" />
+                                    </mstrlayout:bSetProperty>
+                                </mstrlayout:block>
+                            </mstrlayout:bSetProperty>
+                        </mstrlayout:list>
+                    </mstrlayout:block>
+                </mstrlayout:bSetProperty>                                                         		     
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+		
+		<mstrlayout:bSetProperty path="views">
+			<mstrlayout:block name="GraphFormatEditor">
+				<mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+				<mstrlayout:bSetProperty path="helpTopic" method="getHelpTopic"/>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:block>
+</mstrlayout:layout>

@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="TitleDrillPath" inherits="BaseBlock">
+	<definition>
+        	<!-- drill path key -->
+			<property name="k" type="String" />
+        	<!-- isWithin ? -->
+			<property name="within" type="Boolean" />
+			<!--  drill type -->
+			<property name="dt" type="Integer" />
+        	<!--name ? -->
+			<property name="n" type="String" />
+			<!-- target object id -->
+			<property name="oid" type="String" />
+	</definition>
+</block>

@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionTypePopup is a popup used by ExpressionEditor for choosing between an Attribute Form qualifier
+		subexpression, or an Attribute Element list subexpression.
+		It is a list view for selecting an expression type (Qualify, Select).
+	-->
+	<block name="ExpressionTypePopup" inherits="ListView">
+		<assignments>
+			<property name="id">ExpressionTypePopup1</property>
+			<property name="modelPath">opener/model/parent/parent/getExprTypeListModel(opener.model)</property>
+			<property name="cmds">!ClickListItem;Unpop;EditConditionExprType|model/getSelectedItem()|opener/model</property>
+			<property name="visible">false</property>
+			<property name="width">200px</property>
+			<property name="height">auto</property>
+			<property name="cssText">filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+			<property name="multiSelect">false</property>
+			<property name="popOrientation">0</property>
+			<property name="CommandEnabledUnpop" type="Boolean">true</property>
+		</assignments>
+	</block>

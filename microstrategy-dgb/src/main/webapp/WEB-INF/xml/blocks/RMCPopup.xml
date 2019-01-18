@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="RMCPopup" inherits="ListView">
+	        <assignments>
+	            <property name="id">RMCPopup1</property>
+	            <property name="modelPath">opener/model/getRMCModel()</property>
+                <property name="itemRendererClass">mstr.itemrenderers.DrillList</property>
+				<property name="cssText">filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+	            <property name="visible">false</property>
+				<property name="height">auto</property>
+				<property name="multiSelect">false</property>
+                <property name="cmds">!ClickListItem;DrillHierarchyItem|model/getSelectedItem()|opener/model;Unpop</property>
+                <property name="allowBrowseFolder">false</property>
+                <property name="allowBrowseAttribute">false</property>
+                <property name="allowBrowseHierarchy">false</property>
+				<property name="popOrientation">0</property>
+	            <property name="CommandEnabledUnpop" type="Boolean">true</property>
+	        </assignments>
+    	</block>

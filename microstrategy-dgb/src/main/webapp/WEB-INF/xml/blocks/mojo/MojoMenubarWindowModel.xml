@@ -1,0 +1,41 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoMenubarWindowModel" inherits="MojoToolbarButtonModel">
+    <assignments>
+		<property name="n">window</property>
+		<property name="desc">{desc:mstrWeb.1923|Window}</property>
+		<property name="items">
+			<list>
+			    <block name="MojoToolbarButtonModel">
+                    <property name="n">datasetsPanel</property>
+                    <property name="desc">{desc:mstrWeb.2943|Dataset Objects}</property>
+                    <property name="cmd">DisplayPanel</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">editPanel</property>
+                    <property name="desc">{desc:mstrWeb.1088|Edit}</property>
+                    <property name="cmd">DisplayPanel</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">propertiesPanel</property>
+                    <property name="desc">{desc:mstrWeb.7554|Visualization Properties}</property>
+                    <property name="cmd">DisplayPanel</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">filterPanel</property>
+                    <property name="desc">{desc:mstrWeb.5758|Filter Editor}</property>
+                    <property name="cmd">DisplayPanel</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">pageByPanel</property>
+                    <property name="desc">{desc:mstrWeb.5136|Page By}</property>
+                    <property name="cmd">DisplayPanel</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">galleryPanel</property>
+                    <property name="desc">{desc:mstrWeb.10833|Gallery}</property>
+                    <property name="cmd">DisplayPanel</property>
+                </block>
+   			</list>
+		</property>
+	</assignments>
+</block>

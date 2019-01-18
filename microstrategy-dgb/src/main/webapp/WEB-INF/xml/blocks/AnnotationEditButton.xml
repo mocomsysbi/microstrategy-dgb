@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="AnnotationEditButton" inherits="TextButton">
+       <assignments>
+       	   <property name="layoutClass">mstr.layouts.AddEditButton</property>
+	       <property name="caption">{desc:mstrWeb.3224|Edit...}</property>
+	       <property name="modelPath">parent/model</property>
+	       <property name="cssClass">Button</property>
+	       <property name="cmds">SetMode|"edit"|parent/model;Resize||parent/parent</property>
+       </assignments>
+    </block>

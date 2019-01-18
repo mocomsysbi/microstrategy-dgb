@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarThresholdsButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbThresholds</property>
+		<property name="tooltip">{desc:mstrWeb.5996|Toggle Thresholds}</property>
+	</assignments>
+</block>

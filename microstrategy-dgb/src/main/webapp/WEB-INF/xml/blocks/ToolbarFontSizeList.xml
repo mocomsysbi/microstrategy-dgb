@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarFontSizeList" inherits="ToolbarListModel">
+	<assignments>
+		<property name="valueForm">n</property>
+		<property name="selectedIndicesList">8</property>
+		<property name="cmdid">FontSize</property>
+		<property name="width">40px</property>
+		<property name="descriptors|emptyText" type="String">{desc:mstrWeb.3536|Size}</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

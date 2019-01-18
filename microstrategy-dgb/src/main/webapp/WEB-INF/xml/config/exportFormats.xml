@@ -1,0 +1,149 @@
+<export-formats version="1.0">
+    <!-- Report Export modes -->
+    <export-format
+        name="excelPlaintext" desc="Excel with plaintext" desc-id="mstrWeb.249"
+        file-extension="xls" mime-type="application/vnd.ms-excel"
+        style="ReportGridStyleExportExcelPlainText"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatExcelWithPlaintext"
+        page-name="exportBinary"
+        feature-id="web-export-to-excelPlainText;!iserver-supports-full-plaintext-export;report-is-grid-view-mode"/>
+    <export-format
+        name="excelPlaintextIServer" desc="Excel with plaintext" desc-id="mstrWeb.249"
+        style="ReportExportIServerStyle"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatExcelWithPlaintextIServer"
+        page-name="exportBinary"
+        force-download="true"
+        feature-id="web-export-to-excelPlainText;iserver-supports-full-plaintext-export;report-is-grid-view-mode"/>
+    <export-format
+        name="csv" desc="CSV file format(comma separated value)" desc-id="mstrWeb.1857"
+        file-extension="csv" mime-type="application/csv"
+        bean-type="ReportBean" style="ReportGridStyleExportCSV"
+        view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatCsv"
+        page-name="exportBinary"
+        feature-id="web-export-to-csv;!iserver-supports-full-plaintext-export;report-is-grid-view-mode"/>
+    <export-format
+        name="csvIServer" desc="CSV file format(comma separated value)" desc-id="mstrWeb.1857"
+        file-extension="csv" mime-type="application/csv"
+        bean-type="ReportBean" style="ReportExportIServerStyle"
+        view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatCsvIServer"
+        page-name="exportBinary"
+        feature-id="web-export-to-csv;iserver-supports-full-plaintext-export;report-is-grid-view-mode"/>
+    <export-format
+        name="excelFormattingGrids" desc="Excel with formatting (html)" desc-id="mstrWeb.2389"
+        file-extension="xls" mime-type="application/vnd.ms-excel"
+        style="ReportGridStyleExportExcelFormatting"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatExcelWithFormatting"
+        page-name="export"
+        feature-id="!iserver-supports-excel-formatting;web-export-to-excel;report-is-grid-view-mode"/>
+    <export-format
+        name="excelFormattingGridsIServer" desc="Excel with formatting" desc-id="mstrWeb.2389"
+        style="ReportExportIServerStyle"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatExcelWithFormattingIServer"
+        page-name="exportBinary"
+        force-download="true"
+        feature-id="iserver-supports-excel-formatting;web-export-to-excel;report-is-grid-view-mode" />
+    <export-format
+        name="htmlGrids" desc="HTML" desc-id="mstrWeb.3957"
+        file-extension="html" mime-type="text/html"
+        style="ReportGridStyleExportHTML"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatHtml"
+        page-name="export"
+        feature-id="web-export-to-html;report-is-grid-view-mode"/>
+    <export-format
+        name="plaintext" desc="Plaintext" desc-id="mstrWeb.321"
+        file-extension="txt" mime-type="text/plain"
+        style="ReportGridStyleExportPlainText"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatPlaintext"
+        force-download="true"        
+        page-name="exportBinary"
+        feature-id="web-export-to-plaintext;!iserver-supports-full-plaintext-export;report-is-grid-view-mode"/>
+    <export-format
+        name="plaintextIServer" desc="Plaintext" desc-id="mstrWeb.321"
+        file-extension="txt" mime-type="text/plain"
+        style="ReportExportIServerStyle"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatPlaintextIServer"
+        force-download="true"        
+        page-name="exportBinary"
+        feature-id="web-export-to-plaintext;iserver-supports-full-plaintext-export;report-is-grid-view-mode"/>
+    <export-format
+        name="excelFormattingGraphs" desc="Excel with formatting (html)" desc-id="mstrWeb.2547"
+        file-extension="xls" mime-type="application/vnd.ms-excel"
+        style="ReportGraphStyleExportExcel"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGraph"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatExcelWithFormatting"
+        page-name="export"
+        feature-id="!iserver-supports-excel-formatting;web-export-to-excel;!report-is-grid-view-mode"/>
+    <export-format
+        name="excelFormattingGraphsIServer" desc="Excel with formatting" desc-id="mstrWeb.2389"
+        style="ReportExportIServerStyle"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGraph"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatExcelWithFormattingIServer"
+        page-name="exportBinary"
+        force-download="true"
+        feature-id="iserver-supports-excel-formatting;web-export-to-excel;report-is-graph-view-mode"/>
+    <export-format
+        name="htmlGraphs" desc="HTML" desc-id="mstrWeb.3957"
+        file-extension="html" mime-type="text/html"
+        style="ReportGraphStyleExportHTML"
+        bean-type="ReportBean" view-mode="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGraph"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatHtml"
+        page-name="export"
+        feature-id="web-export-to-html;report-is-graph-view-mode"/>
+    <export-format
+        name="reportFlashExport" desc="Flash" desc-id=""
+        feature-id="false"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatFlash"
+        bean-type="ReportBean"/>
+    <!-- Document Export modes -->
+    <export-format
+        name="htmlDocuments" desc="HTML" desc-id="mstrWeb.3957"
+        file-extension="html" mime-type="text/html" style=""
+        bean-type="DocumentBean"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatDocumentHtml"/>
+    <export-format
+        name="excelWithoutFormatting" desc="Excel without formatting (html without CSS)" desc-id="mstrWeb.248"
+        file-extension="xls" mime-type="application/vnd.ms-excel"  style=""
+        bean-type="DocumentBean"
+        force-download="true"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatDocumentExcel"/>
+    <!-- RW Export modes - The export formats for report writing are used only for mapping a view mode with a mime type-->
+    <export-format
+        name="rwExcel" desc="Excel" desc-id="" style=""
+        feature-id="web-export-to-excel;enable-export"
+        force-download="true"
+        bean-type="RWBean" execution-mode="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_EXCEL"/>
+    <export-format
+        name="rwPDF" desc="PDF" desc-id="" file-extension="pdf"
+        mime-type="application/pdf" style=""
+        feature-id="web-export-to-pdf;enable-pdf"
+        bean-type="RWBean" execution-mode="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_PDF"/>
+    <export-format
+        name="rwFlash" desc="Flash" desc-id=""
+        feature-id="web-export-to-flash;enable-flash"
+        export-format-type="com.microstrategy.web.app.beans.EnumExportFormats.ExportFormatFlash"
+        bean-type="RWBean" execution-mode="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_FLASH_EXPORT"/>
+    <export-format
+        name="rwHTML" desc="HTML" desc-id="" file-extension="htm"
+        mime-type="text/html" style=""
+        feature-id="web-export-to-html;enable-html-export"
+        bean-type="RWBean" execution-mode="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_DATA"/>
+    <export-format
+        name="rwCSV" desc="CSV" desc-id="" file-extension="csv"
+        mime-type="application/csv" style=""
+        feature-id="rw-ive-mode-available"
+        bean-type="RWBean" execution-mode="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_CSV"/>
+    <export-format
+    	name="rwMSTR" desc="MSTR" desc-id="" file-extension="mstr"
+        mime-type="application/download" style=""
+        feature-id="rw-analysis-dashboard-view-mode;!rw-optimized-interactive-view-mode"
+        bean-type="RWBean" execution-mode="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_MSTR"/>
+</export-formats>

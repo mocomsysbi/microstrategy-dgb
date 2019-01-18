@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Fieldset is a container for grouping controls in editors.  -->
+	<block name="FieldSet" inherits="BaseView,Container">
+		<definition>
+			<!-- Title of the FieldSet. -->
+			<property name="legend" type="String" />
+			<property name="legendField" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.FieldSet</property>
+			<property name="layoutClass">mstr.layouts.FieldSet</property>
+			<property name="cssClass">Fieldset</property>
+		</assignments>
+	</block>

@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarGraphValuesButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbDataValues</property>
+		<property name="tooltip">{desc:mstrWeb.2404|Data Values}</property>
+		<property name="cmdid">dValues</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

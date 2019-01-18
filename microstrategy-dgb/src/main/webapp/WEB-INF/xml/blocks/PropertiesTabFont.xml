@@ -1,0 +1,62 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabFont">
+  <assignments>
+    <property name="title">{desc:mstrWeb.1918|Format} - {desc:mstrWeb.3521|Font}</property>
+    <property name="modelPath">parent/model/items/10</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Font.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1020" name="PropertiesEditorSelectors"/>
+        <block listElementKey="K1021" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3521|Font}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1022" name="FontFormatter">
+                <property name="modelPath">parent/model</property>
+                <property name="nameModelPath">font</property>
+                <property name="styleModelPath">BoldItalic</property>
+                <property name="sizeModelPath">fsize</property>
+                <property name="underlineField">TextUnderline</property>
+                <property name="strikeoutField">TextStrikeout</property>
+                <property name="colorModelPath">color</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2238" name="HBox">
+          <property name="visibleField">parent/model/onlyButtons</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2239" name="ColorPicker">
+                <property name="caption">{desc:mstrWeb.9862|Normal state color:}</property>
+                <property name="modelPath">parent/parent/model/color</property>
+                <property name="enabledField">parent/model/onlyButtons</property>
+                <property name="popup/viewFlags">2</property>
+              </block>
+              <block listElementKey="K2240" name="VBox">
+                <property name="cssClass">HighlightColorVBox</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2241" name="ColorPicker">
+                      <property name="caption">{desc:mstrWeb.9863|Highlight state color:}</property>
+                      <property name="modelPath">parent/parent/parent/model/FontHighlightColor</property>
+                      <property name="enabledField">parent/model/onlyButtons</property>
+                      <property name="popup/viewFlags">2</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesTabFont is the "Format - Font" tab of the properties editor.
+	-->

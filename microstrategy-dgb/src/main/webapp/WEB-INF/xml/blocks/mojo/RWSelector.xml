@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the Selector Object portion of a Report Writer Unit.
+--> 
+<block name="RWSelector" inherits="RWObject">
+    <definition>
+        <!-- Available Elements. List of Element -->
+        <property name="elms" type="List" /> 
+        <!-- Current Selected Elements. List of Element -->
+        <property name="ces" type="List" /> 
+        
+        <property name="unset" type="Boolean" />
+    </definition> 
+</block>

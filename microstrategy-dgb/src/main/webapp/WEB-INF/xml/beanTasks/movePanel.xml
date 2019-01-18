@@ -1,0 +1,19 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+    <basicInfo desc="This task moves a panel within it's panel stack">
+        <parameter name="psKey" desc="The key of the panel stack that contains the panel to move"  required="true" />
+        <parameter name="pKey" desc="The key of the panel to move"  required="true" />
+        <parameter name="direction" desc="0 to move to the left, or any other value to move to the right"  required="true" />
+    </basicInfo>
+    
+    <!-- REPORT WRITER EVENT REMOVE OBJECT  -->
+    <eventInfo eventID="2048078">
+        <argument name="applyNow" value="false" />
+    </eventInfo>
+    
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWDocumentMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="2" />
+        </style>
+    </beanInfo>
+</beanTask>

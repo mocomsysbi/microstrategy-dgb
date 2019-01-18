@@ -1,0 +1,67 @@
+        <web-bean name="ReportSubtotalsDHTMLEditor" persist-mode="2" sys-bean="TabManagerBean" feature-id="dhtml;orionIServer">
+            <init-properties>
+		    <property name="targetBeanPath" source="const" type="string" value="frame.rb"/>
+		    <property name="isModal" source="const" type="boolean" value="true"/>
+            </init-properties>
+            <request-properties>
+		    <property name="currentTab" source="request" type="int" value="currentTab"/>
+		    <property name="selectedTabOptions" source="request" type="string" value="selectedTabOptions"/>
+            </request-properties>
+            <web-beans>
+            <web-bean name="tbDef" sys-bean="TabBean">
+                <init-properties>
+			<property name="tabRepresented" source="const" type="int" value="1"/>
+			<property name="tabLabelId" type="1" value="mstrWeb.4081"/><!--Definitions-->
+			<property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_USER"/>
+            <property name="helpTopic" source="const" type="string" value="Subtotals_dialog_Definition.htm"/>
+                </init-properties>
+                <styles>
+	                <style name="SubtotalSimpleTabStyle">
+   	                <properties>
+			    <property name="beanName" source="const" type="string" value="subtotalEditorBean"/>
+			    <property name="styleName" value="SubtotalSimpleStyle"/>
+			    <property name="scriptClass" value="mstrSubtotalSimpleTab"/>
+			    <property name="transform" value="TabBeanTransform"/>
+ 		    	</properties>
+	                </style>
+                </styles>
+            </web-bean>
+            <web-bean name="tbAdvanced" sys-bean="TabBean">
+                <init-properties>
+			<property name="tabRepresented" source="const" type="int" value="2"/>
+			<property name="tabLabelId" type="1" value="mstrWeb.4082"/><!--Advanced-->
+			<property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_USER"/>
+            <property name="helpTopic" source="const" type="string" value="Subtotals_dialog_Advanced.htm"/>
+                <property name="features" source="const" type="string" value="has-available-subtotals"/>
+                </init-properties>
+                <styles>
+	                <style name="SubtotalAdvancedTabStyle">
+	                    <properties>
+	                        <property name="beanName" value="subtotalEditorBean"/>
+	                        <property name="styleName" value="SubtotalAdvancedStyle"/>
+	                        <property name="scriptClass" value="mstrSubtotalAdvancedTab"/>
+		                <property name="transform" value="TabBeanTransform"/>
+	                    </properties>
+	                </style>
+                </styles>
+            </web-bean>
+            <web-bean name="tbDisplay" sys-bean="TabBean">
+                <init-properties>
+	                <property name="tabRepresented" source="const" type="int" value="3"/>
+	                <property name="tabLabelId" type="1" value="mstrWeb.4083"/><!--Display-->
+	                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_USER"/>
+                	<property name="helpTopic" source="const" type="string" value="Subtotals_dialog_Display.htm"/>
+                </init-properties>
+                <styles>
+	                <style name="SubtotalDisplayTabStyle">
+	                    <properties>
+	                        <property name="beanName" value="subtotalEditorBean"/>
+	                        <property name="styleName" value="SubtotalDisplayStyle"/>
+	                        <property name="scriptClass" value="mstrSubtotalDisplayTab"/>
+		                <property name="transform" value="TabBeanTransform"/>
+	                    </properties>
+	                </style>
+                </styles>
+            </web-bean>
+            </web-beans>
+        </web-bean>

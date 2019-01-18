@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="Link" inherits="BaseBlock">
+	<definition>
+        <!-- target - WebObjectInfo -->
+        <property name="target" type="Block" />
+        
+        <!-- link type-->
+        <property name="t" type="Integer" />
+
+        <!-- link name -->
+        <property name="n" type="String" />
+
+        <!-- default answer mode-->
+        <property name="daMode" type="Integer" />
+        
+        <!-- Answers -->
+        <property name="ans" type="List" />
+
+        <!-- URL for link type -> URL -->
+        <property name="url" type="String" />
+        
+        <!-- selector options -->
+        <property name="so" type="String" />        
+	</definition>
+</block>

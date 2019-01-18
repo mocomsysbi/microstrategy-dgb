@@ -1,0 +1,126 @@
+<visualizations>
+  <visualization-list name="flash" view-mode="50"><!--
+		This file provides the list of flash visualizations.
+		Each visualization is listed as a visualization node, for example:
+		<visualization desc-id="custom.1234" desc="User friendly name" style-name="visName" scope="4"/>
+
+		Where:
+			* desc-id: The key of a string from a MessagesBundle.properties file with the
+				localized description of the Visualization.
+			* desc: The description of the visualization. This description will be used
+				in case a desc-id is not provided.
+			* style-name: A name of a Style from the styleCatalog used to render this visualization.
+			* scope: A bitwise value indicating where the visualization can be used:
+				1: Reports
+				2: Templates within a report services document.
+				16: Dashboards
+				Being bitwise, the values can be combined, for example:
+				1 + 2 = 3, means the visualization can be used with stand alone reports or
+					templates within a report services document.
+
+-->
+
+    <visualization id="ImageSample" desc="Image Sample" desc-id="mstrWeb.5814" scope="1" projects="MicroStrategy Tutorial" style-name="vistestmapsampleReport"/>
+    <visualization id="Sparkline" desc="Sparkline on Image" desc-id="mstrWeb.5815" scope="1" projects="MicroStrategy Tutorial" style-name="visMapSparklineReport"/>
+    <visualization id="ProductRevenueAnalysis" desc="Product Revenue Analysis" desc-id="mstrWeb.4838" scope="12" projects="MicroStrategy Tutorial" style-name="visProductRevenueAnalysisDocument"/>
+    <visualization id="SalesDashboard" desc="Sales Dashboard" desc-id="mstrWeb.5816" scope="12" projects="MicroStrategy Tutorial" style-name="visupdsparklineDocument"/>
+    <visualization id="MediaDoc" desc="Media Visualization" desc-id="mstrWeb.5817" scope="12" projects="MicroStrategy Tutorial" style-name="vismediawgt1Document"/>
+    <visualization id="TV" desc="TV Visualization" desc-id="mstrWeb.5818" scope="12" projects="MicroStrategy Tutorial" style-name="vistvwgt2Document"/>
+    <visualization id="SimpleDashboard" desc="Simple Dashboard" desc-id="mstrWeb.5819" scope="1" projects="Financial Reporting Analysis Module|MicroStrategy Tutorial" style-name="visSimpleDashboardReport"/>
+    <visualization id="CustomProductAnalysisScorecard" desc="Custom Product Analysis Scorecard" desc-id="mstrWeb.5820" scope="12" projects="MicroStrategy Tutorial" style-name="visCustomProductAnalysisScorecardDocument"/>
+    <visualization id="AutoPlayWithLineSeries" desc="Auto Play with Line Series" desc-id="mstrWeb.5821" scope="12" projects="MicroStrategy Tutorial" style-name="visAutoPlayLineSeriesDocument"/>
+    <visualization id="CustomColorCodedGrid" desc="Custom Color Coded Grid" desc-id="mstrWeb.5822" scope="12" projects="MicroStrategy Tutorial" style-name="visCustomColorCodedGridDocument"/>
+    <visualization id="ChartWithinCrosstabGridCells" desc="Chart within Crosstab Grid Cells Visualization" desc-id="mstrWeb.5823" scope="12" projects="MicroStrategy Tutorial" style-name="visChartwithinCrosstabGridCellsDocument"/>
+    <visualization id="AddingSeriesontheFlytoChart" desc="Adding Series on the Fly to a Chart" desc-id="mstrWeb.5824" scope="1" projects="MicroStrategy Tutorial" style-name="visAddingSeriesOnTheFlyReport"/>
+    <visualization id="GridShowingGraphsAlignedinRows" desc="Grid showing Graphs Aligned in rows" desc-id="mstrWeb.5825" scope="1" projects="MicroStrategy Tutorial" style-name="visGridshowingGraphsAlignedinrowsReport"/>
+    <visualization id="MultiControlVisualization" desc="Multi Control Visualization" desc-id="mstrWeb.5826" scope="12" projects="MicroStrategy Tutorial" style-name="visMultiControlVisualizationDocument"/>
+    <visualization id="LinkSample" desc="Link Sample" desc-id="mstrWeb.5827" scope="1" projects="MicroStrategy Tutorial" style-name="visLinkSampleReport"/>
+    <visualization id="WhatIfControl" desc="WhatIf Control" desc-id="mstrWeb.5828" projects="Financial Reporting Analysis Module|MicroStrategy Tutorial" style-name="visWhatIf" scope="3" titleDESCId="23315"/>
+    <visualization id="FisheyeWidget" desc="Fish Eye Selector" desc-id="mstrWeb.5000" style-name="visFishEye" scope="2" includeMDProperties="1"/>
+    <visualization id="Funnel" desc="Funnel" desc-id="mstrWeb.3154" style-name="visFunnel" scope="3" includeMDProperties="1"/>
+    <visualization id="GaugeContainer" desc="Gauge" desc-id="mstrWeb.3153" style-name="visGaugeContainer" scope="3" includeMDProperties="1"/>
+    <visualization id="BubbleGrid" desc="Bubble Grid" desc-id="mstrWeb.5612" style-name="visBubbleGrid" scope="3" />
+    <visualization id="DrillingBubble" desc="Interactive Bubble" desc-id="mstrWeb.4773" style-name="visDrillingBubble" scope="3" includeMDProperties="1"/>
+    <visualization id="DataCloud" desc="Data Cloud" desc-id="mstrWeb.5593" style-name="visDataCloud" scope="3" includeMDProperties="1"/>
+    <visualization id="GraphMatrix" desc="Graph Matrix (deprecated)" desc-id="mstrWeb.8152" style-name="visGraphMatrix" scope="3" includeMDProperties="1"/>
+    <visualization id="HeatMap2" desc="Heat Map (deprecated)" desc-id="mstrWeb.13385" style-name="visHeatMap" scope="3"/>
+    <visualization id="MediaWidget" desc="Media" desc-id="mstrWeb.5611" style-name="visMediaWidget" scope="3"/>
+    <visualization id="Microcharts" desc="Microcharts" desc-id="mstrWeb.5630" style-name="visMicrocharts" scope="3" includeMDProperties="1"/>
+    <visualization id="RSSWidget" desc="RSS Reader" desc-id="mstrWeb.5610" style-name="visRSSWidget" scope="3"/>
+    <visualization id="Waterfall" desc="Waterfall" desc-id="mstrWeb.5594" style-name="visWaterfall" scope="3" includeMDProperties="1"/>
+    <visualization id="WeightedList" desc="Weighted List Viewer" desc-id="mstrWeb.5613" style-name="visWeightedList" scope="3" includeMDProperties="1"/>
+    <visualization id="DatePicker" desc="Date Selection" desc-id="mstrWeb.5783" style-name="visDatePicker" scope="3"/>
+    <visualization id="SimpleGrid" desc="Table" scope="3" minSecondaryProviders="0" maxSecondaryProviders="5" desc-id="mstrWeb.7755" style-name="visSimpleGridReport" includeMDProperties="1" titleDESCId="23310"/>
+    <visualization id="SimpleGridDoc" desc="Table" scope="12" desc-id="mstrWeb.7755" style-name="visSimpleGridRW" projects="Financial Reporting Analysis Module|MicroStrategy Tutorial" includeMDProperties="1"/>
+    <visualization id="ImageLayout" desc="Image Layout" desc-id="mstrWeb.8976" includeMDProperties="1" scope="2" style-name="visImageLayout" propsEditor="visPropsImageLayoutStyle" titleDESCId=""/>
+  </visualization-list>
+  <visualization-list name="ajax" view-mode="51">
+    <visualization id="TimelineSample" desc="Timeline" desc-id="mstrWeb.7754" scope="3" projects="" style-name="ReportTimelineAjaxVisualizationStyle" titleDESCId="23312" is-mojo="true"/>
+    <visualization id="Survey" desc="Survey" desc-id="mstrWeb.10002" projects="" scope="2" propsEditor="visPropsSurveyStyle" style-name="SurveyVisualizationStyle" is-mojo="true"/>
+    <visualization id="DatePicker" desc="Date Selection" desc-id="mstrWeb.5783" style-name="visAjaxDatePicker" scope="3" is-mojo="true"/>
+    <visualization id="HeatMap" desc="Heat Map" desc-id="mstrWeb.4820" scope="18" projects="" style-name="VIHeatMapVisualizationStyle" propsEditor="VIHeatMapVisualizationStyle" titleDESCId="10828" is-mojo="true" attribute-minimum="1" metric-minimum="1" widget-type="2" position="0"/>
+    <visualization id="GraphMatrix2" desc="Graph Matrix" desc-id="mstrWeb.5614" projects="" scope="18" propsEditor="" style-name="GraphMatrixVisualizationStyle" titleDESCId="19470" is-mojo="true" widget-type="1" position="1" subtypes="BarChart,LineChart,AreaChart,BubbleChart,PieChart,ComboChart"/>
+    <visualization id="Mapbox" desc="Geospatial Service" desc-id="mstrWeb.15751" scope="18" style-name="MapboxVisualizationStyle" propsEditor="" is-mojo="true" widget-type="8" position="2"/>
+    <visualization id="NetViz" desc="Network" desc-id="mstrWeb.8892" scope="18" projects="" style-name="NetworkVisualizationStyle" propsEditor="NetworkVisualizationStyle" is-mojo="true" attribute-minimum="2" metric-minimum="1" widget-type="3" position="3"/>
+    <visualization id="NewGraphMatrix" desc="New Graph Matrix" desc-id="mstrWeb.14905" projects="" scope="18" propsEditor="" style-name="NewGraphMatrixVisualizationStyle" titleDESCId="19470" is-mojo="true" widget-type="1" position="4" subtypes="ClusteredBarChart,BarChart,LineChart,AreaChart,BubbleChart,PieChart,ComboChart,Histogram,BoxPlot,Waterfall"/>
+    <visualization id="ESRIMap" desc="Map" desc-id="mstrWeb.7736" scope="19" style-name="ESRIMapVisualizationStyle" propsEditor="visPropsIPhoneMapStyle" is-mojo="true" attribute-minimum="1" widget-type="5" position="5" />
+    <visualization id="Map" desc="Map" desc-id="mstrWeb.7736" scope="19" style-name="GoogleMapVisualizationStyle" propsEditor="visPropsIPhoneMapStyle" is-mojo="true" widget-type="6" position="5"/>
+    <visualization id="KPICard" desc="KPI" desc-id="mstrWeb.15800" scope="18" style-name="KPICardVisualizationStyle" propsEditor="" is-mojo="true" metric-minimum="1" widget-type="9" position="6"/>
+  </visualization-list>
+  <visualization-list name="iphone" view-mode="70" show-in-web="false">
+    <visualization id="InteractiveGrid" desc="Interactive Grid" desc-id="mstrWeb.7734" scope="11" projects="" style-name="IPhoneInteractiveGridStyle" propsEditor="visPropsIPhoneInteractiveGridStyle" titleDESCId="23308"/>
+    <visualization id="TimeSeriesGraph" desc="Time Series" desc-id="mstrWeb.7735" scope="11" projects="" style-name="IPhoneTimeSeriesStyle" propsEditor="visPropsIPhoneTimeSeriesStyle" titleDESCId="23313"/>
+    <visualization id="Map" desc="Map" desc-id="mstrWeb.7736" scope="11" projects="" style-name="IPhoneMapStyle" propsEditor="visPropsIPhoneMapStyle" titleDESCId="23309"/>
+	<visualization id="ESRIMap" desc="Map" desc-id="mstrWeb.7736" scope="3" style-name="ViEsriMapAdapter" propsEditor="visPropsIPhoneMapStyle"/>
+    <visualization id="RSSWidget" desc="RSS Reader" desc-id="mstrWeb.5610" scope="11" projects="" style-name="IPhoneRssStyle" propsEditor="" titleDESCId="19461"/>
+    <visualization id="ImageViewer" desc="Image Viewer" desc-id="mstrWeb.8270" scope="11" projects="" style-name="IPhoneImageViewerStyle" propsEditor="visPropsImageViewerStyle"/>
+    <visualization id="PhotoUploader" desc="Photo Uploader" desc-id="mstrWeb.8310" scope="11" projects="" style-name="IPhonePhotoUploaderStyle" propsEditor="" />
+    <visualization id="DataCloud" desc="Data Cloud" desc-id="mstrWeb.5593" scope="11" style-name="IPhoneDataCloud"/>
+    <visualization id="Multimedia" desc="Multimedia Widget" desc-id="mstrWeb.9040" scope="11" style-name="IPhoneMediaStyle" propsEditor="visPropsMultiMediaStyle"/>
+    <visualization id="VideoPlayer" desc="Video Player" desc-id="mstrWeb.9778" scope="10" projects="" style-name="IOSVideoPlayerStyle" propsEditor="visPropsVideoPlayerStyle" />
+    <visualization id="Microcharts" desc="Microcharts" desc-id="mstrWeb.5630" scope="11" projects="" style-name="IPadMicroChartsStyle" propsEditor="" titleDESCId="19469"/>
+    <visualization id="Survey" desc="Survey" desc-id="mstrWeb.10002" projects="" scope="2" propsEditor="visPropsSurveyStyle" style-name="SurveyVisualizationStyle" titleDESCId=""/>
+  </visualization-list>
+  <visualization-list name="ipad" view-mode="71" show-in-web="false">
+    <visualization id="TimeLine" minSecondaryProviders="2" maxSecondaryProviders="2" desc="Time Line Widget" desc-id="mstrWeb.7754" scope="3" projects="" style-name="IPadTimeLineWidgetStyle" propsEditor="visPropsIPadTimeLineWidgetStyle"/>
+    <visualization id="InteractiveGrid" desc="Interactive Grid" desc-id="mstrWeb.7734" scope="3" projects="" style-name="IPadInteractiveGridStyle" propsEditor="visPropsIPhoneInteractiveGridStyle" titleDESCId="23308"/>
+    <visualization id="TimeSeriesGraph" desc="iPhone Time Series" desc-id="mstrWeb.7735" scope="3" projects="" style-name="IPadTimeSeriesStyle" propsEditor="visPropsIPhoneTimeSeriesStyle" titleDESCId="23313"/>
+    <visualization id="Map" desc="iPhone Map" desc-id="mstrWeb.7736" scope="3" projects="" style-name="IPadMapStyle" propsEditor="visPropsIPhoneMapStyle" titleDESCId="23309"/>
+    <visualization id="ESRIMap" desc="Map" desc-id="mstrWeb.7736" scope="3" style-name="ViEsriMapAdapter" propsEditor="visPropsIPhoneMapStyle"/>
+	<visualization id="Microcharts" desc="Microcharts" desc-id="mstrWeb.5630" scope="3" projects="" style-name="IPadMicroChartsStyle" propsEditor="" titleDESCId="19469"/>
+    <visualization id="HeatMap" desc="Heat Map" desc-id="mstrWeb.4820" scope="3" projects="" style-name="IPadHeatMapStyle" propsEditor="" titleDESCId="10828"/>
+    <visualization id="DatePicker" desc="Date Selection" desc-id="mstrWeb.5783" scope="3" projects="" style-name="IPadDatePickerStyle" propsEditor="" titleDESCId="20368"/>
+    <visualization id="GraphMatrix2" desc="Graph Matrix" desc-id="mstrWeb.5614" scope="3" projects="" style-name="IPadGraphMatrix2Style" propsEditor="" titleDESCId="19470"/>
+    <visualization id="ImageViewer" desc="Image Viewer" desc-id="mstrWeb.8270" scope="3" projects="" style-name="IPhoneImageViewerStyle" propsEditor="visPropsImageViewerStyle"/>
+    <visualization id="PhotoUploader" desc="Photo Uploader" desc-id="mstrWeb.8310" scope="3" projects="" style-name="IPhonePhotoUploaderStyle" propsEditor="visPropsPhotoUploaderStyle" />
+    <visualization id="RSSWidget" desc="RSS Reader" desc-id="mstrWeb.5610" scope="3" projects="" style-name="IPhoneRssStyle" propsEditor="" titleDESCId="19461"/>
+    <visualization id="DataCloud" desc="Data Cloud" desc-id="mstrWeb.5593" scope="3" style-name="IPhoneDataCloud"/>
+    <visualization id="Multimedia" desc="Multimedia Widget" desc-id="mstrWeb.9040" scope="3" style-name="IPhoneMediaStyle" propsEditor="visPropsMultiMediaStyle"/>
+    <visualization id="NetViz" desc="Network" desc-id="mstrWeb.8892" scope="3" style-name="IPhoneNetVizStyle"/>
+    <visualization id="ImageLayout" desc="Image Layout" desc-id="mstrWeb.8976" includeMDProperties="1" scope="2" style-name="IPhoneImageMapStyle" propsEditor="visPropsImageLayoutStyle" titleDESCId=""/>
+    <visualization id="VideoPlayer" desc="Video Player" desc-id="mstrWeb.9778" scope="2" projects="" style-name="IOSVideoPlayerStyle" propsEditor="visPropsVideoPlayerStyle" />
+    <visualization id="Survey" desc="Survey" desc-id="mstrWeb.10002" projects="" scope="2" propsEditor="visPropsSurveyStyle" style-name="SurveyVisualizationStyle" titleDESCId=""/>
+  </visualization-list>
+  <visualization-list name="android" view-mode="72" show-in-web="false">
+    <visualization id="InteractiveGrid" desc="Interactive Grid" desc-id="mstrWeb.7734" scope="11" projects="" style-name="InteractiveGridAjaxVisualizationStyle" propsEditor="visPropsIPhoneInteractiveGridStyle" titleDESCId="23308" is-mojo="true"/>
+    <visualization id="TimeSeriesGraph" desc="Time Series" desc-id="mstrWeb.7735" scope="11" projects="" style-name="TimeSeriesAjaxVisualizationStyle" propsEditor="visPropsIPhoneTimeSeriesStyle" titleDESCId="23313" is-mojo="true"/>
+    <visualization id="Map" desc="Map" desc-id="mstrWeb.7736" scope="11" projects="" style-name="AndroidMapStyle" propsEditor="visPropsIPhoneMapStyle" titleDESCId="23309" is-mojo="true"/>
+    <visualization id="ESRIMap" desc="Map" desc-id="mstrWeb.7736" scope="11" projects="" style-name="AndroidESRIMapStyle" propsEditor="visPropsIPhoneMapStyle"/>
+    <visualization id="ImageViewer" desc="Image Viewer" desc-id="mstrWeb.8270" scope="11" projects="" style-name="ImageViewerVisualizationStyle" propsEditor="visPropsImageViewerStyle" is-mojo="true"/>
+    <visualization id="PhotoUploader" desc="Photo Uploader" desc-id="mstrWeb.8310" scope="11" projects="" style-name="AndroidPhotoUploaderStyle" propsEditor="" is-mojo="true" />
+    <visualization id="Microcharts" desc="Microcharts" desc-id="mstrWeb.5630" scope="11" projects="" style-name="MicroChartsVisualizationStyle" propsEditor="" titleDESCId="19469" is-mojo="true"/>
+    <visualization id="Multimedia" desc="Multimedia Widget" desc-id="mstrWeb.9040" scope="11" style-name="MultimediaStyle" propsEditor="visPropsMultiMediaStyle"/>
+  </visualization-list>
+  <visualization-list name="androidTablet" view-mode="73" show-in-web="false">
+    <visualization id="InteractiveGrid" desc="Interactive Grid" desc-id="mstrWeb.7734" scope="11" projects="" style-name="InteractiveGridAjaxVisualizationStyle" propsEditor="visPropsIPhoneInteractiveGridStyle" titleDESCId="23308" is-mojo="true"/>
+    <visualization id="TimeSeriesGraph" desc="Time Series" desc-id="mstrWeb.7735" scope="11" projects="" style-name="TimeSeriesAjaxVisualizationStyle" propsEditor="visPropsIPhoneTimeSeriesStyle" titleDESCId="23313" is-mojo="true"/>
+    <visualization id="Microcharts" desc="Microcharts" desc-id="mstrWeb.5630" scope="11" projects="" style-name="MicroChartsVisualizationStyle" propsEditor="" titleDESCId="19469" is-mojo="true"/>
+    <visualization id="Map" desc="Map" desc-id="mstrWeb.7736" scope="11" projects="" style-name="AndroidMapStyle" propsEditor="visPropsIPhoneMapStyle" titleDESCId="23309" is-mojo="true"/>
+    <visualization id="ESRIMap" desc="Map" desc-id="mstrWeb.7736" scope="11" projects="" style-name="AndroidESRIMapStyle" propsEditor="visPropsIPhoneMapStyle"/>
+    <visualization id="ImageViewer" desc="Image Viewer" desc-id="mstrWeb.8270" scope="11" projects="" style-name="ImageViewerVisualizationStyle" propsEditor="visPropsImageViewerStyle" is-mojo="true"/>
+    <visualization id="PhotoUploader" desc="Photo Uploader" desc-id="mstrWeb.8310" scope="11" projects="" style-name="AndroidPhotoUploaderStyle" propsEditor="" is-mojo="true" />
+    <visualization id="ImageLayout" desc="Image Layout" desc-id="mstrWeb.8976" includeMDProperties="1" scope="11" projects="" propsEditor="visPropsImageLayoutStyle" style-name="AndroidImageMapStyle" titleDESCId="23348" is-mojo="true"/>
+    <visualization id="HeatMap" desc="Heat Map" desc-id="mstrWeb.4820" scope="11" projects="" style-name="HeatMapVisualizationStyle" propsEditor="" titleDESCId="10828" is-mojo="true"/>
+    <visualization id="Multimedia" desc="Multimedia Widget" desc-id="mstrWeb.9040" scope="11" style-name="MultimediaStyle" propsEditor="visPropsMultiMediaStyle"/>
+   </visualization-list>
+</visualizations>

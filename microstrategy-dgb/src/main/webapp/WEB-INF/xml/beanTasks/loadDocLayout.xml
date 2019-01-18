@@ -1,0 +1,37 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.LoadDocLayoutTask">
+	<!-- 
+		This Task is used to load the layout of a Report Writer document.
+	-->
+	<basicInfo desc="This Task loads the specified layout of a Report Writer document.">
+		<parameter name="layoutKey" desc="Specifies the key of the layout to load." required="true" />
+		<parameter name="rwb" desc="The state of the Report Writer Bean." required="true" type="simplestring"/>
+        <parameter name="groupByIDs" desc="List of desired GroupBy IDs" required="false" type="simplestring"/>
+		<parameter name="availableWidth"
+			desc="The width of the available screen area. Used in the MicroStrategy Mobile app when document layout zoom type is fit to width or fit to page."
+			required="false" defvalue="0" type="int"/>
+        <parameter name="availableHeight"
+            desc="The height of the available screen area. Used in the MicroStrategy Mobile app when document layout is optimized for micro-app and zoom type is fit to page."
+            required="false" defvalue="0" type="int"/>
+        <parameter name="styleName"
+            desc="The style to use when generating the data for this layout"
+            required="false"
+            defvalue="RWDocumentMojoStyle" type="simplestring"/>
+	</basicInfo>
+
+	<!-- REPORT_WRITER_EVENT_SET_CURRENT_LAYOUT -->
+	<eventInfo eventID="2048093">
+		<argument name="sectionKey" value="layoutKey" source="parameter" />
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing Bean.
+	-->
+	<beanInfo name="rwb" bean-type="RWBean">
+		<style name="styleName" source="parameter">
+			<actualParameter name="treesToRender" source="const" value="3" />
+            <actualParameter name="availableWidth" value="availableWidth" source="parameter" />
+            <actualParameter name="availableHeight" value="availableHeight" source="parameter" />
+		</style>
+	</beanInfo>
+</beanTask>

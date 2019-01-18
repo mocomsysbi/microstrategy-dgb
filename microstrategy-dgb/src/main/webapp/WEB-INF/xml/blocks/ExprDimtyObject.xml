@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExprDimtyObject represents the dimensionality of an expression node.  It is typically contained
+		in the "dimtyObject" property of an ExpressionNodeValue, especially for metric qual nodes, which
+		can be defined with a variety of dimensionality.
+	-->
+	<block name="ExprDimtyObject" inherits="BaseBlock">
+		<definition>
+			<property name="canContinue" type="Boolean" />
+			<property name="filterRest" type="Boolean" />
+			<property name="units" type="List" />
+		</definition>
+	</block>

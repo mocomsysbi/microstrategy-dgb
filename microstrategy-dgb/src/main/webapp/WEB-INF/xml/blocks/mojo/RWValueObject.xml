@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about the data of a Report Writer object, when the 
+    object's value is scalar (String).
+--> 
+<block name="RWValueObject" inherits="RWObject">
+    <definition>
+        <!-- The String value of the object. -->
+        <property name="v" type="String" />
+    </definition>
+</block>
+        

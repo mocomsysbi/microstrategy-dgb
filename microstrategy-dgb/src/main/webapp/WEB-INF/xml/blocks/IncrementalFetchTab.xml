@@ -1,0 +1,55 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="IncrementalFetchTab">
+  <assignments>
+    <!-- property name="title">{desc:mstrWeb.1897|Page Setup} - {desc:mstrWeb.3687|Page}</property-->
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="modelPath">parent/model/items/6</property>
+    <property name="helpTopic">properties_dialog_layout_properties_advanced.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K737" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5618|Incremental Fetch}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K738" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5621|Enable incremental fetch}</property>
+                <property name="valueField">incrFetchEnabled</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K739" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5619|Fetch Level:}</property>
+                <property name="modelPath">parent/model/getDynamicListModel("incrFetchLevels","incrFetchCurLevel")</property>
+                <property name="enabledField">parent/model/incrFetchEnabled</property>
+                <property name="cssText">margin-left:15px</property>
+                <property name="popup/width">auto</property>
+              </block>
+              <block listElementKey="K740" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.5620|Block Size:}</property>
+                <property name="valueField">incrFetchBlockCount</property>
+                <property name="modelPath">parent/model</property>
+                <!--property name="cssText">margin-top:4px;</property-->
+                <property name="totalSize">7</property>
+                <property name="enabledField">parent/model/incrFetchEnabled</property>
+                <property name="cssText">margin-left:15px</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="required">true</property>
+                    <property name="type">1</property>
+                    <property name="min">1</property>
+                    <property name="max">999999</property>
+                  </block>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+        IncrementalFetchTab is the "Incremental Fetch" tab of the Document Properties editor.
+    -->

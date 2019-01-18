@@ -1,0 +1,24 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ResultSetBeanManipulationTask">
+
+	<basicInfo desc="This task provides the ability to manipluate the RWBean. ">
+		<parameter name="rwb" desc="The state of the RWBean" required="false" type="simplestring"/>
+		<parameter name="events" desc="The events" required="false" />
+        <parameter name="styleName" desc="The style to use to transform the RWBean. If omitted, a simple MessageResult is generated." required="false" type="simplestring"/>
+        <parameter name="treesToRender" desc="A bitmap flag indicates whether to do partial update for the document. A default value of 2 should be used."  required="false" defvalue="2" type="int"/> 
+    </basicInfo>
+
+	<eventInfo eventID="1024001" >
+       <argument name="events" value="events" source="parameter"  />
+	</eventInfo>
+
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  
+	-->
+	<beanInfo name="rwb" bean-type="RWBean">
+        <style name="styleName" source="parameter" >
+                <actualParameter name="treesToRender" source="parameter" value="treesToRender" />
+        </style> 
+	</beanInfo>
+</beanTask>

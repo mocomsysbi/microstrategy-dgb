@@ -1,0 +1,118 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if name="areThereProjectsToDisplay">
+    	<mstrlayout:then>
+            <table class="mstrLargeIconView" border="0" cellpadding="0" cellspacing="0">
+                <col class="mstrLargeIconViewCell" />
+                <col class="mstrLargeIconViewCell" />
+				    <mstrlayout:list id="project" name="getProjectsList">
+                        <tr>
+	                        <td>
+	                           <mstrlayout:if name="hasNextProject">
+	                               <mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+	                               <mstrlayout:then>
+			                           <div class="mstrProjectItem">
+				                           <table cellspacing="0" class="mstrLargeIconViewItem">
+				                           <colgroup style="width: 60px"></colgroup>
+			                               <colgroup></colgroup>
+			                                  <tr>
+				                                <td><!-- class="mstrLargeIconViewItemImage"> -->
+													<mstrlayout:render name="projectImage">
+					                                	<mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+					                                </mstrlayout:render>
+				                                </td>
+				                                <td class="mstrLargeIconViewItemText">
+					                               <mstrlayout:render name="AnchorTag">
+		                                               <mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+		                                           </mstrlayout:render>
+					                                <div class="mstrLargeIconViewItemName">
+						                                <mstrlayout:render name="projectName">
+					    	                            	<mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+					        	                        </mstrlayout:render>
+					                                </div>
+					                                <mstrlayout:if name="isProjectDescriptionAvailable">
+					                                    <mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+					                                    <mstrlayout:then>
+					                                        <div class="mstrProjectDescription">
+								                                <mstrlayout:render name="projectDescription">
+								                                	<mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+						    		                            </mstrlayout:render>
+					                                        </div>
+					                                    </mstrlayout:then>
+					                                </mstrlayout:if>
+					                                <div class="mstrServer">
+						                                <mstrlayout:render name="serverAlias">
+					    	                            	<mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+					        	                        </mstrlayout:render>
+					                                </div>
+					                            </td>
+					                         </tr>
+					                       </table>
+				                       </div>
+			                       </mstrlayout:then>
+		                       </mstrlayout:if>
+		                       <mstrlayout:next list="project"/>
+		                    </td>
+	                        <td>
+	                           <mstrlayout:if name="hasNextProject">
+                                   <mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+                                   <mstrlayout:then>
+			                           <div class="mstrProjectItem">
+				                           <table cellspacing="0" class="mstrLargeIconViewItem">
+				                           <colgroup style="width: 60px"></colgroup>
+			                               <colgroup></colgroup>
+			                                 <tr>
+				                                 <td><!-- class="mstrLargeIconViewItemImage"> -->
+												<mstrlayout:render name="projectImage">
+				                                	<mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+				                                </mstrlayout:render>
+				                                </td><td class="mstrLargeIconViewItemText">
+						                           <mstrlayout:render name="AnchorTag">
+					                                   <mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+					                               </mstrlayout:render>
+					                               
+				                                <div class="mstrLargeIconViewItemName">
+					                                <mstrlayout:render name="projectName">
+				    	                            	<mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+				        	                        </mstrlayout:render>
+				                                </div>
+				                                <mstrlayout:if name="isProjectDescriptionAvailable">
+				                                    <mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+				                                    <mstrlayout:then>
+				                                        <div class="mstrProjectDescription">
+							                                <mstrlayout:render name="projectDescription">
+				            			                    	<mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+				                        			        </mstrlayout:render>
+				                                        </div>
+				                                    </mstrlayout:then>
+				                                </mstrlayout:if>
+				                                <div class="mstrServer">
+					                                <mstrlayout:render name="serverAlias">
+				    	                            	<mstrlayout:argument list="project" type="com.microstrategy.web.app.ProjectInformation"/>
+				        	                        </mstrlayout:render>
+				                                </div>
+				                            </td>
+				                          </tr>
+				                        </table>
+			                        </div>
+		                        </mstrlayout:then>
+                            </mstrlayout:if>
+	                        <mstrlayout:next list="project"/>
+	                      </td>
+                        </tr>
+		    		</mstrlayout:list>
+            </table>
+            <mstrlayout:render name="messagesSection"/>
+        </mstrlayout:then>
+        <mstrlayout:else>
+    		<mstrlayout:if name="areThereMessagesToDisplay">
+    			<mstrlayout:then>
+            		<mstrlayout:render name="messagesSection"/>
+                </mstrlayout:then>
+                <mstrlayout:else>
+            		<mstrlayout:render name="emptyProjectList"/>
+                </mstrlayout:else>
+    		</mstrlayout:if>
+        </mstrlayout:else>
+    </mstrlayout:if>
+</mstrlayout:layout>

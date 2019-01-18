@@ -1,0 +1,19 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Relationship Node
+-->
+<block name="RelationshipNode" inherits="PromptableExpNode">
+    <definition>
+        <!-- Dimty Object  -->
+        <property name="dmy" type="Block" />
+        
+        <!-- Relationship Object  -->
+        <property name="relation" type="Block" />
+
+        <!-- ApplySubExpression flag  -->
+        <property name="applySubExpr" type="Boolean" />     
+
+        <!-- UseSchema flag flag, -->
+        <property name="useSchema" type="Boolean" />               
+    </definition>
+</block>

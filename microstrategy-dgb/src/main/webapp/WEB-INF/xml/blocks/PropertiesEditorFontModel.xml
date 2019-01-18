@@ -1,0 +1,27 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- This is the model used for the 'Font' tab of the Report Services properties editor. -->
+	<block name="PropertiesEditorFontModel" inherits="EditorBoneTranslator">
+		<definition>
+			<property name="fontTabEnabled" type="Boolean" />
+
+			<property name="unitSelectorChange" type="String" />
+			<property name="tabName" type="String" />
+			
+			<property name="font" type="Block" />
+			<property name="BoldItalic" type="Block" />
+			<property name="fsize" type="Block" />
+			<property name="color" type="Block" />
+			<property name="FontHighlightColor" type="Block" />
+		</definition>
+		<assignments>
+			<property name="categoryText">{desc:mstrWeb.1918|Format}</property>
+			<property name="titleText">{desc:mstrWeb.3521|Font}</property>
+			<property name="scriptClass">mstr.bones.editors.FontPropertiesBoneTranslator</property>
+			<property name="fields">font|BoldItalic|fsize|TextUnderline|TextStrikeout|color|isButton|onlyButtons|FontHighlightColor</property>
+			<property name="visibleField">fontTabEnabled</property>
+			<property name="fontTabEnabled">true</property>
+			
+			<property name="unitSelectorChange">|Grid|</property>
+			<property name="tabName">font</property>
+		</assignments>
+	</block>

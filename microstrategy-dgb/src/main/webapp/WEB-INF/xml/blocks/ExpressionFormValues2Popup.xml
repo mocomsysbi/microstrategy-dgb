@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ExpressionFormValues2Popup" inherits="ExpressionFormValues1Popup">
+		<assignments>
+			<property name="id">ExpressionFormValues2Popup1</property>
+			<property name="modelPath">opener/model/answer/getFormValues2CartModel(opener.model)</property>
+			<property name="contentView/children[1]/cmds">Unpop||parent/parent;OpenPopup|"ExpressionConstant2Popup1"|parent/parent/opener</property>
+			<property name="okButton/cmds">Unpop||parent;EditConditionFormValues2|parent/model|parent/opener/model</property>
+		</assignments>
+	</block>

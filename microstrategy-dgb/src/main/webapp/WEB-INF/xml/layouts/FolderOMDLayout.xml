@@ -1,0 +1,77 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+		<td>
+ 			<mstrlayout:render name="ancestors"/>
+		</td>
+		<td>
+	    		<mstrlayout:render name="openParent"/>
+	    		<mstrlayout:render name="createFolderButton"/>
+		</td>
+            </tr>
+        </table>
+
+        <div sty="fileList">
+        	<div class="mstrSmallIconView">
+        <mstrlayout:if method="isCurrentObjectUnAvailable">
+        <mstrlayout:then>
+        	<mstrlayout:render name="descriptor">
+               	<mstrlayout:argument type="string" value="mstrWeb.726"/><!-- Access Denied -->
+            </mstrlayout:render>
+        </mstrlayout:then>
+        <mstrlayout:else>
+            <mstrlayout:if method="isEmptyList">
+			<mstrlayout:then>
+               	<mstrlayout:render name="descriptor">
+                   	<mstrlayout:argument type="string" value="mstrWeb.70"/><!-- This folder is Empty -->
+               	</mstrlayout:render>
+            </mstrlayout:then>
+			<mstrlayout:else>
+		            	<mstrlayout:list id="contents" name="getContents" base="bean">
+		                    <div>
+		                        <mstrlayout:attr name="getUnitAttributes">
+		                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+		                        </mstrlayout:attr>
+                                
+                                <!-- <span class="image"><span></span></span> -->
+                                <mstrlayout:render name="layeredIconInfo"><!-- replace <span> above to dynamically set style class... -->
+		                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+		                        </mstrlayout:render>
+                                
+		                        <mstrlayout:render name="unit">
+		                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+		                        </mstrlayout:render>
+		                    </div>
+		                </mstrlayout:list>
+
+		                <mstrlayout:if name="shouldRenderFolderLinks">
+	                		<mstrlayout:then>
+				                <mstrlayout:list id="links" name="getLinks" base="bean">
+				                    <div>
+				                        <mstrlayout:attr name="getLinkAttributes">
+				                            <mstrlayout:argument list="links" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+				                        </mstrlayout:attr>
+				                        
+                                        <!-- <span class="image"><span></span></span> -->
+                                        <mstrlayout:render name="layeredIconInfo"><!-- replace <span> above to dynamically set style class... -->
+	                                        <mstrlayout:argument list="links" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                                        <mstrlayout:argument type="boolean" value="true"/>
+	                                    </mstrlayout:render>
+                                        
+				                        <mstrlayout:render name="unit">
+				                            <mstrlayout:argument list="links" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+				                        </mstrlayout:render>
+				                    </div>
+			                   	</mstrlayout:list>
+		                   	</mstrlayout:then>
+            			</mstrlayout:if>
+                   	</mstrlayout:else>
+		</mstrlayout:if>
+		</mstrlayout:else>
+		</mstrlayout:if>
+        </div>
+        </div>
+        <mstrlayout:render name="incrementalFetch"/>
+</mstrlayout:layout>

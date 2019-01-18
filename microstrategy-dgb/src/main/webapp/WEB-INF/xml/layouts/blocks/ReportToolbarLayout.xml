@@ -1,0 +1,45 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isIFrameRequest">
+	<mstrlayout:else>
+      <![CDATA[
+        <textarea id="rptRibbonToolbarModel" class="mstrJSON">
+      ]]>
+      	<mstrlayout:bContext defaultContentType="JSON" />
+      	<mstrlayout:block name="ReportToolbarModel">
+      	
+      	<mstrlayout:bSetProperty path="id" value="rptRibbonToolbarModel" />
+		<mstrlayout:bSetProperty path="selectedToolbar" method="getSelectedToolbarId" />
+		<mstrlayout:bSetProperty path="targetPath" method="getDefaultTargetPath"/>
+		<mstrlayout:bSetProperty path="beanPath" method="getBeanPath"/>
+		
+		<!-- Fills the ToolbarModel with the ribbon information retrieved from the page config of the page 'report'  -->
+		<mstrlayout:bEditBlock path="" method="loadRibbon"/>
+		
+		<mstrlayout:bEditBlock path="" method="processToolbarEvents" />
+		
+		<!-- Replaces the model placeholder with the real toolbar model based on the selected toolbar preference of the user -->
+		<mstrlayout:bEditBlock path="" method="loadSelectedModel" />
+		
+	  </mstrlayout:block>
+      <![CDATA[
+	   </textarea>
+        <textarea id="rptRibbonToolbar" class="mstrJSON">
+      ]]>
+      <mstrlayout:block name="ReportToolbar">
+		<mstrlayout:bSetProperty path="modelPath" value="#rptRibbonToolbarModel" />
+		
+		<mstrlayout:bEditBlock path="" method="loadRibbonView"/>
+		
+	  </mstrlayout:block>
+      <![CDATA[
+	   </textarea>
+      ]]>
+	  <mstrlayout:juilLayouts rootBlockName="ReportToolbar" />
+      <script type="text/javascript">
+	      mstr.$register('rptRibbonToolbarModel', self);
+	      mstr.$register('rptRibbonToolbar', self).render();
+      </script>
+    </mstrlayout:else>
+  </mstrlayout:if>	
+</mstrlayout:layout>

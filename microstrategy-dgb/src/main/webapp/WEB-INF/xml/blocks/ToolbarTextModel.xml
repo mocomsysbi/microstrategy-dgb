@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarTextModel" inherits="ToolbarControlModel">
+		<definition>
+			<!-- The value of the text box -->
+			<property name="value" type="String" />
+      
+      <!-- The string to be displayed as the tooltip of the button. -->
+      <property name="tooltip" type="String" />
+      
+			<!-- The cssText to be applied to the text container. -->
+			<property name="cssText" type="String" />
+
+			<!-- Indicates if the text should appear as a button. -->
+			<property name="isButton" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="type">TEXT</property>
+			<property name="isButton">true</property>
+			<property name="toolbarHelper">
+				<block name="ToolbarButtonHelper" />
+			</property>
+		</assignments>
+	</block>

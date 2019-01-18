@@ -1,0 +1,87 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <table cellspacing="0" cellpadding="0" border="0">
+    <colgroup>
+      <col width="*"/>
+      <col width="20"/>
+      <col width="*"/>
+    </colgroup>
+    <tr>
+      <td style="vertical-align: top">
+        <div class="mstrSearchSections">
+          <div id="nameSection">
+            <mstrlayout:render name="searchNameTitle"/>
+            <br />
+            <mstrlayout:render name="searchNameTextInputBox"/>
+            <br />
+            <mstrlayout:render name="searchStringConstraintsComboBox"/>
+            <mstrlayout:render name="requiredLabelForSearchName"/>
+            <br />
+          </div>
+          <hr />
+          <div id="typesSection">
+            <mstrlayout:render name="typeTitle"/>
+            <mstrlayout:if name="isFeatureAvailable">
+                <mstrlayout:argument type="string" value="view-user-properties" />
+                <mstrlayout:then>
+                    <br />
+                    <mstrlayout:render name="searchObjectTypeUsers"/>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            <mstrlayout:if name="isFeatureAvailable">
+                <mstrlayout:argument type="string" value="view-group-properties" />
+                <mstrlayout:then>
+                    <br />
+                    <mstrlayout:render name="searchObjectTypeGroups"/>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            <mstrlayout:if name="isFeatureAvailable">
+                <mstrlayout:argument type="string" value="view-security-role-properties" />
+                <mstrlayout:then>
+                    <br />
+                    <mstrlayout:render name="searchObjectTypeSecurityRoles"/>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            <br />
+          </div>
+          <hr />
+          <div id="datesSection">
+            <mstrlayout:render name="dateTitle"/>
+            <br />
+            <mstrlayout:render name="dateSimpleFindAllObject"/>
+            <br />
+            <mstrlayout:render name="findAllObjectsWithCreatedOrModified"/>
+            <br />
+            <div id="dateAdvanced">
+              <mstrlayout:render name="dateForPreviousTimeUnits"/>
+              <br />
+              <mstrlayout:render name="dateStartAndEndDate"/>
+            </div>
+          </div>
+          <hr />
+          <div id="ownerSection">
+            <mstrlayout:render name="ownerTitle"/>
+            <br />
+            <mstrlayout:render name="ownerCreatedByAnyUser"/>
+            <br />
+            <mstrlayout:render name="ownerCreatedOnlyByMe"/>
+          </div>
+          <hr />
+          <div id="descriptionSection">
+            <mstrlayout:render name="descriptionTitle"/>
+            <br />
+            <mstrlayout:render name="descriptionTextArea"/>
+          </div>
+        </div>
+      </td>
+      <td>&nbsp;</td>
+      <td style="vertical-align: top">
+        <div style="vertical-align: top">
+          <mstrlayout:render name="searchDetails"/>
+          <mstrlayout:render name="newSearchLink"/>
+          <mstrlayout:render name="searchTypeLink"/>
+        </div>
+      </td>
+    </tr>
+  </table>
+</mstrlayout:layout>

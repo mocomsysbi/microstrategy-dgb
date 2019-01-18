@@ -1,0 +1,47 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ModifyUserTask" privileges="EnableAdministrationFromWeb">
+	<basicInfo desc="This Task provides the ability to modify user.">
+        <!-- parameter for modify event -->
+        <parameter name="userID" desc="The original name of the user to modify" required="true"/>
+		<parameter name="loginName" desc="The login name of the user to modify" required="true" />
+		<parameter name="fullName" desc="The full name of the user to modify" required="true" />
+		<parameter name="password" desc="The password of the user to modify"  required="true" />
+		<parameter name="confirmPassword" desc="The confirmed password of the user to create" required="true"/>
+		<parameter name="description" desc="The description of the user to modify" required="false" />
+		<parameter name="disabled" desc="The disablity of the user to modify" required="false" />
+		<parameter name="passwordAutoExpire" desc="The auto expiration of password" required="false" />
+		<parameter name="passwordExpirationDays" desc="The expiration days of password" required="false" />
+		<parameter name="LDAPDN" desc="The LDAP distuiguish name" required="false" />
+		<parameter name="warehouseLogin" desc="The wardhouse ID" required="false" />
+		<parameter name="warehousePassword" desc="The warehouse password" required="false" />
+		<parameter name="windowsLogin" desc="The windows login name" required="false" />
+	</basicInfo>
+	
+	<!--
+		"32768001" is the EnumUserEntityBeanEvents.USER_ENTITY_EVENT_MODIFY_BASIC.
+	-->
+	<eventInfo eventID="32768001">	
+		<argument name="passwordConfirmed" value="confirmPassword" source="parameter"  />
+		<argument name="disable" value="disabled" source="parameter"  />
+	</eventInfo>
+	
+	<!--
+		"32768002" is the EnumUserEntityBeanEvents.USER_ENTITY_EVENT_MODIFY_AUTH.
+	-->
+	<eventInfo eventID="32768002">	
+		 <argument name="warehouseID" value="warehouseLogin" source="parameter"  />
+		 <argument name="warehousePwd" value="warehousePassword" source="parameter"  />
+		 <argument name="saveNow" value="1"/>   
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'ub' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="ub" bean-type="UserBean">
+        <style name="styleName" source="parameter">		
+		</style>
+
+	</beanInfo>
+</beanTask>
+

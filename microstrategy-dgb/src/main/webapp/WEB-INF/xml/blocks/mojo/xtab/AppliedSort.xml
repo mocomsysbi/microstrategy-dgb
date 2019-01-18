@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the applied sort definition for Advanced Sort Editor.
+--> 
+<block name="AppliedSort">
+    <definition>
+        <!-- The id of the sort definition -->
+        <property name="value" type="String"/>
+        
+        <!-- Sort order, is it ascending -->
+        <property name="isAsc" type="Integer" />
+    </definition>
+</block>

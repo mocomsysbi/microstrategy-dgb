@@ -1,0 +1,121 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		ExpressionPromptAnswerModel is an answer to a PromptQuestionModel which edits an ExpressionModel.
+		In ExpressionPromptAnswerModel, a simple answer's value is specified by an expression tree.
+		This tree is maintained in the "selected" property.  Additionally, the "available" property
+		specifies a list of objects which the end-user may use in the expression tree.  Also, the optional "min" and "max" 
+		properties define further restrictions on the end-user's selections.
+	-->
+	<block name="ExpressionPromptAnswerModel" inherits="PromptAnswerModel">
+		<definition>
+			<!-- Optional minimum amount of conditions required for a simple answer to this Expression Prompt. -->
+			<property name="min" type="Integer" />
+
+			<!-- Optional max amount of conditions allowed for a simple answer to this Expression Prompt. -->
+			<property name="max" type="Integer" />
+			
+			<!-- ListModel of available objects which the end-user may qualify in the simple answer. -->
+			<property name="available" type="Block" />
+
+			<!-- ExpressionModel of conditions that form the default simple answer. -->
+			<property name="selected" type="Block" />
+			
+			<!-- Specifies which type of attribute forms are allowed in an attribute form qualification:
+				 0 = all, 1 = browse forms only, 2 = report forms only. -->
+			<property name="formCategory" type="Integer" />
+			
+			<!-- Specifies which type of math functions are allowed in qualifications:
+				 "Attribute", "Metric", "MDXAttribute", "SAPAttribute", or "MDXMetric". -->
+			<property name="functionCategory" type="String" />
+			
+			<!-- Comma-delimited list of expression types allowed for any conditions added to this model. 
+				 (10 = metric qual, 2 = attribute form qual, 5 = attribute element list qual). 
+				 If missing, all expression types are allowed. -->
+			<property name="allowedExpressionTypes" type="String" />
+
+			<!-- The default expression type for any conditions added to this model. 
+				 (10 = metric qual, 2 = attribute form qual, 5 = attribute element list qual). -->
+			<property name="defaultExpressionType" type="Integer" />
+				 
+			<!-- The default expression type for any new ATTRIBUTE conditions added to this model. 
+				 (2 = attribute form qual, 5 = attribute element list qual). -->
+			<property name="defaultAttributeExpressionType" type="Integer" />
+
+			<!-- Optional list of function objects that are allowed in qualifications; used
+				 instead of functionCategory. -->
+			<property name="allowedFunctions" type="List" />
+			
+			<!-- The default function for any new Form/Metric condition added to this model
+				 without a specified function.  Syntax = "<func_type>,<func_id>" -->
+			<property name="defaultFunction" type="String" />
+
+			<!-- The default function for any new Attribute Form qualifier conditions added to this model
+				 without a specified function.  Syntax = "<func_type>,<func_id>". 
+				 If unspecified, the "defaultFunction" property will be applied. -->
+			<property name="defaultAttributeFunction" type="String" />
+
+			<!-- The default function for any new Attribute Element list conditions added to this model
+				 without a specified function.  Syntax = "<func_type>,<func_id>". 
+				 If unspecified, the "defaultFunction" property will be applied. -->
+			<property name="defaultListFunction" type="String" />
+
+			<!-- The default metric function for any new Metric conditions added to this model
+				 without a specified function.  Syntax = "<func_type>,<func_id>". 
+				 If unspecified, the "defaultFunction" property will be applied. -->
+			<property name="defaultMetricFunction" type="String" />
+
+			<!-- The default metric level for any new Metric conditions added to this model.
+				 (0 = default, 1 = metric, 2 = report). -->
+			<property name="defaultMetricLevel" type="Integer" />
+			
+			<property name="allowDisplayOutputLevelSelector" type="Boolean" />
+
+			<!-- The default AND/OR operator for the root of this model's expression answer.
+				 (19 = AND, 20 = OR). -->
+			<property name="defaultBranchQualId" type="Integer" />
+
+			<!-- Optional form name used to determine which items are allowed in answer.
+				 E.g., if set to "tp", then only items with form "tp" = some values (see 
+				 the "allowedItemFormValues" property) will be allowed. -->
+			<property name="allowedItemFormName" type="String" />
+			
+			<!-- Optional comma-delimited list of form values for item that are allowed in answer.
+				 To continue the example above for "allowedItemFormName", if
+				 "allowedItemFormValues" = "a,m" then only items with "tp" = "a" or "m" are allowed. -->
+			<property name="allowedItemFormValues" type="String" />
+
+			<!-- Optional comma-delimited list of form values for item that are NOT allowed in answer.
+				 To continue the example above for "allowedItemFormName", if
+				 "prohibitedItemFormValues" = "f,f_sc" then items with "tp" = "f" or "f_sc" are NOT allowed. -->
+			<property name="prohibitedItemFormValues" type="String" />
+			
+			<!-- If true, this flag prevents available items from being removed once they are selected. -->
+			<property name="keepAvailableItems" type="Boolean" />
+
+			<!-- Indicate, which type of navigation can be performed, if there is a search. see EnumPromptPropertyNamesAndValues -->
+			<property name="allowNavAboveSearchRoot" type="Integer" />
+
+			<!-- If true, this flag tells the cart to preserve the sort order of the "available" list items
+				 when moving items from "selected" back to "available". -->
+			<property name="keepAvailableSorted" type="Boolean" />
+			
+			<!-- Optional flag; if set to false, prohibits grouping of condition; otherwise, allowed. -->
+			<property name="allowGrouping" type="Boolean" />
+
+			<!-- Optional flag; if set to true, the model enables the Add command always, regardless of the max property. -->
+			<property name="allowAddAlways" type="Boolean" />
+      
+            <!-- Optional setting to limit the number of elements allowed in an Attribute Element selection. 
+               Unlimited by default. -->
+            <property name="maxElementsAllowed" type="Integer" />
+
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ExpressionPromptAnswer</property>
+			<property name="extendedProperties">
+				<block name="ExpressionPromptAnswerExtendedProperties" />
+			</property>
+			<property name="keepAvailableItems">{pref:cartItemKeptInCartAvailable|false}</property>
+			<property name="allowNavAboveSearchRoot">3</property>
+		</assignments>
+	</block>

@@ -1,0 +1,34 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Expression Node
+-->
+<block name="ExpNode">
+    <definition>
+        <!-- Expression Type of the node -->
+        <property name="et" type="Integer" />
+
+        <!-- The Display Name -->
+        <property name="n" type="String" />
+
+        <!-- Whether the node has a parent Not -->
+        <property name="not" type="Boolean" />
+
+        <!-- The Children Nodes Collection -->
+        <property name="nds" type="List" />
+        
+        <!-- Dimty Type of the node  -->
+        <property name="dmt" type="Integer" />
+    
+        <!-- Dimty Type of the node  -->
+        <property name="mdxUnitId" type="String" />
+        
+        <!-- Is a dynamic condition, which means it has a place holder -->
+        <property name="idc" type="Boolean" />
+        
+        <!-- PlaceHolder of the node -->
+        <property name="ph" type="Block" />
+        
+        <!-- Is independent CSI -->
+        <property name="idcsi" type="Boolean" />
+    </definition>
+</block>

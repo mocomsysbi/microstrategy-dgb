@@ -1,0 +1,26 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div  class="mstrPanelPortrait">
+        <table class="pane" cellspacing="0">
+            <tr>
+                <td>
+                    <div sty="titl" class="mstrPanelTitleBar">
+                        <span class="mstrPanelTitle">
+                            <mstrlayout:render name="Descriptor">
+                                <mstrlayout:argument type="int" value="2303"/>
+                            </mstrlayout:render>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td sty="body" class="mstrPanelBody">
+                    <div sty="body" class="mstrBrowser">
+                        <mstrlayout:include file="/WEB-INF/xml/layouts/FolderProjectBrowserLayout.xml">
+                        </mstrlayout:include>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</mstrlayout:layout>

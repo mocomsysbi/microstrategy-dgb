@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- HTTP Processors -->
+	<block name="XHRProcessor" inherits="BaseModel">
+		<definition>
+			<property name="taskURL" type="String"/>
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.http.XHRProcessor</property>
+			<property name="taskURL">{controllerParam:servletDeploymentName|TaskProcessorServlet}</property>
+		</assignments>
+	</block>

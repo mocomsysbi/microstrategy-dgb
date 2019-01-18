@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarNotesButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbNotesPanel</property>
+		<property name="tooltip">{desc:mstrWeb.5364|Notes}</property>
+		<property name="cmdid">notesPanel</property>
+		<property name="visibleFeatures">web-is-notes-available</property>
+	</assignments>
+</block>

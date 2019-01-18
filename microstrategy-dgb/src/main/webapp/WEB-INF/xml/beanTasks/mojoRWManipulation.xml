@@ -1,0 +1,14 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MojoRWManipulationTask">
+    <basicInfo desc="This task pivots an RWD Grid and serializes the partial results.">
+        <parameter name="params" desc="The JSON containing parameters plus delta" required="true" />
+        <parameter name="messageID" desc="The Message ID of a previously executed Report Writer Document." required="false" />
+        <parameter name="stateID" desc="The document State ID." required="false" defvalue="-1" />
+        <parameter name="suppressData" desc="Indicates that no data shall be returned to the caller" required="false" defvalue="false" />
+        <parameter name="resolveOnly" desc="Indicates that the document should not be executed" required="false" defvalue="false" />
+        <parameter name="excludeData" desc="use this bit to indicate backend should exclude data result from data part, and only keep definition info" required="false" defvalue="false"/>
+        <parameter name="disablePU" desc="Indicates that parrtial update shall be disabled" required="false" defvalue="false" />
+        </basicInfo>    
+
+    <beanInfo name="rwb" bean-type="RWBean"/>
+</beanTask>

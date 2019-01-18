@@ -1,0 +1,17 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+    <basicInfo desc="This task removes an object from the document.">
+        <parameter name="objectKey" desc="The key of the object to remove"  required="true" />
+    </basicInfo>    
+
+    <!-- REPORT WRITER EVENT REMOVE OBJECT  -->
+    <eventInfo eventID="2048004">
+        <argument name="oKey" source="parameter" value="objectKey" />
+    </eventInfo>
+    
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWDocumentMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="2" />
+        </style>
+    </beanInfo>
+</beanTask>

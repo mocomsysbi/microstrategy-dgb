@@ -1,0 +1,52 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<div id = "derivedElmtBrowser">
+		<table class="mstrListView" cellspacing="0" id = "deListTable">
+            <colgroup>
+                    <col width="5%"/>
+                    <col width="35%"/>
+                    <col width="60%" />
+			</colgroup>		
+			<thead>
+			<tr>
+				<td scope="col">&nbsp;</td>
+				<td scope="col" style="overflow: hidden;">
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="int" value="5638"/><!-- Descriptor: Derived Element -->
+                    </mstrlayout:render>
+				</td>
+				<td scope="col">
+        	    	<mstrlayout:render name="descriptor">
+        	    		<mstrlayout:argument type="int" value="1020"/><!-- Descriptor: Summary -->
+        	    	</mstrlayout:render>	
+				</td>
+			</tr>
+	        </thead>
+    	    <tbody>			
+                <mstrlayout:list id="contents" name="getContents" base="bean">
+                    <tr>
+                       <td>
+                    		<!--input type="checkbox" name="deVisible"/-->
+                       		<mstrlayout:render name="visibleCheckBox">
+                       			<mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+                       		</mstrlayout:render>
+                       </td>
+                       <td>
+	                        <mstrlayout:attr name="getUnitAttributes">
+	                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                        </mstrlayout:attr>
+	                        <mstrlayout:render name="unit">
+	                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                        </mstrlayout:render>
+                       </td>
+                       <td>
+	                        <mstrlayout:render name="unitSummary">
+	                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                        </mstrlayout:render>
+                       </td>
+                    </tr>
+                </mstrlayout:list>
+            </tbody>
+        </table>
+	  </div>
+</mstrlayout:layout>

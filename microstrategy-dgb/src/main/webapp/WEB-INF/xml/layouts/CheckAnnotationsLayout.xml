@@ -1,0 +1,7 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:bContext defaultContentType="JSON" />
+	<mstrlayout:block name="AnnotationBlock">
+	     <mstrlayout:bSetProperty path="hasAnnotation" method="hasAnnotations" base="bean"/>
+	</mstrlayout:block>
+</mstrlayout:layout>

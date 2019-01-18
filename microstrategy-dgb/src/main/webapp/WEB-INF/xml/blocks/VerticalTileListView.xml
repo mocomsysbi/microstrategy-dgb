@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		VerticalTileListView is a ListView that displays tiles with image above text.
+	-->
+	<block name="VerticalTileListView" inherits="ListView">
+		<assignments>
+			<property name="itemCSSPrefix">VtList</property>
+			<property name="itemRendererClass">mstr.itemrenderers.VerticalTileList</property>
+			<property name="showIcons">true</property>
+			<property name="showDescriptions">true</property>
+			<property name="multiSelect">false</property>
+            <property name="allowBrowseAttribute">false</property>
+            <property name="allowBrowseHierarchy">false</property>
+		</assignments>
+	</block>

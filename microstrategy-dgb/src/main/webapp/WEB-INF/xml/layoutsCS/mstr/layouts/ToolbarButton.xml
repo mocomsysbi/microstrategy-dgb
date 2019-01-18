@@ -1,0 +1,15 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_tooltip="rootTag.firstChild.title = model.get('tooltip');"
+    on_model_set_state="mstr.behaviors.ToolbarButton.setButtonClassName(view);"
+    on_set_enabled="mstr.behaviors.ToolbarButton.setButtonClassName(view);"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible']);">
+  <a class="{@cssPrefix}{@cssClass}">
+  	<span id="{@model/id}" 
+  		style="{@cssText}"
+  		align="absmiddle"
+  		onmouseout="mstr.behaviors.ToolbarButton.setButtonClassName(mstr.$obj('{@id}'), false);" 
+  		onmouseover="mstr.behaviors.ToolbarButton.setButtonClassName(mstr.$obj('{@id}'), true);" 
+  		onclick="var v = mstr.$obj('{@id}'); if (v.get('enabled')) { v.fireCommands() } return false;">
+  	</span>
+  </a>
+</mstrlayout:layout>

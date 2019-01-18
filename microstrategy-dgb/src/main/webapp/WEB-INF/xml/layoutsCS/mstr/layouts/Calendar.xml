@@ -1,0 +1,41 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_browseMonth="mstr.behaviors.CalendarView.on_model_set_browseMonth(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.CalendarView.on_set_visible(view, model, rootTag)">
+  <div style="display:none;visibility:hidden;width:130px;border:1px solid #d7dce8;background-color:white;" class="mstrCalendar"
+       id="{@id}">
+    <div style="background-color:#7694bf;text-align:center;border:1px solid #d7dce8;"
+         id="{@id}_title_bar">
+         <!-- TQMS 323618 In IE the year input loses focus after this method is called -->
+         <!-- onclick="mstr.utils.Dom.clearBrowserHighlights()"> -->
+      <img style="float:left;padding-top:2px;padding-left:2px;vertical-align:middle;"
+           src="../images/bubble_left_onblue.gif"
+           id="{@id}_move_prev"
+           onclick="mstr.behaviors.CalendarView.on_click_movePrev('{@id}');">
+      </img>
+      <img style="float:right;padding-top:2px;padding-right:2px;vertical-align:middle;"
+           src="../images/bubble_right_onblue.gif"
+           id="{@id}_move_next"
+           onclick="mstr.behaviors.CalendarView.on_click_moveNext('{@id}');">
+      </img>
+      <span id="{@id}_title">
+        <span id="{@id}_month">
+          <span>
+          </span>
+        </span>
+        <span style="margin-left:1px;">
+          <input onkeyup="mstr.behaviors.CalendarView.on_key_up_year(arguments[0],'{@id}',this);"
+                 style="width:30px;text-align:center;"
+                 id="{@id}_year"
+                 type="text">
+          </input>
+        </span>
+      </span>
+    </div>
+    <div id="{@id}_table_container">
+    </div>
+    <div style="text-align:center;width:100%;border-top:1px solid #d7dce8;color:blue;font-weight:bold;"
+         onclick="mstr.$obj('{@id}').fireCommands()">
+           {@descriptors/closeCaption}
+    </div>
+  </div>
+</mstrlayout:layout>

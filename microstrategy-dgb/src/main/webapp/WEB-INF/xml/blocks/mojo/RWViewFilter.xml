@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for Editing RW View Filters.
+--> 
+<block name="RWViewFilter">
+  <definition>
+    <!-- Available dataset objects -->
+    <property name="targets" type="List" />
+    
+    <!-- Root of view filter expression (ExpNode block) -->
+    <property name="expr" type="Block" />
+    <!-- Root of view limit expression (ExpNode block) -->
+    <property name="limitExpr" type="Block" />
+    <!-- Message ID of current document -->
+    <property name="messageID" type="String" />
+    <!-- The effective dataset ID for element browsing. It can be empty if Cube Join is on and grid source is none. -->
+    <property name="dsid" type="String" />
+  </definition>
+  
+</block>

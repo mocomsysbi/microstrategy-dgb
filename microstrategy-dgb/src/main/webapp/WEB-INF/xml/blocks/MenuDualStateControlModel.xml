@@ -1,0 +1,6 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MenuDualStateControlModel" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="type">MENU</property>
+	</assignments>
+</block>

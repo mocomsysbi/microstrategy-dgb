@@ -1,0 +1,65 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="AttrFormsSort">
+  <assignments>
+    <property name="id">AttrFormsSort</property>
+    <property name="visible">false</property>
+    <property name="title">{desc:mstrWeb.2217|Sort}</property>
+    <property name="helpTopic">sort_dialog_box.htm</property>
+    <property name="contentView">
+		 <block name="HBox">
+             <property name="padding">4</property>
+             <property name="modelPath">parent/model</property>
+             <property name="children">
+             	<list>
+             		<block listElementKey="K2192" name="TooltipText">
+             			<property name="id">tt</property>
+			            <property name="modelPath">parent/parent/opener/EditSelectorSource</property>
+			        </block>
+	              	<block listElementKey="K2193" name="ListPulldown">
+						<property name='id'>sortLPD</property>
+						<property name='popup/width'>100px</property>
+			            <property name="modelPath">parent/parent/opener/getDynamicListModel("availAttrFormsList","sortAttrForm")</property>
+			        </block>
+			        <block listElementKey="K2194" name="RadioList">
+			            <property name="modelPath">parent/parent/opener/stRadioList</property>
+			            <property name="multiSelect">false</property>
+			            <property name="horizontal">false</property>
+			            <property name="enabledField">parent/parent/opener/SortTypeEnabled</property>
+			        </block>
+			    </list>
+			 </property>
+		</block>
+    </property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K2195" name="TextButton">
+          <property name="cmds">Unpop||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K2196" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+          <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- ok button -->
+        <block listElementKey="K2200" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">SelectSortAttrForm||parent/opener;Unpop||parent</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K2201" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">Unpop||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

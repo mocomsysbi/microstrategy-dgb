@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarSeparator" inherits="BaseView">
+		<definition>
+			<!--
+				Property that allow client side to identify the separator, 
+				since we are not using any custom script class we have to 
+				be able to identify this block in some way.
+			--> 
+			<property name="ge" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="cssClass">ToolbarSeparator</property>
+			<property name="layoutClass">mstr.layouts.ToolbarSeparator</property>
+			<property name="visible">true</property>
+			<property name="ge">true</property>
+		</assignments>
+	</block>

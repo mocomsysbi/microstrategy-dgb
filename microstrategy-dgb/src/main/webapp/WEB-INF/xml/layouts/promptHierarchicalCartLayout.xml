@@ -1,0 +1,135 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+     <mstrlayout:include file="/WEB-INF/xml/layouts/PromptObjectLayout.xml">
+        <mstrlayout:replace slot="s1">
+			<div class="prmHierarchicalCart">
+				<mstrlayout:if name="isFolderInformationVisible">
+				<mstrlayout:then>
+					<div class="hierarchies">
+						<mstrlayout:render name="folderInformation"/>
+					</div>
+				</mstrlayout:then>
+				</mstrlayout:if>
+				<mstrlayout:if name="isHierarchyInformationVisible">
+				<mstrlayout:then>
+					<div class="hierarchies">
+						<mstrlayout:render name="hierarchyInformation"/>
+					</div>
+				</mstrlayout:then>
+				</mstrlayout:if>
+				<table class="mstrCart" cellspacing="0">
+				<thead>
+				<tr>
+					<td class="mstrCartAvailable">
+						<mstrlayout:if name="isButtonTabControlVisible">
+						<mstrlayout:then>
+							<div class="tabs">
+								<mstrlayout:render name="buttonTabControl"/>
+							</div>
+						</mstrlayout:then>
+						</mstrlayout:if>
+						<mstrlayout:if name="isAttributeInformationVisible">
+						<mstrlayout:then>
+							<mstrlayout:if name="isExpressionVisible">
+							<mstrlayout:then>
+							</mstrlayout:then>
+							<mstrlayout:else>
+								<div class="attributes">
+									<mstrlayout:render name="attributeInformation"/>
+								</div>
+							</mstrlayout:else>
+							</mstrlayout:if>
+						</mstrlayout:then>
+						</mstrlayout:if>
+						<mstrlayout:if name="isSearchVisible">
+						<mstrlayout:then>
+                            <mstrlayout:if name="isDhtmlMode">
+                            <mstrlayout:then>
+                                <div class="search" onkeydown="return promptSubmitSearchForEnterKey(this, event);">
+                                    <mstrlayout:render name="search"/>
+                                </div>
+                            </mstrlayout:then>
+                            <mstrlayout:else>
+                                <div class="search">
+                                    <mstrlayout:render name="search"/>
+                                </div>
+                            </mstrlayout:else>
+                            </mstrlayout:if>
+                        </mstrlayout:then>
+						</mstrlayout:if>
+					</td>
+					<td class="mstrCartButtons">
+					</td>
+					<td class="mstrCartSelected">
+					</td>
+					<td class="mstrCartExtras">
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="mstrCartAvailable">
+						<mstrlayout:if name="isExpressionVisible">
+						<mstrlayout:then>
+							<div class="attributes">
+								<mstrlayout:render name="attributeInformation"/>
+							</div>
+							<div class="operator">
+								<div><mstrlayout:render name="operatorLabel"/></div>
+								<mstrlayout:render name="operators"/>
+							</div>
+							<div class="value">
+								<div><mstrlayout:render name="inputLabel"/></div>
+								<mstrlayout:render name="qualificationInputBox"/>
+							</div>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<div class="listHeader">
+								<mstrlayout:render name="label">
+									<mstrlayout:argument type="int" value="3487"/>
+									<mstrlayout:argument type="string" value="unitsToAdd"/>
+								</mstrlayout:render>
+							</div>
+							<div class="list">
+								<mstrlayout:render name="available"/>
+							</div>
+							<div class="fetch">
+								<mstrlayout:render name="availableHeaderContent"/>
+							</div>
+						</mstrlayout:else>
+						</mstrlayout:if>
+						<mstrlayout:if name="isDrillVisible">
+						<mstrlayout:then>
+							<div class="drill">
+								<mstrlayout:render name="drillInformation"/>
+							</div>
+						</mstrlayout:then>
+						</mstrlayout:if>
+					</td>
+					<td class="mstrCartButtons">
+						<mstrlayout:render name="add"/>
+						<mstrlayout:render name="remove"/>
+					</td>
+					<td class="mstrCartSelected">
+						<div class="listHeader">
+							<mstrlayout:render name="label">
+								<mstrlayout:argument type="int" value="3488"/>
+								<mstrlayout:argument type="string" value="unitsToRemove"/>
+							</mstrlayout:render>
+						</div>
+						<div class="list">
+							<mstrlayout:render name="selected"/>
+						</div>
+					</td>
+					<td class="mstrCartExtras">
+						<div class="extras">
+							<mstrlayout:render name="match"/>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+          </div>
+        </mstrlayout:replace>
+    </mstrlayout:include>
+</mstrlayout:layout>

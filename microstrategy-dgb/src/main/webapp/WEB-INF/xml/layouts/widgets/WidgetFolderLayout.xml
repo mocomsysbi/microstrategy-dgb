@@ -1,0 +1,104 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:bContext defaultContentType="JSON" />
+  <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderBaseLayout.xml">
+    <mstrlayout:replace slot="mainFolder">
+      <mstrlayout:if method="includeFolderInfo">
+        <mstrlayout:then>
+          <mstrlayout:base id="FolderObject" method="getMainFolder" base="transform"/>
+          
+          <!-- Populate the root folder... -->
+          <mstrlayout:bSetProperty path="container">
+            <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+          </mstrlayout:bSetProperty>
+          <mstrlayout:bSetProperty path="container/did" method="getID" base="FolderObject"/>
+          <!-- if the folder results are from search, and no ancestor info included, then set default folder name -->
+          <mstrlayout:if method="isSearchDefined" base="bean">
+            <mstrlayout:then>
+              <mstrlayout:if method="includeAncestorInfo" value="false">
+                <mstrlayout:then>
+                  <mstrlayout:bSetProperty path="container/n" method="getDescriptor">
+                    <mstrlayout:argument value="73" type="int"/> <!-- Search Results: -->
+                  </mstrlayout:bSetProperty>
+                  <mstrlayout:bDeleteProperty path="container/dssid"/>
+                </mstrlayout:then>
+              </mstrlayout:if>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          
+        </mstrlayout:then>
+      </mstrlayout:if>
+    </mstrlayout:replace>
+    <mstrlayout:replace slot="search">
+      <mstrlayout:if method="isSearchDefined" base="bean">
+        <mstrlayout:then>
+          <mstrlayout:bSetProperty path="searchXML" method="getSearchXML"/>
+          <mstrlayout:bSetProperty path="searchFlags" method="getSearchFlags"/>
+          <mstrlayout:bSetProperty path="dataSourcesXML" method="getSearchDataSources"/>
+          <mstrlayout:bSetProperty path="objectType" method="getSearchTypes"/>
+        </mstrlayout:then>
+      </mstrlayout:if>
+    </mstrlayout:replace>
+    <mstrlayout:replace slot="ancestor">
+      <!-- Loop through the ancestors, which includes the folder itself... -->
+      <mstrlayout:if method="includeAncestorInfo">
+        <mstrlayout:then>
+          <mstrlayout:if method="hasAncestor">
+            <mstrlayout:then>
+              <mstrlayout:bSetProperty path="containerTree">
+                <mstrlayout:block name="TreeModel">
+                  <mstrlayout:bSetProperty path="selectedPathList" method="getMainFolderTreeLocation"/>
+                  <mstrlayout:list id="ancestors" method="getAncestors">
+                    <mstrlayout:base id="nodeValue" method="getValue" base="ancestors"/> <!-- the WebObjectInfo of the ancestor node -->
+                    <!-- Add a new FlattenedTreeNode to this list... -->
+                    <mstrlayout:bSetProperty path="flattenedNodes">
+                      <mstrlayout:block name="TreeNode">
+                        <mstrlayout:bSetProperty path="path" method="getLocation" base="ancestors"/>
+                        <mstrlayout:bSetProperty path="value">
+                          <mstrlayout:block name="ItemInfo">
+                            <mstrlayout:bSetProperty path="dssid" method="getID" base="nodeValue"/>
+							<mstrlayout:bSetProperty path="did" method="getID" base="nodeValue"/>
+                            <mstrlayout:if method="getType" base="nodeValue" value="8"> <!-- folder type -->
+                              <mstrlayout:then>
+                                <mstrlayout:bSetProperty path="n" method="getFolderName">
+                                  <mstrlayout:argument base="nodeValue" type="com.microstrategy.web.objects.WebFolder"/>
+                                </mstrlayout:bSetProperty>
+                              </mstrlayout:then>
+                              <mstrlayout:else>
+                                <mstrlayout:bSetProperty path="n" method="getObjectName">
+                                  <mstrlayout:argument base="nodeValue" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                </mstrlayout:bSetProperty>
+                              </mstrlayout:else>
+                            </mstrlayout:if>
+                            <mstrlayout:bSetProperty path="desc" method="getObjectDescription">
+                              <mstrlayout:argument base="nodeValue" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:bSetProperty>
+                            <mstrlayout:bSetProperty path="icon" method="getCssName">
+                              <mstrlayout:argument base="nodeValue" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:bSetProperty>
+                            <mstrlayout:bSetProperty path="tp" method="getType" base="nodeValue"/>
+                            <!--<mstrlayout:bSetProperty path="otp" method="getType" base="nodeValue"/> -->
+                            <mstrlayout:if method="includeOwnerInfo">
+                              <mstrlayout:then>
+                                <mstrlayout:base id="owner" method="getOwner" base="nodeValue"/>
+                                <mstrlayout:bSetProperty path="own" method="getName" base="owner"/>
+                              </mstrlayout:then>
+                            </mstrlayout:if>
+                            <!--<mstrlayout:bSetProperty path="mod" method="getObjectModificationTime">
+                              <mstrlayout:argument base="nodeValue" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:bSetProperty>-->
+                          </mstrlayout:block>
+                        </mstrlayout:bSetProperty>
+                      </mstrlayout:block>
+                    </mstrlayout:bSetProperty>
+                  </mstrlayout:list>
+                </mstrlayout:block>
+              </mstrlayout:bSetProperty>
+              
+            </mstrlayout:then>
+          </mstrlayout:if>
+        </mstrlayout:then>
+      </mstrlayout:if>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+</mstrlayout:layout>

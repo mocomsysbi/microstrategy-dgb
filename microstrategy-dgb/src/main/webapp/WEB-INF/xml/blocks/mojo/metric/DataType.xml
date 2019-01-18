@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for the internal data type.
+--> 
+<block name="DataType">
+  <definition>
+    <!-- Type -->
+    <property name="ddt" type="Integer" />
+    
+    <!-- Precision -->
+    <property name="prec" type="Integer" />
+    
+    <!-- Scale -->
+    <property name="scl" type="Integer" />
+  </definition>
+</block>

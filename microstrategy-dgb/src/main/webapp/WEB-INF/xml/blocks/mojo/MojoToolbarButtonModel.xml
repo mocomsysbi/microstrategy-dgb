@@ -1,0 +1,35 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+        <!-- This toolbar button model defines four types of button.
+             All types contain n and desc. Whether cmd or items is not empty is used to distinguish different types.
+             1. Normal Button: cmd is not empty while items is.
+             2. Picker Button: Both cmd and items are not empty.
+             3. Menu Button: items is not empty shile cmd is.
+             4. Delimiter: Both cmd and items are empty.
+             5. Text Button: Both cmd and label are not empty while items is. -->
+<block name="MojoToolbarButtonModel">
+<definition>
+    <!-- The name of this button. Used as class name. -->
+    <property name="n" type="String"/>
+
+    <!-- (Optional) The description of this buttons. Used as tooltip. -->
+    <property name="desc" type="String"/>
+
+    <!-- (Optional) The command name. -->
+    <property name="cmd" type="String"/>
+
+    <!-- (Optional) The flag whether this button will be shown in:
+     0 = Normal mode only.
+     1 = Both Normal mode and Presentation mode.
+     2 = Presentation mode only.
+     if not Specified = Normal mode only.
+    -->
+    <property name="pm" type="Integer"/>
+
+    <!-- (Optional) The child items. -->
+    <property name="items" type="List"/>
+
+    <!-- (Optional) An optional string containing comma-delimited features
+        to be checked for visibility status. -->
+    <property name="visibleFeatures" type="String"/>
+</definition>
+</block>

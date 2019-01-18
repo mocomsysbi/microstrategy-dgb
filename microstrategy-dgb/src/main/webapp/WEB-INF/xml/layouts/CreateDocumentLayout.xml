@@ -1,0 +1,38 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:render name="buttonOptions" />
+	
+ 	<div class="sectionContainer">
+		<div class="sectionHeader">
+			<mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="string" value="mstrWeb.5599"/> 
+            </mstrlayout:render>		
+		</div>
+		<div class="sectionBody">
+		    <mstrlayout:render name="bean">
+		        <mstrlayout:argument value="folderCreateDashboard"/>
+		        <mstrlayout:argument value="FolderStyleCreateDashboard"/>
+		    </mstrlayout:render>
+		</div>
+	</div>
+	
+	<div class="sectionContainer">
+		<div class="sectionHeader">
+			<mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="string" value="mstrWeb.5600"/> <!-- Document Templates -->
+            </mstrlayout:render>		
+		</div>
+		<div class="sectionBody">
+			<div style="float: none; clear: both; line-height: 0; padding: 0; margin: 0;" />
+			<mstrlayout:render name="blankObject" />
+			
+			<mstrlayout:list id="FolderObjects" name="getSortedList">
+					<mstrlayout:render name="object">
+					    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+					</mstrlayout:render>
+			</mstrlayout:list>
+			<div style="float: none; clear: both; line-height: 0; padding: 0; margin: 0;" />
+		</div>
+	</div>
+	
+</mstrlayout:layout>

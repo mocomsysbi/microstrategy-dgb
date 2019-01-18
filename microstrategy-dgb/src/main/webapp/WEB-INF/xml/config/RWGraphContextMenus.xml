@@ -1,0 +1,54 @@
+<shortcut-list-set name="RWGraphContextMenus" version="1.0">
+  <shortcut-list name="graphOptions">
+    <shortcut name="drill" desc="[Drill]" desc-id="mstrWeb.145" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphDrill" />
+    <shortcut name="format" desc="[Format...]"  desc-id="mstrWeb.4596" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphFormat" base-bone="rwb_viewer" dhtml-enabled="commands.queryEnabled('openGraphFormatter');"/>
+    <shortcut name="fill" desc="Fill" desc-id="mstrWeb.2885" type="picker" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphFill">
+	    <shortcut-list name="cmFillColorPicker" config-src="/WEB-INF/xml/config/reportColorPicker.xml">
+        </shortcut-list>
+    </shortcut>
+    <shortcut name="line" desc="Line" desc-id="mstrWeb.3546" type="picker" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphLine">
+	    <shortcut-list name="cmLineColorPicker" config-src="/WEB-INF/xml/config/colorPickerShortcutList.xml">
+        </shortcut-list>
+    </shortcut>
+    <shortcut name="font" desc="Font" desc-id="mstrWeb.3433" type="picker" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphFont">
+	    <shortcut-list name="cmFontColorPicker" config-src="/WEB-INF/xml/config/advFontColorPicker.xml">
+        </shortcut-list>
+    </shortcut>
+    
+    <!-- TQMS 347309: to be consistent with 8.1.2 version, in RW graph mode, we need to show the context menu including formatting, View Mode, Sort Grid, Edit Totals and Edit View Filter.-->
+    <shortcut desc="-" name="fmtSeparator1"/>    
+    
+    <shortcut name="viewMode" desc="[View Mode]" desc-id="mstrWeb.3564" feature-id="menu-grid-mode">
+      <properties>
+        <property name="supportedTypes" value="obj.52" />
+      </properties>
+      <shortcut name="gridMode" desc="[Grid View]" desc-id="mstrWeb.3561" feature-id="menu-grid-mode" 
+          base-bone="rwb_viewer" onclick="commands.exec('gridMode')" dhtml-enabled="commands.queryEnabled('gridMode');" dhtml-checked="commands.queryState('gridMode')" />
+
+      <shortcut name="graphMode" desc="[Graph View]" desc-id="mstrWeb.3562" feature-id="menu-grid-mode" 
+          base-bone="rwb_viewer" onclick="commands.exec('graphMode')" dhtml-enabled="commands.queryEnabled('graphMode');" dhtml-checked="commands.queryState('graphMode')" />
+
+      <shortcut name="gridGraphMode" desc="[Grid and Graph View]" desc-id="mstrWeb.3563" feature-id="menu-grid-mode" 
+          base-bone="rwb_viewer" onclick="commands.exec('gridGraphMode')" dhtml-enabled="commands.queryEnabled('gridGraphMode');" dhtml-checked="commands.queryState('gridGraphMode')" />
+
+      <shortcut name="flashMode" desc="[Widget]" desc-id="mstrWeb.4921" feature-id="visualizations-supported;visualizations-available-for-rw-grids"
+          base-bone="rwb_viewer" onclick="commands.exec('visFlashMode')" dhtml-checked="commands.queryState('visFlashMode')" dhtml-show="commands.queryVisible('visFlashMode');"/>
+            
+    </shortcut>
+    
+    <shortcut desc="-" name="vmSeparator1"/>    
+    
+    <shortcut name="sortGraphCell" base-bone="rwb_viewer" desc="[Sort Graph...]" desc-id="mstrWeb.6089" dhtml-enabled="noDataset == false" dhtml-show="commands.queryEnabled('onegrid')" feature-id="embedded-template-node;web-sort;check-execute-mode;frame-element-enabled;dhtml;rw-interactive-view-mode-eplus" onclick="commands.exec('edtSortGrid');"/>
+    <shortcut name="editTotalsCell" base-bone="rwb_viewer" desc="[Edit Totals...]" desc-id="mstrWeb.3310" dhtml-enabled="commands.queryEnabled('hasmetrics')" feature-id="embedded-template-node;frame-element-enabled;dhtml;show-totals" onclick="commands.exec('edtSubtotals');" />    
+    <shortcut name="viewFilter" base-bone="rwb_viewer" desc="Edit View Filter..." desc-id="mstrWeb.3938" dhtml-show="commands.queryEnabled('vfeRWGrid')" feature-id="use-view-filter-editor;rw-interactive-view-mode-eplus" onclick="commands.exec('vfeRWGrid')"/>    
+  </shortcut-list>
+
+  <shortcut-list name="dropZoneOptions">
+    <shortcut name="selectControlTarget" desc="[Select  Targets]" desc-id="mstrWeb.4724" feature-id="rw-editable-view-mode-eplus" onclick="var bone = microstrategy.getActiveCXBone(); bone.processContextMenus('sct');"/>
+    <shortcut name="createGridControlAutowireOff" desc="[Use as Selector...]" desc-id="mstrWeb.6152" feature-id="rw-editable-view-mode-eplus" dhtml-show="microstrategy.bone('rwb_viewer').commands.queryState('hasNoTargets') &amp;&amp; !microstrategy.bone('rwb_viewer').autoWire" onclick="var bone = microstrategy.getActiveCXBone(); bone.processContextMenus('tuce');"/>
+    <shortcut name="createGridControlAutowireOn" desc="[Use as Selector]" desc-id="mstrWeb.7483" feature-id="rw-editable-view-mode-eplus" dhtml-show="microstrategy.bone('rwb_viewer').commands.queryState('hasNoTargets') &amp;&amp; microstrategy.bone('rwb_viewer').autoWire" onclick="var bone = microstrategy.getActiveCXBone(); bone.processContextMenus('cgs');"/>
+    <shortcut name="editGridControl" desc="[Edit Selector...]" desc-id="mstrWeb.4964" feature-id="rw-editable-view-mode-eplus" dhtml-show="!microstrategy.bone('rwb_viewer').commands.queryState('hasNoTargets')" onclick="var bone = microstrategy.getActiveCXBone(); bone.processContextMenus('tuce');"/>
+    <shortcut name="removeGridControl" desc="[Remove Selector]" desc-id="mstrWeb.6151" feature-id="rw-editable-view-mode-eplus" dhtml-show="!microstrategy.bone('rwb_viewer').commands.queryState('hasNoTargets')" onclick="microstrategy.bone('rwb_viewer').commands.exec('removeTargets');"/>
+  </shortcut-list>
+
+</shortcut-list-set>

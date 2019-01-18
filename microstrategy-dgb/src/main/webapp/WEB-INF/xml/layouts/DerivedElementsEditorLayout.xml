@@ -1,0 +1,94 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div id="deContent" class="body">
+        <mstrlayout:render name="validationErrorMessage"/>
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="deLst"/>
+        </mstrlayout:render>
+        <div>
+            <div class="mstrTabSet">
+                <span id="deTabDefinition" class="mstrTabSetTabSelected">
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="int" value="1407"/><!-- Descriptor: Definition -->
+                    </mstrlayout:render>
+                </span>
+                <span id="deTabProperties" class="mstrTabSetTab">
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="int" value="434"/><!-- Descriptor: Properties -->
+                    </mstrlayout:render>
+                </span>
+            </div>
+            <div id="deDefinitionSection" class="mstrTabContainer">
+                <mstrlayout:render name="currentElement"></mstrlayout:render>      
+            </div>
+            <div id="dePropertiesSection" class="mstrTabContainer" style="display:none">
+                <fieldset id="deBehaviorSet" class="mstrPropertySet">
+                    <legend>
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="int" value="6200"/><!-- Descriptor: Derived Element behavior: -->
+                        </mstrlayout:render>
+                    </legend>
+                    <div>
+                        <input type="radio" id="deBehaviorConsolidate" name="deBehavior" value="0"/><label for="deBehaviorConsolidate">
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="int" value="6199"/><!-- Descriptor: Consolidate items into one derived element -->
+                            </mstrlayout:render>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="deBehaviorSeparate" name="deBehavior" value="1"/><label for="deBehaviorSeparate">
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="int" value="5348"/><!-- Descriptor: Keep individual items separate -->
+                            </mstrlayout:render>
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset id="deAggregationSet" class="mstrPropertySet">
+                    <legend>
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="int" value="5349"/><!-- Descriptor: Subtotal behavior: -->
+                        </mstrlayout:render>
+                    </legend>
+                    <select size="0" id="deAggregation" name="deAggregation" >
+                        <option value="1">
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="int" value="5350"/><!-- Descriptor: Use this element when calculating subtotals -->
+                            </mstrlayout:render>
+                        </option>
+                        <option value="2">
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="int" value="5351"/><!-- Descriptor: Use the individual items that comprise this element when calculating subtotals -->
+                            </mstrlayout:render>
+                        </option>
+                        <option value="3">
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="int" value="5352"/><!-- Descriptor: Do not use this element when calculating subtotal -->
+                            </mstrlayout:render>
+                        </option>
+                    </select>
+                </fieldset>
+                <fieldset id="deLevelSet" class="mstrPropertySet">
+                    <legend>
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="int" value="5353"/><!-- Descriptor: All Other behavior: -->
+                        </mstrlayout:render>
+                    </legend>
+                    <div>
+	                    <input type="radio" id="deLevelDontInclude" name="deLevel" value="1"/><label for="deLevelDontInclude">
+	                        <mstrlayout:render name="descriptor">
+	                            <mstrlayout:argument type="int" value="5354"/><!-- Descriptor: Do not include individual items in the All Other element -->
+	                        </mstrlayout:render>
+	                    </label>
+                    </div>
+                    <div>
+	                    <input type="radio" id="deLevelInclude" name="deLevel" value="0"/><label for="deLevelInclude">
+	                        <mstrlayout:render name="descriptor">
+	                            <mstrlayout:argument type="int" value="5355"/><!-- Descriptor: Include individual items in the All Other element -->
+	                        </mstrlayout:render>
+	                    </label>
+	                </div>
+                </fieldset>
+            </div>
+        </div>      
+    </div>
+</mstrlayout:layout>

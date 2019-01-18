@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ElementsObjectNodeValue is an ExpressionNodeValue representing a collection of attribute elements.
+	-->		
+	<block name="ElementsObjectNodeValue" inherits="ExpressionNodeValue">
+		<definition>
+			<property name="elementsCollection" type="List" />
+		</definition>
+		<assignments>
+			<property name="nodeType">2</property> <!-- ElementsCollection -->
+		</assignments>
+	</block>

@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="LinksContainer" inherits="BaseBlock">
+	<definition>
+        <!-- link definitions   -->
+        <property name="links" type="List" />
+
+        <!-- open in a new window   -->
+        <property name="onw" type="Boolean" />
+
+        <!-- default index   -->
+        <property name="di" type="Integer" />
+	</definition>
+</block>

@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name = "TransactionReport">
+    <definition>
+        <!-- dssid of the transaction report  -->
+        <property name = "txRptId" type = "String" />
+        
+        <!-- A list of transaction inputs (TransactionInput)-->
+        <property name = "inputs" type = "List" />
+    </definition>
+</block>

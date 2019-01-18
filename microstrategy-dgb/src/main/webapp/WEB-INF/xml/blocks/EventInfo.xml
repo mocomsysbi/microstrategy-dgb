@@ -1,0 +1,35 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Info block for containing information about an MSTR Event. -->
+	<block name="EventInfo" inherits="BaseBlock">
+		<definition>
+			<!-- The Id of the Event (must be a FQCN from an Enumeration). -->
+			<property name="event-id" type="String" />
+			
+			<!-- The action-id must be unique value for only this event. -->
+			<property name="action-id" type="String" />
+			
+			<!-- The base bean for the Event. -->
+			<property name="base-bean" type="String" />
+			
+			<!-- The List of EventArgument elements for this event. -->
+			<property name="args" type="List" />
+			
+			<!-- Whether to include the state of the page in the Event (true by default). -->
+			<property name="append-state" type="Boolean" />
+			
+			<!-- Whether to open a the link in a new window. -->
+			<property name="use-window-open" type="Boolean" />
+			
+			<!-- The target where the href should be executed.  This property will be ignored if the use-window-open
+				property is set. -->
+			<property name="target" type="String" />
+			
+			<!-- Indicates that hyperlink should target the iframe.  This property will be ignored if the target
+				property is set. -->
+			<property name="iframe" type="Boolean" />
+			
+		</definition>
+		<assignments>
+			<property name="append-state">true</property>
+		</assignments>
+	</block>

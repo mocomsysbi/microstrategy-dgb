@@ -1,0 +1,100 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="HBox" name="FontFormatter">
+  <definition>
+    <!-- The path to the Font name ListModel. -->
+    <property name="nameModelPath" type="String"/>
+    <!-- The path to the Bold/Italic font style ListModel. -->
+    <property name="styleModelPath" type="String"/>
+    <!-- The path to the Font size ListModel. -->
+    <property name="sizeModelPath" type="String"/>
+    <!-- The path to the TextUnderline boolean model field. -->
+    <property name="underlineField" type="String"/>
+    <!-- The path to the TextStrikeout boolean model field. -->
+    <property name="strikeoutField" type="String"/>
+    <!-- The path to the Font color ListModel. -->
+    <property name="colorModelPath" type="String"/> 
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.views.FontFormatter</property>
+    <property name="children">
+      <list>
+      	
+      		
+      		
+        <block listElementKey="K654" name="VBox">
+          <property name="children">
+            <list>
+              <block listElementKey="K655" name="FastListView">
+                <property name="caption">{desc:mstrWeb.2172|Font:}</property>
+                <property name="height">100px</property>
+                <property name="width">175px</property>
+                <property name="itemRendererClass">mstr.itemrenderers.FontList</property>
+                <property name="multiSelect">false</property>
+              </block>
+              <block listElementKey="effects" name="FieldSet">
+                <property name="legend">{desc:mstrWeb.2038|Effects}</property>
+                <property name="modelPath">parent/parent/model</property>
+                <property name="cssText">padding-left: 4px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K657" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.3061|Underline}</property>
+                      <property name="modelPath">parent/model</property>
+                    </block>
+                    <block listElementKey="K658" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.3062|Strikeout}</property>
+                      <property name="modelPath">parent/model</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K659" name="VBox">
+          <property name="modelPath">parent/model</property>
+          <property name="cssText">margin-left:4px;</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K660" name="HBox">
+                <property name="modelPath">parent/parent/model</property>
+                <property name="padding">1</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K661" name="ListView">
+                      <property name="caption">{desc:mstrWeb.3059|Style:}</property>
+                      <property name="multiSelect">false</property>
+                      <property name="height">100px</property>
+                      <property name="width">120px</property>
+                    </block>
+                    <block listElementKey="K662" name="FastListView">
+                      <property name="caption">{desc:mstrWeb.2178|Size:}</property>
+                      <property name="multiSelect">false</property>
+                      <property name="height">100px</property>
+                      <property name="width">55px</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="color" name="ColorPicker">
+                <property name="caption">{desc:mstrWeb.3063|Color:}</property>
+                <property name="popup/viewFlags">10</property>
+              </block>
+              <block listElementKey="preview" name="FontPreview">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-top:5px;</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        
+        
+       
+      	
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		FontFormatter is the font formatting block that is reused for several of the properties editors.
+	-->

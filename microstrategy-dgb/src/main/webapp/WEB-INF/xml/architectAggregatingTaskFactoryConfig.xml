@@ -1,0 +1,32 @@
+<!DOCTYPE aggregatingTaskFactory SYSTEM "dtds/aggregatingTaskFactory.dtd" >
+<aggregatingTaskFactory isPrivate="true">
+<tasks>
+    <task registerAs="arch.getProjects" class="com.microstrategy.web.app.tasks.architect.GetArchitectProjectsTask"/>
+    <task registerAs="arch.createProject" class="com.microstrategy.web.app.tasks.architect.CreateProjectTask"/>
+    <task registerAs="arch.deleteProject" class="com.microstrategy.web.app.tasks.architect.DeleteProjectTask"/>         
+    <task registerAs="arch.deleteObject" class="com.microstrategy.web.app.tasks.architect.DeleteObjectTask"/>
+    <task registerAs="arch.renameObject" class="com.microstrategy.web.app.tasks.architect.RenameObjectTask"/>
+    <task registerAs="arch.saveDBRole" class="com.microstrategy.web.app.tasks.architect.SaveDBRoleTask"/>
+    <task registerAs="arch.search" class="com.microstrategy.web.app.tasks.architect.SearchTask"/>
+    <task registerAs="arch.nameSearchTable" class="com.microstrategy.web.app.tasks.architect.NameSearchTableTask"/>
+    <task registerAs="arch.getDBObjects" class="com.microstrategy.web.app.tasks.architect.GetDBObjectsTask"/>
+    <task registerAs="arch.getDBRoles" class="com.microstrategy.web.app.tasks.architect.GetDBRolesTask"/>
+<task registerAs="arch.catalogAction" class="com.microstrategy.web.app.tasks.architect.CatalogActionTask"/>    
+    <task registerAs="arch.getODBCDSNs" class="com.microstrategy.web.app.tasks.architect.GetODBCDSNsTask"/>
+    <task registerAs="arch.getODBCDrivers" class="com.microstrategy.web.app.tasks.architect.GetODBCDriversTask"/>        
+    <task registerAs="arch.schemaInstanceAction" class="com.microstrategy.web.app.tasks.architect.SchemaInstanceActionTask"/>
+    <task registerAs="arch.schemaManipulation" class="com.microstrategy.web.app.tasks.architect.SchemaManipulationTask"/>    
+    <task registerAs="arch.refreshEngineSchema" class="com.microstrategy.web.app.tasks.architect.RefreshEngineSchemaTask"/>
+    <task registerAs="arch.addProjectDBRole" class="com.microstrategy.web.app.tasks.architect.AddProjectDBRoleTask"/>
+    <task registerAs="arch.Parse" class="com.microstrategy.web.app.tasks.architect.ParseTask"/>
+    <task registerAs="arch.loadLogicalTables" class="com.microstrategy.web.app.tasks.architect.GetLogicalTableTask"/>
+    <task registerAs="arch.getObjectInBulk" class="com.microstrategy.web.app.tasks.architect.GetObjectInBulkTask"/>
+    <task registerAs="arch.getHierarchyInfo" class="com.microstrategy.web.app.tasks.architect.GetHierarchyInfoTask"/>
+    <task registerAs="arch.getLinkInfo" class="com.microstrategy.web.app.tasks.architect.GetLinkInfoTask"/>
+    <task registerAs="arch.checkPrivileges" class="com.microstrategy.web.app.tasks.architect.PrivilegeCheckerTask"/>
+    <task registerAs="arch.getServerInfo" class="com.microstrategy.web.app.tasks.QueryBuilder.GetServerInfoTask"/>
+    <task registerAs="arch.getCustomConnector" class="com.microstrategy.web.app.tasks.architect.GetCustomConnectorTask"/>
+    <task registerAs="arch.spark" class="com.microstrategy.web.app.tasks.architect.SparkTask"/>
+    <task registerAs="arch.sparkFileUpload" class="com.microstrategy.web.app.tasks.architect.SparkMultiPartTask"/>
+</tasks>
+</aggregatingTaskFactory>

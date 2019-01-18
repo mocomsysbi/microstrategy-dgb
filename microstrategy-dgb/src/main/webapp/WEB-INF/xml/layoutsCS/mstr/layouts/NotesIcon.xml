@@ -1,0 +1,7 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	on_model_set_hasAnnotation="view.set('visible', model.get('hasAnnotation')==true)"
+	on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div id="{@id}" class="{@cssPrefix}{@cssClass}" onclick="microstrategy.toggleAccordion(microstrategy.ACCORDION_RW_NOTES_PANEL);">
+  	<img border="0" id="{@iconId}" name="{@iconId}" alt="" src="../images/1ptrans.gif" title="{@title}" class="{@cssPrefix}{@cssIconClass}"/>
+  </div>
+</mstrlayout:layout>

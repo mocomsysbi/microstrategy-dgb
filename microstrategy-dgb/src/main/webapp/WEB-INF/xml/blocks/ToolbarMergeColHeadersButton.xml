@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarMergeColHeadersButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbMergeColHeaders</property>
+		<property name="tooltip">{desc:mstrWeb.1920|Merge Column Header}</property>
+		<property name="cmdid">checkMergeColHeader</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

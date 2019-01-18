@@ -1,0 +1,89 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:include file="/WEB-INF/xml/layouts/PromptObjectLayout.xml">
+        <mstrlayout:replace slot="s1">  
+          <div class="prmExpressionCart">
+			<table class="mstrCart" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="mstrCartAvailable">
+					<div class="listHeader">
+						<mstrlayout:render name="availableLabel"/>
+					</div>
+					<div class="list">
+						<mstrlayout:render name="available"/>
+					</div>
+					<div class="fetch">
+						<mstrlayout:render name="incrementalFetch"/>
+					</div>
+					<div class="operator">
+						<div><mstrlayout:render name="operatorLabel"/></div>
+						<mstrlayout:render name="operators"/>
+					</div>
+					<div class="value">
+						<div>
+							<mstrlayout:render name="label">
+								<mstrlayout:argument type="int" value="527"/>
+								<mstrlayout:argument type="string" value="unitsToAdd"/>
+							</mstrlayout:render>
+						</div>
+						<mstrlayout:render name="qualificationInputBox"/>
+						<mstrlayout:if name="isCalendarAvailable">
+						<mstrlayout:then>
+							<mstrlayout:render name="calendarButton"/>
+						</mstrlayout:then>
+						</mstrlayout:if>
+                        <mstrlayout:if name="isNextInputButtonAvailable">
+                            <mstrlayout:then>
+                                <mstrlayout:render name="nextInputButton"/>
+                            </mstrlayout:then>
+                    	</mstrlayout:if>    
+					</div>
+					<mstrlayout:if name="isIncludeExcludeAvailable">
+					<mstrlayout:then>
+						<div>
+							<mstrlayout:render name="includeExcludeOption"/>
+						</div>
+					</mstrlayout:then>
+					</mstrlayout:if>
+				</td>
+				<td class="mstrCartButtons">
+					<mstrlayout:render name="add"/>
+					<mstrlayout:render name="remove"/>
+				</td>
+				<td class="mstrCartSelected">
+					<div class="listHeader">
+						<mstrlayout:render name="label">
+							<mstrlayout:argument type="int" value="3488"/>
+							<mstrlayout:argument type="string" value="unitsToRemove"/>
+						</mstrlayout:render>
+					</div>
+					<div class="list">
+						<mstrlayout:render name="selected"/>
+					</div>
+				</td>
+				<mstrlayout:if name="areUPandDownButtonsAvailable">
+				<mstrlayout:then>
+					<td class="mstrCartButtons">
+						<mstrlayout:render name="up"/>
+						<mstrlayout:render name="down"/>
+					</td>
+				</mstrlayout:then>
+				</mstrlayout:if>
+				<td class="mstrCartExtras">
+	                <mstrlayout:render name="match"/>
+				</td>
+			</tr>
+			</tbody>
+			</table>
+			<mstrlayout:if name="isInputFromTextFile">
+			<mstrlayout:then>
+				<div class="fileLoader">
+					<mstrlayout:render name="inputTextFile"/>
+				</div>
+			</mstrlayout:then>
+			</mstrlayout:if>
+	</div>
+        </mstrlayout:replace>
+    </mstrlayout:include>
+</mstrlayout:layout>

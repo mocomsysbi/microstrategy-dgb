@@ -1,0 +1,36 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.AndroidSetDocSelectorElementsTask">
+	<!-- 
+		This information is used to provide "metadata" about this task. In general, it includes
+		names, descriptions and whether the parameters are required or not.
+		This task is similar to setDocSelectorElementsTask but uses different style to accomodate android visualizations
+	-->
+	<basicInfo desc="This task sets the current elements on a Document Selector Control and serializes the results.">
+		<parameter name="messageID" desc="The Message ID of a previously executed Document." required="false" />
+		<parameter name="selectorKeyContext" desc="The context of the Selector Control. It may be a simple key for the control or a key with tree type, node type and control type (all separated by a semicolon &quot;;&quot;)." required="true" />
+        <parameter name="ctlKey" desc="The key that uniquely identifies the Selector Control." />
+		<parameter name="elemList" desc="A list of element IDs separated by the ITEM_SEPARATOR (see EnumRWBeanEvents for details). Multiple attributes are separated by the CONTROL_GROUP_BY_SEPARATOR (see EnumRWBeanEvents for details)." required="true" />
+		<parameter name="include" desc="A flag that indicates whether the elements selection is included or excluded. We currently only support include."  required="false" defvalue="1" />
+        <parameter name="usePartialUpdate" desc="A flag that indicates whether a partial display can be used." required="false" defvalue="1" />
+	</basicInfo>	
+
+	<!-- REPORT_WRITER_EVENT_SET_SELECTOR_CONTROL_ELEMENTS -->
+	<eventInfo eventID="2048084">
+        <argument name="usePartDisplay" source="parameter" value="usePartialUpdate" />
+		<argument name="unitKeyContext" source="parameter" value="selectorKeyContext" />
+		<argument name="ctlKey" source="parameter" value="ctlKey" />
+		<argument name="currentIncludeState" source="parameter" value="include" />
+		<argument name="applyNow" value="false" />
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.
+	-->
+	<beanInfo name="rwb" bean-type="RWBean">
+		<style name="RWDocumentMobileStyle">
+			<actualParameter name="treesToRender" source="const" value="2" />
+            <actualParameter name="zoomFactor" value="zoomFactor" source="parameter"/>
+		</style>
+	</beanInfo>
+</beanTask>

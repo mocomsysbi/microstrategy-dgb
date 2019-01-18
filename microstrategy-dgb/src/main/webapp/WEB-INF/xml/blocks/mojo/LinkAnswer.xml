@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="LinkAnswer" inherits="BaseBlock">
+	<definition>
+        <!-- answer mode. See com.microstrategy.web.objects.EnumLinkAnswerMode-->
+        <property name="m" type="Integer" />
+
+        <!-- Prompt ID   -->
+        <property name="pid" type="String" />
+
+        <!-- Prompt type -->
+        <property name="pt" type="Integer" />
+
+        <!-- Prompt Origin - WebObjectInfo -->
+        <property name="po" type="Block" />
+		
+		<!-- base form id for 'dynamically' answering constant prompts, used together with 'po.did' to identify a form-->
+		<property name ="bfid" type="String"/>
+		
+        <!-- Dynamic Units. List of Strings (ID of those titles whose elements need to be passed as link answers )  -->
+        <property name="dunits" type="List" />
+
+        <!-- Static elements . List of ElementModel blocks -->
+        <property name="es" type="List" />
+	</definition>
+</block>

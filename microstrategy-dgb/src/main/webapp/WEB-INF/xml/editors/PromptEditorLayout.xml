@@ -1,0 +1,7 @@
+<widget>
+    <footer>
+        <button type="1" id="89002" title-desc="[Save]" title-desc-id="mstrWeb.118" enable-feature-id="" event-id="89002" javaScript="return microstrategy.bone('promptTabMgr_PromptDialogStyle').applyPropertyChanges('processCommands');" base-bean="promptTabMgr"/>
+        <button type="1" id="89001" title-desc="[Save As]" title-desc-id="mstrWeb.1896" enable-feature-id="" event-id="89001" javaScript="return microstrategy.bone('promptTabMgr_PromptDialogStyle').applyPropertyChanges('processCommands')" base-bean="promptTabMgr"/>
+        <button type="1" id="3026" title-desc="[Cancel]" title-desc-id="mstrWeb.2140" enable-feature-id="" event-id="3026" base-bean="promptTabMgr"/>
+    </footer>
+</widget>

@@ -1,0 +1,56 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isClusterListEmpty">
+    <mstrlayout:then>
+      <mstrlayout:render name="emptyList" />&nbsp;
+      <mstrlayout:render name="configureServersLink" />
+    </mstrlayout:then>
+    <mstrlayout:else>
+      <div class="mstrLargeIconView">
+        <table class="mstrLargeIconView" id="ClusterList" cellspacing="20">
+          <colgroup>
+            <col class="img" />
+            <col class="txt" />
+            <col class="img" />
+            <col class="txt" />
+          </colgroup>
+          <mstrlayout:list id="clusters" base="bean" name="getClusters">
+            <tr>
+              <td>
+                <mstrlayout:render name="icon">
+                  <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+                </mstrlayout:render>
+              </td>
+              <td class="mstrLargeIconViewItemText">
+                <div class="mstrLargeIconViewItemName">
+                  <mstrlayout:render name="clusterName">
+                    <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+                  </mstrlayout:render>
+                </div>
+              </td>
+              <mstrlayout:next list="clusters" />
+              <mstrlayout:if name="hasNextCluster">
+                <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+                <mstrlayout:then>
+                   <td>
+                      <mstrlayout:render name="icon">
+                        <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+                      </mstrlayout:render>
+	               </td>
+	               <td class="mstrLargeIconViewItemText">
+	                    <div class="mstrLargeIconViewItemName">
+	                      <mstrlayout:render name="clusterName">
+	                        <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+	                      </mstrlayout:render>
+	                    </div>
+                   </td>
+                </mstrlayout:then>
+              </mstrlayout:if>
+            </tr>
+            <mstrlayout:next list="clusters" />
+          </mstrlayout:list>
+        </table>
+      </div>
+    </mstrlayout:else>
+  </mstrlayout:if>
+</mstrlayout:layout>

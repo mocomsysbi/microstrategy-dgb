@@ -1,0 +1,45 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="0" class="preferenceList">
+            <tr>
+              <td>
+                <mstrlayout:render name="AsTextBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceProjectAlias" />
+                  <mstrlayout:argument type="string" value="30" />
+                  <mstrlayout:argument type="string" value="500" />
+                  <mstrlayout:argument type="string" value="mstrWeb.996" /> <!--Descriptor:Project alias:-->
+                </mstrlayout:render>&nbsp;
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mstrlayout:render name="AsTextBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceProjectIndex" />
+                  <mstrlayout:argument type="string" value="30" />
+                  <mstrlayout:argument type="string" value="500" />
+                  <mstrlayout:argument type="string" value="mstrWeb.4479" /> <!--Descriptor:Project index:-->
+                </mstrlayout:render>&nbsp;
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mstrlayout:render name="AsTextBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceProjectHeader" />
+                  <mstrlayout:argument type="string" value="100" />
+                  <mstrlayout:argument type="string" value="5000" />
+                  <mstrlayout:argument type="string" value="mstrWeb.5631" /> <!--Descriptor:Project header text:-->
+                </mstrlayout:render>&nbsp;
+                <br />
+              </td>
+            </tr>
+          </table>
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

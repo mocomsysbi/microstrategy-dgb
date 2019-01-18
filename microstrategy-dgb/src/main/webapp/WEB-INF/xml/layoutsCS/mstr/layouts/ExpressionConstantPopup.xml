@@ -1,0 +1,31 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.ExpressionConstantPopup.on_set_visible(view, model, rootTag, context)">
+  <table cellspacing="0"
+         style="{@cssText}"
+         cellpadding="0"
+         class="{@cssPrefix}{@cssClass}"
+         id="{@id}">
+    <tbody>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellContents">
+          <div class="{@cssPrefix}{@cssClass}OpaqueContainer">
+            <mstrlayout:wRender name="textView">
+            </mstrlayout:wRender>
+            <mstrlayout:wRender name="browseView">
+            </mstrlayout:wRender>
+            <mstrlayout:wRender name="importView">
+            </mstrlayout:wRender>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellButtonBar">
+          <mstrlayout:wRender name="okButton">
+          </mstrlayout:wRender>
+          <mstrlayout:wRender name="cancelButton">
+          </mstrlayout:wRender>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mstrlayout:layout>

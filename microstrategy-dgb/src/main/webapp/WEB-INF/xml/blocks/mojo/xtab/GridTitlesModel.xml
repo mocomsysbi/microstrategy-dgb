@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="GridTitlesModel" inherits="BaseBlock">
+	<definition>
+			<!-- An array of grid titles -->
+			<property name="row" type="List" />
+            <property name="col" type="List" />
+            
+            <!-- col widths --> 
+            <property name="cws" type="List" />
+            
+            <!-- is visible -->
+            <property name="show" type="Boolean" />
+
+            <!-- remove extra column -->
+            <property name="rec" type="Boolean" />
+            
+			<!--  Subtotal position for row axis. Value from EnumDssXmlSubtotalsPosition -->
+			<property name="rowSubPos" type="Integer" />
+
+			<!--  Subtotal Position for col axis. Value from EnumDssXmlSubtotalsPosition -->
+			<property name="colSubPos" type="Integer" />
+            
+	</definition>
+</block>

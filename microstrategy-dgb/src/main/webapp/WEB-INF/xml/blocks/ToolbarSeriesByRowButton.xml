@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarSeriesByRowButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbSerByRow</property>
+		<property name="tooltip">{desc:mstrWeb.3711|Series by Row}</property>
+		<property name="cmdid">seriesByRow</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

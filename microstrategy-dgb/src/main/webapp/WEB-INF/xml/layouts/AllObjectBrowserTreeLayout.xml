@@ -1,0 +1,12 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+        <mstrlayout:include file="/WEB-INF/xml/layouts/AllObjectBrowserListLayout.xml">
+			    <mstrlayout:replace slot="s3"/>
+        	    <mstrlayout:replace slot="s1">
+        	    	<div class="mstrSmallIconView" id="tree">
+                 	  <mstrlayout:render name="tree"/>
+                 	</div>
+        	    </mstrlayout:replace>
+        	    <mstrlayout:replace slot="s2"/>
+        </mstrlayout:include>
+</mstrlayout:layout>

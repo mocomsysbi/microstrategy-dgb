@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionListCartModel is a data model which contains a ListModel, "available",
+		and an ExpressionModel, "selected".  ExpressionListCartModel typically is used
+		to create conditions in "selected" using objects in "available".
+	-->
+	<block name="ExpressionListCartModel" inherits="ListCartModel">
+		<assignments>
+			<property name="scriptClass">mstr.models.ExpressionListCart</property>
+		</assignments>
+	</block>

@@ -1,0 +1,138 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:bContext defaultContentType="JSON" />
+    <mstrlayout:base id="prompt" method="getWebPrompt"/>
+
+	<!--Constant Prompt -->
+	<mstrlayout:if method="isConstantPrompt">
+		<mstrlayout:then>
+		   <mstrlayout:block name="ConstantPromptAnswerModel">
+				<!--<mstrlayout:bSetProperty path="dataType" method="getPromptDataType"/>
+				<mstrlayout:bSetProperty path="required" method="isRequired" base="prompt"/>
+				<mstrlayout:bSetProperty path="min" method="getMin" base="prompt"/>
+				<mstrlayout:bSetProperty path="max" method="getMax" base="prompt"/>-->
+	            <mstrlayout:bSetProperty path="dateFormat" method="getDateFormat"/>  
+	            <mstrlayout:bSetProperty path="firstDayOfWeek" method="getFirstDayOfWeek"/>  	            
+	            <mstrlayout:bSetProperty path="timeFormat" method="getTimeFormat"/>					
+				<mstrlayout:bSetProperty path="isComplex" value="false"/>
+				<mstrlayout:bSetProperty path="valueString" method="getConstantAnswer"/>
+			</mstrlayout:block>
+		</mstrlayout:then>
+	</mstrlayout:if>	
+	
+	<!--Element Prompt -->
+	<mstrlayout:if method="isElementPrompt">
+		<mstrlayout:then>
+			<mstrlayout:block name="ListPromptAnswerModel">
+			<mstrlayout:bSetProperty path="isComplex" value="false"/>
+				<mstrlayout:bSetProperty path="selected">
+				  <mstrlayout:block name="ListModel">
+					<mstrlayout:list id="elem" name="getElementsAnswer">
+					  <mstrlayout:bSetProperty path="items">
+						<mstrlayout:block name="ItemInfo">
+						  <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebElement#getElementID" base="elem"/>
+						  <mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebElement#getDisplayName" base="elem"/>
+						  <mstrlayout:bSetProperty path="icon" value="ae"/>
+						  <mstrlayout:bSetProperty path="emt" method="com.microstrategy.web.objects.WebElement#getElementType" base="elem"/>
+						  <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebElement#getDisplayUnitType" base="elem"/>                          
+						</mstrlayout:block>
+					  </mstrlayout:bSetProperty>
+					</mstrlayout:list>
+				  </mstrlayout:block>
+				</mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:then>
+	</mstrlayout:if>
+	
+	<!--Object prompt -->
+	<mstrlayout:if method="isObjectPrompt">
+		<mstrlayout:then>
+             <mstrlayout:block name="ListPromptAnswerModel">
+				<mstrlayout:bSetProperty path="isComplex" value="false"/>
+				<mstrlayout:bSetProperty path="selected">
+					<mstrlayout:block name="ListModel">
+						<mstrlayout:list id="obj" name="getObjectsAnswer">
+							  <mstrlayout:bSetProperty path="items">
+								<mstrlayout:block name="ItemInfo">
+								  <mstrlayout:bSetProperty path="dssid" method="getID" base="obj"/>
+								  <mstrlayout:bSetProperty path="n" method="getDisplayName" base="obj"/>
+								  <mstrlayout:bSetProperty path="desc" method="getDescription" base="obj"/>
+								  <mstrlayout:bSetProperty path="icon" method="getObjectInfoCssName">
+									<mstrlayout:argument list="obj" type="com.microstrategy.web.objects.WebObjectInfo"/>
+								  </mstrlayout:bSetProperty>
+								  <mstrlayout:bSetProperty path="tp" method="getType" base="obj"/>
+								</mstrlayout:block>
+							  </mstrlayout:bSetProperty>
+						</mstrlayout:list>								
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+            </mstrlayout:block>
+		</mstrlayout:then>
+	</mstrlayout:if>
+
+	<!--Dimty prompt -->
+	<mstrlayout:if method="isDimtyPrompt">
+		<mstrlayout:then>
+             <mstrlayout:block name="ListPromptAnswerModel">
+				<mstrlayout:bSetProperty path="isComplex" value="false"/>
+			    <mstrlayout:bSetProperty path="selected">
+			        <mstrlayout:block name="ListModel">
+			
+			         <!-- list of answer -->
+			         <mstrlayout:list id="obj" name="getDimtyAnswer">
+			          <mstrlayout:if operator="isNotNull" base="obj">
+			           <mstrlayout:then>
+			            <!-- if obj != null -->
+			            <mstrlayout:base id="target" method="getTarget" base="obj" />
+			            <mstrlayout:if operator="isNull" base="target">
+			             <mstrlayout:then>
+			              <!-- dimty unit -->
+			              <mstrlayout:bSetProperty path="items">
+			              	<mstrlayout:block name="DimtyUnit">
+			              		<mstrlayout:bSetProperty path="tp" value="1048578"/>  <!-- EnumWebDependentObjectType.WebDependentObjectDimtyUnit -->
+			              		<mstrlayout:bSetProperty path="dssid" value="-4"/>    <!-- EnumDSSXMLDimtyUnitType.DssXmlDimtyUnitTypeReportBaseLevel -->
+			              		<mstrlayout:bSetProperty path="n" method="getDisplayName" base="obj"/>
+			              		<mstrlayout:bSetProperty path="icon" value="g"/>
+			              		<mstrlayout:bSetProperty path="agg" method="getAggregation" base="obj"/> 
+			              		<mstrlayout:bSetProperty path="flt" method="getFiltering" base="obj"/> 
+			              		<mstrlayout:bSetProperty path="gb" method="getGroupBy" base="obj"/> 
+			              		<mstrlayout:bSetProperty path="rps" method="getRelativePosition" base="obj"/> 
+			              	</mstrlayout:block>
+			              </mstrlayout:bSetProperty>
+			             </mstrlayout:then>
+			             <mstrlayout:else>
+			              <!-- att/hier -->
+			              <mstrlayout:bSetProperty path="items">
+			               <mstrlayout:block name="ItemInfo">
+			                <mstrlayout:bSetProperty path="dssid" method="getID" base="target" />
+			                <mstrlayout:bSetProperty path="n" method="getDisplayName" base="target" />
+			                <mstrlayout:bSetProperty path="desc" method="getDescription" base="target" />
+			                <mstrlayout:bSetProperty path="icon" method="getObjectInfoCssName">
+			                 <mstrlayout:argument list="target" type="com.microstrategy.web.objects.WebObjectInfo" />
+			                </mstrlayout:bSetProperty>
+			                <mstrlayout:bSetProperty path="tp" method="getType" base="target" />
+			               </mstrlayout:block>
+			              </mstrlayout:bSetProperty>
+			             </mstrlayout:else>
+			            </mstrlayout:if>
+			           </mstrlayout:then>
+			          </mstrlayout:if>
+			         </mstrlayout:list>
+			        </mstrlayout:block>
+			    </mstrlayout:bSetProperty>
+            </mstrlayout:block>
+		</mstrlayout:then>
+	</mstrlayout:if>
+	<!--Expression prompt -->
+	<mstrlayout:if method="isExpressionPrompt">
+		<mstrlayout:then>
+			<mstrlayout:block name="ExpressionPromptAnswerModel">
+		        <mstrlayout:bSetProperty path="isComplex" value="false"/>
+		        <mstrlayout:bSetProperty path="selected">
+		          <mstrlayout:base id="answer" method="getExpressionAnswer" base="transform"/>
+		          <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/promptExpressionAnswer_widget.xml"/>
+		        </mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:then>
+	</mstrlayout:if>
+</mstrlayout:layout>

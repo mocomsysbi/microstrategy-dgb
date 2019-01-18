@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		FormShortcutNodeValue is an ExpressionNodeValue representing a shortcut to an attribute form.
+	-->		
+	<block name="FormShortcutNodeValue" inherits="ExpressionNodeValue">
+		<definition>
+			<property name="attribute" type="Block" />
+			<property name="form" type="Block" />
+		</definition>
+		<assignments>
+			<property name="nodeType">1</property> <!-- FormShortcut -->
+		</assignments>
+	</block>

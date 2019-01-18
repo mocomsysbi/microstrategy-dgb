@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ToolbarListItemInfo is used for ToolbarListModel items.
+	-->
+	<block name="ToolbarListItemInfo" inherits="BaseItemInfo,ToolbarCustomizationInfo">
+		<definition>
+			<!-- An optional string that gets passed to ToolbarRadioButtons views for css use. -->
+			 <property name="id" type="String" />
+		</definition>
+	</block>

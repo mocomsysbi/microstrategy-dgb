@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarFitToContentsButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbFitToContents</property>
+		<property name="tooltip">{desc:mstrWeb.2589|Fit To Contents}</property>
+		<property name="cmdid">fittocontent</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

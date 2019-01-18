@@ -1,0 +1,38 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		ReportInstanceModel represents an instance of a prompted Report/Document. 
+		It contains infromation at the report-level, independent of the individual prompt questions.
+		It also contains a sub-model of prompt questions in its "promptQuestions" property.
+		Typically useful for actions such as renaming the report instance or load/saving prompt answers.
+	-->
+	<block name="ReportInstanceModel" inherits="BaseModel">
+		<definition>
+			<!-- Information about the Report object itself, such as dssid, name, description. -->
+			<property name="objectInfo" type="Block" />
+			
+			<!-- Information about this instance of the Report, such message id, message state. -->
+			<property name="messageInfo" type="Block" />
+			
+			<!-- History List message name for Prompts Page. -->
+			<property name="messageName" type="Block" />
+			
+			<!-- A ListModel in which each list item is a PromptQuestionModel. -->
+			<property name="promptQuestions" type="Block" />
+			
+			<!-- Generic lookup of additional properties provided by server for this ReportInstanceModel. 
+				 This can be used as a convenient repository for application-specific data, if needed. -->
+			<property name="extendedProperties" type="Block" />
+            <!-- Enabled Run Report button -->
+            <property name="CommandEnabledApplyPromptAnswers" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ReportInstance</property>
+			<property name="extendedProperties">
+				<block name="ReportInstanceExtendedProperties" />
+			</property>
+			<property name="messageName">
+				<block name="ConstantPromptAnswerModel" />
+			</property>
+            <property name="CommandEnabledApplyPromptAnswers">true</property>
+		</assignments>
+	</block>

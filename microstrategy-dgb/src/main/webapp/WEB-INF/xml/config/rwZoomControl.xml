@@ -1,0 +1,73 @@
+<shortcut-list name="zoom" feature-id="dhtml;!rw-static-view-mode">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+      <attribute name="ty" value="btng"/>
+    </attributes>
+    <shortcut desc="%" name="tbZoom" type="pulldown">
+      <attributes>
+        <attribute name="cmdid" value="zoom"/>
+        <attribute name="cmdtp" value="3"/>
+        <attribute name="cmdpk" value="zoomPicker"/>
+      </attributes>
+      <shortcut-list name="zoomPicker" feature-id="dhtml;!rw-static-view-mode">
+        <attributes>
+          <attribute name="ty" value="pkr"/>
+        </attributes>
+        <shortcut desc="400%" name="zoompkr400">
+          <attributes>
+            <attribute name="id" value="zoompkr400"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="300%" name="zoompkr300">
+          <attributes>
+            <attribute name="id" value="zoompkr300"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="200%" name="zoompkr200">
+          <attributes>
+            <attribute name="id" value="zoompkr200"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="150%" name="zoompkr150">
+          <attributes>
+            <attribute name="id" value="zoompkr150"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="125%" name="zoompkr125">
+          <attributes>
+            <attribute name="id" value="zoompkr125"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="100%" name="zoompkr100">
+          <attributes>
+            <attribute name="id" value="zoompkr100"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="75%" name="zoompkr75">
+          <attributes>
+            <attribute name="id" value="zoompkr75"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="50%" name="zoompkr50">
+          <attributes>
+            <attribute name="id" value="zoompkr50"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="25%" name="zoompkr25">
+          <attributes>
+            <attribute name="id" value="zoompkr25"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="Fit Width" desc-id="mstrWeb.4809" name="zoompkrWidth">
+          <attributes>
+            <attribute name="id" value="zoompkrWidth"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="Fit Page" desc-id="mstrWeb.4808" name="zoompkrPage">
+          <attributes>
+            <attribute name="id" value="zoompkrPage"/>
+          </attributes>
+        </shortcut>
+      </shortcut-list>
+    </shortcut>
+  </shortcut-list>

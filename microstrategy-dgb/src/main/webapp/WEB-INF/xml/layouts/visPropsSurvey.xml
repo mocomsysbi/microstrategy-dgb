@@ -1,0 +1,184 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:if name="isValidGrid">
+    <mstrlayout:then>
+		<![CDATA[
+			<style type="text/css">
+			    .mstrSurveyHeader {
+			        background-color: #CCC;
+			        font-weight: bold;
+			        font-size: 9pt;
+			        height: 20px;
+			        line-height: 20px;
+			        padding-left: 5px;
+			    }
+			    .mstrSurveyItem {
+			    	padding: 2px 10px;
+			    }
+				.mstrSurveyTable {
+					table-layout:auto;
+					width:100%;
+					border-style:solid;
+					border-width:1px;
+					border-spacing:0;
+				}
+				.mstrSurveyTable-cell {
+					border-bottom:1px dotted #999999;
+					padding:3px 6px 3px 3px;
+					vertical-align:middle;
+				}
+				.mstrSurveyTable th {
+					background-color:#D4D0C8;
+					font-weight:bold;
+					text-align:left;
+					padding:2px 0px 2px 3px;
+				}
+			</style>
+        ]]>    
+        <div class="mstrSurveyContainer">
+            <div class="mstrSurveyHeader">
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.10003" /> <!-- Descriptor: Survey Style -->
+                </mstrlayout:render>
+            </div>
+            <div class="mstrSurveyItemContainer">
+                <div class="mstrSurveyItem">
+		            <span>
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="string" value="mstrWeb.10004" /> <!-- Descriptor: Color scheme -->
+                        </mstrlayout:render>		                
+                    </span>
+					<mstrlayout:render name="ColorThemeSelectBox">
+						<mstrlayout:argument type="String" value="cs" /> <!-- display scheme -->
+					</mstrlayout:render>
+                </div>
+                <div class="mstrSurveyItem">
+       		        <mstrlayout:render name="checkbox">
+       		            <mstrlayout:argument type="String" value="suvt"/>
+       		            <mstrlayout:argument type="String" value="onclick^microstrategy.bone('visPropsEditor_visPropsSurveyStyle').enableSurveyTitle(this.checked)"/> <!-- Extra atts -->
+       		            <mstrlayout:argument type="String" value="1" /> <!--  Default value -->
+			        </mstrlayout:render>
+			        <span>
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="string" value="mstrWeb.10005" /> <!-- Descriptor: Show survey title -->
+                        </mstrlayout:render>			            
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="mstrSurveyContainer">
+            <div class="mstrSurveyHeader">
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.10006" /> <!-- Descriptor: Survey Configuration -->
+                </mstrlayout:render>
+            </div>
+            <div class="mstrSurveyItemContainer">
+                <div class="mstrSurveyItem">
+			    <table style="width:100%">
+			        <colgroup><col style="width:5%"></col><col style="width:95%"></col></colgroup>
+			        <tr><td colspan="2">
+           		        <mstrlayout:render name="checkbox">
+           		            <mstrlayout:argument type="String" value="sec"/>
+           		            <mstrlayout:argument type="String" value="onclick^microstrategy.bone('visPropsEditor_visPropsSurveyStyle').enableSection(this.checked)"/> <!-- Extra atts -->
+				        </mstrlayout:render>
+				        <span>
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="string" value="mstrWeb.10007" /> <!-- Descriptor: Enable sections -->
+                            </mstrlayout:render>
+				        </span>
+			        </td></tr>
+			        <tr><td colspan="2">
+          		        <mstrlayout:render name="checkbox">
+          		            <mstrlayout:argument type="String" value="grp"/>
+          		            <mstrlayout:argument type="String" value="onclick^microstrategy.bone('visPropsEditor_visPropsSurveyStyle').enableGroup(this.checked)"/> <!-- Extra atts -->
+				        </mstrlayout:render>
+				        <span>
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="string" value="mstrWeb.10008" /> <!-- Descriptor: Support question group -->
+                            </mstrlayout:render>
+				        </span>
+			        </td></tr>
+			        <tr><td></td><td>
+           		        <mstrlayout:render name="checkbox">
+           		            <mstrlayout:argument type="String" value="tbl"/>
+           		            <mstrlayout:argument type="String" value="onclick^microstrategy.bone('visPropsEditor_visPropsSurveyStyle').enableTable(this.checked)"/> <!-- Extra atts -->
+				        </mstrlayout:render>
+				        <span>
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="string" value="mstrWeb.10009" /> <!-- Descriptor: Support question table -->
+                            </mstrlayout:render>
+				        </span>
+			        </td></tr>
+			    </table>
+            	</div>
+         	    <div class="mstrSurveyItem">
+	 		        <mstrlayout:render name="checkbox">
+	 		            <mstrlayout:argument type="String" value="req"/>
+	    	            <mstrlayout:argument type="String" value="onclick^microstrategy.bone('visPropsEditor_visPropsSurveyStyle').showRequire(this.checked)"/> <!-- Extra atts -->
+			            <mstrlayout:argument type="String" value="1" /> <!--  Default value -->
+			        </mstrlayout:render>
+			        <span>
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="string" value="mstrWeb.10010" /> <!-- Descriptor: Show only required field -->
+                        </mstrlayout:render>
+                    </span>
+                </div>
+                <div class="mstrSurveyItem">
+				    <table class="mstrSurveyTable">
+					<colgroup><col style="width:36%"></col><col style="width:20%"></col><col style="width:40%"></col></colgroup>			        
+				        <tr>
+				            <th>
+                                <mstrlayout:render name="descriptor">
+                                    <mstrlayout:argument type="string" value="mstrWeb.10011" /> <!-- Descriptor: Survey Elements -->
+                                </mstrlayout:render>
+				            </th>
+				            <th>
+                                <mstrlayout:render name="descriptor">
+                                    <mstrlayout:argument type="string" value="mstrWeb.661" /> <!-- Descriptor: Required -->
+                                </mstrlayout:render>				                
+				            </th>
+				            <th>
+                                <mstrlayout:render name="descriptor">
+                                    <mstrlayout:argument type="string" value="mstrWeb.10012" /> <!-- Descriptor: Required -->
+                                </mstrlayout:render>
+				            </th>
+						</tr>
+						<tr>
+						    <td colspan="3">
+						        <div style="max-height:360px;overflow-y:auto;">
+						            <table id="visSurvey_SemanticsTable" style="width:100%">
+						            <colgroup><col style="width:40%"></col><col style="width:20%"></col><col style="width:40%"></col></colgroup>
+									<mstrlayout:list id="SurveyObjects" name="getSurveyObjects">
+									<tr>
+									    <td class="mstrSurveyTable-cell">
+				                            <mstrlayout:render name="SurveySemanticsTitle">
+					                        	<mstrlayout:argument list="SurveyObjects" type="com.microstrategy.web.app.transforms.SurveyObject"/>
+				       			            </mstrlayout:render>
+									    </td>
+									    <td class="mstrSurveyTable-cell">
+				                            <mstrlayout:render name="IsRequired">
+					                        	<mstrlayout:argument list="SurveyObjects" type="com.microstrategy.web.app.transforms.SurveyObject"/>
+				       			            </mstrlayout:render>
+									    </td>
+									    <td class="mstrSurveyTable-cell">
+				                            <mstrlayout:render name="AttributeSelectBox">
+					                        	<mstrlayout:argument list="SurveyObjects" type="com.microstrategy.web.app.transforms.SurveyObject"/>
+				       			            </mstrlayout:render>
+									    </td>
+									</tr>
+									<mstrlayout:next list="SurveyObjects"/>
+								    </mstrlayout:list>
+						            </table>
+						        </div>
+						    </td>
+						</tr>
+					</table>
+                </div>
+           	</div>
+        </div>
+    </mstrlayout:then>
+    <mstrlayout:else>
+      <mstrlayout:render name="ValidationError"/>
+    </mstrlayout:else>
+  	</mstrlayout:if>
+</mstrlayout:layout>

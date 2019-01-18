@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Tab is a container for laying out controls in editors.  -->
+	<block name="Tab" inherits="BaseView,Container">
+		<definition>
+			<!-- Title of the tab. -->
+			<property name="title" type="String" />
+
+			<!-- Width of the tab. -->
+			<property name="width" type="String" />
+
+			<!-- Height of the tab. -->
+			<property name="height" type="String" />
+			
+			<!-- The text to appear in the disabled div -->
+			<property name="disabledMessage" type="String" />
+
+			<!-- The help topic associated with this tab. -->
+			<property name="helpTopic" type="String" />			
+			
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.Tab</property>
+			<property name="cssClass">Tab</property>
+			<property name="width">auto</property>
+			<property name="height">auto</property>
+			<property name="disabledMessage">{desc:mstrWeb.889|Please wait...}</property>
+		</assignments>
+	</block>

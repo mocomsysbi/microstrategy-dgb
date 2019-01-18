@@ -1,0 +1,143 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isClusterListEmpty">
+    <mstrlayout:then>
+      <mstrlayout:render name="connectedServersTitle" />
+      <br />
+      <mstrlayout:render name="emptyList" />
+    </mstrlayout:then>
+    <mstrlayout:else>
+      <p>
+		<mstrlayout:if name="isFeatureAvailable">
+			<mstrlayout:argument value="!mobile-server" />
+			<mstrlayout:then>
+        		<mstrlayout:render name="homeLink" />
+			</mstrlayout:then>			
+		</mstrlayout:if>      
+      </p>
+      <mstrlayout:render name="connectedServersTitle" />
+      <br />
+      <table cellpadding="0" class="mstrListView" border="0" cellspacing="0">
+        <colgroup>
+            <col class="typ"/>
+            <col class="nam"/>
+            <col class="cdes"/>
+            <col class="loaded"/>
+            <col class="size"/>
+            <col class="act"/>
+            <col class="prop"/>
+        </colgroup>
+        <thead>
+	        <tr>
+	          <td>
+	            <mstrlayout:render name="Descriptor">
+	              <mstrlayout:argument type="int" value="756" />
+	              <!-- Cluster -->
+	            </mstrlayout:render>
+	          </td>
+	          <td>
+	            <mstrlayout:render name="Descriptor">
+	              <mstrlayout:argument type="int" value="36" />
+	              <!-- Server name -->
+	            </mstrlayout:render>
+	          </td>
+	          <td>
+	            <mstrlayout:render name="Descriptor">
+	              <mstrlayout:argument type="int" value="757" />
+	              <!--  Connect mode -->
+	            </mstrlayout:render>
+	          </td>
+	          <td>
+	            <mstrlayout:render name="Descriptor">
+	              <mstrlayout:argument type="int" value="758" />
+	              <!-- Loaded -->
+	            </mstrlayout:render>
+	          </td>
+	          <td>
+	            <mstrlayout:render name="Descriptor">
+	              <mstrlayout:argument type="int" value="761" />
+	              <!-- Maximum pool size -->
+	            </mstrlayout:render>
+	          </td>
+	          <td>
+	            <mstrlayout:render name="Descriptor">
+	              <mstrlayout:argument type="int" value="762" />
+	              <!-- Action -->
+	            </mstrlayout:render>
+	          </td>
+	          <td>
+	            <mstrlayout:render name="Descriptor">
+	              <mstrlayout:argument type="int" value="434" />
+	              <!-- Properties -->
+	            </mstrlayout:render>
+	          </td>
+	        </tr>
+        </thead>
+        <tbody>
+		        <mstrlayout:list id="clusters" base="bean" name="getClusters">
+		          <mstrlayout:list id="servers" name="getClusterNodes">
+		            <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+		            <tr>
+                      <mstrlayout:attr name="getClusterCSS" attribute="class">
+	                    <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+	                  </mstrlayout:attr>
+		              <mstrlayout:if name="isFirstClusterNode">
+		                <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+		                <mstrlayout:argument list="servers" type="com.microstrategy.web.objects.WebClusterNode" />
+		                <mstrlayout:then>
+		                  <td>
+		                    <mstrlayout:attr name="getClusterSize" attribute="rowspan">
+		                      <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+		                    </mstrlayout:attr>
+		                    <mstrlayout:render name="ClusterIndex">
+		                      <mstrlayout:argument list="clusters" type="com.microstrategy.web.objects.WebCluster" />
+		                    </mstrlayout:render>
+		                  </td>
+		                </mstrlayout:then>
+		              </mstrlayout:if>
+		              <td class="mstrAdminServerName">
+		                <mstrlayout:render name="serverName">
+		                  <mstrlayout:argument list="servers" type="com.microstrategy.web.objects.WebClusterNode" />
+		                </mstrlayout:render>
+		              </td>
+		              <td>
+		                <mstrlayout:render name="serverConnectionMode">
+		                  <mstrlayout:argument list="servers" type="com.microstrategy.web.objects.WebClusterNode" />
+		                </mstrlayout:render>
+		              </td>
+		              <td>
+		                <mstrlayout:render name="serverLoad">
+		                  <mstrlayout:argument list="servers" type="com.microstrategy.web.objects.WebClusterNode" />
+		                </mstrlayout:render>
+		              </td>
+		              <td>
+		                <mstrlayout:render name="serverConnectionPoolSize">
+		                  <mstrlayout:argument list="servers" type="com.microstrategy.web.objects.WebClusterNode" />
+		                </mstrlayout:render>
+		              </td>
+		              <td>
+		                <mstrlayout:render name="DisconnectServer">
+		                  <mstrlayout:argument list="servers" type="com.microstrategy.web.objects.WebClusterNode" />
+		                </mstrlayout:render>
+		              </td>
+		              <td>
+		                <mstrlayout:render name="modifyServerProperties">
+		                  <mstrlayout:argument list="servers" type="com.microstrategy.web.objects.WebClusterNode" />
+		                </mstrlayout:render>
+						<mstrlayout:if name="isFeatureAvailable">
+							<mstrlayout:argument value="mobile-server" />
+							<mstrlayout:else>		                
+				                <mstrlayout:render name="serverAdminLink">
+				                  <mstrlayout:argument list="servers" type="com.microstrategy.web.objects.WebClusterNode" />
+				                </mstrlayout:render>
+			                </mstrlayout:else>
+		                </mstrlayout:if>
+		              </td>
+		            </tr>
+		          </mstrlayout:list>
+		        </mstrlayout:list>
+	        </tbody>
+      </table>
+    </mstrlayout:else>
+  </mstrlayout:if>
+</mstrlayout:layout>

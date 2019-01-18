@@ -1,0 +1,138 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- 
+        ListModel is a data model which contains a generic list of items.
+        Each item is typically represented by an ItemInfo Block.
+        ListModel also contains information about the list, such as block
+        properties for incremental fetching, and a path tree.
+    -->
+    <block name="ListModel" inherits="BaseModel">
+        <definition>            
+            <!-- An array of items (e.g. contents of a folder, list of attribute elements). -->
+            <property name="items" type="List" />
+
+            <!-- A tree (TreeModel) represent of the folder content -->
+            <property name="tree" type="Block"/>
+            
+            <!-- An array of items to be inserted before the given "items" list.  These items
+                 are preserved across requests (e.g., after incremental fetching, searching & folder browsing). -->
+            <property name="prefixItems" type="List" />
+
+            <!-- The name of the property used to compare list items (typically, "dssid"). -->
+            <property name="valueForm" type="String" />
+
+            <!-- The starting index (1-based) of the current incremental fetch window.
+                 If undefined, we assume 1. -->
+            <property name="blockBegin" type="Integer" />
+
+            <!-- The maximum number of items that can be inc fetched by this ListModel. 
+                 If undefined, we assume all items are fetched simulatenously.  -->
+            <property name="blockCount" type="Integer" />
+            
+            <!-- Whether the block count should be used in task call or not. 
+                If it is auto, task should use the global setting instead of the block count set on this model.
+            --> 
+            <property name="blockCountAuto" type="Boolean"/>
+
+            <!-- The total size of the list (including items outside the current inc fetch window). -->
+            <property name="totalSize" type="Integer" />
+            
+            <!-- TreeModel that specifies the container where the list items reside.
+                 Typically, a tree of folders, where the selected node is the folder that
+                 contains the list items. -->
+            <property name="containerTree" type="Block" />
+
+            <!-- The container for these list items, typically a folder or an attribute. 
+                 The "container" property can be used as a simpler alternative to the "containerTree"
+                 property, when there is no tree available, just a single container folder/object. -->
+            <property name="container" type="Block" />
+
+            <!-- An enumeration of the types of objects contained in the list items.
+                 Each object type is an integer; multiple types are concatenated in a comma-delimited string.
+                 -->
+            <property name="objectType" type="String" />
+
+            <!-- If true, list items may include folders that can be navigated into for hierarchical browsing. -->
+            <property name="hierarchical" type="Boolean" />
+
+            <!-- If the list items are filtered by a user-defined search string, this is the search string. -->
+            <property name="searchPattern" type="String" />
+            
+            <property name="searchMatchCase" type="Boolean"/>
+            <property name="searchMatchCaseAvailable" type="Boolean"/>
+
+            <!-- If true, element browsing within a hierarchy will require a non-empty searchPattern string. -->
+            <property name="elementSearchRequired" type="Boolean" />
+            
+            <!-- whether the list can perform element search -->
+            <property name="elementSearchDisabled" type="Boolean"/>
+            <!-- whether the list can perform match case in element search -->
+            <property name="matchCaseDisabled" type="Boolean"/>
+            
+            <!-- If the list items are defined by a search object, this is the XML definition of the search. -->
+            <property name="searchXML" type="String" />
+            <property name="searchFlags" type="String" />
+
+            <!-- If the list items are defined by a filter, this is the XML definition of filter. -->
+            <property name="filterXML" type="String" />
+
+            <!-- If true, then the list items represent Attribute elements that cannot be drilled into. --> 
+            <property name="leafElements" type="Boolean" />
+            
+            <!-- Optional comma-delimited list of indices of selected list items in this model.
+                 Example: "0,2,5" indicates that items with index = 0, 2 & 5 are selected. -->
+            <property name="selectedIndicesList" type="String" />
+
+            <!-- Optional flag which tells ListModel how to update its containerTree when browsing the elements
+                 of a hierarchy's entry point attribute.  If true, all sibling entry points are retained in the tree;
+                 otherwise, only the browsed entry point is retained in the tree. -->                
+            <property name="keepEntryPoints" type="Boolean" />
+            <!-- Optional flag which tells ListModel how to update its containerTree when browsing a foler. If this is ture, 
+                the original container tree will be keep, newly browsed folder will be appened into the container tree. 
+                When this is false, the container tree will be replaced by the container tree of the newly browsed folder. -->
+            <property name="keepFolders" type="Boolean"/>
+      
+            <!-- If the list items are limited by specific data sources, this is the XML definition of the available data sources. -->
+            <property name="dataSourcesXML" type="String" />
+            
+            <!-- For a model of attribute elements, true indicates that the list items include form values for all browseable forms. -->
+            <property name="includeFormValues" type="Boolean" />
+
+            <!-- Optional form name used to determine which items are allowed in answer.
+                 E.g., if set to "tp", then only items with form "tp" = some values (see 
+                 the "allowedItemFormValues" property) will be allowed. -->
+            <property name="allowedItemFormName" type="String" />
+            
+            <!-- Optional comma-delimited list of form values for item that are allowed in answer.
+                 To continue the example above for "allowedItemFormName", if
+                 "allowedItemFormValues" = "a,m" then only items with "tp" = "a" or "m" are allowed. -->
+            <property name="allowedItemFormValues" type="String" />
+
+            <!-- Optional comma-delimited list of form values for item that are NOT allowed in answer.
+                 To continue the example above for "allowedItemFormName", if
+                 "prohibitedItemFormValues" = "f,f_sc" then items with "tp" = "f" or "f_sc" are NOT allowed. -->
+            <property name="prohibitedItemFormValues" type="String" />
+            <property name="keepSelectionsAfterRequest" type="Boolean"/>
+            
+            <!-- Raise property change events even if the value is the same. -->
+            <property name="enableReselect" type="Boolean" />
+            <!-- Selecting the first item by default -->
+            <property name="autoSelectFirstItem" type="Boolean" />
+            <!-- Default selection: The legal values include 0:auto, 1:first, 2:last. 
+                 It overrides "autoSelectFirstItem".
+            -->
+            <property name="defaultSelection" type="Integer" />
+            
+            <!-- if the list of items are from a single dimension, this is the id of the dimension -->
+            <property name="dimensionId" type="String" />
+        </definition>   
+        <assignments>
+            <property name="scriptClass">mstr.models.ListModel</property>
+            <property name="valueForm">dssid</property>
+            <property name="keepEntryPoints">true</property>
+            <property name="enableReselect">false</property>    
+            <property name="searchMatchCase">false</property>           
+            <property name="blockCountAuto">false</property>
+            <property name="elementSearchDisabled">false</property>
+            <property name="matchCaseDisabled">false</property>
+        </assignments>
+    </block>

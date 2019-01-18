@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the data portion of a Report Writer Section. 
+--> 
+<block name="RWSection" inherits="RWUnit">
+    <definition>
+        <!-- The selected groupby elements for the section. It is an array of integers, referring to the indexes of the elems array in RWData -->
+        <property name="pbes" type="String" annotation="json:expression"/>
+        
+        <!-- The subsections of this section. Blocks are of type RWSubsection -->
+        <property name="subsections" type="List" />
+        <!-- Marks the start of a new horizontal section, used for horizontal sections rendering -->
+        <property name="bh" type="String" />
+        <!-- Marks the start of a new vertical section, used for horizontal sections rendering -->
+        <property name="bv" type="String" />
+    </definition>
+</block>

@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- FetchControl is a set of buttons for fetching through blocks of data. -->
+	<block name="FetchControl" inherits="BaseView">
+		<definition>
+			<property name="targetViewPath" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.FetchControl</property>
+			<property name="cssClass">FetchControl</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="fetchFirstCaption" type="String">{desc:mstrWeb.162|First Page}</property>
+					<property name="fetchPreviousCaption" type="String">{desc:mstrWeb.5961|Previous Page}</property>
+					<property name="fetchNextCaption" type="String">{desc:mstrWeb.3012|Next Page}</property>
+					<property name="fetchLastCaption" type="String">{desc:mstrWeb.163|Last Page}</property>
+                    <property name="noItems" type="String">0 {desc:mstrWeb.5270|items}</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

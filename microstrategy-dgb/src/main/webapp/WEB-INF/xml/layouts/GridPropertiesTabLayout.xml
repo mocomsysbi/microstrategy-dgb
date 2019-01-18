@@ -1,0 +1,5 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:render name="headersSection"/>
+    <mstrlayout:render name="viewSection"/>
+</mstrlayout:layout>

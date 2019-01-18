@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarDynamicListModel" inherits="ToolbarListModel">
+        <definition>          
+            <!-- toolbar popup ID -->
+            <property name="popup|id" type="String" />
+        </definition>
+		<assignments>
+			<property name="type">LIST</property>
+			<property name="toolbarHelper">
+				<block name="ToolbarDynamicListHelper" />
+			</property>
+		</assignments>
+	</block>

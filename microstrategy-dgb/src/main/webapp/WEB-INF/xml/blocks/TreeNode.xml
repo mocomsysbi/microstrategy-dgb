@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		Generic node of a Tree. Typically used in a TreeModel.
+		Each node can represent some object (e.g., a folder, an attribute, etc),
+		which is specified in the node's "value" property.  The node can
+		also have additional properties that can relate to fellow nodes,
+		such as a list of children nodes.
+	-->
+	<block name="TreeNode" inherits="BaseBlock">
+		<definition>
+			<!-- Data value of the node.  Typically an ItemInfo Block. -->
+			<property name="value" type="Block" />
+ 
+			<!-- The child nodes of the TreeNode, if any.  A list of other TreeNode Blocks. -->
+			<property name="children" type="List" />
+			
+			<!-- Path of the node.  Typically only used in a list of flattened 
+				 tree nodes, to reconstruct a tree from a flat list. 
+				 Syntax: "#/#/#...".  For example, "0" represents the root node,
+				 "0/0" represents the first child of the root node, "0/2/1" represents
+				 the 2nd child of the 3rd child of the root node.  -->
+			<property name="path" type="String" />
+		</definition>
+	</block>

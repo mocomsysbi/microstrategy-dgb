@@ -1,0 +1,26 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoMenubarShareModel" inherits="MojoToolbarButtonModel">
+    <assignments>
+		<property name="n">share</property>
+		<property name="desc">{desc:mstrWeb.9099|Share}</property>
+		<property name="items">
+			<list>
+			    <block name="MojoToolbarButtonModel">
+			    	<property name="n">shareByLinkGetLink</property>
+ 			    	<property name="desc">{desc:mstrWeb.15578|Get a link}</property>
+ 			    	<property name="cmd">ShowSharingEditor</property>
+				</block>
+ 			    <block name="MojoToolbarButtonModel">
+ 			    	<property name="n">shareByLinkMSTRLibrary</property>
+ 			    	<property name="desc">{desc:mstrWeb.15579|Get a link to MicroStrategy Library}</property>
+ 			    	<property name="cmd">ShowSharingEditor</property>
+				</block>
+ 			    <block name="MojoToolbarButtonModel">
+ 			    	<property name="n">shareByLinkEmbed</property>
+ 			    	<property name="desc">{desc:mstrWeb.9774|Embed}</property>
+ 			    	<property name="cmd">ShowSharingEditor</property>
+				</block>
+   			</list>
+		</property>
+	</assignments>
+</block>

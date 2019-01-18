@@ -1,0 +1,43 @@
+<shortcut-list name="gridViewModes">
+     <attributes>
+       <attribute name="ty" value="btng"/>
+       <attribute name="nowrap" value="1"/>
+     </attributes>
+     <shortcut desc="[View: Grid]" desc-id="mstrWeb.3547" feature-id="menu-grid-mode" name="tbGrid" type="button">
+       <attributes>
+         <attribute name="cmdtp" value="1"/>
+         <attribute name="cmdid" value="gridMode"/>
+         <attribute name="cmdvl" value="1"/>
+       </attributes>
+     </shortcut>
+     <shortcut desc="[View: Graph]" desc-id="mstrWeb.3548" feature-id="menu-graph-mode" name="tbGraph" type="button">
+       <attributes>
+         <attribute name="cmdtp" value="1"/>
+         <attribute name="cmdid" value="gridMode"/>
+         <attribute name="cmdvl" value="2"/>
+       </attributes>
+     </shortcut>
+     <shortcut desc="[View: Graph and Grid]" desc-id="mstrWeb.3684" feature-id="menu-grid-graph-mode" name="tbGraphGrid" type="button">
+       <attributes>
+         <attribute name="cmdtp" value="1"/>
+         <attribute name="cmdid" value="gridMode"/>
+         <attribute name="cmdvl" value="3"/>
+       </attributes>
+     </shortcut>
+     <shortcut desc="[View: Flash]" desc-id="mstrWeb.14513" feature-id="visualizations-supported;visualizations-available-for-rw-grids" name="tbFlash" type="button" iframe="false">
+       <attributes>
+         <attribute name="cmdtp" value="1"/>
+         <attribute name="cmdid" value="visualizationMode"/>
+         <attribute name="cmdvl" value="50"/>
+         <attribute name="style" value="display: none; visibility: hidden;"/><!-- hidden by default, will be displayed on the client side if needed -->
+       </attributes>
+     </shortcut>
+     <shortcut desc="AJAX" desc-id="" feature-id="visualizations-supported;visualizations-available-for-rw-grids" name="tbAjax" type="button" iframe="false">
+       <attributes>
+         <attribute name="cmdtp" value="1"/>
+         <attribute name="cmdid" value="visualizationMode"/>
+         <attribute name="cmdvl" value="51"/>
+         <attribute name="style" value="display: none; visibility: hidden;"/><!-- hidden by default, will be displayed on the client side if needed -->
+       </attributes>
+     </shortcut>
+  </shortcut-list>

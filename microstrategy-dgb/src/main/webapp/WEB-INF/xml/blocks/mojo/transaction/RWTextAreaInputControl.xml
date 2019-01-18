@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWTextAreaInputControl" inherits="RWDataInputObject, WidthConfig">
+    <definition>
+        <!-- The maximum length -->
+        <property name="ml" type="Integer"/>
+        
+        <!-- Show icon when collapsed -->
+        <property name="siwc" type="Boolean"/>
+        
+        <!-- Show preview -->
+        <property name="sp" type="Boolean" />
+
+        <!-- Preview length-->
+        <property name="pl" type="Integer" />
+    </definition>
+</block>

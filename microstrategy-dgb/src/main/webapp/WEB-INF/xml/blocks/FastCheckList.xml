@@ -1,0 +1,5 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- FastCheckList is an extended CheckList for rendering large lists of items.  It renders
+		 the items on demand as the user scrolls thru the list, thus keeping page loading times down.  -->	
+	<block name="FastCheckList" inherits="CheckList,FastListProperties">
+	</block>

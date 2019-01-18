@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Attribute Elements Qual
+-->
+<block name="AttributeElementsQual" inherits="ExpNode">
+    <definition>
+        <!-- Attribute ObjectInfo -->
+        <property name="a" type="Block" />
+        
+        <!-- Function (operator) -->
+        <property name="fn" type="Integer" />
+        
+        <!-- List of Elements -->
+        <property name="es" type="List" />
+    </definition>
+</block>

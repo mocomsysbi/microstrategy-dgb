@@ -1,0 +1,34 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_item="mstr.behaviors.ListHeaderView.on_model_set_item(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div title="{@tooltip}"
+       style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <table cellspacing="0"
+           cellpadding="0"
+           class="{@cssPrefix}{@cssClass}Table">
+      <tr>
+        <td width="99%"
+            class="{@cssPrefix}{@cssClass}Cell">
+          <div class="{@cssPrefix}{@cssClass}Value"
+               id="{@id}_txt">
+          </div>
+        </td>
+        <td width="35px"
+            class="{@cssPrefix}{@cssClass}Cell">
+          <div class="{@cssPrefix}ToolButtonRoundedRight">
+            <img title="{@iconTooltip}"
+                 onmouseout="mstr.behaviors.ToolButtonRounded.unhover(this.parentNode)"
+                 style="{@iconCSSText}"
+                 class="{@iconClass}"
+                 src="../images/1ptrans.gif"
+                 onmouseover="mstr.behaviors.ToolButtonRounded.hover(this.parentNode)"
+                 onclick="return mstr.$obj('{@id}').fireCommands()">
+            </img>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

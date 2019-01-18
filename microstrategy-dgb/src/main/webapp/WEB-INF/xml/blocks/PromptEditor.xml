@@ -1,0 +1,140 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- PromptEditor is an Editor for displaying the questions of a prompted Report or Document. --> 
+	<block name="PromptEditor" inherits="Editor">
+		<definition>
+			<!-- A view (typically a ViewStack) to display the individual prompt questions. -->
+			<property name="book" type="Block" />
+			
+			<!-- Table of contents for viewing the pages of PromptEditor's book. -->
+			<property name="toc" type="Block" />
+			
+			<!-- UIComponent for displaying summary of the user's answers to the prompt's questions. -->
+			<property name="summary" type="Block" />
+			
+			<!-- If set to true, this property shows the summary child view and hides the book child view. -->
+			<property name="showSummary" type="Boolean" />
+			
+			<!-- Button for navigating to the book's previous page. -->
+			<property name="previousButton" type="Block" />
+
+			<!-- Button for navigating to the book's previous page. -->
+			<property name="nextButton" type="Block" />
+
+			<!-- Button for submitting user's answers to all PromptQuestions in PromptEditor. -->
+			<property name="finishButton" type="Block" />
+			
+			<!-- Button for saving user's answers to all PromptQuestions in PromptEditor. -->
+			<property name="saveButton" type="Block" />
+			
+			<!-- Button for cancelling request for prompted Report or Document. -->
+			<property name="cancelButton" type="Block" />
+			
+			<!-- Button for hiding the PromptEditor's summary . -->
+			<property name="closeSummaryButton" type="Block" />
+			
+			<!-- TextBox for History List message name . -->			
+			<property name="messageNameView" type="Block" />
+			<!-- If set to true, we are going to calculate the window size and resize prompt editor.
+				When prompt editor used in a popup dialog, we should set this to false to skip resizing -->
+			<property name="autoResize" type="Boolean"/>
+			<!-- This optional flag tells the PromptEditor to use a fixed tableLayout 
+				for its HTML table.  It's useful for supporting horizontal layouts 
+				in customizations. -->			
+			<property name="autoResizeWidth" type="Boolean"/>
+			
+			<!-- if set to true, scroll browser window in subscription page when clicking on BackToTop icon -->
+			<property name="scrollBrowser" type="Boolean"/>
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.PromptEditor</property>
+			<property name="cssClass">PromptEditor</property>
+			<property name="showSummary">false</property>
+			<property name="autoResize">true</property>
+			<property name="scrollBrowser">false</property>
+			<property name="toc">
+				<block name="BaseView">
+					<property name="layoutClass">mstr.layouts.PromptTOC</property>
+					<property name="cssClass">PromptTOC</property>
+					<property name="contentsView" type="Block">
+						<block name="PromptList">
+							<property name="modelPath">parent/parent/model/promptQuestions</property>
+							<property name="cmds">Set_showSummary|"0"|parent/parent;ValidateCurrentPrompt|{stage:"3"}|model/parent;ClickListItem</property>
+							<property name="CommandEnabledValidateCurrentPrompt" type="Boolean">true</property>
+						</block>
+					</property>
+					<property name="descriptors">
+						<block name="BaseBlock">
+							<property name="summary" type="String">{desc:mstrWeb.1066|Summary of your selections}</property>
+							<property name="showIndex" type="String">{desc:mstrWeb.5888|Show Index}</property>
+							<property name="hideIndex" type="String">{desc:mstrWeb.5889|Hide Index}</property>
+							<property name="index" type="String">{desc:mstrWeb.5890|Index}</property>
+						</block>
+					</property>
+				</block>
+			</property>
+			<property name="summary">
+				<block name="PromptSummaryBook">
+					<property name="modelPath">parent/model/getPromptQuestionsSummaryModel()</property>
+				</block>
+			</property>
+			<property name="previousButton">
+				<block name="TextButton">
+					<property name="caption">&lt; {desc:mstrWeb.1058|Previous}</property>
+					<property name="cmds">ValidateCurrentPrompt|{stage:"3"}|parent/model;PreviousView||parent/book</property>
+				</block>
+			</property>
+			<property name="nextButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.1059|Next} &gt;</property>
+					<property name="cmds">ValidateCurrentPrompt|{stage:"3"}|parent/model;NextView||parent/book</property>
+				</block>
+			</property>
+			<property name="finishButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.1302|Finish}</property>
+					<property name="cmds">ApplyPromptAnswers||parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="saveButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.5891|Save}</property>
+					<property name="cmds">SavePromptAnswers||parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="cancelButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.221|Cancel}</property>
+					<property name="cmds">CancelPrompt||parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="closeSummaryButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.1065|Back To Prompt}</property>
+					<property name="cmds">Set_showSummary|"0"|parent</property>
+					<property name="visible">false</property>
+				</block>
+			</property>
+			<property name="messageNameView">
+				<block name="TextBox">
+					<property name="caption">{desc:mstrWeb.5719|Report Message Name:}</property>
+					<property name="modelPath">parent/model/messageName/getCalendarTimePicker()</property>
+					<property name="cssText">width: 300px</property>
+					<property name='useBlur'>true</property>
+				</block>
+			</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="invalidAnswersWarning" type="String">{desc:mstrWeb.5691|Some problems were found with one or more of your selections.  Please review your answers and follow the instructions marked by a red flag.}</property>
+					<property name="invalidPersonalAnswersWarning" type="String">{desc:mstrWeb.5692|Some problems were found with your personal answers. Please follow the instructions marked by a red flag.}</property>
+					<property name="loadingPrompts" type="String">{desc:mstrWeb.5928|Loading prompts...}</property>
+					<property name="cancel" type="String">{desc:mstrWeb.221|Cancel}</property>
+					<property name="run" type="String">{desc:mstrWeb.13954|Run}</property>
+					<property name="viewSummary" type="String">{desc:mstrWeb.15689|View summary}</property>
+				</block>
+			</property>
+			
+		</assignments>
+	</block>

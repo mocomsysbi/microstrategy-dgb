@@ -1,0 +1,37 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- This is the model used for the 'Incremental Fetch' tab of the Report Services document properties editor. -->
+	<block name="RWLayoutMobileModel" inherits="EditorBoneTranslator">
+		<definition>
+			<property name="layoutMobileTabEnabled" type="Boolean" />
+			<property name="SupportedOrientations" type="Block" />
+		</definition>
+		<assignments>
+			<property name="categoryText">{desc:mstrWeb.5615|Layout Properties}</property>
+			<property name="titleText">{desc:mstrWeb.5943|Mobile}</property>
+            <property name="fields">SupportedOrientations|FitPDFContentHeight|DisplayPageByBar|DisplayRePromptIcon|UseAsInfoWindow|multiLayoutMode</property>
+			<property name="visibleField">layoutMobileTabEnabled</property>
+			<property name="layoutMobileTabEnabled">true</property>
+			
+			<property name="SupportedOrientations">
+				<block name="ListModel">
+			        <property name="valueForm">dssid</property>
+			        <property name="items">
+			          <list>
+			            <block listElementKey="pandl" name="ItemInfo">
+			              <property name="dssid">3</property>
+			              <property name="n">{desc:mstrWeb.6165|Portrait and Landscape}</property>
+			            </block>
+			            <block listElementKey="ponly" name="ItemInfo">
+			              <property name="dssid">1</property>
+			              <property name="n">{desc:mstrWeb.6166|Portrait Only}</property>
+			            </block>
+			            <block listElementKey="lonly" name="ItemInfo">
+			              <property name="dssid">2</property>
+			              <property name="n">{desc:mstrWeb.6167|Landscape Only}</property>
+			            </block>
+			          </list>
+			        </property>
+		    	</block>				
+			</property>
+		</assignments>
+	</block>

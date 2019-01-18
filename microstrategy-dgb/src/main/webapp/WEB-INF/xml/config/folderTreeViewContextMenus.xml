@@ -1,0 +1,74 @@
+<shortcut-list-set base-bean="fb" name="folderTreeViewContextMenus" version="1.0">
+  <shortcut-list name="ftb_cm">
+    <shortcut name="copy" desc="[Copy...]" desc-id="mstrWeb.3354"
+      dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); treeBone.isMenuItemAvailable('copy');"
+      onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onActionItemClick(3);"/>
+    <shortcut name="move" desc="[Move...]" desc-id="mstrWeb.3355"
+      dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); treeBone.isMenuItemAvailable('move');"
+      onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onActionItemClick(2);"  />
+    <shortcut name="new" desc="[New...]" desc-id="mstrWeb.1895" feature-id="create-objects-or-folder" 
+      dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); treeBone.currentContextMenuNode!=null;">
+      <shortcut-list name="new">
+        <shortcut base-bean="fb" desc="Folder" desc-id="mstrWeb.3373" name="newFolder" feature-id="create-folder" iframe="true">
+          <event base-bean="OMDCreateFolder" event-id="com.microstrategy.web.app.beans.EnumFrameEditorEvents.WebEventOpen">
+            <argument name="com.microstrategy.web.app.beans.EnumOMDCreateFolderEvents.OMDCreateFolderEventArgumentTargetName" value="fb"/>
+          </event>
+        </shortcut>
+        <shortcut name="groupnew1" desc="-" />
+        <shortcut base-bean="fb" desc="Report" desc-id="mstrWeb.1279" name="newReport" onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newReport');" feature-id="create-view-reports" iframe="false">
+          <event event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreate"/>
+        </shortcut>
+        <shortcut base-bean="fb" desc="Document" desc-id="mstrWeb.239" name="newDocument" onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newDocument');" feature-id="template-documents;documents-design-mode" iframe="false" />
+		<shortcut base-bean="fb" desc="Dossier" desc-id="mstrWeb.15452" append-state="true" name="tbNewIVE" onclick="microstrategy.bone('folderAllModes').commands.exec('newBlankVI');" type="button" feature-id="dhtml;create-analysis"  href="#"  iframe="false"/>
+        <shortcut name="newPrompt" desc="[Prompt]" desc-id="mstrWeb.4465" feature-id="use-prompt-editor"> 
+          <shortcut-list name="new">
+          	<shortcut name="createPrompt" desc="[Create Prompt...]" desc-id="mstrWeb.4466">
+              <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreatePromptPage" />
+            </shortcut>
+            <shortcut name="HQPrompt" desc="[Hierarchy Qualification...]" desc-id="mstrWeb.5209"  onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newPrompt',[3, 16]);"/>
+            <shortcut name="AQPrompt" desc="[Attribute Qualification...]" desc-id="mstrWeb.5210"  onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newPrompt',[3, 17]);"/>
+            <shortcut name="elementPrompt" desc="[Attribute Element...]" desc-id="mstrWeb.4467"  onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newPrompt',[2]);"/>
+            <shortcut name="MQPrompt" desc="[Metric Qualification...]" desc-id="mstrWeb.5211" onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newPrompt',[3, 10]);"/>
+            <shortcut name="valuePrompt" desc="[Value...]" desc-id="mstrWeb.4468"  onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newPrompt',[1]);"/>
+            <shortcut name="objectPrompt" desc="[Object...]" desc-id="mstrWeb.4469"  onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newPrompt',[4]);"/>
+          </shortcut-list>
+        </shortcut>
+      </shortcut-list>
+      <shortcut name="newFilter" desc="[Filter...]" desc-id="mstrWeb.1281"  feature-id="savetemplatefilter;use-report-filter-editor"
+          onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('newFilter', []);" />
+	<shortcut name="newCGE" desc="Custom Group" desc-id="mstrWeb.2105" onclick="microstrategy.bone('folderAllModes').commands.exec('newCGE');" feature-id="web-use-custom-group-editor" />  
+	<shortcut name="Metric" desc="[Metric]" desc-id="mstrWeb.4779" feature-id="create-metric">
+		<shortcut-list name="Metric">
+			<shortcut name="newME" desc="[Formula Metric]" desc-id="mstrWeb.9473" onclick="microstrategy.bone('folderAllModes').commands.exec('newME');" />
+			<!--  
+			 <shortcut name="newSME" desc="Dimensional Metric" onclick="microstrategy.bone('folderAllModes').commands.exec('newSME');">      
+			 </shortcut>-->
+		</shortcut-list>      
+	</shortcut>         
+    </shortcut>
+    <shortcut name="group1" desc="-" />
+    <shortcut name="create-document" desc="*[Create Document]*" desc-id="mstrWeb.2918" feature-id="document-execution"
+      dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); (treeBone) ? treeBone.isCreateDocumentMenuItemAvailable() : false;"
+      onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onNewCreateObjectMenuClick('createDocument', []);" />
+    <shortcut name="create-shortcut" desc="[Create Shortcut...]" desc-id="mstrWeb.3356"
+      dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); treeBone.isMenuItemAvailable('create-shortcut');"
+      onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onActionItemClick(8);" />
+    <shortcut name="delete" desc="[Delete...]" desc-id="mstrWeb.3357"
+      dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); treeBone.isMenuItemAvailable('delete');"
+      onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onDeleteMenuItemClick();" />
+    <shortcut name="rename" desc="[Rename...]" desc-id="mstrWeb.3358"
+      dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); treeBone.isMenuItemAvailable('rename');"
+      onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.enableRenameField();" />
+    <shortcut name="group2" desc="-" />
+    <shortcut name="properties" desc="[Properties...]" desc-id="mstrWeb.3359"
+      dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); treeBone.currentContextMenuNode!=null;"
+      onclick="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); if (treeBone) treeBone.onActionItemClick(6);" />
+ 
+<!-- <shortcut name="export-link" desc="[Show Link...]" desc-id="mstrWeb.8210" feature-id="!need-validate-random-num;include-session-url"
+      builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderTreeExportLink" >
+	</shortcut>  -->
+	<shortcut name="sharing" desc="[Share ...]" desc-id="mstrWeb.8101" feature-id="!need-validate-random-num;include-session-url"
+		dhtml-show="var treeBone = microstrategy.findBone(microstrategy.RMCTarget); treeBone.currentContextMenuNode!=null;"
+		builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderTreeShareLink" />
+  </shortcut-list>
+</shortcut-list-set>

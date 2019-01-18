@@ -1,0 +1,147 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwToolsMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1749" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5898|New Document}</property>
+          <property name="cmdid">newRW</property>
+          <property name="visibleFeatures">documents-design-mode;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1750" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5899|Import Document...}</property>
+          <property name="cmdid">addExistingLayout</property>
+          <property name="visibleFeatures">documents-design-mode;rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1751" name="BaseBlock"/>
+        <block listElementKey="K1752" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.2943|Dataset Objects}</property>
+          <property name="cmdid">datasetObjPanel</property>
+          <property name="visibleFeatures">dataset-objects-list;rw-interactive-view-mode-eplus;is-not-visible-document-visualization;not-navigation-document</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1753" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.5854|Document Structure}</property>
+          <property name="cmdid">outlinePanel</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1754" name="ToolbarNotesButton">
+          <property name="type">MENU</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+          <property name="text">{desc:mstrWeb.5364|Notes}</property>
+          <property name="visibleFeatures">not-navigation-document</property>
+        </block>
+        <block listElementKey="K1755" name="ToolbarReportsButton">
+          <property name="type">MENU</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+          <property name="text">{desc:mstrWeb.3783|Related Reports}</property>
+          <property name="visibleFeatures">not-navigation-document</property>
+        </block>
+        <block listElementKey="K1756" name="BaseBlock"/>
+        <block listElementKey="K1757" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.2941|Grouping}</property>
+          <property name="cmdid">groupBy</property>
+          <property name="listenerMethods">onstatechange</property>
+          <property name="visibleFeatures">!rw-flash-view-mode;rw-interactive-view-mode;rw-groupby-not-empty;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1758" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.2941|Grouping}</property>
+          <property name="cmdid">groupBy</property>
+          <property name="listenerMethods">onstatechange</property>
+          <property name="visibleFeatures">!rw-flash-view-mode;!rw-interactive-view-mode;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1759" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.2941|Grouping}</property>
+          <property name="cmdid">toggleFlashGrouping</property>
+          <property name="visibleFeatures">rw-flash-view-mode;not-navigation-document</property>
+          <property name="enabledFeatures">rw-groupby-not-empty</property>
+          <property name="listenerMethods">onFlashGroupByChange</property>
+        </block>
+        <block listElementKey="K1760" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3550|Alignment Grid}</property>
+          <property name="cmdid">grid</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+		  <property name="listenerMethods">onselectionchange,onstatechange</property>          
+        </block>
+        <block listElementKey="K1761" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3073|Snap to grid...}</property>
+          <property name="cmdid">toggleSnap</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1762" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3475|Ruler}</property>
+          <property name="cmdid">rulers</property>
+          <property name="visibleFeatures">check-design-mode</property>
+          <property name="listenerMethods">onstatechange</property>          
+        </block>
+        <block listElementKey="K1763" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4835|Sections...}</property>
+          <property name="cmdid">openPageSetupSectionsTab</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1764" name="BaseBlock"/>
+        <block listElementKey="K1766" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.2742|Pivot buttons}</property>
+          <property name="cmdid">pivotButtons</property>
+          <property name="enabledFeatures">enable-show-pivot-buttons</property>
+          <property name="visibleFeatures">web-pivot;rw-interactive-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1767" name="ToolbarDualStateButtonModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.2741|Sort buttons}</property>
+          <property name="cmdid">sortButtons</property>
+          <property name="enabledFeatures">enable-show-sort-buttons</property>
+          <property name="visibleFeatures">web-sort;rw-interactive-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1768" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.5686|Graph Zones}</property>
+          <property name="cmdid">graphZones</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1769" name="BaseBlock"/>
+        <block listElementKey="K1770" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3481|Document Properties...}</property>
+          <property name="cmdid">edtDocProps</property>
+          <property name="visibleFeatures">dhtml;rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K1771" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5566|Document Details Page}</property>
+          <property name="cmdid">docDetails</property>
+          <property name="visibleFeatures">report-details;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1772" name="BaseBlock"/>
+        <block listElementKey="K1773" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4646|Report Custom Visualizations...}</property>
+          <property name="cmdid">visualizationsEditor</property>
+          <property name="visibleFeatures">documents-design-mode;visualizations-supported;visualizations-available-for-rw-grids;enable-vis-editor;rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1774" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4647|Document Custom Visualizations...}</property>
+          <property name="cmdid">visualizationsEditorRW</property>
+          <property name="visibleFeatures">documents-design-mode;visualizations-supported;visualizations-available-for-rw;enable-vis-editor;rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1775" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.7582|Layout Custom Visualizations...}</property>
+          <property name="cmdid">visualizationsEditorRWLayout</property>
+          <property name="visibleFeatures">documents-design-mode;visualizations-supported;visualizations-available-for-rw-layouts;enable-vis-editor;rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="KDocViewsEdit" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.8499|Manage Views...}</property>
+          <property name="cmdid">docViewsEdit</property>
+          <property name="enabledFeatures">rw-docviews-not-empty</property>
+          <property name="visibleFeatures">dhtml;rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

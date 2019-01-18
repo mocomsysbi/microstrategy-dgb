@@ -1,0 +1,22 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	maskContainer="return rootTag.rows[0].cells[0]"
+	on_set_cssText="rootTag.style.cssText = view.props['cssText']" 
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <table style="{@cssText}"
+       class="select-free {@cssPrefix}{@cssClass}"
+       id="{@id}" onmouseout="mstr.behaviors.FloatingMenu.onmouseout('{@id}');" onmouseover="mstr.behaviors.FloatingMenu.onmouseover('{@id}');">
+       <tr>
+       	<td>
+	       <div class="{@cssPrefix}{@cssClass}Container">
+		    <mstrlayout:wIterate name="children"
+		                         id="child">
+				<div class="{@cssPrefix}{@cssClass}Item">
+					<mstrlayout:wRender name="child">
+					</mstrlayout:wRender>
+				</div>
+			</mstrlayout:wIterate>
+			</div>
+		 </td>
+		</tr>
+  </table>
+</mstrlayout:layout>

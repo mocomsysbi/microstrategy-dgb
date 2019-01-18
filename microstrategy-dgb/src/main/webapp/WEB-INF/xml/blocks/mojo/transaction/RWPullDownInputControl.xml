@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWPullDownInputControl" inherits="RWDataInputObject, SubTypeConfig, WidthConfig, ValuesConfig">
+    <definition>
+        <!-- Text to display for the unset state -->
+        <property name="ust" type="String"/>
+    </definition>
+</block>

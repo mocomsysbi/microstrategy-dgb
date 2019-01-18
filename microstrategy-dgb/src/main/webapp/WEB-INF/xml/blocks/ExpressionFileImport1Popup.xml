@@ -1,0 +1,77 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionFileImportPopup is a popup used by ExpressionEditor for editing the first constant
+		of an attribute form qualification.  It displays a textarea and a GUI for importing the contents
+		of a client-side file into the textarea, plus ok and cancel buttons.
+	-->
+	<block name="ExpressionFileImport1Popup" inherits="BaseView">
+		<definition>
+			<!-- The view for entering a constant, typically a TextBox. -->
+			<property name="contentView" type="Block" />
+			
+			<!-- The OK button to apply the user's input and close this popup. -->
+			<property name="okButton" type="Block" />
+			
+			<!-- The Cancel button to discard the user's input and close this popup. -->
+			<property name="cancelButton" type="Block" />
+		</definition>
+		<assignments>
+			<property name="id">ExpressionFileImport1Popup1</property>
+			<property name="layoutClass">mstr.layouts.ExpressionFileImportPopup</property>
+			<property name="cssClass">Popup</property>
+			<property name="cssText">filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+			<property name="modelPath">opener/model/answer/getConstant1CloneModel(opener.model)</property>
+			<property name="popOrientation">0</property>
+			<property name="CommandEnabledUnpop" type="Boolean">true</property>
+			<property name="contentView">
+				<block name="TextAreaWithImport">
+					<property name="modelPath">parent/model</property>
+					<property name="validateOnChange">false</property>
+					<property name="formatOnValidate">true</property>
+				</block>
+			</property>
+			<property name="okButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.2397|OK}</property>
+					<property name="cssClass">TextButton</property>
+					<property name="onclick"><![CDATA[
+						var view = mstr.$obj(this.id),
+							popupView = view && view.props.parent,
+							textareaView = popupView.props.contentView,
+							model = textareaView && textareaView.props.model,
+							sc;
+						if (model) {
+							var el = document.getElementById(textareaView.props.id + '_txt');
+							var changed = model.set('valueString', el.value);
+							if (changed && model.format) { model.format({validateOnChange: true, formatOnValidate: true});}
+							var vs = model && model.props.validationStatus;
+							sc = vs && vs.statusCode;
+						}
+						if (!sc || (sc == mstr.Enum.Validation.STATUSCODE.VALID)) {
+							return view.fireCommands();
+						} else {	
+                            var msg = model && model.props.message;
+                            if (sc == mstr.Enum.Validation.STATUSCODE.TRUNCATED) {
+                                var rt= confirm(msg || 'The number of elements to import is larger than the maximum number permitted for this project. The imported list will be truncated to ## elements. Click OK to import the truncated element list.');
+                                if (rt) {
+                                    return view.fireCommands();
+                                }
+                            } else {
+								if (msg) alert(msg);
+						    }
+						}
+					]]></property>
+					<!-- TQMS 426323-->
+					<property name="cmds">EditConditionConstant1|parent/model/valueString|parent/opener/model;Unpop||parent</property>
+					<property name="enabledField">parent/contentView/enabled</property>
+				</block>
+			</property>
+			<property name="cancelButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.2399|Cancel}</property>
+					<property name="cssClass">TextButton</property>
+					<property name="cmds">Unpop||parent</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

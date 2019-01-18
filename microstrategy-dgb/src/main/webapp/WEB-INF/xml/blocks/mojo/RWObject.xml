@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about the data of a Report Writer object.
+--> 
+<block name="RWObject" inherits="RWUnit">
+    <definition>
+        <!-- The tooltip for this object -->
+        <property name="tooltip" type="String" />
+        
+        <property name="hidden" type="Boolean" />
+    </definition>
+</block>

@@ -1,0 +1,67 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="prmCart">
+    <mstrlayout:attr name="getMainDivAttributes" />
+    <mstrlayout:if name="isEditable" base="bean">
+	<mstrlayout:then>
+    <div class="search">
+        <mstrlayout:render name="search"/>
+    </div> 
+    <div>
+        <mstrlayout:render name="showUnused"/>
+    </div> 
+    <table class="mstrCart">
+      <colgroup>
+         <col width="42%"/>
+         <col width="8%" />
+         <col width="42%" />
+         <col width="8%" />
+      </colgroup>		
+      <tr valign="middle">
+        <td class="mstrCartAvailable">
+          <div class="listHeader">
+			<label>
+				<mstrlayout:render name="descriptor">
+					<mstrlayout:argument type="int" value="3487"/><!-- Descriptor: Available: -->
+				</mstrlayout:render>      
+			</label>
+		  </div>
+          <div class="list">
+            <mstrlayout:render name="available"/>
+          </div>
+          <mstrlayout:render name="incrementalFetch"/>
+        </td>
+        <td class="mstrCartButtons">
+          <mstrlayout:render name="addRemoveButtons"/>
+        </td>
+        <td class="mstrCartSelected">
+          <div class="listHeader">
+				<mstrlayout:render name="descriptor">
+					<mstrlayout:argument type="int" value="3488"/><!-- Descriptor: Selected: -->
+				</mstrlayout:render> 
+		  </div>
+		  <div class="list">
+            <mstrlayout:render name="selected"/>
+          </div>
+        </td>
+        <td class="mstrCartButtons">
+          <mstrlayout:render name="upDownButtons"/>
+        </td>
+      </tr>
+    </table>
+    </mstrlayout:then>        		  	
+    <mstrlayout:else>    
+      <div id="dePreview">
+      	<label for="previewContent">
+			<mstrlayout:render name="descriptor">
+				<mstrlayout:argument type="int" value="548"/><!-- Descriptor: Elements -->
+			</mstrlayout:render>      	
+      	</label>
+      	<span id="dePreviewContent">
+	     <mstrlayout:render name="preview"/>        
+      	</span>
+      </div>	  		
+    </mstrlayout:else>        		  	
+    </mstrlayout:if>
+  </div>
+</mstrlayout:layout>

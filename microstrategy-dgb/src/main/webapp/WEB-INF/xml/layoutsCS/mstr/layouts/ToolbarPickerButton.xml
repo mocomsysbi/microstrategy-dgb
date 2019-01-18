@@ -1,0 +1,49 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	openerArea="return rootTag.childNodes[1].rows[0].cells[1]"
+    on_set_opened="mstr.behaviors.ToolbarPickerButton.on_set_opened(view, model, rootTag);"
+    on_set_enabled="mstr.behaviors.ToolbarPickerButton.on_set_enabled(view, model, rootTag); if(!view.get('enabled') &amp;&amp; view.execClosePopup){view.execClosePopup();}"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div class="{@cssPrefix}{@cssClass}"
+       id="{@model/id}">
+    <div class="{@cssPrefix}{@cssClass}Caption">
+      {@caption}
+    </div>
+    <table cellspacing="0"
+           style="{@cssText}"
+           cellpadding="0"
+           class="{@cssPrefix}{@cssClass}Table">
+      <tr>
+      	<td class="{@cssPrefix}{@cssClass}HorizontalCaption">{@horizontalCaption}</td>
+        <td class="{@cssPrefix}{@cssClass}CellContent">
+		  <div style="position: relative;">
+	          <a title=""
+	             href="/#"
+	             onkeydown="{@onkeydown};  var e = arguments[0] || window.event;  return (e &amp;&amp; (e.keyCode == 9));  "
+	             class="{@cssPrefix}{@cssClass}TabStop"
+	             id="{@id}TabStop">
+	            <div>
+	            </div>
+	          </a>
+	          <div id="{@model/id}"
+	                title="{@model/title}"
+	          		class="{@cssPrefix}{@cssClass}PickerBtn" 
+	          		onmousedown="mstr.behaviors.ToolbarPickerButton.pickerButtonPushed('{@id}')">
+	          </div>
+	          <div class="{@cssPrefix}{@cssClass}ReadyState">
+	          </div>
+	          <div class="{@cssPrefix}{@cssClass}Mask" title="{@model/title}">
+	          </div>
+	       </div>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellButton">
+          <div class="{@cssPrefix}{@cssClass}Button" 
+          		onmousedown="return mstr.behaviors.ToolbarPickerButton.onmousedown('{@id}')">
+            <div>
+              &amp;nbsp;
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

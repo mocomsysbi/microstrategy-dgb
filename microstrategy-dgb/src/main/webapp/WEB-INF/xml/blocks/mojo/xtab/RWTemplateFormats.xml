@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the structure of the formats for the different zones in a RW template.
+--> 
+<block name="RWTemplateFormats">
+    <definition>
+        <!-- The column headers zone. -->
+        <property name="ch" type="Block" />
+        
+        <!-- The row headers zone. -->
+        <property name="rh" type="Block" />
+        
+        <!-- The values zone. -->
+        <property name="va" type="Block" />
+    </definition>
+</block>

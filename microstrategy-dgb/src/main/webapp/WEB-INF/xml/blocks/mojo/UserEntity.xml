@@ -1,0 +1,21 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<block name="UserEntity" inherits="WebObjectInfo,Fetchable">
+    <definition>
+    
+        <!--  Whether this User Entity is a User Group; if false, then it is a User -->
+        <property name="isGroup" type="Boolean"/>
+        
+        <!-- The ancestor information, a tree of UserEntity blocks with a UserEntity as root -->
+        <property name="anc" type="Block" />
+        
+        <!-- The shortcut information, a list of UserEntity blocks that is top UserGroups  -->
+        <property name="topGroups" type="List" />
+        
+        <!-- The list of the parent groups for this User Entity -->
+        <property name="parents" type="List" />
+        
+        <!-- The members of this UserEntity if this User Entity is a UserGroup; empty if it is a User -->
+        <property name="items" type="List" />
+
+    </definition>
+</block>

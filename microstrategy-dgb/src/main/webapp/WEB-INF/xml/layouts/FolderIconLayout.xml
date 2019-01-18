@@ -1,0 +1,248 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if name="isEmptyList">
+        <mstrlayout:then>
+            <mstrlayout:render name="EmptyList" />
+        </mstrlayout:then>
+        <mstrlayout:else>
+    <div class="mstrLargeIconViewDiv">
+        <div class="mstrFolderInfo">
+            <div class="mstrLargeIconViewItemName">
+                <mstrlayout:render name="FolderName" />
+            </div>
+            <div class="mstrLargeIconViewItemDescription">
+                <mstrlayout:render name="FolderDescription" />
+            </div>
+        </div>
+        <table class="mstrLargeIconView" id="FolderIcons">
+            <colgroup>
+                <col class="mstrLargeIconViewCell" />
+                <col class="mstrLargeIconViewCell" />
+            </colgroup>
+            <mstrlayout:list id="FolderObjects" name="getSortedList">
+                <tr>
+                    <td class="mstrLargeIconViewItem">
+                    <div class="mstrLargeIconItemContainer">
+                        <table cellspacing="0" cellpadding="0" class="mstrLargeIconItemTable">
+                           
+                            <!--  no need to assign cssClass to TABLE ...
+                            <mstrlayout:attr name="addCSSForObjectType">
+                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:attr>
+                            -->
+                              
+                            <tr><td> <!-- class="mstrLargeIconViewItemImage"> -->
+                                <mstrlayout:attr name="getContextMenuAttributes">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                </mstrlayout:attr>
+                                <mstrlayout:attr attribute="oid" method="getID" base="FolderObjects"/>
+                                <mstrlayout:attr attribute="oty" method="getType" base="FolderObjects"/>
+                                <mstrlayout:render name="LayeredIconInfo">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    <mstrlayout:argument type="boolean" value="true"/><!-- "false"  -->
+                                    <mstrlayout:argument type="boolean" value="true"/>
+                                </mstrlayout:render>
+                            </td><td class="mstrLargeIconViewItemText">
+                            <mstrlayout:attr name="getContextMenuAttributes">
+                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:attr>
+                            <mstrlayout:attr attribute="oid" method="getID" base="FolderObjects"/>
+                            <mstrlayout:attr attribute="oty" method="getType" base="FolderObjects"/>
+                            
+                            <mstrlayout:render name="AnchorTag">
+                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:render>
+                            
+                            <div class="mstrLargeIconViewItemName">
+                                <mstrlayout:render name="NameInfo">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                </mstrlayout:render>
+                            </div>
+                            <div class="mstrLargeIconViewItemOwner">
+                                <label>
+                                    <mstrlayout:render name="Descriptor">
+                                        <mstrlayout:argument type="int" value="60"/>
+                                    </mstrlayout:render>
+                                    :
+                                </label>
+                                <span>
+                                    <mstrlayout:render name="OwnerInfo">
+                                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    </mstrlayout:render>
+                                </span>
+                            </div>
+                            <div class="mstrLargeIconViewItemModified">
+                                <label>
+                                    <mstrlayout:render name="Descriptor">
+                                        <mstrlayout:argument type="int" value="61"/>
+                                    </mstrlayout:render>
+                                    :
+                                </label>
+                                <span>
+                                    <mstrlayout:render name="ModifiedInfo">
+                                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    </mstrlayout:render>
+                                </span>
+                            </div>
+                            <div class="mstrLargeIconViewItemDescription">
+                                <mstrlayout:render name="DescriptionInfo">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                </mstrlayout:render>
+                            </div>
+                            <div></div>
+                            <div class="mstrLargeIconViewItemActions">
+                            	<mstrlayout:slot name="leftActionButtons">
+                                <mstrlayout:render name="EditInfo">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    <mstrlayout:argument type="boolean" value="true"/>
+                                </mstrlayout:render>
+                                <mstrlayout:render name="SubscriptionInfo">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    <mstrlayout:argument type="boolean" value="true"/>
+                                </mstrlayout:render>
+                                <mstrlayout:if name="isDhtml">
+                                    <mstrlayout:then>
+                                    </mstrlayout:then>
+                                    <mstrlayout:else>
+                    <mstrlayout:render name="DeleteInfo">
+                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:argument type="boolean" value="true"/>
+                    </mstrlayout:render>
+                    </mstrlayout:else>
+                                </mstrlayout:if>
+                                <mstrlayout:render name="SendNowInfo">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    <mstrlayout:argument type="boolean" value="true"/>
+                                </mstrlayout:render>
+                                <mstrlayout:render name="Export">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    <mstrlayout:argument type="boolean" value="true"/>
+                                </mstrlayout:render>
+                                <mstrlayout:render name="PDFExport">
+                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    <mstrlayout:argument type="boolean" value="true"/>
+                                </mstrlayout:render>
+                                </mstrlayout:slot>
+                            </div>
+                        </td></tr></table>
+                    </div>
+                    </td>
+                    <mstrlayout:next list="FolderObjects"/>
+                    <mstrlayout:if name="isFolderNotNull">
+                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:then>
+                            <td class="mstrLargeIconViewItem">
+                              <div class="mstrLargeIconItemContainer">
+                                <table cellspacing="0" cellpadding="0" class="mstrLargeIconItemTable">
+                                    <!-- no need to assign cssClass for this DIV ... 
+                                    <mstrlayout:attr name="addCSSForObjectType">
+                                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                    </mstrlayout:attr>
+                                     -->
+                                     
+                                     <tr><td> <!-- class="mstrLargeIconViewItemImage"> -->
+			                                <mstrlayout:attr name="getContextMenuAttributes">
+			                                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                                </mstrlayout:attr>
+			                                <mstrlayout:attr attribute="oid" method="getID" base="FolderObjects"/>
+			                                <mstrlayout:attr attribute="oty" method="getType" base="FolderObjects"/>
+		                                   <mstrlayout:render name="LayeredIconInfo">
+		                                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+		                                        <mstrlayout:argument type="boolean" value="true"/> <!-- "false" -->
+		                                        <mstrlayout:argument type="boolean" value="true"/>
+		                                    </mstrlayout:render>
+                                    </td><td class="mstrLargeIconViewItemText">
+                            <mstrlayout:attr name="getContextMenuAttributes">
+                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:attr>
+                                <mstrlayout:attr attribute="oid" method="getID" base="FolderObjects"/>
+                                <mstrlayout:attr attribute="oty" method="getType" base="FolderObjects"/>
+                                    
+                                    <mstrlayout:render name="AnchorTag">
+		                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+		                            </mstrlayout:render>
+                            
+                                    <div class="mstrLargeIconViewItemName">
+                                        <mstrlayout:render name="NameInfo">
+                                            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                        </mstrlayout:render>
+                                    </div>
+                                    <div class="mstrLargeIconViewItemOwner">
+                                        <label>
+                                            <mstrlayout:render name="Descriptor">
+                                                <mstrlayout:argument type="int" value="60"/>
+                                            </mstrlayout:render>
+                                            :
+                                        </label>
+                                        <span>
+                                            <mstrlayout:render name="OwnerInfo">
+                                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                            </mstrlayout:render>
+                                        </span>
+                                    </div>
+                                    <div class="mstrLargeIconViewItemModified">
+                                        <label>
+                                            <mstrlayout:render name="Descriptor">
+                                                <mstrlayout:argument type="int" value="61"/>
+                                            </mstrlayout:render>
+                                            :
+                                        </label>
+                                        <span>
+                                            <mstrlayout:render name="ModifiedInfo">
+                                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                            </mstrlayout:render>
+                                        </span>
+                                    </div>
+                                    <div class="mstrLargeIconViewItemDescription">
+                                        <mstrlayout:render name="DescriptionInfo">
+                                            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                        </mstrlayout:render>
+                                    </div>
+                                    <div></div>
+                                    <div class="mstrLargeIconViewItemActions">
+                                    	<mstrlayout:slot name="rightActionButtons">
+                                        <mstrlayout:render name="EditInfo">
+                                            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                            <mstrlayout:argument type="boolean" value="true"/>
+                                        </mstrlayout:render>
+                                        <mstrlayout:render name="SubscriptionInfo">
+                                            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                            <mstrlayout:argument type="boolean" value="true"/>
+                                        </mstrlayout:render>
+                                    <mstrlayout:if name="isDhtml">
+                                        <mstrlayout:then>
+                                        </mstrlayout:then>
+                                          <mstrlayout:else>
+                        <mstrlayout:render name="DeleteInfo">
+                            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            <mstrlayout:argument type="boolean" value="true"/>
+                        </mstrlayout:render>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                                        <mstrlayout:render name="SendNowInfo">
+                                            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                            <mstrlayout:argument type="boolean" value="true"/>
+                                        </mstrlayout:render>
+                                        <mstrlayout:render name="Export">
+                                            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                            <mstrlayout:argument type="boolean" value="true"/>
+                                        </mstrlayout:render>
+                                        <mstrlayout:render name="PDFExport">
+                                            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                            <mstrlayout:argument type="boolean" value="true"/>
+                                        </mstrlayout:render>
+                                        </mstrlayout:slot>
+                                    </div>
+                                </td></tr></table>
+                                </div>
+                            </td>
+                        </mstrlayout:then>
+                    </mstrlayout:if>
+                </tr>
+                <mstrlayout:next list="FolderObjects"/>
+            </mstrlayout:list>
+        </table>
+    </div>
+        </mstrlayout:else>
+    </mstrlayout:if>
+</mstrlayout:layout>

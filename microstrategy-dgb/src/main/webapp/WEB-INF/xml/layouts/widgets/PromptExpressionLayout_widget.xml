@@ -1,0 +1,65 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptBaseLayout_widget.xml">
+		<!-- settings -->
+		<mstrlayout:replace slot="generalSettings">
+		  <mstrlayout:base id="search" method="getSearchObject" base="transform"/>
+		</mstrlayout:replace>
+      <!-- ============================ Model ======================================== -->
+		<mstrlayout:replace slot="modelContent">
+	      <mstrlayout:if method="isHierarchyQualification"> <!-- HQ -->
+	        <mstrlayout:then>
+	          <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/promptHierarchy_common.xml"/>
+	        </mstrlayout:then>
+	        <mstrlayout:else>
+	          <!-- All other cases use model for AQ and MQ -->
+	          <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/promptExpression_common.xml"/>
+	        </mstrlayout:else>
+	      </mstrlayout:if>
+		  <mstrlayout:if method="isTrimmedTree">
+    		<mstrlayout:then>
+		       <mstrlayout:bSetProperty path="answer/available/hierarchical" value="false" /> <!--  So we do not try to perform non-recursive search from client side -->
+			</mstrlayout:then>
+		  </mstrlayout:if>
+		</mstrlayout:replace>
+		
+	  <!-- ============================================================================== -->
+      <!-- ============================ View ======================================== -->
+		<mstrlayout:replace slot="viewContent">
+	        <!-- Visible? -->
+	        <mstrlayout:if method="isOneByOneDisplayMode">
+	          <mstrlayout:else>
+	            <mstrlayout:bSetProperty path="visible" value="true"/>
+	          </mstrlayout:else>
+	        </mstrlayout:if>
+	        
+	        <mstrlayout:bSetProperty path="complexAnswerView">
+	          <mstrlayout:block name="TextDiv">
+	            <mstrlayout:bSetProperty path="modelPath" value="parent/model/answer/complexString"/>
+	          </mstrlayout:block>
+	        </mstrlayout:bSetProperty>
+	        
+	        <mstrlayout:if method="isAttributeQualification"> <!-- AQ -->
+	          <mstrlayout:then>
+	            <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptAQStyles.xml"/>
+	          </mstrlayout:then>
+	          <mstrlayout:else>
+	            <mstrlayout:if method="isMetricQualification"> <!-- MQ -->
+	              <mstrlayout:then>
+	                <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptMQStyles.xml"/>
+	              </mstrlayout:then>
+	              <mstrlayout:else>   <!-- HQ -->
+	                <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptHQStyles.xml"/>
+	              </mstrlayout:else>
+	            </mstrlayout:if>
+	          </mstrlayout:else>
+	        </mstrlayout:if>
+			<mstrlayout:if method="isTrimmedTree">
+	    		<mstrlayout:then>
+						<mstrlayout:bSetProperty path="simpleAnswerView/availableView/autoCollapse" value="true" />
+				</mstrlayout:then>
+			</mstrlayout:if>
+		</mstrlayout:replace>
+	</mstrlayout:include>
+      <!-- ============================================================================== -->
+</mstrlayout:layout>

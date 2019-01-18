@@ -1,0 +1,38 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <mstrlayout:attr name="getMainDivAttributes" />
+    <table class="pane" cellspacing="1">
+      <tr>
+        <td class="body">
+            
+          <table cellspacing="0" cellpadding="0">
+            <mstrlayout:attr name="getContentTableAttributes" />
+            <tr>
+              <td>
+                <mstrlayout:render name="genericValidationErrorMessage" />
+                <mstrlayout:render name="filterTree" />
+                <mstrlayout:if name="isAddWizardRequested" >
+                  <mstrlayout:then>
+                    <table border="0" width="100%">
+                      <mstrlayout:render name="addWizardTransition" />
+                      <tr>
+                        <td align="center" valign="middle" />
+                        <td />
+                        <td align="left">
+                          <mstrlayout:render name="separator"/>
+                          <mstrlayout:render name="addWizardDropdown" />
+                          <mstrlayout:render name="addWizardButtons" />
+                        </td>
+                      </tr>
+                    </table>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

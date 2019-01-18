@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		TextButton is a view whose GUI is a clickable button with an optional text caption. -->
+	<block name="TextButton" inherits="BaseView">
+		<definition>
+			<!-- The text to display on the TextButton's GUI. -->
+			<property name="caption" type="String" />
+
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+
+			<!-- Javascript handler for responding to user clicks. -->
+			<property name="onclick" type="String" />
+
+			<!-- Optional reference to UIComponent which this TextButton may act upon when clicked. -->
+			<property name="targetPath" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.TextButton</property>
+			<property name="cssClass">Button</property>
+			<property name="onclick"><![CDATA[return mstr.$obj(this.id).fireCommands()]]></property>
+		</assignments>
+	</block>

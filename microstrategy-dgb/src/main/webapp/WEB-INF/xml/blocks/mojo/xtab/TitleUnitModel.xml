@@ -1,0 +1,62 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="TitleUnitModel" inherits="BaseBlock">
+	<definition>
+			<!-- name -->
+			<property name="n" type="String" />
+			
+            <!-- description -->
+            <property name="desc" type="String" />
+            
+			<!-- Unit ID -->
+			<property name="id" type="String" />
+
+			<!-- form ID -->
+			<property name="fid" type="String" />
+
+			<!-- form type -->
+			<property name="ftp" type="Integer" />
+			
+			<!-- form index -->
+			<property name="fix" type="Integer" />
+
+      <!-- unit type. EnumDssXMLObjectTypes  -->
+			<property name="otp" type="Integer" />
+
+      <!-- unit type. EnumDssXmlTemplateUnitType   -->
+			<property name="utp" type="Integer" />
+
+      <!-- sort order. Missing -> none, true->ascending, false->descending -->
+			<property name="so" type="Boolean" />
+			
+			<!-- display form id -->
+			<property name="dfi" type="Integer"/>			
+
+			<!-- An array of title elements  -->
+			<property name="es" type="List" />
+			<!-- row span -->
+			<property name="rs" type="Integer" />
+			<!-- col span -->
+			<property name="cs" type="Integer" />
+      <!-- css class name -->
+			<property name="cni" type="Integer" />
+
+			<!--  action type -->
+			<property name="at" type="Integer" />
+
+      <!-- drill path info. this will be the drill path with highest importance For non-metric values this should have only one entry. For metrics, this would have an (array) entry for each Metric -->
+			<property name="dp" type="List" />
+
+			<!-- selector control-->
+			<property name="sc" type="Block" />
+
+			<!-- Link Map. Array of link containers. For non-metric values this should have only one entry. For metrics, this would have an (array) entry for each Metric -->
+			<property name="lm" type="List" />
+			
+			<!-- form list, only applies to titles targeting a form or an attribute-->
+			<property name="fs" type="List" />	
+			
+			<!-- geo role -->
+			<property name="fgr" type="Integer" />
+			
+	</definition>
+</block>

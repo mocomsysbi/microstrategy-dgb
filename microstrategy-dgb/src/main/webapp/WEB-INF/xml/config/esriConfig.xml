@@ -1,0 +1,77 @@
+<ec>  
+   <!-- The following nodes are used for on-premises map integration -->
+   <bms> 
+     <bm key="default"> </bm> 
+   </bms> 
+   <pjs> 
+   </pjs> 
+   <!-- End of nodes used for on-premises map integration -->
+  
+  
+   <!-- The following nodes are used for cloud-based map integration -->
+  
+   <!-- Please insert keys obtained from MicroStrategy Map key from Technical Support in apps node -->
+   <apps></apps>
+  
+   <layers>
+      <layer id="1" 
+             title="US-States" 
+             ml="http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_States_Generalized/FeatureServer/0"/>
+      <layer id="2"
+             title="US-ZipCodes"
+             ml="http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_ZIP_Codes/FeatureServer/0"/>
+      <layer id="3"
+             title="US-Counties"
+             ml="http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Counties_Generalized/FeatureServer/0"/>
+      <layer id="4" 
+             title="World-Countries Detailed" 
+             ml="http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries/FeatureServer/0" />
+      <layer id="5" 
+	     title="World-Countries Generalized" 
+             ml="http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer/0" />
+      <layer id="6"
+	     title="World-Admin-Divisions"
+             ml="http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Administrative_Divisions/FeatureServer/0"/>
+    
+   </layers>
+   <shapes>
+       <shape id="100" 
+             default="true"
+             qf="['STATE_NAME']"
+             ea="state_name"
+             layerId="1" />
+      <shape id="200"             
+             qf="['state_abbr']"
+             ea="state_abbr"
+             layerId="1" />
+      <shape id="300"             
+             qf="['ZIP']"
+             ea="ZIP"
+             layerId="2"/>
+      <shape id="4"
+             qf="['ISO','Country']"
+             ea="Country"
+             layerId="5" />
+      <shape id="5"             
+             qf="['NAME']"
+             ea="NAME"
+			 sf="COUNTRY"
+			 sfr="3"
+             layerId="6" />
+      <shape id="6"           
+             roleId="9"
+             type="Polygon"	     
+	     	 qf="['NAME']"
+			 ea="NAME"
+	     	 sf="STATE_NAME"
+	         sfr="2"
+	         pk="FID"
+	         
+             layerId="3" />       
+   </shapes>
+  
+   <webmaps>    
+    <webmap id="d7ff04c4b7384df084aa64c9fa7b0f76" default="true" />    
+   </webmaps>  
+   <!-- End of Nodes used for cloud-based map integration -->
+</ec>

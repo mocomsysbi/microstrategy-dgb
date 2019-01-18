@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarCurrencyButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbCurrency</property>
+		<property name="tooltip">{desc:mstrWeb.2192|Currency Style}</property>
+		<property name="cmdid">Currency</property>
+		<property name="visibleFeatures">1033</property>
+	</assignments>
+</block>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE beanTask SYSTEM "beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.GridLinkedDrillTask">
+	<!-- 
+			This information is used to provide "metadata" about this task. In general, it includes
+			names, descriptions and whether the parameters are required or not. 
+	-->
+	<basicInfo desc="This task provides the ability to perform a linked drill on a grid for Iphone">
+            <parameter name="styleName" desc="The style to use to transform the ReportBean. If omitted, a simple MessageResult is generated." required="false" type="simplestring"/>
+			<parameter name="reportID" desc="The report ID" required="true"/>
+			<parameter name="originMessageID" desc="The origin message ID" required="false"/>
+			<parameter name="promptsAnswerXML" desc="The prompt answer XML" required="false"/>
+			<parameter name="elementsPromptAnswers" desc="The element prompt answers" required="false"/>
+			<parameter name="valuePromptAnswers" desc="The value prompt answers" required="false" />
+        	<parameter name="objectsPromptAnswers" desc="The objects prompt answers" required="false"/>
+			<parameter name="linkAnswers" desc="The link answers" required="false"/>
+	</basicInfo>
+	
+	<!-- run main report event -->
+	<eventInfo eventID="4001">
+		<argument name="reportID" value="reportID" source="parameter"/>
+		<argument name="resultFlags" value="134217728"/>
+		<argument name="originMessageID" value="originMessageID" source="parameter"/>
+		<argument name="promptsAnswerXML" value="promptsAnswerXML" source="parameter"/>
+		<argument name="elementsPromptAnswers" value="elementsPromptAnswers" source="parameter"/>
+		<argument name="valuePromptAnswers" value="valuePromptAnswers" source="parameter" />
+        <argument name="objectsPromptAnswers" value="objectsPromptAnswers" source="parameter"/>
+		<argument name="linkAnswers" value="linkAnswers" source="parameter"/>
+	</eventInfo>	
+
+	<!--This information describes how the task is defined in terms of an existing Bean.-->
+	<beanInfo name="rb" bean-type="ReportBean">
+        <style name="styleName" source="parameter" />
+	</beanInfo> 
+	
+</beanTask>

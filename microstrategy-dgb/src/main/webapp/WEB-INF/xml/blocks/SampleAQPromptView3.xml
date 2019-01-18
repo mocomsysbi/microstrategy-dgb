@@ -1,0 +1,32 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="PromptEditor" name="SampleAQPromptView3">
+  <assignments>
+    <property name="book">
+      <block name="ViewStack">
+        <property name="modelPath">parent/model/promptQuestions</property>
+        <property name="views">
+          <list>
+            <block listElementKey="K1424" name="PromptQuestionView">
+              <property name="simpleAnswerView">
+                <!-- Cart style -->
+                <block name="ExpressionTreeCart">
+                  <property name="modelPath">parent/model/answer/getTreeCartModel()</property>
+                  <!-- search box: -->
+                  <property name="searchView">
+                    <block name="TextBoxWithIcon">
+                      <property name="cmds">Search||parent/model/available</property>
+                      <property name="caption">Search for:</property>
+                      <property name="iconTooltip">Search</property>
+                      <property name="iconCSSText">background-image: url(../style/mstr/images/tbSearch.gif)</property>
+                    </block>
+                  </property>
+                </block>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- A sample TREE cart view of a Report with a single AQ Prompt question. -->

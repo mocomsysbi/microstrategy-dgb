@@ -1,0 +1,7 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.MojoWidget.on_set_visible(view, model, rootTag);">
+  <div class="{@cssPrefix}{@cssClass}" style="{@cssText}" id="{@id}">
+	<div class="{@cssPrefix}{@cssClass}Desc">{@desc}</div>
+	<div class="{@cssPrefix}{@cssClass}Loading mstrTreeWait">{@waitMessage}</div>
+  </div>
+</mstrlayout:layout>

@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Filter Branch Qualification
+-->
+
+<block name="FilterBranchQual" inherits="ExpNode">
+    <definition>
+        <!-- Whether the node has a parent Not -->
+        <property name="fn" type="Integer" />
+
+        <!-- The Children Nodes Collection -->
+        <property name="nds" type="List" />
+    </definition>
+</block>

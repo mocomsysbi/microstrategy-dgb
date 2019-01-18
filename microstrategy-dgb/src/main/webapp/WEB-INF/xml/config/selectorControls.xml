@@ -1,0 +1,44 @@
+<shortcut-list name="selectorControls" version="1.0">
+    <shortcut desc="[Drop-down]" desc-id="mstrWeb.4729" name="pkrSelectBox" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="0"/>
+            <attribute name="class" value="tbSelectBox"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Slider]" desc-id="mstrWeb.4730" name="pkrSlider" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="1"/>
+            <attribute name="class" value="tbSlider"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Check Boxes]" desc-id="mstrWeb.4733" name="pkrCheckBox" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="4"/>
+            <attribute name="class" value="tbCheckBox"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Radio Buttons]" desc-id="mstrWeb.4732" name="pkrRadioButton" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="3"/>
+            <attribute name="class" value="tbRadioButton"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Button Bar]" desc-id="mstrWeb.4734" name="pkrButtonArray" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="5"/>
+            <attribute name="class" value="tbButtonArray"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Listbox]" desc-id="mstrWeb.4731" name="pkrListBox" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="2"/>
+            <attribute name="class" value="tbListBox"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Link Bar]" desc-id="mstrWeb.4735" name="pkrHyperlinkArray" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="6"/>
+            <attribute name="class" value="tbHyperlinkArray"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

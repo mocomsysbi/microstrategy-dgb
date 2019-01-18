@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarGridButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbGrid</property>
+        <property name="cmdid">gridMode</property>
+	</assignments>
+</block>

@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition portion of a Template node. This can be the definition
+    for a Grid, a Graph or a Grid/Graph.
+--> 
+<block name="RWTemplateDef" inherits="RWUnitDef">
+    <definition>
+	<!-- This is the value of the FormattingView WindowState property.
+	    0 == Normal, 1 == Minimized, 2 == Maximized.
+	-->
+	<property name="ds" type="Integer"/>
+        
+        <!--  The tree type. For example, 1 == CONTENT, 2 == PAGE_HEADER, ...
+            see c.m.w.o.rw.EnumDSSXMLRWTreeType -->
+        <property name="tt" type="Integer"/>
+        
+        <!-- Control key context -->
+        <property name="ck" type="String"/>
+        
+        <!-- The value of the FormattingCrosstab ShowExportOptions property.  
+             0 == Auto, 1 == Yes, 2 == No 
+        -->
+        <property name="eo" type="Integer"/>     
+        
+        <property name="an" type="List"/>
+           
+    </definition>
+</block>

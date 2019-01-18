@@ -1,0 +1,147 @@
+<IPAThresholdDefaults>
+  <counter i="CU" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33"/>
+        <format c="#00ff00"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66.0"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#ff0000"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <counter i="MU" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33"/>
+        <format c="#00ff00"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66.0"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#ff0000"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <counter i="SC" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33"/>
+        <format c="#00ff00"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66.0"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#ff0000"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <counter i="SM" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33"/>
+        <format c="#00ff00"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66.0"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#ff0000"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <counter i="OS" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33"/>
+        <format c="#00ff00"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#ff0000"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <counter i="SR" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33.0"/>
+        <format c="#ff0000"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66.0"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#00ff00"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <counter i="RC" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33"/>
+        <format c="#ff0000"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66.0"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#00ff00"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <counter i="UT" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33"/>
+        <format c="#00ff00"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#ff0000"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <counter i="WC" ts="2014-06-13 22:01:31">
+    <thrDef ts="2014-06-13 22:01:31" uf="Real Time">
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="low" val="33"/>
+        <format c="#00ff00"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="high" val="66"/>
+        <format c="#0000ff"/>
+      </thr>
+      <thr ts="2014-06-13 22:01:31">
+        <exp c="max" val="100"/>
+        <format c="#ff0000"/>
+      </thr>
+    </thrDef>
+  </counter>
+  <root i="RN" ts="1970-01-01 00:00:00"/>
+</IPAThresholdDefaults>

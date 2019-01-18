@@ -1,0 +1,18 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:if name="isValidGrid">
+		<mstrlayout:then>		
+			<mstrlayout:render name="descriptor">
+				<mstrlayout:argument type="string" value="mstrWeb.8014" /> <!-- Descriptor: Image Map -->
+			</mstrlayout:render>
+			<mstrlayout:render name="Textbox">
+				<mstrlayout:argument type="String" value="mf" /> <!-- Property Name -->
+				<mstrlayout:argument type="String" value="size^40" /> <!--  extra attributes -->
+				<mstrlayout:argument type="String" value="VisFramework/map/USAMapCoords.html" /> <!--  default value -->
+			</mstrlayout:render>
+		</mstrlayout:then>
+		<mstrlayout:else>
+			<mstrlayout:render name="ValidationError" />
+		</mstrlayout:else>
+	</mstrlayout:if>
+</mstrlayout:layout>

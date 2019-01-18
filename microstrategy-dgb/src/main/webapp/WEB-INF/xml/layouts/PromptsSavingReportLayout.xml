@@ -1,0 +1,138 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="promptWarningHeaderMessage">
+    <mstrlayout:render name="warningHeaderMessage"/>
+  </div>
+  <table class="mstrPrompts"><tr>
+    <mstrlayout:render name="multiplePromptCssLink"/>
+    <mstrlayout:if name="isMultiplePrompt">
+      <mstrlayout:then>
+        <td id="mstrPromptsIndex" class="mstrPromptsIndex" valign="top">
+          <div class="mstrPromptsItemSummary">
+            <mstrlayout:render name="promptSummaryIndexSection"/>
+          </div>
+          <mstrlayout:render name="firstPreviousIncrementalFetch"/>
+          <mstrlayout:list id="promptObject" name="getPromptsListForIndexSection">
+            <mstrlayout:render name="promptIndex">
+                <mstrlayout:argument list="promptObject" type="com.microstrategy.web.beans.PromptObject"/>
+            </mstrlayout:render>
+            <mstrlayout:next list="promptObject"/>
+          </mstrlayout:list>
+          <mstrlayout:render name="nextLastIncrementalFetch"/>
+
+          <div class="mstrSpacer"></div>
+
+        </td>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <!-- THIS USED TO BE CONTROLLED BY LEVEL FLAGS.
+         UNCOMMENTED THIS CODE TO DISPLAY TOP BAT IF DESIRED.
+    <div id="mstrPromptsButtonBarTop" class="buttonBar">
+      <mstrlayout:render name="promptSummaryButton"/>
+        <mstrlayout:if name="isOneByOneDisplayMode">
+          <mstrlayout:then>
+            <mstrlayout:render name="previousButton"/>
+            <mstrlayout:render name="nextButton"/>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:render name="executeButton"/>
+        <mstrlayout:render name="saveButton"/>
+        <mstrlayout:render name="cancelButton"/>
+    </div> -->
+    <mstrlayout:if name="isPromptSummaryViewable">
+      <mstrlayout:then>
+        <td class="mstrPromptsBody">
+            <div id="mstrPromptsBody" class="body">
+          <a id="top"></a>
+          <div class="mstrPromptSummary">
+            <div class="mstrPanelTitleBar">
+              <mstrlayout:render name="label">
+                <mstrlayout:argument type="int" value="1066"/>
+                <mstrlayout:argument type="string" value="null"/>
+              </mstrlayout:render>
+            </div>
+            <mstrlayout:list id="prompt" name="getPromptsListForSummary">
+              <div class="prmSummary">
+                <mstrlayout:render name="prompt">
+                  <mstrlayout:argument list="prompt" type="com.microstrategy.web.beans.PromptObject"/>
+                </mstrlayout:render>
+              </div>
+              <mstrlayout:next list="prompt"/>
+            </mstrlayout:list>
+          </div>
+        </div>
+        <div id="mstrPromptsButtonBarBottom" class="buttonBar">
+            <mstrlayout:render name="promptSummaryButton"/>
+            <mstrlayout:if name="isOneByOneDisplayMode">
+              <mstrlayout:then>
+                <mstrlayout:render name="previousButton"/>
+                <mstrlayout:render name="nextButton"/>
+              </mstrlayout:then>
+            </mstrlayout:if>
+            <mstrlayout:render name="saveButton"/>
+            <mstrlayout:render name="cancelButton"/>
+        </div>
+        </td>
+      </mstrlayout:then>
+      <mstrlayout:else>
+        <td class="mstrPromptsBody">
+            <div id="mstrPromptsBody" class="body">
+          <a id="top"></a>
+          <mstrlayout:if name="isDhtmlMode">
+            <mstrlayout:then>
+              <mstrlayout:render name="calendar"/>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:if name="displayPromptOneByOne">
+            <mstrlayout:then>
+              <mstrlayout:list id="singlePrompt" name="getPromptsListOneByOne">
+                <div class="mstrPrompt">
+                  <mstrlayout:render name="promptAnchor">
+                    <mstrlayout:argument list="singlePrompt" type="com.microstrategy.web.beans.PromptObject"/>
+                  </mstrlayout:render>
+                  <mstrlayout:render name="promptNumber">
+                    <mstrlayout:argument list="singlePrompt" type="com.microstrategy.web.beans.PromptObject"/>
+                  </mstrlayout:render>
+                  <mstrlayout:render name="prompt">
+                    <mstrlayout:argument list="singlePrompt" type="com.microstrategy.web.beans.PromptObject"/>
+                  </mstrlayout:render>
+                  <mstrlayout:next list="singlePrompt"/>
+                </div>
+              </mstrlayout:list>
+            </mstrlayout:then>
+            <mstrlayout:else>
+                <mstrlayout:list id="multiplePrompt" name="getPromptsList">
+              <div class="mstrPrompt">
+                  <mstrlayout:render name="promptAnchor">
+                    <mstrlayout:argument list="multiplePrompt" type="com.microstrategy.web.beans.PromptObject"/>
+                  </mstrlayout:render>
+                  <mstrlayout:render name="promptNumber">
+                    <mstrlayout:argument list="multiplePrompt" type="com.microstrategy.web.beans.PromptObject"/>
+                  </mstrlayout:render>
+                  <mstrlayout:render name="prompt">
+                    <mstrlayout:argument list="multiplePrompt" type="com.microstrategy.web.beans.PromptObject"/>
+                  </mstrlayout:render>
+              </div>
+                  <mstrlayout:next list="multiplePrompt"/>
+                </mstrlayout:list>
+            </mstrlayout:else>
+          </mstrlayout:if>
+
+          <div class="mstrSpacer"></div>
+        </div>
+        <div id="mstrPromptsButtonBarBottom" class="buttonBar">
+          <mstrlayout:render name="promptSummaryButton"/>
+            <mstrlayout:if name="isOneByOneDisplayMode">
+              <mstrlayout:then>
+                <mstrlayout:render name="previousButton"/>
+                <mstrlayout:render name="nextButton"/>
+              </mstrlayout:then>
+            </mstrlayout:if>
+            <mstrlayout:render name="saveButton"/>
+            <mstrlayout:render name="cancelButton"/>
+        </div>
+        </td>
+      </mstrlayout:else>
+    </mstrlayout:if>
+  </tr></table>
+</mstrlayout:layout>

@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarSubmitButton" inherits="BaseView">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ToolbarButton</property>
+			<property name="cssClass">ToolbarButton</property>
+			<property name="modelPushedProps">cmds,queueGroup</property>
+		</assignments>
+	</block>

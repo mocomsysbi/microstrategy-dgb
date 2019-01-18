@@ -1,0 +1,9 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:render name="name"/>
+    <mstrlayout:render name="parentName"/>
+    <mstrlayout:render name="serverName"/>
+    <mstrlayout:render name="path"/>
+    <mstrlayout:render name="message"/>
+    <mstrlayout:render name="childrenDetails"/>
+</mstrlayout:layout>

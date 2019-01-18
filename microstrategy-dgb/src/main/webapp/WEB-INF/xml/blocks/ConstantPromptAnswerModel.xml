@@ -1,0 +1,33 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ConstantPromptAnswerModel is an answer to a PromptQuestionModel with type="CONSTANT".
+		In ConstantPromptAnswerModel, a simple answer's value is a string.
+		The "min", "max" and "dataType" properties may be used to restrict the string's content.
+	-->
+	<block name="ConstantPromptAnswerModel" inherits="PromptAnswerModel">
+		<definition>
+			<!-- The value of the answer, in string format. -->
+			<property name="valueString" type="String" />
+			
+			<!-- The data type restriction on the constant answer value.  Uses the data type
+				 enumeration EnumDSSXMLDataType (1=Integer, 3=Numeric, 8,9=Text, 14=Date, 15=Time, 16=TimeStamp, etc). -->
+			<property name="dataType" type="Integer" />
+			
+			<!-- For Numeric,Date,Time,TimeStamp: the minimum value allowed. For Text, the minimum string size allowed. -->
+			<property name="min" type="String" />
+
+			<!-- For Numeric,Date,Time,TimeStamp: the maximum value allowed. For Text, the maximum string size allowed. -->
+			<property name="max" type="String" />		
+			
+			<!-- Enabled view who want to call the execValidate method -->
+			<property name="CommandEnabledValidate" type="Boolean" />
+			
+			<property name="decimalSep" type="String" />
+			<property name="thousandSep" type="String" />
+			
+		</definition>
+		<assignments>			
+			<property name="scriptClass">mstr.models.ConstantPromptAnswer</property>
+			<property name="CommandEnabledValidate">true</property>
+		</assignments>
+	</block>

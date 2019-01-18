@@ -1,0 +1,39 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+  <div class="mstrPanelPortrait">
+    <div class="mstrPanelTitleBar">
+      <div class="mstrPanelTitle">
+        <mstrlayout:render name="title"/>
+      </div>
+    </div>
+    <div class="mstrPanelBody">
+    
+        <table cellspacing="0" cellpadding="2" style="table-layout: fixed;" class="preferenceList">
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Schedule for Subscriptions: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.9020"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td style="width:80%">
+              <mstrlayout:render name="ScheduleTypes"/>
+              <mstrlayout:render name="ScheduleShoppingCart"/>
+              <mstrlayout:render name="warning"/>
+            </td>
+          </tr>
+          <tr>
+	          <td></td>
+	          <td>
+	           <mstrlayout:render name="Save"/>
+               <mstrlayout:render name="Cancel"/>
+              </td>
+          </tr>
+        </table>
+      
+    </div>
+  </div>
+      
+</mstrlayout:layout>

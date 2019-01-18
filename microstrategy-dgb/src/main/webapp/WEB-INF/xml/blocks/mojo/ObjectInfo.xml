@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<block name="ObjectInfo">
+    <definition>
+        <!-- The Object ID -->
+        <property name="did" type="String" />   
+		<!-- The Object Name -->
+        <property name="n" type="String" />
+		<!-- The Object Description -->
+        <property name="desc" type="String" />  
+		<!-- The Object type -->
+        <property name="tp" type="Integer" /> 
+		<!-- Is ShortCut -->
+        <property name="isc" type="Boolean" />
+         <!-- The Object Sub type -->
+        <property name="stp" type="Integer" />
+    </definition>
+</block>

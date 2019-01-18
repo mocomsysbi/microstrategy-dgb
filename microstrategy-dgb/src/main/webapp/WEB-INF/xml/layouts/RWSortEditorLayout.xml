@@ -1,0 +1,71 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:render name="groupByInfo"/>
+	<fieldset class="sortFields">
+		<legend>
+			<mstrlayout:render name="descriptor">
+                  	<mstrlayout:argument type="string" value="mstrWeb.3237"/>
+              	</mstrlayout:render>
+		</legend>
+	    <div>
+		    <table class="sort">
+		        <colgroup>
+		            <col class="sortLabel"/>
+		            <col class="sortKey"/>
+		            <col class="sortOrder"/>
+		            <col class="sortOrder"/>
+		        </colgroup>
+		        <tr>
+		            <td>1.&nbsp;
+		                <mstrlayout:render name="descriptor">
+		                    <mstrlayout:argument type="string" value="mstrWeb.2744"/>
+		                </mstrlayout:render>
+		            </td>
+		            <td>
+		                <mstrlayout:render name="templateUnits"/>
+		            </td>
+		            <td>
+		                <mstrlayout:render name="ascendingRadioButton"/>
+		                <mstrlayout:render name="descriptor">
+		                    <mstrlayout:argument type="string" value="mstrWeb.2162"/>
+		                </mstrlayout:render>
+		            </td>
+		            <td>
+		                <mstrlayout:render name="descendingRadioButton"/>
+		                <mstrlayout:render name="descriptor">
+		                    <mstrlayout:argument type="string" value="mstrWeb.2163"/>
+		                </mstrlayout:render>
+		            </td>
+		        </tr>
+		        <mstrlayout:list id="myList" name="numberOfSortKeys" base="transform">
+			        <tr>
+			            <td>
+			            	<mstrlayout:render name="sortNumber">
+		                    	<mstrlayout:argument list="myList" type="java.lang.Integer"/>
+		                    </mstrlayout:render>.&nbsp;
+			                <mstrlayout:render name="descriptor">
+			                    <mstrlayout:argument type="string" value="mstrWeb.2745"/>
+			                </mstrlayout:render>
+			            </td>
+			            <td>
+			                <mstrlayout:render name="templateUnits"/>
+			            </td>
+			            <td>
+			                <mstrlayout:render name="ascendingRadioButton"/>
+			                <mstrlayout:render name="descriptor">
+			                    <mstrlayout:argument type="string" value="mstrWeb.2162"/>
+			                </mstrlayout:render>
+			            </td>
+			            <td>
+			                <mstrlayout:render name="descendingRadioButton"/>
+			                <mstrlayout:render name="descriptor">
+			                    <mstrlayout:argument type="string" value="mstrWeb.2163"/>
+			                </mstrlayout:render>
+			            </td>
+			        </tr>
+			    </mstrlayout:list>
+		    </table>
+		</div>
+	</fieldset>
+    <br/>
+</mstrlayout:layout>

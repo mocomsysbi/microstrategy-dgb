@@ -1,0 +1,42 @@
+<framework
+	desc="This is the framework defintion xml for mstr Web application."
+	name="mstrFramework" version="1.0">
+	<browser-settings config-src="/WEB-INF/xml/config/browserSettings.xml" />
+	<errors config-src="/WEB-INF/xml/config/adminErrors.xml" />
+	<folder-links config-src="/WEB-INF/xml/config/folderLinks.xml" />
+	<pages>
+		<page desc="login" desc-id="mstrWeb.26" feature-id=""
+			login-required="false" name="monitorLogin" persist-mode="8" track="false">
+			<templates>
+				<template XMLmerge_id="1" file-name="/jsp/ipa/IPALogin.jsp">
+					<page-sections use-default="false">
+						<page-section file-name="/jsp/ipa/IPA_ShortcutsBar.jsp" name="header" />
+						<page-section file-name="/jsp/ipa/IPA_Path.jsp" name="path" />
+					</page-sections>
+				</template>
+			</templates>
+		</page>
+		<page default="false" desc="Integrated Platform Administrator Page"
+			desc-id="mstrWeb.624" login-required="true" name="welcomeadmin2">
+			<templates>
+				<template XMLmerge_id="1" file-name="/jsp/ipa/IPA_Landing.jsp">
+					<page-sections use-default="false">
+						<page-section file-name="/jsp/ipa/IPA_ShortcutsBar.jsp" name="header" />
+						<page-section file-name="/jsp/ipa/IPA_Path.jsp" name="path" />
+					</page-sections>
+				</template>
+			</templates>
+		</page>
+		<page default="false" desc="IPA Environment Details" desc-id="mstrWeb.624"
+            login-required="true" name="ipaEnvironmentDetails">
+            <templates>
+                <template XMLmerge_id="1" file-name="/jsp/ipa/IPAEnvironmentDetails.jsp">
+                    <page-sections use-default="false">
+                        <page-section file-name="/jsp/ipa/IPA_ShortcutsBar.jsp" name="header" />
+                        <page-section file-name="/jsp/ipa/IPA_Path.jsp" name="path" />
+                    </page-sections>
+                </template>
+            </templates>
+        </page>
+	</pages>
+</framework>

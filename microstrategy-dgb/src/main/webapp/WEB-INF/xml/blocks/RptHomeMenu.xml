@@ -1,0 +1,126 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptMenuModel" name="RptHomeMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="saveDirectly" name="ToolbarSaveButton">
+          <property name="htmlId">mnuSave</property>        
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.118|Save}</property>
+          <property name="visibleFeatures">!check-design-mode;not-datamart;save-report;enable-save-report</property>
+          <property name="cmdid">menuDirectSave</property>
+          <property name="listenerMethods">ongridselectionschange,onReportReload,onScreenModeChange</property>
+          <property name="extraCssClass">mnuHome</property>
+        </block>
+        <block listElementKey="K1555" name="ToolbarSaveButton">
+          <property name="htmlId">mnuSaveAs</property>
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.1896|Save As...}</property>
+          <property name="visibleFeatures">!check-design-mode;not-datamart;save-report;enable-save-report</property>
+          <property name="extraCssClass">mnuHome</property>
+        </block>
+        <block listElementKey="K1556" name="BaseBlock"/>
+        <block listElementKey="K1557" name="ToolbarUndoButton">
+          <property name="id">undoMenu</property>
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3540|Undo}</property>
+          <property name="shortcutText" type="String">Ctrl+Z</property>
+          <property name="visibleFeatures">not-datamart;!check-design-mode</property>
+          <property name="listenerMethods">ongridselectionschange,onReportReload</property>
+        </block>
+        <block listElementKey="K1558" name="ToolbarRedoButton">
+          <property name="id">redoMenu</property>
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3541|Redo}</property>
+          <property name="shortcutText" type="String">Ctrl+Y</property>
+          <property name="visibleFeatures">not-datamart;!check-design-mode</property>
+          <property name="listenerMethods">ongridselectionschange,onReportReload</property>
+        </block>
+        <block listElementKey="K1559" name="BaseBlock"/>
+        <block listElementKey="K1560" name="ToolbarDesignModeButton">
+          <property name="id">designMenu</property>
+          <property name="type">MENU</property>
+          <property name="cmdid">designMode</property>
+          <property name="text">{desc:mstrWeb.3067|Design Mode}</property>
+          <property name="visibleFeatures">design-mode;not-datamart;enable-design-mode;!check-design-mode</property>
+        </block>
+        <block listElementKey="K1561" name="ToolbarGridButton">
+          <property name="id">gridMenu</property>
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.114|Grid}</property>
+          <property name="visibleFeatures">menu-grid-mode;!check-design-mode</property>
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="K1562" name="ToolbarGraphButton">
+          <property name="id">graphMenu</property>
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.115|Graph}</property>
+          <property name="visibleFeatures">menu-graph-mode;!check-design-mode</property>
+          <property name="enabledFeatures">is-viewable-report;enable-graph-mode</property>
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="K1563" name="ToolbarGridGraphButton">
+          <property name="id">gridGraphMenu</property>
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.1904|Grid and Graph}</property>
+          <property name="visibleFeatures">menu-grid-graph-mode;!check-design-mode</property>
+          <property name="enabledFeatures">is-viewable-report;enable-grid-graph-mode</property>
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="K1564" name="BaseBlock"/>
+        <block listElementKey="K1565" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.1982|Add to History List}</property>
+          <property name="cmdid">addToHistoryList</property>
+          <property name="visibleFeatures">is-viewable-report;add-history-list</property>
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="rptCtPersonalView" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.9173|Create Personal View}</property>
+          <property name="cmdid">createPersonalView</property>
+        </block>
+        <block listElementKey="rptShareURL" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.8101|Share}</property>
+          <property name="cmdid">ShowSharingEditor</property>
+          <property name="visibleFeatures">scheduling</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+        <block listElementKey="K1566" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2249|Send Now...}</property>
+          <property name="cmdid">ncSendNow</property>
+          <property name="visibleFeatures">is-viewable-report;use-immediate-delivery</property>
+          <property name="enabledFeatures">enable-send-now</property>
+        </block>
+        <block listElementKey="K1567" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.5007|Subscribe to}</property>
+          <property name="menuModel">RptHomeSendNowMenu</property>
+          <property name="cmdid">subscribeToMenu</property>
+        </block>
+        <block listElementKey="K1568" name="BaseBlock"/>
+        <block listElementKey="K1569" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.246|Export}</property>
+          <property name="menuModel">RptHomeExportMenu</property>
+          <property name="style">RptExportMenuBlockLoader</property>
+          <property name="layouts">/WEB-INF/xml/layouts/blocks/HomeExportMenuLayout.xml</property>
+          <property name="enabledFeatures">is-viewable-report;show-report-export-menu</property>
+          <property name="listenerMethods">onReportReload</property>
+          <property name="toolbarHelper">
+            <block name="ToolbarButtonHelper">
+              <property name="visible">true</property>
+            </block>
+          </property>
+        </block>
+        <block listElementKey="K1571" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2109|Print...}</property>
+          <property name="cmdid">printPDF</property>
+          <property name="visibleFeatures">is-viewable-report;pdf;enable-pdf</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1572" name="BaseBlock"/>
+        <block listElementKey="K1573" name="ToolbarFullScreenButton">
+          <property name="text">{desc:mstrWeb.4664|Full Screen Mode}</property>
+          <property name="type">MENU</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

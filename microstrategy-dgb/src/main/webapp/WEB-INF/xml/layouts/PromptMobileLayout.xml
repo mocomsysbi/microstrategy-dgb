@@ -1,0 +1,57 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:block name="ReportInstanceModel">
+	    <mstrlayout:base id="ownerBean" method="getContainerBean" base="transform"/>
+		<mstrlayout:if operator="isNotNull" base="ownerBean">
+			<mstrlayout:then>
+				<mstrlayout:bSetProperty path="objectInfo">
+					<mstrlayout:block name="ItemInfo">
+						<mstrlayout:bSetProperty path="dssid" method="getObjectID" base="ownerBean"/>
+						<mstrlayout:bSetProperty path="n" method="getObjectName" base="ownerBean"/>
+						<mstrlayout:bSetProperty path="tp" method="getObjectType" base="ownerBean"/>
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="messageInfo">
+					<mstrlayout:block name="ItemInfo">
+						<!--
+						<mstrlayout:bSetProperty path="dssid" method="getMessageID" base="ownerBean"/>
+						<mstrlayout:bSetProperty path="n" method="getDisplayName" base="ownerBean"/>
+						-->
+						<mstrlayout:bSetProperty path="desc" value="" />
+						<mstrlayout:bSetProperty path="icon" value="" />
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+				
+				<!--<mstrlayout:bSetProperty path="messageName">
+					  <mstrlayout:block name="ConstantPromptAnswerModel">
+						  <mstrlayout:bSetProperty path="valueString" method="getDisplayName" base="ownerBean"/>
+						<mstrlayout:bSetProperty path="dateFormat" method="getDateFormat"/>  
+						<mstrlayout:bSetProperty path="timeFormat" method="getTimeFormat"/>  	        	
+					</mstrlayout:block>  	            
+				</mstrlayout:bSetProperty>-->
+			</mstrlayout:then>
+		</mstrlayout:if>
+		        
+		<mstrlayout:bSetProperty path="extendedProperties">
+            <mstrlayout:block name="ReportInstanceExtendedProperties">
+                <mstrlayout:bSetProperty path="beanPath" method="getPromptsBeanPath"/>
+                <mstrlayout:bSetProperty path="beanType" method="getContainerBeanType"/>
+                <mstrlayout:bSetProperty path="isReprompt" method="isReprompted"/>
+            </mstrlayout:block>
+        </mstrlayout:bSetProperty>
+        
+        <mstrlayout:bSetProperty path="promptQuestions">
+            <mstrlayout:block name="ListModel">
+                <mstrlayout:bSetProperty path="valueForm" value="id"/>
+                <mstrlayout:bSetProperty path="selectedIndicesList" method="getCurrentPromptPosition"/>
+                <mstrlayout:list id="promptIndexList" base="bean" name="getPromptAppBeans">
+                    <mstrlayout:bAppendList path="items" method="getPromptPageWidget">
+                        <mstrlayout:argument list="promptIndexList" type="com.microstrategy.web.app.beans.PromptAppBean"/>
+                        <mstrlayout:argument type="boolean" value="true"/> <!-- model=true; view = false -->
+                    </mstrlayout:bAppendList>
+                </mstrlayout:list>
+            </mstrlayout:block> 
+        </mstrlayout:bSetProperty>
+        <mstrlayout:slot name="ReportInstanceModel"/>
+    </mstrlayout:block>
+</mstrlayout:layout>

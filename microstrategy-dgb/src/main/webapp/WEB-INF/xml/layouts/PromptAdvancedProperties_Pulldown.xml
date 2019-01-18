@@ -1,0 +1,85 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+        <span class="title">*Properties for Pull down style</span>
+        <p/>
+        <table width="70%" cellspacing="2">
+            <tr>
+                <td>
+                *Font style: &nbsp;
+                <select name="p_pulldown_fontStyle" id="p_pulldown_fontStyle" class="promptDropDown">
+                        <mstrlayout:list id="style" name="getFontStyleList">
+                            <option>
+                                <mstrlayout:attr name="addOptionAttr">
+                                    <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:attr>
+                                <mstrlayout:render name="optionText">
+                                    <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:render>
+                            </option>
+                        </mstrlayout:list>          
+                </select>
+                </td>
+                <td>
+                Font size:&nbsp;
+                <select name="p_pulldown_fontSize" id="p_pulldown_fontSize" class="promptDropDown">
+                        <mstrlayout:list id="style" name="getFontSizeList">
+                            <option>
+                                <mstrlayout:attr name="addOptionAttr">
+                                    <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:attr>
+                                <mstrlayout:render name="optionText">
+                                    <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:render>
+                            </option>
+                        </mstrlayout:list>          
+                </select>
+                </td>
+            </tr>
+            <mstrlayout:if name="showObjectDescriptionInProperties">
+                <mstrlayout:then>
+                <tr>
+                    <td>
+                    Object descriptions:
+                    </td>
+                    <td>
+                    <select name="p_pulldown_desc_location" id="p_pulldown_desc_location" class="promptDropDown">
+                            <mstrlayout:list id="style" name="getDescLocationList">
+                                <option>
+                                    <mstrlayout:attr name="addOptionAttr">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:attr>
+                                    <mstrlayout:render name="optionText">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:render>
+                                </option>
+                            </mstrlayout:list>          
+                    </select>
+                    </td>
+                </tr>
+                    
+                </mstrlayout:then>
+            </mstrlayout:if>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" name="p_pulldown_setCustWidth" id="p_pulldown_setCustWidth"/> 
+                <label for="p_pulldown_setCustWidth"> &nbsp;*Custom pull down width </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                &nbsp;&nbsp;&nbsp;&nbsp;Width&nbsp;
+                <input type="text" name="p_pulldown_customWidth" id="p_pulldown_customWidth" value="15"/>
+                &nbsp;inches
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="p_option_selectLayoutDef" id="p_option_selectLayoutDef_pull"/>
+                <label for="p_option_selectLayoutDef_pull"> &nbsp;Layout Definition Source </label>
+            </td>
+            <td>
+                <input type="file" name="layoutFile" value="\\was-ewang25\shared\217660.htm" class="mstrInputTextLong"/>
+            </td>
+        </tr>
+    </table>
+</mstrlayout:layout>

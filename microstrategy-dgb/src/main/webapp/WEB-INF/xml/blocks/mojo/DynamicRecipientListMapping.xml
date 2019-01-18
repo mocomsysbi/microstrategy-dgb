@@ -1,0 +1,29 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single object in metadata.
+-->
+<block name="DynamicRecipientListMapping">
+    <definition>
+
+        <!-- The Physical Address Mapping Field -->
+        <property name="phyaddr" type="Block" />
+
+        <!-- The Device Mapping Field -->
+        <property name="dev" type="Block" />
+        
+        <!-- The Linked User ID Mapping Field -->
+        <property name="uid" type="Block" />
+        
+        <!-- The Personalization Mapping Field -->
+        <property name="pa" type="Block" />
+        
+        <!-- The Recipient Name Mapping Field -->
+        <property name="rn" type="Block" />
+        
+        <!-- The Notification Address Mapping Field -->
+        <property name="na" type="Block" />
+        
+        <!-- The Notification Device Mapping Field -->
+        <property name="nd" type="Block" />
+    </definition>
+</block>

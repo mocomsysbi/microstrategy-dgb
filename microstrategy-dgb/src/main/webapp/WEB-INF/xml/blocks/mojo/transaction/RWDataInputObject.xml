@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWDataInputObject">
+    <definition>
+      <!-- The data input type -->
+      <property name="t" type="Integer"/>
+      <!-- Datatype of mapped transaction column -->
+      <property name="dt" type="Integer" />
+      <!-- The display mode, 0 for popup, 1 for inline  -->
+      <property name="dm" type="Integer"/>
+      <!-- The control key identifying this object -->
+      <property name="k" type="String"/>
+      <!-- 1 means user's input is required for this DIC -->
+      <property name="req" type="Integer"/>
+    </definition>
+</block>

@@ -1,0 +1,9 @@
+<paper-sizes>
+    <paper-size desc="Letter 8.5&quot; x 11&quot;" desc_id="29" desktop-key="1" key="Letter,8.5,11"/>
+    <paper-size desc="Legal 8.5&quot; x 14&quot;" desc_id="32" desktop-key="2" key="Legal,8.5,14"/>
+    <paper-size desc="Executive 7.25&quot; x 10.5&quot;" desc_id="5876" desktop-key="3" key="Executive,7.25,10.5"/>
+    <paper-size desc="Folio 8.5&quot; x 13&quot;" desc_id="35" desktop-key="4" key="Folio,8.5,13"/>
+    <paper-size desc="A3 11.69&quot; x 16.54&quot;" desc_id="1345" desktop-key="5" key="A3,11.69,16.54"/>
+    <paper-size desc="A4 8.27&quot; x 11.69&quot;" desc_id="34" desktop-key="6" key="A4,8.27,11.69"/>
+    <paper-size desc="A5 5.83&quot; x 8.27&quot;" desc_id="5875" desktop-key="7" key="A5,5.83,8.27"/>
+</paper-sizes>

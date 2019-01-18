@@ -1,0 +1,221 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+<mstrlayout:if name="isValidGrid">
+    <mstrlayout:then>
+    	<![CDATA[
+			<style type="text/css">
+				.iphone-table {
+					width:350px;
+					border-style:solid;
+					border-width:1px;
+					border-spacing:0;
+				}
+				.iphone-table .whiteRow {
+					background-color:#FFFFFF;
+				}
+				.iphone-table td {
+					border-bottom:1px dotted #999999;
+					padding:3px 6px 3px 3px;
+					vertical-align:middle;
+				}
+				.iphone-table th {
+					background-color:#D4D0C8;
+					font-weight:bold;
+					align:left;
+					padding:0 6px 0 3px;
+				}
+				.iphone-grid {
+					padding: 0 0 5px 5px;
+				}
+				.iphone-grid-disabled {
+					position:relative;
+				}
+				.iphone-grid-disabled:before {
+					content:'';
+					position:absolute;
+					top:0;
+					left:0;
+					height: 100%;
+					width: 100%;
+					background-color: #FFF;
+					opacity: .5;			
+				}
+				.iphone-table a {
+					text-decoration:underline;
+                    cursor: pointer;
+				}
+				.vispropstab {
+				    border-style:solid;
+				}
+                .noWidths .iphoneWidthField{
+                    display : none;
+                }
+                .noWidths .iphoneWidthFieldContainer{
+                    padding-left:148px !important;
+                }
+		        .iphone-grid .mstrPulldown {  
+			        float: none;
+					clear: none;
+					display:inline-block;
+					height:15px;
+			    }
+			</style>
+        ]]>
+        <div class="iphonegridcontainer">
+        	<table>
+        	<tr>
+        	<td>
+	        	<mstrlayout:if name="hasMoreThanOneAttribute">
+					<mstrlayout:then>
+						<div class="iphone-grid" style="padding-left:0;">
+							<mstrlayout:render name="checkbox">
+								<mstrlayout:argument type="String" value="gr" />
+								<mstrlayout:argument type="String"
+									value="onclick^microstrategy.bone('visPropsEditor_visPropsIPhoneInteractiveGridStyle').updateGrouping();" />
+								<mstrlayout:argument type="String" value="1" />
+							</mstrlayout:render>
+							<span>
+								<mstrlayout:render name="GroupByDescriptor">
+								</mstrlayout:render>
+							</span>
+						</div>
+						<div id="groupingOpts" class="iphone-grid">
+			                <span style="margin-right: 3px;">
+			                    <mstrlayout:render name="descriptor">
+			                        <mstrlayout:argument type="string" value="mstrWeb.12414"/><!-- Grouping background: -->
+			                    </mstrlayout:render>
+			                </span>
+			                <mstrlayout:render name="ColorPicker">
+			                    <mstrlayout:argument type="String" value="gb" /> <!-- prop name -->
+			                </mstrlayout:render>
+
+			                <div style="clear:both;margin-bottom:3px;"/>
+			                <span style="margin-right: 3px;">
+			                    <mstrlayout:render name="descriptor">
+			                        <mstrlayout:argument type="string" value="mstrWeb.12413"/><!-- Grouping font size: -->
+			                    </mstrlayout:render>			                    
+			                </span>                
+				            <mstrlayout:render name="SelectBox">
+				            	<mstrlayout:argument type="String" value="gfs"/> 
+				            	<mstrlayout:argument type="String" value="10^10|11^11|12^12|13^13|14^14|15^15|16^16|17^17|18^18|19^19|20^20" /> <!-- selectBox elements -->
+				            	<mstrlayout:argument type="String" value="" /> <!-- extra att -->
+				            	<mstrlayout:argument type="String" value="15" /> <!-- default val -->
+				            </mstrlayout:render>	
+			            </div>
+			            <div class="iphone-grid">
+			                <span style="margin-right: 3px;">
+			                    <mstrlayout:render name="descriptor">
+			                        <mstrlayout:argument type="string" value="mstrWeb.13794"/><!-- Header Font Size: -->
+			                    </mstrlayout:render>			                    
+			                </span>                
+				            <mstrlayout:render name="SelectBox">
+				            	<mstrlayout:argument type="String" value="hfs"/> 
+				            	<mstrlayout:argument type="String" value="10^10|11^11|12^12|13^13|14^14|15^15|16^16|17^17|18^18|19^19|20^20" /> <!-- selectBox elements -->
+				            	<mstrlayout:argument type="String" value="" /> <!-- extra att -->
+				            	<mstrlayout:argument type="String" value="15" /> <!-- default val -->
+				            </mstrlayout:render>
+			            </div>
+					</mstrlayout:then>
+				</mstrlayout:if>
+	            <div class="iphone-grid">
+	                <span style="margin-right: 3px;">
+	                    <mstrlayout:render name="descriptor">
+	                        <mstrlayout:argument type="string" value="mstrWeb.8306"/><!-- Default Action Form -->
+	                    </mstrlayout:render>
+	                    <![CDATA[:]]>
+	                </span>
+	                <mstrlayout:render name="DefaultActionFormPulldown">
+	                    <mstrlayout:argument type="String" value="daf" /> <!-- prop name -->
+	                </mstrlayout:render>
+	            </div>
+        	</td>
+        	<td style="vertical-align: top;">
+	            <div class="iphone-grid">
+	                <span style="margin-right: 3px;">
+	                    <mstrlayout:render name="descriptor">
+	                        <mstrlayout:argument type="string" value="mstrWeb.5584"/><!-- Color Theme: -->
+	                    </mstrlayout:render>
+				    </span>
+					<mstrlayout:render name="ColorThemeSelectBox">
+						<mstrlayout:argument type="String" value="ct" /> <!-- prop name -->					
+					</mstrlayout:render>
+	            </div>
+	        	<div class="iphone-grid">
+					<mstrlayout:render name="checkbox">
+				      <mstrlayout:argument type="String" value="bn"/>
+				    </mstrlayout:render> 
+				    <span>
+				    	<mstrlayout:render name="descriptor">
+				        	<mstrlayout:argument type="string" value="mstrWeb.3646"/><!-- Banding -->
+						</mstrlayout:render>
+					</span>               
+				</div>
+	            <div class="iphone-grid">
+	                <mstrlayout:render name="checkbox">
+	                  <mstrlayout:argument type="String" value="ar"/>
+	                  <mstrlayout:argument type="String" value="onclick^microstrategy.bone('visPropsEditor_visPropsIPhoneInteractiveGridStyle').showWidths(this);"/>
+	                  <mstrlayout:argument type="String" value="1"/>
+	                </mstrlayout:render> 
+	                <span>
+	                    <mstrlayout:render name="descriptor">
+	                        <mstrlayout:argument type="string" value="mstrWeb.7731"/><!-- Automatic column sizing -->
+	                    </mstrlayout:render>
+	                </span>               
+	            </div>
+	            <div class="iphone-grid">
+                    <span style="margin-right: 3px;">
+	                    <mstrlayout:render name="descriptor">
+	                        <mstrlayout:argument type="string" value="mstrWeb.13795"/><!-- Values Font Size: -->
+	                    </mstrlayout:render>			                    
+	                </span>                
+		            <mstrlayout:render name="SelectBox">
+		            	<mstrlayout:argument type="String" value="vfs"/> 
+		            	<mstrlayout:argument type="String" value="10^10|11^11|12^12|13^13|14^14|15^15|16^16|17^17|18^18|19^19|20^20" /> <!-- selectBox elements -->
+		            	<mstrlayout:argument type="String" value="" /> <!-- extra att -->
+		            	<mstrlayout:argument type="String" value="15" /> <!-- default val -->
+		            </mstrlayout:render>            
+	            </div>
+	            
+        	</td>
+        	</tr>
+        	</table>
+			<div class="iphone-grid">
+			    <span>
+			    	<mstrlayout:render name="descriptor">
+			        	<mstrlayout:argument type="string" value="mstrWeb.4073"/><!-- Columns: -->
+					</mstrlayout:render>
+			    </span>	
+                <span class="iphoneWidthFieldContainer" style="font-weight:bold;padding-left:92px;">
+                    <span class="iphoneWidthField">
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="string" value="mstrWeb.7730"/><!-- Width(%) -->
+                        </mstrlayout:render>
+                    </span>
+                </span>
+                <span style="font-weight:bold;padding-left: 63px;">
+			    	<mstrlayout:render name="descriptor">
+			        	<mstrlayout:argument type="string" value="mstrWeb.8248"/><!-- Toggle -->
+					</mstrlayout:render>	
+				</span>
+			</div>
+			<div class="iphone-grid">
+				<mstrlayout:render name="GroupsTable">
+			      <mstrlayout:argument type="String" value="cols"/>
+			    </mstrlayout:render>
+				<mstrlayout:render name="hiddenInput">
+			      <mstrlayout:argument type="String" value="cols"/>
+                  <mstrlayout:argument type="String" value="getvalue^microstrategy.bone('visPropsEditor_visPropsIPhoneInteractiveGridStyle').getColsXML()|isvalid^microstrategy.bone('visPropsEditor_visPropsIPhoneInteractiveGridStyle').validateColumns();"/>
+			    </mstrlayout:render>
+			    <span>
+			    	<mstrlayout:render name="descriptor">
+			        	<mstrlayout:argument type="string" value="mstrWeb.7556"/><!-- Drag to re-order -->
+					</mstrlayout:render>
+			    </span>
+			</div>
+        </div>
+    </mstrlayout:then>
+    <mstrlayout:else>
+		<mstrlayout:render name="ValidationError"/>
+    </mstrlayout:else>
+</mstrlayout:if>
+</mstrlayout:layout>

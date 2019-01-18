@@ -1,0 +1,26 @@
+<shortcut-list-set name="srToolbar" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="createObjects">
+    <shortcut base-bean="ugb" desc="Create New Security Role" desc-id="mstrWeb.5199" append-state="true" name="tbNewSR" type="button" feature-id="create-security-roles" href="#"  iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreateSecurityRole"/>
+    </shortcut>
+  </shortcut-list>    
+  <shortcut-list name="srView">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="View: List" desc-id="mstrWeb.3382" name="tbListView" type="button"  check-feature-id="check-security-roles-mode-list-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeSecurityRolesViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentSecurityRolesViewMode" value="SecurityRoleFolderListStyle"/>
+      </event>
+    </shortcut>
+    <shortcut desc="View: Icon" desc-id="mstrWeb.3381" name="tbLargeIcons" type="button" check-feature-id="!check-security-roles-mode-list-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeSecurityRolesViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentSecurityRolesViewMode" value="SecurityRoleFolderIconStyle"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

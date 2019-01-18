@@ -1,0 +1,38 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="RibbonEvent" inherits="BaseBlock">
+		<definition>
+
+			<!-- The target window of the event -->
+			<property name="target" type="String" />
+
+			<!-- The params that build the URL with the event(s) in the form param|param|param|... -->
+			<property name="evtParams" type="String" />
+
+			<!-- The event that will be containing the real event, usually 120001 -->
+			<property name="evt" type="Integer" />
+
+			<!-- The source of the bean that will handle in first instance the event, usually RibbonBean -->
+			<property name="src" type="String" />
+
+			<!-- The Id that handles the event -->
+			<property name="originalBean" type="String" />
+
+			<!-- Identifier of the original event -->
+			<property name="originalEvent" type="String" />
+
+			<!-- The original arguments of the event in the form name:value|name:value|nam.... -->
+			<property name="originalArguments" type="String" />
+
+			<!-- If the event will run on the iframe -->
+			<property name="iframe" type="Boolean"/>	
+					
+		</definition>
+		<assignments>
+			<property name="target">0</property>
+			<property name="evtParams">evt|src|originalBean|originalEvent|originalArguments|iframe</property>
+			<property name="evt">120001</property>
+			<property name="src">mstrWeb.report.frame.ribbonBean.120001</property>
+			<property name="originalBean">rb</property>
+			<property name="iframe">false</property>
+		</assignments>
+	</block>

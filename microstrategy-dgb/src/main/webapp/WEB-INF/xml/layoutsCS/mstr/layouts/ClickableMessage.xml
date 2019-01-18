@@ -1,0 +1,5 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_enabled="rootTag.disabled = !view.props['enabled']"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'inline', 'none', view.props['visible'])">
+  <div>{@msgText}</div>
+</mstrlayout:layout>

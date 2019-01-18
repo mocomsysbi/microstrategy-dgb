@@ -1,0 +1,26 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Custom Group Properties
+-->
+<block name="CustomGroupProperties">
+    <definition>
+      
+      <!-- Aggregation property -->
+      <property name="agg" type="Integer" />
+  
+      <!-- Flatten property-->
+      <property name="flat" type="Boolean" />
+  
+      <!-- Is Parent First property -->
+      <property name="pf" type="Boolean" />
+
+      <!-- Report Filter Interaction -->
+      <property name="rfi" type="Integer" />
+      
+      <!-- The Custom Group can expand -->
+      <property name="ce" type="Boolean" />
+        
+      <!-- The Custom Group is spliced -->
+      <property name="isp" type="Boolean" />
+  </definition>
+</block>

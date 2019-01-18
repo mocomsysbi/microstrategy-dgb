@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="TitleSelectorDef" inherits="BaseBlock">
+	<definition>
+        <!-- Control Type. See c.m.webapi.EnumDSSXMLRWControlType -->
+        <property name="ct" type="String" />
+
+        <!-- Control key context -->
+        <property name="ck" type="String" />
+         
+        <!-- Control key -->         
+        <property name="ckey" type="String"/>
+
+        <!-- Show All ? --> 
+        <property name="all" type="Boolean" />
+
+        <!-- Control Target Keys. While a list would be more generic, the fact is that client side should need this list ONLY to send it back when selection is changed.   -->
+        <property name="tks" type="String" />
+        
+        <!-- This property stores an array of custom group by nodes -->
+        <property name="cgb" type="Block"/>
+        
+        <!-- This property stores an array of the selected elements -->
+        <property name="ces" type="List"/>
+	</definition>
+</block>

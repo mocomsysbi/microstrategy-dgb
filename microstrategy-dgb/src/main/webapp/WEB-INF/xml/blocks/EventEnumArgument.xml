@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Info block for containing information about a getter-value parameter for events. -->
+	<block name="EventEnumArgument" inherits="EventArgument">
+		<assignments>
+			<property name="type">1</property>
+		</assignments>
+	</block>

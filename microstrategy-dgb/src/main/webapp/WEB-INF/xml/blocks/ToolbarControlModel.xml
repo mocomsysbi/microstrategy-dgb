@@ -1,0 +1,36 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- An abstract model for toolbar controls (buttons, radio buttons, list, etc). -->
+	<block name="ToolbarControlModel" inherits="BaseModel,ToolbarCustomizationInfo">
+		<definition>
+			<!-- A string containing a constant value that specifies what type of view should be instantiated by the Toolbar view. -->
+			<property name="type" type="String" />
+			
+			<!-- A helper object (from the ToolbarControlHelper type hierarchy) for toolbar interactions. -->
+			<property name="toolbarHelper" type="Block" />
+
+			<!-- An optional string containing the id of the command this control will be associated with. -->
+			<property name="cmdid" type="String" />
+			
+			<!-- An optional string containing comma-delimited features to be checked for enabled status.  NOTE: This will override the call
+			 	to execEnabled for the cmdid. -->
+			 <property name="enabledFeatures" type="String" />
+			 
+			<!-- An optional path to the object this ToolbarControlModel will interact with.  Usually set by the parent ToolbarModel, but it can be 
+				overridden in the individual ToolbarControlModel. -->
+			<property name="targetPath" type="String" />
+			
+			<!-- An optional comma delimited string of methods the helper should implement for control synchronization. -->
+			<property name="listenerMethods" type="String" />
+			
+			<!-- By default the control will be invisible until the target is available to 
+				synchronize with.  If this property is true, this control will be visible before the
+				target is ready. -->
+			<property name="visibleBeforeTarget" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="toolbarHelper">
+				<block name="ToolbarControlHelper" />
+			</property>
+			<property name="listenerMethods">onselectionchange</property>
+		</assignments>
+	</block>

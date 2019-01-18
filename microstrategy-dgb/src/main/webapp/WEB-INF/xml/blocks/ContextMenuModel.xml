@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ContextMenuModel" inherits="BaseModel">
+	<definition>
+			<!-- Unique identifier. -->
+			<property name="id" type="String" />
+			<!-- FQCN of the javascript representation of this model. -->
+			<property name="scriptClass" type="String" />
+		</definition>
+		<assignments>
+			<property name="id">dcmmID</property>
+			<property name="scriptClass">mstr.models.ContextMenuModel</property>
+		</assignments>
+	</block>
+

@@ -1,0 +1,14 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.GetRWGraphImageTask">
+  <basicInfo desc="This Task returns the binary image data for a graph in a Report Writer document.">
+    <parameter name="width" desc="Specifies the width (in pixels) of the graph image." required="true" type="int"/>
+    <parameter name="height" desc="Specifies the height (in pixels) of the graph image." required="true" type="int"/>
+    <parameter name="messageID" desc="The Message ID for the previously executed Report Writer document. It is optional if a GraphBean state is provided." required="false" type="guid"/>
+    <parameter name="imgType" desc="The type of image desired. See com.microstrategy.webapi.EnumDSSXMLGraphImgTypes for possible values.  This value is optional if the caller provides a previous GraphBean state." required="false" type="int"/>
+    <parameter name="nodeKey" desc="The key of the template node whose graph should be generated. This value is optional if the caller provides a previous GraphBean state." required="false" type="simplestring"/>
+    <parameter name="sliceID" desc="The slice identifier of the template node whose graph should be generated. This value is optional if the caller provides a previous GraphBean state." required="false" type="simplestring"/>
+    <parameter name="needCoordinate" desc="Specifies whether to get coordinate data for the graph from iServer" required="false" defvalue="0" type="int"/>
+  </basicInfo>
+  
+  <beanInfo name="gb" bean-type="GraphBean" />
+</beanTask>

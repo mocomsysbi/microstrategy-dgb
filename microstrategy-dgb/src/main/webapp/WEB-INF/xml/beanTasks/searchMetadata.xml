@@ -1,0 +1,90 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MetadataSearchTask">
+	<!-- 
+		This information is used to provide "metadata" about this task. In general, it includes
+		names, descriptions and whether the parameters are required or not. 
+	-->
+	<basicInfo desc="This Task provides the ability to search MicroStrategy Metadata. Includes the ability to perform incremental fetch.">
+		<parameter name="styleName" desc="The style to use to transform the FolderBean." defvalue="WidgetFolderStyle" required="false" type="simplestring"/>
+		<!-- parameter for browsing, support incremental fetch and sorting -->
+		<parameter name="blockBegin" desc="The index (starting at 1) of the first element to begin browsing.  If omitted, then the first element is chosen." required="false" />
+		<parameter name="blockCount" desc="The number of elements to return in this fetch.  If omitted, then all remaining elements are returned." required="false" />
+		<parameter name="sortKey" desc="How the elements of the folder are sorted. Sort keys are specified as integers, as described by the EnumWebObjectSort interface.  If omitted, then WebObjectSortObjectNameFoldersFirst is used ('6') is used." required="false" type="simplestring"/>
+		<parameter name="asc" desc="Whether elements of the list are sorted in ascending order or not.  Values are either 'true' or 'false'.  If omitted, then 'true' is assumed." required="false" type="boolean"/>
+		<!-- parameter for search event -->
+		<parameter name="searchID" desc="Specifies the ID of the search to use." required="false" />
+		<parameter name="searchPattern" desc="Specifies the text that the name should include in the search." required="false" />
+		<parameter name="nameWildcards" desc="Specifies whether the search will include wildcards." required="false" />
+		<parameter name="rootFolderID" desc="Specifies the ID of the root folder." required="false" />
+		<parameter name="rootFolderType" desc="Specifies the type of the root folder." required="false" />
+		<parameter name="objectType" desc="Specifies the types of the objects to search within the list of validObjectTypes." required="false" />
+		<parameter name="dateType" desc="Specifies if the search should be restricted based on the date." required="false" />
+		<parameter name="dateSubType" desc="Specifies if the search should be restricted based on dates on a time or date interval." required="false" />
+		<parameter name="created" desc="Specifies if the search should be restricted based on dates taken from the creation time." required="false" />
+		<parameter name="intervalUnit" desc="Specifies the time units when a search is restricted based on a time interval." required="false" />
+		<parameter name="intervalValue" desc="Specifies the time value when a search is restricted based on a time interval." required="false" />
+		<parameter name="startDate" desc="Specifies the starting date when a search is restricted based on a date interval." required="false" />
+		<parameter name="endDate" desc="Specifies the ending date when a search is restricted based on a date interval." required="false" />
+		<parameter name="ownerType" desc="Specifies the owner of the object to search." required="false" />
+		<parameter name="description" desc="Specifies to restrict the search based on some text found in the description." required="false" />
+		<parameter name="maxObjects" desc="Specifies whether the search should return a maximum number of objects." required="false" />
+		<parameter name="recursive" desc="Specifies whether to recurse into the subfolders during a search operation. Set argument to 1 to enable recursion." required="false" />
+		<parameter name="searchDomain" desc="Specifies an integer value for the search domain. It defaults to com.microstrategy.webapi.EnumDSSXMLSearchDomain #DssXmlSearchDomainProject." required="false" />
+		<parameter name="folderBrowserStyle" desc="Specifies whether the search should perform in a folder browsing style. In folder browsing style, the subfolders in current root folder will be automatically added as search result when the search has a root and not recursive." required="false"/>
+		<parameter name="includeAncestorInfo" desc="Specifies whether the Block should include ancestor information." required="false" type="boolean"/>
+		<parameter name="dataSourcesXML" desc="Specifies the data sources xml to be used by the search" required="false"/>
+		<parameter name="includeObjectDesc" desc="Indicates whether it is need to output object description." required="false" type="boolean"/>
+        <parameter name="folderLinksContextId" desc="Specifies the context id associated with the folder links that appear on the ancestor list." required="false" type="int"/>
+        <parameter name="quickSearch" desc="Specifies whether to use New Search Engine." required="false"/>
+        <parameter name="fields" desc="Specifies what fields to search - name, description or comment." required="false"/>
+		<parameter name="validObjectTypes" desc="What subtype of objects we want to limit the output to. A comma-separated list of values from EnumDSSXMLObjectSubTypes. This parameter can only be modified via the searchMetadata.xml file." required="false" defvalue="1,2,3,4,8,10,11,12,13,14,18,39,43,47,55,72,256,257,512,768,769,770,771,772,773,774,775,776,778,779,1024,1025,1026,1027,1028,2048,2560,2566,2567,2568,2569,3072,3328,3585,3587,12032,14080,14081,14082,17153" hidden="true"/>
+		<parameter name="showObjectTags" desc="Indicates whether we need to provide object tags" required="false" defvalue="false" type="boolean"/>
+		<parameter name="uses" desc="Specifies the object info to be used to search dependent. Format: did:type" required="false" />
+		<parameter name="includeHiddenAncestors" desc="Hidden ancestor should be included" defvalue="false" required="false" type="boolean" />
+		<parameter name="encodeObjectInfo" desc="Whether to HTML encode object name and description" defvalue="false" required="false" type="boolean" />
+	</basicInfo>
+
+	<!--
+		This information describes how the task is defined in terms of an existing 
+		Event.  "2003" is the EnumFolderBeanEvents.FOLDER_EVENT_SEARCH Event.
+	-->
+	<eventInfo eventID="2003">
+		<argument name="usePreviousRootFolder" value="1"/>
+		<argument name="folderBlockBegin" value="blockBegin" source="parameter"  />
+		<argument name="folderBlockCount" value="blockCount" source="parameter"  />
+		<argument name="recurse" value="recursive" source="parameter"  />
+		<argument name="dataSources" value="dataSourcesXML" source="parameter"  />
+		<argument name="name" value="searchPattern" source="parameter"  />
+		<argument name="quickSearch" value="quickSearch" source="parameter"  />
+	</eventInfo>
+	
+	<eventInfo eventID="2001">	
+		<argument name="folderBlockBegin" value="blockBegin" source="parameter"  />
+		<argument name="folderBlockCount" value="blockCount" source="parameter"  />
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'fb' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="fb" bean-type="FolderBean">
+        <style name="styleName" source="parameter">		
+			<!-- Override the actual parameters associated with this style with values
+			     from URL (or form data) parameters.
+            -->
+
+            <actualParameter name="sortField" value="sortKey" source="parameter" />
+            <actualParameter name="sortAscending" value="asc" source="parameter"  />
+            <actualParameter name="includeOwnerInfo" value="false"/>
+            <actualParameter name="includeTimeInfo" value="false"/>
+            <actualParameter name="includeAncestorInfo" value="includeAncestorInfo" source="parameter" />
+			<actualParameter name="includeObjectDesc" value="includeObjectDesc" source="parameter" />
+            <actualParameter name="folderLinksContextId" value="folderLinksContextId" source="parameter"/>
+            <actualParameter name="showObjectTags" value="showObjectTags" source="parameter"/>
+            <actualParameter name="searchPattern" value="searchPattern" source="parameter"/>
+            <actualParameter name="includeHiddenAncestors" value="includeHiddenAncestors" source="parameter"/>
+            <actualParameter name="useEncoding" value="encodeObjectInfo" source="parameter"/>
+		</style>
+
+	</beanInfo>
+</beanTask>

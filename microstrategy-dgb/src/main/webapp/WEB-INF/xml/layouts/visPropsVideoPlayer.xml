@@ -1,0 +1,90 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+      <![CDATA[
+        <style type="text/css">
+            .videoPlayerDiv div {
+            	padding: 4px 0 2px 20px;
+            }        
+            .videoPlayerDiv table {
+				padding-left: 20px;
+			}
+        </style>
+     ]]>
+    <div class="videoPlayerDiv"> 
+	<fieldset class="mstrFieldset">
+		<legend>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.4283" /> <!-- Descriptor: Source -->
+            </mstrlayout:render>
+		</legend>
+           <mstrlayout:render name="Radio">
+             <mstrlayout:argument type="String" value="isstr" />
+             <mstrlayout:argument type="String" value="0^mstrWeb.9780" /> <!-- Descriptor: Video Streaming (ex. YouTube) -->
+             <mstrlayout:argument type="String" value="onclick^microstrategy.bone('visPropsEditor_visPropsVideoPlayerStyle').update();"/> <!-- extraParams -->
+             <mstrlayout:argument type="String" value="0" /> <!-- default value -->
+           </mstrlayout:render>
+           <div>
+           	<table>
+           		<tr>
+            		<td>
+			            <mstrlayout:render name="descriptor">
+			              <mstrlayout:argument type="string" value="mstrWeb.9808"/> <!-- Descriptor: Embed Video HTML -->
+			            </mstrlayout:render>
+		            </td>
+		            <td>
+			            <mstrlayout:render name="Textarea">
+			            	<mstrlayout:argument type="String" value="evhtml"/>
+			            	<mstrlayout:argument type="String" value="rows^2|style^width:300px" /> <!-- extra attributes -->	            	
+			            </mstrlayout:render>
+		            </td>
+		        </tr>
+		        <tr>	
+            		<td>
+			            <mstrlayout:render name="descriptor">
+			              <mstrlayout:argument type="string" value="mstrWeb.9781"/> <!-- Descriptor: Alternate Download URL -->
+			            </mstrlayout:render>
+		            </td>
+            		<td>
+			            <mstrlayout:render name="Textbox">
+			            	<mstrlayout:argument type="String" value="adurl"/> 
+			            	<mstrlayout:argument type="String" value="style^width:300px" /> <!-- extra attributes -->	            	
+			            </mstrlayout:render>
+		            </td>
+	            </tr>
+            </table>            
+           </div>
+           <mstrlayout:render name="Radio">
+             <mstrlayout:argument type="String" value="isstr" />
+             <mstrlayout:argument type="String" value="1^mstrWeb.9783" /> <!-- Descriptor: Video Download -->
+             <mstrlayout:argument type="String" value="onclick^microstrategy.bone('visPropsEditor_visPropsVideoPlayerStyle').update();"/> <!-- extraParams -->
+             <mstrlayout:argument type="String" value="0" /> <!-- default value -->
+           </mstrlayout:render>
+			<div><div>
+	            <mstrlayout:render name="descriptor">
+	              <mstrlayout:argument type="string" value="mstrWeb.9779"/> <!-- Descriptor: Video URL -->
+	            </mstrlayout:render>&nbsp;&nbsp;
+	            <mstrlayout:render name="Textbox">
+	            	<mstrlayout:argument type="String" value="vurl"/>
+	            	<mstrlayout:argument type="String" value="style^width:300px" /> <!-- extra attributes --> 
+	            </mstrlayout:render>	
+			</div></div>
+	</fieldset>
+        
+	<fieldset class="mstrFieldset">
+        <legend>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.9784" /> <!-- Descriptor: Thumbnail -->
+            </mstrlayout:render>
+        </legend>
+		<div>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.9785"/> <!-- Descriptor: Video Thumbnail URL -->
+            </mstrlayout:render>&nbsp;&nbsp;
+            <mstrlayout:render name="Textbox">
+            	<mstrlayout:argument type="String" value="vturl"/>
+            	<mstrlayout:argument type="String" value="style^width:300px" /> <!-- extra attributes --> 
+            </mstrlayout:render>	
+        </div>
+	</fieldset>
+		</div>
+	</mstrlayout:layout>

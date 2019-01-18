@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarFillColorPicker" inherits="ToolbarColorPickerModel">
+	<assignments>
+		<property name="id">tbFillColor</property>
+		<property name="cmdid">FillColor</property>
+		<property name="tooltip">{desc:mstrWeb.2186|Fill Color}</property>
+		<property name="lastColor">#FFFFFF</property>
+		<property name="popup|viewFlags">15</property>
+		<property name="enableReselect">true</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

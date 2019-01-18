@@ -1,0 +1,26 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="HBox" name="PropertiesEditorSelectors">
+  <assignments>
+    <property name="modelPath">parent/parent/model</property>
+    <property name="visible">true</property>
+    <property name="id">pfeUnitSelector</property>
+    <property name="cssText">table-layout:fixed; width:50%;</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K949" name="ListPulldown">
+          <property name="modelPath">parent/model/edtUnitSelector</property>
+          <property name="visibleField">model/visible</property>
+          <property name="enabledField">model/enabled</property>
+        </block>
+        <block listElementKey="K950" name="ListPulldown">
+          <property name="modelPath">parent/model/edtValueSelector</property>
+          <property name="visibleField">model/visible</property>
+          <property name="enabledField">model/formatEnabled</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesEditorSelectors are the select boxes that appear at the top of the propeties editor tabs.
+	-->

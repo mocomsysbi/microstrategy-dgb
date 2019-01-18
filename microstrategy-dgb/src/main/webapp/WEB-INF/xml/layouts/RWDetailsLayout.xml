@@ -1,0 +1,170 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<div>
+	   <mstrlayout:attr attribute="class" method="getCssClassName">
+	      <mstrlayout:argument type="string" value="reportDetails"/>
+	   </mstrlayout:attr>
+	   
+	   <div>
+		  <mstrlayout:attr attribute="class" method="getCssClassName">
+			 <mstrlayout:argument type="string" value="name"/>
+		  </mstrlayout:attr>
+		   <div class="mstrPanelTitleBar">
+                  <div class="mstrPanelTitle">
+                      <mstrlayout:render method="name"/>
+                  </div>
+              </div>
+	   </div>
+	   <div>
+		  <mstrlayout:attr attribute="class" method="getCssClassName">
+		     <mstrlayout:argument type="string" value="description"/>
+		  </mstrlayout:attr>
+		    <mstrlayout:if method="getRWDescription" operator="isNotEmptyStr">
+		       <mstrlayout:then>
+			     <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="654"/></mstrlayout:render></label>
+			     <span><mstrlayout:display method="getRWDescription"/></span>
+		       </mstrlayout:then>
+		     </mstrlayout:if>
+	   </div>
+	   <div>
+		  <mstrlayout:attr attribute="class" method="getCssClassName">
+		     <mstrlayout:argument type="string" value="modified"/>
+		  </mstrlayout:attr>
+          <mstrlayout:if method="getModifiedInformation" operator="isNotEmptyStr">
+             <mstrlayout:then>
+		       <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="61"/></mstrlayout:render>:</label>
+		       <span><mstrlayout:display method="getModifiedInformation"/></span>
+	         </mstrlayout:then>
+	      </mstrlayout:if>
+	   </div>
+	   <div>
+		 <mstrlayout:attr attribute="class" method="getCssClassName">
+		     <mstrlayout:argument type="string" value="owner"/>
+		 </mstrlayout:attr>
+		 <mstrlayout:if method="getOwner" operator="isNotEmptyStr">
+		   <mstrlayout:then>
+		    <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="60"/></mstrlayout:render>:</label>
+		    <span><mstrlayout:display method="getOwner"/></span>
+		   </mstrlayout:then>
+		 </mstrlayout:if>
+	   </div>
+       <div>
+		 <mstrlayout:attr attribute="class" method="getCssClassName">
+		    <mstrlayout:argument type="string" value="reportPath"/>
+		 </mstrlayout:attr>
+  		 <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="651"/></mstrlayout:render></label>           
+		 <span class="mstrPathFirst"><mstrlayout:display method="getProjectName"/></span>
+		 <span class="mstrPathDelim">&gt;</span> 	
+         <mstrlayout:list id="Ancestors" name="getObjectPathFolderAncestors">
+        	<mstrlayout:argument type="int" value="1"/>
+          	  <span>
+	            <mstrlayout:display method="getAncestorName">
+		           <mstrlayout:argument list="Ancestors" type="com.microstrategy.web.objects.WebFolder"/>
+			    </mstrlayout:display>
+              </span>
+			<span class="mstrPathDelim">&gt;</span> 	
+        </mstrlayout:list>
+      	<span class="mstrPathLast"><mstrlayout:display method="getObjectName"/></span>
+      </div>
+	
+	  <div>
+		 <mstrlayout:attr attribute="class" method="getCssClassName">
+		    <mstrlayout:argument type="string" value="start"/>
+		 </mstrlayout:attr>
+		 <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="188"/></mstrlayout:render>:</label>
+		 <span><mstrlayout:display method="getStartTime"/></span>
+	  </div>
+		   
+	  <div>
+	     <mstrlayout:attr attribute="class" method="getCssClassName">
+	        <mstrlayout:argument type="string" value="finish"/>
+	     </mstrlayout:attr>
+	     <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="655"/></mstrlayout:render></label>
+	     <span><mstrlayout:display method="getFinishTime"/></span>
+	  </div>		
+	 
+	  <mstrlayout:if method="isDhtml">
+         <mstrlayout:then>
+                   <mstrlayout:render method="advancedAreaJavaScript"/>
+         </mstrlayout:then>
+      </mstrlayout:if>  
+		
+	 <mstrlayout:if method="shouldRenderAdvancedAreaExpanded">
+         <mstrlayout:then>
+           <div>
+		     <mstrlayout:attr attribute="id" method="getAdvancedDivId"/>
+	         <div>
+	           <mstrlayout:attr attribute="class" method="getCssClassName">
+		          <mstrlayout:argument type="string" value="server"/>
+		       </mstrlayout:attr>
+		       <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="36"/></mstrlayout:render>:</label>
+			   <span><mstrlayout:display method="getServerName"/></span>
+              </div>
+              <div>
+	           <mstrlayout:attr attribute="class" method="getCssClassName">
+		          <mstrlayout:argument type="string" value="msgID"/>
+		       </mstrlayout:attr>
+		       <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="80"/></mstrlayout:render></label>
+			   <span><mstrlayout:display method="getMessageID"/></span>
+              </div>
+			  <div>
+	            <mstrlayout:attr attribute="class" method="getCssClassName">
+		          <mstrlayout:argument type="string" value="jobID"/>
+		        </mstrlayout:attr>
+				<label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="3808"/></mstrlayout:render></label>
+			    <span><mstrlayout:display method="getJobID"/></span>
+			  </div> 
+              <div>
+	            <mstrlayout:attr attribute="class" method="getCssClassName">
+		          <mstrlayout:argument type="string" value="docID"/>
+		        </mstrlayout:attr>
+		        <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="3333"/></mstrlayout:render>:</label>
+			    <span><mstrlayout:display method="getDocumentID"/></span>
+              </div>
+			  <div>
+	           <mstrlayout:attr attribute="class" method="getCssClassName">
+		          <mstrlayout:argument type="string" value="status"/>
+		       </mstrlayout:attr>
+ 	      	   <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="187"/></mstrlayout:render>:</label>
+			   <span><mstrlayout:display method="getDocumentStatus"/></span>
+		     </div>
+			 <div>
+	          <mstrlayout:attr attribute="class" method="getCssClassName">
+		        <mstrlayout:argument type="string" value="mct"/>
+		      </mstrlayout:attr>
+		      <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="652"/></mstrlayout:render></label>
+			  <span><mstrlayout:display method="getMessageCreationTime"/></span>
+		    </div>
+            <div>
+	          <mstrlayout:attr attribute="class" method="getCssClassName">
+		        <mstrlayout:argument type="string" value="mlu"/>
+		      </mstrlayout:attr>
+			  <label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="653"/></mstrlayout:render></label>
+			  <span><mstrlayout:display method="getMessageModificationTime"/></span>
+		    </div>
+           </div>	 
+	     </mstrlayout:then>
+     </mstrlayout:if>
+	 <div>
+		 <mstrlayout:attr attribute="class" method="getCssClassName">
+	        <mstrlayout:argument type="string" value="buttonbarRight"/>
+	     </mstrlayout:attr>
+	     <mstrlayout:render method="advancedDetailsButton"/>
+     </div>
+     
+     <mstrlayout:if method="isDhtml">
+        <mstrlayout:then>
+          <mstrlayout:if method="isAdvancedAreaExpanded">
+             <mstrlayout:else>
+                <script type="text/javascript">toggleAdvancedArea(false);</script>
+             </mstrlayout:else>
+          </mstrlayout:if>
+        </mstrlayout:then>
+     </mstrlayout:if>   
+
+	 <mstrlayout:list id="Datasets" name="getDatasets">
+          <mstrlayout:include file="/WEB-INF/xml/layouts/DatasetDetailsLayout.xml"/>   	
+     </mstrlayout:list>
+	 			
+	</div>
+</mstrlayout:layout>

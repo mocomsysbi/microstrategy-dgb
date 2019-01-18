@@ -1,0 +1,25 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.BlockLoaderTask">
+	<!-- 
+		This Task is used to dynamically load a toolbar. The Block tree is populated by a 
+		specific Transform/Style for explicit use in the rendering of new toolbars.
+	-->
+	<basicInfo desc="This Task returns the Toolbar Model Block tree for a specific toolbar of a particular ribbon list.">
+		<parameter name="ribbonListName" desc="Specifies the name of a specific ribbon-list in the ribbon-list-set." required="true" type="simplestring"/>
+		<parameter name="toolbarName" desc="Specifies the name of a specific ribbon toolbar in the ribbon-list." required="true" type="simplestring"/>
+		<parameter name="viewer" desc="Specifies the viewer to use for rendering the Toolbar" required="false" type="simplestring"/>
+		<parameter name="juil" desc="Whether the Block tree is being constructed for the Javascript UI Library" required="false" defvalue="false" type="boolean"/>
+	</basicInfo>
+
+    <!--
+        This Task does not require a Bean at all! 
+    -->	
+	<beanInfo>
+		<style name="RibbonAjaxToolbarRequest" source="const">
+			<!-- Wire up the task parameters to actual parameters of the same name. -->
+			<actualParameter name="ribbonListName" value="ribbonListName" source="parameter" />
+			<actualParameter name="toolbarName" value="toolbarName" source="parameter" />
+			<actualParameter name="viewer" value="viewer" source="parameter" />
+		</style>
+	</beanInfo>
+</beanTask>

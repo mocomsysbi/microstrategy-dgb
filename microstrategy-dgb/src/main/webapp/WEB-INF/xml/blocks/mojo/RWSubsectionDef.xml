@@ -1,0 +1,26 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single subsection in a RWD.
+--> 
+<block name="RWSubsectionDef" inherits="RWUnitDef">
+    <definition>
+        <!-- A bitwise flag indicating the state for vertical CanShrink and CanGrow.  
+             0 == none, 1 == CanShrink, 2 == CanGrow, 3 == CanShrink and CanGrow -->
+        <property name="vc" type="Integer" />
+
+		<!-- An bitwise flag indicating the state for horizontal CanShrink and CanGrow.
+		 	 0 == none, 1 == CanShrink, 2 == CanGrow, 3 == CanShrink and CanGrow -->
+		<property name="hc" type="Integer" />
+
+		<!-- A dynamic block (map) of keys identifying which child controls have dynamic 
+		     heights or widths. The block contains one property for each dynamic dimensioned 
+		     child within the subsection. The value for the property is
+		     1 == Height is dynamic, 2 == Width is dynamic, or 3 == Both height and width 
+		     are dynamic. -->
+		<property name="ck" type="Block" />
+	</definition>
+	<assignments>
+        <!-- Our type is 4 [RWUNIT_SUBSECTION] -->
+        <property name="t">4</property>
+    </assignments>
+</block>

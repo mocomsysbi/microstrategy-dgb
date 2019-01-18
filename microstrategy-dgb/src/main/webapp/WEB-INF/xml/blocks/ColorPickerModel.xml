@@ -1,0 +1,29 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ColorPickerModel" inherits="ListModel">
+		<definition>
+			<!-- The maximum size of the items collection.  If the models gets a new item
+				it pushes it into the beginning of the items and pops the last item.  A value
+				of -1 means there is no limit. -->
+			<property name="maxSize" type="Integer" />
+			
+			<!-- The actual value (color).  This may not match a color in the ListModel, in which
+				case we clear all selections. -->
+			<property name="actualColor" type="String" />
+			
+			<!-- A boolean indicating whether the model contains any non-transparent colors. -->
+			<property name="hasColor" type="Boolean" />
+			
+			<!-- Command to allow select by value (used for editor buttons -->
+			<property name="CommandEnabledSelectValue" type="Boolean" />
+
+            <!-- This property gets pushed to the viewFlags property of the ColorPickerPopup of the view 
+                that is targeting this model. -->
+            <property name="popup|viewFlags" type="String" />			
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ColorPicker</property>
+			<property name="valueForm">dssid</property>
+			<property name="maxSize">-1</property>
+			<property name="CommandEnabledSelectValue">true</property>
+		</assignments>
+	</block>

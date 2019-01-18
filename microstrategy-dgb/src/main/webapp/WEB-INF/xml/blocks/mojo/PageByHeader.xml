@@ -1,0 +1,19 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- 
+        This block represents a Report Page By Header.
+    -->
+    <block name="PageByHeader" annotation="xml:elementName=ph">
+        <definition>
+            <!-- The ID of the page by header. -->
+            <property name="id" type="String" />
+
+            <!-- The name of the page by header. -->
+            <property name="n" type="String" />
+            
+            <!-- The type of the page by header. -->
+            <property name="tp" type="Integer" />
+            
+            <!-- The collection of headers for this page by header. -->
+            <property name="h" type="List" annotation="xml:embedChildren" />
+        </definition>
+    </block>

@@ -1,0 +1,32 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for a token.
+--> 
+<block name="Token">
+  <definition>
+    <!-- Value of the token -->
+    <property name="v" type="String" />
+    
+    <!-- Type of the token -->
+    <property name="tp" type="Integer" />
+    
+    <!-- The object referred by the token -->
+    <property name="oi" type="Block" />
+    
+    <!-- Level of the token -->
+    <property name="lv" type="Integer" />
+    
+    <!-- State of the token -->
+    <property name="sta" type="Integer" />
+    
+    <!-- Extra value type of the referred object -->
+    <property name="extp" type="String" />
+    
+    <!-- Extra value of the referred object -->
+    <property name="exv" type="String" />
+    
+    <!-- Section Type of the token -->
+    <property name="sctt" type="Integer" />
+    
+  </definition>
+</block>

@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarTextBox" inherits="ToolbarControl,HTextBox">
+		<assignments>
+			<property name="modelPushedProps">caption,totalSize,validator</property>
+			<property name="valueField">value</property>
+		</assignments>
+	</block>

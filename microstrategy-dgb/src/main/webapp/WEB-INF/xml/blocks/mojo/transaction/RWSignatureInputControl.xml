@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWSignatureInputControl" inherits="RWDataInputObject">
+  <definition>
+    <!-- whether to show guide line -->
+    <property name="sgl" type="Boolean" />
+  </definition>
+</block>

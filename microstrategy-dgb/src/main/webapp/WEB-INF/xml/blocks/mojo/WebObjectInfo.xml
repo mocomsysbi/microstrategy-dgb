@@ -1,0 +1,61 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single object in metadata.
+-->
+<block name="WebObjectInfo">
+    <definition>
+        <!-- The DSS ID of the object -->
+        <property name="did" type="String" />
+        
+        <!-- The type of the object. Report == 3, Folder == 8, Attribute == 12, ... 
+             See c.m.webapi.EnumDSSXMLObjectTypes for details. -->
+        <property name="t" type="Integer" />
+        
+        <!-- The subtype of the object. CustomGroup == 257, Graph == 769, ...
+             See c.m.webapi.EnumDSSXMLObjectSubTypes for details. -->
+        <property name="st" type="Integer" />
+        
+        <!-- The name of the object. -->
+        <property name="n" type="String" /> 
+        
+        <!-- The Object Description -->
+        <property name="desc" type="String" />
+        
+        <!-- Is ShortCut -->
+        <property name="isc" type="Boolean" />
+    
+        <!-- Abbreviation property -->        
+        <property name="ab" type="String" />
+                
+        <!-- Icon Path property -->        
+        <property name="icp" type="String" />
+        
+        <!-- The DataSources. See WebObjectInfo.getDataSources() -->
+        <property name="dsrcs" type="String" />        
+        
+        <!-- The XML representation of the object. -->
+        <property name="xml" type="String" />
+        
+        <!-- The Access Granted bitmap. -->        
+        <property name="acg" type="Integer" />
+        
+        <!-- ACL List of the object. -->
+        <property name="acls" type="List" />
+        
+        <!-- Default View Media if set -->
+        <property name="dvm" type="Integer" />
+        
+        <!-- Property sets of the object.  -->
+        <property name="prss" type="Block" />
+        
+         <!-- The owner of the object. -->
+        <property name="own" type="String" />
+        
+        <!-- The modification time of the object -->
+        <property name="mdt" type="String" />
+        
+        <!-- Available View Media if set -->
+        <property name="avm" type="Integer" />
+        
+    </definition>
+</block>

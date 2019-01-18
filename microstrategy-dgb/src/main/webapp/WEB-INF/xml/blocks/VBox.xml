@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- VBox is a container for laying out view Blocks vertically on-screen.  -->
+	<block name="VBox" inherits="BaseView,Container">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.VBox</property>
+			<property name="cssClass">VBox</property>
+		</assignments>
+	</block>

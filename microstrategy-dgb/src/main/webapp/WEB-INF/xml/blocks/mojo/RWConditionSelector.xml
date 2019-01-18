@@ -1,0 +1,37 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the Condition Selector Object portion of a Report Writer Unit.
+--> 
+<block name="RWConditionSelector" inherits="RWSelector">
+    <definition>
+        <!-- Indicate the minimum metric value on the target grid-->
+        <property name="min" type="Double" /> 
+        
+        <!-- Indicate the maximum metric value on the target grid -->
+        <property name="max" type="Double" /> 
+        
+        <!-- Indicate the total elements count on the target grid -->
+        <property name="cnt" type="Integer" />         
+
+        <!-- qualification type -->
+        <property name="qt" type="Integer" />    
+        
+        <!-- function type -->
+        <property name="ft" type="Integer" />
+        
+        <!-- function -->
+        <property name="f" type="Integer" />
+        
+        <!-- constant node list, each element should be a ConstantNode block -->
+        <property name="cs" type="List" />
+                  
+        <!-- Indicate if there are no values coming from backend -->
+        <property name="nov" type="Boolean" />    
+              
+        <!-- Indicate the data type of the metric -->
+        <property name="dt" type="Integer" />   
+        
+        <!-- Attribute form id used in the expression if it is an attribute qualification selector --> 
+        <property name="fid" type="String" />
+    </definition> 
+</block>

@@ -1,0 +1,28 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+    <basicInfo desc="This task pivots an RWD Grid and serializes the partial results.">
+        <parameter name="messageID" desc="The Message ID of a previously executed Report Writer Document." required="false" />
+        <parameter name="action" desc="The node key for the pivoted template (used for partial update)"  required="true" />
+        <parameter name="key" desc="The node key for the pivoted template (used for partial update)"  required="true" />
+        <parameter name="objectId" desc="The dss id of the unit being pivoted"  required="false" />
+        <parameter name="objectType" desc="The dss type of the unit being pivoted"  required="false"/>
+        <parameter name="axis" desc="The target axis of the pivot operation"  required="false" />
+        <parameter name="pos" desc="The target position within the axis"  required="true" />
+    </basicInfo>    
+
+    <!-- REPORT_WRITER_EVENT_UPDATE_TEMPLATE_UNITS  -->
+    <eventInfo eventID="2048157">
+        <argument name="templateAction" source="parameter" value="action" />
+        <argument name="unitKeyContext" source="parameter" value="key" />
+        <argument name="objectId" source="parameter" value="objectId" />
+        <argument name="objectType" source="parameter" value="objectType" />
+        <argument name="templateAxis" source="parameter" value="axis" />
+        <argument name="templatePosition" source="parameter" value="pos" />
+    </eventInfo>
+    
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWDocumentMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="2" />
+        </style>
+    </beanInfo>
+</beanTask>

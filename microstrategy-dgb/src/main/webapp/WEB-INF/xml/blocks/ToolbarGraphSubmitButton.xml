@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarGraphSubmitButton" inherits="ToolbarSubmitButtonModel">
+	<assignments>
+		<property name="id">tbRepaintGraph</property>
+		<property name="tooltip">{desc:mstrWeb.3519|Apply}</property>
+		<property name="queueGroup">CategoriesSeries</property>
+		<property name="cmds">!SubmitQueue|queueGroup|model/parent</property>
+		<property name="visibleFeatures">!check-design-mode</property>
+	</assignments>
+</block>

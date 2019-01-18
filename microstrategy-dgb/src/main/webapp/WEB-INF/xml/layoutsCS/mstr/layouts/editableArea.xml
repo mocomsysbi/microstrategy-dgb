@@ -1,0 +1,13 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])"
+    on_model_set_mode="rootTag.style.display=((model.get('mode') == 'edit')? 'block':'none');rootTag.firstChild.value=model.get('value');model.set('CommandEnabledValidateEdit',false);if(model.get('mode') == 'edit') view.props['parent'].setEditCursor();"
+    on_model_set_value="rootTag.firstChild.value=model.get('value')">
+  <div style="width:100%">
+    <textArea style="{@cssText}"
+              class="{@cssPrefix}{@cssClass}"
+              id="{@id}"
+		      onkeyup="mstr.$obj('{@id}').getModel().updateValue((this.value &amp;&amp; this.value.length!=0)?this.value:'');"
+              onblur="mstr.$obj('{@id}').getModel().updateValue((this.value &amp;&amp; this.value.length!=0)?this.value:'');">
+    </textArea>
+  </div>
+</mstrlayout:layout>

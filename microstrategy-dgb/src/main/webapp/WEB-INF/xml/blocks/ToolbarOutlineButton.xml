@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarOutlineButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbOutline</property>
+        <property name="tooltip">{desc:mstrWeb.1074|Outline}</property>
+        <property name="cmdid">tOutline</property>
+        <property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

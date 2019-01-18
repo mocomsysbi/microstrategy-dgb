@@ -1,0 +1,29 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	on_model_set_--bgField--="rootTag.lastChild.style.backgroundColor = model.get(view.get('bgField'));" 
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div title="{@tooltip}"
+       class="{@cssPrefix}{@cssClass}"
+       style="{@cssText}"
+       id="{@id}"
+       onselectstart="return false">
+    <div class="{@cssPrefix}{@cssClass}Caption">
+    	{@caption}
+    </div>
+    <div style="position:relative;width:{@width};height:{@height};border:{@borderStyle};"
+	   class="{@cssPrefix}{@cssClass}Slider"
+	   id="{@id}Slider"
+	   onclick="mstr.$obj('{@id}').on_click(arguments[0],self);"
+	   onmouseover="mstr.$obj('{@id}').showTooltip(true);"
+	   onmouseout="mstr.$obj('{@id}').showTooltip(false);">
+	   	 <span id="{@id}Thumb"
+	   		class="{@cssPrefix}{@thumbCssClass}"
+	    	style="position:absolute;">
+         </span>
+	   	 <span id="{@id}Tooltip"
+	   		class="{@cssPrefix}{@tooltipCssClass}"
+	    	style="position:absolute;display:none;">
+	      	  <span>3 of 20</span>
+         </span>
+	</div>
+  </div>
+</mstrlayout:layout>

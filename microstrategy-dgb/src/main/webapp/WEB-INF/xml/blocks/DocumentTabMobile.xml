@@ -1,0 +1,90 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="DocumentTabMobile">
+  <assignments>
+    <property name="title">{desc:mstrWeb.3538|Document Properties} - {desc:mstrWeb.702|Advanced}</property>
+    <property name="width">550px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">properties_dialog_box_document_properties_mobile.htm</property>
+    <property name="children">
+      <list>
+      	<block listElementKey="mobilefs" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5943|Mobile}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="enableGraphTooltips" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.7740|Enable graph tooltips}</property>
+                <property name="valueField">enableGraphTooltips</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="enableZoom" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8627|Enable zoom (Pinch and double-tap)}</property>
+                <property name="valueField">EnableZoom</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="enableTextCopy" name="CheckBox">
+          		<property name="caption">{desc:mstrWeb.9816|Enable copy for text (Text sub-selection is only supported outside of the Detail section)}</property>
+          		<property name="valueField">EnableCopyForText</property>
+          		<property name="modelPath">parent/model</property>
+        	  </block>
+        	  <block listElementKey="SmartClientDocHBox" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="SmartClientDocLabel" name="TextLabel">
+                      <property name="value">{desc:mstrWeb.13298|Smart client:}</property>
+                      <property name="cssText">margin-left:5px</property>
+                    </block>
+                    <block listElementKey="SmartClientDoc" name="RadioList">
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="modelPath">parent/model/SmartClientDoc</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="OfflineOnCube" name="CheckBox">
+                  <property name="caption">{desc:mstrWeb.|Allow offline manipulation on filter selector based on cube}</property>
+                  <property name="valueField">OfflineOnCube</property>
+                  <property name="visibleField">parent/model/ShowOfflineUCOnCubeConfig</property>
+                  <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="EnableSwipingToSwitchLayout" name="CheckBox">
+              	<property name="caption">{desc:mstrWeb.12280|Enable swiping to switch layout}</property>
+              	<property name="valueField">EnableSwipingToSwitchLayout</property>
+              	<property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="documentThemeColor" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.11463|Document theme color}:</property>
+                <property name="modelPath">parent/model/DocumentThemeColor</property>
+              </block>
+              <block listElementKey="MakePrivate" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.13846|Make document private}</property>
+                <property name="valueField">MakePrivate</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <!--delete it when it is not used in the future-->
+        <!--<block listElementKey="exportfs" name="FieldSet">-->
+          <!--<property name="legend">{desc:mstrWeb.246|Export}</property>-->
+          <!--<property name="modelPath">parent/model</property>-->
+          <!--<property name="children">-->
+            <!--<list>-->
+              <!--<block listElementKey="enableMobileExport" name="CheckBox">-->
+                <!--<property name="caption">{desc:mstrWeb.|Enable export}</property>-->
+                <!--<property name="valueField">EnableExport</property>-->
+                <!--<property name="modelPath">parent/model</property>-->
+              <!--</block>-->
+            <!--</list>-->
+          <!--</property>-->
+        <!--</block>-->
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		DocumentTabAdvanced is the "Document Properties - Advanced" tab of the document properties editor.
+	-->

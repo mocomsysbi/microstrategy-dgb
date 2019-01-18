@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ListModel" name="BorderOptionsModel">
+  <assignments>
+    <property name="valueForm">dssid</property>
+    <property name="selectedIndicesList">0</property>
+    <property name="items">
+      <list>
+        <block listElementKey="K22" name="ItemInfo">
+          <property name="dssid">0</property>
+          <property name="n">{desc:mstrWeb.2057|None}</property>
+        </block>
+        <block listElementKey="K23" name="ItemInfo">
+          <property name="dssid">1</property>
+          <property name="n">{desc:mstrWeb.2058|All}</property>
+        </block>
+        <block listElementKey="K24" name="ItemInfo">
+          <property name="dssid">2</property>
+          <property name="n">{desc:mstrWeb.2056|Custom}</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- This model allows the user to choose which borders to display for an object.  Used by the 
+		RWProperties and DocumentProperties editors. -->

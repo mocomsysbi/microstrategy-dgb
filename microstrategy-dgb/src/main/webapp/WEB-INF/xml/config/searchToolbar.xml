@@ -1,0 +1,19 @@
+<!-- Search Page ToolBar modified based on Folder Page ToolBar -->
+<shortcut-list-set config-src="/WEB-INF/xml/config/folderToolbar.xml" name="searchToolbar">
+    <attributes>
+        <attribute name="class" value="mstrMenuExtraToolbar mstrToolbar"/>
+    </attributes>
+    <shortcut-list name="createObjects" deleted="1"/>
+  <shortcut-list name="createFolder" deleted="1"/>
+  <shortcut-list name="folderTreeView" deleted="1"/>
+  <shortcut-list name="folderRefresh" deleted="1"/>
+
+  <shortcut-list name="folderView" feature-id ="dhtml" >
+    <shortcut name="tbListView" check-feature-id="check-mode-list-view" onclick="microstrategy.bone('folderAllModes').commands.exec('listView', null, this.firstChild);return false;">
+        <event XMLmerge_id="1" deleted="1"/>
+    </shortcut>
+    <shortcut name="tbLargeIcons" check-feature-id="check-mode-icon-view" onclick="microstrategy.bone('folderAllModes').commands.exec('iconView', null, this.firstChild);return false;">
+       <event XMLmerge_id="1" deleted="1"/>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

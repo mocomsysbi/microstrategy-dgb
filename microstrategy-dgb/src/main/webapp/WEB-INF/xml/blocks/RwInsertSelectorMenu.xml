@@ -1,0 +1,95 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwInsertSelectorMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1739" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelDd</property>
+          <property name="text">{desc:mstrWeb.4729|Drop-down}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|0</property>
+        </block>
+        <block listElementKey="K1740" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelSld</property>
+          <property name="text">{desc:mstrWeb.4730|Slider}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|1</property>
+        </block>
+        <block listElementKey="K1741" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelCb</property>
+          <property name="text">{desc:mstrWeb.4733|Checkboxes}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|4</property>
+        </block>
+        <block listElementKey="K1742" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelRb</property>
+          <property name="text">{desc:mstrWeb.4732|Radio Buttons}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|3</property>
+        </block>
+        <block listElementKey="K1743" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelBb</property>
+          <property name="text">{desc:mstrWeb.4734|Button Bar}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|5</property>
+        </block>
+        <block listElementKey="K1744" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelLb</property>
+          <property name="text">{desc:mstrWeb.4731|Listbox}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|2</property>
+        </block>
+        <block listElementKey="K1745" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelLk</property>
+          <property name="text">{desc:mstrWeb.4735|Link Bar}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|6</property>
+        </block>
+        <block listElementKey="searchBox" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelDd</property>
+          <property name="text">{desc:mstrWeb.8967|Search Box}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|9</property>
+        </block>           
+        <block listElementKey="K1746" name="BaseBlock"/>
+        <block listElementKey="calendarSelector" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelDatePickerSelector</property>
+          <property name="text">{desc:mstrWeb.7654|Calendar}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|11</property>
+        </block> 
+        <block listElementKey="metricQualSep" name="BaseBlock"/>
+        <block listElementKey="metricSlider" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelSld</property>
+          <property name="text">{desc:mstrWeb.8107|Metric Slider}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|7</property>
+        </block>
+        <block listElementKey="metricQual" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelDd</property>
+          <property name="text">{desc:mstrWeb.8108|Metric Qualification}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|8</property>
+        </block>
+        <block listElementKey="K1747" name="BaseBlock"/>
+        <block listElementKey="actionSelectorButton" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelAsBb</property>
+          <property name="text">{desc:mstrWeb.8231|Action Selector Button}</property>
+          <property name="visibleFeatures">configure-transactions</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|5|4</property>
+        </block>
+        <block listElementKey="actionSelectorLink" name="MenuControlModel">
+          <property name="htmlId">mnuInsertSelAsLk</property>
+          <property name="text">{desc:mstrWeb.8230|Action Selector Link}</property>
+          <property name="visibleFeatures">configure-transactions</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;111|6|4</property>
+        </block>
+        
+		
+        <!-- <block listElementKey="K1748" name="BaseBlock"/> -->
+      </list>
+    </property>
+  </assignments>
+</block>

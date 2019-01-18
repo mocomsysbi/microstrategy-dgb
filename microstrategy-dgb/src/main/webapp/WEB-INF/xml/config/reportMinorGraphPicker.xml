@@ -1,0 +1,379 @@
+<shortcut-list name="minorpicker" version="1.0">
+    <attributes>
+      <attribute name="ty" value="pkr"/>
+    </attributes>
+    <shortcut desc="Absolute" desc-id="mstrWeb.358" name="minorpicker0" base-bean="rb" feature-id="dhtml-or-graph-minor-absolute">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1,2,16,32"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Absolute" desc-id="mstrWeb.358" name="minorpicker57" base-bean="rb" feature-id="dhtml-or-graph-minor-bar-absolute">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="4,8"/>
+        <attribute name="id" value="pkr128"/>
+        <attribute name="value" value="128"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bipolar Absolute" desc-id="mstrWeb.360" name="minorpicker1" base-bean="rb" feature-id="dhtml-or-graph-minor-bipolar-absolute">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1,2,16,32"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis absolute" desc-id="mstrWeb.362" name="minorpicker2" base-bean="rb" feature-id="dhtml-or-graph-minor-dualaxis-absolute">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1,2,16,32"/>
+        <attribute name="id" value="pkr16"/>
+        <attribute name="value" value="16"/>
+      </attributes>
+    </shortcut>   
+    <shortcut desc="Stacked" desc-id="mstrWeb.359" name="minorpicker3" base-bean="rb" feature-id="dhtml-or-graph-minor-stacked">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1,2,4,8,16,32"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bipolar stacked" desc-id="mstrWeb.361" name="minorpicker4" base-bean="rb" feature-id="dhtml-or-graph-minor-bipolar-stacked">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1,2,4,8,16,32"/>
+        <attribute name="id" value="pkr8"/>
+        <attribute name="value" value="8"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis stacked" desc-id="mstrWeb.363" name="minorpicker5" base-bean="rb" feature-id="dhtml-or-graph-minor-dualaxis-stacked">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1,2,4,8,16,32"/>
+        <attribute name="id" value="pkr32"/>
+        <attribute name="value" value="32"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Percent" desc-id="mstrWeb.364" name="minorpicker6" base-bean="rb" feature-id="dhtml-or-graph-minor-percent">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1,2,4,8,16,32"/>
+        <attribute name="id" value="pkr64"/>
+        <attribute name="value" value="64"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Clustered" desc-id="mstrWeb.3305" name="minorpicker7" base-bean="rb" feature-id="dhtml-or-graph-minor-side-by-side">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="4,8"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bipolar clustered" desc-id="mstrWeb.3307" name="minorpicker8" base-bean="rb" feature-id="dhtml-or-graph-minor-bipolar-side-by-side">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="4,8"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis clustered" desc-id="mstrWeb.3306" name="minorpicker9" base-bean="rb" feature-id="dhtml-or-graph-minor-dualaxis-side-by-side">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="4,8"/>
+        <attribute name="id" value="pkr16"/>
+        <attribute name="value" value="16"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Pie" desc-id="mstrWeb.344" name="minorpicker10" base-bean="rb" feature-id="dhtml-or-graph-minor-pie">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="64"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Ring pie" desc-id="mstrWeb.368" name="minorpicker13" base-bean="rb" feature-id="dhtml-or-graph-minor-ring-pie">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="64"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Multiple proportional pies" desc-id="mstrWeb.371" name="minorpicker12" base-bean="rb" feature-id="dhtml-or-graph-minor-multiple-proportional-pies">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="64"/>
+        <attribute name="id" value="pkr16"/>
+        <attribute name="value" value="16"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Multiple proportional ring pies" desc-id="mstrWeb.372" name="minorpicker15" base-bean="rb" feature-id="dhtml-or-graph-minor-multiple-proportional-ring-pies">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="64"/>
+        <attribute name="id" value="pkr32"/>
+        <attribute name="value" value="32"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="X-Y scatter" desc-id="mstrWeb.407" name="minorpicker16" base-bean="rb" feature-id="dhtml-or-graph-minor-xy-scatter">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="128"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="X-Y scatter with labels" desc-id="mstrWeb.376" name="minorpicker17" base-bean="rb" feature-id="dhtml-or-graph-minor-xy-scatter-with-labels">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="128"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis X-Y scatter" desc-id="mstrWeb.375" name="minorpicker18" base-bean="rb" feature-id="dhtml-or-graph-minor-dualaxis-xy-scatter">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="128"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis X-Y scatter with labels" desc-id="mstrWeb.377" name="minorpicker19" base-bean="rb" feature-id="dhtml-or-graph-minor-dualaxis-xy-scatter-with-labels">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="128"/>
+        <attribute name="id" value="pkr8"/>
+        <attribute name="value" value="8"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Polar coordinates chart" desc-id="mstrWeb.379" name="minorpicker20" base-bean="rb" feature-id="dhtml-or-graph-minor-polar-coordinates-chart">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="256"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis polar chart" desc-id="mstrWeb.381" name="minorpicker21" base-bean="rb" feature-id="dhtml-or-graph-minor-dualaxis-polar-chart">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="256"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar line" desc-id="mstrWeb.382" name="minorpicker23" base-bean="rb" feature-id="dhtml-or-graph-minor-radar-line">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="512"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar stacked line" desc-id="mstrWeb.3849" name="minorpicker24" base-bean="rb" feature-id="dhtml-or-graph-minor-radar-stacked-area">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="512"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis radar line" desc-id="mstrWeb.384" name="minorpicker25" base-bean="rb" feature-id="dhtml-or-graph-minor-dualaxis-radar-line">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="512"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis radar stacked line" desc-id="mstrWeb.3850" name="minorpicker26" base-bean="rb" feature-id="dhtml-or-graph-minor-dualaxis-radar-stacked-area">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="512"/>
+        <attribute name="id" value="pkr8"/>
+        <attribute name="value" value="8"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar area" desc-id="mstrWeb.3851" name="minorpicker55" base-bean="rb" feature-id="dhtml-or-graph-minor-area">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="512"/>
+        <attribute name="id" value="pkr16"/>
+        <attribute name="value" value="16"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar Stacked Area" desc-id="mstrWeb.383" name="minorpicker56"  base-bean="rb" feature-id="dhtml-or-graph-minor-stacked-area">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="512"/>
+        <attribute name="id" value="pkr32"/>
+        <attribute name="value" value="32"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bubble" desc-id="mstrWeb.348" name="minorpicker27" base-bean="rb" feature-id="dhtml-or-graph-minor-bubble">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1024"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bubble dual-axis" desc-id="mstrWeb.386" name="minorpicker28" base-bean="rb" feature-id="dhtml-or-graph-minor-bubble-dualaxis">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="1024"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="HiLow" desc-id="mstrWeb.408" name="minorpicker29" base-bean="rb" feature-id="dhtml-or-graph-minor-hilow">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="2048"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="HiLow-Open" desc-id="mstrWeb.388" name="minorpicker31" base-bean="rb" feature-id="dhtml-or-graph-minor-hilow-open">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="2048"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="HiLow-Open-Close" desc-id="mstrWeb.390" name="minorpicker33" base-bean="rb" feature-id="dhtml-or-graph-minor-hilow-open-close">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="2048"/>
+        <attribute name="id" value="pkr16"/>
+        <attribute name="value" value="16"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Vertical histogram" desc-id="mstrWeb.392" name="minorpicker35" base-bean="rb" feature-id="dhtml-or-graph-minor-vertical-histogram">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="4096"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Horizontal histogram" desc-id="mstrWeb.393" name="minorpicker36" base-bean="rb" feature-id="dhtml-or-graph-minor-horizontal-histogram">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="4096"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bars" desc-id="mstrWeb.394" name="minorpicker37" base-bean="rb" feature-id="dhtml-or-graph-minor-bars">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="8192"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Pyramids" desc-id="mstrWeb.395" name="minorpicker38" base-bean="rb" feature-id="dhtml-or-graph-minor-pyramids">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="8192"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Octagons" desc-id="mstrWeb.396" name="minorpicker39" base-bean="rb" feature-id="dhtml-or-graph-minor-octagons">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="8192"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Cut-corner bars" desc-id="mstrWeb.397" name="minorpicker40" base-bean="rb" feature-id="dhtml-or-graph-minor-cut-corner-bars">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="8192"/>
+        <attribute name="id" value="pkr8"/>
+        <attribute name="value" value="8"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Cubes" desc-id="mstrWeb.398" name="minorpicker41" base-bean="rb" feature-id="dhtml-or-graph-minor-cubes">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="16384"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Spheres" desc-id="mstrWeb.399" name="minorpicker42" base-bean="rb" feature-id="dhtml-or-graph-minor-spheres">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="16384"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Areas" desc-id="mstrWeb.400" name="minorpicker43" base-bean="rb" feature-id="dhtml-or-graph-minor-areas">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="32768,65536"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Ribbons" desc-id="mstrWeb.401" name="minorpicker44" base-bean="rb" feature-id="dhtml-or-graph-minor-ribbons">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="32768,65536"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Steps" desc-id="mstrWeb.402" name="minorpicker45" base-bean="rb" feature-id="dhtml-or-graph-minor-steps">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="32768,65536"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D surface" desc-id="mstrWeb.355" name="minorpicker46" base-bean="rb" feature-id="dhtml-or-graph-minor-3d-surface">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="131072"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D surface with sides" desc-id="mstrWeb.403" name="minorpicker47" base-bean="rb" feature-id="dhtml-or-graph-minor-3d-surface-with-sides">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="131072"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D honeycomb surface" desc-id="mstrWeb.404" name="minorpicker48" base-bean="rb" feature-id="dhtml-or-graph-minor-3d-honeycomb-surface">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="131072"/>
+        <attribute name="id" value="pkr4"/>
+        <attribute name="value" value="4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D XYZ scatter chart" desc-id="mstrWeb.405" name="minorpicker49" base-bean="rb" feature-id="dhtml-or-graph-minor-3d-xyz-scatter-chart">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="262144"/>
+        <attribute name="id" value="pkr1"/>
+        <attribute name="value" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D XYZ scatter chart with labels" desc-id="mstrWeb.406" name="minorpicker50" base-bean="rb" feature-id="dhtml-or-graph-minor-3d-xyz-scatter-chart-with-labels">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="262144"/>
+        <attribute name="id" value="pkr2"/>
+        <attribute name="value" value="2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Standard" desc-id="mstrWeb.3157" name="minorpicker51" base-bean="rb" feature-id="dhtml-or-graph-minor-standard">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="524288,1048576,2097152"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Percent" desc-id="mstrWeb.364" name="minorpicker52" base-bean="rb" feature-id="dhtml-or-graph-minor-pareto-percent">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="2097152"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Box and Whiskers" desc-id="mstrWeb.3264" name="minorpicker53" base-bean="rb" feature-id="dhtml-or-graph-minor-box-and-whiskers">
+      <attributes>
+        <attribute name="ftv" value="4194304"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Gantt" desc-id="mstrWeb.3533" name="minorpicker54" base-bean="rb" feature-id="dhtml-or-graph-minor-gantt">
+      <attributes>
+        <attribute name="ftv" value="8388608"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bipolar Absolute" desc-id="mstrWeb.360" name="minorpicker55" base-bean="rb" feature-id="dhtml-or-graph-minor--bar-bipolar-absolute">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="4,8"/>
+        <attribute name="id" value="pkr256"/>
+        <attribute name="value" value="256"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis absolute" desc-id="mstrWeb.362" name="minorpicker56" base-bean="rb" feature-id="dhtml-or-graph-minor-bar-dualaxis-absolute">
+      <attributes>
+        <attribute name="ftv" feature-id="dhtml" value="4,8"/>
+        <attribute name="id" value="pkr512"/>
+        <attribute name="value" value="512"/>
+      </attributes>
+    </shortcut>     
+</shortcut-list>

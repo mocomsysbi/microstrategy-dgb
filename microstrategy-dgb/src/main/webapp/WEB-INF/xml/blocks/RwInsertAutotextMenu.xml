@@ -1,0 +1,57 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwInsertAutotextMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1684" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2925|Page Number}</property>
+          <property name="cmdid">autotext;pgNum</property>
+        </block>
+        <block listElementKey="K1685" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2926|Total Pages}</property>
+          <property name="cmdid">autotext;totPages</property>
+        </block>
+        <block listElementKey="K1686" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2927|Date/Time}</property>
+          <property name="cmdid">autotext;dateTime</property>
+        </block>
+        <block listElementKey="K1687" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2928|Current User}</property>
+          <property name="cmdid">autotext;curUsr</property>
+        </block>
+        <block listElementKey="K1688" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2929|Document Name}</property>
+          <property name="cmdid">autotext;docName</property>
+        </block>
+        <block listElementKey="K1689" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5803|Document Description}</property>
+          <property name="cmdid">autotext;docDesc</property>
+        </block>
+        <block listElementKey="K1690" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2930|Project Name}</property>
+          <property name="cmdid">autotext;prjName</property>
+        </block>
+        <block listElementKey="K1691" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2931|Document Execution Time}</property>
+          <property name="cmdid">autotext;docExecTime</property>
+        </block>
+        <block listElementKey="K1692" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3093|Filter Details}</property>
+          <property name="cmdid">autotext;filterDet</property>
+        </block>
+        <block listElementKey="K1693" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3950|Prompt Details}</property>
+          <property name="cmdid">autotext;promptDet</property>
+        </block>
+        <block listElementKey="K1694" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.1924|Report Details}</property>
+          <property name="cmdid">autotext;reportDet</property>
+        </block>
+        <block listElementKey="K1695" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5364|Notes}</property>
+          <property name="cmdid">autotext;notes</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

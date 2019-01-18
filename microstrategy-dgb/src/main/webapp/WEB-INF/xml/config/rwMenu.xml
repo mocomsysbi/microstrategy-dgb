@@ -1,0 +1,349 @@
+<shortcut-list-set name="rw-menus" version="1.0">
+  <shortcut-list desc="[File]" desc-id="mstrWeb.489" name="file" use-default="false">
+    <shortcut append-state="true" desc="[Save As]" desc-id="mstrWeb.1896" feature-id="save-report;enable-save-report" href="#" iframe="false" name="document1">
+      <event XMLmerge_id="1" base-bean="rwframe.rwb" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventRWSaveAs">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentApplyChangesFirst" value="false"/>
+        <argument base-bean="rwframe.rwb" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentReportParentFolderID" sys-bean="com.microstrategy.web.beans.RWBean" value="parentID"/>
+        <argument base-bean="rwframe" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentReportDesignMode" sys-bean="com.microstrategy.web.beans.RWFrameBean" value="isDesignMode"/>
+      </event>
+    </shortcut>
+    <shortcut desc="-" name="separator1_1">
+      <event XMLmerge_id="1" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.app.beans.EnumRWProjectBrowserBeanEvents.WebEventBrowserNavigate" state="hidden"/>
+      <event XMLmerge_id="2" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_SET_SELECTOR_CONTROL_ELEMENTS" state="hidden"/>
+      <event XMLmerge_id="3" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_APPLY_GRAPH_CONTROL_ACTION" state="hidden"/>
+      <event XMLmerge_id="4" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_SET_DOCUMENT_ZOOM" state="hidden"/>
+      <event XMLmerge_id="5" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="hidden"/>
+      <event XMLmerge_id="6" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventRefresh" state="hidden"/>
+      <event XMLmerge_id="7" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_REMOVE_TEMPLATE_UNIT" state="hidden"/>
+      <event XMLmerge_id="8" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_REMOVE_METRIC" state="hidden"/>
+      <event XMLmerge_id="9" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_CHANGE_STYLE" state="hidden"/>
+      <event XMLmerge_id="10" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_ADD_TEMPLATE_UNIT" state="hidden"/>
+      <event XMLmerge_id="11" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_ADD_METRIC" state="hidden"/>
+      <event XMLmerge_id="10" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_SORT" state="hidden"/>
+      <event XMLmerge_id="11" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_PIVOT" state="hidden"/>
+      <event XMLmerge_id="13" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_ADD_FORM" state="hidden"/>
+      <event XMLmerge_id="14" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_REMOVE_FORM" state="hidden"/>
+      <event XMLmerge_id="15" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_MOVE_METRIC" state="hidden"/>
+      <event XMLmerge_id="16" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_SET_PROPERTY_VALUES" state="hidden"/>
+      <event XMLmerge_id="17" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_SET_COLUMN_SCENARIO" state="hidden"/>
+      <event XMLmerge_id="18" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_SET_ROW_SCENARIO" state="hidden"/>
+      <event XMLmerge_id="19" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_SHOW_BANDING" state="hidden"/>
+      <event XMLmerge_id="20" action="refresh" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumViewBeanEvents.VIEW_EVENT_MOVE_METRIC" state="hidden"/>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe" desc="[Add to History List]" desc-id="mstrWeb.1982" enable-feature-id="enable-add-history-list" feature-id="add-history-list" href="#" iframe="true" name="document2">
+      <event XMLmerge_id="1" action="disable" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_SAVE_TO_INBOX"/>
+    </shortcut>
+
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="Subscribe to" desc-id="mstrWeb.5007" feature-id="dhtml;nc-enabled" href="#" iframe="true" name="document10">
+      <shortcut append-state="true" base-bean="rwframe.rwb" desc="History List..." desc-id="mstrWeb.5008" feature-id="scheduling" href="#" iframe="true" name="document10_1">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="subs"/>
+      </event>
+    </shortcut>
+      <shortcut append-state="true" base-bean="rwframe.rwb" desc="Mobile..." desc-id="mstrWeb.5009" feature-id="use-mobile;mobile-view-document" href="#" iframe="true" name="document10_2">
+        <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+          <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="mobileSubs"/>
+        </event>
+      </shortcut>
+      <shortcut append-state="true" base-bean="rwframe.ncSubs" desc="E-mail..." desc-id="mstrWeb.5068" enable-feature-id="nc-enabled;enable-scheduled-email" feature-id="scheduled-email" href="#" iframe="true" name="document10_3">
+        <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+          <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSubs"/>
+        </event>
+      </shortcut>
+      <shortcut append-state="true" base-bean="rwframe.ncFileSubs" desc="[File...]" desc-id="mstrWeb.3250" enable-feature-id="nc-enabled;enable-scheduled-file-export" feature-id="scheduled-file-export-menu" href="#" iframe="true" name="document10_4">
+        <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+          <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncFileSubs"/>
+        </event>
+      </shortcut>
+      <shortcut append-state="true" base-bean="rwframe.ncPrintSubs" desc="[Printer...]" desc-id="mstrWeb.3251" enable-feature-id="nc-enabled;enable-scheduled-print" feature-id="scheduled-print-menu" href="#" iframe="true" name="document10_5">
+        <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+          <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncPrintSubs"/>
+        </event>
+      </shortcut>
+      <shortcut append-state="true" base-bean="rwframe.ncCacheSubs" desc="[Cache Update...]" desc-id="mstrWeb.14368" enable-feature-id="nc-enabled;enable-scheduling" feature-id="scheduling" href="#" iframe="true" name="document10_6">
+        <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+          <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncCacheSubs"/>
+        </event>
+      </shortcut>
+    </shortcut>
+
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Subscribe to History List...]" desc-id="mstrWeb.5069" feature-id="!document-multi-subscribe-menu;scheduling" href="#" iframe="true" name="document11">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="subs"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Subscribe to Mobile...]" desc-id="mstrWeb.5070" feature-id="!document-multi-subscribe-menu;use-mobile;mobile-view-document" href="#" iframe="true" name="document12">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="mobileSubs"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.ncSubs" desc="[Subscribe to E-mail...]" desc-id="mstrWeb.5071" enable-feature-id="enable-scheduled-email" feature-id="!document-multi-subscribe-menu;nc-enabled;scheduled-email" href="#" iframe="true" name="document13">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSubs"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.ncFileSubs" desc="[Subscribe to File...]" desc-id="mstrWeb.5072" enable-feature-id="enable-scheduled-file-export" feature-id="!document-multi-subscribe-menu;nc-enabled;scheduled-file-export-menu" href="#" iframe="true" name="document14">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncFileSubs"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.ncPrintSubs" desc="[Subscribe to Printer...]" desc-id="mstrWeb.5073" enable-feature-id="enable-scheduled-print" feature-id="!document-multi-subscribe-menu;nc-enabled;scheduled-print-menu" href="#" iframe="true" name="document15">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncPrintSubs"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.ncCacheSubs" desc="[Subscribe to Cache Update...]" desc-id="mstrWeb.14367" enable-feature-id="enable-scheduling" feature-id="!document-multi-subscribe-menu;nc-enabled;scheduling" href="#" iframe="true" name="document16">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncCacheSubs"/>
+      </event>
+    </shortcut>
+
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="Send Now..." desc-id="mstrWeb.2249" enable-feature-id="enable-send-now" feature-id="dhtml;use-immediate-delivery" href="#" iframe="true" name="document5">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSendNow"/>
+      </event>
+    </shortcut>
+    <shortcut desc="-" name="separator1_2"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Page Setup...]" desc-id="mstrWeb.3244" feature-id="dhtml;documents-design-mode;!rw-flash-view-mode" href="#" iframe="false" name="document6" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtPageSetup&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" desc="[Page Setup...]" desc-id="mstrWeb.3244" feature-id="!dhtml;documents-design-mode;!rw-flash-view-mode" href="#" iframe="true" name="document6a">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="PageSetupHTML"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe" desc="[Page Setup...]" desc-id="mstrWeb.3244" feature-id="!dhtml;documents-design-mode" href="#" iframe="true" name="document6a">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="PageSetupHTML"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Print...]" desc-id="mstrWeb.2109" feature-id="print;enable-print" iframe="false" name="document8_1" onclick="exportRW(3,'mstrExportWindow')">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventRWExport">
+        <argument enumname="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_PDF" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentRWExecutionMode" source="enum"/>
+      </event>
+    </shortcut>    
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="Export" desc-id="mstrWeb.246" name="expSub">
+	    <shortcut append-state="true" base-bean="rwframe.rwb" desc="Excel" desc-id="mstrWeb.3958" feature-id="web-export-to-excel;enable-export" iframe="false" name="expe" onclick="exportRW(4,'mstrExportWindow')" >
+	      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventRWExport">
+		    <argument enumname="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_EXCEL" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentRWExecutionMode" source="enum"/>
+	      </event>
+	    </shortcut>	    
+	    <shortcut append-state="true" base-bean="rwframe.rwb" desc="HTML" desc-id="mstrWeb.3957" feature-id="web-export-to-html;enable-html-export" iframe="false" name="exph" onclick="exportRW(-1,'mstrExportWindow')">
+	      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventRWDHTMLExport">
+	      </event>
+	    </shortcut>	    
+	    <shortcut append-state="true" base-bean="rwframe.rwb" desc="PDF" desc-id="mstrWeb.1877" feature-id="web-export-to-pdf;enable-pdf" iframe="false" name="expp" onclick="exportRW(3,'mstrExportWindow', null, null, null, true)">
+	      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventRWExport">
+		    <argument enumname="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_PDF" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentRWExecutionMode" source="enum"/>
+	      </event>
+	    </shortcut>	    
+	    <shortcut append-state="true" base-bean="rwframe.rwb" desc="Flash" desc-id="mstrWeb.14513" feature-id="web-export-to-flash;enable-flash" iframe="false" name="expf" onclick="exportRW(7,'mstrExportWindow')">
+	      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventRWExport">
+		    <argument enumname="com.microstrategy.web.objects.rw.EnumRWExecutionModes.RW_MODE_FLASH_EXPORT" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentRWExecutionMode" source="enum"/>
+	      </event>
+	    </shortcut>	    
+    </shortcut>	    
+    <shortcut desc="-" name="separator1_3"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Document Details Page]" desc-id="mstrWeb.5566" feature-id="report-details" href="#" iframe="false" name="document9">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventGetRWDocumentDetails">
+        <argument base-bean="rwframe.rwb" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentMessageID" sys-bean="com.microstrategy.web.beans.RWBean" value="messageID"/>
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentAllowExecute" value="0"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list base-bean="rwframe.rwb" desc="[Edit]" desc-id="mstrWeb.1088" feature-id="rw-editable-view-mode-eplus" name="edit" use-default="false">
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Undo]" desc-id="mstrWeb.3482" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;undoq&apos;)" feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" key-shortcut-desc="Ctrl+Z" name="edit2" onclick="microstrategy.getViewerBone().commands.exec(&apos;undo&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Redo]" desc-id="mstrWeb.3473" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;redoq&apos;)" feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" key-shortcut-desc="Ctrl+Y" name="edit3" onclick="microstrategy.getViewerBone().commands.exec(&apos;redo&apos;);"/>
+    <shortcut desc="-" name="edit4"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Cut]" desc-id="mstrWeb.3393" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;cutq&apos;)"  feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" key-shortcut-desc="Ctrl+X" name="edit5" onclick="microstrategy.getViewerBone().commands.exec(&apos;cut&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Copy]" desc-id="mstrWeb.3394" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;copyq&apos;);"  feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" key-shortcut-desc="Ctrl+C" name="edit6" onclick="microstrategy.getViewerBone().commands.exec(&apos;copy&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Paste]" desc-id="mstrWeb.3395" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;paste&apos;)"  feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" key-shortcut-desc="Ctrl+V" name="edit7" onclick="microstrategy.getViewerBone().commands.exec(&apos;paste&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Paste Formatting]" desc-id="mstrWeb.3396" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;pasteFormat&apos;)" feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" name="edit8" onclick="microstrategy.getViewerBone().commands.exec(&apos;pasteFormat&apos;);"/>
+    <shortcut desc="-" name="edit9"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Select All]" desc-id="mstrWeb.3474" feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" key-shortcut-desc="Ctrl+A" name="edit10" onclick="microstrategy.getViewerBone().commands.exec(&apos;selectAll&apos;);"/>
+    <shortcut desc="-" name="edit11"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Delete]" desc-id="mstrWeb.629" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;deleteq&apos;)"  feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" key-shortcut-desc="Del" name="edit12" onclick="microstrategy.getViewerBone().commands.exec(&apos;delete&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Delete Layout]" desc-id="" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;removeTab&apos;)"  feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" name="edit13" onclick="microstrategy.getViewerBone().commands.exec(&apos;removeTab&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Duplicate]" desc-id="mstrWeb.3397" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;copyq&apos;)"  feature-id="dhtml;rw-interactive-view-mode-eplus" href="#" iframe="true" key-shortcut-desc="Ctrl+D" name="edit14" onclick="microstrategy.getViewerBone().commands.exec(&apos;duplicate&apos;);"/>
+  </shortcut-list>
+  <shortcut-list desc="[View]" desc-id="mstrWeb.1900" name="view" use-default="false">
+    <shortcut append-state="true" base-bean="rwframe" check-feature-id="check-design-mode" desc="[Design]" desc-id="mstrWeb.3067" enable-feature-id="enable-design-mode" feature-id="documents-design-mode;dhtml;document-html-view-mode" href="#" iframe="false" name="view1">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumRWFrameEvents.WebEventChangeDesignMode">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentReportDesignMode" value="1"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe" check-feature-id="rw-static-view-mode;" desc="[Express Mode]" desc-id="mstrWeb.11694" feature-id="rw-static-view-mode-available" href="#" iframe="false" name="view21">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_EXECUTE">
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_MEDIA_TYPE" value="1"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe" check-feature-id="rw-interactive-view-mode;" desc="[Interactive Mode]" desc-id="mstrWeb.14530" feature-id="rw-interactive-view-mode-available;dhtml" href="#" iframe="false" name="view22">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumRWFrameEvents.WebEventSetCurrentViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumRWFrameEvents.WebEventArgumentCurrentViewMode" value="2"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe" check-feature-id="rw-editable-view-mode;" desc="[Editable Mode]" desc-id="mstrWeb.4691" feature-id="rw-editable-view-mode-available;dhtml" href="#" iframe="false" name="view23">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumRWFrameEvents.WebEventSetCurrentViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumRWFrameEvents.WebEventArgumentCurrentViewMode" value="4"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe" check-feature-id="rw-flash-view-mode;" desc="[Flash Mode]" desc-id="mstrWeb.14531" feature-id="rw-flash-view-mode-available;dhtml" href="#" iframe="false" name="view24">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumRWFrameEvents.WebEventSetCurrentViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumRWFrameEvents.WebEventArgumentCurrentViewMode" value="8"/>
+      </event>
+    </shortcut>
+    <shortcut desc="-" name="view3"/>
+    
+    <shortcut append-state="true" base-bean="rwframe.pbb" desc="[Grouping]" desc-id="mstrWeb.2941" feature-id="!rw-flash-view-mode;!rw-interactive-view-mode;" check-feature-id="open" name="view4_1" dhtml-checked="microstrategy.bone(&apos;pbb_GroupByStyle&apos;)" onclick="microstrategy.toggleEditor(&apos;pbb_GroupByStyle&apos;, &apos;pbb&apos;);">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="pbb"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="pbb"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.pbb" desc="[Grouping]" desc-id="mstrWeb.2941" feature-id="rw-interactive-view-mode;rw-groupby-not-empty" check-feature-id="open" name="view4_3" dhtml-checked="microstrategy.bone(&apos;pbb_GroupByStyle&apos;)" onclick="microstrategy.toggleEditor(&apos;pbb_GroupByStyle&apos;, &apos;pbb&apos;);">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="pbb"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="pbb"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="false" base-bean="rwframe.pbb" desc="[Grouping]" desc-id="mstrWeb.2941" feature-id="!rw-analysis-view-mode;rw-flash-view-mode" enable-feature-id="has-active-units" name="view4_2" dhtml-checked="microstrategy.bone(&apos;rwb_RWFlashViewStyle&apos;).groupingChecked();" onclick="microstrategy.bone(&apos;rwb_RWFlashViewStyle&apos;).toggleGrouping();" />
+    <shortcut append-state="false" base-bean="rwframe.pbb" desc="[Grouping]" desc-id="mstrWeb.2941" feature-id="rw-analysis-view-mode" enable-feature-id="has-active-units" name="view4_4" dhtml-checked="microstrategy.bone(&apos;rwb_RWAnalysisSWFStyle&apos;).groupingChecked();" onclick="microstrategy.bone(&apos;rwb_RWAnalysisSWFStyle&apos;).toggleGrouping();" />   
+    <shortcut append-state="true" base-bean="rwframe.reportObjs" desc="[Dataset Objects]" desc-id="mstrWeb.2943" feature-id="dhtml;dataset-objects-list;rw-interactive-view-mode-eplus;is-not-visible-document-visualization" key-shortcut-desc="F8" name="view5" dhtml-checked="microstrategy.bone(&apos;accordion_AccordionTabManagerStyle&apos;)&amp;&amp;microstrategy.bone(&apos;accordion_AccordionTabManagerStyle&apos;).currentTabName==microstrategy.ACCORDION_RW_DATASET_PANEL" onclick="microstrategy.toggleAccordion(microstrategy.ACCORDION_RW_DATASET_PANEL);" iframe="false"/>
+    <shortcut desc="-" name="view6"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Ruler]" desc-id="mstrWeb.3475" dhtml-checked="microstrategy.getViewerBone().rulerOn" feature-id="check-design-mode;dhtml" href="#" iframe="true" name="view7" onclick="microstrategy.getViewerBone().toggleRuler();"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Alignment Grid]" desc-id="mstrWeb.3247" dhtml-checked="microstrategy.getViewerBone().commands.queryState(&apos;grid&apos;)" feature-id="dhtml;rw-editable-view-mode-eplus" href="#" iframe="true" name="view8" onclick="microstrategy.getViewerBone().commands.exec(&apos;grid&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Toolbars]" desc-id="mstrWeb.3094" feature-id="dhtml;menu-toolbar" href="#" iframe="true" name="view9">
+      <shortcut-list config-src="/WEB-INF/xml/config/rwToolbarsMenu.xml" name="document-toolbars"/>
+    </shortcut>
+    <shortcut desc="-" name="viewSections1"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="Sections..." desc-id="mstrWeb.4835" feature-id="dhtml;rw-editable-view-mode-eplus;" check-feature-id="open" href="#" iframe="false" name="data8b" onclick="microstrategy.getViewerBone().commands.exec(&apos;openPageSetupSectionsTab&apos;);"/> 
+    <shortcut desc="-" name="view10"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" check-feature-id="check-show-pivot-buttons" desc="[Pivot buttons]" desc-id="mstrWeb.2742" enable-feature-id="enable-show-pivot-buttons" feature-id="web-pivot;rw-interactive-view-mode-eplus" href="#" iframe="false" name="view11">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventUpdatePreference" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentPrefName" value="showPivot"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentPrefValue" value="0"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventUpdatePreference" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentPrefName" value="showPivot"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentPrefValue" value="1"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" check-feature-id="check-show-sort-buttons" desc="[Sort buttons]" desc-id="mstrWeb.2741" enable-feature-id="enable-show-sort-buttons" feature-id="web-sort;rw-interactive-view-mode-eplus" href="#" iframe="false" name="view12">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventUpdatePreference" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentPrefName" value="sSrt"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentPrefValue" value="0"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventUpdatePreference" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentPrefName" value="sSrt"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentPrefValue" value="1"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="accordion" check-feature-id="related-reports-visible-in-accordion" desc="Related Reports" extra-url="&amp;currentTabName=relatedReports" desc-id="mstrWeb.3783" iframe="false" name="view13" dhtml-checked="microstrategy.bone(&apos;accordion_AccordionTabManagerStyle&apos;)&amp;&amp;microstrategy.bone(&apos;accordion_AccordionTabManagerStyle&apos;).currentTabName==microstrategy.ACCORDION_RW_RELATED_RP_PANEL" onclick="microstrategy.toggleAccordion(microstrategy.ACCORDION_RW_RELATED_RP_PANEL);">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSetPermanentBrowserSetting" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingName" value="obView"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingValue" value="0"/>
+      </event>	
+      <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="accordion"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false"/>
+      </event>
+      <event XMLmerge_id="3" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSetPermanentBrowserSetting" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingName" value="obView"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingValue" value="1"/>
+      </event>
+      <event XMLmerge_id="4" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="accordion"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>	
+    </shortcut>
+	<shortcut desc="-" name="view16"/>
+    <shortcut append-state="true" base-bean="rwframe" desc-id="mstrWeb.4664" desc="Full Screen Mode" feature-id="check-execute-mode;!page-full-screen-mode" href="#" onclick="toggleScreenMode();" iframe="false" key-shortcut-desc="F12" name="view18">
+      <event XMLmerge_id="2" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSwitchScreenMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentScreenMode" value="2"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe" desc-id="mstrWeb.4665" desc="Restore Normal Screen Mode" feature-id="check-execute-mode;page-full-screen-mode" href="#" onclick="toggleScreenMode();" iframe="false" key-shortcut-desc="F12" name="view19">
+      <event XMLmerge_id="2" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSwitchScreenMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentScreenMode" value="1"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="*Notes*" name="view14" dhtml-checked="microstrategy.bone(&apos;accordion_AccordionTabManagerStyle&apos;)&amp;&amp;microstrategy.bone(&apos;accordion_AccordionTabManagerStyle&apos;).currentTabName==microstrategy.ACCORDION_RW_NOTES_PANEL" onclick="microstrategy.toggleAccordion(microstrategy.ACCORDION_RW_NOTES_PANEL);" feature-id="web-is-notes-available;dhtml"/>
+  </shortcut-list>
+  <shortcut-list config-src="/WEB-INF/xml/config/rwInsertMenu.xml" name="insert"/>
+  <shortcut-list base-bean="rwframe.rwb" desc="[Data]" desc-id="mstrWeb.1910" name="data" use-default="false">
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Swap Rows and Columns]" desc-id="mstrWeb.3480" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;swapAxes&apos;)" feature-id="dhtml;web-pivot;frame-element-enabled;rw-editable-view-mode-eplus" href="#" iframe="false" name="data8" onclick="microstrategy.getViewerBone().commands.exec(&apos;swapAxes&apos;);"/>
+    <shortcut desc="-" name="data8a"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Sort Document...]" desc-id="mstrWeb.3199" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtSortRW&apos;)" feature-id="web-sort;frame-element-enabled;dhtml;rw-editable-view-mode-eplus" href="#" iframe="false" name="data8b" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtSortRW&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Sort Grid...]" desc-id="mstrWeb.3200" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtSortGridMenu&apos;)" enable-feature-id="!check-design-mode" feature-id="web-sort;check-execute-mode;frame-element-enabled;dhtml;rw-editable-view-mode-eplus" href="#" iframe="false" name="data8c" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtSortGrid&apos;);"/>
+    <shortcut desc="-" name="data8d"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Add Dataset...]" desc-id="mstrWeb.3246" feature-id="dhtml;manage-datasets;rw-editable-view-mode-eplus" href="#" iframe="true" name="data8e" onclick="microstrategy.getViewerBone().commands.exec(&apos;openSelectDatasetEditor&apos;);" />
+    <shortcut desc="-" name="data8f"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Refresh]" desc-id="mstrWeb.773" feature-id="check-execute-mode;refresh" href="#" iframe="false" name="data9">
+      <event XMLmerge_id="1" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REPROMPT" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REEXECUTE_FRESH" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REGENERATE" value="false"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Regenerate]" desc-id="mstrWeb.4975" enable-feature-id="enable-reexecute" feature-id="check-execute-mode;reexecute" href="#" iframe="false" name="data10">
+      <event XMLmerge_id="1" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REPROMPT" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REEXECUTE_FRESH" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REGENERATE" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Re-run]" desc-id="mstrWeb.3758" enable-feature-id="enable-reexecute" feature-id="check-execute-mode;reexecute" href="#" iframe="false" name="data11">
+      <event XMLmerge_id="1" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REPROMPT" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REEXECUTE_FRESH" value="true"/>
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REGENERATE" value="false"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="Re-prompt" desc-id="mstrWeb.119" enable-feature-id="enable-reprompt" feature-id="reprompt;" href="#" iframe="false" name="data1">
+      <event XMLmerge_id="1" base-bean="rwframe.rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REPROMPT" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut desc="-" name="data2"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Insert New Metric...]" desc-id="mstrWeb.2212" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtDMetric&apos;)" feature-id="frame-element-enabled;dhtml;insert-new-metric;rw-editable-view-mode-eplus" href="#" iframe="false" name="data3" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtDMetric&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Rename/Edit Objects...]" desc-id="mstrWeb.1914" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtRename&apos;)" feature-id="frame-element-enabled;dhtml;rename-edit-object;rw-editable-view-mode-eplus" href="#" iframe="false" name="data4" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtRename&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Show Subtotals]" desc-id="mstrWeb.2118" dhtml-checked="microstrategy.getViewerBone().commands.queryState(&apos;tsubtotals&apos;)" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;tsubtotals&apos;)" feature-id="dhtml;show-totals;show-subtotals;rw-editable-view-mode-eplus" href="#" iframe="true" name="data5" onclick="microstrategy.getViewerBone().commands.exec(&apos;tsubtotals&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Edit Totals...]" desc-id="mstrWeb.3310" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtSubtotals&apos;)" feature-id="orionIServer;frame-element-enabled;dhtml;show-totals;rw-editable-view-mode-eplus" href="#" iframe="false" name="data7" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtSubtotals&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Edit Totals...]" desc-id="mstrWeb.3310" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtSubtotalsOldIServer&apos;)" feature-id="!orionIServer;frame-element-enabled;dhtml;show-totals;rw-editable-view-mode-eplus" href="#" iframe="false" name="data7b" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtSubtotalsOldIServer&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="Edit View Filter..." desc-id="mstrWeb.3938" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;vfeRWGrid&apos;)" feature-id="use-view-filter-editor;frame-element-enabled;dhtml;rw-editable-view-mode-eplus" href="#" iframe="false" name="dataViewFilter" onclick="microstrategy.getViewerBone().commands.exec(&apos;vfeRWGrid&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="View Filter..." desc-id="mstrWeb.3939" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;vfeRWGrid&apos;)" feature-id="!use-view-filter-editor;frame-element-enabled;dhtml;rw-editable-view-mode-eplus" href="#" iframe="false" name="dataViewFilterNonEditable" onclick="microstrategy.getViewerBone().commands.exec(&apos;vfeRWGrid&apos;);"/>
+
+  </shortcut-list>
+  <shortcut-list base-bean="rwframe.rwb" desc="Format" desc-id="mstrWeb.1918" name="format" use-default="false" feature-id="rw-editable-view-mode-eplus">
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Grid Cells...]" desc-id="mstrWeb.3070" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;oneggridfmt&apos;)" feature-id="show-grid-format-editor;dhtml;" href="#" iframe="true" name="format2" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtProps&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Graph...]" desc-id="mstrWeb.3071" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;onegraphfmt&apos;)" feature-id="show-graph-format-editor;dhtml;" href="#" iframe="true" name="format3" onclick="microstrategy.getViewerBone().commands.exec(&apos;openFormatGraph&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Thresholds]" desc-id="mstrWeb.3647" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtSimpleThresholdEditor&apos;)" feature-id="dhtml" href="#" iframe="true" name="format4">
+        <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Basic...]" desc-id="mstrWeb.4605" href="#" iframe="true" name="format4_1" onclick="microstrategy.getViewerBone().commands.exec(&apos;openSimpleThresholdEditor&apos;);" />
+        <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Advanced...]" desc-id="mstrWeb.4606" href="#" iframe="true" name="format4_2" onclick="microstrategy.getViewerBone().commands.exec(&apos;openAdvThresholdEditor&apos;);" />
+    </shortcut>
+    <shortcut desc="-" name="format5"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Properties and Formatting...]" desc-id="mstrWeb.5356" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled()" feature-id="dhtml" href="#" iframe="true" name="format6" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtProps&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="*Report Details Properties...*" desc-id="mstrWeb.5635" href="#" feature-id="dhtml;documents-design-mode" iframe="true" onclick="commands.exec('FilterDetailsProperties')" name="format8" dhtml-enabled="commands.queryEnabled('FilterDetailsProperties');" />
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Document Properties...]" desc-id="mstrWeb.3481" feature-id="dhtml" href="#" iframe="false" name="format9" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtDocProps&apos;);"/>
+    <shortcut desc="-" name="format10"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Snap to Grid...]" desc-id="mstrWeb.3073" dhtml-checked="!microstrategy.SNAP_OFF" feature-id="dhtml" href="#" iframe="true" name="format11" onclick="microstrategy.getViewerBone().commands.exec(&apos;toggleSnap&apos;);"/>
+    <shortcut desc="-" name="format12"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Set Control Default...]" desc-id="mstrWeb.3074" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;setCtrlDft&apos;)" feature-id="dhtml" href="#" iframe="true" name="format13" onclick="microstrategy.getViewerBone().commands.exec(&apos;setDefaults&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Apply Control Defaults...]" desc-id="mstrWeb.3075" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;applyCtrlDft&apos;)" feature-id="dhtml" href="#" iframe="true" name="format14" onclick="microstrategy.getViewerBone().commands.exec(&apos;applyDefaults&apos;);"/>
+    <shortcut desc="-" name="format15"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Resize Columns and Rows]" desc-id="mstrWeb.2591" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtResize&apos;)" feature-id="grid-layout;check-execute-mode;frame-element-enabled;dhtml" href="#" iframe="false" name="format16" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtResize&apos;);">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="resizeRW"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="Report Custom Visualizations..." desc-id="mstrWeb.4646" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;visualizationsEditor&apos;)" feature-id="documents-design-mode;visualizations-supported;visualizations-available-for-rw-grids;enable-vis-editor" href="#" iframe="false" name="format15" onclick="microstrategy.getViewerBone().commands.exec(&apos;visualizationsEditor&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="Document Custom Visualizations..." desc-id="mstrWeb.4647" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;visualizationsEditorRW&apos;)" feature-id="documents-design-mode;visualizations-supported;visualizations-available-for-rw;enable-vis-editor" href="#" iframe="false" name="format16" onclick="microstrategy.getViewerBone().commands.exec(&apos;visualizationsEditorRW&apos;);"/>
+  </shortcut-list>
+  <shortcut-list config-src="/WEB-INF/xml/config/rwAddToPanelMenu.xml" name="AddToPanel" hidden='true'/>
+</shortcut-list-set>

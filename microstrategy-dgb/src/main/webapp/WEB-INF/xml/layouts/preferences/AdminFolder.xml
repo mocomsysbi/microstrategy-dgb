@@ -1,0 +1,62 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="2" class="preferenceList">
+          	<tr>
+             <td valign="top" style="width:18%;">
+               <span class="prefs-input">
+                 <mstrlayout:render name="descriptor"> <!--desc="Footer" -->
+                   <mstrlayout:argument type="string" value="mstrWeb.1933" />
+                 </mstrlayout:render>
+               </span>
+             </td>
+             <td valign="top">
+               <mstrlayout:render name="FooterPath"/>
+               <br />
+             </td>
+           </tr>
+           <tr>
+              <td colspan="2"><hr style="height: 1px;"/></td>
+            </tr>
+            
+            <tr>
+              <td valign="top" style="width:18%;">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--desc="Shared Reports Folder" -->
+                    <mstrlayout:argument type="string" value="mstrWeb.2569" />
+                  </mstrlayout:render>:
+                </span>
+              </td>
+              <td valign="top">
+                <mstrlayout:render name="SharedReports"/>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><hr style="height: 1px;"/></td>
+            </tr>
+
+            <tr>
+              <td valign="top" style="width:18%;">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--desc="My Reports" -->
+                    <mstrlayout:argument type="string" value="mstrWeb.3" />
+                  </mstrlayout:render>:
+                </span>
+              </td>
+              <td valign="top">
+                <mstrlayout:render name="HideMyReports"/>
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><hr style="height: 1px;"/></td>
+            </tr>
+
+          </table>
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

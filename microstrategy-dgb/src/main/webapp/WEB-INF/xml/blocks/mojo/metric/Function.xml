@@ -1,0 +1,29 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for a system function.
+--> 
+<block name="Function" inherits="WebObjectInfo">
+  <definition>
+    <!-- SQL type of the function -->
+    <property name="sqt" type="Integer" />
+    <!-- isOrderSignificant of the function -->
+    <property name="ios" type="Boolean" />
+    <!-- repeat parameter count of the function -->
+    <property name="rpc" type="Integer" />   
+    <!-- isDBOnly --> 
+    <property name="idbo" type="Boolean" />
+    <!-- isPrefix --> 
+    <property name="ip" type="Boolean" />
+    <!-- function type -->
+    <property name="fnt" type="Integer" />
+    <!-- A list of function parameter names -->
+    <property name="pars" type="List"/>
+    <!-- A list of function property names -->
+    <property name="pros" type="List" />
+    <!-- The help topic name -->
+    <property name="h" type="String" />
+  </definition>
+  <assignments>
+    <property name="rpc">0</property>
+  </assignments>
+</block>

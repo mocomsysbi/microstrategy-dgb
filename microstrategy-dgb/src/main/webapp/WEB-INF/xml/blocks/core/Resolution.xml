@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block represents a Resolution object.
+-->
+<block name="Resolution" annotation="xml:elementName=rsl">
+    <definition>
+        <!-- A Locale ID -->
+        <property name="lcl" type="Integer" />
+        
+        <!-- List of Prompt Blocks... -->
+        <property name="prompts" type="List" />
+    </definition>
+</block>

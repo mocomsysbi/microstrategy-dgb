@@ -1,0 +1,47 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    scrollArea="return rootTag.rows[0].cells[0].firstChild.childNodes[2]"
+    on_set_headerView="rootTag.rows[0].cells[0].firstChild.childNodes[1].style.display = view.props['headerView'] ? 'block' : 'none'"
+    on_set_message="mstr.behaviors.ListView.on_set_message(view, model, rootTag)"
+    on_set_height="mstr.behaviors.ListView.on_set_height(view, model, rootTag)"
+    on_set_width="mstr.behaviors.ListView.on_set_width(view, model, rootTag)"
+    on_set_caption="mstr.behaviors.ListView.on_set_caption(view, model, rootTag)"
+    on_set_validationStatus="mstr.behaviors.Controls.on_set_validationStatus(view, model, view.props.scrollArea)"
+    on_model_set_readyState="mstr.behaviors.ListView.on_model_set_readyState(view, model, rootTag)"
+    on_model_set_leadIndex="mstr.behaviors.ListView.on_model_set_leadIndex(view,model,rootTag)"
+    on_set_enabled="rootTag.rows[0].cells[0].firstChild.className = (view.props['enabled']) ? '' : 'mstrDisabled'"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'table', 'none', view.props['visible'])">
+  <table cellspacing="0" cellpadding="0"
+  		title="{@tooltip}"
+        class="{@cssPrefix}{@cssClass}"
+        id="{@id}">
+	<tr>
+		<td class="{@cssPrefix}{@cssClass}Cell">
+			<span>
+				<div class="{@cssPrefix}{@cssClass}Caption"></div>
+				<div class="{@cssPrefix}{@cssClass}Header" style="display: none">
+					<mstrlayout:wRender name="headerView"></mstrlayout:wRender>
+				</div>
+				<div style="{@cssText}; width:{@width}; height:{@height};"
+					class="{@cssPrefix}{@cssClass}Contents" id="ListBlockContents_{@id}">
+						<div oncontextmenu="return mstr.behaviors.Generic.oncontextmenu(arguments[0], self, '{@id}');"
+	           				onmouseup="try{document.getElementById('{@id}TabStop').focus();}catch(localerr){}; return mstr.behaviors.Generic.clearBrowserHighlights(self)"
+	           				onmousedown="try{document.getElementById('{@id}TabStop').focus();}catch(localerr){}"
+		           			class="{@cssPrefix}{@cssClass}ListContainer"
+	    	       			id="{@id}ListContainer">
+			      		</div>
+	      				<div class="{@cssPrefix}{@cssClass}ReadyState"></div>
+						<div class="{@cssPrefix}{@cssClass}MessageSection">
+							<div class="{@cssPrefix}{@cssClass}Message"></div>
+						</div>
+				</div>
+				<a title=""
+					href="/#"
+	    	   		onkeydown="return mstr.$obj('{@id}').onkeydown(arguments[0], self);"
+	       			onkeypress="return mstr.$obj('{@id}').onkeypress(arguments[0], self);"
+		       		class="{@cssPrefix}{@cssClass}TabStop"
+		       		id="{@id}TabStop"><div></div></a>
+			</span>
+		</td>
+	</tr>
+  </table>
+</mstrlayout:layout>

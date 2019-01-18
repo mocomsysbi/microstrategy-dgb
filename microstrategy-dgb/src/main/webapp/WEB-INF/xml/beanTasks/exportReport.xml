@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE beanTask SYSTEM "beanTask.dtd">
+<beanTask adminTask="false" class="com.microstrategy.web.app.tasks.ExportReportTask" registerAs="exportReport">
+  <basicInfo desc="This Task exports a Report in binary format with the specified executionMode.">
+    <parameter desc="The Message ID of a previously executed Report." name="msgID" required="false"/>
+    <parameter desc="The object ID of the Report to execute." name="reportID" required="false"/>
+    <parameter name="executionMode" desc="The parameter to specify the execution mode to run the report.  See EnumWebReportExecutionModes for details." required="false" defvalue="2" type="int"/>
+    <parameter desc="The report's start row" name="startRow" required="false"/>
+    <parameter desc="The report's start column" name="startCol" required="false"/>
+    <parameter desc="The report's maximum number of rows to get" name="maxRows" required="false"/>
+    <parameter desc="The report's maximum number of columns to get" name="maxCols" required="false"/>
+    <parameter desc="The parameter to specify the prompt answers using the previous message ID" name="originMessageID" required="false"/>
+    <parameter desc="The parameter to specify the prompt answers using the prompt answer xml" name="promptsAnswerXML" required="false"/>
+    <parameter desc="The parameter to specify the answers for the element prompts" name="elementsPromptAnswers" required="false"/>
+    <parameter desc="The parameter to specify the answers for the value prompts" name="valuePromptAnswers" required="false"/>
+    <parameter desc="The parameter to specify the answers for the object prompts" name="objectsPromptAnswers" required="false"/>
+    <parameter desc="The parameter to specify the answers for the prompts using the link Answers" name="linkAnswers" required="false"/>
+    <parameter name="expandPageBy" desc="The parameter to specify if user want's to expand the page-by element." required="false" defvalue="false" type="boolean"/>
+    <parameter name="excelVersion" desc="The parameter to specify the version of excel user want's to use the report to convert to.  See EnumExcelVersion for details." required="false" type="int"/>
+    <parameter name="plainTextDelimiter" desc="The parameter to specify the separator user want's to use when exporting a report to plain text format." required="false"/>
+  </basicInfo>
+  
+  <eventInfo eventID="4001">
+    <argument name="doNotAutoReprompt" source="const" value="true"/>
+  </eventInfo>
+  
+  <beanInfo bean-type="ReportBean" name="rb"/>
+  
+</beanTask>

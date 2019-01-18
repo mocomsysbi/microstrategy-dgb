@@ -1,0 +1,153 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptDispId -->
+<mstrlayout:layout>
+        <table width="100%">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td class="mstrPromptEditorCell"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5234" /></mstrlayout:render></td>
+                <td class="mstrPromptEditorCell">
+                    <input type="text" name="title" id="p_title" class="mstrInputTextLong" cmdid="setTitle" onkeyup="microstrategy.bone('tabPromptDispId').updateText(this);this.modified=true;">
+                        <mstrlayout:attr name="addTitleAsValue"/>
+                    </input>
+                </td>
+            </tr>
+            <tr>
+                <td class="mstrPromptEditorCell"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5754" /></mstrlayout:render></td>
+                <td class="mstrPromptEditorCell">
+                    <textarea rows="1" cols="1" class="mstrPromptDescription" name="desc" id="p_desc" cmdid="setDesc" onkeyup="microstrategy.bone('tabPromptDispId').updateText(this);this.modified=true;">
+                        <mstrlayout:render name="description"/>
+                    </textarea>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table width="100%">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr> 
+                <td class="mstrPromptEditorCell" colspan="2">
+                    <mstrlayout:if name="isRequired">
+                        <mstrlayout:then>
+                            <input type="checkbox" name="required" id="p_required" cmdid="setRequired" value="required" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);" checked="checked"/>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="required" id="p_required" cmdid="setRequired" value="required" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);"/>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="p_required"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5237" /></mstrlayout:render></label>
+                </td>
+            </tr>
+            <tr>
+                <td class="mstrPromptEditorCell">
+                    <mstrlayout:if name="hasMin">
+                        <mstrlayout:then>
+                            <input type="checkbox" name="p_min_check" id="p_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateMinCheck(this);" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="p_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="p_min_check" id="p_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateMinCheck(this);">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="p_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <mstrlayout:if method="isExpressionPrompt">
+                    	<mstrlayout:then>
+							<label for="p_min_check"><mstrlayout:render name="Descriptor">
+		                	    <mstrlayout:argument type="int" value="6145" />	<!-- Minimum number of qualifications: -->
+            			    </mstrlayout:render></label>
+                    	</mstrlayout:then>
+                    	<mstrlayout:else>
+							<label for="p_min_check"><mstrlayout:render name="Descriptor">
+		                    	<mstrlayout:argument type="int" value="5238" />
+                			</mstrlayout:render></label>
+                    	</mstrlayout:else>
+                    </mstrlayout:if>
+                </td>
+                <td class="mstrPromptEditorCell">
+                    <input type="text" name="p_min_value" id="p_min_value" class="mstrInputTextMedium" cmdid="setMinVal" DPN="p_min_check" DTY="1" MIN="1" MAX="999" LE="p_max_value" FLDID="5238" onkeyup="return microstrategy.bone('tabPromptDispId').updateMinValue(this);">
+                        <mstrlayout:attr name="addMinValueAttr"/>
+                    </input>
+                </td>
+            </tr>
+            <tr>
+                <td class="mstrPromptEditorCell">
+                    <mstrlayout:if name="hasMax">
+                        <mstrlayout:then>
+                            <input type="checkbox" name="p_max_check" id="p_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateMaxCheck(this);" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="p_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="p_max_check" id="p_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateMaxCheck(this);">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="p_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+	                    <mstrlayout:if method="isExpressionPrompt">
+	                    	<mstrlayout:then>
+			                    <label for="p_max_check"><mstrlayout:render name="Descriptor">
+				                    <mstrlayout:argument type="int" value="6146" />	<!-- Maximum number of qualifications: -->
+                			    </mstrlayout:render></label>
+	                    	</mstrlayout:then>
+	                    	<mstrlayout:else>
+                    			<label for="p_max_check"><mstrlayout:render name="Descriptor">
+		                    		<mstrlayout:argument type="int" value="5239" />
+                    			</mstrlayout:render></label>
+	                    	</mstrlayout:else>
+	                    </mstrlayout:if>
+                </td>
+                <td class="mstrPromptEditorCell">
+                    <input type="text" name="p_max_value" id="p_max_value" class="mstrInputTextMedium" cmdid="setMaxVal" DPN="p_max_check" DTY="1" MIN="1" MAX="999" GE="p_min_value" FLDID="5239" onkeyup="return microstrategy.bone('tabPromptDispId').updateMaxValue(this);">
+                        <mstrlayout:attr name="addMaxValueAttr"/>
+                    </input>
+                </td>
+            </tr>
+        </table>
+	    <mstrlayout:if name="showUserAnswerRestriction">
+			<mstrlayout:then>
+		        <table width="100%">
+		            <colgroup>
+		                  <col width="30%"/>
+		                  <col width="70%"/>
+		            </colgroup>
+		            <tr>
+		                <td class="mstrPromptEditorCell">
+		                    <mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5240" /></mstrlayout:render>
+		                </td>
+		                <td class="mstrPromptEditorCell">
+		                    <select size="1" name="pAnsAllowed" id="p_ansAllowed" cmdid="setPAnswerAllowed" onchange="return microstrategy.bone('tabPromptDispId').updateAnswerRestrictionList(this);">
+		                        <mstrlayout:list id="allow" name="getPersonalAnswersAllowedList">
+		                            <option>
+		                                <mstrlayout:attr name="addOptionAttr">
+		                                    <mstrlayout:argument list="allow"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+		                                </mstrlayout:attr>
+		                                <mstrlayout:render name="optionText">
+		                                    <mstrlayout:argument list="allow"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+		                                </mstrlayout:render>
+		                            </option>
+		                        </mstrlayout:list>
+		                    </select>
+		                </td>
+		            </tr>
+		        </table>
+			</mstrlayout:then>
+		</mstrlayout:if>
+		<!-- the prompt name used by save and save as event to pass in new name generated from client side, if any. -->
+		<input type="hidden" name="p_name" id="p_name" cmdid="setName">
+			<mstrlayout:attr name="addNameAsValue"/>
+		</input>
+</mstrlayout:layout>

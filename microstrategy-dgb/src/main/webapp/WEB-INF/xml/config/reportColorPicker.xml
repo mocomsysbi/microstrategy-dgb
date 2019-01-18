@@ -1,0 +1,230 @@
+<shortcut-list name="reportColorPicker" version="1.0">
+  <attributes>
+    <attribute name="ty" value="pkr" />
+    <attribute name="sty" value="pkr" />
+    <attribute name="styst" value="color"/>
+    <attribute name="class" value="mstrColorPicker" />
+  </attributes>
+  <shortcut desc="No Fill" desc-id="mstrWeb.5774" location="prefix" name="colorPicker0">
+    <attributes>
+      <attribute name="id" value="pkr"/>
+      <attribute name="style" value="background-color:transparent"/>;
+    </attributes>
+  </shortcut>
+  <shortcut desc="Black" desc-id="mstrWeb.2266" type="colorpicker" name="pkr#000000">
+    <attributes>
+      <attribute name="style" value="background-color: #000000;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Brown" desc-id="mstrWeb.2287" type="colorpicker" name="pkr#993300">
+    <attributes>
+      <attribute name="style" value="background-color: #993300;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Olive Green" desc-id="mstrWeb.2496" type="colorpicker" name="pkr#333300">
+    <attributes>
+      <attribute name="style" value="background-color: #333300;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Dark Green" desc-id="mstrWeb.2495" type="colorpicker" name="pkr#003300">
+    <attributes>
+      <attribute name="style" value="background-color: #003300;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Dark Teal" desc-id="mstrWeb.2493" type="colorpicker" name="pkr#003366">
+    <attributes>
+      <attribute name="style" value="background-color: #003366;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Dark Blue" desc-id="mstrWeb.2267" type="colorpicker" name="pkr#000080">
+    <attributes>
+      <attribute name="style" value="background-color: #000080;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Indigo" desc-id="mstrWeb.2498" type="colorpicker" name="pkr#333399">
+    <attributes>
+      <attribute name="style" value="background-color: #333399;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Grey-80%" desc-id="mstrWeb.2500" type="colorpicker" name="pkr#333333">
+    <attributes>
+      <attribute name="style" value="background-color: #333333;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Dark Red" desc-id="mstrWeb.2279" type="colorpicker" name="pkr#800000">
+    <attributes>
+      <attribute name="style" value="background-color: #800000;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Orange" desc-id="mstrWeb.2491" type="colorpicker" name="pkr#FF6600">
+    <attributes>
+      <attribute name="style" value="background-color: #FF6600;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Dark Yellow" desc-id="mstrWeb.2476" type="colorpicker" name="pkr#808000">
+    <attributes>
+      <attribute name="style" value="background-color: #808000;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Green" desc-id="mstrWeb.2271" type="colorpicker" name="pkr#008000">
+    <attributes>
+      <attribute name="style" value="background-color: #008000;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Teal" desc-id="mstrWeb.2478" type="colorpicker" name="pkr#008080">
+    <attributes>
+      <attribute name="style" value="background-color: #008080;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Blue" desc-id="mstrWeb.2268" type="colorpicker" name="pkr#0000FF">
+    <attributes>
+      <attribute name="style" value="background-color: #0000FF;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Blue-Grey" desc-id="mstrWeb.2492" type="colorpicker" name="pkr#666699">
+    <attributes>
+      <attribute name="style" value="background-color: #666699;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Grey-50%" desc-id="mstrWeb.2273" type="colorpicker" name="pkr#808080">
+    <attributes>
+      <attribute name="style" value="background-color: #808080;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Red" desc-id="mstrWeb.2280" type="colorpicker" name="pkr#FF0000">
+    <attributes>
+      <attribute name="style" value="background-color: #FF0000;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Light Orange" desc-id="mstrWeb.2490" type="colorpicker" name="pkr#FF9900">
+    <attributes>
+      <attribute name="style" value="background-color: #FF9900;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Lime" desc-id="mstrWeb.2488" type="colorpicker" name="pkr#99CC00">
+    <attributes>
+      <attribute name="style" value="background-color: #99CC00;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Sea Green" desc-id="mstrWeb.2494" type="colorpicker" name="pkr#339966">
+    <attributes>
+      <attribute name="style" value="background-color: #339966;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Aqua" desc-id="mstrWeb.2487" type="colorpicker" name="pkr#33CCCC">
+    <attributes>
+      <attribute name="style" value="background-color: #33CCCC;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Light Blue" desc-id="mstrWeb.2269" type="colorpicker" name="pkr#3366FF">
+    <attributes>
+      <attribute name="style" value="background-color: #3366FF;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Violet" desc-id="mstrWeb.2477" type="colorpicker" name="pkr#800080">
+    <attributes>
+      <attribute name="style" value="background-color: #800080;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Grey-40%" desc-id="mstrWeb.2499" type="colorpicker" name="pkr#969696">
+    <attributes>
+      <attribute name="style" value="background-color: #969696;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Pink" desc-id="mstrWeb.2292" type="colorpicker" name="pkr#FF00FF">
+    <attributes>
+      <attribute name="style" value="background-color: #FF00FF;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Gold" desc-id="mstrWeb.2489" type="colorpicker" name="pkr#FFCC00">
+    <attributes>
+      <attribute name="style" value="background-color: #FFCC00;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Yellow" desc-id="mstrWeb.2281" type="colorpicker" name="pkr#FFFF00">
+    <attributes>
+      <attribute name="style" value="background-color: #FFFF00;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Bright Green" desc-id="mstrWeb.2484" type="colorpicker" name="pkr#00FF00">
+    <attributes>
+      <attribute name="style" value="background-color: #00FF00;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Turquoise" desc-id="mstrWeb.2483" type="colorpicker" name="pkr#00FFFF">
+    <attributes>
+      <attribute name="style" value="background-color: #00FFFF;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Sky Blue" desc-id="mstrWeb.2480" type="colorpicker" name="pkr#00CCFF">
+    <attributes>
+      <attribute name="style" value="background-color: #00CCFF;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Plum" desc-id="mstrWeb.2497" type="colorpicker" name="pkr#993366">
+    <attributes>
+      <attribute name="style" value="background-color: #993366;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Grey-25%" desc-id="mstrWeb.2274" type="colorpicker" name="pkr#C0C0C0">
+    <attributes>
+      <attribute name="style" value="background-color: #C0C0C0;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Rose" desc-id="mstrWeb.2485" type="colorpicker" name="pkr#FF99CC">
+    <attributes>
+      <attribute name="style" value="background-color: #FF99CC;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Tan" desc-id="mstrWeb.2486" type="colorpicker" name="pkr#FFCC99">
+    <attributes>
+      <attribute name="style" value="background-color: #FFCC99;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Light Yellow" desc-id="mstrWeb.2282" type="colorpicker" name="pkr#FFFF99">
+    <attributes>
+      <attribute name="style" value="background-color: #FFFF99;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Light Green" desc-id="mstrWeb.2481" type="colorpicker" name="pkr#CCFFCC">
+    <attributes>
+      <attribute name="style" value="background-color: #CCFFCC;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Light Turquoise" desc-id="mstrWeb.2479" type="colorpicker" name="pkr#CCFFFF">
+    <attributes>
+      <attribute name="style" value="background-color: #CCFFFF;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Pale Blue" desc-id="mstrWeb.2482" type="colorpicker" name="pkr#99CCFF">
+    <attributes>
+      <attribute name="style" value="background-color: #99CCFF;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="Lavender" desc-id="mstrWeb.2290" type="colorpicker" name="pkr#CC99FF">
+    <attributes>
+      <attribute name="style" value="background-color: #CC99FF;" />
+    </attributes>
+  </shortcut>
+  <shortcut desc="White" desc-id="mstrWeb.2293" type="colorpicker" name="pkr#ffffff">
+    <attributes>
+      <attribute name="style" value="background-color: #ffffff;" />
+    </attributes>
+  </shortcut>
+  <shortcut location="suffix" desc="Custom Colors" name="pkrCustom">
+    <attributes>
+      <attribute name="style" value="display:none"/>;
+    </attributes>
+  </shortcut>
+  <shortcut desc="More Colors..." desc-id="mstrWeb.3531" location="suffix" name="pkrMore"  base-bone="reportFormatToolbar" dhtml-show="showMoreColors();">
+    <attributes>
+      <attribute name="style" value="background-color:"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="Gradients..." desc-id="mstrWeb.4833" location="suffix" name="pkrGradients"  base-bone="reportFormatToolbar" dhtml-show="showMoreColors();">
+    <attributes>
+      <attribute name="style" value="background-color:"/>
+    </attributes>
+  </shortcut>
+
+</shortcut-list>

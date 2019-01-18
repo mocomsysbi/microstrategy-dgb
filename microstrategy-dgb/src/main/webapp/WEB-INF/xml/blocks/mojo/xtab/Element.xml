@@ -1,0 +1,44 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single element.
+-->
+<block name="Element" annotation="xml:elementName=e">
+    <definition>
+        <!-- The global index of the element IDs ... -->
+        <property name="vi" type="Integer" />
+    
+        <!-- The element ID ... -->
+        <property name="v" type="String" />
+        
+        <!-- The (display) name of the element... -->
+        <property name="n" type="String" />
+        
+        <!-- The type of element. Concrete == 1, Metric == 2, ...
+             See c.m.webapi.EnumDSSXMLElementType for details... -->
+        <property name="t" type="Integer" />
+        
+        <!-- The weight of the element -->
+        <property name="wt" type="String" />
+        
+        <!-- The level of the element -->
+        <property name="lv" type="Integer" />
+        
+        <!-- If the element contains children -->
+        <property name="hcd" type="Boolean" />
+        
+        <!-- The parent element ID -->
+        <property name="pid" type="String" />
+        
+        <!-- If the element is hidden -->
+        <property name="hid" type="Boolean" />
+        
+        <!-- If the element is expanded -->
+        <property name="epd" type="Boolean" />
+        
+        <!-- If the element is a leaf node -->
+        <property name="ln" type="Boolean" />
+        
+        <!-- The parent element index -->
+        <property name="pi" type="Integer" />
+    </definition>
+</block>

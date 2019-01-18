@@ -1,0 +1,162 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="DocumentTemplateViewToolbarModel" name="DocumentDataToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K75" name="ToolbarRefreshButton">
+          <property name="visibleFeatures">check-execute-mode;quicklinks-refresh</property>
+        </block>
+        <block listElementKey="K76" name="ToolbarReExecuteRwdButton">
+          <property name="visibleFeatures">check-execute-mode;reexecute</property>
+        </block>
+        <block listElementKey="K77" name="ToolbarRepromptButton"/>
+        <block listElementKey="K78" name="BaseBlock"/>
+        <block listElementKey="K79" name="ToolbarSwapAxesButton">
+          <property name="visibleFeatures">web-pivot;rw-editable-view-mode-eplus;dhtml</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K80" name="ToolbarInsertMetricButton">
+          <property name="cmdid">edtDMetric</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K81" name="ToolbarRenameButton">
+          <property name="cmdid">edtRename</property>
+          <property name="visibleFeatures">frame-element-enabled;rename-edit-object;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K82" name="ToolbarDualStateButtonModel">
+          <property name="id">tbAttributeForms</property>
+          <property name="tooltip">{desc:mstrWeb.5787|Toggle Attribute Forms}</property>
+          <property name="cmdid">toggleattforms</property>
+          <property name="visibleFeatures">show-attribute-forms;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K83" name="ToolbarToggleTotalsButton">
+          <property name="visibleFeatures">dhtml;show-totals;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K84" name="ToolbarEditTotalsButton">
+          <property name="cmdid">edtSubtotals</property>
+          <property name="visibleFeatures">orionIServer;dhtml;show-totals;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K85" name="ToolbarButtonModel">
+          <property name="id">tbTotalsOldIServer</property>
+          <property name="tooltip">{desc:mstrWeb.3310|Edit Totals...}</property>
+          <property name="cmdid">edtSubtotalsOldIServer</property>
+          <property name="visibleFeatures">!orionIServer;dhtml;show-totals;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K86" name="BaseBlock"/>
+        <block listElementKey="K87" name="ToolbarQuickThresholdsPicker">
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;use-basic-threshold-editor</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+          <property name="width">105px</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K88" name="ToolbarListItemInfo">
+                <property name="dssid">0|edtAdvancedThresholds</property>
+                <property name="desc">{desc:mstrWeb.5835|Top and Bottom 20% - Background Color}</property>
+                <property name="cssClass">qtpkr0</property>
+              </block>
+              <block listElementKey="K89" name="ToolbarListItemInfo">
+                <property name="dssid">1|edtAdvancedThresholds</property>
+                <property name="desc">{desc:mstrWeb.5836|Top and Bottom 20% - Font Color}</property>
+                <property name="cssClass">qtpkr1</property>
+              </block>
+              <block listElementKey="K90" name="ToolbarListItemInfo">
+                <property name="dssid">2|edtAdvancedThresholds</property>
+                <property name="desc">{desc:mstrWeb.5837|Top and Bottom 20% - Stoplight}</property>
+                <property name="cssClass">qtpkr2</property>
+              </block>
+              <block listElementKey="K91" name="ToolbarListItemInfo">
+                <property name="dssid">3|edtAdvancedThresholds</property>
+                <property name="desc">{desc:mstrWeb.5838|Top and Bottom 20%, Center 60% - Stoplight}</property>
+                <property name="cssClass">qtpkr3</property>
+              </block>
+              <block listElementKey="K92" name="ToolbarListItemInfo">
+                <property name="dssid">4|edtAdvancedThresholds</property>
+                <property name="desc">{desc:mstrWeb.5839|Top and Bottom 20%, Center 60% - Arrows}</property>
+                <property name="cssClass">qtpkr4</property>
+              </block>
+              <block listElementKey="K93" name="ToolbarListItemInfo">
+                <property name="dssid">5|edtAdvancedThresholds</property>
+                <property name="desc">{desc:mstrWeb.5840|Top and Bottom 20%, Center 60% - Flags}</property>
+                <property name="cssClass">qtpkr5</property>
+              </block>
+              <block listElementKey="K94" name="ToolbarListItemInfo">
+                <property name="dssid">6|edtAdvancedThresholds</property>
+                <property name="desc">{desc:mstrWeb.5841|20% Slices - Icons}</property>
+                <property name="cssClass">qtpkr6</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K95" name="ToolbarThresholdsButton">
+          <property name="cmdid">ShowThreshold</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K96" name="ToolbarButtonModel">
+          <property name="id">tbEdtSimpleThresholdEditor</property>
+          <property name="tooltip">{desc:mstrWeb.6192|Visual Thresholds Editor...}</property>
+          <property name="cmdid">openSimpleThresholdEditor</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K97" name="ToolbarButtonModel">
+          <property name="id">tbEdtAdvThresholdEditor</property>
+          <property name="tooltip">{desc:mstrWeb.4569|Advanced Thresholds Editor...}</property>
+          <property name="cmdid">openAdvThresholdEditor</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1528" name="ToolbarButtonModel">
+          <property name="id">tbBasicConditionalFormatting</property>
+          <property name="tooltip">{desc:mstrWeb.5994|Visual Conditional Formatting...}</property>
+          <property name="cmdid">openBasicConditionalFormatting</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K1529" name="ToolbarButtonModel">
+          <property name="id">tbAdvConditionalFormatting</property>
+          <property name="tooltip">{desc:mstrWeb.6001|Advanced Conditional Formatting...}</property>
+          <property name="cmdid">openAdvConditionalFormatting</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K98" name="ToolbarDualStateButtonModel">
+          <property name="id">tbToggleConditionalFormatting</property>
+          <property name="tooltip">{desc:mstrWeb.5675|Toggle Conditional Formatting}</property>
+          <property name="cmdid">toggleConditionalFormatting</property>
+          <property name="visibleFeatures">rw-interactive-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K99" name="BaseBlock"/>
+        <block listElementKey="K100" name="ToolbarSortGridButton">
+          <property name="cmdid">edtSort</property>
+          <property name="visibleFeatures">web-sort;frame-element-enabled;dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K102" name="ToolbarButtonModel">
+          <property name="id">tbViewFilter</property>
+          <property name="tooltip">{desc:mstrWeb.3938|Edit View Filter...}</property>
+          <property name="cmdid">vfeRWGrid</property>
+          <property name="visibleFeatures">use-view-filter-editor;frame-element-enabled;dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K103" name="ToolbarButtonModel">
+          <property name="id">tbViewFilterNonEditable</property>
+          <property name="tooltip">{desc:mstrWeb.3939|View Filter...}</property>
+          <property name="cmdid">vfeRWGrid</property>
+          <property name="visibleFeatures">!use-view-filter-editor;frame-element-enabled;dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K104" name="BaseBlock"/>
+        <block listElementKey="tbToggleHideNulls" name="ToolbarToggleHideNullsButton">
+          <property name="visibleFeatures">dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

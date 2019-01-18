@@ -1,0 +1,27 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- Renders a ListModel containing border styles.  Transform needs to support the following methods:
+	getPickerList(String)
+	getDescriptor(String)
+	getListAttribute(String)
+-->
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+	<mstrlayout:block name="ListModel">
+		<mstrlayout:bSetProperty path="valueForm" value="dssid" />
+		<mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+		<mstrlayout:list id="borderList" method="getPickerList">
+			<mstrlayout:argument type="string" value="borderPicker" />
+			<mstrlayout:bSetProperty path="items">
+				<mstrlayout:block name="ItemInfo">
+					<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+						<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="borderList" />
+					</mstrlayout:bSetProperty>
+					<mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+						<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="borderList" />
+						<mstrlayout:argument type="string" value="value::const" />
+					</mstrlayout:bSetProperty>
+				</mstrlayout:block>
+			</mstrlayout:bSetProperty>
+		</mstrlayout:list>
+	</mstrlayout:block>
+</mstrlayout:layout>

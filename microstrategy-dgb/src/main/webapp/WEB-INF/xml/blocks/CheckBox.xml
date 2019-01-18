@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- CheckBox is an editable check box control with the structure: "[] caption".  -->
+	<block name="CheckBox" inherits="BaseView">
+		<definition>
+			<!-- The caption to appear to the left of the field value. -->
+			<property name="caption" type="String" />
+
+			<!-- The name of the model property that will supply the value. -->
+			<property name="valueField" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.CheckBox</property>
+			<property name="cssClass">CheckBox</property>
+		</assignments>
+	</block>

@@ -1,0 +1,110 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <![CDATA[
+        <style type="text/css">
+            .leftpadding {
+            	padding-left: 19px;
+            	width: 150px;
+            }
+            .g {
+            	max-width:250px; 
+            	display: inline-block; 
+            	min-width:100px;
+            }
+            .d {
+            	padding-left:20px;
+            }
+            .d select {
+                width: 100%; 
+            }
+        </style>
+     ]]>
+     <table>
+        <tr>
+           <td class="leftpadding">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.11444"/> <!-- Descriptor: Image Quality: -->
+            </mstrlayout:render>
+          </td>
+          <td class="d">
+         	 <div class="g" >
+	            <mstrlayout:render name="SelectBox">
+	            	<mstrlayout:argument type="String" value="iq"/> 
+	            	<mstrlayout:argument type="String" value="0^mstrWeb.3056|1^mstrWeb.3057|2^mstrWeb.3058" /> <!-- selectBox elements -->
+	            	<mstrlayout:argument type="String" value="" /> <!-- extra att -->
+	            	<mstrlayout:argument type="String" value="0" /> <!-- default val -->
+	            </mstrlayout:render>	
+	        </div>    
+          </td>
+        </tr>
+        <tr>
+          <td class="leftpadding" >
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.11445" /> <!-- Descriptor:  Image Size:-->
+            </mstrlayout:render>
+          </td>
+          <td class="d">
+          	<div class="g">
+	            <mstrlayout:render name="SelectBox">
+	              <mstrlayout:argument type="String" value="is" />
+	              <mstrlayout:argument type="String" value="0^mstrWeb.11446|1^mstrWeb.2263|2^mstrWeb.11447|3^mstrWeb.11448" /> <!-- selectBox elements -->
+            	  <mstrlayout:argument type="String" value="" /> <!-- extra att -->
+            	  <mstrlayout:argument type="String" value="1" /> <!-- default val -->
+	            </mstrlayout:render>
+	        </div>    
+          </td>
+        </tr>
+        <tr>
+          <td class="leftpadding" >
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.11963" /> <!-- Descriptor:  Allow Multiple Photos:-->
+            </mstrlayout:render>
+          </td>
+          <td class="d">
+          	<div class="g">
+	            <mstrlayout:render name="SelectBox">
+	              <mstrlayout:argument type="String" value="amp" />
+	              <mstrlayout:argument type="String" value="0^mstrWeb.219|1^mstrWeb.218" /> <!-- selectBox elements -->
+            	  <mstrlayout:argument type="String" value="" /> <!-- extra att -->
+            	  <mstrlayout:argument type="String" value="0" /> <!-- default val -->
+	            </mstrlayout:render>
+	        </div>    
+          </td>
+        </tr>
+        <tr>
+          <td class="leftpadding" >
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.11964" /> <!-- Descriptor:  Allow Existing Pictures:-->
+            </mstrlayout:render>
+          </td>
+          <td class="d">
+          	<div class="g">
+	            <mstrlayout:render name="SelectBox">
+	              <mstrlayout:argument type="String" value="aep" />
+	              <mstrlayout:argument type="String" value="0^mstrWeb.219|1^mstrWeb.218" /> <!-- selectBox elements -->
+            	  <mstrlayout:argument type="String" value="" /> <!-- extra att -->
+            	  <mstrlayout:argument type="String" value="0" /> <!-- default val -->
+	            </mstrlayout:render>
+	        </div>    
+          </td>
+        </tr>
+        <tr>
+          <td class="leftpadding" >
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.11965" /> <!-- Descriptor:  Default Camera:-->
+            </mstrlayout:render>
+          </td>
+          <td class="d">
+          	<div class="g">
+	            <mstrlayout:render name="SelectBox">
+	              <mstrlayout:argument type="String" value="dc" />
+	              <mstrlayout:argument type="String" value="0^mstrWeb.11961|1^mstrWeb.11962" /> <!-- selectBox elements -->
+            	  <mstrlayout:argument type="String" value="" /> <!-- extra att -->
+            	  <mstrlayout:argument type="String" value="0" /> <!-- default val -->
+	            </mstrlayout:render>
+	        </div>    
+          </td>
+        </tr>
+        </table>
+</mstrlayout:layout>
+

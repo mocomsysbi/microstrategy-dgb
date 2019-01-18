@@ -1,0 +1,76 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="FilterDetailsEditorView">
+  <assignments>
+    <property name="id">FilterDetailsEditor</property>
+    <property name="title">{desc:mstrWeb.5371|Report Details Properties}</property>
+    <property name="modelPath">parent/models/0</property>
+    <property name="visible">true</property>
+    <property name="avoidCache">true</property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K507" name="TextButton">
+          <property name="cmds">CancelChanges||parent/model;Unpop||parent;ResetValidationStatus||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K508" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+		  <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- target viewer -->
+    <property name="contentView">
+      <block name="VBox">
+        <property name="modelPath">parent/model</property>
+        <property name="children">
+          <list>
+            <block listElementKey="K509" name="ListView">
+              <property name="cssClass">ListBlockTabbed</property>
+              <property name="itemCSSPrefix">ListBlockTabbedItem</property>
+              <property name="modelPath">parent/model/tabList</property>
+              <property name="multiSelect">false</property>
+              <property name="showIcons">false</property>
+              <property name="height">20px</property>
+              <property name="width">530px</property>
+            </block>
+            <block listElementKey="K510" name="ViewStack">
+              <property name="modelPath">parent/model/tabList</property>
+              <property name="cssClass">TabbedMenuBody</property>
+              <property name="height">450px</property>
+              <property name="views">
+                <list>
+                  <block listElementKey="K511" name="FilterDetailsGeneralTabView"/>
+                  <block listElementKey="K512" name="FilterDetailsContentsTabView"/>
+                  <block listElementKey="K513" name="FilterDetailsOtherTabView"/>
+                  <block listElementKey="K514" name="FilterDetailsTemplateTabView"/>
+                </list>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- ok button -->
+        <block listElementKey="K515" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">SubmitChanges|","|parent/model;Unpop||parent;</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K516" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">CancelChanges||parent/model;Unpop||parent;</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		Filter Details Editor is a popup used for setting filter properties.
+	-->

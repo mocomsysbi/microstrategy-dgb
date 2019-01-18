@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="CalculatedConfig" inherits="BaseBlock">
+    <definition>
+        <!-- The min value -->
+        <property name="min" type="Double"/>
+        <!-- The max value -->
+        <property name="max" type="Double"/>
+        <!-- The interval value -->
+        <property name="itv" type="Double"/>
+    </definition>
+</block>

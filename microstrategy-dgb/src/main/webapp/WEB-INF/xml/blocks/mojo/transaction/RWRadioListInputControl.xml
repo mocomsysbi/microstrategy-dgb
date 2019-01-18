@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWRadioListInputControl" inherits="RWDataInputObject, SubTypeConfig, ValuesConfig">
+    <definition>
+    	<!-- Items per row: 0-All in one row, 1-Vertical, > 1-Horizontal -->
+    	<property name="ipr" type="Integer" />
+        <!-- Text to display for the unset state -->
+        <property name="ust" type="String" />
+    </definition>
+</block>

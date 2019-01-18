@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- Calendar View is a popup for picking a date.  -->
+    <block name="CalendarView" inherits="BaseView">
+      <definition>
+        <!-- CSS style for the calendar div. -->      
+        <property name="calCSSText" type="String" />
+        <!-- CSS style for the calendar title. -->        
+        <property name="titleCSSText" type="String" />  
+                             
+      </definition>
+      <assignments>         
+        <property name="layoutClass">mstr.layouts.Calendar</property>  
+        <property name="modelPath">parent/model/getCalendar()</property>   
+		<property name="cmds">Unpop||</property>        
+		<property name="descriptors">
+			<block name="BaseBlock">
+				<property name="closeCaption" type="String">{desc:mstrWeb.2102|Close}</property>
+				<property name="today" type="String">{desc:mstrWeb.9423|Today}</property>
+			</block>
+		</property>
+      </assignments>
+    </block>

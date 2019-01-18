@@ -1,0 +1,74 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TreeView is a tree with +/- icons for collapsing/expanding nodes. -->
+	<block name="TreeView" inherits="BaseView">
+		<definition>
+			<!-- The text to display above the TreeView. -->
+			<property name="caption" type="String" />
+
+			<!-- Optional CSS specification of height for the scroll area of the tree view. -->
+			<property name="height" type="String" />
+
+			<!-- Optional CSS specification of width for the scroll area of the tree view. -->
+			<property name="width" type="String" />
+
+			<!-- If true, checkboxes are shown; if false, radio buttons. -->
+			<property name="multiSelect" type="Boolean" />
+
+			<!-- Fqcn of the object to use for rendering tree nodes. -->
+			<property name="itemRendererClass" type="String" />
+
+			<!-- Optional prefix name of the CSS class for rendering tree node items.  -->
+			<property name="itemCSSPrefix" type="String" />
+
+			<!-- Optional CSS class for single filter node in hierarchy tree case.  -->
+			<property name="singleFilterCssClass" type="String" />
+
+			<!-- Optional comma-delimited list of object types.  If the root node's value is an object of one of the
+				 listed types, then the root node's value should be hidden from the end-user. -->
+			<property name="hideRootNodeTypes" type="String" />
+			
+            <!-- Commands used when search performed on this view. -->
+			<property name="cmdsSearch" type="String"/>
+			
+            <!-- Optional list of commands to execute when the tree is double-clicked by an end-user. -->
+            <property name="cmdsDblClick" type="String"/>			
+
+			<!-- Flags for enabling/disabling browse features in the GUI. -->
+			<property name="allowExpandCollapse" type="Boolean" />
+			<property name="allowBrowseFolder" type="Boolean" />
+			<property name="allowBrowseAttribute" type="Boolean" />
+			<property name="allowBrowseHierarchy" type="Boolean" />
+			<property name="autoCollapse" type="Boolean"/>
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.TreeView</property>
+			<property name="layoutClass">mstr.layouts.TreeView</property>
+			<property name="itemRendererClass">mstr.behaviors.ExpandableTreeView</property>
+			<property name="cssClass">TreeView</property>
+			<property name="height">150px</property>
+			<property name="itemCSSPrefix">TreeView</property>
+			<property name="multiSelect">true</property>
+			<property name="cmds">ClickTreeNode;BrowseTreeNode</property>
+			<property name="allowExpandCollapse">true</property>
+			<property name="allowBrowseFolder">true</property>
+			<property name="allowBrowseAttribute">true</property>
+			<property name="allowBrowseHierarchy">true</property>
+			<property name="hideRootNodeTypes">8</property>
+			<property name="cmdsSearch">SearchNode||model</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="emptyText" type="String">{desc:mstrWeb.257|(none)}</property>
+					<property name="errorText" type="String">{desc:mstrWeb.5810|Error loading contents}</property>
+                    <property name="errorDetailsText" type="String">{desc:mstrWeb.5811|Details ...}</property>
+					<property name="searchRequiredText" type="String">{desc:mstrWeb.6026|Please enter search criteria. List may be long.}</property>
+					<property name="waitingText" type="String">{desc:mstrWeb.5674|Loading...}</property>
+					<property name="loadingText" type="String">{desc:mstrWeb.5674|Loading...}</property>
+					<property name="requestTimeOutText" type="String">{desc:mstrWeb.5781|Request timed out.}</property>
+					<property name="requestCancelledText" type="String">{desc:mstrWeb.5780|Request cancelled.}</property>
+					<property name="incrementalFetchSeparator" type="String">{desc:mstrWeb.5962|of}</property>
+					<property name="searchResultsCaption" type="String">{desc:mstrWeb.538|Search for:}</property>
+                    <property name="noItems" type="String">0 {desc:mstrWeb.5270|items}</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

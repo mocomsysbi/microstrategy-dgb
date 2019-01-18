@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="AnnotationAddition" inherits="BaseModel">
+    	<definition>
+    		<property name="value" type="String" />
+    		<property name="prefixLen" type="Integer"/>
+			<property name="postfixLen" type="Integer"/>
+    	</definition>
+		<assignments>
+		    <property name="scriptClass">mstr.models.AnnotationAddArea</property>
+			<property name="postfixLen">7</property>
+		</assignments>	    
+    </block>

@@ -1,0 +1,10 @@
+<shortcut-list-set name="filterContextMenus" version="1.0">
+  <shortcut-list name="default">
+  </shortcut-list>
+  <shortcut-list name="operators">
+    <shortcut name="and" desc="[And]" desc-id="mstrWeb.701" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FilterAnd" />
+    <shortcut name="or" desc="[Or]" desc-id="mstrWeb.2201" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FilterOr" />
+    <shortcut name="andNot" desc="[And Not]" desc-id="mstrWeb.2458" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FilterAndNot" />
+    <shortcut name="orNot" desc="[Or Not]" desc-id="mstrWeb.2459" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FilterOrNot" />
+  </shortcut-list>
+</shortcut-list-set>

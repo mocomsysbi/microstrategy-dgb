@@ -1,0 +1,54 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="IPhoneTimeSeriesEditorModel" inherits="BaseModel">
+        <definition>
+            <property name="enableAdd" type="Boolean"/>
+            <property name="nodes" type="Block"/>
+            <property name="rangeList" type="Block"/>
+            <property name="dataSets" type="Block"/>
+            <property name="empty" type="Boolean"/>
+            <property name="downEnabled" type="Boolean"/>
+            <property name="upEnabled" type="Boolean"/>
+            <property name="attEnabled" type="Boolean"/>
+            <property name="selectedRangeSize" type="String"/>
+            <property name="selectedName" type="String"/>
+            <property name="selectedLevel" type="String"/>
+            <property name="selectedRange" type="String"/>
+            <property name="boneName" type="String"/>
+            <property name="isReport" type="Boolean"/>
+            <property name="__atts" type="Block"/>
+            <property name="granularity" type="String"/>
+            <property name="preview" type="Block"/>
+        </definition>
+        <assignments>
+            <property name="scriptClass">mstr.models.IPhoneTimeSeriesEditorModel</property>
+            <property name="enableAdd">true</property>
+            <property name="boneName">rwb_viewer</property>
+            <property name="attEnabled">false</property>
+            <property name ="__atts">
+                <block name="BaseBlock"/>
+            </property>
+            <property name ="preview">
+                <block name="BaseModel">
+                    <property name="value" type="String"></property>
+                </block>
+            </property>
+            <property name="nodes">
+                <block name="ListModel">
+                    <property name="valueForm">dssid</property>
+                </block>
+            </property>
+            
+            <property name="rangeList">
+                <block name="ListModel"/>
+                <!-- 
+                    <block name="ItemInfo">
+                      <property name="dssid">1</property>
+                      <property name="n">att2</property>
+                    </block>
+                 -->
+            </property>
+            <property name="dataSets">
+                <block name="ListModel"/>
+            </property>
+        </assignments>
+    </block>

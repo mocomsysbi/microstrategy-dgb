@@ -1,0 +1,16 @@
+
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!-- MetricQualifierLevelAttributesPopup is an ObjectSelector popup specifically launched by the MetricQualifier
+	 to choose attributes for a custom dimensionality level.
+	 -->
+<block name="MetricQualifierLevelAttributesPopup" inherits="ObjectSelector">
+	<assignments>
+		<property name="id">MetricQualifierLevelAttributesPopup1</property>
+		<property name="modelPath">opener/model/parent/getLevelCartModel()</property>
+		<property name="title">{desc:mstrWeb.5929|Select Attributes}</property>
+		<property name="cssText">width:460px</property>
+		<property name="isModal" >false</property>
+		<!-- ok button -->
+		<property name="cmdButtons[0]/cmds">Unpop||parent;EditConditionLevelAttributes|parent/model/selected/items|parent/opener/parent/model/selected</property>
+</assignments>
+</block>

@@ -1,0 +1,88 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isValidGrid">
+    <mstrlayout:then>
+      <![CDATA[
+        <style type="text/css">
+            .h {
+                background: black; 
+                color: white;
+            }
+            .t {
+                        width:100%;
+                padding:2px 2px 2px 10px;
+            }   
+            .c {
+                    padding-left:20px; 
+            }
+            .leftpadding {
+            	padding-left: 9px;
+            	width: 50px;
+            }
+            .g{
+            	max-width:250px; 
+            	display: inline-block; 
+            }
+            .d{
+            	padding-left:20px;
+            }
+            .d select {
+                	width: 100%; 
+            }
+        </style>
+     ]]>
+      <table class="t" id="iphone-table">
+        <tr>
+          <th class="h" colspan="2">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.7884" /> <!-- Descriptor: Color Choices -->
+            </mstrlayout:render>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="2">
+          </td>
+        </tr>
+        <tr>
+          <td class="leftpadding">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.959" /><!-- Descriptor: Default -->
+            </mstrlayout:render><![CDATA[:]]> 
+          </td>
+          <td class="c">
+            <mstrlayout:render name="ColorPicker">
+              <mstrlayout:argument type="String" value="npc" />
+              <mstrlayout:argument type="String" value="#AAAAAA" />
+            </mstrlayout:render>
+          </td>
+        </tr>
+      </table>     
+      <table class="t">
+        <tr>
+          <th class="h" colspan="2">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.7888" /> <!-- Descriptor:  Image Map Coordinates -->
+            </mstrlayout:render>
+          </th>
+        </tr>
+        <tr>
+          <td class="leftpadding" >
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.7889" /> <!-- Descriptor:  Pick Map:-->
+            </mstrlayout:render>
+          </td>
+          <td class="d">
+          	<div class="g">
+	            <mstrlayout:render name="ImageMapPulldown">
+	              <mstrlayout:argument type="String" value="mf" />
+	            </mstrlayout:render>
+	        </div>    
+          </td>
+        </tr>
+      </table>
+    </mstrlayout:then>
+    <mstrlayout:else>
+      <mstrlayout:render name="ValidationError" />
+    </mstrlayout:else>
+  </mstrlayout:if>
+</mstrlayout:layout>

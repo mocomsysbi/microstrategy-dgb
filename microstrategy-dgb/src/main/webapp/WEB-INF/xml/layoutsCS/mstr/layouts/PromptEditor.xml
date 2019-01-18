@@ -1,0 +1,55 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'table', 'none', view.props['visible']); if(!view.props['autoResize'] &amp;&amp; view.props['visible'])mstr.behaviors.PromptEditor.attachScrollHandler(view, model, rootTag);"
+    on_win_resize="if (view.props['autoResize']) {mstr.behaviors.PromptEditor.on_win_resize(view, model, rootTag);} else {mstr.behaviors.PromptEditor.on_win_scroll(view, model, rootTag)}"
+    on_win_scroll="if (!view.props['autoResize']) mstr.behaviors.PromptEditor.on_win_scroll(view, model, rootTag)"
+    on_set_showSummary="mstr.behaviors.PromptEditor.on_set_showSummary(view, model, rootTag)"
+    on_set_height="mstr.behaviors.PromptEditor.on_set_height(view, model, rootTag, context)"
+    on_set_toc="mstr.behaviors.PromptEditor.on_set_toc(view, model, rootTag)" 
+    on_model_set_validationStatus="mstr.behaviors.PromptEditor.on_model_set_validationStatus(view, model, rootTag)">
+  <table title="{@tooltip}"
+         cellspacing="3"
+         style="{@cssText}"
+         cellpadding="0"
+         class="{@cssPrefix}{@cssClass}"
+         id="{@id}">
+    <tbody>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellTOC">
+          <mstrlayout:wRender name="toc">
+          </mstrlayout:wRender>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellBook">
+          <div class="{@cssPrefix}{@cssClass}BookContainer">
+            <mstrlayout:wRender name="summary">
+            </mstrlayout:wRender>
+            <mstrlayout:wRender name="book">
+              &amp;#160;{@descriptors/loadingPrompts}
+            </mstrlayout:wRender>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellRenameMsgToolbar" colspan="2">
+                <mstrlayout:wRender name="messageNameView">
+                </mstrlayout:wRender>
+		</td>
+	  </tr>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellNavToolbar" colspan="2">
+                <mstrlayout:wRender name="closeSummaryButton">
+                </mstrlayout:wRender>
+                <mstrlayout:wRender name="previousButton">
+                </mstrlayout:wRender>
+                <mstrlayout:wRender name="nextButton">
+                </mstrlayout:wRender>
+                <mstrlayout:wRender name="finishButton">
+                </mstrlayout:wRender>
+                <mstrlayout:wRender name="saveButton">
+                </mstrlayout:wRender>
+                <mstrlayout:wRender name="cancelButton">
+                </mstrlayout:wRender>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mstrlayout:layout>

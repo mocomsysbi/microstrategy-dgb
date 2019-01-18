@@ -1,0 +1,61 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if method="isIFrameRequest">
+    <mstrlayout:else>
+     <mstrlayout:if name="isDhtml">
+      <mstrlayout:then>
+	  <mstrlayout:include file="/WEB-INF/xml/layouts/RWReportFrameProcessor.xml"/>
+	  <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/PageInfoBlockLayout.xml" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+    </mstrlayout:else>
+  </mstrlayout:if>
+    
+  <mstrlayout:render name="iFrameComponent">
+      <mstrlayout:argument value="rw_error"/>
+  </mstrlayout:render>
+  <table border="0" cellpadding="0" cellspacing="0" class="rwLayout" width="100%">
+    <colgroup span="1">
+      <col class="rwLayoutLeft" span="1" width="*"/>
+      <col class="rwLayoutRight" span="1" width="100%"/>
+    </colgroup>
+    <tr>
+      <td class="rwLayoutLeft" colspan="1" rowspan="1">
+      </td>
+      <td class="rwLayoutRight" colspan="1" rowspan="1">
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.subs"/>
+        </mstrlayout:render>
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.ncSubs"/>
+        </mstrlayout:render>
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.ncFileSubs"/>
+        </mstrlayout:render>
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.ncPrintSubs"/>
+        </mstrlayout:render>
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.ncSendNow"/>
+        </mstrlayout:render>
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.mobileSubs"/>
+        </mstrlayout:render>
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.rwb"/>
+          <mstrlayout:argument value="RWMultiLayoutTabStripStyle"/>
+        </mstrlayout:render>
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.pbb"/>
+          <mstrlayout:argument value="GroupByStyle"/>
+        </mstrlayout:render>
+          <mstrlayout:render name="editorMessage" />
+        <mstrlayout:render name="bean">
+          <mstrlayout:argument value="rwframe.rwb"/>
+          <mstrlayout:argument value="RWDocumentDesignStyle"/>
+        </mstrlayout:render>
+      </td>
+    </tr>
+  </table>
+  
+</mstrlayout:layout>

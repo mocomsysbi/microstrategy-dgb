@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="SubMenuOption" inherits="MenuOption">
+		<definition>
+			<!-- Indicates the style catalog style to use to load the sub menu. -->
+			<property name="style" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.FloatingMenuOption</property>
+			<property name="cssClass">SubMenuOption</property>
+			<property name="cmds">OpenSubMenu</property>
+			<property name="hasMenu">true</property>
+		</assignments>
+	</block>

@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition portion of a Report Writer Unit.
+--> 
+<block name="RWConditionSelectorDef" inherits="RWSelectorDef">
+    <definition>  
+        <!-- Indicate the decimal places of source metric on the target gird -->
+        <property name="numFmts" type="Block" />   
+        
+        <!-- attribute form list if it is an attribute form selector -->
+        <property name="fs" type="List" />              
+    </definition> 
+</block>

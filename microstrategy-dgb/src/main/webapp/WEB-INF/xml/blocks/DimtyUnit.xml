@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="DimtyUnit" inherits="ItemInfo">
+		<definition>
+			<!-- aggregation -->
+			<property name="agg" type="Integer" />
+			<!-- filtering -->
+			<property name="flt" type="Integer" />
+			<!-- groupby -->
+			<property name="gb" type="Boolean" />
+			<!-- relativePos -->
+			<property name="rps" type="Integer" />
+		</definition>
+	</block>

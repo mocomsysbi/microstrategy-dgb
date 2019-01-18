@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ListModel" name="LineStyleModel">
+  <assignments>
+    <property name="valueForm">dssid</property>
+    <property name="selectedIndicesList">0</property>
+    <property name="items">
+      <list>
+        <block listElementKey="K786" name="ItemInfo">
+          <property name="dssid">1</property>
+          <property name="n">{desc:mstrWeb.3532|Solid}</property>
+        </block>
+        <block listElementKey="K787" name="ItemInfo">
+          <property name="dssid">2</property>
+          <property name="n">{desc:mstrWeb.2259|Dashed}</property>
+        </block>
+        <block listElementKey="K788" name="ItemInfo">
+          <property name="dssid">3</property>
+          <property name="n">{desc:mstrWeb.2260|Dotted}</property>
+        </block>
+        <block listElementKey="K789" name="ItemInfo">
+          <property name="dssid">4</property>
+          <property name="n">{desc:mstrWeb.15361|Double}</property><!-- DE61732 -->
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- Used for any editor that has line style picker controls -->

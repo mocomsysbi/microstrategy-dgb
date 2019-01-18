@@ -1,0 +1,350 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptQualId -->
+<mstrlayout:layout>
+    <mstrlayout:if method="isMetricQualificationPrompt">
+        <mstrlayout:else>
+            <div id="expTypeAllowedDiv">
+                <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+                    <colgroup>
+                          <col width="30%"/>
+                          <col width="70%"/>
+                    </colgroup>
+                    <tr>
+                        <td class="mstrPromptEditorCell"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5272" /></mstrlayout:render></td>
+                        <td class="mstrPromptEditorCell">
+                            <select size="1" name="p_expTypeAllowed" id="p_expTypeAllowed" class="mstrPromptDropDown" cmdid="setExpTypeAllowed" onchange="microstrategy.bone('tabPromptQualId').updateExpTypeAllowed(this);">
+                                <mstrlayout:list id="type" name="getExpTypeAllowedList">
+                                    <option>
+                                        <mstrlayout:attr name="addOptionAttr">
+                                            <mstrlayout:argument list="type"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:attr>
+                                        <mstrlayout:render name="optionText">
+                                            <mstrlayout:argument list="type"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:render>
+                                    </option>
+                                </mstrlayout:list>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="DefExpTypeDiv">
+                <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+                    <colgroup>
+                          <col width="30%"/>
+                          <col width="70%"/>
+                    </colgroup>
+                    <tr>
+                        <td class="mstrPromptEditorCell mstrPaddingLeft20"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5273" /></mstrlayout:render></td>
+                        <td class="mstrPromptEditorCell">
+                            <select size="1" name="p_defaultExpType" id="p_defaultExpType" class="mstrPromptDropDown" cmdid="setDefaultExpType" onchange="microstrategy.bone('tabPromptQualId').updateDefaultExpType(this);">
+                                <mstrlayout:list id="type" name="getDefaultExpTypeList">
+                                    <option>
+                                        <mstrlayout:attr name="addOptionAttr">
+                                            <mstrlayout:argument list="type"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:attr>
+                                        <mstrlayout:render name="optionText">
+                                            <mstrlayout:argument list="type"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:render>
+                                    </option>
+                                </mstrlayout:list>
+                            </select>
+                            <div style="display:none">
+                                <select size="1" name="p_defaultExpTypeCopy" id="p_defaultExpTypeCopy" class="mstrPromptDropDown" >
+                                    <mstrlayout:list id="type" name="getDefaultExpTypeList">
+                                        <option>
+                                            <mstrlayout:attr name="addOptionAttr">
+                                                <mstrlayout:argument list="type"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                            </mstrlayout:attr>
+                                            <mstrlayout:render name="optionText">
+                                                <mstrlayout:argument list="type"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                            </mstrlayout:render>
+                                        </option>
+                                    </mstrlayout:list>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+		</mstrlayout:else>
+	</mstrlayout:if>
+    <div id="DefCondOpDiv">
+        <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td class="mstrPromptEditorCell mstrPaddingLeft20"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5274" /></mstrlayout:render></td>
+                <td class="mstrPromptEditorCell">
+                    <select size="1" name="p_defaultCondOp" id="p_defaultCondOp" class="mstrPromptDropDown" cmdid="setDefaultCondOp" onchange="microstrategy.bone('tabPromptQualId').updateList(this);">
+                        <mstrlayout:list id="op" name="getDefaultConditionOpList">
+                            <option>
+                                <mstrlayout:attr name="addOptionAttr">
+                                    <mstrlayout:argument list="op"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:attr>
+                                <mstrlayout:render name="optionText">
+                                    <mstrlayout:argument list="op"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:render>
+                            </option>
+                        </mstrlayout:list>
+                    </select>
+                    <div style="display:none">
+                        <select size="1" name="p_defaultCondOpCopy" id="p_defaultCondOpCopy" class="mstrPromptDropDown">
+	                        <mstrlayout:list id="op" name="getDefaultConditionOpList">
+	                            <option>
+	                                <mstrlayout:attr name="addOptionAttr">
+	                                    <mstrlayout:argument list="op"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+	                                </mstrlayout:attr>
+	                                <mstrlayout:render name="optionText">
+	                                    <mstrlayout:argument list="op"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+	                                </mstrlayout:render>
+	                            </option>
+	                        </mstrlayout:list>
+	                    </select>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+	<mstrlayout:if method="isMetricQualificationPrompt">
+		<mstrlayout:else>
+            <div id="expMaxElemDiv">
+                <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+                    <colgroup>
+                          <col width="30%"/>
+                          <col width="70%"/>
+                    </colgroup>
+                    <tr>
+                        <td class="mstrPromptEditorCell mstrPaddingLeft20">
+                            <mstrlayout:if name="isMaxElemPerSubNonDefault">
+                                <mstrlayout:then>
+                                    <input type="checkbox" name="maxElemPerSubMode" id="p_maxElemPerSubMode" cmdid="setMaxElemPerSubMode" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);microstrategy.bone('tabPromptQualId').updateText(getObj('p_maxElemPerSub'))" checked="checked">
+                                        <mstrlayout:attr name="addDisableObjs">
+                                            <mstrlayout:argument value="p_maxElemPerSub"/>
+                                        </mstrlayout:attr>
+                                    </input>
+                                </mstrlayout:then>
+                                <mstrlayout:else>
+                                    <input type="checkbox" name="maxElemPerSubMode" id="p_maxElemPerSubMode" cmdid="setMaxElemPerSubMode" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);microstrategy.bone('tabPromptQualId').updateText(getObj('p_maxElemPerSub'))" >
+                                        <mstrlayout:attr name="addDisableObjs">
+                                            <mstrlayout:argument value="p_maxElemPerSub"/>
+                                        </mstrlayout:attr>
+                                    </input>
+                                </mstrlayout:else>
+                            </mstrlayout:if>
+                            <label for="p_maxElemPerSubMode"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5271" /></mstrlayout:render></label>
+                        </td>
+                        <td class="mstrPromptEditorCell">
+                            <mstrlayout:if name="isMaxElemPerSubNonDefault">
+                                <mstrlayout:then>
+                                    <input type="text" name="maxElemPerSub" id="p_maxElemPerSub" size="50" cmdid="setMaxElemPerSub" onkeyup="microstrategy.bone('tabPromptQualId').updateText(this);" DPN="p_maxElemPerSubMode" DTY="1" FLDID="5271" MIN="1" MAX="999">
+                                        <mstrlayout:attr name="addMaxElemPerSubAsValue"/>
+                                    </input>
+                                </mstrlayout:then>
+                                <mstrlayout:else>
+                                    <input type="text" name="maxElemPerSub" id="p_maxElemPerSub" size="50" cmdid="setMaxElemPerSub" onkeyup="microstrategy.bone('tabPromptQualId').updateText(this);" DPN="p_maxElemPerSubMode" DTY="1" FLDID="5271" MIN="1" MAX="999" disabled="disabled"/>
+                                </mstrlayout:else>
+                            </mstrlayout:if>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+			<div id="allowElemImportDiv">
+				<table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+					<colgroup>
+						  <col width="30%"/>
+						  <col width="70%"/>
+					</colgroup>
+					<tr>
+						<td class="mstrPromptEditorCell mstrPaddingLeft20" colspan="2">
+							<mstrlayout:if name="isAllowElementImport">
+								<mstrlayout:then>
+									<input type="checkbox" name="allowElementImport" id="p_allowElementImport" cmdid="setAllowElementImport" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);" checked="checked"/>
+								</mstrlayout:then>
+								<mstrlayout:else>
+									<input type="checkbox" name="allowElementImport" id="p_allowElementImport" cmdid="setAllowElementImport" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);" />
+								</mstrlayout:else>
+							</mstrlayout:if>
+							<label for="p_allowElementImport"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5278" /></mstrlayout:render></label>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<mstrlayout:if method="isHierarchyPrompt">
+				<mstrlayout:else>
+					<div id="allowElementBrowseDiv">
+						<table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+							<colgroup>
+								  <col width="30%"/>
+								  <col width="70%"/>
+							</colgroup>
+							<tr>
+								<td class="mstrPromptEditorCell mstrPaddingLeft20" colspan="2">
+									<mstrlayout:if name="isAllowElementBrowse">
+										<mstrlayout:then>
+											<input type="checkbox" name="allowElementBrowse" id="p_allowElementBrowse" cmdid="setAllowElementBrowse" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);" checked="checked"/>
+										</mstrlayout:then>
+										<mstrlayout:else>
+											<input type="checkbox" name="allowElementBrowse" id="p_allowElementBrowse" cmdid="setAllowElementBrowse" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);" />
+										</mstrlayout:else>
+									</mstrlayout:if>
+									<label for="p_allowElementBrowse">
+										<mstrlayout:render name="Descriptor">
+								           <mstrlayout:argument type="int" value="5723"/>
+								        </mstrlayout:render>   
+								    </label>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</mstrlayout:else>
+			</mstrlayout:if>
+        </mstrlayout:else>
+    </mstrlayout:if>
+    <div id="DefOpBetweenDiv">
+        <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td class="mstrPromptEditorCell"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5275" /></mstrlayout:render></td>
+                <td class="mstrPromptEditorCell">
+                    <select size="1" name="p_defaultRootOp" id="p_defaultRootOp" class="mstrPromptDropDown" cmdid="setDefaultRootOp" onchange="microstrategy.bone('tabPromptQualId').updateList(this);">
+                        <mstrlayout:list id="op" name="getDefaultRootOpList">
+                            <option>
+                                <mstrlayout:attr name="addOptionAttr">
+                                    <mstrlayout:argument list="op"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:attr>
+                                <mstrlayout:render name="optionText">
+                                    <mstrlayout:argument list="op"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:render>
+                            </option>
+                        </mstrlayout:list>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="allowOpChangeDiv">
+        <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td class="mstrPromptEditorCell" colspan="2">
+                    <mstrlayout:if name="isAllowOpChange">
+                        <mstrlayout:then>
+                            <input type="checkbox" name="allowOpChange" id="p_allowOpChange" cmdid="setAllowOpChange" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);microstrategy.bone('tabPromptQualId').updateCheck(getObj('p_allowRootOpChange'));microstrategy.bone('tabPromptQualId').updateCheck(getObj('p_allowInterOpChange'));" checked="checked">
+								<mstrlayout:attr name="addDisableObjs">
+									<mstrlayout:argument value="p_allowRootOpChange,p_allowInterOpChange"/>
+								</mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="allowOpChange" id="p_allowOpChange" cmdid="setAllowOpChange" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);microstrategy.bone('tabPromptQualId').updateCheck(getObj('p_allowRootOpChange'));microstrategy.bone('tabPromptQualId').updateCheck(getObj('p_allowInterOpChange'));" >
+								<mstrlayout:attr name="addDisableObjs">
+									<mstrlayout:argument value="p_allowRootOpChange,p_allowInterOpChange"/>
+								</mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="p_allowOpChange">
+						<mstrlayout:render name="Descriptor">
+				           <mstrlayout:argument type="int" value="5724"/>
+				        </mstrlayout:render>   
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+	
+	
+	<div id="allowRootOpChangeDiv">
+        <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td class="mstrPromptEditorCell mstrPaddingLeft20" colspan="2">
+                    <mstrlayout:if name="isOnlyAllowRootOpChange">
+                        <mstrlayout:then>
+                            <input type="radio" name="opChange" id="p_allowRootOpChange" value="root" cmdid="setAllowRootOpChange" onclick="microstrategy.bone('tabPromptQualId').updateRadioButton(this);" checked="checked">
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="radio" name="opChange" id="p_allowRootOpChange" value="root" cmdid="setAllowRootOpChange" onclick="microstrategy.bone('tabPromptQualId').updateRadioButton(this);" >
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="p_allowRootOpChange">
+						<mstrlayout:render name="Descriptor">
+				           <mstrlayout:argument type="int" value="5725"/>
+				        </mstrlayout:render>   
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="allowInterOpChangeDiv">
+        <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td class="mstrPromptEditorCell mstrPaddingLeft20" colspan="2">
+                    <mstrlayout:if name="isAllowFullExpChange">
+                        <mstrlayout:then>
+                            <input type="radio" name="opChange" id="p_allowInterOpChange" value="inter" cmdid="setAllowInterOpChange" onclick="microstrategy.bone('tabPromptQualId').updateRadioButton(this);" checked="checked"/>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="radio" name="opChange" id="p_allowInterOpChange" value="inter" cmdid="setAllowInterOpChange" onclick="microstrategy.bone('tabPromptQualId').updateRadioButton(this);" />
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="p_allowInterOpChange">
+						<mstrlayout:render name="Descriptor">
+				           <mstrlayout:argument type="int" value="5726"/>
+				        </mstrlayout:render>   
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <mstrlayout:if method="isMetricQualificationPrompt">
+        <mstrlayout:then>
+            <div id="dispOutputLevelDiv">
+                <table width="100%" cellpadding="0" cellspacing="0" class="mstrPromptQualTable">
+                    <colgroup>
+                          <col width="30%"/>
+                          <col width="70%"/>
+                    </colgroup>
+                    <tr>
+                        <td class="mstrPromptEditorCell" colspan="2">
+                            <mstrlayout:if name="isDispOuputLevelSelector">
+                                <mstrlayout:then>
+                                    <input type="checkbox" name="dispOutputLevel" id="p_dispOutputLevel" cmdid="setDispOutputLevel" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);" checked="checked"/>
+                                </mstrlayout:then>
+                                <mstrlayout:else>
+                                    <input type="checkbox" name="dispOutputLevel" id="p_dispOutputLevel" cmdid="setDispOutputLevel" onclick="microstrategy.bone('tabPromptQualId').updateCheck(this);" />
+                                </mstrlayout:else>
+                            </mstrlayout:if>
+                            <label for="p_dispOutputLevel">
+                            <mstrlayout:render name="Descriptor">
+                                <mstrlayout:argument type="int" value="5323"/>
+                                </mstrlayout:render>                            
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </mstrlayout:then>
+		<mstrlayout:else>
+		</mstrlayout:else>
+    </mstrlayout:if>
+</mstrlayout:layout>

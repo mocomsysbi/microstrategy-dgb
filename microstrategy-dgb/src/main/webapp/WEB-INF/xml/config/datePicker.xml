@@ -1,0 +1,1428 @@
+<shortcut-list name="datePicker" version="1.0">
+<shortcut desc="07.4" name="pkrDate10310" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd.M"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.4.98" name="pkrDate10311" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd.M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.98" name="pkrDate10312" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.Apr." desc-id="mstrWeb.5476" name="pkrDate10313" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd. MMM."/>
+</attributes>
+</shortcut>
+<shortcut desc="07.Apr. 98" desc-id="mstrWeb.5477" name="pkrDate10314" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd.MMM. yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07. Apr 98" desc-id="mstrWeb.5478" name="pkrDate10315" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd. MMM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="Apr. 98" desc-id="mstrWeb.5479" name="pkrDate10316" feature-id="1031">
+<attributes>
+<attribute name="value" value="MMM. yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="April 98" desc-id="mstrWeb.5480" name="pkrDate10317" feature-id="1031">
+<attributes>
+<attribute name="value" value="MMMM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07. April 1998" desc-id="mstrWeb.5481" name="pkrDate10318" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd. MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.4.98 3:41 PM" name="pkrDate10319" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd.M.yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.4.98 03:41" name="pkrDate103110" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd.M.yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.4.1998" name="pkrDate103111" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd.M.yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07. Apr. 1998" desc-id="mstrWeb.5482" name="pkrDate103112" feature-id="1031">
+<attributes>
+<attribute name="value" value="dd. MMM. yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7.04.98" name="pkrDate103113" feature-id="1031">
+<attributes>
+<attribute name="value" value="d.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7.4.98" name="pkrDate103114" feature-id="1031">
+<attributes>
+<attribute name="value" value="d.M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7.4.1998" name="pkrDate103115" feature-id="1031">
+<attributes>
+<attribute name="value" value="d.M.yyyy"/>
+</attributes>
+</shortcut>
+
+    <shortcut desc="07.04.1998" name="pkrDate20550" feature-id="2055">
+<attributes>
+<attribute name="value" value="dd.MM.yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.98" name="pkrDate20551" feature-id="2055">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7. 4. 98" name="pkrDate20552" feature-id="2055">
+<attributes>
+<attribute name="value" value="d. M. yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.4.98" name="pkrDate20553" feature-id="2055">
+<attributes>
+<attribute name="value" value="dd.M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate20554" feature-id="2055">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="7. April 1998" desc-id="mstrWeb.5483" name="pkrDate20555" feature-id="2055">
+<attributes>
+<attribute name="value" value="d. MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7. Apr 98" desc-id="mstrWeb.5484" name="pkrDate20556" feature-id="2055">
+<attributes>
+<attribute name="value" value="d. MMM yy"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="4/7" name="pkrDate10330" feature-id="1033">
+<attributes>
+<attribute name="value" value="M/d"/>
+</attributes>
+</shortcut>
+<shortcut desc="04/07" name="pkrDate10331" feature-id="1033">
+<attributes>
+<attribute name="value" value="MM/dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/7/98" name="pkrDate10332" feature-id="1033">
+<attributes>
+<attribute name="value" value="M/d/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="04/07/98" name="pkrDate10333" feature-id="1033">
+<attributes>
+<attribute name="value" value="MM/dd/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="04/07/1998" name="pkrDate10334" feature-id="1033">
+<attributes>
+<attribute name="value" value="MM/dd/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-Apr" desc-id="mstrWeb.5485" name="pkrDate10335" feature-id="1033">
+<attributes>
+<attribute name="value" value="d-MMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-Apr-98" desc-id="mstrWeb.5486" name="pkrDate10336" feature-id="1033">
+<attributes>
+<attribute name="value" value="d-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="Apr-98" desc-id="mstrWeb.5487" name="pkrDate10337" feature-id="1033">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="Apr &#39;98" desc-id="mstrWeb.5488" name="pkrDate10338" feature-id="1033">
+<attributes>
+<attribute name="value" value="MMM &#39;yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="April 1998" desc-id="mstrWeb.5489" name="pkrDate10339" feature-id="1033">
+<attributes>
+<attribute name="value" value="MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/7/98 3:41" name="pkrDate103310" feature-id="1033">
+<attributes>
+<attribute name="value" value="M/d/yy h:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/7/98 3:41 PM" name="pkrDate103311" feature-id="1033">
+<attributes>
+<attribute name="value" value="M/d/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="April 7, 1998" desc-id="mstrWeb.5490" name="pkrDate103312" feature-id="1033">
+<attributes>
+<attribute name="value" value="MMMM d, yyyy"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="07-4" name="pkrDate30820" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-M"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-4-98" name="pkrDate30821" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-M-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98" name="pkrDate30822" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-MM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr" desc-id="mstrWeb.5491" name="pkrDate30823" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-MMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr-98" desc-id="mstrWeb.5492" name="pkrDate30824" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="Apr-98" desc-id="mstrWeb.5487" name="pkrDate30825" feature-id="3082">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="April-98" desc-id="mstrWeb.5493" name="pkrDate30826" feature-id="3082">
+<attributes>
+<attribute name="value" value="MMMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07 de April de 1998" desc-id="mstrWeb.5494" name="pkrDate30827" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd \d\e MMMM \d\e yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-4-98 3:41 PM" name="pkrDate30828" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-M-yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-4-98 03:41" name="pkrDate30829" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-M-yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-4-1998" name="pkrDate308210" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-M-yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr-1998" desc-id="mstrWeb.5495" name="pkrDate308211" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd-MMM-yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7/04/98" name="pkrDate308212" feature-id="3082">
+<attributes>
+<attribute name="value" value="d/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7/4/98" name="pkrDate308213" feature-id="3082">
+<attributes>
+<attribute name="value" value="d/M/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98" name="pkrDate308214" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.98" name="pkrDate308215" feature-id="3082">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="4/98" name="pkrDate10360" feature-id="1036">
+<attributes>
+<attribute name="value" value="M/dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/07/98" name="pkrDate10361" feature-id="1036">
+<attributes>
+<attribute name="value" value="M/dd/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="04/07/98" name="pkrDate10362" feature-id="1036">
+<attributes>
+<attribute name="value" value="MM/dd/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr" desc-id="mstrWeb.5491" name="pkrDate10363" feature-id="1036">
+<attributes>
+<attribute name="value" value="dd-MMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr-98" desc-id="mstrWeb.5492" name="pkrDate10364" feature-id="1036">
+<attributes>
+<attribute name="value" value="dd-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="Apr-98" desc-id="mstrWeb.2238" name="pkrDate10365" feature-id="1036">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="April 98" desc-id="mstrWeb.5480" name="pkrDate10366" feature-id="1036">
+<attributes>
+<attribute name="value" value="MMMM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07 April 1998" desc-id="mstrWeb.5496" name="pkrDate10367" feature-id="1036">
+<attributes>
+<attribute name="value" value="dd MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/07/98 3:41 PM" name="pkrDate10368" feature-id="1036">
+<attributes>
+<attribute name="value" value="M/dd/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/07/98 03:41" name="pkrDate10369" feature-id="1036">
+<attributes>
+<attribute name="value" value="M/dd/yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/07/1998" name="pkrDate103610" feature-id="1036">
+<attributes>
+<attribute name="value" value="M/dd/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr-1998" desc-id="mstrWeb.5495" name="pkrDate103611" feature-id="1036">
+<attributes>
+<attribute name="value" value="dd-MMM-yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98" name="pkrDate103612" feature-id="1036">
+<attributes>
+<attribute name="value" value="dd/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.98" name="pkrDate103613" feature-id="1036">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98" name="pkrDate103614" feature-id="1036">
+<attributes>
+<attribute name="value" value="dd-MM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/1998" name="pkrDate103615" feature-id="1036">
+<attributes>
+<attribute name="value" value="dd/MM/yyyy"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="7/04/1998" name="pkrDate20600" feature-id="2060">
+<attributes>
+<attribute name="value" value="d/MM/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7/04/98" name="pkrDate20601" feature-id="2060">
+<attributes>
+<attribute name="value" value="d/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.98" name="pkrDate20602" feature-id="2060">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="98/04/07" name="pkrDate20603" feature-id="2060">
+<attributes>
+<attribute name="value" value="yy/MM/dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98" name="pkrDate20604" feature-id="2060">
+<attributes>
+<attribute name="value" value="dd-MM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/1998" name="pkrDate20605" feature-id="2060">
+<attributes>
+<attribute name="value" value="dd/MM/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate20606" feature-id="2060">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98" name="pkrDate20607" feature-id="2060">
+<attributes>
+<attribute name="value" value="dd/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="mardi 7 avril 1998" name="pkrDate20608" feature-id="2060">
+<attributes>
+<attribute name="value" value="dddd d MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07 avril 1998" name="pkrDate20609" feature-id="2060">
+<attributes>
+<attribute name="value" value="dd MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-avr.-1998" name="pkrDate206010" feature-id="2060">
+<attributes>
+<attribute name="value" value="dd-MMM-yyyy"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="07.04.98" name="pkrDate41080" feature-id="4108">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.1998" name="pkrDate41081" feature-id="4108">
+<attributes>
+<attribute name="value" value="dd.MM.yyyy"/>
+</attributes>
+</shortcut>
+    <shortcut desc="07. 4. 98" name="pkrDate41082" feature-id="4108">
+<attributes>
+<attribute name="value" value="dd. M. yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7.4.98" name="pkrDate41083" feature-id="4108">
+<attributes>
+<attribute name="value" value="d.M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate41084" feature-id="4108">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="7. April 1998" desc-id="mstrWeb.5483" name="pkrDate41085" feature-id="4108">
+<attributes>
+<attribute name="value" value="d. MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 apr 98" desc-id="mstrWeb.5497" name="pkrDate41086" feature-id="4108">
+<attributes>
+<attribute name="value" value="d MMM yy"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="07/4" name="pkrDate10401" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd/M"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/4/98" name="pkrDate10402" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd/M/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98" name="pkrDate10403" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr" desc-id="mstrWeb.5491" name="pkrDate10404" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd-MMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr-98" desc-id="mstrWeb.5492" name="pkrDate10405" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="Apr-98" desc-id="mstrWeb.2238" name="pkrDate10406" feature-id="1040">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="April-98" desc-id="mstrWeb.5493" name="pkrDate10407" feature-id="1040">
+<attributes>
+<attribute name="value" value="MMMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07 April, 1998" desc-id="mstrWeb.5498" name="pkrDate10408" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd MMMM, yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/4/98 3:41 PM" name="pkrDate10409" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd/M/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98 03:41" name="pkrDate104010" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd/M/yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/1998" name="pkrDate104011" feature-id="1040">
+<attributes>
+<attribute name="value" value="dd/MM/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998.04.07" name="pkrDate104012" feature-id="1040">
+<attributes>
+<attribute name="value" value="yyyy.MM.dd"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="07.04.98" name="pkrDate20640" feature-id="2064">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.1998" name="pkrDate20641" feature-id="2064">
+<attributes>
+<attribute name="value" value="dd.MM.yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07. 04. 98" name="pkrDate20642" feature-id="2064">
+<attributes>
+<attribute name="value" value="dd. MM. yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.4.98" name="pkrDate20643" feature-id="2064">
+<attributes>
+<attribute name="value" value="dd.M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7/4/98" name="pkrTime20644" feature-id="2064">
+<attributes>
+<attribute name="value" value="d/M/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate20645" feature-id="2064">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-apr-98" desc-id="mstrWeb.2237" name="pkrDate20646" feature-id="2064">
+<attributes>
+<attribute name="value" value="d-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 April 1998" desc-id="mstrWeb.5499" name="pkrDate20647" feature-id="2064">
+<attributes>
+<attribute name="value" value="d MMMM yyyy"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="1998&#x5e74;4&#x6708;7&#x65e5;" name="pkrDate10410" feature-id="1041">
+<attributes>
+<attribute name="value" value="yyyy&#x5e74;M&#x6708;d&#x65e5;"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998&#x5e74;4&#x6708;" name="pkrDate10411" feature-id="1041">
+<attributes>
+<attribute name="value" value="yyyy&#x5e74;M&#x6708;"/>
+</attributes>
+</shortcut>
+<shortcut desc="4&#x6708;7&#x65e5;" name="pkrDate10412" feature-id="1041">
+<attributes>
+<attribute name="value" value="M&#x6708;d&#x65e5;"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998/4/7" name="pkrDate10413" feature-id="1041">
+<attributes>
+<attribute name="value" value="yyyy/M/d"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998/4/7 3:41 PM" name="pkrDate10414" feature-id="1041">
+<attributes>
+<attribute name="value" value="yyyy/M/d h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998/4/7 03:41" name="pkrDate10415" feature-id="1041">
+<attributes>
+<attribute name="value" value="yyyy/M/d hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/7" name="pkrDate10416" feature-id="1041">
+<attributes>
+<attribute name="value" value="M/d"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/7/98" name="pkrDate10417" feature-id="1041">
+<attributes>
+<attribute name="value" value="M/d/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="04/07/98" name="pkrDate10418" feature-id="1041">
+<attributes>
+<attribute name="value" value="MM/dd/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-Apr" desc-id="mstrWeb.5491" name="pkrDate10419" feature-id="1041">
+<attributes>
+<attribute name="value" value="dd-MMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-Apr-98" desc-id="mstrWeb.2237" name="pkrDate104110" feature-id="1041">
+<attributes>
+<attribute name="value" value="d-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="Apr-98" desc-id="mstrWeb.2238" name="pkrDate104111" feature-id="1041">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="April-98" desc-id="mstrWeb.5493" name="pkrDate104112" feature-id="1041">
+<attributes>
+<attribute name="value" value="MMMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998/04/07" name="pkrDate104113" feature-id="1041">
+<attributes>
+<attribute name="value" value="yyyy/MM/dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="98/04/07" name="pkrDate104114" feature-id="1041">
+<attributes>
+<attribute name="value" value="yy/MM/dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate104115" feature-id="1041">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="98/4/7" name="pkrDate104116" feature-id="1041">
+<attributes>
+<attribute name="value" value="yy/M/d"/>
+</attributes>
+</shortcut>
+<shortcut desc="4/7/1998" name="pkrDate104117" feature-id="1041">
+<attributes>
+<attribute name="value" value="M/d/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="04/07/1998" name="pkrDate104118" feature-id="1041">
+<attributes>
+<attribute name="value" value="MM/dd/yyyy"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrDate10420" feature-id="1042" desc="1998&#xB144; 4&#xC6D4; 7&#xC77C;">
+<attributes>
+<attribute name="value" value="yyyy&#xB144; M&#xC6D4; d&#xC77C;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10421" feature-id="1042" desc="998&#xB144; 4&#xC6D4;">
+<attributes>
+<attribute name="value" value="yyyy&#xB144; M&#xC6D4;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10422" feature-id="1042" desc="4&#xC6D4; 7&#xC77C;">
+<attributes>
+<attribute name="value" value="M&#xC6D4; d&#xC77C;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10423" feature-id="1042" desc="98-4-7">
+<attributes>
+<attribute name="value" value="yy-M-d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10424" feature-id="1042" desc="98-4-7 3:41 PM">
+<attributes>
+<attribute name="value" value="yy-M-d h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10425" feature-id="1042" desc="98-4-7 03:41">
+<attributes>
+<attribute name="value" value="yy-M-d hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10426" feature-id="1042" desc="98/4/7">
+<attributes>
+<attribute name="value" value="yy\/M\/d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10427" feature-id="1042" desc="1998-4-7">
+<attributes>
+<attribute name="value" value="yyyy-M-d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10428" feature-id="1042" desc="1998/4/7">
+<attributes>
+<attribute name="value" value="yyyy\/M\/d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10429" feature-id="1042" desc="4/7">
+<attributes>
+<attribute name="value" value="M\/d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104210" feature-id="1042" desc="4/7/98">
+<attributes>
+<attribute name="value" value="M\/d\/yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104211" feature-id="1042" desc="04/07/98">
+<attributes>
+<attribute name="value" value="MM\/dd\/yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104212" feature-id="1042" desc="7-Apr" desc-id="mstrWeb.2236">
+<attributes>
+<attribute name="value" value="d-MMM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104213" feature-id="1042" desc="7-Apr-98" desc-id="mstrWeb.2237">
+<attributes>
+<attribute name="value" value="d-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104214" feature-id="1042" desc="Apr-98" desc-id="mstrWeb.2238">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104215" feature-id="1042" desc="April-98" desc-id="mstrWeb.5493">
+<attributes>
+<attribute name="value" value="MMMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104216" feature-id="1042" desc="1998-04-07">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104217" feature-id="1042" desc="98-04-07">
+<attributes>
+<attribute name="value" value="yy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104218" feature-id="1042" desc="4/7/1998">
+<attributes>
+<attribute name="value" value="M\/d\/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104219" feature-id="1042" desc="04/17/1998">
+<attributes>
+<attribute name="value" value="MM\/dd\/yyyy"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrDate10460" feature-id="1046" desc="07/4">
+<attributes>
+<attribute name="value" value="dd/M"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10461" feature-id="1046" desc="07/4/98">
+<attributes>
+<attribute name="value" value="dd/M/yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10462" feature-id="1046" desc="07/04/98">
+<attributes>
+<attribute name="value" value="dd/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10463" feature-id="1046" desc="07-Apr" desc-id="mstrWeb.5491">
+<attributes>
+<attribute name="value" value="dd-MMM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10464" feature-id="1046" desc="07-Apr-98" desc-id="mstrWeb.5492">
+<attributes>
+<attribute name="value" value="dd-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10465" feature-id="1046" desc="Apr-98" desc-id="mstrWeb.2238">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10466" feature-id="1046" desc="April-98" desc-id="mstrWeb.5493">
+<attributes>
+<attribute name="value" value="MMMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10467" feature-id="1046" desc="07 April, 1998" desc-id="mstrWeb.5498">
+<attributes>
+<attribute name="value" value="dd MMMM, yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10468" feature-id="1046" desc="07/4/98 3:41 PM">
+<attributes>
+<attribute name="value" value="dd/M/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10469" feature-id="1046" desc="07/4/98 03:41">
+<attributes>
+<attribute name="value" value="dd/M/yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104610" feature-id="1046" desc="07/04/1998">
+<attributes>
+<attribute name="value" value="dd/MM/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate104611" feature-id="1046" desc="1998.04.07">
+<attributes>
+<attribute name="value" value="yyyy.MM.dd"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrDate10530" feature-id="1053" desc="1998-04-07">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10531" feature-id="1053" desc="1998-04-07 03:41">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10532" feature-id="1053" desc="98-04-07">
+<attributes>
+<attribute name="value" value="yy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10533" feature-id="1053" desc="07-4 1998">
+<attributes>
+<attribute name="value" value="dd-M yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10534" feature-id="1053" desc="07-4 -98">
+<attributes>
+<attribute name="value" value="dd-M -yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10535" feature-id="1053" desc="07-4 98">
+<attributes>
+<attribute name="value" value="dd-M yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10536" feature-id="1053" desc="07-4-98">
+<attributes>
+<attribute name="value" value="dd-M-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10537" feature-id="1053" desc="1998 04 07">
+<attributes>
+<attribute name="value" value="yyyy MM dd"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10538" feature-id="1053" desc="07-Apr" desc-id="mstrWeb.5491">
+<attributes>
+<attribute name="value" value="dd-MMM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10539" feature-id="1053" desc="Apr-98" desc-id="mstrWeb.2238">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate105310" feature-id="1053" desc="1998">
+<attributes>
+<attribute name="value" value="yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate105311" feature-id="1053" desc="den 07 April 1998" desc-id="mstrWeb.5504">
+<attributes>
+<attribute name="value" value="&quot;den&quot;  dd MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate105312" feature-id="1053" desc="07 April 1998" desc-id="mstrWeb.5496">
+<attributes>
+<attribute name="value" value="dd MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate105313" feature-id="1053" desc="07 April -98" desc-id="mstrWeb.5500">
+<attributes>
+<attribute name="value" value="dd MMMM -yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate105314" feature-id="1053" desc="April" desc-id="mstrWeb.1959">
+<attributes>
+<attribute name="value" value="MMMM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate105315" feature-id="1053" desc="April 1998" desc-id="mstrWeb.2240">
+<attributes>
+<attribute name="value" value="MMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate105316" feature-id="1053" desc="April -98" desc-id="mstrWeb.5501">
+<attributes>
+<attribute name="value" value="MMMM -yy"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrDate20570" feature-id="2057" desc="4/7">
+<attributes>
+<attribute name="value" value="M/d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20571" feature-id="2057" desc="07/04">
+<attributes>
+<attribute name="value" value="dd/MM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20572" feature-id="2057" desc="7/4/98">
+<attributes>
+<attribute name="value" value="M/d/yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20573" feature-id="2057" desc="07/04/98">
+<attributes>
+<attribute name="value" value="dd/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20574" feature-id="2057" desc="07/04/1998">
+<attributes>
+<attribute name="value" value="dd/MM/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20575" feature-id="2057" desc="7-Apr" desc-id="mstrWeb.2236">
+<attributes>
+<attribute name="value" value="d-MMM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20576" feature-id="2057" desc="7-Apr-98" desc-id="mstrWeb.2237">
+<attributes>
+<attribute name="value" value="d-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20577" feature-id="2057" desc="Apr-98" desc-id="mstrWeb.2238">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20578" feature-id="2057" desc="Apr '98" desc-id="mstrWeb.2239">
+<attributes>
+<attribute name="value" value="MMM 'yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20579" feature-id="2057" desc="April 1998" desc-id="mstrWeb.2240">
+<attributes>
+<attribute name="value" value="MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205710" feature-id="2057" desc="7/4/98 3:41">
+<attributes>
+<attribute name="value" value="d/M/yy h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205711" feature-id="2057" desc="7/4/98 3:41 PM">
+<attributes>
+<attribute name="value" value="d/M/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205712" feature-id="2057" desc="April 7, 1998" desc-id="mstrWeb.2243">
+<attributes>
+<attribute name="value" value="MMMM d, yyyy"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrDate20520" feature-id="2052" desc="1998&#x5E74;4&#x6708;7&#x65E5;">
+<attributes>
+<attribute name="value" value="yyyy&#x5E74;M&#x6708;d&#x65E5;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20521" feature-id="2052" desc="1998&#x5E74;4&#x6708;">
+<attributes>
+<attribute name="value" value="yyyy&#x5E74;M&#x6708;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20522" feature-id="2052" desc="4&#x6708;7&#x65E5;">
+<attributes>
+<attribute name="value" value="M&#x6708;d&#x65E5;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20523" feature-id="2052" desc="4-7-98">
+<attributes>
+<attribute name="value" value="M-d-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20524" feature-id="2052" desc="7-Apr" desc-id="mstrWeb.2236">
+<attributes>
+<attribute name="value" value="d-MMM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20525" feature-id="2052" desc="7-April-98" desc-id="mstrWeb.5502">
+<attributes>
+<attribute name="value" value="d-MMMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20526" feature-id="2052" desc="07-04-98">
+<attributes>
+<attribute name="value" value="dd-MM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20527" feature-id="2052" desc="Apr-98" desc-id="mstrWeb.2238">
+<attributes>
+<attribute name="value" value="MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20528" feature-id="2052" desc="April-98" desc-id="mstrWeb.5493">
+<attributes>
+<attribute name="value" value="MMMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate20529" feature-id="2052" desc="4">
+<attributes>
+<attribute name="value" value="M"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205210" feature-id="2052" desc="4-98">
+<attributes>
+<attribute name="value" value="M-yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205211" feature-id="2052" desc="1998-4-7">
+<attributes>
+<attribute name="value" value="yyyy-M-d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205212" feature-id="2052" desc="1998-4-7 3:41 PM">
+<attributes>
+<attribute name="value" value="yyyy-M-d h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205213" feature-id="2052" desc="1998-4-7 03:41">
+<attributes>
+<attribute name="value" value="yyyy-M-d hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205214" feature-id="2052" desc="98-4-7">
+<attributes>
+<attribute name="value" value="yy-M-d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205215" feature-id="2052" desc="4-7">
+<attributes>
+<attribute name="value" value="M-d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205216" feature-id="2052" desc="98-04-07">
+<attributes>
+<attribute name="value" value="yy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate205217" feature-id="2052" desc="1998-04-07">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrDate10280" feature-id="1028" desc="1998&#x5e74;4&#x6708;7&#x65e5;">
+<attributes>
+<attribute name="value" value="yyyy&#x5e74;M&#x6708;d&#x65e5;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10281" feature-id="1028" desc="4&#x6708;7&#x65e5;">
+<attributes>
+<attribute name="value" value="M&#x6708;d&#x65e5;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10282" feature-id="1028" desc="1998/04/07">
+<attributes>
+<attribute name="value" value="yyyy/MM/dd"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10283" feature-id="1028" desc="1998/4/7">
+<attributes>
+<attribute name="value" value="yyyy/M/d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10284" feature-id="1028" desc="1998-04-07">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate102811" feature-id="1028" desc="1998/4/7 3:41 PM">
+<attributes>
+<attribute name="value" value="yyyy/M/d h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10285" feature-id="1028" desc="1998/4/7 15:41">
+<attributes>
+<attribute name="value" value="yyyy/M/d hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10286" feature-id="1028" desc="4/7">
+<attributes>
+<attribute name="value" value="M/d"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10287" feature-id="1028" desc="4/7/98">
+<attributes>
+<attribute name="value" value="M/d/yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10288" feature-id="1028" desc="04/07/98">
+<attributes>
+<attribute name="value" value="MM/dd/yy"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate10289" feature-id="1028" desc="7-Apr" desc-id="mstrWeb.2236">
+<attributes>
+<attribute name="value" value="d-MMM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrDate102810" feature-id="1028" desc="7-Apr-98" desc-id="mstrWeb.2237">
+<attributes>
+<attribute name="value" value="d-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98" name="pkrDate10430" feature-id="1043">
+<attributes>
+<attribute name="value" value="dd-MM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-apr-98" name="pkrDate10431" feature-id="1043" desc-id="mstrWeb.2237">
+<attributes>
+<attribute name="value" value="d-MMM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 April 1998" desc-id="mstrWeb.5499" name="pkrDate10432" feature-id="1043">
+<attributes>
+<attribute name="value" value="d MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-04-98 3:41 PM" name="pkrDate10433" feature-id="1043">
+<attributes>
+<attribute name="value" value="d-MM-yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-04-98 03:41" name="pkrDate10434" feature-id="1043">
+<attributes>
+<attribute name="value" value="d-MM-yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="4.07.1998" name="pkrDate10435" feature-id="1043">
+<attributes>
+<attribute name="value" value="M.dd.yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-apr-1998" desc-id="mstrWeb.5495" name="pkrDate10436" feature-id="1043">
+<attributes>
+<attribute name="value" value="dd-MMM-yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-4-1998" name="pkrDate10437" feature-id="1043">
+<attributes>
+<attribute name="value" value="d-M-yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-4-98" name="pkrDate10438" feature-id="1043">
+<attributes>
+<attribute name="value" value="d-M-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98" name="pkrDate10439" feature-id="1043">
+<attributes>
+<attribute name="value" value="dd/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.98" name="pkrDate104310" feature-id="1043">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate104311" feature-id="1043">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 apr 98" desc-id="mstrWeb.5497" name="pkrDate104312" feature-id="1043">
+<attributes>
+<attribute name="value" value="d MMM yy"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="07.04.1998" name="pkrDate10301" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd.MM.yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.98" name="pkrDate10302" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7.04.98" name="pkrDate10303" feature-id="1030">
+<attributes>
+<attribute name="value" value="d.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7.4.98" name="pkrDate10304" feature-id="1030">
+<attributes>
+<attribute name="value" value="d.M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7. April 1998" desc-id="mstrWeb.5483" name="pkrDate10305" feature-id="1030">
+<attributes>
+<attribute name="value" value="d. MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 Apr 1998" desc-id="mstrWeb.5503" name="pkrDate10306" feature-id="1030">
+<attributes>
+<attribute name="value" value="d MMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-apr-1998" desc-id="mstrWeb.5495" name="pkrDate10307" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd-MMM-yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98 15:41" name="pkrDate10308" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd-MM-yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98 15:41:46" name="pkrDate10309" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd-MM-yy hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07 15:41" name="pkrDate103010" feature-id="1030">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98" name="pkrDate103011" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd-MM-yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07. April 1998" desc-id="mstrWeb.5481" name="pkrDate103012" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd. MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998.04.07" name="pkrDate103013" feature-id="1030">
+<attributes>
+<attribute name="value" value="yyyy.MM.dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="98-04-07" name="pkrDate103014" feature-id="1030">
+<attributes>
+<attribute name="value" value="yy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="April 1998" desc-id="mstrWeb.2240" name="pkrDate103015" feature-id="1030">
+<attributes>
+<attribute name="value" value="MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.4.98" name="pkrDate103016" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd.M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/4 1998" name="pkrDate103017" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd/M yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="April 98" desc-id="mstrWeb.5480" name="pkrDate103018" feature-id="1030">
+<attributes>
+<attribute name="value" value="MMMM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.4.1998" desc-id="mstrWeb.5480" name="pkrDate103019" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd.M.yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04 1998" name="pkrDate103020" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd/MM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04 98" name="pkrDate103021" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd/MM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/4 98" name="pkrDate103022" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd/M yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate103023" feature-id="1030">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="7/4" name="pkrDate103024" feature-id="1049">
+<attributes>
+<attribute name="value" value="d/M"/>
+</attributes>
+</shortcut>
+<shortcut desc="7/4/98" name="pkrDate103025" feature-id="1049">
+<attributes>
+<attribute name="value" value="d/M/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98" name="pkrDate103026" feature-id="1049">
+<attributes>
+<attribute name="value" value="dd/MM/yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 Apr" name="pkrDate103027" feature-id="1049">
+<attributes>
+<attribute name="value" value="d MMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 Apr 98" name="pkrDate103028" feature-id="1049">
+<attributes>
+<attribute name="value" value="d MMM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998, Apr" name="pkrDate103029" feature-id="1049">
+<attributes>
+<attribute name="value" value="yyyy, MMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="April 1998" name="pkrDate103030" feature-id="1049">
+<attributes>
+<attribute name="value" value="MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98 3:41 PM" name="pkrDate103031" feature-id="1049">
+<attributes>
+<attribute name="value" value="dd/MM/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98 15:41" name="pkrDate103032" feature-id="1049">
+<attributes>
+<attribute name="value" value="dd/MM/yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998, 07 April" name="pkrDate103033" feature-id="1049">
+<attributes>
+<attribute name="value" value="yyyy, dd MMMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="7/4/1998" name="pkrDate103034" feature-id="1049">
+<attributes>
+<attribute name="value" value="d/M/yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-Apr-1998" name="pkrDate103035" feature-id="1049">
+<attributes>
+<attribute name="value" value="d-MMM-yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.1998" name="pkrDate103036" feature-id="1049">
+<attributes>
+<attribute name="value" value="dd.MM.yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07.04.98" name="pkrDate103037" feature-id="1049">
+<attributes>
+<attribute name="value" value="dd.MM.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7.4.98" name="pkrDate103038" feature-id="1049">
+<attributes>
+<attribute name="value" value="d.M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate103039" feature-id="1049">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-04" name="pkrDate103040" feature-id="1045">
+<attributes>
+<attribute name="value" value="d-MM"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07" name="pkrDate103041" feature-id="1045">
+<attributes>
+<attribute name="value" value="yyyy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="98-04-07" name="pkrDate103042" feature-id="1045">
+<attributes>
+<attribute name="value" value="yy-MM-dd"/>
+</attributes>
+</shortcut>
+<shortcut desc="07 Apr" name="pkrDate103043" feature-id="1045">
+<attributes>
+<attribute name="value" value="d MMM"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 Apr 98" name="pkrDate103044" feature-id="1045">
+<attributes>
+<attribute name="value" value="d MMM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="Apr 98" name="pkrDate103045" feature-id="1045">
+<attributes>
+<attribute name="value" value="MMM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="April 98" name="pkrDate103046" feature-id="1045">
+<attributes>
+<attribute name="value" value="MMMM yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7 April 1998" name="pkrDate103047" feature-id="1045">
+<attributes>
+<attribute name="value" value="d MMMM yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98 3:41 PM" name="pkrDate103048" feature-id="1045">
+<attributes>
+<attribute name="value" value="dd-MM-yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98 15:41" name="pkrDate103049" feature-id="1045">
+<attributes>
+<attribute name="value" value="dd-MM-yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="A.98" name="pkrDate103050" feature-id="1045">
+<attributes>
+<attribute name="value" value="M.yy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-4-1998" name="pkrDate103051" feature-id="1045">
+<attributes>
+<attribute name="value" value="d-M-yyyy"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-Apr-1998" name="pkrDate103052" feature-id="1045">
+<attributes>
+<attribute name="value" value="d-MMM-yyyy"/>
+</attributes>
+</shortcut>
+</shortcut-list>

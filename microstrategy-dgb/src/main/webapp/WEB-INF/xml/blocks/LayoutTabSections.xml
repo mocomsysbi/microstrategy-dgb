@@ -1,0 +1,57 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="LayoutTabSections">
+  <assignments>
+    <property name="title">{desc:mstrWeb.6024|Layout Properties} - {desc:mstrWeb.4783|Sections}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Sections.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K783" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4783|Sections}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K784" name="FastCheckList">
+                <property name="caption">{desc:mstrWeb.5617|Sections Display:}</property>
+                <property name="modelPath">parent/model/getDynamicListModel("sectionsList","VisibleSections")</property>
+                <property name="height">152px</property>
+                <property name="width">440px</property>
+                <property name="id">pfeSectionDisplay</property>
+                <property name="validator">
+                  <block name="ListValidator">
+                    <property name="required">true</property>
+                    <property name="errMessage">{desc:mstrWeb.4560|At least one sections needs to be visible}</property>
+                  </block>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K785" name="TextButton">
+          <property name="caption">{desc:mstrWeb.5643|Display All Sections}</property>
+          <property name="cssText">margin-left:4px;</property>
+          <property name="cmds">SelectAll||parent/model/VisibleSections;ResetValidationStatus||parent/children/0/children/0</property>
+        </block>
+        <block listElementKey="K786" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.9297|Sections Docked (Mobile Only):}</property>
+          <property name="modelPath" type="String">parent/model</property>
+		  <property name="children">
+			<list>
+              <block listElementKey="K787" name="FastCheckList">
+                <property name="modelPath">parent/model/getDynamicListModel("dockableSectionsList","DockedSections")</property>
+                <property name="height">101px</property>
+                <property name="width">220px</property>
+                <property name="id">pfeSectionDocked</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		LayoutTabSections is the "Layout Properties - Sections" tab of the document properties editor.
+	-->

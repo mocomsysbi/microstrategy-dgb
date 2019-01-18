@@ -1,0 +1,38 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the structure of an Template Metric threshold block.
+--> 
+<block name="TemplateMetricThreshold">
+    <definition>
+        <!-- The threshold id. (Also referred to as the threshold index.) -->
+        <property name="tid" type="String" />
+        
+        <!-- The name of the threshold -->
+        <property name="n" type="String" />
+        
+        <!-- The scope of the threshold -->
+        <property name="scope" type="Integer" />
+        
+        <!-- The replace text type of the threshold -->
+        <property name="rtp" type="Integer" />
+        
+        <!-- The replace text of the threshold -->
+        <property name="rtxt" type="String" />
+        
+        <!-- The threshold type as defined in EnumThresholdTypes -->
+        <property name="ttp" type="Integer" />
+        
+        <!-- The threshold formatting information -->
+        <property name="fmt" type="Block" />
+        
+        <!-- The ceiling value of the threshold -->
+        <property name="ceil" type="Double" />
+        
+        <!-- The floor value of the threshold -->
+        <property name="flr" type="Double" />
+        
+        <!-- The threshold expression block. -->
+        <property name="expr" type="Block" />
+        
+    </definition>
+</block>

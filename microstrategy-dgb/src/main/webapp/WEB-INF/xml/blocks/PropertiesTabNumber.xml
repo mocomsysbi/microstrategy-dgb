@@ -1,0 +1,122 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabNumber">
+  <assignments>
+    <property name="title">{desc:mstrWeb.1918|Format} - {desc:mstrWeb.3434|Number}</property>
+    <property name="modelPath">parent/model/items/11</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Number.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1111" name="PropertiesEditorSelectors"/>
+        <block listElementKey="K1112" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3434|Number}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1113" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1114" name="RadioList">
+                      <property name="modelPath">parent/model/Category</property>
+                      <property name="showIcons">false</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                    </block>
+                    <block listElementKey="K1115" name="VBox">
+                      <property name="cssText">margin-left: 20px;</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K1116" name="HTextBox">
+                            <property name="caption">{desc:mstrWeb.2046|Decimal places}:</property>
+                            <property name="valueField">DecimalPlaces</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:2,3,6,8</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">1</property>
+                                <property name="min">0</property>
+                                <property name="max">10</property>
+                              </block>
+                            </property>
+                          </block>
+                          <block listElementKey="K1117" name="HTextBox">
+                            <property name="caption">{desc:mstrWeb.2047|Currency symbol}:</property>
+                            <property name="valueField">CurrencySymbol</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="totalSize">4</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:3</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="regEx">^[^'"]*$</property>
+                              </block>
+                            </property>
+                          </block>
+                          <block listElementKey="K1118" name="ListPulldown">
+                            <property name="horizontalCaption">{desc:mstrWeb.2048|Currency position}:</property>
+                            <property name="modelPath">parent/model/CurrencyPosition</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:3</property>
+                            <property name="popup/height">80px</property>
+                          </block>
+                          <block listElementKey="K1119" name="ListView">
+                            <property name="caption">{desc:mstrWeb.2044|Negative numbers}:</property>
+                            <property name="modelPath">parent/model/NegativeNumbers</property>
+                            <property name="multiSelect">false</property>
+                            <property name="height">100px</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:2,3,6</property>
+                          </block>
+                          <block listElementKey="K1120" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.2049|Use 1000 separator}</property>
+                            <property name="valueField">ThousandSeparator</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:2</property>
+                          </block>
+                          <block listElementKey="K1121" name="ListView">
+                            <property name="caption">{desc:mstrWeb.2961|Type:}</property>
+                            <property name="modelPath">parent/model/Date</property>
+                            <property name="multiSelect">false</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:4</property>
+                            <property name="height">auto</property>
+                          </block>
+                          <block listElementKey="K1122" name="ListView">
+                            <property name="caption">{desc:mstrWeb.2961|Type:}</property>
+                            <property name="modelPath">parent/model/Time</property>
+                            <property name="multiSelect">false</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:5</property>
+                            <property name="height">auto</property>
+                          </block>
+                          <block listElementKey="K1123" name="ListView">
+                            <property name="caption">{desc:mstrWeb.2961|Type:}</property>
+                            <property name="modelPath">parent/model/Fraction</property>
+                            <property name="multiSelect">false</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:7</property>
+                            <property name="height">90px</property>
+                          </block>
+                          <block listElementKey="K1124" name="HTextBox">
+                            <property name="caption">{desc:mstrWeb.2961|Type:}</property>
+                            <property name="valueField">Format</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="visibleField">parent/model/Category/selectedIndices:9</property>
+                            <property name="totalSize">50</property>
+                            <property name="maxlength">255</property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesTabNumber is the "Number" tab of the properties editor.
+	-->

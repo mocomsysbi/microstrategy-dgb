@@ -1,0 +1,612 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabSelector">
+  <assignments>
+    <property name="title">{desc:mstrWeb.434|Properties} - {desc:mstrWeb.4728|Selector}</property>
+    <property name="modelPath">parent/model/items/6</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Selector.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1125" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4728|Selector}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/isNormalSelector</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2180" name="HBox">
+                <property name="padding">4</property>
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1126" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.4743|Action Type}:</property>
+                      <property name="popup/height">auto</property>
+                      <property name="modelPath">parent/model/EditSelectorType</property>
+                      <property name="enabledField">!parent/model/isDSAsTarget</property>
+                    </block>
+                    <block listElementKey="K1127" name="ListPulldown">
+                      <property name="id">sourceLPD</property>
+                      <property name="horizontalCaption">{desc:mstrWeb.4283|Source}:</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("documentAttributes","EditSelectorSource")</property>
+                      <property name="visibleField">parent/model/EditSelectorType/selectedIndices:0,4</property>
+                    </block>
+                    <block listElementKey="K1151" name="ListPulldown">
+                      <property name="id">replaceLPD</property>
+                      <property name="horizontalCaption">{desc:mstrWeb.14485|Replace Attribute}:</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("documentPureAttributes","EditSelectorSourceAttributes")</property>
+                      <property name="visibleField">parent/model/EditSelectorType/selectedIndices:5</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2183" name="HBox">
+              	<property name="modelPath">parent/model</property>
+              	<property name="padding">4</property>
+              	<property name="children">
+                  <list>
+                    <block listElementKey="K2181" name="ListPulldown">
+                      <property name="id">formLPD</property>
+                      <property name="horizontalCaption">{desc:mstrWeb.5247|Displayed forms:}</property>
+                      <property name="modelPath">parent/model/displayForms</property>
+                      <property name="enabledField">parent/model/displayFormsEnable</property>
+                      <property name="visibleField">parent/model/EditSelectorType/selectedIndices:0</property>
+                    </block>
+                    <block listElementKey="K2182" name="ToolButton">
+                      <property name="cssText">background-image:url(../style/mstr/images/tbSort.gif);margin-top:2px;</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="enabledField">!parent/model/EditSelectorSource/selectedIndices:0</property>
+                      <property name="cmds">TryOpenPopup|"sortEditor","AttrFormsSortBlock","sortAttrForm","availAttrFormsList"|model</property>
+                      <property name="visibleField">parent/model/EditSelectorType/selectedIndices:0</property>
+                    </block>
+              		<block listElementKey="K2184" name="ListPulldown">
+	              	  <property name="horizontalCaption">{desc:mstrWeb.8466|Form Separator:}</property>
+			          <property name="modelPath">parent/model/showFormDelimiters</property>
+			          <property name="enabledField">!parent/model/EditSelectorSource/selectedIndices:0</property>
+			          <property name="visibleField">parent/model/EditSelectorType/selectedIndices:0</property>
+			        </block>
+              		<block listElementKey="K2185" name="HTextBox">
+			          <property name="modelPath">parent/model</property>
+			          <property name="maxlength">3</property>
+			          <property name="totalSize">3</property>
+			          <property name="cssText">margin-top:2px;</property>
+			          <property name="valueField">EditFormDelimiter</property>
+			          <property name="enabledField">parent/model/showFormDelimiters/selectedIndices:4</property>
+			          <property name="visibleField">parent/model/EditSelectorType/selectedIndices:0</property>
+			          <property name="validator">
+			            <block name="FieldValidator">
+			              <property name="required">true</property>
+			              <property name="valid">false</property>
+			            </block>
+			          </property>
+			        </block>
+			      </list>
+			    </property>
+			  </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="MetricQualTypeFS" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4728|Selector}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/isMetricQualifier</property>
+          <property name="children">
+            <list>
+              <block listElementKey="MetricQualType" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4743|Action Type}:</property>
+                <property name="modelPath">parent/model/EditSelectorMetricQualType</property>
+              </block>
+              <block listElementKey="documentMetrics" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4283|Source}:</property>
+                <property name="modelPath">parent/model/getDynamicListModel("documentMetrics","EditSelectorSourceMetrics")</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="ActionSelectorFS" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4728|Selector}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/isActionSelector</property>
+          <property name="enabledField">parent/model/transactionEnabled</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1138" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4743|Action Type}:</property>
+                <property name="modelPath">parent/model/actionSelectorType</property>
+                <property name="cssText">margin-bottom: 10px</property>
+              </block>
+              <block listElementKey="K1153" name="CheckBox">
+              	<property name="caption">{desc:mstrWeb.14579|Allow submission without network (mobile only)}</property>
+                <property name="cssText">margin-left: 10px</property>
+                <property name="visibleField">parent/model/actionSelectorType/selectedIndices:0</property>
+                <property name="valueField">OfflineSubmission</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1139" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8239|Require confirmation}</property>
+                <property name="cssText">margin-left: 10px</property>
+                <property name="visibleField">parent/model/actionSelectorType/selectedIndices:0,2</property>
+                <property name="valueField">DisplayConfirmation</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1142" name="RadioList">
+                <property name="caption">{desc:mstrWeb.8234|Subsequent Actions}</property>
+                <property name="cssText">margin: 5px 15px</property>
+                <property name="height">auto</property>
+                <property name="visibleField">parent/model/actionSelectorType/selectedIndices:0</property>
+                <property name="modelPath">parent/model/postSubmitOption</property>
+              </block>
+              <block listElementKey="K1146" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">parent/model/actionSelectorType/selectedIndices:0</property>
+                <property name="cssText">margin:0px 0px 0px 15px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1143" name="HBox">
+                      <property name="modelPath">parent/model</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K1144" name="HTextBox">
+                            <property name="valueField">runReportDocName</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="cssText">margin-left: 20px;</property>
+                            <property name="totalSize">30</property>
+                            <property name="readonly">true</property>
+                            <property name="enabledField">parent/model/postSubmitOption/selectedIndices:2</property>
+                          </block>
+                          <block listElementKey="K1145" name="TextButton">
+                            <property name="caption">...</property>
+                            <property name="enabledField">parent/model/postSubmitOption/selectedIndices:2</property>
+                            <property name="cmds">OpenModalPopup|"SingleObjectSelectorBlock",viewProps,modelProps|parent</property>
+                            <property name="viewProps" type="Block">
+                                <block name="BaseBlock">
+                                  <property name="cmdButtons[0]/cmds" type="String">SelectObject|parent/model/getSelectedItems()|parent/opener/model;Unpop||parent</property>
+                                </block>
+                            </property>
+                            <property name="modelProps" type="Block">
+                               <block name="BaseBlock">
+                                 <property name="objectType" type="String">2048,768,769,774,14080,14081</property>
+                               </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K1147" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.8604|Force live execution}</property>
+                      <property name="enabledField">parent/model/postSubmitOption/selectedIndices:2</property>
+                      <property name="cssText">margin: 5px 0 0 18px</property>
+                      <property name="valueField">ForceLiveExecution</property>
+                      <property name="modelPath">parent/model</property>
+                    </block>
+                    <block listElementKey="K1149" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.8982|Answer prompts with the same answers as the source}</property>
+                      <property name="enabledField">parent/model/postSubmitOption/selectedIndices:2</property>
+                      <property name="cssText">margin: 5px 0 0 18px</property>
+                      <property name="valueField">AutoAnswerPrompt</property>
+                      <property name="modelPath">parent/model</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K1140" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8235|Display message after submit}</property>
+                <property name="cssText">margin-left: 15px</property>
+                <property name="valueField">ShowSubmitMessage</property>
+                <property name="visibleField">parent/model/actionSelectorType/selectedIndices:0</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1141" name="HTextBox">
+                <property name="valueField">SubmitMessage</property>
+                <property name="cssText">margin-left: 35px</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">30</property>
+                <property name="visibleField">parent/model/actionSelectorType/selectedIndices:0</property>
+                <property name="enabledField">parent/model/ShowSubmitMessage</property>
+              </block>
+              <block listElementKey="K1148" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8603|Invalidate mobile device cache}</property>
+                <property name="cssText">margin-left: 15px</property>
+                <property name="valueField">InvalidateCache</property>
+                <property name="visibleField">parent/model/actionSelectorType/selectedIndices:0</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="DDICSelectorFS" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4728|Selector}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/isDDIC</property>
+          <property name="children">
+            <list>
+              <block listElementKey="DDICSource" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4283|Source}:</property>
+                <property name="modelPath">parent/model/getDynamicListModel("documentAttributes","EditSelectorSourceDDIC")</property>
+                <property name="enabledField">false</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1128" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5601|Targets}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="enabledField">!model/Autowire</property>
+          <property name="visibleField">model/EditSelectorType/selectedIndices:0,1,3,4,5</property>
+          <property name="children">
+            <list>
+			  <block listElementKey="datasetAsTarget" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.11471|Select datasets as target}</property>
+				<property name="valueField">isDSAsTarget</property>
+				<property name="modelPath">parent/model</property>
+				<property name="visibleField">parent/model/dsAsTgtChkVisible</property>
+			  </block>
+              <block listElementKey="K1129" name="SimpleListCart">
+                <property name="modelPath">parent/model/getDynamicCartModel("availableTemplates","EditSelectorTargets")</property>
+                <property name="showMoveButtons">false</property>
+                <property name="availableView/height">110px</property>
+                <property name="availableView/width">200px</property>
+                <property name="selectedView/height">110px</property>
+                <property name="selectedView/width">200px</property>
+                <property name="visibleField">parent/model/attrLCVisible</property>
+              </block>
+              <block listElementKey="K1129_metrics" name="SimpleListCart">
+                <property name="modelPath">parent/model/getDynamicCartModel("availableTemplatesNoSelectors","EditSelectorTargetsMetrics")</property>
+                <property name="showMoveButtons">false</property>
+                <property name="availableView/height">110px</property>
+                <property name="availableView/width">200px</property>
+                <property name="selectedView/height">110px</property>
+                <property name="selectedView/width">200px</property>
+                <property name="visibleField">parent/model/metricLCVisible</property>
+              </block>
+              <block listElementKey="K1129_dataset" name="SimpleListCart">
+                <property name="modelPath">parent/model/getDynamicCartModel("availableTemplatesDataset","EditSelectorTargetsDataset")</property>
+                <property name="showMoveButtons">false</property>
+                <property name="availableView/height">110px</property>
+                <property name="availableView/width">200px</property>
+                <property name="selectedView/height">110px</property>
+                <property name="selectedView/width">200px</property>
+                <property name="visibleField">parent/model/datasetLCVisible</property>
+              </block>
+              <block listElementKey="K1129_attributes" name="SimpleListCart">
+                <property name="modelPath">parent/model/getDynamicCartModel("availableTemplatesNoSelectors","EditSelectorTargetsAttributes")</property>
+                <property name="showMoveButtons">false</property>
+                <property name="availableView/height">110px</property>
+                <property name="availableView/width">200px</property>
+                <property name="selectedView/height">110px</property>
+                <property name="selectedView/width">200px</property>
+                <property name="visibleField">parent/model/attrReplaceLCVisible</property>
+              </block>
+              <block listElementKey="K1146_Table" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">parent/model/submissionLCVisible</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1129_submission" name="SimpleListCart">
+	                  <property name="modelPath">parent/model/getDynamicCartModel("availableTemplates","EditSelectorTargets")</property>
+	                  <property name="showMoveButtons">false</property>
+	                  <property name="availableView/height">110px</property>
+	                  <property name="availableView/width">200px</property>
+	                  <property name="selectedView/height">110px</property>
+	                  <property name="selectedView/width">200px</property>
+	                  <property name="upButton">
+	                    <block name="ToolButton">
+						  <property name="tooltip">{desc:mstrWeb.138|Move Up}</property>
+						  <property name="iconClass">mstrBGIcon_tbUp</property>
+						  <property name="cmds">Up||parent/model/selected</property>
+						  <property name="modelPath">parent/model/selected</property>
+	                	  <property name="visibleField">parent/parent/model/TXNSubmitInOrder</property>
+	                    </block>
+	                  </property>
+	                  <property name="downButton">
+	                    <block name="ToolButton">
+						  <property name="tooltip">{desc:mstrWeb.139|Move Down}</property>
+						  <property name="iconClass">mstrBGIcon_tbDown</property>
+						  <property name="cmds">Down||parent/model/selected</property>
+						  <property name="modelPath">parent/model/selected</property>
+	                	  <property name="visibleField">parent/parent/model/TXNSubmitInOrder</property>
+	                    </block>
+	                  </property>
+	                </block>
+	                <block listElementKey="K1148_Table" name="CheckBox">
+	                  <property name="caption">{desc:mstrWeb.14580|Submit transaction in order}</property>
+	                  <property name="valueField">TXNSubmitInOrder</property>
+	                  <property name="modelPath">parent/model</property>
+	                  <property name="visibleField">parent/model/actionSelectorType/selectedIndices:0</property>
+	                </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="TableSubmitButton" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.11173|Submit Button}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/showTableButtons</property>
+          <property name="enabledField">parent/model/transactionEnabled</property>
+          <property name="children">
+            <list>
+              <block listElementKey="SubmitText" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.8229|Display Text:}</property>
+                <property name="valueField">TableSubmitText</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1139_Table" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8239|Require confirmation}</property>
+                <property name="valueField">DisplayConfirmation</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1142_Table" name="RadioList">
+                <property name="caption">{desc:mstrWeb.8234|Subsequent Actions}</property>
+                <property name="cssText">margin: 5px 15px</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/postSubmitOption</property>
+              </block>
+              <block listElementKey="K1146_Table" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin:0px 0px 0px 15px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1143_Table" name="HBox">
+                      <property name="modelPath">parent/model</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K1144_Table" name="HTextBox">
+                            <property name="valueField">runReportDocName</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="cssText">margin-left: 20px;</property>
+                            <property name="totalSize">30</property>
+                            <property name="readonly">true</property>
+                            <property name="enabledField">parent/model/postSubmitOption/selectedIndices:2</property>
+                          </block>
+                          <block listElementKey="K1145_Table" name="TextButton">
+                            <property name="caption">...</property>
+                            <property name="enabledField">parent/model/postSubmitOption/selectedIndices:2</property>
+                            <property name="cmds">OpenModalPopup|"SingleObjectSelectorBlock",viewProps,modelProps|parent</property>
+                            <property name="viewProps" type="Block">
+                                <block name="BaseBlock">
+                                  <property name="cmdButtons[0]/cmds" type="String">SelectObject|parent/model/getSelectedItems()|parent/opener/model;Unpop||parent</property>
+                                </block>
+                            </property>
+                            <property name="modelProps" type="Block">
+                               <block name="BaseBlock">
+                                 <property name="objectType" type="String">2048,768,769,774,14080,14081</property>
+                               </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K1147_Table" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.8604|Force live execution}</property>
+                      <property name="enabledField">parent/model/postSubmitOption/selectedIndices:2</property>
+                      <property name="cssText">margin: 5px 0 0 18px</property>
+                      <property name="valueField">ForceLiveExecution</property>
+                      <property name="modelPath">parent/model</property>
+                    </block>
+                    <block listElementKey="K1149_Table" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.8982|Answer prompts with the same answers as the source}</property>
+                      <property name="enabledField">parent/model/postSubmitOption/selectedIndices:2</property>
+                      <property name="cssText">margin: 5px 0 0 18px</property>
+                      <property name="valueField">AutoAnswerPrompt</property>
+                      <property name="modelPath">parent/model</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K1140_Table" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8235|Display message after submit}</property>
+                <property name="cssText">margin-left: 15px</property>
+                <property name="valueField">ShowSubmitMessage</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1141_Table" name="HTextBox">
+                <property name="valueField">SubmitMessage</property>
+                <property name="cssText">margin-left: 35px</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">30</property>
+                <property name="enabledField">parent/model/ShowSubmitMessage</property>
+              </block>
+              <block listElementKey="K1148_Table" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8603|Invalidate mobile device cache}</property>
+                <property name="cssText">margin-left: 15px</property>
+                <property name="valueField">InvalidateCache</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="TableCancelButton" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.11174|Cancel Button}</property>
+          <property name="legendField">model/TableCancelType</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/showTableButtons</property>
+          <property name="enabledField">parent/model/transactionEnabled</property>
+          <property name="children">
+            <list>
+              <block listElementKey="CancelText" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.8229|Display Text:}</property>
+                <property name="valueField">TableCancelText</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="cancelConfirm" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8239|Require confirmation}</property>
+                <property name="valueField">TableCancelConfirmation</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1138" name="ClickableMessage">
+          <property name="scriptClass">mstr.views.DisableAutowireMessage</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/showAutoWireMessage</property>
+          <property name="msgText">{desc:mstrWeb.6153|This layout is configured to automatically maintain targets. If you would like manual control, click here.}</property>
+          <property name="dlgText">{desc:mstrWeb.6154|If you continue with this change, you will need to manually maintain targets for all selectors in this layout.}</property>
+        </block>
+        <block listElementKey="DataFilterMode" name="TriStateCheckBox">
+          <property name="caption">{desc:mstrWeb.6160|Apply selections as a filter}</property>
+          <property name="modelPath">parent/model/DataFilterMode</property>
+          <property name="enabledField">parent/model/DataFilterModeEnabled</property>
+          <property name="visibleField">parent/model/DataFilterVisible</property>
+          <property name="cssClass">TriStateCheckBox2</property>
+        </block>
+        <block listElementKey="dummyModeMetricQual" name="CheckBox">
+          <property name="caption">{desc:mstrWeb.6160|Apply selections as a filter}</property>
+          <property name="enabled">false</property>
+          <property name="valueField">isMetricQualifier</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/isMetricQualifier</property>
+          <property name="cssClass">TriStateCheckBox2</property>
+        </block>
+        <block listElementKey="K1150" name="ListPulldown">
+          <property name="horizontalCaption">{desc:mstrWeb.11720|Update target filters when current selection changes:}</property>
+          <property name="modelPath">parent/model/UpdateFilterTarget</property>
+          <property name="enabledField">parent/model/updateFilterTargetEnabled</property>
+          <property name="visibleField">!parent/model/attrReplaceLCVisible</property>
+        </block>
+        <block listElementKey="K1130" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5601|Targets}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/EditSelectorType/selectedIndices:2</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1131" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4727|Panel Stack}:</property>
+                <property name="modelPath">parent/model/getDynamicListModel("availablePanelStacks","EditSelectorTargetsSingleSelect")</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="mobileIpad" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5943|Mobile}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/EditSelectorType/selectedIndices:2</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1133" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.7868|Display selector docked to its panel stack}</property>
+                <property name="valueField">DisplaySelectorDocked</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1132" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.702|Advanced}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/showAdvanced</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1133" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5093|Automatically update when there is no data for the current selection}</property>
+                <property name="valueField">EditSelectorAutoSync</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">parent/model/selectorAutoSyncEnabled</property>
+                <property name="visibleField">parent/model/selectorAutoSyncVisible</property>
+              </block>
+              <block listElementKey="K1134" name="HBox">
+                <property name="visibleField">parent/model/showTotalVisible</property>
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1135" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.5603|Show Option for Total}</property>
+                      <property name="valueField">EditSelectorShowTotal</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="enabledField">parent/model/showTotalEnabled</property>
+                    </block>
+                    <!-- I.B. Please don't remove this block. It will be needed in the nearest future.
+                    <block name="ListPulldown">
+                      <property name="modelPath">parent/model/EditSelectorTotalPosition</property>
+                      <property name="enabledField">parent/model/EditSelectorType/selectedIndices:0</property>
+                    </block>
+                    -->
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K1136" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4741|Show option for All}</property>
+                <property name="valueField">EditSelectorShowAll</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">parent/model/OptionAllEnabled</property>
+                <property name="visibleField">parent/model/optionAllVisible</property>
+              </block>
+              <block listElementKey="K1137" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4851|Alias:}</property>
+                <property name="valueField">EditSelectorAllAlias</property>
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-left: 20px;</property>
+                <property name="totalSize">30</property>
+                <property name="enabledField">model/EditSelectorShowAll</property>
+                <property name="visibleField">parent/model/allAliasVisible</property>
+              </block>
+              <block listElementKey="K2186" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="padding">0</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="currentStateUC" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.7627|Current State}:</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("selectorCurrentStateOptsUC","selectorCurrentStateUC")</property>
+                      <property name="visibleField">parent/model/stateUCVisible</property>
+                      <property name="enabledField">parent/model/stateEnabled</property>
+                    </block>
+                    <block listElementKey="currentState" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.7627|Current State}:</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("selectorCurrentStateOpts","selectorCurrentState")</property>
+                      <property name="visibleField">!parent/model/stateUCVisible</property>
+                      <property name="enabledField">parent/model/stateEnabled</property>
+                    </block>
+                    <block listElementKey="numberOfElements" name="HTextBox">
+                      <property name="caption">{desc:mstrWeb.7626|Number of Elements}:</property>
+                      <property name="valueField">UnsetCount</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="totalSize">5</property>
+                      <property name="enabledField">parent/model/countEnabled</property>
+                      <property name="visibleField">parent/model/countVisible</property>
+                      <property name="cssText">margin-top:4px;margin-left:16px;</property>
+                    </block>
+		          </list>
+		        </property>
+		      </block>
+              <block listElementKey="selectionType" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.8059|Selection Type:}</property>
+                <property name="modelPath">parent/model/EditSelectorSelectionType</property>
+                <property name="visibleField">parent/model/selectionTypeVisible</property>
+                <property name="enabledField">!parent/model/isMetricQualifierStyle</property>
+              </block>
+              <block listElementKey="metricConditionType" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.8151|Qualify on:}</property>
+                <property name="modelPath">parent/model/EditSelectorMetricConditionType</property>
+                <property name="visibleField">parent/model/showMetricConditionType</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      	<block listElementKey="K1152" name="FieldSet">
+      	  <property name="legend">{desc:mstrWeb.14486|Candidate Attributes}</property>
+      	  <property name="modelPath">parent/model</property>
+      	  <property name="visibleField">parent/model/attrReplaceLCVisible</property>
+      	  <property name="children">
+      	  	<list>
+              <block listElementKey="K1129_attributes" name="SimpleListCart">
+                <property name="modelPath">parent/model/getDynamicCartModel("candidateAttributes","EditSelectorCandidateAttributes")</property>
+                <property name="showMoveButtons">false</property>
+                <property name="availableView/height">110px</property>
+                <property name="availableView/width">200px</property>
+                <property name="selectedView/height">110px</property>
+                <property name="selectedView/width">200px</property>
+              </block>
+      	  	</list>
+      	  </property>
+      	</block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+    PropertiesTabSelector is the "Properties - Selector" tab of the properties editor.
+-->

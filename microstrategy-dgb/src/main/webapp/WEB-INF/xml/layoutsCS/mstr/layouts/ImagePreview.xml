@@ -1,0 +1,6 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	on_model_set_--valueField--="mstr.behaviors.ImagePreview.on_set_src(rootTag, view, model)"
+    on_set_visible="mstr.behaviors.ImagePreview.on_set_visible(rootTag, 'block', 'none', view.props['visible'])">
+	<div class="{@cssPrefix}{@cssClass}" style="{@cssText}">
+	</div>
+</mstrlayout:layout>

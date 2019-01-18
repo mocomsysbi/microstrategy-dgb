@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- This is the model used for the 'Incremental Fetch' tab of the Report Services document properties editor. -->
+    <block name="RWLayoutIncFetchModel" inherits="EditorBoneTranslator">
+        <definition>
+            <property name="incrFetchTabEnabled" type="Boolean" />
+        </definition>
+        <assignments>
+            <property name="categoryText">{desc:mstrWeb.5615|Layout Properties}</property>
+            <property name="titleText">{desc:mstrWeb.5587|Advanced}</property>
+            <property name="fields">incrFetchEnabled|incrFetchBlockCount</property>
+            <property name="visibleField">incrFetchTabEnabled</property>
+            <property name="incrFetchTabEnabled">true</property>
+        </assignments>
+    </block>

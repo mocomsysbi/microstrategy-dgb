@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarPickerButton" inherits="ToolbarListPulldown">
+		<definition>
+			<!-- This boolean property indicates whether the picker button should extract the class of the 
+				selected item in it's ListView (used for buttons that show the icon of the current selected item).-->
+			<property name="useDynamicBtnImg" type="Boolean" />
+			
+			<!-- If this property is true the picker button will show the value of the last selected item.  -->
+			<property name="showLastSelection" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="itemRendererClass">mstr.itemrenderers.ToolbarPickerButton</property>
+			<property name="layoutClass">mstr.layouts.ToolbarPickerButton</property>
+			<property name="modelPushedProps">useDynamicBtnImg,showLastSelection,!popup|id,!popup|ignoreSelection,!popup|multiSelect,!popup|isCheckList,!popup|nudge</property>
+		</assignments>
+	</block>

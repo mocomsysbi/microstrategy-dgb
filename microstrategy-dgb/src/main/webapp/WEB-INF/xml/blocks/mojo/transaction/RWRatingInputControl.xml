@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWRatingInputControl" inherits="RWDataInputObject">
+	<definition>
+    	<!-- The possible preset values list -->
+		<property name="vls" type="List"/>
+		<!-- Display Style -->
+		<property name="stl" type="Integer"/>
+	</definition>
+</block>

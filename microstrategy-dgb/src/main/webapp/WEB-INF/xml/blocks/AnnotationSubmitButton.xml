@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="AnnotationSubmitButton" inherits="TextButton">
+    	<assignments>
+    	   <property name="layoutClass">mstr.layouts.AddSubmitButton</property>
+	       <property name="caption">{desc:mstrWeb.5369|Submit}</property>
+	       <property name="modelPath">parent/model/addition</property>
+	       <property name="cssClass">Button</property>
+	       <property name="cmds">Update|"true"|parent/parent;!ValidateAdd||model;!ValidateAdd|model/value|parent/parent;Add|model/value|parent/model;Clear||model;SetMode|"add"|parent/model</property>
+		</assignments>
+	</block>

@@ -1,0 +1,8 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="deFormatSelector">
+        <mstrlayout:render name="formatSelector"/>
+    </div>
+    <mstrlayout:render name="controlBar"/>
+    <mstrlayout:render name="tabContainerBody"/>
+</mstrlayout:layout>

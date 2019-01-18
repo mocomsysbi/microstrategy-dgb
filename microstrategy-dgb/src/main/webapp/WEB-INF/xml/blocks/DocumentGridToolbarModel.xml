@@ -1,0 +1,41 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="DocumentTemplateViewToolbarModel" name="DocumentGridToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="gridStyles" name="ToolbarAutostyleList">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K158" name="BaseBlock"/>
+        <block listElementKey="K159" name="ToolbarBandingButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K160" name="ToolbarOutlineButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K161" name="BaseBlock"/>
+        <block listElementKey="K162" name="ToolbarMergeColHeadersButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K163" name="ToolbarMergeRowHeadersButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K164" name="BaseBlock"/>
+        <block listElementKey="K165" name="ToolbarFitToContentsButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K166" name="ToolbarFitToWindowButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K167" name="BaseBlock"/>
+        <block listElementKey="K168" name="ToolbarLockRowHeadersButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K169" name="ToolbarLockColHeadersButton">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K170" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

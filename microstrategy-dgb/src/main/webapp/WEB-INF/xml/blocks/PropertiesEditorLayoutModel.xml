@@ -1,0 +1,365 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorLayoutModel">
+  <definition>
+    <property name="layoutTabEnabled" type="Boolean"/>
+    <!-- Utility models -->
+    <property name="SizeModelFixedOnly" type="Block"/>
+    <property name="SizeModelFixed100" type="Block"/>
+    <property name="SizeModelFixedFit" type="Block"/>
+    <property name="NewPage" type="Block"/>
+    <property name="Lmode" type="Block"/>
+    <property name="XTabView" type="Block"/>
+    <property name="TextOverflow" type="Block"/>
+    <property name="Overflow" type="Block"/>
+    <property name="ExportOverflow" type="Block"/>
+    <property name="GraphExportOverflow" type="Block"/>
+    <property name="XTabPos" type="Block"/>
+    <property name="SelectorStyles" type="Block"/>
+    <property name="EditSelectorStyleSingleSelect" type="Block"/>
+    <property name="EditSelectorStyleMetricQual" type="Block"/>
+    <property name="EditSelectorOrientation" type="Block"/>
+    <property name="EditSelectorMultiSelectEnabled" type="Boolean"/>
+    <property name="ChangeSelectionOnMouseOverEnabled" type="Boolean"/>
+    <property name="ExportOverflowVisible" type="Boolean"/>
+    <property name="IsPortal" type="Boolean"/>
+    <property name="enableShortcut" type="Boolean"/>
+    <property name="visibleSearchOnServ" type="Boolean"/>   
+    <property name="ItemWidthModeEnabled" type="Boolean" />
+    <property name="exportSelectorTriState" type="Block"/>  
+    <property name="ExportAsShownOnWeb" type="Boolean"/>
+    <property name="EditSelectorNoSelectionBehavior" type="Block" />
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.bones.editors.LayoutPropertiesBoneTranslator</property>
+    <property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+    <property name="titleText">{desc:mstrWeb.3437|Layout}</property>
+    <property name="fields">showSelectorStyle|EditSelectorStyleMetricQual|isSection|isOneGrid|showSize|showPageBreak|isSelector|showFixedWidthOnly|showFixed100Width|showFixedFitWidth|showFixedHeightOnly|showFixed100Height|showFixedFitHeight|isHorizontalSubsection|isLine|isImage|showTitleHeight|isCubeReportDataset|visibleShortcut|Left|Top|Width|Height|SubWidth|SubHeight|Shrink|Grow|MaxHeight|ShrinkHorizontal|GrowHorizontal|MaxWidth|HideIfEmpty|FitExcelRowHeight|Keep|Repeat|RepeatHoriz|NewPage|LockAspectRatio|Lmode|Length|XTabView|Overflow|TextOverflow|isText|ExportOverflow|GraphExportOverflow|GraphExportOverflowSpacing|XTabPos|XTabPer|QuickSwitch|Shortcut|ItemWidthMode|TitleHeight|Locked|SelectorStyles|EditSelectorStyleSingleSelect|EditSelectorOrientation|EditSelectorMultiSelect|EditSelectorMouseOverAction|showRepeatSection|IsPortal|showTextOverflow|showContentOverflow|isSlicingSelector|EditSelectorSearchOnServ|MinSel|MaxSel|EnableSelCount|EditSelectorNoSelectionBehavior|showInRptCp|visibleShowInRptCp|exportSelectorTriState|ExportAsShownOnWeb|isButton|onlyButtons|showLockAspectRatio</property>	
+	<property name="visibleField">layoutTabEnabled</property>
+    <property name="layoutTabEnabled">true</property>
+    <property name="EditSelectorMultiSelectEnabled">true</property>
+    <property name="ItemWidthModeEnabled">true</property>
+    <property name="SizeModelFixedOnly">
+      <block name="SizeModelFixedOnlyModel"/>
+    </property>
+    <property name="SizeModelFixed100">
+      <block name="SizeModelFixed100Model"/>
+    </property>
+    <property name="SizeModelFixedFit">
+      <block name="SizeModelFixedFitModel"/>
+    </property>
+    <property name="NewPage">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K903" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2997|None}</property>
+            </block>
+            <block listElementKey="K904" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2998|Before section}</property>
+            </block>
+            <block listElementKey="K905" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2999|After section}</property>
+            </block>
+            <block listElementKey="K906" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.3000|Before and after section}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="Lmode">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K907" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2984|Fixed at}</property>
+            </block>
+            <block listElementKey="K908" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">100%</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="XTabView">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K909" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2975|Grid}</property>
+            </block>
+            <block listElementKey="K910" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.115|Graph}</property>
+            </block>
+            <block listElementKey="K911" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.2972|Grid and Graph}</property>
+            </block>
+            <block listElementKey="K2098" name="ItemInfo">
+              <property name="dssid">50</property>
+              <property name="n">{desc:mstrWeb.4921|Widget}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="Overflow">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K912" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2974|Clip}</property>
+            </block>
+            <block listElementKey="K913" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2976|Scroll}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+   <property name="TextOverflow">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K912" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2974|Clip}</property>
+            </block>
+            <block listElementKey="K913" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.2976|Scroll}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="ExportOverflow">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K914" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2974|Clip}</property>
+            </block>
+            <block listElementKey="K915" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4645|Grid Overflow (PDF &amp; Excel)}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="GraphExportOverflow">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K916" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2057|None}</property>
+            </block>
+            <block listElementKey="K917" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2069|Vertical}</property>
+            </block>
+            <block listElementKey="K918" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2066|Horizontal}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="XTabPos">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K919" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2256|Top}</property>
+            </block>
+            <block listElementKey="K920" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2257|Bottom}</property>
+            </block>
+            <block listElementKey="K921" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.1893|Left}</property>
+            </block>
+            <block listElementKey="K922" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.1894|Right}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="SelectorStyles">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K923" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4729|Drop-down}</property>
+            </block>
+            <block listElementKey="K924" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4730|Slider}</property>
+            </block>
+            <block listElementKey="K925" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4731|List Box}</property>
+            </block>
+            <block listElementKey="K926" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">{desc:mstrWeb.4734|Button bar}</property>
+            </block>
+            <block listElementKey="K927" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.4732|Radio buttons}</property>
+            </block>
+            <block listElementKey="K928" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.4735|Link bar}</property>
+            </block>
+            <block listElementKey="K929" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.4733|Checkboxes}</property>
+            </block>
+            <block listElementKey="SBItem" name="ItemInfo">
+              <property name="dssid">9</property>
+              <property name="n">{desc:mstrWeb.8967|Search Box}</property>
+            </block>           
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="EditSelectorStyleMetricQual">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="metricSlider" name="ItemInfo">
+              <property name="dssid">7</property>
+              <property name="n">{desc:mstrWeb.8107|Metric Slider}</property>
+            </block>
+            <block listElementKey="metricQual" name="ItemInfo">
+              <property name="dssid">8</property>
+              <property name="n">{desc:mstrWeb.8108|Metric Qualification}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="EditSelectorStyleSingleSelect">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K930" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4729|Drop-down}</property>
+            </block>
+            <block listElementKey="K931" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4730|Slider}</property>
+            </block>
+            <block listElementKey="K932" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4731|List Box}</property>
+            </block>
+            <block listElementKey="K933" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">{desc:mstrWeb.4734|Button bar}</property>
+            </block>
+            <block listElementKey="K934" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.4732|Radio buttons}</property>
+            </block>
+            <block listElementKey="K935" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.4735|Link bar}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="EditSelectorOrientation">
+      <block name="VOrientationModel"/>
+    </property>
+    
+    <property name="exportSelectorTriState">
+        <block name="TriStateListModel">
+            <property name="ExcludedItemsOnLoop">0</property>
+            <property name="items">
+		      <list>
+		        <block listElementKey="K1521" name="ItemInfo">
+		          <property name="dssid">0</property>
+		          <property name="n">{desc:mstrWeb.6029|Unknown}</property>
+		          <property name="cssClass">OffDefault</property>
+		        </block>
+		        <block listElementKey="K1522" name="ItemInfo">
+		          <property name="dssid">1</property>
+		          <property name="n">{desc:mstrWeb.6031|Off}</property>
+		          <property name="cssClass">Off</property>
+		        </block>
+		        <block listElementKey="K1523" name="ItemInfo">
+		          <property name="dssid">2</property>
+		          <property name="n">{desc:mstrWeb.6030|On}</property>
+		          <property name="cssClass">On</property>
+		        </block>
+		      </list>
+		    </property>
+      </block>
+    </property>
+    
+    <property name="EditSelectorNoSelectionBehavior">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K936" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2210|Empty}</property>
+            </block>
+            <block listElementKey="K937" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.8329|Unset}</property>
+            </block>
+            <block listElementKey="K938" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2058|All}</property>
+            </block>
+            <block listElementKey="notAllowEmpty" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.|Not Allowed}</property>
+            </block>            
+          </list>
+        </property>
+      </block>
+    </property>    
+  </assignments>
+</block>
+<!-- This is the model used for the 'Layout' tab of the Report Services properties editor. -->

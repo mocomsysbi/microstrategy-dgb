@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!-- 
+    This Block provides information about a RW Text Selector object.
+-->
+<block name="RWTextSelector" inherits="RWSelector">
+    <definition>        
+        <!-- A list of values for the selector -->
+        <property name="vs" type="List" />
+    </definition>
+</block>

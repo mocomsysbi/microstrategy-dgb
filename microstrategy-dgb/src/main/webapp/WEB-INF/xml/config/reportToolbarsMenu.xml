@@ -1,0 +1,78 @@
+
+<shortcut-list base-bean="rb" name="report-toolbars" feature-id="menu-toolbar" version="1.0">
+  <shortcut append-state="true" base-bean="std" check-feature-id="open" desc="[Standard]" desc-id="mstrWeb.3157" href="#" iframe="true" name="view9_0" dhtml-checked="microstrategy.bone('reportStandardToolbar')" onclick="microstrategy.toggleEditor('reportStandardToolbar', 'std');">
+    <event XMLmerge_id="1" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="std" />
+    </event>
+    <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="std" />
+    </event>
+  </shortcut>
+  <shortcut append-state="true" base-bean="reportCrosstab" check-feature-id="open" desc="[Crosstab]" desc-id="mstrWeb.3477" href="#" iframe="true" name="view9_2" dhtml-checked="microstrategy.bone('reportCrosstabToolbar')" onclick="microstrategy.toggleEditor('reportCrosstabToolbar', 'reportCrosstab');">
+    <event XMLmerge_id="1" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="reportCrosstab" />
+    </event>
+    <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="reportCrosstab" />
+    </event>
+  </shortcut>
+  <shortcut append-state="true" base-bean="reportGrid" check-feature-id="open" desc="[Grid]" desc-id="mstrWeb.3478" href="#" iframe="true" name="view9_3" dhtml-checked="microstrategy.bone('reportGridToolbar')" onclick="microstrategy.toggleEditor('reportGridToolbar', 'reportGrid');">
+    <event XMLmerge_id="1" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="reportGrid" />
+    </event>
+    <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="reportGrid" />
+    </event>
+  </shortcut>
+  <shortcut append-state="true" base-bean="reportGraph" check-feature-id="open" desc="[Graph]" desc-id="" href="#" iframe="true" name="view9_6" dhtml-checked="microstrategy.bone('reportGraphToolbar')" onclick="microstrategy.toggleEditor('reportGraphToolbar', 'reportGraph');">
+    <event XMLmerge_id="1" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="reportGraph" />
+    </event>
+    <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="reportGraph" />
+    </event>
+  </shortcut>
+  <shortcut append-state="true" base-bean="panels" check-feature-id="open" desc="[Panels]" desc-id="mstrWeb.3476" href="#" iframe="true" name="view9_1" dhtml-checked="microstrategy.bone('reportPanelsToolbar')" onclick="microstrategy.toggleEditor('reportPanelsToolbar', 'panels');" enable-feature-id="is-not-visualization-mode">
+    <event XMLmerge_id="1" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="panels" />
+    </event>
+    <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="panels" />
+    </event>
+  </shortcut>
+  <shortcut append-state="true" base-bean="rb" check-feature-id="check-format-toolbar" desc="[Formatting]" desc-id="mstrWeb.2869" enable-feature-id="enable-format-toolbar;is-not-visualization-mode" feature-id="!dhtml;show-grid-format-toolbar;check-grid-mode" href="#" iframe="true" name="view9_4_1">
+    <event XMLmerge_id="1" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="gridToolbar" />
+    </event>
+    <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="gridToolbar" />
+    </event>
+  </shortcut>
+  <shortcut append-state="true" base-bean="rb" check-feature-id="check-format-toolbar" desc="[Formatting]" desc-id="mstrWeb.2869" enable-feature-id="enable-format-toolbar;is-not-visualization-mode" feature-id="!dhtml;show-graph-format-toolbar;check-graph-mode" href="#" iframe="true" name="view9_4_2">
+    <event XMLmerge_id="1" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="graphToolbar" />
+    </event>
+    <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="graphToolbar" />
+    </event>
+  </shortcut>
+  <shortcut append-state="true" base-bean="reportFT" check-feature-id="open" desc="[Formatting]" desc-id="mstrWeb.2869" href="#" iframe="true" name="view9_4_3" enable-feature-id="enable-format-toolbar;is-not-visualization-mode" feature-id="dhtml;show-format-toolbar" dhtml-checked="microstrategy.bone('UniqueReportID').commands.queryState('formatToolbar')" onclick="toggleShowBean('reportFT', !microstrategy.bone('UniqueReportID').commands.queryState('formatToolbar'), '');">
+    <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+      <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="reportFT" />
+    </event>
+    <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="reportFT" />
+    </event>
+  </shortcut>
+  <shortcut append-state="true" base-bean="rb" check-feature-id="check-show-report-toolbar" desc="[Report]" desc-id="mstrWeb.2117" href="#" iframe="true" name="view9_5" dhtml-checked="document.getElementById('report_toolbar').childNodes.length > 0" onclick="microstrategy.updateBrowserSetting('rt', (document.getElementById('report_toolbar').childNodes.length > 0) ? '0' : '1');microstrategy.updateManager.flushAndSubmitChanges();">
+    <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSetPermanentBrowserSetting" state="checked">
+      <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingName" value="rt" />
+      <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingValue" value="0" />
+    </event>
+    <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSetPermanentBrowserSetting" state="unchecked">
+      <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingName" value="rt" />
+      <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingValue" value="1" />
+    </event>
+  </shortcut>
+</shortcut-list>

@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Info block for containing information about a getter-value parameter for events. -->
+	<block name="EventGetterArgument" inherits="EventArgument">
+		<definition>
+			<!-- The base bean for the Event parameter used for getter-value parameters. -->
+			<property name="base-bean" type="String" />
+			
+			<!-- The sys bean for the Event parameter used for getter-value parameters. -->
+			<property name="sys-bean" type="String" />
+		</definition>
+		<assignments>
+			<property name="type">2</property>
+		</assignments>
+	</block>

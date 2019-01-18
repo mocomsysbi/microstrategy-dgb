@@ -1,0 +1,87 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_answer="mstr.behaviors.PromptSaveCheckbox2.on_set_answer(view, model, rootTag)"
+    on_model.answer_set_container="mstr.behaviors.PromptSaveCheckbox2.on_set_readyState(view, model, rootTag)"
+    on_model_set_savingAnswer="mstr.behaviors.PromptSaveCheckbox2.on_set_savingAnswer(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'inline', 'none', view.props['visible'])">
+  <div class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <table cellspacing="0"
+           cellpadding="0">
+      <tr>
+        <td style="padding-left:10px;vertical-align:middle;">
+          <mstrlayout:wRender name="loadSavedAnswerButton">
+          </mstrlayout:wRender>
+        </td>
+      </tr>
+    </table>    
+    <fieldset>
+      <legend>
+              <input value="1"
+                     name="{@id}_checkbox"
+                     class="{@cssPrefix}{@cssClass}Checkbox"
+                     id="{@id}_checkbox"
+                     type="checkbox"
+                     onclick="mstr.behaviors.PromptSaveCheckbox2.onClickSaving('{@id}', this)">
+              </input>
+              <label for="{@id}_checkbox">
+               {@saveAnswerCaption}
+              </label>
+      </legend>
+      <table cellspacing="0"
+             style="display:none"
+             cellpadding="0"
+             class="{@cssPrefix}{@cssClass}DetailTable">
+        <tr>
+          <td>
+            <div class="mstrTextBoxCaption">
+              <label for="{@id}_text_name">
+                {@descriptors/name}
+              </label><span class="mstrRequiredFieldMark" title="{@descriptors/required}">*</span>
+            </div>
+          </td>
+          <td>
+            <div class="mstrTextBoxInput">
+              <input name="{@id}_text_name"
+                     onblur="mstr.behaviors.PromptSaveCheckbox2.onNameChange('{@id}', this)"
+                     onkeypress="if (mstr.utils.ISW3C) return mstr.behaviors.CalendarAndTimePicker.onkeypress_dayinput('{@id}','{@id}_text_name');"
+                     id="{@id}_text_name"
+                     type="textbox">
+              </input>
+            </div>
+          </td>
+          <td>
+            <mstrlayout:wRender name="getSavedAnswerNameButton">
+            </mstrlayout:wRender>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <input name="{@id}_checkbox_default"
+                   class="{@cssPrefix}{@cssClass}Checkbox"
+                   id="{@id}_checkbox_default"
+                   type="checkbox"
+                   onclick="mstr.behaviors.PromptSaveCheckbox2.onClickDefault('{@id}', this)">
+            </input>
+            <label for="{@id}_checkbox_default">
+              {@descriptors/setAsDefault}
+            </label>
+          </td>
+          <td>
+            <input name="{@id}_checkbox_autoclose"
+                   class="{@cssPrefix}{@cssClass}Checkbox"
+                   style="display:none;" 
+                   id="{@id}_checkbox_autoclose"
+                   type="checkbox"
+                   onclick="mstr.behaviors.PromptSaveCheckbox2.onClickAutoClose('{@id}', this)">
+            </input>
+            <label style="display:none;" for="{@id}_checkbox_autoclose">
+              {@autoCloseCaption}
+            </label>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+  </div>
+</mstrlayout:layout>

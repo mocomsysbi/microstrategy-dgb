@@ -1,0 +1,461 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+<!-- in pageconfig.xml this tab's name is tabPromptQId -->
+    <span>
+    <mstrlayout:if name="isHierarchyPrompt">
+             <mstrlayout:then>
+	            <mstrlayout:render name="Descriptor">
+	              <mstrlayout:argument type="int" value="5226" />
+	              <!-- Reduce the number of hierarchies available at run time -->
+	            </mstrlayout:render>
+             </mstrlayout:then>
+             <mstrlayout:else>
+                     <mstrlayout:if name="isAttributeQualificationPrompt">
+                         <mstrlayout:then>
+			    <mstrlayout:render name="Descriptor">
+			      <mstrlayout:argument type="int" value="5306" />
+			    </mstrlayout:render>
+                             <!-- Select the attributes to be used in qualification -->
+                         </mstrlayout:then>
+                         <mstrlayout:else>
+                             <mstrlayout:if name="isMetricQualificationPrompt">
+                                 <mstrlayout:then>
+				    <mstrlayout:render name="Descriptor">
+				      <mstrlayout:argument type="int" value="5307" />
+				    </mstrlayout:render>
+                                    <!-- Choose a Metric or a metric search object -->
+                                 </mstrlayout:then>
+                             </mstrlayout:if>
+                         </mstrlayout:else>
+                    </mstrlayout:if>
+             </mstrlayout:else>
+        </mstrlayout:if>        
+    </span>
+	<table style="margin-left:20px;width:550px;">
+		<tr>
+			<td colspan="2">
+		        <mstrlayout:if name="isHierarchyPrompt">    
+		            <mstrlayout:then>
+		                <mstrlayout:if name="useAllObjects">
+		                    <mstrlayout:then>
+		                        <input type="radio" name="exp_type" id="exp_type_all" cmdid="exp_all_hier" value="all" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);" checked="checked"/>
+		                    </mstrlayout:then>
+		                    <mstrlayout:else>
+		                        <input type="radio" name="exp_type" id="exp_type_all" cmdid="exp_all_hier" value="all" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);"/> 
+		                    </mstrlayout:else>
+		                </mstrlayout:if>
+		                <label for="exp_type_all">
+				    <mstrlayout:render name="Descriptor">
+				      <mstrlayout:argument type="int" value="5227" />
+				    </mstrlayout:render>
+		               		<!-- All Hierarchies -->
+		                </label>
+		            </mstrlayout:then>
+		        </mstrlayout:if>    
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+		        <mstrlayout:if name="useOneObject">
+		           <mstrlayout:then>
+		              <input type="radio" name="exp_type" id="exp_type_one" cmdid="radioSelection" value="one" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);microstrategy.bone('tabPromptQId').updateText(getObj('exp_org_name'));" checked="checked"/>
+		            </mstrlayout:then>
+		            <mstrlayout:else>
+		              <input type="radio" name="exp_type" id="exp_type_one" cmdid="radioSelection" value="one" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);microstrategy.bone('tabPromptQId').updateText(getObj('exp_org_name'));"/> 
+		            </mstrlayout:else>
+		        </mstrlayout:if>
+		        <mstrlayout:if name="isHierarchyPrompt">
+		             <mstrlayout:then>
+		                     <label for="exp_type_one"> 
+					<mstrlayout:render name="Descriptor">
+						<mstrlayout:argument type="int" value="5228" />
+					</mstrlayout:render>
+					<!-- Choose a Hierarchy -->
+		                     </label>
+		             </mstrlayout:then>
+		             <mstrlayout:else>
+		                     <mstrlayout:if name="isAttributeQualificationPrompt">
+		                         <mstrlayout:then>
+		                            <label for="exp_type_one">
+					    <mstrlayout:render name="Descriptor">
+					      <mstrlayout:argument type="int" value="5308" />
+					    </mstrlayout:render>
+		                            <!-- Choose an Attribute -->
+		                            </label>
+		                         </mstrlayout:then>
+		                         <mstrlayout:else>
+		                             <mstrlayout:if name="isMetricQualificationPrompt">
+		                                 <mstrlayout:then>
+		                                     <label for="exp_type_one">
+							    <mstrlayout:render name="Descriptor">
+							      <mstrlayout:argument type="int" value="5309" />
+							    </mstrlayout:render>
+			                                    <!-- Choose a Metric -->
+		                                     </label>
+		                                 </mstrlayout:then>
+		                             </mstrlayout:if>
+		                         </mstrlayout:else>
+		                    </mstrlayout:if>
+		             </mstrlayout:else>
+		        </mstrlayout:if>
+			</td>
+		</tr>
+		<tr>
+			<td>
+		        <mstrlayout:if name="isHierarchyPrompt">
+		             <mstrlayout:then>
+						<input type="text" readonly="readonly" size="50" name="exp_org_name" id="exp_org_name" class="mstrInputTextLong" style="left:20px;" cmdid="setOriginObj" DPN="exp_type_one" NONZERO="1" FLDID="5228">
+							<mstrlayout:attr name="addObjectNameAsValue"/>
+						</input>
+						<!-- Choose a Hierarchy -->
+		             </mstrlayout:then>
+		             <mstrlayout:else>
+		                     <mstrlayout:if name="isAttributeQualificationPrompt">
+		                         <mstrlayout:then>
+									<input type="text" readonly="readonly" size="50" name="exp_org_name" id="exp_org_name" class="mstrInputTextLong" style="left:20px;" cmdid="setOriginObj" DPN="exp_type_one" NONZERO="1" FLDID="5308">
+										<mstrlayout:attr name="addObjectNameAsValue"/>
+									</input>
+		                            <!-- Choose an Attribute -->
+		                         </mstrlayout:then>
+		                         <mstrlayout:else>
+		                             <mstrlayout:if name="isMetricQualificationPrompt">
+		                                 <mstrlayout:then>
+											<input type="text" readonly="readonly" size="50" name="exp_org_name" id="exp_org_name" class="mstrInputTextLong" style="left:20px;" cmdid="setOriginObj" DPN="exp_type_one" NONZERO="1" FLDID="5309">
+												<mstrlayout:attr name="addObjectNameAsValue"/>
+											</input>
+			                                    <!-- Choose a Metric -->
+		                                 </mstrlayout:then>
+		                             </mstrlayout:if>
+		                         </mstrlayout:else>
+		                    </mstrlayout:if>
+		             </mstrlayout:else>
+		        </mstrlayout:if>
+		        <input type="hidden" name="exp_org_dssid" id="exp_org_dssid">
+		            <mstrlayout:attr name="addObjectDSSIDAsValue"/>
+		        </input>
+			</td>
+			<td>
+		        <mstrlayout:if name="isHierarchyPrompt">
+		             <mstrlayout:then>
+		             	 <!-- @todo, should not use onmenusubmitform() -->
+		                 <input type="button" name="exp_org_selector" id="exp_org_selector" cmdid="openOriginSelector" class="mstrButton mstrPromptButtonInline" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_org_dssid', 'tabPromptQId', 'SET_EXP_ORG_HIERARCHY', 18, true);"> 
+				  <mstrlayout:attr attribute="value" method="getDescriptor">
+				    <mstrlayout:argument type="int" value="5229" />
+				  </mstrlayout:attr>
+				 </input>
+		             </mstrlayout:then>
+		             <mstrlayout:else>
+		                     <mstrlayout:if name="isAttributeQualificationPrompt">
+		                         <mstrlayout:then>
+					      <input type="button" name="exp_org_selector" id="exp_org_selector" cmdid="openOriginSelector" class="mstrButton mstrPromptButtonInline" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_org_dssid', 'tabPromptQId', 'SET_EXP_ORG_ATTRIBUTE', 16, true);"> <!-- @todo, should not use onmenusubmitform() !!!-->
+						  <mstrlayout:attr attribute="value" method="getDescriptor">
+						    <mstrlayout:argument type="int" value="5287" />
+						  </mstrlayout:attr>
+					      </input>
+		                         </mstrlayout:then>
+		                         <mstrlayout:else>
+		                             <mstrlayout:if name="isMetricQualificationPrompt">
+		                                 <mstrlayout:then>
+							<input type="button" name="exp_org_selector" id="exp_org_selector" cmdid="openOriginSelector" class="mstrButton mstrPromptButtonInline" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_org_dssid', 'tabPromptQId', 'SET_EXP_ORG_METRIC', 17, true);"> <!-- @todo, should not use onmenusubmitform() !!!-->
+							  <mstrlayout:attr attribute="value" method="getDescriptor">
+							    <mstrlayout:argument type="int" value="2457" />
+							  </mstrlayout:attr>
+							</input>
+		                                 </mstrlayout:then>
+		                             </mstrlayout:if>
+		                         </mstrlayout:else>
+		                    </mstrlayout:if>
+		             </mstrlayout:else>
+		        </mstrlayout:if>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<mstrlayout:if name="usePredefinedList">
+					<mstrlayout:then>
+						<input type="radio" name="exp_type" id="exp_type_pre" value="pre" cmdid="radioSelection" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);" checked="checked"/>
+					</mstrlayout:then>
+					<mstrlayout:else>
+						<input type="radio" name="exp_type" id="exp_type_pre" value="pre" cmdid="radioSelection" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);"/>
+					</mstrlayout:else>              
+				</mstrlayout:if>
+				<label for="exp_type_pre">  
+					<mstrlayout:if name="isHierarchyPrompt">
+							 <mstrlayout:then>
+							    <mstrlayout:render name="Descriptor">
+							      <mstrlayout:argument type="int" value="5244" />
+							    </mstrlayout:render>
+								<!-- Use a predefined list of hierarchies -->
+							 </mstrlayout:then>
+							 <mstrlayout:else>
+									 <mstrlayout:if name="isAttributeQualificationPrompt">
+										 <mstrlayout:then>
+										    <mstrlayout:render name="Descriptor">
+										      <mstrlayout:argument type="int" value="5286" />
+										    </mstrlayout:render>
+										 	<!-- Use a predefined list of attributes -->
+										 </mstrlayout:then>
+										 <mstrlayout:else>
+											 <mstrlayout:if name="isMetricQualificationPrompt">
+												 <mstrlayout:then>
+												    <mstrlayout:render name="Descriptor">
+												      <mstrlayout:argument type="int" value="5310" />
+												    </mstrlayout:render>
+												 	<!-- Use a predefined list of metrics -->
+												 </mstrlayout:then>
+											 </mstrlayout:if>
+										 </mstrlayout:else>
+									</mstrlayout:if>
+							 </mstrlayout:else>
+						</mstrlayout:if>        
+				</label>
+			</td>
+		</tr>        
+		<tr>
+			<td>
+				<mstrlayout:if name="isHierarchyPrompt">
+					 <mstrlayout:then>
+						<select style="margin-left:20px;" multiple="multiple" id="exp_elem_pre_list" name="exp_elem_pre_list" DPN="exp_type_pre" NONZERO="1" FLDID="5244" cmdid="setPreDefObjs" size="10" class="mstrElementList" onchange="microstrategy.bone('tabPromptQId').onClickExpPredefinedList(this)">
+						<!-- Use a predefined list of hierarchies -->
+							<mstrlayout:list id="objects" name="getPredefinedList">
+								<option>
+									<mstrlayout:attr name="addOptionAttr">
+										<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+									</mstrlayout:attr>
+									<mstrlayout:render name="optionText">
+										<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+									</mstrlayout:render>
+								</option>
+							</mstrlayout:list>                  
+						</select>
+					 </mstrlayout:then>
+					 <mstrlayout:else>
+							 <mstrlayout:if name="isAttributeQualificationPrompt">
+								 <mstrlayout:then>
+									<select style="margin-left:20px;" multiple="multiple" id="exp_elem_pre_list" name="exp_elem_pre_list" DPN="exp_type_pre" NONZERO="1" FLDID="5286" cmdid="setPreDefObjs" size="10" class="mstrElementList" onchange="microstrategy.bone('tabPromptQId').onClickExpPredefinedList(this)">
+									 <!-- Use a predefined list of attributes -->
+										<mstrlayout:list id="objects" name="getPredefinedList">
+											<option>
+												<mstrlayout:attr name="addOptionAttr">
+													<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+												</mstrlayout:attr>
+												<mstrlayout:render name="optionText">
+													<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+												</mstrlayout:render>
+											</option>
+										</mstrlayout:list>                  
+									</select>
+								 </mstrlayout:then>
+								 <mstrlayout:else>
+									 <mstrlayout:if name="isMetricQualificationPrompt">
+										 <mstrlayout:then>
+											<select style="margin-left:20px;" multiple="multiple" id="exp_elem_pre_list" name="exp_elem_pre_list" DPN="exp_type_pre" NONZERO="1" FLDID="5310" cmdid="setPreDefObjs" size="10" class="mstrElementList" onchange="microstrategy.bone('tabPromptQId').onClickExpPredefinedList(this)">
+											 <!-- Use a predefined list of metrics -->
+												<mstrlayout:list id="objects" name="getPredefinedList">
+													<option>
+														<mstrlayout:attr name="addOptionAttr">
+															<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+														</mstrlayout:attr>
+														<mstrlayout:render name="optionText">
+															<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+														</mstrlayout:render>
+													</option>
+												</mstrlayout:list>                  
+											</select>
+										 </mstrlayout:then>
+									 </mstrlayout:if>
+								 </mstrlayout:else>
+							</mstrlayout:if>
+					 </mstrlayout:else>
+				</mstrlayout:if>        
+			</td>
+			<td>
+				<div>
+					<mstrlayout:if name="isHierarchyPrompt">
+						 <mstrlayout:then>
+								<input type="button" id="exp_add_elem" name="exp_add_elem" cmdid="openObjSelector" class="mstrButton mstrPromptButtonBlock" style="top:10px;" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_elem_pre_list', 'tabPromptQId', 'SET_EXP_PRELIST', 18, false);">
+								  <mstrlayout:attr attribute="value" method="getDescriptor">
+								    <mstrlayout:argument type="int" value="5230" />
+								  </mstrlayout:attr>
+								</input>
+						 </mstrlayout:then>
+						 <mstrlayout:else>
+								 <mstrlayout:if name="isAttributeQualificationPrompt">
+									 <mstrlayout:then>
+										<input type="button" id="exp_add_elem" name="exp_add_elem" cmdid="openObjSelector" class="mstrButton mstrPromptButtonBlock" style="top:10px;" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_elem_pre_list', 'tabPromptQId', 'SET_EXP_PRELIST', 16, false);">
+										  <mstrlayout:attr attribute="value" method="getDescriptor">
+										    <mstrlayout:argument type="int" value="5230" />
+										  </mstrlayout:attr>
+										</input>
+									 </mstrlayout:then>
+									 <mstrlayout:else>
+										 <mstrlayout:if name="isMetricQualificationPrompt">
+											 <mstrlayout:then>
+												<input type="button" id="exp_add_elem" name="exp_add_elem" cmdid="openObjSelector" class="mstrButton mstrPromptButtonBlock" style="top:10px;" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_elem_pre_list', 'tabPromptQId', 'SET_EXP_PRELIST', 17, false);">
+												  <mstrlayout:attr attribute="value" method="getDescriptor">
+												    <mstrlayout:argument type="int" value="5230" />
+												  </mstrlayout:attr>
+												</input>
+											 </mstrlayout:then>
+										 </mstrlayout:if>
+									 </mstrlayout:else>
+								</mstrlayout:if>
+						 </mstrlayout:else>
+					</mstrlayout:if>
+
+
+					
+					<input type="button" id="exp_remove_elem" name="exp_remove_elem" class="mstrButton mstrPromptButtonBlock" onclick="microstrategy.bone('tabPromptQId').removeItems('exp_elem_pre_list');microstrategy.bone('tabPromptQId').refreshEXPButtonStates();" style="top:30px;">
+					  <mstrlayout:attr attribute="value" method="getDescriptor">
+					    <mstrlayout:argument type="int" value="4448" />
+					  </mstrlayout:attr>
+					</input>
+					<input type="button" id="exp_clear_elem" name="exp_clear_elem" class="mstrButton mstrPromptButtonBlock" onclick="microstrategy.bone('tabPromptQId').removeAllItems('exp_elem_pre_list');microstrategy.bone('tabPromptQId').refreshEXPButtonStates();" style="top:50px;">
+					  <mstrlayout:attr attribute="value" method="getDescriptor">
+					    <mstrlayout:argument type="int" value="2827" />
+					  </mstrlayout:attr>
+					</input>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<mstrlayout:if name="useSearchObject">
+					<mstrlayout:then>
+					  <input type="radio" name="exp_type" id="exp_type_search" cmdid="radioSelection" value="search" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);microstrategy.bone('tabPromptQId').updateText(getObj('exp_search_name'));" checked="checked"/>
+					</mstrlayout:then>
+					<mstrlayout:else>
+					  <input type="radio" name="exp_type" id="exp_type_search" cmdid="radioSelection" value="search" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);microstrategy.bone('tabPromptQId').updateText(getObj('exp_search_name'));"/> 
+					</mstrlayout:else>              
+				</mstrlayout:if>
+	            <label for="exp_type_search">
+			<mstrlayout:render name="Descriptor">
+				<mstrlayout:argument type="int" value="5245" />
+			</mstrlayout:render>
+	            	<!-- Use the result of a search object -->
+	            <br/></label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="text" id="exp_search_name" name="exp_search_name" readonly="readonly" DPN="exp_type_search" NONZERO="1" FLDID="5245" class="mstrInputTextLong" style="left:20px;" cmdid="setOriginObj">
+					<mstrlayout:attr name="addSearchNameAttrs"/>
+				</input>
+			</td>
+			<td>
+				<input type="button" name="exp_search_selector" id="exp_search_selector" cmdid="openSearchSelector" class="mstrButton mstrPromptButtonInline" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_org_dssid', 'tabPromptQId', 'SET_EXP_SEARCH', 11, true);"> <!-- @todo, should not use onmenusubmitform() !!!-->
+				  <mstrlayout:attr attribute="value" method="getDescriptor">
+				    <mstrlayout:argument type="int" value="5231" />
+				  </mstrlayout:attr>
+				</input>
+			</td>
+		</tr>
+	
+		<mstrlayout:if name="isAttributeQualificationPrompt">
+			<mstrlayout:then>
+				<tr>
+					<td colspan="2">
+						<hr/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<span>
+						<mstrlayout:render name="Descriptor">
+							<mstrlayout:argument type="int" value="5246" />
+						</mstrlayout:render>
+						<!-- Select the attribute forms that should be displayed for the attribute qualification -->
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					  <span  style="margin-left:20px;">
+						<mstrlayout:render name="Descriptor">
+							<mstrlayout:argument type="int" value="5247" />
+						</mstrlayout:render>
+					  	<!-- Displayed forms -->&nbsp;
+					  </span>
+					  <mstrlayout:render name="displayAttributeFormsPulldown" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div id="customFormsDiv" style="display:none; padding-left:20px;">
+							<table class="mstrCart">
+								<tr>
+									<td class="mstrCartAvailable">
+										<select multiple="multiple" id="exp_all_att_forms" name="exp_all_att_forms" size="10" onchange="microstrategy.bone('tabPromptQId').onClickAQCFAvailList(this)">
+											<mstrlayout:list id="objects" name="getAllAttributeForms">
+												<option>
+													<mstrlayout:attr name="addOptionAttr">
+														<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+													</mstrlayout:attr>
+													<mstrlayout:render name="optionText">
+														<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+													</mstrlayout:render>
+												</option>
+											</mstrlayout:list>					
+										</select>
+									</td>
+									<td class="mstrCartButtons">
+										<div>
+											<input type="button" id="exp_add_cf" name="exp_add_cf" class="mstrIcon-btn mstrIcon-btnArrowRight" onclick="var qb = microstrategy.bone('tabPromptQId'); var cfs = getObj('exp_custom_forms'); var afs = getObj('exp_all_att_forms'); qb.moveSelectedOptions(afs, cfs, false, false);qb.updateList(getObj('exp_disp_att_form'));qb.refreshAQCFButtons(afs, cfs)">
+											  <mstrlayout:attr attribute="title" method="getDescriptor">
+											    <mstrlayout:argument type="int" value="4447" /> <!-- Add -->
+											  </mstrlayout:attr>
+											</input><br/>
+											<input type="button" id="exp_addall_cf" name="exp_addall_cf" class="mstrIcon-btn mstrIcon-btnAddAll" onclick="var qb = microstrategy.bone('tabPromptQId'); var cfs = getObj('exp_custom_forms'); var afs = getObj('exp_all_att_forms'); qb.moveAllOptions(afs, cfs, false, false);qb.updateList(getObj('exp_disp_att_form'));qb.refreshAQCFButtons(afs, cfs)">
+											  <mstrlayout:attr attribute="title" method="getDescriptor">
+											    <mstrlayout:argument type="int" value="5930" /> <!-- Add All -->
+											  </mstrlayout:attr>
+											</input><br/>
+											<input type="button" id="exp_remove_cf" name="exp_remove_cf" class="mstrIcon-btn mstrIcon-btnArrowLeft" onclick="var qb = microstrategy.bone('tabPromptQId'); var cfs = getObj('exp_custom_forms'); var afs = getObj('exp_all_att_forms'); qb.moveSelectedOptions(cfs, afs, true, false);qb.updateList(getObj('exp_disp_att_form'));qb.refreshAQCFButtons(afs, cfs)">
+											  <mstrlayout:attr attribute="title" method="getDescriptor">
+											    <mstrlayout:argument type="int" value="4448" /> <!-- Remove -->
+											  </mstrlayout:attr>
+											</input><br/>
+											<input type="button" id="exp_removeall_cf" name="exp_removeall_cf" class="mstrIcon-btn mstrIcon-btnRemoveAll" onclick="var qb = microstrategy.bone('tabPromptQId'); var cfs = getObj('exp_custom_forms'); var afs = getObj('exp_all_att_forms'); qb.moveAllOptions(cfs, afs, false, false);qb.updateList(getObj('exp_disp_att_form'));qb.refreshAQCFButtons(afs, cfs)">
+											  <mstrlayout:attr attribute="title" method="getDescriptor">
+											    <mstrlayout:argument type="int" value="4400" /> <!-- Remove All -->
+											  </mstrlayout:attr>
+											</input><br/>
+										</div>
+									</td>
+									<td class="mstrCartSelected">
+										<select multiple="multiple" id="exp_custom_forms" name="exp_custom_forms" cmdid="setCustomForms" size="10" onchange="microstrategy.bone('tabPromptQId').onClickAQCFSelList(this)">
+											<mstrlayout:list id="objects" name="getCustomForms">
+												<option>
+													<mstrlayout:attr name="addOptionAttr">
+														<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+													</mstrlayout:attr>
+													<mstrlayout:render name="optionText">
+														<mstrlayout:argument list="objects"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+													</mstrlayout:render>
+												</option>
+											</mstrlayout:list>					
+										</select>
+									</td>
+									<td class="mstrCartButtons">
+										<div>
+											<input type="button" id="exp_up_cf" name="exp_up_cf" class="mstrIcon-btn mstrIcon-btnArrowUp" onclick="var qb = microstrategy.bone('tabPromptQId'); qb.moveUpOPItem('exp_custom_forms');qb.updateList(getObj('exp_disp_att_form')); qb.refreshAQCFSelButtons(getObj('exp_custom_forms'))">
+											  <mstrlayout:attr attribute="title" method="getDescriptor">
+											    <mstrlayout:argument type="int" value="138" /> <!-- Move Up -->
+											  </mstrlayout:attr>
+											</input>
+											<input type="button" id="exp_down_cf" name="exp_down_ef" class="mstrIcon-btn mstrIcon-btnArrowDown" onclick="var qb = microstrategy.bone('tabPromptQId'); qb.moveDownOPItem('exp_custom_forms');qb.updateList(getObj('exp_disp_att_form')); qb.refreshAQCFSelButtons(getObj('exp_custom_forms'))">
+											  <mstrlayout:attr attribute="title" method="getDescriptor">
+											    <mstrlayout:argument type="int" value="139" /> <!-- Move Down -->
+											  </mstrlayout:attr>
+											</input>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				  </tr>
+			</mstrlayout:then>              
+		</mstrlayout:if>
+	</table>
+</mstrlayout:layout>

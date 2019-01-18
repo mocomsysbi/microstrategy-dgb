@@ -1,0 +1,44 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_answer="mstr.behaviors.PromptQuestionSummary.on_model_set_answer(view, model, rootTag)"
+    on_set_pageNum="mstr.behaviors.PromptQuestion.on_set_pageNum(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.PromptQuestion.on_set_visible(view, model, rootTag, context)">
+  <div style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <span>
+      <div class="{@cssPrefix}{@cssClass}TitleBar">
+	<table cellspacing="0" cellpadding="0">
+		<tr>
+			<td align="left" valign="middle">
+			        <span class="{@cssPrefix}{@cssClass}TitleBarIndex">
+			        </span>
+			        <span class="{@cssPrefix}{@cssClass}TitleBarTitle">
+			          {@model/title}
+			        </span>
+			        <span class="{@cssPrefix}{@cssClass}TitleBarRequired">
+			          {@descriptors/required}
+			        </span>
+			</td>
+			<td width="1%" align="right" valign="middle">
+				<img src="../images/1ptrans.gif" align="absmiddle" style="display: none"
+					class="{@cssPrefix}{@cssClass}BackToTopImg"
+					title="{@descriptors/backToTop}"
+					onclick="mstr.behaviors.PromptQuestion.onClickBackToTop('{@id}')" />
+			</td>
+		</tr>
+	</table>
+      </div>
+      <div class="{@cssPrefix}{@cssClass}{@model/type}">
+        <div class="{@cssPrefix}{@cssClass}SimpleAnswerView">
+          <span class="{@cssPrefix}{@cssClass}SimpleAnswerCaption">{@descriptors/simpleAnswerViewCaption}</span>
+          <mstrlayout:wRender name="simpleAnswerView"></mstrlayout:wRender>
+        </div>
+        <div class="{@cssPrefix}{@cssClass}ComplexAnswerView">
+          <span class="{@cssPrefix}{@cssClass}ComplexAnswerCaption">{@descriptors/complexAnswerViewCaption}</span>
+          <span class="{@cssPrefix}{@cssClass}ComplexAnswerValue">{@model/answer/complexString}</span>
+        </div>
+        <div class="{@cssPrefix}{@cssClass}EmptyAnswerView">{@descriptors/emptyAnswerViewCaption}</div>
+      </div>
+    </span>
+  </div>
+</mstrlayout:layout>

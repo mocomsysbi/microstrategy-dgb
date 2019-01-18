@@ -1,0 +1,156 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptToolbarModel" name="ReportDataToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1157" name="ToolbarButtonModel">
+          <property name="id">tbViewFilter</property>
+          <property name="tooltip">{desc:mstrWeb.1986|Add View Filter Condition...}</property>
+          <property name="cmdid">addViewFilterCondition</property>
+          <property name="visibleFeatures">use-view-filter-editor</property>
+        </block>
+        <block listElementKey="K1158" name="ToolbarSortGridButton">
+          <property name="cmdid">sort</property>
+          <property name="visibleFeatures">web-sort</property>
+        </block>
+        <block listElementKey="K1159" name="ToolbarDualStateButtonModel">
+          <property name="id">tbDrill</property>
+          <property name="tooltip">{desc:mstrWeb.2113|Drill...}</property>
+          <property name="cmdid">drill</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+        </block>
+        <block listElementKey="K1159_d" name="ToolbarButtonModel">
+          <property name="id">tbDrillChecks</property>
+          <property name="tooltip">{desc:mstrWeb.2113|Drill...}</property>
+          <property name="cmdid">drillEditor</property>
+        </block>
+        <block listElementKey="K1160" name="ToolbarButtonModel">
+          <property name="id">tbFilterOnSelections</property>
+          <property name="tooltip">{desc:mstrWeb.2114|Filter on Selections...}</property>
+          <property name="cmdid">fos</property>
+          <property name="visibleFeatures">!show-filter-on-selections-checks;filteronselection-editor</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1160_f" name="ToolbarButtonModel">
+          <property name="id">tbFilterOnSelectionsChecks</property>
+          <property name="tooltip">{desc:mstrWeb.2114|Filter on Selections...}</property>
+          <property name="cmdid">drillFilterEditor</property>
+          <property name="visibleFeatures">show-filter-on-selections-checks;filteronselection-editor</property>
+        </block>
+        <block listElementKey="rptTbHideNulls" name="ToolbarDualStateButtonModel">
+          <property name="id">tbToggleHideNulls</property>
+          <property name="tooltip">{desc:mstrWeb.9847|Hide Nulls/Zeros}</property>
+          <property name="cmdid">toggleHideNullsOrZeros</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1161" name="BaseBlock"/>
+        <block listElementKey="K1162" name="ToolbarRefreshButton">
+          <property name="visibleFeatures">quicklinks-refresh</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1163" name="ToolbarReExecuteRptButton">
+          <property name="visibleFeatures">reexecute</property>
+        </block>
+        <block listElementKey="K1164" name="ToolbarRepromptButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1165" name="BaseBlock"/>
+        <block listElementKey="K1166" name="ToolbarSwapAxesButton">
+          <property name="visibleFeatures">!is-non-viewable-report;web-pivot</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1167" name="ToolbarInsertMetricButton">
+          <property name="cmdid">newMetric</property>
+          <property name="visibleFeatures">insert-new-metric</property>
+        </block>
+        <block listElementKey="K1168" name="ToolbarRenameButton">
+          <property name="cmdid">renameEditObjects</property>
+          <property name="visibleFeatures">rename-edit-object</property>
+        </block>
+        <block listElementKey="K1169" name="ToolbarEditFormsButton">
+          <property name="cmdid">attForms</property>
+          <property name="visibleFeatures">set-attributeform-display</property>
+        </block>
+        <block listElementKey="K1170" name="ToolbarDualStateButtonModel">
+          <property name="id">tbAttributeForms</property>
+          <property name="tooltip">{desc:mstrWeb.6113|Toggle Attribute Form Names}</property>
+          <property name="cmdid">toggleAttributeForms</property>
+          <property name="visibleFeatures">show-attribute-forms</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1171" name="ToolbarToggleTotalsButton">
+          <property name="visibleFeatures">show-totals;show-subtotals</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+        </block>
+        <block listElementKey="K1172" name="ToolbarEditTotalsButton">
+          <property name="cmdid">editTotals</property>
+          <property name="visibleFeatures">show-totals;orionIServer</property>
+        </block>
+        <block listElementKey="K1173" name="BaseBlock"/>
+        <block listElementKey="K1174" name="ToolbarQuickThresholdsPicker">
+          <property name="visibleFeatures">use-basic-threshold-editor</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K1175" name="ToolbarListItemInfo">
+                <property name="dssid">0</property>
+                <property name="desc">{desc:mstrWeb.5835|Top and Bottom 20% - Background Color}</property>
+                <property name="cssClass">qtpkr0</property>
+              </block>
+              <block listElementKey="K1176" name="ToolbarListItemInfo">
+                <property name="dssid">1</property>
+                <property name="desc">{desc:mstrWeb.5836|Top and Bottom 20% - Font Color}</property>
+                <property name="cssClass">qtpkr1</property>
+              </block>
+              <block listElementKey="K1177" name="ToolbarListItemInfo">
+                <property name="dssid">2</property>
+                <property name="desc">{desc:mstrWeb.5837|Top and Bottom 20% - Stoplight}</property>
+                <property name="cssClass">qtpkr2</property>
+              </block>
+              <block listElementKey="K1178" name="ToolbarListItemInfo">
+                <property name="dssid">3</property>
+                <property name="desc">{desc:mstrWeb.5838|Top and Bottom 20%, Center 60% - Stoplight}</property>
+                <property name="cssClass">qtpkr3</property>
+              </block>
+              <block listElementKey="K1179" name="ToolbarListItemInfo">
+                <property name="dssid">4</property>
+                <property name="desc">{desc:mstrWeb.5839|Top and Bottom 20%, Center 60% - Arrows}</property>
+                <property name="cssClass">qtpkr4</property>
+              </block>
+              <block listElementKey="K1180" name="ToolbarListItemInfo">
+                <property name="dssid">5</property>
+                <property name="desc">{desc:mstrWeb.5840|Top and Bottom 20%, Center 60% - Flags}</property>
+                <property name="cssClass">qtpkr5</property>
+              </block>
+              <block listElementKey="K1181" name="ToolbarListItemInfo">
+                <property name="dssid">6</property>
+                <property name="desc">{desc:mstrWeb.5841|20% Slices - Icons}</property>
+                <property name="cssClass">qtpkr6</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1182" name="ToolbarThresholdsButton">
+          <property name="cmdid">toggleThresholds</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K1183" name="ToolbarDualStateButtonModel">
+          <property name="id">tbSimpleThreshold</property>
+          <property name="tooltip">{desc:mstrWeb.4404|Visual Thresholds Editor}</property>
+          <property name="cmdid">simpleThresholds</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+          <property name="visibleFeatures">use-basic-threshold-editor</property>
+        </block>
+        <block listElementKey="K1184" name="ToolbarButtonModel">
+          <property name="id">tbAddNewThreshold</property>
+          <property name="tooltip">{desc:mstrWeb.4569|Advanced Threshold Editor}</property>
+          <property name="cmdid">advancedThresholds</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+          <property name="visibleFeatures">use-advanced-threshold-editor</property>
+        </block>
+        <block listElementKey="K1185" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

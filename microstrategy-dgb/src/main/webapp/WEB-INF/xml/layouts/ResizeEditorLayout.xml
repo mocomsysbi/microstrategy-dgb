@@ -1,0 +1,71 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<table id="edtColumnWidths" cellspacing="1" width="100%">
+		<tr>
+			<td valign="top">
+				<span class="mstrHighlighted">
+				  <mstrlayout:render name="descriptor">
+					<mstrlayout:argument type="string" value="mstrWeb.2592"/>
+				  </mstrlayout:render>
+				</span>
+				<br/>
+				<mstrlayout:render name="fitToColumnRadioButton">
+				  <mstrlayout:argument type="int" value="1"/>
+				</mstrlayout:render>
+				<mstrlayout:render name="descriptor">
+				  <mstrlayout:argument type="string" value="mstrWeb.2588"/>
+				</mstrlayout:render>
+				<br/>
+				<mstrlayout:render name="fitToColumnRadioButton">
+				  <mstrlayout:argument type="int" value="2"/>
+				</mstrlayout:render>
+				<mstrlayout:render name="descriptor">
+				  <mstrlayout:argument type="string" value="mstrWeb.2589"/>
+				</mstrlayout:render>
+				<br/>
+				<mstrlayout:render name="fitToColumnRadioButton">
+				  <mstrlayout:argument type="int" value="3"/>
+				</mstrlayout:render>
+				<mstrlayout:render name="descriptor">
+				  <mstrlayout:argument type="string" value="mstrWeb.2050"/>
+				</mstrlayout:render>
+			</td>
+			<td valign="top">
+				<span class="mstrHighlighted">
+				  <mstrlayout:render name="descriptor">
+					<mstrlayout:argument type="string" value="mstrWeb.2593"/>
+				  </mstrlayout:render>
+				</span>
+				<br/>
+				  <mstrlayout:render name="fitToRowRadioButton">
+					<mstrlayout:argument type="int" value="2"/>
+				  </mstrlayout:render>
+				  <mstrlayout:render name="descriptor">
+					<mstrlayout:argument type="string" value="mstrWeb.2589"/>
+				  </mstrlayout:render>
+				  <br/>
+				  <mstrlayout:render name="fitToRowRadioButton">
+					<mstrlayout:argument type="int" value="3"/>
+				  </mstrlayout:render>
+				  <mstrlayout:render name="descriptor">
+					<mstrlayout:argument type="string" value="mstrWeb.2597"/>
+				  </mstrlayout:render>
+				  <mstrlayout:render name="heightTextBox"/>&nbsp;
+				  <mstrlayout:render name="unitsLabel"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding-left: 20px;">
+				<mstrlayout:render name="columnList"/>
+				<br />
+				<span>
+				  <mstrlayout:render name="descriptor">
+					<mstrlayout:argument type="string" value="mstrWeb.2595"/>
+				  </mstrlayout:render>
+				</span>
+				<mstrlayout:render name="widthTextBox"/>&nbsp;
+				<mstrlayout:render name="unitsLabel"/>
+			</td>
+		</tr>
+	</table>
+</mstrlayout:layout>

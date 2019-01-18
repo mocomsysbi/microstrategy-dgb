@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarFullScreenButton" inherits="ToolbarButtonModel">
+	<assignments>
+        <property name="id">tbFullMode</property>
+        <property name="tooltip">{desc:mstrWeb.4664|Full Screen Mode}</property>
+        <property name="cmdid">toggleScreenMode</property>
+        <property name="visibleFeatures">!page-full-screen-mode</property>
+        <property name="listenerMethods">onScreenModeChange</property>
+	</assignments>
+</block>

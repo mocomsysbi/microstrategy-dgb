@@ -1,0 +1,67 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptQId, so its tab id is tabPromptQId -->
+<mstrlayout:layout>
+		<span class="title">
+			<mstrlayout:render method="descriptor">
+				<mstrlayout:argument value="5435" type="int"/>
+			</mstrlayout:render>
+		</span>
+		<p/>
+		<mstrlayout:if name="isDatePrompt">
+			<mstrlayout:then>
+				<input type="radio" name="vptype" id="vp_type_Date" cmdid="setVPTypeDate" value="Date"  onclick="microstrategy.bone('tabPromptQId').updatePTypeRadioButton(this);" checked="checked"/>
+			</mstrlayout:then>
+			<mstrlayout:else>
+				<input type="radio" name="vptype" id="vp_type_Date" cmdid="setVPTypeDate" value="Date" onclick="microstrategy.bone('tabPromptQId').updatePTypeRadioButton(this);" />
+			</mstrlayout:else>
+		</mstrlayout:if>
+		<label for="vp_type_Date"> 
+			<mstrlayout:render method="descriptor">
+				<mstrlayout:argument value="5439" type="int"/>
+			</mstrlayout:render>
+		</label>
+		<p/>
+		<mstrlayout:if name="isNumericPrompt">
+			<mstrlayout:then>
+				<input type="radio" name="vptype" id="vp_type_Num" cmdid="setVPTypeNum" value="Num" onclick="microstrategy.bone('tabPromptQId').updatePTypeRadioButton(this);" checked="checked"/>
+			</mstrlayout:then>
+			<mstrlayout:else>
+				<input type="radio" name="vptype" id="vp_type_Num" cmdid="setVPTypeNum" value="Num" onclick="microstrategy.bone('tabPromptQId').updatePTypeRadioButton(this);" />
+			</mstrlayout:else>
+		</mstrlayout:if>
+		<label for="vp_type_Num"> 
+			<mstrlayout:render method="descriptor">
+				<mstrlayout:argument value="5436" type="int"/>
+			</mstrlayout:render>
+		</label>
+		<p/>
+		<mstrlayout:if name="isTextPrompt">
+			<mstrlayout:then>
+				<input type="radio" name="vptype" id="vp_type_Text" cmdid="setVPTypeText" value="Text" onclick="microstrategy.bone('tabPromptQId').updatePTypeRadioButton(this);" checked="checked"/>
+			</mstrlayout:then>
+			<mstrlayout:else>
+				<input type="radio" name="vptype" id="vp_type_Text" cmdid="setVPTypeText" value="Text" onclick="microstrategy.bone('tabPromptQId').updatePTypeRadioButton(this);" />
+			</mstrlayout:else>
+		</mstrlayout:if>
+		<label for="vp_type_Text">
+			<mstrlayout:render method="descriptor">
+				<mstrlayout:argument value="5437" type="int"/>
+			</mstrlayout:render>
+		</label>
+		 <p/>
+		<mstrlayout:if name="isBigDecPrompt">
+			<mstrlayout:then>
+				<input type="radio" name="vptype" id="vp_type_BigDec" cmdid="setVPTypeBigDec" value="BigDec" onclick="microstrategy.bone('tabPromptQId').updatePTypeRadioButton(this);" checked="checked"/>
+			</mstrlayout:then>
+			<mstrlayout:else>
+				<input type="radio" name="vptype" id="vp_type_BigDec" cmdid="setVPTypeBigDec" value="BigDec" onclick="microstrategy.bone('tabPromptQId').updatePTypeRadioButton(this);" />
+			</mstrlayout:else>
+		</mstrlayout:if>
+		<label for="vp_type_BigDec">
+			<mstrlayout:render method="descriptor">
+				<mstrlayout:argument value="5438" type="int"/>
+			</mstrlayout:render>
+		</label>
+		<p/>
+
+</mstrlayout:layout>

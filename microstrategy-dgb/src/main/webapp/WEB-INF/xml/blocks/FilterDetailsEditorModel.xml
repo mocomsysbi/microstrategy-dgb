@@ -1,0 +1,58 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ChangeTrackingModelManager" name="FilterDetailsEditorModel">
+  <definition>
+    <!-- tabList specifies the names of the tabs that will be shown in the editor -->
+    <property name="tabList" type="Block"/>
+    <!-- tabModels contains the list of the models for the tabs-->
+    <property name="tabModels" type="Block"/>
+    <!-- oldValue holds a comma delimeted string of name value pairs representing the properties of the editor when it is first loaded-->
+    <property name="oldValue" type="String"/>
+    <!-- objId is the id of the textField when the editor is opened for a textField, if not it is undefined-->
+    <property name="objId" type="String"/>
+    <!-- CommandEnabledSubmitChanges allows enabling/disabling of the command that is fired on the model when OK is clicked on the editor-->
+    <property name="CommandEnabledSubmitChanges" type="Boolean"/>
+  </definition>
+  <assignments>
+    <property name="CommandEnabledSubmitChanges">true</property>
+    <property name="scriptClass">mstr.models.FilterDetailsEditor</property>
+    <property name="tabList">
+      <block name="ListModel">
+        <property name="selectedIndicesList">0</property>
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K499" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.295|General}</property>
+            </block>
+            <block listElementKey="K500" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5428|Filter Details - Contents}</property>
+            </block>
+            <block listElementKey="K501" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.5429|Filter Details - Other}</property>
+            </block>
+            <block listElementKey="K502" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.5131|Template Details}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="tabModels">
+      <block name="ListModel">
+        <property name="items">
+          <list>
+            <block listElementKey="K503" name="FilterDetailsGeneralTabModel"/>
+            <block listElementKey="K504" name="FilterDetailsContentsTabModel"/>
+            <block listElementKey="K505" name="FilterDetailsOtherTabModel"/>
+            <block listElementKey="K506" name="FilterDetailsTemplateTabModel"/>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- Root level model for the Report Details Editor for Reports and Documents -->

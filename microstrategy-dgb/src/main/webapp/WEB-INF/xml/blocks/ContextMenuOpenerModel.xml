@@ -1,0 +1,21 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		ListModel is a data model which contains a generic list of items.
+		Each item is typically represented by an ItemInfo Block.
+		ListModel also contains information about the list, such as block
+		properties for incremental fetching, and a path tree.
+	-->
+	<block name="ContextMenuOpenerModel" inherits="ToolbarControlModel">
+		<definition>          
+			<property name="contextMenuName" type="String" />
+        </definition>
+        
+        
+        <assignments>
+			<property name="type">CONTEXTMENU</property>
+			<property name="toolbarHelper">
+				<block name="ToolbarButtonHelper" />
+			</property>
+            <property name="scriptClass">mstr.models.ToolbarContextMenuOpenerModel</property>
+		</assignments>
+	</block>

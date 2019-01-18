@@ -1,0 +1,34 @@
+<shortcut-list name="viewMode" feature-id="!is-non-viewable-report">
+  	<shortcut base-bean="frame" check-feature-id="check-design-mode" desc="Design" desc-id="mstrWeb.3067" feature-id="!dhtml;design-mode;not-datamart;enable-design-mode;!check-design-mode" name="tbDesignModeHTML" type="button">
+      <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventChangeDesignMode">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentReportDesignMode" value="1"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbDesignAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-grid-mode" desc="[Grid]" desc-id="mstrWeb.114" enable-feature-id="enable-grid-mode" feature-id="!dhtml;menu-grid-mode;!check-design-mode" name="tbGridHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_CHANGE_VIEW_MODE">
+        <argument enumname="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGrid" name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_VIEW_MODE" source="enum"/>
+      </event>
+	  <attributes>
+		<attribute name="src" feature-id="accessibility" value="tbGridAcc.gif"/>
+	  </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-graph-mode" desc="[Graph]" desc-id="mstrWeb.115" enable-feature-id="enable-graph-mode" feature-id="!dhtml;menu-graph-mode;!check-design-mode" name="tbGraphHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_CHANGE_VIEW_MODE">
+        <argument enumname="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeGraph" name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_VIEW_MODE" source="enum"/>
+      </event>
+	  <attributes>
+        <attribute name="src" feature-id="accessibility" value="tbGraphAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-grid-graph-mode" desc="[Grid and Graph]" desc-id="mstrWeb.1904" enable-feature-id="enable-grid-graph-mode" feature-id="!dhtml;menu-grid-graph-mode;!check-design-mode" name="tbGraphGridHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_CHANGE_VIEW_MODE">
+        <argument enumname="com.microstrategy.web.objects.EnumWebReportViewMode.ReportViewModeBoth" name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_VIEW_MODE" source="enum"/>
+      </event>
+	  <attributes>
+        <attribute name="src" feature-id="accessibility" value="tbGraphGridAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>

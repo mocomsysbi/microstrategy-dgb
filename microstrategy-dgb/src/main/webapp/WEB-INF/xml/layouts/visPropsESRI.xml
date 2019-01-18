@@ -1,0 +1,504 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:if name="isValidGrid">
+		<mstrlayout:then>
+					<![CDATA[
+        <style type="text/css">
+        	.h {
+                background: #E8E8E8;
+                color: #656565;
+                text-align:left;
+                padding: 3px 5px;
+            }
+            .t {
+                width:100%;
+                padding:2px 2px 2px 0px;
+            }
+            .b {
+                text-align:left;
+                padding-right:10px;
+            }
+            .esd {
+                        text-align:left;
+                        padding-left:20px;
+
+            }
+            .esd select{
+                	width: 100%;
+            }
+            .es {
+                        text-align:left;
+                        padding-right:10px;
+                        vertical-align:top;
+            }
+            .es select{
+                	width: 80%;
+                	vertical-align:top;
+            }
+            .g{
+            	max-width:180px;
+            	display: inline-block;
+            }
+            .b select{
+            	width: 100%;
+            }
+            .leftpadding {
+            	padding-left: 6px;
+            	width: 191px;
+            }
+            .rleftpadding {
+            	padding-left: 16px;
+            	width: 121px;
+            }
+            .leftCheckbox {
+            	padding-left: 4px;
+            }
+            .b input {
+				height:14px;
+			}
+			.r {
+			    color: red;
+			    display: none;
+			}
+			.p{
+            	max-width:225px;
+            	display: inline-block;
+            }
+            .p select{
+                	width: 69px;
+                	vertical-align:top;
+             }
+			.tdiv{
+         	 	display:none;
+            	border:1px solid #cecece;
+            	margin-top: 3px;
+            }
+			.pdiv{
+           		display:none;
+           		left:-20px;
+           		top:-20px;
+           		position:absolute;
+           		height:700px;
+           		width:450px;
+           		background:transparent;
+           	}
+           	.denpd{
+           		height :27px;
+           	}
+			.ipdiv{
+           		position:absolute;
+           		top:60px;
+           		width:100%;
+           		border:1px solid #999;
+           		background:#fff;
+			}
+			.ipdiv input[type=radio] {
+				margin: 5px 3px 7px 15px;
+			 }
+			 .ipdiv th {padding-bottom: 10px;}
+			 .ipdiv .buttonBar {text-align: right;}
+			 .ipdiv .mstrButton {margin-left: 20px;}
+			 #dspopup {width: 100%;}
+        </style>
+     	]]>
+
+     	 <mstrlayout:if name="isRW">
+				<mstrlayout:then>
+					<mstrlayout:render name="HiddenInput"> <!-- Hidden input for primary grid key -->
+						<mstrlayout:argument type="string" value="pgk" /> <!-- prop name -->
+					</mstrlayout:render>
+					<mstrlayout:if name="isFeatureAvailable">
+					<mstrlayout:argument value="is-esri-on-premise" />
+     				<mstrlayout:then>
+     				<fieldset class="mstrFieldset visPropsMap ESRI">
+          			  <legend>
+						<mstrlayout:render name="descriptor">
+							<mstrlayout:argument type="string" value="mstrWeb.9474" /> <!-- Descriptor: Datasets used on the map-->
+						</mstrlayout:render>
+          			  </legend>
+     			   </fieldset>
+     				<mstrlayout:render name="Tabs">
+					</mstrlayout:render>
+     				</mstrlayout:then>
+        			</mstrlayout:if>
+					<div id="ppdiv" class="pdiv">
+						<div class="ipdiv">
+							<mstrlayout:render name="DatasetRadio">
+							</mstrlayout:render>
+						</div>
+					</div>
+		     	 <mstrlayout:render name="HiddenInput">
+			    	<mstrlayout:argument type="string" value="sgProps"/>
+			    	<mstrlayout:argument type="string" value=""/>
+			    	<mstrlayout:argument type="String" value="getvalue^microstrategy.bone('visPropsEditor_visPropsESRIStyle').getGridsXml();"/>
+		   		 </mstrlayout:render>
+
+			    <mstrlayout:render name="HiddenInput">
+			    	<mstrlayout:argument type="string" value="sdps"/>
+			    	<mstrlayout:argument type="string" value=""/>
+			    	<mstrlayout:argument type="String" value="getval^microstrategy.bone('visPropsEditor_visPropsESRIStyle').getSdpString();"/>
+			    </mstrlayout:render>
+			</mstrlayout:then>
+		</mstrlayout:if>
+
+		<mstrlayout:render name="HiddenInput">
+	    	<mstrlayout:argument type="string" value="mtp"/>
+	    	<mstrlayout:argument type="string" value=""/>
+	    	<mstrlayout:argument type="String" value="getvalue^microstrategy.bone('visPropsEditor_visPropsESRIStyle').getMTPForPrimaryString(true);"/>
+    	</mstrlayout:render>
+
+		<mstrlayout:list id="TemplateKeys" name="getKeyList">
+		    <div id="gridDiv" class="tdiv">
+		    	<mstrlayout:attr name="getTemplateKey">
+		        	<mstrlayout:argument list="TemplateKeys" type="String"/>
+		        </mstrlayout:attr>
+		        <mstrlayout:attr name="getTemplateName">
+		        	<mstrlayout:argument list="TemplateKeys" type="String"/>
+       			</mstrlayout:attr>
+			<table class="t" id="iphone-table">
+			    <tr>
+		          <th class="h" colspan="2">
+		            <mstrlayout:render name="descriptor">
+		              <mstrlayout:argument type="string" value="mstrWeb.8066"/> <!-- Descriptor: Marker Styles / Mode -->
+		            </mstrlayout:render>
+		          </th>
+		        </tr>
+				<tr>
+					<td colspan="2" class="leftCheckbox">
+						<mstrlayout:render name="ShowMarkerCheckbox">
+							<mstrlayout:argument type="String" value="sm" /> <!-- property name -->
+							<mstrlayout:argument type="String" value="" /> <!-- default value-->
+							<mstrlayout:argument type="String" list="TemplateKeys"/>
+						</mstrlayout:render>
+						<span>
+							<mstrlayout:render name="descriptor">
+								<mstrlayout:argument type="string" value="mstrWeb.8017" /> <!-- Descriptor: Show Markers -->
+							</mstrlayout:render>
+						</span>
+					</td>
+				</tr>
+				<tr>
+				  <td class="rleftpadding">
+		            <mstrlayout:render name="ImageRadio">
+		              <mstrlayout:argument type="String" value="mtp"/>
+		               <mstrlayout:argument type="String" list="TemplateKeys"/>
+		            </mstrlayout:render>
+		          </td>
+                 <td class="esd es">
+
+		          				<div class="denpd"></div>
+
+								<mstrlayout:if name="isIE">
+									<mstrlayout:then>
+										<div class="p" style="height: 30px; visibility :hidden">
+										</div>
+									</mstrlayout:then>
+								</mstrlayout:if>
+								<div class="p" id="densityPulldown" style="width: 150px">
+									<mstrlayout:render name="DensityPulldown">
+										<mstrlayout:argument type="String" value="dms" />
+										<mstrlayout:argument type="String" list="TemplateKeys" />
+									</mstrlayout:render>
+								</div>
+					</td>
+	          	</tr>
+
+				<tr>
+					<td colspan="2">
+						<table class="t">
+							<tr id="maxBubbleSizeTextbox">
+					         	<td class="leftpadding">
+						         	<mstrlayout:render name="descriptor">
+						              <mstrlayout:argument type="string" value="mstrWeb.11125"/> <!-- Descriptor: Maximum bubble size (Range: 7 to 100) -->
+						            </mstrlayout:render>
+						          	</td>
+						        <td class="b c">
+						            <div class="g" >
+							            <mstrlayout:render name="BubbleSizeTextbox">
+							              <mstrlayout:argument type="String" value="mbs"/>
+							              <mstrlayout:argument type="String" value="100"/>
+							              <mstrlayout:argument type="String" list="TemplateKeys"/>
+							            </mstrlayout:render>
+						            </div>
+							        <span id="bubbleWarning" class="r">
+						               <mstrlayout:render name="descriptor">
+						            	  <mstrlayout:argument type="string" value="mstrWeb.11124"/> <!-- Descriptor: Size beyond range -->
+						               </mstrlayout:render>
+						            </span>
+						        </td>
+					        </tr>
+					        <tr id="mapSizingStyle">
+					          <td class="leftpadding" style="white-space:nowrap">
+					            <mstrlayout:render name="descriptor">
+					              <mstrlayout:argument type="string" value="mstrWeb.9043"/> <!-- Descriptor: Negative values are represented as -->
+					            </mstrlayout:render>
+					          </td>
+					          <td class="b">
+						          <div>
+						            <mstrlayout:render name="MapSizingStylePulldown">
+										<mstrlayout:argument type="String" value="mss" /> <!-- prop name map sizing style-->
+									 	<mstrlayout:argument type="String" list="TemplateKeys"/>
+									 	<mstrlayout:argument type="boolean" value="false"/>
+									</mstrlayout:render>
+						          </div>
+					          </td>
+					        </tr>
+					        <tr id="applyThreadCheckBox">
+		        			  <td colspan="2" class="leftCheckbox">
+		          				  <mstrlayout:render name="checkbox">
+		           					   <mstrlayout:argument type="String" value="at"/>
+		             				   <mstrlayout:argument type="String" value="1" />
+		              				   <mstrlayout:argument type="String" list="TemplateKeys"/>
+		         				  </mstrlayout:render>
+		          				  <span>
+		           					  <mstrlayout:render name="descriptor">
+		              					  <mstrlayout:argument type="string" value="mstrWeb.9276"/> <!-- Descriptor:  Apply color formatting to the map -->
+		         					  </mstrlayout:render>
+		           				 </span>
+		       			      </td>
+		      			  </tr>
+
+                            <!-- cluster markers -->
+                            <tr id="applyMarkerClustering">
+                                <td colspan="2" class="leftCheckbox">
+                                    <mstrlayout:render name="checkbox">
+                                        <mstrlayout:argument type="String" value="mc"/>
+                                        <mstrlayout:argument type="String" value="1" />
+                                        <mstrlayout:argument type="String" list="TemplateKeys"/>
+                                    </mstrlayout:render>
+                                    <span>
+                                        <mstrlayout:render name="descriptor">
+                                            <mstrlayout:argument type="string" value="mstrWeb.11841"/>
+                                        </mstrlayout:render>
+                                    </span>
+                                </td>
+                            </tr>
+
+						</table>
+					</td>
+				</tr>
+						<tr>
+							<th class="h" colspan="2">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="string" value="mstrWeb.7639" /> <!-- Descriptor: Select Location -->
+								</mstrlayout:render>
+							</th>
+						</tr>
+						<tr>
+							<td class="leftpadding">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="string" value="mstrWeb.8062" /> <!-- Descriptor: Use Attribute or Form -->
+								</mstrlayout:render>
+							</td>
+							<td class="b">
+								<mstrlayout:render name="AttributeOrFormPulldown">
+									<mstrlayout:argument type="String" value="af" />
+									<mstrlayout:argument type="String" list="TemplateKeys" />
+								</mstrlayout:render>
+							</td>
+						</tr>
+						<tr id="attr">
+							<td class="leftpadding">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="string" value="mstrWeb.8064" /> <!-- Descriptor: Select attribute -->
+								</mstrlayout:render>
+							</td>
+							<td class="b">
+								<mstrlayout:render name="AttributePulldown">
+									<mstrlayout:argument type="String" value="ma" />
+									<mstrlayout:argument type="String" list="TemplateKeys" />
+								</mstrlayout:render>
+							</td>
+						</tr>
+						<tr id="lat">
+							<td class="leftpadding">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="string" value="mstrWeb.7641" /> <!-- Descriptor: Select Latitude: -->
+								</mstrlayout:render>
+							</td>
+							<td class="b">
+								<div class="g">
+									<mstrlayout:render name="AttributeFormsPulldown">
+										<mstrlayout:argument type="String" value="lat" />
+										<mstrlayout:argument type="String" list="TemplateKeys" />
+									</mstrlayout:render>
+								</div>
+							</td>
+						</tr>
+						<tr id="long">
+							<td class="leftpadding">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="string" value="mstrWeb.7642" /> <!-- Descriptor: Select Longitude: -->
+								</mstrlayout:render>
+							</td>
+							<td class="b">
+								<div class="g">
+									<mstrlayout:render name="AttributeFormsPulldown">
+										<mstrlayout:argument type="String" value="lng" />
+										<mstrlayout:argument type="String" list="TemplateKeys" />
+									</mstrlayout:render>
+								</div>
+							</td>
+						</tr>
+						<tr id="attform">
+							<td class="leftpadding">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="string" value="mstrWeb.9073" /> <!-- Descriptor: Selection display Form -->
+								</mstrlayout:render>
+							</td>
+							<td class="b">
+								<div class="g">
+									<mstrlayout:render name="AttributeFormsPulldown">
+										<mstrlayout:argument type="String" value="satf" />
+										<mstrlayout:argument type="String" list="TemplateKeys" />
+									</mstrlayout:render>
+								</div>
+							</td>
+						</tr>
+						<tr id="att">
+							<td class="leftpadding">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="string" value="mstrWeb.9182" /> <!-- Selection display attribute -->
+								</mstrlayout:render>
+							</td>
+							<td class="b">
+								<div class="g">
+									<mstrlayout:render name="AttributePulldown">
+										<mstrlayout:argument type="String" value="atf" />
+										<mstrlayout:argument type="String" list="TemplateKeys" />
+									</mstrlayout:render>
+								</div>
+							</td>
+						</tr>
+
+
+				<tr>
+					<td colspan="2">
+						<hr/>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2" class="leftCheckbox">
+						<mstrlayout:render name="ShowAreaCheckbox">
+							<mstrlayout:argument type="String" value="sa" /> <!-- property name -->
+							<mstrlayout:argument type="String" value="1" /> <!--  Default value -->
+							<mstrlayout:argument type="String" list="TemplateKeys"/>
+						</mstrlayout:render>
+						<span>
+							<mstrlayout:render name="descriptor">
+								<mstrlayout:argument type="string" value="mstrWeb.8018" /> <!-- Descriptor: Show Areas -->
+							</mstrlayout:render>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table class="t">
+							<tr>
+								<td class="leftpadding">
+									<mstrlayout:render name="descriptor">
+										<mstrlayout:argument type="string" value="mstrWeb.2149" /> <!-- Descriptor: Attribute: -->
+									</mstrlayout:render>
+								</td>
+								<td class="b">
+									<div>
+										<mstrlayout:render name="AttributePulldown">
+											<mstrlayout:argument type="String" value="aa" /> <!-- property name -->
+											<mstrlayout:argument type="String" list="TemplateKeys"/>
+										</mstrlayout:render>
+									</div>
+								</td>
+							</tr>
+							<mstrlayout:if name="isFeatureAvailable">
+								<mstrlayout:argument value="is-esri-on-premise" />
+								<mstrlayout:then>
+								</mstrlayout:then>
+                				<mstrlayout:else>
+							<tr>
+								<td class="leftpadding">
+									<mstrlayout:render name="descriptor">
+										<mstrlayout:argument type="string" value="mstrWeb.9067" /> <!-- Descriptor: Shape File: -->
+									</mstrlayout:render>
+								</td>
+								<td class="b">
+									<div>
+										<mstrlayout:render name="ShapePulldown">
+											<mstrlayout:argument type="String" value="lid" /> <!-- property name -->
+											<mstrlayout:argument type="String" list="TemplateKeys"/>
+										</mstrlayout:render>
+									</div>
+								</td>
+							</tr>
+							</mstrlayout:else>
+						</mstrlayout:if>
+						 </table>
+					</td>
+				</tr>
+
+                <tr>
+                    <td colspan="2">
+                        <hr/>
+                    </td>
+                </tr>
+                <!-- current location for mobile only -->
+                <tr>
+                    <td colspan="2" class="leftCheckbox">
+                        <mstrlayout:render name="checkbox">
+                            <mstrlayout:argument type="String" value="sclb" /> <!-- property name -->
+                            <mstrlayout:argument type="String" value="0" /> <!--  Default value -->
+                            <mstrlayout:argument type="String" list="TemplateKeys"/>
+                        </mstrlayout:render>
+                        <span>
+                            <mstrlayout:render name="descriptor">
+                                <mstrlayout:argument type="string" value="mstrWeb.14448" /> <!-- Descriptor: Show Current Location Button -->
+                            </mstrlayout:render>
+                        </span>
+                    </td>
+                </tr>
+
+			</table>
+		</div>
+		</mstrlayout:list>
+		
+		<mstrlayout:if name="isRW">
+				<mstrlayout:then>
+					<fieldset class="mstrFieldset visPropsMap ESRI">
+						<legend>
+							<mstrlayout:render name="descriptor">
+								<mstrlayout:argument type="string" value="mstrWeb.9476" /> <!-- Descriptor: General map properties -->
+							</mstrlayout:render>
+						</legend>
+					</fieldset>
+				</mstrlayout:then>
+			</mstrlayout:if>
+			<table>				
+				<mstrlayout:if name="isRW">
+					<mstrlayout:then>
+						<tr>
+							<td class="leftpadding" style="white-space:nowrap">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="string" value="mstrWeb.8763" /> <!-- Descriptor: Redraw on Selector action: -->
+								</mstrlayout:render>
+							</td>
+							<td class="b">
+								<div class="g">
+									<mstrlayout:render name="SelectBox">
+										<mstrlayout:argument type="String" value="rosa" /> <!-- prop name -->
+										<mstrlayout:argument type="String" value="0^mstrWeb.8764|1^mstrWeb.8765" /> <!-- selectBox elements -->
+										<mstrlayout:argument type="String" value="" /> <!-- extra att -->
+										<mstrlayout:argument type="String" value="0" /> <!-- default val -->
+									</mstrlayout:render>
+								</div>
+							</td>
+						</tr>
+					</mstrlayout:then>
+				</mstrlayout:if>
+			</table>
+		</mstrlayout:then>
+
+		<mstrlayout:else>
+			<mstrlayout:render name="ValidationError" />
+		</mstrlayout:else>
+	</mstrlayout:if>
+</mstrlayout:layout>

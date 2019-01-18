@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about a Prompt's default answer. 
+This is a "base" block and should several subblocks each with a 
+different set of properties.
+-->
+<block name="PromptAnswer">
+    <definition>
+        <!-- The short XML for this prompt answer. -->
+        <property name="xml" type="String"  />
+    </definition>
+</block>

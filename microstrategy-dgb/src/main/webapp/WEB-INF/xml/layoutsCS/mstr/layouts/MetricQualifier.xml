@@ -1,0 +1,63 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <div class="{@cssPrefix}{@cssClass}ContainerIncludeView">
+      <mstrlayout:wRender name="includeView">
+      </mstrlayout:wRender>
+    </div>
+    <table cellspacing="0"
+           cellpadding="0"
+           class="{@cssPrefix}{@cssClass}TablePathView">
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellPathView">
+          <mstrlayout:wRender name="pathView">
+          </mstrlayout:wRender>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellPathUpButton">
+          <mstrlayout:wRender name="pathUpButton">
+          </mstrlayout:wRender>
+        </td>
+      </tr>
+    </table>
+    <div class="{@cssPrefix}{@cssClass}ContainerSearchView">
+      <mstrlayout:wRender name="searchView">
+      </mstrlayout:wRender>
+    </div>
+    <table cellspacing="0"
+           cellpadding="0"
+           class="{@cssPrefix}{@cssClass}Table">
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellLeft">
+          <div class="{@cssPrefix}{@cssClass}ContainerTargetView">
+            <mstrlayout:wRender name="targetView">
+            </mstrlayout:wRender>
+          </div>
+          <div class="{@cssPrefix}{@cssClass}ContainerFetchView">
+            <mstrlayout:wRender name="fetchView">
+            </mstrlayout:wRender>
+          </div>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellRight">
+          <div class="{@cssPrefix}{@cssClass}ContainerFunctionView">
+            <mstrlayout:wRender name="functionView">
+            </mstrlayout:wRender>
+          </div>
+          <div class="{@cssPrefix}{@cssClass}ContainerConstant1View">
+            <mstrlayout:wRender name="constant1View">
+            </mstrlayout:wRender>
+          </div>
+          <div class="{@cssPrefix}{@cssClass}ContainerConstant2View">
+            <mstrlayout:wRender name="constant2View">
+            </mstrlayout:wRender>
+          </div>
+          <div class="{@cssPrefix}{@cssClass}ContainerLevelView">
+            <mstrlayout:wRender name="levelView">
+            </mstrlayout:wRender>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

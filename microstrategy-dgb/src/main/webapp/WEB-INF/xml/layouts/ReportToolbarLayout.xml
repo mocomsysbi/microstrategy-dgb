@@ -1,0 +1,71 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <table class="toolbar-global" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <colgroup>
+      <mstrlayout:if name="isOutlineModeAvailable">
+        <mstrlayout:then>
+          <col width="1%" />
+        </mstrlayout:then>
+      </mstrlayout:if>
+    </colgroup>
+    <tbody>
+      <tr>
+        <mstrlayout:if name="isOutlineModeAvailable">
+          <mstrlayout:then>
+            <td>
+              <mstrlayout:render name="OutlineModeLevels" />
+            </td>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <td>
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+                <mstrlayout:if name="isRowIncrementalFetchAvailable">
+                  <mstrlayout:then>
+                    <td>
+                      <mstrlayout:render name="RowIncrementalFetch" />
+                    </td>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+                <mstrlayout:if name="isReportStylesAvailable">
+                  <mstrlayout:then>
+                    <td>
+                      <mstrlayout:render name="ReportStyles" />
+                    </td>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+                <mstrlayout:if name="isPivotButtonsAvailable">
+                  <mstrlayout:then>
+                    <td>
+                      <mstrlayout:render name="ShowPivotButtons" />
+                    </td>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+                <mstrlayout:if name="isSortButtonsAvailable">
+                  <mstrlayout:then>
+                    <td>
+                      <mstrlayout:render name="ShowSortButtons" />
+                    </td>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td align="right">
+          <mstrlayout:if name="isRowCountAvailable">
+            <mstrlayout:then>
+              <mstrlayout:render name="RowCount" />
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:if name="isColumnCountAvailable">
+            <mstrlayout:then>
+              <mstrlayout:render name="ColumnCount" />
+            </mstrlayout:then>
+          </mstrlayout:if>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mstrlayout:layout>

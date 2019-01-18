@@ -1,0 +1,28 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+    <!-- 
+        This Task is used to apply a segment to a document
+    -->
+    <basicInfo desc="This Task applies a segment to a document.">
+        <parameter name="segmentID" desc="The Id of the segment to be applied." required="true" />
+        <parameter name="messageID" desc="The Message ID of a previously executed Report Writer Document." required="false" />
+        <parameter name="nodeKey" desc="The key to locate the node.If it's assigned, the segment would be applied to the subtree rooted by this node." required="false" />
+        <parameter name="unitKeyContext" desc="The key context of the node we're applying segment to." required="false" />
+    </basicInfo>
+
+
+    <eventInfo eventID="2048155">
+        <argument name="segmentID" source="parameter" value="segmentID" />
+        <argument name="nodeKey" source="parameter" value="nodeKey" />
+        <argument name="unitKeyContext" source="parameter" value="unitKeyContext" />
+    </eventInfo>
+
+    <!--
+        This information describes how the task is defined in terms of an existing Bean.
+    -->
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWDocumentMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="2" />
+        </style>
+    </beanInfo>
+</beanTask>

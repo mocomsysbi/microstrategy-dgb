@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<mkitBundles dir="ui/bundles"> 
+	<!-- mkitBundle name="mkit-config">
+		<mkitGroup name="startingPoints">
+        </mkitGroup>
+        <mkitGroup name="addJS">
+	        <jsFile name="ui/cmsw3.0/mkitConfig.js"/>    
+        </mkitGroup>
+        <mkitGroup name="addCSS"> 
+        </mkitGroup>
+    </mkitBundle-->
+    <mkitBundle name="mkit-core">
+        <mkitGroup name="startingPoints">
+        </mkitGroup>
+        <mkitGroup name="addJS">
+	        <jsFile name="ui/mkit1.0/core/mkit.js"/>    
+	        <jsFile name="ui/mkit1.0/core/ensure.js"/>  
+	        <jsFile name="ui/mkit1.0/www/loader.js"/>
+	        <jsFile name="ui/mkit1.0/www/require.js"/>
+            <jsFile name="ui/mkit1.0/evt/pub.js"/>
+            <jsFile name="ui/mkit1.0/util/string/desc.js"/>
+            <jsFile name="ui/mkit1.0/util/string/tmpl.js"/>    
+            <jsFile name="ui/mkit1.0/util/fn/overwrite.js"/>  
+	        <jsFile name="ui/mkit1.0/util/fn/extend.js"/>  
+	        <jsFile name="ui/mkit1.0/util/fn/after.js"/>  
+	        <jsFile name="ui/mkit1.0/util/fn/before.js"/>  
+	        <jsFile name="ui/mkit1.0/util/fn/queue.js"/>  
+	        <jsFile name="ui/mkit1.0/util/fn/prependQueue.js"/>  
+	        <jsFile name="ui/mkit1.0/util/fn/merge.js"/>  
+	        <jsFile name="ui/mkit1.0/core/decorate.js"/>  
+	        <jsFile name="ui/mkit1.0/core/constr.js"/>   
+	        <jsFile name="ui/mkit1.0/evt/Observable.js"/>    
+	        <jsFile name="ui/mkit1.0/core/create.js"/>
+        </mkitGroup>
+        <mkitGroup name="addCSS"> 
+            <jsFile name="ui/mkit1.0/css/helpers.css"/>
+        </mkitGroup>
+    </mkitBundle>   
+    <mkitBundle name="ipa" bundle-depends="mkit-core">
+        <mkitGroup name="startingPoints">
+            <jsFile name="ui/ipa/appInit.js"/>
+        </mkitGroup>
+        <mkitGroup name="addJS">
+            <jsFile name="ui/ipa/appInit.js"/>
+        </mkitGroup>
+        <mkitGroup name="addCSS">
+        	<jsFile name="javascript/mojo/css/sass/ipa/IPA.css"/>
+        </mkitGroup>
+    </mkitBundle>
+</mkitBundles>

@@ -1,0 +1,356 @@
+<framework desc="This is the framework defintion xml for mstr Web application" name="mstrFramework" version="1.0">
+  <browser-settings config-src="/WEB-INF/xml/config/browserSettings.xml"/>
+  <errors config-src="/WEB-INF/xml/config/adminErrors.xml"/>
+  <folder-links config-src="/WEB-INF/xml/config/folderLinks.xml"/>
+  <pages>
+    <page desc="Main Servlet" desc-id="mstrWeb.4823" feature-id="" login-required="false" name="welcome" track="false">
+      <templates>
+        <template XMLmerge_id="1" file-name="/servlet/mstrWeb">
+          <page-sections use-default="false"/>
+        </template>
+      </templates>
+    </page>
+    <page desc="Main Servlet&apos;s Login Page" desc-id="mstrWeb.4824" feature-id="" login-required="false" name="login" track="false">
+      <templates>
+        <template XMLmerge_id="1" file-name="/servlet/mstrWeb">
+          <page-sections use-default="false"/>
+        </template>
+      </templates>
+    </page>
+    <page default="true" login-required="true" name="-1">
+      <templates>
+        <template XMLmerge_id="1" error-desc="An error has occurred on this page." error-title-id="mstrWeb.1167" file-name="/jsp/mstrWeb.jsp">
+          <page-sections use-default="false">
+              <page-section file-name="/jsp/Empty.jsp" name="header"/>
+            <page-section file-name="/jsp/Admin_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/Empty.jsp" name="dockTop"/>
+            <page-section file-name="/jsp/Empty.jsp" name="dockLeft"/>
+            <page-section file-name="/jsp/Empty.jsp" name="dockRight"/>
+            <page-section file-name="/jsp/Empty.jsp" name="dockBottom"/>
+            <page-section file-name="/jsp/Admin_Error.jsp" name="error"/>
+            <page-section file-name="/jsp/Generic_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/Admin_Copyright_Footer.jsp" name="footer"/>
+            <page-section file-name="/jsp/Admin_Links.jsp" name="links"/>
+            <page-section file-name="/jsp/Empty.jsp" name="path_options"/>
+          </page-sections>
+          <shortcut-list-set name="default">
+            <shortcut-list name="toolbar" use-default="false">
+              <shortcut append-state="false" desc="Intelligence Servers" desc-id="mstrWeb.2350" href="" name="servers">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventAdminOpenHome"/>
+              </shortcut>
+              <shortcut append-state="false" desc="Diagnostics" desc-id="mstrWeb.2703" href="" name="diagnostics">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenDiagnostics"/>
+              </shortcut>
+              <shortcut append-state="false" desc="Security" desc-id="mstrWeb.2696" href="" name="security">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenSecuritySetup"/>
+              </shortcut>
+              <shortcut append-state="false" desc="Other configruation" desc-id="mstrWeb.12192"  href="" name="otherConf">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPage">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentTarget" value="other"/>
+                </event>
+              </shortcut>
+              <!-- Add for Custom Visualization, add vis-->
+			  <shortcut append-state="false" desc="Custom Visualizations" desc-id="mstrWeb.4633" feature-id="!mobile-server" href="" name="Custom Visualizations">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPage">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentTarget" value="customVisualization"/>
+                </event>
+                 </shortcut>
+			  <shortcut append-state="false" desc="Mobile Configuration" feature-id="mobile-server" desc-id="mstrWeb.7764" href="" name="mobileList">
+				 <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPage">
+                   <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentTarget" value="mobileList"/>
+                </event>
+			  </shortcut>
+            </shortcut-list>
+          </shortcut-list-set>
+        </template>
+      </templates>
+    </page>
+    <page desc="About" desc-id="mstrWeb.1142" feature-id="" login-required="false" name="about">
+      <templates>
+        <template XMLmerge_id="1">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/Admin_AboutInfo_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/Empty.jsp" name="header"/>
+            <page-section file-name="/jsp/About_Links.jsp" name="links"/>
+            <page-section file-name="/jsp/Empty.jsp" name="footer"/>
+			<page-section file-name="/jsp/AboutPage_Path.jsp" name="path"/>
+          </page-sections>
+          <shortcut-list-set name="default" use-default="false"/>
+        </template>
+      </templates>
+    </page>
+    <page default="false" desc="Error page" desc-id="mstrWeb.3444" login-required="false" name="error">
+      <templates>
+        <template XMLmerge_id="1" file-name="/jsp/Error_Template.jsp">
+          <page-sections use-default="true"/>
+          <shortcut-list-set name="error">
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+        </template>
+      </templates>
+    </page>
+    <page default="false" desc="Administrator Page" desc-id="mstrWeb.624" login-required="false" name="welcomeadmin">
+      <templates>
+        <template XMLmerge_id="1" error-desc="Error in the Administrator page" error-title-id="mstrWeb.938">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/Admin_Servers_Error.jsp" name="error"/>
+            <page-section file-name="/jsp/Admin_Servers_Toolbar.jsp" name="dockLeft"/>
+          </page-sections>
+          <shortcut-list-set name="welcomeadmin">
+            <shortcut-list name="toolbar" use-default="true">
+              <shortcut append-state="false" desc="Intelligence Servers" desc-id="mstrWeb.2350" href="" name="servers" selected="true">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventAdminOpenHome"/>
+              </shortcut>
+            </shortcut-list>
+          </shortcut-list-set>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="adminBean" persist-mode="2" sys-bean="AdminBean">
+          <request-properties>
+            <property name="showDefaultProperties" source="request" type="boolean" value="showDefault"/>
+            <property name="showServerProperties" source="request" type="boolean" value="showServerProps"/>
+          </request-properties>
+        </web-bean>
+      </web-beans>
+    </page>
+    <page default="false" desc="Diagnostics" desc-id="mstrWeb.2703" login-required="false" name="diagnostics">
+      <templates>
+        <template XMLmerge_id="1" error-desc="Error in the Administrator Page" error-title-id="mstrWeb.938">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/Diagnostics_Toolbar.jsp" name="dockLeft"/>
+            <page-section file-name="/jsp/Diagnostics_Content.jsp" name="content"/>
+          </page-sections>
+          <shortcut-list-set name="diagnostics">
+            <shortcut-list name="toolbar" use-default="true">
+              <shortcut append-state="false" desc="Diagnostics" desc-id="mstrWeb.2703" href="" name="diagnostics" selected="true">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenDiagnostics"/>
+              </shortcut>
+            </shortcut-list>
+            <shortcut-list name="configHelp" use-default="false">
+              <shortcut desc="How do I configure internal log file settings?" desc-id="mstrWeb.2854" extra-url="#QA1" href="" iframe="false" name="help1" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_DiagConfig.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+            </shortcut-list>
+            <shortcut-list name="logsHelp" use-default="false">
+              <shortcut desc="How do I filter the display of logs?" desc-id="mstrWeb.2855" extra-url="#QA1" href="" iframe="false" name="help1" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_ViewLog.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+              <shortcut desc="Why logs are not displayed in the Web page even if I have selected all of the options?" desc-id="mstrWeb.2856" extra-url="#QA2" href="" iframe="false" name="help2" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_ViewLog.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+            </shortcut-list>
+            <shortcut-list name="statsHelp" use-default="false">
+              <shortcut desc="How do I configure the statistics?" desc-id="mstrWeb.2857" extra-url="#QA1" href="" iframe="false" name="help1" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_Stat.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+              <shortcut desc="What information is displayed on the screen?" desc-id="mstrWeb.2858" extra-url="#QA2" href="" iframe="false" name="help2" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_Stat.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+              <shortcut desc="Why would I store statistics information into a file?" desc-id="mstrWeb.2859" extra-url="#QA3" href="" iframe="false" name="help3" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_Stat.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+            </shortcut-list>
+          </shortcut-list-set>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="diagBean" persist-mode="2" sys-bean="DiagnosticsBean">
+          <request-properties>
+            <property name="showState" source="request" type="int" value="show"/>
+          </request-properties>
+        </web-bean>
+      </web-beans>
+    </page>
+    <page default="false" desc="Administrator Security Options Page" desc-id="mstrWeb.624" login-required="false" name="security">
+      <templates>
+        <template XMLmerge_id="1" error-desc="Error in the Administrator page" error-title-id="mstrWeb.938">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/Security_Toolbar.jsp" name="dockLeft"/>
+          </page-sections>
+          <shortcut-list-set name="security">
+            <shortcut-list name="toolbar" use-default="true">
+              <shortcut append-state="false" desc="Security" desc-id="mstrWeb.2696" href="" name="security" selected="true">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenSecuritySetup"/>
+              </shortcut>
+            </shortcut-list>
+            <shortcut-list name="adminHelp" use-default="false">
+              <shortcut desc="How do I configure the security levels for the end users?" desc-id="mstrWeb.2860" extra-url="#QA1" href="" iframe="false" name="help1" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_Security.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+              <shortcut desc="What does it mean to not use cookies?" desc-id="mstrWeb.2861" extra-url="#QA2" href="" iframe="false" name="help2" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_Security.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+              <shortcut desc="How to encrypt the communication between the Web and Intelligence Server machines ? What does this mean?" desc-id="mstrWeb.2862" extra-url="#QA3" href="" iframe="false" name="help3" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_Security.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+              <shortcut desc="How to make sure to automatically log on to the application when the session is lost?" desc-id="mstrWeb.2863" extra-url="#QA6" href="" iframe="false" name="help4" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_Security.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+              <shortcut desc="How to allow users to change the expired password?" desc-id="mstrWeb.2864" extra-url="#QA6" href="" iframe="false" name="help5" target="_new">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenAdminFAQs">
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSubPage" value="Adm_FAQ_Security.htm"/>
+                  <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsAdminHelp" value="1"/>
+                </event>
+              </shortcut>
+            </shortcut-list>
+          </shortcut-list-set>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="adminBean" persist-mode="2" sys-bean="AdminBean">
+          <init-properties>
+            <property name="style" source="const" type="string" value="SecurityStyle"/>
+          </init-properties>
+        </web-bean>
+      </web-beans>
+    </page>
+    <page default="false" desc="Purge Caches Options page" desc-id="mstrWeb.624" login-required="false" name="purgecaches">
+      <templates>
+        <template XMLmerge_id="1" error-desc="Error in the Administrator Page" error-title-id="mstrWeb.938">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/PurgeCaches_Toolbar.jsp" name="dockLeft"/>
+            <page-section file-name="/jsp/PurgeCaches.jsp" name="content"/>
+          </page-sections>
+          <shortcut-list-set name="purgecaches">
+            <shortcut-list name="toolbar" use-default="true">
+              <shortcut append-state="false" desc="Diagnostics" desc-id="mstrWeb.2703" href="" name="diagnostics" selected="false">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenDiagnostics"/>
+              </shortcut>
+            </shortcut-list>
+          </shortcut-list-set>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean bean-type="app" name="adminBean" persist-mode="2" sys-bean="AdminBean">
+          <request-properties>
+            <property name="showState" source="request" type="int" value="show"/>
+          </request-properties>
+        </web-bean>
+      </web-beans>
+    </page>
+    <page desc="Custom Visualizations" desc-id="mstrWeb.4633" allow-cancel="false" login-required="false" name="customVisualization" track="false">
+      <templates>
+        <template>
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/CustomVisualization_Toolbar.jsp" name="dockLeft"/>
+            <page-section file-name="/jsp/CustomVisualization_Content.jsp" name="content"/>
+          </page-sections>
+        </template>
+      </templates>
+    </page>
+    <page desc="Run Time Diagnostics page" desc-id="mstrWeb.624" feature-id="" login-required="false" name="runtimediagnostics">
+      <templates>
+        <template error-desc="Error in the Administrator Page" error-title-id="mstrWeb.938">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/PurgeCaches_Toolbar.jsp" name="dockLeft"/>
+            <page-section file-name="/jsp/runTimeDiagnostics.jsp" name="content"/>
+          </page-sections>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean bean-type="app" name="adminBean" persist-mode="2" sys-bean="AdminBean">
+          <request-properties>
+            <property name="showState" source="request" type="int" value="show"/>
+          </request-properties>
+        </web-bean>
+      </web-beans>
+    </page>
+    <page desc="Mobile Configuration List Page" desc-id="mstrWeb.7837" allow-cancel="false" login-required="false" name="mobileList" track="false">
+      <templates>
+        <template>
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/MobileConfig_Toolbar.jsp" name="dockLeft"/>
+            <page-section file-name="/jsp/Mojo_Section.jsp" name="content"/>
+            <page-section file-name="/jsp/MobileList_Header_Mojo.jsp" name="header_mojo"/>
+            <page-section file-name="/jsp/MobileList_Content_Mojo.jsp" name="content_mojo"/>
+          </page-sections>
+        </template>
+      </templates>
+    </page>
+    <page desc="Mobile Configuration Editing Page" desc-id="mstrWeb.7837" allow-cancel="false" login-required="false" name="mobileConfig" track="false">
+      <templates>
+        <template>
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/MobileConfig_Toolbar.jsp" name="dockLeft"/>
+            <page-section file-name="/jsp/Mojo_Section.jsp" name="content"/>
+            <page-section file-name="/jsp/MobileConfig_Header_Mojo.jsp" name="header_mojo"/>
+            <page-section file-name="/jsp/MobileConfig_Content_Mojo.jsp" name="content_mojo"/>
+          </page-sections>
+        </template>
+      </templates>
+    </page>
+    <page default="false" desc="DebugFlags" login-required="false" name="debug">
+      <addons>
+        <addon name="com.microstrategy.web.app.addons.DebugFlagsAddOn">
+        </addon>
+      </addons>
+      <templates>
+        <template XMLmerge_id="1" >
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/Empty.jsp" name="header"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Empty_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Footer.jsp" name="footer"/>
+            <page-section file-name="/jsp/Logout_Links.jsp" name="links"/>
+            <page-section file-name="/jsp/Debug_Flags.jsp" name="content"/>
+          </page-sections>
+        </template>
+      </templates>
+    </page>
+    <page default="false" desc="Other Configuration" desc-id="mstrWeb.12192" login-required="false" name="other">
+      <templates>
+        <template XMLmerge_id="1" error-desc="Error in the Administrator page" error-title-id="mstrWeb.938">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/OtherConfiguration_Toolbar.jsp" name="dockLeft"/>
+          </page-sections>
+          <shortcut-list-set name="otherconfig">
+            <shortcut-list name="toolbar" use-default="true">
+                <shortcut append-state="false" desc="Other configruation" desc-id="mstrWeb.12192"  href="" name="otherConf" selected="true">
+                	<event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPage">
+                  		<argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentTarget" value="other"/>
+                	</event>
+              </shortcut>
+            </shortcut-list>
+          </shortcut-list-set>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="adminBean" persist-mode="2" sys-bean="AdminBean">
+          <init-properties>
+            <property name="style" source="const" type="string" value="OtherConfigurationStyle"/>
+          </init-properties>
+        </web-bean>
+      </web-beans>
+    </page>
+  </pages>
+</framework>

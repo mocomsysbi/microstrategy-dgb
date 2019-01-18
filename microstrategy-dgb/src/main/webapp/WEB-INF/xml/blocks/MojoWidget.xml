@@ -1,0 +1,35 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- MojoWidget is an UIComponent for displaying a mojo-widget inside. -->
+	<block name="MojoWidget" inherits="BaseView">
+		<definition>
+			<!-- A unique string to identify the mojo widget to be handled by the behavior class mstr.behaviors.MojoWidget. -->
+			<property name="name" type="String" />
+
+			<!-- Optional description about the mojo widget. -->
+			<property name="desc" type="String" />
+
+            <!-- Optional text message to display while waiting on mojo widget rendering. -->
+            <!-- It'll be initially displayed in mojo widget placeholder node, and then replaced by the rendered widget domNode. -->
+            <property name="waitMessage" type="String" />
+
+            <!-- A string representation of JSON object to configure the mojo widget. -->
+            <property name="cfg" type="Block" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.MojoWidget</property>
+			<property name="cssClass">MojoWidget</property>
+			<property name="cfg">
+               <block name="BaseBlock">
+                  <!-- A JSON object to config the mojo widget instance -->
+                  <property name="ui" type="String"></property>
+
+                  <!-- The string representation of the data JSON to initialize the mojo widget instance -->
+                  <!-- This "data" will be overwritten if "datProp" below is defined -->
+                  <property name="data" type="String"></property>
+
+                  <!-- The name of the model property that holds the data JSON to initialize the mojo widget instance -->
+                  <property name="dataProp" type="String"></property>
+               </block>
+            </property>
+		</assignments>
+	</block>

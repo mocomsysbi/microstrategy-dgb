@@ -1,0 +1,159 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="TabModel" name="GraphFormatEditorFormatModel">
+  <definition>
+    <property name="mainCat" type="Block"/>
+    <property name="titlePosition" type="Block"/>
+    <property name="subCat" type="Block"/>
+    <property name="fontName" type="Block"/>
+    <property name="textBoldItalic" type="Block"/>
+    <property name="fontSize" type="Block"/>
+    <property name="textUnderline" type="Boolean"/>
+    <property name="textStrikeout" type="Boolean"/>
+    <property name="fontColor" type="Block"/>
+    <property name="fillColor" type="Block"/>
+    <property name="lineColor" type="Block"/>
+    <property name="sliderValue" type="Integer"/>
+    <property name="bevelType" type="Block"/>
+    <!--Series Marker-->
+	<property name="markerShape" type="Block"/>
+	<property name="markerColor" type="Block"/>
+	<property name="markerBevelType" type="Block"/>
+	<property name="markerBorderColor" type="Block"/>
+	<property name="markerBorderStyle" type="Block"/>
+	<property name="markerBorderThickness" type="Block" />
+	<!--Series Line-->
+	<property name="seriesLineStyle" type="Block" />
+	<property name="seriesLineColor" type="Block"/>
+	<property name="seriesLineThickness" type="Block" />
+	<!-- hichert -->
+	<property name="increfillColor" type="Block" />
+	<property name="decreFillColor" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="tabId">Format</property>
+    <property name="titleText">{desc:mstrWeb.3899|Format}</property>
+    <property name="categoryText">{desc:mstrWeb.3899|Format}</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="visibleField">fmt_visible</property>      
+    <property name="scriptClass">mstr.models.GraphFormatTabModel</property>
+    <property name="storeFields">fontName|fontSize|textBoldItalic|textUnderline|textStrikeout|fontColor|fillColor|lineColor|bevelType|areaAlpha|show|titlePosition|titleContent|tooltipsShow|tooltipsEditor|markerShow|markerColor|markerAlphaText|markerShape|markerBevelType|markerSize|markerBorderColor|markerBorderStyle|markerBorderThickness|markerBorderAlpha|markerBorderAlphaText|seriesLineColor|seriesLineStyle|seriesLineThickness|lineAlpha|seriesLineAlpha|seriesLineAlphaText|textFormatField_visible|seriesLineFormatField_visible|seriesAreaFormatField_visible|markerFormatField_visible|markerShowFormatField_visible|oldFillField_visible|oldLineField_visible|increDecreColorField|increfillColor|decreFillColor|AFTransparencyField</property>
+    <property name="actionFields">mainCat|subCat</property>
+    <property name="mainCat">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+      </block>
+    </property>
+    <property name="titlePosition">
+      <block name="ListModel">
+        <property name="selectedIndicesList">0</property>
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1957" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.3722|Right}</property>
+            </block>
+            <block listElementKey="K1958" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.3723|Left}</property>
+            </block>
+            <block listElementKey="K1959" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.3724|Bottom}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="subCat">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+      </block>
+    </property>
+    <property name="sliderValue">30</property>
+	  
+    <property name="bevelType">
+		<block name="BevelTypeModel" />
+    </property>
+
+	<!--Series Marker-->
+	<property name="markerBorderStyle">
+		<block name="SeriesLineStyleModel" />
+	</property>
+	  
+	<property name="markerBevelType">
+		<block name="BevelTypeModel" />
+	</property>
+	
+	<property name="markerBorderThickness">
+		<block name="LineThicknessModel" />
+	</property>
+	  
+	<property name="markerShape">
+      <block name="ListModel">
+        <property name="selectedIndicesList">1</property>
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="MarkerRectangle" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="desc">*Rectangle*</property>		
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px; background-image: url(../images/graphEditorImage/rectangle.png);</property>
+            </block>
+            <block listElementKey="MarkerXShape" name="ItemInfo">
+              <property name="dssid">7</property>
+              <property name="desc">*X-Shape*</property>
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px;background-image: url(../images/graphEditorImage/x.png);</property>
+            </block>
+            <block listElementKey="MarkerThinPlus" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="desc">*Thin-Plus*</property>
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px; background-image: url(../images/graphEditorImage/thin_plus.png);</property>
+            </block>
+            <block listElementKey="MarkerFatPlus" name="ItemInfo">
+              <property name="dssid">10</property>
+              <property name="desc">*Fat-Plus*</property>
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px; background-image: url(../images/graphEditorImage/thick_plus.png);</property>
+            </block>
+            <block listElementKey="MarkerCircle" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="desc">*Circle*</property>
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px; background-image: url(../images/graphEditorImage/circle.png);</property>
+            </block>
+            <block listElementKey="MarkerDiamond" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="desc">*Diamond*</property>
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px; background-image: url(../images/graphEditorImage/diamond.png);</property>
+            </block>
+            <block listElementKey="MarkerTriangle" name="ItemInfo">
+              <property name="dssid">8</property>
+              <property name="desc">*Triangle*</property>
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px; background-image: url(../images/graphEditorImage/triangle.png);</property>
+            </block>
+            <block listElementKey="MarkerSquare" name="ItemInfo">
+              <property name="dssid">24</property>
+              <property name="desc">*Square*</property>
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px; background-image: url(../images/graphEditorImage/square.png);</property>
+            </block>
+            <block listElementKey="MarkerStar" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="desc">*Star*</property>
+			  <property name="cssText">background-position: 2px 50%; padding-left: 23px; background-image: url(../images/graphEditorImage/star.png);</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+	  
+	<!--Series Line-->
+	<property name="seriesLineStyle">
+		<block name="SeriesLineStyleModel" />
+	</property> 
+	
+	<property name="seriesLineThickness">
+		<block name="LineThicknessModel" />
+	</property>
+	  
+  </assignments>
+</block>

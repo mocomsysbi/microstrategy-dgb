@@ -1,0 +1,66 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+	<mstrlayout:list id="ffList" method="getPickerList">
+		<mstrlayout:argument type="String" value="fontPicker" />
+		<mstrlayout:bSetProperty path="items[fontFamily]/items" if-undefined="ignore">
+			<mstrlayout:block name="ToolbarListItemInfo">
+				<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+					<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="ffList" />
+				</mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:list>
+	
+	<mstrlayout:list id="fzList" method="getPickerList">
+		<mstrlayout:argument type="String" value="sizePicker" />
+		<mstrlayout:bSetProperty path="items[fontSize]/items" if-undefined="ignore">
+			<mstrlayout:block name="ToolbarListItemInfo">
+				<mstrlayout:bSetProperty path="n" method="getListAttribute">
+					<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fzList" />
+					<mstrlayout:argument type="String" value="value::const" />
+				</mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:list>
+	
+	<mstrlayout:list id="colorList" method="getPickerList">
+		<mstrlayout:argument type="string" value="blockColorPicker" />
+		<mstrlayout:bSetProperty path="items[fillColor]/items" if-undefined="ignore">
+			<mstrlayout:block name="ToolbarListItemInfo">
+				<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+					<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="colorList" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+					<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="colorList" />
+					<mstrlayout:argument type="string" value="value::const" />
+				</mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+		
+		<mstrlayout:bSetProperty path="items[lineColor]/items" if-undefined="ignore">
+			<mstrlayout:block name="ToolbarListItemInfo">
+				<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+					<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="colorList" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+					<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="colorList" />
+					<mstrlayout:argument type="string" value="value::const" />
+				</mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+		
+		<mstrlayout:bSetProperty path="items[fontColor]/items" if-undefined="ignore">
+			<mstrlayout:block name="ToolbarListItemInfo">
+				<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+					<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="colorList" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+					<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="colorList" />
+					<mstrlayout:argument type="string" value="value::const" />
+				</mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:list>
+
+</mstrlayout:layout>

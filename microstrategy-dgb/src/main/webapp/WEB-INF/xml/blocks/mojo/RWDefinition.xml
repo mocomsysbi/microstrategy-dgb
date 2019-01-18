@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition of a Report Writer document.
+--> 
+<block name="RWDefinition">
+    <definition>
+        <!-- A list of layouts. Each Block is of type RWLayoutDef. -->
+        <property name="layouts" type="List" />
+        
+        <!-- Information about the root node -->
+        <property name="root" type="Block" />
+    </definition>
+</block>

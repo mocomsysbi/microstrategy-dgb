@@ -1,0 +1,8 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<![CDATA[<msg id="]]>
+	<mstrlayout:render name="messageID"/><![CDATA[" st="]]>
+	<mstrlayout:render name="StateID"/><![CDATA[" status="]]>
+	<mstrlayout:render name="Status"/>
+	<![CDATA["/>]]>
+</mstrlayout:layout>

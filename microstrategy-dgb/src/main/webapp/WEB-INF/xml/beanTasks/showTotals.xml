@@ -1,0 +1,26 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+    <basicInfo desc="This task changes the unit name on a RWD Grid and serializes the partial results.">
+        <parameter name="messageID" desc="The Message ID of a previously executed Report Writer Document." required="false" />
+        <parameter name="key" desc="The node key for the pivoted template (used for partial update)"  required="true" />
+        <parameter name="objectId" desc="The dss id of the unit being pivoted"  required="false" />
+        <parameter name="objectType" desc="The dss type of the unit being pivoted"  required="false"/>
+        <parameter name="subtotalType" desc="The dss type of the subtotal being applied on the template unit "  required="true"/>
+        <parameter name="clearSubtotalType" desc="The dss type of the subtotal being cleared on the template unit "  required="true"/>
+    </basicInfo>
+
+    <!-- REPORT_WRITER_EVENT_UPDATE_TEMPLATE_UNITS  -->
+    <eventInfo eventID="2048156">
+        <argument name="unitKeyContext" source="parameter" value="key" />
+        <argument name="objectId" source="parameter" value="objectId" />
+        <argument name="objectType" source="parameter" value="objectType" />
+        <argument name="subtotalType" source="parameter" value="subtotalType" />
+        <argument name="clearSubtotalType" source="parameter" value="clearSubtotalType" />
+    </eventInfo>
+
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWDocumentMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="2" />
+        </style>
+    </beanInfo>
+</beanTask>

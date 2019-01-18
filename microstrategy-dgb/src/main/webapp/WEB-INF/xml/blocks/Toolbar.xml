@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="Toolbar" inherits="ViewBook">
+	<assignments>
+		<property name="layoutClass">mstr.layouts.Toolbar</property>
+		<property name="scriptClass">mstr.views.Toolbar</property>
+		<property name="cssClass">Toolbar2</property>
+		<property name="CommandEnabledSubmitQueue" type="Boolean">false</property>
+	</assignments>
+</block>

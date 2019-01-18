@@ -1,0 +1,107 @@
+ <shortcut-list base-bean="rwframe.rwb" desc="Add to Panel" desc-id="mstrWeb.2919" feature-id="rw-editable-view-mode-eplus" name="AddToPanel" use-default="false" hidden='true'>
+   <shortcut append-state="true" base-bean="rwframe" desc="[Text]" desc-id="mstrWeb.1013"  feature-id="dhtml" iframe="true" class="ctrl106" name="insert4"
+       base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '106');" />
+   <shortcut append-state="true" base-bean="rwframe" desc="[Image]" desc-id="mstrWeb.2922" feature-id="dhtml" iframe="true" class="ctrl102" name="insert5"
+       base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '102');"/>
+   <shortcut append-state="true" base-bean="rwframe" desc="[Line]" desc-id="mstrWeb.2059" feature-id="dhtml" iframe="true" class="ctrl105" name="insert6"
+       base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '105');"/>
+   <shortcut append-state="true" base-bean="rwframe" desc="[Rectangle]" base-bone="rwb_viewer" desc-id="mstrWeb.3196" feature-id="dhtml" iframe="true" class="ctrl101-0" name="insert7">
+       <shortcut append-state="true" base-bean="rwframe" desc="[Rectangle]" desc-id="mstrWeb.3196" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl101-0" name="rectangle1" onclick="commands.exec('addToPanel', '101|0');"/>
+       <shortcut append-state="true" base-bean="rwframe" desc="[Rounded rectangle]" desc-id="mstrWeb.4726" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl101-1" name="selector2" onclick="commands.exec('addToPanel', '101|1');"/>
+   </shortcut>
+   <shortcut append-state="true" base-bean="rwframe" desc="[Report]" desc-id="mstrWeb.1279" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52R" name="insert81_ZZZ"
+       base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52|R');"/>
+   <shortcut append-state="true" base-bean="rwframe" desc="[Grid]" desc-id="mstrWeb.114" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52" name="insert8"
+       base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52');"/>
+   <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Graph]" desc-id="mstrWeb.115" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G" name="insert13">
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Vertical area]" desc-id="mstrWeb.338" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-1" name="graphtype1" 
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|1');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Horizontal area]" desc-id="mstrWeb.339" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-2" name="graphtype2"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|2')"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Vertical bar]" desc-id="mstrWeb.340" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-4" name="graphtypet3"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|4');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Horizontal bar]" desc-id="mstrWeb.341" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-8" name="graphtype4"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|8');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Vertical line]" desc-id="mstrWeb.342" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-16" name="graphtype5"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|16');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Horizontal line]" desc-id="mstrWeb.343" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-32" name="graphtype6"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|32');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Pie]" desc-id="mstrWeb.344" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-64" name="graphtype7"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|64');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Scatter]" desc-id="mstrWeb.345" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-128" name="graphtype8"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|128');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Polar]" desc-id="mstrWeb.346" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-256" name="graphtype9"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|256');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Radar]" desc-id="mstrWeb.347" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-512" name="graphtype10"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|512');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Bubble]" desc-id="mstrWeb.348" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-1024" name="graphtype11"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|1024');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[HiLo... Stock]" desc-id="mstrWeb.349" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-2048" name="graphtype12"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|2048');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Histogram]" desc-id="mstrWeb.350" feature-id="dhtml;modify-grid-level-in-documents" iframe="true" class="ctrl52G-4096" name="graphtype13"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|4096');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[3D risers" desc-id="mstrWeb.351" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-8192" name="graphtype14"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|8192');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[3D floating]" desc-id="mstrWeb.352" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-16384" name="graphtype15"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|16384');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[3D connect group]" desc-id="mstrWeb.353" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-32768" name="graphtype16"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|32768');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[3D connect series]" desc-id="mstrWeb.354" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-65536" name="graphtype17"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|65536');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[3D surface]" desc-id="mstrWeb.355" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-131072" name="graphtype18"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|131072');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[3D scatter]" desc-id="mstrWeb.356" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-262144" name="graphtype19"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|262144');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Guage]" desc-id="mstrWeb.3153" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-524288" name="graphtype20"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|524288');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Funnel]" desc-id="mstrWeb.3154" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-1048576" name="graphtype21"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|1048576');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Pareto]" desc-id="mstrWeb.3155" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-2097152" name="graphtype22"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|2097152');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Box Plot]" desc-id="mstrWeb.3156" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-4194304" name="graphtype23"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|4194304');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Gantt]" desc-id="mstrWeb.3533" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-8388608" name="graphtype24"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|8388608');"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Combination]" desc-id="mstrWeb.5576" feature-id="dhtml;modify-grid-level-in-documents" href="#" iframe="true" class="ctrl52G-16777216" name="graphtype25"
+        base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '52G|16777216');"/>
+   </shortcut>
+   
+   
+   <shortcut append-state="true" base-bean="rwframe" desc="[Panel Stack]" desc-id="mstrWeb.4727" feature-id="dhtml;" iframe="true" class="ctrl8" name="insert9"
+       base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '8');"/>
+
+   <shortcut append-state="true" base-bean="rwframe" desc="[HTML Container]" desc-id="mstrWeb.4538" feature-id="dhtml" iframe="true" class="ctrl107" name="insert8_1"
+       base-bone="rwb_viewer" onclick="commands.exec('addToPanel', '107');"/>
+
+   <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Selector]" desc-id="mstrWeb.4728" feature-id="dhtml" href="#" iframe="true" class="ctrl111-0" name="insert10" dyn-menu="buildWidgetSubMenu" scope="111" dyn-all="false" cmd="addToPanel">
+       <shortcut append-state="true" base-bean="rwframe" desc="[Drop-down]" desc-id="mstrWeb.4729" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl111-0" name="selector1" onclick="commands.exec('addToPanel', '111|0');"/>
+       <shortcut append-state="true" base-bean="rwframe" desc="[Slider]" desc-id="mstrWeb.4730" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl111-1" name="selector2" onclick="commands.exec('addToPanel', '111|1');"/>
+       <shortcut append-state="true" base-bean="rwframe" desc="[Listbox]" desc-id="mstrWeb.4731" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl111-2" name="selector3" onclick="commands.exec('addToPanel', '111|2');"/>
+       <shortcut append-state="true" base-bean="rwframe" desc="[Radio Buttons]" desc-id="mstrWeb.4732" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl111-3" name="selector4" onclick="commands.exec('addToPanel', '111|3');"/>
+       <shortcut append-state="true" base-bean="rwframe" desc="[Checkboxes]" desc-id="mstrWeb.4733" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl111-4" name="selector5" onclick="commands.exec('addToPanel', '111|4');"/>
+       <shortcut append-state="true" base-bean="rwframe" desc="[Button Bar]" desc-id="mstrWeb.4734" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl111-5" name="selector6" onclick="commands.exec('addToPanel', '111|5');"/>
+       <shortcut append-state="true" base-bean="rwframe" desc="[Link Bar]" desc-id="mstrWeb.4735" feature-id="dhtml;" iframe="true" base-bone="rwb_viewer" class="ctrl111-6" name="selector7" onclick="commands.exec('addToPanel', '111|6');"/>
+   </shortcut>
+
+   <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Widgets]" desc-id="mstrWeb.4771" feature-id="dhtml" href="#" iframe="true" class="ctrlwdgt" name="insert11" dyn-menu="buildWidgetSubMenu" scope="52" dyn-all="true" cmd="addToPanel">
+       <shortcut append-state="true" base-bean="rwframe" desc="[Dynamic widget menu population failed]" desc-id="mstrWeb.4816" iframe="true" base-bone="rwb_viewer" name="widget1" />
+   </shortcut>
+
+
+
+   <shortcut desc="-" desc-id="" name="insert99"/>
+
+   <!-- I.B. We need to change the command if we want to include autotext to this menu
+   <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Auto-text]" desc-id="mstrWeb.2924" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;autotext&apos;)" feature-id="dhtml" href="#" iframe="true" name="insert12">
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Page Number]" desc-id="mstrWeb.2925" feature-id="dhtml" href="#" iframe="true" name="autotext1" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;pgNum&apos;);"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Total Pages]" desc-id="mstrWeb.2926" feature-id="dhtml" href="#" iframe="true" name="autotext2" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;totPages&apos;);"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Date/Time]" desc-id="mstrWeb.2927" feature-id="dhtml" href="#" iframe="true" name="autotext3" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;dateTime&apos;);"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Current User]" desc-id="mstrWeb.2928" feature-id="dhtml" href="#" iframe="true" name="autotext4" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;curUsr&apos;);"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Document Name]" desc-id="mstrWeb.2929" feature-id="dhtml" href="#" iframe="true" name="autotext5" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;docName&apos;);"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Project Name]" desc-id="mstrWeb.2930" feature-id="dhtml" href="#" iframe="true" name="autotext6" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;prjName&apos;);"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Document Execution Time]" desc-id="mstrWeb.2931" feature-id="dhtml" href="#" iframe="true" name="autotext7" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;docExecTime&apos;);"/>
+     <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Filter Details]" desc-id="mstrWeb.3093" feature-id="dhtml" href="#" iframe="true" name="autotext8" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;filterDet&apos;);"/>
+  	  <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Notes]" desc-id="mstrWeb.5364" feature-id="dhtml" href="#" iframe="true" name="autotext9" onclick="microstrategy.getViewerBone().commands.exec(&apos;autotext&apos;, &apos;notes&apos;);"/> 
+	</shortcut>
+	 -->
+</shortcut-list>

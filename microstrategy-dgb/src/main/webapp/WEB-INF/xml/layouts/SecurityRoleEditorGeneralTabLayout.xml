@@ -1,0 +1,47 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+    <table cellpadding="0" cellspacing="3">
+
+        <tr>
+            <td>
+                <mstrlayout:render name="nameLabel" />
+            </td>
+            <td>
+                <mstrlayout:render name="nameField" />
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top">
+                <mstrlayout:render name="descriptionLabel" />
+            </td>
+            <td>
+                <mstrlayout:render name="descriptionField" />
+            </td>
+        </tr>
+
+        <mstrlayout:if name="isFeatureAvailable">
+            <mstrlayout:argument type="string" value="edit-security-role-properties" />
+            <mstrlayout:then>
+
+                <tr>
+                    <td valign="top">
+                       <mstrlayout:render name="privilegesLabel" />
+                    </td>
+                    <td valign="top">
+                        <div class="privilegeList"><mstrlayout:render name="privilegesField" /></div>
+                    </td>
+                </tr>
+				<tr>
+					<td/>
+					<td valign="top" >
+						<mstrlayout:render name="privilegeLegend" />
+					</td>
+				</tr>
+            </mstrlayout:then>
+        </mstrlayout:if>
+
+    </table>
+	
+</mstrlayout:layout>

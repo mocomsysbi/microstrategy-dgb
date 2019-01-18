@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarFitToWindowButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbFitToWindow</property>
+        <property name="tooltip">{desc:mstrWeb.2588|Fit To Window}</property>
+        <property name="cmdid">fittowindow</property>
+        <property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

@@ -1,0 +1,49 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorButtonModel">
+  <definition>
+    <property name="buttonTabEnabled" type="Boolean"/>
+    <property name="DisplayStyle" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+    <property name="titleText">{desc:mstrWeb.6457|Button}</property>
+    <property name="scriptClass">mstr.bones.editors.ButtonPropertiesBoneTranslator</property>
+    <property name="fields">NormalURL|HighlightURL|DisplayStyle|highlightURLEnable|normalURLEnable|isInsideNavBar|multiButtons</property>
+    <property name="visibleField">buttonTabEnabled</property>
+    <property name="buttonTabEnabled">true</property>
+    <property name="DisplayStyle">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K2227" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.9866|Caption only}</property>
+            </block>
+            <block listElementKey="K2228" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.9867|Icon only}</property>
+            </block>
+            <block listElementKey="K2229" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.9868|Icon to the left of caption}</property>
+            </block>
+            <block listElementKey="K2230" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.9869|Icon to the right of caption}</property>
+            </block>
+            <block listElementKey="K2231" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">{desc:mstrWeb.9870|Icon on top of caption}</property>
+            </block>
+            <block listElementKey="K2232" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.2056|Custom}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Button' tab of the Report Services properties editor. -->

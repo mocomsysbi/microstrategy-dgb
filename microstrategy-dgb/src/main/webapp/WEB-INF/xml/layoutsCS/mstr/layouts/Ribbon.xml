@@ -1,0 +1,22 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <table cellpadding="{@padding}" 
+         cellspacing="0" 
+         style="{@cssText}"
+         class="{@cssPrefix}{@cssClass}"
+         id="{@id}">
+    <tbody class="{@cssClassBody}">
+	    <tr class="{@cssPrefix}{@cssClassGroup}">
+	      <td valign="top" align="{@hAlign}" class="Begin"></td>
+		  <mstrlayout:wIterate name="children"
+	                           id="child">
+	        <td valign="top" align="{@hAlign}">
+		  	  <mstrlayout:wRender name="child">
+		      </mstrlayout:wRender>
+	        </td>
+		  </mstrlayout:wIterate>
+		  <td valign="top" align="{@hAlign}" class="End"></td>
+	    </tr>
+	</tbody>
+  </table>
+</mstrlayout:layout>

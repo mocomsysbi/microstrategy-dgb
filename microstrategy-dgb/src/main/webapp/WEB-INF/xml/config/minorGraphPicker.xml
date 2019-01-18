@@ -1,0 +1,386 @@
+<shortcut-list name="minorpicker" version="1.0">
+    <attributes>
+      <attribute name="ty" value="pkr"/>
+    </attributes>
+    <shortcut desc="Absolute" desc-id="mstrWeb.358" name="minorpicker0">
+      <attributes>
+        <attribute name="ftv" value="1,2,16,32"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Absolute" desc-id="mstrWeb.358" name="minorpicker66">
+      <attributes>
+        <attribute name="ftv" value="4,8"/>
+        <attribute name="id" value="pkr128"/>
+        <attribute name="location" value="prefix"/>        
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bipolar Absolute" desc-id="mstrWeb.360" name="minorpicker1">
+      <attributes>
+        <attribute name="ftv" value="1,2,16,32"/>
+        <attribute name="id" value="pkr4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis absolute" desc-id="mstrWeb.362" name="minorpicker2">
+      <attributes>
+        <attribute name="ftv" value="1,2,16,32"/>
+        <attribute name="id" value="pkr16"/>
+      </attributes>
+    </shortcut>    
+    <shortcut desc="Stacked" desc-id="mstrWeb.359" name="minorpicker3">
+      <attributes>
+        <attribute name="ftv" value="1,2,4,8,16,32"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bipolar stacked" desc-id="mstrWeb.361" name="minorpicker4">
+      <attributes>
+        <attribute name="ftv" value="1,2,4,8,16,32"/>
+        <attribute name="id" value="pkr8"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis stacked" desc-id="mstrWeb.363" name="minorpicker5">
+      <attributes>
+        <attribute name="ftv" value="1,2,4,8,16,32"/>
+        <attribute name="id" value="pkr32"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Percent" desc-id="mstrWeb.364" name="minorpicker6">
+      <attributes>
+        <attribute name="ftv" value="1,2,4,8,16,32"/>
+        <attribute name="id" value="pkr64"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Clustered" desc-id="mstrWeb.3305" name="minorpicker7">
+      <attributes>
+        <attribute name="ftv" value="4,8"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bipolar clustered" desc-id="mstrWeb.3307" name="minorpicker8">
+      <attributes>
+        <attribute name="ftv" value="4,8"/>
+        <attribute name="id" value="pkr4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis clustered" desc-id="mstrWeb.3306" name="minorpicker9">
+      <attributes>
+        <attribute name="ftv" value="4,8"/>
+        <attribute name="id" value="pkr16"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Pie" desc-id="mstrWeb.344" name="minorpicker10">
+      <attributes>
+        <attribute name="ftv" value="64"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Ring pie" desc-id="mstrWeb.368" name="minorpicker13">
+      <attributes>
+        <attribute name="ftv" value="64"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Multiple proportional pies" desc-id="mstrWeb.371" name="minorpicker12">
+      <attributes>
+        <attribute name="ftv" value="64"/>
+        <attribute name="id" value="pkr16"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Multiple proportional ring pies" desc-id="mstrWeb.372" name="minorpicker15">
+      <attributes>
+        <attribute name="ftv" value="64"/>
+        <attribute name="id" value="pkr32"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="X-Y scatter" desc-id="mstrWeb.407" name="minorpicker16">
+      <attributes>
+        <attribute name="ftv" value="128"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis X-Y scatter" desc-id="mstrWeb.375" name="minorpicker18">
+      <attributes>
+        <attribute name="ftv" value="128"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Polar coordinates chart" desc-id="mstrWeb.379" name="minorpicker20">
+      <attributes>
+        <attribute name="ftv" value="256"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis polar chart" desc-id="mstrWeb.380" name="minorpicker21">
+      <attributes>
+        <attribute name="ftv" value="256"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar line" desc-id="mstrWeb.382" name="minorpicker23">
+      <attributes>
+        <attribute name="ftv" value="512"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar stacked line" desc-id="mstrWeb.3849" name="minorpicker24">
+      <attributes>
+        <attribute name="ftv" value="512"/>
+        <attribute name="id" value="pkr64"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis radar line" desc-id="mstrWeb.384" name="minorpicker25">
+      <attributes>
+        <attribute name="ftv" value="512"/>
+        <attribute name="id" value="pkr4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis radar stacked line" desc-id="mstrWeb.3850" name="minorpicker26">
+      <attributes>
+        <attribute name="ftv" value="512"/>
+        <attribute name="id" value="pkr128"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar area" desc-id="mstrWeb.3851" name="minorpicker61">
+      <attributes>
+        <attribute name="ftv" value="512"/>
+        <attribute name="id" value="pkr16"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar Stacked Area" desc-id="mstrWeb.383" name="minorpicker62">
+      <attributes>
+        <attribute name="ftv" value="512"/>
+        <attribute name="id" value="pkr32"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis radar area" desc-id="mstrWeb.5884" name="minorpicker63">
+      <attributes>
+        <attribute name="ftv" value="512"/>
+        <attribute name="id" value="pkr256"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis radar stacked area" desc-id="mstrWeb.385" name="minorpicker64">
+      <attributes>
+        <attribute name="ftv" value="512"/>
+        <attribute name="id" value="pkr8"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bubble" desc-id="mstrWeb.348" name="minorpicker27">
+      <attributes>
+        <attribute name="ftv" value="1024"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bubble dual-axis" desc-id="mstrWeb.386" name="minorpicker28">
+      <attributes>
+        <attribute name="ftv" value="1024"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="HiLow" desc-id="mstrWeb.408" name="minorpicker29">
+      <attributes>
+        <attribute name="ftv" value="2048"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="HiLow-Open" desc-id="mstrWeb.388" name="minorpicker31">
+      <attributes>
+        <attribute name="ftv" value="2048"/>
+        <attribute name="id" value="pkr4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="HiLow-Open-Close" desc-id="mstrWeb.390" name="minorpicker33">
+      <attributes>
+        <attribute name="ftv" value="2048"/>
+        <attribute name="id" value="pkr16"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Vertical histogram" desc-id="mstrWeb.392" name="minorpicker35">
+      <attributes>
+        <attribute name="ftv" value="4096"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Horizontal histogram" desc-id="mstrWeb.393" name="minorpicker36">
+      <attributes>
+        <attribute name="ftv" value="4096"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bars" desc-id="mstrWeb.394" name="minorpicker37">
+      <attributes>
+        <attribute name="ftv" value="8192"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Pyramids" desc-id="mstrWeb.395" name="minorpicker38">
+      <attributes>
+        <attribute name="ftv" value="8192"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Octagons" desc-id="mstrWeb.396" name="minorpicker39">
+      <attributes>
+        <attribute name="ftv" value="8192"/>
+        <attribute name="id" value="pkr4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Cut-corner bars" desc-id="mstrWeb.397" name="minorpicker40">
+      <attributes>
+        <attribute name="ftv" value="8192"/>
+        <attribute name="id" value="pkr8"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Cubes" desc-id="mstrWeb.398" name="minorpicker41">
+      <attributes>
+        <attribute name="ftv" value="16384"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Spheres" desc-id="mstrWeb.399" name="minorpicker42">
+      <attributes>
+        <attribute name="ftv" value="16384"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Areas" desc-id="mstrWeb.400" name="minorpicker43">
+      <attributes>
+        <attribute name="ftv" value="32768,65536"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Ribbons" desc-id="mstrWeb.401" name="minorpicker44">
+      <attributes>
+        <attribute name="ftv" value="32768,65536"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Steps" desc-id="mstrWeb.402" name="minorpicker45">
+      <attributes>
+        <attribute name="ftv" value="32768,65536"/>
+        <attribute name="id" value="pkr4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D surface" desc-id="mstrWeb.355" name="minorpicker46">
+      <attributes>
+        <attribute name="ftv" value="131072"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D surface with sides" desc-id="mstrWeb.403" name="minorpicker47">
+      <attributes>
+        <attribute name="ftv" value="131072"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D honeycomb surface" desc-id="mstrWeb.404" name="minorpicker48">
+      <attributes>
+        <attribute name="ftv" value="131072"/>
+        <attribute name="id" value="pkr4"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D XYZ scatter chart" desc-id="mstrWeb.405" name="minorpicker49">
+      <attributes>
+        <attribute name="ftv" value="262144"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Standard" desc-id="mstrWeb.3157" name="minorpicker51">
+      <attributes>
+        <attribute name="ftv" value="524288,1048576,2097152"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Percent" desc-id="mstrWeb.364" name="minorpicker52">
+      <attributes>
+        <attribute name="ftv" value="2097152"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Box and Whiskers" desc-id="mstrWeb.3264" name="minorpicker53">
+      <attributes>
+        <attribute name="ftv" value="4194304"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Gantt" desc-id="mstrWeb.3533" name="minorpicker54">
+      <attributes>
+        <attribute name="ftv" value="8388608"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+	<shortcut desc="Bar Area" desc-id="mstrWeb.5577" name="minorpicker55">
+      <attributes>
+        <attribute name="ftv" value="16777216"/>
+        <attribute name="id" value="pkr1"/>
+      </attributes>
+    </shortcut>
+	<shortcut desc="Bar Line" desc-id="mstrWeb.5578" name="minorpicker56">
+      <attributes>
+        <attribute name="ftv" value="16777216"/>
+        <attribute name="id" value="pkr2"/>
+      </attributes>
+    </shortcut>
+	<shortcut desc="Area Line" desc-id="mstrWeb.5582" name="minorpicker57">
+      <attributes>
+        <attribute name="ftv" value="16777216"/>
+        <attribute name="id" value="pkr4"/>
+      </attributes>
+    </shortcut>
+	<shortcut desc="Dual Axis Bar Area" desc-id="mstrWeb.5579" name="minorpicker58">
+      <attributes>
+        <attribute name="ftv" value="16777216"/>
+        <attribute name="id" value="pkr8"/>
+      </attributes>
+    </shortcut>
+	<shortcut desc="Dual Axis Bar Line" desc-id="mstrWeb.5580" name="minorpicker59">
+      <attributes>
+        <attribute name="ftv" value="16777216"/>
+        <attribute name="id" value="pkr16"/>
+      </attributes>
+    </shortcut>
+	<shortcut desc="Dual Axis Area Line" desc-id="mstrWeb.5581" name="minorpicker60">
+      <attributes>
+        <attribute name="ftv" value="16777216"/>
+        <attribute name="id" value="pkr32"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bipolar Absolute" desc-id="mstrWeb.360" name="minorpicker61">
+      <attributes>
+        <attribute name="ftv" value="4,8"/>
+        <attribute name="id" value="pkr256"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Dual-axis absolute" desc-id="mstrWeb.362" name="minorpicker62">
+      <attributes>
+        <attribute name="ftv" value="4,8"/>
+        <attribute name="id" value="pkr512"/>
+      </attributes>
+    </shortcut>
+    <!-- Hichert Minor Types --> 
+    <shortcut desc="Lipstick Vertical" desc-id="mstrWeb.9834" name="minorpicker63">
+    	<attributes>
+    		<attribute name="ftv" value="33554432"/>
+    		<attribute name="id" value="pkr1"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Lipstick Horizontal" desc-id="mstrWeb.9835" name="minorpicker64">
+    	<attributes>
+    		<attribute name="ftv" value="33554432"/>
+    		<attribute name="id" value="pkr2"/>
+    	</attributes>
+    </shortcut>
+    <!-- Hichert Overlapping Bars Minor Types -->  
+    <shortcut desc="OverlappingBars Vertical" desc-id="mstrWeb.9836" name="minorpicker65">
+    	<attributes>
+    		<attribute name="ftv" value="33554432"/>
+    		<attribute name="id" value="pkr4"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="OverlappingBars Horizontal" desc-id="mstrWeb.9837" name="minorpicker66">
+    	<attributes>
+    		<attribute name="ftv" value="33554432"/>
+    		<attribute name="id" value="pkr8"/>
+    	</attributes>
+    </shortcut>
+</shortcut-list>

@@ -1,0 +1,19 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MobileHTMLGridResultsTask">
+	<basicInfo desc="This task retrieves the results of a grid report execution, in HTML format.">
+		<parameter name="messageID" desc="the message ID" required="true"/>
+		<parameter name="stateID" desc="The state ID of the message" required="false"/>
+		<parameter name="xPos" desc="The column page number" required="false"/>
+		<parameter name="yPos" desc="The row page number" required="false"/>
+		<parameter name="rowsPerPage" desc="The rows per page setting." required="false"/>
+		<parameter name="colsPerPage" desc="The columns per page setting." required="false"/>
+		<parameter name="pageByKeys" desc="The list of pageby elements to select before applying the result." required="false"/>
+		<parameter name="desiredPageByKeys" desc="The list of desired pageby elements." required="false"/>
+	</basicInfo>
+
+	<beanInfo name="rb" bean-type="ReportBean">
+		<style name="MobileHTMLGridStyle">
+			<actualParameter name="gridStyle" value="reportiPhoneGridStyle" source="parameter"/>
+		</style>
+	</beanInfo>
+</beanTask>

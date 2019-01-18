@@ -1,0 +1,16 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWSaveSegmentTask">
+    <basicInfo desc="This Task provides the ability to save a segment.">
+        <parameter name="msgID" desc="The Message ID of a previously executed RWBean." required="false" />
+        <parameter name="folderName" desc="The name of one of the special folders in metadata" required="false" />
+        <parameter name="objName" desc="The desired segment name" required="true" />
+        <parameter name="objDesc" desc="The desired segment description" required="false" />
+        <parameter name="saveAsFlags" desc="The save as flag. See EnumDSSXMLDocSaveAsFlags for details" required="false" defvalue="0"/>
+        <parameter name="nodeKey" desc="The key to locate the node.If it's assigned, the segment would be create from the subtree rooted by this node." required="false" defvalue="" />
+    </basicInfo>    
+    
+    <!--
+        This information describes how the task is defined in terms of an existing bean.
+    -->
+    <beanInfo name="rwb" bean-type="RWBean"/>
+</beanTask>

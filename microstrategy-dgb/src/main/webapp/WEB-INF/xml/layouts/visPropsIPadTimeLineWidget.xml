@@ -1,0 +1,88 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+<mstrlayout:if name="isValidGrid">
+    <mstrlayout:then>
+    	<![CDATA[
+			<style type="text/css">
+				.iphone-table {
+					width:350px;
+					border-style:solid;
+					border-width:1px;
+					border-spacing:0;
+				}
+				.iphone-table .whiteRow {
+					background-color:#FFFFFF;
+				}
+				.iphone-table td {
+					border-bottom:1px dotted #999999;
+					padding:3px 6px 3px 3px;
+					vertical-align:middle;
+				}
+				.iphone-table th {
+					background-color:#D4D0C8;
+					font-weight:bold;
+					align:left;
+					padding:0 6px 0 3px;
+				}
+				.iphone-grid {
+					padding: 0 0 5px 5px;
+				}
+				.iphone-table a {
+					text-decoration:underline;
+                    cursor: pointer;
+				}
+				.vispropstab {
+				    border-style:solid;
+				}
+                .noWidths .iphoneWidthField{
+                    display : none;
+                }
+                .noWidths .iphoneWidthFieldContainer{
+                    padding-left:148px !important;
+                }
+			</style>
+        ]]>
+       
+       
+       
+	<mstrlayout:if name="isRW">
+		<mstrlayout:then>
+			<mstrlayout:render name="HiddenInput"> <!-- Hidden input for primary grid key -->
+				<mstrlayout:argument type="string" value="tl" /> <!-- prop name -->
+			</mstrlayout:render>
+		</mstrlayout:then>
+	</mstrlayout:if>
+      <table class="t" id="iphone-table" style="table-layout:fixed;">
+        <tr>
+          <td class="leftpadding">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.8412"/> <!-- Descriptor: Select Initial Edge -->
+            </mstrlayout:render>
+          </td>
+          <td class="b">
+            <mstrlayout:render name="LeftOrRightEdge">
+              <mstrlayout:argument type="String" value="lre"/>
+            </mstrlayout:render>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="leftpadding">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.8452"/> <!-- Descriptor: Show labels of Header Subtitle -->
+            </mstrlayout:render>
+          </td>
+          <td class="b">
+            <mstrlayout:render name="DisplayHeaderSubTitleCheckBox">
+              <mstrlayout:argument type="String" value="sst"/>
+            </mstrlayout:render>
+          </td>
+        </tr>
+        
+      </table>
+    </mstrlayout:then>
+    <mstrlayout:else>
+      <mstrlayout:render name="ValidationError"/>
+    </mstrlayout:else>
+</mstrlayout:if>
+</mstrlayout:layout>

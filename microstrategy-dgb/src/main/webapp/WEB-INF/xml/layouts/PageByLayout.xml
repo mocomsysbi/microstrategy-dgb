@@ -1,0 +1,59 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait" style="position: relative;">
+    <div class="mstrPanelTitleBar mstrPageByTitleBar">
+      <mstrlayout:attr name="getAttributesTitle" />
+      <span class="mstrPanelTitle">
+        <mstrlayout:render name="EditorTitle" />
+      </span>
+    </div>
+    <div class="mstrPanelTitleBar-inlineBody">
+      <mstrlayout:attr name="getAttributesBody" />
+      <mstrlayout:if name="isListEmpty">
+        <mstrlayout:then>
+          <span class="pgbyNone">
+            <mstrlayout:render name="EmptyList" />
+          </span>
+        </mstrlayout:then>
+        <mstrlayout:else>
+          <mstrlayout:list id="units" name="getUnits" base="bean">
+            <span class="pgby">
+              <mstrlayout:attr name="getAttributesUnit">
+                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+              </mstrlayout:attr>
+              <mstrlayout:render name="SortButtons">
+                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+              </mstrlayout:render>
+              <mstrlayout:render name="Alias">
+                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+              </mstrlayout:render>
+              <mstrlayout:render name="Elements">
+                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+              </mstrlayout:render>
+              <mstrlayout:render name="PivotButtons">
+                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+              </mstrlayout:render>
+            </span>
+          </mstrlayout:list>
+          <mstrlayout:render name="SubmitButton" />
+          <![CDATA[
+              <div style="clear:both;height:0;line-height:0"></div>
+          ]]>
+        </mstrlayout:else>
+      </mstrlayout:if>
+	  <mstrlayout:if name="hasFakedUnits">
+		<mstrlayout:then>
+		  <mstrlayout:list id="fakedUnits" name="getFakedUnits" base="bean">
+			<mstrlayout:render name="fakedUnits">
+			  <mstrlayout:argument list="fakedUnits" type="com.microstrategy.web.app.beans.PageByUnitReportFaked" />
+			</mstrlayout:render>
+		  </mstrlayout:list>
+		</mstrlayout:then>  
+	  </mstrlayout:if>
+    </div>
+    <div class="mstrPanelTitleBar-inlineButtonBar">
+      <mstrlayout:render name="HelpButton" />
+      <mstrlayout:render name="CloseButton" />
+    </div>
+  </div>
+</mstrlayout:layout>

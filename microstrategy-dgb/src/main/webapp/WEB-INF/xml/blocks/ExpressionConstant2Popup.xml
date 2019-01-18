@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionConstant2Popup is a popup used by ExpressionEditor for editing the second constant
+		of a metric or attribute form qualification.  It is the same definition as ExpressionConstant1Popup
+		but targets the second constant rather than the first.
+	-->
+	<block name="ExpressionConstant2Popup" inherits="ExpressionConstant1Popup">
+		<assignments>
+			<property name="id">ExpressionConstant2Popup1</property>
+			<property name="modelPath">opener/model/answer/getConstant2CloneModel(opener.model)</property>
+			<property name="browseView/cmds">Unpop||parent;OpenPopup|"ExpressionFormValues2Popup1"|parent/opener</property>
+			<property name="okButton/cmds">Unpop||parent;EditConditionConstant2|parent/model/valueString|parent/opener/model</property>
+		</assignments>
+	</block>

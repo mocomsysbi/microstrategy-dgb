@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+	An element in a Drill Link. Since all Drill Links for the same object share the same target, 
+	the "target" property is defined in the "RWDrillLinkContainer.xml"
+--> 
+<block name="RWDrillLink">
+    <definition>
+    	<!-- The index that determines the position of the link in the context menu. -->
+        <property name="index" type="Integer" />
+    	<!-- The name of the Drill Link. It is the display text in the context menu. -->
+        <property name="n" type="String" />
+        <!-- The URL -->
+        <property name="url" type="String" />
+    </definition>
+</block>

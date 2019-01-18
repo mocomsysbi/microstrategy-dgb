@@ -1,0 +1,20 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<div class="mstrPathText">
+		<span class="mstrPathFirst">
+	      	<mstrlayout:render name="LinkForDesktop"/>
+      	</span>
+		<span class="mstrPathDelim">&gt;</span> 	
+        <mstrlayout:list id="Ancestors" name="getObjectPathFolderAncestors">
+        	<mstrlayout:argument type="int" value="1"/>
+        			<span>
+	                    <mstrlayout:render name="Ancestor">
+		                    <mstrlayout:argument list="Ancestors" type="com.microstrategy.web.objects.WebFolder"/>
+			            </mstrlayout:render>
+                    </span>
+					<span class="mstrPathDelim">&gt;</span> 	
+        </mstrlayout:list>
+      	<mstrlayout:render name="ObjectName"/>
+	</div>      	
+	<div class="mstrSpacer"></div>
+</mstrlayout:layout>

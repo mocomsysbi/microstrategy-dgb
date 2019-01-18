@@ -1,0 +1,12 @@
+<shortcut-list name="gaugeStylePicker" version="1.0">
+    <shortcut desc="[Old]" desc-id="mstrWeb.4995" name="pkrCircular">
+        <attributes>
+            <attribute name="value" value="0"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[New]" desc-id="mstrWeb.4996" name="pkrCircularNew">
+        <attributes>
+            <attribute name="value" value="6"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

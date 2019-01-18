@@ -1,0 +1,19 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about Objects that has a hyper-link. 
+    In mojo, two types of Objects, Textfields and Images, may have a hyper-link. 
+    If a user LMC the hyper-link, he will be navigated to another page. 
+--> 
+<block name="LinkInfo">
+    <definition>
+    	<!-- The URL of the hyper-link.  -->
+        <property name="url" type="String" />
+        
+        <!-- The target of the hyper-link. 
+        	If the value of this property is "_blank", then the browser will open a new window.
+        	Otherwise, if it has an empty value, then the browser will remain in the same window.
+        -->
+        <property name="target" type="String" />
+    </definition>
+</block>
+        

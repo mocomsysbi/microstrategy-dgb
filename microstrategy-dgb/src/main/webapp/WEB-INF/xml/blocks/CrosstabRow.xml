@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		CrosstabRow represents a collection of cells of data for a CrosstabModel, typically
+		rendered in a CrosstabView as a table cell.
+	-->
+	<block name="CrosstabRow" inherits="BaseBlock">
+		<definition>
+			<!-- An ordered list of CrosstabCell Blocks. -->
+			<property name="cells" type="List" />			
+		</definition>
+	</block>

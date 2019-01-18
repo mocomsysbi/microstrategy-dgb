@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+
+<!--
+      GraphProperties is a group of properties that are applicable to graph objects. 
+  -->
+<block name="GraphProperties" inherits="BaseBlock">
+  <definition>
+    <!-- static graph properties -->
+	<property name="majorType" type="Integer" />
+    <property name="minorType" type="Integer" />
+    <property name="maxCategories" type="Integer" />
+    <property name="maxSeries" type="Integer" /> 
+    <property name="showSubtotals" type="Boolean" /> 
+    <property name="seriesByCol" type="Boolean" />
+    
+    <!-- most of graph properties will be set dynamically into gPropsSet-->	  
+	<property name="gPropsSet" type="Block" />
+	  
+    <!-- series related infomation -->  
+	<property name="seriesNum" type="Integer" />   
+    <property name="seriesInfo" type="List" /> 	  
+	      
+  </definition>
+</block>

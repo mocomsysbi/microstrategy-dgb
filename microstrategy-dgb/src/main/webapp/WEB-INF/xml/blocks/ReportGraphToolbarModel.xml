@@ -1,0 +1,41 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptToolbarModel" name="ReportGraphToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1218" name="ToolbarGraphMajorList">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1219" name="ToolbarGraphMinorList">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1220" name="ToolbarGraphLegendButton">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1221" name="ToolbarGraphValuesButton">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1222" name="BaseBlock"/>
+        <block listElementKey="K1223" name="ToolbarSeriesByRowButton">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1224" name="ToolbarSeriesByColButton">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1225" name="BaseBlock"/>
+        <block listElementKey="K1226" name="ToolbarGraphAutoArrangeButton">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1227" name="BaseBlock"/>
+        <block listElementKey="K1228" name="ToolbarGraphCategoriesText">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange,onReportReload</property>
+        </block>
+        <block listElementKey="K1229" name="ToolbarGraphSeriesText">
+          <property name="listenerMethods">onGraphPropertiesReady,ongridselectionschange,onReportReload</property>
+        </block>
+        <block listElementKey="K1230" name="ToolbarGraphSubmitButton"/>
+        <block listElementKey="K1231" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+	ClickableMessage is a view component for displaying a message with a link in it. 
+ 	-->
+	<block name="ClickableMessage" inherits="BaseView">
+		<definition>
+			<property name="msgText" type="String"/>
+			<property name="dlgText" type="String"/>
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ClickableMessage</property>
+			<property name="scriptClass">mstr.views.ClickableMessage</property>
+		</assignments>
+	</block>

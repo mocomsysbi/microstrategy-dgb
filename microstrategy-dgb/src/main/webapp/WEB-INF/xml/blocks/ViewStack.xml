@@ -1,0 +1,27 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ViewStack is a collection of views, which can be shown individually or all at once. -->
+	<block name="ViewStack" inherits="BaseView">
+		<definition>
+			<!-- The collection of views displayed by this ViewStack. -->
+			<property name="views" type="List" />
+			
+			<!-- Numbers of views to be shown simultaneously (< 1 = show all). -->
+			<property name="viewRange" type="Integer" />
+
+			<!-- Index (1-based) of the first view currently displayed. -->
+			<property name="currentViewNum" type="Integer" />
+			
+			<!-- Optional CSS specification of height for the view stack. -->
+			<property name="height" type="String" />
+			
+			<!-- Optional CSS specification of width for the view stack. -->
+			<property name="width" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.ViewStack</property>
+			<property name="layoutClass">mstr.layouts.ViewStack</property>
+			<property name="cssClass">ViewStack</property>
+			<property name="height">auto</property>
+			<property name="width">auto</property>
+		</assignments>
+	</block>

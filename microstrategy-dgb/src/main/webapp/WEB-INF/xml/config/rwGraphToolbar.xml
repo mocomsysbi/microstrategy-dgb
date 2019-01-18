@@ -1,0 +1,130 @@
+<shortcut-list-set javascript-file="graphToolbar.js" name="rwGraphToolbar" script-class="mstrGraphToolbarImpl" feature-id="dhtml;simple-graph-formatting;grid-graph-formatting;rw-editable-view-mode-eplus" version="1.0">
+  <attributes>
+    <attribute name="at" value="rwb_viewer"/>
+    <attribute name="ty" value="tool"/>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  
+  <shortcut-list name="saveList" config-src="/WEB-INF/xml/config/rwSaveControl.xml"/>
+  <shortcut-list name="editControls" config-src="/WEB-INF/xml/config/rwEditControls.xml"/>
+  <shortcut-list name="viewModes" config-src="/WEB-INF/xml/config/rwViewModeControls.xml"/>
+  <shortcut-list name="gridViewModes" config-src="/WEB-INF/xml/config/rwGridViewModeControls.xml"/>
+  
+  <shortcut-list name="style">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Graph Type" desc-id="mstrWeb.3517" name="tbGraphType" type="pulldown">
+      <attributes>
+        <attribute name="cmdid" value="major"/>
+        <attribute name="cmdtp" value="3"/>
+        <attribute name="cmdvl" value=""/>
+        <attribute name="cmdpk" value="majorpicker"/>
+        <attribute name="class" value="ddpulldowndisabled"/>
+      </attributes>
+      <shortcut-list css-class="picker" name="majorpicker" config-src="/WEB-INF/xml/config/majorGraphPicker.xml">
+      </shortcut-list>
+    </shortcut>
+    <shortcut desc="Graph Sub-Type" desc-id="mstrWeb.3518" name="tbGraphSubType" type="pulldown">
+      <attributes>
+        <attribute name="ty" value="btng"/>
+        <attribute name="cmdid" value="minor"/>
+        <attribute name="cmdtp" value="3"/>
+        <attribute name="cmdpk" value="minorpicker"/>
+        <attribute name="class" value="xpulldowndisabled"/>
+      </attributes>
+      <shortcut-list name="minorpicker" config-src="/WEB-INF/xml/config/minorGraphPicker.xml">
+        <attributes>
+          <attribute name="ty" value="pkr"/>
+        </attributes>
+      </shortcut-list>
+    </shortcut>
+    <shortcut desc="Legend" desc-id="mstrWeb.2403" name="tbLegend" type="button">
+      <attributes>
+        <attribute name="cmdid" value="legend"/>
+        <attribute name="cmdtp" value="2"/>
+        <attribute name="cmdvl" value="1"/>
+        <attribute name="class" value="disabled"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Data Values" desc-id="mstrWeb.2404" name="tbDataValues" type="button">
+      <attributes>
+        <attribute name="cmdid" value="dValues"/>
+        <attribute name="cmdtp" value="2"/>
+        <attribute name="cmdvl" value="1"/>
+        <attribute name="class" value="disabled"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  
+  <shortcut-list name="layout">
+    <attributes>
+      <attribute name="ty" value="btng" />
+		<attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut type="button" desc-id="mstrWeb.3711" desc="Series by Row" name="tbSerByRow">
+      <attributes>
+        <attribute name="cmdtp" value="1" />
+        <attribute name="cmdid" value="seriesLayout" />
+        <attribute name="cmdvl" value="0" />
+      </attributes>
+    </shortcut>
+    <shortcut type="button" desc-id="mstrWeb.3712" desc="Series by Column" name="tbSerByCol">
+      <attributes>
+        <attribute name="cmdtp" value="1" />
+        <attribute name="cmdid" value="seriesLayout" />
+        <attribute name="cmdvl" value="1" />
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  
+   <shortcut-list name="Arrangement" feature-id="simple-graph-formatting;!check-design-mode">
+    <attributes>
+      <attribute name="ty" value="btng" />
+        <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut type="button" desc-id="mstrWeb.4834" desc="Auto Arrange" name="tbAutoArrange">
+      <attributes>
+        <attribute name="cmdtp" value="1" />
+        <attribute name="cmdid" value="autoArrange" />
+        <attribute name="cmdvl" value="0" />
+        <attribute name="class" value="disabled"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Categories:" desc-id="mstrWeb.2402" name="tbCategories" type="textbox">
+      <attributes>
+        <attribute name="cmdid" value="categories"/>
+        <attribute name="size" value="4"/>
+        <attribute name="maxlength" value="4"/>
+        <attribute name="class" value="txtdisabled"/>
+        <attribute name="dty" value="1"/>
+        <attribute name="fldid" value="3631"/>
+        <attribute name="cmdtp" value="6"/>
+        <attribute name="cmdvl" value="1"/>
+        <attribute name="min" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Series:" desc-id="mstrWeb.2401" name="tbSeries" type="textbox">
+      <attributes>
+        <attribute name="cmdid" value="series"/>
+        <attribute name="size" value="4"/>
+        <attribute name="maxlength" value="4"/>
+        <attribute name="class" value="txtdisabled"/>
+        <attribute name="dty" value="1"/>
+        <attribute name="fldid" value="3632"/>
+        <attribute name="cmdtp" value="6"/>
+        <attribute name="cmdvl" value="1"/>
+        <attribute name="min" value="1"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Apply" desc-id="mstrWeb.3519" name="tbRepaintGraph" type="button">
+      <attributes>
+        <attribute name="cmdid" value="categories,series"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

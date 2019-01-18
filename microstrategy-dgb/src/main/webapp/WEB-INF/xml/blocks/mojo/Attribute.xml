@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<block name="Attribute" inherits="WebObjectInfo,Fetchable" annotation="xml:elementName=a">
+    <definition>
+        <!-- The Attribute Forms collection. A collection of AttributeForm Blocks. -->
+        <property name="fms" type="List" /> 
+        
+		<!-- The Attribute Elements Block. A collection of Element Blocks. -->
+        <property name="es" type="List" />
+        
+        <!-- Whether the attribute is locked or not. -->
+        <property name="ilk" type="Boolean" />        
+    </definition>
+</block>

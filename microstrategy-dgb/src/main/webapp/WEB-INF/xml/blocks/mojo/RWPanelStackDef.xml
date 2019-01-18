@@ -1,0 +1,64 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single PanelStack in a RWD.
+--> 
+<block name="RWPanelStackDef" inherits="RWUnitDef">
+    <definition>
+        <!-- The title to display for this panel stack. -->
+        <property name="ttl" type="String" />
+        
+        <!-- A flag to indicate whether this Panel Stack is used as an Info Window -->
+        <property name="ifw" type="Boolean"/>
+        
+        <!-- Indicates the Placement of the Info Window. The valud could be:
+        	AUTO:1, FIXED:2, ABOVE:3, BELOW:4, LEFT:5, RIGHT:6-->
+        <property name="iwpl" type="Integer" />
+        
+        <!-- Works in conjunction with the info window property and resets the current panel to the first panel. -->
+        <property name="sfp" type="Boolean"/>
+        
+        <!-- Indicates whether the title for the panel stack should come from the currently selected panel.
+             0 == it should come from the current panel, 1 == it should come from the definition of the PanelStack. 
+        -->
+        <property name="ttlSrc" type="Integer" />
+
+        <!-- The flag to indicate whether this PanelStack enables panel-switching. -->
+        <property name="sw" type="Boolean" />
+        
+        <!-- A flag to indicate whether this PanelStack is an on demand panel stack. -->
+        <property name="od" type="Boolean" />
+        
+        <!-- The panel stack name. This property is set only for info windows. We need it because URL API 
+             info window links use panel stack names -->
+        <property name="n" type="String" />
+        <!-- Indicates if the Panel Stack is being used as a Filters Panel Stack. -->
+        <property name="ifp" type="Boolean"/> 
+        
+        <!-- Indicates if the Panel Stack is being used as a Filters Summary Panel Stack. -->
+        <property name="ifsp" type="Boolean"/> 
+        
+         <!-- Indicates if the Panel Stack is being used as a Table Control. -->
+        <property name="itb" type="Boolean"/> 
+        
+        <!-- Indicates if the Filters Panel automatically submit selection change. -->
+        <property name="cas" type="Boolean"/>        
+        
+        <!--  Indicates if current use has privilege to load/save segments -->
+        <property name="useSeg" type ="Boolean"/>
+           
+        <!-- Indicates if the the FilterDisplay mode of the panel -->
+        <property name="fds" type="Integer"/>  
+        
+        <!-- Indicates the FilterMode of the panel -->   
+        <property name="fm" type="Integer" />
+        
+        <!-- The HTML5 VI analysis panel stack type. -->
+        <property name="psType" type="Integer" />
+        
+        <!-- Indicates if the HTML5 VI drop zones panel is visible. -->
+        <property name="dzv" type="Boolean" />
+        
+        <!-- The width of the HTML5 VI drop zones panel. -->
+        <property name="dzw" type="String" />
+    </definition>
+</block>

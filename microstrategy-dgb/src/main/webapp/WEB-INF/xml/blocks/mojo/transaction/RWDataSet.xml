@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name = "RWDataSet" >
+  <definition>
+    <!-- dataset name -->
+    <property name = "n" type = "String" />
+    
+    <!-- dataset id -->
+    <property name = "dsid" type = "String" />
+    
+    <!-- dataset type -->
+    <property name = "dst" type = "Integer" />
+    
+    <!-- List of attributes (Attribute Block) -->
+    <property name = "attrs" type = "List" />
+  </definition>
+</block>

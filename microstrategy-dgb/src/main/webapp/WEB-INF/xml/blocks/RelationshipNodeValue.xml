@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		RelationshipNodeValue is an ExpressionNodeValue representing a metadata relationship.
+	-->		
+	<block name="RelationshipNodeValue" inherits="ExpressionNodeValue">
+		<definition>
+			<property name="applySubExpression" type="Boolean" />
+			<property name="useSchema" type="Boolean" />
+			<property name="relationship" type="Block" />
+		</definition>
+		<assignments>
+			<property name="nodeType">7</property> <!-- Relationship -->
+		</assignments>
+	</block>

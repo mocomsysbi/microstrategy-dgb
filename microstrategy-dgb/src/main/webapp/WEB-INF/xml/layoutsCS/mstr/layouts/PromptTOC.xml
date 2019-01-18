@@ -1,0 +1,37 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_height="mstr.behaviors.PromptTOC.on_set_height(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.PromptTOC.on_set_visible(view, model, rootTag, context)">
+  <div title="{@tooltip}"
+       style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <div style="display:none"
+         class="{@cssPrefix}{@cssClass}Opener">
+      <img title="{@descriptors/showIndex}"
+           src="../style/mstr/images/btnOpenRight.gif"
+           onclick="mstr.$obj('{@id}').set('visible', true)">
+      </img>
+    </div>
+    <table cellspacing="0"
+           cellpadding="0"
+           class="{@cssPrefix}{@cssClass}Header">
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}HeaderCellLeft">
+          {@descriptors/index}
+        </td>
+        <td class="{@cssPrefix}{@cssClass}HeaderCellRight" onclick="mstr.$obj('{@id}').set('visible', false)">
+          <span title="{@descriptors/hideIndex}"
+               onclick="mstr.$obj('{@id}').set('visible', false)">
+          </span>
+        </td>
+      </tr>
+    </table>
+    <div class="{@cssPrefix}{@cssClass}SummaryButton" id="{@id}_summaryButton"
+         onclick="mstr.$obj('{@id}').props.parent.execCommand('Set_showSummary', true)">
+      {@descriptors/summary}
+
+    </div>
+    <mstrlayout:wRender name="contentsView">
+    </mstrlayout:wRender>
+  </div>
+</mstrlayout:layout>

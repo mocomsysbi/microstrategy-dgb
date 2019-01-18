@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!-- 
+    This Block provides the definition information about a RW Text Selector object.
+-->
+<block name="RWTextSelectorDef" inherits="RWSelectorDef">
+    <definition>
+        <!-- Data type from EnumDSSXMLDataType -->
+        <property name="dt" type="Integer"/>
+    </definition>
+</block>

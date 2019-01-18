@@ -1,0 +1,42 @@
+<shortcut-list-set javascript-file="toolbar.js" name="folderToolbar" script-class="mstrToolbarImpl" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrMenuExtraToolbar mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="createFolder" feature-id="dhtml;create-folder">
+    <shortcut base-bean="fb" desc="Create New Folder" desc-id="mstrWeb.3245" append-state="true" name="tbNewFolder" type="button" feature-id="dhtml;create-folder" href="#"  iframe="true">
+      <event XMLmerge_id="1" base-bean="OMDCreateFolder" event-id="com.microstrategy.web.app.beans.EnumFrameEditorEvents.WebEventOpen">
+        <argument name="com.microstrategy.web.app.beans.EnumOMDCreateFolderEvents.OMDCreateFolderEventArgumentTargetName" value="fb"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="folderView">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="View: List" desc-id="mstrWeb.3382" name="tbListView" type="button"  check-feature-id="check-mode-list-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeFolderViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentFolderViewMode" value="FolderStyleList"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbListViewAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="View: Icon" desc-id="mstrWeb.3381" name="tbLargeIcons" type="button" check-feature-id="check-mode-icon-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeFolderViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentFolderViewMode" value="FolderStyleIcon"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbLargeIconsAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="folderRefresh">
+    <shortcut desc="Refresh" desc-id="mstrWeb.773" name="tbRefresh" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventRefresh"/>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbRefreshAcc.gif"/>
+      </attributes>
+	</shortcut>
+  </shortcut-list>
+</shortcut-list-set>

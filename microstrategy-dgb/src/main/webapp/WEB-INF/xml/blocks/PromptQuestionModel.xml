@@ -1,0 +1,52 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		PromptQuestionModel is one of possibly multiple questions that comprise 
+		the prompt for a prompted Report or Document.  A PromptQuestionModel typically
+		has "title" and "meaning" properties, plus an "answer" sub-model which represents
+		the end-user's response to the PromptQuestion.
+	-->
+	<block name="PromptQuestionModel" inherits="BaseModel">
+		<definition>
+			<!-- Index distinguishes this PromptQuestionModel from other questions in a multi-question prompt. -->
+			<property name="index" type="Integer" />
+
+			<!-- Type of question: either CONSTANT, OBJECT, ELEMENT, ATTRIBUTEQUAL, METRICQUAL, or HIERARCHY. -->
+			<property name="type" type="String" />
+
+			<!-- The display name for the PromptQuestionModel. -->
+			<property name="title" type="String" />
+
+			<!-- A descriptive explanation of the purpose of the PromptQuestionModel. -->
+			<property name="meaning" type="String" />
+
+			<!-- Further optional instructions to the end-user for answering this PromptQuestionModel.  -->
+			<property name="instructions" type="String" />
+
+			<!-- Definition of the answer to this PromptQuestionModel (typically a PromptAnswerModel). -->
+			<property name="answer" type="Block" />
+
+			<!-- Generic lookup of additional properties provided by server for this PromptQuestionModel. 
+				 This can be used as a convenient repository for application-specific data, if needed. -->
+			<property name="extendedProperties" type="Block" />
+			<!-- A list of saved answers for this prompt -->
+			<property name="savedAnswers" type="Block"/>
+			<property name="CommandEnabledLoadSavedAnswer" type="Boolean"/>
+			<!-- whether the current answer should be saved when answer is submitted -->
+			<property name="savingAnswer" type="Boolean"/>
+			<!-- answer number restriction -->
+			<property name="answerRestriction" type="Integer"/>
+			<!-- The name of this prompt -->
+			<property name="n" type="String"/>
+			<property name="namePrefixForSingleSavedAnswer" type="String"/>
+			
+			<!-- the display style name of this prompt  -->
+			<property name="displayStyle" type="String" />
+		</definition>		
+		<assignments>
+			<property name="scriptClass">mstr.models.PromptQuestion</property>
+			<property name="extendedProperties">
+				<block name="PromptQuestionExtendedProperties" />
+			</property>
+			<property name="CommandEnabledLoadSavedAnswer">true</property>			
+		</assignments>
+	</block>

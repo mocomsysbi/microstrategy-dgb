@@ -1,0 +1,108 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorGridModel">
+  <definition>
+    <property name="gridTabEnabled" type="Boolean"/>
+    <property name="DrillOptions" type="Block"/>
+    <property name="AttForms" type="Block"/>
+    <property name="HideNullZeroValues" type="Block" />
+    <property name="showGridIf" type="Boolean" />
+    <property name="gridIfRowMode" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.bones.editors.GridPropertiesBoneTranslator</property>
+    <property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+    <property name="titleText">{desc:mstrWeb.3478|Grid}</property>
+    <property name="fields">isLockHeadersAvailable|isShowHeadersAvailable|isMergeHeadersAvailable|isGridFormattingEnabled|enableAttForms|enableThresholds|RHS|RHM|RHL|CHS|CHM|CHL|Outline|Banding|AttForms|ShowThreshold|TitleOverlap|DrillOptions|ShowDrillingOptions|allowRemoveExtraColumn|HideNullsOrZeros|HideNullZeroValues|gridIfEnabled|gridIfMaxRows|showGridIf|gridIfRowMode</property>
+    <property name="visibleField">gridTabEnabled</property>
+    <property name="gridTabEnabled">true</property>
+    <property name="DrillOptions">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K900" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.5845|No drilling}</property>
+            </block>
+            <block listElementKey="K901" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.5846|Drill within}</property>
+            </block>
+            <block listElementKey="K902" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5847|Drill anywhere}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+   	<property name="AttForms">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K904" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2411|Off}</property>
+            </block>
+            <block listElementKey="K905" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2410|On}</property>
+            </block>
+			<block listElementKey="K906" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.8504|Form Name Only}</property>
+            </block>
+            <block listElementKey="K907" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.8505|Show Attribute Name Once}</property>
+            </block>
+            <block listElementKey="K908" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.4531|Automatic}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="HideNullZeroValues">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="hideBoth" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.9844|Hide Nulls or Zeros}</property>
+            </block>
+            <block listElementKey="hideNulls" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.9845|Hide Nulls Only}</property>
+            </block>
+            <block listElementKey="hideZeros" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.9846|Hide Zeros Only}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="gridIfRowMode">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K911" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.9673|Individual rows}</property>
+            </block>
+            <block listElementKey="K912" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.9675|Blocks}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+   	</assignments>
+</block>
+<!-- This is the model used for the 'Grid' tab of the Report Services properties editor. -->

@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarAjaxButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="tooltip">{desc:mstrWeb.5676|AJAX}</property>
+		<property name="cmdid">visAjaxMode</property>
+	</assignments>
+</block>

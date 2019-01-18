@@ -1,0 +1,72 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- This is the model used for the 'Color and Lines' tab of the Report Services properties editor. -->
+	<block name="PropertiesEditorColorModel" inherits="EditorBoneTranslator">
+		<definition>
+			<property name="colorTabEnabled" type="Boolean" />
+
+			<property name="unitSelectorChange" type="String" />
+			<property name="tabName" type="String" />
+			<property name="FillColor" type="Block" />
+			<property name="SelectionColor" type="Block" />
+			<property name="propBorderStyle" type="Block" />
+			<property name="AllStyle" type="Block" />
+			<property name="AllColor" type="Block" />
+			<property name="LeftStyle" type="Block" />
+			<property name="LeftColor" type="Block" />
+			<property name="RightStyle" type="Block" />
+			<property name="RightColor" type="Block" />
+			<property name="TopStyle" type="Block" />
+			<property name="TopColor" type="Block" />
+			<property name="BottomStyle" type="Block" />
+			<property name="BottomColor" type="Block" />
+			<property name="LineSettingStyle" type="Block" />
+			<property name="ShapeSettingStyle" type="Block" />
+			<property name="LineSettingColor" type="Block" />
+			<property name="enableBordersNot3d" type="Block" />
+			<property name="BackgroundHighlightColor" type="Block" />
+			<property name="BorderOptions" type="Block" />
+			<property name="ButtonBorderOptions" type="Block" />
+			<property name="FillEffect" type="Block" />
+		</definition>
+		<assignments>
+			<property name="categoryText">{desc:mstrWeb.1918|Format}</property>
+			<property name="titleText">{desc:mstrWeb.3436|Color and Lines}</property>
+			<property name="scriptClass">mstr.bones.editors.ColorLinesPropertiesBoneTranslator</property>
+			<property name="fields">isLine|isButton|onlyButtons|showFillColor|showSelectionColor|enableFillColor|showBorders|enableBorders|showLineColor|showCorners|FillColor|SelectionColor|propBorderStyle|AllStyle|AllColor|LeftStyle|LeftColor|RightStyle|RightColor|TopStyle|TopColor|BottomStyle|BottomColor|LineSettingStyle|ShapeSettingStyle|LineSettingColor|LineSettingWeight|showFlashOnlyForSelector|showFlashOnlyForFillColorSelector|BackgroundHighlightColor|FillEffect|isNavBar|showEditorSelector</property>
+			<property name="visibleField">colorTabEnabled</property>
+			<property name="colorTabEnabled">true</property>
+			
+			<property name="unitSelectorChange">|Panel|AllGrid|</property>
+			<property name="tabName">color</property>
+
+			<property name="BorderOptions">
+				<block name="BorderOptionsModel" />
+			</property>
+			<property name="ButtonBorderOptions">
+				<block name="ButtonBorderOptionsModel" />
+			</property>
+			<property name="LineSettingStyle">
+				<block name="LineStyleModel" />
+			</property>		
+			<property name="ShapeSettingStyle">
+				<block name="ShapeStyleModel"/>
+			</property>
+			<property name="FillEffect">
+				<block name="ListModel">
+					<property name="valueForm">dssid</property>
+					<property name="items">
+						<list>
+							<block listElementKey="K2227" name="ItemInfo">
+								<property name="dssid">0</property>
+								<property name="n">{desc:mstrWeb.7805|Flat}</property>
+							</block>
+							<block listElementKey="K2228" name="ItemInfo">
+								<property name="dssid">1</property>
+								<property name="n">{desc:mstrWeb.9865|Glossy}</property>
+							</block>
+						</list>
+					</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ShortcutNodeValue is an ExpressionNodeValue representing a shortcut to a metadata object.
+	-->		
+	<block name="ShortcutNodeValue" inherits="ExpressionNodeValue">
+		<definition>
+			<property name="target" type="Block" />
+		</definition>
+		<assignments>
+			<property name="expressionType">1</property>	<!-- Generic -->
+			<property name="nodeType">5</property> <!-- Shortcut -->
+		</assignments>
+	</block>

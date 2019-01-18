@@ -1,0 +1,17 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ReportSaveTask">
+
+	<basicInfo desc="This Task provides the ability to save a report">
+		<parameter name="msgID" desc="The Message ID of a previously executed Report." required="true" type="guid"/>
+		<parameter name="folderID" desc="The folder where the report is to be saved" required="true" type="guid"/>
+		<parameter name="objName" desc="The desired report name" required="true" />
+		<parameter name="objDesc" desc="The desired report description" required="false" />
+		<parameter name="saveAsFlags" desc="The save as flag. Set it to 96 if you want to overwrite the existing object. See EnumDSSXMLReportSaveAsFlags for details" required="false" defvalue="64" type="int"/>
+		<parameter name="reportViewMode" desc="The Report's view mode. See EnumReportViewModes for details." required="false" defvalue="1" type="int"/>
+	</basicInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing Bean.
+	-->
+	<beanInfo name="rb" bean-type="ReportBean"/>
+</beanTask>

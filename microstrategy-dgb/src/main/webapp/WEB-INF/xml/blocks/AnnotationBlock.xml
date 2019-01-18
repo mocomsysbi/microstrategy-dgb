@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="AnnotationBlock" inherits="BaseBlock">
+		<definition>
+		    <property name="annotation" type="String"/>
+			<property name="hasAnnotation" type="Boolean"/>
+		</definition>
+	</block>

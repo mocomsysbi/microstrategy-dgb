@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarReportsButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbRelatedReportsPanel</property>
+		<property name="tooltip">{desc:mstrWeb.5673|Related Reports}</property>
+		<property name="cmdid">relatedReportsPanel</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

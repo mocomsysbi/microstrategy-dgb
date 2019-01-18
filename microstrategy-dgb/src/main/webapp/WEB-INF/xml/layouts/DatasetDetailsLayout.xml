@@ -1,0 +1,402 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div>
+    <div>
+      <mstrlayout:attr attribute="class" method="getCssClassName">
+        <mstrlayout:argument type="string" value="name" />
+      </mstrlayout:attr>
+      <label>
+        <mstrlayout:render name="descriptor">
+          <mstrlayout:argument type="int" value="78" />
+        </mstrlayout:render>
+      </label>
+      <span>
+        <mstrlayout:display method="getReportName">
+          <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+        </mstrlayout:display>
+      </span>
+    </div>
+    <mstrlayout:if method="getReportDescription" operator="isNotEmptyStr">
+      <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+      <mstrlayout:then>
+        <div>
+          <mstrlayout:attr attribute="class" method="getCssClassName">
+            <mstrlayout:argument type="string" value="description" />
+          </mstrlayout:attr>
+          <label>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="int" value="643" />
+            </mstrlayout:render>
+          </label>
+          <span>
+            <mstrlayout:display method="getReportDescription">
+              <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            </mstrlayout:display>
+          </span>
+        </div>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if method="getReportOwner" operator="isNotEmptyStr">
+      <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+      <mstrlayout:then>
+        <div>
+          <mstrlayout:attr attribute="class" method="getCssClassName">
+            <mstrlayout:argument type="string" value="owner" />
+          </mstrlayout:attr>
+          <label>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="int" value="60" />
+            </mstrlayout:render>
+            :
+          </label>
+          <span>
+            <mstrlayout:display method="getReportOwner">
+              <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            </mstrlayout:display>
+          </span>
+        </div>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <div>
+      <mstrlayout:attr attribute="class" method="getCssClassName">
+        <mstrlayout:argument type="string" value="reportPath" />
+      </mstrlayout:attr>
+      <label>
+        <mstrlayout:render name="descriptor">
+          <mstrlayout:argument type="int" value="650" />
+        </mstrlayout:render>
+      </label>
+      <span class="mstrPathFirst">
+        <mstrlayout:display method="getProjectName" />
+      </span>
+      <span class="mstrPathDelim">&gt;</span>
+      <mstrlayout:list id="Ancestors" name="getObjectPathFolderAncestors">
+        <mstrlayout:argument type="int" value="1" />
+        <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDetails" />
+        <span>
+          <mstrlayout:display method="getAncestorName">
+            <mstrlayout:argument list="Ancestors" type="com.microstrategy.web.objects.WebFolder" />
+          </mstrlayout:display>
+        </span>
+        <span class="mstrPathDelim">&gt;</span>
+      </mstrlayout:list>
+      <span class="mstrPathLast">
+        <mstrlayout:display method="getReportName">
+          <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+        </mstrlayout:display>
+      </span>
+    </div>
+    <mstrlayout:if method="getModifiedInformation" operator="isNotEmptyStr">
+      <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+      <mstrlayout:then>
+        <div>
+          <mstrlayout:attr attribute="class" method="getCssClassName">
+            <mstrlayout:argument type="string" value="modified" />
+          </mstrlayout:attr>
+          <label>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="int" value="61" />
+            </mstrlayout:render>
+            :
+          </label>
+          <span>
+            <mstrlayout:display method="getModifiedInformation">
+              <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            </mstrlayout:display>
+          </span>
+        </div>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if method="getStartTime" operator="isNotEmptyStr">
+      <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+      <mstrlayout:then>
+        <div>
+          <mstrlayout:attr attribute="class" method="getCssClassName">
+            <mstrlayout:argument type="string" value="start" />
+          </mstrlayout:attr>
+          <label>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="int" value="188" />
+            </mstrlayout:render>
+            :
+          </label>
+          <span>
+            <mstrlayout:display method="getStartTime">
+              <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            </mstrlayout:display>
+          </span>
+        </div>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if method="getStartTime" operator="isNotEmptyStr">
+      <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+      <mstrlayout:then>
+        <div>
+          <mstrlayout:attr attribute="class" method="getCssClassName">
+            <mstrlayout:argument type="string" value="finish" />
+          </mstrlayout:attr>
+          <label>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="int" value="655" />
+            </mstrlayout:render>
+          </label>
+          <span>
+            <mstrlayout:display method="getFinishTime">
+              <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            </mstrlayout:display>
+          </span>
+        </div>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <div>
+      <mstrlayout:attr attribute="class" method="getCssClassName">
+        <mstrlayout:argument type="string" value="sql" />
+      </mstrlayout:attr>
+      <label>
+        <mstrlayout:render name="descriptor">
+          <mstrlayout:argument type="int" value="1924" />
+        </mstrlayout:render>
+      </label>
+      <div class="divReportDetails">
+        <mstrlayout:display method="getReportDetails">
+          <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+        </mstrlayout:display>
+      </div>
+    </div>
+    <div>
+      <mstrlayout:attr attribute="class" method="getCssClassName">
+        <mstrlayout:argument type="string" value="sql" />
+      </mstrlayout:attr>
+      <mstrlayout:if name="isFeatureAvailable">
+        <mstrlayout:argument value="show-report-sql" />
+        <mstrlayout:then>
+          <label>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="int" value="642" />
+            </mstrlayout:render>
+          </label>
+          <textarea rows="15" cols="65" readonly="readonly">
+            <mstrlayout:display method="getReportSQL">
+              <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            </mstrlayout:display>
+          </textarea>
+        </mstrlayout:then>
+      </mstrlayout:if>
+    </div>
+    <mstrlayout:if method="shouldRenderAdvancedAreaExpanded">
+      <mstrlayout:then>
+        <div>
+          <mstrlayout:attr attribute="id" method="getAdvancedDivId">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+          </mstrlayout:attr>
+          <div>
+            <mstrlayout:attr attribute="class" method="getCssClassName">
+              <mstrlayout:argument type="string" value="rows" />
+            </mstrlayout:attr>
+            <label>
+              <mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="int" value="648" />
+              </mstrlayout:render>
+            </label>
+            <span>
+              <mstrlayout:display method="getTotalRows">
+                <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+              </mstrlayout:display>
+            </span>
+          </div>
+          <div>
+            <mstrlayout:attr attribute="class" method="getCssClassName">
+              <mstrlayout:argument type="string" value="cols" />
+            </mstrlayout:attr>
+            <label>
+              <mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="int" value="649" />
+              </mstrlayout:render>
+            </label>
+            <span>
+              <mstrlayout:display method="getTotalColumns">
+                <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+              </mstrlayout:display>
+            </span>
+          </div>
+          <div>
+            <mstrlayout:attr attribute="class" method="getCssClassName">
+              <mstrlayout:argument type="string" value="server" />
+            </mstrlayout:attr>
+            <label>
+              <mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="int" value="36" />
+              </mstrlayout:render>
+              :
+            </label>
+            <span>
+              <mstrlayout:display method="getServerName">
+                <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+              </mstrlayout:display>
+            </span>
+          </div>
+          <mstrlayout:if method="getMessageID" operator="isNotEmptyStr">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            <mstrlayout:then>
+              <div>
+                <mstrlayout:attr attribute="class" method="getCssClassName">
+                  <mstrlayout:argument type="string" value="msgID" />
+                </mstrlayout:attr>
+                <label>
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="80" />
+                  </mstrlayout:render>
+                </label>
+                <span>
+                  <mstrlayout:display method="getMessageID">
+                    <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+                  </mstrlayout:display>
+                </span>
+              </div>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:if method="getJobID" operator="isNotEmptyStr">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            <mstrlayout:then>
+              <div>
+                <mstrlayout:attr attribute="class" method="getCssClassName">
+                  <mstrlayout:argument type="string" value="jobID" />
+                </mstrlayout:attr>
+                <label>
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="3808" />
+                  </mstrlayout:render>
+                </label>
+                <span>
+                  <mstrlayout:display method="getJobID">
+                    <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+                  </mstrlayout:display>
+                </span>
+              </div>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:if method="getReportID" operator="isNotEmptyStr">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            <mstrlayout:then>
+              <div>
+                <mstrlayout:attr attribute="class" method="getCssClassName">
+                  <mstrlayout:argument type="string" value="reportID" />
+                </mstrlayout:attr>
+                <label>
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="77" />
+                  </mstrlayout:render>
+                </label>
+                <span>
+                  <mstrlayout:display method="getReportID">
+                    <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+                  </mstrlayout:display>
+                </span>
+              </div>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:if method="getReportStatus" operator="isNotEmptyStr">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            <mstrlayout:then>
+              <div>
+                <mstrlayout:attr attribute="class" method="getCssClassName">
+                  <mstrlayout:argument type="string" value="status" />
+                </mstrlayout:attr>
+                <label>
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="187" />
+                  </mstrlayout:render>
+                  :
+                </label>
+                <span>
+                  <mstrlayout:display method="getReportStatus">
+                    <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+                  </mstrlayout:display>
+                </span>
+              </div>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:if method="getMessageCreationTime" operator="isNotEmptyStr">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            <mstrlayout:then>
+              <div>
+                <mstrlayout:attr attribute="class" method="getCssClassName">
+                  <mstrlayout:argument type="string" value="mct" />
+                </mstrlayout:attr>
+                <label>
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="652" />
+                  </mstrlayout:render>
+                </label>
+                <span>
+                  <mstrlayout:display method="getMessageCreationTime">
+                    <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+                  </mstrlayout:display>
+                </span>
+              </div>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:if method="getMessageModificationTime" operator="isNotEmptyStr">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            <mstrlayout:then>
+              <div>
+                <mstrlayout:attr attribute="class" method="getCssClassName">
+                  <mstrlayout:argument type="string" value="mlu" />
+                </mstrlayout:attr>
+                <label>
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="653" />
+                  </mstrlayout:render>
+                </label>
+                <span>
+                  <mstrlayout:display method="getMessageModificationTime">
+                    <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+                  </mstrlayout:display>
+                </span>
+              </div>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:if method="getReportType" operator="isNotNull">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            <mstrlayout:then>
+              <div>
+                <mstrlayout:attr attribute="class" method="getCssClassName">
+                  <mstrlayout:argument type="string" value="rty" />
+                </mstrlayout:attr>
+                <label>
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="3192" />
+                  </mstrlayout:render>
+                </label>
+                <span>
+                  <mstrlayout:display method="getReportType">
+                    <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+                  </mstrlayout:display>
+                </span>
+              </div>
+            </mstrlayout:then>
+          </mstrlayout:if>
+        </div>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if method="isDhtml">
+      <mstrlayout:then>
+        <div>
+          <mstrlayout:attr attribute="class" method="getCssClassName">
+            <mstrlayout:argument type="string" value="buttonbarRight" />
+          </mstrlayout:attr>
+          <mstrlayout:render method="advancedDetailsButton">
+            <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+          </mstrlayout:render>
+        </div>
+        <mstrlayout:if method="isAdvancedAreaExpanded">
+          <mstrlayout:else>
+            <mstrlayout:render method="toggleAdvancedArea">
+              <mstrlayout:argument list="Datasets" type="com.microstrategy.web.objects.rw.RWDataSetDetails" />
+            </mstrlayout:render>
+          </mstrlayout:else>
+        </mstrlayout:if>
+      </mstrlayout:then>
+    </mstrlayout:if>
+  </div>
+</mstrlayout:layout>

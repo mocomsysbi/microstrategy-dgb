@@ -1,0 +1,271 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorSelectorModel">
+  <definition>
+	  <property name="selectorTabEnabled" type="Boolean"/>
+    <property name="postSubmitOption" type="Block"/>
+    <property name="actionSelectorType" type="Block"/>
+    <property name="EditSelectorType" type="Block"/>
+    <property name="EditSelectorSelectionType" type="Block"/>
+    <property name="EditSelectorMetricConditionType" type="Block"/>
+    <property name="EditSelectorMetricQualType" type="Block"/>
+    <property name="EditSelectorTotalPosition" type="Block"/>
+    <property name="DataFilterMode" type="Block"/>
+    <property name="showTotalEnabled" type="Boolean"/>
+    <property name="selectorAutoSyncEnabled" type="Boolean"/>
+    <property name="displayForms" type="Block"/>
+    <property name="EditDisplayForm" type="Block"/>
+    <property name="selectedAttrForms" type="Block"/>
+    <property name="showFormDelimiters" type="Block"/>
+    <property name="EditFormDelimiter" type="Block"/>
+    <property name="sortAttrForm" type="Block"/>
+    <property name="sortType" type="Block"/>
+    <property name="okBtnEnable" type="Boolean"/>
+    <property name="UpdateFilterTarget" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+    <property name="titleText">{desc:mstrWeb.4728|Selector}</property>
+    <property name="titleField">selectorTabTitle</property>
+    <property name="scriptClass">mstr.bones.editors.SelectorPageBoneTranslator</property>
+    <property name="visibleField">selectorTabEnabled</property>
+    <property name="selectorTabEnabled">true</property>
+    <property name="okBtnEnable">false</property>
+    <property name="fields">selectorTabTitle|AutoAnswerPrompt|InvalidateCache|ForceLiveExecution|transactionEnabled|actionSelectorType|runReportDocId|runReportDocName|runObjectType|OfflineSubmission|TXNSubmitInOrder|DisplayConfirmation|ShowSubmitMessage|SubmitMessage|postSubmitOption|isNormalSelector|isActionSelector|isMetricQualifierStyle|isMetricQualifier|EditSelectorMetricQualType|EditSelectorType|EditSelectorShowAll|EditSelectorAllAlias|EditSelectorShowTotal|EditSelectorTotalPosition|EditSelectorAutoSync|DataFilterMode|DataFilterModeEnabled|Autowire|UnsetCount|isCubeReportDataset|DisplaySelectorDocked|EditSelectorSelectionType|EditSelectorMetricConditionType|showMetricConditionType|displayForms|EditDisplayForm|showFormDelimiters|EditFormDelimiter|sortAttrForm|selectedAttrForms|sortType|displayFormsEnable|showTableButtons|showAdvanced|showAutoWireMessage|TableSubmitText|TableCancelText|TableCancelConfirmation|TableCancelType|showTableDisplayMode|isDSAsTarget|attrLCVisible|metricLCVisible|datasetLCVisible|attrReplaceLCVisible|submissionLCVisible|DataFilterVisible|selectorAutoSyncVisible|showTotalVisible|countVisible|selectionTypeVisible|isDDIC|stateUCVisible|UpdateFilterTarget|optionAllVisible|allAliasVisible|dsAsTgtChkVisible</property>
+    <property name="EditSelectorType">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K944" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4749|Select Attribute Element}</property>
+            </block>
+            <block listElementKey="K945" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4744|Select Metric}</property>
+            </block>
+            <block listElementKey="K946" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.4745|Select Panel}</property>
+            </block>
+            <block listElementKey="K947" name="ItemInfo"> <!--place holder for transaction action typed selector-->
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.|Select Transaction Action}</property>
+              <property name="cssText">display:none;</property>
+            </block>            
+            <!-- block listElementKey="K948" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">{desc:mstrWeb.|Select Text}</property>
+            </block -->
+            <block listElementKey="K949" name="ItemInfo">
+              <property name="dssid">7</property>
+              <property name="n">{desc:mstrWeb.14483|Select Attribute Qualification}</property>
+              <property name="cssText">display:none;</property>
+            </block>
+            <block listElementKey="K950" name="ItemInfo">
+              <property name="dssid">8</property>
+              <property name="n">{desc:mstrWeb.14484|Select Attribute}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="postSubmitOption">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="GoBacktoPrevious" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.8236|No subsequent action}</property>
+            </block>
+            <block listElementKey="RefreshDocument" name="ItemInfo">
+              <property name="dssid">8</property>
+              <property name="n">{desc:mstrWeb.8237|Refresh the current document}</property>
+            </block>
+            <block listElementKey="RunNewReport" name="ItemInfo">
+              <property name="dssid">16</property>
+              <property name="n">{desc:mstrWeb.8238|Run a new report or document}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="actionSelectorType">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="SubmitAction" name="ItemInfo">
+              <property name="dssid">8</property>
+              <property name="n">{desc:mstrWeb.5369|Submit}</property>
+            </block>
+            <block listElementKey="RecalculateAction" name="ItemInfo">
+              <property name="dssid">16</property>
+              <property name="n">{desc:mstrWeb.8232|Recaculate}</property>
+            </block>
+            <block listElementKey="DiscardAction" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.8233|Discard Changes}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="EditSelectorMetricQualType">
+      <block name="ListModel">
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="MetricQual" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.8266|Metric Condition}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="EditSelectorTotalPosition">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K947" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2256|Top}</property>
+            </block>
+            <block listElementKey="K948" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2257|Bottom}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="DataFilterMode">
+        <block name="TriStateListModel">
+            <property name="ExcludedItemsOnLoop">0</property>
+      </block>
+    </property>
+
+    <property name="EditSelectorSelectionType">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K949" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.3945|Include}</property>
+            </block>
+            <block listElementKey="K950" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.3946|Exclude}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+
+    <property name="EditSelectorMetricConditionType">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K951" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.527|Value}</property>
+            </block>
+            <block listElementKey="K952" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.8070|Rank Highest}</property>
+            </block>
+            <block listElementKey="K953" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.8071|Rank Lowest}</property>
+            </block>
+            <block listElementKey="K954" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.8072|Rank % Highest}</property>
+            </block>
+            <block listElementKey="K955" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.8073|Rank % Lowest}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+
+    <property name="displayForms">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K2199"  name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5539|Automatic}</property>
+            </block>
+            <block listElementKey="K2200"  name="ItemInfo">
+              <property name="dssid">custom</property>
+              <property name="n">{desc:mstrWeb.5870|Custom...}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+
+     <property name="showFormDelimiters">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K2201" name="ItemInfo">
+              <property name="dssid">:</property>
+              <property name="n">{desc:mstrWeb.6157|Colon}</property>
+            </block>
+            <block listElementKey="K2202" name="ItemInfo">
+              <property name="dssid">;</property>
+              <property name="n">{desc:mstrWeb.1054|Semicolon}</property>
+            </block>
+            <block listElementKey="K2203" name="ItemInfo">
+              <property name="dssid">,</property>
+              <property name="n">{desc:mstrWeb.1052|Comma}</property>
+            </block>
+            <block listElementKey="K2204" name="ItemInfo">
+              <property name="dssid">SPACE</property>
+              <property name="n">{desc:mstrWeb.1055|Space}</property>
+            </block>
+            <block listElementKey="K2205" name="ItemInfo">
+              <property name="dssid">OTHER</property>
+              <property name="n">{desc:mstrWeb.3627|Other}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="UpdateFilterTarget">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K2215" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.11721|Do not update}</property>
+            </block>
+            <block listElementKey="K2216" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.11722|Unset}</property>
+            </block>
+            <block listElementKey="K2217" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2461|All}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Selector' tab of the Report Services properties editor. -->

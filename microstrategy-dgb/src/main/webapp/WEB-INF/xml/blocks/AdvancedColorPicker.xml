@@ -1,0 +1,262 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="AdvancedColorPicker">
+  <assignments>
+    <property name="id">AdvancedColorPickerBlock</property>
+    <property name="title">{desc:mstrWeb.3225|Advanced Color Picker}</property>
+    <property name="modelPath">parent/models/0</property>
+    <property name="zIndex">1002</property>
+    <property name="visible">true</property>
+    <property name="helpTopic">advanced_color_picker_dialog_box.htm</property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K0" name="TextButton">
+          <property name="cmds">Unpop||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K1" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+          <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- target viewer -->
+    <property name="contentView">
+      <block name="VBox">
+        <property name="children">
+          <list>
+            <block listElementKey="K2" name="HBox">
+              <property name="modelPath">parent/parent/model</property>
+              <property name="children">
+                <list>
+                  <block listElementKey="K3" name="VBox">
+                    <property name="modelPath">parent/model</property>
+                    <property name="children">
+                      <list>
+                        <block listElementKey="K4" name="ColorPickerListView">
+                          <property name="caption">{desc:mstrWeb.3603|Basic Colors:}</property>
+                          <property name="modelPath">parent/model/basicColors</property>
+                          <property name="width">177px</property>
+                          <property name="height">122px</property>
+                          <property name="itemCssClass">ColorAdvItem</property>
+                        </block>
+                        <block listElementKey="K5" name="ColorPickerListView">
+                          <property name="caption">{desc:mstrWeb.4752|User Palette:}</property>
+                          <property name="modelPath">#mstrPageInfo/userPalette</property>
+                          <property name="width">177px</property>
+                          <property name="height">24px</property>
+                          <property name="itemCssClass">ColorAdvItem</property>
+                          <property name="renderTransparent">true</property>
+                        </block>
+                      </list>
+                    </property>
+                  </block>
+                  <block listElementKey="K6" name="Slider">
+                    <property name="modelPath">parent/model</property>
+                    <property name="orientation">b</property>
+                    <property name="bgField">rootColor</property>
+                    <property name="height">160px;</property>
+                    <property name="width">160px;</property>
+                    <property name="borderStyle">1px solid #808080</property>
+                    <property name="cssClass">AdvColorSB</property>
+                    <property name="thumbCssClass">AdvColorSBThumb</property>
+                    <property name="xField">s</property>
+                    <property name="yField">v</property>
+                    <property name="orientation">b</property>
+                    <property name="origin">7</property>
+                    <property name="xMin">0</property>
+                    <property name="xMax">100</property>
+                    <property name="yMin">0</property>
+                    <property name="yMax">100</property>
+                  </block>
+                  <block listElementKey="K7" name="Slider">
+                    <property name="modelPath">parent/model</property>
+                    <property name="orientation">v</property>
+                    <property name="height">160px;</property>
+                    <property name="width">10px;</property>
+                    <property name="borderStyle">1px solid #808080</property>
+                    <property name="cssClass">AdvColorHue</property>
+                    <property name="thumbCssClass">AdvColorHueThumb</property>
+                    <property name="yField">h</property>
+                    <property name="orientation">v</property>
+                    <property name="origin">6</property>
+                    <property name="yMin">0</property>
+                    <property name="yMax">359</property>
+                  </block>
+                </list>
+              </property>
+            </block>
+            <block listElementKey="K8" name="HBox">
+              <property name="modelPath">parent/parent/model</property>
+              <property name="cssText">margin-top:10px;</property>
+              <property name="hAlign">right</property>
+              <property name="children">
+                <list>
+                  <block listElementKey="K9" name="Slider">
+                    <property name="modelPath">parent/model</property>
+                    <property name="bgField">color</property>
+                    <property name="height">66px;</property>
+                    <property name="width">66px;</property>
+                    <property name="borderStyle">2px inset #D4D0C7</property>
+                    <property name="cssClass">AdvColorPreview</property>
+                  </block>
+                  <block listElementKey="K10" name="HTextBox">
+                    <property name="caption">{desc:mstrWeb.6011|Hex:}</property>
+                    <property name="valueField">hex</property>
+                    <property name="modelPath">parent/model</property>
+                    <property name="totalSize">6</property>
+                    <property name="cssText">margin-left:7px</property>
+                    <property name="maxlength">6</property>
+                    <property name="validator">
+                      <block name="FieldValidator">
+                        <property name="regEx">^([a-f]|[A-F]|\d){6}$</property>
+                        <property name="errMessage">{desc:mstrWeb.6022|This field should be a valid 6 digit hexadecimal number}</property>
+                        <property name="required">true</property>
+                      </block>
+                    </property>
+                  </block>
+                  <block listElementKey="K11" name="VBox">
+                    <property name="modelPath">parent/model</property>
+                    <property name="cssText">margin-left:10px</property>
+                    <property name="children">
+                      <list>
+                        <block listElementKey="K12" name="HTextBox">
+                          <property name="caption">{desc:mstrWeb.3604|Red}:</property>
+                          <property name="valueField">r</property>
+                          <property name="modelPath">parent/model</property>
+                          <property name="totalSize">2</property>
+                          <property name="maxlength">3</property>
+                          <property name="validator">
+                            <block name="FieldValidator">
+                              <property name="required">true</property>
+                              <property name="type">1</property>
+                              <property name="min">0</property>
+                              <property name="max">255</property>
+                            </block>
+                          </property>
+                        </block>
+                        <block listElementKey="K13" name="HTextBox">
+                          <property name="caption">{desc:mstrWeb.3606|Green}:</property>
+                          <property name="valueField">g</property>
+                          <property name="modelPath">parent/model</property>
+                          <property name="totalSize">2</property>
+                          <property name="maxlength">3</property>
+                          <property name="cssText">margin-top:3px</property>
+                          <property name="validator">
+                            <block name="FieldValidator">
+                              <property name="required">true</property>
+                              <property name="type">1</property>
+                              <property name="min">0</property>
+                              <property name="max">255</property>
+                            </block>
+                          </property>
+                        </block>
+                        <block listElementKey="K14" name="HTextBox">
+                          <property name="caption">{desc:mstrWeb.3608|Blue}:</property>
+                          <property name="valueField">b</property>
+                          <property name="modelPath">parent/model</property>
+                          <property name="totalSize">2</property>
+                          <property name="maxlength">3</property>
+                          <property name="cssText">margin-top:3px</property>
+                          <property name="validator">
+                            <block name="FieldValidator">
+                              <property name="required">true</property>
+                              <property name="type">1</property>
+                              <property name="min">0</property>
+                              <property name="max">255</property>
+                            </block>
+                          </property>
+                        </block>
+                      </list>
+                    </property>
+                  </block>
+                  <block listElementKey="K15" name="VBox">
+                    <property name="modelPath">parent/model</property>
+                    <property name="cssText">margin-left:10px</property>
+                    <property name="children">
+                      <list>
+                        <block listElementKey="K16" name="HTextBox">
+                          <property name="caption">{desc:mstrWeb.3605|Hue}:</property>
+                          <property name="valueField">h</property>
+                          <property name="modelPath">parent/model</property>
+                          <property name="totalSize">2</property>
+                          <property name="maxlength">3</property>
+                          <property name="validator">
+                            <block name="FieldValidator">
+                              <property name="required">true</property>
+                              <property name="type">1</property>
+                              <property name="min">0</property>
+                              <property name="max">359</property>
+                            </block>
+                          </property>
+                        </block>
+                        <block listElementKey="K17" name="HTextBox">
+                          <property name="caption">{desc:mstrWeb.3607|Saturation}:</property>
+                          <property name="valueField">s</property>
+                          <property name="modelPath">parent/model</property>
+                          <property name="totalSize">2</property>
+                          <property name="maxlength">3</property>
+                          <property name="cssText">margin-top:3px</property>
+                          <property name="validator">
+                            <block name="FieldValidator">
+                              <property name="required">true</property>
+                              <property name="type">1</property>
+                              <property name="min">0</property>
+                              <property name="max">100</property>
+                            </block>
+                          </property>
+                        </block>
+                        <block listElementKey="K18" name="HTextBox">
+                          <property name="caption">{desc:mstrWeb.3609|Brightness}:</property>
+                          <property name="valueField">v</property>
+                          <property name="modelPath">parent/model</property>
+                          <property name="totalSize">2</property>
+                          <property name="maxlength">3</property>
+                          <property name="cssText">margin-top:3px</property>
+                          <property name="validator">
+                            <block name="FieldValidator">
+                              <property name="required">true</property>
+                              <property name="type">1</property>
+                              <property name="min">0</property>
+                              <property name="max">100</property>
+                            </block>
+                          </property>
+                        </block>
+                      </list>
+                    </property>
+                  </block>
+                </list>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- apply button -->
+        <block listElementKey="K19" name="TextButton">
+          <property name="caption">{desc:mstrWeb.134|Apply}</property>
+          <property name="cmds">!CheckValidationStatus||parent;AddUserColor||parent/model;SelectValue|parent/model/color|parent/opener/model;UpdateTarget||parent/model</property>
+        </block>
+        <!-- ok button -->
+        <block listElementKey="K20" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">!CheckValidationStatus||parent;AddUserColor||parent/model;SelectValue|parent/model/color|parent/opener/model;UpdateTarget||parent/model;DetachUserPalette||parent/model;Unpop||parent</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K21" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">DetachUserPalette||parent/model;Unpop||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesEditor is a popup used for setting rw control properties.
+	-->

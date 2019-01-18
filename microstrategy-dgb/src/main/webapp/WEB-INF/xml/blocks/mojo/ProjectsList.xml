@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ProjectsList" inherits="BaseBlock">
+	<definition>
+         <!-- Answers -->
+        <property name="projects" type="List" />
+	</definition>
+</block>

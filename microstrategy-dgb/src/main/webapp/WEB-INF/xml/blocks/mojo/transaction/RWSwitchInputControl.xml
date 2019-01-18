@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWSwitchInputControl" inherits="RWDataInputObject">
+	<definition>
+		<!-- whether display as checkbox on mobile devices: 0 - no, 1 - yes -->
+		<property name="stl" type="Integer"/>
+		<!-- The possible values list -->
+		<property name="vls" type="List"/>
+	</definition>
+</block>

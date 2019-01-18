@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarSortGridButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbSort</property>
+		<property name="tooltip">{desc:mstrWeb.1888|Sort...}</property>
+	</assignments>
+</block>

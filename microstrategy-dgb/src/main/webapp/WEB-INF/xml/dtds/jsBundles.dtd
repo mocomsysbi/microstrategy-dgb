@@ -1,0 +1,57 @@
+<!-- 
+    At the root is a single element that defines all bundles.
+    o It has an attribute called 'dir' that defines the path relative
+      to the "application root" directory to store bundles. If the 
+      directory does not exist, it is created.
+-->
+<!ELEMENT jsBundles (jsBundle+)>
+<!ATTLIST jsBundles dir CDATA #REQUIRED>
+
+<!--
+    This element defines a single bundle. It contains a list
+    of ZERO OR MORE elements that define where the source JavaScript
+    files originate. Bundles with zero JSDIR elements are used to copy
+    existing bundles while changing the compressor or other attributes.
+    
+    o It has a (required) attribute that defines the name of the bundle.
+      The name of the bundle is used to uniquely identify it in the
+      group of all bundles. This name is also used to form the actual
+      bundled JavaScript file.
+    o It has an (optional) attribute ('minify') that defines whether 
+      the group of source files are minified after being combined.
+      By default, the contents is not minified.
+    o It has an (optional) attribute ('depSort') that defines whether
+      the source files are sorted by their static code dependencies.
+      By default, the list of files are combined in the order supplied.
+    o It has an (optional) attribute ('inherits') that defines the name
+      of another (already defined) JavaScript bundle. If present, then
+      this bundle inherits the list of files defined in another bundle.
+    o It has an (optional) attribute ('sassSuffix') that defines the name
+      suffix of target SASS partial that will be used to compile the SASS
+      bundle. By default, the suffix is "".
+-->
+<!ELEMENT jsBundle (jsDir*)>
+<!ATTLIST jsBundle name ID #REQUIRED>
+<!ATTLIST jsBundle minify (true | false) "false">
+<!ATTLIST jsBundle type (yui|closure|comments-only) "yui"	>
+<!ATTLIST jsBundle depSort (true | false) "false">
+<!ATTLIST jsBundle inherits IDREF #IMPLIED>
+<!ATTLIST jsBundle excludes CDATA #IMPLIED> 
+<!ATTLIST jsBundle minifyflags CDATA #IMPLIED>
+<!ATTLIST jsBundle sassSuffix CDATA #IMPLIED>
+
+<!--
+    This element defines a single JavaScript source directory. It contains
+    a list of JavaScript files that are located in that directory.
+    o It has a (required) path attribute that identifies the path relative
+      to the "application root" directory.
+-->
+<!ELEMENT jsDir (jsFile+)>
+<!ATTLIST jsDir path CDATA #REQUIRED>
+
+<!--
+    This element defines a single JavaScript source file. 
+    o It has a (required) file name.
+-->
+<!ELEMENT jsFile EMPTY>
+<!ATTLIST jsFile name NMTOKEN #REQUIRED>

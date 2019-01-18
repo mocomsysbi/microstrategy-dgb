@@ -1,0 +1,86 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="BaseModel" name="GradientEditorModel">
+  <definition>
+    <!-- The data describing the current gradient. -->
+    <property name="gradient" type="String"/>
+    <!-- A ListModel of basic colors for the beginning color. -->
+    <property name="color1" type="Block"/>
+    <!-- A ListModel of basic colors for the ending color. -->
+    <property name="color2" type="Block"/>
+    <!-- The gradient type (e.g., Horizontal, Vertical, Diagonal Up, etc.) -->
+    <property name="gradientType" type="Block"/>
+    <!-- The gradient angle (based on gradientType) -->
+    <property name="angle" type="Integer"/>
+    <!-- A ListModel containing the colors for 'Basic Colors' palette. -->
+    <property name="variants" type="Block"/>
+    <!-- A cache of all possible variants. -->
+    <property name="variantsCache" type="List"/>
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.models.GradientEditor</property>
+    <property name="gradientType">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K695" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4957|Horizontal}</property>
+            </block>
+            <block listElementKey="K696" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4949|Vertical}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="variants">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+      </block>
+    </property>
+    <property name="variantsCache">
+      <list>
+        <block listElementKey="K697" name="ListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K698" name="ItemInfo">
+                <property name="dssid">14,0,0,0</property>
+              </block>
+              <block listElementKey="K699" name="ItemInfo">
+                <property name="dssid">14,0,100,0</property>
+              </block>
+              <block listElementKey="K700" name="ItemInfo">
+                <property name="dssid">14,0,50,50</property>
+                <property name="flashOnly" type="Boolean">true</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K701" name="ListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K702" name="ItemInfo">
+                <property name="dssid">14,90,0,0</property>
+              </block>
+              <block listElementKey="K703" name="ItemInfo">
+                <property name="dssid">14,90,0,100</property>
+              </block>
+              <block listElementKey="K704" name="ItemInfo">
+                <property name="dssid">14,90,50,50</property>
+                <property name="flashOnly" type="Boolean">true</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

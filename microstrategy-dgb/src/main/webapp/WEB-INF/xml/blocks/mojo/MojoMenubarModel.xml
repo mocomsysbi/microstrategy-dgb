@@ -1,0 +1,26 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoMenubarModel">
+    <definition>
+        <!-- An array of buttons. -->
+        <property name="items" type="List" />
+    </definition>
+    <assignments>
+        <property name="items">
+            <list>
+                <block name="MojoMenubarFileModel" />
+                <block name="MojoMenubarInsertModel" />
+                <block name="MojoMenubarStyleModel" />
+                <block name="MojoMenubarShareModel" />                
+                <block name="MojoMenubarViewModel" />
+                <block name="MojoMenubarHelpModel" />
+                
+
+                <!--
+			    <block name="MojoMenubarEditModel" />
+				<block name="MojoMenubarInsertModel" />
+				<block name="MojoMenubarWindowModel" />
+				-->
+            </list>
+        </property>
+    </assignments>
+</block>

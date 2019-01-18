@@ -1,0 +1,21 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+<form id="exportForm" action="" method="post">
+	<mstrlayout:attr name="getFormAttributes"/>
+	<mstrlayout:render name="HiddenInputFromRequest">
+		<mstrlayout:argument type="string" value="defaultRunMode" />
+	</mstrlayout:render>
+	<mstrlayout:render name="HiddenInputFromRequest">
+		<mstrlayout:argument type="string" value="showOptionsPage" />
+	</mstrlayout:render>	
+</form>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptsContainerLayout_widget.xml">
+    <mstrlayout:replace slot="ReportInstanceModel">
+      <mstrlayout:bDeleteProperty path="messageName"/>
+      <mstrlayout:bSetProperty path="extendedProperties/updateManagerFormId" value="exportForm"/>
+    </mstrlayout:replace>
+    <mstrlayout:replace slot="PromptEditor">
+      <mstrlayout:bDeleteProperty path="messageNameView"/>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+</mstrlayout:layout>

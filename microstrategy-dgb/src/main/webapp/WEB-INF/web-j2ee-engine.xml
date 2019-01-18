@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-j2ee-engine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="web-j2ee-engine.xsd">
+  <security-role-map>
+     <role-name>admin</role-name>
+     <server-role-name>administrators</server-role-name>
+  </security-role-map>
+</web-j2ee-engine>

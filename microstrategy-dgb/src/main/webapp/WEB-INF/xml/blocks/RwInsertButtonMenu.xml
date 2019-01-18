@@ -1,0 +1,51 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwInsertButtonMenu">
+	<assignments>
+		<property name="items">
+			<list>
+				<block listElementKey="K1789" name="MenuControlModel">
+					<property name="htmlId">mnuInsertBtnCO</property>
+					<property name="text">{desc:mstrWeb.9866|Caption only}</property>
+					<property name="extraCssClass">MenuOption mnuInsert</property>
+					<property name="cmdid">currentControl;106B|1</property>
+				</block>
+                <block listElementKey="K30003" name="BaseBlock">
+                  <property name="notForPanel" type="Boolean">true</property>
+                </block>
+				<block listElementKey="K1790" name="MenuControlModel">
+					<property name="htmlId">mnuInsertBtnIO</property>
+					<property name="text">{desc:mstrWeb.9867|Icon only}</property>
+					<property name="extraCssClass">MenuOption mnuInsert</property>
+					<property name="cmdid">currentControl;106B|2</property>
+				</block>
+				<block listElementKey="K1791" name="MenuControlModel">
+					<property name="htmlId">mnuInsertBtnIL</property>
+					<property name="text">{desc:mstrWeb.9868|Icon to the left of caption}</property>
+					<property name="extraCssClass">MenuOption mnuInsert</property>
+					<property name="cmdid">currentControl;106B|3</property>
+				</block>
+				<block listElementKey="K1792" name="MenuControlModel">
+					<property name="htmlId">mnuInsertBtnIR</property>
+					<property name="text">{desc:mstrWeb.9869|Icon to the right of caption}</property>
+					<property name="extraCssClass">MenuOption mnuInsert</property>
+					<property name="cmdid">currentControl;106B|4</property>
+				</block>
+				<block listElementKey="K1793" name="MenuControlModel">
+					<property name="htmlId">mnuInsertBtnIT</property>
+					<property name="text">{desc:mstrWeb.9870|Icon on top of caption}</property>
+					<property name="extraCssClass">MenuOption mnuInsert</property>
+					<property name="cmdid">currentControl;106B|5</property>
+				</block>
+				<block listElementKey="K30001" name="BaseBlock">
+					<property name="notForPanel" type="Boolean">true</property>
+				</block>
+				<block listElementKey="K1794" name="MenuControlModel">
+					<property name="htmlId">mnuInsertBtnCustom</property>
+					<property name="text">{desc:mstrWeb.2056|Custom}</property>
+					<property name="extraCssClass">MenuOption mnuInsert</property>
+					<property name="cmdid">currentControl;106B|6</property>
+				</block>
+			</list>
+		</property>
+	</assignments>
+</block>

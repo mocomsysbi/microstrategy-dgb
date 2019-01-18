@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition of a (combined) Grid & Graph object.
+--> 
+<block name="RWGridGraphDef" inherits="RWTemplateDef">
+	<definition>
+		<!-- The value of the FormattingCrosstab GridPosition property.  
+		     0 == Top, 1 == Bottom, 2 == Left, 3 == Right 
+		-->
+		<property name="gp" type="Integer" />
+
+		<!-- The value of the FormattingCrosstab GridArea property. 
+		     It is a number between 0 and 100. -->
+		<property name="ga" type="Integer" /> 	
+
+		<!--  quick switch mode -> missing values implies Quick Switch Disabled. If present, the value implies 
+		the current display mode EnumDssXMLDisplayMode-->
+		<property name="qsm" type="Integer" /> 	
+	</definition>
+	<assignments>
+		<property name="t">527</property>
+	</assignments>
+</block>

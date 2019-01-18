@@ -1,0 +1,280 @@
+<!-- 
+    1. A blockLibrary is simply a collection of ZERO or ONE macros followed by any 
+       number of block, includeBlock and includeDir elements. 
+    2. Essentially, the blockLibrary defines all of the blocks necessary for this
+       library along with any macros which may be used in any of the property values.
+-->
+<!ELEMENT blockLibrary (macros?, (block | includeBlock | includeDir)* )>
+
+<!-- 
+    1. A macros element is simple a list of ONE or MORE macro elements.
+-->
+<!ELEMENT macros (macro+)>
+
+<!-- 
+    1. A macro element defines a name and a Fully Qualified Class Name
+       for the Macro that implements this functionality. 
+       
+    2. The macro needs to be declared before it can be used in the library.
+       Otherwise, the macro is not expanded in a property value. The name needs
+       to be unique in the library.
+       
+    3. The value of the 'name' attribute is the name of the macro. 
+    
+    4. The value of the 'fcqn' attribute refers to the Fully Qualified Class
+       Name of the Java class that implements the macro.
+       
+    5. A macro element can have no child elements.
+-->
+<!ELEMENT macro EMPTY>
+<!ATTLIST macro name NMTOKEN #REQUIRED>
+<!ATTLIST macro fqcn NMTOKEN #REQUIRED>
+
+<!--
+    1. A block consists of ZERO or ONE definition followed by ZERO 
+       or MORE assignments elements.  A block element may appear inside an
+       assignments element, in which case, only property elements are allowed.
+       
+    2. Though it would be legal to include NEITHER a definition nor an assignments 
+       element, it would have no effect (it as if it was never present).
+-->
+<!ELEMENT block (definition?, assignments*, property*)>
+
+<!-- 
+    1. A block element has a 'name' attribute which refers to a Block that we are
+       either declaring or referencing. We are "referencing" a Block if the block
+       element appears inside an assignments element. Otherwise, we are declaring
+       the block.
+
+    2. The 'name' attribute is of type NMTOKEN as we require it to be a "typical"
+       name (e.g., no spaces).
+	   
+    3. The 'name' attribute is optional because while it is REQUIRED for top-level
+       block elements (declaring), it is optional when inside an assignments 
+       statement. If it is not provided, it is known as an "anonymous" Block.
+-->
+<!ATTLIST block name NMTOKEN #IMPLIED>
+
+<!-- 
+    1. A block element has an 'inherits' attribute which defines a COMMA
+       SEPARATED LIST of other Blocks that it inherits properties from.  
+       
+    2. Each of the named Blocks must exist in the library.
+	
+    3. This attribute is optional. If present, it instructs the FACTORY to inherit
+       the definitions and assignments from the specified Blocks in the
+       order that they are listed.
+       
+    4. If no 'inherits' attribute exists, then no inheritance is performed.
+-->
+<!ATTLIST block inherits CDATA #IMPLIED>
+
+<!--
+    1. When a block element appears inside a list element, it may be given
+       a key. This key identifies the "slot" where the block is stored in 
+       the list. When specified outside of a list assignment context, then
+       this attribute is not allowed.
+       
+    2. The key must begin with either a letter, dash ('-') or an underscore ('_')
+       followed by the same or a digit.
+-->
+<!ATTLIST block listElementKey NMTOKEN #IMPLIED>
+
+<!--
+    1. When a block element appears inside a list element, it may be given 
+       instructions on where to place this block. These "instructions" are 
+       represented in the 'listAction' attribute.
+       
+       a. The 'prepend' action indicates that the Block should be inserted
+          before the beginning of the list.
+          
+       b. The 'append' action indicates that the Block should be added to 
+          the end of the list. This is the DEFAULT action, if omitted.
+          
+       c. The 'insert' action indicates that the Block should be inserted
+          BEFORE another (existing) element. The 'listItem' attribute defines
+          the existing element that the insertion is relative to. If 'listItem'
+          is omitted or invalid, this action becomes 'append'.
+          
+       d. The 'add' action indicates that the Block should be added AFTER
+          another (existing) element. The 'listItem' attribute defines the existing
+          element that the addition is relative to. If 'listItem' is omitted or
+          invalid, this action becomes 'append'.
+          
+       e. The 'replace' action indicates that the Block should REPLACE another
+          existing element. The 'listItem' attribute defines the existing element to
+          replace. If 'listItem' is omitted or invalid, this action becomes 'append'.    
+          
+       f. The 'delete' action indicates an existing list element should be removed.
+          The 'listItem' attribute defines the existing element to remove. If 
+          'listItem' is omitted or invalid, this action becomes a 'no op'.    
+-->
+<!ATTLIST block listAction (prepend | append | insert | add | replace | delete) #IMPLIED>
+
+<!--
+    1. When a block element appears inside a list element, a reference to an 
+       existing element may be required to fulfill the insertion of that Block.
+       If the listAction is 'insert', 'add' or 'replace', then the 'listItem' 
+       attribute defines which existing element the operation is relative to.
+       
+    2. The 'listItem' attribute may be a key (see listElementKey above) or may be
+       a numeric index.
+       
+-->
+<!ATTLIST block listItem NMTOKEN #IMPLIED>
+
+<!--
+    1. When a block element appears inside a list element, By default, all child 
+       nodes are appended to the collection of children in the order they're found
+       in the xml; when this attribute is specified, it allows to change this 
+       default ordering and the node is appended in the given position.
+    2. This position is relative only within the current list.  If listAction
+       is defined that instruction will be used regardless of position.
+       
+-->
+<!ATTLIST block position CDATA #IMPLIED>
+
+<!--
+    1. A block has an optional 'annotation' attribute that defines a set of 
+       arbitrary annotations. Each annotation belongs to a group and has a value.
+       Annotations are extra information provided by the designer which affect
+       how the property is rendered. It is expected that annotations are grouped
+       by Content Type and that a given Renderer observes the annotations specified
+       for its Content Type.
+-->
+<!ATTLIST block annotation CDATA #IMPLIED>
+
+<!--
+    1. A definition element defines a list of ONE or MORE property elements.
+
+    2. Each definition element defines the property elements for a single
+       Block.
+-->
+<!ELEMENT definition (property+) >
+
+<!-- 
+    1. An assignments element represents the property assignments that are 
+       performed by the FACTORY during Block creation. There are essentially
+       two types of assignment blocks: default and mode-specific. 
+
+    2. Default assignments are performed all of the time, regardless of the mode
+       specified.
+
+    3. Mode-specific assignments are performed after default assignments (overriding
+       them if specified). 
+
+    4. When a Block is created, the caller may optionally specify a mode. If omitted,
+       only default assignments are applied. If a mode is specified, the default assignments
+       are applied, followed by mode-specific assignments.
+-->
+<!ELEMENT assignments (property)+ >
+
+<!--
+    1. The mode attribute defines whether an assignment section is "default" or
+       "mode-specific". If the mode attribute is omitted, then the section is considered
+       to apply "default" assignments. If a mode attribute is specified, then the 
+       value of the attribute defines the name of the mode.
+-->
+<!ATTLIST assignments mode NMTOKEN #IMPLIED>
+
+<!--
+    1. A property serves a "dual" role in this content. It can be used to represent
+       the "definition" of a property (in which case the 'type' attribute is required).
+	   
+    2. It can also be used to represent a property "assignment" (in which case the text
+       body of the element represents the value of the property).
+ 
+    3. When a scalar-valued property is being assigned, the text content (#PCDATA)
+       is evaluated in the context of the previously declared 'type'.
+	   
+    4. When a list-valued property is being assigned, then the only acceptable
+       content is a <list> element.
+
+    5. When a Block-valued property is being assigned, then the only acceptable content
+       is a <block> element.
+	   
+    6. When the <property> is used in a definition element, then the content must be
+       EMPTY; otherwise, it is considered an error.
+	   
+    7. "Mixed Content" (elements that contain parsed character data as well as
+       content) requires us to place #PCDATA first and to include ZERO or MORE 
+       alternatives. This is a requirement for DTDs.
+-->
+<!ELEMENT property (#PCDATA | block | list | EMPTY )* >
+
+<!-- 
+    1. A property has a required 'name' attribute that defines the simple name of 
+       the property.
+	   
+    2. In a normal property declaration, the 'name' attribute must conform to the 
+       name of a valid XML element (NMTOKEN). However, in the case that a property
+       is being assigned in an assignments section, the 'name' attribute may be 
+       a PATH which is an arbitrary string. In this case, the 'name' attribute is 
+       typed as CDATA. 
+-->
+<!ATTLIST property name CDATA #REQUIRED>
+
+<!-- 
+    1. A property has an optional 'type' attribute that defines what kind of
+       value may be saved in the property: String, Integer, Boolean, Double, Long, 
+       Block or List.
+	  
+    2. The 'type' attribute is required when the property element appears in a
+       definition element; when inside an assignments element it is optional. If 
+       present, then it may define a property "on the fly".
+-->
+<!ATTLIST property type NMTOKEN #IMPLIED>
+
+<!--
+    1. A property has an optional 'annotation' attribute that defines a set of 
+       arbitrary annotations. Each annotation belongs to a group and has a value.
+       Annotations are extra information provided by the designer which affect
+       how the property is rendered. It is expected that annotations are grouped
+       by Content Type and that a given Renderer observes the annotations specified
+       for its Content Type.
+	   
+    2. An annotation attribute may appear on a property in the context of a definition
+       or an assignment. The values of multiple annotation attributes combine/replace
+       to form a single set.
+-->
+<!ATTLIST property annotation CDATA #IMPLIED>
+
+<!--
+    1. A list element is used in an assignments section to assign a list of Blocks
+       to a list-valued property.
+-->
+<!ELEMENT list (block)+>
+
+<!--
+    1. The includeBlock element instructs the library to load a specific Block 
+       indicated by the REQUIRED 'name' attribute. This is a Block name, not a 
+       file name, hence there is no suffix or directory information. 
+   
+    2. To specify a directory where to look for the block file, use the 'dir' 
+       attribute. The path specified is assumed to be RELATIVE to the directory 
+       that contains the block library file. 
+	   
+    3. If omitted, the block file is assumed to be in the same directory as the 
+       block library file.
+-->
+<!ELEMENT includeBlock EMPTY>
+<!ATTLIST includeBlock name NMTOKEN #REQUIRED>
+<!ATTLIST includeBlock dir CDATA #IMPLIED>
+
+<!--
+    1. The includeDir element instructs the library to load all of the Block files 
+       located in the directory specified by the 'dir' attribute. 
+
+    2. As in the case of the 'includeBlock' element, the path specified is assumed
+       to be RELATIVE to the directory that contains the block library file.
+
+    3. If omitted, the directory searched is the same directory that contains the 
+       block library.
+	   
+    4. The directory searched may recurse into subdirectories or not. If the
+       value of the 'recurse' attribute is 'true', then subdirectories are searched.
+       Otherwise, they are not. If omitted, they are not searched.
+-->
+<!ELEMENT includeDir EMPTY>
+<!ATTLIST includeDir dir CDATA #IMPLIED>
+<!ATTLIST includeDir recurse (true | false) 'false'>

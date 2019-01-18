@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about a Prompt's location. See WebPromptLocation.
+-->
+<block name="PromptLocation">
+    <definition>
+        <!-- The Prompt PIN. See WebPromptLocation.getPIN() -->
+        <property name="pin" type="Integer" />
+
+        <!-- The ID of the prompt location. See WebPromptLocation.getID() -->
+        <property name="did" type="String" />
+        
+        <!-- The type of the prompt location. See WebPromptLocation.getType() -->
+        <property name="t" type="Integer" />
+    </definition>
+</block>

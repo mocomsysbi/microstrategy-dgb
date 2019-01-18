@@ -1,0 +1,55 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:bContext defaultContentType="JSON" />
+	     <mstrlayout:block name="HeadersModel">
+	         <mstrlayout:list id="header" method="getHeaders">
+	             <mstrlayout:argument type="com.microstrategy.web.objects.WebHeaders" base="headersList" />
+	             <mstrlayout:bSetProperty path = "items">
+	                 <mstrlayout:block name="HeaderModel">
+	                     <mstrlayout:bSetProperty path="idx" method="com.microstrategy.web.objects.WebHeader#getWebElementIndex" base="header">
+	                         <mstrlayout:argument type="java.lang.Boolean"/>
+	                     </mstrlayout:bSetProperty>
+	                     <mstrlayout:bSetProperty path="rs" method="com.microstrategy.web.objects.WebHeader#getRowSpan" base="header" />
+	                     <mstrlayout:bSetProperty path="o" method="com.microstrategy.web.objects.WebHeader#getOrdinal" base="header" />
+	                     <mstrlayout:bSetProperty path="cs" method="getColSpan">
+	                         <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+	                     </mstrlayout:bSetProperty>
+	                     <mstrlayout:bSetProperty path="at" method="getActionType">
+	                         <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+	                     </mstrlayout:bSetProperty>
+	                     <!-- 
+	                     <mstrlayout:bSetProperty path="a" method="getAxis">
+	                         <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+	                     </mstrlayout:bSetProperty>
+	                     -->
+					    <mstrlayout:bSetProperty path="pi" method="getParentIndex">
+	                         <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+					    </mstrlayout:bSetProperty>
+	                     <mstrlayout:bSetProperty path="tui" method="getTitleUnitIndex">
+	                         <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+	                     </mstrlayout:bSetProperty>
+	                     <mstrlayout:bSetProperty path="ui" method="getUnitIndex">
+	                         <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+	                     </mstrlayout:bSetProperty>
+	                     <mstrlayout:bSetProperty path="mix" method="getMetricIndex">
+	                         <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+	                     </mstrlayout:bSetProperty>
+	                     <mstrlayout:bSetProperty path="css" method="getCssClass">
+	                         <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+	                     </mstrlayout:bSetProperty>
+			            <mstrlayout:bSetProperty path="so" method="getSortOrder">
+					        <mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+			            </mstrlayout:bSetProperty>
+						<mstrlayout:if name="isComplex">
+							<mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+							 <mstrlayout:then>
+	                       		<mstrlayout:bSetProperty path="v" method="getValue">
+	                           		<mstrlayout:argument type="com.microstrategy.web.objects.WebHeader" base="header" />
+	                       		</mstrlayout:bSetProperty>
+						    </mstrlayout:then>
+						</mstrlayout:if>
+					</mstrlayout:block> <!-- header model -->
+	     		</mstrlayout:bSetProperty>   
+			</mstrlayout:list> <!-- headers -->
+	</mstrlayout:block> <!-- HeadersModel -->                                                                             
+</mstrlayout:layout>

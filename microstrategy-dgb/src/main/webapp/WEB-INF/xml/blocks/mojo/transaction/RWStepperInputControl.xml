@@ -1,0 +1,3 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWStepperInputControl" inherits="RWDataInputObject, CalculatedConfig">
+</block>

@@ -1,0 +1,90 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <table class="sort">
+        <colgroup>
+            <col class="sortLabel"/>
+            <col class="sortKey"/>
+            <col class="sortOrder"/>
+            <col class="sortOrder"/>
+        </colgroup>
+        <tr>
+            <td>1.&nbsp;
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2744"/>
+                </mstrlayout:render>
+            </td>
+            <td>
+                <mstrlayout:render name="templateUnits"/>
+            </td>
+            <td>
+                <mstrlayout:render name="ascendingRadioButtonByAxis">
+                    <mstrlayout:argument type="int" value="1"/>                
+                </mstrlayout:render>
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2162"/>
+                </mstrlayout:render>
+            </td>
+            <td>
+                <mstrlayout:render name="descendingRadioButtonByAxis">
+                    <mstrlayout:argument type="int" value="1"/>                
+                </mstrlayout:render>
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2163"/>
+                </mstrlayout:render>
+            </td>
+        </tr>
+        <tr>
+            <td>2.&nbsp;
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2745"/>
+                </mstrlayout:render>
+            </td>
+            <td>
+                <mstrlayout:render name="templateUnits"/>
+            </td>
+            <td>
+                <mstrlayout:render name="ascendingRadioButtonByAxis">
+                    <mstrlayout:argument type="int" value="1"/>                
+                </mstrlayout:render>
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2162"/>
+                </mstrlayout:render>
+            </td>
+            <td>
+                <mstrlayout:render name="descendingRadioButtonByAxis">
+                    <mstrlayout:argument type="int" value="1"/>                
+                </mstrlayout:render>
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2163"/>
+                </mstrlayout:render>
+            </td>
+        </tr>
+        <tr>
+            <td>3.&nbsp;
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2745"/>
+                </mstrlayout:render>
+            </td>
+            <td>
+                <mstrlayout:render name="templateUnits"/>
+            </td>
+            <td>
+                <mstrlayout:render name="ascendingRadioButtonByAxis">
+                    <mstrlayout:argument type="int" value="1"/>                
+                </mstrlayout:render>
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2162"/>
+                </mstrlayout:render>
+            </td>
+            <td>
+                <mstrlayout:render name="descendingRadioButtonByAxis">
+                    <mstrlayout:argument type="int" value="1"/>                
+                </mstrlayout:render>
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.2163"/>
+                </mstrlayout:render>
+            </td>
+        </tr>
+    </table>
+    <br/>
+</mstrlayout:layout>

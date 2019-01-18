@@ -1,0 +1,176 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<!-- objects prompt -->
+	<mstrlayout:if name="isObjectsPrompt">
+		<mstrlayout:then>
+			<!-- render questions tab -->
+		    <mstrlayout:if name="isQuestionsTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptObjectsQuestionTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render display properties tab -->
+			<mstrlayout:if name="isDispPropertiesTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptObjectsDispPropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render style properties tab -->
+			<mstrlayout:if name="isStylePropertiesTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptObjectsStylePropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!--render default answers tab -->
+			<mstrlayout:if name="isDefaultAnswerTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptObjectsDefaultAnswersTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+		    </mstrlayout:if>
+		</mstrlayout:then>
+	</mstrlayout:if>
+	<!--elements prompt -->
+	<mstrlayout:if name="isElementsPrompt">
+		<mstrlayout:then>
+			<!-- render questions tab -->
+		    <mstrlayout:if name="isQuestionsTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptElementsQuestionTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render display properties tab -->
+			<mstrlayout:if name="isDispPropertiesTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptElementsDispPropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render style properties tab -->
+			<mstrlayout:if name="isStylePropertiesTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptElementsStylePropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render default answers tab -->
+			<mstrlayout:if name="isDefaultAnswerTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptElementsDefaultAnswersTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+		    </mstrlayout:if>
+		</mstrlayout:then>
+	</mstrlayout:if>
+	<!-- constant prompt -->
+	<mstrlayout:if name="isConstantPrompt">
+		<mstrlayout:then>
+		 	<!-- render display properties tab -->
+			<mstrlayout:if name="isDispPropertiesTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptConstantDispPropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>				
+			</mstrlayout:if>
+			<!-- render questions tab -->
+		    <mstrlayout:if name="isQuestionsTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptConstantQuestionTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render style properties tab -->
+			<mstrlayout:if name="isStylePropertiesTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptConstantStylePropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render default answers tab -->
+			<mstrlayout:if name="isDefaultAnswerTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptConstantDefaultAnswersTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+		    </mstrlayout:if>
+		</mstrlayout:then>
+	</mstrlayout:if>
+	<!-- expression prompt -->
+    <mstrlayout:if name="isExpressionPrompt">
+		<mstrlayout:then>
+			<!-- render questions tab -->
+		    <mstrlayout:if name="isQuestionsTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptExpressionQuestionTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render display properties tab -->
+			<mstrlayout:if name="isDispPropertiesTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptExpressionDispPropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render style properties tab -->
+			<mstrlayout:if name="isStylePropertiesTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptExpressionStylePropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!-- render qualification properties tab -->
+			<mstrlayout:if name="isQualificationTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptExpressionQaulificationPropertiesTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+		 	<!--render default answers tab -->
+			<mstrlayout:if name="isDefaultAnswerTab">
+				<mstrlayout:then>
+					<mstrlayout:render name="bean">
+				        <mstrlayout:argument value="promptEditor"/>
+				        <mstrlayout:argument value="PromptExpressionDefaultAnswersTabStyle"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+		    </mstrlayout:if>
+		</mstrlayout:then>
+	</mstrlayout:if>
+</mstrlayout:layout>

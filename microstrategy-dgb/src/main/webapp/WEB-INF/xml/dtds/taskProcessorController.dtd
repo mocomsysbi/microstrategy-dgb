@@ -1,0 +1,34 @@
+<!ELEMENT taskProcessorController (taskEnvelopes?, adminPages, viewerPages, privateTasks?)>
+
+<!ELEMENT taskEnvelopes (taskEnvelope)* >
+<!ATTLIST taskEnvelopes default IDREF #REQUIRED>
+
+<!ELEMENT taskEnvelope (successPath, failurePath) >
+<!ATTLIST taskEnvelope id ID #REQUIRED>
+<!ATTLIST taskEnvelope contentTypes CDATA #REQUIRED>
+<!ATTLIST taskEnvelope defaultContentType NMTOKEN #IMPLIED>
+<!ATTLIST taskEnvelope encoders CDATA #IMPLIED>
+<!ATTLIST taskEnvelope allowedTasks CDATA #IMPLIED>
+
+<!ELEMENT successPath EMPTY >
+<!ATTLIST successPath file-name CDATA #REQUIRED>
+
+<!ELEMENT failurePath EMPTY >
+<!ATTLIST failurePath file-name CDATA #REQUIRED>
+
+<!ELEMENT adminPages (interfacePage+)>
+<!ATTLIST adminPages default IDREF #REQUIRED>
+
+<!ELEMENT interfacePage EMPTY>
+<!ATTLIST interfacePage page ID #REQUIRED>
+<!ATTLIST interfacePage file-name CDATA #REQUIRED>
+<!ATTLIST interfacePage tab-name CDATA #REQUIRED>
+
+<!ELEMENT viewerPages (interfacePage+)>
+<!ATTLIST viewerPages default IDREF #REQUIRED>
+
+<!ELEMENT privateTasks (privateTask+)>
+<!ATTLIST privateTasks show (true | false) #REQUIRED>
+
+<!ELEMENT privateTask EMPTY>
+<!ATTLIST privateTask taskID ID #REQUIRED>

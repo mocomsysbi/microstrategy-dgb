@@ -1,0 +1,21 @@
+<shortcut-list name="deGroupPicker" version="1.0">
+	<attributes>
+		<attribute name="ty" value="pkr"/>
+	   <attribute name="sty" value="pkr" />		
+	</attributes>
+	<shortcut append-state="true" base-bean="deed" desc="List" desc-id="mstrWeb.5313" name="pkrDEBucket" type="pickeroption" feature-id="!srcMdx">
+        <attributes>
+            <attribute name="value" value="109002"/>
+        </attributes>
+	</shortcut>
+	<shortcut append-state="true" base-bean="deed" desc="Calculation" desc-id="mstrWeb.5188" name="pkrDECalculation" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="109003"/>
+        </attributes>
+	</shortcut>
+	<shortcut append-state="true" base-bean="deed" desc="Filter" desc-id="mstrWeb.5189" name="pkrDEAdvancedSlider" type="pickeroption" feature-id="!srcMdx">
+        <attributes>
+            <attribute name="value" value="109004"/>
+        </attributes>
+	</shortcut>
+</shortcut-list>

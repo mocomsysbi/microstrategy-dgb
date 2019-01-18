@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block collects the preference information.
+--> 
+<block name="Preferences">
+    <definition>
+        <!-- An Integer value to indicate whether the document will retain parent when drill -->
+        <property name="rtprnt" type="Integer" />
+        
+        <!-- An Integer value to indicate whether the document will retain threshold when drill -->
+        <property name="rtthld" type="Integer" />
+
+        <!-- A Boolean value to indicate whether the document will be opened in the same browser window -->
+        <property name="drillnw" type="Boolean" />        
+        
+    </definition>
+</block>

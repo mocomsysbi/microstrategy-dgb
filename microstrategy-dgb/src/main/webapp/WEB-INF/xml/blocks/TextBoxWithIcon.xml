@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TextBoxWithIcon is a TextBox with an icon to the right, typically used for
+		submitting the user's input (e.g., for a search). -->	
+	<block name="TextBoxWithIcon" inherits="TextBox">
+		<definition>
+			<!-- The tooltip for the icon. -->
+			<property name="iconTooltip" type="String" />
+			
+			<!-- CSS style for the icon (typically, a background image). -->
+			<property name="iconCSSText" type="String" />
+			
+			<!-- CSS class for the icon (typically, a background image). 
+				TQMS issue 339212: Get a 'this page contains both secure and nonsecure items' pop-up warning when Web is deployed under HTTPS for the Prompt page in Orion in IE
+     			Work around is to refer a background image through class instead of using a inline style (iconCSSText) property.
+			-->
+			<property name="iconClass" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.TextBoxWithIcon</property>
+			<property name="cssClass">TextBoxWithIcon</property>
+		</assignments>
+	</block>

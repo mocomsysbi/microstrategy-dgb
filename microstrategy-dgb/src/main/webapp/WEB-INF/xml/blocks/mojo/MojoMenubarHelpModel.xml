@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoMenubarHelpModel" inherits="MojoToolbarButtonModel">
+    <assignments>
+		<property name="n">help</property>
+		<property name="desc">{desc:mstrWeb.1143|Help}</property>        
+		<property name="items">
+			<list>
+			    <block name="MojoToolbarButtonModel">
+					<property name="n">helpLink</property>
+                    <property name="desc">{desc:mstrWeb.13988|Online Help}</property>
+                    <property name="cmd">showHelpTopic</property>
+				</block>
+   			</list>
+		</property>
+	</assignments>
+</block>

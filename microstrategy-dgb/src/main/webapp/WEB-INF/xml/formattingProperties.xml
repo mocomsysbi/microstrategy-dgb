@@ -1,0 +1,580 @@
+<propertySets version="1.0">
+
+    <propertySet name="FormattingSection">
+        <property htmlPropName="expanded" mappedPropName="Expanded" encodeValue="false" appliesTo="none"/>
+        <property htmlPropName="fitExcelRowHeight" mappedPropName="FitExcelRowHeight" attrName="ferh" appliesTo="4"/>
+        <property htmlPropName="keepSectionTogether" mappedPropName="KeepSectionTogether" attrName="kst" appliesTo="4"/>
+        <property htmlPropName="repeatSection" mappedPropName="RepeatSection" attrName="rpts" appliesTo="4"/>
+        <property htmlPropName="repeatHorizontally" mappedPropName="RepeatHorizontally" attrName="rpth" appliesTo="4"/>
+        <property htmlPropName="forceNewPage" mappedPropName="ForceNewPage" attrName="fnp" appliesTo="4"/>
+        <property htmlPropName="hideIfEmpty" mappedPropName="HideIfEmpty" attrName="he" appliesTo="4"/>
+        <property htmlPropName="showInHTMLViewMode" mappedPropName="ShowInHTMLViewMode" attrName="shvm" appliesTo="4">
+            <propertyValue htmlValue="visible" mappedValue="-1"/>
+            <propertyValue htmlValue="hidden" mappedValue="0"/>
+        </property>
+        <property htmlPropName="docked" mappedPropName="DockSection" appliesTo="dsec" attrName="docked"/><!--  apply to section, the realy section not sub section -->
+    </propertySet>
+
+    <propertySet name="FormattingView">
+        <property htmlPropName="showTitleBar" mappedPropName="ShowTitleBar" appliesTo="52,8,111" attrName="swt"/>
+        <property htmlPropName="windowState" mappedPropName="WindowState" appliesTo="52,111" attrName="ws"/>
+        <property htmlPropName="windowTitle" mappedPropName="Title" appliesTo="52,8,9,111" attrName="wt"/>
+        <property htmlPropName="titleBarDisplay" mappedPropName="TitleBarDisplay" appliesTo="52,8" attrName="tbd"/>
+        <property htmlPropName="ShowWidgetTitleBar" mappedPropName="ShowWidgetTitleBar" appliesTo="52" attrName="swwt"/>
+        <property htmlPropName="UseAsInformationWindow" mappedPropName="UseAsInformationWindow" appliesTo="8" attrName="uaiw"/>
+        <property htmlPropName="EnableHorizontalSwipeToChange" mappedPropName="EnableHorizontalSwipeToChange" default="0" appliesTo="8" attrName="ehstc"/>
+        <property htmlPropName="StyleForSwitchingPanel" mappedPropName="StyleForSwitchingPanel" default="0" appliesTo="8" attrName="sfwp"/>
+        <property htmlPropName="InformationWindowPlacement" mappedPropName="InformationWindowPlacement" appliesTo="8" attrName="iwpl"/>
+        <property htmlPropName="InfoWindowMode" mappedPropName="InfoWindowMode" appliesTo="8" attrName="iwm"/>
+        <property htmlPropName="InfoWindowPosition" mappedPropName="InfoWindowPosition" appliesTo="8" attrName="iwp"/>
+        <property htmlPropName="TabCloseToDismissInfoWindow" mappedPropName="TabCloseToDismissInfoWindow" appliesTo="8" attrName="tctdiw"/>
+        <property htmlPropName="CopyMode" mappedPropName="CopyMode" appliesTo="106,52" attrName="mcm" />
+        <property htmlPropName="DisplayInPartialScreen" mappedPropName="DisplayInPartialScreen" appliesTo="8" attrName="dips"/>
+        <property htmlPropName="ShowAsCollapsiblePanel" mappedPropName="ShowAsCollapsiblePanel" appliesTo="8" attrName="sacp"/>
+        <property htmlPropName="InitialSlidingInWidth" mappedPropName="InitialSlidingInWidth" appliesTo="8" attrName="isiw"/>
+        <property htmlPropName="InitialSlidingInHeight" mappedPropName="InitialSlidingInHeight" appliesTo="8" attrName="isih"/>
+    </propertySet>
+
+    <propertySet name="FormattingCrosstab">
+        <property htmlPropName="gridPosition" mappedPropName="GridPosition" appliesTo="52"/>
+        <property htmlPropName="gridArea" mappedPropName="GridAreaPercent" appliesTo="52"/>
+        <property htmlPropName="gridOverFlow" mappedPropName="OverflowMode" appliesTo="52" attrName="ovf" target="2"/>
+        <property htmlPropName="gridShowRH" mappedPropName="ShowRowHeaders" appliesTo="52"/>
+        <property htmlPropName="gridShowCH" mappedPropName="ShowColHeaders" appliesTo="52"/>
+        <property htmlPropName="gridExportOverFlow" mappedPropName="ExportOverflowMode" appliesTo="52" attrName="xovf" target="2"/>
+        <property htmlPropName="quickSwitch" mappedPropName="Prefetch" appliesTo="52" target="2"/>
+        <property htmlPropName="exportOptions" mappedPropName="ShowExportOptions" appliesTo="52" attrName="seo"/>
+    </propertySet>
+
+    <propertySet name="FormattingPosition">
+        <property htmlPropName="top" styleName="top" mappedPropName="Top" encodeValue="true" type="position" appliesTo="101,102,105,106,107,52,53,8,111"/>
+        <property htmlPropName="left" styleName="left" mappedPropName="Left" encodeValue="true" type="position" appliesTo="101,102,105,106,107,52,53,8,111"/>        
+        <property htmlPropName="locked" mappedPropName="Locked" appliesTo="101,102,105,106,107,52,53,8,111" attrName="lck"/>
+    </propertySet>
+
+    <propertySet name="FormattingSize">
+        <property htmlPropName="width" styleName="width" mappedPropName="Width" encodeValue="true" type="size" appliesTo="101,102,105,106,107,52,53,8,111,4" attrName="wd" target="3"/>
+        <property htmlPropName="height" styleName="height" mappedPropName="Height" encodeValue="true" type="size" appliesTo="101,102,105,106,107,52,53,4,8,111,4" attrName="ht" target="3"/>
+        <property htmlPropName="oldWidth" mappedPropName="OldWidth" encodeValue="true" appliesTo="52" attrName="oldwd" target="3"/>
+        <property htmlPropName="oldHeight" mappedPropName="OldHeight" encodeValue="true" appliesTo="52" attrName="oldht" target="3"/>
+        <property htmlPropName="heightMode" styleName="height" mappedPropName="HeightMode" encodeValue="true" type="heightMode" appliesTo="101,102,105,106,107,52,53,111,8" attrName="hm"/>
+        <property htmlPropName="widthMode" styleName="width" mappedPropName="WidthMode" encodeValue="true" type="widthMode" appliesTo="101,102,105,106,107,52,53,8,111" attrName="wm"/>
+        <property htmlPropName="autoResizeInDesign" mappedPropName="AutoResizeInDesign" appliesTo="106" attrName="ard"/>
+        <property htmlPropName="maxHeight" mappedPropName="MaxHeight" encodeValue="true" type="position" appliesTo="4" attrName="mh"/>
+        <property htmlPropName="canGrow" mappedPropName="CanGrow" appliesTo="4" attrName="cg"/>
+        <property htmlPropName="canShrink" mappedPropName="CanShrink" appliesTo="4" attrName="cs"/>
+        <property htmlPropName="maxWidth" mappedPropName="MaxWidth" encodeValue="true" type="position" appliesTo="4" attrName="mw"/>
+        <property htmlPropName="canGrowHorizontal" mappedPropName="CanGrowHorizontal" appliesTo="4" attrName="cgh"/>
+        <property htmlPropName="canShrinkHorizontal" mappedPropName="CanShrinkHorizontal" appliesTo="4" attrName="csh"/>
+        <property htmlPropName="length" mappedPropName="Length" appliesTo="105" attrName="cs"/>
+        <property htmlPropName="lengthMode" mappedPropName="LengthMode" appliesTo="105"/>
+        <property htmlPropName="lockAspectRatio" mappedPropName="LockAspectRatio" appliesTo="102,106"/>
+        <property htmlPropName="TextOverflow" styleName="overflow" mappedPropName="TextOverflow" encodeValue="true" appliesTo="106,8" attrName="tovf">
+            <propertyValue htmlValue="auto" mappedValue="-1"/>
+            <propertyValue htmlValue="hidden" mappedValue="0"/>
+        </property>
+    </propertySet>
+
+    <propertySet name="FormattingAppearance">
+        <property htmlPropName="visibility" styleName="visibility" mappedPropName="Visible" encodeValue="true" appliesTo="101,102,105,106,107,52,53,4,8,111" attrName="visible">
+            <propertyValue htmlValue="visible" mappedValue="-1"/>
+            <propertyValue htmlValue="hidden" mappedValue="0"/>
+        </property>
+        <property htmlPropName="title" mappedPropName="TooltipText" appliesTo="101,102,105,106,107,52,53,8,111" attrName="title"/>
+        <property htmlPropName="name" mappedPropName="Name" appliesTo="101,102,105,106,107,52,53,4,8,111" attrName="nm"/>
+        <property htmlPropName="hasRoundedCorners" mappedPropName="HasRoundedCorners" appliesTo="101,8" attrName="rc"/>
+        <property htmlPropName="dropShadowEffect" mappedPropName="DropShadowEffect" appliesTo="101,102,105,106,107,53,8,111,52" attrName="dse" target="3"/>
+        <property htmlPropName="dropShadowDepth" mappedPropName="DropShadowDepth" appliesTo="101,102,105,106,107,53,8,111,52" attrName="dsw" target="3"/>
+        <property htmlPropName="topLeftCornerRadius" mappedPropName="TopLeftCornerRadius" appliesTo="101,8" attrName="tlcr"/>
+        <property htmlPropName="topRightCornerRadius" mappedPropName="TopRightCornerRadius" appliesTo="101,8" attrName="trcr"/>
+        <property htmlPropName="bottomLeftCornerRadius" mappedPropName="BottomLeftCornerRadius" appliesTo="101,8" attrName="blcr"/>
+        <property htmlPropName="bottomRightCornerRadius" mappedPropName="BottomRightCornerRadius" appliesTo="101,8" attrName="brcr"/>
+        <property htmlPropName="radius" mappedPropName="Radius" appliesTo="101,8" attrName="rd"/>
+        <property htmlPropName="topCornersOnly" mappedPropName="TopCornersOnly" appliesTo="101,8" attrName="tco"/>
+        <property htmlPropName="formatVersion" mappedPropName="FormatVersion" appliesTo="52" attrName="fmtv"/>
+        <property htmlPropName="IgnoreInExport" mappedPropName="IgnoreInExport" appliesTo="8" attrName="cone"/>
+		<property htmlPropName="showOnlyInRepeatingCopies" mappedPropName="ShowOnlyInRepeatingCopies" attrName="sirc" appliesTo="101,102,105,106,107,52,53,8,111"/>
+        <property htmlPropName="ExpandAllPanels" mappedPropName="ExpandAllPanels" appliesTo="8" attrName="ep"/>
+        <property htmlPropName="SplitPanelAcrossPages" mappedPropName="SplitPanelAcrossPages" appliesTo="8" attrName="spcp"/>
+        <property htmlPropName="RepeatPanelSpacing" mappedPropName="RepeatPanelSpacing" appliesTo="8" attrName="povfs"/>
+        <property htmlPropName="DisplayStyle" mappedPropName="DisplayStyle" appliesTo="106" attrName="dpst" />
+        <property htmlPropName="Transparency" mappedPropName="Transparency" appliesTo="8" attrName="trpr"/>
+        <property htmlPropName="Blur" mappedPropName="Blur" appliesTo="8" attrName="blur"/>
+    </propertySet>
+
+    <propertySet name="FormattingNavigation">
+        <property htmlPropName="isLink" mappedPropName="IsHyperlink" appliesTo="102,106" attrName="isl"/>
+        <property htmlPropName="link" mappedPropName="Hyperlink" appliesTo="102,106" attrName="href"/>
+        <property htmlPropName="newWin" mappedPropName="OpenInNewWindow" appliesTo="102,106" attrName="nw"/>
+    </propertySet>
+
+    <propertySet name="FormattingHTML">
+        <property htmlPropName="htmlType" mappedPropName="HTMLType" appliesTo="107" attrName="htype"/>
+        <property htmlPropName="url" mappedPropName="URL" appliesTo="107" attrName="hsrc"/>
+        <property htmlPropName="htmlText" mappedPropName="HTMLText" appliesTo="107" attrName="htxt"/>
+    </propertySet>
+
+    <propertySet name="FormattingAlignment">
+        <property htmlPropName="textAlign" styleName="text-align" mappedPropName="Horizontal" encodeValue="true" type="align" appliesTo="106,111,107,t,de">
+            <propertyValue htmlValue="left" mappedValue="0" default="true"/>
+            <propertyValue htmlValue="right" mappedValue="1"/>
+            <propertyValue htmlValue="center" mappedValue="2"/>
+            <propertyValue htmlValue="justify" mappedValue="6"/>
+        </property>
+        <property htmlPropName="textAlign2" styleName="text-align" mappedPropName="Horizontal2" encodeValue="true" type="align" appliesTo="52">
+            <propertyValue htmlValue="left" mappedValue="2" default="true"/>
+            <propertyValue htmlValue="right" mappedValue="4"/>
+            <propertyValue htmlValue="center" mappedValue="3"/>
+            <propertyValue htmlValue="justify" mappedValue="6"/>
+        </property>        
+        <property htmlPropName="verticalAlign" styleName="vertical-align" mappedPropName="Vertical" encodeValue="true" attrName="vta" type="align" appliesTo="52,106,107,111,t,de" target="3">
+            <propertyValue htmlValue="top" mappedValue="0" default="true"/>
+            <propertyValue htmlValue="middle" mappedValue="1"/>
+            <propertyValue htmlValue="bottom" mappedValue="2"/>
+        </property>
+        <property htmlPropName="verticalAlign2" styleName="vertical-align" mappedPropName="Vertical2" encodeValue="true" attrName="vta2" type="align" appliesTo="52" target="3">
+            <propertyValue htmlValue="top" mappedValue="1" default="true"/>
+            <propertyValue htmlValue="middle" mappedValue="2"/>
+            <propertyValue htmlValue="bottom" mappedValue="3"/>
+        </property>
+		<property htmlPropName="TextDirection" styleName="filter" mappedPropName="TextDirection" appliesTo="52,106,107,t,de" attrName="td" target="3"/>
+        <property htmlPropName="whiteSpace" styleName="white-space" mappedPropName="TextWrap" encodeValue="true" appliesTo="52,106,107,t,de">
+            <propertyValue htmlValue="normal" mappedValue="-1" default="true"/>
+            <propertyValue htmlValue="nowrap" mappedValue="0"/>
+        </property>
+    </propertySet>
+
+    <propertySet name="FormattingFont">
+        <property htmlPropName="fontFamily" styleName="font-family" mappedPropName="Name" encodeValue="false" appliesTo="52,106,107,111,8,t,de,df"/>
+        <property htmlPropName="fontSize" styleName="font-size" mappedPropName="Size" encodeValue="true" type="weight" appliesTo="52,106,107,111,8,t,de,df"/>
+
+        <property htmlPropName="color" styleName="color" mappedPropName="Color" encodeValue="true" type="color" appliesTo="52,106,107,111,8,t,de,df">
+            <propertyValue htmlValue="" mappedValue="#000000" default="true"/>
+        </property>
+
+        <property htmlPropName="fontWeight" styleName="font-weight" mappedPropName="Bold" encodeValue="true" appliesTo="52,106,107,111,8,t,de,df">
+            <propertyValue htmlValue="bold" mappedValue="-1"/>
+            <propertyValue htmlValue="normal" mappedValue="0" default="true"/>
+        </property>
+        <property htmlPropName="fontStyle" styleName="font-style" mappedPropName="Italic" encodeValue="true" appliesTo="52,106,107,111,8,t,de,df">
+            <propertyValue htmlValue="italic" mappedValue="-1"/>
+            <propertyValue htmlValue="normal" mappedValue="0" default="true"/>
+        </property>
+        <property htmlPropName="textDecoration" styleName="text-decoration" mappedPropName="Underline" encodeValue="true" type="decoration" appliesTo="52,106,107,111,8,208,t,de,df">
+            <propertyValue htmlValue="underline" mappedValue="-1"/>
+            <propertyValue htmlValue="" mappedValue="0" default="true"/>
+        </property>
+        <property htmlPropName="textDecoration2" styleName="text-decoration" mappedPropName="Strikeout" encodeValue="true" type="decoration" appliesTo="52,106,107,111,8,208,t,de,df">
+            <propertyValue htmlValue="line-through" mappedValue="-1"/>
+            <propertyValue htmlValue="" mappedValue="0" default="true"/>
+        </property>
+        <property htmlPropName="FontHighlightColor" mappedPropName="HighlightColor" encodeValue="true" type="color" appliesTo="106"  attrName="fhlc" />
+    </propertySet>
+
+    <propertySet name="FormattingPatterns">
+        <property htmlPropName="backgroundColor" styleName="background-color" mappedPropName="FillColor" encodeValue="true" type="color" appliesTo="101,106,107,52,53,4,8,9,111,208,t,de" >
+            <propertyValue htmlValue="" mappedValue="#FFFFFF" default="true"/>
+        </property>
+        <property htmlPropName="backgroundStyle" styleName="background-color" mappedPropName="FillStyle" encodeValue="true" type="backStyle" appliesTo="101,106,107,52,53,4,8,9,111,208" attrName="bgstyle" target="3"/>
+    	<property htmlPropName="gradientColor" styleName="filter" mappedPropName="GradientColor" encodeValue="true" type="color" appliesTo="101,106,107,52,53,4,8,9,111,208"/>
+    	<property htmlPropName="gradientAngle" mappedPropName="GradientAngle" appliesTo="101,106,107,52,53,4,8,9,111,208"/>
+    	<property htmlPropName="gradientXOffset" mappedPropName="GradientXOffset" appliesTo="101,106,107,52,53,4,8,9,111,208"/>
+    	<property htmlPropName="gradientYOffset" mappedPropName="GradientYOffset" appliesTo="101,106,107,52,53,4,8,9,111,208"/>
+	    <property htmlPropName="selectionColor" mappedPropName="SelectorSelectionColor" encodeValue="true" type="color" appliesTo="52,111" attrName="ssc"/>
+		<property htmlPropName="selectionStyle" mappedPropName="SelectorSelectionFillStyle" encodeValue="false" type="backStyle" appliesTo="52,111" attrName="sstyle"/>
+		<property htmlPropName="BackgroundHighlightColor" mappedPropName="HighlightColor" encodeValue="true" type="color" appliesTo="8,106" attrName="bhlc" />
+		<property htmlPropName="FillEffect" mappedPropName="FillEffect"  appliesTo="106" attrName="fe" />
+    </propertySet>
+
+    <propertySet name="FormattingBorder">
+        <property htmlPropName="b3dstyle" mappedPropName="Border3DStyle" appliesTo="102,106,107,52,53,111,112,101,8,t,de" attrName="b3dstyle" target="3"/>
+        <property htmlPropName="b3dweight" mappedPropName="Border3DWeight" appliesTo="102,106,107,52,53,111,112,101,8,t,de" attrName="b3dweight" target="3"/>
+        <property htmlPropName="borderTopColor2" styleName="border-top-color" mappedPropName="Border3DTopColor" encodeValue="true" type="color" appliesTo="102,106,107,52,53,111,101,8,t,de" attrName="b3dtc" target="3"/>
+        <property htmlPropName="borderRightColor2" styleName="border-right-color" mappedPropName="Border3DRightColor" encodeValue="true" type="color" appliesTo="102,106,107,52,53,111,101,8,t,de" attrName="b3drc" target="3"/>
+        <property htmlPropName="borderBottomColor2" styleName="border-bottom-color" mappedPropName="Border3DBottomColor" encodeValue="true" type="color" appliesTo="102,106,107,52,53,111,101,8,t,de" attrName="b3dbc" target="3"/>
+        <property htmlPropName="borderLeftColor2" styleName="border-left-color" mappedPropName="Border3DLeftColor" encodeValue="true" type="color" appliesTo="102,106,107,52,53,111,101,8,t,de" attrName="b3dlc" target="3"/>
+
+        <property htmlPropName="borderTopColor" styleName="border-top-color" mappedPropName="TopColor" encodeValue="true" type="color" appliesTo="102,106,107,52,53,111,8,t,de" attrName="btc" target="3"/>
+        <property htmlPropName="borderRightColor" styleName="border-right-color" mappedPropName="RightColor" encodeValue="true" type="color" appliesTo="102,106,107,52,53,111,8,t,de" attrName="brc" target="3"/>
+        <property htmlPropName="borderBottomColor" styleName="border-bottom-color" mappedPropName="BottomColor" encodeValue="true" type="color" appliesTo="102,106,107,52,53,111,8,t,de" attrName="bbc" target="3"/>
+        <property htmlPropName="borderLeftColor" styleName="border-left-color" mappedPropName="LeftColor" encodeValue="true" type="color" appliesTo="102,106,107,52,53,111,8,t,de" attrName="blc" target="3"/>
+        <property htmlPropName="borderTopStyle" styleName="border-top" mappedPropName="TopStyle" encodeValue="true" type="borderStyle" appliesTo="102,106,107,52,53,111,8,t,de" attrName="bts" target="3">
+            <propertyValue htmlValue="" mappedValue="-1" default="true"/>
+            <propertyValue htmlValue="0pt solid" mappedValue="0"/>
+            <propertyValue htmlValue="0pt none" mappedValue="8"/>
+            <propertyValue htmlValue="1pt dashed" mappedValue="3"/>
+            <propertyValue htmlValue="1pt dotted" mappedValue="4"/>
+            <propertyValue htmlValue="1.5pt solid" mappedValue="5"/>
+            <propertyValue htmlValue="2.5pt double" mappedValue="6"/>
+            <propertyValue htmlValue="1pt solid" mappedValue="1"/>
+            <propertyValue htmlValue="0.5pt solid" mappedValue="7"/>
+        </property>
+        <property htmlPropName="borderRightStyle" styleName="border-right" mappedPropName="RightStyle" encodeValue="true" type="borderStyle" appliesTo="102,106,107,52,53,111,8,t,de" attrName="brs" target="3">
+            <propertyValue htmlValue="" mappedValue="-1" default="true"/>
+            <propertyValue htmlValue="0pt solid" mappedValue="0"/>
+            <propertyValue htmlValue="0pt none" mappedValue="8"/>
+            <propertyValue htmlValue="1pt dashed" mappedValue="3"/>
+            <propertyValue htmlValue="1pt dotted" mappedValue="4"/>
+            <propertyValue htmlValue="1.5pt solid" mappedValue="5"/>
+            <propertyValue htmlValue="2.5pt double" mappedValue="6"/>
+            <propertyValue htmlValue="1pt solid" mappedValue="1"/>
+            <propertyValue htmlValue="0.5pt solid" mappedValue="7"/>
+        </property>
+        <property htmlPropName="borderBottomStyle" styleName="border-bottom" mappedPropName="BottomStyle" encodeValue="true" type="borderStyle" appliesTo="102,106,107,52,53,111,8,t,de" attrName="bbs" target="3">
+            <propertyValue htmlValue="" mappedValue="-1" default="true"/>
+            <propertyValue htmlValue="0pt solid" mappedValue="0"/>
+            <propertyValue htmlValue="0pt none" mappedValue="8"/>
+            <propertyValue htmlValue="1pt dashed" mappedValue="3"/>
+            <propertyValue htmlValue="1pt dotted" mappedValue="4"/>
+            <propertyValue htmlValue="1.5pt solid" mappedValue="5"/>
+            <propertyValue htmlValue="2.5pt double" mappedValue="6"/>
+            <propertyValue htmlValue="1pt solid" mappedValue="1"/>
+            <propertyValue htmlValue="0.5pt solid" mappedValue="7"/>
+        </property>
+        <property htmlPropName="borderLeftStyle" styleName="border-left" mappedPropName="LeftStyle" encodeValue="true" type="borderStyle" appliesTo="102,106,107,52,53,111,8,t,de" attrName="bls" target="3">
+            <propertyValue htmlValue="" mappedValue="-1" default="true"/>
+            <propertyValue htmlValue="0pt solid" mappedValue="0"/>
+            <propertyValue htmlValue="0pt none" mappedValue="8"/>
+            <propertyValue htmlValue="1pt dashed" mappedValue="3"/>
+            <propertyValue htmlValue="1pt dotted" mappedValue="4"/>
+            <propertyValue htmlValue="1.5pt solid" mappedValue="5"/>
+            <propertyValue htmlValue="2.5pt double" mappedValue="6"/>
+            <propertyValue htmlValue="1pt solid" mappedValue="1"/>
+            <propertyValue htmlValue="0.5pt solid" mappedValue="7"/>
+        </property>
+    </propertySet>
+    <propertySet name="FormattingOrder">
+        <property htmlPropName="zIndex" styleName="z-index" mappedPropName="ZIndex" encodeValue="false" appliesTo="101,102,105,106,107,52,53,8,111"/>
+    </propertySet>
+    <propertySet name="FormattingPadding">
+        <property htmlPropName="paddingLeft" styleName="padding-left" mappedPropName="LeftPadding" encodeValue="true" type="padding" appliesTo="52,106,t,de"/>
+        <property htmlPropName="paddingRight" styleName="padding-right" mappedPropName="RightPadding" encodeValue="true" type="padding" appliesTo="52,106,t,de"/>
+        <property htmlPropName="paddingTop" styleName="padding-top" mappedPropName="TopPadding" encodeValue="true" type="padding" appliesTo="52,106,t,de"/>
+        <property htmlPropName="paddingBottom" styleName="padding-bottom" mappedPropName="BottomPadding" encodeValue="true" type="padding" appliesTo="52,106,t,de"/>
+        <property htmlPropName="lineHeight" styleName="line-height" mappedPropName="LineSpacing" encodeValue="true" type="lineHeight" appliesTo="106,t"/>
+    </propertySet>
+    <propertySet name="FormattingPicture">
+        <property htmlPropName="pictureMode" mappedPropName="PictureMode" appliesTo="102"/>
+        <property htmlPropName="pictureAlignment" mappedPropName="PictureAlignment" appliesTo="102"/>
+        <property htmlPropName="NormalURL" mappedPropName="NormalURL" attrName="nmurl" appliesTo="106"/>
+        <property htmlPropName="HighlightURL" mappedPropName="HighlightURL" attrName="hlurl" appliesTo="106"/>
+    </propertySet>
+    <propertySet name="FormattingUnassigned">
+        <property htmlPropName="src" mappedPropName="src" appliesTo="102" attrName="src"/>
+        <property htmlPropName="xTabView" mappedPropName="xTabView" appliesTo="52" attrName="xTabView"/>
+    </propertySet>
+    <propertySet name="FormattingLine">
+        <property htmlPropName="lineStyle" mappedPropName="LineStyle" encodeValue="true" appliesTo="101,105" attrName="ls" target="3">
+            <propertyValue htmlValue="dashed" mappedValue="2"/>
+            <propertyValue htmlValue="dotted" mappedValue="3"/>
+            <propertyValue htmlValue="double" mappedValue="4"/>
+            <propertyValue htmlValue="none" mappedValue="0"/>
+            <propertyValue htmlValue="solid" mappedValue="1" default="true"/>
+        </property>
+        <property htmlPropName="lineColor" mappedPropName="LineColor" encodeValue="true" type="color" appliesTo="101,105" attrName="lc" target="3">
+            <propertyValue htmlValue="" mappedValue="#000000" default="true"/>
+        </property>
+        <property htmlPropName="lineWeight" mappedPropName="LineWeight" encodeValue="true" type="weight" appliesTo="101,105" attrName="lw" target="3"/>
+        <property htmlPropName="orientation" mappedPropName="LineOrientation" encodeValue="true" appliesTo="105" attrName="or">
+            <propertyValue htmlValue="border-top" mappedValue="0" default="true"/>
+            <propertyValue htmlValue="border-left" mappedValue="1"/>
+        </property>
+    </propertySet>
+    <propertySet name="FormattingPage">
+        <property htmlPropName="PaperType" mappedPropName="PaperType" encodeValue="true">
+            <propertyValue htmlValue="2A,46.81,66.18" mappedValue="1"/>
+			<propertyValue  htmlValue="A0,33.11,46.81"  mappedValue="2"/>
+			<propertyValue htmlValue="A1,23.39,33.11"  mappedValue="3"/>
+			<propertyValue  htmlValue="A2,16.54,23.39"  mappedValue="4"/>
+			<propertyValue  htmlValue="A3,11.69,16.54"  mappedValue="5"/>
+			<propertyValue  htmlValue="A4,8.27,11.69"  mappedValue="6"/>
+			<propertyValue  htmlValue="A5,5.83,8.27"  mappedValue="7"/>
+			<propertyValue  htmlValue="A6,4.13,5.83"  mappedValue="8"/>
+			<propertyValue  htmlValue="A7,2.91,4.13"  mappedValue="9"/>
+			<propertyValue  htmlValue="A8,2.09,2.91"  mappedValue="10"/>
+			<propertyValue  htmlValue="C,17,22"  mappedValue="11"/>
+			<propertyValue  htmlValue="D,22,34"  mappedValue="12"/>
+			<propertyValue  htmlValue="E,34,44"  mappedValue="13"/>
+			<propertyValue htmlValue="Executive,7.25,10.5"  mappedValue="14"/>
+			<propertyValue  htmlValue="F,28,40"  mappedValue="15"/>
+			<propertyValue  htmlValue="Ledger,11,17"  mappedValue="16"/>
+			<propertyValue  htmlValue="Legal,8.5,14"  mappedValue="17"/>
+			<propertyValue  htmlValue="Letter,8.5,11"  mappedValue="18"/>
+			<propertyValue  htmlValue="Super A3/B,13,19"  mappedValue="19"/>
+			<propertyValue  htmlValue="Folio,8.5,13"  mappedValue="20"/>
+            <propertyValue  htmlValue="Custom"  mappedValue="0" default="true"/>
+        </property>
+        <property htmlPropName="PageWidth" mappedPropName="PageWidth"/>
+        <property htmlPropName="PageHeight" mappedPropName="PageHeight"/>
+        <property htmlPropName="Orientation" mappedPropName="Orientation"/>
+        <property htmlPropName="Scaling" mappedPropName="Scaling"/>
+        <property htmlPropName="ScalePercentage" mappedPropName="ScalePercentage"/>
+        <property htmlPropName="ScalePagesWide" mappedPropName="ScalePagesWide"/>
+        <property htmlPropName="ScalePagesTall" mappedPropName="ScalePagesTall"/>
+        <property htmlPropName="BlackAndWhite" mappedPropName="BlackAndWhite"/>
+        <property htmlPropName="MarginTop" mappedPropName="MarginTop"/>
+        <property htmlPropName="MarginBottom" mappedPropName="MarginBottom"/>
+        <property htmlPropName="MarginRight" mappedPropName="MarginRight"/>
+        <property htmlPropName="MarginLeft" mappedPropName="MarginLeft"/>
+        <property htmlPropName="PrintHeaderOn" mappedPropName="PrintHeaderOn"/>
+        <property htmlPropName="PrintFooterOn" mappedPropName="PrintFooterOn"/>
+        <property htmlPropName="ExpandToFit" mappedPropName="ExpandToFit"/>
+        <property htmlPropName="SectionHorizontalOverflow" mappedPropName="SectionHorizontalOverflow"/>
+        <property htmlPropName="LayoutWidth" mappedPropName="Width"/>
+        <property htmlPropName="ScalePageHeaderFooter" mappedPropName="ScalePageHeaderFooter"/>
+        <property htmlPropName="EditableViewMode" mappedPropName="EditableViewMode"/>
+        <property htmlPropName="DefaultViewMode" mappedPropName="DefaultViewMode"/>
+        <property htmlPropName="AvailableViewModes" mappedPropName="AvailableViewModes"/>
+        <property htmlPropName="DefaultGridStyle" mappedPropName="DefaultGridStyle"/>
+        <property htmlPropName="EmbedFonts" mappedPropName="EmbedFonts"/>
+        <property htmlPropName="IncludeBookmarks" mappedPropName="IncludeBookmarks"/>
+        <property htmlPropName="ShowBookmarks" mappedPropName="ShowBookmarks"/>
+        <property htmlPropName="UsePageWidthAsLayoutWidth" mappedPropName="UsePageWidthAsLayoutWidth"/>
+        <property htmlPropName="UseOneSheetPerLayout" mappedPropName="UseOneSheetPerLayout"/>
+        <property htmlPropName="UseOneSheetPerGroupElement" mappedPropName="UseOneSheetPerGroupElement"/>
+        <property htmlPropName="GraphFormat" mappedPropName="GraphFormat">
+            <propertyValue htmlValue="1" mappedValue="10"/>
+            <propertyValue htmlValue="0" mappedValue="11"/>
+        </property>
+        <property htmlPropName="GraphQualityDPI" mappedPropName="GraphQualityDPI">
+            <propertyValue htmlValue="1" mappedValue="96"/>
+            <propertyValue htmlValue="0" mappedValue="288"/>
+        </property>
+    </propertySet>
+
+    <propertySet name="RWDocumentProperties">
+        <property htmlPropName="zoom" encodeValue="true" type="zoom" mappedPropName="ZoomFactor"/>
+        <property htmlPropName="ZoomType" mappedPropName="ZoomType"/>
+        <property htmlPropName="DefaultPageByExportMode" mappedPropName="DefaultPageByExportMode"/>
+        <property htmlPropName="PromptUserForPagebyExport" mappedPropName="PromptUserForPagebyExport"/>
+        <property htmlPropName="ExecutionFullScreenMode" mappedPropName="ExecutionFullScreenMode"/>
+        <property htmlPropName="ShowFloatingToolbars" mappedPropName="ShowFloatingToolbars"/>        
+        <property htmlPropName="ViewModeInteractivityLevel" mappedPropName="ViewModeInteractivityLevel"/>        
+        <property htmlPropName="CtlAutoSubmit" mappedPropName="CtlAutoSubmit"/>
+        <property htmlPropName="CalculateDocWidth" mappedPropName="CalculateDocWidth"/>
+        <property htmlPropName="ExportRange" mappedPropName="ExportRange"/>
+        <property htmlPropName="ExcelEmbedImages" mappedPropName="ExcelEmbedImages"/>
+        <property htmlPropName="ExcelGraphFormat" mappedPropName="ExcelGraphFormat"/>
+        <property htmlPropName="EmbeddedFonts" mappedPropName="EmbeddedFonts"/>
+        <property htmlPropName="ShowTabsForSingleLayout" mappedPropName="ShowTabsForSingleLayout"/>
+        <property htmlPropName="PreLoadAllPanels" mappedPropName="PreLoadAllPanels"/>
+        <property htmlPropName="SelectorBehavior" mappedPropName="SelectorBehavior"/>
+        <property htmlPropName="layoutBarStyle" mappedPropName="layoutBarStyle" default="0"/>
+        <property htmlPropName="layoutBarPosition" mappedPropName="layoutBarPosition" default="1"/>
+        <property htmlPropName="enableGraphTooltips" mappedPropName="enableGraphTooltips"/>
+        <property htmlPropName="ExcelExportDocumentURL" mappedPropName="ExcelExportDocumentURL" default=""/>
+        <property htmlPropName="PDFExportDocumentURL" mappedPropName="PDFExportDocumentURL"  default=""/>
+        <property htmlPropName="ShowHiddenObjects" mappedPropName="ShowHiddenObjects"/>
+        <property htmlPropName="ApplyGBToAllLayouts" mappedPropName="ApplyGBToAllLayouts"/>
+        <property htmlPropName="IsNavigationDocument" mappedPropName="IsNavigationDocument"/>
+        <property htmlPropName="ShowingBarsTemporarily" mappedPropName="ShowingBarsTemporarily"/>
+        <property htmlPropName="SmartClientDoc" mappedPropName="SmartClientDoc"/>
+        <property htmlPropName="OfflineOnCube" mappedPropName="OfflineOnCube"/>
+        <property htmlPropName="PreserveTranslations" mappedPropName="PreserveTranslations"/>
+        <property htmlPropName="DocumentVersion" mappedPropName="DocumentVersion"/>
+        <property htmlPropName="LayoutStyle" mappedPropName="LayoutStyle"/>
+        </propertySet>
+
+    <propertySet name="FormattingNumber">
+        <property htmlPropName="DecimalPlaces" mappedPropName="DecimalPlaces" appliesTo="100,106,52,t,de" attrName="ndp" target="2"/>
+	    <property htmlPropName="NegativeNumbers" mappedPropName="NegativeNumbers" appliesTo="100,106,52,t,de" attrName="nnn" target="2"/>
+        <property htmlPropName="CurrencySymbol" mappedPropName="CurrencySymbol" appliesTo="100,106,52,t,de" attrName="ncs" target="2"/>
+        <property htmlPropName="CurrencyPosition" mappedPropName="CurrencyPosition" appliesTo="100,106,52,t,de" attrName="ncp" target="2"/>
+        <property htmlPropName="Format" mappedPropName="Format" appliesTo="100,106,52,t,de" attrName="nfs" target="2"/>
+        <property htmlPropName="ThousandSeparator" mappedPropName="ThousandSeparator" appliesTo="100,106,52,t,de" attrName="nth" target="2"/>
+        <property htmlPropName="Category" mappedPropName="Category" appliesTo="100,106,52,t,de" attrName="nct" target="2"/>
+    </propertySet>
+
+    <propertySet name="FormattingLayout">
+        <property mappedPropName="UseMasterPageHeaderFooter" htmlPropName="TabMPHF"/>
+        <property mappedPropName="TabColor" encodeValue="true" type="color" htmlPropName="TabColor">
+            <propertyValue htmlValue="" mappedValue="#ffffff" default="true"/>
+        </property>
+        <property htmlPropName="SupportedOrientations" mappedPropName="SupportedOrientations" default="3"/>
+        <property mappedPropName="Autowire" htmlPropName="Autowire"/>
+        <property mappedPropName="FitPDFContentHeight" htmlPropName="FitPDFContentHeight" default="0"/>
+        <property mappedPropName="DisplayPageByBar" htmlPropName="DisplayPageByBar" default="-1"/>
+        <property mappedPropName="DisplayRePromptIcon" htmlPropName="DisplayRePromptIcon" default="-1"/>
+        <property mappedPropName="UseAsInfoWindow" htmlPropName="UseAsInfoWindow" default="0"/>        
+        <property mappedPropName="UseAsFilterPanel" htmlPropName="UseAsFilterPanel" appliesTo="8" attrName="uafp" default="0"/>
+        <property mappedPropName="UseAsMasterPanel" htmlPropName="UseAsMasterPanel" appliesTo="8" attrName="uamp" default="0"/>
+        <property mappedPropName="CtlAutoSubmit" htmlPropName="CtlAutoSubmit" appliesTo="8" attrName="cas" default="-1"/>  
+        <property mappedPropName="UseSegments" htmlPropName="UseSegments" default="0"/>         
+        <property mappedPropName="ResetToFirstPanelWhenTargeted" htmlPropName="ResetToFirstPanelWhenTargeted" attrName="rtfp" default="0"/>
+        <property mappedPropName="UseAsNavBar" htmlPropName="UseAsNavBar" appliesTo="8" attrName="uanb" default="0"/>
+        <property mappedPropName="NavBarLayout" htmlPropName="NavBarLayout" appliesTo="8" attrName="nbl" default="0"/>
+        <property mappedPropName="UseAsTableControl" htmlPropName="UseAsTableControl" appliesTo="8" attrName="uatc" default="0"/>
+        <property mappedPropName="TableControlDefinition" htmlPropName="TableControlDefinition" appliesTo="8" attrName="tcd" default=""/>
+    </propertySet>
+
+    <propertySet name="TableOfContents">
+        <property htmlPropName="Enabled" mappedPropName="Enabled"/>
+        <property htmlPropName="BeforeLayout" mappedPropName="BeforeLayout"/>
+        <property htmlPropName="Title" mappedPropName="Title"/>
+        <property htmlPropName="ShowTabLeader" mappedPropName="ShowTabLeader"/>
+        <property htmlPropName="TOCFontName" mappedPropName="FontName"/>
+        <property htmlPropName="TOCFontBold" mappedPropName="FontBold"/>
+        <property htmlPropName="TOCFontItalic" mappedPropName="FontItalic"/>
+        <property htmlPropName="TOCFontSize" mappedPropName="FontSize"/>
+        <property htmlPropName="TOCFontStrikeout" mappedPropName="FontStrikeout"/>
+        <property htmlPropName="TOCFontUnderline" mappedPropName="FontUnderline"/>
+        <property htmlPropName="TOCFontColor" mappedPropName="FontColor"/>
+		<property htmlPropName="TOCFillStyle" mappedPropName="FillStyle"/>
+		<property htmlPropName="TOCFillColor" mappedPropName="FillColor"/>
+        <property htmlPropName="IncludePageHeaderFooter" mappedPropName="IncludePageHeaderFooter"/>
+		<property htmlPropName="TOCTitleAlignment" mappedPropName="TitleAlignment"/>
+		<property htmlPropName="TOCTitleFontName" mappedPropName="TitleFontName"/>
+		<property htmlPropName="TOCTitleFontBold" mappedPropName="TitleFontBold"/>
+        <property htmlPropName="TOCTitleFontItalic" mappedPropName="TitleFontItalic"/>
+		<property htmlPropName="TOCTitleFontSize" mappedPropName="TitleFontSize"/>
+		<property htmlPropName="TOCTitleFontUnderline" mappedPropName="TitleFontUnderline"/>
+		<property htmlPropName="TOCTitleFontStrikeout" mappedPropName="TitleFontStrikeout"/>
+		<property htmlPropName="TOCTitleFontColor" mappedPropName="TitleFontColor"/>
+		<property htmlPropName="TOCTitleFillStyle" mappedPropName="TitleFillStyle"/>
+		<property htmlPropName="TOCTitleFillColor" mappedPropName="TitleFillColor"/>
+		<property htmlPropName="TOCTitleEnableInherit" mappedPropName="UserSeparateStyleForTitle"/>
+		<property htmlPropName="TOCLeftIndent" mappedPropName="LeftIndent"/>
+		<property htmlPropName="TOCRightIndent" mappedPropName="RightIndent"/>
+		<property htmlPropName="TOCBorderStyle" mappedPropName="BorderStyle"/>
+		<property htmlPropName="TOCBorderColor" mappedPropName="BorderColor"/>
+		<property htmlPropName="TOCBorderWeight" mappedPropName="BorderWeight"/>
+    </propertySet>
+	
+     <propertySet name="WatermarkProperties">
+    	<property htmlPropName="WatermarkType" mappedPropName="WatermarkType"/>
+    	<property htmlPropName="Text" mappedPropName="Text"/>
+    	<property htmlPropName="WatermarkFontName" mappedPropName="FontName"/>
+    	<property htmlPropName="WatermarkFontBold" mappedPropName="FontBold"/>
+    	<property htmlPropName="WatermarkFontItalic" mappedPropName="FontItalic"/>
+    	<property htmlPropName="WatermarkFontSize" mappedPropName="FontSize"/>
+    	<property htmlPropName="WatermarkFontStrikeout" mappedPropName="FontStrikeout"/>
+    	<property htmlPropName="WatermarkFontUnderline" mappedPropName="FontUnderline"/>
+    	<property htmlPropName="WatermarkFontColor" mappedPropName="FontColor"/>
+    	<property htmlPropName="WatermarkFontScript" mappedPropName="FontScript"/>
+    	<property htmlPropName="AutoFontSize" mappedPropName="AutoFontSize"/>
+    	<property htmlPropName="TextWashout" mappedPropName="TextWashout"/>
+    	<property htmlPropName="TextOrientation" mappedPropName="TextOrientation"/>
+    	<property htmlPropName="ImageSource" mappedPropName="ImageSource"/>
+    	<property htmlPropName="ImageScale" mappedPropName="ImageScale"/>
+    </propertySet>
+	<propertySet name="AnalyticalEngineProperties">
+	    <property htmlPropName="RemoveNullGroups" mappedPropName="RemoveNullGroups"/>
+		<property htmlPropName="TrimNoSectionData" mappedPropName="TrimEmptySections"/>
+		<property htmlPropName="RemoveMissingUnits" mappedPropName="RemoveMissingUnits"/>
+		<property htmlPropName="SingleSourceGrid" mappedPropName="SingleSourceGrid"/>
+        <property htmlPropName="KeepControlTargetsConsistent" mappedPropName="KeepControlTargetsConsistent"/>
+	</propertySet>
+	<propertySet name="VLDB Select">
+		<property htmlPropName="RWLevelMCEJoin" mappedPropName="MCE Join To Get Data Combination"/>
+	</propertySet>
+    <propertySet name="Visualization">
+        <property htmlPropName="VisualizationsEnabled" mappedPropName="VisualizationsEnabled" appliesTo="52"/>
+    	<property htmlPropName="ViewMode" mappedPropName="ViewMode" appliesTo="52"/>
+        <property htmlPropName="VisualizationList" mappedPropName="VisualizationList" appliesTo="52"/>
+        <property htmlPropName="SelectedVisualization" mappedPropName="SelectedVisualization" appliesTo="52"/>
+        <property htmlPropName="FileName" mappedPropName="FileName" appliesTo="52"/>
+        <property htmlPropName="CustomProps" mappedPropName="CustomProps" appliesTo="52"/>
+        <property htmlPropName="VisProps" mappedPropName="VisProps" appliesTo="52"/>
+        <property htmlPropName="IncludeMDProperties" mappedPropName="IncludeMDProperties" appliesTo="52"/>
+        <property htmlPropName="IPhoneVisualization" mappedPropName="IPhoneVisualization" attrName="iphv" appliesTo="52"/>
+        <property htmlPropName="IPadVisualization" mappedPropName="IPadVisualization" attrName="ipadv" appliesTo="52"/>
+        <property htmlPropName="APhoneVisualization" mappedPropName="APhoneVisualization" attrName="aphv" appliesTo="52"/>  
+        <property htmlPropName="ATabletVisualization" mappedPropName="ATabletVisualization" attrName="atv" appliesTo="52"/>        
+    </propertySet>
+    <propertySet name="FormattingSelector">
+      <property htmlPropName="Style" mappedPropName="Style" appliesTo="111"/>
+      <property htmlPropName="Multiselect" mappedPropName="Multiselect" appliesTo="52,111"/>
+      <property htmlPropName="ctlOrientation" mappedPropName="Orientation" appliesTo="111"/>
+      <property htmlPropName="ItemWidthMode" mappedPropName="ItemWidthMode" appliesTo="111"/>
+      <property htmlPropName="mouseOverAction" mappedPropName="MouseOverAction" appliesTo="111"/>
+      <property htmlPropName="DisplaySelectorDocked" mappedPropName="DisplaySelectorDocked" appliesTo="111"/>
+      <property htmlPropName="Include" mappedPropName="Include" appliesTo="111"/>
+      <property htmlPropName="mct" mappedPropName="MetricConditionType" appliesTo="111"/>
+      <property htmlPropName="DisplayText" mappedPropName="DisplayText" appliesTo="111"/>
+      <property htmlPropName="OfflineSubmission" mappedPropName="OfflineSubmission" appliesTo="111"/>
+      <property htmlPropName="DisplayConfirmation" mappedPropName="DisplayConfirmation" appliesTo="111"/>
+      <property htmlPropName="SubmitMessage" mappedPropName="SubmitMessage" appliesTo="111"/>
+      <property htmlPropName="ShowSummary" mappedPropName="ShowSummary" appliesTo="111"/>
+      <property htmlPropName="SearchOnServer" mappedPropName="SearchOnServer" attrName="sos" appliesTo="111"/>
+      <property htmlPropName="MaxSelectionCount" mappedPropName="MaxSelectionCount" attrName="masc" appliesTo="111"/>
+      <property htmlPropName="MinSelectionCount" mappedPropName="MinSelectionCount" attrName="misc" appliesTo="111"/>
+      <property htmlPropName="NoSelectionBehavior" mappedPropName="NoSelectionBehavior" attrName="nsb" appliesTo="111"/>
+      <property htmlPropName="ExportAsShownOnWeb" mappedPropName="ExportAsShownOnWeb" attrName="aow" appliesTo="111"/>
+      <property htmlPropName="showElementCount" mappedPropName="ShowElementCount" attrName="sec" appliesTo="111"/>
+      <property htmlPropName="InformationWindowTarget" mappedPropName="InformationWindowTarget" attrName="ifw" appliesTo="102,106,111"/>
+      <property htmlPropName="ActionForDirectTargetSelectors" mappedPropName="ActionForDirectTargetSelectors" attrName="adts" appliesTo="111"/>
+      <property htmlPropName="IndependentNodeSelector" mappedPropName="IndependentNodeSelector" appliesTo="52"/>
+      <property htmlPropName="TXNSubmitInOrder" mappedPropName="TXNSubmitInOrder" appliesTo="111"/>
+    </propertySet>
+
+    <propertySet name="FormattingWidget">
+      <property htmlPropName="RSLPath" mappedPropName="RSLPath" appliesTo="52,111"/>
+      <property htmlPropName="ClassName" mappedPropName="ClassName" attrName="twc" appliesTo="52,111" target="2"/>
+      <property htmlPropName="Enable" mappedPropName="Enable" appliesTo="52,111"/>
+      <property htmlPropName="WidgetProps" mappedPropName="WidgetProps" attrName="wp" appliesTo="52,111"/>
+      <property htmlPropName="NonFlashRender" mappedPropName="NonFlashRender" attrName="nfr" appliesTo="52" target="2"/>
+	  <property htmlPropName="IsApp" mappedPropName="IsApp" appliesTo="52,111"/>
+	  <property htmlPropName="SecondaryDataProviders" mappedPropName="SecondaryDataProviders" appliesTo="52,111"/>
+      <property htmlPropName="DhtmlRenderer" mappedPropName="DhtmlRenderer" attrName="dr" appliesTo="52" target="2"/>
+    </propertySet>
+
+    <propertySet name="FormattingTransitions">
+      <property htmlPropName="EnableTransition" mappedPropName="Enable" appliesTo="8,52"/>
+      <property htmlPropName="Transition" mappedPropName="Transition" attrName="ttr" appliesTo="8,52" target="2"/>
+      <property htmlPropName="Duration" mappedPropName="Duration" attrName="tdr" appliesTo="8,52" target="2"/>
+    </propertySet>
+
+    <propertySet name="Mobile">
+      <property htmlPropName="MobileDataView" mappedPropName="View"/>
+      <property htmlPropName="EnableBookStylePagebyNavigation" mappedPropName="EnableBookStylePagebyNavigation" default="0"/>
+      <property htmlPropName="EnableZoom" mappedPropName="EnableZoom" default="0"/>
+      <property htmlPropName="RefreshFrequency" mappedPropName="RefreshFrequency" default="-1"/>
+      <property htmlPropName="EnableExport" mappedPropName="EnableExport" default="0"/>
+      <property htmlPropName="EnableCopyForText" mappedPropName="EnableCopyForText" default="-1"/>
+      <property htmlPropName="EnableCopyForGridCell" mappedPropName="EnableCopyForGridCell" default="-1"/>
+      <property htmlPropName="DocumentThemeColor" mappedPropName="DocumentThemeColor" default="0"/>
+      <property htmlPropName="EnableSwipingToSwitchLayout" mappedPropName="EnableSwipingToSwitchLayout" default="-1"/>
+    </propertySet>
+    
+    <propertySet name="FormattingGroup">
+      <property htmlPropName="UseOneSheetPerPage" mappedPropName="UseOneSheetPerPage"/>
+    </propertySet>    
+
+	<propertySet name="FilterDetailsFormatProperties">
+      <property htmlPropName="FilterDetailsFormat" mappedPropName="FilterDetailsFormat"/>
+    </propertySet>    
+	
+	<propertySet name="FormattingIncrementalFetch">
+      <property htmlPropName="PSPreLoadAllPanels" mappedPropName="PreLoadAllPanels" attrName="plp" appliesTo="8"/>
+      <property htmlPropName="gridIfEnabled" mappedPropName="EnableIFOnGrid" attrName="gif" appliesTo="52"/>
+      <property htmlPropName="gridIfMaxRows" mappedPropName="MaxRows" attrName="gmr" appliesTo="52"/>
+      <property htmlPropName="gridIfRowMode" mappedPropName="RowIFMode" attrName="gifmd" appliesTo="52"/>
+    </propertySet>    
+    
+    <propertySet name="FormattingAnalysis">
+      <!-- AnalysisSection: 1-FiltersPanelStack; 2-VisualizationContentPanelStack; 3-PageByPanelStack; 4-VisualizationsPanelStack ; 5-DefaultGridTemplate ; 6-ViewDataGridTemplate -->
+      <property htmlPropName="AnalysisSection" mappedPropName="AnalysisSection" appliesTo="8,52"/>
+      <property htmlPropName="Collapsed" mappedPropName="Collapsed" appliesTo="111"/>
+      <property htmlPropName="DatasetObjectsVisible" mappedPropName="DatasetObjectsVisible" appliesTo="4"/>
+      <property htmlPropName="DatasetObjectsWidth" mappedPropName="DatasetObjectsWidth" appliesTo="4"/>     
+      <property htmlPropName="DropZonesVisible" mappedPropName="DropZonesVisible" appliesTo="8"/>
+      <property htmlPropName="DropZonesWidth" mappedPropName="DropZonesWidth" appliesTo="8"/>
+      <property htmlPropName="FilterDisplay" mappedPropName="FilterDisplay" appliesTo="8"/>
+      <property htmlPropName="FilterMode" mappedPropName="FilterMode" appliesTo="8"/>
+      <property htmlPropName="DatasetsSettings" mappedPropName="DatasetsSettings" appliesTo="4"/>
+      <property htmlPropName="TOCVisible" mappedPropName="TOCVisible" appliesTo="4"/>
+      <property htmlPropName="TOCWidth" mappedPropName="TOCWidth" appliesTo="4"/>
+    </propertySet>
+
+    <propertySet name="FormattingTransactions">
+      <property htmlPropName="InputControlStyle" n="InputControlStyle" appliesTo="111" />
+      <property htmlPropName="InputControlSetting" n="InputControlSetting" appliesTo="111" />
+	  <property htmlPropName="ShowChangeIndication" n="ShowChangeIndication" appliesTo="51,52" />	
+	  <property htmlPropName="SetBadgeToValueOnField" mappedPropName="SetBadgeToValueOnField" appliesTo="106"/>
+    </propertySet>
+    
+    <propertySet name="RWDExecution">
+      <property htmlPropName="OnDemandEvaluation" mappedPropName="OnDemandEvaluation"/>
+    </propertySet> 
+
+</propertySets>

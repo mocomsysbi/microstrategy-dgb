@@ -1,0 +1,36 @@
+<shortcut-list name="viewModes" feature-id="dhtml">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Design" desc-id="mstrWeb.3067" feature-id="dhtml;documents-design-mode;" check-feature-id="check-design-mode" name="tbDesignMode" type="button">
+        <attributes>
+            <attribute name="cmdid" value="rwChangeDesignMode"/>
+            <attribute name="cmdvl" value="1"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Express Mode" desc-id="mstrWeb.11694" feature-id="rw-static-view-mode-available" check-feature-id="rw-static-view-mode;" name="tbStaticViewMode" type="button">
+    	<attributes>
+            <attribute name="cmdid" value="rwCurrentViewMode"/>
+            <attribute name="cmdvl" value="1"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Interactive Mode" desc-id="mstrWeb.14530" feature-id="rw-interactive-view-mode-available" check-feature-id="rw-interactive-view-mode;" name="tbInteractiveViewMode" type="button">
+    	<attributes>
+            <attribute name="cmdid" value="rwCurrentViewMode"/>
+            <attribute name="cmdvl" value="2"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Editable Mode" desc-id="mstrWeb.4691" feature-id="rw-editable-view-mode-available" check-feature-id="rw-editable-view-mode;" name="tbEditableViewMode" type="button">
+    	<attributes>
+            <attribute name="cmdid" value="rwCurrentViewMode"/>
+            <attribute name="cmdvl" value="4"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Flash Mode" desc-id="mstrWeb.14531" feature-id="rw-flash-view-mode-available" check-feature-id="rw-flash-view-mode;" name="tbFlashViewMode" type="button">
+    	<attributes>
+            <attribute name="cmdid" value="rwCurrentViewMode"/>
+            <attribute name="cmdvl" value="8"/>
+    	</attributes>
+    </shortcut>
+</shortcut-list>

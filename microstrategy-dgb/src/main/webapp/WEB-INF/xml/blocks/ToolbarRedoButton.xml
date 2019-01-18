@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarRedoButton" inherits="ToolbarButtonModel">
+	<assignments>
+	    <property name="id">tbRedo</property>
+	    <property name="tooltip">{desc:mstrWeb.3541|Redo}</property>
+	    <property name="cmdid">redo</property>
+	</assignments>
+</block>

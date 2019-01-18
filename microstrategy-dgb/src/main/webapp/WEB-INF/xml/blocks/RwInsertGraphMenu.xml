@@ -1,0 +1,166 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwInsertGraphMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1696" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp1</property>
+          <property name="text">{desc:mstrWeb.338|Vertical area}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|1</property>
+        </block>
+        <block listElementKey="K1697" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp2</property>
+          <property name="text">{desc:mstrWeb.339|Horizontal area}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|2</property>
+        </block>
+        <block listElementKey="K1698" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp4</property>
+          <property name="text">{desc:mstrWeb.340|Vertical bar}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|4</property>
+        </block>
+        <block listElementKey="K1699" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp8</property>
+          <property name="text">{desc:mstrWeb.341|Horizontal bar}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|8</property>
+        </block>
+        <block listElementKey="K1700" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp16</property>
+          <property name="text">{desc:mstrWeb.342|Vertical line}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|16</property>
+        </block>
+        <block listElementKey="K1701" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp32</property>
+          <property name="text">{desc:mstrWeb.343|Horizontal line}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|32</property>
+        </block>
+        <block listElementKey="K1702" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp64</property>
+          <property name="text">{desc:mstrWeb.344|Pie}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|64</property>
+        </block>
+        <block listElementKey="K1703" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp128</property>
+          <property name="text">{desc:mstrWeb.345|Scatter}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|128</property>
+        </block>
+        <block listElementKey="K1704" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp256</property>
+          <property name="text">{desc:mstrWeb.346|Polar}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|256</property>
+        </block>
+        <block listElementKey="K1705" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp512</property>
+          <property name="text">{desc:mstrWeb.347|Radar}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|512</property>
+        </block>
+        <block listElementKey="K1706" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp1024</property>
+          <property name="text">{desc:mstrWeb.348|Bubble}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|1024</property>
+        </block>
+        <block listElementKey="K1707" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp2048</property>
+          <property name="text">{desc:mstrWeb.349|HiLo... Stock}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|2048</property>
+        </block>
+        <block listElementKey="K1708" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp4096</property>
+          <property name="text">{desc:mstrWeb.350|Histogram}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|4096</property>
+        </block>
+        <block listElementKey="K1709" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp8192</property>
+          <property name="text">{desc:mstrWeb.351|3D risers}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|8192</property>
+        </block>
+        <block listElementKey="K1710" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp16384</property>
+          <property name="text">{desc:mstrWeb.352|3D floating}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|16384</property>
+        </block>
+        <block listElementKey="K1711" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp32768</property>
+          <property name="text">{desc:mstrWeb.353|3D connect group}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|32768</property>
+        </block>
+        <block listElementKey="K1712" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp65536</property>
+          <property name="text">{desc:mstrWeb.354|3D connect series}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|65536</property>
+        </block>
+        <block listElementKey="K1713" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp131072</property>
+          <property name="text">{desc:mstrWeb.355|3D surface}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|131072</property>
+        </block>
+        <block listElementKey="K1714" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp262144</property>
+          <property name="text">{desc:mstrWeb.356|3D scatter}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|262144</property>
+        </block>
+        <block listElementKey="K1715" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp524288</property>
+          <property name="text">{desc:mstrWeb.3153|Guage}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|524288</property>
+        </block>
+        <block listElementKey="K1716" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp1048576</property>
+          <property name="text">{desc:mstrWeb.3154|Funnel}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|1048576</property>
+        </block>
+        <block listElementKey="K1717" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp2097152</property>
+          <property name="text">{desc:mstrWeb.3155|Pareto}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|2097152</property>
+        </block>
+        <block listElementKey="K1718" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp4194304</property>
+          <property name="text">{desc:mstrWeb.3156|Box Plot}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|4194304</property>
+        </block>
+        <block listElementKey="K1719" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp8388608</property>
+          <property name="text">{desc:mstrWeb.3533|Gantt}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|8388608</property>
+        </block>
+        <block listElementKey="K1720" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp16777216</property>
+          <property name="text">{desc:mstrWeb.5576|Combination}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|16777216</property>
+        </block>
+        <!-- New added hichert graph -->
+        <block listElementKey="MenuControlHichert" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrp33554432</property>
+          <property name="text">{desc:mstrWeb.9833|Hichert}</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+          <property name="cmdid">currentControl;52G|33554432</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

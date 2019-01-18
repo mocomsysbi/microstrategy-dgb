@@ -1,0 +1,142 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:render name="iFrameComponent">
+    <mstrlayout:argument value="rw_error" />
+  </mstrlayout:render>
+  <mstrlayout:if method="isIFrameRequest">
+    <mstrlayout:else>
+      <mstrlayout:if name="isDhtml">
+        <mstrlayout:then>
+        <mstrlayout:if name="isFeatureAvailable">
+          <mstrlayout:argument value="!rw-interactive-view-mode-full-screen-reporter" />
+          <mstrlayout:then>
+            <mstrlayout:include file="/WEB-INF/xml/layouts/RWReportFrameProcessor.xml" />
+            <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/PageInfoBlockLayout.xml" />
+          </mstrlayout:then>
+        </mstrlayout:if>
+        </mstrlayout:then>
+      </mstrlayout:if>
+    </mstrlayout:else>
+  </mstrlayout:if>
+  <mstrlayout:if name="isFeatureAvailable">
+    <mstrlayout:argument value="rw-interactive-view-mode-eplus" />
+    <mstrlayout:then>
+      <table border="0" cellpadding="0" cellspacing="0" class="rwLayout" width="100%">
+        <colgroup span="1">
+          <col class="rwLayoutRight" span="1" width="100%" />
+        </colgroup>
+        <tr>
+          <td class="rwLayoutRight" colspan="1" rowspan="1">
+<!--
+            <mstrlayout:render name="bean">
+              <mstrlayout:argument value="rwframe.subs" />
+            </mstrlayout:render>
+            <mstrlayout:render name="bean">
+              <mstrlayout:argument value="rwframe.ncSubs" />
+            </mstrlayout:render>
+            <mstrlayout:render name="bean">
+              <mstrlayout:argument value="rwframe.ncFileSubs" />
+            </mstrlayout:render>
+            <mstrlayout:render name="bean">
+              <mstrlayout:argument value="rwframe.ncPrintSubs" />
+            </mstrlayout:render>
+            <mstrlayout:render name="bean">
+              <mstrlayout:argument value="rwframe.ncSendNow" />
+            </mstrlayout:render>
+            <mstrlayout:render name="bean">
+              <mstrlayout:argument value="rwframe.mobileSubs" />
+            </mstrlayout:render>
+-->
+            <mstrlayout:if method="isFeatureAvailable">
+              <mstrlayout:argument value="rw-multi-layout-enabled-interactive" />
+              <mstrlayout:then>
+                <mstrlayout:render name="bean">
+                  <mstrlayout:argument value="rwframe.rwb" />
+                  <mstrlayout:argument value="RWMultiLayoutTabStripStyle" />
+                </mstrlayout:render>
+              </mstrlayout:then>
+            </mstrlayout:if>
+            <mstrlayout:render name="bean">
+              <mstrlayout:argument value="rwframe.pbb" />
+              <mstrlayout:argument value="GroupByStyle" />
+            </mstrlayout:render>
+            <mstrlayout:render name="editorMessage" />
+            <mstrlayout:render name="documentData" />
+            <mstrlayout:if method="isFeatureAvailable">
+              <mstrlayout:argument value="rw-incremental-fetch-enabled-interactive" />
+              <mstrlayout:then>
+                <div class="rwIncFetch">
+	              <mstrlayout:render name="bean">
+	                <mstrlayout:argument value="rwframe.rwb" />
+	                <mstrlayout:argument value="RWIncrementalFetchStyle" />
+	              </mstrlayout:render>
+                </div>
+	          </mstrlayout:then>
+            </mstrlayout:if>
+          </td>
+        </tr>
+      </table>
+    </mstrlayout:then>
+    <mstrlayout:else>
+<!--     
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="rwframe.subs" />
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="rwframe.ncSubs" />
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="rwframe.ncFileSubs" />
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="rwframe.ncPrintSubs" />
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="rwframe.ncSendNow" />
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="rwframe.mobileSubs" />
+      </mstrlayout:render>
+ -->
+      <mstrlayout:if name="isFeatureAvailable">
+        <mstrlayout:argument value="rw-flash-view-mode" />
+        <mstrlayout:then>
+          <mstrlayout:render name="editorMessage" />
+          <mstrlayout:if name="isIFrameRequest">
+            <mstrlayout:else>
+              <mstrlayout:render name="documentData" />
+            </mstrlayout:else>
+          </mstrlayout:if>
+        </mstrlayout:then>
+        <mstrlayout:else>
+          <mstrlayout:if method="isFeatureAvailable">
+            <mstrlayout:argument value="rw-multi-layout-enabled-interactive" />
+            <mstrlayout:then>
+              <mstrlayout:render name="bean">
+                <mstrlayout:argument value="rwframe.rwb" />
+                <mstrlayout:argument value="RWMultiLayoutTabStripStyle" />
+              </mstrlayout:render>
+            </mstrlayout:then>
+          </mstrlayout:if>
+          <mstrlayout:render name="bean">
+            <mstrlayout:argument value="rwframe.pbb" />
+            <mstrlayout:argument value="GroupByStyle" />
+          </mstrlayout:render>
+          <mstrlayout:render name="editorMessage" />
+          <mstrlayout:render name="documentData" />
+          <mstrlayout:if method="isFeatureAvailable">
+            <mstrlayout:argument value="rw-incremental-fetch-enabled-interactive" />
+            <mstrlayout:then>
+              <div class="rwIncFetch">
+                <mstrlayout:render name="bean">
+                  <mstrlayout:argument value="rwframe.rwb" />
+                  <mstrlayout:argument value="RWIncrementalFetchStyle" />
+                </mstrlayout:render>
+              </div>
+            </mstrlayout:then>
+          </mstrlayout:if>
+        </mstrlayout:else>
+      </mstrlayout:if>
+    </mstrlayout:else>
+  </mstrlayout:if>
+</mstrlayout:layout>

@@ -1,0 +1,35 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for Custom Group Elements.
+--> 
+<block name="CustomGroupElement">
+    <definition>
+    <!-- The Custom Group Node Key -->
+        <property name="did" type="String" />
+
+    <!-- The Custom Group Element Name -->
+        <property name="n" type="String" />
+
+    <!-- The Custom Group Element Expression -->
+        <property name="expr" type="Block" />
+
+        <!-- The Custom Group header format -->
+        <property name="header_format" type="Block" />
+        
+        <!-- The Custom Group header format -->
+        <property name="grid_format" type="Block" />
+        
+        <!-- The Custom Group header format -->
+        <property name="child_header_format" type="Block" />
+        
+        <!-- The Custom Group header format -->
+        <property name="child_grid_format" type="Block" />
+    
+        <!-- The Custom Group Element can expand -->
+        <property name="ce" type="Boolean" />
+        
+        <!-- The Custom Group Element is spliced -->
+        <property name="isp" type="Boolean" />
+        
+    </definition>
+</block>

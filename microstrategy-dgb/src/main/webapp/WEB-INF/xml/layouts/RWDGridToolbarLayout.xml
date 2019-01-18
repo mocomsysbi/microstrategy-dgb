@@ -1,0 +1,7 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:render name="bean">
+        <mstrlayout:argument value="GridAutoStyle"/>
+        <mstrlayout:argument value="GridAutoStylesRWStyle"/>
+    </mstrlayout:render>
+</mstrlayout:layout>

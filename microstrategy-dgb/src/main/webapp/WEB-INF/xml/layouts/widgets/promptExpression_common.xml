@@ -1,0 +1,374 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <!-- Set all of the scalar properties on this question. -->
+    <mstrlayout:if method="isMetricQualification">
+      <mstrlayout:then>
+        <mstrlayout:bSetProperty path="type" value="METRICQUAL"/>
+      </mstrlayout:then>
+      <mstrlayout:else>
+        <mstrlayout:if method="isAttributeQualification">
+          <mstrlayout:then>
+            <mstrlayout:if value="3" method="getBeanExpressionType" base="pb">
+              <mstrlayout:then>
+                <mstrlayout:bSetProperty path="type" value="SAP_CHAR_VARIABLE"/>
+              </mstrlayout:then>
+              <mstrlayout:else>
+                <mstrlayout:bSetProperty path="type" value="ATTRIBUTEQUAL"/>
+              </mstrlayout:else>
+            </mstrlayout:if>
+          </mstrlayout:then>
+          <mstrlayout:else>
+            <mstrlayout:if value="8" method="getBeanExpressionType" base="pb">
+              <mstrlayout:then>
+                <mstrlayout:bSetProperty path="type" value="SAP_HIER_NODE_VARIABLE"/>
+              </mstrlayout:then>
+              <mstrlayout:else>
+                <mstrlayout:bSetProperty path="type" value="HIERARCHY"/>
+              </mstrlayout:else>
+            </mstrlayout:if>
+          </mstrlayout:else>
+        </mstrlayout:if>
+      </mstrlayout:else>
+    </mstrlayout:if>
+    <!-- Special types for SAP prompts -->
+    <!-- Specify the title and description. -->
+    <mstrlayout:bSetProperty path="answer">
+      <mstrlayout:block name="ExpressionPromptAnswerModel">
+        <mstrlayout:bSetProperty path="dateFormat" method="getDateFormat"/>  	
+	    <mstrlayout:bSetProperty path="firstDayOfWeek" method="getFirstDayOfWeek"/>         				
+        <mstrlayout:bSetProperty path="timeFormat" method="getTimeFormat"/>	        
+        <!-- default expression type -->
+        <mstrlayout:if method="isMetricQualification">
+          <mstrlayout:then> <!-- MQ -->
+            <mstrlayout:bSetProperty path="defaultExpressionType" value="10"/> <!--single metric qual -->
+            <mstrlayout:bSetProperty path="defaultFunction" method="getDefaultFunction"/> <!-- Greater Equals -->
+            <mstrlayout:bSetProperty path="allowDisplayOutputLevelSelector" method="isAllowDisplayOutputLevelSelector"/>
+          </mstrlayout:then>
+          <mstrlayout:else> <!-- AQ, HQ-->
+            <!-- default expression type -->
+            <mstrlayout:if method="isSAPQualification">
+              <mstrlayout:then>
+                <mstrlayout:if method="isHierarchyQualification">
+                <mstrlayout:then>
+                  <mstrlayout:bSetProperty path="defaultExpressionType" value="5"/> <!-- filter list qual -->
+                  <mstrlayout:bSetProperty path="allowedExpressionTypes" value="5"/>
+                </mstrlayout:then>
+                <mstrlayout:else>
+                  <mstrlayout:bSetProperty path="defaultExpressionType" value="2"/> <!-- single base form qual -->
+                  <mstrlayout:bSetProperty path="allowedExpressionTypes" value="2"/>
+                </mstrlayout:else>
+                </mstrlayout:if>
+              </mstrlayout:then>
+              <mstrlayout:else>
+                <mstrlayout:if method="getPropertyValue" value="1">
+                  <mstrlayout:argument value="DefaultExpressionType"/>
+                  <mstrlayout:then>
+                    <mstrlayout:bSetProperty path="defaultExpressionType" value="5"/> <!-- filter list qual -->
+                    <mstrlayout:bSetProperty path="defaultAttributeExpressionType" value="5"/>
+                  </mstrlayout:then>
+                  <mstrlayout:else>
+                    <mstrlayout:bSetProperty path="defaultExpressionType" value="2"/> <!-- single base form qual -->
+                    <mstrlayout:bSetProperty path="defaultAttributeExpressionType" value="2"/>
+                  </mstrlayout:else>
+                </mstrlayout:if>
+                <mstrlayout:if method="getPropertyValue" value="1">
+                  <mstrlayout:argument value="ExpressionTypesAllowed"/>
+                  <mstrlayout:then>
+                    <mstrlayout:bSetProperty path="allowedExpressionTypes" value="5"/> <!-- select -->
+                  </mstrlayout:then>
+                  <mstrlayout:else>
+                    <mstrlayout:if method="getPropertyValue" value="2">
+                      <mstrlayout:argument value="ExpressionTypesAllowed"/>
+                      <mstrlayout:then>
+                        <mstrlayout:bSetProperty path="allowedExpressionTypes" value="2"/> <!-- qualify -->
+                      </mstrlayout:then>
+                      <mstrlayout:else>
+                        <mstrlayout:bSetProperty path="allowedExpressionTypes" value="2,5"/> <!-- select and qualify -->
+                      </mstrlayout:else>
+                    </mstrlayout:if>
+                  </mstrlayout:else>
+                </mstrlayout:if>
+              </mstrlayout:else>
+            </mstrlayout:if>
+            <!-- default function -->
+            <mstrlayout:if method="isTextboxStyle">
+              <mstrlayout:then>
+                <mstrlayout:bSetProperty path="defaultFunction" method="getDefaultFunction"/> <!-- IN -->
+              </mstrlayout:then>
+              <mstrlayout:else>
+                <mstrlayout:bSetProperty path="defaultFunction" method="getDefaultFunction"/> <!-- Equals -->
+              </mstrlayout:else>
+            </mstrlayout:if>
+          </mstrlayout:else>
+        </mstrlayout:if>
+        <!-- Specify if end-user must answer this question before Finishing. -->
+        <mstrlayout:bSetProperty path="required" method="com.microstrategy.web.objects.WebPrompt#isRequired" base="prompt"/>
+        <mstrlayout:bSetProperty path="min" method="com.microstrategy.web.objects.WebPrompt#getMin" base="prompt"/>
+        <mstrlayout:bSetProperty path="max" method="com.microstrategy.web.objects.WebPrompt#getMax" base="prompt"/>
+        <mstrlayout:bSetProperty path="allowAddAlways" value="true" />
+        <mstrlayout:if method="hasError">
+        	<mstrlayout:then>
+	            <mstrlayout:bSetProperty path="message" method="getErrorMessage"/>
+	            <mstrlayout:bSetProperty path="validationStatus/statusCode" value="999"/> <!-- mstr.Enum.Validation.STATUSCODE.INVALID -->
+        	</mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:bSetProperty path="allowedItemFormName" value=""/>
+        <mstrlayout:bSetProperty path="allowedItemFormValues" value=""/>
+      	<mstrlayout:bSetProperty path="allowNavAboveSearchRoot" method="getPropertyValue">
+        	<mstrlayout:argument value="AllowNavigationBeyondSearchRoot"/>
+	 	</mstrlayout:bSetProperty>
+        <!-- overriding previous setting -->
+        <mstrlayout:if method="isHICart_or_TreeStyle">
+          <mstrlayout:then>
+            <mstrlayout:if method="isMetricQualification"> <!-- MQ -->
+              <mstrlayout:then>
+                <mstrlayout:bSetProperty path="allowedItemFormName" value="icon"/>
+                <mstrlayout:bSetProperty path="allowedItemFormValues" value="m,m_sc"/>
+              </mstrlayout:then>
+              <mstrlayout:else> <!-- AQ and HQ -->
+                <mstrlayout:bSetProperty path="allowedItemFormName" value="icon"/>
+                <mstrlayout:bSetProperty path="allowedItemFormValues" value="a,a_sc,ae"/>
+              </mstrlayout:else>
+            </mstrlayout:if>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:if method="getPropertyValue" value="20">
+          <mstrlayout:argument value="DefaultRootOperator"/>
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="defaultBranchQualId" value="20"/>
+          </mstrlayout:then>
+          <mstrlayout:else>
+            <mstrlayout:bSetProperty path="defaultBranchQualId" value="19"/>
+          </mstrlayout:else>
+        </mstrlayout:if>
+        <mstrlayout:bSetProperty path="extendedProperties">
+          <mstrlayout:block name="ExpressionPromptAnswerExtendedProperties">
+            <mstrlayout:bSetProperty path="key" method="com.microstrategy.web.objects.WebPrompt#getKey" base="prompt"/>
+          </mstrlayout:block>
+        </mstrlayout:bSetProperty>
+        <mstrlayout:bSetProperty path="formCategory" method="com.microstrategy.web.objects.WebExpressionPrompt#getDisplayedForms" base="prompt"/>
+        <!-- function category -->
+        <mstrlayout:if value="1" method="getBeanExpressionType" base="pb">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="functionCategory" value="Attribute"/>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:if value="2" method="getBeanExpressionType" base="pb">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="functionCategory" value="MDXAttribute"/>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:if value="3" method="getBeanExpressionType" base="pb">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="functionCategory" value="SAPAttribute"/>
+            <mstrlayout:if operator="isNotNull" base="prompt" method="getDefaultFunction">
+              <mstrlayout:then>
+                <mstrlayout:bEditList path="allowedFunctions" method="getAllowedFunctions"/>
+              </mstrlayout:then>
+            </mstrlayout:if>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:if value="4" method="getBeanExpressionType" base="pb">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="functionCategory" value="Metric"/>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:if value="5" method="getBeanExpressionType" base="pb">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="functionCategory" value="MDXMetric"/>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:if value="6" method="getBeanExpressionType" base="pb">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="functionCategory" value="Attribute"/>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:if value="7" method="getBeanExpressionType" base="pb">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="functionCategory" value="MDXAttribute"/>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <mstrlayout:if value="8" method="getBeanExpressionType" base="pb">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="functionCategory" value="SAPAttribute"/>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <!-- Specify default answer, if any. -->
+        <mstrlayout:if method="isAnswerComplex" base="bean">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="isComplex" value="true"/>
+            <mstrlayout:bSetProperty path="complexString" method="getDefaultAnswerAsString"/>
+          </mstrlayout:then>
+          <mstrlayout:else>
+            <mstrlayout:bSetProperty path="selected">
+              <mstrlayout:base id="answer" method="getAnswer" base="transform"/>
+              <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/promptExpressionAnswer_widget.xml"/>
+            </mstrlayout:bSetProperty>
+            <mstrlayout:if method="getPropertyValue" value="0">
+              <mstrlayout:argument value="AllowInterExpressionOperatorChange"/>
+              <mstrlayout:then>
+                <mstrlayout:bSetProperty path="allowGrouping" value="false"/>
+              </mstrlayout:then>
+              <mstrlayout:else>
+                <mstrlayout:bSetProperty path="allowGrouping" value="true"/>
+              </mstrlayout:else>
+            </mstrlayout:if>
+            <mstrlayout:if method="getPropertyValue" value="0">
+              <mstrlayout:argument value="AllowLoadFromFile"/>
+              <mstrlayout:then>
+                <mstrlayout:bSetProperty path="selected/allowFileImport" value="false"/>
+              </mstrlayout:then>
+              <mstrlayout:else>
+                <mstrlayout:bSetProperty path="selected/allowFileImport" value="true"/>
+              </mstrlayout:else>
+            </mstrlayout:if>
+            <mstrlayout:if method="getPropertyValue" value="0">
+              <mstrlayout:argument value="AllowElementBrowse"/> 
+              <mstrlayout:then>
+                <mstrlayout:bSetProperty path="selected/allowElementBrowse" value="false"/>
+              </mstrlayout:then>
+              <mstrlayout:else>
+                <mstrlayout:bSetProperty path="selected/allowElementBrowse" value="true"/>
+              </mstrlayout:else>
+            </mstrlayout:if>
+           	<mstrlayout:bSetProperty path="maxElementsAllowed" method="getPropertyValue">
+              <mstrlayout:argument value="MaxElementsPerSubExpression"/>
+            </mstrlayout:bSetProperty>
+          </mstrlayout:else>
+        </mstrlayout:if>
+        <!-- available : predefined List / search result -->
+        <mstrlayout:if method="isAvailableFolderAvailable"> <!-- only when it is available -->
+          <mstrlayout:then>
+            <mstrlayout:base id="attDispForms" method="getDisplayedForms" base="transform"/>
+            <!-- populate answer/available -->
+            <mstrlayout:slot name="available">
+              <mstrlayout:if method="isHICartStyle">
+                <mstrlayout:then>
+                  <mstrlayout:if method="getPropertyValue" value="3">
+                    <mstrlayout:argument value="AllowNavigationBeyondSearchRoot"/>
+                    <mstrlayout:then>
+                      <!-- hierarchical style is only when you have the allow navigation property set to 3 -->
+                      <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+                        <mstrlayout:argument value="WidgetFolderSimpleHierarchicalStyle"/>
+                        <mstrlayout:argument value="attForms"/>
+                        <mstrlayout:argument base="attDispForms" type="java.lang.Object"/>
+                      </mstrlayout:bSetProperty>
+                    </mstrlayout:then>
+                    <mstrlayout:else>
+                      <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+                        <mstrlayout:argument value="WidgetFolderSimpleStyle"/>
+                        <mstrlayout:argument value="attForms"/>
+                        <mstrlayout:argument base="attDispForms" type="java.lang.Object"/>
+                      </mstrlayout:bSetProperty>
+                      <mstrlayout:bSetProperty path="available/autoSelectFirstItem" value="true"/>
+                    </mstrlayout:else>
+                  </mstrlayout:if>
+                </mstrlayout:then>
+                <mstrlayout:else>
+                  <mstrlayout:if method="isTreeStyle">
+                    <mstrlayout:then>
+                      <mstrlayout:base id="includeFolder" method="hasNonEmptySearchResults" base="transform"/>
+                      <mstrlayout:if method="getPropertyValue" value="3">
+                        <mstrlayout:argument value="AllowNavigationBeyondSearchRoot"/>
+                        <mstrlayout:then>
+                          <!-- hierarchical style is only when you have the allow navigation property set to 3 -->
+                          <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+                            <mstrlayout:argument value="WidgetFolderSimpleHierarchicalStyle"/>
+                            <mstrlayout:argument value="attForms"/>
+                            <mstrlayout:argument base="attDispForms" type="java.lang.Object"/>
+                          </mstrlayout:bSetProperty>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                          <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+                            <mstrlayout:argument value="WidgetFolderSimpleStyle"/>
+                            <mstrlayout:argument value="attForms"/>
+                            <mstrlayout:argument base="attDispForms" type="java.lang.Object"/>
+                          </mstrlayout:bSetProperty>
+                          <mstrlayout:bSetProperty path="available/autoSelectFirstItem" value="true"/>
+                        </mstrlayout:else>
+                      </mstrlayout:if>
+                    </mstrlayout:then>
+                    <mstrlayout:else>
+                      <mstrlayout:if method="isTextboxStyle">
+                        <mstrlayout:then>
+<!--                      <mstrlayout:base id="attDispForms" method="getAllFormsInteger" base="transform"/> -->
+                          <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+                            <mstrlayout:argument value="WidgetFolderSimpleStyle"/>
+                            <mstrlayout:argument value="attForms"/>
+                            <mstrlayout:argument base="attDispForms" type="java.lang.Object"/> <!-- All forms -->
+                          </mstrlayout:bSetProperty>
+                          <mstrlayout:bSetProperty path="available/autoSelectFirstItem" value="true"/>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                          <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+                            <mstrlayout:argument value="WidgetFolderSimpleStyle"/>
+                            <mstrlayout:argument value="attForms"/>
+                            <mstrlayout:argument base="attDispForms" type="java.lang.Object"/>
+                          </mstrlayout:bSetProperty>
+                          <mstrlayout:bSetProperty path="available/autoSelectFirstItem" value="true"/>
+                        </mstrlayout:else>
+                      </mstrlayout:if>
+                    </mstrlayout:else>
+                  </mstrlayout:if>
+                </mstrlayout:else>
+              </mstrlayout:if>
+            </mstrlayout:slot>
+          </mstrlayout:then>
+          <mstrlayout:else> <!-- send search information for later retrieval -->
+            <mstrlayout:if operator="isNotNull" base="search">
+              <mstrlayout:then>
+                <mstrlayout:bSetProperty path="available">
+                  <mstrlayout:block name="ListModel">
+                    <mstrlayout:bSetProperty path="searchXML" method="com.microstrategy.web.objects.WebSearch#getXML" base="search"/>
+                    <mstrlayout:bSetProperty path="dataSourcesXML" method="com.microstrategy.web.objects.WebObjectInfo#getDataSources" base="search"/>
+                    <mstrlayout:bSetProperty path="objectType" method="getSearchTypes"/>
+                    <mstrlayout:bSetProperty path="autoSelectFirstItem" value="true"/>
+                    <!-- javascript needs tp of container to invoke the service -->
+                    <mstrlayout:bSetProperty path="container">
+                      <mstrlayout:block name="ItemInfo">
+                        <mstrlayout:bSetProperty path="tp" value="8"/>
+			            <mstrlayout:bSetProperty path="stp" value="-1" />
+			            <mstrlayout:bSetProperty path="icon" value="p" />
+			            <mstrlayout:bSetProperty path="n" method="getDescriptor">
+			             	<mstrlayout:argument value="73" type="int"/> <!-- Search Results: -->
+			            </mstrlayout:bSetProperty>
+                      </mstrlayout:block>
+                    </mstrlayout:bSetProperty>
+                  </mstrlayout:block>
+                </mstrlayout:bSetProperty>
+              </mstrlayout:then>
+            </mstrlayout:if>
+          </mstrlayout:else>
+        </mstrlayout:if>
+        
+        <!-- render none option for non-required non-cart style prompts -->
+        <mstrlayout:if name="shouldRenderNoneOption">
+        <mstrlayout:then>
+         <mstrlayout:bSetProperty path="available/prefixItems">
+            <mstrlayout:block name="ItemInfo">
+                 <mstrlayout:bSetProperty path="dssid" value="0"/>
+                 <mstrlayout:bSetProperty path="tp" value="0"/>
+                 <mstrlayout:bSetProperty path="n" method="getDescriptor">
+                 <mstrlayout:argument type="int" value="181" />
+              <!-- Descriptor: - none - -->
+             </mstrlayout:bSetProperty>
+            </mstrlayout:block>
+           </mstrlayout:bSetProperty>
+        </mstrlayout:then>
+     </mstrlayout:if>
+        
+        <!-- set up hierarchical property no matter the prompt is showing or not -->
+        <mstrlayout:if method="isUseFolderStructure">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="available/hierarchical" value="true"/>
+          </mstrlayout:then>
+          <mstrlayout:else>
+            <mstrlayout:bSetProperty path="available/hierarchical" value="false"/>
+          </mstrlayout:else>
+        </mstrlayout:if>
+        <mstrlayout:bSetProperty path="available/dataSourcesXML" method="com.microstrategy.web.objects.WebObjectInfo#getDataSources" base="prompt"/>
+        <mstrlayout:bSetProperty path="available/blockCountAuto" value="true"/>
+		<mstrlayout:slot name="answerEnd"/>
+      </mstrlayout:block>
+    </mstrlayout:bSetProperty>
+</mstrlayout:layout>

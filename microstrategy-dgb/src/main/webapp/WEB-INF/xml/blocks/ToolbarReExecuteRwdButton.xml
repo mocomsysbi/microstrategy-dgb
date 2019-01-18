@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarReExecuteRwdButton" inherits="ToolbarReExecuteButton">
+	<assignments>
+        <property name="tooltip">{desc:mstrWeb.3758|Re-run document}</property>
+        <property name="visibleFeatures">check-execute-mode;reexecute;page-full-screen-mode</property>
+	</assignments>
+</block>

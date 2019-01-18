@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<cssBundles dir="css/bundles">   
+	<cssBundle name="cmsw">
+        <cssFile name="css/mi-cms-catalog.css"/>
+        <cssFile name="css/juju/plugins/mstrStoreUploader.css" /> 
+        <cssFile name="css/juju/plugins/mstrPhotoUploader.css" /> 
+        <cssFile name="ui/jquery-plugins/mstrCarousel.css" />
+        <cssFile name="ui/jquery-plugins/mstrAutoComplete.css" />
+    </cssBundle>    
+</cssBundles>

@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- NOTE THAT WE NEED TO UNIFY HOW TASKS RETURN DATA. PERHAPS IFRAME ENVS SHOULD DEFINE
+	     'data' in envelope file? OR ALL TASKS SHOULD LOOK FOR A 'data' NODE FOR TASK DATA? -->	
+	<block name="LoginTaskData" inherits="BaseBlock">
+		<definition>
+			<property name="sessionState" type="String" />
+			<property name="name" type="String" />
+		</definition>
+	</block>

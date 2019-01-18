@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarLineColorPicker" inherits="ToolbarColorPickerModel">
+	<assignments>
+		<property name="id">tbLineColor</property>
+		<property name="cmdid">lncolor</property>
+		<property name="tooltip">{desc:mstrWeb.3523|Line Color}</property>
+		<property name="lastColor">#000000</property>
+		<property name="popup|viewFlags">10</property>
+		<property name="enableReselect">true</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

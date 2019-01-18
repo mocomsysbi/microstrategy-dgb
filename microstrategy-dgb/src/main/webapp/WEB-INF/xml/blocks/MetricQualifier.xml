@@ -1,0 +1,49 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="BaseQualifier" name="MetricQualifier">
+  <definition>
+    <!-- Optional view for choosing the dimensionality or "level" of the qualification. -->
+    <property name="levelView" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="layoutClass">mstr.layouts.MetricQualifier</property>
+    <property name="targetView/caption">Metric:</property>
+    <property name="expressionType">10</property>
+    <property name="levelView">
+      <block name="ListPulldown">
+        <property name="caption">{desc:mstrWeb.5910|At level:}</property>
+        <property name="modelPath">parent/model/getLevelListModel()</property>
+        <property name="cmds">EditConditionLevel|model/getSelectedItem()|parent/model/selected</property>
+        <property name="popup">
+          <block name="VBox">
+            <property name="modelPath">parent/model</property>
+            <property name="visible">false</property>
+            <property name="cssClass">Popup</property>
+            <property name="cssText">filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+            <property name="CommandEnabledUnpop" type="Boolean">true</property>
+            <property name="popOrientation">1</property>
+            <property name="children">
+              <list>
+                <block listElementKey="K790" name="FastListView">
+                  <property name="width">200px</property>
+                  <property name="modelPath">parent/model</property>
+                  <property name="cmds">!ClickListItem;Unpop||parent;FireCommands||parent/opener</property>
+                  <property name="multiSelect">false</property>
+                  <property name="allowBrowseFolder">false</property>
+                  <property name="allowBrowseAttribute">false</property>
+                  <property name="allowBrowseHierarchy">false</property>
+                </block>
+                <block listElementKey="K791" name="TextLink">
+                  <property name="caption">{desc:mstrWeb.5908|Choose attributes...}</property>
+                  <property name="cmds">Unpop||parent;OpenPopup|"MetricQualifierLevelAttributesPopup1"|parent/opener</property>
+                </block>
+              </list>
+            </property>
+          </block>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- 
+		MetricQualifier is a BaseQualifier with additional properties for viewing a metric qualification.
+	-->

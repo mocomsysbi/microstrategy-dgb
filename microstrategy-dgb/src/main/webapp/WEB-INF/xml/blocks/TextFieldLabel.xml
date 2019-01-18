@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TextLabel is a UIComponent for displaying read-only text whose caption is controlled by a field -->
+	   <block name="TextFieldLabel" inherits="BaseView">
+        <definition>
+            <!-- Optional value of TextBox contents. -->
+            <property name="value" type="String" />
+        </definition>
+        <assignments>
+            <property name="layoutClass">mstr.layouts.TextFieldLabel</property>
+            <property name="cssClass">TextLabel</property>
+        </assignments>
+    </block>

@@ -1,0 +1,107 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- PromptSummaryBook is a ViewBook specifically for displaying a summary of prompt questions & answers. -->
+	<block name="PromptSummaryBook" inherits="ViewBook">
+		<assignments>
+			<property name="cssClass">PromptSummaryBook</property>
+			<property name="childViewTypes">
+				<block name="BaseBlock">
+					<property name="default" type="Block">
+						<block name="PromptQuestionView" />
+					</property>
+					<property name="CONSTANT" type="Block">
+						<block name="PromptQuestionView">
+							<property name="layoutClass">mstr.layouts.PromptQuestionSummary</property>
+							<property name="cssClass">PromptQuestionSummary</property>
+							<property name="simpleAnswerView">
+								<block name="TextDiv">
+									<property name="modelPath">parent/model/answer/getSelected()</property>
+								</block>
+							</property>
+						</block>
+					</property>
+					<property name="OBJECT" type="Block">
+						<block name="PromptQuestionView">
+							<property name="layoutClass">mstr.layouts.PromptQuestionSummary</property>
+							<property name="cssClass">PromptQuestionSummary</property>
+							<property name="simpleAnswerView">
+								<block name="ListTextDiv">
+									<property name="modelPath">parent/model/answer/getSelected()</property>
+								</block>
+							</property>
+						</block>
+					</property>
+					<property name="ELEMENT" type="Block">
+						<block name="PromptQuestionView">
+							<property name="layoutClass">mstr.layouts.PromptQuestionSummary</property>
+							<property name="cssClass">PromptQuestionSummary</property>
+							<property name="simpleAnswerView">
+								<block name="ListTextDiv">
+									<property name="modelPath">parent/model/answer/getSelected()</property>
+								</block>
+							</property>
+						</block>
+					</property>
+					<property name="ATTRIBUTEQUAL" type="Block">
+						<block name="PromptQuestionView">
+							<property name="layoutClass">mstr.layouts.PromptQuestionSummary</property>
+							<property name="cssClass">PromptQuestionSummary</property>
+							<property name="simpleAnswerView">
+								<block name="ExpressionEditor">
+									<property name="modelPath">parent/model/answer/getSelected()</property>
+									<property name="readOnly">true</property>
+								</block>
+							</property>
+						</block>
+					</property>
+					<property name="METRICQUAL" type="Block">
+						<block name="PromptQuestionView">
+							<property name="layoutClass">mstr.layouts.PromptQuestionSummary</property>
+							<property name="cssClass">PromptQuestionSummary</property>
+							<property name="simpleAnswerView">
+								<block name="ExpressionEditor">
+									<property name="modelPath">parent/model/answer/getSelected()</property>
+									<property name="readOnly">true</property>
+								</block>
+							</property>
+						</block>
+					</property>
+					<property name="HIERARCHY" type="Block">
+						<block name="PromptQuestionView">
+							<property name="layoutClass">mstr.layouts.PromptQuestionSummary</property>
+							<property name="cssClass">PromptQuestionSummary</property>
+							<property name="simpleAnswerView">
+								<block name="ExpressionEditor">
+									<property name="modelPath">parent/model/answer/getSelected()</property>
+									<property name="readOnly">true</property>
+								</block>
+							</property>
+						</block>
+					</property>
+					<property name="SAP_CHAR_VARIABLE" type="Block">
+						<block name="PromptQuestionView">
+							<property name="layoutClass">mstr.layouts.PromptQuestionSummary</property>
+							<property name="cssClass">PromptQuestionSummary</property>
+							<property name="simpleAnswerView">
+								<block name="ExpressionEditor">
+									<property name="modelPath">parent/model/answer/getSelected()</property>
+									<property name="readOnly">true</property>
+								</block>
+							</property>
+						</block>
+					</property>
+					<property name="SAP_HIER_NODE_VARIABLE" type="Block">
+						<block name="PromptQuestionView">
+							<property name="layoutClass">mstr.layouts.PromptQuestionSummary</property>
+							<property name="cssClass">PromptQuestionSummary</property>
+							<property name="simpleAnswerView">
+								<block name="ExpressionEditor">
+									<property name="modelPath">parent/model/answer/getSelected()</property>
+									<property name="readOnly">true</property>
+								</block>
+							</property>
+						</block>
+					</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

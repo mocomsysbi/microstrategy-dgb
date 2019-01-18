@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TabTreeListView is the ListView used in editors with vertical tab lists. -->
+	<block name="TabTreeListView" inherits="ListView">
+		<assignments>
+			<property name="scriptClass">mstr.views.TabTreeListView</property>
+			<property name="itemRendererClass">mstr.itemrenderers.TabTreeList</property>
+			<property name="multiSelect">false</property>
+			<property name="showIcons">false</property>
+			<property name="ignoreKeyStrokes">true</property>
+			<property name="cssClass">LeftListBlock</property>
+			
+		</assignments>
+	</block>

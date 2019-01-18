@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- PromptSaveOneAnswer view is the view for saving a prompt answer when "allow only one saved answer per prompt" -->
+	<block name="PromptSaveOneAnswer" inherits="BaseView">
+		<definition>
+			<property name="saveAnswerCaption" type="String"/>
+			<property name="autoCloseCaption" type="String"/>
+		</definition>
+		<assignments>
+			<!-- <property name="id">PromptSaveOneAnswer</property> -->
+			<property name="cssClass">PromptSaveOneAnswer</property>
+			<property name="layoutClass">mstr.layouts.PromptSaveCheckbox</property>
+			<property name="saveAnswerCaption">{desc:mstrWeb.5763|Remember this answer}</property>
+			<property name="autoCloseCaption">{desc:mstrWeb.5920|Do not prompt me again}</property>
+		</assignments>
+	</block>

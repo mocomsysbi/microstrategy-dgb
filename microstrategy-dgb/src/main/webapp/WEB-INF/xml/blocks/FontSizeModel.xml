@@ -1,0 +1,72 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ListModel" name="FontSizeModel">
+  <assignments>
+    <property name="valueForm">n</property>
+    <property name="selectedIndicesList">0</property>
+    <property name="items">
+      <list>
+        <block listElementKey="K665" name="ItemInfo">
+          <property name="n">2</property>
+        </block>
+        <block listElementKey="K666" name="ItemInfo">
+          <property name="n">3</property>
+        </block>
+        <block listElementKey="K667" name="ItemInfo">
+          <property name="n">4</property>
+        </block>
+        <block listElementKey="K668" name="ItemInfo">
+          <property name="n">5</property>
+        </block>
+        <block listElementKey="K669" name="ItemInfo">
+          <property name="n">6</property>
+        </block>
+        <block listElementKey="K670" name="ItemInfo">
+          <property name="n">7</property>
+        </block>
+        <block listElementKey="K671" name="ItemInfo">
+          <property name="n">8</property>
+        </block>
+        <block listElementKey="K672" name="ItemInfo">
+          <property name="n">9</property>
+        </block>
+        <block listElementKey="K673" name="ItemInfo">
+          <property name="n">10</property>
+        </block>
+        <block listElementKey="K674" name="ItemInfo">
+          <property name="n">11</property>
+        </block>
+        <block listElementKey="K675" name="ItemInfo">
+          <property name="n">12</property>
+        </block>
+        <block listElementKey="K676" name="ItemInfo">
+          <property name="n">14</property>
+        </block>
+        <block listElementKey="K677" name="ItemInfo">
+          <property name="n">16</property>
+        </block>
+        <block listElementKey="K678" name="ItemInfo">
+          <property name="n">18</property>
+        </block>
+        <block listElementKey="K679" name="ItemInfo">
+          <property name="n">20</property>
+        </block>
+        <block listElementKey="K680" name="ItemInfo">
+          <property name="n">22</property>
+        </block>
+        <block listElementKey="K681" name="ItemInfo">
+          <property name="n">24</property>
+        </block>
+        <block listElementKey="K682" name="ItemInfo">
+          <property name="n">36</property>
+        </block>
+        <block listElementKey="K683" name="ItemInfo">
+          <property name="n">48</property>
+        </block>
+        <block listElementKey="K684" name="ItemInfo">
+          <property name="n">72</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- Used for any editor that has the font size list control. -->

@@ -1,0 +1,72 @@
+<shortcut-list-set javascript-file="toolbar.js" name="folderToolbar" script-class="mstrToolbarImpl" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrFolderToolbar mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="createObjects" feature-id="create-objects">
+    <shortcut base-bean="fb" desc="Create Report" desc-id="mstrWeb.5" append-state="true" name="tbNewReport" type="button" feature-id="create-view-reports" href="#"  iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreate"/>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbNewReportAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="fb" desc="Create Document" desc-id="mstrWeb.2918" append-state="true" name="tbNewDocument" type="button" feature-id="template-documents;dhtml;documents-design-mode" href="#"  iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreateDocument"/>
+    </shortcut>
+    <shortcut base-bean="fb" desc="Create Prompt" desc-id="mstrWeb.5233" append-state="true" name="tbNewPrompt" type="button" feature-id="dhtml;use-prompt-editor" href="#"  iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreatePromptPage"/>
+    </shortcut>
+    <shortcut base-bean="fb" desc="Create Filter" desc-id="mstrWeb.6032" append-state="true" name="tbNewFilter" type="button" feature-id="dhtml;use-report-filter-editor;savetemplatefilter" href="#"  iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenFilterEditor">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsNew" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut base-bean="fb" desc="Create Custom Group" desc-id="mstrWeb.8130" append-state="true" name="tbNewCGE" onclick="microstrategy.bone('folderAllModes').commands.exec('newCGE');return false;" type="button" feature-id="dhtml;web-use-custom-group-editor"  href="#"  iframe="false">      
+    </shortcut>
+    <shortcut base-bean="fb" desc="Create Metric" desc-id="mstrWeb.8978" append-state="true" name="tbNewME" onclick="microstrategy.bone('folderAllModes').commands.exec('newFSE');return false;" type="button" feature-id="dhtml;create-metric"  href="#"  iframe="false">      
+    </shortcut>    
+    <shortcut base-bean="fb" desc="Create Dossier" desc-id="mstrWeb.14825" append-state="true" name="tbNewHTML5IVE" onclick="microstrategy.bone('folderAllModes').commands.exec('newBlankVI');return false;" type="button" feature-id="dhtml;create-analysis" href="#" iframe="false" />
+    <shortcut base-bean="fb" desc="Import Data" desc-id="mstrWeb.7972" append-state="true" name="tbImportData" onclick="microstrategy.bone('folderAllModes').commands.exec('openDataImport');return false;" type="button" feature-id="dhtml;web-import-data;!enableQB"  href="#"  iframe="false"/>
+    <shortcut base-bean="fb" desc="Import Data" desc-id="mstrWeb.7972" append-state="true" name="tbQueryBuilder" onclick="microstrategy.bone('folderAllModes').commands.exec('openDataImport');return false;" type="button" feature-id="dhtml;web-import-data;enableQB"  href="#"  iframe="false"/>     
+  </shortcut-list>
+  <shortcut-list name="createFolder" feature-id="dhtml;create-folder">
+    <shortcut base-bean="fb" desc="Create New Folder" desc-id="mstrWeb.3245" append-state="true" name="tbNewFolder" type="button" feature-id="dhtml;create-folder" href="#"  iframe="true">
+      <event XMLmerge_id="1" base-bean="OMDCreateFolder" event-id="com.microstrategy.web.app.beans.EnumFrameEditorEvents.WebEventOpen">
+        <argument name="com.microstrategy.web.app.beans.EnumOMDCreateFolderEvents.OMDCreateFolderEventArgumentTargetName" value="fb"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="folderTreeView" feature-id="i-frame">
+    <shortcut desc="Show Navigation Tree" desc-id="mstrWeb.5695" append-state="true" name="tbTreeView" type="button" feature-id="i-frame" check-feature-id="check-show-left-toolbar" href="#"  iframe="false" dhtml-checked="microstrategy.bone(&apos;leftToolbar&apos;)" onclick="microstrategy.toggleLeftToolbar();return false;">
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="folderView">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="View: List" desc-id="mstrWeb.3382" name="tbListView" type="button"  check-feature-id="check-mode-list-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeFolderViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentFolderViewMode" value="FolderStyleList"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbListViewAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="View: Icon" desc-id="mstrWeb.3381" name="tbLargeIcons" type="button" check-feature-id="check-mode-icon-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeFolderViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentFolderViewMode" value="FolderStyleIcon"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbLargeIconsAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="folderRefresh">
+    <shortcut desc="Refresh" desc-id="mstrWeb.773" name="tbRefresh" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventRefresh"/>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbRefreshAcc.gif"/>
+      </attributes>
+	</shortcut>
+  </shortcut-list>
+</shortcut-list-set>

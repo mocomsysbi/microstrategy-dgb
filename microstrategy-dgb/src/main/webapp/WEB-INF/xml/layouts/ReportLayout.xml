@@ -1,0 +1,42 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="report-top">
+    <mstrlayout:render name="top"/>
+  </div>
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="tblReportLayout">
+    <colgroup span="1">
+      <col span="1" width="1%"/>
+      <col span="1" width="98%"/>
+      <col span="1" width="1%"/>
+    </colgroup>
+    <tr>
+      <td id="tdReportLayoutLeft" colspan="1" rowspan="1">
+        <div class="report-left">
+          <mstrlayout:render name="left"/>
+        </div>
+      </td>
+      <td id="tdReportLayoutCenter" colspan="1" rowspan="1">
+        <div class="report-center">
+          <mstrlayout:render name="center"/>
+        </div>
+      </td>
+      <td id="tdReportLayoutRight" colspan="1" rowspan="1">
+        <div class="report-right">
+          <mstrlayout:render name="right"/>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <colgroup span="1">
+      <col span="1" width="100%"/>
+    </colgroup>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <div class="report-bottom">
+          <mstrlayout:render name="bottom"/>
+        </div>
+      </td>
+    </tr>
+  </table>
+</mstrlayout:layout>

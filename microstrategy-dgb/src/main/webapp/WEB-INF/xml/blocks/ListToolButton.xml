@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ListToolButton" inherits="ListPulldown">
+		<assignments>
+			<property name="itemRendererClass">mstr.null</property>
+			<property name="layoutClass">mstr.layouts.ListToolButton</property>
+		</assignments>
+	</block>

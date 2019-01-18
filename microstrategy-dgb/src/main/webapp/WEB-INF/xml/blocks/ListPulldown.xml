@@ -1,0 +1,38 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ListPulldown is a rich pulldown which pops open a ListView. Typically the popup
+		 shares the same model (a ListModel) as the ListPulldown.  -->
+	<block name="ListPulldown" inherits="ListView,PulldownProperties">
+		<definition>
+			<!-- Caption to appear no the left of the pulldown. -->
+			<property name="horizontalCaption" type="String" />
+			<property name="cssTextHorizontalCaption" type="String" />
+			
+			<!-- Optional value to set on the model if the control is disabled. -->
+			<property name="disabledModelValue" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.Pulldown</property>
+			<property name="layoutClass">mstr.layouts.Pulldown</property>
+			<property name="itemRendererClass">mstr.itemrenderers.ListPulldownView</property>
+			<property name="cssClass">ListPulldown</property>
+			<property name="multiSelect">false</property>
+			<property name="modelClass">mstr.models.ListModel</property>
+			<property name="horizontalCaption"></property>
+			<property name="popup">
+				<block name="FastListView">
+					<property name="visible">false</property>
+					<property name="cssText">filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+					<property name="showItemsDuringRequest">true</property>
+					<property name="width">200px</property>
+					<property name="modelPath">parent/model</property>
+					<property name="multiSelect">false</property>
+					<property name="cmds">!ClickListItem;Unpop;FireCommands||opener</property>
+					<property name="CommandEnabledUnpop" type="Boolean">true</property>
+					<property name="allowBrowseFolder">false</property>
+					<property name="allowBrowseAttribute">false</property>
+					<property name="allowBrowseHierarchy">false</property>
+					<property name="popOrientation">1</property>	<!-- Indicates that this popup is vertically oriented. -->
+				</block>
+			</property>
+		</assignments>
+	</block>

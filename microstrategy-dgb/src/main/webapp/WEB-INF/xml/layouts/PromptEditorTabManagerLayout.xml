@@ -1,0 +1,264 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:render name="bean">
+        <mstrlayout:argument value="promptEditor"/>
+    </mstrlayout:render>
+    <mstrlayout:render name="controlBar"/>
+    <mstrlayout:render name="tabContainerBody"/>
+
+	<!-- link context for selector -->
+    <mstrlayout:bContext defaultContentType="JSON" />
+
+	<script type="text/javascript">
+    <![CDATA[
+	selectorsParams = {
+		"keepAvailableItems":
+	]]>
+	<mstrlayout:render name="preferenceValue">
+		<mstrlayout:argument value="cartItemKeptInCartAvailable"/>
+	</mstrlayout:render>
+    <![CDATA[
+    		,
+			blockCount:
+    ]]>
+	<mstrlayout:render name="preferenceValueReplaceNull">
+		<mstrlayout:argument value="objectsBlockCount"/>
+		<mstrlayout:argument value="30"/>
+	</mstrlayout:render>
+	<![CDATA[	
+		, 
+		helpPath:
+    ]]>
+    <mstrlayout:render name="helpPath"/>
+	<![CDATA[	
+		,
+		"4": { 
+			blockBegin: 0,
+			multiSelect: true,
+		    allowedItemFormName: "icon",
+            allowedItemFormValues: "",
+            prohibitedItemFormValues: "f",
+			tree: 
+    ]]>
+
+	<mstrlayout:block name="TreeModel">
+	  <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+			<mstrlayout:argument value="4" type="int"/> <!-- EnumObjectBrowserContexts.ReportAllObjectsTab -->
+	  </mstrlayout:bSetProperty>
+	  <mstrlayout:list id="folder" method="getFlattenedContexFolderList">
+			<mstrlayout:argument value="4" type="int"/> <!-- EnumObjectBrowserContexts.ReportAllObjectsTab -->
+			<mstrlayout:base id="FolderObject" method="getValue" base="folder"/> <!-- the WebObjectInfo of the ancestor node -->
+			<!-- Add a new FlattenedTreeNode to this list... -->
+			<mstrlayout:bSetProperty path="flattenedNodes">
+			  <mstrlayout:block name="TreeNode">
+				<mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+				<mstrlayout:bSetProperty path="value">
+					<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+				</mstrlayout:bSetProperty>
+			  </mstrlayout:block>
+			</mstrlayout:bSetProperty>
+	  </mstrlayout:list>
+	</mstrlayout:block>
+    <![CDATA[
+		},
+		"16": { 
+			blockBegin: 0,
+			multiSelect: false,
+		    allowedItemFormName: "icon",
+            allowedItemFormValues: "a,a_sc",
+            objectType: "12",
+			tree:			
+    ]]>
+	<mstrlayout:block name="TreeModel">
+	  <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+			<mstrlayout:argument value="16" type="int"/> <!-- EnumObjectBrowserContexts.PromptAttribute -->
+	  </mstrlayout:bSetProperty>
+	  <mstrlayout:list id="folder" method="getFlattenedContexFolderList">
+			<mstrlayout:argument value="16" type="int"/> <!-- EnumObjectBrowserContexts.PromptAttribute -->
+			<mstrlayout:base id="FolderObject" method="getValue" base="folder"/> <!-- the WebObjectInfo of the ancestor node -->
+			<!-- Add a new FlattenedTreeNode to this list... -->
+			<mstrlayout:bSetProperty path="flattenedNodes">
+			  <mstrlayout:block name="TreeNode">
+				<mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+				<mstrlayout:bSetProperty path="value">
+					<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+				</mstrlayout:bSetProperty>
+			  </mstrlayout:block>
+			</mstrlayout:bSetProperty>
+	  </mstrlayout:list>
+	</mstrlayout:block>
+    <![CDATA[
+		},
+		"17": { 
+			blockBegin: 0,
+			multiSelect: false,
+		    allowedItemFormName: "icon",
+            allowedItemFormValues: "m,m_sc",
+            objectType: "1024,1028",
+			tree:			
+    ]]>
+	<mstrlayout:block name="TreeModel">
+	  <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+			<mstrlayout:argument value="17" type="int"/> <!-- EnumObjectBrowserContexts.PromptMetric -->
+	  </mstrlayout:bSetProperty>
+	  <mstrlayout:list id="folder" method="getFlattenedContexFolderList">
+			<mstrlayout:argument value="17" type="int"/> <!-- EnumObjectBrowserContexts.PromptMetric -->
+			<mstrlayout:base id="FolderObject" method="getValue" base="folder"/> <!-- the WebObjectInfo of the ancestor node -->
+			<!-- Add a new FlattenedTreeNode to this list... -->
+			<mstrlayout:bSetProperty path="flattenedNodes">
+			  <mstrlayout:block name="TreeNode">
+				<mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+				<mstrlayout:bSetProperty path="value">
+					<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+				</mstrlayout:bSetProperty>
+			  </mstrlayout:block>
+			</mstrlayout:bSetProperty>
+	  </mstrlayout:list>
+	</mstrlayout:block>
+    <![CDATA[
+		},
+		"18": { 
+			blockBegin: 0,
+			multiSelect: false,
+		    allowedItemFormName: "icon",
+            allowedItemFormValues: "hi,hi_sc",
+            objectType: "14",
+			tree:			
+    ]]>
+	<mstrlayout:block name="TreeModel">
+	  <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+			<mstrlayout:argument value="18" type="int"/> <!-- EnumObjectBrowserContexts.PromptHierarchy -->
+	  </mstrlayout:bSetProperty>
+	  <mstrlayout:list id="folder" method="getFlattenedContexFolderList">
+			<mstrlayout:argument value="18" type="int"/> <!-- EnumObjectBrowserContexts.PromptHierarchy -->
+			<mstrlayout:base id="FolderObject" method="getValue" base="folder"/> <!-- the WebObjectInfo of the ancestor node -->
+			<!-- Add a new FlattenedTreeNode to this list... -->
+			<mstrlayout:bSetProperty path="flattenedNodes">
+			  <mstrlayout:block name="TreeNode">
+				<mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+				<mstrlayout:bSetProperty path="value">
+					<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+				</mstrlayout:bSetProperty>
+			  </mstrlayout:block>
+			</mstrlayout:bSetProperty>
+	  </mstrlayout:list>
+	</mstrlayout:block>
+    <![CDATA[
+		},
+		"10": { 
+			blockBegin: 0,
+			multiSelect: false,
+		    allowedItemFormName: "icon",
+            allowedItemFormValues: "fi,fi_sc",
+            objectType: "1",
+			tree: 
+    ]]>
+	<mstrlayout:block name="TreeModel">
+	  <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+			<mstrlayout:argument value="10" type="int"/> <!-- EnumObjectBrowserContexts.PromptFilter -->
+	  </mstrlayout:bSetProperty>
+	  <mstrlayout:list id="folder" method="getFlattenedContexFolderList">
+			<mstrlayout:argument value="10" type="int"/> <!-- EnumObjectBrowserContexts.PromptFilter -->
+			<mstrlayout:base id="FolderObject" method="getValue" base="folder"/> <!-- the WebObjectInfo of the ancestor node -->
+			<!-- Add a new FlattenedTreeNode to this list... -->
+			<mstrlayout:bSetProperty path="flattenedNodes">
+			  <mstrlayout:block name="TreeNode">
+				<mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+				<mstrlayout:bSetProperty path="value">
+					<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+				</mstrlayout:bSetProperty>
+			  </mstrlayout:block>
+			</mstrlayout:bSetProperty>
+	  </mstrlayout:list>
+	</mstrlayout:block>
+	
+    <![CDATA[
+		},
+		"11": { 
+			blockBegin: 0,
+			multiSelect: false,
+		    allowedItemFormName: "icon",
+            allowedItemFormValues: "", 
+            objectType: "39",
+			tree:
+    ]]>
+	<mstrlayout:block name="TreeModel">
+	  <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+			<mstrlayout:argument value="11" type="int"/> <!-- EnumObjectBrowserContexts.PromptSearch -->
+	  </mstrlayout:bSetProperty>
+	  <mstrlayout:list id="folder" method="getFlattenedContexFolderList">
+			<mstrlayout:argument value="11" type="int"/> <!-- EnumObjectBrowserContexts.PromptSearch -->
+			<mstrlayout:base id="FolderObject" method="getValue" base="folder"/> <!-- the WebObjectInfo of the ancestor node -->
+			<!-- Add a new FlattenedTreeNode to this list... -->
+			<mstrlayout:bSetProperty path="flattenedNodes">
+			  <mstrlayout:block name="TreeNode">
+				<mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+				<mstrlayout:bSetProperty path="value">
+					<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+				</mstrlayout:bSetProperty>
+			  </mstrlayout:block>
+			</mstrlayout:bSetProperty>
+	  </mstrlayout:list>
+	</mstrlayout:block>
+	<![CDATA[
+	}};
+    ]]>
+	</script>
+
+	<!-- multiple objects selector pop up -->
+    <![CDATA[
+    <textarea id="jsonOBPE1" class="mstrJSON">
+    ]]>
+    <mstrlayout:block name="ObjectSelector"/>
+    <![CDATA[
+    </textarea>
+    ]]>
+	<mstrlayout:juilLayouts rootBlockName="ObjectSelector" />
+    <script type="text/javascript">mstr.$register('jsonOBPE1', self);</script>
+
+	<!-- single object selector pop up -->
+    <![CDATA[
+    <textarea id="jsonPE2" class="mstrJSON">
+    ]]>
+    <mstrlayout:block name="SingleObjectSelector"/>
+    <![CDATA[
+    </textarea>
+    ]]>
+	<mstrlayout:juilLayouts rootBlockName="SingleObjectSelector" />
+    <script type="text/javascript">mstr.$register('jsonPE2', self);</script>
+
+	    <!-- add this to stop the curtain. Otherwise, when popup shown, 8.x javascript will 
+      cover the entire window with a curtian for a few seconds then hide it. This will make
+      our popup glitching. -->
+<!--  	<script type="text/javascript">window.iframe.notifyParent = function(){}</script> -->
+
+
+	<!-- iframe for task call -->    
+    <![CDATA[
+    <iframe class="mstrFrameProcessor" name="mstrFrameProcessor1" id="mstrFrameProcessor1" src="../html/Empty.html" style="display: none;height: 200px; width: 200px">
+    </iframe>
+    <textarea id="jsonPE3" class="mstrJSON">
+    ]]>
+    <mstrlayout:block name="FrameProcessor">
+        <mstrlayout:bSetProperty path="frameName" value="mstrFrameProcessor1" />
+    </mstrlayout:block>
+      
+    <![CDATA[
+    </textarea>
+    ]]>
+
+	<script type="text/javascript">
+	mstr.$register('jsonPE3', self);
+	</script>
+
+    <textarea rows="1" cols="20" id="jsonPromptFetchBlockPopup" class="mstrJSON">
+    <mstrlayout:block name="FetchBlockPopup">
+        <mstrlayout:bSetProperty path="id" value="FetchBlockPopup1" />
+    </mstrlayout:block>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="FetchBlockPopup" />
+	<script type="text/javascript">
+      mstr.$register('jsonPromptFetchBlockPopup', self);
+	</script>
+	
+</mstrlayout:layout>

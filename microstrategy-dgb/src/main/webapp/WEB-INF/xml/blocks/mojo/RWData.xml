@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the data associated with a Report Writer document.
+--> 
+<block name="RWData">
+    <definition>
+        <!-- A list of layouts. Each element is a RWLayout Block -->
+        <property name="layouts" type="List"/>
+        
+        <!-- Element IDs, an array of String values -->
+        <property name="elems" type="String"  annotation="json:expression"/>
+    </definition>
+</block>

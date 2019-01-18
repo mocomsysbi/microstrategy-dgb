@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarDualStateButtonModel" inherits="ToolbarButtonModel">
+	<definition>
+		<!-- A boolean indicating whether the button should be pressed or not. -->
+		<property name="state" type="Boolean" />
+	</definition>
+	<assignments>
+		<property name="toolbarHelper">
+			<block name="ToolbarDualStateButtonHelper" />
+		</property>
+	</assignments>
+</block>

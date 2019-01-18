@@ -1,0 +1,46 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ToolbarViewStack is the view stack that appears below the ribbon toolbar tabs and renders the individual toolbars. -->
+	<block name="ToolbarViewStack" inherits="ViewStack,ViewBookChildContainer">
+		<assignments>
+			<property name="modelPath">parent/model/toolbarModels</property>
+			<property name="height">1px</property>
+			<property name="cssText">min-height:32px;</property>
+			<property name="childViewTypes">
+				<block name="BaseBlock">
+					<property name="default" type="Block">
+						<block name="ToolbarSeparator" />
+					</property>
+					<property name="BUTTON" type="Block">
+						<block name="ToolbarButton" />
+					</property>
+					<property name="SUBMITBUTTON" type="Block">
+						<block name="ToolbarSubmitButton" />
+					</property>
+					<property name="TEXTBOX" type="Block">
+						<block name="ToolbarTextBox" />
+					</property>
+					<property name="LIST" type="Block">
+						<block name="ToolbarListPulldown" />
+					</property>
+					<property name="RADIOBUTTONS" type="Block">
+						<block name="ToolbarRadioButtons" />
+					</property>
+					<property name="COLORPICKER" type="Block">
+						<block name="ToolbarColorPicker" />
+					</property>
+					<property name="PICKERBUTTON" type="Block">
+						<block name="ToolbarPickerButton" />
+					</property>
+					<property name="TILELIST" type="Block">
+						<block name="ToolbarTilePulldown" />
+					</property>
+					<property name="TEXT" type="Block">
+						<block name="ToolbarText" />
+					</property>
+                    <property name="CONTEXTMENU" type="Block">
+                        <block name="ContextMenuOpener" />
+                    </property>
+				</block>
+			</property>
+		</assignments>
+	</block>

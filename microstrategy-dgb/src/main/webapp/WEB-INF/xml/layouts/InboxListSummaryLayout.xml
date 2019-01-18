@@ -1,0 +1,55 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <table class="mstrListView" cellspacing="0" id="HistoryList">
+        <mstrlayout:attr name="getMainTableAttributes" />
+        <mstrlayout:if name="isInboxEmpty">
+        <mstrlayout:else>
+            <colgroup>
+                <col class="nam" />
+            </colgroup>
+         </mstrlayout:else>
+         </mstrlayout:if>
+        <tbody>
+        <mstrlayout:if name="isInboxEmpty">
+            <mstrlayout:then>
+                <tr>
+                    <td>
+                        <div class="mstrListViewEptyList">
+                            <mstrlayout:render name="Descriptor">
+                                <mstrlayout:argument type="int" value="412"/> <!-- Your history list is empty. -->
+                            </mstrlayout:render>
+                        </div>
+                    </td>
+                </tr>
+            </mstrlayout:then>
+            <mstrlayout:else>
+                <mstrlayout:list id="parentInboxMessages" name="getMessages">
+                <tr>
+                    <mstrlayout:attr name="getMessageAttributes" >
+                        <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                    </mstrlayout:attr>
+                    <td style="width:20em;"><div style="word-wrap: break-word;">
+                        <mstrlayout:render name="NameInfo">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </div></td>
+                    </tr>
+                    <mstrlayout:list id="childInboxMessages" name="getChildMessages">
+                        <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                    <tr>
+                        <mstrlayout:attr name="getMessageAttributes" >
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:attr>
+                        <td>
+                            <mstrlayout:render name="NameInfo">
+                                <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                            </mstrlayout:render>
+                        </td>
+                    </tr>
+                    </mstrlayout:list>
+                </mstrlayout:list>
+            </mstrlayout:else>
+        </mstrlayout:if>
+        </tbody>
+    </table>
+</mstrlayout:layout>

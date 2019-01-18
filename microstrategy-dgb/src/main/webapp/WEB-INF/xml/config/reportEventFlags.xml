@@ -1,0 +1,204 @@
+<!-- More than one entry may match the event. In this case, the last entry to match will get applied -->
+<event-flags>
+    <!-- add view filter condition: status only, working set, template, folder, inbox -->
+    <event-flag key="0" id="6015">
+        <flag XMLmerge_id="1" value="176685184" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    <event-flag key="0" id="262144001">
+        <flag XMLmerge_id="1" value="176685184" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+
+    <!-- continue step for view filter: status only, working set, template, folder, inbox -->
+    <event-flag key="1" id="262144003">
+        <flag XMLmerge_id="1" value="176685184" action="replace" type="result" iframe="true"/>
+    </event-flag>
+
+    <!-- open formula editor: status only, working set, template, folder, inbox -->
+    <event-flag key="2" id="6014">
+        <flag XMLmerge_id="1" value="176685184" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+
+    <!-- switch object browser tabls: status only, working set, template, folder, inbox -->
+    <event-flag key="3" id="49001">
+        <flag XMLmerge_id="1" value="176685184" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+
+    <!-- open object browser -->
+    <event-flag key="4" id="5010">
+    	<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ob"/>
+    	<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="177733760" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>    
+    <!-- close object browser -->
+    <event-flag key="5" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ob"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="177864832" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+	
+	<!-- open subscription editor History List: status only, template (necessary for reportFrameBean), inbox -->
+	<event-flag key="6" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="subs" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160768" action="replace" type="result" excludeDrillPath="true" iframe="true"/> 
+	</event-flag>
+    <!-- close subscription editor History List: status only, template (necessary for reportFrameBean), inbox, gird -->
+    <event-flag key="7" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="subs" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291840" action="replace" type="result" excludeDrillPath="true" iframe="true"/> 
+    </event-flag>
+    
+	<!-- open subscription editor Send Now: status only, working set, template, inbox -->
+	<event-flag key="8" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSendNow" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160896" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close subscription editor Send Now: status only, working set, template, inbox, gird -->
+    <event-flag key="9" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSendNow" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291968" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    	
+	<!-- open subscription editor Mobile: status only, working set, template, inbox -->
+	<event-flag key="10" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="mobileSubs" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160896" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close subscription editor Mobile: status only, working set, template, inbox, gird -->
+    <event-flag key="11" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="mobileSubs" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291968" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+	
+	<!-- open subscription editor Email: status only, working set, template, inbox -->
+	<event-flag key="12" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSubs" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160896" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close subscription editor Email: status only, working set, template, inbox, gird -->
+    <event-flag key="13" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSubs" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291968" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>	
+	
+	<!-- open subscription editor File: status only, working set, template, inbox -->
+	<event-flag key="14" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncFileSubs" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160896" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close subscription editor File: status only, working set, template, inbox, gird -->
+    <event-flag key="15" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncFileSubs" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291968" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>	
+	
+	<!-- open subscription editor Print: status only, working set, template, inbox -->
+	<event-flag key="16" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncPrintSubs" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160896" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close subscription editor Print: status only, working set, template, inbox, gird -->
+    <event-flag key="17" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncPrintSubs" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291968" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    	
+	<!-- open subtotals editor: status only, template, inbox -->
+	<event-flag key="18" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ReportSubtotalsDHTMLEditor" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160768" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close subtotals editor: status only, template, inbox, gird -->
+    <event-flag key="19" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ReportSubtotalsDHTMLEditor" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291840" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    	
+	<!-- open attribute forms editor: status only, working set, template, inbox -->
+	<event-flag key="20" id="6018">
+        <flag XMLmerge_id="1" value="176160896" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+	    
+	<!-- open alerts editor: status only, template, working set, inbox -->
+	<event-flag key="23" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="alertsEditor" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160896" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close alerts editor: status only, template, working set, inbox, gird -->
+    <event-flag key="24" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="alertsEditor" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291968" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>	
+	
+	<!-- open advanced formatting editor: status only, template, inbox -->
+	<event-flag key="25" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="gridEditor" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="176160896" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close advanced formatting editor: status only, template, inbox, gird -->
+    <event-flag key="26" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="gridEditor" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="176291968" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>	
+	
+	<!-- open report options editor: status only, properties, inbox -->
+	<event-flag key="27" id="5010">
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="gridOptions" />
+		<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true" />
+        <flag XMLmerge_id="1" value="167772416" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+	</event-flag>
+    <!-- close report options editor: status only, properties, inbox, gird -->
+    <event-flag key="28" id="5010">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="gridOptions" />
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false" />
+        <flag XMLmerge_id="1" value="167903488" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>	
+	
+	<!-- open/close sort editor: status only, working set, template, folder, inbox 
+    <event-flag key="29" id="5010">
+    	<argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="sortDHTMLEditor" />
+        <flag XMLmerge_id="1" excludeDrillPath="true" iframe="true"/>
+    </event-flag>-->
+    
+    <!-- close subscription editor History List: status only, folder, template, inbox -->
+    <event-flag key="30" id="17004" src-bean="subs">
+        <flag XMLmerge_id="1" value="176685088" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    <!-- close subscription editor Send Now: status only, folder, template, inbox -->
+    <event-flag key="31" id="17004" src-bean="ncSendNow">
+        <flag XMLmerge_id="1" value="176685088" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    <!-- close subscription editor Mobile: status only, folder, template, inbox -->
+    <event-flag key="32" id="17004" src-bean="mobileSubs">
+        <flag XMLmerge_id="1" value="176685088" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    <!-- close subscription editor Email: status only, folder, template, inbox -->
+    <event-flag key="33" id="17004" src-bean="ncSubs">
+        <flag XMLmerge_id="1" value="176685088" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    <!-- close subscription editor File: status only, folder, template, inbox -->
+    <event-flag key="34" id="17004" src-bean="ncFileSubs">
+        <flag XMLmerge_id="1" value="176685088" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+    <!-- close subscription editor Print: status only, folder, template, inbox -->
+    <event-flag key="35" id="17004" src-bean="ncPrintSubs">
+        <flag XMLmerge_id="1" value="176685088" action="replace" type="result" excludeDrillPath="true" iframe="true"/>
+    </event-flag>
+</event-flags>

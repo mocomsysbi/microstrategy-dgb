@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Embedded Filter Qualification
+-->
+<block name="EmbeddedFilterQual" inherits="ExpNode">
+    <definition>
+        <!-- Filter ObjectInfo -->
+        <property name="f" type="Block" />
+    </definition>
+</block>

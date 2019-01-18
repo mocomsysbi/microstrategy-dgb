@@ -1,0 +1,95 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- SimpleListCart is a shopping cart with 2 ListVeiw of ListModels. -->
+	<block name="SimpleListCart" inherits="ListBrowser">
+		<definition>
+			<property name="selectedView" type="Block" />
+			<property name="addButton" type="Block" />
+			<property name="addAllButton" type="Block" />
+			<property name="removeButton" type="Block" />
+			<property name="removeAllButton" type="Block" />
+			<property name="upButton" type="Block" />
+			<property name="downButton" type="Block" />
+			<property name="showMoveButtons" type="Boolean" />
+            <property name="width" type="String"/>
+		</definition>
+		<assignments>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="loading" type="String">{desc:mstrWeb.2901|Loading...}</property>
+				</block>
+			</property>
+			<property name="layoutClass">mstr.layouts.ListCart</property>
+			<property name="cssClass">ListCart</property>
+			<property name="showMoveButtons">true</property>
+			<property name="availableView">
+				<block name="ListView">
+					<property name="caption">{desc:mstrWeb.1408|Available:}</property>
+					<property name="modelPath">parent/model/availableFiltered</property>
+					<property name="cmds">!ClickListItem;BrowseListItem||parent/model/available</property>
+					<property name="cmdsDblClick">Add||parent/model</property>
+					<property name="multiSelect">true</property>
+				</block>
+			</property>
+			<property name="selectedView">
+				<block name="ListView">
+					<property name="caption">{desc:mstrWeb.1409|Selected:}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="multiSelect">true</property>
+					<property name="allowBrowseFolder">false</property>
+					<property name="allowBrowseAttribute">false</property>
+					<property name="allowBrowseHierarchy">false</property>
+					<property name="cmdsDblClick">Remove||parent/model</property>
+				</block>
+			</property>
+			<property name="addButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.4447|Add}</property>
+					<property name="iconClass">mstrBGIcon_tbAdd</property>
+					<property name="cmds">Add||parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="addAllButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.5930|Add All}</property>
+					<property name="iconClass">mstrBGIcon_tbAddAll</property>
+					<property name="cmds">AddAll||parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="removeButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.4448|Remove}</property>
+					<property name="iconClass">mstrBGIcon_tbRemove</property>
+					<property name="cmds">Remove||parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="removeAllButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.4400|Remove All}</property>
+					<property name="iconClass">mstrBGIcon_tbRemoveAll</property>
+					<property name="cmds">RemoveAll||parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="upButton">
+				<block name="ToolButton">
+					<property name="visible">false</property>
+					<property name="tooltip">{desc:mstrWeb.138|Move Up}</property>
+					<property name="iconClass">mstrBGIcon_tbUp</property>
+					<property name="cmds">Up||parent/model/selected</property>
+					<property name="modelPath">parent/model/selected</property>
+				</block>
+			</property>
+			<property name="downButton">
+				<block name="ToolButton">
+					<property name="visible">false</property>
+					<property name="tooltip">{desc:mstrWeb.139|Move Down}</property>
+					<property name="iconClass">mstrBGIcon_tbDown</property>
+					<property name="cmds">Down||parent/model/selected</property>
+					<property name="modelPath">parent/model/selected</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

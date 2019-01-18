@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		TimeNodeValue is an ExpressionNodeValue representing a date, time or timestamp.
+	-->		
+	<block name="TimeNodeValue" inherits="ExpressionNodeValue">
+		<definition>
+			<property name="timeContainer" type="Block" />
+		</definition>
+		<assignments>
+			<property name="nodeType">6</property> <!-- Time -->
+		</assignments>
+	</block>

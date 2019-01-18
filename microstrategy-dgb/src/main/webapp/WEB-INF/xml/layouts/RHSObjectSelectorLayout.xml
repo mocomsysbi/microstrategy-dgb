@@ -1,0 +1,92 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<script type="text/javascript">
+    <![CDATA[
+        RHSselectorsParams = {
+    ]]>
+    <![CDATA[
+       "a": { 
+             allowedItemFormValues: "a,a_sc",
+             objectType: "12",
+             tree:			
+    ]]>
+    <mstrlayout:block name="TreeModel">
+      <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+          <mstrlayout:argument value="16" type="int"/> <!-- EnumObjectBrowserContexts.PromptAttribute -->
+      </mstrlayout:bSetProperty>
+      <mstrlayout:list id="folder" method="getFlattenedContexFolderList">
+          <mstrlayout:argument value="16" type="int"/> <!-- EnumObjectBrowserContexts.PromptAttribute -->
+          <mstrlayout:base id="FolderObject" method="getValue" base="folder"/> <!-- the WebObjectInfo of the ancestor node -->
+          <!-- Add a new FlattenedTreeNode to this list... -->
+             <mstrlayout:bSetProperty path="flattenedNodes">
+                <mstrlayout:block name="TreeNode">
+                    <mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+                    <mstrlayout:bSetProperty path="value">
+                         <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+                    </mstrlayout:bSetProperty>
+                </mstrlayout:block>
+            </mstrlayout:bSetProperty>
+      </mstrlayout:list>
+    </mstrlayout:block>
+	<![CDATA[
+	   },
+       "m": { 
+             allowedItemFormValues: "m,m_sc",
+             objectType: "1024,1028",
+             tree:			
+   ]]>
+   <mstrlayout:block name="TreeModel">
+	  <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+          <mstrlayout:argument value="17" type="int"/> <!-- EnumObjectBrowserContexts.PromptMetric -->
+      </mstrlayout:bSetProperty>
+      <mstrlayout:list id="folder" method="getFlattenedContexFolderList">
+          <mstrlayout:argument value="17" type="int"/> <!-- EnumObjectBrowserContexts.PromptMetric -->
+              <mstrlayout:base id="FolderObject" method="getValue" base="folder"/> <!-- the WebObjectInfo of the ancestor node -->
+                  <!-- Add a new FlattenedTreeNode to this list... -->
+                  <mstrlayout:bSetProperty path="flattenedNodes">
+                       <mstrlayout:block name="TreeNode">
+                           <mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+                           <mstrlayout:bSetProperty path="value">
+                               <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+                          </mstrlayout:bSetProperty>
+                       </mstrlayout:block>
+                 </mstrlayout:bSetProperty>
+      </mstrlayout:list>
+   </mstrlayout:block>
+   <![CDATA[
+   }};
+   ]]>
+   </script>	
+	   <![CDATA[
+    	<textarea id="jsonPE1" class="mstrJSON">
+		]]>
+	   <mstrlayout:block name="ListModel">
+		        <mstrlayout:bSetProperty path="id" value="objSelector1"/>
+				<mstrlayout:bSetProperty path="valueForm" value="dssid"/>
+				<mstrlayout:bSetProperty path="hierarchical" value="true"/>
+				<mstrlayout:bSetProperty path="keepFolders" value="true"/>
+				<mstrlayout:bSetProperty path="blockCount" name="getPreferenceIntegerReplaceNull">
+		             <mstrlayout:argument value="objectsBlockCount"/>
+		             <mstrlayout:argument value="30"/>
+	            </mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="blockBegin" value="0"/>
+                <mstrlayout:bSetProperty path="allowedItemFormName" value="icon"/>
+       </mstrlayout:block>
+    <![CDATA[
+    </textarea>
+    ]]>  
+    <script type="text/javascript">mstr.$register('jsonPE1', self);</script>
+    <!-- single object selector pop up -->
+    <![CDATA[
+    <textarea id="jsonPE2" class="mstrJSON">
+    ]]>
+    <mstrlayout:block name="SingleObjectSelector">
+        <mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+		<mstrlayout:bSetProperty path="moveToBody" value="true"/>
+    </mstrlayout:block>
+    <![CDATA[
+    </textarea>
+    ]]>
+    <mstrlayout:juilLayouts rootBlockName="SingleObjectSelector" />
+    <script type="text/javascript">mstr.$register('jsonPE2', self);</script>
+</mstrlayout:layout>

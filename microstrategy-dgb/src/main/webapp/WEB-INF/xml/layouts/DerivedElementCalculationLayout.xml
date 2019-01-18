@@ -1,0 +1,111 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="prmCart">
+    <mstrlayout:attr name="getMainDivAttributes" />
+    <mstrlayout:if name="isEditable" base="transform">
+	<mstrlayout:then>
+    <table class="mstrCart" >
+            <colgroup>
+                    <col width="42%"/>
+                    <col width="8%" />
+                    <col width="42%" />
+                    <col width="8%" />
+			</colgroup>
+	  <mstrlayout:if name="isTokenstream" base="transform">
+	  <mstrlayout:else>
+		  <tr> 
+			<td colspan="4">
+			  <div id="dePreview">
+				<label for="previewContent">
+					<mstrlayout:render name="descriptor">
+						<mstrlayout:argument type="int" value="3389"/><!-- Descriptor: Preview -->
+					</mstrlayout:render>
+				</label>
+				<span id="dePreviewContent"></span>
+			  </div>	  		
+			</td>
+		  </tr>
+	  </mstrlayout:else>
+	  </mstrlayout:if>
+      <tr valign="middle">
+        <td align="left" valign="top" style="width: auto;">
+        	<div id="srcType">
+	          <mstrlayout:render name="availablesSourceSelector"/>
+	        </div>
+        </td>
+        <td>&nbsp;</td>
+        <td align="left" valign="top" style="width: auto;">
+	        <mstrlayout:if name="isTokenstream" base="transform">
+	        <mstrlayout:else>
+			  <label>
+				<mstrlayout:render name="descriptor">
+					<mstrlayout:argument type="int" value="5424"/><!-- Descriptor: Function: -->
+				</mstrlayout:render>
+			  </label>
+			  <mstrlayout:render name="operatorSelector"/>
+	        </mstrlayout:else>
+	        </mstrlayout:if>
+        </td>
+		<td>&nbsp;</td>        
+      </tr>
+      <tr valign= "middle">
+      	<td colspan = "4">
+      		<mstrlayout:if name="isElementTab">
+        	    <mstrlayout:then>
+            		<div class="search" id="desearch">
+		            	 <mstrlayout:render name="search"/>
+        		  	</div> 
+        	    </mstrlayout:then>        		  	
+      		</mstrlayout:if>
+      	</td>
+      </tr>
+      <tr valign="middle">
+        <td class="mstrCartAvailable">
+  	            <div id="constantControl">
+	        	    <input type="text" size="20" id="de_cf" style="display:none;"/>
+	          	</div>
+       	        <div id="deElmt">
+            		<mstrlayout:render name="availableElements">
+            			<mstrlayout:argument type="string" value="deElementSrc"/>
+            		</mstrlayout:render>
+			            <div>
+		      		      <mstrlayout:render name="incrementalFetch"/>
+		          		</div> 		       	 
+ 		       	</div>	        		
+       	        <div>
+            		<mstrlayout:render name="availableGroups">
+            			<mstrlayout:argument type="string" value="deGroupSrc"/>
+            		</mstrlayout:render>
+ 		       	</div>	        				
+        </td>
+        <td class="mstrCartButtons" align="center">
+          <mstrlayout:render name="addRemoveButtons"/>
+        </td>
+        <td class="mstrCartSelected" colspan="2">
+          <mstrlayout:render name="selected"/>
+        </td>   
+        <mstrlayout:if name="isTokenstream" base="transform">
+        <mstrlayout:else>
+	        <td class="mstrCartButtons" align="center">
+	          <mstrlayout:render name="updownButtons"/>        
+	        </td>
+        </mstrlayout:else>
+        </mstrlayout:if>
+      </tr>
+    </table>
+    </mstrlayout:then>        		  	
+    <mstrlayout:else>    
+      <div id="dePreview">
+      	<label for="previewContent">
+			<mstrlayout:render name="descriptor">
+				<mstrlayout:argument type="int" value="3389"/><!-- Descriptor: Preview -->
+			</mstrlayout:render>      	
+      	</label>
+      	<span id="dePreviewContent">
+	     <mstrlayout:render name="preview"/>        
+      	</span>
+      </div>	  		
+    </mstrlayout:else>        		  	
+    </mstrlayout:if>
+  </div>
+</mstrlayout:layout>

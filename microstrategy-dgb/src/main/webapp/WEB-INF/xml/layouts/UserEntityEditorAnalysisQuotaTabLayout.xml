@@ -1,0 +1,45 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <span>
+      <mstrlayout:if name="isUser">
+        <mstrlayout:then>
+          <!--  mstrlayout:render name="descriptor">
+            <mstrlayout:argument type="string" value="mstrWeb.xxxx"/>
+          </mstrlayout:render -->
+          *This setting defines the number of documents a user is allowed to save in a project*
+        </mstrlayout:then>
+        <mstrlayout:else>
+          <!--  mstrlayout:render name="descriptor">
+            <mstrlayout:argument type="string" value="mstrWeb.xxxx"/>
+          </mstrlayout:render -->   
+          *This setting defines the number of documents a user group is allowed to save in a project*     
+        </mstrlayout:else>
+      </mstrlayout:if>         
+    </span>
+    
+    <table>
+      <tr>
+        <td colspan="2">
+          <mstrlayout:render name="ProjectsSelector" />
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <mstrlayout:render name="DefaultQuotaRadio" />
+          <mstrlayout:render name="DefaultQuotaLabel" />
+        </td>
+      </tr>  
+      
+      <tr>
+        <td>
+          <mstrlayout:render name="UserDefinedQuotaRadio" />
+          <mstrlayout:render name="UserDefinedQuotaLabel" />
+        </td>
+        <td>
+          <mstrlayout:render name="QuotaInputField" />
+        </td>
+      </tr>               
+    </table>
+    
+</mstrlayout:layout>

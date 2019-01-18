@@ -1,0 +1,36 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div>
+    <br/>
+<!-- 
+    <div>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="subs"/>
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="ncSubs"/>
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="ncFileSubs"/>
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="ncPrintSubs"/>
+      </mstrlayout:render>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="ncSendNow"/>
+      </mstrlayout:render>
+    </div>
+ -->      
+    <div>
+      <mstrlayout:render name="iFrameComponent">
+        <mstrlayout:argument value="document_message"/>
+      </mstrlayout:render>
+    </div>
+    <div>
+      <mstrlayout:render name="bean">
+        <mstrlayout:argument value="db"/>
+        <mstrlayout:argument value="SimpleDocumentStyle"/>
+      </mstrlayout:render>
+    </div>
+  </div>
+</mstrlayout:layout>

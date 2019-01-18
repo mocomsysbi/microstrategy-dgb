@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="SavedAnswer" inherits="ItemInfo">
+		<definition>
+			<!-- whether the answer is a default answer -->
+			<property name="isDefault" type="Boolean" />
+			<!-- whether the answer is set to auto close -->
+			<property name="isAutoClose" type="Boolean" />
+		</definition>
+	</block>

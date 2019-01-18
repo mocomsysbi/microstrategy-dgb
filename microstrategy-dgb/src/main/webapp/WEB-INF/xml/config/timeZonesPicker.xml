@@ -1,0 +1,187 @@
+<shortcut-list name="timeZonePicker" version="1.0">
+  <shortcut desc="Default" desc-id="mstrWeb.2604" name="0">
+    <attributes>
+      <attribute name="value" value="0"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -11:00) Midway Islands" desc-id="mstrWeb.2605" name="MIT">
+    <attributes>
+      <attribute name="value" value="MIT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -10:00) Hawaii" desc-id="mstrWeb.2606" name="HST">
+    <attributes>
+      <attribute name="value" value="HST"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -9:00) Alaska" desc-id="mstrWeb.2607" name="America/Anchorage">
+    <attributes>
+      <attribute name="value" value="America/Anchorage"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -8:00) Pacific Time (US &amp; Canada) " desc-id="mstrWeb.2805" name="PST">
+    <attributes>
+      <attribute name="value" value="PST"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -7:00) Arizona " desc-id="mstrWeb.2609" name="PNT">
+    <attributes>
+      <attribute name="value" value="PNT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -7:00) Mountain Time (US &amp; Canada)" desc-id="mstrWeb.2806" name="MST">
+    <attributes>
+      <attribute name="value" value="US/Mountain"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -6:00) Central Time (US &amp; Canada) " desc-id="mstrWeb.2807" name="CST">
+    <attributes>
+      <attribute name="value" value="CST"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -6:00) Mexico City" desc-id="mstrWeb.2648" name="America/Mexico_City">
+    <attributes>
+      <attribute name="value" value="America/Mexico_City"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -5:00) Eastern Time (US &amp; Canada) " desc-id="mstrWeb.2808" name="EST">
+    <attributes>
+      <attribute name="value" value="US/Eastern"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -4:00) Atlantic Time (Canada) " desc-id="mstrWeb.2613" name="AST">
+    <attributes>
+      <attribute name="value" value="Canada/Atlantic"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -4:00) Puerto Rico" desc-id="mstrWeb.2614" name="PRT">
+    <attributes>
+      <attribute name="value" value="PRT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -3:30) Newfoundland " desc-id="mstrWeb.2615" name="CNT">
+    <attributes>
+      <attribute name="value" value="CNT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -3:00) Argentina" desc-id="mstrWeb.2616" name="AGT">
+    <attributes>
+      <attribute name="value" value="AGT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -3:00) Brazil" desc-id="mstrWeb.2617" name="BET">
+    <attributes>
+      <attribute name="value" value="BET"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -2:00) Mid-Atlantic" desc-id="mstrWeb.2618" name="Etc/GMT+2">
+    <attributes>
+      <attribute name="value" value="Etc/GMT+2"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT -1:00) Azores, Cape Verde" desc-id="mstrWeb.2619" name="Atlantic/Cape_Verde">
+    <attributes>
+      <attribute name="value" value="Atlantic/Cape_Verde"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT) Greenwich Mean Time" desc-id="mstrWeb.2620" name="GMT">
+    <attributes>
+      <attribute name="value" value="Europe/London"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT) Western Europe" desc-id="mstrWeb.2621" name="WET">
+    <attributes>
+      <attribute name="value" value="WET"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +1:00) Europe/Berlin" desc-id="mstrWeb.4391" name="Europe/Berlin">
+    <attributes>
+      <attribute name="value" value="Europe/Berlin"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +2:00) Central Africa " desc-id="mstrWeb.2622" name="CAT">
+    <attributes>
+      <attribute name="value" value="CAT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +2:00) Egypt " desc-id="mstrWeb.2623" name="ART">
+    <attributes>
+      <attribute name="value" value="ART"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +2:00) Eastern Europe" desc-id="mstrWeb.2624" name="EET">
+    <attributes>
+      <attribute name="value" value="EET"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +3:00) East Africa" desc-id="mstrWeb.2625" name="EAT">
+    <attributes>
+      <attribute name="value" value="EAT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +3:00) Middle East" desc-id="mstrWeb.7854" name="Asia/Riyadh">
+    <attributes>
+      <attribute name="value" value="Asia/Riyadh"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +4:00) Near East" desc-id="mstrWeb.2627" name="NET">
+    <attributes>
+      <attribute name="value" value="NET"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +5:00) Pakistan/Lahore" desc-id="mstrWeb.2628" name="PLT">
+    <attributes>
+      <attribute name="value" value="PLT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +5:30) India" desc-id="mstrWeb.2641" name="IST">
+    <attributes>
+      <attribute name="value" value="IST"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +6:00) Bangladesh" desc-id="mstrWeb.2629" name="BST">
+    <attributes>
+      <attribute name="value" value="BST"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +7:00) Vietnam " desc-id="mstrWeb.2630" name="VST">
+    <attributes>
+      <attribute name="value" value="VST"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +8:00) China Time (Taiwan) " desc-id="mstrWeb.2631" name="CTT">
+    <attributes>
+      <attribute name="value" value="CTT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +9:00) Seoul" desc-id="mstrWeb.2649" name="Asia/Seoul">
+    <attributes>
+      <attribute name="value" value="Asia/Seoul"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +9:00) Osaka, Sapporo, Tokyo" desc-id="mstrWeb.2650" name="JST">
+    <attributes>
+      <attribute name="value" value="JST"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +9:30) Australia Central " desc-id="mstrWeb.2632" name="ACT">
+    <attributes>
+      <attribute name="value" value="ACT"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +10:00) Australia Eastern " desc-id="mstrWeb.2633" name="AET">
+    <attributes>
+      <attribute name="value" value="AET"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +11:00) Solomon Islands " desc-id="mstrWeb.2634" name="SST">
+    <attributes>
+      <attribute name="value" value="SST"/>
+    </attributes>
+  </shortcut>
+  <shortcut desc="(GMT +12:00) New Zealand" desc-id="mstrWeb.2635" name="NST">
+    <attributes>
+      <attribute name="value" value="NST"/>
+    </attributes>
+  </shortcut>
+</shortcut-list>

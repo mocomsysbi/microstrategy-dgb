@@ -1,0 +1,284 @@
+<Thresholds>
+    <ThresholdColorBands>
+        <!-- Business Blue -->
+        <ThresholdBand title="16094">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#d2e0e8" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#a4cbe6" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#80add9" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#558dcc" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#2e78bb" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Marine Blue -->
+        <ThresholdBand title="16095">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#abcffa" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#7ca8de" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#4570af" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#224b8f" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#0e3270" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Business Teal -->
+        <ThresholdBand title="16096">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#c1d5d2" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#5e93a3" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#226482" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#1a5980" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#2b4864" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Aquamarine -->
+        <ThresholdBand title="16097">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#d5e2dd" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#94c4bc" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#3db3b9" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#2293a9" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#1a6e8c" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Emerald -->
+        <ThresholdBand title="16098">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#cbedb9" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#a9e5ae" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#6dd483" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#41b17b" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#158e74" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Yellow to Green -->
+        <ThresholdBand title="16099">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f0d900" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#c3c500" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#8ac153" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#4fb24a" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#589867" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Tangerine -->
+        <ThresholdBand title="16100">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f7dea5" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#f9c27e" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#fba555" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#f1842f" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#e8650a" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Honey -->
+        <ThresholdBand title="16101">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#fff0b1" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#fbdc8c" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#f6c763" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#f0ae34" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#f19600" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Sunflower -->
+        <ThresholdBand title="16102">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f4fab4" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#f5f467" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#f6ed16" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#f8d90b" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#fbc300" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Business Red -->
+        <ThresholdBand title="16103">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f9ddd0" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#f7bbaf" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#f18b84" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#e55d5f" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#c72d41" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Raspberry -->
+        <ThresholdBand title="16104">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f2d5ba" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#f5ad97" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#f08182" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#ea4e6a" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#bb3051" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Lavender -->
+        <ThresholdBand title="2290">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#faddd6" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#edc1d3" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#bb8fc3" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#7a53ab" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#484c97" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Gray -->
+        <ThresholdBand title="5585">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#dadee1" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#b9c0c5" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#969fa6" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#6c7278" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#434649" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Tropical Jungle -->
+        <ThresholdBand title="16105">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#e55149" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#f3844b" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#f9cf69" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#d6df73" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#82bc58" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Orange and Teal -->
+        <ThresholdBand title="16106">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f26826" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#fcac77" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#d1d1d1" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#6ad2c6" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#1da291" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Wild Berry -->
+        <ThresholdBand title="16107">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f8dfa2" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#ed9479" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#c6597e" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#8a5b9f" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#634a9d" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Traffic Lights -->
+        <ThresholdBand title="16108">
+            <Thresholds>
+                <Threshold startValue="0" endValue="34" backgroundColor="#ec7b75" />
+                <Threshold startValue="34" endValue="66" backgroundColor="#f6db7f" />
+                <Threshold startValue="66" endValue="100" backgroundColor="#84c87b" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Temperature -->
+        <ThresholdBand title="16109">
+            <Thresholds>
+                <Threshold startValue="0" endValue="34" backgroundColor="#e53841" />
+                <Threshold startValue="34" endValue="66" backgroundColor="#d1d1d1" />
+                <Threshold startValue="66" endValue="100" backgroundColor="#5086c2" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Accessibility Palette 1 - Gold and Purple -->
+        <ThresholdBand title="16110">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f29426" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#f8c362" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#dfdfdf" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#9b78ce" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#5226a7" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Accessibility Palette 2 - Gray -->
+        <ThresholdBand title="5585">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#dadee1" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#b9c0c5" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#969fa6" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#6c7278" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#434649" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Accessibility Palette 3 - Orange and teal -->
+        <ThresholdBand title="16106">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" backgroundColor="#f26826" />
+                <Threshold startValue="20" endValue="40" backgroundColor="#fcac77" />
+                <Threshold startValue="40" endValue="60" backgroundColor="#d1d1d1" />
+                <Threshold startValue="60" endValue="80" backgroundColor="#6ad2c6" />
+                <Threshold startValue="80" endValue="100" backgroundColor="#1da291" />
+            </Thresholds>
+        </ThresholdBand>
+    </ThresholdColorBands>
+    <ThresholdImageBands>
+        <!-- Arrows -->
+        <ThresholdBand title="12110" combinedImageURL="../images/quickThresholdImgs/arrows.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/red_arrow.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/yellow_arrow.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/green_arrow.png" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Reqular Push Pin -->
+        <ThresholdBand title="7665" combinedImageURL="../images/quickThresholdImgs/tack_pins.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/regularpp_red.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/regularpp_yellow.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/regularpp_green.png" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Rounded Push Pin -->
+        <ThresholdBand title="7666" combinedImageURL="../images/quickThresholdImgs/push_pins.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/roundedpp_red.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/roundedpp_yellow.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/roundedpp_green.png" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Blank Bubble -->
+        <ThresholdBand title="12111" combinedImageURL="../images/quickThresholdImgs/blank.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/blank_bubble_red.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/blank_bubble_blue.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/blank_bubble_green.png" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Truck -->
+        <ThresholdBand title="7905" combinedImageURL="../images/quickThresholdImgs/trucks.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/truck_red.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/truck_left.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/truck_green.png" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Retail Store -->
+        <ThresholdBand title="7908" combinedImageURL="../images/quickThresholdImgs/retail.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/retail_store_red.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/retail_store_left.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/retail_store_green.png" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Hospital -->
+        <ThresholdBand title="7909" combinedImageURL="../images/quickThresholdImgs/hospital.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/hospital_red.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/hospital_left.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/hospital_green.png" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Restaurant -->
+        <ThresholdBand title="7907" combinedImageURL="../images/quickThresholdImgs/restaurant.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/restaurant_red.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/restaurant_left.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/restaurant_green.png" />
+            </Thresholds>
+        </ThresholdBand>
+        <!-- Service Center -->
+        <ThresholdBand title="7910" combinedImageURL="../images/quickThresholdImgs/service.png">
+            <Thresholds>
+                <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/service_ctr_repair_red.png" />
+                <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/serv_ctr_repair_left.png" />
+                <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/service_ctr_repair_green.png" />
+            </Thresholds>
+        </ThresholdBand>
+    </ThresholdImageBands>
+</Thresholds>

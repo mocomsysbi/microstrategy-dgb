@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TreeBrowser is a container for a view of a TreeModel, with optional view
+		for search. -->		
+	<block name="TreeBrowser" inherits="BaseView">
+		<definition>
+			<property name="searchView" type="Block" />
+			<property name="availableView" type="Block" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ListBrowser</property>
+			<property name="cssClass">ListBrowser</property>
+			<property name="availableView">
+				<block name="TreeView">
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

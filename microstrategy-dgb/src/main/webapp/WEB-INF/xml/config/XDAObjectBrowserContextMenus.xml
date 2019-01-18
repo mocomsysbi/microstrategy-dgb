@@ -1,0 +1,6 @@
+<shortcut-list-set base-bean="XDAAllObjectsBrowser" name="XDAObjectBrowserContextMenus" version="1.0">
+  <shortcut-list name="object">
+    <shortcut name="addToGrid" desc="Add To Grid" desc-id="mstrWeb.2021" base-bone="XDAAllObjectsBrowser_display" onclick="selections.processContextMenu('ag')" dhtml-show="selections.checkShowContextMenuOption('ag')" feature-id="web-pivot"/>
+    <shortcut name="addToFilter" desc="Add To Filter" desc-id="mstrWeb.2022" base-bone="XDAAllObjectsBrowser_display"  onclick="selections.processContextMenu('af')" dhtml-show="selections.checkShowContextMenuOption('af')"  dhtml-enabled="!microstrategy.bone('XDAAllObjectsBrowser_display').selections.isMulti()"/>
+  </shortcut-list>
+</shortcut-list-set>

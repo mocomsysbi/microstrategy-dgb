@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the data portion of a Report Writer Panel Stack. 
+--> 
+<block name="RWPanelStack" inherits="RWObject">
+    <definition>
+        <!-- The key of the currently visible panel. -->
+        <property name="selKey" type="String" />
+        
+        <!-- The panels of this panel stack. Blocks are of type RWSubsection -->
+        <property name="panels" type="List" />
+    </definition>
+</block>

@@ -1,0 +1,13 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<div class="mstrPathIcons">
+		<mstrlayout:render name="HomeButton"/>
+		<mstrlayout:render name="BackButton"/>
+		<mstrlayout:render name="ForwardButton"/>
+      	<mstrlayout:render name="ParentUpButton"/>
+     </div>
+     <div class="mstrPathText">
+      	<mstrlayout:render name="CurrentItem"/>
+	</div>
+	<div class="mstrSpacer"></div>
+</mstrlayout:layout>

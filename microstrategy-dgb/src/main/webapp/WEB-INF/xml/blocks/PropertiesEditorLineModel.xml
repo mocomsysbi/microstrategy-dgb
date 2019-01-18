@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- This is the model used for the 'Line' tab of the Report Services properties editor. -->
+	<block name="PropertiesEditorLineModel" inherits="EditorBoneTranslator">
+		<definition>
+			<property name="lineTabEnabled" type="Boolean" />
+			<property name="LineOrientation" type="Block" />
+		</definition>
+		<assignments>
+			<property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+			<property name="titleText">{desc:mstrWeb.2059|Line}</property>
+			<property name="fields">LineOrientation</property>
+			<property name="visibleField">lineTabEnabled</property>
+			<property name="lineTabEnabled">true</property>
+			<property name="LineOrientation">
+				<block name="HOrientationModel" />
+			</property>
+		</assignments>
+	</block>

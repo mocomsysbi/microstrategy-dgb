@@ -1,0 +1,75 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="BaseModel" name="InsertLayoutEditorModel">
+  <definition>
+    <!-- The ListModel containing the names of the tabs for this editor. -->
+    <property name="tabList" type="Block"/>
+    <!-- The ListModel containing the names of new dashboard layouts. -->
+    <property name="newDashboardLayouts" type="Block"/>
+	<!-- The ListModel containing the names of new document layouts. -->
+    <property name="newDocumentLayouts" type="Block"/>
+    <!-- The ListModel for the ListBrowser component for existing dashboard layouts. -->
+    <property name="existingLayouts" type="Block"/>
+    <!--  This property is used to enable the editors 'Ok' button -->
+    <property name="CommandEnabledSubmitModel" type="Boolean"/>
+    <!-- The boneId is the id of the bone to interact with. -->
+    <property name="boneId" type="String" />
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.models.InsertLayoutEditor</property>
+    <property name="CommandEnabledSubmitModel">false</property>
+    <property name="boneId">rwb_viewer</property>
+    <property name="tabList">
+      <block name="ListModel">
+        <property name="valueForm">n</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K751" name="ItemInfo">
+              <property name="n">{desc:mstrWeb.8227|Dashboard-style Layouts}</property>
+            </block>
+            <block listElementKey="K752" name="ItemInfo">
+              <property name="n">{desc:mstrWeb.8228|Document Layouts}</property>
+            </block>
+			<block listElementKey="K753" name="ItemInfo">
+              <property name="n">{desc:mstrWeb.8265|Browse Documents}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+	<property name="newDocumentLayouts">
+      <block name="ListModel">
+        <property name="blockBegin">0</property>
+        <property name="blockCount">20</property>
+        <property name="objectType">14081</property>
+        <property name="container">
+          <block name="ItemInfo">
+            <property name="dssid">6C87013036D94E65B9FD227CF919327E</property> <!-- Objects Templates->Document folder-->
+            <property name="n">{desc:""|Documents}</property>
+            <property name="tp">8</property>
+          </block>
+        </property>
+      </block>
+    </property>
+    <property name="existingLayouts">
+      <block name="ListModel">
+        <property name="blockBegin">0</property>
+        <property name="blockCount">20</property>
+        <property name="objectType">14081,8</property>
+        <!-- 14081 -->
+        <property name="allowedItemFormName">tp</property>
+        <property name="prohibitedItemFormValues">8</property>
+        <property name="hierarchical">true</property>
+        <property name="keepFolders">true</property>
+        <property name="container">
+          <block name="ItemInfo">
+            <property name="icon">f</property>
+            <property name="dssid">8D678D6D11D3E4981000E787EC6DE8A4</property>
+            <property name="n">{desc:mstrWeb.2|Shared Reports}</property>
+            <property name="tp">8</property>
+          </block>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="HeightConfig" inherits="BaseBlock">
+  <definition>
+    <!-- Height mode, 0-Automatic, 1-Fixed-->
+    <property name="hm" type="Integer" />
+    <!-- Height -->
+    <property name="h" type="Double" />
+  </definition>
+</block>

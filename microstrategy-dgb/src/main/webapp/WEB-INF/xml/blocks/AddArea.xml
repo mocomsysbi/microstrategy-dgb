@@ -1,0 +1,31 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="AddArea" inherits="BaseView">
+		<definition>
+			<property name="scratchPad" type="Block"/>
+			<property name="editButton" type="Block"/>
+			<property name="submitButton" type="Block"/>
+			<property name="cssButtonClass" type="String"/>
+		</definition>
+		<assignments>
+		    <property name="scriptClass">mstr.views.BaseView</property>
+		    <property name="layoutClass">mstr.layouts.AddArea</property>
+		    <property name="modelPath">parent/model</property>
+		    <property name="cssClass">AddArea</property>
+		    <property name="cssButtonClass">AnnotationButtons</property>
+		    <property name="scratchPad">
+		    	<block name="ScratchPad">
+		    		<property name="id">scratchPad</property>
+		    	</block>
+		    </property>
+		    <property name="editButton">
+		    	<block name="AnnotationEditButton">
+		    		<property name="id">editButton</property>
+		    	</block>
+		    </property>
+		    <property name="submitButton">
+		    	<block name="AnnotationSubmitButton">
+		    		<property name="id">submitButton</property>
+		    	</block>
+		    </property>
+		</assignments>
+	</block>

@@ -1,0 +1,260 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if name="isDhtml">
+        <mstrlayout:then>
+            <mstrlayout:include file="/WEB-INF/xml/layouts/RWReportFrameProcessor.xml"/>
+            <mstrlayout:include file="/WEB-INF/xml/layouts/blocks/PageInfoBlockLayout.xml" />
+        </mstrlayout:then>
+    </mstrlayout:if>
+  
+    <mstrlayout:base id="frame.rb" method="getTargetBean" base="bean"/>
+    <mstrlayout:render name="iFrameComponent">
+        <mstrlayout:argument value="report_error"/>
+    </mstrlayout:render>
+	<mstrlayout:if name="isFeatureAvailable">
+		<mstrlayout:argument value="report-details"/>
+		<mstrlayout:then>
+			<mstrlayout:render name="bean">
+				<mstrlayout:argument value="frame.reportDetails"/>
+				<mstrlayout:argument value="ReportDetailsPanelStyle"/>
+			</mstrlayout:render>
+		</mstrlayout:then>
+	</mstrlayout:if>
+    <mstrlayout:if name="isFeatureAvailable">
+        <mstrlayout:argument value="report-filter"/>
+        <mstrlayout:then>
+            <mstrlayout:render name="bean">
+                <mstrlayout:argument value="rfe"/>
+                <mstrlayout:argument value="ReportFilterStyle"/>
+            </mstrlayout:render>
+        </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if name="isFeatureAvailable">
+        <mstrlayout:argument value="report-limit"/>
+        <mstrlayout:then>
+            <mstrlayout:render name="bean">
+                <mstrlayout:argument value="rle"/>
+                <mstrlayout:argument value="MDXReportLimitStyle"/>
+            </mstrlayout:render>
+        </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if name="isFeatureAvailable">
+        <mstrlayout:argument value="show-view-filter-editor"/>
+        <mstrlayout:then>
+            <mstrlayout:render name="bean">
+                <mstrlayout:argument value="frame.vfep"/>
+                <mstrlayout:argument value="ViewFilterPanelStyle"/>
+            </mstrlayout:render>
+        </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if name="isFeatureAvailable">
+        <mstrlayout:argument value="show-prompt-details"/>
+        <mstrlayout:then>
+            <mstrlayout:if name="isFeatureAvailable" base="frame.rb">
+                <mstrlayout:argument value="reprompt"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.promptDetails"/>
+                        <mstrlayout:argument value="PromptDetailsStyle"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+        </mstrlayout:then>
+    </mstrlayout:if>
+    <mstrlayout:if name="isFeatureAvailable">
+        <mstrlayout:argument value="dhtml"/>
+        <mstrlayout:else>
+            <mstrlayout:if name="isFeatureAvailable">
+                <mstrlayout:argument value="is-viewable-report"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="gridToolbar"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="graphToolbar"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+        </mstrlayout:else>
+    </mstrlayout:if>
+    <table cellpadding="0" cellspacing="0" width="100%" class="repLayout viewMode">
+        <colgroup span="1">
+            <col span="1" width="*"/>
+            <col span="1" width="100%"/>
+        </colgroup>
+        <tr>
+            <td class="repLayoutLeft" valign="top">
+            </td>
+            <td class="repLayoutRight" valign="top">
+                <mstrlayout:attr name="getReportDataCellAttributes"/>
+                <mstrlayout:if name="shouldDisplayContent" base="bean">
+                    <mstrlayout:argument value="report_page_by"/>
+                    <mstrlayout:then>
+                        <mstrlayout:render name="bean">
+                            <mstrlayout:argument value="frame.pbb"/>
+                            <mstrlayout:argument value="PageByStyle"/>
+                        </mstrlayout:render>
+                    </mstrlayout:then>
+                </mstrlayout:if>
+                <mstrlayout:if name="isFeatureAvailable">
+                    <mstrlayout:argument value="dhtml"/>
+                    <mstrlayout:else>
+                        <mstrlayout:render name="iFrameComponent">
+                            <mstrlayout:argument value="report_format_editor"/>
+                        </mstrlayout:render>
+                    </mstrlayout:else>
+                </mstrlayout:if>
+                <form action="">
+                    <mstrlayout:attr name="getReportFormAttributes"/>
+                    <mstrlayout:render name="reportFormHiddenInputs"/>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.drillEditor"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.drillFilterEditor"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.formula"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.attForms"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.edtReportSimpleThresholds"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.subtotalEditor"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.subtotalEditor_OldIServer"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.sortEditor"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.vle"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.resizeEditor"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.visualizationsEditor"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="bean">
+                        <mstrlayout:argument value="frame.visPropsEditor"/>
+                    </mstrlayout:render>                    
+                    <mstrlayout:if name="shouldDisplayContent" base="bean">
+                        <mstrlayout:argument value="report_toolbar"/>
+                        <mstrlayout:then>                  
+                            <mstrlayout:if name="isReportToolbarEnabled" base="bean">
+                                <mstrlayout:then>
+                                    <mstrlayout:render name="bean">
+                                        <mstrlayout:argument value="frame.rb"/>
+                                        <mstrlayout:argument value="ReportStyleIncrementalFetchToolbar"/>
+                                    </mstrlayout:render>
+                                </mstrlayout:then>
+                                <mstrlayout:else>
+                                    <mstrlayout:render name="emptyIFrameComponent">
+                                        <mstrlayout:argument value="report_toolbar"/>
+                                    </mstrlayout:render>
+                                </mstrlayout:else>
+                            </mstrlayout:if>
+                        </mstrlayout:then>
+                    </mstrlayout:if>                  
+                    <mstrlayout:render name="editorMessage">
+                        <mstrlayout:argument value="frame_message_before_data"/>
+                    </mstrlayout:render>
+                    <mstrlayout:if name="shouldDisplayContent" base="bean">
+                        <mstrlayout:argument value="report_data"/>
+                        <mstrlayout:then>
+                            <mstrlayout:if name="isFeatureAvailable">
+                                <mstrlayout:argument value="is-not-visualization-mode"/>
+                                <mstrlayout:then>
+                                    <mstrlayout:if name="isFeatureAvailable">
+                                        <mstrlayout:argument value="check-graph-mode"/>
+                                        <mstrlayout:then>
+                                            <mstrlayout:render name="bean">
+                                                <mstrlayout:argument value="frame.rb"/>
+                                                <mstrlayout:argument value="ReportGraphStyle"/>
+                                                <mstrlayout:argument type="boolean" value="true"/>
+                                            </mstrlayout:render>
+                                        </mstrlayout:then>
+                                        <mstrlayout:else>
+                                            <mstrlayout:if name="isFeatureAvailable">
+                                                <mstrlayout:argument value="check-grid-mode"/>
+                                                <mstrlayout:then>
+                                                    <mstrlayout:if name="isFeatureAvailable">
+                                                        <mstrlayout:argument value="check-recursive-attribute"/>
+                                                        <mstrlayout:then>
+                                                            <mstrlayout:render name="bean">
+                                                                <mstrlayout:argument value="frame.rb"/>
+                                                                <mstrlayout:argument value="ReportGridStyle"/>
+                                                                <mstrlayout:argument type="boolean" value="true"/>
+                                                            </mstrlayout:render>
+                                                        </mstrlayout:then>
+                                                        <mstrlayout:else>
+                                                            <mstrlayout:if name="isFeatureAvailable">
+		                                                        <mstrlayout:argument value="check-outline-mode"/>
+		                                                        <mstrlayout:then>
+		                                                            <mstrlayout:render name="bean">
+		                                                                <mstrlayout:argument value="frame.rb"/>
+		                                                                <mstrlayout:argument value="ReportOutlineModeStyle"/>
+		                                                                <mstrlayout:argument type="boolean" value="true"/>
+		                                                            </mstrlayout:render>
+		                                                        </mstrlayout:then>
+		                                                        <mstrlayout:else>
+		                                                            <mstrlayout:render name="bean">
+		                                                                <mstrlayout:argument value="frame.rb"/>
+		                                                                <mstrlayout:argument value="ReportGridStyle"/>
+		                                                                <mstrlayout:argument type="boolean" value="true"/>
+		                                                            </mstrlayout:render>
+		                                                        </mstrlayout:else>
+		                                                    </mstrlayout:if>
+                                                        </mstrlayout:else>
+                                                    </mstrlayout:if>
+                                                </mstrlayout:then>
+                                                <mstrlayout:else>
+                                                    <mstrlayout:render name="bean">
+                                                        <mstrlayout:argument value="frame.rb"/>
+                                                        <mstrlayout:argument value="ReportGridGraphStyle"/>
+                                                        <mstrlayout:argument type="boolean" value="true"/>
+                                                    </mstrlayout:render>
+                                                </mstrlayout:else>
+                                            </mstrlayout:if>
+                                        </mstrlayout:else>
+                                    </mstrlayout:if>
+                                </mstrlayout:then>
+                                <mstrlayout:else>
+                                    <mstrlayout:render name="visualization">
+                                        <mstrlayout:argument value="frame.rb"/>
+                                        <mstrlayout:argument type="boolean" value="true"/>
+                                    </mstrlayout:render>
+                                </mstrlayout:else>
+                            </mstrlayout:if>
+                        </mstrlayout:then>
+                    </mstrlayout:if>
+                </form>
+              
+                <!-- <mstrlayout:render name="bean">
+                          <mstrlayout:argument value="frame.subs"/>
+                      </mstrlayout:render>
+                      <mstrlayout:render name="bean">
+                          <mstrlayout:argument value="frame.mobileSubs"/>
+                      </mstrlayout:render>
+                      <mstrlayout:render name="bean">
+                          <mstrlayout:argument value="frame.ncSubs"/>
+                      </mstrlayout:render>
+                      <mstrlayout:render name="bean">
+                          <mstrlayout:argument value="frame.ncFileSubs"/>
+                      </mstrlayout:render>
+                      <mstrlayout:render name="bean">
+                          <mstrlayout:argument value="frame.ncPrintSubs"/>
+                      </mstrlayout:render>
+                      <mstrlayout:render name="bean">
+                          <mstrlayout:argument value="frame.ncSendNow"/>
+                      </mstrlayout:render>
+                       -->
+            </td>
+        </tr>
+    </table>
+</mstrlayout:layout>

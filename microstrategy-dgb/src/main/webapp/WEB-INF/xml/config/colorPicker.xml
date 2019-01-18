@@ -1,0 +1,4 @@
+<shortcut-list-set name="colorPicker" version="1.0">
+   <shortcut-list name="colorPicker" config-src="/WEB-INF/xml/config/colorPickerShortcutList.xml">
+  </shortcut-list>
+</shortcut-list-set>

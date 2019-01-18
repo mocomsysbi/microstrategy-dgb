@@ -1,0 +1,41 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- BoneTranslatorManager is a model that manages individual BoneTranslator models -->
+	<block name="BoneTranslatorManager" inherits="ListModel">
+		<definition>
+			<!-- The boneId is the id of the bone to translate. -->
+			<property name="boneId" type="String" />
+			
+			<!-- The cmdId to call when saving model changes -->
+			<property name="boneCmdId" type="String" />
+			
+			<!-- Internal flag to store whether the properties have changed. -->
+			<property name="hasChanges" type="Boolean" />
+
+			<!-- Internal flag to track whether the ok button should be enabled. -->
+			<property name="enableOk" type="Boolean" />
+
+			<!-- Internal flag to track whether the preview button should be enabled. -->
+			<property name="enablePreview" type="Boolean" />
+
+			<!-- Internal flag to store whether the properties have changed. -->
+			<property name="hasChanges" type="Boolean" />
+
+			<!-- Internal flag to store whether the model has been disabled by a view. -->
+			<property name="viewDisabled" type="Boolean" />
+
+			<!-- Internal count of how many times the user presses the 'Preview' button.  It's used 
+				for rolling back all changes when the user hits cancel. -->
+			<property name="previewCount" type="Integer" />
+		</definition>
+		<assignments>
+			<property name="CommandEnabledCancelChanges" type="Boolean">true</property>
+			<property name="scriptClass">mstr.bones.editors.BoneTranslatorManager</property>
+			<property name="hasChanges">false</property>
+			<property name="enableOk">false</property>
+			<property name="enablePreview">false</property>
+			<property name="viewDisabled">false</property>
+			<property name="previewCount">0</property>
+			<property name="CommandEnabledPreviewChanges" type="Boolean">false</property>
+			<property name="CommandEnabledOkChanges" type="Boolean">false</property>
+		</assignments>
+	</block>

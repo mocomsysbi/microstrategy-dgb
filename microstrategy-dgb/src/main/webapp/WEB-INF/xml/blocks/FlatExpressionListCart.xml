@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		FlatExpressionListCart is an ExpressionListCart view which does not allow grouping.
+		The view can display a list of available root operators.
+	-->
+	<block name="FlatExpressionListCart" inherits="ExpressionListCart">
+		<definition>
+			<property name="rootOperatorView" type="Block" />
+		</definition>
+		<assignments>
+			<property name="showMoveButtons">false</property>
+			<property name="upButton/visible">false</property>
+			<property name="downButton/visible">false</property>
+            <property name="groupConditionsButton/visible">false</property>
+            <property name="ungroupConditionsButton/visible">false</property>
+			<property name="rootOperatorView">
+				<block name="RadioList">
+					<property name="caption">{desc:mstrWeb.5897|Match:}</property>
+					<property name="modelPath">parent/model/parent/getRootOperatorListModel()</property>
+					<property name="cmds">!ClickListItem;EditRootOperator|model/getSelectedItem()|parent/model/selected</property>
+					<property name="height">auto</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

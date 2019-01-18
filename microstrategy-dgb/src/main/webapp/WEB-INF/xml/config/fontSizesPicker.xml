@@ -1,0 +1,125 @@
+<shortcut-list name="sizePicker" version="1.0">
+    <attributes>
+      <attribute name="ty" value="pkr" />
+    </attributes>
+	<shortcut desc="2" desc-id="" name="pkr2pt">
+		<attributes>
+			<attribute name="id" value="pkr2pt" />
+			<attribute name="value" value="2" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="3" desc-id="" name="pkr3pt">
+		<attributes>
+			<attribute name="id" value="pkr3pt" />
+			<attribute name="value" value="3" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="4" desc-id="" name="pkr4pt">
+		<attributes>
+			<attribute name="id" value="pkr4pt" />
+			<attribute name="value" value="4" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="5" desc-id="" name="pkr5pt">
+		<attributes>
+			<attribute name="id" value="pkr5pt" />
+			<attribute name="value" value="5" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="6" desc-id="" name="pkr6pt">
+		<attributes>
+			<attribute name="id" value="pkr6pt" />
+			<attribute name="value" value="6" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="7" desc-id="" name="pkr7pt">
+		<attributes>
+			<attribute name="id" value="pkr7pt" />
+			<attribute name="value" value="7" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="8" desc-id="" name="pkr8pt">
+		<attributes>
+			<attribute name="id" value="pkr8pt" />
+			<attribute name="value" value="8" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="9" desc-id="" name="pkr9pt">
+		<attributes>
+			<attribute name="id" value="pkr9pt" />
+			<attribute name="value" value="9" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="10" desc-id="" name="pkr10pt">
+		<attributes>
+			<attribute name="id" value="pkr10pt" />
+			<attribute name="value" value="10" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="11" desc-id="" name="pkr11pt">
+		<attributes>
+			<attribute name="id" value="pkr11pt" />
+			<attribute name="value" value="11" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="12" desc-id="" name="pkr12pt">
+		<attributes>
+			<attribute name="id" value="pkr12pt" />
+			<attribute name="value" value="12" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="14" desc-id="" name="pkr14pt">
+		<attributes>
+			<attribute name="id" value="pkr14pt" />
+			<attribute name="value" value="14" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="16" desc-id="" name="pkr16pt">
+		<attributes>
+			<attribute name="id" value="pkr16pt" />
+			<attribute name="value" value="16" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="18" desc-id="" name="pkr18pt">
+		<attributes>
+			<attribute name="id" value="pkr18pt" />
+			<attribute name="value" value="18" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="20" desc-id="" name="pkr20pt">
+		<attributes>
+			<attribute name="id" value="pkr20pt" />
+			<attribute name="value" value="20" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="22" desc-id="" name="pkr22pt">
+		<attributes>
+			<attribute name="id" value="pkr22pt" />
+			<attribute name="value" value="22" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="24" desc-id="" name="pkr24pt">
+		<attributes>
+			<attribute name="id" value="pkr24pt" />
+			<attribute name="value" value="24" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="36" desc-id="" name="pkr36pt">
+		<attributes>
+			<attribute name="id" value="pkr36pt" />
+			<attribute name="value" value="36" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="48" desc-id="" name="pkr48pt">
+		<attributes>
+			<attribute name="id" value="pkr48pt" />
+			<attribute name="value" value="48" />
+		</attributes>
+	</shortcut>
+	<shortcut desc="72" desc-id="" name="pkr72pt">
+		<attributes>
+			<attribute name="id" value="pkr72pt" />
+			<attribute name="value" value="72" />
+		</attributes>
+	</shortcut>
+</shortcut-list>

@@ -1,0 +1,179 @@
+<!DOCTYPE aggregatingTaskFactory SYSTEM "dtds/aggregatingTaskFactory.dtd">
+<aggregatingTaskFactory>
+	<tasks>
+		<task registerAs="getGoogleConfig" class="com.microstrategy.web.app.tasks.GetGoogleConfigurationTask" />
+		<task registerAs="getESRIConfig" class="com.microstrategy.web.app.tasks.GetESRIConfigurationTask" />
+		<task registerAs="login" class="com.microstrategy.web.app.tasks.AppLoginTask" />
+		<task registerAs="logout" class="com.microstrategy.web.tasks.LogoutTask" />
+		<task registerAs="loginFirst" class="com.microstrategy.web.app.tasks.LoginFirstTask" />
+		<task registerAs="getProjectsInfo" class="com.microstrategy.web.app.tasks.AppGetProjectsTask" />
+		<task registerAs="getServerProperties" class="com.microstrategy.web.app.tasks.GetServerPropertiesTask" />
+		<task registerAs="validatePromptForTemplate" class="com.microstrategy.web.app.tasks.ValidatePromptForTemplateTask" />
+		<task registerAs="uploadFile" class="com.microstrategy.web.tasks.UploadFileTask" />
+		<task registerAs="getBundles" class="com.microstrategy.web.app.tasks.GetBundlesTask" />
+		<task registerAs="uploadImageFile" class="com.microstrategy.web.app.tasks.UploadImageTask" />
+		<task registerAs="docXMLResults" class="com.microstrategy.web.tasks.DocumentXMLResultsTask" />
+		<task registerAs="docBinaryResults" class="com.microstrategy.web.tasks.DocumentBinaryResultsTask" />
+		<task registerAs="setVisualizationProperties" class="com.microstrategy.web.app.tasks.SetVisualizationPropertiesTask" />
+		<task adminTask="true" registerAs="registerVisualization" class="com.microstrategy.web.app.tasks.AddVisualizationTask" />
+		<task adminTask="true" registerAs="addWidget" class="com.microstrategy.web.app.tasks.AddWidgetTask" />
+		<task adminTask="true" registerAs="importCustomVizZip" class="com.microstrategy.web.app.tasks.UploadVisualizationZipTask" />
+		<task registerAs="getFlexSettings" class="com.microstrategy.web.tasks.GetFlexSettingsTask" />
+		<task registerAs="getSessionState" class="com.microstrategy.web.app.tasks.GetSessionStateTask" />
+		<task registerAs="IsServerConnected" class="com.microstrategy.web.tasks.ServerConnectionTask" />
+		<task registerAs="getReportGridFormat" class="com.microstrategy.web.app.tasks.GetGridFormatTask" />
+		<task registerAs="getDocGridFormat" class="com.microstrategy.web.app.tasks.GetRWGridFormatTask" />
+		<task registerAs="keepSessionAlive" class="com.microstrategy.web.app.tasks.KeepSessionAliveTask" />
+		<task registerAs="getSchedules" class="com.microstrategy.web.tasks.GetTriggersTask" />
+		<task registerAs="getRWGraphProperties" class="com.microstrategy.web.app.tasks.GetRWGraphPropertiesTask" />
+		<task registerAs="getReportGraphProperties" class="com.microstrategy.web.app.tasks.GetReportGraphPropertiesTask" />
+		<task registerAs="getPageByTree" class="com.microstrategy.web.tasks.GetPageByTreeTask" />
+		<task registerAs="checkUserPrivileges" class="com.microstrategy.web.tasks.CheckUserPrivilegesTask" />
+		<task registerAs="getObjectDetails" class="com.microstrategy.web.app.tasks.GetObjectDetailsTask" />
+		<task registerAs="getDescriptors" class="com.microstrategy.web.app.tasks.GetDescriptorsTask" />
+		<task registerAs="getBundleDescriptors" class="com.microstrategy.web.app.tasks.GetBundleDescriptorsTask" />
+		<task adminTask="true" registerAs="getConnectedServers" class="com.microstrategy.web.tasks.ServersTask" />
+		<task registerAs="saveCustomGroup" class="com.microstrategy.web.app.tasks.SaveCustomGroupTask" />
+		<task registerAs="createFolder" class="com.microstrategy.web.app.tasks.CreateFolderTask" />
+		<task registerAs="getLocaleInfo" class="com.microstrategy.web.app.tasks.GetLocaleInfoTask" />
+		<task registerAs="setPreference" class="com.microstrategy.web.app.tasks.SetPreferenceTask" />
+		<task registerAs="setCubeMapping" class="com.microstrategy.web.tasks.SetCubeMappingTask" />
+		<task registerAs="getCubeMapping" class="com.microstrategy.web.tasks.CubeMappingResultsTask" />
+		<task registerAs="getBinaryReportResults" class="com.microstrategy.web.tasks.ReportBinaryResultsTask" />
+		<task registerAs="saveAndPublishCube" class="com.microstrategy.web.tasks.SaveAndPublishCubeTask" />
+		<task registerAs="recoverDataDiscoveryErrors" class="com.microstrategy.web.tasks.RecoverDataDiscoveryErrorsTask" />
+		<task registerAs="getCubeBinaryResults" class="com.microstrategy.web.tasks.GetCubeBinaryResultsTask" />
+		<task registerAs="getDBInstances" class="com.microstrategy.web.tasks.GetDBInstancesTask" />
+		<task registerAs="getDBMSObjects" class="com.microstrategy.web.app.tasks.GetDBMSTask" />
+		<task registerAs="pollStatus" class="com.microstrategy.web.tasks.PollStatusTask" />
+		<task registerAs="saveThresholds" class="com.microstrategy.web.app.tasks.SaveThresholdsTask" />
+		<task registerAs="getThresholds" class="com.microstrategy.web.app.tasks.GetThresholdsTask" />
+		<task registerAs="pollEmmaStatus" class="com.microstrategy.web.tasks.PollEmmaStatusTask" />
+		<task registerAs="getNamedFolderID" class="com.microstrategy.web.tasks.GetNamedFolderID" />
+		<task registerAs="getObjectInfo" class="com.microstrategy.web.tasks.ObjectInfoTask" />
+		<task registerAs="saveObjectACL" class="com.microstrategy.web.tasks.SaveObjectACLTask" />
+		<task registerAs="getUserEntityInfo" class="com.microstrategy.web.tasks.UserEntityInfoTask" />
+		<task registerAs="getUserServices" class="com.microstrategy.web.tasks.UserServicesTask" />
+		<task registerAs="getCachesUpdateTimes" class="com.microstrategy.web.app.tasks.CachesUpdateTimeTask" />
+		<task registerAs="answerPrompts" class="com.microstrategy.web.tasks.AnswerPromptsTask" />
+		<task registerAs="invokeXMLAPI" class="com.microstrategy.web.tasks.XMLAPITask" />
+		<task registerAs="invokeBinaryXMLAPI" class="com.microstrategy.web.tasks.BinaryXMLAPITask" />
+		<task registerAs="deleteMessage" class="com.microstrategy.web.tasks.DeleteMessageTask" />
+		<task registerAs="gridDrill" class="com.microstrategy.web.tasks.ReportGridDrillTask" />
+		<task registerAs="graphDrill" class="com.microstrategy.web.tasks.ReportGraphDrillTask" />
+		<task registerAs="getUserPrivilegeXml" class="com.microstrategy.web.tasks.GetUserPrivilegeXmlTask" />
+		<task registerAs="getPrompts" class="com.microstrategy.web.tasks.GetPromptsTask" />
+		<task registerAs="getReportGraphImage" class="com.microstrategy.web.tasks.GetReportGraphImageTask" />
+		<task registerAs="getIVEWidgets" class="com.microstrategy.web.app.tasks.GetIVEWidgetsTask" />
+		<task registerAs="getVisualizationGallery" class="com.microstrategy.web.app.tasks.GetVisualizationGalleryTask" />
+		<task registerAs="checkLatency" class="com.microstrategy.web.tasks.CheckLatencyTask" adminTask="false" />
+		<task class="com.microstrategy.web.app.tasks.GetMapCoordinates" registerAs="getMapCoordinates" />
+		<task class="com.microstrategy.web.app.tasks.GetAllMapCoordinatesTask" registerAs="getAllMapCoordinates" />
+		<task registerAs="getTransactionReportDefinition" class="com.microstrategy.web.app.tasks.GetTransactionReportDefinition" />
+		<task registerAs="getRWTransactions" class="com.microstrategy.web.app.tasks.GetRWTransactions" />
+		<task registerAs="saveRWTransactions" class="com.microstrategy.web.app.tasks.SaveRWTransactions" />
+		<task registerAs="validateLocalTransaction" class="com.microstrategy.web.app.tasks.SaveRWTransactions" />
+		<task registerAs="getRWDocumentViews" class="com.microstrategy.web.app.tasks.GetRWDocumentViewsTask" />
+		<task registerAs="saveRWDocumentViews" class="com.microstrategy.web.app.tasks.SaveRWDocumentViewsTask" />
+		<task registerAs="getRWTransactionTargetDataset" class="com.microstrategy.web.app.tasks.GetRWTransactionTargetDataset" />
+		<task registerAs="getSystemFunctions" class="com.microstrategy.web.app.tasks.GetSystemFunctionsTask" />
+		<task registerAs="getMetricDefinition" class="com.microstrategy.web.app.tasks.GetMetricDefinitionTask" />
+		<task registerAs="validateMetric" class="com.microstrategy.web.app.tasks.ValidateMetricTask" />
+		<task registerAs="saveMetricDefinition" class="com.microstrategy.web.app.tasks.SaveMetricDefinitionTask" />
+		<task registerAs="getWSAttributeForms" class="com.microstrategy.web.app.tasks.AttributeFormTask" />
+		<task registerAs="getSearchSuggestions" class="com.microstrategy.web.app.tasks.GetSearchSuggestionsTask" />
+		<task registerAs="getDynamicRecipientLists" class="com.microstrategy.web.app.tasks.GetDynamicRecipientListsTask" />
+		<task registerAs="browseAttributeForms" class="com.microstrategy.web.app.tasks.BrowseAttributeFormsTask" />
+		<task registerAs="getDynamicRecipientList" class="com.microstrategy.web.app.tasks.GetDynamicRecipientListTask" />
+		<task registerAs="saveDynamicRecipientList" class="com.microstrategy.web.app.tasks.SaveDynamicRecipientListTask" />
+		<task registerAs="deleteDynamicRecipientList" class="com.microstrategy.web.app.tasks.DeleteDynamicRecipientListTask" />
+		<task registerAs="getDRLRelatedSubscriptions" class="com.microstrategy.web.app.tasks.GetDRLRelatedSubscriptionsTask" />
+		<task registerAs="deleteObject" class="com.microstrategy.web.app.tasks.DeleteObjectTask" />
+		<task registerAs="renameObject" class="com.microstrategy.web.app.tasks.RenameObjectTask" />
+		<task registerAs="getAssociatedSchedules" class="com.microstrategy.web.app.tasks.GetAssociatedSchedulesTask" />
+		<task registerAs="getShortcutsList" class="com.microstrategy.web.app.tasks.GetShortcutsList" />
+		<task registerAs="shortURL" class="com.microstrategy.web.app.tasks.ShortURLTask" />
+		<task registerAs="getMapShapes" class="com.microstrategy.web.app.tasks.GetMapShapesTask" />
+		<task registerAs="getRWGridViewFilter" class="com.microstrategy.web.app.tasks.GetRWGridViewFilterTask" />
+		<task registerAs="mojoGetReportWorkingSet" class="com.microstrategy.web.app.tasks.MojoGetReportWorkingSetTask" />
+		<task registerAs="importSaveRWD" class="com.microstrategy.web.app.tasks.ImportSaveRWDTask" />
+		<task registerAs="importAsyncSaveRWD" class="com.microstrategy.web.app.tasks.ImportAsyncSaveRWDTask" />
+		<task registerAs="desktopImportSaveDashboard" class="com.microstrategy.web.app.tasks.DesktopImportSaveDashboardTask" />
+		<task registerAs="isSessionAlive" class="com.microstrategy.web.app.tasks.SessionAliveTask" />
+		<task registerAs="closeSessions" class="com.microstrategy.web.tasks.CloseSessionsTask" />
+		<task registerAs="mojoGetDocumentManifest" class="com.microstrategy.web.app.tasks.MojoGetDocumentManifestTask" />
+		<task registerAs="getGoogleExtraConfig" class="com.microstrategy.web.app.tasks.GetGoogleExtraConfigurationTask" />
+		<task registerAs="getESRIExtraConfig" class="com.microstrategy.web.app.tasks.GetESRIExtraConfigurationTask" />
+		<task registerAs="getMultiMapConfig" class="com.microstrategy.web.app.tasks.GetMultiMapConfigurationTask" />
+		<task registerAs="duplicateReportInstance" class="com.microstrategy.web.app.tasks.DuplicateReportInstanceTask" />
+		<task registerAs="getWSAttributeForms" class="com.microstrategy.web.app.tasks.AttributeFormTask" />
+		<task registerAs="usherQRWeb" class="com.microstrategy.web.app.tasks.UsherQRCodeTask" />
+		<task registerAs="usherRememberMe" class="com.microstrategy.web.app.tasks.UsherRememberMeTask" />
+		<task registerAs="usherNotifyMe" class="com.microstrategy.web.app.tasks.UsherNotifyMeTask" />
+		<task registerAs="usherLoginWeb" class="com.microstrategy.web.app.tasks.UsherAuthenticationTask" />
+		<task registerAs="GetObjectSubscriptions" class="com.microstrategy.web.app.tasks.GetObjectSubscriptionsTask" />
+		<task registerAs="cancelSubscriptionsTask" class="com.microstrategy.web.app.tasks.CancelSubscriptionsTask" />
+		<task registerAs="MojoGetNDE" class="com.microstrategy.web.app.tasks.MojoGetNDETask" />
+		<task registerAs="editObjectTag" class="com.microstrategy.web.app.tasks.EditObjectTagTask" />
+		<task registerAs="addObjectTag" class="com.microstrategy.web.app.tasks.AddObjectTagTask"  />
+		<task registerAs="getMapBoundaryConfig" class="com.microstrategy.web.app.tasks.GetESRIKMLConfigurationTask" />
+		<task registerAs="getMapBoxGeoID" class="com.microstrategy.web.app.tasks.GetMapBoxPolygonIDTask" />
+		<task registerAs="getSubscriptionAssociatedInformation" class="com.microstrategy.web.app.tasks.GetSubscriptionAssociatedInformationTask" />
+		<task registerAs="getRWTransactionSources" class="com.microstrategy.web.app.tasks.GetRWTransactionSourcesTask" />
+		<task registerAs="setConditionalTransaction" class="com.microstrategy.web.app.tasks.SetConditionalTransactionTask" />
+		<task registerAs="getShapeGeoData" class="com.microstrategy.web.app.tasks.GetShapeGeoDataTask" />
+		<task registerAs="getMapConfigure" class="com.microstrategy.web.app.tasks.GetMapConfigurationTask" />
+		<task registerAs="savePalette" class="com.microstrategy.web.tasks.SavePaletteTask" />
+		<task registerAs="deletePalette" class="com.microstrategy.web.tasks.DeletePaletteTask" />
+		<task registerAs="updateTheme" class="com.microstrategy.web.tasks.UpdateThemeTask" />
+		<task registerAs="validateDocumentLinks" class="com.microstrategy.web.app.tasks.ValidateDocumentLinksTask" />
+		<task registerAs="oneTierRequest" class="com.microstrategy.web.tasks.OneTierRequestTask" />
+    		<task registerAs="usherRegUsr" class="com.microstrategy.web.app.tasks.UsherRegisterUserTask"  />
+		<task registerAs="webServerAdmin" class="com.microstrategy.web.app.tasks.WebServerAdminTask" adminTask="true" />
+		<task registerAs="validateWebServerConnectionTask" class="com.microstrategy.web.app.tasks.ValidateWebServerConnectionTask" />
+		<task registerAs="validateUsherConfigTask" class="com.microstrategy.web.app.tasks.ValidateUsherConfigTask" />
+		<task registerAs="getCustomSort" class="com.microstrategy.web.app.tasks.MojoGetCustomSortTask" />
+		<task registerAs="getVersionInfo" class="com.microstrategy.web.app.tasks.GetVersionInfo" />
+		<task registerAs="getElementFromGraph" class="com.microstrategy.web.app.tasks.GetElementFromGraphTask" />
+		<task registerAs="saveImagePreview" class="com.microstrategy.web.tasks.StorePreviewImageTask" />
+		<task registerAs="retrieveImagePreview" class="com.microstrategy.web.tasks.RetrievePreviewImageTask" />
+		<task registerAs="importImage" class="com.microstrategy.web.app.tasks.ImportImageTask" />
+		<task registerAs="getRWEmbeddedImage" class="com.microstrategy.web.app.tasks.GetRWEmbeddedImageTask" />
+		<task registerAs="browseMDX" class="com.microstrategy.web.app.tasks.BrowseMDXTask" />
+		<task registerAs="getSystemPickerJson" class="com.microstrategy.web.app.tasks.GetSystemPickerJsonTask" />
+		<task registerAs="getRecentSaveAsFolders" class="com.microstrategy.web.app.tasks.GetRecentSaveAsFoldersTask" />
+		<task registerAs="getPluginsVisList" class="com.microstrategy.web.app.tasks.GetPluginsVisListTask" />
+		<task registerAs="getNeeFeatureFlags" class="com.microstrategy.web.app.tasks.GetNeeFeatureFlagsTask" />
+		<task registerAs="createIdentityToken" class="com.microstrategy.web.app.tasks.CreateIdentityTokenTask" />
+		<task registerAs="getGUIDs" class="com.microstrategy.web.app.tasks.GetGUIDsTask" />
+	</tasks>
+	<factories>
+		<factory name="Bean" class="com.microstrategy.web.app.tasks.BeanTaskFactory" />
+		<factory name="Mobile" class="com.microstrategy.web.tasks.AggregatingTaskFactory">
+			<params>
+				<param name="file" value="mobileAggregatingTaskFactoryConfig.xml" />
+				<param name="serverType" value="mobile" />
+			</params>
+		</factory>
+		<factory name="Architect" class="com.microstrategy.web.tasks.AggregatingTaskFactory">
+			<params>
+				<param name="file" value="architectAggregatingTaskFactoryConfig.xml" />
+			</params>
+		</factory>
+		<factory name="QueryBuilder" class="com.microstrategy.web.tasks.AggregatingTaskFactory">
+			<params>
+				<param name="file" value="queryBuilderAggregatingTaskFactoryConfig.xml" />
+			</params>
+		</factory>
+		<factory name="DataAccess" class="com.microstrategy.web.tasks.AggregatingTaskFactory">
+			<params>
+				<param name="file" value="dataAccessAggregatingTaskFactoryConfig.xml" />
+			</params>
+		</factory>
+		<factory name="IPA" class="com.microstrategy.web.tasks.AggregatingTaskFactory">
+			<params>
+				<param name="file" value="ipaAggregatingTaskFactoryConfig.xml" />
+			</params>
+		</factory>
+	</factories>
+</aggregatingTaskFactory>

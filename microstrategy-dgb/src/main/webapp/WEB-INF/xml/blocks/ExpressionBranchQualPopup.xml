@@ -1,0 +1,19 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionBranchQualPopup is a popup used by ExpressionEditor for editing the branch qual above  
+		a subexpression.  It is a list view for selecting a logical operator (AND/OR + NOT).
+	-->
+	<block name="ExpressionBranchQualPopup" inherits="ListView">
+		<assignments>
+			<property name="id">ExpressionBranchQualPopup1</property>
+			<property name="modelPath">opener/model/parent/parent/getBranchQualListModel(opener.model)</property>
+			<property name="cmds">!ClickListItem;Unpop;EditConditionBranchQual|model/getSelectedItem()|opener/model</property>
+			<property name="visible">false</property>
+			<property name="width">200px</property>
+			<property name="height">auto</property>
+			<property name="cssText">filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+			<property name="multiSelect">false</property>
+			<property name="popOrientation">0</property>
+			<property name="CommandEnabledUnpop" type="Boolean">true</property>
+		</assignments>
+	</block>

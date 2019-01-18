@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="RibbonListView" inherits="ListView">
+		<definition>
+			<!-- An optional list of blocks to render at the right edge of the ribbon. -->
+			<property name="rightIcons" type="List" /> 
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.ToolbarListView</property>
+			<property name="layoutClass">mstr.layouts.ToolbarListView</property>
+			<property name="itemRendererClass">mstr.itemrenderers.TabbedToolbarView</property>
+			<property name="cssClass">ListBlockToolbar</property>
+			<property name="itemCSSPrefix">ListBlockToolbarItem</property>
+			<property name="modelPath">parent/model</property>
+			<property name="height">21px</property>
+			<property name="width">100%</property>
+			<property name="multiSelect">false</property>
+			<property name="showItemsDuringRequest">true</property>
+			<property name="id">ribbonToolbarTabs</property>
+			<property name="ignoreKeyStrokes">true</property>
+            <property name="allowBrowseHierarchy">false</property>
+		</assignments>
+	</block>

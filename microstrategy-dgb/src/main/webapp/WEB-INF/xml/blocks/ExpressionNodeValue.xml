@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionNodeValue is the structure for the value of a tree node in an ExpressionModel.
+	-->
+	<block name="ExpressionNodeValue" inherits="BaseBlock">
+		<definition>
+			<property name="expressionType" type="Integer" />
+			<property name="nodeType" type="Integer" />
+			<property name="nodeDimtyType" type="Integer" />
+			<property name="dataType" type="Integer" />
+			<property name="dimtyObject" type="Block" />
+			<property name="limitUnitId" type="String" />
+			<property name="limitGroupId" type="String" />
+			<property name="limitType" type="Integer" />
+			<property name="displayName" type="String" />
+			<property name="emet" type="String" />
+		</definition>
+	</block>

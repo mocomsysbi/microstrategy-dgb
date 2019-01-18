@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!--Header View for the data explorer  -->
+    <block name="DataExplorerHeaderView" inherits="BaseView">
+        <assignments>
+            <property name="CommandEnabledAddQualify" type="Boolean">true</property>
+            <property name="cmds" type="String">AddQualify|model/item|parent/parent/model/selected</property>
+            <property name="iconClass" type="String">mstrBGIcon_tbSearch</property>
+            <property name="cssClass" type="String">DataExplorerHeaderView</property>
+            <property name="modelPath" type="String">parent/model/getHeaderModel()</property>
+            <property name="iconTooltip" type="String">{desc:mstrWeb.546|Qualify}</property>
+            <property name="layoutClass" type="String">mstr.layouts.ListHeaderView</property>
+        </assignments>
+    </block>

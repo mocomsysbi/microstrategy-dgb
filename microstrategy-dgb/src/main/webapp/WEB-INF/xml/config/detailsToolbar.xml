@@ -1,0 +1,19 @@
+<shortcut-list-set name="detailsToolbar" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="detailsTb" use-container="true" use-default="false">
+    <attributes>
+      <attribute name="class" source="const" type="string" value="mstrToolbarGroup"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Close" desc-id="mstrWeb.2102" name="tbClose" type="buttonLabel" enable-feature-id="has-previous-pages">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventReturnTo"/>
+      <attributes>
+         <attribute name="src" feature-id="accessibility" value="tbCloseAccD.gif"/>
+         <attribute name="src" feature-id="accessibility;has-previous-pages" value="tbCloseAcc.gif"/>		 
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

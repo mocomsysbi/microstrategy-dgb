@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWBarcodeInputControl" inherits="RWDataInputObject, ValuesConfig">
+	<definition>
+		<!-- enable match value -->
+		<property name="em" type="Boolean"/>
+	</definition>
+</block>

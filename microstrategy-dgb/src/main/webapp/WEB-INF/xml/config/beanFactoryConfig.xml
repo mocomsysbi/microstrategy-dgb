@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="no"?>
+<!-- BeanFactory configuration file for MicroStrategy Web -->
+<!DOCTYPE beanfactory-config SYSTEM "beanFactoryConfig.dtd">
+<beanfactory-config>
+    <bean-packages>
+        <bean-package package-name="com.microstrategy.web.app.beans" local-factory="AppBeanFactory"/>
+        <bean-package package-name="com.microstrategy.web.admin.beans" local-factory="AdminBeanFactory"/>
+    </bean-packages>
+</beanfactory-config>

@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single object in metadata.
+-->
+<block name="WebObjectACL">
+    <definition>
+        <!-- The DSS ID of the user object -->
+        <property name="did" type="String" />
+
+        <!-- The name of the user. -->
+        <property name="n" type="String" /> 
+        
+        <!-- The subtype of the user entity. -->
+        <property name="st" type="Integer"/>
+        
+        <!-- The rights associated with this user. -->
+        <property name="rgt" type="Integer" />
+        
+        <property name="den" type="Boolean" />
+        
+        <property name="inh" type="Boolean" />
+        
+    </definition>
+</block>

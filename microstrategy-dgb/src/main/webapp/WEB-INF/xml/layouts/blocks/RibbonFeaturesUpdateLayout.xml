@@ -1,0 +1,11 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+	<script type="text/javascript">
+		<![CDATA[mstr.behaviors.featureResolver.absorbFeatures(]]>
+			<mstrlayout:block name="BaseBlock">
+				<mstrlayout:bEditBlock path="" method="loadResolvedFeatures"/>
+			</mstrlayout:block> 
+		<![CDATA[);]]>
+	</script>
+</mstrlayout:layout>

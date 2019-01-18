@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="Container" inherits="BaseBlock">
+		<definition>
+			<!-- List of Blocks contained by Parent. -->
+			<property name="children" type="List" />
+		</definition>
+	</block>

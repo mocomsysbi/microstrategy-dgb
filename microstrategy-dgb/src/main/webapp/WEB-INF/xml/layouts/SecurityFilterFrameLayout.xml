@@ -1,0 +1,35 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+    <div class="comboSection">
+        <span class="comboTitle">
+            <mstrlayout:render name="Descriptor">
+            	<mstrlayout:argument type="int" value="4446"/>
+            </mstrlayout:render>&nbsp;
+            <mstrlayout:render name="projectList" />
+        </span>
+
+        <table cellpadding="0" cellspacing="0" class="mstrCart">
+            <tr>
+                <td class="mstrCartAvailable">
+                    <mstrlayout:render name="folderBrowseSection" />
+                </td>
+                <td class="mstrCartButtons">
+                    <mstrlayout:render name="add" />
+                    <mstrlayout:render name="remove" />
+                </td>
+                <td class="mstrCartSelected sfCartSelected">
+                    <div class="sfSelected">
+                        <mstrlayout:render name="Descriptor">
+                            <mstrlayout:argument type="int" value="3488"/>
+                        </mstrlayout:render>
+                        <div class="sfWrapper">
+                            <mstrlayout:render name="securityFilterSection" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</mstrlayout:layout>

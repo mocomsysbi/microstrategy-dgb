@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- TimePicker View is a component for picking a time.  -->
+    <block name="TimePickerView" inherits="BaseView">
+      <definition>
+        <property name="seperator" type="String" />    
+        <property name="isMilitaryTime" type="String" />                      
+      </definition>
+      <assignments>         
+        <property name="layoutClass">mstr.layouts.TimePicker</property>   
+        <property name="modelPath">parent/model/getTimePicker()</property>          
+        <property name="seperator">:</property>   
+        <property name="isMilitaryTime">true</property>                              
+      </assignments>
+    </block>    

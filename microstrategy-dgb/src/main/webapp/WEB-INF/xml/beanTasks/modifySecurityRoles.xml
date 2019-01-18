@@ -1,0 +1,21 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ModifySecurityRolesTask" privileges="EnableAdministrationFromWeb">
+	<basicInfo desc="This Task provides the ability to modify the security filters for a user or a group. For securityRoles parameter, customer need to list all the securityRoles they want to put for the user or group. For setting multiple parameters, we use caret to seperate them.">
+		<parameter name="userEntityID" desc="The user or group to be modified" required="true" />
+		<parameter name="securityRoles" desc="The security roles of the user or group. It includes the information about the user's security roles per project. Customer need to list all the securityRoles they want to put for the user or group. For the parameter's format see: com.microstrategy.web.app.tasks.ModifySecurityRolesTask#securityRolesParam" required="true" type="simplestring"/>
+	</basicInfo>
+
+	<!--
+		"32768012" is the EnumUserEntityBeanEvents.USER_ENTITY_EVENT_MODIFY_SECURITY_ROLES
+	-->
+	<eventInfo eventID="32768012">
+		 <argument name="saveNow" value="1"/>   
+	</eventInfo>
+
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'ub' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="ub" bean-type="UserBean">
+	</beanInfo>
+</beanTask>

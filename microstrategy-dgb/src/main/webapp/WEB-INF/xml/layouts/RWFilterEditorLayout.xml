@@ -1,0 +1,57 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <table class="pane" cellspacing="1">
+      <mstrlayout:if name="isEditableOrEmpty">
+        <mstrlayout:then>      
+          <tr>
+            <td>
+              <div class="mstrPanelTitleBar">
+                <mstrlayout:render name="emptyFilterMessage" />
+                <mstrlayout:if name="isEditable">
+                  <mstrlayout:then>
+                    <span class="mstrPanelTitleOptions">
+                      <mstrlayout:render name="headerAddCondition" />
+                      <mstrlayout:render name="headerClearAll" />
+                    </span>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+              </div>
+            </td>
+          </tr>
+        </mstrlayout:then>
+      </mstrlayout:if>
+      <tr>
+        <td class="mstrPanelBody">
+          <div id="containerDiv" class="mstr-filter-containerDiv">
+            <table cellspacing="0" cellpadding="0">
+              <mstrlayout:attr name="getContentTableAttributes" />
+              <tr>
+                <td>
+                  <mstrlayout:render name="genericValidationErrorMessage" />
+                  <mstrlayout:render name="filterTree" />
+                  <mstrlayout:if name="isAddWizardRequested" >
+                    <mstrlayout:then>
+                      <table border="0" width="100%">
+                        <mstrlayout:render name="addWizardTransition" />
+                        <tr>
+                          <td align="center" valign="middle" />
+                          <td />
+                          <td align="left" valign="top">
+                            <mstrlayout:render name="separator"/>
+                            <mstrlayout:render name="addWizardDropdown" />
+                            <mstrlayout:render name="addWizardButtons" />
+                          </td>
+                        </tr>
+                      </table>
+                    </mstrlayout:then>
+                  </mstrlayout:if>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

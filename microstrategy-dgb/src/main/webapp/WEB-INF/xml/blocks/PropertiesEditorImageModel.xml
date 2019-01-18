@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- This is the model used for the 'General' tab of the Report Services properties editor. -->
+	<block name="PropertiesEditorImageModel" inherits="EditorBoneTranslator">
+		<definition>
+			<property name="imageTabEnabled" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+			<property name="titleText">{desc:mstrWeb.3698|Image}</property>
+			<property name="fields">Source|enableEmbeddedImages</property>
+			<property name="visibleField">imageTabEnabled</property>
+			<property name="imageTabEnabled">true</property>
+		</assignments>
+	</block>

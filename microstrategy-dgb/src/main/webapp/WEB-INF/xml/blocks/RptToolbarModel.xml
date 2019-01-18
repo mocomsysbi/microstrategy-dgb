@@ -1,0 +1,104 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ToolbarModel" name="RptToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="ToolbarHomeButton" name="ToolbarHomeButton"/>
+        <block listElementKey="K2168" name="ToolbarDynamicListModel">
+          <property name="id">tbBackPicker</property>	
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">backPicker</property>
+          <property name="width">200px</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="title" type="String">{desc:mstrWeb.373|Back}</property>
+          <property name="listenerMethods">onReportReload,onScreenModeChange</property>
+          <property name="enabledFeatures">has-previous-pages</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+          <property name="toolbarHelper/id" type="String">tbBackPickerHelper</property>
+        </block>
+        <block listElementKey="K2169" name="ToolbarDynamicListModel">
+    	  <property name="id">tbForwardPicker</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">forwardPicker</property>
+          <property name="width">200px</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="title" type="String">{desc:mstrWeb.4489|Forward}</property>
+          <property name="listenerMethods">onReportReload,onScreenModeChange</property>
+          <property name="enabledFeatures">has-next-pages</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+          <property name="toolbarHelper/id" type="String">tbForwardPickerHelper</property>
+        </block>
+        <block listElementKey="ToolbarBrowseParentButton" name="ToolbarBrowseParentButton"/>
+        <block listElementKey="PathSep" name="BaseBlock"/>
+        <block listElementKey="SaveBtn_directSave" name="ToolbarSaveButton">
+          <property name="tooltip">{desc:mstrWeb.118|Save}</property>
+          <property name="cmdid">dSave</property>
+          <property name="visibleFeatures">!check-design-mode;is-viewable-report;save-report;enable-save-report;!force-save-as</property>
+          <property name="listenerMethods">ongridselectionschange,onReportReload,onScreenModeChange</property>
+        </block>
+        <block listElementKey="SaveBtn_SaveAs" name="ToolbarSaveButton">
+          <property name="id">tbSaveAs</property> 
+          <property name="tooltip">{desc:mstrWeb.628|Save As}</property>
+          <property name="cmdid">dSave</property>
+          <property name="visibleFeatures">!check-design-mode;is-viewable-report;save-report;enable-save-report;force-save-as</property>
+          <property name="listenerMethods">ongridselectionschange,onReportReload,onScreenModeChange</property>
+        </block>
+        <block listElementKey="K1337" name="BaseBlock"/>
+        <block listElementKey="K1338" name="ToolbarUndoButton">
+          <property name="visibleFeatures">is-viewable-report;!check-design-mode;!page-full-screen-mode</property>
+          <property name="listenerMethods">ongridselectionschange,onReportReload,onScreenModeChange</property>
+        </block>
+        <block listElementKey="K1339" name="ToolbarRedoButton">
+          <property name="visibleFeatures">is-viewable-report;!check-design-mode;!page-full-screen-mode</property>
+          <property name="listenerMethods">ongridselectionschange,onReportReload,onScreenModeChange</property>
+        </block>
+        <block listElementKey="K1340" name="BaseBlock"/>
+        <block listElementKey="K1341" name="ToolbarDesignModeButton">
+          <property name="cmdid">designMode</property>
+          <property name="visibleFeatures">design-mode;is-viewable-report;enable-design-mode;!check-design-mode</property>
+        </block>
+        <block listElementKey="restorePage" name="ToolbarDualStateButtonModel">
+            <property name="id">tbApply</property>
+            <property name="cmdid">restoreMode</property>
+            <property name="tooltip">Report Mode</property>
+            <property name="visibleFeatures">optimized-report-page</property>
+        </block>
+        <block listElementKey="K1342" name="ToolbarGridButton">
+          <property name="tooltip">{desc:mstrWeb.114|Grid}</property>
+          <property name="visibleFeatures">menu-grid-mode;!check-design-mode</property>
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="K1343" name="ToolbarGraphButton">
+          <property name="tooltip">{desc:mstrWeb.115|Graph}</property>
+          <property name="visibleFeatures">menu-graph-mode;!check-design-mode</property>
+          <property name="enabledFeatures">is-viewable-report;enable-graph-mode</property>
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="K1344" name="ToolbarGridGraphButton">
+          <property name="tooltip">{desc:mstrWeb.1904|Grid and Graph}</property>
+          <property name="visibleFeatures">menu-grid-graph-mode;!check-design-mode</property>
+          <property name="enabledFeatures">is-viewable-report;enable-grid-graph-mode</property>
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="K1345" name="ToolbarFlashButton">
+          <property name="id">tbFlash</property>
+          <property name="listenerMethods">onReportReload,onvischange</property>
+          <property name="tooltip">{desc:mstrWeb.5809|Custom Flash Visualization}</property>
+          <property name="visibleFeatures">!optimized-report-page</property>
+        </block>
+        <block listElementKey="K1346" name="ToolbarAjaxButton">
+          <property name="id">tbAjax</property>
+          <property name="listenerMethods">onReportReload,onvischange</property>
+          <property name="visibleFeatures">!optimized-report-page</property>
+        </block>
+        <block listElementKey="K1347" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

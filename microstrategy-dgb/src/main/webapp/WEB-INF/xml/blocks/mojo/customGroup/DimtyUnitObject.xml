@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Dimty Unit 
+-->
+<block name="DimtyUnitObject">
+   <definition>
+         <!-- Name of the unit -->
+    <property name="n" type="String" />
+         
+         <!-- Unit's type  --> 
+    <property name="utp" type="Integer" />
+    
+         <!-- Unit's Target ObjectInfo --> 
+        <property name="utgt" type="Block" />
+      
+        <!-- Aggregation Property --> 
+    <property name="agg" type="Integer" />
+
+        <!-- Filtering Property --> 
+    <property name="flt" type="Integer" />
+
+         <!-- Group By Property --> 
+    <property name="gb" type="Boolean" />
+
+        <!-- Relative position property --> 
+    <property name="rps" type="Integer" />
+   </definition>
+</block>

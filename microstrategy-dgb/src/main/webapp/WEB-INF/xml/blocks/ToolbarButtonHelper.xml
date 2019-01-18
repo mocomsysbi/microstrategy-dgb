@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ToolbarButtonHelper is model used for submiting single state button clicks on the toolbar. -->
+	<block name="ToolbarButtonHelper" inherits="ToolbarControlHelper">
+		<assignments>
+			<property name="scriptClass">mstr.models.ToolbarButtonHelper</property>
+		</assignments>
+	</block>

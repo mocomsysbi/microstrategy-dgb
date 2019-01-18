@@ -1,0 +1,21 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- A sample model of a Report Instance with 1 Element Prompt question. -->
+	<block name="SampleElementPromptModel" inherits="ReportInstanceModel">
+		<assignments>
+			<property name="objectInfo">
+				<block name="ItemInfo">
+					<property name="dssid">idQuarterlySalesReport</property>
+					<property name="n">Quarterly Sales Report</property>
+					<property name="desc">This Report will show you sales data for the data slice that you specify in your prompt answers.</property>
+					<property name="icon">gp</property>
+				</block>
+			</property>
+			<property name="messageInfo">
+				<block name="ItemInfo">
+					<property name="dssid">idMessage1</property>
+					<property name="n">Quarterly Sales Report (Northeast, Q2 2006)</property>
+					<property name="desc">No filtering by product.</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

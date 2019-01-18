@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWSliderInputControl" inherits="RWDataInputObject, WidthConfig, ValuesConfig">
+    <definition>
+        <!-- The percentage of the total control width reserved to display the value label -->
+        <property name="ldw" type="Integer" />
+    </definition>
+</block>

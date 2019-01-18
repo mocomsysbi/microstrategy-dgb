@@ -1,0 +1,39 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_readyState="mstr.behaviors.TextAreaWithImport.on_model_set_readyState(view, model, rootTag)" 
+    on_model_set_valueString="mstr.behaviors.TextAreaWithImport.on_model_set_valueString(view, model, rootTag)" 
+    on_set_enabled="mstr.behaviors.TextAreaWithImport.on_set_enabled(view, model, rootTag)"
+	on_set_importEnabled="mstr.behaviors.TextAreaWithImport.on_set_importEnabled(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.get('visible'))">
+  <div title="{@tooltip}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <div class="{@cssPrefix}{@cssClass}Import">
+      <form enctype="multipart/form-data" method="post">
+            <input name="{@id}_file"
+                   id="{@id}_file"
+                   type="file">
+            </input>
+            <input value="{@descriptors/importLabel}"
+                   name="{@id}_import"
+                   id="{@id}_import"
+                   onclick="mstr.behaviors.TextAreaWithImport.onClickSubmitButton('{@id}', this.parentNode.firstChild, this.parentNode)"
+                   type="button">
+            </input>
+      </form>
+    </div>
+    <div class="{@cssPrefix}{@cssClass}Caption">
+      <label for="{@id}_txt">
+        {@caption}
+      </label>
+    </div>
+    <div class="{@cssPrefix}{@cssClass}Input">
+      <textarea maxlength="{@maxlength}"
+                cols="{@cols}"
+                rows="{@rows}"
+                name="{@id}_txt"
+                style="{@cssText}"
+                onblur="mstr.behaviors.TextAreaWithImport.onblur('{@id}', this)"
+                id="{@id}_txt">
+      </textarea></div>
+  </div>
+</mstrlayout:layout>

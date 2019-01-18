@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ElementModel" inherits="BaseBlock">
+	<definition>
+			<!-- name -->
+			<property name="n" type="String" />
+            
+            <!-- description -->
+            <property name="desc" type="String" />
+            
+			<!-- id -->
+			<property name="id" type="String" />
+			
+			<!-- Underlying object DSS id for metric elements. Omitted for other types. -->
+			<property name="oid" type="String" />
+			
+			<!-- Underlying object type for metric elements. Omitted for other types. -->
+			<property name="otp" type="Integer" />
+			
+			<!-- Underlying raw data information for attribute form elements. Omitted for other types. -->
+			<property name="rv" type="String" />
+			
+			<property name="dut" type="Integer" />
+	</definition>
+</block>

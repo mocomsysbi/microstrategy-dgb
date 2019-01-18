@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This header properties in GridProperties node.
+--> 
+<block name="GridHeaderProperties">
+    <definition>
+            <!-- Show -->
+            <property name='shw' type="String" />
+            <!-- Merge -->
+            <property name='mg' type="String" />
+    </definition>
+</block>

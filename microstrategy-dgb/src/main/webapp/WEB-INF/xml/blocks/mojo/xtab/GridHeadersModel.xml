@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="GridHeadersModel" inherits="BaseBlock">
+	<definition>
+			<!-- row headers -->
+			<property name="rhs" type="Block" />
+
+			<!-- col headers -->
+            <property name="chs" type="Block" />
+	</definition>
+</block>

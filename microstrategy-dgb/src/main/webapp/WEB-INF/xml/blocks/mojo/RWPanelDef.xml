@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single subsection in a RWD.
+--> 
+<block name="RWPanelDef" inherits="RWSubsectionDef">
+	<definition>
+		<!-- Indicates whether the panel is loaded or not (for on demand panels) -->
+		<property name="l" type="Boolean" />
+		
+		<!-- If the panel has a title, it is stored here -->
+		<property name="ttl" type="String" />
+		
+		<!-- The layoutXML property (in JSON form) for the HTML5 VI analysis panel. -->
+		<property name="layoutXML" type="Block" />
+        
+        <!-- Indicates if the Panel is inside the filter panel stack. -->
+        <property name="isFilterPanel" type="Boolean"/> 
+	</definition>
+    <assignments>
+        <!-- Our type is 9 [RWUNIT_PANEL] -->
+        <property name="t">9</property>
+    </assignments>
+</block>

@@ -1,0 +1,5 @@
+<shortcut-list-set base-bean="sb" name="ncsContextMenus" version="1.0">
+  <shortcut-list name="remove">
+    <shortcut name="remove" desc="[Remove...]" desc-id="mstrWeb.190" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.NCSRemoveRecipient" />
+  </shortcut-list>
+</shortcut-list-set>

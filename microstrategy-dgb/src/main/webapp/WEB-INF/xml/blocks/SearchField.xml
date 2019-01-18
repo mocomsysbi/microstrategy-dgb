@@ -1,0 +1,26 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Search Field contains a TextBoxWithIcon, which is a TextBox with an icon to the right, typically used for
+		submitting the user's input (e.g., for a search) and a checkbox which indicate whether the search is case sensitive or not -->	
+	<block name="SearchField" inherits="BaseView">
+		<definition>
+			<!-- The GUI component for search input box -->
+			<property name="searchBox" type="Block"/>
+			<!-- The GUI component for match case -->
+			<property name="matchCaseBox" type="Block" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.SearchField</property>
+			<property name="cssClass">SearchField</property>
+			<property name="searchBox">
+				<block name="TextBoxWithIcon">
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="matchCaseBox">
+				<block name="CheckBox">
+					<property name="modelPath">parent/model</property>
+					<property name="caption">{desc:mstrWeb.1049|Match Case}</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

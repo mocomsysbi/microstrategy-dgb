@@ -1,0 +1,16 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_mask="mstr.behaviors.Crosstab.on_set_visible(view, model, rootTag)"
+    contentsArea="return rootTag.lastChild.previousSibling"
+    on_model_set_readyState="mstr.behaviors.Crosstab.on_preview_model_set_readyState(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.Crosstab.on_set_visible(view, model, rootTag)">
+  <div style="{@cssText}; width:{@width}; height:{@height};"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <style id="{@id}_styleTag">
+    </style>
+    <div class="{@cssPrefix}{@cssClass}Contents">
+    </div>
+    <div class="{@cssPrefix}{@cssClass}ReadyState">
+    </div>
+  </div>
+</mstrlayout:layout>

@@ -1,0 +1,75 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwToolbarModel" name="DocumentAlignToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K37" name="ToolbarButtonModel">
+          <property name="id">tbDocAlignLeft</property>
+          <property name="tooltip">{desc:mstrWeb.3499|Align Left}</property>
+          <property name="cmdid">AlignLeft</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K38" name="ToolbarButtonModel">
+          <property name="id">tbDocAlignCenter</property>
+          <property name="tooltip">{desc:mstrWeb.3500|Align Center}</property>
+          <property name="cmdid">AlignCenter</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K39" name="ToolbarButtonModel">
+          <property name="id">tbDocAlignRight</property>
+          <property name="tooltip">{desc:mstrWeb.3501|Align Right}</property>
+          <property name="cmdid">AlignRight</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K40" name="ToolbarButtonModel">
+          <property name="id">tbDocAlignTop</property>
+          <property name="tooltip">{desc:mstrWeb.3502|Align Top}</property>
+          <property name="cmdid">AlignTop</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K41" name="ToolbarButtonModel">
+          <property name="id">tbDocAlignMiddle</property>
+          <property name="tooltip">{desc:mstrWeb.3503|Align Middle}</property>
+          <property name="cmdid">AlignMiddle</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K42" name="ToolbarButtonModel">
+          <property name="id">tbDocAlignBottom</property>
+          <property name="tooltip">{desc:mstrWeb.3504|Align Bottom}</property>
+          <property name="cmdid">AlignBottom</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K43" name="BaseBlock"/>
+        <block listElementKey="K44" name="ToolbarButtonModel">
+          <property name="id">tbBack</property>
+          <property name="tooltip">{desc:mstrWeb.3099|Send to Back}</property>
+          <property name="cmdid">back</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K45" name="ToolbarButtonModel">
+          <property name="id">tbFront</property>
+          <property name="tooltip">{desc:mstrWeb.3100|Bring to Front}</property>
+          <property name="cmdid">front</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K46" name="ToolbarButtonModel">
+          <property name="id">tbBackOne</property>
+          <property name="tooltip">{desc:mstrWeb.3101|Send Backward}</property>
+          <property name="cmdid">oneBack</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K47" name="ToolbarButtonModel">
+          <property name="id">tbFrontOne</property>
+          <property name="tooltip">{desc:mstrWeb.3102|Bring Foreward}</property>
+          <property name="cmdid">oneFront</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K48" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

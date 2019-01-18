@@ -1,0 +1,20 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_minute="mstr.behaviors.TimePickerView.on_model_set_minute(view, model, rootTag)"
+    on_model_set_second="mstr.behaviors.TimePickerView.on_model_set_second(view, model, rootTag)"
+    on_model_set_hour="mstr.behaviors.TimePickerView.on_model_set_hour(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.TimePickerView.on_set_visible(view, model, rootTag)">
+  <div id="{@id}">
+    <span id="{@id}_hour">
+    </span>
+    <label>
+       {@model/timeDelimiter} 
+    </label>
+    <span id="{@id}_minute">
+    </span>
+    <label>
+       {@model/timeDelimiter} 
+    </label>
+    <span id="{@id}_second">
+    </span>
+  </div>
+</mstrlayout:layout>

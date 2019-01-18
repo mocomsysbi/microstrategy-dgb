@@ -1,0 +1,28 @@
+<shortcut-list name="fillEffectPicker" version="1.0">
+    <shortcut desc="None" desc-id="mstrWeb.512" name="pkr0">
+        <attributes>
+            <attribute name="value" value="0"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Smooth Edge" desc-id="mstrWeb.4829" name="pkr1">
+        <attributes>
+            <attribute name="value" value="1"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Chiseled Edge" desc-id="mstrWeb.4830" name="pkr2">
+        <attributes>
+            <attribute name="value" value="2"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Donut" desc-id="mstrWeb.4831" name="pkr3">
+        <attributes>
+            <attribute name="value" value="3"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Sphere" desc-id="mstrWeb.4832" name="pkr4">
+        <attributes>
+            <attribute name="value" value="4"/>
+        </attributes>
+    </shortcut>
+    
+</shortcut-list>

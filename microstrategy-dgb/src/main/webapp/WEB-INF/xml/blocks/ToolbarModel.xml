@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarModel" inherits="RibbonListModel">
+	<assignments>
+		<property name="items">
+			<list>
+				<block name="BaseBlock" listElementKey="FirstSeparator" />	<!-- Initial toolbar separator -->
+			</list>
+		</property>
+	</assignments>
+</block>

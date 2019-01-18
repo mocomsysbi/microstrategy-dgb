@@ -1,0 +1,22 @@
+<shortcut-list name="searchObjectTypes_web" desc="Web Metadata search">
+    <shortcut name="12" desc="Attribute"  desc-id="mstrWeb.2148" feature-id="manage_objects" >
+    </shortcut>
+    <shortcut name="257" desc="Custom Group"  desc-id="mstrWeb.2105" feature-id="manage_objects">
+    </shortcut>
+    <shortcut name="14081" desc="Dossier/Document"  desc-id="mstrWeb.15500" feature-id="">
+    </shortcut>
+    <shortcut name="256" desc="Filter"  desc-id="mstrWeb.6189" feature-id="new-report">
+    </shortcut>
+    <shortcut name="8" desc="Folder"  desc-id="mstrWeb.3373" feature-id="">
+    </shortcut>
+    <shortcut name="14080" desc="HTML Document"  desc-id="mstrWeb.3376" feature-id="">
+    </shortcut>
+    <shortcut name="4" desc="Metric"  desc-id="mstrWeb.4779" feature-id="manage_objects">
+    </shortcut>
+    <shortcut name="10" desc="Prompt"  desc-id="mstrWeb.4465" feature-id="new-report">
+    </shortcut>
+    <shortcut name="3" desc="Report"  desc-id="mstrWeb.3374" feature-id="">
+    </shortcut>
+    <shortcut name="2" desc="Template"  desc-id="mstrWeb.3624" feature-id="new-report">
+    </shortcut>
+</shortcut-list>

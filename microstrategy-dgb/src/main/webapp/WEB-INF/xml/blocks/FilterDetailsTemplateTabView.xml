@@ -1,0 +1,102 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="FilterDetailsTemplateTabView">
+  <assignments>
+    <property name="title">{desc:mstrWeb.5131|Template Details}</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="modelPath">parent/parent/model/tabModels/items/3</property>
+	<property name="helpTopic">Report_Properties_dialog_box__Template_Details_tab.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K601" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5445|Contents}</property>
+          <property name="cssText"> clear:both</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K602" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K603" name="TextLabel">
+                      <property name="value">{desc:mstrWeb.5396|Include in Template Details}</property>
+                      <property name="cssClass">RDFieldSetHeaderLabel</property>
+                    </block>
+                    <block listElementKey="K604" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5397|Unit from View or Base}</property>
+                      <property name="modelPath">parent/model/TDVT</property>
+                      <property name="cssText">margin-left:10px</property>
+                      <property name="popup/height">60px</property>
+                    </block>
+                    <block listElementKey="K605" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5398|Base Template name}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/TDTN</property>
+                    </block>
+                    <block listElementKey="K606" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5399|Template Description}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/TDTD</property>
+                    </block>
+                    <block listElementKey="K607" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5400|Non-metric template units}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/TDNM</property>
+                    </block>
+                    <block listElementKey="K608" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.1158|Metrics}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/TDTM</property>
+                    </block>
+                    <block listElementKey="K609" name="VBox">
+                      <property name="modelPath">parent/model</property>
+                      <property name="cssText">margin-left:17px</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K610" name="TriStateCheckBox">
+                            <property name="caption">{desc:mstrWeb.5401|Dimensionality}</property>
+                            <property name="valueField">selectedIndicesList</property>
+                            <property name="modelPath">parent/model/MDDN</property>
+                            <property name="enabledField">parent/model/TDTM/selectedIndices:0,1</property>
+                          </block>
+                          <block listElementKey="K611" name="TriStateCheckBox">
+                            <property name="caption">{desc:mstrWeb.3324|Transformation}</property>
+                            <property name="valueField">selectedIndicesList</property>
+                            <property name="modelPath">parent/model/MDTF</property>
+                            <property name="enabledField">parent/model/TDTM/selectedIndices:0,1</property>
+                          </block>
+                          <block listElementKey="K612" name="TriStateCheckBox">
+                            <property name="caption">{desc:mstrWeb.1907|Formula}</property>
+                            <property name="valueField">selectedIndicesList</property>
+                            <property name="modelPath">parent/model/MDFM</property>
+                            <property name="enabledField">parent/model/TDTM/selectedIndices:0,1</property>
+                          </block>
+                          <block listElementKey="K613" name="TriStateCheckBox">
+                            <property name="caption">{desc:mstrWeb.5402|Conditionality}</property>
+                            <property name="valueField">selectedIndicesList</property>
+                            <property name="modelPath">parent/model/MDCD</property>
+                            <property name="enabledField">parent/model/TDTM/selectedIndices:0,1</property>
+                          </block>
+                          <block listElementKey="K614" name="TriStateCheckBox">
+                            <property name="caption">{desc:mstrWeb.5403|Conditional Metrics Only}</property>
+                            <property name="valueField">selectedIndicesList</property>
+                            <property name="modelPath">parent/model/MDCM</property>
+                            <property name="enabledField">parent/model/TDTM/selectedIndices:0,1</property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		FilterDetailsTemplateTab is the "Template Details" tab of the details editor.
+	-->

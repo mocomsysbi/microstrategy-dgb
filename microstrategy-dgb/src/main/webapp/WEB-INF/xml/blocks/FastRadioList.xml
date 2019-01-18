@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- FastRadioList is a FastCheckList with single-selection only. -->
+	<block name="FastRadioList" inherits="FastCheckList">
+		<assignments>
+			<property name="itemCSSPrefix">RadioListItem</property>
+			<property name="multiSelect">false</property>
+		</assignments>
+	</block>

@@ -1,0 +1,22 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tr>
+            <td>
+                <mstrlayout:render name="LayeredIconInfo"/>
+            </td>
+            <td>
+            <div>
+                <mstrlayout:render name="nameInfo"/>
+                <mstrlayout:render name="descriptionInfo"/>
+                <mstrlayout:render name="ownerInfo"/>
+                <mstrlayout:render name="modifiedInfo"/>
+            </div>
+            </td>
+        </tr>
+    </table>
+</mstrlayout:layout>

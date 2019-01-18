@@ -1,0 +1,85 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:bContext defaultContentType="JSON" />
+  <mstrlayout:block name="BlockContainer">
+    <mstrlayout:bSetProperty path="models">
+      <mstrlayout:block name="FilterDetailsEditorModel">
+        <mstrlayout:bSetProperty path="oldValue" method="getProperty" />
+        <mstrlayout:bSetProperty path="objId" method="getObjectId" />
+
+        <!-- General Tab -->
+        <mstrlayout:bSetProperty path="tabModels/items[0]/RDRD/selectedIndicesList" method="includeReportDescription" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/RDPD/selectedIndicesList" method="includePromptDetails" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/RDFD/selectedIndicesList" method="includeFilterDetails" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/RDTD/selectedIndicesList" method="includeTemplateDetails" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/PDTI/selectedIndicesList" method="includePromptTitles" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/PDUA/selectedIndicesList" method="replacementPromptString" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/sanep/selectedIndicesList" method="showAttribNameForAEPrompts" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/IUPD/selectedIndicesList" method="includeUnusedPrompts" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/daon/selectedIndicesList" method="mdDelimeter" />
+        <mstrlayout:bSetProperty path="tabModels/items[0]/FDOA/selectedIndicesList" method="useAliasesInFilterDetails" />
+
+
+        <!-- Filter Details Tab -->
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDRF/selectedIndicesList" method="includeReportFilter" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDFN/selectedIndicesList" method="reportFilterName" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDFD/selectedIndicesList" method="includeReportFilterDesc" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDVF/selectedIndicesList" method="includeViewFilter" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/IMQVF/selectedIndicesList" method="includeMetricQualInViewFilter" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDRL/selectedIndicesList" method="includeReportLimits" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDUF/selectedIndicesList" method="includeUserFilter" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/RDSF/selectedIndicesList" method="includeSecurityFilter" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDLS/selectedIndicesList" method="includeSubExpressionName" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDSE/selectedIndicesList" method="showEmptyExpressions" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDOR/selectedIndicesList" method="subExpressionOrder" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDCR/selectedIndicesList" method="carriageReturnAfterSubExpressionName" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/FDSP/selectedIndicesList" method="carriageReturnBetweenSubExpressions" />
+        <mstrlayout:bSetProperty path="tabModels/items[1]/escf/selectedIndicesList" method="expandShortcutFilters" />
+
+
+        <!-- Filter Details Other Tab -->
+        <mstrlayout:bSetProperty path="tabModels/items[2]/san/selectedIndicesList" method="showAttribNameInListConditions" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/SAAN" method="separatorAfterAttribName" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/caan/selectedIndicesList" method="carriageReturnAfterAttribName" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/SBLT/selectedIndicesList" method="separatorBetweenLastTwo" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/CDLT" method="customSeparator" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/cbe/selectedIndicesList" method="carriageReturnBetweenElements" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/te/selectedIndicesList" method="trimElements" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/unso/selectedIndicesList" method="useSymbolsForOperators" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/iafn/selectedIndicesList" method="attribFormNameInAQConditions" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/DTDD/selectedIndicesList" method="dynamicDates" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/pacs/selectedIndicesList" method="parenthesesAroundConditions" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/cbc/selectedIndicesList" method="carriageReturnBetweenConditions" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/EXCS/selectedIndicesList" method="spacing" />
+        <mstrlayout:bSetProperty path="tabModels/items[2]/lobc/selectedIndicesList" method="logicalOperatorBetweenConditions" />
+
+
+        <!-- Template Details Tab -->
+        <mstrlayout:bSetProperty path="tabModels/items[3]/TDVT/selectedIndicesList" method="unitsFromViewOrBase" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/TDTN/selectedIndicesList" method="includeBaseTemplateName" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/TDTD/selectedIndicesList" method="includeTemplateDesc" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/TDNM/selectedIndicesList" method="includeNonMetricTemplateUnits" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/TDTM/selectedIndicesList" method="includeMetrics" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/MDDN/selectedIndicesList" method="includeDimensionality" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/MDTF/selectedIndicesList" method="includeTransformation" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/MDFM/selectedIndicesList" method="includeFormula" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/MDCD/selectedIndicesList" method="includeConditionality" />
+        <mstrlayout:bSetProperty path="tabModels/items[3]/MDCM/selectedIndicesList" method="includeConditionalMetricsOnly" />
+      </mstrlayout:block>
+    </mstrlayout:bSetProperty>
+    <mstrlayout:bSetProperty path="views">
+      <mstrlayout:block name="FilterDetailsEditorView">
+		<mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>  
+      	<mstrlayout:if name="isRWD">
+      		<mstrlayout:then>
+      			<mstrlayout:bDeleteProperty path="contentView/children[K510]/views[K514]/children[0]/children[0]/children[K604]" />
+      			<mstrlayout:bDeleteProperty path="contentView/children[K510]/views[K512]/children[0]/children[0]/children[K485]" />
+      		</mstrlayout:then>
+      		<mstrlayout:else>
+      			<mstrlayout:bDeleteProperty path="contentView/children[K510]/views[K512]/children[0]/children[0]/children[K486]" />
+      		</mstrlayout:else>
+      	</mstrlayout:if>
+      </mstrlayout:block>
+    </mstrlayout:bSetProperty>
+  </mstrlayout:block>
+</mstrlayout:layout>

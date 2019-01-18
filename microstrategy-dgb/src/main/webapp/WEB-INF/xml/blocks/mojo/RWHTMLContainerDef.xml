@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition portion of an HTML Container object.
+--> 
+<block name="RWHTMLContainerDef" inherits="RWUnitDef">
+    <definition>
+    	<!-- A value of 0 indicates an IFRAME, a value of 1 indicates HTML Text -->
+    	<property name="ht" type="Integer" />
+    </definition>
+</block>

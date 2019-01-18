@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="VBox" name="ReportToolbar">
+  <assignments>
+    <property name="visible">true</property>
+    <property name="cssClass">TabbedMenuVBox</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1288" name="RibbonListView">
+          <property name="rightIcons">
+            <list>
+              <block listElementKey="K1289" name="NotesIconView">
+                <property name="modelPath">parent/parent/model/NotesIconModel</property>
+              </block>
+              <block listElementKey="K1290" name="LastUpdateView">
+                <property name="target">ReportFrame</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="ViewStack" name="ToolbarViewStack"/>
+      </list>
+    </property>
+  </assignments>
+</block>

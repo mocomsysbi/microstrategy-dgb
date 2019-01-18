@@ -1,0 +1,97 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="DocumentTabExport">
+  <assignments>
+    <property name="title">{desc:mstrWeb.3538|Document Properties} - {desc:mstrWeb.246|Export}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Export.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K378" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.295|General}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K379" name="RadioList">
+                <property name="caption">{desc:mstrWeb.5164|Export}</property>
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/ExportRange</property>
+              </block>
+              <block listElementKey="K380" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5165|Expand Page-by}</property>
+                <property name="valueField">DefaultPageByExportMode</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K381" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3163|Prompt User on Export}</property>
+                <property name="valueField">PromptUserForPagebyExport</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K382" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3958|Excel}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K383" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.14578|Fetch images from URLs and save them to Excel}</property>
+                <property name="valueField">ExcelEmbedImages</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K384" name="RadioList">
+                <property name="caption">{desc:mstrWeb.5343|Graph Format}</property>
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/ExcelGraphFormat</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K385" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.1877|PDF}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K386" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3460|Include Bookmarks in PDF}</property>
+                <property name="valueField">IncludeBookmarks</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K387" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3777|Show bookmarks in PDF}</property>
+                <property name="valueField">ShowBookmarks</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/IncludeBookmarks</property>
+                <property name="cssText">margin-left:15px</property>
+              </block>
+              <block listElementKey="K388" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3461|Embed Fonts in PDF}</property>
+                <property name="valueField">EmbedFonts</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K389" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3350|Use bitmaps for graphs}</property>
+                <property name="valueField">GraphFormat</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K390" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3483|Use draft quality for graphs}</property>
+                <property name="valueField">GraphQualityDPI</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/GraphFormat</property>
+                <property name="cssText">margin-left:15px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		DocumentTabExport is the "Document Properties - Export" tab of the document properties editor.
+	-->

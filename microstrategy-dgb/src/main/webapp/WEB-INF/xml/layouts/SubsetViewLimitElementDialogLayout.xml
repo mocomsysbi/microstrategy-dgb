@@ -1,0 +1,30 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <mstrlayout:attr name="getMainDivAttributes" />
+    <mstrlayout:if name="getEditMode" base="bean" value="1">
+        <mstrlayout:then>
+            <div class="filter_Worning">
+                <mstrlayout:render name="Descriptor">
+                    <mstrlayout:argument type="int" value="6067" />
+                </mstrlayout:render>
+            </div>
+        </mstrlayout:then>
+    </mstrlayout:if>
+    <table class="pane" cellspacing="1">
+      <tr>
+        <td class="body">
+          <table cellspacing="0" cellpadding="0">
+            <mstrlayout:attr name="getContentTableAttributes" />
+            <tr>
+              <td>
+                <mstrlayout:render name="genericValidationErrorMessage" />
+                <mstrlayout:render name="filterTree" />                
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

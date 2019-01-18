@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ResultWindow" inherits="BaseBlock">
+	<definition>
+            <!-- Block Begin  -->
+			<property name="bb" type="Integer" />
+
+            <!-- Block Count -->
+			<property name="bc" type="Integer" />
+
+            <!-- Total Count -->
+			<property name="tc" type="Integer" />
+			
+			<!-- Row Mode -->
+			<property name="rm" type="Integer" />
+			
+			<!-- Total Blocks count -->
+			<property name="tbc" type="Integer" />
+			
+	</definition>
+</block>

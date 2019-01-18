@@ -1,0 +1,21 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    listItemRendererClass="mstr.behaviors.PromptTOCList"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div onmouseup="return mstr.behaviors.Generic.clearBrowserHighlights(self);"
+       onmousedown="return mstr.behaviors.ListView.onmousedown(arguments[0], self, '{@id}')"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <table cellspacing="0"
+           cellpadding="0"
+           class="{@cssPrefix}{@cssClass}Table">
+      <colgroup>
+        <col class="{@cssPrefix}{@cssClass}ColIndex">
+        </col>
+        <col class="{@cssPrefix}{@cssClass}ColTitle">
+        </col>
+      </colgroup>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</mstrlayout:layout>

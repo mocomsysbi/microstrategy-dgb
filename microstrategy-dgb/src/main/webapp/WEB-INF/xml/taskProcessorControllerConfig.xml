@@ -1,0 +1,284 @@
+<!DOCTYPE taskProcessorController SYSTEM "dtds/taskProcessorController.dtd">
+<taskProcessorController>
+	<taskEnvelopes default="juil_iframe">
+		<taskEnvelope id="juil_iframe" contentTypes="JSON" defaultContentType="JSON" encoders="JSON,SCRIPT">
+			<successPath file-name="/jsp/taskProc/juil_iframe_success.jsp"/>
+			<failurePath file-name="/jsp/taskProc/juil_iframe_failure.jsp"/>
+		</taskEnvelope>
+		<taskEnvelope id="xml" contentTypes="XML,xmlanf" defaultContentType="XML">
+			<successPath file-name="/jsp/taskProc/xml_success.jsp"/>
+			<failurePath file-name="/jsp/taskProc/xml_failure.jsp"/>
+		</taskEnvelope>
+		<!-- <taskEnvelope id="html" defaultContentType="HTML">
+			<successPath file-name="/jsp/taskProc/html_success.jsp"/>
+			<failurePath file-name="/jsp/taskProc/html_failure.jsp"/>
+		</taskEnvelope> -->
+		<taskEnvelope id="xhr" contentTypes="JSON,XML,BINARY">
+			<successPath file-name="/jsp/taskProc/xhr_success.jsp"/>
+			<failurePath file-name="/jsp/taskProc/xhr_failure.jsp"/>
+		</taskEnvelope>
+		<taskEnvelope id="juil_xhr" contentTypes="JSON" defaultContentType="JSON">
+			<successPath file-name="/jsp/taskProc/juil_xhr_success.jsp"/>
+			<failurePath file-name="/jsp/taskProc/xhr_failure.jsp"/>
+		</taskEnvelope>
+		<taskEnvelope id="jsonp" contentTypes="JSON,JSONP,JSOND" defaultContentType="JSONP" allowedTasks="createFolder,importSaveRWD,importAsyncSaveRWD,importFile,getProjects,getProjectsInfo,login,searchMetadata,getObjectInfo,closeSessions,loginFirst,isSessionAlive">
+			<successPath file-name="/jsp/taskProc/jsonp_success.jsp"/>
+			<failurePath file-name="/jsp/taskProc/jsonp_failure.jsp"/>
+		</taskEnvelope>
+		<taskEnvelope id="blackberry_xml" contentTypes="XML,xmlanf" defaultContentType="XML">
+            <successPath file-name="/jsp/taskProc/blackberry_xml_success.jsp"/>
+			<failurePath file-name="/jsp/taskProc/blackberry_xml_failure.jsp"/>
+        </taskEnvelope>
+		<taskEnvelope id="jsonp2" contentTypes="JSON,JSONP,JSOND" defaultContentType="JSONP" allowedTasks="createFolder,importSaveRWD,importAsyncSaveRWD,importFile,getProjects,getProjectsInfo,login,searchMetadata,getObjectInfo,closeSessions,loginFirst,isSessionAlive">
+		        <successPath file-name="/jsp/taskProc/jsonp2_success.jsp"/>
+		        <failurePath file-name="/jsp/taskProc/jsonp2_failure.jsp"/>
+        	</taskEnvelope>
+	</taskEnvelopes>
+	<adminPages default="home">
+		<interfacePage page="home" file-name="/jsp/taskProc/home.jsp" tab-name="Home"/>
+		<interfacePage page="params" file-name="/jsp/taskProc/params.jsp" tab-name="Parameters"/>
+		<interfacePage page="builder" file-name="/jsp/taskProc/builder.jsp" tab-name="Builder"/>
+		<interfacePage page="config" file-name="/jsp/taskProc/conf.jsp" tab-name="Configuration"/>
+	</adminPages>
+    <viewerPages default="viewerHome">
+        <interfacePage page="viewerHome" file-name="/jsp/taskProc/home.jsp" tab-name="Home"/>
+        <interfacePage page="viewerParams" file-name="/jsp/taskProc/params.jsp" tab-name="Parameters"/>
+        <interfacePage page="viewerBuilder" file-name="/jsp/taskProc/viewerBuilder.jsp" tab-name="Builder"/>
+    </viewerPages>
+	<privateTasks show="false">
+		<privateTask taskID="addObjectTag"/>
+		<privateTask taskID="AdvancedSort"/>
+		<privateTask taskID="applySegment"/>
+		<privateTask taskID="browseMDX"/>
+		<privateTask taskID="cancelSubscriptionsTask"/>
+		<privateTask taskID="changeUnitName"/>
+		<privateTask taskID="copyObject"/>
+		<privateTask taskID="deletePalette"/>
+		<privateTask taskID="duplicateReportInstance"/>
+		<privateTask taskID="editObjectTag"/>
+		<privateTask taskID="getBundleDescriptors"/>
+		<privateTask taskID="getBundles"/>
+		<privateTask taskID="getCustomSort"/>
+		<privateTask taskID="getDocGridFormat"/>
+		<privateTask taskID="getElementFromGraph"/>
+		<privateTask taskID="getESRIConfig"/>
+		<privateTask taskID="getESRIExtraConfig"/>
+		<privateTask taskID="getMapBoundaryConfig"/>
+		<privateTask taskID="getMapBoxGeoID"/>
+		<privateTask taskID="getGoogleExtraConfig"/>
+		<privateTask taskID="getMapConfigure"/>
+		<privateTask taskID="getMultiMapConfig"/>
+		<privateTask taskID="getRWTransactionSources"/>
+		<privateTask taskID="getRWTransactionTargetDataset"/>
+		<privateTask taskID="getShapeGeoData"/>
+		<privateTask taskID="getShortcutsList"/>
+		<privateTask taskID="getSystemPickerJson"/>
+		<privateTask taskID="getThresholds"/>
+		<privateTask taskID="getVisualizationGallery"/>
+		<privateTask taskID="importAsyncSaveRWD"/>
+		<privateTask taskID="mojoGetDocumentManifest"/>
+		<privateTask taskID="mojoGetNDE"/>
+		<privateTask taskID="mojoGetReportWorkingSet"/>
+		<privateTask taskID="mojoRWEvents"/>
+		<privateTask taskID="mojoRWManipulation"/>
+		<privateTask taskID="moveDocLayout"/>
+		<privateTask taskID="movePanel"/>
+		<privateTask taskID="pollEmmaStatus"/>
+		<privateTask taskID="recoverDataDiscoveryErrors"/>
+		<privateTask taskID="removeDocLayout"/>
+		<privateTask taskID="renamePromptAnswer"/>
+		<privateTask taskID="retrieveImagePreview"/>
+		<privateTask taskID="RWBinaryExecute"/>
+		<privateTask taskID="saveImagePreview"/>
+		<privateTask taskID="savePalette"/>
+		<privateTask taskID="saveRWTheme"/>
+		<privateTask taskID="saveRWTransactions"/>
+		<privateTask taskID="saveSegment"/>
+		<privateTask taskID="saveThresholds"/>
+		<privateTask taskID="setConditionalTransaction"/>
+		<privateTask taskID="shortURL"/>
+		<privateTask taskID="showTotals"/>
+		<privateTask taskID="updateTemplateUnits"/>
+		<privateTask taskID="updateTheme"/>
+		<privateTask taskID="usherLoginWeb"/>
+		<privateTask taskID="usherNotifyMe"/>
+		<privateTask taskID="usherQRWeb"/>
+		<privateTask taskID="usherRegUsr"/>
+		<privateTask taskID="usherRememberMe"/>
+		<privateTask taskID="validateLocalTransaction"/>
+		<privateTask taskID="validateUsherConfigTask"/>
+		<privateTask taskID="addDocToHistoryList"/>
+		<privateTask taskID="addWidget"/>
+		<privateTask taskID="androidRWExecute"/>
+		<privateTask taskID="answerPrompts"/>
+		<privateTask taskID="applyGraphSelectorAction"/>
+		<privateTask taskID="changeDocGroupBy"/>
+		<privateTask taskID="changePassword"/>
+		<privateTask taskID="checkLatency"/>
+		<privateTask taskID="closeSessions"/>
+		<privateTask taskID="createFolder"/>
+		<privateTask taskID="createMobileConfiguration"/>
+		<privateTask taskID="deleteDynamicRecipientList"/>
+		<privateTask taskID="getDRLRelatedSubscriptions"/>
+		<privateTask taskID="deleteMessage" />
+		<privateTask taskID="deleteMobileConfiguration"/>
+		<privateTask taskID="importCustomVizZip"/>
+		<privateTask taskID="docBinaryResults"/>
+		<privateTask taskID="DocDrill"/>
+		<privateTask taskID="docPivot"/>
+		<privateTask taskID="docPivotForm"/>
+		<privateTask taskID="DocSort"/>
+		<privateTask taskID="DocTransaction"/>
+		<privateTask taskID="docXMLResults"/>
+		<privateTask taskID="DocXtabIncrementalFetch"/>
+		<privateTask taskID="duplicateMobileConfiguration"/>
+		<privateTask taskID="fetchDocPage"/>
+		<privateTask taskID="getSubscriptionAssociatedInformation"/>
+		<privateTask taskID="getBinaryReportResults"/>
+		<privateTask taskID="getCachesUpdateTimes"/>
+		<privateTask taskID="getConnectedServers"/>
+		<privateTask taskID="getCubeBinaryResults"/>
+		<privateTask taskID="getCubeMapping"/>
+		<privateTask taskID="getCustomGroup"/>
+		<privateTask taskID="getDBInstances"/>
+		<privateTask taskID="getDBMSObjects"/>
+		<privateTask taskID="getDescriptors"/>
+		<privateTask taskID="getDIExternalInfo"/>
+		<privateTask taskID="getDynamicRecipientList"/>
+		<privateTask taskID="getDynamicRecipientLists"/>
+		<privateTask taskID="getFlexSettings"/>
+		<privateTask taskID="getGoogleConfig"/>
+		<privateTask taskID="getIPByMachineName" />
+		<privateTask taskID="getLocaleInfo"/>
+		<privateTask taskID="getMobileConfiguration"/>
+		<privateTask taskID="getMobileConfigurationBlock"/>
+		<privateTask taskID="getMobileConfigurationIndex"/>
+		<privateTask taskID="getMobileReports"/>
+		<privateTask taskID="getMobileSubscription"/>
+		<privateTask taskID="getNamedFolderID"/>
+		<privateTask taskID="getNewMobileConfiguration"/>
+		<privateTask taskID="getObjectDetails"/>
+		<privateTask taskID="getObjectInfo" />
+		<privateTask taskID="getPageByTree"/>
+		<privateTask taskID="getRWTransactions"/>
+		<privateTask taskID="getSchedules"/>
+		<privateTask taskID="getSearchSuggestions"/>
+		<privateTask taskID="getTransactionReportDefinition"/>
+		<privateTask taskID="getUserEntityInfo"/>
+		<privateTask taskID="getUserPrivilegeXml"/>
+		<privateTask taskID="getUserServices"/>
+		<privateTask taskID="getWSAttributeForms"/>
+		<privateTask taskID="graphDrill"/>
+		<privateTask taskID="gridDrill"/>
+		<privateTask taskID="gridLinkedDrill"/>
+		<privateTask taskID="gridPivot"/>
+		<privateTask taskID="gridSort"/>
+		<privateTask taskID="importFile"/>
+		<privateTask taskID="invokeBinaryXMLAPI"/>
+		<privateTask taskID="invokeXMLAPI"/>
+		<privateTask taskID="iPhoneGetGraphResults"/>
+		<privateTask taskID="iPhoneGetReportResults"/>
+		<privateTask taskID="iPhoneGetRWResults"/>
+		<privateTask taskID="iphoneGraphDrillResult" />
+		<privateTask taskID="iPhonePreLoadRWResults"/>
+		<privateTask taskID="IPhoneReportResults"/>
+		<privateTask taskID="IPhoneRWResults"/>
+		<privateTask taskID="iPhoneSubscribe"/>
+		<privateTask taskID="iPhoneUnsubscribe"/>
+		<privateTask taskID="IsServerConnected"/>
+		<privateTask taskID="isSessionAlive"/>
+		<privateTask taskID="keepSessionAlive"/>
+		<privateTask taskID="loadDocLayout"/>
+		<privateTask taskID="loadToolbar"/>
+		<privateTask taskID="mobileDeleteSubscription"/>
+		<privateTask taskID="mobileDuplicateMessage"/>
+		<privateTask taskID="mobileExecuteReport"/>
+		<privateTask taskID="mobileExecuteReportDS"/>
+		<privateTask taskID="mobileExecuteRW"/>
+		<privateTask taskID="mobileExecuteRWDS"/>
+		<privateTask taskID="mobileGetChunkedGridResults"/>
+		<privateTask taskID="mobileGetChunkedRWResults"/>
+		<privateTask taskID="mobileGetDevices"/>
+		<privateTask taskID="mobileGetGraphResults"/>
+		<privateTask taskID="mobileGetGridResults"/>
+		<privateTask taskID="mobileGetInboxMessageTime"/>
+		<privateTask taskID="mobileGetPushRegistrationStatus"/>
+		<privateTask taskID="mobileGetRWResults"/>
+		<privateTask taskID="mobileGraphXML"/>
+		<privateTask taskID="mobileGraphXMLWithSubtotals"/>
+		<privateTask taskID="mobileHTMLGridResults"/>
+		<privateTask taskID="mobileHTMLMojoGridResults"/>
+		<privateTask taskID="mobileLoadSubscription"/>
+		<privateTask taskID="mobileLogin"/>
+		<privateTask taskID="mobilePollStatus"/>
+		<privateTask taskID="mobilePromptsXml"/>
+		<privateTask taskID="mobilePushRegister"/>
+		<privateTask taskID="mobilePushUnregister"/>
+		<privateTask taskID="mobileRefreshSubscription"/>
+		<privateTask taskID="mobileRWPDFResults"/>
+		<privateTask taskID="mobileSaveProperties"/>
+		<privateTask taskID="mobileSaveSubscription"/>
+		<privateTask taskID="mobileSubscribe"/>
+		<privateTask taskID="mobileUpdateSubscription"/>
+		<privateTask taskID="mobileValidateMetricValue"/>
+		<privateTask taskID="pollStatus" />
+		<privateTask taskID="registerVisualization"/>
+		<privateTask taskID="ReportOndemandDrill"/>
+		<privateTask taskID="requestNewPanel"/>
+		<privateTask taskID="RWGridDrillToReport"/>
+		<privateTask taskID="rwLinkedDrill"/>
+		<privateTask taskID="RWManipulation "/>
+		<privateTask taskID="RWOnDemandDrill"/>
+		<privateTask taskID="saveAndPublishCube"/>
+		<privateTask taskID="saveCustomGroup"/>
+		<privateTask taskID="saveDBInstance"/>
+		<privateTask taskID="setDocSelectorExpression"/>
+		<privateTask taskID="setDocSelectorExpressionUnset"/>
+		<privateTask taskID="saveDynamicRecipientList"/>
+		<privateTask taskID="saveObjectACL"/>
+		<privateTask taskID="saveSubscription"/>
+		<privateTask taskID="setCubeMapping"/>
+		<privateTask taskID="setCurrentPanel"/>
+		<privateTask taskID="setDisplayMode"/>
+		<privateTask taskID="setDocLayout"/>
+		<privateTask taskID="setDocVisSelectorElements"/>
+		<privateTask taskID="androidSetDocSelectorElements" />
+		<privateTask taskID="getMobileConfigurationVersion"/>
+		<privateTask taskID="mobileGetChunkedGraphResults"/>
+        <privateTask taskID="setDocSelectorExression"/>
+		<privateTask taskID="setDocSelectorInclude"/>
+		<privateTask taskID="setDocZoom"/>
+		<privateTask taskID="setPreference"/>
+		<privateTask taskID="setRWUnitProperties"/>
+		<privateTask taskID="setVisualizationProperties"/>
+		<privateTask taskID="updateMobileConfiguration"/>
+		<privateTask taskID="updateMobileConfigurationProperties"/>
+		<privateTask taskID="uploadFile"/>
+		<privateTask taskID="uploadImageFile"/>
+		<privateTask taskID="validatePromptForTemplate"/>
+        <privateTask taskID="validateDocumentLinks"/>
+        <privateTask taskID="getIVEWidgets"/>
+        <privateTask taskID="getMapCoordinates" />
+        <privateTask taskID="getAllMapCoordinates" />
+        <privateTask taskID="unsetSelector"/>
+        <privateTask taskID="getMapShapes" />
+        <privateTask taskID="DocAddDerivedMetric"/>
+        <privateTask taskID="DocEditDerivedMetric"/>
+        <privateTask taskID="loginFirst"/>
+        <privateTask taskID="getProjectsInfo"/>
+		<privateTask taskID="getSystemFunctions"/>
+	    <privateTask taskID="getMetricDefinition"/>
+	    <privateTask taskID="validateMetric"/>
+	    <privateTask taskID="saveMetricDefinition"/>
+	    <privateTask taskID="desktopImportSaveDashboard"/>
+	    <privateTask taskID="oneTierRequest"/>
+	    <privateTask taskID="validateWebServerConnectionTask "/>
+	    <privateTask taskID="webServerAdmin "/>
+	    <privateTask taskID="getRecentSaveAsFolders "/>
+	    <privateTask taskID="getPluginsVisList "/>
+	    <privateTask taskID="getNeeFeatureFlags "/>
+	    <privateTask taskID="createIdentityToken"/>
+	    <privateTask taskID="getGUIDs"/>
+	      
+	</privateTasks>
+</taskProcessorController>

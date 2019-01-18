@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about a constant Prompt's answer. 
+-->
+<block name="ConstantPromptAnswer" inherits="PromptAnswer">
+    <definition>
+        <!-- The answer as a String, text representation -->
+        <property name="text" type="String" />
+    </definition>
+</block>

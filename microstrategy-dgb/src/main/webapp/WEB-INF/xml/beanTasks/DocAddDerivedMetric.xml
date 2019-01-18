@@ -1,0 +1,28 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+	<!-- 
+		This information is used to provide "metadata" about this task. In general, it includes
+		names, descriptions and whether the parameters are required or not. 
+	-->
+	<basicInfo desc="This task adds an Derived Metric to a RWD Grid and serializes the partial results.">
+          <parameter name="messageID" desc="The Message ID of a previously executed Report Writer Document." required="true" />
+          <parameter name="nodeKey" desc="node key. Used for partial update" required="true" />
+          <parameter name="formula" desc="derived metric formula" required="true" />
+          <parameter name="isTokenstream" desc="indicating formula is a string or tokenstream xml" required="false" />
+          <parameter name="alias" desc="derived metric alias" required="false" />
+          <parameter name="dsID" desc="id of the dataset which the derived metricc is added to" required="false" />
+          <parameter name="isAggFromBase" desc=" " required="false" />
+          <parameter name="metricPos" desc="template position to add the new derived metric" required="false" />
+	</basicInfo>	
+
+	<!-- REPORT_WRITER_EVENT_ADD_DERIVED_METRIC  -->
+	<eventInfo eventID="2048040">
+	</eventInfo>
+
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWIVEMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="3" />
+        </style>
+    </beanInfo>
+    
+</beanTask>

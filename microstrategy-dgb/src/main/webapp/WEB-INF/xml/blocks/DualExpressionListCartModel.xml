@@ -1,0 +1,19 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		DualExpressionListCartModel is a data model which contains a ListModel, "available",
+		and either (1) a single ExpressionModel, "selected"; or (2) two ExpressionModels,
+		"selectedIncludes" & "selectedExcludes".  DualExpressionListCartModel typically is used
+		to create conditions in "selected" using objects in "available".
+	-->
+	<block name="DualExpressionListCartModel" inherits="ExpressionListCartModel">
+		<definition>
+			<!-- An ExpressionModel for selections to be included. -->
+			<property name="selectedIncludes" type="Block" />
+			
+			<!-- An ExpressionModel for selections to be excluded. -->
+			<property name="selectedExcludes" type="Block" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.DualExpressionListCart</property>
+		</assignments>
+	</block>

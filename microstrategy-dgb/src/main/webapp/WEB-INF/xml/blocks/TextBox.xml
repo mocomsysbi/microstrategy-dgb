@@ -1,0 +1,48 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TextBox is a view for entering text input, with an optional caption. -->
+	<block name="TextBox" inherits="BaseView">
+		<definition>
+			<!-- Either "text" or "password". -->
+			<property name="inputType" type="String" />
+
+			<!-- The text to display on the TextBox's GUI. -->
+			<property name="caption" type="String" />
+
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+
+			<!-- The width of the TextBox, in number of characters. -->
+			<property name="totalSize" type="Integer" />
+
+			<!-- The maximum number of characters of data the TextBox can store. -->
+			<property name="maxlength" type="Integer" />
+
+			<!-- True if TextBox's contents cannot be edited by end-user. -->
+			<property name="readonly" type="Boolean" />
+
+			<!-- Optional reference to model or view which this TextBox may act upon when clicked. -->
+			<property name="targetPath" type="String" />
+
+			<!-- Optional value of TextBox contents. -->
+			<property name="value" type="String" />
+
+			<!-- Javascript handler for responding to user typing. -->
+			<property name="onkeypress" type="String" />
+
+			<!-- The name of the model property that will supply the value. -->
+			<property name="valueField" type="String" />
+			
+			<!-- An optional suffix to appear after the text box.-->
+			<property name="captionSuffix" type="String" />
+			
+			<!-- True to fire events from onblur event.  False to use onkeyup event. -->
+			<property name="useBlur" type="Boolean" />
+	    </definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.TextBox</property>
+			<property name="layoutClass">mstr.layouts.TextBox</property>
+			<property name="cssClass">TextBox</property>
+			<property name="inputType">text</property>
+			<property name="valueField">valueString</property>	<!-- For backward compatibility -->
+		</assignments>
+	</block>

@@ -1,0 +1,37 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptAnsId, so its tab id is tabPromptAnsId -->
+<mstrlayout:layout>
+	<span class="title">
+		*Select default answers*
+	</span>	
+	<p/>
+	<span>*Click edit to preview the prompt and select your default answers*</span>
+	<p/>
+	<span class="mstrPromptLabelOffset">
+		*Default answers summary
+	</span>
+	<table style="position:relative;left:20px;top:10px;">
+		<tr>
+			<td>
+				<select multiple="multiple" name="ep_op_defaultAnswerList" size="10" id="ep_op_defaultAnswerList" class="mstrElementList">
+						<mstrlayout:list id="elems" name="getDefaultAnswerList">
+							<option>
+								<mstrlayout:attr name="addOptionAttr">
+									<mstrlayout:argument list="elems"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+								</mstrlayout:attr>
+								<mstrlayout:render name="optionText">
+									<mstrlayout:argument list="elems"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+								</mstrlayout:render>
+							</option>
+						</mstrlayout:list>
+				</select>
+			</td>
+			<td>
+				<div style="display:inline;">
+					<input type="button" value="*Edit*" name="ep_op_edit_default" id="ep_op_edit_default" class="mstrButton mstrPromptButtonBlock" style="top:10px;" cmdid="editDefault" onclick="if (microstrategy.bone('tabPromptAnsId').tabManager.onmenusubmitform()) {microstrategy.bone('tabPromptAnsId').execImmediately(this);}"/> <!-- @todo, should not use onmenusubmitform() !!!-->
+					<input type="button" value="*Clear*" name="ep_op_clear_default" id="ep_op_clear_default" class="mstrButton mstrPromptButtonBlock" style="top:30px;" cmdid="clearDefault" onclick="microstrategy.bone('tabPromptAnsId').removeAllItems('ep_op_defaultAnswerList');this.setAttribute(microstrategy.HTMLATTR_CMD_VALUE,'1');"/>
+				</div>
+			</td>
+		</tr>
+	</table>	
+</mstrlayout:layout>

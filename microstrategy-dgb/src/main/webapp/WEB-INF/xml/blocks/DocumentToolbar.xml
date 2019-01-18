@@ -1,0 +1,36 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="VBox" name="DocumentToolbar">
+  <assignments>
+    <property name="cssClass">TabbedMenuVBox</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K423" name="RibbonListView">
+          <property name="rightIcons">
+            <list>
+              <block listElementKey="K424" name="NotesIconView">
+                <property name="modelPath">parent/parent/model/NotesIconModel</property>
+              </block>
+              <block listElementKey="K425" name="LastUpdateView">
+                <property name="target">rwb_viewer</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="ViewStack" name="ToolbarViewStack">
+          <property name="views">
+            <list>
+              <block listElementKey="Home" name="Toolbar"/>
+              <block listElementKey="Tools" name="Toolbar"/>
+              <block listElementKey="Insert" name="Toolbar"/>
+              <block listElementKey="Data" name="Toolbar"/>
+              <block listElementKey="Grid" name="Toolbar"/>
+              <block listElementKey="Graph" name="Toolbar"/>
+              <block listElementKey="Format" name="Toolbar"/>
+              <block listElementKey="Align" name="Toolbar"/>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		CrosstabView is a view upon a CrosstabModel, typically laid out like an HTML table.
+	-->
+	<block name="CrosstabView" inherits="BaseView">
+		<definition>
+			<!-- Optional CSS specification of height for the scroll area of the list view. -->
+			<property name="height" type="String" />
+
+			<!-- Optional CSS specification of width for the scroll area of the list view. -->
+			<property name="width" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.Crosstab</property>
+			<property name="layoutClass">mstr.layouts.CrosstabView</property>
+			<property name="cssClass">CrosstabView</property>
+		</assignments>
+	</block>

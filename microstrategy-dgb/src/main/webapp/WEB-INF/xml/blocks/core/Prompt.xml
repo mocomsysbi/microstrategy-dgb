@@ -1,0 +1,58 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about a Prompt.
+-->
+<block name="Prompt" inherits="WebObjectInfo">
+    <definition>
+        <!-- The Prompt key. See WebPrompt.getKey() -->
+        <property name="k" type="String" />
+        
+        <!-- Prompt Type. See com.microstrategy.web.objects.EnumWebPromptType -->
+        <property name="ptp" type="Integer" />
+       
+        <!-- DSS Prompt type. See WebPrompt.getDSSPromptType() -->
+        <property name="dptp" type="Integer" />
+
+        <!-- The Prompt PIN. See WebPrompt.getPIN() -->
+        <property name="pin" type="Integer" />
+        
+        <!-- The Prompt Title. -->
+        <property name="ttl" type="String" />
+
+        <!-- The meaning of the prompt. -->
+        <property name="mn" type="String" />
+        
+        <!-- Whether the prompt is used. See WebPrompt.isUsed() -->
+        <property name="used" type="Boolean" />
+        
+        <!-- Whether the prompt is closed. -->
+        <property name="clsd" type="Boolean" />
+        
+        <!-- Whether the prompt is canceled. -->
+        <property name="cncl" type="Boolean" />
+        
+        <!-- Whether the prompt is required. -->
+        <property name="reqd" type="Boolean" />
+        
+        <!-- How the prompt was reused. See com.microstrategy.webapi.EnumDSSXMLPromptReuse -->
+        <property name="reus" type="Integer" />
+        
+        <!-- The Prompt minimum value -->
+        <property name="min" type="String" />
+        
+        <!-- The Prompt maximum value -->
+        <property name="max" type="String" />
+     
+        <!-- The display properties. It is a List of Property Blocks... -->
+        <property name="prs" type="List" />
+        
+        <!-- The Prompt Location. A Block of type PromptLocation. -->
+        <property name="loc" type="Block" />
+        
+        <!-- The Prompt Answer Block. A subblock of PromptAnswer based on the prompt type. -->
+        <property name="ans" type="Block" />
+        
+        <property name="hasAns" type="Boolean"  />
+        
+    </definition>
+</block>

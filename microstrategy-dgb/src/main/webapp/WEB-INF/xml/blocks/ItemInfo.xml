@@ -1,0 +1,46 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ItemInfo is any generic metadata or warehouse data item.
+		For example: a folder, an attribute, an attribute element.
+	-->
+	<block name="ItemInfo" inherits="BaseItemInfo">
+		<definition>
+			<!-- The type of item (4 = metric, 12 = attribute, 21 = form, 0 = element, etc). Required for answering prompts. -->
+			<property name="tp" type="String" />
+
+			<!-- The subtype of item. Required for answering prompts. -->
+			<property name="stp" type="String" />
+
+			<!-- The data type of the item's value (e.g., an attribute form may be a number, date, string, etc). -->
+			<property name="dtp" type="Integer" />
+
+			<!-- If true, this item is a locked attribute. -->
+			<property name="locked" type="Boolean" />
+			<!-- the filters associated with dimension attributes 
+				it is a list of ItemInfo which represents one filter -->
+			<property name="filters" type="List"/>
+			<!-- If true, this item is a browse form for an attribute. -->
+			<property name="isBrowseForm" type="Boolean" />
+
+			<!-- For an attribute, the list of the attribute's forms. -->
+			<property name="dssforms" type="List" />			
+
+			<!-- For an attribute element, the type of element, used in filter expressions. -->
+			<property name="emt" type="Integer" />
+			
+			<!-- For a hierarchy, a flattened list of attribute nodes that describe the paths down the hierarchy. -->
+			<property name="flattenedNodes" type="List" />
+			
+			<!-- The path of the object -->
+			<property name="pt" type="String" />
+			
+			<property name="acg" type="Integer" />
+			
+			<!-- For a shortcut, did refers to its real id (dssid is its target's id)-->
+			<property name="did" type="String" />
+			
+			<!-- the object tags assosiated with the object-->
+			<property name="tgs" type="String" />
+						
+		</definition>
+	</block>

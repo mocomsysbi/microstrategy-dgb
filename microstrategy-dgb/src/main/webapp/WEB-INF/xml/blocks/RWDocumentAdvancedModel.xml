@@ -1,0 +1,145 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="RWDocumentAdvancedModel">
+  <definition>
+    <property name="docAdvTabEnabled" type="Boolean"/>
+    <property name="MobileDataView" type="Block"/>
+    <property name="PreLoadAllPanels" type="Block"/>
+    <property name="RemoveMissingUnits" type="Block"/>
+    <property name="SingleSourceGrid" type="Block"/>
+    <property name="RWLevelMCEJoin" type="Block"/>
+    <property name="layoutBarStyle" type="Block"/>
+    <property name="layoutBarPosition" type="Block"/>
+    <property name="layoutBarPosition2" type="Block"/>    
+    <property name="scheduleTypesModel" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.bones.editors.DocAdvancedBoneTranslator</property>
+    <property name="categoryText">{desc:mstrWeb.3588|Document Properties}</property>
+    <property name="titleText">{desc:mstrWeb.702|Advanced}</property>
+    <property name="fields">ShowTabsForSingleLayout|RemoveNullGroups|TrimNoSectionData|EmbeddedFonts|PreLoadAllPanels|ApplyGBToAllLayouts|scheduleTypesModel|canBeScheduled|RemoveMissingUnits|SingleSourceGrid|RWLevelMCEJoin|RefreshDocument|RefreshFrequency|KeepControlTargetsConsistent</property>
+    <property name="visibleField">docAdvTabEnabled</property>
+    <property name="docAdvTabEnabled">true</property>
+    <property name="MobileDataView">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1354" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5590|Tabular Interactive}</property>
+            </block>
+            <block listElementKey="K1355" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.5591|Original Layout}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="PreLoadAllPanels">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K898" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.6106|All Panels of All Panel Stacks}</property>
+            </block>
+            <block listElementKey="K899" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.6107|Current Panel Only of All Panel Stacks}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="scheduleTypesModel">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="allowNone" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.9024|Do not allow this Document to be scheduled.}</property>
+            </block>
+            <block listElementKey="allowAll" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.9021|Allow Users to subscribe to all Schedules.}</property>
+            </block>
+            <block listElementKey="allowUserSelected" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.9022|Only allow Users to subscribe to Schedules in the list below:}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+   	<!-- TQMS 742324 -->
+    <property name="RemoveMissingUnits">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="inheritFromProject" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.10983|Inherit value from project-level setting.}</property>
+            </block>
+            <block listElementKey="trueSetting" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.10984|Remove objects not available in the source dataset(s).}</property>
+            </block>
+            <block listElementKey="falseSetting" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.10985|Do not remove objects not available in the source dataset(s).}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="SingleSourceGrid">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="inheritFromProject" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.10983|Inherit value from project-level setting.}</property>
+            </block>
+            <block listElementKey="trueSetting" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.14489|Objects in document grids must come from the grid’s source dataset only.}</property>
+            </block>
+            <block listElementKey="falseSetting" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.14488|Allow objects in document grids to come from multiple datasets.}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="RWLevelMCEJoin">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="inheritFromProject" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.10983|Inherit value from project-level setting.}</property>
+            </block>
+            <block listElementKey="bigRelation" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.14625|Use big relation to join in order to get complete combination.}</property>
+            </block>
+            <block listElementKey="minimumRelation" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.14626|Use minimum relations to do the join with less memory.}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Advanced' tab of the Report Services document properties editor. -->

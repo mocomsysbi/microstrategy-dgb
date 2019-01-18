@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains a list of function categories.
+--> 
+<block name="FunctionCategories">
+  <definition>
+    <!-- A list of FunctionCategory -->
+    <property name="fncs" type="List" />
+  </definition>
+</block>

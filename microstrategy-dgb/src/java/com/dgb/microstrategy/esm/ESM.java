@@ -1,6 +1,5 @@
 package com.dgb.microstrategy.esm;
 
-import com.microstrategy.custom.util.MstrUtil;
 import com.microstrategy.web.app.AbstractExternalSecurity;
 import com.microstrategy.web.beans.RequestKeys;
 import com.microstrategy.web.objects.WebIServerSession;
@@ -49,7 +48,6 @@ public class ESM extends AbstractExternalSecurity {
 		System.out.println("===> Create MSTR Session.");
 		
 		try {
-			session = MstrUtil.connectSession("localhost", "MicroStrategy Tutorial", "administrator", null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

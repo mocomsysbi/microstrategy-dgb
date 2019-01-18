@@ -1,0 +1,21 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <![CDATA[
+    <link rel="stylesheet" type="text/css" href="../javascript/mojo/css/Vis.css"/>
+	<div id="visContainer]]><mstrlayout:render name="UniqueId"/><![CDATA[">&nbsp;</div>
+	<script language="javascript">
+        var data = ]]><mstrlayout:render name="GridData"/><![CDATA[,
+        	props = {	placeholder: 'visContainer]]><mstrlayout:render name="UniqueId"/><![CDATA[',
+			            width:parseInt(']]><mstrlayout:render name="containerWidth"/><![CDATA['),
+			            height:parseInt(']]><mstrlayout:render name="containerHeight"/><![CDATA['),
+			            zoomFactor:]]><mstrlayout:render name="zoomFactor"/><![CDATA[,
+			            scriptClass:'mstrmojo.' + ']]><mstrlayout:render name="FormalParameterValue"><mstrlayout:argument value="mojoClassName"/></mstrlayout:render><![CDATA[',
+			            id: ']]><mstrlayout:render name="UniqueId"/><![CDATA[',
+			            bundle:"]]><mstrlayout:render name="FormalParameterValue"><mstrlayout:argument value="mojoBundle"/></mstrlayout:render><![CDATA["
+			        },
+         	extProps = ]]><mstrlayout:render name="ExtraProps"/><![CDATA[;
+
+        microstrategy.renderVis(data, props, extProps);
+	</script>
+	]]>
+</mstrlayout:layout>

@@ -1,0 +1,31 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="VBox" name="ExpressionLevelPopup">
+  <assignments>
+    <property name="id">ExpressionLevelPopup1</property>
+    <property name="cssClass">Popup</property>
+    <property name="modelPath">opener/model/parent/parent/getLevelListModel(opener.model)</property>
+    <property name="visible">false</property>
+    <property name="cssText">width:200px; filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+    <property name="popOrientation">0</property>
+    <property name="CommandEnabledUnpop" type="Boolean">true</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K466" name="ListView">
+          <property name="modelPath">parent/model</property>
+          <property name="cmds">!ClickListItem;Unpop||parent;EditConditionLevel|model/getSelectedItem()|parent/opener/model</property>
+          <property name="height">auto</property>
+          <property name="multiSelect">false</property>
+        </block>
+        <block listElementKey="K467" name="TextLink">
+          <property name="caption">{desc:mstrWeb.5908|Choose attributes...}</property>
+          <property name="cmds">Unpop||parent;OpenPopup|"ExpressionLevelAttributesPopup1"|parent/opener</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		ExpressionLevelPopup is a popup used by ExpressionEditor for editing the dimensionality or "level" of 
+		a metric qualification subexpression.
+		It is a list view for selecting a level (Default, Metric, Report, or custom).
+	-->

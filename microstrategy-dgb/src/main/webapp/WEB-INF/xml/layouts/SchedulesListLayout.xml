@@ -1,0 +1,5 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:render name="headers"/>
+    <mstrlayout:render name="schedules"/>
+</mstrlayout:layout>

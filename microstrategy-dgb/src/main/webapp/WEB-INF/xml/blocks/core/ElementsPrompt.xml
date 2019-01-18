@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about an element Prompt's question. 
+-->
+<block name="ElementsPrompt" inherits="Prompt">
+    <definition>
+        <!-- A suggested list of Element Blocks. -->
+        <property name="suggest" type="List" />
+        
+        <!-- The origin, which is an Attribute Block.  -->
+        <property name="orgn" type="Block" />
+        
+        <!-- The filter restrictions, which is a Filter Block. -->
+        <property name="fres" type="Block" />
+    </definition>
+</block>

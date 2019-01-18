@@ -1,0 +1,22 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.BaseUserEntityBeanTask">
+	<basicInfo desc="This Task provides the ability to delete a user or goup from the medadata.">
+		<parameter name="userEntityID" desc="The user or group id" required="true" type="simplestring"/>
+	</basicInfo>
+
+	<!--
+		"32768006" is the EnumUserEntityBentEvents.USER_ENTITY_EVENT_DELETE.
+	-->
+	<eventInfo eventID="32768006">
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'ub' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="ub" bean-type="UserBean">
+        <style name="styleName" source="parameter">		
+		</style>
+
+	</beanInfo>
+</beanTask>

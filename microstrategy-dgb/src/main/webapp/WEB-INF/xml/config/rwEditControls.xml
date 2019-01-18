@@ -1,0 +1,30 @@
+<shortcut-list feature-id="rw-editable-view-mode-eplus;" name="editControls">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Undo" desc-id="mstrWeb.3540" name="tbUndo" type="button">
+      <attributes>
+        <attribute name="cmdid" value="undo"/>
+        <attribute name="class" value="disabled"/>
+        <attribute name="disabled" value="true"/>
+        <attribute name="src" feature-id="accessibility" value="tbUndoAccD.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Redo" desc-id="mstrWeb.3541" name="tbRedo" type="button">
+      <attributes>
+        <attribute name="cmdid" value="redo"/>
+        <attribute name="class" value="disabled"/>
+        <attribute name="disabled" value="true"/>
+        <attribute name="src" feature-id="accessibility" value="tbRedoAccD.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Apply" desc-id="mstrWeb.3519" name="tbApply" type="button">
+      <attributes>
+        <attribute name="cmdid" value="apply"/>
+        <attribute name="class" value="disabled"/>
+        <attribute name="disabled" value="true"/>
+        <attribute name="src" feature-id="accessibility" value="tbApplyChangesAccD.gif"/>
+      </attributes>
+    </shortcut>
+</shortcut-list>

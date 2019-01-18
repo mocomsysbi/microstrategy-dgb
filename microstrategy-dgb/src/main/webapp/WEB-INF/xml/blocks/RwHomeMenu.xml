@@ -1,0 +1,201 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwHomeMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="saveDirectly" name="ToolbarSaveButton">
+          <property name="htmlId">mnuSave</property>
+          <property name="tooltip">{desc:mstrWeb.118|Save}</property>
+          <property name="cmdid">dSave</property>
+          <property name="type">MENU</property>
+          <property name="visibleFeatures">save-report;enable-save-report</property>
+          <property name="text">{desc:mstrWeb.118|Save}</property>
+          <property name="extraCssClass">mnuHome</property>
+        </block>
+        <block listElementKey="K1645" name="ToolbarSaveButton">
+          <property name="htmlId">mnuSaveAs</property>
+          <property name="type">MENU</property>
+          <property name="visibleFeatures">save-report;enable-save-report</property>
+          <property name="text">{desc:mstrWeb.1896|Save As...}</property>
+          <property name="extraCssClass">mnuHome</property>
+        </block>
+        <block listElementKey="K1646" name="BaseBlock"/>
+        <block listElementKey="K1647" name="ToolbarUndoButton">
+          <property name="type">MENU</property>
+          <property name="shortcutText">Ctrl+Z</property>
+          <property name="targetPath">#bonesUpdateManager</property>
+          <property name="text">{desc:mstrWeb.3482|Undo}</property>
+          <property name="visibleFeatures">dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onupdatemanagerchange</property>
+        </block>
+        <block listElementKey="K1648" name="ToolbarRedoButton">
+          <property name="type">MENU</property>
+          <property name="shortcutText">Ctrl+Y</property>
+          <property name="text">{desc:mstrWeb.3473|Redo}</property>
+          <property name="targetPath">#bonesUpdateManager</property>
+          <property name="visibleFeatures">dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onupdatemanagerchange</property>
+        </block>
+        <block listElementKey="K1649" name="BaseBlock"/>
+        <block listElementKey="K1650" name="MenuControlModel">
+          <property name="shortcutText">Ctrl+X</property>
+          <property name="text">{desc:mstrWeb.3393|Cut}</property>
+          <property name="cmdid">cut</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1651" name="MenuControlModel">
+          <property name="shortcutText">Ctrl+C</property>
+          <property name="text">{desc:mstrWeb.3394|Copy}</property>
+          <property name="cmdid">copy</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1652" name="MenuControlModel">
+          <property name="shortcutText">Ctrl+V</property>
+          <property name="text">{desc:mstrWeb.3395|Paste}</property>
+          <property name="cmdid">paste</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1653" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3396|Paste Formatting}</property>
+          <property name="cmdid">pasteFormat</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1654" name="BaseBlock"/>
+        <block listElementKey="K1655" name="MenuControlModel">
+          <property name="shortcutText">Ctrl+A</property>
+          <property name="text">{desc:mstrWeb.3474|Select All}</property>
+          <property name="cmdid">selectAll</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1656" name="MenuControlModel">
+          <property name="shortcutText">Del</property>
+          <property name="text">{desc:mstrWeb.629|Delete}</property>
+          <property name="cmdid">delete</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1657" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5678|Delete Layout}</property>
+          <property name="cmdid">removeTab</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1658" name="MenuControlModel">
+          <property name="shortcutText">Ctrl+D</property>
+          <property name="text">{desc:mstrWeb.3397|Duplicate}</property>
+          <property name="cmdid">duplicate</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1659" name="BaseBlock"/>
+        <block listElementKey="K1660" name="ToolbarDesignModeButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3067|Design Mode}</property>
+          <property name="cmdid">designViewMode</property>
+          <property name="visibleFeatures">documents-design-mode;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1661" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.11694|Presentation Mode}</property>
+          <property name="cmdid">staticViewMode</property>
+          <property name="visibleFeatures">rw-static-view-mode-available;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1662" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.14530|Interactive Mode}</property>
+          <property name="cmdid">interactiveViewMode</property>
+          <property name="visibleFeatures">rw-interactive-view-mode-available;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1663" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.4691|Editable Mode}</property>
+          <property name="cmdid">editableMode</property>
+          <property name="visibleFeatures">rw-editable-view-mode-available;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1664" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14531|Flash Mode}</property>
+          <property name="cmdid">flashViewMode</property>
+          <property name="visibleFeatures">rw-flash-view-mode-enabled;rw-flash-view-mode-available;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1665" name="BaseBlock"/>
+        <block listElementKey="K1666" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.1982|Add to History List}</property>
+          <property name="cmdid">saveToInbox</property>
+          <property name="visibleFeatures">add-history-list;not-navigation-document</property>
+          <property name="listenerMethods">onselectionchange,onDocReload</property>
+        </block>
+        <block listElementKey="rwCtPersonalView" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.9173|Create Personal View}</property>
+          <property name="cmdid">createPersonalView</property>
+          <property name="visibleFeatures">not-navigation-document</property>
+        </block>
+         <block listElementKey="rwTbCtShareURL" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.8101|Share}</property>
+          <property name="cmdid">ShowSharingEditor</property>
+          <property name="visibleFeatures">scheduling</property>
+        </block>
+        <block listElementKey="K1667" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2249|Send Now...}</property>
+          <property name="cmdid">sendNow</property>
+          <property name="visibleFeatures">use-immediate-delivery;not-navigation-document</property>
+          <property name="enabledFeatures">enable-send-now</property>
+        </block>
+        <block listElementKey="K1668" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.5007|Subscribe to}</property>
+          <property name="menuModel">RwHomeSubscribeMenu</property>
+          <property name="visibleFeatures">nc-enabled;document-multi-subscribe-menu;not-navigation-document</property>
+          <property name="enabledFeatures">nc-enabled</property>
+        </block>
+        <block listElementKey="K1669" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5069|Subscribe to History List...}</property>
+          <property name="cmdid">scheduleHL</property>
+          <property name="visibleFeatures">!document-multi-subscribe-menu;scheduling;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1670" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5070|Subscribe to Mobile...}</property>
+          <property name="cmdid">mobileSubs</property>
+          <property name="visibleFeatures">!document-multi-subscribe-menu;use-mobile;mobile-view-document;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1671" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5071|Subscribe to E-mail...}</property>
+          <property name="cmdid">ncSubs</property>
+          <property name="visibleFeatures">nc-enabled;!document-multi-subscribe-menu;scheduled-email;not-navigation-document</property>
+          <property name="enabledFeatures">enable-scheduled-email</property>
+        </block>
+        <block listElementKey="K1672" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5072|Subscribe to File...}</property>
+          <property name="cmdid">ncFileSubs</property>
+          <property name="visibleFeatures">!document-multi-subscribe-menu;nc-enabled;scheduled-file-export-menu;not-navigation-document</property>
+          <property name="enabledFeatures">enable-scheduled-file-export</property>
+        </block>
+        <block listElementKey="K1673" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5073|Subscribe to Printer...}</property>
+          <property name="cmdid">ncPrintSubs</property>
+          <property name="visibleFeatures">!document-multi-subscribe-menu;nc-enabled;scheduled-print-menu;not-navigation-document</property>
+          <property name="enabledFeatures">enable-scheduled-print</property>
+        </block>
+         <block listElementKey="K1679" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14367|Subscribe to Cache Update...}</property>
+          <property name="cmdid">ncCacheSubs</property>
+          <property name="visibleFeatures">!document-multi-subscribe-menu;scheduling;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1674" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3244|Page Setup...}</property>
+          <property name="cmdid">edtPageSetup</property>
+          <property name="visibleFeatures">!rw-flash-view-mode;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1675" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2109|Print...}</property>
+          <property name="cmdid">printPDF</property>
+          <property name="visibleFeatures">print;enable-print;web-export-to-pdf;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1676" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.246|Export}</property>
+          <property name="menuModel">RwHomeExportMenu</property>
+          <property name="visibleFeatures">show-rw-export-menu;not-navigation-document</property>
+          <property name="enabledFeatures">show-rw-export-menu</property>
+        </block>
+        <block listElementKey="K1677" name="BaseBlock"/>
+        <block listElementKey="K1678" name="ToolbarFullScreenButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.4664|Full Screen Mode}</property>
+          <property name="visibleFeatures">check-execute-mode;!page-full-screen-mode</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

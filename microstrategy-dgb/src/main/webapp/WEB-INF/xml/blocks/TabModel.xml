@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="TabModel" inherits="BaseModel">
+		<definition>	
+			<property name="tabId" type="String"/>	
+			<property name="titleText" type="String"/>
+			<property name="categoryText" type="String"/>
+			<property name="visibleField" type="String"/>				
+			<property name="visible" type="Boolean"/>	
+			<property name="enabledField" type="String"/>						
+			<property name="enabled" type="Boolean"/>	
+			<property name="storeFields" type="String"/>	
+			<property name="actionFields" type="String"/> <!-- set fields which are not related to backend properties -->			
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.TabModel</property>		
+		</assignments>
+	</block>		

@@ -1,0 +1,6 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		This is the default base block for all blocks.
+		to be rendered in JSON. 
+	--> 
+	<block name="BaseBlock" />

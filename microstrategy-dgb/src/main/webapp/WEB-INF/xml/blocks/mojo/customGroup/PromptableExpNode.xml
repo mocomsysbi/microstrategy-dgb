@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for a Promptable Expression Node
+-->
+<block name="PromptableExpNode" inherits="ExpNode">
+    <definition>
+        <!-- The of prompt object associated with the node -->        
+        <property name="p" type="Block" />
+    </definition>
+</block>

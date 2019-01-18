@@ -1,0 +1,34 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwInsertWidgetMenuEditor">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1696" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.14513|Flash (deprecated)}</property>
+          <property name="menuModel">RwMenuModelEditor</property>
+          <property name="htmlId">RwMenuModelEditor</property>
+          <property name="layouts">/WEB-INF/xml/layouts/blocks/InsertFlashWidgetMenuEditorLayout.xml</property>
+          <property name="cmdid">widgetsSubMenu</property>
+          <property name="extraCssClass">SubMenuOption</property>
+        </block>
+        <block listElementKey="K1697" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.7724|DHTML}</property>
+          <property name="extraCssClass">SubMenuOption</property>
+          <property name="menuModel">RwMenuModelEditor</property>
+          <property name="cmdid">widgetsSubMenu</property>
+          <property name="htmlId">flashIconMenu</property>
+          <property name="layouts">/WEB-INF/xml/layouts/blocks/InsertDHTMLWidgetMenuEditorLayout.xml</property>
+        </block>
+        <block listElementKey="K1698" name="SubMenuControlModel">
+          <property name="htmlId">mnuInsertGrp4</property>
+          <property name="text">{desc:mstrWeb.5943|Mobile}</property>
+          <property name="extraCssClass">SubMenuOption</property>
+          <property name="menuModel">RwMenuModelEditor</property>
+          <property name="cmdid">widgetsSubMenu</property>
+          <property name="htmlId">flashIconMenu</property>
+          <property name="layouts">/WEB-INF/xml/layouts/blocks/InsertIPhoneWidgetMenuEditorLayout.xml</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

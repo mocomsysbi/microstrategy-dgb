@@ -1,0 +1,417 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwToolbarModel" name="DocumentInsertToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K304" name="ToolbarDualStateButtonModel">
+          <property name="id">tbCursor</property>
+          <property name="tooltip">{desc:mstrWeb.3701|Cursor}</property>
+          <property name="cmdid">cursor</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K305" name="ToolbarDualStateButtonModel">
+          <property name="id">tbLock</property>
+          <property name="tooltip">{desc:mstrWeb.3543|Lock Control}</property>
+          <property name="cmdid">lock</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K306" name="BaseBlock"/>
+        <block listElementKey="K307" name="ToolbarDualStateButtonModel">
+          <property name="id">tbText</property>
+          <property name="tooltip">{desc:mstrWeb.3544|Text}</property>
+          <property name="cmdid">106</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K308" name="ToolbarDualStateButtonModel">
+          <property name="id">tbImage</property>
+          <property name="tooltip">{desc:mstrWeb.3545|Image}</property>
+          <property name="cmdid">102</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K309" name="ToolbarDualStateButtonModel">
+          <property name="id">tbLine</property>
+          <property name="tooltip">{desc:mstrWeb.3546|Line}</property>
+          <property name="cmdid">105</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K310" name="ToolbarListModel">
+          <property name="id">tbRectangles</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">101</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="useDynamicBtnImg" type="String">true</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+          <property name="width">160px</property>
+          <property name="toolbarHelper/visible">true</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K311" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T101_0</property>
+                <property name="dssid">0</property>
+                <property name="n">{desc:mstrWeb.3196|Rectangle}</property>
+              </block>
+              <block listElementKey="K312" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T101_1</property>
+                <property name="dssid">1</property>
+                <property name="n">{desc:mstrWeb.4726|Rounded Rectangle}</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K313" name="ToolbarDualStateButtonModel">
+          <property name="id">tbNewReport</property>
+          <property name="tooltip">{desc:mstrWeb.1279|Report}</property>
+          <property name="cmdid">52|R</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="visibleFeatures">modify-grid-level-in-documents</property>
+        </block>
+        <block listElementKey="K314" name="ToolbarDualStateButtonModel">
+          <property name="id">tbGrid</property>
+          <property name="tooltip">{desc:mstrWeb.3238|Grid}</property>
+          <property name="cmdid">52</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="visibleFeatures">modify-grid-level-in-documents</property>
+        </block>
+        <block listElementKey="K315" name="ToolbarListModel">
+          <property name="id">tbGraph</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">52G</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="useDynamicBtnImg" type="String">true</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+          <property name="width">170px</property>
+          <property name="toolbarHelper/visible">true</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K316" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_1</property>
+                <property name="dssid">1</property>
+                <property name="n">{desc:mstrWeb.338|Vertical area}</property>
+              </block>
+              <block listElementKey="K317" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_2</property>
+                <property name="dssid">2</property>
+                <property name="n">{desc:mstrWeb.339|Horizontal area}</property>
+              </block>
+              <block listElementKey="K318" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_4</property>
+                <property name="dssid">4</property>
+                <property name="n">{desc:mstrWeb.340|Vertical bar}</property>
+              </block>
+              <block listElementKey="K319" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_8</property>
+                <property name="dssid">8</property>
+                <property name="n">{desc:mstrWeb.341|Horizontal bar}</property>
+              </block>
+              <block listElementKey="K320" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_16</property>
+                <property name="dssid">16</property>
+                <property name="n">{desc:mstrWeb.342|Vertical line}</property>
+              </block>
+              <block listElementKey="K321" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_32</property>
+                <property name="dssid">32</property>
+                <property name="n">{desc:mstrWeb.343|Horizontal line}</property>
+              </block>
+              <block listElementKey="K322" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_64</property>
+                <property name="dssid">64</property>
+                <property name="n">{desc:mstrWeb.344|Pie}</property>
+              </block>
+              <block listElementKey="K323" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_128</property>
+                <property name="dssid">128</property>
+                <property name="n">{desc:mstrWeb.345|Scatter}</property>
+              </block>
+              <block listElementKey="K324" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_256</property>
+                <property name="dssid">256</property>
+                <property name="n">{desc:mstrWeb.346|Polar}</property>
+              </block>
+              <block listElementKey="K325" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_512</property>
+                <property name="dssid">512</property>
+                <property name="n">{desc:mstrWeb.347|Radar}</property>
+              </block>
+              <block listElementKey="K326" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_1024</property>
+                <property name="dssid">1024</property>
+                <property name="n">{desc:mstrWeb.348|Bubble}</property>
+              </block>
+              <block listElementKey="K327" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_2048</property>
+                <property name="dssid">2048</property>
+                <property name="n">{desc:mstrWeb.349|HiLo... Stock}</property>
+              </block>
+              <block listElementKey="K328" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_4096</property>
+                <property name="dssid">4096</property>
+                <property name="n">{desc:mstrWeb.350|Histogram}</property>
+              </block>
+              <block listElementKey="K329" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_8192</property>
+                <property name="dssid">8192</property>
+                <property name="n">{desc:mstrWeb.351|3D risers}</property>
+              </block>
+              <block listElementKey="K330" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_16384</property>
+                <property name="dssid">16384</property>
+                <property name="n">{desc:mstrWeb.352|3D floating}</property>
+              </block>
+              <block listElementKey="K331" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_32768</property>
+                <property name="dssid">32768</property>
+                <property name="n">{desc:mstrWeb.353|3D connect group}</property>
+              </block>
+              <block listElementKey="K332" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_65536</property>
+                <property name="dssid">65536</property>
+                <property name="n">{desc:mstrWeb.354|3D connect series}</property>
+              </block>
+              <block listElementKey="K333" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_131072</property>
+                <property name="dssid">131072</property>
+                <property name="n">{desc:mstrWeb.355|3D surface}</property>
+              </block>
+              <block listElementKey="K334" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_262144</property>
+                <property name="dssid">262144</property>
+                <property name="n">{desc:mstrWeb.356|3D scatter}</property>
+              </block>
+              <block listElementKey="K335" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_524288</property>
+                <property name="dssid">524288</property>
+                <property name="n">{desc:mstrWeb.3153|Gauge}</property>
+              </block>
+              <block listElementKey="K336" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_1048576</property>
+                <property name="dssid">1048576</property>
+                <property name="n">{desc:mstrWeb.3154|Funnel}</property>
+              </block>
+              <block listElementKey="K337" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_2097152</property>
+                <property name="dssid">2097152</property>
+                <property name="n">{desc:mstrWeb.3155|Pareto}</property>
+              </block>
+              <block listElementKey="K338" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_4194304</property>
+                <property name="dssid">4194304</property>
+                <property name="n">{desc:mstrWeb.3156|Box Plot}</property>
+              </block>
+              <block listElementKey="K339" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_8388608</property>
+                <property name="dssid">8388608</property>
+                <property name="n">{desc:mstrWeb.3533|Gantt}</property>
+              </block>
+              <block listElementKey="K340" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_16777216</property>
+                <property name="dssid">16777216</property>
+                <property name="n">{desc:mstrWeb.5576|Combination}</property>
+              </block>
+              <block listElementKey="ToolbarListItemHichert" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T52G_33554432</property>
+                <property name="dssid">33554432</property>
+                <property name="n">{desc:mstrWeb.9833|Hichert}</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K341" name="ToolbarDualStateButtonModel">
+          <property name="id">tbPanelStack</property>
+          <property name="tooltip">{desc:mstrWeb.4727|Panel Stack}</property>
+          <property name="cmdid">8</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="tbInsertFP" name="ToolbarDualStateButtonModel">
+          <property name="id">tbFilterPanel</property>
+          <property name="tooltip">{desc:mstrWeb.8966|Filter Panel}</property>
+          <property name="cmdid">8|FP</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+         <block listElementKey="tbInsertTC" name="ToolbarDualStateButtonModel">
+          <property name="id">tbTableControl</property>
+          <property name="tooltip">{desc:mstrWeb.11172|Table Control (Mobile)}</property>
+          <property name="cmdid">8|TC</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="visibleFeatures">configure-transactions</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K342" name="ToolbarDualStateButtonModel">
+          <property name="id">tbHTMLCont</property>
+          <property name="tooltip">{desc:mstrWeb.4538|HTML Container}</property>
+          <property name="cmdid">107</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="visibleFeatures">documents-design-mode;create-html-container</property>
+        </block>
+        <block listElementKey="selectors" name="ToolbarListModel">
+          <property name="id">tbSelectorControl</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">111</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="useDynamicBtnImg" type="String">true</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+          <property name="width">155px</property>
+          <property name="toolbarHelper/visible">true</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K343" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_0</property>
+                <property name="dssid">0</property>
+                <property name="n">{desc:mstrWeb.4729|Drop-down}</property>
+              </block>
+              <block listElementKey="K344" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_1</property>
+                <property name="dssid">1</property>
+                <property name="n">{desc:mstrWeb.4730|Slider}</property>
+              </block>
+              <block listElementKey="K345" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_4</property>
+                <property name="dssid">4</property>
+                <property name="n">{desc:mstrWeb.4733|Check Boxes}</property>
+              </block>
+              <block listElementKey="K346" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_3</property>
+                <property name="dssid">3</property>
+                <property name="n">{desc:mstrWeb.4732|Radio Buttons}</property>
+              </block>
+              <block listElementKey="K347" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_5</property>
+                <property name="dssid">5</property>
+                <property name="n">{desc:mstrWeb.4734|Button Bar}</property>
+              </block>
+              <block listElementKey="K348" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_2</property>
+                <property name="dssid">2</property>
+                <property name="n">{desc:mstrWeb.4731|Listbox}</property>
+              </block>
+              <block listElementKey="K349" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_6</property>
+                <property name="dssid">6</property>
+                <property name="n">{desc:mstrWeb.4735|Link Bar}</property>
+              </block>
+              <block listElementKey="tbSearchBox" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_0</property>
+                <property name="dssid">9</property>
+                <property name="n">{desc:mstrWeb.8967|Search Box}</property>
+              </block>
+              <block listElementKey="metricSlider" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_1</property>
+                <property name="dssid">7</property>
+                <property name="n">{desc:mstrWeb.8107|Metric Slider}</property>
+              </block>
+              <block listElementKey="metricQual" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_0</property>
+                <property name="dssid">8</property>
+                <property name="n">{desc:mstrWeb.8108|Metric Qualification}</property>
+              </block>
+			  <block listElementKey="calendarSelector" name="ItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_DatePickerSelector </property>
+                <property name="dssid">11</property>
+                <property name="n">{desc:mstrWeb.14482|Calendar Selector}</property>
+              </block> 
+              <!-- Action Selector reuse the button-bar style but have the different control type-->
+              <block listElementKey="actionSelectorButton" name="ToolbarListItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_5_4</property>
+                <property name="dssid">5|4</property> 
+                <property name="n">{desc:mstrWeb.8231|Action Selector Button}</property>
+                <property name="visibleFeatures">configure-transactions</property>
+              </block>
+              <block listElementKey="actionSelectorLink" name="ToolbarListItemInfo">
+                <property name="cssClass" type="String">ToolbarList T111_6_4</property>
+                <property name="dssid">6|4</property> 
+                <property name="n">{desc:mstrWeb.8230|Action Selector Link}</property>
+                <property name="visibleFeatures">configure-transactions</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1795" name="ToolbarListModel">
+          <property name="id">tbButton</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">106B</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="useDynamicBtnImg" type="String">true</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+          <property name="width">170px</property>
+          <property name="toolbarHelper/visible">true</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K1796" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T106B_CO</property>
+                <property name="dssid">1</property>
+                <property name="n">{desc:mstrWeb.9866|Caption only}</property>
+              </block>
+              <block listElementKey="K1797" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T106B_IO</property>
+                <property name="dssid">2</property>
+                <property name="n">{desc:mstrWeb.9867|Icon only}</property>
+              </block>
+              <block listElementKey="K1798" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T106B_IL</property>
+                <property name="dssid">3</property>
+                <property name="n">{desc:mstrWeb.9868|Icon to the left of caption}</property>
+              </block>
+              <block listElementKey="K1799" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T106B_IR</property>
+                <property name="dssid">4</property>
+                <property name="n">{desc:mstrWeb.9869|Icon to the right of caption}</property>
+              </block>
+              <block listElementKey="K1800" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T106B_IT</property>
+                <property name="dssid">5</property>
+                <property name="n">{desc:mstrWeb.9870|Icon on top of caption}</property>
+              </block>
+              <block listElementKey="K1801" name="ToolbarListItemInfo">
+                <property name="cssClass">ToolbarList T106B_Custom</property>
+                <property name="dssid">6</property>
+                <property name="n">{desc:mstrWeb.2056|Custom}</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="widgets" name="ContextMenuOpenerModel">
+          <property name="id">tbWidgets</property>
+          <property name="contextMenuName">insertWidgetToolbar</property>
+          <property name="cmdid">widget;BubbleGrid</property>
+        </block>
+        <block listElementKey="K350" name="BaseBlock"/>
+        <block listElementKey="K351" name="ToolbarButtonModel">
+          <property name="id">tbNewLayout</property>
+          <property name="tooltip">{desc:mstrWeb.5883|Layout...}</property>
+          <property name="cmdid">addNewLayout</property>
+          <property name="visibleFeatures">documents-design-mode</property>
+        </block>
+        <block listElementKey="K352" name="ToolbarButtonModel">
+          <property name="id">tbExistingLayout</property>
+          <property name="tooltip">{desc:mstrWeb.3068|Document...}</property>
+          <property name="cmdid">addExistingLayout</property>
+          <property name="visibleFeatures">documents-design-mode</property>
+        </block>
+        <block listElementKey="K353" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

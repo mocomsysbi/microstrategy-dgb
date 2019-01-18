@@ -1,0 +1,82 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if name="hasSubscriptionsOrCanSubscribe">
+        <mstrlayout:then>
+        
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="4096"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="subscriptionsByDeliveryMode">
+                        <mstrlayout:argument type="int" value="4096"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+        
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="16"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="subscriptionsByDeliveryMode">
+                        <mstrlayout:argument type="int" value="16"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="64"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="subscriptionsByDeliveryMode">
+                        <mstrlayout:argument type="int" value="64"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="128"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="subscriptionsByDeliveryMode">
+                        <mstrlayout:argument type="int" value="128"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="1"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="subscriptionsByDeliveryMode">
+                        <mstrlayout:argument type="int" value="1"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="2"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="subscriptionsByDeliveryMode">
+                        <mstrlayout:argument type="int" value="2"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="8192"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="subscriptionsByDeliveryMode">
+                        <mstrlayout:argument type="int" value="8192"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="4"/>
+                <mstrlayout:then>
+                    <mstrlayout:render name="subscriptionsByDeliveryMode">
+                        <mstrlayout:argument type="int" value="4"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+        </mstrlayout:then>
+        <mstrlayout:else>
+            <mstrlayout:render name="showMessage"/>
+        </mstrlayout:else>
+    </mstrlayout:if>
+</mstrlayout:layout>

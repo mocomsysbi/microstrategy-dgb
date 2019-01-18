@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides properties information for a IServer.
+-->
+<block name="IServerProperties">
+    <definition>
+        <!-- Refers to the current I Server version. -->
+        <property name="vr" type="String" />
+        
+        <!-- Refers to the IServer's current One Tier compatibility version. -->
+        <property name="ocv" type="Integer" />
+        
+    </definition>
+</block>

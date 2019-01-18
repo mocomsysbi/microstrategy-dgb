@@ -1,0 +1,78 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if name="isEmptyList">
+        <mstrlayout:then>
+            <mstrlayout:render name="EmptyList" />
+        </mstrlayout:then>
+        <mstrlayout:else>
+    <div>
+        <table class="mstrListView mstrSummaryIconView" id="FolderIcons">
+            <mstrlayout:list id="FolderObjects" name="getSortedList">
+                <tr>
+                    <td>
+                        <table cellspacing="0">
+                            <tr>
+			                <td>
+			                    <mstrlayout:attr name="getContextMenuAttributes">
+			                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                    </mstrlayout:attr>
+			                    <mstrlayout:attr attribute="oid" method="getID" base="FolderObjects"/>
+			                    <mstrlayout:attr attribute="oty" method="getType" base="FolderObjects"/>
+			                    <mstrlayout:render name="LayeredIconInfo">
+			                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                        <mstrlayout:argument type="boolean" value="true"/>
+			                        <mstrlayout:argument type="boolean" value="false"/>
+			                    </mstrlayout:render>
+			                </td>
+                            <td class="mstrListViewNameInfo">
+			                    <mstrlayout:attr name="getContextMenuAttributes">
+			                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                    </mstrlayout:attr>
+			                    <mstrlayout:attr attribute="oid" method="getID" base="FolderObjects"/>
+			                    <mstrlayout:attr attribute="oty" method="getType" base="FolderObjects"/>
+			                    <mstrlayout:render name="NameInfo">
+			                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                    </mstrlayout:render>
+			                </td>
+                		</tr></table>
+                    </td>
+                    <mstrlayout:next list="FolderObjects"/>
+                    <mstrlayout:if name="isFolderNotNull">
+                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:then>
+                            <td>
+                                <table cellspacing="0">
+                                    <tr>
+			                <td>
+			                    <mstrlayout:attr name="getContextMenuAttributes">
+			                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                    </mstrlayout:attr>
+			                    <mstrlayout:attr attribute="oid" method="getID" base="FolderObjects"/>
+			                    <mstrlayout:attr attribute="oty" method="getType" base="FolderObjects"/>
+			                    <mstrlayout:render name="LayeredIconInfo">
+			                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                        <mstrlayout:argument type="boolean" value="true"/>
+			                        <mstrlayout:argument type="boolean" value="false"/>
+			                    </mstrlayout:render>
+			                </td>
+                            <td class="mstrListViewNameInfo">
+			                    <mstrlayout:attr name="getContextMenuAttributes">
+			                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                    </mstrlayout:attr>
+			                    <mstrlayout:attr attribute="oid" method="getID" base="FolderObjects"/>
+			                    <mstrlayout:attr attribute="oty" method="getType" base="FolderObjects"/>
+			                    <mstrlayout:render name="NameInfo">
+			                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+			                    </mstrlayout:render>
+			                </td></tr></table>
+                            </td>
+                        </mstrlayout:then>
+                    </mstrlayout:if>
+                </tr>
+                <mstrlayout:next list="FolderObjects"/>
+            </mstrlayout:list>
+        </table>
+    </div>
+        </mstrlayout:else>
+    </mstrlayout:if>
+</mstrlayout:layout>

@@ -1,0 +1,350 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabColor">
+  <assignments>
+    <property name="title">{desc:mstrWeb.1918|Format} - {desc:mstrWeb.3436|Color and Lines}</property>
+    <property name="modelPath">parent/model/items/9</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Color_Lines.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K967" name="PropertiesEditorSelectors">
+          <property name="visibleField">parent/model/showEditorSelector</property>
+        </block>
+        <block listElementKey="K968" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2885|Fill}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showFillColor</property>
+          <property name="children">
+            <list>
+              <block listElementKey="e1" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="K969" name="ColorPicker">
+                      <property name="horizontalCaption">{desc:mstrWeb.2060|Color:}</property>
+                      <property name="modelPath">parent/parent/model/FillColor</property>
+                      <property name="enabledField">parent/model/enableFillColor</property>
+                      <property name="visibleField">!parent/parent/model/isNavBar</property>
+                      <property name="popup/viewFlags">15</property>
+                    </block>
+                    <block listElementKey="K2237" name="ColorPicker">
+                      <property name="horizontalCaption">{desc:mstrWeb.2060|Color:}</property>
+                      <property name="modelPath">parent/parent/model/FillColor</property>
+                      <property name="enabledField">parent/model/enableFillColor</property>
+                      <property name="visibleField">parent/parent/model/isNavBar</property>
+                      <property name="popup/viewFlags">3</property>
+                    </block>
+                    <block listElementKey="flashOnly" name="TextLabel">
+                      <property name="cssText">margin-left:5px;margin-top:6px</property>
+                      <property name="value">{desc:mstrWeb.4875|(Flash Only)}</property>
+                      <property name="visibleField">parent/parent/model/showFlashOnlyForFillColorSelector</property>
+                    </block>
+                    <block listElementKey="K2238" name="TextLabel">
+                      <property name="cssText">margin-left:5px;margin-top:6px</property>
+                      <property name="value">{desc:mstrWeb.9864|(Runtime only and inapplicable for preview)}</property>
+                      <property name="visibleField">parent/parent/model/isNavBar</property>
+                    </block>
+                    <block listElementKey="selColor" name="ColorPicker">
+                      <property name="cssText">margin-left:8px</property>
+                      <property name="horizontalCaption">{desc:mstrWeb.9491|Selection Color:}</property>
+                      <property name="modelPath">parent/parent/model/SelectionColor</property>
+                      <property name="visibleField">parent/parent/model/showSelectionColor</property>
+                      <property name="popup/viewFlags">43</property>
+                    </block>
+                    <block listElementKey="selFlashOnly" name="TextLabel">
+                      <property name="cssText">margin-left:5px;margin-top:6px</property>
+                      <property name="value">{desc:mstrWeb.4875|(Flash Only)}</property>
+                      <property name="visibleField">parent/parent/model/showFlashOnlyForSelector</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2233" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2885|Fill}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">parent/model/onlyButtons</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2218" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3059|Style：}</property>
+                <property name="modelPath">parent/model/FillEffect</property>
+              </block>
+              <block listElementKey="K2234" name="HBox">
+                <property name="cssText">padding-top:10px;</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2235" name="ColorPicker">
+                      <property name="horizontalCaption">{desc:mstrWeb.9862|Normal state color:}</property>
+                      <!-- reuse the FillColor -->
+                      <property name="modelPath">parent/parent/model/FillColor</property>
+                      <property name="popup/viewFlags">3</property>
+                    </block>
+                    <block listElementKey="K2237" name="ColorPicker">
+                      <property name="horizontalCaption">{desc:mstrWeb.9863|Highlight state color:}</property>
+                      <property name="cssText">padding-left:40px;</property>
+                      <property name="modelPath">parent/parent/model/BackgroundHighlightColor</property>
+                      <property name="popup/viewFlags">3</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2219" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.7809|Icon}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">parent/model/isNavBar</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2234" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2237" name="ColorPicker">
+                      <property name="horizontalCaption">{desc:mstrWeb.9863|Highlight state color:}</property>
+                      <property name="modelPath">parent/parent/model/BackgroundHighlightColor</property>
+                      <property name="popup/viewFlags">3</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K970" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3185|Line and Shape Settings}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showLineColor</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K971" name="TextDiv">
+                <property name="caption">{desc:mstrWeb.3185|Line and Shape Settings} {desc:mstrWeb.4875|(Flash Only)}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/showCorners</property>
+              </block>
+              <block listElementKey="K972" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3059|Style:}</property>
+                <property name="modelPath">parent/model/LineSettingStyle</property>
+                <property name="visibleField">parent/model/isLine</property>
+              </block>
+              <block listElementKey="K973" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3059|Style:}</property>
+                <property name="modelPath">parent/model/ShapeSettingStyle</property>
+                <property name="visibleField">!parent/model/isLine</property>
+                <property name="enabledField">parent/model/enableBordersNot3d</property>
+              </block>
+              <block listElementKey="K974" name="ColorPicker">
+                <property name="horizontalCaption">{desc:mstrWeb.2060|Color:}</property>
+                <property name="modelPath">parent/model/LineSettingColor</property>
+                <property name="popup/viewFlags">10</property>
+                <property name="enabledField">parent/model/enableBordersNot3d</property>
+              </block>
+              <block listElementKey="K975" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.3439|Weight:}</property>
+                <property name="valueField">LineSettingWeight</property>
+                <property name="enabledField">parent/model/enableBordersNot3d</property>
+                <property name="modelPath">parent/model</property>
+                <property name="maxlength">4</property>
+                <property name="totalSize">7</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="required">true</property>
+                    <property name="type">1</property>
+                    <property name="min">1</property>
+                    <property name="max">1584</property>
+                  </block>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K975" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2886|Borders}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showBorders</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K976" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="K977" name="RadioList">
+                      <property name="modelPath">parent/parent/model/getDynamicListModel("BorderOptions","propBorderStyle")</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="enabledField">parent/parent/model/enableBordersNot3d</property>
+                      <property name="visibleField">!parent/parent/model/isButton</property>
+                    </block>
+                    <block listElementKey="K2246" name="RadioList">
+                      <property name="modelPath">parent/parent/model/getDynamicListModel("ButtonBorderOptions","propButtonBorderStyle")</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="enabledField">parent/parent/model/enableBordersNot3d</property>
+                      <property name="visibleField">parent/parent/model/isButton</property>
+                    </block>
+                    <block listElementKey="K978" name="ViewStack">
+                      <property name="modelPath">parent/parent/model/propBorderStyle</property>
+                      <property name="visibleField">!parent/parent/model/isButton</property>
+                      <property name="cssText"/>
+                      <property name="views">
+                        <list>
+                          <block listElementKey="K979" name="VBox"/>
+                          <block listElementKey="K980" name="VBox">
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K981" name="HBox">
+                                  <property name="padding">1</property>
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K982" name="ListPulldown">
+                                    <property name="modelPath">parent/parent/parent/parent/parent/model/AllStyle</property>
+                                    <property name="popup/height">120px</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    <block listElementKey="K983" name="ColorPicker">
+                                    <property name="modelPath">parent/parent/parent/parent/parent/model/AllColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K984" name="HBox">
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K985" name="VBox">
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K986" name="TextLabel">
+                                    <property name="value">{desc:mstrWeb.2173|Left:}</property>
+                                    <property name="cssText">line-height:25px</property>
+                                    </block>
+                                    <block listElementKey="K987" name="TextLabel">
+                                    <property name="value">{desc:mstrWeb.2174|Right:}</property>
+                                    <property name="cssText">line-height:25px</property>
+                                    </block>
+                                    <block listElementKey="K988" name="TextLabel">
+                                    <property name="value">{desc:mstrWeb.2061|Top:}</property>
+                                    <property name="cssText">line-height:25px</property>
+                                    </block>
+                                    <block listElementKey="K989" name="TextLabel">
+                                    <property name="value">{desc:mstrWeb.2062|Bottom:}</property>
+                                    <property name="cssText">line-height:25px</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                                <block listElementKey="K990" name="VBox">
+                                  <property name="modelPath">parent/parent/parent/parent/model</property>
+                                  <property name="cssText">margin-left:2px;</property>
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K991" name="ListPulldown">
+                                    <property name="modelPath">parent/model/LeftStyle</property>
+                                    <property name="cssText">width:62px</property>
+                                    <property name="popup/height">120px</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    <block listElementKey="K992" name="ListPulldown">
+                                    <property name="modelPath">parent/model/RightStyle</property>
+                                    <property name="cssText">width:62px</property>
+                                    <property name="popup/height">120px</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    <block listElementKey="K993" name="ListPulldown">
+                                    <property name="modelPath">parent/model/TopStyle</property>
+                                    <property name="cssText">width:62px</property>
+                                    <property name="popup/height">120px</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    <block listElementKey="K994" name="ListPulldown">
+                                    <property name="modelPath">parent/model/BottomStyle</property>
+                                    <property name="cssText">width:62px</property>
+                                    <property name="popup/height">120px</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                                <block listElementKey="K995" name="VBox">
+                                  <property name="modelPath">parent/parent/parent/parent/model</property>
+                                  <property name="cssText">margin-left:2px;</property>
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K996" name="ColorPicker">
+                                    <property name="modelPath">parent/model/LeftColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    <block listElementKey="K997" name="ColorPicker">
+                                    <property name="modelPath">parent/model/RightColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    <block listElementKey="K998" name="ColorPicker">
+                                    <property name="modelPath">parent/model/TopColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    <block listElementKey="K999" name="ColorPicker">
+                                    <property name="modelPath">parent/model/BottomColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K2247" name="ViewStack">
+                      <property name="modelPath">parent/parent/model/propButtonBorderStyle</property>
+                      <property name="visibleField">parent/parent/model/isButton</property>
+                      <property name="cssText"/>
+                      <property name="views">
+                        <list>
+                          <block listElementKey="K2248" name="VBox"/>
+                          <block listElementKey="K2249" name="VBox">
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2250" name="HBox">
+                                  <property name="padding">1</property>
+                                  <property name="cssText">margin-top:14px;</property>
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K2251" name="ColorPicker">
+                                    <property name="modelPath">parent/parent/parent/parent/parent/model/AllColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    <property name="enabledField">model/parent/enableBordersNot3d</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesTabFont is the "Format - Color" tab of the properties editor.
+	-->

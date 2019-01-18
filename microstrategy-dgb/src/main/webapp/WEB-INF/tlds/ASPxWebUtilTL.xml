@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib usage="usageASP">
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>ASPxwebUtilTL</shortname>
+    <info>Microstrategy Web Utils Tag Library</info>
+    <tag alias="advancedSearchLink">
+        <name>advancedSearchLink</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="value">
+        <name>value</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="base">
+        <name>base</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="beanValue">
+        <name>beanValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute alias="property">
+            <name>mproperty</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag alias="connectionValue">
+        <name>connectionValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute alias="property">
+            <name>mproperty</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+	<tag alias="IPAValue">
+        <name>IPAValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="descriptor">
+        <name>descriptor</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="displayBean">
+        <name>displayBean</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="javascript">
+        <name>javascript</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="displayCookies">
+        <name>displayCookies</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="displayGuiComponent">
+        <name>displayGuiComponent</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="dynTableCell">
+        <name>dynTableCell</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="dynTable">
+        <name>dynTable</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="else">
+        <name>melse</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="errorValue">
+        <name>errorValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute alias="property">
+            <name>mproperty</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag alias="eventArgument">
+        <name>eventArgument</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="exportSetContentType">
+        <name>exportSetContentType</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="ifBeanValue">
+        <name>ifBeanValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute alias="property">
+            <name>mproperty</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag alias="ifConnectionValue">
+        <name>ifConnectionValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute alias="property">
+            <name>mproperty</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag alias="ifDisplayMore">
+        <name>ifDisplayMore</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="ifPlainTextExport">
+        <name>ifPlainTextExport</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="ifErrorValue">
+        <name>ifErrorValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute alias="property">
+            <name>mproperty</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag alias="ifFeature">
+        <name>ifFeature</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute alias="enum">
+            <name>menum</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag alias="ifShowAdminPage">
+        <name>ifShowAdminPage</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="ifUseIframe">
+        <name>ifUseIframe</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="logging">
+        <name>logging</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="metaContentType">
+        <name>metaContentType</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="objectPath">
+        <name>objectPath</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="pageState">
+        <name>pageState</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="panelCloseInfo">
+        <name>panelCloseInfo</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="panelContent">
+        <name>panelContent</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="panelOpenInfo">
+        <name>panelOpenInfo</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="panel">
+        <name>panel</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="panelTitle">
+        <name>panelTitle</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="performanceString">
+        <name>performanceString</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="performanceTimer">
+        <name>performanceTimer</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="preferenceValue">
+        <name>preferenceValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="quickSearch">
+        <name>quickSearch</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="requestString">
+        <name>requestString</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="resource">
+        <name>resource</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="returnTo">
+        <name>returnTo</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="returnToPath">
+        <name>returnToPath</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="scriptPageState">
+        <name>scriptPageState</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="shortcutElement">
+        <name>shortcutElement</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="shortcutOptions">
+        <name>shortcutOptions</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="shortcutProperty">
+        <name>shortcutProperty</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="shortcutSeparator">
+        <name>shortcutSeparator</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="string">
+        <name>mstring</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="then">
+        <name>mthen</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="urlEvent">
+        <name>urlEvent</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="formEvent">
+        <name>formEvent</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="wait">
+        <name>wait</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="ifTemplateValue">
+        <name>ifTemplateValue</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute alias="property">
+            <name>mproperty</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag alias="clientSideDescriptor">
+        <name>clientSideDescriptor</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="updateManager">
+        <name>updateManager</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag alias="contextMenus">
+        <name>contextMenus</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+    <tag>
+	<name>exportToExcel</name> <!-- ASP.NET Control Name (ASP.Net Exclusive)-->
+        <tagclass/>
+        <bodycontent>ASP</bodycontent>
+        <description>This tag is used when the excelDirectExport flag is set to true.
+                     Reports are exported using temp files to support Unicode characters.
+		</description>
+        <usage>
+            &lt;web:ifFeature runat="server" name="excelDirectExport" type="config" value="true"&gt;
+		    	&lt;web:mthen runat="server"&gt;
+                    &lt;web:exporttoExcel runat="server"  beanName="eb" /&gt;
+                &lt;/web:mthen&gt;
+                &lt;web:melse runat="server"&gt;
+                    &lt;web:displayBean runat="server" bean="eb" /&gt;
+                &lt;/web:melse&gt;
+            &lt;/web:ifFeature&gt;
+        </usage>
+        <attribute>
+            <name>beanName</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>The name of the bean to be loaded. (ExportBean - eb)</description>
+        </attribute>
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+        <attribute>
+            <name>styleName</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>getTarget</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>ignoreCurrent</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>status</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>renderGroupList</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag alias="licensingInfo">
+        <name>licensingInfo</name> <!-- ASP.NET Control Name -->
+        <attribute>
+            <name>runat</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Indicates that the ASP.Net control should be processed on the server</description>
+        </attribute>
+    </tag>
+</taglib>

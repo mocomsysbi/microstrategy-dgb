@@ -1,0 +1,292 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="DocumentTabTofC">
+  <assignments>
+    <property name="title">{desc:mstrWeb.3538|Document Properties} - {desc:mstrWeb.4577|Table of Contents}</property>
+    <property name="width">550px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_TOC.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K391" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5796|Table of Contents (PDF Only)}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K392" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4575|Include Table of Contents}</property>
+                <property name="valueField">EnableToc</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K393" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-left:20px</property>
+                <property name="children">
+                  <list>
+					<block listElementKey="titleHBox" name="HBox">
+					  <property name="modelPath">parent/model</property>
+                      <property name="children">
+						<list>
+						  <block listElementKey="K394" name="HTextBox">
+						    <property name="caption">{desc:mstrWeb.5054|Title:}</property>
+						    <property name="valueField">TOCTitle</property>
+						    <property name="modelPath">parent/model</property>
+						    <property name="enabledField">model/EnableToc</property>
+						    <property name="totalSize">40</property>
+						    <property name="maxlength">255</property>
+						    <property name="cssText">margin-top:5px;</property>
+						  </block>
+						  <block listElementKey="titleAlign" name="ListPulldown">
+							<property name="horizontalCaption">{desc:mstrWeb.8630|Align:}</property>
+							<property name="enabledField">parent/model/EnableToc</property>
+							<property name="modelPath">parent/model/TOCTitleAlignment</property>
+						  </block>
+						</list>
+                      </property>	
+					</block> 
+                    <block listElementKey="K395" name="HBox">
+                      <property name="modelPath">parent/model</property>
+					  <!--property name="cssText">margin-top:5px;</property-->
+					  <property name="cssClass">TOCSmallTopMargin</property>	
+                      <property name="children">
+						<list>
+						  <block listElementKey="titleFontLabel" name="TextLabel">
+							<property name="value">{desc:mstrWeb.2172|Font:}</property>
+							<property name="enabledField">parent/model/TOCTitleSetEnable</property>
+							<!--property name="cssText">margin-left:8px;margin-right:10px;margin-top:5px;</property-->
+							<property name="cssClass">TOCLeftTextAligen</property>							  
+						  </block>
+						  <block listElementKey="titleFontButton" name="ToolButton">
+							<property name="modelPath">parent/model</property>
+							<property name="cssText">background-image: url(../style/mstr/images/tbAdvancedFormatting.gif);</property>	
+							<property name="enabledField">parent/model/TOCTitleSetEnable</property>
+							<property name="cmds">OpenModalPopup|"FontFormatEditorTofC",viewProps|</property>
+							<property name="CommandEnabledOpenModalPopup" type="Boolean">true</property>
+							<property name="viewProps" type="Block">
+							  <block name="BaseBlock">
+								<property name="contentView/children/0/nameModelPath" type="String">TOCTitleFontName</property>
+								<property name="contentView/children/0/styleModelPath" type="String">TOCTitleFontBoldItalic</property>
+                                <property name="contentView/children/0/sizeModelPath" type="String">TOCTitleFontSize</property>
+								<property name="contentView/children/0/underlineField" type="String">TOCTitleFontUnderline</property>
+								<property name="contentView/children/0/strikeoutField" type="String">TOCTitleFontStrikeout</property>
+								<property name="contentView/children/0/colorModelPath" type="String">TOCTitleFontColor</property>
+							  </block>
+							</property>
+						  </block>
+						  <block listElementKey="titleColorLabel" name="TextLabel">
+						    <property name="value">{desc:mstrWeb.8632|Fill Color:}</property>
+							<property name="enabledField">parent/model/TOCTitleSetEnable</property>
+							<!--property name="cssText">margin-left:18px;margin-right:8px;margin-top:5px;</property-->
+							<property name="cssClass">TOCRightTextAligen</property>	
+						  </block>
+						  <block listElementKey="titleColorPicker" name="ColorPicker">
+							<property name="modelPath">parent/model</property>
+							<property name="enabledField">parent/model/TOCTitleSetEnable</property>
+							<property name="modelPath">parent/model/TOCTitleFillColor</property>
+							<property name="popup/viewFlags">11</property>
+						  </block>
+						  <block listElementKey="InheritCheckBox" name="CheckBox">
+							<property name="caption">{desc:mstrWeb.9078|Inherit formatting from body}</property>
+							<property name="enabledField">model/EnableToc</property>
+							<property name="valueField">TOCTitleEnableInherit</property>
+							<property name="modelPath">parent/model</property>
+							<property name="cssText">margin-left:8px;margin-right:8px;margin-top:5px;</property>
+							<!--property name="cssClass">TOCInheritAligen</property-->	  
+						  </block>
+						</list>
+                      </property>
+                    </block>
+					<!--============================================Body===========================================-->
+					<block listElementKey="bodyLabel" name="TextLabel">
+					  <property name="value">{desc:mstrWeb.4579|Body}</property>
+					  <!--property name="cssText">margin-top:15px;</property-->
+					  <property name="cssClass">TOCLargeTopMargin</property>
+					</block>
+					<block listElementKey="bodyProp" name="HBox">
+					  <property name="modelPath">parent/model</property>
+					  <!--property name="cssText">margin-top:5px;</property-->
+					  <property name="cssClass">TOCSmallTopMargin</property>	
+                      <property name="children">
+						<list>
+						  <block listElementKey="bodyFontLabel" name="TextLabel">
+							<property name="value">{desc:mstrWeb.2172|Font:}</property>
+							<property name="cssText">margin-left:8px;margin-right:10px;margin-top:5px;</property>
+						  </block>
+						  <block listElementKey="bodyFontButton" name="ToolButton">
+							<!--property name="caption">{desc:mstrWeb.2172|Font:}</property-->
+							<property name="modelPath">parent/model</property>
+							<property name="cssText">background-image: url(../style/mstr/images/tbAdvancedFormatting.gif);</property>
+							<property name="enabledField">model/EnableToc</property>
+							<property name="cmds">OpenModalPopup|"FontFormatEditorTofC",viewProps|</property>
+							<property name="CommandEnabledOpenModalPopup" type="Boolean">true</property>
+							<property name="viewProps" type="Block">
+							  <block name="BaseBlock">
+								<property name="contentView/children/0/nameModelPath" type="String">TOCFontName</property>
+								<property name="contentView/children/0/styleModelPath" type="String">TOCFontBoldItalic</property>
+                                <property name="contentView/children/0/sizeModelPath" type="String">TOCFontSize</property>
+								<property name="contentView/children/0/underlineField" type="String">TOCFontUnderline</property>
+								<property name="contentView/children/0/strikeoutField" type="String">TOCFontStrikeout</property>
+								<property name="contentView/children/0/colorModelPath" type="String">TOCFontColor</property>
+							  </block>
+							</property>
+						  </block>
+						  <block listElementKey="bodyColorLabel" name="TextLabel">
+						    <property name="value">{desc:mstrWeb.8632|Fill Color:}</property>
+							<!--property name="cssText">margin-left:18px;margin-right:8px;margin-top:5px;</property-->
+							<property name="cssClass">TOCRightTextAligen</property>
+						  </block>
+						  <block listElementKey="bodyColorPicker" name="ColorPicker">
+							<property name="enabledField">parent/model/EnableToc</property>
+							<property name="modelPath">parent/model/TOCFillColor</property>
+							<property name="popup/viewFlags">11</property>
+						  </block>
+						</list>
+					  </property>
+					</block>
+					<!--============================================Indentation===========================================-->
+					<block listElementKey="IndentLabel" name="TextLabel">
+					  <property name="value">{desc:mstrWeb.9169|Indentation}</property>
+					  <!--property name="cssText">margin-top:15px;</property-->
+					  <property name="cssClass">TOCLargeTopMargin</property>
+					</block>
+					<block listElementKey="IndentHBox" name="HBox">
+					  <!--property name="cssText">margin-top:5px;</property-->
+					  <property name="cssClass">TOCSmallTopMargin</property>	
+					  <property name="modelPath">parent/model</property>
+                      <property name="children">
+						<list>
+						  <block listElementKey="TOCLeftIndent" name="HTextBox">
+            			    <property name="caption">{desc:mstrWeb.1934|Left:}</property>
+						    <property name="valueField">TOCLeftIndent</property>
+						    <property name="modelPath">parent/model</property>
+						    <property name="enabledField">model/EnableToc</property>
+						    <property name="totalSize">5</property>
+						    <property name="maxlength">10</property>
+						    <!--property name="cssText">margin-left:8px;margin-right:10px;margin-top:5px;</property-->
+							<property name="cssClass">TOCHTextAligen</property>
+							<property name="validator">
+							  <block name="FieldValidator">
+								<property name="required">true</property>
+								<property name="type">7</property>
+								<property name="min">0</property>
+							  </block>
+							</property>
+						  </block>
+						  <block listElementKey="InchesLabel" name="TextLabel">
+						    <property name="value">{desc:mstrWeb.3710|Inches}</property>
+							<property name="cssText">margin-right:40px;margin-top:7px;</property>
+						  </block>
+						  <block listElementKey="TOCRightIndent" name="HTextBox">
+            			    <property name="caption">{desc:mstrWeb.1936|Right:}</property>
+						    <property name="valueField">TOCRightIndent</property>
+						    <property name="modelPath">parent/model</property>
+						    <property name="enabledField">model/EnableToc</property>
+						    <property name="totalSize">5</property>
+						    <property name="maxlength">10</property>
+						    <!--property name="cssText">margin-left:8px;margin-right:10px;margin-top:5px;</property-->
+							<property name="cssClass">TOCHTextAligen</property>
+							<property name="validator">
+							  <block name="FieldValidator">
+								<property name="required">true</property>
+								<property name="type">7</property>
+								<property name="min">0</property>
+							  </block>
+							</property>
+						  </block>
+						  <block listElementKey="RightInchesLabel" name="TextLabel">
+						    <property name="value">{desc:mstrWeb.3710|Inches}</property>
+							<property name="cssText">margin-right:40px;margin-top:7px;</property>
+						  </block>
+						</list>
+					  </property>
+					</block>
+					<!--============================================Border===========================================-->
+					<block listElementKey="BorderLabel" name="TextLabel">
+					  <property name="value">{desc:mstrWeb.2886|Borders}</property>
+					  <!--property name="cssText">margin-top:15px;</property-->
+					  <property name="cssClass">TOCLargeTopMargin</property>
+					</block>
+					<block listElementKey="BorderVBox" name="VBox">
+					  <property name="modelPath">parent/model</property>
+                      <property name="children">
+						<list>
+						  <block listElementKey="BorderStyleList" name="ListPulldown">
+						    <property name="horizontalCaption">{desc:mstrWeb.3059|Style:}</property>
+						    <property name="cssText">margin-left:8px;margin-right:10px;margin-top:5px;</property>
+							<!--property name="cssClass">TOCBorderColorList</property-->
+							<property name="enabledField">parent/model/EnableToc</property>
+							<property name="modelPath">parent/model/TOCBorderStyle</property>
+						  </block>
+						  <block listElementKey="BorderColorHBox" name="HBox">
+							<property name="modelPath">parent/model</property>
+							<!--property name="cssText">margin-top:5px;</property-->
+							<property name="cssClass">TOCSmallTopMargin</property>	
+							<property name="children">
+							  <list>
+								<block listElementKey="BorderColorLabel" name="TextLabel">
+								  <property name="value">{desc:mstrWeb.2060|Color:}</property>
+								  <!--property name="cssText">margin-left:8px;margin-right:2px;margin-top:5px;</property-->
+								  <property name="cssClass">TOCBorderColorLabel</property>
+								</block>
+								<block listElementKey="BorderColorPicker" name="ColorPicker">
+								  <property name="enabledField">parent/model/TOCBorderStyleEnable</property>
+								  <property name="modelPath">parent/model/TOCBorderColor</property>
+								  <property name="popup/viewFlags">10</property>
+							    </block>
+							  </list>
+							</property>
+						  </block>
+						  <block listElementKey="BorderWeight" name="HTextBox">
+							<property name="caption">{desc:mstrWeb.3439|Weight:}</property>
+						    <property name="modelPath">parent/model</property>
+							<property name="valueField">TOCBorderWeight</property>
+						    <property name="enabledField">parent/model/TOCBorderStyleEnable</property>
+						    <property name="totalSize">7</property>
+						    <property name="maxlength">4</property>
+						    <!--property name="cssText">margin-left:8px;margin-right:10px;margin-top:5px;</property-->
+							<property name="cssClass">TOCHTextAligen</property>
+							<property name="validator">
+             				 <block name="FieldValidator">
+								<property name="type">1</property>
+								<property name="min">1</property>
+								<property name="max">1584</property>
+								<property name="required">true</property>
+							  </block>
+							</property>  
+						  </block>
+						</list>
+					  </property>
+					</block>
+                    <block listElementKey="K400" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.4574|Show tab leader}</property>
+                      <property name="valueField">TabLeader</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="enabledField">model/EnableToc</property>
+                      <property name="cssText">margin-top:5px;</property>
+                    </block>
+                    <block listElementKey="K2170" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.8323|Include Page Header / Footer}</property>
+                      <property name="valueField">IncludePageHeaderFooter</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="enabledField">model/EnableToc</property>
+                      <property name="cssText">margin-top:5px;</property>
+                    </block>
+                    <block listElementKey="K401" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.4576|Before layout}:</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("BeforeLayoutItems","BeforeLayout")</property>
+                      <property name="enabledField">parent/model/EnableToc</property>
+                      <property name="visibleField">parent/model/hasMultipleLayouts</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		DocumentTabTofC is the "Document Properties - Table of Contents" tab of the document properties editor.
+	-->

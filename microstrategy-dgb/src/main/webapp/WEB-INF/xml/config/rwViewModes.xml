@@ -1,0 +1,29 @@
+<shortcut-list name="RWViewModesPicker" version="1.0">
+    <attributes>
+    	<attribute name="ty" value="pkr" />
+    </attributes>
+    <shortcut desc="Express Mode" desc-id="mstrWeb.11694" feature-id="rw-static-view-mode-available" name = "static">
+    	<attributes>
+    		<attribute name="class" value="tbStaticViewMode" />
+            <attribute name="value" value="1"/>    				
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Interactive Mode" desc-id="mstrWeb.14530" feature-id="rw-interactive-view-mode-available" name = "interactive">
+    	<attributes>
+    		<attribute name="class" value="tbInteractiveViewMode" />
+            <attribute name="value" value="2"/>        				
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Editable Mode" desc-id="mstrWeb.4691" feature-id="rw-editable-view-mode-available" name = "editable">
+    	<attributes>
+    		<attribute name="class" value="tbEditableViewMode" />
+            <attribute name="value" value="4"/>        				
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Flash Mode" desc-id="mstrWeb.14531" feature-id="rw-flash-view-mode-available" name = "flash">
+    	<attributes>
+    		<attribute name="class" value="tbFlashViewMode" />
+            <attribute name="value" value="8"/>        				
+    	</attributes>
+    </shortcut>    		    		    
+</shortcut-list>

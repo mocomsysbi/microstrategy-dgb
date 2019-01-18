@@ -1,0 +1,105 @@
+<shortcut-list-set name="reportPanelsToolbar" feature-id="is-not-visualization-mode;is-viewable-report" version="1.0">
+  <attributes>
+    <attribute name="at" value="UniqueReportID"/>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  
+  <shortcut-list name="panels">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="frame.accordion" check-feature-id="object-browser-visible-in-accordion" extra-url="&amp;currentTabName=workingSet" desc="Object Browser" desc-id="mstrWeb.1908" enable-feature-id="enable-object-browser" feature-id="!dhtml;not-datamart;object-browser-editor" iframe="true" name="tbObjectBrowserHTML" type="button">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSetPermanentBrowserSetting" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingName" value="accordionReportView"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingValue" value="0"/>
+      </event>	
+      <event XMLmerge_id="2" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="accordion"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false"/>
+      </event>
+      <event XMLmerge_id="3" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSetPermanentBrowserSetting" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingName" value="accordionReportView"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingValue" value="1"/>
+      </event>
+      <event XMLmerge_id="4" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="accordion"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbObjectBrowserAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-object-browser" value="tbObjectBrowserAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  
+  <shortcut-list name="filters">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+
+	<shortcut base-bean="pbb" check-feature-id="open" desc="Page-By Section" desc-id="mstrWeb.2725" enable-feature-id="enable-pageby" feature-id="!dhtml;is-viewable-report;show-pageby" iframe="true" name="tbPageByHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="pbb"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false"/>
+      </event>
+      <event XMLmerge_id="2" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="pbb"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbPageByAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-pageby" value="tbPageByAcc.gif"/>
+      </attributes>
+    </shortcut>
+    
+    <shortcut base-bean="rb" check-feature-id="check-show-report-filter" feature-id="report-filter;!dhtml;!is-view-report" desc="Report Filter" desc-id="mstrWeb.1983" iframe="true" name="tbReportFilterHTML" type="button">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="rfe"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="rfe"/>
+      </event>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-show-report-filter" feature-id="report-filter;!dhtml;is-view-report" desc="Cube Filter" desc-id="mstrWeb.4979" iframe="true" name="tbCubeFilterHTML" type="button">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="rfe"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="rfe"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbReportFilterAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-show-view-filter" feature-id="use-view-filter-editor;!dhtml;not-datamart" desc="View Filter" desc-id="mstrWeb.1984" enable-feature-id="enable-view-filter-editor" iframe="true" name="tbViewFilterHTML" type="button">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventCloseReportFrameElement" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="vfep"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="vfep"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbViewFilterAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-view-filter-editor" value="tbViewFilterAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-show-prompt-details" feature-id="!dhtml;show-prompt-details;reprompt" desc="Prompt Details" desc-id="mstrWeb.3950" iframe="true" name="tbPromptDetailsHTML" type="button">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="promptDetails"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="promptDetails"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbPromptDetailsAcc.gif"/>
+      </attributes>
+    </shortcut>
+    </shortcut-list>
+</shortcut-list-set>

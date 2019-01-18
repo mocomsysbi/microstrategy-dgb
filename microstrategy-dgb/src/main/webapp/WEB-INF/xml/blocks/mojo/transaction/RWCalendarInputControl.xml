@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWCalendarInputControl" inherits="RWDataInputObject, RangeConfig">
+    <definition>
+      <!-- Include time -->
+      <property name="ict" type="Boolean" />
+  </definition>
+</block>

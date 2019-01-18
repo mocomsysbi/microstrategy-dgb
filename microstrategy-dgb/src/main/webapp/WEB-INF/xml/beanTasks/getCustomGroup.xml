@@ -1,0 +1,19 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask>
+  <basicInfo desc="This Task retrieves the information regarding a custom group object from the metadata.">
+    <parameter name="customGroupId" desc="Specifies the DSS id of the custom group object" required="true"/>
+    <parameter name="styleName" desc="Specifies the Style to use from the Style Catalog." defvalue="MojoCustomGroupStyle" required="false" type="simplestring"/>
+  </basicInfo>
+  
+  <!--
+    This information describes how the task is defined in terms of an existing 
+    Event. 1001 is the EnumCustomGroupBeanEvents.CUSTOMGROUP_EVENT_BROWSE event
+  -->
+  <eventInfo eventID="1001" >
+    <argument name="objectId" value="customGroupId" source="parameter"  />
+  </eventInfo>
+  
+  <beanInfo name="cgb" bean-type="CustomGroupBean">
+    <style name="styleName" source="parameter" />
+  </beanInfo>
+</beanTask>

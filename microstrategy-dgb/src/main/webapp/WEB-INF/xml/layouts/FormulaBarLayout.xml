@@ -1,0 +1,36 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="mstrFormulaFields">
+        <div class="group">
+            <div>
+                <mstrlayout:render name="errorMessage"/>
+            </div>
+            <div>
+                <mstrlayout:render name="formulaUnitsTitle"/>
+                <mstrlayout:render name="formulaUnitsList"/>
+                <mstrlayout:if method="isDhtml">
+                    <mstrlayout:else>
+                        <mstrlayout:if name="showAggFromBaseCheckBox">
+                            <mstrlayout:then>
+                                <mstrlayout:render name="formulaAggregateFromBaseTitle"/>
+                                <mstrlayout:render name="formulaAggregateFromBaseInput"/>
+                            </mstrlayout:then>
+                        </mstrlayout:if>
+                    </mstrlayout:else>
+                </mstrlayout:if>
+            </div>
+            <div>
+                <mstrlayout:render name="formulaNameTitle"/>
+                <mstrlayout:render name="formulaNameText"/>
+                <mstrlayout:render name="formulaDynamicAliasTitle"/>
+                <mstrlayout:render name="formulaDynamicAliasInput"/>
+            </div>
+            
+            <mstrlayout:if method="isDhtml">
+                <mstrlayout:else>
+                    <mstrlayout:render name="formulaDefinitionSection"/>
+                </mstrlayout:else>
+            </mstrlayout:if>
+        </div>
+    </div>
+</mstrlayout:layout>

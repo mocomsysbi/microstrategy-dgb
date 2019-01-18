@@ -1,0 +1,6 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="SubTypeConfig">
+    <definition>
+        <property name="st" type="Integer"/>
+    </definition>
+</block>

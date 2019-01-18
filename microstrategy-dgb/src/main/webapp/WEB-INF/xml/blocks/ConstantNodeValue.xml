@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ConstantNodeValue is an ExpressionNodeValue representing a constant value.
+	-->		
+	<block name="ConstantNodeValue" inherits="ExpressionNodeValue">
+		<definition>
+			<property name="constantDataType" type="Integer" />
+			<property name="constantValue" type="String" />
+		</definition>
+		<assignments>
+			<property name="nodeType">3</property> <!-- Constant -->
+		</assignments>
+	</block>

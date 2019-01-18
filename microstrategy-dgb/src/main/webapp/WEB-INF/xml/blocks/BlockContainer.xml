@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		TaskModel inherits from the BaseModel.  The sole purpose of this block is to transport
+		multiple models and views down to the client.
+	-->
+	<block name="BlockContainer" inherits="BaseModel">
+		<definition>
+			<!-- The collection of model blocks. -->
+			<property name="models" type="List" />			
+
+			<!-- The collection of view blocks. -->
+			<property name="views" type="List" />			
+			
+			<!-- The id of the view to render. -->
+			<property name="renderableView" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.BlockContainer</property>
+		</assignments>
+	</block>

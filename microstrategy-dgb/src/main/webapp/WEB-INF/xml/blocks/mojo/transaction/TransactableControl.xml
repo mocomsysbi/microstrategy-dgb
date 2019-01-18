@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name = "TransactableControl" >
+    <definition>
+      <!-- Control Key -->
+      <property name = "ctlKey" type = "String" />
+      
+      <!-- target keys -->
+      <property name = "tks" type = "String" />
+
+      <!-- control definition (RWDataInputObject). Optional -->
+      <property name = "pr" type = "Block" />
+
+      <!-- data driven config optional -->
+      <property name = "ddic" type = "Block" />
+    </definition>
+</block>

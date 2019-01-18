@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarItalicButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbItalic</property>
+		<property name="tooltip">{desc:mstrWeb.2719|Italic}</property>
+		<property name="cmdid">Italic</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

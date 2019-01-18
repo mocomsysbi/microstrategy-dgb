@@ -1,0 +1,44 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ToolbarModel" name="IVEActionBarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="toggleFilters" name="ToolbarButtonModel">
+          <property name="id">toggleFilters</property>
+          <property name="tooltip">{desc:mstrWeb.3265|Actions}</property>
+          <property name="cmdid">toggleFilters</property>
+        </block>
+        <block listElementKey="toggleDropZones" name="ToolbarButtonModel">
+          <property name="id">toggleDropZones</property>
+          <property name="tooltip">{desc:mstrWeb.3265|Actions}</property>
+          <property name="cmdid">toggleDropZones</property>
+        </block>
+        <block listElementKey="toggleDatasetObjects" name="ToolbarButtonModel">
+          <property name="id">toggleDatasetObjects</property>
+          <property name="tooltip">Toggle Dataset Objects</property>
+          <property name="cmdid">toggleDatasetObjects</property>
+        </block>
+        <block listElementKey="togglePageBy" name="ToolbarButtonModel">
+          <property name="id">togglePageBy</property>
+          <property name="tooltip">{desc:mstrWeb.3265|Actions}</property>
+          <property name="cmdid">togglePageBy</property>
+        </block>
+        <block listElementKey="toggleLocalFilters" name="ToolbarButtonModel">
+          <property name="id">toggleLocalFilters</property>
+          <property name="tooltip">{desc:mstrWeb.3265|Actions}</property>
+          <property name="cmdid">toggleLocalFilters</property>
+        </block>
+        <block listElementKey="removeCurrentVisualization" name="ToolbarButtonModel">
+          <property name="id">removeCurrentVisualization</property>
+          <property name="tooltip">Remove Current Visualization</property>
+          <property name="cmdid">removeCurrentVisualization</property>
+        </block>
+        <block listElementKey="getVisualizationGallery" name="ToolbarButtonModel">
+          <property name="id">getVisualizationGallery</property>
+          <property name="tooltip">Insert Visualization</property>
+          <property name="cmdid">getVisualizationGallery</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

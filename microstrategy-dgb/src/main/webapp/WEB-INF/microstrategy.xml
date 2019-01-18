@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<application>
+  <global>
+    <parameter name="adminServersFile" value="AdminServers.xml"/> 
+    <parameter name="dtdLocation" value="/WEB-INF/xml/dtds">
+      <description><![CDATA[This is the directory where the application looks for DTDs used by Layout Definitions]]></description>
+    </parameter>
+    <parameter name="reloadConfigurationFiles" value="false"/>
+    <parameter name="localesFile" value="/WEB-INF/xml/locales.xml"/>
+     <parameter name="preferencesGroupsFile" value="preferencesGroups.xml"/>
+    <parameter name="resourcesFolderImage" value="../images"/>
+    <parameter name="resourcesFolderSavedImage" value="savedImages/"/>
+    <parameter name="clusterHttpURL" value=""/>
+    <parameter name="resourcesFolderHelp" value="../help"/>
+    <parameter name="resourcesFolderCustomHelp" value="../plugins"/>
+    <parameter name="resourcesFolderJavaScript" value="../javascript"/>
+    <parameter name="resourcesFolderJSP" value="../jsp"/>
+    <parameter name="resourcesFolderStyle" value="../style"/>
+    <parameter name="resourcesFolderStyleFixedFont" value="../style/fixed-font"/>
+    <parameter name="resourcesFolderStyleFixedFontDB" value="../style/fixed-font/db"/>
+    <parameter name="resourcesFolderCustom" value=".."/>
+    <parameter name="serverConfigFilesDefaultLocation" value="/WEB-INF/xml/"/>
+    <parameter name="serverLogFilesDefaultLocation" value="/WEB-INF/log/"/>
+    <parameter name="serverLogPropertiesFile" value="logger.properties"/>
+    <parameter name="styleCatalogFile" value="styleCatalog.xml"/>
+    <parameter name="sysPreferenceDefinitionFile" value="sys_definitions.xml"/>
+    <parameter name="sysServerDefaultsFile" value="sys_defaults.xml"/>
+    <parameter name="serverFormatterFile" value="/WEB-INF/xml/format_config.xml"/>
+    <parameter name="webApiErrorsFolder" value="/WEB-INF/classes/resources/"/>
+    <parameter name="webApiErrorsClassPath" value="resources"/>
+    <parameter name="iframeJSP" value="/jsp/iframe.jsp"/>
+    <parameter name="xhrJSP" value="/jsp/xhr.jsp"/>
+    <parameter name="adminServletDeploymentName" value="mstrWebAdmin"/>
+    <parameter name="webServletDeploymentName" value="mstrWeb"/>
+    <parameter name="serverAdminServletDeploymentName" value="mstrServerAdmin"/>
+    <parameter name="eventsFile" value="/WEB-INF/xml/config/events.xml"/>
+    <parameter name="blockLibrary" value="blocks/blockLibrary.xml">
+      <description>This parameter specifies the location of the (Web) Block Library Configuration File.</description>
+    </parameter>
+    <parameter name="prependSlashToResource" value="false">
+      <description>Whether to prefix resource paths used in ServletContainerServices with a slash.</description>
+    </parameter>
+    <parameter name="sslTruststore" value="/WEB-INF/trusted.jks">
+      <description>Trusted certificates for TLS communication with the Intelligence Server.</description>
+    </parameter>
+    <parameter name="sslTruststorePwd" value="mstr123"/>
+    <parameter name="sslClientKeystore" value="/WEB-INF/clientKey.jks">
+      <description>Client private key and certificate.
+      	Needed if Intelligence Server TLS is configured to require client certificates.</description>
+    </parameter>
+    <parameter name="sslClientKeystorePwd" value="mstr123"/>
+<parameter name="serverType" value="web"/>
+<parameter name="serverType" value="web"/>
+  </global>
+  <controllers>
+    <controller name="mstrDocumentImages">
+      <parameters>
+        <parameter name="imagesPath" value="../../images"/>
+      </parameters>
+    </controller>
+    <controller name="mstrWeb">
+      <parameters>
+        <parameter name="blockLibrary" value="blocks/blockLibrary.xml">
+          <description><![CDATA[This parameter specifies the location of the Block Library Configuration File.]]></description>
+        </parameter>
+        <parameter name="blankReportId" value="05B202B9999F4C1AB960DA6208CADF3D"/>
+        <parameter name="blankReportWritingId" value="8154998B41AE3328BBB70692605904E4"/>
+        <parameter name="blankXdaReportId" value="1ADEAA2C4754E2DE5DFEC08022DAFDC6"/>
+        <parameter name="blankAnalysisId" value="52576385422A3F9F174B97BE6E361116"/>
+        <parameter name="blankHtml5DashboardId" value="4802DE4C4C18F434C75BFA84EC8A5E4B"/>
+        <parameter name="configFile" value="pageConfig.xml"/>
+        <parameter name="controllerClass" value="com.microstrategy.web.app.MSTRWebController"/>
+        <parameter name="defaultPDFImagesFolder" value="/images/"/>
+        <parameter name="excelDirectExport" value="false"/>
+        <parameter name="externalSecurityClass" value="com.microstrategy.web.app.DefaultExternalSecurity"/>
+        <parameter name="formatPropertiesMapping" value="/WEB-INF/xml/formattingProperties.xml"/>
+        <parameter name="intelligenceServerPollingFrequency" value="300000"/>
+        <parameter name="servletDeploymentName" value="mstrWeb"/>
+        <parameter name="useServletForPDF" value="true"/>
+        <parameter name="servletEventHandler" value="com.microstrategy.web.app.beans.AdminServletEventHandler"/>
+        <parameter name="servletWebComponentName" value="com.microstrategy.web.app.beans.ServletWebComponent"/>
+      </parameters>
+    </controller>
+    <controller name="mstrWeb72GraphLoader">
+      <parameters>
+        <parameter name="graphBeanName" value="gb"/>
+        <parameter name="mainServletPath" value="mstrWeb"/>
+        <parameter name="reportBeanPath" value="mstrWeb.report.frame.rb"/>
+        <parameter name="resourceName" value="MSIGraphLoader.asp"/>
+      </parameters>
+    </controller>
+    <controller name="mstrWeb72RebuildReport">
+      <parameters>
+        <parameter name="mainServletPath" value="mstrWeb"/>
+        <parameter name="reportBeanPath" value="mstrWeb.report.frame.rb"/>
+        <parameter name="resourceName" value="RebuildReport.asp"/>
+      </parameters>
+    </controller>
+    <controller name="mstrWebAdmin">
+      <parameters>
+        <parameter name="blockLibrary" value="blocks/blockLibrary.xml">
+          <description><![CDATA[This parameter specifies the location of the Block Library Configuration File.]]></description>
+        </parameter>
+        <parameter name="configFile" value="/WEB-INF/xml/Admin_pageConfig.xml"/>
+        <parameter name="controllerClass" value="com.microstrategy.web.admin.AdminController"/>
+        <parameter name="defaultEvent" value="3055"/>
+        <parameter name="diagnosticsFileMbSizeLimit" value="1"/>
+        <parameter name="externalSecurityClass" value="com.microstrategy.web.app.DefaultExternalSecurity"/>
+        <parameter name="servletDeploymentName" value="mstrWebAdmin"/>
+        <parameter name="servletEventHandler" value="com.microstrategy.web.app.beans.AdminServletEventHandler"/>
+        <parameter name="intelligenceServerPollingFrequency" value="300000"/>
+        <parameter name="servletWebComponentName" value="com.microstrategy.web.app.beans.ServletWebComponent"/>
+      </parameters>
+    </controller>
+    <controller name="mstrServerAdmin">
+      <parameters>
+        <parameter name="configFile" value="/WEB-INF/xml/serverAdminConfig.xml"/>
+        <parameter name="controllerClass" value="com.microstrategy.web.app.ServerAdminController"/>
+        <parameter name="externalSecurityClass" value="com.microstrategy.web.app.DefaultExternalSecurity"/>
+        <parameter name="globalFeaturesClass" value="com.microstrategy.web.admin.ServerAdminFeatures"/>
+        <parameter name="servletDeploymentName" value="mstrServerAdmin"/>
+      </parameters>
+    </controller>
+    <controller name="TaskProcessorServlet">
+      <parameters>
+        <parameter name="configFile" value="/WEB-INF/xml/taskProcessorControllerConfig.xml">
+          <description>This is the configuration file that is used by the TaskProcessorController class.</description>
+        </parameter>
+        <parameter name="controllerClass" value="com.microstrategy.web.controller.TaskProcessorController">
+          <description>This is the Fully Qualified Class Name of the AppController class to instantiate.</description>
+        </parameter>
+        <parameter name="taskFactoryClass" value="com.microstrategy.web.tasks.AggregatingTaskFactory">
+          <description>This is the Fully Qualified Class Name of the TaskFactory class to instantiate.</description>
+        </parameter>
+        <parameter name="aggregatingTaskFactoryConfig" value="aggregatingTaskFactoryConfig.xml">
+          <description>This is the configuration file that is used by the Aggregating Task Factory class.</description>
+        </parameter>
+        <parameter name="blockLibrary" value="blocks/blockLibrary.xml"/>
+        <parameter name="beanTaskDir" value="beanTasks">
+          <description>This is the directory where bean task definition files are located.</description>
+        </parameter>
+        <parameter name="servletDeploymentName" value="taskProc"/>
+      </parameters>
+    </controller>
+    <controller name="TaskAdminServlet">
+      <parameters>
+        <parameter name="controllerClass" value="com.microstrategy.web.controller.TaskAdminController">
+          <description>This is the Fully Qualified Class Name of the AppController class to instantiate.</description>
+        </parameter>
+        <parameter name="servletDeploymentName" value="taskAdmin"/>
+      </parameters>
+    </controller>
+    <controller name="TaskViewerServlet">
+      <parameters>
+        <parameter name="controllerClass" value="com.microstrategy.web.controller.TaskViewerController">
+          <description>This is the Fully Qualified Class Name of the AppController class to instantiate.</description>
+        </parameter>
+        <parameter name="servletDeploymentName" value="taskViewer"/>
+      </parameters>
+    </controller>
+    <controller name="ResourceFeed">
+      <parameters>
+        <parameter name="controllerClass" value="com.microstrategy.web.controller.ResourceFeedController">
+          <description>This is the Fully Qualified Class Name of the AppController class to instantiate.</description>
+        </parameter>
+        <parameter name="configFile" value="/WEB-INF/xml/config/resources.xml">
+          <description>The path to the configuration file</description>
+        </parameter>
+        <parameter name="servletDeploymentName" value="resourceFeed"/>     
+      </parameters>
+    </controller>
+  </controllers>
+</application>

@@ -1,0 +1,36 @@
+<shortcut-list-set name="userMgrToolbar" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="createObjects">
+    <shortcut base-bean="ugb" desc="Create New Group" desc-id="mstrWeb.5203" append-state="true" name="tbNewGroup" type="button" feature-id="create-groups" href="#"  iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreateUserGroup">
+        <argument base-bean="ugb" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectID" value="objectID"/>
+      </event>
+    </shortcut>
+    <shortcut base-bean="ugb" desc="Create New User" desc-id="mstrWeb.5202" append-state="true" name="tbNewUser" type="button" feature-id="create-users-and-groups" href="#"  iframe="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreateUser">
+        <argument base-bean="ugb" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectID" value="objectID"/>
+      </event>
+    </shortcut>
+  </shortcut-list>  
+  <shortcut-list name="userMgrView">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="View: List" desc-id="mstrWeb.3382" name="tbListView" type="button"  check-feature-id="check-user-manager-mode-list-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeUserManagerViewModeType">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentUserManagerViewModeType" value="0"/>
+      </event>
+    </shortcut>
+    <shortcut desc="View: Icon" desc-id="mstrWeb.3381" name="tbLargeIcons" type="button" check-feature-id="!check-user-manager-mode-list-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeUserManagerViewModeType">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentUserManagerViewModeType" value="1"/>
+      </event>
+    </shortcut>
+    <shortcut desc="Refresh" desc-id="mstrWeb.773" name="tbRefresh" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventRefresh"/>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

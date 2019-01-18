@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		ListValidator is a block used for validating ListView blocks.
+	-->
+	<block name="ListValidator" inherits="BaseModel">
+		<definition>
+			<!-- A boolean indicating whether this ListView should require that there always be a selected index. -->
+			<property name="required" type="Boolean" />
+			
+			<!-- The string message to be shown to the user when data is invalid. -->
+			<property name="errMessage" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ListValidator</property>
+		</assignments>
+	</block>

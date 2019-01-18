@@ -1,0 +1,63 @@
+<shortcut-list-set feature-id="rw-interactive-view-mode-eplus" name="reportPanelsToolbar" version="1.0">
+  <attributes>
+    <attribute name="at" value="rwb_viewer"/>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  
+  <shortcut-list name="saveList" config-src="/WEB-INF/xml/config/rwSaveControl.xml"/>
+  <shortcut-list name="editControls" config-src="/WEB-INF/xml/config/rwEditControls.xml"/>
+  <shortcut-list name="viewModes" config-src="/WEB-INF/xml/config/rwViewModeControls.xml"/>
+  
+  <shortcut-list name="panels">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="rwframe.rwb" desc="Dataset Objects" desc-id="mstrWeb.2943" feature-id="rw-interactive-view-mode-eplus" name="tbDatasetObjects" type="button" >
+      <attributes>
+        <attribute name="cmdtp" value="2"/>
+        <attribute name="cmdid" value="datasetObjPanel"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rwframe.rwb" desc="Document Structure" desc-id="mstrWeb.5854" feature-id="rw-interactive-view-mode-eplus" name="tbOutlinePanel" type="button" >
+      <attributes>
+        <attribute name="cmdtp" value="2"/>
+        <attribute name="cmdid" value="outlinePanel"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rwframe.rwb" desc="*Notes*" name="tbNotesPanel" type="button" feature-id="web-is-notes-available">
+      <attributes>
+        <attribute name="cmdtp" value="2"/>
+        <attribute name="cmdid" value="notesPanel"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rwframe.rwb" desc="*Related Reports" name="tbRelatedReportsPanel" type="button" >
+	  <attributes>
+        <attribute name="cmdtp" value="2"/>
+        <attribute name="cmdid" value="relatedReportsPanel"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list feature-id="" name="view">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="rwframe.pbb" check-feature-id="open" desc="Grouping" desc-id="mstrWeb.2941" feature-id="!dhtml" iframe="true" name="tbPageByHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="pbb"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="false"/>
+      </event>
+      <event XMLmerge_id="2" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="pbb"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbPageByAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

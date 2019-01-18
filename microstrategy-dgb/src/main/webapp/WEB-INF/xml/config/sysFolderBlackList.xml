@@ -1,0 +1,6 @@
+<!-- The blacklist of the system folder. When the folder name is put into this list, then access to it is forbidden. -->
+<!-- The id comes from EnumDSSXMLFolderNames. -->
+<sys-folder-blacklist>
+		<sys-folder id="84" />
+		<sys-folder id="87" />
+</sys-folder-blacklist>

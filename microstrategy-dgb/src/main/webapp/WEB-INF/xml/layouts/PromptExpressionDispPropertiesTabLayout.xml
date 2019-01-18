@@ -1,0 +1,140 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptDispId, so its tab id is tabPromptDispId -->
+<mstrlayout:layout>
+		<table width="80%">
+			<colgroup>
+			      <col width="10%"/>
+			      <col width="60%"/>
+			</colgroup>
+			<tr>
+				<td><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5234" /></mstrlayout:render></td>
+				<td>
+					<input type="text" name="title" id="p_title" class="mstrInputTextLong" cmdid="setTitle" onkeyup="microstrategy.bone('tabPromptDispId').updateText(this);">
+						<mstrlayout:attr name="addTitleAsValue"/>
+					</input>
+					<input type="checkbox" id="checkbox_title" name="showTitle"/> 
+					<label for="checkbox_title"> Show </label>
+				</td>
+			</tr>
+			<tr>
+				<td><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5235" /></mstrlayout:render></td>
+				<td>
+					<textarea rows="1" cols="1" class="mstrPromptDescription" name="desc" id="p_desc" cmdid="setDesc" onkeyup="microstrategy.bone('tabPromptDispId').updateText(this);">
+						<mstrlayout:render name="description"/>
+					</textarea>
+					<input type="checkbox" id="checkbox_desc" name="showDesc"/> 
+					<label for="checkbox_desc"> Show </label>
+				</td>
+			</tr>
+		</table>
+		<table width="80%">
+			<colgroup>
+			      <col width="20%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr>
+				<td colspan="2">
+					<input type="checkbox" id="checkbox_error" value="showErr"/> 
+					<label for="checkbox_error"> Show error </label>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="checkbox" id="checkbox_incr" value="showInc"/> 
+					<label for="checkbox_incr"> Show Incremental fetch </label>
+				</td>
+			</tr>
+			<tr>
+				<td><span class="mstrPromptLabelOffset"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5316" /></mstrlayout:render></span></td>
+				<td><input type="text" size="3" name="incrSize" class="mstrInputTextShort" value="15"/></td>
+			</tr>
+		</table>
+		<hr/>
+		<span class="title"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5315" /></mstrlayout:render></span>
+
+		<table width="55%">
+			<tr> 
+				<td colspan="2">
+					<mstrlayout:if name="isRequired">
+						<mstrlayout:then>
+							<input type="checkbox" name="required" id="p_required" cmdid="setRequired" value="required" onclick="microstrategy.bone('tabPromptStyle').updateCheck(this);" checked="checked"/>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="required" id="p_required" cmdid="setRequired" value="required" onclick="microstrategy.bone('tabPromptStyle').updateCheck(this);"/>
+						</mstrlayout:else>
+					</mstrlayout:if>
+					<label for="p_required"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5237" /></mstrlayout:render></label>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<mstrlayout:if name="hasMin">
+						<mstrlayout:then>
+							<input type="checkbox" name="p_min_check" id="p_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptStyle').updateCheck(this);microstrategy.bone('tabPromptStyle').updateText(getObj('p_min_val'));" checked="checked"/>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="p_min_check" id="p_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptStyle').updateCheck(this);microstrategy.bone('tabPromptStyle').updateText(getObj('p_min_val'));"/>
+						</mstrlayout:else>
+					</mstrlayout:if>
+					<label for="p_min_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5238" /></mstrlayout:render></label>
+				</td>
+				<td>
+					<input type="text" name="p_min_value" id="p_min_value" class="mstrInputTextMedium" cmdid="setMinVal" onkeyup="microstrategy.bone('tabPromptStyle').updateText(this);microstrategy.bone('tabPromptStyle').updateCheckByName('p_min_check', true)">
+						<mstrlayout:attr name="addMinValueAttr"/>
+					</input>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<mstrlayout:if name="hasMax">
+						<mstrlayout:then>
+							<input type="checkbox" name="p_max_check" id="p_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptStyle').updateCheck(this);microstrategy.bone('tabPromptStyle').updateText(getObj('p_max_val'));" checked="checked"/>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="p_max_check" id="p_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptStyle').updateCheck(this);microstrategy.bone('tabPromptStyle').updateText(getObj('p_max_val'));"/>
+						</mstrlayout:else>
+					</mstrlayout:if>
+					<label for="p_max_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5239" /></mstrlayout:render></label>
+				</td>
+				<td>
+					<input type="text" name="p_max_value" id="p_max_value" class="mstrInputTextMedium" cmdid="setMaxVal" onkeyup="microstrategy.bone('tabPromptStyle').updateText(this);microstrategy.bone('tabPromptStyle').updateCheckByName('p_max_check', true);">
+						<mstrlayout:attr name="addMaxValueAttr"/>
+					</input>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="checkbox" id="checkbox_rest" value="showRestr"/> 
+					<label for="checkbox_rest"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5317" /></mstrlayout:render></label>
+				</td>
+			</tr>			
+		</table>
+	<hr/>
+	<span class="title"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5318" /></mstrlayout:render></span>
+	<table width="70%">
+		<tr>
+			<td><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5258" /></mstrlayout:render></td>
+			<td>
+				<mstrlayout:render name="stylesCombo" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="checkbox" id="checkbox_cart" value="showSCart" /> 
+				<label for="checkbox_cart"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5319" /></mstrlayout:render></label>
+			</td>
+		</tr>
+		<mstrlayout:if name="showCartOrder">
+			<mstrlayout:then>
+				<tr>
+					<td colspan="2">
+						<img src="..\images\1ptrans.gif" width="20px" alt="      "/>
+						<input type="checkbox" id="checkbox_o_cart" value="showSCart" /> 
+						<label for="checkbox_o_cart"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5320" /></mstrlayout:render></label>
+					</td>
+				</tr>
+			</mstrlayout:then>
+		</mstrlayout:if>
+	</table>
+		
+</mstrlayout:layout>

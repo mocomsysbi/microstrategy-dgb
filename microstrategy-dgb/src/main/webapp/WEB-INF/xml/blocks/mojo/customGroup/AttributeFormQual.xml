@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Attribute Form Qualification
+-->
+<block name="AttributeFormQual" inherits="ExpNode">
+    <definition>
+        <!-- Attribute ObjectInfo -->
+        <property name="a" type="Block" />
+        
+        <!-- Attribute Form ObjectInfo -->
+        <property name="fm" type="Block" />
+        
+        <!-- Function (operator) -->
+        <property name="fn" type="Integer" />
+        
+        <!-- Function type if not present it is assumed to be generic. -->
+        <property name="fnt" type="Integer" />
+        
+        <!-- List of constants ConstantNode -->
+        <property name="cs" type="List" />
+    </definition>
+</block>

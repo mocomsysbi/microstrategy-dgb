@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- 
+        This block represents a Report Page By tree.
+    -->
+    <block name="PageByTree" annotation="xml:elementName=pbt">
+        <definition>
+            <!-- The list of page by elements. -->
+            <property name="es" type="List" />
+
+            <!-- The PageByHeader block. -->
+            <property name="ph" type="Block" />
+        </definition>
+    </block>

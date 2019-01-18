@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarCommaButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbComma</property>
+		<property name="tooltip">{desc:mstrWeb.2190|Comma Style}</property>
+		<property name="cmdid">Comma</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

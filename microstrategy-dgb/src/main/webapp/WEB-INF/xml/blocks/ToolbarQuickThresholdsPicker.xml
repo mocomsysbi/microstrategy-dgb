@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarQuickThresholdsPicker" inherits="ToolbarListModel">
+	<assignments>
+        <property name="id">tbAutoThresholds</property>
+        <property name="valueForm">dssid</property>
+        <property name="type">PICKERBUTTON</property>
+        <property name="cmdid">quickThresholds</property>
+        <property name="popup|id">quickThresholds</property>
+        <property name="title" type="String">{desc:mstrWeb.5963|Quick Thresholds, select a metric first.}</property>
+        <property name="enableReselect">true</property>
+        <property name="updateOnClick" type="Boolean">true</property>
+        <property name="selectedIndicesList">0</property>
+	</assignments>
+</block>

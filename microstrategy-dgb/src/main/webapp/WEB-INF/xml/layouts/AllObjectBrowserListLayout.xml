@@ -1,0 +1,84 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="mstrBrowser">
+	    <div id='folerBoxContainerID' class='folerBoxContainer'>
+	    	<mstrlayout:render name="ancestors" />
+			<mstrlayout:slot name="s3">
+				<mstrlayout:render name="openParent" />
+			</mstrlayout:slot>
+		   <mstrlayout:render name="displayFormatIcon" />
+	    </div>
+    
+        <mstrlayout:render name="search"/>
+        <div style="position:relative">
+        <div sty="fileList">
+        	<mstrlayout:slot name="s1">
+        		<div class="mstrSmallIconView" id="list">
+                	<mstrlayout:list id="contents" name="getContents" base="bean">
+                		<mstrlayout:argument type="boolean" value="true"/>
+                		<mstrlayout:if name="shouldDisplayObject">
+                			<mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+                			<mstrlayout:then>
+		                    <div>
+		                        <mstrlayout:attr name="getUnitAttributes">
+		                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+		                        </mstrlayout:attr>
+	
+		                        <mstrlayout:attr name="getContextMenuAttributes">
+	                        		<mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                    		</mstrlayout:attr>
+	
+	                            <!-- <span class="image"><span></span></span>-->
+	                            <mstrlayout:render name="layeredIconInfo"><!-- replace <span> above to dynamically set style class... -->
+	                                <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                            </mstrlayout:render>
+	
+		                        <mstrlayout:render name="unit">
+		                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+		                        </mstrlayout:render>
+		                    </div>
+		            	</mstrlayout:then>
+		            	<mstrlayout:else>
+		            		<div class="mstrTreeStrong">
+		            			<mstrlayout:render name="layeredIconInfo"><!-- replace <span> above to dynamically set style class... -->
+	                                <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                            </mstrlayout:render>
+	                            	
+		                        <mstrlayout:render name="unit">
+		                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+		                        </mstrlayout:render>
+		                    </div>
+		            	</mstrlayout:else>
+            		</mstrlayout:if>
+	                </mstrlayout:list>
+	                <mstrlayout:if name="shouldRenderFolderLinks">
+                		<mstrlayout:then>
+                             <mstrlayout:list id="links" name="getLinks" base="bean">
+	                		    <div>
+	                        		<mstrlayout:attr name="getLinkAttributes">
+	                            		<mstrlayout:argument list="links" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                        		</mstrlayout:attr>
+                                    
+                                    <!-- <span class="image"><span></span></span> -->
+		                            <mstrlayout:render name="layeredIconInfo"><!-- replace <span> above to dynamically set style class... -->
+		                                <mstrlayout:argument list="links" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+		                                <mstrlayout:argument type="boolean" value="true"/>
+		                            </mstrlayout:render>
+                            
+	                        		<mstrlayout:render name="unit">
+	                            		<mstrlayout:argument list="links" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+	                        		</mstrlayout:render>
+	                    		</div>
+                   			</mstrlayout:list>
+                    	</mstrlayout:then>
+            		</mstrlayout:if>
+        </div>
+        </mstrlayout:slot>
+        </div>
+        </div>
+        <mstrlayout:slot name="s2">
+        <mstrlayout:render name="incrementalFetch"/>
+        <mstrlayout:render name="objectCount"/>
+        </mstrlayout:slot>
+    </div>
+</mstrlayout:layout>

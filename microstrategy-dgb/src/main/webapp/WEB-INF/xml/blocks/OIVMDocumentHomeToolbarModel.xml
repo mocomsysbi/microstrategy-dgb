@@ -1,0 +1,107 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RibbonListModel" name="OIVMDocumentHomeToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K2222" name="ToolbarButtonModel">
+          <property name="id">tbShareURL</property>
+          <property name="tooltip">{desc:mstrWeb.8101|Share}</property>
+          <property name="cmdid">ShowSharingEditor</property>
+          <property name="visibleFeatures">scheduling</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+        <block listElementKey="K2223" name="ToolbarButtonModel">
+          <property name="id">tbPrint</property>
+          <property name="tooltip">{desc:mstrWeb.314|Print}</property>
+          <property name="cmdid">printPDF</property>
+          <property name="visibleFeatures">print;enable-print;web-export-to-pdf;not-navigation-document;!rw-analysis-view-mode</property>
+        </block>
+        <block listElementKey="K2224" name="ToolbarDynamicListModel">
+          <property name="title" type="String">{desc:mstrWeb.246|Export}</property>
+          <property name="id">tbExportPicker</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">export</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="useDynamicBtnImg" type="String">true</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+          <property name="visibleFeatures">show-rw-export-menu;not-navigation-document;!rw-analysis-view-mode</property>
+          <property name="width">65px</property>
+        </block>
+        <block listElementKey="K2225" name="ToolbarSaveButton">
+          <property name="tooltip">{desc:mstrWeb.118|Save}</property>
+          <property name="cmdid">dSave</property>
+          <!--DE31918 documents-design-mode -->
+          <property name="visibleFeatures">save-report;enable-save-report;!rw-ive-mode-available;rw-optimized-interactive-view-mode;</property>
+        </block>
+        <block listElementKey="K2226" name="ToolbarButtonModel">
+          <property name="id">tbCreatePersonalView</property>
+          <property name="tooltip">{desc:mstrWeb.9173|Create Personal View}</property>
+          <property name="cmdid">createPersonalView</property>
+          <property name="visibleFeatures">not-navigation-document</property>
+        </block>
+        <block listElementKey="K2227" name="ToolbarButtonModel">
+          <property name="id">tbSend</property>
+          <property name="tooltip">{desc:mstrWeb.2249|Send Now...}</property>
+          <property name="cmdid">sendNow</property>
+          <property name="visibleFeatures">use-immediate-delivery;not-navigation-document</property>
+          <property name="enabledFeatures">enable-send-now</property>
+        </block>
+        <block listElementKey="K2228" name="ToolbarButtonModel">
+          <property name="id">tbAddToHistoryList</property>
+          <property name="tooltip">{desc:mstrWeb.1982|Add to History List}</property>
+          <property name="cmdid">saveToInbox</property>
+          <property name="visibleFeatures">add-history-list;not-navigation-document</property>
+          <property name="enabledFeatures">enable-add-history-list</property>
+          <property name="listenerMethods">onselectionchange,onDocReload</property>
+        </block>
+        <block listElementKey="K2229" name="ToolbarButtonModel">
+          <property name="id">tbScheduled</property>
+          <property name="tooltip">{desc:mstrWeb.4675|Schedule delivery to History List}</property>
+          <property name="cmdid">scheduleHL</property>
+          <property name="visibleFeatures">scheduling;not-navigation-document</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+        <block listElementKey="K2230" name="ToolbarButtonModel">
+          <!-- <property name="visibleFeatures">check-execute-mode;quicklinks-refresh;page-full-screen-mode</property> -->
+          <!-- <property name="listenerMethods">onselectionchange,onScreenModeChange</property> -->
+          <!-- DE31074 we need for this option to read Refresh, but execute the re-run command -->
+          <property name="id">tbReExecute</property>
+          <property name="tooltip">{desc:mstrWeb.773|Refresh}</property>
+          <property name="cmdid">rerun</property>
+          <property name="visibleFeatures">check-execute-mode;</property>
+        </block>
+        <block listElementKey="K2231" name="ToolbarRepromptButton">
+          <property name="visibleFeatures">check-execute-mode;reprompt</property>
+          <property name="listenerMethods">onselectionchange</property>
+        </block>
+        <block listElementKey="K2232" name="ToolbarButtonModel">
+          <property name="id">tbResetDocument</property>
+          <property name="tooltip">{desc:mstrWeb.11168|Reset Selections}</property>
+          <property name="cmdid">resetSelections</property>
+          <property name="visibleFeatures">rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="K2233" name="ToolbarDynamicListModel">
+          <property name="visibleFeatures">!rw-analysis-view-mode</property>
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="cmdid">zoom</property>
+          <property name="title" type="String">{desc:mstrWeb.11141|Zoom}</property>
+          <property name="width">125px</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K2234" name="ToolbarDesignModeButton">
+          <property name="cmdid">designViewMode</property>
+          <property name="tooltip">{desc:mstrWeb.1088|Edit}</property>
+          <property name="visibleFeatures">!rw-ive-mode-available;documents-design-mode</property>
+        </block>
+        <block listElementKey="K1397" name="ToolbarButtonModel">
+          <property name="cmdid">editableMode</property>
+          <property name="tooltip">{desc:mstrWeb.14673|Run as Editable Mode}</property>
+          <property name="visibleFeatures">rw-editable-view-mode-available</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

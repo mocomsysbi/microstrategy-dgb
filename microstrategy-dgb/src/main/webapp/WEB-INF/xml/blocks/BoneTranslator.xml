@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- BoneTranslator is a model that communicates with a bone commands object to populate
+		and save properties -->
+	<block name="BoneTranslator" inherits="BaseModel">
+		<definition>
+			<!-- The boneId is the id of the bone to translate. -->
+			<property name="boneId" type="String" />
+
+			<!-- fields is a pipe (|) delimited string of fields to translate. -->
+			<property name="fields" type="String" />
+
+			<!-- The name of the field that determines if this model is enabled. -->
+			<property name="visibleField" type="String" />
+			
+			<!-- The enabled field dictates whether to translate the bone or not. -->
+			<property name="enabled" type="Boolean" />
+			
+			<!-- A set of properties that the parent is going to be notified if they change -->
+			<property name="broadcastProperties" type="Block" />
+			
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.bones.editors.BoneTranslator</property>
+			<property name="boneId">rwb_viewer</property>
+			<property name="enabled">true</property>
+			<property name="fields"></property>
+		</assignments>
+	</block>

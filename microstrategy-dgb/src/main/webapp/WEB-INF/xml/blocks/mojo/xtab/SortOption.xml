@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the data associated with a simple sort option for Advanced Sort Editor.
+--> 
+<block name="SortOption">
+    <definition>
+        <!-- The text to be displayed in the pulldown -->
+        <property name="n" type="String"/>
+        
+        <!-- Sort value -->
+        <property name="v" type="String" />
+    </definition>
+</block>

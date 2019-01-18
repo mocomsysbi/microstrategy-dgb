@@ -1,0 +1,176 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isDhtml">
+   <mstrlayout:then>
+    <mstrlayout:include file="/WEB-INF/xml/layouts/RWReportFrameProcessor.xml">
+    </mstrlayout:include>
+   </mstrlayout:then>
+  </mstrlayout:if>
+  
+  <mstrlayout:base id="rb" method="getTargetBean" base="bean"/>
+  <mstrlayout:render name="iFrameComponent">
+      <mstrlayout:argument value="report_error"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="designModeButtonBar"/>
+ 
+  <table cellpadding="0" cellspacing="0" width="100%" class="repLayout">
+      <colgroup span="1">
+          <col span="1" width="*"/>
+          <col span="1" width="100%"/>
+      </colgroup>
+      <tr>
+          <td class="repLayoutLeft" valign="top">
+              <mstrlayout:if name="isFeatureAvailable">
+                  <mstrlayout:argument value="object-browser-editor"/>
+                  <mstrlayout:then>
+                      <mstrlayout:if name="isDesignTemplateDisplayed">
+                          <mstrlayout:then>
+                              <mstrlayout:render name="objectBrowser">
+                                  <mstrlayout:argument value="ob"/>
+                                  <mstrlayout:argument value="ReportObjBrowserTabManagerStyle"/>
+                              </mstrlayout:render>
+                          </mstrlayout:then>
+                          <mstrlayout:else>
+                              <mstrlayout:if name="isFeatureAvailable">
+                                  <mstrlayout:argument value="modify-report-list"/>
+                                  <mstrlayout:then>
+                                      <mstrlayout:if name="isFeatureAvailable">
+                                          <mstrlayout:argument value="use-report-filter-editor"/>
+                                          <mstrlayout:then>
+                                              <mstrlayout:render name="bean">
+                                                  <mstrlayout:argument value="ob"/>
+                                              </mstrlayout:render>
+                                          </mstrlayout:then>
+                                      </mstrlayout:if>
+                                  </mstrlayout:then>
+                              </mstrlayout:if>
+                          </mstrlayout:else>
+                      </mstrlayout:if>
+                  </mstrlayout:then>
+              </mstrlayout:if>
+          </td>
+          <td class="repLayoutRight" valign="top">
+              <mstrlayout:if name="isDesignFilterDisplayed">
+                  <mstrlayout:then>
+                      <mstrlayout:if name="isFeatureAvailable">
+                          <mstrlayout:argument value="report-filter-supported"/>
+                          <mstrlayout:then>
+                              <mstrlayout:render name="bean">
+                                  <mstrlayout:argument value="rfe"/>
+                                  <mstrlayout:argument value="ReportFilterStyle"/>
+                              </mstrlayout:render>
+                               <mstrlayout:render name="bean">
+                                  <mstrlayout:argument value="rfe_XDAObjectsBrowser"/>
+                                  <mstrlayout:argument value="filterMDXObjectsStyle"/>
+                              </mstrlayout:render>
+                          </mstrlayout:then>
+                      </mstrlayout:if>
+                      <mstrlayout:if name="isFeatureAvailable">
+                          <mstrlayout:argument value="report-limit-supported"/>
+                          <mstrlayout:then>
+                              <mstrlayout:render name="bean">
+                                  <mstrlayout:argument value="rle"/>
+                                  <mstrlayout:argument value="MDXReportLimitStyle"/>
+                              </mstrlayout:render>
+                          </mstrlayout:then>
+                      </mstrlayout:if>
+                     <form action="">
+                        <mstrlayout:attr name="getReportFormAttributes"/>
+                         <mstrlayout:render name="reportFormHiddenInputs"/>
+                        <mstrlayout:render name="bean">
+                            <mstrlayout:argument value="frame.formula"/>
+                        </mstrlayout:render>
+                    </form>
+                      <mstrlayout:if name="isFeatureAvailable">
+                          <mstrlayout:argument value="use-view-filter-editor"/>
+                          <mstrlayout:then>
+                              <mstrlayout:render name="bean">
+                                  <mstrlayout:argument value="vfep"/>
+                                  <mstrlayout:argument value="ViewFilterPanelStyle"/>
+                              </mstrlayout:render>
+                          </mstrlayout:then>
+                      </mstrlayout:if>
+                  </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if name="isDesignTemplateDisplayed">
+                  <mstrlayout:then>
+                      <mstrlayout:render name="bean">
+                          <mstrlayout:argument value="pbb"/>
+                          <mstrlayout:argument value="PageByStyle"/>
+                      </mstrlayout:render>
+                      <form action="">
+                          <mstrlayout:attr name="getReportFormAttributes"/>
+                          <mstrlayout:render name="reportFormHiddenInputs"/>
+                          <mstrlayout:render name="bean">
+                              <mstrlayout:argument value="attForms"/>
+                          </mstrlayout:render>
+                          <mstrlayout:render name="editorMessage">
+                              <mstrlayout:argument value="frame_message_before_data"/>
+                          </mstrlayout:render>
+                      </form>
+                      <div class="mi-dm-container">
+                          <mstrlayout:if name="getOutputFormat" base="rb" operator="neq" value="4">
+                              <mstrlayout:then>
+                                  <mstrlayout:if name="getViewMode" base="rb" operator="eq" value="2">
+                                      <mstrlayout:then>
+                                          <mstrlayout:if name="isDhtml">
+                                              <mstrlayout:then>
+                                                  <mstrlayout:render name="bean">
+                                                      <mstrlayout:argument value="rb"/>
+                                                      <mstrlayout:argument value="GraphDesignModeStyle"/>
+                                                  </mstrlayout:render>
+                                              </mstrlayout:then>
+                                              <mstrlayout:else>
+                                                  <mstrlayout:render name="bean">
+                                                      <mstrlayout:argument value="rb"/>
+                                                      <mstrlayout:argument value="ReportDesignModeStyle"/>
+                                                  </mstrlayout:render>
+                                              </mstrlayout:else>
+                                          </mstrlayout:if>
+                                      </mstrlayout:then>
+                                      <mstrlayout:else>
+                                          <mstrlayout:if name="getViewMode" base="rb" operator="eq" value="3">
+                                              <mstrlayout:then>
+                                                  <mstrlayout:if name="isDhtml">
+                                                      <mstrlayout:then>
+                                                          <mstrlayout:render name="bean">
+                                                              <mstrlayout:argument value="rb"/>
+                                                              <mstrlayout:argument value="GraphDesignModeStyle"/>
+                                                          </mstrlayout:render>
+                                                          <mstrlayout:render name="bean">
+                                                              <mstrlayout:argument value="rb"/>
+                                                              <mstrlayout:argument value="ReportDesignModeStyle"/>
+                                                          </mstrlayout:render>
+                                                      </mstrlayout:then>
+                                                      <mstrlayout:else>
+                                                          <mstrlayout:render name="bean">
+                                                              <mstrlayout:argument value="rb"/>
+                                                              <mstrlayout:argument value="ReportDesignModeStyle"/>
+                                                          </mstrlayout:render>
+                                                      </mstrlayout:else>
+                                                  </mstrlayout:if>  
+                                              </mstrlayout:then>
+                                              <mstrlayout:else>
+                                                  <mstrlayout:render name="bean">
+                                                      <mstrlayout:argument value="rb"/>
+                                                      <mstrlayout:argument value="ReportDesignModeStyle"/>
+                                                  </mstrlayout:render>
+                                              </mstrlayout:else>
+                                          </mstrlayout:if>  
+                                      </mstrlayout:else>
+                                  </mstrlayout:if>
+                              </mstrlayout:then>
+                              <mstrlayout:else>
+                                  <mstrlayout:render name="bean">
+                                      <mstrlayout:argument value="rb"/>
+                                      <mstrlayout:argument value="ReportDesignModeStyle"/>
+                                  </mstrlayout:render>
+                              </mstrlayout:else>
+                          </mstrlayout:if>
+                      </div>
+                  </mstrlayout:then>
+              </mstrlayout:if>
+          </td>
+      </tr>
+  </table>
+</mstrlayout:layout>

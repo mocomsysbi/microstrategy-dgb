@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents a runtime instance of a Report Writer document.
+--> 
+<block name="WaterMark">
+    <definition>
+	    <!-- WatermarkType:  0-Inherit; 1-No Watermark; 2-Text;3-Image -->
+	    <property name="tp" type="Integer"/>
+	    <!-- image source -->
+		<property name="imgSrc" type="String"/>
+	    <!-- ImageScale: Any value less than 0 means Auto. Any other value is the percentage that we use for the scale -->
+	    <property name="imgScale" type="Integer"/>
+    </definition>
+    <assignments>
+        <property name="tp">1</property>
+        <property name="imgScale">0</property>
+    </assignments>
+</block>

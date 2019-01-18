@@ -1,0 +1,8 @@
+<widget>
+    <title desc="DATASET OBJECTS" desc-id="mstrWeb.3311"/>
+    <toolbar>
+        <button type="0" title-desc-id="mstrWeb.3033" img-src="../images/1ptrans.gif"  extra-attributes="id='tbDatasetNew' class='mstrIcon-tb' sty='btn' b='new'" feature-id="manage-datasets;rw-editable-view-mode-eplus" />
+        <button type="0" title-desc-id="mstrWeb.3035" img-src="../images/1ptrans.gif"  extra-attributes="id='tbDatasetDelete' class='mstrIcon-tb mstrIcon-disabled' sty='btn' b='del'" feature-id="manage-datasets;rw-editable-view-mode-eplus" />
+    </toolbar>
+</widget>
+

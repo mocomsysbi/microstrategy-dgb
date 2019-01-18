@@ -1,0 +1,235 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <table class="mstrListView" cellspacing="0" id="HistoryList">
+        <mstrlayout:attr name="getMainTableAttributes" />
+        <mstrlayout:if name="isInboxEmpty">
+            <mstrlayout:else>
+                <colgroup>
+                    <col class="typ" />
+                    <col class="nam" />
+                    <col class="sta" />
+                    <col class="mct" />
+                    <!--
+                    <col class="mct" />
+                    <col class="mct" />
+                    -->
+                    <mstrlayout:if name="isFeatureAvailable">
+                        <mstrlayout:argument value="!export;!pdf;!report-details"/>
+                        <mstrlayout:else>
+                            <col class="act" />
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <col class="rem" />
+                </colgroup>
+            </mstrlayout:else>
+        </mstrlayout:if>
+        <thead>
+            <tr>
+                <td scope="col">
+                <div class='typ' >&nbsp;</div>
+                </td> <!-- this space is need for IE6 -->
+                <td scope="col">
+                <div>
+                    <mstrlayout:render name="SortingTitle">
+                        <mstrlayout:argument type="int" value="945"/> <!-- name-->
+                        <mstrlayout:argument type="int" value="12"/> <!-- WebMessageSortByTitle -->
+                    </mstrlayout:render>
+               </div>	                    
+                </td>
+                <td scope="col">
+                <div>
+                    <mstrlayout:render name="SortingTitle">
+                    	<mstrlayout:argument type="int" value="187"/> <!-- Status -->
+                        <mstrlayout:argument type="int" value="8"/> <!-- WebMessageSortByRequestStatus -->
+                    </mstrlayout:render>
+                </div>
+                </td>
+                <td scope="col">
+                <div>
+                    <mstrlayout:render name="SortingTitle">
+                        <mstrlayout:argument type="int" value="2546"/> <!--Message Creation Time used for Message Start Time-->
+                        <mstrlayout:argument type="int" value="7"/> <!-- WebMessageSortByRequestStartTime -->
+                    </mstrlayout:render>
+                </div>
+                </td>
+                <!--
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="2546"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="Sort">
+                        <mstrlayout:argument type="int" value="1"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="3281"/>
+                    </mstrlayout:render>
+                    <mstrlayout:render name="Sort">
+                        <mstrlayout:argument type="int" value="3"/>
+                    </mstrlayout:render>
+                </td>
+                -->
+                <mstrlayout:if name="isFeatureAvailable">
+                    <mstrlayout:argument value="!export;!pdf;!report-details"/>
+                    <mstrlayout:else>
+                        <td scope="col"><div class='act'>                            
+                            <mstrlayout:render name="Descriptor">
+                                <mstrlayout:argument type="int" value="3265"/>
+                            </mstrlayout:render></div>
+                        </td>
+                    </mstrlayout:else>
+                </mstrlayout:if>
+                <td scope="col" class="mstrTitle-button">
+                <div>
+                   <mstrlayout:render name="removeButton" />
+                </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+        <mstrlayout:if name="isInboxEmpty">
+            <mstrlayout:then>
+                <tr>
+                    <td colspan="6">
+                        <div class="mstrListViewEmptyList">
+                            <mstrlayout:render name="Descriptor">
+                                <mstrlayout:argument type="int" value="412"/> <!-- Your history list is empty. -->
+                            </mstrlayout:render>
+                        </div>
+                    </td>
+                </tr>
+            </mstrlayout:then>
+            <mstrlayout:else>
+                <mstrlayout:list id="parentInboxMessages" name="getMessages">
+                <tr>
+                    <mstrlayout:attr name="getMessageAttributes" >
+                        <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                    </mstrlayout:attr>
+                    <td>
+                        <mstrlayout:attr name="getContextMenuAttributes">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:attr>
+                        <mstrlayout:render name="LayeredIconInfo">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <td>
+                        <mstrlayout:attr name="getContextMenuAttributes">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:attr>
+                         <mstrlayout:render name="NameInfo">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <td>
+                        <mstrlayout:render name="StatusInfo">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                        <mstrlayout:render name="MarkUnread">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <td>
+                        <mstrlayout:render name="StartTimeInfo">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <mstrlayout:if name="isFeatureAvailable">
+                        <mstrlayout:argument value="!export;!pdf;!report-details"/>
+                        <mstrlayout:else>
+                            <td style="white-space:nowrap;">
+                                <mstrlayout:render name="ExportInfo">
+                                    <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                                </mstrlayout:render>
+                                <mstrlayout:render name="PDFExportInfo">
+                                    <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                                </mstrlayout:render>
+                                <mstrlayout:render name="DetailsInfo">
+                                    <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                                </mstrlayout:render>
+                                <mstrlayout:render name="RenameIcon">
+                                    <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                                </mstrlayout:render>
+                            </td>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <td>
+                        <mstrlayout:render name="RemoveInfo">
+                            <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    </tr>
+                    <mstrlayout:list id="childInboxMessages" name="getChildMessages">
+                        <mstrlayout:argument list="parentInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                    <tr>
+                        <mstrlayout:attr name="getMessageAttributes" >
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:attr>
+                    <td>
+                        <mstrlayout:attr name="getContextMenuAttributes">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:attr>
+                        <mstrlayout:render name="LayeredIconInfo">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <td>
+                        <mstrlayout:attr name="getContextMenuAttributes">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:attr>
+                        <mstrlayout:render name="NameInfo">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <td>
+                        <mstrlayout:render name="StatusInfo">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <td>
+                        <mstrlayout:render name="StartTimeInfo">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <!--
+                    <td>
+                        <mstrlayout:render name="CreateTimeInfo">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    <td>
+                        <mstrlayout:render name="ModificationTimeInfo">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    -->
+                    <mstrlayout:if name="isFeatureAvailable">
+                        <mstrlayout:argument value="!export;!pdf;!report-details"/>
+                        <mstrlayout:else>
+                            <td style="white-space:nowrap;">
+                                <mstrlayout:render name="ExportInfo">
+                                        <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                                    </mstrlayout:render>
+                                <mstrlayout:render name="PDFExportInfo">
+                                        <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                                    </mstrlayout:render>
+                                <mstrlayout:render name="DetailsInfo">
+                                        <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                                </mstrlayout:render>
+                            </td>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <td>
+                        <mstrlayout:render name="RemoveInfo">
+                            <mstrlayout:argument list="childInboxMessages" type="com.microstrategy.web.objects.WebMessage"/>
+                        </mstrlayout:render>
+                    </td>
+                    </tr>
+                    </mstrlayout:list>
+                </mstrlayout:list>
+            </mstrlayout:else>
+        </mstrlayout:if>
+        </tbody>
+    </table>
+</mstrlayout:layout>

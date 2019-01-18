@@ -1,0 +1,275 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorGeneralModel">
+  <definition>
+    <property name="generalTabEnabled" type="Boolean"/>
+    <property name="HTMLType" type="Block"/>
+    <property name="PortalState" type="Block"/>
+    <property name="ExportOptions" type="Block"/>
+    <property name="TitleBarDisplay" type="Block"/>
+    <property name="PSPreLoadAllPanels" type="Block"/>
+    <property name="titleTriState" type="Block"/>
+    <property name="InformationWindowPlacement" type="Block"/>
+    <property name="InfoWindowMode" type="Block"/>
+    <property name="InfoWindowPosition" type="Block"/>
+    <property name="TextCopyMode" type="Block" />
+    <property name="GridCellCopyMode" type="Block" />    
+    <property name="SwipePanelStyle" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="titleText">{desc:mstrWeb.295|General}</property>
+    <property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+    <property name="scriptClass">mstr.bones.editors.GeneralTabBoneTranslator</property>
+    <property name="fields">DisplayText|isActionSelector|showTooltip|showVisibleInHTMLViewMode|showNavigationProps|showHTMLContainer|showPortal|showPanelStackTitle|Name|isSection|SubType|ToolTip|Visible|VisibleHTML|IsLink|Link|NewWin|HTMLType|IFrameSource|IsPortal|panelCustomTitle|PortalTitle|PortalState|ExportOptions|TitleBarDisplay|PSPreLoadAllPanels|ShowWidgetTitleBar|titleTriState|UseAsInformationWindow|isSelector|EnableHorizontalSwipeToChange|hasSelectorTitle|docked|isPageHeaderSection|isPageFooterSection|isFilterPanel|fpAutoSubmit|ResetToFirstPanelWhenTargeted|isInFilterPanel|ShowElementCount|InformationWindowPlacement|ShowInfoWindowTargets|ShowMobile|SetBadgeToValueOnField|InfoWindowMode|InfoWindowPosition|TabCloseToDismissInfoWindow|InfoWindowPositionEnabled|TextCopyMode|GridCellCopyMode|isText|isOneGrid|iOSOnlyCopyVisible|showTableDisplayMode|SwipePanelStyle|DisplayInPartialScreen|ShowAsCollapsiblePanel|InitialSlidingInWidthEnabled|InitialSlidingInHeightEnabled|InitialSlidingInWidth|InitialSlidingInHeight|hasElemCount</property>
+    <property name="visibleField">generalTabEnabled</property>
+    <property name="generalTabEnabled">true</property>
+    <property name="HTMLType">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K893" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4554|HTML Text}</property>
+            </block>
+            <block listElementKey="K894" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4555|IFrame}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="PortalState">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K895" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4542|Normal}</property>
+            </block>
+            <block listElementKey="K896" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4543|Minimized}</property>
+            </block>
+            <block listElementKey="K897" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4544|Maximized}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="ExportOptions">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K900" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.5539|Automatic}</property>
+            </block>
+            <block listElementKey="K901" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.219|Yes}</property>
+            </block>
+            <block listElementKey="K902" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.218|No}</property>              
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="TitleBarDisplay">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K898" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4791|Current Panel Name}</property>
+            </block>
+            <block listElementKey="K899" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4792|Custom Title}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="PSPreLoadAllPanels">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="inherit" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.6109|Inherit From Document}</property>
+            </block>
+            <block listElementKey="allPanels" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.6110|All Panels}</property>
+            </block>
+            <block listElementKey="currentPanel" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.6111|Current Panel Only}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="titleTriState">
+  		<block name="TriStateListModel">
+  			<property name="ExcludedItemsOnLoop">0</property>
+      </block>
+    </property>
+    <property name="InformationWindowPlacement">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="auto" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4531|Automatic}</property>
+            </block>
+            <block listElementKey="fixed" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4961|Fixed}</property>
+            </block>
+            <block listElementKey="above" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.9744|Above}</property>
+            </block>
+            <block listElementKey="below" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.3013|Below}</property>
+            </block>
+            <block listElementKey="left" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">{desc:mstrWeb.3049|Left}</property>
+            </block>
+            <block listElementKey="right" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.3050|Right}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="InfoWindowMode">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="appear" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.9839|Appear(Default)}</property>
+            </block>
+            <block listElementKey="flipup" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.9840|Flip up}</property>
+            </block>
+            <block listElementKey="scaleup" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.9841|Scale up}</property>
+            </block>
+            <block listElementKey="slide" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.9842|Slide}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="InfoWindowPosition">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="ifwPosAbove" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.9744|Above}</property>
+            </block>
+            <block listElementKey="ifwPosBelow" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.3013|Below}</property>
+            </block>
+            <block listElementKey="ifwPosLeft" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.3049|Left}</property>
+            </block>
+            <block listElementKey="ifwPosRight" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.3050|Right}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="TextCopyMode">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="disableCopyForText" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.9819|Disable copy for this text}</property>
+            </block>
+            <block listElementKey="enableCopyForText" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.9820|Enable copy for this text}</property>
+            </block>
+            <block listElementKey="txtUseDocLevel" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.9821|Use the document-level behavior}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>   
+    <property name="GridCellCopyMode">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="disableCopyForGridCell" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.9838|Disable copy for grid cell}</property>
+            </block>
+            <block listElementKey="enableCopyForGridCell" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.9817|Enable copy for grid cell}</property>
+            </block>
+            <block listElementKey="gridUseDocLevel" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.9821|Use the document-level behavior}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>      
+    <property name="SwipePanelStyle">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="defPanelSwitchStyle" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.5539|Automatic}</property>
+            </block>
+            <block listElementKey="pdPanelSwitchStyle" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.5291|Pull Down}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'General' tab of the Report Services properties editor. -->

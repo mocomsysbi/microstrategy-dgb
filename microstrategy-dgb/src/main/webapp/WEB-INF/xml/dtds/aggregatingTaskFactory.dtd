@@ -1,0 +1,55 @@
+<!--
+	An aggregatingTaskFactory element defines the configuration for the
+	AggregatingTaskFactory class.  It may contain ZERO or ONE
+	tasks element followed by ZERO or ONE factories element.
+-->
+<!ELEMENT aggregatingTaskFactory (tasks?, factories?) >
+<!ATTLIST aggregatingTaskFactory isPrivate CDATA #IMPLIED>
+
+<!--
+	A tasks element defines a collection of tasks to be directly exposed
+	by this factory.
+	1) A tasks element contains ONE or MORE task elements.
+-->
+<!ELEMENT tasks (task)+ >
+<!ATTLIST tasks privileges CDATA #IMPLIED>
+
+<!--
+	A task element defines a single Task.
+	1) A task element has no children.
+	2) A task element has a REQUIRED 'registerAs' attribute that defines the 
+	   identifier for the task.
+	3) A task element has a REQUIRED 'class' attribute that defines the fully
+	   qualified Java class name for the class to instantiate.
+-->
+<!ELEMENT task EMPTY>
+<!ATTLIST task registerAs NMTOKEN #REQUIRED>
+<!ATTLIST task class NMTOKEN #REQUIRED>
+<!ATTLIST task adminTask (true | false) "false">
+<!ATTLIST task deleted NMTOKEN #IMPLIED>
+<!ATTLIST task privileges CDATA #IMPLIED>
+
+<!--
+	A factories element defines a collection of other factories that can be used
+	to instantiate other Tasks.
+	1) A factories element contains ONE or MORE factory elements.
+-->
+<!ELEMENT factories (factory)+>
+
+<!--
+	A factory element defines a single factory that should be invoked when looking
+	for a Task.
+	1) A factory element has no children.
+	2) A factory element has a REQUIRED 'class' attribute that defines the fully 
+	   qualified Java class name of the factory to instantiate.
+-->
+<!ELEMENT factory (params?)>
+<!ATTLIST factory class NMTOKEN #REQUIRED>
+<!ATTLIST factory deleted NMTOKEN #IMPLIED>
+<!ATTLIST factory name NMTOKEN  #IMPLIED>
+
+<!ELEMENT params (param)+>
+
+<!ELEMENT param EMPTY>
+<!ATTLIST param name NMTOKEN #REQUIRED>
+<!ATTLIST param value NMTOKEN #REQUIRED>

@@ -1,0 +1,29 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <html>
+    <mstrlayout:attr name="getAttributesHTML" />
+    <head>
+      <mstrlayout:render name="metaContentType"/>
+      <title>
+        <mstrlayout:render name="reportNameForTitle"/>
+      </title>
+      <mstrlayout:render name="excelHeader"/>
+      <mstrlayout:render name="css"/>
+    </head>
+    <body>
+      <mstrlayout:attr name="getAttributesBody" />
+      <table>
+        <mstrlayout:render name="header"/>
+        <mstrlayout:render name="reportName"/>
+        <mstrlayout:render name="newLine"/>
+        <mstrlayout:render name="filterDetails"/>
+        <mstrlayout:render name="pageByInfo"/>
+      </table>
+      <table>
+        <mstrlayout:attr name="getAttributesMainTable" />
+        <mstrlayout:render name="report"/>
+        <mstrlayout:render name="footer"/>
+      </table>
+    </body>
+  </html>
+</mstrlayout:layout>

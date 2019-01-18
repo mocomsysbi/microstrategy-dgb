@@ -1,0 +1,144 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="DocumentTabDocument">
+  <assignments>
+    <property name="title">{desc:mstrWeb.3538|Document Properties} - {desc:mstrWeb.239|Document}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Document.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K364" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.295|General}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K365" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3791|Default Grid Autostyle:}</property>
+                <property name="modelPath">parent/model/DefaultGridStyle</property>
+              </block>
+              <block listElementKey="K366" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4655|Always open this document in full screen mode}</property>
+                <property name="valueField">ExecutionFullScreenMode</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="showingBarsTemporarily" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.11309|Allow user to access navigation bars and action menu}</property>
+                <property name="valueField">ShowingBarsTemporarily</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">parent/model/ExecutionFullScreenMode</property>
+                <property name="cssText">margin-left:15px</property>
+              </block>
+              <block listElementKey="K367" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.14559|Enable sorting and pivoting on grids in Presentation and Flash Modes}</property>
+                <property name="valueField">ShowFloatingToolbars</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K378" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.7630|Enable additional interactivity on grids in Flash Mode}</property>
+                <property name="valueField">ViewModeInteractivityLevel</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">parent/model/ShowFloatingToolbars</property>
+                <property name="cssText">margin-left:15px</property>
+              </block>
+              <block listElementKey="K368" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5033|Automatically apply selector changes}</property>
+                <property name="valueField">CtlAutoSubmit</property>
+                <property name="modelPath">parent/model</property>
+              </block>     
+              <block listElementKey="SelectionsAsFilter" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.7477|Apply selections as filter for all new targets}</property>
+                <property name="valueField">DefaultSelectorsAsFilter</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="PreserveTranslations" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.13648|Preserve translations when editing static text fields}</property>
+                <property name="valueField">PreserveTranslations</property>
+                <property name="modelPath">parent/model</property>
+              </block>       
+              <block listElementKey="K369" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4962|Document Width Mode:}</property>
+                <property name="modelPath">parent/model/CalculateDocWidth</property>
+                <property name="popup/height">40px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K370" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5760|Run Modes}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/showDisplayModes</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K371" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K372" name="FastCheckList">
+                      <property name="caption">{desc:mstrWeb.4696|Available Display Modes:}</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("AvailableViewModeItems","AvailableViewModes")</property>
+                      <property name="height">85px</property>
+                    </block>
+                    <block listElementKey="K373" name="TextDiv">
+                      <property name="cssText">margin-left:40px;visibility:hidden;</property>
+                    </block>
+                    <block listElementKey="K374" name="FastCheckList">
+                      <property name="caption">{desc:mstrWeb.5622|Available Export Modes:}</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("AvailableExportModeItems","AvailableExportModes")</property>
+                      <property name="height">85px</property>
+                    </block>
+                    <!-- block listElementKey="td3" name="TextDiv">
+                      <property name="cssText">margin-left:40px;visibility:hidden;</property>
+                    </block>
+                    <block name="VBox" listElementKey="exportDoc">
+                        <property name="modelPath">parent/model</property>
+	                    <property name="children">
+	                        <list>
+	                            <block listElementKey="td4" name="TextDiv">
+			                      <property name="caption">{desc:mstrWeb.|Export Document:}</property>
+			                    </block>
+	                            <block name="TextBox" listElementKey="exportToExcel">
+	                                <property name="valueField">ExcelExportDocumentURL</property>
+	                                <property name="modelPath">parent/model</property>
+	                                <property name="totalSize">16</property>
+	                                <property name="cssText">margin-bottom:45px;</property>
+	                            </block>
+	                            <block name="TextBox" listElementKey="exportToPDF">
+	                                <property name="valueField">PDFExportDocumentURL</property>
+	                                <property name="modelPath">parent/model</property>
+	                                <property name="totalSize">16</property>
+	                            </block>
+	                        </list>
+	                    </property>
+	                </block-->
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K375" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5623|Default Run Mode:}</property>
+                <property name="modelPath">parent/model/getDynamicListModel("AvailableDefaultRunModesItems","DefaultViewMode")</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K376" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3789|Conditional Formatting}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/RenderConditionalFormatting</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K377" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3788|Show Conditional Formatting}</property>
+                <property name="valueField">ShowConditionalFormatting</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		DocumentTabDocument is the "Document Properties - Document" tab of the document properties editor.
+	-->

@@ -1,0 +1,37 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		FontPreview is a reusable component for displaying a font preview.
+	-->
+	<block name="FontPreview" inherits="BaseView">
+		<definition>
+			<!-- The caption to appear above the font preview. -->
+			<property name="caption" type="String" />
+			
+			<!-- The text to appear as formatted in the font preview. -->
+			<property name="text" type="String" />
+		
+			<!-- The name of the model field that holds the font names model. -->
+			<property name="fontFamily" type="String" />
+
+			<!-- The name of model field that holds the font size model. -->
+			<property name="fontSize" type="String" />
+			
+			<!-- The name of the model field that holds the bold/italic model. -->
+			<property name="boldItalic" type="String" />
+
+			<!-- The name of the boolean model field for underline. -->
+			<property name="textUnderline" type="String" />
+
+			<!-- The name of the boolean model field for strikeout. -->
+			<property name="textStrikeout" type="String" />
+
+			<!-- The name of the model field that holds the ColorPickerModel for font color. -->
+			<property name="fontColor" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.FontPreview</property>
+			<property name="cssClass">FontPreview</property>
+			<property name="caption">{desc:mstrWeb.2036|Sample:}</property>
+			<property name="text">{desc:mstrWeb.2037|ABCabc}</property>
+		</assignments>
+	</block>	

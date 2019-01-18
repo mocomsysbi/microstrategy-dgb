@@ -1,0 +1,53 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+	<mstrlayout:block name="BlockContainer">
+		<mstrlayout:bSetProperty path="models">
+			<mstrlayout:block name="InsertLayoutEditorModel">
+				<mstrlayout:bSetProperty path="tabList/selectedIndicesList" method="getRequestParameterValueEncoded">
+					<mstrlayout:argument type="String" value="tabList/selectedIndicesList" />
+					<mstrlayout:argument type="String" value="0" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="newDashboardLayouts">
+					<mstrlayout:block name="ListModel">
+						<mstrlayout:bSetProperty path="valueForm" value="dssid" />
+						<mstrlayout:list id="FolderObject" method="getFolderContents">	
+							<mstrlayout:bSetProperty path="items">
+								<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>			
+							</mstrlayout:bSetProperty>
+						</mstrlayout:list>
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="existingLayouts/blockCount" method="getPreferenceValueReplaceNull">
+					<mstrlayout:argument type="String" value="objectsBlockCount" />
+					<mstrlayout:argument type="String" value="25" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="existingLayouts/containerTree">
+					<mstrlayout:block name="TreeModel">
+					  <mstrlayout:bSetProperty path="selectedPathList" method="getCurrentFolderPath">
+						<mstrlayout:argument type="int" value="19" />
+					  </mstrlayout:bSetProperty>
+					  <mstrlayout:list id="folder" method="getFlattenedContextFolderList">
+							<mstrlayout:argument type="int" value="19" />
+							<mstrlayout:base id="FolderObject" method="getValue" base="folder"/>
+							<mstrlayout:bSetProperty path="flattenedNodes">
+							  <mstrlayout:block name="TreeNode">
+								<mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+								<mstrlayout:bSetProperty path="value">
+									<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+								</mstrlayout:bSetProperty>
+							  </mstrlayout:block>
+							</mstrlayout:bSetProperty>
+					  </mstrlayout:list>
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+		<mstrlayout:bSetProperty path="views">
+			<mstrlayout:block name="InsertLayoutEditor">
+				<mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+				<mstrlayout:bSetProperty path="helpTopic" method="getHelpTopic"/>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:block>
+</mstrlayout:layout>

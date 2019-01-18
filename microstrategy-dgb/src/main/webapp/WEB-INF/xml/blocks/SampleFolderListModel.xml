@@ -1,0 +1,70 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ListModel" name="SampleFolderListModel">
+  <assignments>
+    <property name="totalSize">3</property>
+    <property name="blockBegin">1</property>
+    <property name="blockCount">300</property>
+    <property name="items">
+      <list>
+        <block listElementKey="K1430" name="ItemInfo">
+          <property name="icon">a</property>
+          <property name="dssid">idCustomer</property>
+          <property name="n">Customer</property>
+          <property name="tp">12</property>
+        </block>
+        <block listElementKey="K1431" name="ItemInfo">
+          <property name="icon">m</property>
+          <property name="dssid">idSales</property>
+          <property name="n">Sales ($)</property>
+          <property name="tp">4</property>
+        </block>
+        <block listElementKey="K1432" name="ItemInfo">
+          <property name="icon">ae</property>
+          <property name="dssid">idAttributeElement1</property>
+          <property name="n">Attribute Element 1</property>
+          <property name="tp">0</property>
+        </block>
+      </list>
+    </property>
+    <property name="containerTree">
+      <block name="TreeModel">
+        <property name="selectedPathList">0/1</property>
+        <property name="flattenedNodes">
+          <list>
+            <block listElementKey="K1433" name="TreeNode">
+              <property name="path">0</property>
+              <property name="value">
+                <block name="ItemInfo">
+                  <property name="icon">p</property>
+                  <property name="dssid">idTutorial</property>
+                  <property name="n">MicroStrategy Tutorial Project</property>
+                </block>
+              </property>
+            </block>
+            <block listElementKey="K1434" name="TreeNode">
+              <property name="path">0/0</property>
+              <property name="value">
+                <block name="ItemInfo">
+                  <property name="icon">f</property>
+                  <property name="dssid">idSharedReports</property>
+                  <property name="n">Shared Reports</property>
+                </block>
+              </property>
+            </block>
+            <block listElementKey="K1435" name="TreeNode">
+              <property name="path">0/1</property>
+              <property name="value">
+                <block name="ItemInfo">
+                  <property name="icon">f</property>
+                  <property name="dssid">idMyReports</property>
+                  <property name="n">My Reports</property>
+                </block>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- A sample list model of a folder with 1 subfolder, 1 attribute, and 1 metric. -->

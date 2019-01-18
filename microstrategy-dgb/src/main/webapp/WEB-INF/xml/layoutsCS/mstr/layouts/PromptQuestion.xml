@@ -1,0 +1,106 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_answer="mstr.behaviors.PromptQuestion.on_model_set_answer(view, model, rootTag)"
+    on_set_pageNum="mstr.behaviors.PromptQuestion.on_set_pageNum(view, model, rootTag)"
+    on_model_set_meaning="mstr.behaviors.PromptQuestion.on_model_set_meaning(view, model, rootTag)"
+    on_model.answer_set_isComplex="mstr.behaviors.PromptQuestion.on_model_set_isComplex(view, model, rootTag)"
+    on_model_set_instructions="mstr.behaviors.PromptQuestion.on_model_set_instructions(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.PromptQuestion.on_set_visible(view, model, rootTag, context)">
+  <div style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <span>
+      <div class="{@cssPrefix}{@cssClass}TitleBar">
+	<table cellspacing="0" cellpadding="0">
+		<tr>
+			<td align="left" valign="middle">
+			        <span class="{@cssPrefix}{@cssClass}TitleBarIndex">
+			        </span>
+			        <span class="{@cssPrefix}{@cssClass}TitleBarTitle">
+			          {@model/title}
+			        </span>
+			        <span class="{@cssPrefix}{@cssClass}TitleBarRequired" title="{@descriptors/required}">{@descriptors/required}</span>
+			</td>
+			<td width="1%" align="right" valign="middle">
+				<img src="../images/1ptrans.gif" align="absmiddle" style="display: none"
+					class="{@cssPrefix}{@cssClass}BackToTopImg"
+					title="{@descriptors/backToTop}"
+					onclick="mstr.behaviors.PromptQuestion.onClickBackToTop('{@id}')" />
+			</td>
+		</tr>
+	</table>
+      </div>
+      <table cellspacing="0"
+             cellpadding="0"
+             class="{@cssPrefix}{@cssClass}InfoTable">
+        <tr>
+          <td class="{@cssPrefix}{@cssClass}InfoCellLeft">
+            <div class="{@cssPrefix}{@cssClass}Meaning">
+            </div>
+            <div class="{@cssPrefix}{@cssClass}Instructions">
+            </div>
+            <div class="{@cssPrefix}{@cssClass}Message">
+            </div>
+          </td>
+          <td class="{@cssPrefix}{@cssClass}InfoCellRight">
+            <mstrlayout:wRender name="saveAnswerView">
+            </mstrlayout:wRender>
+          </td>
+        </tr>
+      </table>
+      <div class="{@cssPrefix}{@cssClass}Contents">
+        <table cellspacing="0"
+               cellpadding="0"
+               class="{@cssPrefix}{@cssClass}SimpleAnswerViewTitle">
+          <tr>
+            <td class="{@cssPrefix}{@cssClass}SimpleAnswerViewTitleCellRadio">
+              <input value="0"
+                     name="{@id}_radio"
+                     onmousedown="mstr.behaviors.PromptQuestion.onClickRadio('{@id}', false)"
+                     id="{@id}_radio_simpleAnswerView"
+                     type="radio"
+                     checked="true">
+              </input>
+            </td>
+            <td class="{@cssPrefix}{@cssClass}SimpleAnswerViewTitleCellText">
+              <label for="{@id}_radio_simpleAnswerView">
+                {@descriptors/simpleAnswerViewCaption}
+              </label>
+            </td>
+          </tr>
+        </table>
+        <div style="padding-left: 23px"
+             class="{@cssPrefix}{@cssClass}SimpleAnswerView"
+             onmousedown="this.previousSibling.rows[0].cells[0].childNodes[0].checked = true;               mstr.behaviors.PromptQuestion.onClickRadio('{@id}', false)">
+          <mstrlayout:wRender name="simpleAnswerView">
+             {@descriptors/loading}
+          </mstrlayout:wRender>
+        </div>
+        <table cellspacing="0"
+               cellpadding="0"
+               class="{@cssPrefix}{@cssClass}ComplexAnswerViewTitle">
+          <tr>
+            <td class="{@cssPrefix}{@cssClass}ComplexAnswerViewTitleCellRadio">
+              <input value="1"
+                     name="{@id}_radio"
+                     onmousedown="mstr.behaviors.PromptQuestion.onClickRadio('{@id}', true)"
+                     id="{@id}_radio_complexAnswerView"
+                     type="radio">
+              </input>
+            </td>
+            <td class="{@cssPrefix}{@cssClass}ComplexAnswerViewTitleCellText">
+              <label for="{@id}_radio_complexAnswerView">
+                {@descriptors/complexAnswerViewCaption}
+              </label>
+            </td>
+          </tr>
+        </table>
+        <div style="padding-left: 23px"
+             class="{@cssPrefix}{@cssClass}ComplexAnswerView"
+             onmousedown="this.previousSibling.rows[0].cells[0].childNodes[0].checked = true;               mstr.behaviors.PromptQuestion.onClickRadio('{@id}', true)">
+          <mstrlayout:wRender name="complexAnswerView">
+          </mstrlayout:wRender>
+        </div>
+      </div>
+    </span>
+  </div>
+</mstrlayout:layout>

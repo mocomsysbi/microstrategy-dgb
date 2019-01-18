@@ -1,0 +1,134 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptMenuModel" name="RptToolsMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1579" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.1895|New...}</property>
+          <property name="cmdid">new</property>
+          <property name="visibleFeatures">new-report</property>
+        </block>
+        <block listElementKey="K1580" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2918|Create Document}</property>
+          <property name="cmdid">createDocFromRpt</property>
+          <property name="visibleFeatures">documents-design-mode;is-viewable-report;use-report-access-right</property>
+        </block>
+        <block listElementKey="K1603" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14825|Create Dossier}</property>
+          <property name="cmdid">createIVEFromRpt</property>
+          <property name="visibleFeatures">dhtml;create-analysis;flashvi</property>
+        </block>
+        <block listElementKey="createHTML5IVEFromRpt" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14825|Create Dossier}</property>
+          <property name="cmdid">createHTML5IVEFromRpt</property>
+          <property name="visibleFeatures">dhtml;create-analysis;!flashvi</property>
+        </block>
+        <block listElementKey="K1581" name="BaseBlock"/>
+        <block listElementKey="K1582" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.1951|Report Objects}</property>
+          <property name="cmdid">objBrowser</property>
+          <property name="visibleFeatures">is-viewable-report;report-objects-window</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1583" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.1952|All Objects}</property>
+          <property name="cmdid">allObjects</property>
+          <property name="visibleFeatures">not-datamart;object-browser-editor;!is-view-report;modify-report-list</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1584" name="ToolbarNotesButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.5364|Notes}</property>
+          <property name="visibleFeatures">is-viewable-report;web-is-notes-available</property>
+          <property name="listenerMethods">onstatechange,onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1585" name="ToolbarReportsButton">
+          <property name="type">MENU</property>
+          <property name="listenerMethods">onstatechange,onObjectBrowserTabChange</property>
+          <property name="text">{desc:mstrWeb.5673|Related Reports}</property>
+        </block>
+        <block listElementKey="K1586" name="BaseBlock"/>
+        <block listElementKey="K1587" name="MenuDualStateControlModel">
+          <property name="id">tbPageBy</property>
+          <property name="text">{desc:mstrWeb.2725|Page-By Axis}</property>
+          <property name="cmdid">pageBy</property>
+          <property name="visibleFeatures">is-viewable-report;show-pageby</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1588" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.1983|Report Filter}</property>
+          <property name="cmdid">reportFilter</property>
+          <property name="visibleFeatures">report-filter;!is-view-report</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1589" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.4979|Cube Filter}</property>
+          <property name="cmdid">reportFilter</property>
+          <property name="visibleFeatures">report-filter;!is-view-report</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1590" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.1984|View Filter}</property>
+          <property name="cmdid">viewFilter</property>
+          <property name="visibleFeatures">show-view-filter-editor;not-datamart</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+		<block listElementKey="K1591" name="MenuDualStateControlModel">
+			<property name="text">{desc:mstrWeb.1924|Report Details}</property>
+			<property name="cmdid">reportDetails</property>
+			<property name="visibleFeatures">report-details</property>
+			<property name="listenerMethods">onstatechange</property>
+		</block>
+        <block listElementKey="K1592" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.3950|Prompt Details}</property>
+          <property name="cmdid">promptDetails</property>
+          <property name="visibleFeatures">show-prompt-details;reprompt</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1593" name="BaseBlock"/>
+        <block listElementKey="K1594" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.2742|Pivot buttons}</property>
+          <property name="cmdid">togglePivot</property>
+          <property name="visibleFeatures">web-pivot;is-viewable-report</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1595" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.2741|Sort buttons}</property>
+          <property name="cmdid">toggleSort</property>
+          <property name="visibleFeatures">web-sort;is-viewable-report</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1596" name="MenuDualStateControlModel">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.5853|Report Bar}</property>
+          <property name="cmdid">toggleReportBar</property>
+          <property name="visibleFeatures">is-viewable-report</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1597" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.5686|Graph Zones}</property>
+          <property name="cmdid">toggleGraphZones</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+        </block>
+        <block listElementKey="K1598" name="BaseBlock"/>
+        <block listElementKey="K1599" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4968|Report Options...}</property>
+          <property name="cmdid">gridOptions</property>
+          <property name="visibleFeatures">not-datamart;enable-grid-options;is-not-visualization-mode;is-viewable-report</property>
+        </block>
+        <block listElementKey="K1600" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5565|Report Details Page}</property>
+          <property name="cmdid">reportDetailsPage</property>
+          <property name="visibleFeatures">report-details</property>
+        </block>
+        <block listElementKey="K1601" name="BaseBlock"/>
+        <block listElementKey="K1602" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4636|Custom Visualizations}</property>
+          <property name="cmdid">customVisualizations</property>
+          <property name="enabledFeatures">is-viewable-report</property>
+          <property name="visibleFeatures">visualizations-supported;visualizations-available-for-reports;enable-vis-editor</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,41 @@
+<!DOCTYPE aggregatingTaskFactory SYSTEM "dtds/aggregatingTaskFactory.dtd" >
+<aggregatingTaskFactory isPrivate="true">
+<tasks>
+	<task registerAs="qBuilder.AddTable" class="com.microstrategy.web.app.tasks.QueryBuilder.AddTableTask"/>
+	<task registerAs="qBuilder.AddJoin" class="com.microstrategy.web.app.tasks.QueryBuilder.AddJoinTask"/>
+	<task registerAs="qBuilder.AddSelectedColumn" class="com.microstrategy.web.app.tasks.QueryBuilder.AddSelectedColumn"/>
+	<task registerAs="qBuilder.CreateQBReportInstance" class="com.microstrategy.web.app.tasks.QueryBuilder.CreateQBRepIns"/>
+	<task registerAs="qBuilder.EditTable" class="com.microstrategy.web.app.tasks.QueryBuilder.EditTableTask"/>
+  	<task registerAs="qBuilder.EditJoin" class="com.microstrategy.web.app.tasks.QueryBuilder.EditJoinTask"/>
+  	<task registerAs="qBuilder.EditSelectedColumn" class="com.microstrategy.web.app.tasks.QueryBuilder.EditSelectedColumnTask"/>
+  	<task registerAs="qBuilder.GetReportXDADefinition" class="com.microstrategy.web.app.tasks.QueryBuilder.GetReportXDADefinitionTask"/>
+  	<task registerAs="qBuilder.SaveReportXDADefinition" class="com.microstrategy.web.app.tasks.QueryBuilder.SaveReportXDADefinitionTask"/>
+  	<task registerAs="qBuilder.CalculateGroupBy" class="com.microstrategy.web.app.tasks.QueryBuilder.CalculateGroupByTask"/>
+	<task registerAs="qBuilder.EditCondition" class="com.microstrategy.web.app.tasks.QueryBuilder.EditConditionTask"/>
+ 	<task registerAs="qBuilder.GenerateJoins" class="com.microstrategy.web.app.tasks.QueryBuilder.GenerateJoinsTask"/>
+ 	<task registerAs="qBuilder.Parse" class="com.microstrategy.web.app.tasks.QueryBuilder.ParseTask"/>
+  	<task registerAs="qBuilder.RemoveTable" class="com.microstrategy.web.app.tasks.QueryBuilder.RemoveTableTask"/>
+   	<task registerAs="qBuilder.RemoveSelectedJoin" class="com.microstrategy.web.app.tasks.QueryBuilder.RemoveSelectedJoinTask"/>
+   	<task registerAs="qBuilder.RemoveSelectedColumn" class="com.microstrategy.web.app.tasks.QueryBuilder.RemoveSelectedColumnTask"/>
+   	<task registerAs="qBuilder.SetDBRole" class="com.microstrategy.web.app.tasks.QueryBuilder.SetDBRoleTask"/>
+   	<task registerAs="qBuilder.EditFreeFormSQL" class="com.microstrategy.web.app.tasks.QueryBuilder.EditFreeFormSQLTask"/>
+   	<task registerAs="qBuilder.ConvertToFreeFormSQL" class="com.microstrategy.web.app.tasks.QueryBuilder.ConvertToFreeFormSQLTask"/>
+   	<task registerAs="qBuilder.ConvertToQueryBuilder" class="com.microstrategy.web.app.tasks.QueryBuilder.ConvertToQueryBuilderTask"/>
+   	<task registerAs="qBuilder.ConvertToCube" class="com.microstrategy.web.app.tasks.QueryBuilder.ConvertToCubeTask"/>
+   	<task registerAs="qBuilder.RemapObject" class="com.microstrategy.web.app.tasks.QueryBuilder.RemapObjectTask"/>
+   	<task registerAs="qBuilder.AddMultiSelectedColumns" class="com.microstrategy.web.app.tasks.QueryBuilder.AddMultiSelectedColumns"/>
+   	<task registerAs="qBuilder.GetQuota" class="com.microstrategy.web.app.tasks.QueryBuilder.GetQuotaTask"/>
+   	<task registerAs="qBuilder.GetXDASchemaDBRole" class="com.microstrategy.web.app.tasks.QueryBuilder.GetXDASchemaDBRoleTask"/>
+   	<task registerAs="qBuilder.GetSingleDBRole" class="com.microstrategy.web.app.tasks.QueryBuilder.GetSingleDBRole"/>
+   	<task registerAs="qBuilder.FetchSourceObjects" class="com.microstrategy.web.app.tasks.QueryBuilder.FetchSourceObjectsTask"/>
+   	<task registerAs="qBuilder.ImportSourceObject" class="com.microstrategy.web.app.tasks.QueryBuilder.ImportSourceObjectTask"/>
+   	<task registerAs="qBuilder.UpdateWHTable" class="com.microstrategy.web.app.tasks.QueryBuilder.UpdateWHTableTask"/>
+   	<task registerAs="qBuilder.PublishCube" class="com.microstrategy.web.app.tasks.QueryBuilder.PublishCubeTask"/>
+   	<task registerAs="qBuilder.GetServerInfo" class="com.microstrategy.web.app.tasks.QueryBuilder.GetServerInfoTask"/>
+    <task registerAs="qBuilder.CreateEmmaTables" class="com.microstrategy.web.app.tasks.QueryBuilder.CreateEmmaTablesTask"/>
+    <task registerAs="qBuilder.AddMDXCubes" class="com.microstrategy.web.app.tasks.QueryBuilder.AddMDXCubesTask"/>
+    <task registerAs="qBuilder.UpdateMDXCubes" class="com.microstrategy.web.app.tasks.QueryBuilder.UpdateMDXCubesTask"/>
+    <task registerAs="qBuilder.AutoMapTables" class="com.microstrategy.web.app.tasks.QueryBuilder.AutoMapEmmaTablesTask"/>
+    <task registerAs="qBuilder.RemoveOrDuplicateRI" class="com.microstrategy.web.app.tasks.QueryBuilder.RemoveOrDuplicateQBReportInstanceTask"/>
+ </tasks>
+</aggregatingTaskFactory>

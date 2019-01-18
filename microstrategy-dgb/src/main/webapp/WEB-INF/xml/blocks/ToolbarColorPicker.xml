@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarColorPicker" inherits="ToolbarPickerButton">
+		<assignments>
+			<property name="scriptClass">mstr.views.ToolbarColorPickerButton</property>
+			<property name="CommandEnabledOpenModalPopup" type="Boolean">true</property>
+			<property name="modelPushedProps">popup|viewFlags</property>
+			<property name="popup">
+				<block name="ColorPickerPopup" />
+			</property>
+		</assignments>
+	</block>

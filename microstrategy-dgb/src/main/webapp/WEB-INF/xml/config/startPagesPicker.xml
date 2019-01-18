@@ -1,0 +1,32 @@
+<shortcut-list name="startPagePicker" version="1.0"><!-- Copyright 1996-2002 MicroStrategy Incorporated, All rights reserved. Confidential. -->
+  <shortcut desc="Home" desc-id="mstrWeb.1" name="desktop">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenDefaultDesktop"/>
+  </shortcut>
+  <shortcut desc="Summary" desc-id="mstrWeb.1020" name="summary">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenSummary"/>
+  </shortcut>
+  <shortcut desc="History List" desc-id="mstrWeb.4" feature-id="history-list" name="historyList">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenHistoryList"/>
+  </shortcut>
+  <shortcut desc="My Subscriptions" desc-id="mstrWeb.1077" feature-id="subscriptions" name="mySubs">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenMySubscriptions"/>
+  </shortcut>
+  <shortcut desc="My Reports" desc-id="mstrWeb.3" feature-id="profile-reports" name="my">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenMyReports"/>
+  </shortcut>
+  <shortcut desc="Shared Reports" desc-id="mstrWeb.2" feature-id="public-reports" name="shared">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenSharedReports"/>
+  </shortcut>
+  <shortcut desc="Create Report" desc-id="mstrWeb.5" feature-id="template-reports" name="create">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreate"/>
+  </shortcut>
+  <shortcut desc="Create Document" desc-id="mstrWeb.2918" feature-id="template-documents;dhtml;documents-design-mode" name="8">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreateDocument"/>
+  </shortcut>
+  <shortcut desc="Create Dossier" desc-id="mstrWeb.14825" feature-id="dhtml;create-analysis">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreateBlankVI"/>
+  </shortcut>
+  <shortcut desc="My Page" desc-id="mstrWeb.14510" feature-id="dhtml" name="myPage">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenMyPage"/>
+  </shortcut>
+</shortcut-list>

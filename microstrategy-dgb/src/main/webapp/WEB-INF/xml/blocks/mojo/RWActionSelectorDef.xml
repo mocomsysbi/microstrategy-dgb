@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about an RW Action Selector object.
+--> 
+<block name="RWActionSelectorDef" inherits="RWSelectorDef">
+    <definition>
+      <!-- Bitwise OR of available actions from EnumDSSXMLRWControlActionType -->
+      <property name="aa" type="Integer"/>
+      
+      <!-- Bitwise OR of subsequent actions from EnumDSSXMLRWControlSubsequentAction -->
+      <property name="sac" type="Integer"/>
+      
+      <!-- String to be displayed after a successful commit action -->
+      <property name="msg" type="String"/>
+      
+      <!-- ID of result set to be executed after a successful commit action -->
+      <property name="rsid" type="String"/>
+      
+      <!-- Type of result set to be executed after a successful commit action. (3=report, 55=document) -->
+      <property name="rst" type="Integer"/>
+      
+      <!-- Display text for the action selector -->
+      <property name="dpTxt" type="String"/>
+      
+      <!-- Boolean specifying wehther to display confirmation before performing action -->
+      <property name="dpCfm" type="Boolean"/>
+    </definition>
+</block>

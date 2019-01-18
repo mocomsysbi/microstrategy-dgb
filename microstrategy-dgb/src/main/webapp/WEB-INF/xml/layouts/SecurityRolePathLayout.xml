@@ -1,0 +1,17 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="mstrPathIcons">
+	    <mstrlayout:render name="GoHome"/>
+	    <mstrlayout:render name="GoOneUp"/>
+    </div>
+    <div class="mstrPathText">
+
+        <mstrlayout:render name="GoServer" />
+        <mstrlayout:render name="Delimiter"/>
+
+        <mstrlayout:render name="GoSecurityRoles" />
+        <mstrlayout:render name="Delimiter"/>
+
+        <mstrlayout:render name="CurrentItem"/>
+    </div>
+</mstrlayout:layout>

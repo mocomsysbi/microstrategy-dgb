@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWLikertScaleInputControl" inherits="RWDataInputObject">
+    <definition>
+    	<!-- The possible preset values list -->
+		<property name="vls" type="List"/>
+        <!-- Left Extreme Label -->
+        <property name="mint" type="String"/>
+        <!-- Right Extreme Label -->
+        <property name="maxt" type="String"/>
+    </definition>
+</block>

@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwDataThresholdsMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1628" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5995|Visual...}</property>
+          <property name="cmdid">openSimpleThresholdEditor</property>
+          <property name="visibleFeatures">use-basic-threshold-editor</property>
+          <property name="enabledFeatures">use-basic-threshold-editor</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1629" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4606|Advanced...}</property>
+          <property name="cmdid">openAdvThresholdEditor</property>
+          <property name="visibleFeatures">use-advanced-threshold-editor</property>
+          <property name="enabledFeatures">use-advanced-threshold-editor</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

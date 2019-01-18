@@ -1,0 +1,58 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwFormatMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1630" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3070|Grid Cells...}</property>
+          <property name="cmdid">fmtGridCells</property>
+          <property name="visibleFeatures">show-grid-format-editor</property>
+        </block>
+        <block listElementKey="K8688" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3071|Graph...}</property>
+          <property name="cmdid">openGraphFormatter</property>
+          <property name="visibleFeatures">show-graph-format-editor</property>
+        </block>        
+        <block listElementKey="K1632" name="BaseBlock"/>
+        <block listElementKey="K1633" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5356|Properties and Formatting...}</property>
+          <property name="cmdid">edtProps</property>
+        </block>
+        <block listElementKey="K1634" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4509|Hyperlink...}</property>
+          <property name="cmdid">WebHyperLinkEditor</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;documents-design-mode</property>
+        </block>
+        <block listElementKey="K1635" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5635|Report Details Properties...}</property>
+          <property name="cmdid">FilterDetailsProperties</property>
+          <property name="visibleFeatures">documents-design-mode;web-show-advanced-report-options</property>
+        </block>
+        <block listElementKey="K1636" name="BaseBlock"/>
+        <block listElementKey="K1637" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3074|Set Control Default...}</property>
+          <property name="cmdid">setCtrlDft</property>
+        </block>
+        <block listElementKey="K1638" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3075|Apply Control Defaults...}</property>
+          <property name="cmdid">applyCtrlDft</property>
+        </block>
+        <block listElementKey="K1639" name="BaseBlock"/>
+        <block listElementKey="K1640" name="MenuControlModel">
+          <property name="visibleFeatures">grid-layout;check-execute-mode;frame-element-enabled</property>
+          <property name="text">{desc:mstrWeb.2591|Resize Columns and Rows}</property>
+          <property name="cmdid">edtResize</property>
+        </block>
+        <block listElementKey="themeSeparator" name="BaseBlock"/>
+        <block listElementKey="saveAsThemeMenu" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14563|Save As Theme...}</property>
+          <property name="cmdid">saveAsTheme</property>
+        </block>
+        <block listElementKey="applyThemeMenu" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14564|Apply Theme...}</property>
+          <property name="cmdid">applyTheme</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

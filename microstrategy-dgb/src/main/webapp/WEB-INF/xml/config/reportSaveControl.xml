@@ -1,0 +1,15 @@
+<shortcut-list name="file2" feature-id="is-viewable-report">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Save As" desc-id="mstrWeb.1896" feature-id="!dhtml;not-datamart;save-report;enable-save-report;!check-design-mode" name="tbSave" type="button">
+      <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventSaveAs">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentApplyChangesFirst" value="false"/>
+        <argument base-bean="rb" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentReportParentFolderID" sys-bean="com.microstrategy.web.beans.ReportBean" value="parentID"/>
+        <argument base-bean="frame" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentReportDesignMode" sys-bean="com.microstrategy.web.beans.ReportFrameBean" value="isDesignMode"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbSaveAcc.gif"/>
+      </attributes>
+    </shortcut>
+</shortcut-list>

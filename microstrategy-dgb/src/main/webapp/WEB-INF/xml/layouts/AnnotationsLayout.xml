@@ -1,0 +1,21 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:bContext defaultContentType="JSON" />
+    <mstrlayout:base id="target" method="getTarget" base="bean"/>
+    <mstrlayout:block name="BlockContainer">
+		<mstrlayout:bSetProperty path="models">
+			<mstrlayout:block name="AnnotationModel">
+				<mstrlayout:bSetProperty path="value" method="getAnnotationsEncoded"/>
+				<mstrlayout:bSetProperty path="mode" method="getMode"/>
+				<mstrlayout:bSetProperty path="privilege" method="getPrivilege"/>
+				<mstrlayout:bSetProperty path="objectID" method="com.microstrategy.web.objects.WebObjectInfo#getID" base="target"/>
+				<mstrlayout:bSetProperty path="objectType" method="com.microstrategy.web.objects.WebObjectInfo#getType" base="target"/>
+				<mstrlayout:bSetProperty path="addition/prefixLen" method="getPrefixLength"/>
+		    </mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	    <mstrlayout:bSetProperty path="views">
+	        <mstrlayout:block name="AnnotationView" />
+	    </mstrlayout:bSetProperty>
+	    <mstrlayout:bSetProperty path="renderableView" value="annotationView"/>
+    </mstrlayout:block>
+</mstrlayout:layout>

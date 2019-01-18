@@ -1,0 +1,24 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="0" class="preferenceList">
+            <tr>
+              <td>
+                <mstrlayout:if name="isFeatureAvailable">
+                  <mstrlayout:argument type="string" value="useOffice"/>
+                  <mstrlayout:then>
+                    <mstrlayout:render name="OfficeExport"/>
+                    <mstrlayout:render name="ReportOfficeRefresh"/>
+                    <mstrlayout:render name="OfficeSetupLink"/>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

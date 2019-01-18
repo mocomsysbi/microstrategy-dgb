@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="DrillPath" inherits="ItemInfo">
+		<definition>
+			<!-- the direction of the drill path (up, down, etc) -->
+			<property name="drillDir" type="String" />
+		</definition>
+	</block>

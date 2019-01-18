@@ -1,0 +1,77 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoMenubarStyleModel" inherits="MojoToolbarButtonModel">
+    <assignments>
+        <property name="n">style</property>
+        <property name="desc">{desc:mstrWeb.1918|Format}</property>
+        <property name="pm">0</property>
+        <property name="visibleFeatures">edit-ive</property>
+        <property name="items">
+            <list>
+                <!-- Themes -->
+                <block name="MojoToolbarRadioGroupButtonModel">
+                    <property name="n">SwitchTheme</property>
+                    <property name="desc">{desc:mstrWeb.11784|Themes}</property>
+                    <property name="items">
+                        <list>
+                            <!-- other "items" property [Light Theme/Dark Theme]is assigned in client js from mojoConfig -->
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">SwitchCustomLabel</property>
+                                <property name="desc">{desc:mstrWeb.15386|Custom Themes}</property>
+                                <property name="items">
+                                    <list>
+                                        <block name="MojoToolbarRadioGroupButtonModel">
+                                            <property name="n">SwitchCustomTheme</property>
+                                            <!--<property name="desc">{desc:mstrWeb.11785|Palettes}</property>-->
+                                            <!-- "items" property [Custom Theme Items]is assigned in client js from mojoConfig -->
+                                        </block>
+                                    </list>
+                                </property>
+                            </block>
+                        </list>
+                    </property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+                <!-- Palettes -->
+                <block name="MojoToolbarRadioGroupButtonModel">
+                    <property name="n">SwitchPalette</property>
+                    <property name="desc">{desc:mstrWeb.11785|Palettes}</property>
+                    <property name="items">
+                        <list>
+                            <!-- other "items" property[Built-in Palette] is assigned in client js from mojoConfig -->
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">SwitchCustomLabel</property>
+                                <property name="desc">{desc:mstrWeb.15387|Custom Palettes}</property>
+                                <property name="items">
+                                    <list>
+                                        <block name="MojoToolbarRadioGroupButtonModel">
+                                            <property name="n">SwitchCustomPalette</property>
+                                            <!--<property name="desc">{desc:mstrWeb.11785|Palettes}</property>-->
+                                            <!-- "items" property [Custom Palette]is assigned in client js from mojoConfig -->
+                                        </block>
+                                    </list>
+                                </property>
+                            </block>
+                        </list>
+                    </property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">formatObject</property>
+                    <property name="desc">{desc:mstrWeb.14156|Format Object}</property>
+                    <property name="cmd">formatObject</property>
+                </block>
+
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dashboardStyles</property>
+                    <property name="desc">{desc:mstrWeb.15427|Dossier Formatting...}</property>
+                    <property name="cmd">dashboardStyles</property>
+                </block>
+            </list>
+        </property>
+    </assignments>
+</block>

@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ToolbarCustomizationInfo is a generic block containing properties used for toolbar customizations.
+	-->
+	<block name="ToolbarCustomizationInfo" inherits="BaseBlock">
+		<definition>
+			<!-- An optional HyperlinkInfo block detailing the properties of the hyperlink for this control. -->
+			<property name="link" type="Block" />
+			
+			<!-- An optional EventInfo block detailing the properties of the Event for this control. -->
+			<property name="event" type="Block" />
+			
+			<!-- An optional bit of JavaScript that will be executed when the user interacts with this control.  -->
+			<property name="on-click" type="String" />
+			
+			<!-- An optional "extra" url that will be added to the request when the user interacts with this control. -->
+			<property name="extra-url" type="String" />
+			
+			<!-- An optional string containing comma-delimited features to be checked for visibility status.  NOTE: This will override the call
+			 	to execVisible for the cmdid. -->
+			 <property name="visibleFeatures" type="String" />
+		</definition>
+	</block>

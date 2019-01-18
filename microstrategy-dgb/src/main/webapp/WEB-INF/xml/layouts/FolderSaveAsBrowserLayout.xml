@@ -1,0 +1,65 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.3178"/><!-- Save in: -->
+                </mstrlayout:render>&nbsp;&nbsp;
+            </td>
+            <td>
+                <mstrlayout:render name="ancestorsSelector"/>
+            </td>
+            <td>
+                <mstrlayout:render name="openParentLink"/>
+                <mstrlayout:render name="createFolderButton"/>
+            </td>
+        </tr>
+    </table>
+    <div sty="fileList">
+        <div class="mstrSmallIconView">
+            <mstrlayout:if name="isEmptyList">
+                <mstrlayout:then>
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="string" value="mstrWeb.70"/><!-- This folder is Empty -->
+                    </mstrlayout:render>
+                </mstrlayout:then>
+                <mstrlayout:else>
+                    <mstrlayout:list id="subfolders" name="getSubFolders">
+                        <div>
+                            <mstrlayout:attr name="getObjectAttributes">
+                                <mstrlayout:argument list="subfolders" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:attr>
+                            <mstrlayout:render name="nameInfo">
+                                <mstrlayout:argument list="subfolders" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:render>
+                        </div>
+                    </mstrlayout:list>
+                    <mstrlayout:if name="shouldRenderFolderLinks">
+                        <mstrlayout:then>
+                            <mstrlayout:list id="folderLinks" name="getFolderLinkList">
+                                <mstrlayout:render name="folderLink">
+                                    <mstrlayout:argument list="folderLinks" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                </mstrlayout:render>
+                            </mstrlayout:list>
+                        </mstrlayout:then>
+                    </mstrlayout:if>
+                    <mstrlayout:list id="folderObjects" name="getNonFolderObjects">
+                        <div>
+                            <mstrlayout:attr name="getContextMenuAttributes">
+                                <mstrlayout:argument list="folderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:attr>
+                            <mstrlayout:attr name="getObjectAttributes">
+                                <mstrlayout:argument list="folderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:attr>
+                            <mstrlayout:render name="nameInfo">
+                                <mstrlayout:argument list="folderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                            </mstrlayout:render>
+                        </div>
+                    </mstrlayout:list>
+                </mstrlayout:else>
+            </mstrlayout:if>
+        </div>
+    </div>
+    <mstrlayout:render name="incrementalFetch"/>
+</mstrlayout:layout>

@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides layout information in path bar.
+--> 
+<block name="PathBarLayout">
+    <definition>
+        
+        <!-- The starburst section in this layout. They are organized as an Array with each
+             element a Block.  -->
+        <property name="sb" type="List" />
+        
+        <!-- The navigation buttons section in this layout. They are organized as an Array with each
+             element a Block of type PathBarUnitDef. -->
+        <property name="nb" type="List" />
+        
+        <!-- The path section in this layout. They are organized as an Array with each
+             element a Block of type PathBarUnitDef. -->
+        <property name="pt" type="List" />
+        
+        <!-- The search section in this layout. -->
+        <property name="sc" type="Block" />
+        
+        <!-- The extra links (e.g. help button) section in this layout. They are organized as an Array with each
+             element a Block of type PathBarUnitDef. -->
+        <property name="el" type="List" />
+       
+    </definition>
+</block>

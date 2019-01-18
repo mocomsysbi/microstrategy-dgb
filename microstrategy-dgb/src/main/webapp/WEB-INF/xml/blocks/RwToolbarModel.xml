@@ -1,0 +1,166 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ToolbarModel" name="RwToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="ToolbarHomeButton" name="ToolbarHomeButton">
+          <property name="visibleFeatures">page-full-screen-mode;!rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="backPicker" name="ToolbarListModel">
+          <property name="id">tbBackPicker</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">openPage</property>
+          <property name="width">200px</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="title" type="String">{desc:mstrWeb.373|Back}</property>
+          <property name="listenerMethods">onScreenModeChange</property>
+          <property name="visibleFeatures">page-full-screen-mode;!rw-optimized-interactive-view-mode</property>
+          <property name="enabledFeatures">has-previous-pages</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+        </block>
+        <block listElementKey="forwardPicker" name="ToolbarListModel">
+          <property name="id">tbForwardPicker</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">openPage</property>
+          <property name="width">200px</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="title" type="String">{desc:mstrWeb.4489|Forward}</property>
+          <property name="listenerMethods">onScreenModeChange</property>
+          <property name="visibleFeatures">page-full-screen-mode;!rw-optimized-interactive-view-mode</property>
+          <property name="enabledFeatures">has-next-pages</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+        </block>
+        <block listElementKey="ToolbarBrowseParentButton" name="ToolbarBrowseParentButton">
+          <property name="visibleFeatures">check-execute-mode;page-full-screen-mode;!rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="PathSep" name="BaseBlock"/>
+        <block listElementKey="directSave" name="ToolbarSaveButton">
+          <property name="tooltip">{desc:mstrWeb.118|Save}</property>
+          <property name="cmdid">dSave</property>
+          <property name="visibleFeatures">save-report;enable-save-report;!rw-ive-mode-available;!rw-optimized-interactive-view-mode;!force-save-as</property>
+        </block>
+        <block listElementKey="directSaveExp" name="ToolbarSaveButton">
+          <property name="tooltip">{desc:mstrWeb.118|Save}</property>
+          <property name="cmdid">dSave</property>
+          <property name="visibleFeatures">save-report;enable-save-report;!rw-ive-mode-available;rw-optimized-interactive-view-mode;documents-design-mode</property>
+        </block>
+        <block listElementKey="directSave_ive" name="ToolbarSaveButton">
+          <property name="tooltip">{desc:mstrWeb.118|Save}</property>
+          <property name="cmdid">dSave</property>
+          <property name="visibleFeatures">save-report;enable-save-report;rw-ive-mode-available;save-analysis</property>
+        </block>
+        <block listElementKey="K1388" name="ToolbarSaveButton">
+          <property name="id">tbSaveAs</property>
+          <property name="cmdid">save</property>
+          <property name="visibleFeatures">save-report;enable-save-report;!rw-optimized-interactive-view-mode;!rw-ive-mode-available;force-save-as</property>
+        </block>
+        <block listElementKey="K1388Exp" name="ToolbarSaveButton">
+          <property name="id">tbSaveAs</property>
+          <property name="cmdid">saveAs</property>
+          <property name="visibleFeatures">save-report;check-execute-mode;page-full-screen-mode;rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="K1388_ive" name="ToolbarSaveButton">
+          <property name="id">tbSaveAs</property>
+          <property name="visibleFeatures">save-report;enable-save-report;rw-ive-mode-available;save-analysis</property>
+        </block>
+        <block listElementKey="K1389" name="BaseBlock"/>
+        <block listElementKey="K1390" name="ToolbarUndoButton">
+          <property name="targetPath">#bonesUpdateManager</property>
+          <property name="visibleFeatures">dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onupdatemanagerchange</property>
+        </block>
+        <block listElementKey="K1391" name="ToolbarRedoButton">
+          <property name="targetPath">#bonesUpdateManager</property>
+          <property name="visibleFeatures">dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onupdatemanagerchange</property>
+        </block>
+        <block listElementKey="K1392" name="ToolbarButtonModel">
+          <property name="id">tbApply</property>
+          <property name="tooltip">{desc:mstrWeb.3519|Apply}</property>
+          <property name="cmdid">apply</property>
+          <property name="targetPath">#bonesUpdateManager</property>
+          <property name="listenerMethods">onupdatemanagerchange</property>
+          <property name="visibleFeatures">!rw-static-view-mode;!rw-flash-view-mode;!rw-optimized-interactive-view-mode;!rw-analysis-view-mode</property>
+        </block>
+        <block listElementKey="K1404" name="BaseBlock"/>
+        <block listElementKey="K1405" name="ToolbarButtonModel">
+          <property name="id">tbPublish</property>
+          <property name="tooltip">{desc:mstrWeb.11694|Presentation Mode}</property>
+          <property name="cmdid">publishViewMode</property>
+          <property name="visibleFeatures">!rw-ive-mode-available;rw-static-view-mode-available;!rw-optimized-interactive-view-mode;rw-enable-optimized-interactive-view-mode;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1405_express" name="ToolbarButtonModel">
+          <property name="id">tbPublish</property>
+          <property name="tooltip">{desc:mstrWeb.11694|Presentation Mode}</property>
+          <property name="cmdid">remainExpressViewMode</property>
+          <property name="visibleFeatures">!rw-ive-mode-available;rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="K1393" name="BaseBlock"/>
+
+        <block listElementKey="K1394_lysis" name="ToolbarDualStateButtonModel">
+          <property name="cmdid">convertToDoc</property>
+          <property name="visibleFeatures">rw-ive-mode-available;documents-design-mode</property>
+          <property name="id">tbDesignMode</property>
+          <property name="tooltip">{desc:mstrWeb.5180|Convert to Document}</property>
+        </block>
+        <block listElementKey="K1394" name="ToolbarDesignModeButton">
+          <property name="cmdid">designViewMode</property>
+          <property name="visibleFeatures">!rw-ive-mode-available;documents-design-mode</property>
+        </block>
+        <block listElementKey="K1395" name="ToolbarDualStateButtonModel">
+          <property name="id">tbStaticViewMode</property>
+          <property name="tooltip">{desc:mstrWeb.11694|Presentation Mode}</property>
+          <property name="cmdid">staticViewMode</property>
+          <property name="visibleFeatures">rw-static-view-mode-available;!rw-enable-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="K1396" name="ToolbarDualStateButtonModel">
+          <property name="id">tbInteractiveViewMode</property>
+          <property name="tooltip">{desc:mstrWeb.14530|Interactive Mode}</property>
+          <property name="cmdid">interactiveViewMode</property>
+          <property name="visibleFeatures">rw-interactive-view-mode-available;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1397" name="ToolbarDualStateButtonModel">
+          <property name="id">tbEditableViewMode</property>
+          <property name="tooltip">{desc:mstrWeb.4691|Editable Mode}</property>
+          <property name="cmdid">editableMode</property>
+          <property name="visibleFeatures">rw-editable-view-mode-available</property>
+        </block>
+        <block listElementKey="K1398" name="ToolbarDualStateButtonModel">
+          <property name="id">tbFlashViewMode</property>
+          <property name="tooltip">{desc:mstrWeb.14531|Flash Mode}</property>
+          <property name="cmdid">flashViewMode</property>
+          <property name="visibleFeatures">rw-flash-view-mode-enabled;!rw-ive-mode-available;rw-flash-view-mode-available;rw-support-flash-mode;not-navigation-document</property>
+        </block>
+        <block listElementKey="K1399" name="BaseBlock"/>
+        <block listElementKey="K1400" name="ToolbarDualStateButtonModel">
+          <property name="id">tbDocFlash</property>
+          <property name="tooltip">{desc:mstrWeb.5809|Custom Flash Visualization}</property>
+          <property name="cmdid">docVisualizationModeFlash</property>
+          <property name="listenerMethods">onvischange,onDocReload</property>
+          <property name="visibleFeatures">document-flash-visualizations-available</property>
+        </block>
+        <block listElementKey="K1401" name="ToolbarDualStateButtonModel">
+          <property name="id">tbDocAjax</property>
+          <property name="tooltip">{desc:mstrWeb.5676|AJAX}</property>
+          <property name="cmdid">docVisualizationModeAJAX</property>
+          <property name="listenerMethods">onvischange,onDocReload</property>
+          <property name="visibleFeatures">document-ajax-visualizations-available</property>
+        </block>
+        <block listElementKey="K1402" name="ToolbarDynamicListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="cmdid">docSelectedVisualization</property>
+          <property name="listenerMethods">onvischange,onDocReload</property>
+          <property name="visibleFeatures">show-document-visualizations-pulldown</property>
+        </block>
+        <block listElementKey="K1403" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

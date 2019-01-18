@@ -1,0 +1,34 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ToolButton is a clickable image without a caption (typically, a toolbar button). -->
+	<block name="MenuControl" inherits="ToolbarControl">
+		<definition>
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+
+			<!-- Text to be displayed as option -->			
+			<property name="text" type="String" />
+			
+			<!-- Text to be displayed next to the option, used to display the keyboard shorcut of the option -->
+			<property name="shortcutText" type="String" />
+			
+			<!-- Property that makes this an expandable option -->
+			<property name="hasMenu" type="Boolean" />
+			
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+
+			<!-- Javascript handler for responding to user clicks. -->
+			<property name="onclick" type="String" />
+
+			<!-- Optional reference to UIComponent which this TextButton may act upon when clicked. -->
+			<property name="targetPath" type="String" />
+			
+		</definition>
+		<assignments>
+			<property name="hasMenu">false</property>
+			<property name="cssClass">MenuOption</property>
+			<property name="layoutClass">mstr.layouts.MenuOption</property>
+			<property name="cmds">Pressed||model/toolbarHelper</property>
+			<property name="modelPushedProps">text,shortcutText,!extraCssClass,htmlId</property>
+		</assignments>
+	</block>

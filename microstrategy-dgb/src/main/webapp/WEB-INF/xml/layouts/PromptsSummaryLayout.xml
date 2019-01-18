@@ -1,0 +1,43 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <table cellpadding="0" cellspacing="0">
+  	<mstrlayout:if name="useBackendDetails">
+      <mstrlayout:then>
+        <tr>
+          <td class="promptDetails-emptyColumn">&nbsp;</td>
+          <td>
+            <div class="promptDetailsContent">
+             <mstrlayout:render name="promptDetails"/>
+            </div>
+          </td>
+        </tr>
+      </mstrlayout:then>
+      <mstrlayout:else>
+        <mstrlayout:list id="prompt" name="getPromptsList">
+          <tr>
+            <td class="promptDetails-emptyColumn">&nbsp;</td>
+            <td>
+                <div class="promptDetailsHeader">
+                <mstrlayout:render name="promptNumber">
+                    <mstrlayout:argument list="prompt" type="com.microstrategy.web.beans.PromptObject"/>
+                </mstrlayout:render>
+                <mstrlayout:render name="promptTitle">
+                    <mstrlayout:argument list="prompt" type="com.microstrategy.web.beans.PromptObject"/>
+                </mstrlayout:render>
+                <mstrlayout:render name="requiredPrompt">
+                    <mstrlayout:argument list="prompt" type="com.microstrategy.web.beans.PromptObject"/>
+                </mstrlayout:render>
+                </div>
+                <div class="promptDetailsContent">
+                <mstrlayout:render name="promptObjects">
+                    <mstrlayout:argument list="prompt" type="com.microstrategy.web.beans.PromptObject"/>
+                </mstrlayout:render>
+                </div>
+            </td>
+         </tr>
+         <mstrlayout:next list="prompt"/>
+       </mstrlayout:list>
+      </mstrlayout:else>
+    </mstrlayout:if>
+  </table>
+</mstrlayout:layout>

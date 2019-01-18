@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the properties node in gird structure information node.
+--> 
+<block name="GridProperties">
+    <definition>
+        <!-- The header properties on the row axis. -->
+        <property name="rows" type="Block"/>
+        
+        <!-- The header properties on the columns axis. -->
+        <property name="cols" type="Block"/>
+        
+        <!-- The property to show attribute form names or not (long name). -->
+        <property name="ln" type="String" />
+        
+        <!-- The property to show all rows. -->
+        <property name="sar" type="String" />
+        
+        <!-- The property to hide null/zero value. -->
+        <property name="hnv" type="String" />
+    </definition>
+</block>

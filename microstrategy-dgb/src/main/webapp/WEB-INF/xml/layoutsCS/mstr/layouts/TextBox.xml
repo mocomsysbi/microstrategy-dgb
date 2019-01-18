@@ -1,0 +1,30 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_dataType="mstr.behaviors.TextBox.on_model_set_dataType(view, model, rootTag)"
+	on_model_set_--valueField--="mstr.behaviors.TextBox.on_model_set_value(view, model, rootTag.childNodes[1].firstChild)"
+    on_set_validationStatus="mstr.behaviors.TextBox.on_set_validationStatus(view, model, rootTag.childNodes[1].firstChild)"
+    on_set_enabled="mstr.behaviors.TextBox.on_set_enabled(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.TextBox.on_set_visible(view, model, rootTag)">
+  <div title="{@tooltip}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <div class="{@cssPrefix}{@cssClass}Caption">
+      <label for="{@id}_txt">
+        {@caption}
+      </label>
+    </div>
+    <div class="{@cssPrefix}{@cssClass}Input">
+      <input maxlength="{@maxlength}"
+             name="{@id}_txt"
+             style="{@cssText}"
+             onblur="if (mstr.$obj('{@id}').get('useBlur')) mstr.behaviors.TextBox.on_value_change('{@id}', this)"
+             onkeyup="if (!mstr.$obj('{@id}').get('useBlur')) mstr.behaviors.TextBox.on_value_change('{@id}', this)"
+             id="{@id}_txt"
+             size="{@totalSize}"
+             type="{@inputType}">
+      </input>
+      <span class="{@cssPrefix}{@cssClass}Suffix">
+		  {@captionSuffix}
+	  </span>
+    </div>
+  </div>
+</mstrlayout:layout>

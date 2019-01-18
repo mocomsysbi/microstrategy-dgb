@@ -1,0 +1,53 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div id="vfep_pane" class="mstrPanelPortrait">
+    <mstrlayout:attr name="getMainDivAttributes" />
+    <table class="pane" cellspacing="0">
+      <tr>
+        <td>
+          <form id="vfep" method="post" action="">
+		      <mstrlayout:attr name="getFormAttributes" />
+          	  <mstrlayout:render name="eventHiddenInputs"/>
+	          <div class="mstrPanelTitleBar">
+	            <span class="mstrPanelTitle">
+	              <mstrlayout:render name="editorTitle" />
+	            </span>
+	            <span class="mstrPanelTitleButtonBar">
+	              <mstrlayout:render name="helpButton" />
+	              <mstrlayout:render name="closeButton" />
+	            </span>
+	            <mstrlayout:render name="emptyFilterMessage" />
+	            <mstrlayout:if name="isEditable">
+	              <mstrlayout:then>
+	                <span class="mstrPanelTitleOptions">
+	                  <mstrlayout:render name="headerAddCondition" />
+	                  <mstrlayout:render name="headerClearAll" />
+	                  <mstrlayout:render name="headerAutoApply" />
+	                </span>
+	              </mstrlayout:then>
+	            </mstrlayout:if>
+	          </div>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td class="mstrPanelBody">
+          <mstrlayout:render name="ViewFilter" />
+        </td>
+      </tr>
+      <mstrlayout:if name="isApplyCancelEnabled">
+        <mstrlayout:then>
+	      <tr>
+	        <td class="mstrPanelBody">
+	          <form id="vfep2" method="post" action="">
+			    <mstrlayout:attr name="getFormAttributes" />
+	          	<mstrlayout:render name="eventHiddenInputs"/>
+		        <mstrlayout:render name="applyCancelButtons" />
+	          </form>
+	        </td>
+	      </tr>
+         </mstrlayout:then>
+       </mstrlayout:if>
+    </table>
+  </div>
+</mstrlayout:layout>

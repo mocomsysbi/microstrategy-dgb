@@ -1,0 +1,610 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabLayout">
+  <assignments>
+    <property name="title">{desc:mstrWeb.434|Properties} - {desc:mstrWeb.3437|Layout}</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="modelPath">parent/model/items/1</property>
+    <property name="helpTopic">Properties_dialog_Layout.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="position" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2971|Position}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">!model/isSection</property>
+          <property name="children">
+            <list>
+              <block listElementKey="units" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="left" name="HTextBox">
+                      <property name="caption">{desc:mstrWeb.2979|Left:}</property>
+                      <property name="valueField">Left</property>
+                      <property name="modelPath">parent/parent/model</property>
+                      <property name="totalSize">7</property>
+                      <property name="cssText">width:195px</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="type">7</property>
+                          <property name="min">0</property>
+                          <property name="required">true</property>
+                        </block>
+                      </property>
+                    </block>
+                    <block listElementKey="top" name="HTextBox">
+                      <property name="caption">{desc:mstrWeb.2980|Top:}</property>
+                      <property name="valueField">Top</property>
+                      <property name="modelPath">parent/parent/model</property>
+                      <property name="totalSize">7</property>
+                      <property name="cssText">width:195px</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="type">7</property>
+                          <property name="min">0</property>
+                          <property name="required">true</property>
+                        </block>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K1067" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1068" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.5604|Locked}</property>
+                      <property name="valueField">Locked</property>
+                      <property name="modelPath">parent/parent/model</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2180" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2181" name="CheckBox">
+                      <property name="caption">Show only in repeated sections</property>
+                      <property name="valueField">showInRptCp</property>
+                      <property name="modelPath">parent/parent/model</property>
+                      <property name="visibleField">model/visibleShowInRptCp</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="size" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2981|Size}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="unit" name="HBox">
+                <property name="modelPath" type="String">parent/model</property>
+                <property name="visibleField">model/showSize</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1069" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.272|Width:}</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="visibleField">parent/model/showFixedWidthOnly</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("SizeModelFixedOnly","Wmode11")</property>
+                    </block>
+                    <block listElementKey="K1070" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.272|Width:}</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="visibleField">parent/model/showFixed100Width</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("SizeModelFixed100","Wmode12")</property>
+                    </block>
+                    <block listElementKey="K1071" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.272|Width:}</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="visibleField">parent/model/showFixedFitWidth</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("SizeModelFixedFit","Wmode13")</property>
+                    </block>
+                    <block listElementKey="width" name="HTextBox">
+                      <property name="valueField">Width</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="totalSize">7</property>
+                      <property name="cssText">margin-top:14px;width:140px;</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="type">7</property>
+                          <property name="min">0</property>
+                          <property name="required">true</property>
+                        </block>
+                      </property>
+                    </block>
+                    <block listElementKey="K1072" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.2982|Height}</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="visibleField">parent/model/showFixedHeightOnly</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("SizeModelFixedOnly","Hmode11")</property>
+                    </block>
+                    <block listElementKey="K1073" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.2982|Height}</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="visibleField">parent/model/showFixed100Height</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("SizeModelFixed100","Hmode12")</property>
+                    </block>
+                    <block listElementKey="K1074" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.2982|Height}</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="visibleField">parent/model/showFixedFitHeight</property>
+                      <property name="modelPath">parent/model/getDynamicListModel("SizeModelFixedFit","Hmode13")</property>
+                    </block>
+                    <block listElementKey="height" name="HTextBox">
+                      <property name="valueField">Height</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="totalSize">7</property>
+                      <property name="cssText">margin-top:14px;width:140px;</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="type">7</property>
+                          <property name="min">0</property>
+                          <property name="required">true</property>
+                        </block>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="textOverflow" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.7481|Text Overflow (HTML):}</property>
+                <property name="modelPath">parent/model/TextOverflow</property>
+                <property name="visibleField">parent/model/showTextOverflow</property>
+              </block>
+              <block listElementKey="contentOverflow" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.8057|Content Overflow:}</property>
+                <property name="modelPath">parent/model/TextOverflow</property>
+                <property name="visibleField">parent/model/showContentOverflow</property>
+              </block>
+              <block listElementKey="section" name="HBox">
+                <property name="modelPath" type="String">parent/model</property>
+                <property name="visibleField">model/isSection</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="vertical" name="VBox">
+                      <property name="children">
+                        <list>
+                          <block listElementKey="height" name="HTextBox">
+                            <property name="valueField">SubHeight</property>
+                            <property name="caption">{desc:mstrWeb.2982|Height}</property>
+                            <property name="modelPath">parent/parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">7</property>
+                                <property name="min">0</property>
+                                <property name="required">true</property>
+                              </block>
+                            </property>
+                          </block>
+                          <block listElementKey="K1075" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.4004|Height can shrink}</property>
+                            <property name="valueField">Shrink</property>
+                            <property name="modelPath">parent/parent/model</property>
+                          </block>
+                          <block listElementKey="K1076" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.4005|Height can grow}</property>
+                            <property name="valueField">Grow</property>
+                            <property name="modelPath">parent/parent/model</property>
+                          </block>
+                          <block listElementKey="max" name="HTextBox">
+                            <property name="valueField">MaxHeight</property>
+                            <property name="caption">{desc:mstrWeb.2991|Max Height:}</property>
+                            <property name="modelPath">parent/parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="cssText">margin-left: 16px;</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">7</property>
+                                <property name="min">0</property>
+                                <property name="required">true</property>
+                              </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="horizontal" name="VBox">
+                      <property name="modelPath" type="String">parent/model</property>
+                      <property name="visibleField">model/isHorizontalSubsection</property>
+                      <property name="cssText">margin-left: 20px;</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="width" name="HTextBox">
+                            <property name="valueField">SubWidth</property>
+                            <property name="caption">{desc:mstrWeb.272|Width:}</property>
+                            <property name="modelPath" type="String">parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">7</property>
+                                <property name="min">0</property>
+                                <property name="required">true</property>
+                              </block>
+                            </property>
+                          </block>
+                          <block listElementKey="K1077" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.4006|Width can shrink}</property>
+                            <property name="valueField">ShrinkHorizontal</property>
+                            <property name="modelPath" type="String">parent/model</property>
+                          </block>
+                          <block listElementKey="K1078" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.4007|Width can grow}</property>
+                            <property name="valueField">GrowHorizontal</property>
+                            <property name="modelPath" type="String">parent/model</property>
+                          </block>
+                          <block listElementKey="max" name="HTextBox">
+                            <property name="valueField">MaxWidth</property>
+                            <property name="caption">{desc:mstrWeb.4008|Max Width:}</property>
+                            <property name="modelPath" type="String">parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="cssText">margin-left: 16px;</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">7</property>
+                                <property name="min">0</property>
+                              </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K1079" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3794|Hide If Empty}</property>
+                <property name="valueField">HideIfEmpty</property>
+                <property name="visibleField">model/isSection</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1080" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3597|Lock aspect ratio}</property>
+                <property name="valueField">LockAspectRatio</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/showLockAspectRatio</property>
+              </block>
+              <block listElementKey="line" name="HBox">
+                <property name="visibleField">model/isLine</property>
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1081" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.3598|Length:}</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="modelPath">parent/model/Lmode</property>
+                    </block>
+                    <block listElementKey="length" name="HTextBox">
+                      <property name="valueField">Length</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="totalSize">7</property>
+                      <property name="cssText">margin-top:14px</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="type">7</property>
+                          <property name="min">0.001</property>
+                        </block>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="title" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5605|Title Height}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showTitleHeight</property>
+          <property name="children">
+            <list>
+              <block listElementKey="height" name="HTextBox">
+                <property name="enabledField">parent/model/IsPortal</property>
+                <property name="valueField">TitleHeight</property>
+                <property name="caption">{desc:mstrWeb.3599|Fixed at}</property>
+                <property name="modelPath" type="String">parent/model</property>
+                <property name="totalSize">7</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">7</property>
+                    <property name="min">0.001</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1082" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3958|Excel}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/isSection</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1083" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5864|Automatically Fit Rows}</property>
+                <property name="valueField">FitExcelRowHeight</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1084" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.1877|PDF}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showPageBreak</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1085" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.2993|Keep Together}</property>
+                <property name="valueField">Keep</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">!model/visibleShowInRptCp</property>
+              </block>
+              <block listElementKey="K1086" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.2994|Repeat on each page}</property>
+                <property name="valueField">Repeat</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/showRepeatSection</property>
+              </block>
+              <block listElementKey="K1087" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.2995|Repeat horizontally}</property>
+                <property name="valueField">RepeatHoriz</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">!model/isHorizontalSubsection</property>
+                <property name="visibleField">!model/visibleShowInRptCp</property>
+              </block>
+              <block listElementKey="K1088" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.2996|Force new page}</property>
+                <property name="modelPath">parent/model/NewPage</property>
+                <property name="cssText">margin-left:5px</property>
+                <property name="visibleField">!parent/model/visibleShowInRptCp</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="grid" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.114|Grid}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/isOneGrid</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1089" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3332|Data Source:}</property>
+                <property name="modelPath">parent/model/getDynamicListModel("documentDataSets","DataSource")</property>
+                <property name="id">pfeDataSourceListPulldown</property>
+              </block>
+              <block listElementKey="K1090" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3442|Shortcut}</property>
+                <property name="valueField">Shortcut</property>
+                <property name="visibleField">parent/model/visibleShortcut</property>
+                <property name="enabledField">parent/model/enableShortcut</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1091" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.2966|View:}</property>
+                <property name="modelPath">parent/model/getDynamicListModel("XTabViewModes","XTabView")</property>
+              </block>
+              <block listElementKey="options" name="VBox">
+                <property name="cssClass">GridViewOptions</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1093" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.4643|Grid Overflow (HTML)}:</property>
+                      <property name="modelPath">parent/parent/parent/model/Overflow</property>
+                      <property name="visibleField">parent/parent/parent/model/XTabView/selectedIndices:0,2</property>
+                    </block>
+                    <block listElementKey="K1094" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5606|Grid Overflow (PDF &amp; Excel):}</property>
+                      <property name="modelPath">parent/parent/parent/model/ExportOverflow</property>
+                      <property name="visibleField">parent/parent/parent/model/ExportOverflowVisible</property>
+                    </block>
+                    <block listElementKey="K1095" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5662|Graph Overflow (PDF)}:</property>
+                      <property name="modelPath">parent/parent/parent/model/GraphExportOverflow</property>
+                      <property name="visibleField">parent/parent/parent/model/XTabView/selectedIndices:1</property>
+                    </block>
+                    <block listElementKey="graphExportOverflow" name="HTextBox">
+                      <property name="valueField">GraphExportOverflowSpacing</property>
+                      <property name="caption">{desc:mstrWeb.5663|Spacing}:</property>
+                      <property name="visibleField">parent/parent/parent/model/XTabView/selectedIndices:1</property>
+                      <property name="enabledField">parent/parent/parent/model/GraphExportOverflow/selectedIndices:1,2</property>
+                      <property name="modelPath">parent/parent/parent/model</property>
+                      <property name="totalSize">6</property>
+                      <property name="cssText">width:195px</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="type">7</property>
+                          <property name="min">0</property>
+                        </block>
+                      </property>
+                    </block>
+                    <block listElementKey="K1096" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.4736|Quick Switch}</property>
+                      <property name="valueField">QuickSwitch</property>
+                      <property name="modelPath">parent/parent/parent/model</property>
+                      <property name="visibleField">parent/parent/parent/model/XTabView/selectedIndices:0,1</property>
+                    </block>
+                    <block listElementKey="K1097" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.2977|Grid Position}:</property>
+                      <property name="modelPath">parent/parent/parent/model/XTabPos</property>
+                      <property name="visibleField">parent/parent/parent/model/XTabView/selectedIndices:2</property>
+                    </block>
+                    <block listElementKey="K1098" name="HTextBox">
+                      <property name="valueField">XTabPer</property>
+                      <property name="caption">{desc:mstrWeb.2978|Grid Area}:</property>
+                      <property name="captionSuffix">%</property>
+                      <property name="modelPath">parent/parent/parent/model</property>
+                      <property name="visibleField">parent/parent/parent/model/XTabView/selectedIndices:2</property>
+                      <property name="totalSize">4</property>
+                      <property name="maxlength">3</property>
+                      <property name="cssText">margin-top:1px;</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="type">1</property>
+                          <property name="min">0</property>
+                          <property name="max">100</property>
+                          <property name="required">true</property>
+                        </block>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1099" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4728|Selector}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showSelectorStyle</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1100" name="HBox">
+                <property name="visibleField">parent/model/parent/items/6/isNormalSelector</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1101" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5029|DHTML Style:}</property>
+                      <property name="modelPath">parent/parent/model/getDynamicListModel("SelectorStyles","EditSelectorStyle")</property>
+                      <property name="visibleField">parent/parent/model/parent/items/6/EditSelectorType/selectedIndices:0,1</property>
+                    </block>
+                    <block listElementKey="K1102" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5029|DHTML Style:}</property>
+                      <property name="modelPath">parent/parent/model/EditSelectorStyleSingleSelect</property>
+                      <property name="visibleField">parent/parent/model/parent/items/6/EditSelectorType/selectedIndices:2,5</property>
+                    </block>
+                    <block listElementKey="K1103" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5027|Flash Style:}</property>
+                      <property name="modelPath">parent/parent/model/getDynamicListModel("availableWidgets","setWidget")</property>
+                      <property name="enabledField">!parent/parent/model/EditSelectorStyle/selectedIndices:7</property>
+                      <property name="cssText">margin-left:20px</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="selectorOptions" name="VBox">
+                <property name="visibleField">parent/model/parent/items/6/isNormalSelector</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K1104" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.9|Orientation:}</property>
+                      <property name="modelPath">parent/parent/model/EditSelectorOrientation</property>
+                      <property name="enabledField">!parent/parent/model/EditSelectorStyle/selectedIndices:0,2,7</property>
+                      <property name="visibleField">parent/parent/children/0/children/0/visible</property>
+                    </block>
+                    <block listElementKey="K1105" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.9|Orientation:}</property>
+                      <property name="modelPath">parent/parent/model/EditSelectorOrientation</property>
+                      <property name="enabledField">!parent/parent/model/EditSelectorStyleSingleSelect/selectedIndices:0,2,7</property>
+                      <property name="visibleField">parent/parent/children/0/children/1/visible</property>
+                    </block>
+                    <block listElementKey="K1106" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.4742|Allow multiple selections}</property>
+                      <property name="valueField">EditSelectorMultiSelect</property>
+                      <property name="modelPath">parent/parent/model</property>
+                      <property name="enabledField">parent/parent/model/EditSelectorMultiSelectEnabled</property>
+                    </block>
+                    <block listElementKey="K1107" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.4936|Change Selection on Mouse Over} {desc:mstrWeb.4875|(Flash Only)}</property>
+                      <property name="valueField">EditSelectorMouseOverAction</property>
+                      <property name="modelPath">parent/parent/model</property>
+                      <property name="enabledField">parent/parent/model/ChangeSelectionOnMouseOverEnabled</property>
+                    </block>
+                    <block listElementKey="K1108" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.4782|Make all items the same width}</property>
+                      <property name="valueField">ItemWidthMode</property>
+                      <property name="modelPath">parent/parent/model</property>
+                      <property name="enabledField">parent/parent/model/ItemWidthModeEnabled</property>
+                    </block>
+                    <block listElementKey="searchOnServ" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.8968|Search on server}</property>
+                      <property name="valueField">EditSelectorSearchOnServ</property>
+                      <property name="modelPath">parent/parent/model</property>
+                      <property name="visibleField">parent/parent/model/visibleSearchOnServ</property>
+                    </block>
+                    <block listElementKey="exportSelectorTriState" name="TriStateCheckBox">
+                      <property name="cssClass">TriStateCheckBox2</property>
+                      <property name="caption">{desc:mstrWeb.9027|Export selector to PDF as shown on screen}</property>
+                      <property name="id">aow</property>
+                      <property name="modelPath">parent/parent/model/exportSelectorTriState</property>
+                      <property name="valueField">parent/parent/model/ExportAsShownOnWeb</property>
+                      <property name="enabledField">parent/parent/model/EditSelectorStyle/selectedIndices:3,4,5,6</property>
+                    </block>
+                    <!--  TQMS 853025 -->
+                      <!-- block listElementKey="noSelectionBehavior" name="ListPulldown">
+                        <property name="horizontalCaption">{desc:mstrWeb.|No Selection As:}</property>
+                        <property name="modelPath">parent/parent/model/EditSelectorNoSelectionBehavior</property>
+                      </block -->
+                      <block listElementKey="enableSelCount" name="CheckBox">
+                        <property name="caption">{desc:mstrWeb.|Enable selection restrictions}</property>
+                        <property name="valueField">EnableSelCount</property>
+                        <property name="modelPath">parent/parent/model</property>
+                        <property name="visibleField">false</property>
+                      </block>
+                      <block listElementKey="minSel" name="HTextBox">
+                        <property name="caption">{desc:mstrWeb.|Minimum number of selections:}</property>
+                        <property name="valueField">MinSel</property>
+                        <property name="modelPath">parent/parent/model</property>
+                        <property name="enabledField">parent/parent/model/EnableSelCount</property>
+                        <property name="visibleField">false</property>
+                        <property name="totalSize">7</property>
+                        <property name="validator">
+                          <block name="FieldValidator">
+                            <property name="type">1</property>
+                            <property name="min">0</property>
+                            <property name="lessThan">model/MaxSel</property>
+                          </block>
+                        </property>
+                      </block>  
+                      <block listElementKey="maxSel" name="HTextBox">
+                        <property name="caption">{desc:mstrWeb.|Maximum number of selections:}</property>
+                        <property name="valueField">MaxSel</property>
+                        <property name="modelPath">parent/parent/model</property>
+                        <property name="enabledField">parent/parent/model/EnableSelCount</property>
+                        <property name="visibleField">false</property>
+                        <property name="totalSize">7</property>
+                        <property name="validator">
+                          <block name="FieldValidator">
+                            <property name="type">1</property>
+                            <property name="min">0</property>
+                            <property name="greaterThan">model/MinSel</property>
+                          </block>
+                        </property>
+                      </block>                            
+                  </list>
+                </property>
+              </block>                  
+              <block listElementKey="MetricQualifier" name="HBox">
+                <property name="visibleField">parent/model/parent/items/6/isMetricQualifier</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="metricQual" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5029|DHTML Style:}</property>
+                      <property name="modelPath">parent/parent/model/EditSelectorStyleMetricQual</property>
+                      <property name="visibleField">parent/parent/model/parent/items/6/isMetricQualifier</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesTabLayout is the "Layout" tab of the properties editor.
+	-->

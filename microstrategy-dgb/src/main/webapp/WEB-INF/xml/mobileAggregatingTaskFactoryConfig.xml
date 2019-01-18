@@ -1,0 +1,59 @@
+<!DOCTYPE aggregatingTaskFactory SYSTEM "dtds/aggregatingTaskFactory.dtd">
+<aggregatingTaskFactory>
+  <tasks>
+ 	<task registerAs="getProjects" class="com.microstrategy.web.tasks.GetProjectsTask"/>
+ 	<task registerAs="changePassword" class="com.microstrategy.web.app.tasks.ChangePasswordTask" />
+ 	<task registerAs="closeSessions" class="com.microstrategy.web.tasks.CloseSessionsTask"/>
+    <task registerAs="iPhoneGetGraphResults" class="com.microstrategy.web.tasks.IphoneGraphResultsTask"/>
+    <task registerAs="iPhoneGetRWResults" class="com.microstrategy.web.app.tasks.IPhoneGetRWResultsTask" />
+    <task registerAs="iPhoneGetReportResults" class="com.microstrategy.web.app.tasks.IPhoneGetReportResultsTask" />
+    <task registerAs="iPhonePreLoadRWResults" class="com.microstrategy.web.app.tasks.IPhonePreLoadRWResultsTask" />
+    <task registerAs="iPhoneSubscribe" class="com.microstrategy.web.tasks.IPhoneMobileSubscribeTask" />
+  	<task registerAs="iPhoneUnsubscribe" class="com.microstrategy.web.tasks.IPhoneMobileUnsubscribeTask" />
+    <task registerAs="getMobileReports" class="com.microstrategy.web.tasks.GetMobileReportsTask"/>
+    <task registerAs="mobileLogin" class="com.microstrategy.web.app.tasks.MobileAppLoginTask"/>
+    <task registerAs="getMobileSubscription" class="com.microstrategy.web.tasks.GetMobileSubscriptionTask" />
+    <task registerAs="mobileGetDevices" class="com.microstrategy.web.tasks.MobileGetDevicesTask" />
+    <task registerAs="mobileGetPushRegistrationStatus" class="com.microstrategy.web.tasks.MobileGetPushRegistrationStatusTask" />
+    <task registerAs="mobilePushRegister" class="com.microstrategy.web.tasks.MobilePushRegisterTask" />
+    <task registerAs="mobilePushUnregister" class="com.microstrategy.web.tasks.MobilePushUnregisterTask" />
+    <task registerAs="mobileExecuteReport" class="com.microstrategy.web.tasks.MobileExecuteReportTask"/>
+	<task registerAs="mobileExecuteReportDS" class="com.microstrategy.web.tasks.MobileExecuteReportDSTask"/>
+    <task registerAs="mobileExecuteRW" class="com.microstrategy.web.tasks.MobileExecuteRWTask"/>
+	<task registerAs="mobileExecuteRWDS" class="com.microstrategy.web.tasks.MobileExecuteRWDSTask"/>		
+    <task registerAs="mobilePollStatus" class="com.microstrategy.web.tasks.MobilePollStatusTask"/>
+    <task registerAs="mobileGetGraphResults" class="com.microstrategy.web.tasks.MobileGraphResultsTask"/>
+    <task registerAs="mobileSaveProperties" class="com.microstrategy.web.tasks.MobileSavePropertiesTask"/>
+	<task registerAs="mobileValidateMetricValue" class="com.microstrategy.web.app.tasks.MobileValidateMetricValueTask"/>
+    <task registerAs="mobileRWPDFResults" class="com.microstrategy.web.tasks.MobileRWPDFResultsTask"/>	
+    <task registerAs="mobileRefreshSubscription" class="com.microstrategy.web.tasks.MobileRefreshSubscriptionTask"/>
+    <task registerAs="mobileGetInboxMessageTime" class="com.microstrategy.web.tasks.MobileGetInboxMessageTime"/>	
+    <task registerAs="mobilePromptsXml" class="com.microstrategy.web.tasks.MobilePromptsXmlTask"/>
+    <task registerAs="mobileSaveSubscription" class="com.microstrategy.web.tasks.MobileSaveSubscriptionTask"/>
+    <task registerAs="getMobileConfiguration" class="com.microstrategy.web.app.tasks.GetMobileConfigurationTask" />
+    <task registerAs="usherQR" class="com.microstrategy.web.app.tasks.UsherQRCodeTask" />
+    <task registerAs="usherLogin" class="com.microstrategy.web.app.tasks.UsherAuthenticationTask"  />
+    <task adminTask="true" registerAs="getMobileConfigurationBlock" class="com.microstrategy.web.app.tasks.GetMobileConfigurationBlockTask" />
+    <task adminTask="true" registerAs="getMobileConfigurationIndex" class="com.microstrategy.web.app.tasks.GetMobileConfigurationIndexTask" />
+    <task registerAs="getMobileConfigurationVersion" class="com.microstrategy.web.app.tasks.GetMobileConfigurationVersionTask" />
+    <task adminTask="true" registerAs="createMobileConfiguration" class="com.microstrategy.web.app.tasks.CreateMobileConfigurationTask" />
+    <task adminTask="true" registerAs="updateMobileConfiguration" class="com.microstrategy.web.app.tasks.UpdateMobileConfigurationTask" />
+    <task adminTask="true" registerAs="updateMobileConfigurationProperties" class="com.microstrategy.web.app.tasks.UpdateMobileConfigurationPropertiesTask" />
+    <task adminTask="true" registerAs="duplicateMobileConfiguration" class="com.microstrategy.web.app.tasks.DuplicateMobileConfigurationTask" />
+    <task adminTask="true" registerAs="deleteMobileConfiguration" class="com.microstrategy.web.app.tasks.DeleteMobileConfigurationTask" />
+	<task registerAs="mobileDuplicateMessage" class="com.microstrategy.web.app.tasks.MobileDuplicateMessageTask" />
+	<task adminTask="true" registerAs="getNewMobileConfiguration" class="com.microstrategy.web.app.tasks.GetNewMobileConfigurationTask" />
+  	<task registerAs="RWGridDrillToReport" class="com.microstrategy.web.tasks.RWDrillTask" />
+  	<task registerAs="getDimension" class="com.microstrategy.web.app.tasks.GetDimensionTask" />
+    <task registerAs="getPluginVisList" class="com.microstrategy.web.app.tasks.GetPluginVisListTask" />
+    <task registerAs="getD3WidgetFilesList" class="com.microstrategy.web.app.tasks.GetD3WidgetFilesListTask" />
+  </tasks>
+  <factories>
+    <factory name="MobileBean" class="com.microstrategy.web.app.tasks.BeanTaskFactory">
+     <params>
+       <param name="subFolder" value="mobile"/>
+       <param name="serverType" value="mobile"/>
+     </params>
+   </factory>
+  </factories>
+</aggregatingTaskFactory>

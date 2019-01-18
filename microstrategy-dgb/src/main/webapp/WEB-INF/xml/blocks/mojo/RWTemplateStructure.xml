@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the structure of an Template node.
+--> 
+<block name="RWTemplateStructure">
+    <definition>
+        <!-- The collection of units on the row axis. -->
+        <property name="rows" type="List" />
+        
+        <!-- The collection of units on the columns axis. -->
+        <property name="cols" type="List" />
+        
+        <!-- The metrics collection. -->
+        <property name="mx" type="List" />
+        
+        <!-- The axis of the template metrics unit. -->
+        <property name="tma" type="Integer" />
+        
+        <!-- The grid formats. -->
+        <property name="fmts" type="Block" />
+        
+        <!-- The advanecd grid properties. -->
+        <property name="prop" type="Block" />
+    </definition>
+</block>

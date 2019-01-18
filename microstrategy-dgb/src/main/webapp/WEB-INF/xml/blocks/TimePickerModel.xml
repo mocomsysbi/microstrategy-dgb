@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="TimePickerModel" inherits="BaseModel">
+	    <definition>
+			<property name="timeFormat" type="String" /> 	
+			<property name="hour" type="Integer" /> 
+			<property name="minute" type="Integer" /> 
+			<property name="second" type="Integer" /> 	
+		    <property name="timeDescs" type="Block" />													
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.TimePicker</property>			
+			<property name="timeFormat">hh:mm:ss</property>		 
+			<property name="hour">0</property>	
+			<property name="minute">0</property>	
+			<property name="second">0</property>		
+			<property name="timeDescs">
+                <block name="BaseBlock">
+                    <property name="0" type="String">{desc:mstrWeb.5987|AM}</property>
+                    <property name="1" type="String">{desc:mstrWeb.5988|PM}</property>
+                </block>
+            </property>  													    
+		</assignments>
+	</block>

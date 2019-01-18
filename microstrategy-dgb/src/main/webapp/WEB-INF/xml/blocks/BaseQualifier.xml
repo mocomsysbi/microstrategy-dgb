@@ -1,0 +1,76 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		BaseQualifier is a collection of views which edit the nodes of a qualifier in an
+		Expression tree. 
+	-->
+	<block name="BaseQualifier" inherits="BaseView">
+		<definition>
+			<!-- Indicates whether the view is intended to edit a metric qualifier (10) or attribute qualifier (2). -->
+			<property name="expressionType" type="Integer" />
+			
+			<!-- The view for choosing the attribute for this qualifier.  -->
+			<property name="targetView" type="Block" />
+
+			<!-- The view for choosing the function (=, >, between, etc) for this qualifier.  -->
+			<property name="functionView" type="Block" />
+			
+			<!-- The view for choosing the first constant for this qualifier.  -->
+			<property name="constant1View" type="Block" />
+
+			<!-- The view for choosing the second constant for this qualifier (only for between/not between qualifiers).  -->
+			<property name="constant2View" type="Block" />
+
+			<!-- Optional view for the path of the targetView.  -->
+			<property name="pathView" type="Block" />
+
+			<!-- Optional view for the Up button for walking the path of the targetView.  -->
+			<property name="pathUpButton" type="Block" />
+			
+			<!-- Optional view for entering user-defined searches for the targetView.  -->
+			<property name="searchView" type="Block" />
+			
+			<!-- Optional view for incrementally fetching contents in the targetView. -->
+			<property name="fetchView" type="Block" />
+			
+			<!-- Optional view for choosing whether to include or exclude this qualifier; typically a pulldown. -->
+			<property name="includeView" type="Block" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.Qualifier</property>
+			<property name="cssClass">Qualifier</property>
+			<property name="targetView">
+				<block name="FastListView">
+					<property name="caption">{desc:mstrWeb.1408|Available:}</property>
+					<property name="modelPath">parent/model/getTargetListModel()</property>
+					<property name="cmds">BrowseListItem;!ClickListItem;EditConditionTarget|model/getSelectedItem()|parent/model/selected</property>
+				</block>
+			</property>
+			<property name="functionView">
+				<block name="ListPulldown">
+					<property name="caption">{desc:mstrWeb.5904|Is:}</property>
+					<property name="modelPath">parent/model/getFunctionListModel()</property>
+					<property name="cmds">EditConditionFunction|model/getSelectedItem()|parent/model/selected</property>
+				</block>
+			</property>
+			<property name="constant1View">
+				<block name="CalendarAndTimePicker">
+					<property name="caption">{desc:mstrWeb.4104|Value:}</property>
+					<property name="modelPath">parent/model/getConstant1Model()/getCalendarTimePicker()</property>
+					<property name="cmds">EditConditionConstant1|model/getValueString()|parent/model/selected</property>
+				</block>
+			</property>
+			<property name="constant2View">
+				<block name="CalendarAndTimePicker">
+					<property name="caption">{desc:mstrWeb.5905|And:}</property>
+					<property name="modelPath">parent/model/getConstant2Model()/getCalendarTimePicker()</property>
+					<property name="cmds">EditConditionConstant2|model/getValueString()|parent/model/selected</property>
+				</block>
+			</property>
+			<property name="includeView">
+				<block name="ListPulldown">
+					<property name="modelPath">parent/model/getIncludeListModel()</property>
+					<property name="cmds">EditConditionInclude|model/getSelectedItem()|parent/model/selected</property>
+				</block>
+			</property>
+		</assignments>
+	</block>		 

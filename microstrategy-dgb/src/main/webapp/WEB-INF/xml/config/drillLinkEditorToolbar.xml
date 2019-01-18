@@ -1,0 +1,57 @@
+<shortcut-list-set javascript-file="mstrEditorToolbar.js" name="drillLinkEditorToolbar" feature-id="dhtml" script-class="mstrDrillLinkToolbar" version="1.0">
+  <attributes>
+    <attribute name="at" value="webHyperLinkEditor_WebHyperLinkEditorStyle"/>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="dl_edit">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+      <attribute name="ty" value="btng"/>
+    </attributes>
+    <shortcut desc="New" desc-id="mstrWeb.4996" name="tbDLNew" type="button">
+        <attributes>
+            <attribute name="cmdid" value="new" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Remove" desc-id="mstrWeb.190" name="tbDeleteGroup" type="button">
+      <attributes>
+        <attribute name="cmdid" value="delete" />
+      </attributes>
+    </shortcut>    
+  </shortcut-list>
+  <shortcut-list name="dl_order">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+      <attribute name="ty" value="btng"/>
+    </attributes>
+    <shortcut desc="Move Up" desc-id="mstrWeb.138" name="tbUpGroup" type="button">
+        <attributes>
+            <attribute name="cmdid" value="up" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Move Down" desc-id="mstrWeb.139" name="tbDownGroup" type="button">
+      <attributes>
+        <attribute name="cmdid" value="down" />
+      </attributes>
+    </shortcut>    
+  </shortcut-list>
+  <shortcut-list name="dl_default">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+      <attribute name="ty" value="btng"/>
+    </attributes>
+    <shortcut desc="Set Default" desc-id="mstrWeb.5141" name="tbSetDefault" type="button">
+        <attributes>
+            <attribute name="cmdid" value="setDefault" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Clear Default" desc-id="mstrWeb.5142" name="tbClearDefault" type="button">
+      <attributes>
+        <attribute name="cmdid" value="clearDefault" />
+      </attributes>
+    </shortcut>    
+  </shortcut-list>
+</shortcut-list-set>

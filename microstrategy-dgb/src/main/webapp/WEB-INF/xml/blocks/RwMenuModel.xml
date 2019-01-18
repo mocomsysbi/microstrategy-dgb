@@ -1,0 +1,6 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="RwMenuModel" inherits="MenuModel">
+  <assignments>
+    <property name="targetPath">#rwb_viewer</property>
+  </assignments>
+</block>

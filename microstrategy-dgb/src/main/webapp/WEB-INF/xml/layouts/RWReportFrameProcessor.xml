@@ -1,0 +1,22 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isIFrameRequest">
+	<mstrlayout:else>
+		<mstrlayout:if name="isDhtml">
+		  <mstrlayout:then>
+		      <![CDATA[
+		      <textarea id="json300" class="mstrJSON">
+		      ]]>
+			     <mstrlayout:bContext defaultContentType="JSON" />
+			 <mstrlayout:block name="XHRProcessor" />
+		      <![CDATA[
+			  </textarea>
+		      ]]>
+		      <script type="text/javascript">
+		        mstr.$register('json300', self);
+			  </script>
+		  </mstrlayout:then>
+		</mstrlayout:if>  
+    </mstrlayout:else>
+  </mstrlayout:if>	
+</mstrlayout:layout>

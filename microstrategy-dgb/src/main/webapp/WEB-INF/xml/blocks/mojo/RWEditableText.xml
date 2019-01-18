@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about the data of a Report Writer object, when the 
+    object's value is scalar (String) and editable.
+--> 
+<block name="RWEditableText" inherits="RWLinkObject">
+    <definition>
+    	<!-- The raw data of the object. -->
+        <property name="rv" type="String" />
+
+    	<!-- The columns string. Used for inputting data -->
+        <property name="cls" type="String" />
+        
+    	<!-- The key string. Used for inputting data -->
+        <property name="key" type="String" />
+        
+        <!-- Change type allowed for mapped transaction report -->
+        <property name="cta" type="Integer" />
+        
+        <!-- Values if Data Driven -->
+        <property name="vls" type="List" />
+    </definition>
+</block>
+        

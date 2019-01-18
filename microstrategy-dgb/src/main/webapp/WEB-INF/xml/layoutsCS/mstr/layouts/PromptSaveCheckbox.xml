@@ -1,0 +1,42 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_savingAnswer="mstr.behaviors.PromptSaveCheckbox.on_set_savingAnswer(view, model, rootTag)"
+    on_model.answer_set_container="mstr.behaviors.PromptSaveCheckbox.on_set_readyState(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'table', 'none', view.props['visible'])">
+  <table cellspacing="0"
+         cellpadding="0"
+         class="{@cssPrefix}{@cssClass}"
+         id="{@id}">
+    <tr>
+      <td style="padding: 0">
+        <input value="1"
+               name="{@id}_checkbox"
+               class="{@cssPrefix}{@cssClass}Checkbox"
+               id="{@id}_checkbox"
+               type="checkbox"
+               onclick="mstr.behaviors.PromptSaveCheckbox.onClickRemeber('{@id}', this)">
+        </input>
+        <label class="{@cssPrefix}{@cssClass}Label"
+               for="{@id}_checkbox">
+          
+{@saveAnswerCaption}
+        </label>
+      </td>
+      <td style="padding: 0">
+        <input value="1"
+               name="{@id}_checkbox_autoclose"
+               style="display:none;" 
+               class="{@cssPrefix}{@cssClass}Checkbox"
+               id="{@id}_checkbox_autoclose"
+               type="checkbox"
+               onclick="mstr.behaviors.PromptSaveCheckbox.onClickAutoClose('{@id}', this)">
+        </input>
+        <label class="{@cssPrefix}{@cssClass}Label"
+        	   style="display:none;" 
+               for="{@id}_checkbox_autoclose">
+          
+{@autoCloseCaption}
+        </label>
+      </td>
+    </tr>
+  </table>
+</mstrlayout:layout>

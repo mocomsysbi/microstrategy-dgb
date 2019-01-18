@@ -1,0 +1,66 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		FieldValidator is a block used for validating model fields.
+	-->
+	<block name="FieldValidator" inherits="BaseModel">
+		<definition>
+			<!-- The data type of the field. -->
+			<property name="type" type="Integer" />
+			
+			<!-- The minimum allowable value of the field. -->
+			<property name="min" type="String" />
+			
+			<!-- The maximum allowable value of the field. -->
+			<property name="max" type="String" />
+			
+			<!-- A semi colon delimited string denoting the values the validator can take as exceptions to the validation rules. 
+			For example, value of "0;1" means two exceptions of value 0 or 1. One special 
+			case if for the value of ";" which means exception of value blank.-->
+			<property name="exceptions" type="String" />
+						
+			<!-- The paths to the combination of the fields that this field should be less than.  Each field is separated by
+				a semi colon and summed fields appear to the left of the pipe (|) while subtracted fields appear to the right
+				of the pipe (|).  A lessThan field with no semicolons and no pipes will be a simple comparison   -->
+			<property name="lessThan" type="String" />
+			
+			<!-- The paths to the combination of the fields that this field should be greater than.  Each field is separated by
+				a semi colon and summed fields appear to the left of the pipe (|) while subtracted fields appear to the right
+				of the pipe (|).  A greaterThan field with no semicolons and no pipes will be a simple comparison   -->
+			<property name="greaterThan" type="String" />
+			
+			<!-- A boolean indicating whether this field is required. -->
+			<property name="required" type="Boolean" />
+			
+			<!-- A boolean value holding the current validity state of the field. -->
+			<property name="valid" type="Boolean" />
+			
+			<!-- An optional regular expression for validating the field.  If you supply a regular expression you must
+				also supply an error message (in errMessage). -->
+			<property name="regEx" type="String" />
+			
+			<!-- The string message to be shown to the user when data is invalid. -->
+			<property name="errMessage" type="String" />
+			
+			<!-- descriptors for validation message -->
+			<property name="descriptors" type="Block" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.FieldValidator</property>
+			<property name="min">x</property>
+			<property name="max">x</property>
+			<property name="required">false</property>
+			<property name="valid">true</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+	                <property name="errTypeInt" type="String">{desc:mstrWeb.6076|an Integer value}</property>
+	                <property name="errTypeNum" type="String">{desc:mstrWeb.6077|a Number value}</property>
+	                <property name="errRequired" type="String">{desc:mstrWeb.6078|This field is required.}</property>
+	                <property name="errMinMax" type="String">{desc:mstrWeb.6079|This field should be # between ## and ###.}</property>
+	                <property name="errMaxOrLess" type="String">{desc:mstrWeb.6080|This field should be # less than or equal to ###.}</property>
+	                <property name="errMinOrGreater" type="String">{desc:mstrWeb.6081|This filed should be # greater than or equal to ##.}</property>
+	                <property name="errRegEx" type="String">{desc:mstrWeb.6082|This field failed regular expression validation.}</property>
+	                <property name="errType" type="String">{desc:mstrWeb.6122|This field should be #.}</property> <!-- Descriptor to be added -->
+	            </block>
+			</property>
+		</assignments>
+	</block>

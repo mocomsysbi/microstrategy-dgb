@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name = "TransactionTargetDataset">
+    <definition>
+        <!-- dss id of the transaction target dataset  -->
+        <property name = "did" type = "String" />
+        <!-- name of the transaction target dataset -->
+        <property name = "n" type = "String" />
+        <!-- type of the transaction target dataset -->
+        <property name = "tp" type="Integer" />
+        <!-- A list of dataset elements(form/metic)-->
+        <property name = "dsObjs" type = "List" />
+    </definition>
+</block>

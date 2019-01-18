@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- HTTP Processors -->
+	<block name="FrameProcessor" inherits="BaseModel">
+		<definition>
+			<property name="frameName" type="String" />
+			<property name="timeout" type="Integer" />
+			<property name="taskURL" type="String"/>
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.http.FrameProcessor</property>
+			<property name="timeout">50000</property>
+			<property name="taskURL">{controllerParam:servletDeploymentName|TaskProcessorServlet}</property>
+		</assignments>
+	</block>

@@ -1,0 +1,21 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptMenuModel" name="RptHomeExportMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="PDFExportMenu" name="MenuControlModel">
+          <property name="text">PDF</property>
+          <property name="cmdid">buttonPDF</property>
+          <property name="visibleFeatures">not-datamart;web-export-to-pdf;enable-pdf;!is-non-viewable-report</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="FlashExportMenu" name="MenuControlModel">
+          <property name="text">Flash</property>
+          <property name="cmdid">buttonFlash</property>
+          <property name="visibleFeatures">web-export-to-flash;show-report-flash-export</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

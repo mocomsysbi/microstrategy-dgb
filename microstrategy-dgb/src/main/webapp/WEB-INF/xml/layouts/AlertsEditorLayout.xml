@@ -1,0 +1,5 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:render name="ThresholdExpressions" />
+    <mstrlayout:render name="SubscriptionsPanel" />
+</mstrlayout:layout>

@@ -1,0 +1,30 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ListCart is a shopping cart with 2 FastListView of ListModels. -->
+	<block name="ListCart" inherits="SimpleListCart">
+		<assignments>
+			<property name="availableView">
+				<block name="FastListView">
+					<property name="caption">{desc:mstrWeb.1408|Available:}</property>
+					<property name="modelPath">parent/model/availableFiltered</property>
+					<property name="cmds">!ClickListItem;BrowseListItem||parent/model/available</property>
+					<property name="cmdsDblClick">Add||parent/model</property>
+					<property name="multiSelect">true</property>
+					<property name="width">100%</property>
+					<property name="shouldReplaceSpace">true</property>
+				</block>
+			</property>
+			<property name="selectedView">
+				<block name="FastListView">
+					<property name="caption">{desc:mstrWeb.1409|Selected:}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="multiSelect">true</property>
+					<property name="allowBrowseFolder">false</property>
+					<property name="allowBrowseAttribute">false</property>
+					<property name="allowBrowseHierarchy">false</property>
+					<property name="cmdsDblClick">Remove||parent/model</property>
+					<property name="width">100%</property>
+					<property name="shouldReplaceSpace">true</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

@@ -1,0 +1,32 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+    <div class="sfDfn">
+        <span class="sfName">
+            <mstrlayout:render name="securityFilterName" />
+        </span><br />
+
+        <div>
+            [Expression:]
+            <br />
+            <mstrlayout:render name="securityFilterExpression" />
+            <br />
+        </div>
+
+        <div>
+            [Top Range Attribute:]
+            <br />
+            <mstrlayout:render name="topRangeAttribute" />
+            <br />
+        </div>
+
+        <div>
+            [Bottom Range Attribute:]
+            <br />
+            <mstrlayout:render name="bottomRangeAttribute" />
+            <br />
+        </div>
+
+    </div>
+
+</mstrlayout:layout>

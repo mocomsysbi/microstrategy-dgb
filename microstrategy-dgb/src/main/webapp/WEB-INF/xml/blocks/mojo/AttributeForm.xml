@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<block name="AttributeForm" inherits="WebObjectInfo">
+    <definition>
+        <!-- The data type -->
+        <property name="dtp" type="Integer" />
+        
+        <!-- Is Browse Form (set to 'true' if this form is part of the attribute's browse forms collection)-->
+        <property name="ibf" type="Boolean" />
+        
+        <!-- Is Compound Form -->
+        <property name="icf" type="Boolean" />        
+        <!-- Is id Form -->
+        <!-- Change the name to make it consistent with datasets attribute form. -->
+        <property name="idf" type="Boolean" />
+        <!-- Is Template Form (set to 'true' if this form is 
+        part of the attribute's template forms collection)-->
+        <property name="itf" type="Boolean" />
+        <!-- Is Template Form (set to 'true' if this form is 
+        part of the attribute's template forms collection)-->
+        <property name="obf" type="Boolean" />        
+    </definition>
+</block>

@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ViewBookChildContainer is a view for hosting ViewBooks and it allows for hosting the childViewTypes block here.  
+		The benefit of this is that when there are multiple ViewBooks (like Toolbars) we only have to send down one 
+		set of childViewTypes. -->
+	<block name="ViewBookChildContainer" inherits="BaseBlock">
+		<definition>
+			<!-- The type-specific definitions to be used for the dynamically generated views. -->
+			<property name="childViewTypes" type="Block" />		
+		</definition>
+	</block>

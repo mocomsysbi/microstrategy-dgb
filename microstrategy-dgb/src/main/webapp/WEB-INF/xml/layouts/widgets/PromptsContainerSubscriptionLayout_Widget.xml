@@ -1,0 +1,14 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptsContainerLayout_widget.xml">
+    <mstrlayout:replace slot="ReportInstanceModel">
+      <mstrlayout:bDeleteProperty path="messageName"/>
+      <mstrlayout:bSetProperty path="extendedProperties/updateManagerFormId" method="getPromptFormID"/>
+      <mstrlayout:bSetProperty path="extendedProperties/updateManagerFormTarget" value="_self"/>
+      <mstrlayout:bSetProperty path="extendedProperties/updateManagerFormRemoveInputNames" value="iframe"/>
+    </mstrlayout:replace>
+    <mstrlayout:replace slot="PromptEditor">
+      <mstrlayout:bDeleteProperty path="messageNameView"/>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+</mstrlayout:layout>

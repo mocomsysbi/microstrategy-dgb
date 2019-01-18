@@ -1,0 +1,18 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+
+<mstrlayout:layout>
+  <mstrlayout:base id = "folderObject" method = "getMainFolder" base = "transform"/>
+  <mstrlayout:block name = "ListModel">
+    <mstrlayout:list id = "children" method = "elements" base = "folderObject">
+      <mstrlayout:bSetProperty path = "items">
+        <mstrlayout:block name = "ItemInfo">
+          <mstrlayout:bSetProperty path = "dssid" method = "getID" base = "children"/>
+          <mstrlayout:bSetProperty path = "n" method = "getDisplayName" base = "children"/>
+          <mstrlayout:bSetProperty path = "desc" method = "getDescription" base = "children"/>
+          <mstrlayout:bSetProperty path = "tp" method = "getType" base = "children"/>
+          <mstrlayout:bSetProperty path = "stp" method = "getSubType" base = "children"/>
+        </mstrlayout:block>
+      </mstrlayout:bSetProperty>
+    </mstrlayout:list>
+  </mstrlayout:block>
+</mstrlayout:layout>

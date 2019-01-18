@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<block name="Folder" inherits="WebObjectInfo,Fetchable">
+    <definition>
+        <!-- The ancestor information, a tree of Folder blocks with a Folder as root -->
+        <property name="anc" type="Block" />
+        <!-- The shortcut information, a list of Folder blocks  -->
+        <property name="sc" type="List" />
+        <!-- The ID of the parent folder -->
+        <property name="pf" type="String" />
+        <!-- The Items collection -->
+        <property name="items" type="List" />
+    </definition>
+</block>

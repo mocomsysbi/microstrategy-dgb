@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarCheckListHelper" inherits="ToolbarListHelper">
+		<definition>
+			<!-- If this property is true the helper won't send previously queued events to the target. -->
+			<property name="discardQueue" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ToolbarCheckListHelper</property>
+		</assignments>
+	</block>

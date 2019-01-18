@@ -1,0 +1,14 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:include file="/WEB-INF/xml/layouts/PromptsClassicBaseLayout.xml">
+        <mstrlayout:replace slot="summaryButtons">
+            <mstrlayout:render name="executeButton"/>
+            <mstrlayout:render name="saveButton"/>
+            <mstrlayout:render name="cancelButton"/>
+    	</mstrlayout:replace>
+        <mstrlayout:replace slot="buttons">
+            <mstrlayout:render name="executeButton"/>
+            <mstrlayout:render name="cancelButton"/>
+    	</mstrlayout:replace>
+    </mstrlayout:include>
+</mstrlayout:layout> 

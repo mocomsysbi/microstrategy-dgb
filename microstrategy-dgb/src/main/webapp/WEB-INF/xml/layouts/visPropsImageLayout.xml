@@ -1,0 +1,162 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isValidGrid">
+    <mstrlayout:then>
+      <![CDATA[
+        <style type="text/css">
+            .h {
+                color: black;
+                padding:2px 2px 2px 10px;
+            }
+            .t {
+                width:100%;
+                padding:2px 2px 2px 10px;
+            }   
+            .c {
+                padding-left:20px; 
+            }
+            .leftpadding {
+            	padding-left: 19px;
+            	width: 100px;
+            }
+            .g {
+            	max-width:250px; 
+            	display: inline-block; 
+            }
+            .d {
+            	padding-left:20px;
+            }
+            .d select {
+                width: 100%; 
+            }
+            .b {
+                text-align:left;
+                padding-left:20px; 
+            }    
+            .z input{
+            	width:68px; 
+            }          
+        </style>
+     ]]>
+     <fieldset class="mstrFieldset">
+     <legend>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.295" /> <!-- Descriptor: General -->
+            </mstrlayout:render>&nbsp;
+     </legend>
+      <table>
+        <tr>
+           <td class="leftpadding">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.4963"/> <!-- Descriptor: Display MODE -->
+            </mstrlayout:render>
+          </td>
+          <td class="d">
+         	 <div class="g" >
+	            <mstrlayout:render name="SelectBox">
+	            	<mstrlayout:argument type="String" value="mt"/> 
+	            	<mstrlayout:argument type="String" value="0^mstrWeb.4531|1^mstrWeb.400|2^mstrWeb.348" /> <!-- selectBox elements -->
+	            	<mstrlayout:argument type="String" value="onchange^microstrategy.bone('visPropsEditor_visPropsImageLayoutStyle').updateDisplayModeOptions();" /> <!-- extra att -->
+	            	<mstrlayout:argument type="String" value="3" /> <!-- default val -->
+	            </mstrlayout:render>	
+	        </div>    
+          </td>
+        </tr>
+        <tr>
+          <td class="leftpadding" >
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.9067" /> <!-- Descriptor:  Shape file-->
+            </mstrlayout:render>
+          </td>
+          <td class="d">
+          	<div class="g">
+	            <mstrlayout:render name="SelectBox">
+	              <mstrlayout:argument type="String" value="mf" />
+	              <mstrlayout:argument type="String" value="" /> <!-- Empty selectbox, populated on the JS side-->
+	            </mstrlayout:render>
+	        </div>    
+          </td>
+        </tr>
+        </table>
+        </fieldset>
+        
+        <fieldset class="mstrFieldset">
+        <legend>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.9068" /> <!-- Descriptor:  Max Size -->
+            </mstrlayout:render>
+        </legend>
+		<table> 
+		       <tr>
+            <td class="leftpadding">
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.8733" /> <!-- Descriptor: Type -->
+                </mstrlayout:render>
+            </td>
+            <td class="b">
+                <mstrlayout:render name="SelectBox">
+                    <mstrlayout:argument type="String" value="ty" /> <!-- Property Name -->
+                    <mstrlayout:argument type="String" value="0^mstrWeb.4531|1^mstrWeb.8262" /> <!-- selectBox elements -->
+                    <mstrlayout:argument type="String" value="onchange^microstrategy.bone('visPropsEditor_visPropsImageLayoutStyle').greyOutMaxSizeValue();" /> <!-- extra att -->
+                    <mstrlayout:argument type="String" value="0" /> <!--  default value -->
+                </mstrlayout:render>
+            </td>
+        </tr>
+         <tr>
+            <td class="leftpadding">
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="9069" /> <!-- Descriptor: Value (0.01 - 1) -->
+                </mstrlayout:render>
+            </td>
+            <td class="b z">
+                <mstrlayout:render name="MaxSizeValTextbox">
+                  <mstrlayout:argument type="String" value="val"/>
+                </mstrlayout:render>
+            </td>
+        </tr>
+        </table>
+      </fieldset>   
+           
+       <fieldset class="mstrFieldset">
+        <legend>
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.2869" /> <!-- Descriptor: Formatting-->
+            </mstrlayout:render>
+
+		</legend>
+		<table>
+        <tr>
+            <td class="leftpadding">
+                <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.8015" /> <!-- Descriptor: Background Color -->
+                </mstrlayout:render>
+            </td>
+            <td class="b">
+                <mstrlayout:render name="ColorPicker">
+                    <mstrlayout:argument type="String" value="bc" /> <!-- Property Name -->
+                    <mstrlayout:argument type="String" value="#FFFFFF" /> <!--  default value -->
+                </mstrlayout:render>
+            </td>
+        </tr>
+        <tr id="defaultColor">
+          <td class="leftpadding">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.9070" /> <!-- Descriptor: Default -->
+            </mstrlayout:render><![CDATA[:]]>
+          </td>
+          <td class="c">
+            <mstrlayout:render name="ColorPicker">
+              <mstrlayout:argument type="String" value="npc" />
+              <mstrlayout:argument type="String" value="#AAAAAA" />
+            </mstrlayout:render>
+          </td>
+        </tr>
+      </table>
+      </fieldset>
+      <hr></hr>
+    </mstrlayout:then>
+    <mstrlayout:else>
+      <mstrlayout:render name="ValidationError" />
+    </mstrlayout:else>
+  </mstrlayout:if>
+</mstrlayout:layout>

@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarInsertMetricButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbInsertNewMetric</property>
+		<property name="tooltip">{desc:mstrWeb.2212|Insert New Metric...}</property>
+	</assignments>
+</block>

@@ -1,0 +1,71 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="GradientEditor" name="GraphGradientEditor">
+  <assignments>
+    <property name="id">GraphGradientEditor</property>
+    <property name="contentView/children[shadingStyles]/children[0]/children">
+      <list>
+        <block listElementKey="K705" name="VBox">
+          <property name="cssText">margin-left:20px;width:250px;</property>
+          <property name="extraCssClass">customGradient</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">parent/model/gradientType/selectedIndices:6</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K706" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4883|Transition Type:}</property>
+                <property name="modelPath">parent/model/transitionType</property>
+                <property name="popup/width">120px</property>
+                <property name="popup/height">60px</property>
+              </block>
+              <block listElementKey="K707" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4884|Angle:}</property>
+                <property name="captionSuffix">(0-359)</property>
+                <property name="valueField">angle</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">3</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">1</property>
+                    <property name="min">0</property>
+                    <property name="max">359</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+              <block listElementKey="K708" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4885|X Offset:}</property>
+                <property name="captionSuffix">(0-100)</property>
+                <property name="valueField">xOffset</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">3</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">1</property>
+                    <property name="min">0</property>
+                    <property name="max">100</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+              <block listElementKey="K709" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4886|Y Offset:}</property>
+                <property name="captionSuffix">(0-100)</property>
+                <property name="valueField">yOffset</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">3</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">1</property>
+                    <property name="min">0</property>
+                    <property name="max">100</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,19 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RetrieveChildrenTask" privileges="EnableAdministrationFromWeb">
+	<basicInfo desc="This Task provides the ability to retrieve the existing children in a group.">
+		<parameter name="userGroupID" desc="The group id" required="true" type="simplestring"/>
+	</basicInfo>
+
+	<!--
+		"8192002" is the EnumGroupBeanEvents.GROUP_EVENT_RETRIEVE_CHILDREN_BLOCK.
+	-->
+	<eventInfo eventID="8192002">
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'ugb' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="ugb" bean-type="UserGroupBean">
+	</beanInfo>
+</beanTask>

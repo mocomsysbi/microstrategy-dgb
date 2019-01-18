@@ -1,0 +1,54 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="DocumentTabDelivery">
+  <assignments>
+    <property name="title">{desc:mstrWeb.3538|Document Properties} - {desc:mstrWeb.9029|Delivery}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">properties_dialog_box_document_properties_delivery.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="users" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.11281|Users for Subscriptions}</property><!-- TODO: update descriptor -->
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="elUserType" name="RadioList">
+                <property name="visibleField">parent/parent/model/canBeSubscribed</property>
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/getDynamicListModel("userTypesModel","userType")</property>
+              </block>
+              <block listElementKey="elUserFieldSet" name="FieldSet">
+                <property name="visibleField">model/canBeSubscribed</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/userType/selectedIndices:2</property>
+                <property name="cssClass">usersListCart mstrFieldset</property>
+                <property name="children">
+                  <list>
+                      <block listElementKey="elACLEditor"  name="MojoWidget">
+                          <property name="name">ACLEditor</property>
+                          <property name="desc"></property>
+                          <property name="waitMessage">Rendering Mojo Widget ...</property>
+                          <property name="modelPath">parent/model</property>
+                          <property name="cfg/ui">{"modal":false, "showSharingOptions":false, "showButtonBar":false, "xzIndex":0, "cssClass":"mstrmojo-SharingEditor DocACL", "cssText":"position:static; width:440px; border:0 none; box-shadow:none;", "left":"1px", "top":"1px", "showTitle": false, "showACLHint":false, "showPublisAccess":false}</property>
+                          <property name="cfg/dataProp">selectedUsers</property>
+	                </block>
+                  </list>
+                </property>
+               </block>
+               <block listElementKey="elNotAllowed" name="TextFieldLabel">
+                   <property name="modelPath">parent/model</property>
+                   <property name="visibleField">!model/canBeSubscribed</property>
+                   <property name="valueField" type="String">notAllowedMsg</property>
+               </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+	DocumentTabDelivery is the "Document Properties - Delivery" tab of the document properties editor.
+-->

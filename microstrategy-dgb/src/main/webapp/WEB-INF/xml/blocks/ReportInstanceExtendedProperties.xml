@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ReportInstanceExtendedProperties is a collection of extended properties belonging to the
+		ReportInstanceModel Block (see below).  These properties are used when applying prompt answers.
+	-->
+	<block name="ReportInstanceExtendedProperties" inherits="BaseBlock">
+		<definition>
+			<property name="beanPath" type="String" />
+			<property name="beanType" type="Integer" />
+			<property name="isReprompt" type="Boolean" />
+			<property name="ownerBeanPath" type="String"/>
+			<!-- Optional ID of the HTML Form which this ReportInstance will submit to the MicroStrategy
+				UpdateManager for answering promnpts.  If missing, a new HTML Form is generated at run-time. -->
+			<property name="updateManagerFormId" type="String" />
+      <property name="updateManagerFormTarget" type="String" />
+      <property name="updateManagerFormRemoveInputNames" type="String" />
+    </definition>	
+	</block>

@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarBoldButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbBold</property>
+		<property name="tooltip">{desc:mstrWeb.2718|Bold}</property>
+		<property name="cmdid">Bold</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

@@ -1,0 +1,134 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="GraphFormatEditorTabNumber">
+  <assignments>
+    <property name="title">Format Graph - Number</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="modelPath">parent/model/items/2</property>
+    <property name="helpTopic">Format_Graph_dialog_Number.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K2068" name="HBox">
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2069" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.6120|Targets:}</property>
+                <property name="modelPath">parent/model/seriesLabels</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2070" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3434|Number}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2071" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2072" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.2402|Categories:}</property>
+                      <property name="modelPath">parent/model/gfnCat</property>
+                      <property name="enabledField">parent/model/gfnCat_enabled</property>
+                      <property name="showIcons">false</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                    </block>
+                    <block listElementKey="K2073" name="VBox">
+                      <property name="cssText">margin-left: 20px;</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2074" name="HTextBox">
+                            <property name="caption">{desc:mstrWeb.2046|Decimal places}:</property>
+                            <property name="valueField">gfnDecimalPlaces</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="visibleField">parent/model/gfnCat/selectedIndices:2,3,6,8</property>
+                            <property name="enabledField">parent/model/gfnCat_enabled</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">1</property>
+                                <property name="min">0</property>
+                                <property name="max">9</property>
+                              </block>
+                            </property>                            
+                          </block>
+                          <block listElementKey="K2075" name="HTextBox">
+                            <property name="caption">{desc:mstrWeb.2047|Currency symbol}:</property>
+                            <property name="valueField">gfnCurrencySymbol</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="totalSize">4</property>
+                            <property name="maxlength">4</property>                            
+                            <property name="visibleField">parent/model/gfnCat/selectedIndices:3</property>
+                            <property name="enabledField">parent/model/gfnCat_enabled</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="regEx">^[^0-9]*$</property>
+                                <property name="errMessage">Please enter non-numeric characters</property> <!--TODO: add new descriptor-->
+                              </block>
+                            </property>
+                          </block>                            
+                          <block listElementKey="K2076" name="ListPulldown">
+                            <property name="horizontalCaption">{desc:mstrWeb.2048|Currency position}:</property>
+                            <property name="modelPath">parent/model/gfnCurrencyPosition</property>
+                            <property name="visibleField">parent/model/gfnCat/selectedIndices:3</property>
+                            <property name="enabledField">parent/model/gfnCat_enabled</property>
+                            <property name="popup/height">80px</property>
+                          </block>
+                          <block listElementKey="K2077" name="ListView">
+                            <property name="caption">{desc:mstrWeb.2044|Negative numbers}:</property>
+                            <property name="modelPath">parent/model/gfnNegativeNumbers</property>
+                            <property name="multiSelect">false</property>
+                            <property name="height">90px</property>
+                            <property name="visibleField">parent/model/gfnCat/selectedIndices:2,3,6</property>
+                            <property name="enabledField">parent/model/gfnCat_enabled</property>
+                          </block>
+                          <block listElementKey="K2078" name="CheckBox">
+                            <property name="caption">{desc:mstrWeb.2049|Use 1000 separator}</property>
+                            <property name="valueField">gfnThousandSeparator</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="visibleField">parent/model/gfnCat/selectedIndices:2</property>
+                            <property name="enabledField">parent/model/gfnCat_enabled</property>
+                          </block>
+                          <block listElementKey="K2079" name="ListView">
+                            <property name="caption">{desc:mstrWeb.2961|Type:}</property>
+                            <property name="modelPath">parent/model/gfnDate</property>
+                            <property name="multiSelect">false</property>
+                            <property name="visibleField">parent/model/gfnCat/selectedIndices:4</property>
+                            <property name="enabledField">parent/model/gfnCat_enabled</property>
+                            <property name="height">90px</property>
+                          </block>
+                          <block listElementKey="K2080" name="ListView">
+                            <property name="caption">{desc:mstrWeb.2961|Type:}</property>
+                            <property name="modelPath">parent/model/gfnTime</property>
+                            <property name="multiSelect">false</property>
+                            <property name="visibleField">parent/model/gfnCat/selectedIndices:5</property>
+                            <property name="enabledField">parent/model/gfnCat_enabled</property>
+                            <property name="height">90px</property>
+                          </block>
+                          <block listElementKey="K2081" name="ListView">
+                            <property name="caption">{desc:mstrWeb.2961|Type:}</property>
+                            <property name="modelPath">parent/model/gfnFraction</property>
+                            <property name="multiSelect">false</property>
+                            <property name="visibleField">parent/model/gfnCat/selectedIndices:7</property>
+                            <property name="enabledField">parent/model/gfnCat_enabled</property>                           
+                            <property name="height">90px</property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

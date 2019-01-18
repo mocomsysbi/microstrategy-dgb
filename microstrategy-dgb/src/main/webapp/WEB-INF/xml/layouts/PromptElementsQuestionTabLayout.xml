@@ -1,0 +1,160 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptQId, so its tab id is tabPromptQId -->
+<mstrlayout:layout>
+		<span class="title"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5293" /></mstrlayout:render></span>
+		<p/>
+		<div>
+		<input type="text" readonly="readonly" size="50" name="ep_att_name" id="ep_att_name" class="mstrInputTextLong" style="left:20px;" cmdid="setAttrObj">
+			<mstrlayout:attr name="addAttributeNameAsValue"/>
+		</input>
+		<input type="hidden" name="ep_att_dssid" id="ep_att_dssid">
+			<mstrlayout:attr name="addAttributeDSSIDAsValue"/>
+		</input>
+		<input type="button" name="ep_att_selector" id="ep_att_selector" cmdid="openAttSelector" class="mstrButton mstrPromptButtonInline" style="left:30px;" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_org_dssid', 'tabPromptQId', 'SET_EP_ATTR', 16, true);"> 
+		  <mstrlayout:attr attribute="value" method="getDescriptor">
+		    <mstrlayout:argument type="int" value="5287" />
+		  </mstrlayout:attr>
+		</input>
+		</div>
+		<p/>
+		<span class="title"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5294" /></mstrlayout:render></span>
+		<p/>
+		<mstrlayout:if name="isAllElements">
+			<mstrlayout:then>
+				<input type="radio" name="ep_elem_restriction" id="ep_elem_restriction_all" cmdid="ep_all_elems" value="all" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);" checked="checked"/>
+			</mstrlayout:then>
+			<mstrlayout:else>
+				<input type="radio" name="ep_elem_restriction" id="ep_elem_restriction_all" cmdid="ep_all_elems" value="all" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);"/>
+			</mstrlayout:else>
+		</mstrlayout:if>
+		<label for="ep_elem_restriction_all"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5295" /></mstrlayout:render></label>
+		<br/>
+		<mstrlayout:if name="hasPredefinedList">
+			<mstrlayout:then>
+				<input type="radio" name="ep_elem_restriction" id="ep_elem_restriction_pre" cmdid="radioSelection" value="predefined" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);" checked="checked"/>
+			</mstrlayout:then>
+			<mstrlayout:else>
+				<input type="radio" name="ep_elem_restriction" id="ep_elem_restriction_pre" cmdid="radioSelection" value="predefined" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);"/>
+			</mstrlayout:else>
+		</mstrlayout:if>
+		<label for="ep_elem_restriction_pre"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5296" /></mstrlayout:render></label>
+		<br/>
+		<table style="position:relative;left:20px;">
+			<tr>
+				<td>
+				<select multiple="multiple" id="ep_elem_pre_list" name="ep_elem_pre_list" DPN="ep_elem_restriction_pre" NONZERO="1" FLD="Use_a_predefined_list_of_elements" cmdid="ep_set_pre_list" size="10" class="mstrElementList">
+						<mstrlayout:list id="elems" name="getPredefinedList">
+							<option>
+								<mstrlayout:attr name="addOptionAttr">
+									<mstrlayout:argument list="elems" type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+								</mstrlayout:attr>
+								<mstrlayout:render name="optionText">
+									<mstrlayout:argument list="elems" type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+								</mstrlayout:render>
+							</option>
+						</mstrlayout:list>
+				</select>
+				</td>
+				<td>
+				<div style="position:relative;left:10px;">
+					<mstrlayout:if name="hasPredefinedList">
+						<mstrlayout:then>
+							<input type="button" id="ep_add_elem" name="ep_add_elem" cmdid="editPredefined" class="mstrButton mstrPromptButtonBlock" style="top:10px;"> 
+							  <mstrlayout:attr attribute="value" method="getDescriptor">
+							    <mstrlayout:argument type="int" value="5230" />
+							  </mstrlayout:attr>
+							</input>
+							<br/>
+							<input type="button" id="ep_remove_elem" name="ep_remove_elem" class="mstrButton mstrPromptButtonBlock" style="top:20px;">
+							  <mstrlayout:attr attribute="value" method="getDescriptor">
+							    <mstrlayout:argument type="int" value="4448" />
+							  </mstrlayout:attr>
+							</input><br/>
+							<input type="button" id="ep_clear_elem" name="ep_clear_elem" class="mstrButton mstrPromptButtonBlock" style="top:30px;">
+							  <mstrlayout:attr attribute="value" method="getDescriptor">
+							    <mstrlayout:argument type="int" value="2827" />
+							  </mstrlayout:attr>
+							</input><br/>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<mstrlayout:if name="hasFilter">
+								<mstrlayout:then>
+									<input type="button" id="ep_add_elem" name="ep_add_elem" disabled="disabled" cmdid="editPredefined" class="mstrButton mstrPromptButtonBlock" style="top:10px;"> 
+									  <mstrlayout:attr attribute="value" method="getDescriptor">
+									    <mstrlayout:argument type="int" value="5230" />
+									  </mstrlayout:attr>
+									</input>
+									<br/>
+									<input type="button" id="ep_remove_elem" name="ep_remove_elem" value="*Remove" disabled="disabled" class="mstrButton mstrPromptButtonBlock" style="top:20px;">
+									  <mstrlayout:attr attribute="value" method="getDescriptor">
+									    <mstrlayout:argument type="int" value="4448" />
+									  </mstrlayout:attr>
+									</input><br/>
+									<input type="button" id="ep_clear_elem" name="ep_clear_elem" value="*Clear" disabled="disabled" class="mstrButton mstrPromptButtonBlock" style="top:30px;">
+									  <mstrlayout:attr attribute="value" method="getDescriptor">
+									    <mstrlayout:argument type="int" value="2827" />
+									  </mstrlayout:attr>
+									</input><br/>
+								</mstrlayout:then>
+								<mstrlayout:else>
+									<input type="button" id="ep_add_elem" name="ep_add_elem" cmdid="editPredefined" class="mstrButton mstrPromptButtonBlock" style="top:10px;"> 
+									  <mstrlayout:attr attribute="value" method="getDescriptor">
+									    <mstrlayout:argument type="int" value="5230" />
+									  </mstrlayout:attr>
+									</input>
+									<br/>
+									<input type="button" id="ep_remove_elem" name="ep_remove_elem" value="*Remove" class="mstrButton mstrPromptButtonBlock" style="top:20px;">
+									  <mstrlayout:attr attribute="value" method="getDescriptor">
+									    <mstrlayout:argument type="int" value="4448" />
+									  </mstrlayout:attr>
+									</input><br/>
+									<input type="button" id="ep_clear_elem" name="ep_clear_elem" value="*Clear" class="mstrButton mstrPromptButtonBlock" style="top:30px;">
+									  <mstrlayout:attr attribute="value" method="getDescriptor">
+									    <mstrlayout:argument type="int" value="2827" />
+									  </mstrlayout:attr>
+									</input><br/>														
+								</mstrlayout:else>
+							</mstrlayout:if>	
+						</mstrlayout:else>
+					</mstrlayout:if>
+				</div>
+				<!-- hidden list for removed attribute elements
+				<div style="display:none">
+					<select multiple="multiple" id="ep_elem_pre_list_removed" name="ep_elem_pre_list_removed" size="10" cmdid="ep_remove_pre_list" onchange="microstrategy.bone('tabPromptQId').updateList(this)">
+					</select>
+				</div>	-->
+				</td>
+			</tr>
+		</table>
+		<div>
+			<mstrlayout:if name="hasFilter">
+				<mstrlayout:then>
+					<input type="radio" name="ep_elem_restriction" id="ep_elem_restriction_filter" cmdid="radioSelection" value="filter" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);microstrategy.bone('tabPromptQId').updateText(getObj('ep_filter_name'));" checked="checked"/>
+				</mstrlayout:then>
+				<mstrlayout:else>
+					<input type="radio" name="ep_elem_restriction" id="ep_elem_restriction_filter" cmdid="radioSelection" value="filter" onclick="microstrategy.bone('tabPromptQId').updateRadioButton(event);microstrategy.bone('tabPromptQId').updateText(getObj('ep_filter_name'));"/>
+				</mstrlayout:else>
+			</mstrlayout:if>
+    		<label for="ep_elem_restriction_filter"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5762" /></mstrlayout:render></label>
+			<br/>
+			<input type="text" size="50" name="ep_filter_name" id="ep_filter_name" readonly="readonly" class="mstrInputTextLong" style="left:20px;" cmdid="setFilterObj" DPN="ep_elem_restriction_filter" NONZERO="1" FLDID="5297">
+				<mstrlayout:attr name="addFilterNameAsValue"/>
+			</input>
+			<mstrlayout:if name="hasFilter">
+				<mstrlayout:then>
+					<input type="button" name="ep_filter_selector" id="ep_filter_selector" cmdid="openFilterSelector" class="mstrButton mstrPromptButtonInline" style="left:30px;" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_org_dssid', 'tabPromptQId', 'SET_EP_FILTER', 10, true);"> 
+					  <mstrlayout:attr attribute="value" method="getDescriptor">
+					    <mstrlayout:argument type="int" value="5324" />
+					  </mstrlayout:attr>
+					</input>
+				</mstrlayout:then>
+				<mstrlayout:else>
+					<input type="button" name="ep_filter_selector" id="ep_filter_selector" disabled="disabled" cmdid="openFilterSelector" class="mstrButton mstrPromptButtonInline" style="left:30px;" onclick="microstrategy.bone('tabPromptQId').openMultiSelector('exp_org_dssid', 'tabPromptQId', 'SET_EP_FILTER', 10, true);"> 
+					  <mstrlayout:attr attribute="value" method="getDescriptor">
+					    <mstrlayout:argument type="int" value="5324" />
+					  </mstrlayout:attr>
+					</input>
+				</mstrlayout:else>
+			</mstrlayout:if>
+		</div>
+</mstrlayout:layout>

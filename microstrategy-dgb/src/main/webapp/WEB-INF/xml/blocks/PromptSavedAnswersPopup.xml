@@ -1,0 +1,73 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="PromptSavedAnswersPopup" inherits="BaseView">
+		<definition>
+			<property name="contentView" type="Block"/>
+			<property name="okButton" type="Block"/>
+			<property name="cancelButton" type="Block"/>
+			<property name="deleteButton" type="Block"/>
+			<property name="renameButton" type="Block"/>
+		</definition>
+		<assignments>
+			<property name="id">PromptSavedAnswersPopup</property>
+			<property name="layoutClass">mstr.layouts.PromptSavedAnswersPopup</property>
+			<property name="cssClass">PromptSavedAnswersPopup</property>
+			<property name="visible">false</property>
+			<property name="cssText">width: 200px; filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+			<property name="modelPath">opener/model</property> <!-- ListModel-->
+			<property name="popOrientation">1</property>
+			<property name="CommandEnabledUnpop" type="Boolean">true</property>
+			<property name="contentView">
+				<block name="ListView">
+					<property name="modelPath">parent/model</property>
+					<property name="multiSelect">false</property>
+					<property name="cmds">ClickListItem</property>
+					<property name="allowBrowseFolder">false</property>
+					<property name="allowBrowseAttribute">false</property>
+					<property name="allowBrowseHierarchy">false</property>
+					<property name="showItemsDuringRequest">true</property> <!-- prevent IE7 hang issue -->
+				</block>
+			</property>
+			<property name="okButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.5911|Load}</property>
+					<!-- ask PromptQuestionModel to load the answer -->
+					<property name="cmds">LoadSavedAnswer|model/getSelectedItem()|model/parent;Unpop||parent</property>
+					<property name="modelPath">parent/model</property> <!-- point to the list -->
+				</block>
+			</property>
+			<property name="cancelButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.2399|Cancel}</property>
+					<property name="cmds">Unpop||parent</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="deleteButton">
+				<block name="ToolButton">
+					<property name="descriptors">
+						<block name="BaseBlock">
+							<property name="confirmDelete" type="String">{desc:mstrWeb.5918|Are you sure you wish to delete the answer?}</property>
+						</block>
+					</property>
+					<property name="tooltip">{desc:mstrWeb.629|Delete}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbDelete.gif);</property>
+					<property name="cmds">!Confirm|descriptors/confirmDelete|;DeleteSelected||model;Unpop||parent</property>
+					<property name="modelPath">parent/model</property>
+					<property name="CommandEnabledConfirm" type="Boolean">true</property>
+				</block>
+			</property>
+			<property name="renameButton">
+				<block name="ToolButton">
+					<property name="descriptors">
+						<block name="BaseBlock">
+							<property name="confirmRename" type="String">{desc:mstrWeb.5919|Please rename current answer to:}</property>
+						</block>
+					</property>
+					<property name="tooltip">{desc:mstrWeb.1388|Rename}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbRenameEdit.gif);</property>
+					<property name="cmds">!RenameSelectedItem|prompt("{desc:mstrWeb.5919|Please rename current answer to:}")|model;Unpop||parent</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

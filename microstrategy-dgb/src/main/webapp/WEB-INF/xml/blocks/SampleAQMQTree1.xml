@@ -1,0 +1,228 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ExpressionModel" name="SampleAQMQTree1">
+  <assignments>
+    <property name="flattenedNodes">
+      <list>
+        <!-- The AND node: -->
+        <block listElementKey="K1404" name="TreeNode">
+          <property name="path">0</property>
+          <property name="value">
+            <block name="OperatorNodeValue">
+              <property name="expressionType">14</property>
+              <!-- Branch Qual -->
+              <property name="function">19</property>
+              <!-- AND -->
+            </block>
+          </property>
+        </block>
+        <!-- THE AQ CONDITION: -->
+        <!-- The Equals operator node: -->
+        <block listElementKey="K1405" name="TreeNode">
+          <property name="path">0/0</property>
+          <property name="value">
+            <block name="OperatorNodeValue">
+              <property name="expressionType">2</property>
+              <!-- Attr Form Qual -->
+              <property name="function">6</property>
+              <!-- Equals -->
+            </block>
+          </property>
+        </block>
+        <!-- The Form Shortcut node: -->
+        <block listElementKey="K1406" name="TreeNode">
+          <property name="path">0/0/0</property>
+          <property name="value">
+            <block name="FormShortcutNodeValue">
+              <property name="attribute">
+                <block name="ItemInfo">
+                  <property name="dssid">idCustomer</property>
+                  <property name="n">Customer</property>
+                  <property name="icon">a</property>
+                  <property name="tp">12</property>
+                </block>
+              </property>
+              <property name="form">
+                <block name="ItemInfo">
+                  <property name="dssid">idLastName</property>
+                  <property name="n">Last Name</property>
+                  <property name="icon">af</property>
+                  <property name="dtp">8</property>
+                  <property name="tp">21</property>
+                </block>
+              </property>
+            </block>
+          </property>
+        </block>
+        <!-- The constant node: -->
+        <block listElementKey="K1407" name="TreeNode">
+          <property name="path">0/0/1</property>
+          <property name="value">
+            <block name="ConstantNodeValue">
+              <property name="constantValue">Saylor</property>
+            </block>
+          </property>
+        </block>
+        <!-- The NOT node: -->
+        <block listElementKey="K1408" name="TreeNode">
+          <property name="path">0/1</property>
+          <property name="value">
+            <block name="OperatorNodeValue">
+              <property name="expressionType">14</property>
+              <!-- Branch Qual -->
+              <property name="function">21</property>
+              <!-- NOT -->
+            </block>
+          </property>
+        </block>
+        <!-- The OR node: -->
+        <block listElementKey="K1409" name="TreeNode">
+          <property name="path">0/1/0</property>
+          <property name="value">
+            <block name="OperatorNodeValue">
+              <property name="expressionType">14</property>
+              <!-- Branch Qual -->
+              <property name="function">20</property>
+              <!-- OR -->
+            </block>
+          </property>
+        </block>
+        <!-- THE FIRST MQ CONDITION: -->
+        <!-- The Equals operator node: -->
+        <block listElementKey="K1410" name="TreeNode">
+          <property name="path">0/1/0/0</property>
+          <property name="value">
+            <block name="OperatorNodeValue">
+              <property name="expressionType">10</property>
+              <!-- Metric Qual -->
+              <property name="function">6</property>
+              <!-- Equals -->
+              <property name="nodeDimtyType">4</property>
+              <!-- Output Level -->
+              <property name="dimtyObject">
+                <!-- A custom metric dimty level defined by 2 Attributes: -->
+                <block name="ExprDimtyObject">
+                  <property name="canContinue">true</property>
+                  <property name="filterRest">true</property>
+                  <property name="units">
+                    <list>
+                      <block listElementKey="K1411" name="ExprDimtyUnit">
+                        <property name="unitType">-1</property>
+                        <property name="aggregation">1</property>
+                        <property name="filtering">1</property>
+                        <property name="relativePosition">0</property>
+                        <property name="target">
+                          <block name="ItemInfo">
+                            <property name="dssid">idCountry</property>
+                            <property name="n">Country</property>
+                            <property name="icon">a</property>
+                          </block>
+                        </property>
+                      </block>
+                      <block listElementKey="K1412" name="ExprDimtyUnit">
+                        <property name="unitType">-1</property>
+                        <property name="aggregation">1</property>
+                        <property name="filtering">1</property>
+                        <property name="relativePosition">0</property>
+                        <property name="target">
+                          <block name="ItemInfo">
+                            <property name="dssid">idRegion</property>
+                            <property name="n">Region</property>
+                            <property name="icon">a</property>
+                          </block>
+                        </property>
+                      </block>
+                    </list>
+                  </property>
+                </block>
+              </property>
+            </block>
+          </property>
+        </block>
+        <!-- The Shortcut node: -->
+        <block listElementKey="K1413" name="TreeNode">
+          <property name="path">0/1/0/0/0</property>
+          <property name="value">
+            <block name="ShortcutNodeValue">
+              <property name="target">
+                <block name="ItemInfo">
+                  <property name="dssid">idSales</property>
+                  <property name="n">Sales ($)</property>
+                  <property name="icon">m</property>
+                </block>
+              </property>
+            </block>
+          </property>
+        </block>
+        <!-- The constant node: -->
+        <block listElementKey="K1414" name="TreeNode">
+          <property name="path">0/1/0/0/1</property>
+          <property name="value">
+            <block name="ConstantNodeValue">
+              <property name="constantValue">0</property>
+            </block>
+          </property>
+        </block>
+        <!-- THE AE CONDITION: -->
+        <!-- The Equals operator node: -->
+        <block listElementKey="K1415" name="TreeNode">
+          <property name="path">0/1/0/1</property>
+          <property name="value">
+            <block name="OperatorNodeValue">
+              <property name="expressionType">5</property>
+              <!-- List Qual -->
+              <property name="function">57</property>
+              <!-- Not In List -->
+            </block>
+          </property>
+        </block>
+        <!-- The Shortcut node: -->
+        <block listElementKey="K1416" name="TreeNode">
+          <property name="path">0/1/0/1/0</property>
+          <property name="value">
+            <block name="ShortcutNodeValue">
+              <property name="target">
+                <block name="ItemInfo">
+                  <property name="dssid">idCustomer</property>
+                  <property name="n">Customer</property>
+                  <property name="icon">a</property>
+                  <property name="tp">12</property>
+                </block>
+              </property>
+            </block>
+          </property>
+        </block>
+        <!-- The elements object node: -->
+        <block listElementKey="K1417" name="TreeNode">
+          <property name="path">0/1/0/1/1</property>
+          <property name="value">
+            <block name="ElementsObjectNodeValue">
+              <property name="elementsCollection">
+                <list>
+                  <block listElementKey="K1418" name="ItemInfo">
+                    <property name="dssid">idEverhart</property>
+                    <property name="n">Everhart : Doug</property>
+                    <property name="tp">0</property>
+                    <property name="icon">ae</property>
+                  </block>
+                  <block listElementKey="K1419" name="ItemInfo">
+                    <property name="dssid">idVenky</property>
+                    <property name="n">Jeyanthilal : Venky</property>
+                    <property name="tp">0</property>
+                    <property name="icon">ae</property>
+                  </block>
+                  <block listElementKey="K1420" name="ItemInfo">
+                    <property name="dssid">idWang</property>
+                    <property name="n">Wang : Ellen</property>
+                    <property name="tp">0</property>
+                    <property name="icon">ae</property>
+                  </block>
+                </list>
+              </property>
+            </block>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- A sample ExpressionModel whose tree has nested AQ and MQ conditions. -->

@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition portion of a Template node. This can be the definition
+    for a Grid, a Graph or a Grid/Graph.
+--> 
+<block name="RWEditableTextDef" inherits="RWLinkObjectDef">
+	<definition>
+	    <!-- Node key of the field -->
+        <property name="fgk" type="String" />
+
+        <!--  The tree type. For example, 1 == CONTENT, 2 == PAGE_HEADER, ...
+        	  see c.m.w.o.rw.EnumDSSXMLRWTreeType -->
+        <property name="tt" type="Integer" />
+        
+        <!-- Number formatting properties -->
+        <property name="numFmts" type="Block" />
+	</definition>
+</block>

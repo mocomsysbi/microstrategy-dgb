@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the data portion of a Template node.
+    It's a super Block for GridModel, RWGraph, and RWGridGraph.
+--> 
+<block name="RWTemplate" inherits="RWObject">
+    <definition>
+        <!-- Empty Template descriptor / Placeholder. -->
+        <property name="eg" type="String" />
+
+        <!-- The slice id of this template node -->
+        <property name="sid" type="Integer" />
+
+        <!-- The Data driven control values for a template -->
+        <property name="dcv" type="Block" />
+        
+        <!-- The transaction condition status block -->
+        <property name="tcs" type="Block" />        
+        
+        <!-- The structure of the grid (RWTemplateStructure block). -->
+        <property name="gsi" type="Block" />
+    </definition>
+</block>

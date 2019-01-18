@@ -1,0 +1,52 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="VBox" name="ColorPickerPopup">
+  <definition>
+    <!-- Bitwise flags to determine which text links to show.  Possible values can be found in mstr.Enum.ColorPickerFlags. -->
+    <property name="viewFlags" type="Integer"/>
+  </definition>
+  <assignments>
+    <property name="visible">false</property>
+    <property name="layoutClass">mstr.layouts.ColorPickerPopup</property>
+    <property name="cssClass">ColorPickerPopup</property>
+    <property name="CommandEnabledUnpop" type="Boolean">true</property>
+    <property name="modelPath">opener/model</property>
+    <property name="popOrientation">1</property>
+    <property name="nudge" type="Boolean">true</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K31" name="TextLink">
+          <property name="caption">{desc:mstrWeb.5774}</property>
+          <property name="cmds">Unpop||parent;SelectValue|"transparent"|parent/model</property>
+        </block>
+		<block listElementKey="auto" name="TextLink">
+          <property name="caption">{desc:mstrWeb.4531}</property>
+          <property name="cmds">Unpop||parent;SelectValue|"automatic"|parent/model</property>
+        </block>
+        <block listElementKey="K32" name="ColorPickerListView">
+          <property name="modelPath">parent/model</property>
+          <property name="cmds">!ClickListItem;Unpop||parent;FireCommands||opener</property>
+          <property name="height">94</property>
+        </block>
+        <block listElementKey="K33" name="ColorPickerListView">
+          <property name="modelPath">#mstrPageInfo/userPalette</property>
+          <property name="cssClass">UserColorsView</property>
+          <property name="cmds">!ClickListItem;!SelectValue|model/actualColor|parent/opener/model;Unpop||parent;FireCommands||opener</property>
+          <property name="visibleField">model/hasColor</property>
+          <property name="height">20</property>
+        </block>
+        <block listElementKey="K34" name="TextLink">
+          <property name="caption">{desc:mstrWeb.3531}</property>
+          <property name="cmds">OpenModalPopup|"AdvancedColorPickerBlock"|parent/opener;Unpop||parent</property>
+        </block>
+        <block listElementKey="K35" name="TextLink">
+          <property name="caption">{desc:mstrWeb.4786}</property>
+          <property name="cmds">OpenModalPopup|"GradientEditor"|parent/opener;Unpop||parent</property>
+        </block>
+        <block listElementKey="K36" name="TextLink">
+          <property name="caption">{desc:mstrWeb.4786}</property>
+          <property name="cmds">OpenModalPopup|"GraphGradientEditor"|parent/opener;Unpop||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

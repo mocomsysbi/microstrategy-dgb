@@ -1,0 +1,27 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+<![CDATA[<object-info>]]>
+    	<![CDATA[<object-id>]]><mstrlayout:render name="objectID"/><![CDATA[</object-id>]]>
+    	<![CDATA[<msg-id>]]><mstrlayout:render name="messageID"/><![CDATA[</msg-id>]]>
+    	<![CDATA[<is-prompted>]]><mstrlayout:render name="isPrompted"/><![CDATA[</is-prompted>]]>
+    	<mstrlayout:if name="isPrompted">
+			<mstrlayout:then>
+		    	<![CDATA[<prompt-url>]]>&lt;![CDATA[<mstrlayout:render name="promptURL"/>]]&gt;<![CDATA[</prompt-url>]]>
+			</mstrlayout:then>    	
+			<mstrlayout:else>
+				<mstrlayout:if name="isReport">
+					<mstrlayout:then>
+				    	<![CDATA[<last-update-time>]]><mstrlayout:render name="lastUpdateTime"/><![CDATA[</last-update-time>]]>
+				    	<![CDATA[<total-rows>]]><mstrlayout:render name="gridTotalRows"/><![CDATA[</total-rows>]]>
+				    	<![CDATA[<total-columns>]]><mstrlayout:render name="gridTotalColumns"/><![CDATA[</total-columns>]]>
+					</mstrlayout:then>
+				</mstrlayout:if>			
+			</mstrlayout:else>
+		</mstrlayout:if>
+    	<mstrlayout:if name="isError">
+			<mstrlayout:then>
+		    	<![CDATA[<error>]]>&lt;![CDATA[<mstrlayout:render name="errorMessage"/>]]&gt;<![CDATA[</error>]]>
+			</mstrlayout:then>
+		</mstrlayout:if>          			
+    <![CDATA[</object-info>]]>
+</mstrlayout:layout>

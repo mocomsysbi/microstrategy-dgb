@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarText" inherits="ToolbarControl,BaseView">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ToolbarText</property>
+			<property name="cssClass">ToolbarText</property>
+			<property name="modelPushedProps">cssText,extraCssClass</property>
+ 			<property name="cmds">Pressed||model/toolbarHelper</property>
+		</assignments>
+	</block>

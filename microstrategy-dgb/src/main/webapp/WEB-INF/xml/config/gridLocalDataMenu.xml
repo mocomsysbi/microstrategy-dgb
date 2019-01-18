@@ -1,0 +1,45 @@
+<shortcut-list base-bean="rwframe.rwb" desc="[Data]" desc-id="mstrWeb.1910" name="gridLocalDataMenu" use-default="false">
+    <shortcut name="viewMode" desc="[View Mode]" desc-id="mstrWeb.3564" feature-id="menu-grid-mode">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+      <shortcut name="gridMode" desc="[Grid View]" desc-id="mstrWeb.3561" feature-id="menu-grid-mode" base-bone="rwb_viewer" onclick="commands.exec('gridMode')" dhtml-enabled="commands.queryEnabled('gridMode');" dhtml-checked="commands.queryState('gridMode')"/>
+
+      <shortcut name="graphMode" desc="[Graph View]" desc-id="mstrWeb.3562" feature-id="menu-grid-mode" base-bone="rwb_viewer" onclick="commands.exec('graphMode')" dhtml-enabled="commands.queryEnabled('graphMode');" dhtml-checked="commands.queryState('graphMode')"/>
+
+      <shortcut name="gridGraphMode" desc="[Grid and Graph View]" desc-id="mstrWeb.3563" feature-id="menu-grid-mode" base-bone="rwb_viewer" onclick="commands.exec('gridGraphMode')" dhtml-enabled="commands.queryEnabled('gridGraphMode');" dhtml-checked="commands.queryState('gridGraphMode')"/>
+
+      <shortcut name="flashMode" desc="[Widget]" desc-id="mstrWeb.4921" feature-id="visualizations-supported;visualizations-available-for-rw-grids" base-bone="rwb_viewer" onclick="commands.exec('visFlashMode')" dhtml-checked="commands.queryState('visFlashMode')" dhtml-show="commands.queryVisible('visFlashMode');"/>
+
+      <shortcut name="ajaxMode" desc="[AJAX]" desc-id="mstrWeb.5676" feature-id="visualizations-supported;visualizations-available-for-rw-grids" base-bone="rwb_viewer" onclick="commands.exec('visAjaxMode')" dhtml-checked="commands.queryState('visAjaxMode')" dhtml-show="commands.queryVisible('visAjaxMode');"/>
+          
+    </shortcut>
+    <shortcut desc="-" name="data2"/> 
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Swap Rows and Columns]" desc-id="mstrWeb.3480" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;swapAxes&apos;)" feature-id="dhtml;web-pivot;frame-element-enabled;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data8" onclick="microstrategy.getViewerBone().commands.exec(&apos;swapAxes&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Sort Grid...]" desc-id="mstrWeb.3200" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtSortGridMenu&apos;)" enable-feature-id="!check-design-mode" feature-id="web-sort;check-execute-mode;frame-element-enabled;dhtml;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data8c" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtSortGrid&apos;);"/>       
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Show Totals]" desc-id="mstrWeb.2118" dhtml-checked="microstrategy.getViewerBone().commands.queryState(&apos;tsubtotals&apos;)" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;comboToggleButton&apos;)" feature-id="dhtml;show-totals;show-subtotals;rw-interactive-view-mode-eplus" href="#" iframe="true" name="data5" onclick="microstrategy.getViewerBone().commands.exec(&apos;comboToggleButton&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Edit Totals...]" desc-id="mstrWeb.3310" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtSubtotals&apos;)" feature-id="orionIServer;frame-element-enabled;dhtml;show-totals;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data7" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtSubtotals&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Edit Totals...]" desc-id="mstrWeb.3310" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtSubtotalsOldIServer&apos;)" feature-id="!orionIServer;frame-element-enabled;dhtml;show-totals;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data7b" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtSubtotalsOldIServer&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="Edit View Filter..." desc-id="mstrWeb.3938" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;vfeRWGrid&apos;)" feature-id="use-view-filter-editor;frame-element-enabled;dhtml;rw-interactive-view-mode-eplus" href="#" iframe="false" name="dataViewFilter" onclick="microstrategy.getViewerBone().commands.exec(&apos;vfeRWGrid&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="View Filter..." desc-id="mstrWeb.3939" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;vfeRWGrid&apos;)" feature-id="!use-view-filter-editor;frame-element-enabled;dhtml;rw-interactive-view-mode-eplus" href="#" iframe="false" name="dataViewFilterNonEditable" onclick="microstrategy.getViewerBone().commands.exec(&apos;vfeRWGrid&apos;);"/>
+	<shortcut desc="-" name="data9"/>
+	<shortcut append-state="true" base-bean="rwframe.rwb" desc="[Thresholds]" desc-id="mstrWeb.3647" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;openSimpleThresholdEditor&apos;)" feature-id="dhtml" href="#" iframe="true" name="data12">
+        <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Visual...]" desc-id="mstrWeb.5995" href="#" iframe="true" name="data12_1" onclick="microstrategy.getViewerBone().commands.exec(&apos;openSimpleThresholdEditor&apos;);" />
+        <shortcut append-state="true" base-bean="rwframe.rwb" desc="[Advanced...]" desc-id="mstrWeb.4606" href="#" iframe="true" name="data12_2" onclick="microstrategy.getViewerBone().commands.exec(&apos;openAdvThresholdEditor&apos;);" />
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Insert New Metric...]" desc-id="mstrWeb.2212" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtDMetric&apos;)" feature-id="frame-element-enabled;dhtml;insert-new-metric;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data3" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtDMetric&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Rename/Edit Objects...]" desc-id="mstrWeb.1914" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtRename&apos;)" feature-id="frame-element-enabled;dhtml;rename-edit-object;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data4" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtRename&apos;);"/>
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Resize Columns and Rows]" desc-id="mstrWeb.2591" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtResize&apos;)" feature-id="grid-layout;check-execute-mode;frame-element-enabled;dhtml" href="#" iframe="false" name="data13" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtResize&apos;);">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="resizeRW"/>
+      </event>
+    </shortcut>    
+    <shortcut desc="-" name="fmtSep"/>
+    <shortcut name="data15" desc="[Format Graph...]" desc-id="mstrWeb.3570" feature-id="show-graph-format-editor" 
+        base-bone="rwb_viewer" onclick="commands.exec('openGraphFormatter')" dhtml-show="commands.queryEnabled('onegraphfmt');">
+      <properties>
+        <property name="supportedTypes" value="obj.52" />
+      </properties>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe" base-bone="rwb_viewer" desc="[Properties and Formatting...]" desc-id="mstrWeb.5356" dhtml-enabled="microstrategy.getViewerBone().commands.queryVisible('showPropertiesAndFormatting')" feature-id="dhtml;!rw-interactive-view-mode-full-screen-reporter" href="#" iframe="true" name="data14" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtProps&apos;);"/>
+</shortcut-list>

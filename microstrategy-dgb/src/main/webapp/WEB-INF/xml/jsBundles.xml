@@ -1,0 +1,2151 @@
+<?xml version="1.0"?>
+<!DOCTYPE jsBundles SYSTEM "dtds/jsBundles.dtd">
+<jsBundles dir="javascript/bundles">
+
+  <!--
+    MicroStrategy "Mojo" JavaScript library bundle definitions
+
+    This file contains two sections - the Core bundles and the "feature" bundles.
+
+    CORE BUNDLES
+    ============
+    The Core bundles contain files that almost all Mojo-based applications will need.  Because almost all applications
+    will use these bundles ONLY FILES THAT APPLY TO A MAJORITY OF APPLICATIONS should be placed in these bundles.
+
+    Each core bundle has a "debug" version which is not compressed other than having the comments removed.
+
+    Bundle name     Description:
+    ===============================================================================================
+    MOJO-CORE       includes DOM, CSS, inheritance, and other basic library functions
+    MOJO-COREUI     inherits MOJO-CORE and adds basic UI widgets like container, vbox, hbox, etc.
+                    Used as the starting point for most "feature" bundles.
+
+
+    FEATURE BUNDLES
+    ===============
+    Feature bundles are those which are built on top of the core bundles to implement specific functionality.  To use these bundles you
+    most first include the relevant core bundle.
+
+    For example, to use the OIVM bundle you need to have the following <SCRIPT> tags in your markup:
+
+            <SCRIPT type="text/javascript" src="mojo-coreui.js" />
+            <SCRIPT type="text/javascript" src="mojo-oivm.js" />
+
+    Note: References to the core source files have been left in the definition of feature bundles to preserve the dependencies.  The core source
+            files are omitted from the feature bundles by using the "excludes" attribute on the feature bundle definition.
+
+-->
+
+
+  <!--
+    CORE BUNDLE:    MOJO-CORE
+
+    includes DOM, CSS, inheritance, and other basic library functions
+-->
+  <jsBundle name="mojo-core" depSort="false" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="copyright.js"/>
+      <jsFile name="mstrmojo.js"/>
+      <jsFile name="hash.js"/>
+      <jsFile name="string.js"/>
+      <jsFile name="array.js"/>
+      <jsFile name="publisher.js"/>
+      <jsFile name="dom.js"/>
+      <jsFile name="css.js"/>
+      <jsFile name="locales.js"/>
+      <jsFile name="date.js"/>
+      <jsFile name="expr.js"/>
+      <jsFile name="registry.js"/>
+      <jsFile name="num.js"/>
+      <jsFile name="color.js"/>
+      <jsFile name="boxmodel.js"/>
+      <jsFile name="func.js"/>
+      <jsFile name="fx.js"/>
+      <jsFile name="base64.js" />
+      <jsFile name="Serializer.js" />
+      <jsFile name="Xhr.js"/>
+      <jsFile name="DynamicClassFactory.js" />
+      <jsFile name="Event.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/storage">
+      <jsFile name="DOMStorage.js" />
+      <jsFile name="DOMLocalStorage.js" />
+      <jsFile name="DOMSessionStorage.js" />
+    </jsDir>
+  </jsBundle>
+
+  <jsBundle name="mojo-core-debug" depSort="false" inherits="mojo-core" minify="true" type="comments-only" >
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="stacktrace.js" />
+      <jsFile name="Debug.js" />
+      <jsFile name="DebugUtils.js" />
+    </jsDir>
+  </jsBundle>
+
+
+
+
+
+
+
+  <!--
+    CORE BUNDLE:    MOJO-COREUI
+
+    Core Mojo User Interface Library - includes basic widgets for creating user interfaces.  It includes basic MVC support.
+-->
+  <jsBundle name="mojo-coreui" inherits="mojo-core" depSort="false" minify="true" type="yui" >
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="_Provider.js"/>
+      <jsFile name="Obj.js"/>
+      <jsFile name="Arr.js" />
+
+      <jsFile name="_LoadsScript.js"/>
+      <jsFile name="Binding.js"/>
+      <jsFile name="_HasBindings.js"/>
+      <jsFile name="_HasMarkup.js"/>
+      <jsFile name="_HasTooltip.js"/>
+      <jsFile name="_HasLayout.js" />
+      <jsFile name="Widget.js"/>
+
+      <jsFile name="_HasChildren.js"/>
+      <jsFile name="_ShowsStatus.js"/>
+      <jsFile name="Container.js"/>
+
+      <jsFile name="Box.js"/>
+      <jsFile name="VBox.js"/>
+      <jsFile name="HBox.js"/>
+
+      <jsFile name="Button.js"/>
+
+      <jsFile name="_ListSelections.js"/>
+      <jsFile name="ListBase.js"/>
+      <jsFile name="SelectBox.js"/>
+
+      <jsFile name="_HasPopup.js"/>
+      <jsFile name="_IsPopup.js"/>
+      <jsFile name="_CanAutoClose.js"/>
+      <jsFile name="Popup.js"/>
+
+      <jsFile name="tooltip.js"/>
+
+      <jsFile name="CheckBox.js"/>
+
+      <jsFile name="_HasScrollbox.js"/>
+      <jsFile name="ListBoxBase.js"/>
+      <jsFile name="ListBox.js"/>
+      <jsFile name="ListBoxHoriz.js"/>
+      <jsFile name="_InputList.js"/>
+      <jsFile name="CheckList.js"/>
+
+      <jsFile name="Label.js"/>
+
+      <jsFile name="TextBox.js"/>
+
+      <jsFile name="Dialog.js"/>
+
+      <jsFile name="Model.js" />
+
+      <jsFile name="StepperContentProvider.js" />
+      <jsFile name="NumStepperContentProvider.js" />
+      <jsFile name="DateStepperContentProvider.js" />
+      <jsFile name="Stepper.js" />
+
+      <jsFile name="Calendar.js" />
+
+      <jsFile name="GraphBase.js" />
+
+      <jsFile name="DateTimePicker.js" />
+
+    </jsDir>
+  </jsBundle>
+
+  <jsBundle name="mojo-coreui-debug" depSort="false" inherits="mojo-coreui" minify="true" type="comments-only" >
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="stacktrace.js" />
+      <jsFile name="Debug.js" />
+      <jsFile name="DebugUtils.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--    ================ FEATURE BUNDLES ================   -->
+
+  <!--
+    FEATURE BUNDLE: MOJO-OIVM
+    REQUIRES:       MOJO-COREUI, MOJO-MOBILE
+-->
+  <jsBundle name="mojo-oivm" depSort="true" minify="true" excludes="">
+    <jsDir path="javascript">
+      <jsFile name="AC_OETags.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="OIVMApp.js" />
+      <jsFile name="OIVMViewFactory.js" />
+      <jsFile name="MojoFlexHelper.js"/>
+      <jsFile name="SharingEditor.js"/>
+      <jsFile name="XtabCellMenu.js"/>
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-ALL
+    REQUIRES:       MOJO-COREUI, MOJO-MOBILE
+-->
+  <jsBundle name="mojo-all" depSort="false" minify="true" inherits="mojo-oivm" excludes="mojo-core,mojo-coreui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="_ListBase2Selections.js" />
+      <jsFile name="ListBase2.js" />
+      <jsFile name="ListMapper.js" />
+      <jsFile name="ListBuilder.js" />
+      <jsFile name="List.js" />
+      <jsFile name="ListMapperHoriz.js" />
+      <jsFile name="ListHoriz.js" />
+      <jsFile name="MultiColListBuilder.js" />
+      <jsFile name="MultiColList.js" />
+      <jsFile name="MultiColListHoriz.js" />
+      <jsFile name="WidgetListBase.js" />
+      <jsFile name="WidgetListMapper.js" />
+      <jsFile name="WidgetListBuilder.js" />
+      <jsFile name="WidgetList.js" />
+      <jsFile name="WidgetListMapperHoriz.js" />
+      <jsFile name="WidgetListHoriz.js" />
+      <jsFile name="ListSelector.js" />
+      <jsFile name="WidgetTreeBuilder.js" />
+      <jsFile name="WidgetTree.js" />
+      <jsFile name="TreeNode.js" />
+      <jsFile name="Callback.js" />
+      <jsFile name="CallbackList.js" />
+      <jsFile name="EnumRenderMode.js" />
+      <jsFile name="FieldSet.js" />
+      <jsFile name="Serializer.js" />
+      <jsFile name="XtabCellHoverPopup.js" />
+      <jsFile name="_XtabSelections.js" />
+    </jsDir>
+  </jsBundle>
+
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-IXTAB
+    REQUIRES:       MOJO-COREUI, MOJO-MOBILE
+-->
+  <jsBundle name="mojo-ixtab" depSort="false" minify="true" excludes="mojo-core,mojo-coreui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="EnumReadystate.js" />
+      <jsFile name="_Formattable.js" />
+      <jsFile name="_HasChildren.js" />
+      <jsFile name="_HasWaitIcon.js" />
+      <jsFile name="_HasScrollbox.js" />
+      <jsFile name="markup.js" />
+      <jsFile name="Model.js" />
+      <jsFile name="_TouchGestures.js" />
+      <jsFile name="TouchScroller.js" />
+      <jsFile name="_HasXtabTouchScroll.js" />
+      <jsFile name="GridBase.js" />
+      <jsFile name="Grid.js" />
+      <jsFile name="XtabZone.js" />
+      <jsFile name="XtabBase.js" />
+      <!--
+      Uncomment it when iXtab mix the mixin
+      <jsFile name="_XtabSeamlessIncrementalFetch.js" />
+      Uncomment it when the user do not want to customize the proxy
+      <jsFile name="iMobileRequestProxy.js"/>
+      Uncomment the following three lines if xtab action menu is enabled
+      <jsFile name="VBox.js" />
+      <jsFile name="Button.js" />
+      <jsFile name="_iToolbarMgr.js"/>
+       -->
+      <jsFile name="StringBuffer.js" />
+      <jsFile name="_ResultSetXt.js" />
+      <jsFile name="MobileXtab.js" />
+      <jsFile name="ServerProxy.js" />
+      <jsFile name="XtabDataService.js" />
+      <jsFile name="_FillsBrowser.js" />
+      <jsFile name="iXtab.js" />
+      <jsFile name="XtabModel.js" />
+      <jsFile name="iPhoneXtabController.js" />
+      <jsFile name="iPhoneApp.js" />
+     </jsDir>
+  </jsBundle>
+
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-MOBILE-LIST
+    REQUIRES:       MOJO-COREUI, MOJO-MOBILE
+-->
+  <jsBundle name="mojo-mobile-list" depSort="true" minify="true" excludes="mojo-core,mojo-coreui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="AjaxCall.js" />
+      <jsFile name="HTMLButton.js" />
+      <jsFile name="Model.js" />
+      <jsFile name="ObjectBrowser.js" />
+      <jsFile name="Panel.js" />
+      <jsFile name="TextArea.js" />
+      <jsFile name="ValidationTextBox.js" />
+      <jsFile name="_CanRenderChildrenOnShow.js" />
+      <jsFile name="_HasLayout.js" />
+      <jsFile name="mobileListModel.js"/>
+    </jsDir>
+  </jsBundle>
+
+
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-MOBILE-CONFIG
+    REQUIRES:       MOJO-COREUI, MOJO-MOBILE
+-->
+  <jsBundle name="mojo-mobile-config" depSort="true" minify="true" excludes="mojo-core,mojo-coreui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="GradientEditor.js" />
+      <jsFile name="ObjectBrowser.js" />
+      <jsFile name="Slider.js" />
+      <jsFile name="TabButton.js" />
+      <jsFile name="TextArea.js" />
+      <jsFile name="TextBoxWithLabel.js" />
+      <jsFile name="WidgetListMapperTile.js"/>
+      <jsFile name="WidgetTileList.js"/>
+      <jsFile name="form.js" />
+      <jsFile name="ipadHomescreen_tab.js"/>
+      <jsFile name="mobileModel.js"/>
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-BOOTSTRAP
+    REQUIRES:
+-->
+
+  <jsBundle name="mojo-bootstrap" depSort="true" minify="true">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="mstrmojo.js" />
+      <jsFile name="hash.js" />
+      <jsFile name="array.js" />
+      <jsFile name="base64.js" />
+      <jsFile name="registry.js" />
+      <jsFile name="publisher.js" />
+      <jsFile name="Xhr.js" />
+      <jsFile name="form.js" />
+      <jsFile name="locales.js" />
+      <jsFile name="UUID.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-CGE
+    REQUIRES:       MOJO-COREUI
+-->
+  <jsBundle name="mojo-cge" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="CustomGroupEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-CGE
+    REQUIRES:       MOJO-COREUI
+-->
+  <jsBundle name="mojo-eoe" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/vi/ui/editors">
+      <jsFile name="ExportPDFEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-ACL
+    REQUIRES:       MOJO-COREUI
+-->
+
+  <jsBundle name="mojo-acl" depSort="true" minify="true" excludes="mojo-core,mojo-coreui">
+    <jsDir path="javascript/mojo/js/source/ACL">
+      <jsFile name="ACLEditor.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-sharing" depSort="true" minify="true" excludes="mojo-bootstrap" sassSuffix="-ws">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="SharingEditor.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-metric" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/ME">
+      <jsFile name="MetricIDE.js" />
+      <jsFile name="FunctionSelector.js" />
+      <jsFile name="SimpleMetricEditor.js" />
+      <jsFile name="FunctionWizard.js" />
+      <jsFile name="MetricEditor.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ObjectBrowser.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-palette" depSort="true" minify="true">
+    <jsDir path="javascript/mojo/js/source/prefs">
+      <jsFile name="EditColorPalettesApp.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-dae" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/ME">
+      <jsFile name="FunctionSelector.js" />
+      <jsFile name="SimpleMetricEditor.js" />
+      <jsFile name="FunctionWizard.js" />
+      <jsFile name="DerivedAttributeEditor.js" />
+      <jsFile name="DerivedAttributeIDE.js" />
+      <jsFile name="DerivedMetricIDE.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ObjectBrowser.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi/ui/tabs">
+      <jsFile name="TabStrip.js" />
+      <jsFile name="Tab.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-SORT
+    REQUIRES:       MOJO-BOOTSTRAP
+-->
+  <jsBundle name="mojo-sort" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="AdvancedSortEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-theme
+    REQUIRES:       MOJO-BOOTSTRAP
+-->
+  <jsBundle name="mojo-theme" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="SaveAsEditor.js" />
+      <jsFile name="CustomThemePicker.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: ANDROID-APPLICATION
+    REQUIRES:       NONE
+-->
+  <jsBundle name="android-application" depSort="true" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/factories">
+      <jsFile name="ViewFactory.js" />
+      <jsFile name="ControllerFactory.js" />
+      <jsFile name="ModelFactory.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: ANDROID-PHONE
+    REQUIRES:       NONE
+-->
+  <jsBundle name="android-phone" depSort="true" minify="true" inherits="android-application" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/medium/factories">
+      <jsFile name="ViewFactory.js" />
+      <jsFile name="ControllerFactory.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: ANDROID-TABLET
+    REQUIRES:       NONE
+-->
+  <jsBundle name="android-tablet" depSort="true" minify="true" inherits="android-application" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/large/factories">
+      <jsFile name="ViewFactory.js" />
+      <jsFile name="ControllerFactory.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: ANDROID-PHONE-DEBUG
+    REQUIRES:       ANDROID-PHONE
+-->
+  <jsBundle name="android-phone-debug" depSort="true" minify="true" inherits="android-phone" type="comments-only">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="stacktrace.js" />
+      <jsFile name="Debug.js" />
+      <jsFile name="DebugUtils.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: ANDROID-PHONE-HOSTED
+    REQUIRES:       ANDROID-PHONE-DEBUG
+-->
+  <jsBundle name="android-phone-hosted" depSort="true" minify="false" inherits="android-phone-debug" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileAppProxy.js" />
+      <jsFile name="XHRServerTransport.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: ANDROID-TABLET-DEBUG
+    REQUIRES:       ANDROID-TABLET
+-->
+  <jsBundle name="android-tablet-debug" depSort="true" minify="true" inherits="android-tablet" type="comments-only">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="stacktrace.js" />
+      <jsFile name="Debug.js" />
+      <jsFile name="DebugUtils.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: ANDROID-TABLET-HOSTED
+    REQUIRES:       ANDROID-TABLET-DEBUG
+-->
+  <jsBundle name="android-tablet-hosted" depSort="true" minify="false" inherits="android-tablet-debug" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileAppProxy.js" />
+      <jsFile name="XHRServerTransport.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-MAPS-INFO
+    REQUIRES:       MOJO-COREUI-DEBUG, MOJO-MOBILE-DEBUG
+-->
+  <jsBundle name="mojo-maps-info" depSort="true" minify="true" type="yui" excludes="mojo-core,mojo-coreui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+      <jsFile name="_CanMakeServerProxyRequests.js" />
+      <jsFile name="DocVisTimeSeries.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/maps/jsmap">
+      <jsFile name="InfoWindowRootController.js" />
+      <jsFile name="AndroidMap.js" />
+      <jsFile name="AndroidDocMap.js" />
+      <jsFile name="DocInfoWindowController.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/maps/androidmap">
+      <jsFile name="InfoWindowRootController.js" />
+      <jsFile name="AndroidMap.js" />
+      <jsFile name="AndroidDocMap.js" />
+      <jsFile name="DocInfoWindowController.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/maps">
+      <jsFile name="AndroidMapModel.js" />
+      <jsFile name="MapInfoWindowLayoutViewer.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/medium/factories">
+      <jsFile name="ViewFactory.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-maps-info-debug" depSort="true" minify="true" inherits="mojo-maps-info" type="comments-only" excludes="mojo-core-debug,mojo-coreui-debug">
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: ANDROID-MAP-INFO-HOSTED
+    REQUIRES:       MOJO-COREUI-DEBUG, MOJO-MOBILE-DEBUG
+-->
+  <jsBundle name="mojo-maps-info-hosted" depSort="true" minify="false" inherits="mojo-maps-info-debug" type="closure" minifyflags="--warning_level=QUIET" excludes="mojo-core-debug,mojo-coreui-debug">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileAppProxy.js" />
+      <jsFile name="XHRServerTransport.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-IVE-PICKER
+    REQUIRES:
+-->
+  <jsBundle name="mojo-ive-picker" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="IVEDatasetPicker.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-QB
+    REQUIRES:
+-->
+  <jsBundle name="mojo-qb" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/qb">
+      <jsFile name="QBApp.js" />
+      <jsFile name="OneTierServerTransport.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- Architect
+    FEATURE BUNDLE: MOJO-AR
+    REQUIRES:
+-->
+  <jsBundle name="mojo-ar" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/architect">
+      <jsFile name="ArchitectApp.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- Project Management
+    FEATURE BUNDLE: MOJO-PM
+    REQUIRES:
+-->
+  <jsBundle name="mojo-pm" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/architect/projectmanagement">
+      <jsFile name="ArchitectAdminApp.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-DI
+    REQUIRES:
+-->
+
+  <jsBundle name="mojo-di" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ServerProxy.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="DIApp.js" />
+      <jsFile name="DIContainer.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="OneTierServerTransport.js" />
+    </jsDir>
+  </jsBundle>
+
+
+<jsBundle name="mojo-as" depSort="true" minify="true" inherits="mojo-di">
+    <jsDir path="javascript/mojo/js/source/AS">
+      <jsFile name="DIActions.js" />
+    </jsDir>
+
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-DI-ONETIER
+    REQUIRES:
+-->
+  <jsBundle name="mojo-di-onetier" depSort="true" minify="true">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ServerProxy.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="DIApp.js" />
+      <jsFile name="DIContainer.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="OneTierServerTransport.js" />
+    </jsDir>
+  </jsBundle>
+
+   <!--
+    FEATURE BUNDLE: WORKSTATION-DI
+    REQUIRES:
+-->
+  <jsBundle name="workstation-di" depSort="true" minify="true" sassSuffix="-ws">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ServerProxy.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/workstation/pages">
+      <jsFile name="SecurityFilterEditorPage.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="DIApp.js" />
+      <jsFile name="DIContainer.js" />
+      <jsFile name="WorkstationPageService.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="OneTierServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/onetier/controllers">
+      <jsFile name="RootController.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-TXE
+    REQUIRES:
+-->
+  <jsBundle name="mojo-txe" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/txEditor">
+      <jsFile name="TransactionEditor.js" />
+    </jsDir>
+  </jsBundle>
+  <!--
+    FEATURE BUNDLE: MOJO-ctxe
+    REQUIRES:
+-->
+  <jsBundle name="mojo-ctxe" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/condTx">
+      <jsFile name="ConditionTransactionEditor.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-tc" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/platform">
+      <jsFile name="TableControl.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-FE
+    REQUIRES:
+-->
+  <jsBundle name="mojo-fe" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/fe">
+      <jsFile name="FilterEditor.js" />
+      <jsFile name="FilterUtils.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-DRE
+    REQUIRES:
+    Description: this bundle will be used to load the reconciliation editor in Edit and Editable view mode of a document when
+    		 replacing the dataset.
+-->
+  <jsBundle name="mojo-dre" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/vi/ui">
+      <jsFile name="ReplaceObjectEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-DVE
+    REQUIRES:
+-->
+  <jsBundle name="mojo-dve" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="DocViewsEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-MAP
+    REQUIRES:
+-->
+  <jsBundle name="mojo-map" depSort="true" minify="true" excludes="html5-vi">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="VisMapBase.js"/>
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/mapbox">
+      <jsFile name="VisMapbox.js"/>
+    </jsDir>
+  </jsBundle>
+  
+  <!--
+    FEATURE BUNDLE: KPI Card
+    REQUIRES:
+-->
+  <jsBundle name="vi-kpi" depSort="true" minify="true" excludes="html5-vi">
+    <jsDir path="javascript/mojo/js/source/kpicard">
+      <jsFile name="VisKPICard.js"/>
+    </jsDir>
+  </jsBundle>
+
+
+  <!-- For Windows Phones -->
+
+  <!--
+    FEATURE BUNDLE: WINPHONE-APP
+    REQUIRES:       MOJO-COREUI
+-->
+  <jsBundle name="winphone-app" depSort="true" minify="true" type="yui" excludes="mojo-core,mojo-coreui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/winphone">
+      <jsFile name="ViewFactory.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: WINPHONE-APP-DEBUG
+    REQUIRES:       MOJO-COREUI-DEBUG
+-->
+  <jsBundle name="winphone-app-debug" depSort="true" minify="true" inherits="winphone-app" type="comments-only" excludes="mojo-core-debug,mojo-coreui-debug">
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: WINPHONE-APP-HOSTED
+    REQUIRES:       MOJO-COREUI-DEBUG, MOJO-MOBILE-DEBUG
+-->
+  <jsBundle name="winphone-app-hosted" depSort="true" minify="false" inherits="winphone-app-debug" type="closure" minifyflags="--warning_level=QUIET" excludes="mojo-core-debug,mojo-coreui-debug">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileAppProxy.js" />
+      <jsFile name="XHRServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/maps/jsmap">
+      <jsFile name="InfoWindow.js" />
+    </jsDir>
+
+
+    <!--
+    FEATURE BUNDLE: MOJO-ROS
+    REQUIRES:
+-->
+
+  </jsBundle>
+  <jsBundle name="mojo-ros" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ReportQuickSearchBox.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-DDE
+    REQUIRES:
+-->
+
+  <jsBundle name="mojo-dde" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="DynamicDateEditor.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-drl" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="Editor.js"/>
+      <jsFile name="DynamicRecipientListDataService.js"/>
+      <jsFile name="DynamicRecipientEditor.js" />
+      <jsFile name="DynamicRecipientList.js" />
+    </jsDir>
+  </jsBundle>
+
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-SLE
+    REQUIRES:
+-->
+
+  <jsBundle name="mojo-sle" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="dom.js" />
+      <jsFile name="css.js" />
+      <jsFile name="fx.js" />
+      <jsFile name="form.js" />
+      <jsFile name="dnd.js" />
+      <jsFile name="_IsPopup.js" />
+      <jsFile name="_HasPopup.js" />
+      <jsFile name="container.js" />
+      <jsFile name="Button.js" />
+      <jsFile name="Label.js" />
+      <jsFile name="TextBox.js" />
+      <jsFile name="TextBoxWithLabel.js" />
+      <jsFile name="HBox.js" />
+      <jsFile name="VBox.js" />
+      <jsFile name="Table.js" />
+      <jsFile name="Editor.js" />
+    </jsDir>
+  </jsBundle>
+
+<!--
+    FEATURE BUNDLE: native android js widgets bundles
+-->
+
+  <!--The bundles for Native Android Widgets -->
+  <!--
+  <jsBundle name="mojo-widgets" depSort="true" minify="true"
+    inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+      <jsFile name="NativeVisHeatMap.js" />
+      <jsFile name="CustomVisBase.js" />
+      <jsFile name="NativeAndroidVisMap.js" />
+      <jsFile name="NativeVisMicroChart.js" />
+      <jsFile name="NativeAndroidVisTimeSeries.js" />
+      <jsFile name="NativeDocVisTimeSeries.js" />
+      <jsFile name="NativeAndroidInteractiveGridXtab.js" />
+      <jsFile name="NativeDocInteractiveGridXtab.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/large/factories">
+      <jsFile name="ViewFactory.js" />
+      <jsFile name="ControllerFactory.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/factories">
+      <jsFile name="ModelFactory.js" />
+    </jsDir>
+  </jsBundle>
+  -->
+
+  <!--CustomVisBase-->
+  <!--
+  <jsBundle name="CustomVisBase" depSort="true" minify="false"
+    inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="CustomVisBase.js" />
+    </jsDir>
+  </jsBundle>
+  -->
+
+  <!--HeatMap -->
+  <!--
+  <jsBundle name="mojo-widgets-heatmap" depSort="true" minify="true"
+    inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+      <jsFile name="Dialog.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="NativeVisHeatMap.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-widgets-heatmap-noMinify" depSort="true" minify="false"
+    inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+      <jsFile name="Dialog.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="NativeVisHeatMap.js" />
+    </jsDir>
+  </jsBundle>
+  -->
+
+  <!--Time Series -->
+  <!--
+  <jsBundle name="mojo-widgets-timeseries" depSort="true"
+    minify="true" inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="NativeAndroidVisTimeSeries.js" />
+      <jsFile name="NativeDocVisTimeSeries.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-widgets-timeseries-noMinify" depSort="true"
+    minify="false" inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="NativeAndroidVisTimeSeries.js" />
+      <jsFile name="NativeDocVisTimeSeries.js" />
+    </jsDir>
+  </jsBundle>
+-->
+
+  <!--Micro Chart -->
+  <!--
+  <jsBundle name="mojo-widgets-microchart" depSort="true"
+    minify="true" inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="NativeVisMicroChart.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-widgets-microchart-noMinify" depSort="true"
+    minify="false" inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="NativeVisMicroChart.js" />
+    </jsDir>
+  </jsBundle>
+  -->
+
+
+  <!--Image Layout -->
+
+  <!--
+  <jsBundle name="mojo-widgets-imagelayout" depSort="true"
+    minify="true" inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+      <jsFile name="NativeAndroidVisMap.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-widgets-imagelayout-noMinify" depSort="true"
+    minify="false" inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+      <jsFile name="NativeAndroidVisMap.js" />
+    </jsDir>
+  </jsBundle>
+  -->
+
+  <!--Interactive Grid -->
+  <!--
+  <jsBundle name="mojo-widgets-interactivegrid" depSort="true"
+    minify="true" inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+      <jsFile name="NativeAndroidInteractiveGridXtab.js" />
+      <jsFile name="NativeDocInteractiveGridXtab.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/large/factories">
+      <jsFile name="ViewFactory.js" />
+      <jsFile name="ControllerFactory.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/factories">
+      <jsFile name="ModelFactory.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="mojo-widgets-interactivegrid-noMinify" depSort="true"
+    minify="false" inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+      <jsFile name="AndroidServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="MobileServerProxy.js" />
+      <jsFile name="NativeAndroidInteractiveGridXtab.js" />
+      <jsFile name="NativeDocInteractiveGridXtab.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/large/factories">
+      <jsFile name="ViewFactory.js" />
+      <jsFile name="ControllerFactory.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/android/factories">
+      <jsFile name="ModelFactory.js" />
+    </jsDir>
+  </jsBundle>
+  -->
+
+  <!-- graph matrix -->
+
+  <!--
+  <jsBundle name="mojo-widgets-graphmatrix-noMinify" depSort="true" minify="false"
+    inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="NativeAndroidGraphMatrix.js" />
+    </jsDir>
+  </jsBundle>
+
+  <jsBundle name="mojo-widgets-graphmatrix" depSort="true" minify="true"
+    inherits="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source/android">
+      <jsFile name="AndroidApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="NativeAndroidGraphMatrix.js" />
+    </jsDir>
+  </jsBundle>
+  -->
+
+
+  <!--
+    FEATURE BUNDLE: HTML5-VI
+-->
+  <jsBundle name="html5-vi" depSort="true" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ServerProxy.js" />
+      <jsFile name="XHRServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi">
+      <jsFile name="VisualInsightApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="DIContainer.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- Build a VI CSS bundle without any Data Import specific CSS -->
+  <jsBundle name="html5-vi-css" depSort="true" minify="true" type="yui" sassSuffix="-ws">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ServerProxy.js" />
+      <jsFile name="XHRServerTransport.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi">
+      <jsFile name="VisualInsightApp.js" />
+    </jsDir>
+  </jsBundle>
+
+    <jsBundle name="html5-vi-css-ws" depSort="true" minify="true" type="yui" sassSuffix="-ws">
+        <jsDir path="javascript/mojo/js/source">
+            <jsFile name="ServerProxy.js" />
+            <jsFile name="XHRServerTransport.js" />
+        </jsDir>
+        <jsDir path="javascript/mojo/js/source/vi">
+            <jsFile name="VisualInsightApp.js" />
+        </jsDir>
+    </jsBundle>
+
+  <!-- Build a Data Import CSS bundle for HTML5 VI without any CSS included in the HTML5-VI bundle -->
+  <jsBundle name="mojo-di-css" depSort="true" minify="true" sassSuffix="-ws" excludes="html5-vi-css">
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="DIContainer.js" />
+    </jsDir>
+  </jsBundle>
+
+  <jsBundle name="mojo-di-css-ws" depSort="true" minify="true" excludes="html5-vi-css" sassSuffix="-ws">
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="DIContainer.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <jsBundle name="html5-vi-debug" depSort="true" minify="true" type="yui" inherits="html5-vi">
+    <jsDir path="javascript/mojo/js/source/onetier/controllers">
+      <jsFile name="RootController.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="stacktrace.js" />
+      <jsFile name="Debug.js" />
+      <jsFile name="DebugUtils.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: ONE-TIER
+-->
+  <jsBundle name="one-tier" depSort="true" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ServerProxy.js" />
+      <jsFile name="XtabCellHoverPopup.js" />
+      <jsFile name="OneTierVisList.js" />
+      <jsFile name="CustomVisBase.js" />
+      <jsFile name="HtmlMultipleImageLayout.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/onetier">
+      <jsFile name="OneTierApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi/models">
+      <jsFile name="OneTierServerTransport.js" />
+      <jsFile name="CustomVisDropZones.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi/models/editors">
+      <jsFile name="CustomVisEditorModel.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="DIContainer.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/onetier/vi/ui/tutorial">
+      <jsFile name="GetStartView.js"/>
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/ngm">
+      <jsFile name="VisNewGraphMatrix.js"/>
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: WORKSTATION
+-->
+  <jsBundle name="workstation" depSort="true" minify="true" type="yui" sassSuffix="-ws">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="ServerProxy.js" />
+      <jsFile name="XtabCellHoverPopup.js" />
+      <jsFile name="OneTierVisList.js" />
+      <jsFile name="CustomVisBase.js" />
+      <jsFile name="CustomVisUtility.js" />
+      <jsFile name="HtmlMultipleImageLayout.js" />
+      <jsFile name="TextAreaWithLabel.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/onetier">
+      <jsFile name="OneTierApp.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi/models">
+      <jsFile name="OneTierServerTransport.js" />
+      <jsFile name="CustomVisDropZones.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi/models/editors">
+      <jsFile name="CustomVisEditorModel.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI">
+      <jsFile name="DIContainer.js" />
+    </jsDir>
+    <!-- New map will replace the old map -->
+    <!--<jsDir path="javascript/mojo/js/source/esrimap">
+      <jsFile name="ESRIDensityLayer.js"/>
+      <jsFile name="ClusterLayerWrapper.js"/>
+    </jsDir>-->
+    <jsDir path="javascript/mojo/js/source/onetier/vi/ui/tutorial">
+      <jsFile name="GetStartView.js"/>
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/ngm">
+      <jsFile name="VisNewGraphMatrix.js"/>
+    </jsDir>
+  </jsBundle>
+
+
+<!--
+    FEATURE BUNDLE: ONE-TIER-DEBUG
+    EXTENDS: ONE-TIER
+-->
+
+  <jsBundle name="one-tier-debug" depSort="true" inherits="one-tier" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="stacktrace.js" />
+      <jsFile name="Debug.js" />
+      <jsFile name="DebugUtils.js" />
+    </jsDir>
+  </jsBundle>
+
+
+
+  <!--
+    FEATURE BUNDLE: ONE-TIER-HOSTED
+    EXTENDS: ONE-TIER
+-->
+  <jsBundle name="one-tier-hosted" depSort="true" minify="false" inherits="one-tier" type="yui">
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: workstation-mojo-components
+-->
+  <jsBundle name="workstation-mojo-components" depSort="true" minify="false" inherits="mojo-core" type="yui" sassSuffix="-ws">
+    <jsDir path="javascript/mojo/js/source/vi/ui/editors">
+      <jsFile name="CoverPageEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLES: vi-gm, vi-heatmap, vi-network
+    FEATURE BUNDLES: oivm-gm, oivm-heatmap, oivm-network
+-->
+  <jsBundle name="vi-gm" depSort="true" minify="true" type="yui" excludes="html5-vi">
+    <jsDir path="javascript/mojo/js/source/gm">
+      <jsFile name="VisGraphMatrix.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="vi-ngm" depSort="true" minify="true" type="yui" excludes="html5-vi">
+    <jsDir path="javascript/mojo/js/source/ngm">
+      <jsFile name="VisNewGraphMatrix.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="oivm-gm" depSort="true" minify="true" type="yui" excludes="mojo-oivm">
+    <jsDir path="javascript/mojo/js/source/gm">
+      <jsFile name="VisGraphMatrix.js" />
+    </jsDir>
+  </jsBundle>
+
+  <jsBundle name="vi-heatmap" depSort="true" minify="true" type="yui" excludes="html5-vi">
+    <jsDir path="javascript/mojo/js/source/heatmap/vi">
+      <jsFile name="VisHeatMap.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="oivm-heatmap" depSort="true" minify="true" type="yui" excludes="mojo-oivm">
+    <jsDir path="javascript/mojo/js/source/heatmap/vi">
+      <jsFile name="VisHeatMap.js" />
+    </jsDir>
+  </jsBundle>
+
+  <jsBundle name="vi-network" depSort="true" minify="true" type="yui" excludes="html5-vi">
+    <jsDir path="javascript/mojo/js/source/netviz">
+      <jsFile name="VisNetwork.js" />
+    </jsDir>
+  </jsBundle>
+  <jsBundle name="oivm-network" depSort="true" minify="true" type="yui" excludes="mojo-oivm">
+    <jsDir path="javascript/mojo/js/source/netviz">
+      <jsFile name="VisNetwork.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: MOBILE-CHART
+    EXTENDS:
+-->
+
+  <jsBundle name="mobile-chart" depSort="true" minify="true" type="yui" excludes="mojo-core,mojo-coreui,mobile-app">
+    <jsDir path="javascript/mojo/js/source/chart">
+      <jsFile name="CEModuleMain.js" />
+      <jsFile name="ChartImpl.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOBILE-CHART-DEBUG
+    EXTENDS: MOBILE-CHART
+-->
+
+  <jsBundle name="mobile-chart-debug" depSort="true" minify="false" inherits="mobile-chart" type="comments-only" minifyflags="--warning_level=QUIET" excludes="mojo-core-debug,mojo-coreui-debug,mobile-app">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="stacktrace.js" />
+      <jsFile name="Debug.js" />
+      <jsFile name="DebugUtils.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: mojo-starburst
+    REQUIRES:
+    Description: Starburst Popup menu
+  -->
+  <jsBundle name="mojo-starburst" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="css.js" />
+      <jsFile name="dom.js" />
+      <jsFile name="string.js" />
+      <jsFile name="Popup.js" />
+      <jsFile name="Container.js" />
+      <jsFile name="Widget.js" />
+      <jsFile name="Obj.js" />
+      <jsFile name="_Provider.js" />
+      <jsFile name="_LoadsScript.js" />
+      <jsFile name="Binding.js" />
+      <jsFile name="_HasBindings.js" />
+      <jsFile name="_HasMarkup.js" />
+      <jsFile name="_HasTooltip.js" />
+      <jsFile name="_HasChildren.js" />
+      <jsFile name="_IsPopup.js" />
+      <jsFile name="_CanAutoClose.js" />
+      <jsFile name="ListBase.js" />
+      <jsFile name="_ListSelections.js" />
+      <jsFile name="_HasSuggestion.js" />
+      <jsFile name="imageUtils.js" />
+      <jsFile name="CustomGroupEditor.js" />
+      <jsFile name="SharingEditor.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/ME">
+      <jsFile name="MetricIDE.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/mstr/ui">
+      <jsFile name="EnumWebPromptsList.js" />
+      <jsFile name="CreateButton.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/mstr/search">
+      <jsFile name="SearchSettings.js" />
+      <jsFile name="Search.js" />
+      <jsFile name="SearchButton.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: mojo-session-manager
+    REQUIRES:
+  -->
+  <jsBundle name="mojo-session-manager" depSort="true" minify="true" excludes="mojo-bootstrap">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="SessionManager.js"/>
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: import-bundle
+    Description: This bundle includes files required for the folder page to import .mstr files
+  -->
+  <jsBundle name="import-bundle" depSort="true" minify="true" excludes="mojo-bootstrap">
+  	<jsDir path="javascript/mojo/js/source/ui/editors">
+	  <jsFile name="RenameEditor.js" />
+	</jsDir>
+	<jsDir path="javascript/mojo/js/source/onetier/vi/ui">
+	  <jsFile name="UploadResultEditor.js" />
+	</jsDir>
+  </jsBundle>
+
+
+  <!-- PAGE BUNDLES: This section contains defintions of page-level bundles which are specifically for bundling Bone/JUIL files in mstrWeb.jsp-based pages. -->
+  <!-- Page bundle name conventions:
+     == bone-global - the bundle that includes files required for every page
+     == bone-{xxx} (where xxx is from xxx_links.jsp or pagename}
+     ==== bone-folder: Folder Browsing page (based on Folder_Links.jsp)
+     ==== bone-report: Report page (based on Report_Links.jsp)
+     ==== bone-rw-{view mode}: RWD page at different view mode (Based on RW_Links.jsp)
+     ==== bone-summary: Summary page
+     ==== bone-search: Search page
+
+    PARAMs: depSort="false" if the page was not orginally using resourceMgr to avoid unnecessary dependency that might be added.
+
+    ALL PAGE BUNDLES DO NOT include _Interface added files as below:
+        = <jsFile name="leftToolbar.js" />
+        = <jsFile name="mstrLeftPaneImpl.js" />
+        = <jsFile name="mstrMenuTabsImpl.js" />
+
+    ALL PAGE BUNDLES DO NOT include updatemanager event scope files.
+
+    PAGE BUNDLES include dynamic files (added from transforms). These files will still be added to 'dynamicJS' list but won't actually send a resource request.
+ -->
+  <!--
+    PAGE BUNDLE: bone-global
+    REQUIRES:
+    PARAMS: depSort="false" - Do Not sort-depends.
+    Description: This bundle includes files that are loaded in HTML <HEAD> in each mstrWeb.jsp-based pages.
+                These files do not have dependency on any other files outside this list. And they are prerequisite to other bone/JUIL codes.
+                These files should be excluded from dependency by adding entry in jsdependes.properties for each Javascript file that has reference to any of these files.
+                (However it is difficulty to ensure or maintain this when adding new files, so a code logic is also added in PageResourceManager to exclude such possible dependency)
+                This bundle should be the only file loaded in HTML <HEAD> when the page has resource manager on.
+-->
+  <jsBundle name="bone-global" depSort="false" minify="true" excludes="">
+    <jsDir path="javascript/mstr">
+      <jsFile name="core.js" />
+    </jsDir>
+    <jsDir path="javascript">
+      <jsFile name="DHTML.js" />
+      <jsFile name="IFRAME.js" />
+      <jsFile name="microstrategy.js" />
+      <jsFile name="errors.js" />
+      <jsFile name="bone.js" />
+      <jsFile name="dialog.js" />
+      <jsFile name="HTMLAttributes.js" />
+      <jsFile name="editor.js" />
+      <jsFile name="mstrEventManager.js" />
+      <jsFile name="clientSideDescriptor.js" />
+
+      <!--
+          Search-feature files are originally restricted by object-search feature.
+          If it turns out that it is common use case that mstrWeb is running in non-object-search or full-screen mode,
+          then remove these two files from this list and add back to global_links.jsp
+      -->
+      <jsFile name="mstrSearch.js" />
+      <jsFile name="mstrSearchCommands.js" />
+
+      <!-- This is a dynamic files that is not currently in global_links.jsp, but loaded in all pages, so included them as well -->
+      <jsFile name="mstrMsgBoxImpl.js" />
+
+      <!-- This file is a dynamic not in global_links.jsp but for all non-fullscreen pages. May consider to include it in this list? -->
+      <!-- For now this file should be added to PAGE-Bundle where the pages do show PathBar -->
+      <!--
+      <jsFile name="mstrPathImpl.js" />
+       -->
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-folder
+    REQUIRES: bone-global
+    PARAMS: depSort="false"
+    Description: This bundle include all static files originally loaded in Folder_Links.jsp;
+                 Additionally it also includes most dynamic files loaded in Folder Browsing pages.
+                 It does not include updateManager scope files.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-folder" depSort="true" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <!--
+            This file is added by resource manager dependency sort after enable resourceMgr for Folder Browsing,
+            although it is not required in functionality, added here to avoid one extra request.
+         -->
+      <jsFile name="observer.js" />
+
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="dropdown.js" />
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="ObjectManipulation.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="mstrInlineRename.js" />
+      <jsFile name="mstrTreeViewImpl.js" />
+      <jsFile name="mstrFolderTreeViewImpl.js" />
+      <jsFile name="mstrFolder.js" />
+      <jsFile name="mstrFolderActions.js" />
+      <jsFile name="mstrFolderFrameTreeViewImpl.js" />
+      <jsFile name="Menu.js" />
+      <jsFile name="contextMenuManager.js" />
+      <jsFile name="contextMenu.js" />
+      <jsFile name="toolbar.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-search
+    REQUIRES: bone-global
+    PARAMS: depSort="false"
+    Description: This bundle include all static files originally loaded in Search_Links.jsp;
+                 Additionally it also includes most dynamic files loaded in Folder Browsing pages.
+                 It does not include updateManager scope files.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-search" depSort="false" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="dropdown.js" />
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="toolbar.js" />
+      <jsFile name="Calendar.js" />
+      <jsFile name="Menu.js" />
+      <jsFile name="contextMenu.js" />
+      <jsFile name="contextMenuManager.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="ObjectManipulation.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="mstrInlineRename.js" />
+      <jsFile name="mstrFolder.js" />
+      <jsFile name="mstrFolderActions.js" />
+      <jsFile name="mstrMsgBoxExportLink.js" />
+      <jsFile name="mstrSearchTabsImpl.js" />
+      <jsFile name="mstrFolderSearch.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-inbox
+    REQUIRES: bone-global
+    PARAMS: depSort="false"
+    Description: This bundle include all static files originally loaded in Inbox_Links.jsp;
+                 Additionally it also includes most dynamic files loaded in History List page.
+                 It does NOT include updateManager scope file.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-inbox" depSort="false" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="dropdown.js" />
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="mstrInbox.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="Menu.js" />
+      <jsFile name="contextMenuManager.js" />
+      <jsFile name="contextMenu.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-subscriptions
+    REQUIRES: bone-global
+    PARAMS: depSort="false"
+    Description: This bundle include all static files originally loaded in subscriptions_Links.jsp;
+                 Additionally it also includes most dynamic files loaded in My Subscriptions page.
+                 It does NOT include updateManager scope file.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-subscriptions" depSort="false" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="dropdown.js" />
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="mstrSubscriptionsFolder.js" />
+      <jsFile name="updateManager.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-subscriptions-edit
+    REQUIRES: bone-global
+    PARAMS: depSort="false"
+    Description: This bundle include all static files originally loaded in subscriptions_edit_Links.jsp;
+                 Additionally it also includes most dynamic files loaded in Subscriptions Edit page.
+                 It does NOT include updateManager scope file.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-subscriptions-edit" depSort="false" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="dropdown.js" />
+      <jsFile name="toolbar.js" />
+      <jsFile name="observer.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="contactsEditor.js" />
+      <jsFile name="selections.js" />
+      <jsFile name="tab.js" />
+      <jsFile name="TabManager.js" />
+      <jsFile name="formatObject.js" />
+      <jsFile name="number.js" />
+      <jsFile name="Calendar.js" />
+      <jsFile name="PromptFunctions.js" />
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="Menu.js" />
+      <jsFile name="contextMenuManager.js" />
+      <jsFile name="contextMenu.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-summary
+    REQUIRES: bone-global
+    PARAMS: depSort="false"
+    Description: This bundle include all static files originally loaded in Summary_Links.jsp;
+                 Additionally it also includes most dynamic files loaded in Summary page.
+                 It does NOT include updateManager scope file.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-summary" depSort="false" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="dropdown.js" />
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="createReport.js" />
+      <jsFile name="mstrSubscriptionsFolder.js" />
+      <jsFile name="mstrFolder.js" />
+      <jsFile name="mstrFolderActions.js" />
+      <jsFile name="selections.js" />
+      <jsFile name="mstrObjectBrowserImpl.js" />
+      <jsFile name="mstrObjectExplorerImpl.js" />
+      <jsFile name="mstrXDAObjectExplorerImpl.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="updateManager.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-report
+    REQUIRES: bone-global
+    Description: This bundle include all static files originally loaded in report_links.jsp;
+                 Additionally it also includes most dynamic files for Report View Page.
+                 Some feature-dependent dynamic files are not included, e.g., graph related files.
+                 The dynamic files (added from transforms) will still be added to 'dynamicJS' list but won't actually send a resource request.
+                 It does NOT include updateManager-scope files.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-report" depSort="true" minify="true" excludes="bone-global">
+    <jsDir path="javascript/mstr">
+      <jsFile name="common.js" />
+      <jsFile name="trees.js" />
+      <jsFile name="toolbarsAndAnnotations.js" />
+    </jsDir>
+    <jsDir path="javascript">
+      <jsFile name="dropdown.js" />
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="mstrQuickThresholds.js" />
+      <jsFile name="tableUtils.js" />
+      <jsFile name="Menu.js" />
+      <jsFile name="GradientUtil.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="Drill.js" />
+      <jsFile name="contextMenu.js" />
+      <jsFile name="observer.js" />
+      <jsFile name="template.js" />
+      <jsFile name="features.js" />
+      <jsFile name="formatObject.js" />
+      <jsFile name="number.js" />
+      <jsFile name="PromptFunctions.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="contextMenuManager.js" />
+      <jsFile name="selections.js" />
+      <jsFile name="mstrReportFrame.js" />
+      <jsFile name="tree.js" />
+      <jsFile name="mstrRWUnitBone.js" />
+      <jsFile name="mask.js" />
+      <jsFile name="maskMapped.js" />
+      <jsFile name="mstrGridStatic.js" />
+      <jsFile name="gridSelections.js" />
+      <jsFile name="mstrGridReport.js" />
+      <jsFile name="tab.js" />
+      <jsFile name="mstrObjectBrowserImpl.js" />
+      <jsFile name="TabManager.js" />
+      <jsFile name="mstrAccordionTabManager.js" />
+      <jsFile name="mstrReportObjectsImpl.js" />
+      <jsFile name="mstrReportWSObjectsImpl.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-rw-ivm-fullscreen-reporter
+    REQUIRES: bone-global
+    Description: NOTE - The following info is based on feature "rw-interactive-view-mode-full-screen-reporter" enabled.
+                 This bundle includes (all) required files required in RWD IVM FULLSCREEN mode.
+                 It includes static files originally loaded in RW_Links.jsp.
+                 Additionally it also includes some dynamic files.
+                 The dynamic files (added from transforms) will still be added to 'dynamicJS' list but won't actually send a resource request.
+                 It does not include updateManager-scope files.
+                 This list is built based on a blank RWD IVM Mode FullScreen Mode resources loaded in <DIV.mstrInlineScripts> excluding bone-global.
+-->
+  <jsBundle name="bone-rw-ivm-fullscreen-reporter" depSort="true" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="dropdown.js" />
+      <jsFile name="tableUtils.js" />
+      <jsFile name="formatObject.js" />
+      <jsFile name="Menu.js" />
+      <jsFile name="features.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="objProps.js" />
+      <jsFile name="observer.js" />
+      <jsFile name="contextMenu.js" />
+      <jsFile name="GradientUtil.js" />
+      <jsFile name="docCommands.js" />
+      <jsFile name="number.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="viewerCommands.js" />
+      <jsFile name="mstrSubSection.js" />
+      <jsFile name="selections.js" />
+      <jsFile name="contextMenuManager.js" />
+      <jsFile name="mask.js" />
+      <jsFile name="subSectionMask.js" />
+      <jsFile name="docSelections.js" />
+      <jsFile name="mstrFixedPanel.js" />
+      <jsFile name="section.js" />
+      <jsFile name="mstrFilterPanelMaskImpl.js" />
+      <jsFile name="mstrStaticDoc.js" />
+      <jsFile name="toolbar.js" />
+      <jsFile name="mstrStaticDocViewer.js" />
+      <jsFile name="docViewer.js" />
+      <jsFile name="standardToolbar.js" />
+      <jsFile name="doc.js" />
+    </jsDir>
+  </jsBundle>
+
+
+  <!--
+    PAGE BUNDLE: bone-rw-static
+    REQUIRES: bone-global
+    Description: This bundle includes (all) required files required in RWD Static HTML mode.
+                 It includes the smallest list of files among the RWD View Modes.
+                 It includes static files originally loaded in RW_Links.jsp.
+                 Additionally it also includes some dynamic files.
+                 The dynamic files (added from transforms) will still be added to 'dynamicJS' list but won't actually send a resource request.
+                 It does not include updateManager-scope files.
+                 This list is built based on a blank RWD IVM Mode resources loaded in <DIV.mstrInlineScripts> excluding bone-global.
+-->
+  <jsBundle name="bone-rw-static" depSort="true" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="dropdown.js" />
+      <!--jsFile name="mstrQuickThresholds.js" /-->
+      <jsFile name="tableUtils.js" />
+      <!--jsFile name="Menu.js" />
+        <jsFile name="dragnDropObj.js" />
+        <jsFile name="objProps.js" /-->
+      <jsFile name="GradientUtil.js" />
+      <!-- jsFile name="docCommands.js" />
+        <jsFile name="serializer.js" />
+        <jsFile name="Drill.js" />
+        <jsFile name="contextMenu.js" />
+        <jsFile name="observer.js" />
+        <jsFile name="template.js" /-->
+      <jsFile name="features.js" />
+      <jsFile name="formatObject.js" />
+      <jsFile name="number.js" />
+      <jsFile name="updateManager.js" />
+      <!--jsFile name="contextMenuManager.js" />
+        <jsFile name="viewerCommands.js" />
+        <jsFile name="selections.js" />
+        <jsFile name="mstrSubSection.js" />
+        <jsFile name="mstrPickerImpl.js" />
+        <jsFile name="tree.js" />
+        <jsFile name="mask.js" />
+        <jsFile name="mstrRWUnitBone.js" />
+        <jsFile name="mstrGridStatic.js" />
+        <jsFile name="subSectionMask.js" />
+        <jsFile name="mstrFixedPanel.js" />
+        <jsFile name="gridSelections.js" />
+        <jsFile name="docSelections.js" />
+        <jsFile name="mstrGridReport.js" />
+        <jsFile name="section.js" />
+        <jsFile name="mstrStaticDocViewer.js" /-->
+      <jsFile name="TabManager.js" />
+      <!--jsFile name="mstrStaticDoc.js" /-->
+      <jsFile name="leftToolbar.js" />
+      <jsFile name="tab.js" />
+      <!--jsFile name="mstrObjectBrowserImpl.js" />
+        <jsFile name="mstrFilterPanelMaskImpl.js" />
+        <jsFile name="doc.js" />
+        <jsFile name="mstrRWObjectsImpl.js" />
+        <jsFile name="mstrAccordionTabManager.js" />
+        <jsFile name="docViewer.js" />
+        <jsFile name="mstrGridRW.js" /-->
+    </jsDir>
+    <jsDir path="javascript/mstr">
+      <jsFile name="common.js"/>
+      <jsFile name="toolbarsAndAnnotations.js"/>
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-rw-ivm
+    REQUIRES: bone-global
+    Description: This bundle includes (all) required files required in RWD IVM mode.
+                 It includes the smallest list of files among the RWD View Modes.
+                 It includes static files originally loaded in RW_Links.jsp.
+                 Additionally it also includes some dynamic files.
+                 The dynamic files (added from transforms) will still be added to 'dynamicJS' list but won't actually send a resource request.
+                 It does not include updateManager-scope files.
+                 This list is built based on a blank RWD IVM Mode resources loaded in <DIV.mstrInlineScripts> excluding bone-global.
+-->
+  <jsBundle name="bone-rw-ivm" depSort="true" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="dropdown.js" />
+      <jsFile name="mstrQuickThresholds.js" />
+      <jsFile name="tableUtils.js" />
+      <jsFile name="Menu.js" />
+      <jsFile name="dragnDropObj.js" />
+      <jsFile name="objProps.js" />
+      <jsFile name="GradientUtil.js" />
+      <jsFile name="docCommands.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="Drill.js" />
+      <jsFile name="contextMenu.js" />
+      <jsFile name="observer.js" />
+      <jsFile name="template.js" />
+      <jsFile name="features.js" />
+      <jsFile name="formatObject.js" />
+      <jsFile name="number.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="contextMenuManager.js" />
+      <jsFile name="viewerCommands.js" />
+      <jsFile name="selections.js" />
+      <jsFile name="mstrSubSection.js" />
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="tree.js" />
+      <jsFile name="mask.js" />
+      <jsFile name="mstrRWUnitBone.js" />
+      <jsFile name="mstrGridStatic.js" />
+      <jsFile name="subSectionMask.js" />
+      <jsFile name="mstrFixedPanel.js" />
+      <jsFile name="gridSelections.js" />
+      <jsFile name="docSelections.js" />
+      <jsFile name="mstrGridReport.js" />
+      <jsFile name="section.js" />
+      <jsFile name="mstrStaticDocViewer.js" />
+      <jsFile name="TabManager.js" />
+      <jsFile name="mstrStaticDoc.js" />
+      <jsFile name="leftToolbar.js" />
+      <jsFile name="tab.js" />
+      <jsFile name="mstrObjectBrowserImpl.js" />
+      <jsFile name="mstrFilterPanelMaskImpl.js" />
+      <jsFile name="doc.js" />
+      <jsFile name="mstrRWObjectsImpl.js" />
+      <jsFile name="mstrAccordionTabManager.js" />
+      <jsFile name="docViewer.js" />
+      <jsFile name="mstrGridRW.js" />
+    </jsDir>
+    <jsDir path="javascript/mstr">
+      <jsFile name="common.js"/>
+      <jsFile name="toolbarsAndAnnotations.js"/>
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-rw-design
+    REQUIRES: bone-global, bone-rw-ivm
+    Description: This bundle inherits bundle bone-rw-ivm.
+                 It includes additional files required for RWD Design Mode.
+                 The list of additional files are built based on comparison the resources loaded in <DIV.mstrInlineScripts> between RWD IVM and Design Mode.
+-->
+  <jsBundle name="bone-rw-design" depSort="true" minify="true" inherits="bone-rw-ivm" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="maskMapped.js" />
+      <jsFile name="mstrButton.js" />
+      <jsFile name="mstrHorizontalContainerImpl.js" />
+      <jsFile name="mstrHTMLContainerImpl.js" />
+      <jsFile name="mstrNavigationBar.js" />
+      <jsFile name="mstrPageByImpl.js" />
+      <jsFile name="mstrPanel.js" />
+      <jsFile name="mstrPanelStack.js" />
+      <jsFile name="mstrPortalImpl.js" />
+      <jsFile name="mstrRoundedRectangle.js" />
+      <jsFile name="mstrRWControlImpl.js" />
+      <jsFile name="mstrStaticPageBy.js" />
+      <jsFile name="mstrTableControl.js" />
+    </jsDir>
+    <jsDir path="javascript/mstr">
+      <jsFile name="trees.js"/>
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-rw-evm
+    REQUIRES: bone-global, bone-rw-ivm
+    Description: This bundle inherits bundle bone-rw-ivm.
+                 It includes additional files required for RWD Editable Mode.
+                 The list of additional files are built based on comparison the resources loaded in <DIV.mstrInlineScripts> between RWD IVM and EVM.
+                 Currently this list is same as Design Mode bundle bone-rw-design.
+-->
+  <jsBundle name="bone-rw-evm" depSort="true" minify="true" inherits="bone-rw-ivm" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="maskMapped.js" />
+      <jsFile name="mstrButton.js" />
+      <jsFile name="mstrHorizontalContainerImpl.js" />
+      <jsFile name="mstrHTMLContainerImpl.js" />
+      <jsFile name="mstrNavigationBar.js" />
+      <jsFile name="mstrPageByImpl.js" />
+      <jsFile name="mstrPanel.js" />
+      <jsFile name="mstrPanelStack.js" />
+      <jsFile name="mstrPortalImpl.js" />
+      <jsFile name="mstrRoundedRectangle.js" />
+      <jsFile name="mstrRWControlImpl.js" />
+      <jsFile name="mstrStaticPageBy.js" />
+      <jsFile name="mstrTableControl.js" />
+    </jsDir>
+    <jsDir path="javascript/mstr">
+      <jsFile name="trees.js"/>
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-rw-flash
+    REQUIRES: bone-global
+    Description: This bundle includes files required for RWD Flash VIEW Mode.
+                 This list is built based on a blank RWD Flash View resources loaded in <DIV.mstrInlineScripts> excluding bone-global.
+                 It does not include updateManager-scope files.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-rw-flash" depSort="true" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="mstrPathImpl.js" /><!-- once this file is added to bone-global, then remove from here -->
+      <jsFile name="dropdown.js" />
+      <jsFile name="tableUtils.js" />
+      <jsFile name="AC_OETags.js" />
+      <jsFile name="formatObject.js" />
+      <jsFile name="features.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="observer.js" />
+      <jsFile name="GradientUtil.js" />
+      <jsFile name="number.js" />
+      <jsFile name="viewerCommands.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="relatedReports.js" />
+      <jsFile name="mstrPickerImpl.js" />
+      <jsFile name="mstrFlashDashboardImpl.js" />
+      <jsFile name="mstrFlashViewerImpl.js" />
+
+      <!--These files are loaded only for related-reports tab. Consider to include if this tab is open by default-->
+      <!--
+         <jsFile name="tab.js" />
+        <jsFile name="TabManager.js" />
+        <jsFile name="mstrAccordionTabManager.js" />
+         -->
+    </jsDir>
+    <jsDir path="javascript/mstr">
+      <jsFile name="common.js" />
+      <jsFile name="toolbarsAndAnnotations.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: bone-rw-vi
+    REQUIRES: bone-global
+    Description: This bundle includes files required for RW Flash VI Mode.
+                 This list is built based on a blank RW Flash VI Document resources loaded in <DIV.mstrInlineScripts> excluding bone-global.
+                 It does not include updateManager-scope files.
+                 It does not include _Interface-added files either.
+-->
+  <jsBundle name="bone-rw-vi" depSort="true" minify="true" excludes="bone-global">
+    <jsDir path="javascript">
+      <jsFile name="AC_OETags.js" />
+      <jsFile name="formatObject.js" />
+      <jsFile name="features.js" />
+      <jsFile name="serializer.js" />
+      <jsFile name="observer.js" />
+      <jsFile name="number.js" />
+      <jsFile name="updateManager.js" />
+      <jsFile name="viewerCommands.js" />
+      <jsFile name="mstrFlashViewerImpl.js" />
+      <jsFile name="mstrFlashDashboardImpl.js" />
+    </jsDir>
+    <jsDir path="javascript/mstr">
+      <jsFile name="common.js" />
+      <jsFile name="toolbarsAndAnnotations.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    PAGE BUNDLE: mojo-examples
+    Description: This bundle includes files required for the mojo example application.
+-->
+  <jsBundle name="mojo-examples" depSort="true" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source/examples">
+      <jsFile name="ExampleApp.js" />
+    </jsDir>
+  </jsBundle>
+  <!-- End of PAGE Bundles -->
+
+
+  <!-- Start CSS Bundles -->
+  <!--
+         CSS Bundle: page-common-css
+         Description: Common Mojo Widgets styles to be loaded for mojo-based apps in non-mojo-based pages.
+         Note:
+             - This bundle will create a SASS partial in mojo\css\_page-commoon-css.scss
+             - The page-level .scss file to load this bundle is mojo\css\page-common.scss
+             - Any page-level CSS Bundle could inherit this bundle and then include additional page-specific widgets.
+    -->
+  <jsBundle name="page-common-css" depSort="true" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="Editor.js" />
+      <jsFile name="SharingEditor.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/ME">
+      <jsFile name="MetricIDE.js"/>
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/ui">
+      <jsFile name="_HasScroller.js"/>
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/mstr/search">
+      <jsFile name="Search.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- Dummy bundle creating a bundle for all the dynamically loaded JS for the report page. -->
+  <jsBundle name="report-css" depSort="true" inherits="page-common-css" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="AdvancedSortEditor.js" />
+      <jsFile name="SessionManager.js" />
+      <jsFile name="SharingEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- Dummy bundle creating a bundle for all the dynamically loaded JS for the filter page. -->
+  <jsBundle name="filter-css" depSort="true" inherits="page-common-css" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="DynamicDateEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- Dummy bundle creating a bundle for all the dynamically loaded JS for the report page. -->
+  <jsBundle name="rw-css" depSort="true" inherits="page-common-css" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="AdvancedSortEditor.js" />
+      <jsFile name="SharingEditor.js" />
+      <jsFile name="SessionManager.js" />
+      <jsFile name="SaveAsEditor.js" />
+	  <jsFile name="CustomThemePicker.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/fe">
+      <jsFile name="FilterEditor.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi/ui">
+      <jsFile name="ReplaceObjectEditor.js" />
+      <jsFile name="VIBoxPropertyEditor.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi/ui/tabs">
+      <jsFile name="TabStrip.js" />
+      <jsFile name="Tab.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/condTx">
+      <jsFile name="ConditionTransactionEditor.js" />
+      <jsFile name="ActionRow.js" />
+      <jsFile name="AdvancedExpression.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/mstr">
+      <jsFile name="VisPropsEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- Dummy bundle creating a bundle for all the dynamically loaded JS for the folder page. -->
+  <jsBundle name="folder-css" depSort="true" inherits="page-common-css" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="SharingEditor.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/vi/ui/editors">
+      <jsFile name="ExportPDFEditor.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/DI/ui/dialogs">
+      <jsFile name="DIPermissionDialog.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/ui/editors">
+	  <jsFile name="RenameEditor.js" />
+	</jsDir>
+	<jsDir path="javascript/mojo/js/source/onetier/vi/ui">
+	  <jsFile name="UploadResultEditor.js" />
+	</jsDir>
+  </jsBundle>
+
+  <!-- Bundle for the one tier welcome page -->
+  <jsBundle name="onetier-welcome" depSort="true" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source/onetier/vi/ui/tutorial">
+      <jsFile name="WelcomeView.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- Bundle for the one tier registration page -->
+  <jsBundle name="onetier-registration" depSort="true" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source/onetier/vi/ui/tutorial">
+      <jsFile name="RegistrationView.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!-- End CSS Bundles -->
+
+    <jsBundle name="mojo-usher" depSort="true" minify="true" excludes="mojo-bootstrap">
+        <jsDir path="javascript/mojo/js/source">
+            <jsFile name="UsherLogin.js" />
+        </jsDir>
+    </jsBundle>
+    <jsBundle name="mojo-home" depSort="true" minify="true" excludes="mojo-bootstrap">
+        <jsDir path="javascript/mojo/js/source/home">
+            <jsFile name="HomeApp.js" />
+        </jsDir>
+    </jsBundle>
+
+
+
+  <jsBundle name="mojo-vis-props" depSort="true" minify="true" type="yui">
+    <jsDir path="javascript/mojo/js/source/mstr">
+      <jsFile name="VisPropsEditor.js" />
+    </jsDir>
+  </jsBundle>
+
+  <jsBundle name="mojo-vis-props-debug" inherits="mojo-vis-props" depSort="true" minify="true" type="yui">
+    <!-- Below for Debug-->
+    <jsDir path="javascript/mojo/js/source/netviz">
+      <jsFile name="VisNetwork.js" />
+    </jsDir>
+    <jsDir path="javascript/mojo/js/source/heatmap/vi">
+      <jsFile name="VisHeatMap.js" />
+    </jsDir>
+  </jsBundle>
+
+  <!--
+    FEATURE BUNDLE: MOJO-DOSSIER
+    DESCRIPTION: Bundle to support render Library Web OVIM & HTML5 VI mojo apps
+  -->
+  <jsBundle name="mojo-dossier" depSort="true" minify="true" excludes="">
+    <!-- oivm -->
+    <jsDir path="javascript/mojo/js/source">
+      <jsFile name="OIVMApp.js" />
+      <jsFile name="OIVMViewFactory.js" />
+      <jsFile name="MojoFlexHelper.js"/>
+      <jsFile name="SharingEditor.js"/>
+      <jsFile name="XtabCellMenu.js"/>
+    </jsDir>
+
+    <!-- html5vi -->
+      <jsDir path="javascript/mojo/js/source">
+        <jsFile name="ServerProxy.js" />
+        <jsFile name="XHRServerTransport.js" />
+      </jsDir>
+      <jsDir path="javascript/mojo/js/source/vi">
+        <jsFile name="VisualInsightApp4Library.js" />
+      </jsDir>
+  </jsBundle>
+
+
+  <!--
+    FEATURE BUNDLE: MOJO-DOSSIER-CSS
+    DESCRIPTION: CSS Bundle to support render Library Web HTML5 VI mojo apps
+  -->
+  <jsBundle name="mojo-dossier-css" depSort="true" minify="true" excludes="" sassSuffix="-ws">
+      <!-- html5vi -->
+      <jsDir path="javascript/mojo/js/source">
+        <jsFile name="ServerProxy.js" />
+        <jsFile name="XHRServerTransport.js" />
+      </jsDir>
+      <jsDir path="javascript/mojo/js/source/vi">
+        <jsFile name="VisualInsightApp4Library.js" />
+      </jsDir>
+  </jsBundle>
+  
+  <jsBundle name="vi-kpi-mobile" depSort="true" minify="true" excludes="mojo-dossier">
+    <jsDir path="javascript/mojo/js/source/kpicard">
+      <jsFile name="VisKPICard.js"/>
+    </jsDir>
+  </jsBundle>
+</jsBundles>

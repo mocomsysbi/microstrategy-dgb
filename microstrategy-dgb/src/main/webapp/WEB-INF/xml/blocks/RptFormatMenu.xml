@@ -1,0 +1,32 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptMenuModel" name="RptFormatMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1550" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.1919|Advanced Formatting...}</property>
+          <property name="cmdid">gridEditor</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K8688" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2115|Graph...}</property>
+          <property name="cmdid">openGraphFormatter</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>        
+        <block listElementKey="K1552" name="BaseBlock"/>
+        <block listElementKey="K1553" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5635|Report Details Properties...}</property>
+          <property name="cmdid">FilterDetailsFormat</property>
+          <property name="visibleFeatures">web-show-advanced-report-options</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1554" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3253|Resize Columns and Rows}</property>
+          <property name="cmdid">resizeEditor</property>
+          <property name="visibleFeatures">grid-layout</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

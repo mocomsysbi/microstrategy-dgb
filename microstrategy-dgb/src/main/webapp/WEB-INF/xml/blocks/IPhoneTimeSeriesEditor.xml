@@ -1,0 +1,201 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="VBox" name="IPhoneTimeSeriesEditor">
+  <assignments>
+    <property name="children">
+      <list>
+        <block listElementKey="K2100" name="HBox">
+          <property name="children">
+            <list>
+              <block listElementKey="K2101" name="FieldSet">
+                <property name="legend">{desc:mstrWeb.7617|Interval selector}</property>
+                <property name="cssText">width:170px;</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2102" name="HBox">
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2103" name="FastListView">
+                            <property name="width">130px</property>
+                            <property name="modelPath">parent/parent/parent/parent/model/nodes</property>
+                            <property name="itemRendererClass">mstr.itemrenderers.IPhoneTimeSeriesItemRenderer</property>
+                          </block>
+                          <block listElementKey="K2104" name="VBox">
+                            <property name="cssText">padding-top:30px;</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2105" name="ToolButton">
+                                  <property name="visible">true</property>
+                                  <property name="tooltip">{desc:mstrWeb.4447|Add}</property>
+                                  <property name="cssText">background-image: url(../style/mstr/images/addContents.gif)</property>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model</property>
+                                  <property name="cmds">Add||model</property>
+                                  <property name="enabledField">model/enableAdd</property>
+                                </block>
+                                <block listElementKey="K2106" name="ToolButton">
+                                  <property name="visible">true</property>
+                                  <property name="tooltip">{desc:mstrWeb.4448|Remove}</property>
+                                  <property name="cssText">background-image: url(../style/mstr/images/tbDatasetDelete.gif)</property>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model</property>
+                                  <property name="cmds">Remove||model;DeleteSelected||model/nodes;PostRemove||model</property>
+                                  <property name="enabledField">!model/empty</property>
+                                </block>
+                                <block listElementKey="K2107" name="ToolButton">
+                                  <property name="visible">true</property>
+                                  <property name="tooltip">{desc:mstrWeb.138|Move Up}</property>
+                                  <property name="cssText">background-image: url(../style/mstr/images/tbUp.gif)</property>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model</property>
+                                  <property name="cmds">Up||model/nodes;CheckDown||model</property>
+                                  <property name="enabledField">model/upEnabled</property>
+                                </block>
+                                <block listElementKey="K2108" name="ToolButton">
+                                  <property name="visible">true</property>
+                                  <property name="tooltip">{desc:mstrWeb.139|Move Down}</property>
+                                  <property name="cssText">background-image: url(../style/mstr/images/tbDown.gif)</property>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model</property>
+                                  <property name="cmds">Down||model/nodes;CheckDown||model</property>
+                                  <property name="enabledField">model/downEnabled</property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2109" name="FieldSet">
+                <property name="legend">{desc:mstrWeb.7618|Interval Properties}</property>
+                <property name="cssText">width:210px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2110" name="VBox">
+                      <property name="cssText">padding-right:10px; padding-top:10px; width:169px;</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2111" name="HBox">
+                            <property name="cssText">text-align:left</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2112" name="TextLabel">
+                                  <property name="cssText">width:80px;</property>
+                                  <property name="value">{desc:mstrWeb.7559|Name}:</property>
+                                </block>
+                                <block listElementKey="K2113" name="TextBox">
+                                  <property name="id">selectedNameIphoneEditorField</property>
+                                  <property name="caption"/>
+                                  <property name="useBlur">true</property>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model</property>
+                                  <property name="valueField">selectedName</property>
+                                  <property name="enabledField">!parent/parent/parent/parent/parent/model/empty</property>
+                                  <property name="totalSize">17</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="required">true</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="templateHbox" name="HBox">
+                            <property name="modelPath" type="String">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2163" name="TextLabel">
+                                  <property name="cssText">width:80px;padding-top:4px;</property>
+                                  <property name="value">{desc:mstrWeb.1280|Template}:</property>
+                                </block>
+                                <block listElementKey="K2114" name="ListPulldown">
+                                  <property name="width">120px</property>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model/dataSets</property>
+                                  <property name="descriptors/emptyText">{desc:mstrWeb.7564|Select...}</property>
+                                  <property name="enabledField">!parent/parent/parent/parent/parent/model/empty</property>
+                                  <property name="visibleField">!parent/parent/parent/parent/parent/model/isReport</property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          
+                          <block listElementKey="K2115" name="HBox">
+                            <property name="cssText">text-align:left;padding-top:2px;</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2116" name="TextLabel">
+                                  <property name="cssText">width:80px;</property>
+                                  <property name="value">{desc:mstrWeb.7619|Granularity}:</property>
+                                </block>
+                                <block listElementKey="K2117" name="Label">
+                                  <property name="cssText">white-space:nowrap;width:117px;overflow:hidden;height:15px;background-color:#D4D0C8;border:1px solid #808080;</property>
+                                  <property name="caption"/>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model</property>
+                                  <property name="valueField">granularity</property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2166" name="HBox">
+                            <property name="modelPath" type="String">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2163" name="TextLabel">
+                                  <property name="cssText">width:80px;padding-top:4px;</property>
+                                  <property name="value">{desc:mstrWeb.7620|Interval unit}:</property>
+                                </block>
+                                <block listElementKey="K2118" name="ListPulldown">
+                                  <property name="width">120px</property>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model/rangeList</property>
+                                  <property name="descriptors/emptyText">{desc:mstrWeb.7564|Select...}</property>
+                                  <property name="enabledField">parent/parent/parent/parent/parent/model/attEnabled</property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2119" name="HBox">
+                            <property name="cssText">text-align:left;padding-top:2px;</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2120" name="TextLabel">
+                                  <property name="cssText">width:80px;</property>
+                                  <property name="value">{desc:mstrWeb.7621|Interval size}:</property>
+                                </block>
+                                <block listElementKey="K2121" name="TextBox">
+                                  <property name="caption"/>
+                                  <property name="modelPath">parent/parent/parent/parent/parent/model</property>
+                                  <property name="valueField">selectedRangeSize</property>
+                                  <property name="enabledField">!parent/parent/parent/parent/parent/model/empty</property>
+                                  <property name="totalSize">7</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="scriptClass">mstr.models.IphoneTSFieldValidator</property>
+                                    <property name="required">true</property>
+                                    <property name="type">1</property>
+                                    <property name="min">1</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2122" name="BaseView">
+                <property name="layoutClass">mstr.layouts.HiddenInput</property>
+                <property name="value" type="String">" getvalue="mstr.$obj(input.getAttribute('modelId')).getXMLValue();" isvalid="mstr.$obj(input.getAttribute('modelId')).validate();" visprop="1" id="rl" name="rl"</property>
+                <property name="modelPath">parent/parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2123" name="NonEditableArea">
+          <property name="modelPath">parent/model/preview</property>
+          <property name="cssText">resize:none;height:40px;margin-left:10px;width:350px;padding:4px;</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

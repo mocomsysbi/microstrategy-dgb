@@ -1,0 +1,38 @@
+<shortcut-list name="allBorderPicker" version="1.0">
+	<shortcut desc="None" desc-id="mstrWeb.2258" name="pkr0">
+        <attributes>
+            <attribute name="value" value="0"/>
+            <attribute name="class" value="none"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Dashed" desc-id="mstrWeb.2259" name="pkr3">
+        <attributes>
+            <attribute name="value" value="3"/>
+            <attribute name="class" value="dashed"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Dotted" desc-id="mstrWeb.2260" name="pkr4">
+        <attributes>
+            <attribute name="value" value="4"/>
+            <attribute name="class" value="dotted"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Thin" desc-id="mstrWeb.2262" name="pkr1">
+        <attributes>
+            <attribute name="value" value="1"/>
+            <attribute name="class" value="solid"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Thick" desc-id="mstrWeb.2264" name="pkr5">
+        <attributes>
+            <attribute name="value" value="5"/>
+            <attribute name="class" value="solid"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Double" desc-id="mstrWeb.15361" name="pkr6"><!-- DE61732 -->
+        <attributes>
+            <attribute name="value" value="6"/>
+            <attribute name="class" value="double"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

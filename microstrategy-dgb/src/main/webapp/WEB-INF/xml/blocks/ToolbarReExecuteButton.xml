@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarReExecuteButton" inherits="ToolbarButtonModel">
+	<assignments>
+        <property name="id">tbReExecute</property>
+        <property name="cmdid">rerun</property>
+	</assignments>
+</block>

@@ -1,0 +1,263 @@
+<folder-links version="2.0">
+    <context id="1" desc="Select Dataset Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+        </project>
+    </context>
+    <context id="2" desc="Create RW Document Wizard">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+        </project>
+    </context>
+    <context id="3" desc="Metric Qualification Level Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="19" desc="My Personal Objects" desc-id="mstrWeb.3552" is-root="false"/>
+            <folder-link sys-folder-id="26" desc="Attributes" desc-id="mstrWeb.3581" is-root="true"/>
+        </project>
+    </context>
+    <context id="4" desc="Report Object Browser">
+        <project name="Default" default="true">
+	    <folder-link sys-folder-id="39" desc="" desc-id="" is-root="true"/>
+	    	<folder-link sys-folder-id="28" desc="Data Explorer" desc-id="mstrWeb.4014" is-root="false" feature-id="check-design-mode"/>
+            <folder-link sys-folder-id="19" desc="My Personal Objects" desc-id="mstrWeb.3552" is-root="false"/>
+            <folder-link sys-folder-id="26" desc="Attributes" desc-id="mstrWeb.3581" is-root="false"/>
+            <folder-link sys-folder-id="5" desc="Metrics" desc-id="mstrWeb.3582" is-root="false"/>
+            <folder-link sys-folder-id="31" desc="Hierarchies" desc-id="mstrWeb.3583" is-root="false"/>
+        </project>
+    </context>
+    <context id="5" desc="Object Manupilation Dialog">
+        <project name="Default" default="true">
+        	<folder-link sys-folder-id="39" desc="" desc-id="" is-root="true"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" feature-id="save-report-privilege" default-folder="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="publish" default-folder="false"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false" default-folder="true"/>
+        </project>
+    </context>
+    <context id="6" desc="Save As Dialog">
+        <project name="Default" default="true">
+        	<folder-link sys-folder-id="39" desc="" desc-id="" is-root="true"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" feature-id="save-report-privilege"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="publish"/>
+        </project>
+    </context>
+    <context id="7" desc="Save As Filter Tab">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" feature-id="save-report-privilege"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false" feature-id="template-reports"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="publish"/>
+            <folder-link sys-folder-id="4" desc="Shared Filters" desc-id="mstrWeb.1378" is-root="false" feature-id="template-reports"/>
+        </project>
+    </context>
+    <context id="8" desc="Save As Tempalte Tab">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" feature-id="save-report-privilege"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false" feature-id="template-reports"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="publish"/>
+            <folder-link sys-folder-id="9" desc="Shared Templates" desc-id="mstrWeb.1379" is-root="false" feature-id="template-reports"/>
+        </project>
+    </context>
+    <context id="9" desc="Link Dataset Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true"/>
+        </project>
+    </context>
+    <context id="10" desc="Prompt Filter Selector">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false"/>
+            <folder-link sys-folder-id="4" desc="Filters" desc-id="mstrWeb.2550" is-root="true"/>
+        </project>
+    </context>
+    <context id="11" desc="Prompt Search Selector">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="8" is-root="true"/>
+        </project>
+	</context>
+	<context id="12" desc="Folder Tree View">
+        <project name="Default" default="true">
+        </project>
+    </context>
+    <context id="13" desc="Hyperlink Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="19" desc="My Personal Objects" desc-id="mstrWeb.3552" is-root="false"/>
+        </project>
+    </context>
+	<context id="14" desc="View Report Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true"/>
+        </project>
+    </context>
+	<context id="15" desc="Alerts object selector">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true"/>
+        </project>
+    </context>
+    <context id="16" desc="Prompt Attribute Selector">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false"/>
+            <folder-link sys-folder-id="26" desc="Attributes" desc-id="mstrWeb.3581" is-root="true"/>
+        </project>
+    </context>
+    <context id="17" desc="Prompt Metric Selector">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false"/>
+            <folder-link sys-folder-id="5" desc="Shared Metrics" desc-id="mstrWeb.9277" is-root="true"/>
+        </project>
+    </context>
+    <context id="18" desc="Prompt Heirarchy Selector">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="31" desc="Hierarchies" desc-id="mstrWeb.3583" is-root="true"/>
+            <folder-link sys-folder-id="28" desc="Data Explorer" desc-id="mstrWeb.4014" is-root="false"/>
+        </project>
+    </context>
+    <context id="19" desc="Insert Layout Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="90" desc="Dashboard-style Templates" desc-id="mstrWeb.5599" is-root="false"/>
+            <folder-link sys-folder-id="60" desc="Document Templates" desc-id="mstrWeb.5600" is-root="false"/>
+        </project>
+    </context>
+    <context id="20" desc="Save As Prompt Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="publish"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"  feature-id="save-report-privilege"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="6" desc="Shared Prompts" desc-id="mstrWeb.9232" is-root="false"/>
+        </project>
+    </context>
+    <context id="21" desc="Create Shortcut Dialog">
+        <project name="Default" default="true">
+        	<folder-link sys-folder-id="39" desc="" desc-id="" is-root="true"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" default-folder="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" default-folder="false"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false" default-folder="true"/>
+        </project>
+    </context>
+    <context id="22" desc="Save As Custom Group">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" feature-id="save-report-privilege"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="publish"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false" />
+            <folder-link sys-folder-id="3" desc="Shared Custom Groups" desc-id="mstrWeb.8112" is-root="true"/>
+        </project>
+    </context>
+    <context id="23" desc="browse objects for custom group">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="5" desc="Metrics" desc-id="mstrWeb.3582" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="26" desc="Attributes" desc-id="mstrWeb.3581" is-root="true"/>
+        </project>
+    </context>
+    <context id="24" desc="Save As Filter Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="publish"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" feature-id="save-report-privilege"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="4" desc="Shared Filters" desc-id="mstrWeb.1378" is-root="false"/>
+        </project>
+    </context>
+    <context id="25" desc="browse schema objects for formula editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="24" desc="Schema Objects" is-root="true"/>
+            <folder-link sys-folder-id="5" desc="Metrics" desc-id="mstrWeb.3582" is-root="false"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false"/>
+        </project>
+    </context>
+    <context id="26" desc="browse transformations for metric editors">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="38" desc="Transformations" is-root="true"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false"/>
+        </project>
+    </context>
+    <context id="27" desc="browse objects for custom group">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="5" desc="Metrics" desc-id="mstrWeb.3582" is-root="true"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+            <folder-link sys-folder-id="26" desc="Attributes" desc-id="mstrWeb.3581" is-root="false"/>
+        </project>
+    </context>
+    <context id="28" desc="Save As Editor for QueryBuilder">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="true" feature-id="profile-reports"/>
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="public-reports"/>
+        </project>
+    </context>
+    <context id="29" desc="All Object Browser">
+        <project name="Default" default="true">
+			<folder-link sys-folder-id="26" desc="Attributes" desc-id="mstrWeb.3581" is-root="true"/>
+			<folder-link sys-folder-id="5" desc="Metrics" desc-id="mstrWeb.3582" is-root="false" feature-id="public-reports"/>
+			<folder-link sys-folder-id="1" desc="Public Objects" desc-id="mstrWeb.13797" is-root="false"/>
+			<folder-link sys-folder-id="19" desc="My Personal Objects" desc-id="mstrWeb.3552" is-root="false"/>
+        </project>
+    </context>
+    <context id="30" desc="Open Dashboard Editor">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="true"/>
+        </project>
+    </context>
+    <context id="31" desc="Guest user browsing">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true"/>
+        </project>
+    </context>
+    <context id="32" desc="Select save in dialog">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true" feature-id="publish"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" feature-id="save-report-privilege"/>
+        </project>
+    </context>
+    <context id="33" desc="Browse targets for report filter">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="26" desc="Attributes" desc-id="mstrWeb.3581" is-root="true"/>
+            <folder-link sys-folder-id="5" desc="Metrics" desc-id="mstrWeb.3582" is-root="false" feature-id="public-reports"/>
+            <folder-link sys-folder-id="1" desc="Public Objects" desc-id="mstrWeb.13797" is-root="false"/>
+            <folder-link sys-folder-id="19" desc="My Personal Objects" desc-id="mstrWeb.3552" is-root="false"/>
+            <folder-link sys-folder-id="4" desc="Shared Filters" desc-id="mstrWeb.1378" is-root="false"/>
+        </project>
+    </context>
+    <context id="34" desc="Folder Browsing: Share Reports only">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true" />
+        </project>
+    </context>
+    <context id="35" desc="Folder Browsing - My Reports only">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="true" />
+        </project>
+    </context>
+    <context id="36" desc="Save or Apply Theme Dialog">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="false" feature-id="save-to-sharedreport" />
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false" feature-id="save-to-myreport" />
+            <folder-link sys-folder-id="95" desc="Themes" desc-id="mstrWeb.11784" is-root="true" />
+        </project>
+    </context>
+    <context id="37" desc="Derived Elements Dialog">
+        <project name="Default" default="true">
+            <folder-link sys-folder-id="7" desc="Shared Reports" desc-id="mstrWeb.2" is-root="true"/>
+            <folder-link sys-folder-id="20" desc="My Reports" desc-id="mstrWeb.3" is-root="false"/>
+            <folder-link sys-folder-id="23" desc="My Objects" desc-id="mstrWeb.1380" is-root="false"/>
+        </project>
+    </context>
+</folder-links>

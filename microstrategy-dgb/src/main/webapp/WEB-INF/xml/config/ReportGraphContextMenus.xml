@@ -1,0 +1,19 @@
+<shortcut-list-set name="GraphContextMenus" version="1.0">
+  <shortcut-list name="graphOptions">
+    <shortcut name="drill" desc="[Drill]" desc-id="mstrWeb.145" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphDrill" />
+    <shortcut name="format" desc="[Format...]"  desc-id="mstrWeb.4596" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphFormat" />
+    <shortcut name="fill" desc="Fill" desc-id="mstrWeb.2885" type="picker" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphFill">
+	    <shortcut-list name="cmFillColorPicker" config-src="/WEB-INF/xml/config/reportColorPicker.xml">
+        </shortcut-list>
+    </shortcut>
+    <shortcut name="line" desc="Line" desc-id="mstrWeb.3546" type="picker" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphLine">
+	    <shortcut-list name="cmLineColorPicker" config-src="/WEB-INF/xml/config/colorPickerShortcutList.xml">
+        </shortcut-list>
+    </shortcut>
+    <shortcut name="font" desc="Font" desc-id="mstrWeb.3433" type="picker" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportGraphFont">
+	    <shortcut-list name="cmFontColorPicker" config-src="/WEB-INF/xml/config/advFontColorPicker.xml">
+        </shortcut-list>
+    </shortcut>
+    
+  </shortcut-list>
+</shortcut-list-set>

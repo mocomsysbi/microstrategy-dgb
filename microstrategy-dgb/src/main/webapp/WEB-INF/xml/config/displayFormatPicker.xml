@@ -1,0 +1,14 @@
+<shortcut-list name="displayFormatPicker">
+		<!--<shortcut desc="[List]" desc-id="mstrWeb.3524" name="FolderObjectExplorerTransformStyle">-->
+		<shortcut desc="List" name="FolderObjectExplorerTransformStyle">
+		  <attributes>
+		    <attribute name="value" value="FolderObjectExplorerTransformStyle"/>
+		  </attributes>
+		</shortcut>
+		<!--<shortcut desc="[Tree]" desc-id="mstrWeb.3525" name="FolderObjectExplorerTreeTransformStyle">-->
+		<shortcut desc="Tree" name="FolderObjectExplorerTreeTransformStyle">
+		  <attributes>
+		    <attribute name="value" value="FolderObjectExplorerTreeTransformStyle"/>
+		  </attributes>
+		</shortcut>
+</shortcut-list>

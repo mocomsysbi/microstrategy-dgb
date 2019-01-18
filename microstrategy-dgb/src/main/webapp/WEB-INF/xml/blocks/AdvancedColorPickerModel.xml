@@ -1,0 +1,67 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="AdvancedColorPickerModel" inherits="BaseModel">
+		<definition>
+			<!-- The choosen color (with #). -->
+			<property name="color" type="String" />
+
+			<!-- The root color (as choosen by the slider) -->
+			<property name="rootColor" type="String" />
+			
+			<!-- A ListModel containing the colors for 'Basic Colors' palette. -->
+			<property name="basicColors" type="Block" />
+
+			<!-- hex color (without #). -->
+			<property name="hex" type="String" />
+			
+			<!-- The red component -->
+			<property name="r" type="Integer" />
+			
+			<!-- The green component -->
+			<property name="g" type="Integer" />
+			
+			<!-- The blue component -->
+			<property name="b" type="Integer" />
+			
+			<!-- Hue -->
+			<property name="h" type="Integer" />
+			
+			<!-- Saturation -->
+			<property name="s" type="Integer" />
+			
+			<!-- Brightness -->
+			<property name="v" type="Integer" />
+			
+			<!-- command enabled for panel clicks -->
+			<property name="CommandEnabledClickPanel" type="Boolean" />
+
+			<!-- command enabled for slider clicks -->
+			<property name="CommandEnabledClickSlider" type="Boolean" />
+			
+			<!-- command enabled for adding new colors to the user palette -->
+			<property name="CommandEnabledAddUserColor" type="Boolean" />
+
+			<!-- command enabled for detaching user pallete event handlers (for when the editor is closed) -->
+			<property name="CommandEnabledDetachUserPalette" type="Boolean" />
+			
+			<property name="targetPath" type="String" />		
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.AdvancedColorPicker</property>
+			<property name="color">#ff0000</property>
+			<property name="rootColor">#ff0000</property>
+			<property name="basicColors">
+				<block name="SimpleColorPickerModel" />
+			</property>
+			<property name="hex">ff0000</property>
+			<property name="r">255</property>
+			<property name="g">0</property>
+			<property name="b">0</property>
+			<property name="h">0</property>
+			<property name="s">100</property>
+			<property name="v">100</property>
+			<property name="CommandEnabledClickPanel">true</property>
+			<property name="CommandEnabledClickSlider">true</property>
+			<property name="CommandEnabledAddUserColor">true</property>
+			<property name="CommandEnabledDetachUserPalette">true</property>
+		</assignments>
+	</block>

@@ -1,0 +1,43 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <table>
+    <col/>
+    <col/>
+    <col class="checkColumn"/>
+    <col class="checkColumn"/>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>
+        <mstrlayout:render name="descriptor">
+          <mstrlayout:argument type="string" value="mstrWeb.2032"/>
+        </mstrlayout:render>
+      </td>
+      <td>
+        <mstrlayout:render name="descriptor">
+          <mstrlayout:argument type="string" value="mstrWeb.3321"/>
+        </mstrlayout:render>
+      </td>
+    </tr>
+    <mstrlayout:list id="subtotals" name="getSubtotalsDefinitions_OldIServer">
+      <tr>
+        <td>
+          <mstrlayout:render name="subtotalName">
+            <mstrlayout:argument type="com.microstrategy.web.app.transforms.SubtotalDefinition" list="subtotals"/>
+          </mstrlayout:render>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <mstrlayout:render name="subtotalCheckbox_OldIServer">
+            <mstrlayout:argument type="com.microstrategy.web.app.transforms.SubtotalDefinition" list="subtotals"/>
+          </mstrlayout:render>
+        </td>
+        <td>
+          <mstrlayout:render name="totalCheckbox_OldIServer">
+            <mstrlayout:argument type="com.microstrategy.web.app.transforms.SubtotalDefinition" list="subtotals"/>
+          </mstrlayout:render>
+        </td>
+      </tr>
+    </mstrlayout:list>
+  </table>
+</mstrlayout:layout>

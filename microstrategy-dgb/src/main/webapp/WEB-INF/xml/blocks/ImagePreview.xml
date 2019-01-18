@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ImagePreview is a panel with behaviors for displaying images. -->
+	<block name="ImagePreview" inherits="BaseView">
+		<definition>
+			<!-- The name of the model property that will supply the image source. -->
+			<property name="valueField" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ImagePreview</property>
+			<property name="cssClass">ImagePreview</property>
+		</assignments>
+	</block>

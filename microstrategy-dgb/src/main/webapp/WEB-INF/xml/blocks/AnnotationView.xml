@@ -1,0 +1,35 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="AnnotationView" inherits="BaseView">
+		<definition>
+		    <property name="nonEditableArea" type="Block"/>
+			<property name="editableArea" type="Block"/>
+			<property name="editButtons" type="Block"/>
+			<property name="addArea" type="Block"/>
+		</definition>
+		<assignments>
+		    <property name="id">annotationView</property>
+			<property name="scriptClass">mstr.views.AnnotationView</property>
+			<property name="modelPath">parent/models/0</property>
+			<property name="layoutClass">mstr.layouts.AnnotationArea</property>
+			<property name="nonEditableArea">
+			    <block name="NonEditableArea">
+			    	<property name="id">nonEditableArea</property>
+			    </block>
+			</property>
+			<property name="editableArea">
+			    <block name="EditableArea">
+			    	<property name="id">editableArea</property>
+			    </block>
+			</property>
+			<property name="editButtons">
+			    <block name="EditButtons">
+			    	<property name="id">editButtons</property>
+			    </block>
+			</property>
+			<property name="addArea">
+				<block name="AddArea">
+					<property name="id">addArea</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

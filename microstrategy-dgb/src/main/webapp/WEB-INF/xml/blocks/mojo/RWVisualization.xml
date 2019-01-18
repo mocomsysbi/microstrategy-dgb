@@ -1,0 +1,27 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about the Custom Visualization. 
+    This type of widget directly uses the Visualization Transform's output.
+--> 
+<block name="RWVisualization" inherits="RWObject">
+    <definition>
+        <!-- The Markup String for this object -->
+        <property name="htmlText" type="String" />
+
+        <!-- We extract JavaScript Strings from the HTML text, and put them here.   -->
+        <property name="jsText" type="String" />
+
+        <!-- The selection data for Interaction between the web page and the Visualization Widget   -->
+        <property name="selData" type="String" annotation="json:expression" />
+
+        <!-- The ControlLink for Interaction between the web page and the Visualization Widget   -->
+        <property name="ctrLink" type="String" annotation="json:expression" />
+
+        <!-- The Message to display when all data has been filtered   -->
+        <property name="eg" type="String"/>
+        
+        <!-- Flag to indicate GUI should re-request Server JSON for this visualization -->
+        <property name="nsj" type="Boolean"/>
+        
+    </definition>
+</block>

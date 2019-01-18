@@ -1,0 +1,106 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="GraphFormatEditorTabOptions">
+  <assignments>
+    <property name="title">{desc:|Format Graph - Options}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="modelPath">parent/model/items/5</property>
+    <property name="helpTopic">Format_Graph_dialog_Options.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K2082" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2402|Gauge Settings}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2083" name="ListPulldown">
+                <property name="caption">{desc:mstrWeb.4866|Gauge Style:}</property>
+                <property name="modelPath">parent/model/gaugeStyle</property>
+              </block>
+              <block listElementKey="K2084" name="ListPulldown">
+                <property name="caption">{desc:mstrWeb.4867|Needle Style:}</property>
+                <property name="modelPath">parent/model/gaugeNeedleStyle</property>
+                <property name="enabledField">!parent/model/gaugeStyle/selectedIndices:0</property>
+              </block>
+              <block listElementKey="K2085" name="ListPulldown">
+                <property name="caption">{desc:mstrWeb.4868|Border Style:}</property>
+                <property name="modelPath">parent/model/gaugeBorderStyle</property>
+                <property name="enabledField">!parent/model/gaugeStyle/selectedIndices:0</property>
+              </block>
+              <block listElementKey="K2086" name="Slider">
+                <property name="caption">{desc:mstrWeb.4869|Border Thickness:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">!parent/model/gaugeStyle/selectedIndices:0</property>
+                <property name="height">5px;</property>
+                <property name="width">420px;</property>
+                <property name="enableClickJumps">true</property>
+                <property name="cssClass">Slider</property>
+                <property name="thumbCssClass">SliderThumb</property>
+                <property name="tooltipCssClass">SliderTooltip</property>
+                <property name="borderStyle">1px solid #B2B2B2</property>
+                <property name="animationStep">1</property>
+                <property name="showTooltip">true</property>
+                <property name="tooltipFunction">function f(v){return v.toFixed(0) + '%';}</property>                
+                <property name="xField">gaugeBorderThick</property>
+                <property name="xMin">0</property>
+                <property name="xMax">100</property>
+              </block>
+              <block listElementKey="K2087" name="Slider">
+                <property name="caption">{desc:mstrWeb.4870|Range Thickness:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/gaugeRangeThick_enabled</property>
+                <property name="height">5px;</property>
+                <property name="width">420px;</property>
+                <property name="enableClickJumps">true</property>
+                <property name="cssClass">Slider</property>
+                <property name="thumbCssClass">SliderThumb</property>
+                <property name="tooltipCssClass">SliderTooltip</property>
+                <property name="borderStyle">1px solid #B2B2B2</property>
+                <property name="animationStep">1</property>
+                <property name="showTooltip">true</property>
+                <property name="tooltipFunction">function f(v){return v.toFixed(0) + '%';}</property>                  
+                <property name="xField">gaugeRangeThick</property>
+                <property name="xMin">0</property>
+                <property name="xMax">100</property>
+              </block>
+              <block listElementKey="K2088" name="Slider">
+                <property name="caption">{desc:mstrWeb.4871|Start Angle:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="height">5px;</property>
+                <property name="width">420px;</property>
+                <property name="enableClickJumps">true</property>
+                <property name="cssClass">Slider</property>
+                <property name="thumbCssClass">SliderThumb</property>
+                <property name="tooltipCssClass">SliderTooltip</property>
+                <property name="borderStyle">1px solid #B2B2B2</property>
+                <property name="animationStep">1</property>
+                <property name="showTooltip">true</property>
+                <property name="xField">gaugeStartAngle</property>
+                <property name="xMin">0</property>
+                <property name="xMax">360</property>
+              </block>
+              <block listElementKey="K2089" name="Slider">
+                <property name="caption">{desc:mstrWeb.4872|Stop Angle:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="height">5px;</property>
+                <property name="width">420px;</property>
+                <property name="enableClickJumps">true</property>
+                <property name="cssClass">Slider</property>
+                <property name="thumbCssClass">SliderThumb</property>
+                <property name="tooltipCssClass">SliderTooltip</property>
+                <property name="borderStyle">1px solid #B2B2B2</property>
+                <property name="animationStep">1</property>
+                <property name="showTooltip">true</property>
+                <property name="xField">gaugeStopAngle</property>
+                <property name="xMin">0</property>
+                <property name="xMax">360</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

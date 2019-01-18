@@ -1,0 +1,131 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptMenuModel" name="RptDataMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1531" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.1986|Add View Filter Condition...}</property>
+          <property name="cmdid">addViewFilterCondition</property>
+          <property name="visibleFeatures">use-view-filter-editor</property>
+        </block>
+        <block listElementKey="K1532" name="ToolbarSortGridButton">
+          <property name="text">{desc:mstrWeb.1888|Sort...}</property>
+          <property name="type">MENU</property>
+          <property name="cmdid">sort</property>
+          <property name="visibleFeatures">web-sort</property>
+        </block>
+        <block listElementKey="K1533" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.2113|Drill...}</property>
+          <property name="cmdid">drill</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+        </block>
+        <block listElementKey="K1533_d" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2113|Drill...}</property>
+          <property name="cmdid">drillEditor</property>
+        </block>
+        <block listElementKey="K1534" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2114|Filter on Selections...}</property>
+          <property name="cmdid">fos</property>
+          <property name="visibleFeatures">!show-filter-on-selections-checks;filteronselection-editor</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="fosCustom" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.2114|Filter on Selections...}</property>
+          <property name="visibleFeatures">show-filter-on-selections-checks;filteronselection-editor</property>
+          <property name="cmdid">drillFilterEditor</property>
+        </block>
+     	<block listElementKey="rptHideNullsOrZeros" name="MenuDualStateControlModel">
+			<property name="text">{desc:mstrWeb.9847|Hide Nulls/Zeros}</property>
+			<property name="cmdid">toggleHideNullsOrZeros</property>
+			<property name="listenerMethods">onstatechange</property>
+		</block>
+        <block listElementKey="K1535" name="BaseBlock"/>
+        <block listElementKey="K1536" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.1916|Reset Data}</property>
+          <property name="cmdid">reset</property>
+          <property name="visibleFeatures">is-viewable-report</property>
+          <property name="enabledFeatures">enable-reset-data</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1537" name="ToolbarReExecuteRptButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3757|Re-run report}</property>
+          <property name="visibleFeatures">is-viewable-report;reexecute</property>
+        </block>
+        <block listElementKey="K1537_VR" name="ToolbarReExecuteRptButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3757|Re-run report}</property>
+          <property name="visibleFeatures">!is-viewable-report;quicklinks-refresh</property>
+        </block>
+        <block listElementKey="K1538" name="ToolbarRefreshButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.773|Refresh}</property>
+          <property name="visibleFeatures">refresh</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1539" name="ToolbarRepromptButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.119|Re-Prompt}</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+          <property name="visibleFeatures"></property>
+          <property name="enabledFeatures">reprompt</property>
+        </block>
+        <block listElementKey="K1540" name="BaseBlock"/>
+        <block listElementKey="K1541" name="ToolbarSwapAxesButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3534|Swap Rows and Columns}</property>
+          <property name="visibleFeatures">!is-non-viewable-report;web-pivot</property>
+        </block>
+        <block listElementKey="K1542" name="ToolbarInsertMetricButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.2212|Insert New Metric}</property>
+          <property name="cmdid">newMetric</property>
+          <property name="visibleFeatures">insert-new-metric</property>
+        </block>
+        <block listElementKey="K1543" name="ToolbarRenameButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3358|Rename...}</property>
+          <property name="cmdid">renameEditObjects</property>
+          <property name="visibleFeatures">rename-edit-object</property>
+        </block>
+        <block listElementKey="K1544" name="ToolbarEditFormsButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.5634|Edit Attribute Forms...}</property>
+          <property name="cmdid">attForms</property>
+          <property name="visibleFeatures">set-attributeform-display</property>
+        </block>
+        <block listElementKey="K1545" name="ToolbarToggleTotalsButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.6193|Show Totals}</property>
+          <property name="visibleFeatures">show-totals;show-subtotals</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+        </block>
+        <block listElementKey="K1546" name="ToolbarEditTotalsButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3310|Edit Totals...}</property>
+          <property name="cmdid">editTotals</property>
+          <property name="visibleFeatures">show-totals;orionIServer</property>
+        </block>
+        <block listElementKey="K1547" name="BaseBlock"/>
+        <block listElementKey="K1548" name="ToolbarThresholdsButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.5996|Toggle Thresholds}</property>
+          <property name="cmdid">toggleThresholds</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+        </block>
+        <block listElementKey="K1550" name="MenuDualStateControlModel">
+          <property name="text">{desc:mstrWeb.4404|Visual Thresholds Editor}</property>
+          <property name="cmdid">simpleThresholds</property>
+          <property name="visibleFeatures">dhtml;use-basic-threshold-editor</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+        </block>
+        <block listElementKey="K1549" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4569|Advanced threshold editor}</property>
+          <property name="cmdid">advancedThresholds</property>
+          <property name="visibleFeatures">dhtml;use-advanced-threshold-editor</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the data portion of a Report Writer Unit.
+--> 
+<block name="RWUnit">
+    <definition>
+        <!-- The key of the definition Block that this corresponds to... -->
+        <property name="k" type="String" />
+        
+        <!-- The widget ID, which combined with the node key, uniquely defines this widget instance in the UI -->
+        <property name="wid" type="Integer" />
+    </definition>
+</block>

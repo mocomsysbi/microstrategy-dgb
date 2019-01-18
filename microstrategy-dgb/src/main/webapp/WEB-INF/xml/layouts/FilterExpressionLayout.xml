@@ -1,0 +1,96 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:bContext defaultContentType="JSON" />	
+  <div class="mstrPanelPortrait">
+    <mstrlayout:attr name="getMainDivAttributes" />
+    <table class="pane" cellspacing="0">
+      <tr>
+        <td class="mstrPanelHeader">
+          <div class="mstrPanelTitleBar">
+            <!--span class="title">
+              <mstrlayout:render name="editorTitle" />
+            </span-->
+            <span class="mstrPanelTitleButtonBar">
+              <mstrlayout:render name="helpButton" />
+              <mstrlayout:render name="closeButton" />
+            </span>
+            <mstrlayout:render name="emptyFilterMessage" />
+            <mstrlayout:if name="isEditable">
+              <mstrlayout:then>
+                <span class="mstrPanelTitleOptions">
+                  <mstrlayout:render name="headerAddCondition" />
+                  <mstrlayout:render name="headerClearAll" />
+                  <mstrlayout:render name="headerAutoApply" />
+                </span>
+              </mstrlayout:then>
+            </mstrlayout:if>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="0">
+            <mstrlayout:attr name="getContentTableAttributes" />
+            <tr>
+              <td>
+                <mstrlayout:render name="genericValidationErrorMessage" />
+                <mstrlayout:render name="filterTree" />
+                <mstrlayout:if name="isAddWizardRequested" >
+                  <mstrlayout:then>
+                    <table border="0" width="100%">
+                      <mstrlayout:render name="addWizardTransition" />
+                      <tr>
+                        <td align="center" valign="middle" />
+                        <td />
+                        <td align="left">
+                          <mstrlayout:render name="separator"/>
+                          <mstrlayout:if name="isNotDhtml">
+                            <mstrlayout:then>
+                              <span class="mstrHighlighted" style="color:#cc0000">
+                                <mstrlayout:render name="descriptor" >
+                                  <mstrlayout:argument type="int" value="2200"/>
+                                </mstrlayout:render>
+                                &nbsp;
+                              </span>
+                            </mstrlayout:then>
+                          </mstrlayout:if>
+                          <mstrlayout:render name="addWizardDropdown" />
+                          <mstrlayout:render name="addWizardButtons" />
+                        </td>
+                      </tr>
+                    </table>
+                  </mstrlayout:then>
+                </mstrlayout:if>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mstrlayout:render name="saveCancelButtons" />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/RHSObjectSelectorLayout.xml"/>	
+  <mstrlayout:if name="isIFrameRequest">
+    <mstrlayout:else>
+      <mstrlayout:if name="isDhtml">
+          <mstrlayout:then>
+             <![CDATA[
+               <textarea id="json300" class="mstrJSON">
+             ]]>
+             <mstrlayout:block name="XHRProcessor" />
+             <![CDATA[
+               </textarea>
+             ]]>
+             <script type="text/javascript">
+                 mstr.$register('json300', self);
+             </script>
+         </mstrlayout:then>
+     </mstrlayout:if>
+    </mstrlayout:else>
+  </mstrlayout:if>	
+	
+</mstrlayout:layout>

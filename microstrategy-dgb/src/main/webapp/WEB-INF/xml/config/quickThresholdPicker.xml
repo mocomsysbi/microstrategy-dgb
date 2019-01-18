@@ -1,0 +1,43 @@
+<shortcut-list name="quickThresholdPicker" version="1.0">
+    <attributes>
+      <attribute name="ty" value="pkr" />
+      <attribute name="sty" value="pkr" />
+	  <attribute name="cmdid" value="quickThresholds" />
+	  <attribute name="beanname" value="edtAdvancedThresholds" />
+    </attributes>
+    <shortcut desc="Threshold 0" desc-id="" name="qtpkr0">
+        <attributes>
+            <attribute name="value" value="0" />
+	    </attributes>
+    </shortcut>
+    <shortcut desc="Threshold 1" desc-id="" name="qtpkr1">
+        <attributes>
+            <attribute name="value" value="1" />
+	    </attributes>
+    </shortcut>
+    <shortcut desc="Threshold 2" desc-id="" name="qtpkr2">
+        <attributes>
+            <attribute name="value" value="2" />
+	    </attributes>
+    </shortcut>
+    <shortcut desc="Threshold 3" desc-id="" name="qtpkr3">
+        <attributes>
+            <attribute name="value" value="3" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Threshold 4" desc-id="" name="qtpkr4">
+        <attributes>
+            <attribute name="value" value="4" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Threshold 5" desc-id="" name="qtpkr5">
+        <attributes>
+            <attribute name="value" value="5" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Threshold 6" desc-id="" name="qtpkr6">
+        <attributes>
+            <attribute name="value" value="6" />
+        </attributes>
+    </shortcut>
+</shortcut-list>

@@ -1,0 +1,14 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+<div class="mstrPanelPortrait" id="divLoggedOutConfirm">
+	<div class="mstrPanelTitleBar">
+		<mstrlayout:render name="logoutTitle"/>
+	</div>
+	<div class="mstrPanelBody">
+        <mstrlayout:render name="logoutMessage"/>     
+	</div>
+	<div class="mstrPanelButtonBar">
+		<mstrlayout:render name="exitLogoutPage"/>
+	</div>
+</div>
+</mstrlayout:layout>

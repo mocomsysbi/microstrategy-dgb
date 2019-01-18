@@ -1,0 +1,10 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MobileDeleteSubscriptionTask">
+	<basicInfo desc="This task provides the ability to delete a mobile subscription.">
+		<parameter name="_subscriptionID" desc="the subscription ID" required="true" />
+	</basicInfo>
+	
+	<eventInfo eventID="256002" />
+	
+	<beanInfo name="sb" bean-type="SubscriptionBean" />
+</beanTask>

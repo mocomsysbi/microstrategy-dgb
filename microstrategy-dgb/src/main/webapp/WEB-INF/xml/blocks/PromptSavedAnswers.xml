@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="PromptSavedAnswers" inherits="ListModel">
+		<definition>
+			<property name="descriptors" type="Block" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.PromptSavedAnswers</property>
+			<property name="CommandEnabledRenameSelectedItem" type="Boolean">true</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="rejectDuplicatedNameWarning" type="String">{desc:mstrWeb.6083|This name is already used. Please rename to a name that is not used to avoid ambiguity.}</property>
+				</block>
+			</property>	
+		</assignments>
+	</block>

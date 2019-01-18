@@ -1,0 +1,27 @@
+<shortcut-list name="linePicker" version="1.0">
+    <shortcut desc="None" desc-id="mstrWeb.2057" name="pkr1">
+        <attributes>
+            <attribute name="value" value="0"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Solid" desc-id="mstrWeb.3532" name="pkr2">
+        <attributes>
+            <attribute name="value" value="1"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Dashed" desc-id="mstrWeb.2259" name="pkr3">
+        <attributes>
+            <attribute name="value" value="2"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Dotted" desc-id="mstrWeb.2260" name="pkr4">
+        <attributes>
+            <attribute name="value" value="3"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Double" desc-id="mstrWeb.15361" name="pkr5"><!-- DE61732 -->
+        <attributes>
+            <attribute name="value" value="4"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

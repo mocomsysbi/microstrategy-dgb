@@ -1,0 +1,37 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_enabled="rootTag.childNodes[1].disabled = !view.props['enabled']; 
+    				rootTag.childNodes[1].style.backgroundColor = view.props['enabled'] ? '#ffffff' : '#d4d0c8'; 
+    				var cn = rootTag.childNodes[0].className; 
+    				rootTag.childNodes[0].className = view.props['enabled'] ? cn.replace(/ txtDisabled/g,'') : cn + ' txtDisabled';"
+    on_set_validationStatus="mstr.behaviors.TextBox.on_set_validationStatus(view, model, rootTag.childNodes[1])"
+    on_set_visible="mstr.behaviors.TextBox.on_set_visible(view, model, rootTag);
+                    mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])"
+	on_model_set_--valueField--="mstr.behaviors.TextBox.on_model_set_value(view, model, rootTag.childNodes[1]);">
+  <div title="{@tooltip}"
+       class="{@cssPrefix}{@cssClass} {@extraCssClass}"
+       style="{@cssText}"
+       id="{@id}">
+    <span class="{@cssPrefix}{@cssClass}Caption">
+      <label for="{@id}_txt">
+        {@caption}
+      </label>
+    </span>
+    <input maxlength="{@maxlength}"
+         name="{@id}_txt"
+         onblur="if (mstr.$obj('{@id}').get('useBlur')) mstr.behaviors.TextBox.on_value_change('{@id}', this)"
+         onkeyup="if (!mstr.$obj('{@id}').get('useBlur')){ mstr.behaviors.TextBox.on_value_change('{@id}', this)} mstr.behaviors.TextBox.on_keyPress(event, '{@id}');"
+         onclick="if (mstr.utils.ISFF){ this.blur();this.focus();}"
+         onchange="mstr.behaviors.TextBox.on_file_selected('{@id}', this)"
+         id="{@id}_txt"
+         size="{@totalSize}"
+         type="{@inputType}"
+         accept="{@act}"
+         style="{@inputStyle}"
+         placeholder="{@placeholder}">
+    </input>
+	<span class="{@cssPrefix}{@cssClass}Suffix">
+		{@captionSuffix}
+	</span>
+  </div>
+</mstrlayout:layout>
+

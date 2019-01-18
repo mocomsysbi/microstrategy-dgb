@@ -1,0 +1,257 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptStyleId, so its tab id is tabPromptStyleId -->
+<mstrlayout:layout>
+		<table width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr>
+				<td class="mstrPromptEditorCell"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5258" /></mstrlayout:render></td>
+				<td class="mstrPromptEditorCell">
+					<select size="1" style="width:auto;" name="p_dispStyle" id="p_dispStyle" cmdid="setDispStyle" onchange="microstrategy.bone('tabPromptStyleId').updateList(this);">
+						<mstrlayout:list id="style" name="getDisplayStyles">
+							<option>
+								<mstrlayout:attr name="addOptionAttr">
+									<mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+								</mstrlayout:attr>
+								<mstrlayout:render name="optionText">
+									<mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+								</mstrlayout:render>
+							</option>
+						</mstrlayout:list>
+					</select>
+				</td>
+			</tr>
+			<tr id="cusStyleTR">
+				<td class="mstrPromptEditorCell"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5259" /></mstrlayout:render></td>
+				<td class="mstrPromptEditorCell">
+					<select size="1" name="p_cusStyle" id="p_cusStyle" cmdid="setCustomStyle" onchange="microstrategy.bone('tabPromptStyleId').updateCustomStyleList(this);">
+					</select>
+				</td>
+			</tr>
+		</table>
+
+	<div id="backwardDiv">		
+		<mstrlayout:attr name="addBackwardDisplay"/>
+		<table width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr>
+				<td class="mstrPromptEditorCell" colspan="2">
+					<mstrlayout:if name="isUseWebBlocks">
+						<mstrlayout:then>
+							<input type="checkbox" name="useWebBlocks" id="p_propUseWebBlocks" cmdid="setNotUseWebBlocks" onclick="microstrategy.bone('tabPromptStyleId').updateCheck(this);"/>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="useWebBlocks" id="p_propUseWebBlocks" cmdid="setNotUseWebBlocks" onclick="microstrategy.bone('tabPromptStyleId').updateCheck(this);" checked="checked"/>
+						</mstrlayout:else>
+					</mstrlayout:if>
+					<label for="p_propUseWebBlocks"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5322" /></mstrlayout:render></label>
+				</td>
+			</tr>
+			<tr>
+	            <td class="mstrPromptEditorCell">
+	                <mstrlayout:if name="isPre90CustomStyle">
+	                    <mstrlayout:then>
+	                        <input type="checkbox" name="p_pre90Style_check" id="p_pre90Style_check" cmdid="setKeepPre90Style" onclick="microstrategy.bone('tabPromptStyleId').updateCheck(this);microstrategy.bone('tabPromptStyleId').updateText(getObj('p_pre90Style_value'));" checked="checked">
+	                            <mstrlayout:attr name="addDisableObjs">
+	                                <mstrlayout:argument value="p_pre90Style_value"/>
+	                            </mstrlayout:attr>
+	                        </input>
+	                    </mstrlayout:then>
+	                    <mstrlayout:else>
+	                        <input type="checkbox" name="p_pre90Style_check" id="p_pre90Style_check" cmdid="setKeepPre90Style" onclick="microstrategy.bone('tabPromptStyleId').updateCheck(this);microstrategy.bone('tabPromptStyleId').updateText(getObj('p_pre90Style_value'));">
+	                            <mstrlayout:attr name="addDisableObjs">
+	                                <mstrlayout:argument value="p_pre90Style_value"/>
+	                            </mstrlayout:attr>
+	                        </input>
+	                    </mstrlayout:else>
+	                </mstrlayout:if>
+	                <label for="p_pre90Style_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="6124" /></mstrlayout:render></label>
+	            </td>
+	            <td class="mstrPromptEditorCell">
+	                <input type="text" name="p_pre90Style_value" id="p_pre90Style_value" size="50" cmdid="setPre90StyleVal" DPN="p_pre90Style_check" onkeyup="return microstrategy.bone('tabPromptStyleId').updateText(this);">
+	                    <mstrlayout:attr name="addPre90StyleAsValue"/>
+	                </input>
+	            </td>
+	    	</tr>
+		</table>
+	</div>
+
+		<table width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr> 
+				<td class="mstrPromptEditorCell">
+					<mstrlayout:if name="isFixedWidth">
+						<mstrlayout:then>
+							<input type="checkbox" name="fixedWidth" id="p_propFixedWidth" cmdid="setFixedWidth" onclick="microstrategy.bone('tabPromptStyleId').updateCheck(this);microstrategy.bone('tabPromptStyleId').updateText(getObj('p_width'))" checked="checked">
+								<mstrlayout:attr name="addDisableObjs">
+									<mstrlayout:argument value="p_width"/>
+								</mstrlayout:attr>
+							</input>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="checkbox" name="fixedWidth" id="p_propFixedWidth" cmdid="setFixedWidth" onclick="microstrategy.bone('tabPromptStyleId').updateCheck(this);microstrategy.bone('tabPromptStyleId').updateText(getObj('p_width'))">
+								<mstrlayout:attr name="addDisableObjs">
+									<mstrlayout:argument value="p_width"/>
+								</mstrlayout:attr>
+							</input>
+						</mstrlayout:else>
+					</mstrlayout:if>
+					<label for="p_propFixedWidth"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5260" /></mstrlayout:render></label>
+				</td>
+				<td class="mstrPromptEditorCell">
+					<mstrlayout:if name="isFixedWidth">
+						<mstrlayout:then>
+							<input type="text" name="width" id="p_width" size="19" cmdid="setWidth" DPN="p_propFixedWidth" DTY="2" FLDID="5260" MIN="0" onkeyup="microstrategy.bone('tabPromptStyleId').updateText(this);">
+								<mstrlayout:attr name="addWidthAsValue">
+									<mstrlayout:argument value="999"/>
+								</mstrlayout:attr>
+							</input> 
+                            <span style="padding-left:5px;">
+                                <mstrlayout:render name="unitsLabel"/>
+                            </span>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="text" name="width" id="p_width" size="19" cmdid="setWidth" DPN="p_propFixedWidth" DTY="2" FLDID="5260" MIN="0" onkeyup="microstrategy.bone('tabPromptStyleId').updateText(this);" disabled="disabled">
+								<mstrlayout:attr name="addWidthAsValue">
+									<mstrlayout:argument value="999"/>
+								</mstrlayout:attr>
+							</input> 
+                            <span style="padding-left:5px;">
+                                <mstrlayout:render name="unitsLabel"/>
+                            </span>
+						</mstrlayout:else>
+					</mstrlayout:if>
+				</td>
+			</tr>
+			<tr> 
+				<td class="mstrPromptEditorCell" colspan="2">
+					<div id="showTimePickerDiv" style="display:none">
+						<mstrlayout:if name="isShowTimePicker">
+							<mstrlayout:then>
+								<input type="checkbox" name="p_showTime" id="p_showTime" cmdid="setShowTime" onclick="microstrategy.bone('tabPromptStyleId').updateShowTime(this);microstrategy.bone('tabPromptStyleId').updateText(getObj('p_interval'))" checked="checked">
+									<mstrlayout:attr name="addDisableObjs">
+										<mstrlayout:argument value="p_interval"/>
+									</mstrlayout:attr>								
+								</input>
+							</mstrlayout:then>
+							<mstrlayout:else>
+								<input type="checkbox" name="p_showTime" id="p_showTime" cmdid="setShowTime" onclick="microstrategy.bone('tabPromptStyleId').updateShowTime(this);microstrategy.bone('tabPromptStyleId').updateText(getObj('p_interval'))" >
+									<mstrlayout:attr name="addDisableObjs">
+										<mstrlayout:argument value="p_interval"/>
+									</mstrlayout:attr>								
+								</input>
+							</mstrlayout:else>
+						</mstrlayout:if>
+						<label for="p_showTime"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5731" /></mstrlayout:render></label>
+					</div>
+
+				</td>
+			</tr>
+		</table>
+        
+		<div id="showIphoneIpadProps" style="margin-top:10px;margin-bottom:5px;">
+            <label style="font-weight:bold;"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="8435" /></mstrlayout:render></label>
+        </div>
+        
+		<table id="showSwitchProps" style="display:none" width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tbody>
+				<tr> 
+					<td class="mstrPromptEditorCell">
+						<label><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="7578" /></mstrlayout:render></label>
+					</td>
+					<td class="mstrPromptEditorCell">
+						<input type="text" name="onvalue" id="p_onvalue" size="19" cmdid="setOnValue" FLDID="7578" DTY="1" onkeyup="microstrategy.bone('tabPromptStyleId').updateText(this);" disabled="disabled">
+							<mstrlayout:attr name="getPropertyAsValue">
+								<mstrlayout:argument value="OnValue"/>
+							</mstrlayout:attr>
+						</input>
+					</td>
+				</tr>
+				<tr> 
+					<td class="mstrPromptEditorCell">
+						<label><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="7579" /></mstrlayout:render></label>
+					</td>
+					<td class="mstrPromptEditorCell">
+						<input type="text" name="offvalue" id="p_offvalue" size="19" cmdid="setOffValue" FLDID="7579" DTY="1" onkeyup="microstrategy.bone('tabPromptStyleId').updateText(this);" disabled="disabled">
+							<mstrlayout:attr name="getPropertyAsValue">
+								<mstrlayout:argument value="OffValue"/>
+							</mstrlayout:attr>
+						</input>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table width="80%">
+			<colgroup>
+			      <col width="30%"/>
+			      <col width="70%"/>
+			</colgroup>
+			<tr id="showIntervalProps" style="display:none"> 
+				<td class="mstrPromptEditorCell">
+					<label><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="7580" /></mstrlayout:render></label>
+				</td>
+				<td class="mstrPromptEditorCell">
+					<input type="text" name="interval" id="p_interval" size="19" FLDID="7580" cmdid="setInterval" DTY="2" MIN="0" LE="vp_num_max_value" onkeyup="microstrategy.bone('tabPromptStyleId').updateText(this);" disabled="disabled">
+						<mstrlayout:attr name="getPropertyAsValue">
+							<mstrlayout:argument value="Interval"/>
+						</mstrlayout:attr>
+					</input>&nbsp;&nbsp;<label id="l_intervalUnit"></label>
+				</td>
+			</tr>		
+			<tr id="showGeoProps" style="display:none">
+				<td class="mstrPromptEditorCell">
+					<label><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="7989" /></mstrlayout:render></label>
+				</td>			
+				<td class="mstrPromptEditorCell">
+					<mstrlayout:if name="isLatitude">
+						<mstrlayout:then>
+							<input type="radio" name="vpgeocoordinate" id="vp_geocoordinate_lat" cmdid="setVPGeoCoordLat" value="lat"  onclick="microstrategy.bone('tabPromptStyleId').updateRadioButton(this);" checked="checked"/>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="radio" name="vpgeocoordinate" id="vp_geocoordinate_lat" cmdid="setVPGeoCoordLat" value="lat" onclick="microstrategy.bone('tabPromptStyleId').updateRadioButton(this);" />
+						</mstrlayout:else>
+					</mstrlayout:if>
+					<label for="vp_geocoordinate_lat"> 
+						<mstrlayout:render method="descriptor">
+							<mstrlayout:argument value="7696" type="int"/>
+						</mstrlayout:render>
+					</label>
+					<p/>
+					<mstrlayout:if name="isLongitude">
+						<mstrlayout:then>
+							<input type="radio" name="vpgeocoordinate" id="vp_geocoordinate_long" cmdid="setVPGeoCoordLong" value="long" onclick="microstrategy.bone('tabPromptStyleId').updateRadioButton(this);" checked="checked"/>
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<input type="radio" name="vpgeocoordinate" id="vp_geocoordinate_long" cmdid="setVPGeoCoordLong" value="long" onclick="microstrategy.bone('tabPromptStyleId').updateRadioButton(this);" />
+						</mstrlayout:else>
+					</mstrlayout:if>
+					<label for="vp_geocoordinate_long"> 
+						<mstrlayout:render method="descriptor">
+							<mstrlayout:argument value="7697" type="int"/>
+						</mstrlayout:render>
+					</label>
+				</td>
+			</tr>
+			<tr id="showNumericProps" style="display:none"> 
+				<td class="mstrPromptEditorCell" colspan="2">
+					<input class="mstrButton" type="button" id="b_numberFormat" onclick="microstrategy.bone('tabPromptStyleId').openFormatEditor();">
+                        <mstrlayout:attr attribute="value" method="getDescriptor">
+                            <mstrlayout:argument type="int" value="3573" />
+                        </mstrlayout:attr>
+                    </input>
+				</td>
+			</tr>
+		</table>
+</mstrlayout:layout>

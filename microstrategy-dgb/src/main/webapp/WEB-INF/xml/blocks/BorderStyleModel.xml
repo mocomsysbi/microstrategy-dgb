@@ -1,0 +1,36 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ListModel" name="BorderStyleModel">
+  <assignments>
+    <property name="valueForm">dssid</property>
+    <property name="selectedIndicesList">0</property>
+    <property name="items">
+      <list>
+        <block listElementKey="K25" name="ItemInfo">
+          <property name="dssid">0</property>
+          <property name="n">{desc:mstrWeb.2258}</property>
+        </block>
+        <block listElementKey="K26" name="ItemInfo">
+          <property name="dssid">3</property>
+          <property name="n">{desc:mstrWeb.2259}</property>
+        </block>
+        <block listElementKey="K27" name="ItemInfo">
+          <property name="dssid">4</property>
+          <property name="n">{desc:mstrWeb.2260}</property>
+        </block>
+        <block listElementKey="K28" name="ItemInfo">
+          <property name="dssid">1</property>
+          <property name="n">{desc:mstrWeb.2262}</property>
+        </block>
+        <block listElementKey="K29" name="ItemInfo">
+          <property name="dssid">5</property>
+          <property name="n">{desc:mstrWeb.2264}</property>
+        </block>
+        <block listElementKey="K30" name="ItemInfo">
+          <property name="dssid">6</property>
+          <property name="n">{desc:mstrWeb.15361|Double}</property><!-- DE61732 -->
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- Used for any editor that has border style picker controls -->

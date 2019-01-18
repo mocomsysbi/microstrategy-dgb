@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="PromptGetSavedAnswerNamePopup" inherits="ListView">
+		<assignments>
+			<property name="id">PromptGetSavedAnswerNamePopup</property>
+			<property name="cssText">width: 200px; filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+			<!-- ask PromptAnswerModel to change the container -->
+			<property name="cmds">ClickListItem;Rename|model/getSelectedItem()|model/parent/answer;Unpop</property>
+			<property name="modelPath">parent/model</property> <!-- point to the list -->
+		</assignments>
+	</block>

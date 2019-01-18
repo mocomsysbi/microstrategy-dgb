@@ -1,0 +1,51 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:bContext defaultContentType="JSON" />
+  <mstrlayout:block name="BlockContainer">
+    <mstrlayout:bSetProperty path="models">
+      <mstrlayout:block name="ListModel">
+        <mstrlayout:bSetProperty path="valueForm" value="dssid"/>
+        <mstrlayout:bSetProperty path="hierarchical" value="true"/>
+        <mstrlayout:bSetProperty path="keepFolders" value="true"/>
+        <mstrlayout:bSetProperty path="blockBegin" value="0"/>
+        <mstrlayout:bSetProperty path="containerTree">
+          <mstrlayout:block name="TreeModel">
+            <mstrlayout:bSetProperty path="valueForm" value="did" />
+            <mstrlayout:bSetProperty path="selectedPathList" method="getCurrentFolderPath">
+              <mstrlayout:argument type="int" value="14" />
+            </mstrlayout:bSetProperty>
+            <mstrlayout:list id="folder" method="getFlattenedContextFolderList">
+              <mstrlayout:argument type="int" value="14" />
+              <mstrlayout:base id="FolderObject" method="getValue" base="folder"/>
+              <mstrlayout:bSetProperty path="flattenedNodes">
+                <mstrlayout:block name="TreeNode">
+                  <mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+                  <mstrlayout:bSetProperty path="value">
+                    <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+                  </mstrlayout:bSetProperty>
+                  <mstrlayout:bSetProperty path="value/did" method="getID" base="FolderObject" />
+                </mstrlayout:block>
+              </mstrlayout:bSetProperty>
+            </mstrlayout:list>
+          </mstrlayout:block>
+        </mstrlayout:bSetProperty>
+        <mstrlayout:bSetProperty path="objectType" method="getRequestParameterValue">
+          <mstrlayout:argument type="String" value="objectType" />
+          <mstrlayout:argument type="String" value="2048,768,769,774,776,14080,14081" />
+        </mstrlayout:bSetProperty>
+      </mstrlayout:block>
+    </mstrlayout:bSetProperty>
+    <mstrlayout:bSetProperty path="views">
+      <mstrlayout:block name="SingleObjectSelector">
+        <mstrlayout:bSetProperty path="modelPath" value="parent/models/0" />
+        <mstrlayout:bSetProperty path="visible" value="true" />
+        <mstrlayout:bSetProperty path="loadCmds" value= "!FetchData||model" />
+        <mstrlayout:bSetProperty path="reloadCmds" value= "!FetchData||model" />
+        <mstrlayout:bSetProperty path="cmdButtons[0]/cmds" method="getRequestParameterValue">
+          <mstrlayout:argument type="String" value="cmdButtons[0]/cmds" />
+          <mstrlayout:argument type="String" value="" />
+        </mstrlayout:bSetProperty>
+      </mstrlayout:block>
+    </mstrlayout:bSetProperty>
+  </mstrlayout:block>
+</mstrlayout:layout>

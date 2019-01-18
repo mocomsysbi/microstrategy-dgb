@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarFormatUnitList" inherits="ToolbarDynamicListModel">
+	<assignments>
+		<property name="valueForm">dssid</property>
+		<property name="selectedIndicesList">0</property>
+		<property name="cmdid">tbUnitSelector</property>
+	</assignments>
+</block>

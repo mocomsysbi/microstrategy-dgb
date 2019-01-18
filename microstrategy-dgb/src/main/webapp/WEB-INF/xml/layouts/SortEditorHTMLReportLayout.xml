@@ -1,0 +1,10 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<div class="mstrTabSet">
+        <mstrlayout:render name="rowTabLink"/>
+        <mstrlayout:render name="colTabLink"/>
+	</div>
+    <div class="mstrTabContainer">
+	   <mstrlayout:render name="currentTabContent" />
+    </div>
+</mstrlayout:layout>

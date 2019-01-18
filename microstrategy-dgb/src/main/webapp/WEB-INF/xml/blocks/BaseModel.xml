@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		BaseModel is a generic data model.  A "data model" is essentially a
+		collection of property-value pairs, each of which represents "data".
+		The model is represented in the browser's memory by a javascript class
+		instance.  The name of the class is specified as one of the model's
+		property-value pairs.  The GUI typically allows users to see/edit
+		the model's data by displaying a "view" for that data model 
+		(see BaseView further below for more details).
+	-->
+	<block name="BaseModel" inherits="BaseBlock">
+		<definition>
+			<!-- Unique identifier. -->
+			<property name="id" type="String" />
+
+			<!-- rmc model -->
+			<property name="rmc" type="Block" />
+			
+			<!-- FQCN of the javascript representation of this model. -->
+			<property name="scriptClass" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.BaseModel</property>
+		</assignments>
+	</block>

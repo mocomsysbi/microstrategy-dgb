@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		PromptList is a ListView that displays a list of prompt questions.  Used
+		in the PromptEditor's TOC.
+	 -->
+	<block name="PromptList" inherits="ListView">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.PromptList</property>
+			<property name="cssClass">PromptTOCList</property>
+			<property name="itemRendererClass">mstr.itemrenderers.PromptTOCList</property>
+			<property name="multiSelect">false</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="required" type="String">{desc:mstrWeb.5926|(Required)}</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

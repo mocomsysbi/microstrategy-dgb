@@ -1,0 +1,42 @@
+<shortcut-list name="graphFractionPicker" version="1.0">
+<shortcut name="pkrFraction0" desc="Up to one digit(1/4)" desc-id="mstrWeb.6126">
+<attributes>
+<attribute name="value" value="1"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrFraction1" desc="Up to two digits(21/25)" desc-id="mstrWeb.6127">
+<attributes>
+<attribute name="value" value="2"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrFraction2" desc="Up to three digits(321/943)" desc-id="mstrWeb.6128">
+<attributes>
+<attribute name="value" value="3"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrFraction3" desc="As halves(1/2)" desc-id="mstrWeb.6129">
+<attributes>
+<attribute name="value" value="1000"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrFraction4" desc="As quarters(1/4)" desc-id="mstrWeb.6130">
+<attributes>
+<attribute name="value" value="1001"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrFraction5" desc="As eighths(1/8)" desc-id="mstrWeb.6131">
+<attributes>
+<attribute name="value" value="1002"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrFraction6" desc="As tenths(1/10)" desc-id="mstrWeb.6132">
+<attributes>
+<attribute name="value" value="1003"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrFraction7" desc="As hundredths(1/100)" desc-id="mstrWeb.6133">
+<attributes>
+<attribute name="value" value="1004"/>
+</attributes>
+</shortcut>
+</shortcut-list>

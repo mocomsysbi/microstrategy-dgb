@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ViewRoll is a scrollable collection of views, which are rendered on demand as the end-user scrolls. -->
+	<block name="ViewRoll" inherits="BaseView">
+		<definition>
+			<!-- The collection of views displayed by this ViewRoll. -->
+			<property name="views" type="List" />	
+			
+			<!-- If true, this flag tells the ViewRoll to render its "views" children on-demand as the end-user
+				 scrolls thru the ViewRoll GUI. Otherwise, they are all rendered immediately after the ViewRoll.  -->
+			<property name="renderViewsOnScroll" type="Boolean" />
+			
+			<!-- If renderViewsOnScroll is true, this optional setting a fixed number of views which should be
+				 rendered immediately after the ViewRoll is rendered. -->
+			<property name="initialViewRenderCount" type="Integer" />		
+			
+			<!-- The length of time (in milliseconds) that this view will wait after the end-user scrolls before
+				 rendering the child views that are within the scroll window.  If undefined, default = 200 milliseconds. -->
+			<property name="scrollPause" type="Integer" />	
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.ViewRoll</property>
+			<property name="layoutClass">mstr.layouts.ViewRoll</property>
+			<property name="cssClass">ViewRoll</property>
+			<property name="renderViewsOnScroll">true</property>
+			<property name="initialViewRenderCount">5</property>
+			<property name="scrollPause">200</property>
+		</assignments>
+	</block>

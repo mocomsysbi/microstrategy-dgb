@@ -1,0 +1,132 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="GraphFormatEditorTabGeneral">
+  <assignments>
+    <property name="scriptClass">mstr.views.GraphFormatTabView</property>
+    <property name="title">{desc:|Format Graph - General}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="modelPath">parent/model/items/0</property>
+    <property name="helpTopic">Format_Graph_dialog_General.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1915" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3182|Graph Styles}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1916" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.2079|Graph Type:}</property>
+                <property name="modelPath">parent/model/majorType</property>
+              </block>
+              <block listElementKey="K1917" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3166|Graph Sub-type:}</property>
+                <property name="modelPath">parent/model/minorType</property>
+                <property name="popup/showIcons">false</property>
+                <property name="showIcons">false</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1918" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2125|Maximum}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">!parent/model/majorType/selectedIndices:25</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1919" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.2402|Categories:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="valueField">maxCategories</property>
+                <property name="totalSize">5</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">1</property>
+                    <property name="min">1</property>
+                    <property name="max">16000</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+              <block listElementKey="K1920" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.1047|Series:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="valueField">maxSeries</property>
+                <property name="totalSize">5</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">1</property>
+                    <property name="min">1</property>
+                    <property name="max">1000</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1921" name="CheckBox">
+          <property name="caption">{desc:mstrWeb.4714|Use curved lines}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="valueField">curvedLines</property>
+          <property name="enabledField">parent/model/curvedLines_enabled</property>
+          <property name="visibleField">!parent/model/majorType/selectedIndices:25</property>
+        </block>
+        <block listElementKey="K1922" name="CheckBox">
+          <property name="caption">{desc:mstrWeb.4873|Use font anti-aliasing}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="valueField">antiAliasing</property>
+          <property name="visibleField">!parent/model/majorType/selectedIndices:25</property>
+        </block>
+        <block listElementKey="K1923" name="CheckBox">
+          <property name="caption">{desc:mstrWeb.4958|Apply rounded effect to all series}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="valueField">roundedEffect</property>
+          <property name="visibleField">parent/model/roundedEffect_visible</property>
+          <property name="visibleField">!parent/model/majorType/selectedIndices:25</property>
+        </block>
+        <block listElementKey="MaxBarSizeField" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.9831|Max Bar Size}</property>
+          <property name="modelPath">parent/model</property>
+		  <property name="visibleField">parent/model/majorType/selectedIndices:25</property>
+		  <property name="children">
+            <list>
+              <block listElementKey="MazBarSizeHbox" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="MaxBarSizeLabel" name="TextLabel">
+                      <property name="value">{desc:mstrWeb.2961|Type:}</property>
+                      <property name="cssText">margin-top:5px;</property>
+                    </block>
+                    <block listElementKey="MaxBarSizeType" name="ListPulldown">
+                      <property name="modelPath">parent/model/maxBarSizeType</property>
+                      <property name="cssText">margin-left:55px;</property>
+                      <property name='popup/width'>100px</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="MaxBarSizeValue" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.9848|Value (0.01 - 1):}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="valueField">maxBarSizeValue</property>
+                <property name="enabledField">parent/model/maxBarSizeType/selectedIndices:1</property>
+                <property name="totalSize">5</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">7</property>
+                    <property name="min">0.01</property>
+                    <property name="max">1</property>
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

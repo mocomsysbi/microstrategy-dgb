@@ -1,0 +1,7 @@
+<export-plaintext-delimiters version="1.0">
+    <export-plaintext-delimiter desc="Comma" desc-id="mstrWeb.1052" key="1">,</export-plaintext-delimiter>
+	<export-plaintext-delimiter desc="Tab" desc-id="mstrWeb.1053" key="2"><![CDATA[	]]></export-plaintext-delimiter>
+    <export-plaintext-delimiter desc="Semicolon" desc-id="mstrWeb.1054" key="3">;</export-plaintext-delimiter>
+    <export-plaintext-delimiter desc="Space" desc-id="mstrWeb.1055" key="4"><![CDATA[ ]]></export-plaintext-delimiter>
+    <export-plaintext-delimiter desc="Tilde" desc-id="mstrWeb.4628" key="5">~</export-plaintext-delimiter>
+</export-plaintext-delimiters>

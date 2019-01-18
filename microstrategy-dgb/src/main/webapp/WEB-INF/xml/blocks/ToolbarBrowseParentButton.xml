@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarBrowseParentButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbBrowseParentFSM</property>
+		<property name="tooltip">{desc:mstrWeb.1898|Browse Parent Folder}</property>
+		<property name="cmdid">browseParent</property>
+		<property name="visibleFeatures">page-full-screen-mode</property>
+		<property name="listenerMethods">onScreenModeChange</property>
+	</assignments>
+</block>

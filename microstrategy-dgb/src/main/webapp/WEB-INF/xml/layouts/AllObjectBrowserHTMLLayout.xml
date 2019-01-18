@@ -1,0 +1,21 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="mstrBrowser">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+		    <div>
+			<mstrlayout:render name="ancestors"/>
+		    </div>
+		</td>
+		<td>
+		    <mstrlayout:render name="openParent"/>
+		</td>
+        </tr>
+        </table>
+        <mstrlayout:render name="search"/>
+        <mstrlayout:render name="listHTML"/>
+        <mstrlayout:render name="incrementalFetch"/>
+        <mstrlayout:render name="objectCount"/>
+     </div>
+</mstrlayout:layout>

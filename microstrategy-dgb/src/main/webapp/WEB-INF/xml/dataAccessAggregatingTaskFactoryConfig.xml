@@ -1,0 +1,58 @@
+<!DOCTYPE aggregatingTaskFactory SYSTEM "dtds/aggregatingTaskFactory.dtd" >
+<aggregatingTaskFactory isPrivate="true">
+<tasks>
+    <task registerAs="DICreateEmmaIRRReportInstance" class="com.microstrategy.web.app.tasks.DICreateEmmaIRRReportInstanceTask"/>
+    <task registerAs="DICreateEmmaIRRSourceTables" class="com.microstrategy.web.app.tasks.DICreateEmmaIRRSourceTablesTask"/>
+    <task registerAs="DIEditEmmaIRRSourceTable" class="com.microstrategy.web.app.tasks.DIEditEmmaIRRSourceTableTask"/>
+    <task registerAs="DIDeleteEmmaIRRSourceTable" class="com.microstrategy.web.app.tasks.DIDeleteEmmaIRRSourceTableTask"/>
+    <task registerAs="DIValidateEmmaIRRAlternateSource" class="com.microstrategy.web.app.tasks.DIValidateEmmaIRRAlternateSourceTask"/>
+    <task registerAs="DIGetEmmaIRRAttributes" class="com.microstrategy.web.app.tasks.DIGetEmmaIRRAttributesTask"/>
+    <task registerAs="DISetEmmaIRRFilter" class="com.microstrategy.web.app.tasks.DISetEmmaIRRFilterTask"/>
+    <task registerAs="DIGetObjectFolder" class="com.microstrategy.web.app.tasks.DIGetObjectFolder"/>
+    <task registerAs="DIGetCubeSecurityFilter" class="com.microstrategy.web.app.tasks.DIGetCubeSecurityFilterTask"/>
+    <task registerAs="DISetCubeSecurityFilter" class="com.microstrategy.web.app.tasks.DISetCubeSecurityFilterTask"/>
+    <task registerAs="DIStartOrCancelAggFilterChange" class="com.microstrategy.web.app.tasks.DIStartOrCancelAggFilterChangeTask"/>
+    <task registerAs="DIDataPreparation" class="com.microstrategy.web.app.tasks.DIDataPreparationTask"/>
+    <task registerAs="DIClearDataCache" class="com.microstrategy.web.app.tasks.DIClearDataCacheTask"/>
+    <task registerAs="DIGetCloudElementToken" class="com.microstrategy.web.app.tasks.DIGetCloudElementToken"/>
+    <task registerAs="DISaveEMMASchedule" class="com.microstrategy.web.app.tasks.DISaveEMMASchedule"/>
+    <task registerAs="DIGetSubscriptionInfo" class="com.microstrategy.web.app.tasks.DIGetSubscriptionInfo"/>
+    <task registerAs="DISendToInbox" class="com.microstrategy.web.app.tasks.DISendToInboxTask"/>
+    <task registerAs="DIGetScheduleStatus" class="com.microstrategy.web.app.tasks.DIGetScheduleStatus"/>
+    <task registerAs="DIValidateEmmaSourceTask" class="com.microstrategy.web.app.tasks.DIValidateEmmaSourceTask"/>
+    <task registerAs="DIChangePartition" class="com.microstrategy.web.app.tasks.DIChangePartitionTask"/>
+    <task registerAs="DICreateEMMASourceTable" class="com.microstrategy.web.app.tasks.DICreateEMMASourceTable"/>
+    <task registerAs="DIEditEMMASourceTable" class="com.microstrategy.web.tasks.DIEditEMMASourceTable"/>
+    <task registerAs="DIRemoveEMMASourceTable" class="com.microstrategy.web.app.tasks.DIRemoveEMMASourceTable"/>
+    <task registerAs="DIStartRefineStage" class="com.microstrategy.web.app.tasks.DIStartRefineStage"/>
+    <task registerAs="DICancelRefineStage" class="com.microstrategy.web.app.tasks.DICancelRefineStage"/>
+    <task registerAs="DISetDataImportInfo" class="com.microstrategy.web.app.tasks.DISetDataImportInfo" />
+    <task registerAs="DIAutoMappingEMMASourceTable" class="com.microstrategy.web.app.tasks.DIAutoMappingEMMASourceTable"/>
+    <task registerAs="DIChangeMappingEMMASourceTable" class="com.microstrategy.web.app.tasks.DIChangeMappingEMMASourceTable"/>
+    <task registerAs="DIDetectRelationshipEMMASourceTable" class="com.microstrategy.web.app.tasks.DIDetectRelationshipEMMASourceTable"/>
+    <task registerAs="DIEditRelationshipEMMASourceTable" class="com.microstrategy.web.app.tasks.DIEditRelationshipEMMASourceTable"/>
+    <task registerAs="DIPersistCubeConfigInfo" class="com.microstrategy.web.app.tasks.DIPersistCubeConfigInfo" />
+    <task registerAs="getDIProjectSettings" class="com.microstrategy.web.app.tasks.GetDIProjectSettingsTask" />
+    <task registerAs="DIOAuth" class="com.microstrategy.web.app.tasks.DIOAuthTask"/>
+    <task registerAs="GetWebServiceCatalog" class="com.microstrategy.web.app.tasks.GetWebServiceCatalogTask"/>
+    <task registerAs="GetWebServiceURL" class="com.microstrategy.web.app.tasks.GetWebServiceURLTask"/>
+    <task registerAs="DICreateEMMAReportInstance" class="com.microstrategy.web.app.tasks.DICreateEMMAReportInstance"/>
+    <task registerAs="wikiScrapper" class="com.microstrategy.web.app.tasks.WikiScrapperTask"/>
+    <task registerAs="getDIExternalInfo" class="com.microstrategy.web.app.tasks.GetDIExternalInfoTask"/>
+    <task registerAs="getUserDICubeInfo" class="com.microstrategy.web.app.tasks.GetUserDICubeInfoTask" />
+    <task registerAs="DataWranglerServer" class="com.microstrategy.web.app.tasks.DataWranglerServerTask"/>
+    <task registerAs="importFile" class="com.microstrategy.web.tasks.ImportFileTask"/>
+    <task registerAs="editCube" class="com.microstrategy.web.tasks.EditCubeTask"/>    
+    <task registerAs="getCubeAttributeGroupInfo" class="com.microstrategy.web.app.tasks.GetCubeAttributeGroupInfoTask"/>
+    <task registerAs="setCubeAttributeFormMapping" class="com.microstrategy.web.app.tasks.SetCubeAttributeFormMappingTask"/>
+    <task registerAs="DIToggleDatasetServeMode" class="com.microstrategy.web.app.tasks.DIToggleDatasetServeMode"/>
+    <task registerAs="GetProjectAttributeInfo" class="com.microstrategy.web.app.tasks.GetProjectAttributeInfo"/>
+    <task registerAs="DIClearRelationshipEMMASourceTable" class="com.microstrategy.web.app.tasks.DIClearRelationshipEMMASourceTable"/>
+    <task registerAs="DIKillJob" class="com.microstrategy.web.app.tasks.DIKillJobTask" />
+    <task registerAs="DISetURLWhiteListTask" class="com.microstrategy.web.app.tasks.DISetURLWhiteListTask" />
+    <task registerAs="DIImportFromCube" class="com.microstrategy.web.app.tasks.DIImportFromCube" />
+    <task registerAs="DIManageHadoopGateway" class="com.microstrategy.web.app.tasks.DIManageHadoopGateway" />
+    <task registerAs="DIClearDiscoverCache" class="com.microstrategy.web.tasks.DIClearDiscoverCache" />
+    <task registerAs="GetJDBCConnStrTask" class="com.microstrategy.web.app.tasks.GetJDBCConnStrTask" />
+ </tasks>
+</aggregatingTaskFactory>

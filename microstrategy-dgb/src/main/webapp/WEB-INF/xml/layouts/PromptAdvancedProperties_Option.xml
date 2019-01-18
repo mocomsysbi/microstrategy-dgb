@@ -1,0 +1,117 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+        <span class="title">*Properties for Option button style</span>
+        <p/>
+        <table width="70%" cellspacing="2">
+            <tr>
+                <td>
+                    *Font style: &nbsp;
+                    <select name="p_option_fontStyle" id="p_option_fontStyle" class="promptDropDown">
+                            <mstrlayout:list id="style" name="getFontStyleList">
+                                <option>
+                                    <mstrlayout:attr name="addOptionAttr">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:attr>
+                                    <mstrlayout:render name="optionText">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:render>
+                                </option>
+                            </mstrlayout:list>          
+                    </select>
+                </td>
+                <td>
+                    Font size:&nbsp;
+                    <select name="p_option_fontSize" id="p_option_fontSize" class="promptDropDown">
+                            <mstrlayout:list id="style" name="getFontSizeList">
+                                <option>
+                                    <mstrlayout:attr name="addOptionAttr">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:attr>
+                                    <mstrlayout:render name="optionText">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:render>
+                                </option>
+                            </mstrlayout:list>          
+                    </select>
+                </td>
+            </tr>
+        <mstrlayout:if name="showObjectDescriptionInProperties">
+            <mstrlayout:then>
+                <tr>
+                    <td>
+                        Object descriptions: 
+                    </td>
+                    <td>
+                        <select name="p_option_desc_location" id="p_option_desc_location" class="promptDropDown">
+                                <mstrlayout:list id="style" name="getDescLocationList">
+                                    <option>
+                                        <mstrlayout:attr name="addOptionAttr">
+                                            <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:attr>
+                                        <mstrlayout:render name="optionText">
+                                            <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:render>
+                                    </option>
+                                </mstrlayout:list>          
+                        </select>
+                    </td>
+                </tr>
+            </mstrlayout:then>
+        </mstrlayout:if>
+        <tr>
+            <td>
+                Arrangement: 
+            </td>
+            <td>
+                <select name="p_option_arrange" id="p_option_arrange">
+                        <mstrlayout:list id="style" name="getArrangementList">
+                            <option>
+                                <mstrlayout:attr name="addOptionAttr">
+                                    <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:attr>
+                                <mstrlayout:render name="optionText">
+                                    <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:render>
+                            </option>
+                        </mstrlayout:list>          
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            &nbsp;&nbsp;&nbsp;&nbsp;Number of columns
+            </td>
+            <td>
+            <input type="text" name="p_option_colNum" id="p_option_colNum" value="2"/>
+            </td>
+        </tr>
+        <tr>
+            <td>    
+            &nbsp;&nbsp;&nbsp;&nbsp;Column filling order
+            </td>
+            <td>
+            <select name="p_option_colFillOrder" id="p_option_colFillOrder">
+                    <mstrlayout:list id="style" name="getColFillOrderList">
+                        <option>
+                            <mstrlayout:attr name="addOptionAttr">
+                                <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                            </mstrlayout:attr>
+                            <mstrlayout:render name="optionText">
+                                <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                            </mstrlayout:render>
+                        </option>
+                    </mstrlayout:list>          
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="p_option_selectLayoutDef" id="p_option_selectLayoutDef_opt"/>
+                <label for="p_option_selectLayoutDef_opt"> &nbsp;Layout Definition Source </label>
+            </td>
+            <td>
+                <input type="file" name="layoutFile" value="\\was-ewang25\shared\217660.htm" class="mstrInputTextLong"/>
+            </td>
+        </tr>
+    </table>
+</mstrlayout:layout>

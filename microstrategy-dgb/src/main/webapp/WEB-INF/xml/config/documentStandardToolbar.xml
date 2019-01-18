@@ -1,0 +1,53 @@
+<shortcut-list-set name="documentStandardToolbar" version="1.0">
+  <attributes>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="file">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="db" desc="Print" desc-id="mstrWeb.314" feature-id="print" name="tbPrint" target="mstrExportWindow" type="button">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPrintDocument"/>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="data">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="db" desc="Refresh" desc-id="mstrWeb.773" feature-id="quicklinks-refresh" name="tbRefresh" type="button">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_ARGUMENT_REPROMPT" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_ARGUMENT_REEXECUTE_FRESH" value="false"/>
+      </event>
+    </shortcut>
+    <shortcut base-bean="db" desc="Re-prompt" desc-id="mstrWeb.119" feature-id="reprompt" name="tbReprompt" type="button">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_ARGUMENT_REPROMPT" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut base-bean="ncSendNow" desc="Send Now..." desc-id="mstrWeb.2249" enable-feature-id="enable-send-now" feature-id="dhtml;use-immediate-delivery" iframe="true" name="tbSend" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSendNow"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>        
+      </event>
+    </shortcut>
+    <shortcut base-bean="subs" desc="Schedule delivery to History List" desc-id="mstrWeb.4675" enable-feature-id="enable-scheduling" feature-id="dhtml;scheduling" iframe="true" name="tbScheduled" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="subs"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>        
+      </event>
+    </shortcut>
+
+    <shortcut append-state="true" base-bean="db" feature-id="export;document-uses-excel-export-format" desc="Export" desc-id="mstrWeb.246" name="tbExport" target="mstrExportWindow" type="button" onclick="submitExportForm(this.href,this.target);return false">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenExportDocument"/>
+    </shortcut>
+    <shortcut append-state="true" base-bean="db" feature-id="export;!document-uses-excel-export-format" desc="Export" desc-id="mstrWeb.246" name="tbExport2" target="mstrExportWindow" type="button" onclick="submitExportForm(this.href,this.target,true);return false">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenExportDocument"/>
+    </shortcut>
+
+
+  </shortcut-list>
+</shortcut-list-set>

@@ -1,0 +1,84 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <table cellspacing="0"
+         style="{@cssText}"
+         cellpadding="0"
+         class="{@cssPrefix}{@cssClass}"
+         id="{@id}">
+    <tbody>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellAvailableHeader">
+          <table cellspacing="0"
+                 cellpadding="0"
+                 class="{@cssPrefix}{@cssClass}TablePathView">
+            <tr>
+              <td class="{@cssPrefix}{@cssClass}CellPathView">
+                <mstrlayout:wRender name="pathView">
+                </mstrlayout:wRender>
+              </td>
+              <td class="{@cssPrefix}{@cssClass}CellPathUpButton">
+                <mstrlayout:wRender name="pathUpButton">
+                </mstrlayout:wRender>
+              </td>
+            </tr>
+          </table>
+          <mstrlayout:wRender name="searchView">
+          </mstrlayout:wRender>
+        </td>
+        <td colspan="2">
+        </td>
+      </tr>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellAvailableView"
+            rowspan="2">
+          <mstrlayout:wRender name="availableView">
+            Loading...
+          </mstrlayout:wRender>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellAddRemoveButtons">
+          <div>
+            <mstrlayout:wRender name="addIncludeButton">
+            </mstrlayout:wRender>
+          </div>
+          <div style="height: 11px; width: 1px; overflow: hidden">
+          </div>
+          <div>
+            <mstrlayout:wRender name="removeIncludeButton">
+            </mstrlayout:wRender>
+          </div>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellSelectedView">
+          <mstrlayout:wRender name="selectedIncludesView">
+            Loading...
+          </mstrlayout:wRender>
+        </td>
+      </tr>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellAddRemoveButtons">
+          <div>
+            <mstrlayout:wRender name="addExcludeButton">
+            </mstrlayout:wRender>
+          </div>
+          <div style="height: 11px; width: 1px; overflow: hidden">
+          </div>
+          <div>
+            <mstrlayout:wRender name="removeExcludeButton">
+            </mstrlayout:wRender>
+          </div>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellSelectedView">
+          <mstrlayout:wRender name="selectedExcludesView">
+            Loading...
+          </mstrlayout:wRender>
+        </td>
+      </tr>
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellFetchView"
+            colspan="4">
+          <mstrlayout:wRender name="fetchView">
+          </mstrlayout:wRender>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mstrlayout:layout>

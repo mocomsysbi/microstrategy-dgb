@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This block defines a static Menu Item which has Radio Group Menu Items as children.
+    This static menu item is rendered based on its property 'desc' value - will not be rendered if 'desc' is empty.
+    The children Radio Items will be rendered right below the label item with some indention to right.
+    To render a Radio Group Menu as second-level submenu, this block should be a child of the host menu item
+        which opens the Radio Group submenu.
+-->
+<block name="MojoToolbarRadioGroupButtonModel" inherits="MojoToolbarButtonModel">
+    <definition>
+        <!-- Flag to indicate the child items will be rendered as Radio Group Menus. -->
+        <property name="hasRadioGroup" type="Boolean" />
+	</definition>
+    <assignments>
+        <property name="hasRadioGroup">true</property>
+    </assignments>
+</block>

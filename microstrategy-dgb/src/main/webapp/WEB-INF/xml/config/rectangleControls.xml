@@ -1,0 +1,14 @@
+<shortcut-list name="rectangleControls" version="1.0">
+    <shortcut desc="[Rectangle]" desc-id="mstrWeb.3196" name="pkrRect" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="0"/>
+            <attribute name="class" value="tbRect"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Rounded Rectangle]" desc-id="mstrWeb.4726" name="pkrRoundedRect" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="1"/>
+            <attribute name="class" value="tbRoundedRect"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

@@ -1,0 +1,47 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="CalendarModel" inherits="BaseModel">
+	    <definition>
+			<property name="dateFormat" type="String" />		
+			<property name="min" type="String" />
+			<property name="max" type="String" />						
+		    <!-- Descriptors for months -->  
+		    <property name="monthDescs" type="Block" />
+		    <property name="dayDescs" type="Block" /> 
+		    <property name="TwoDigitStart" type="Integer"/> <!-- the starting year for 21th century, default to 2029 -->	
+		    <property name="firstDayOfWeek" type="Integer"/> 
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.Calendar</property>		
+		    <property name="dateFormat">mm/dd/yyyy</property>
+		    <property name="TwoDigitStart">2029</property>
+		    <property name="firstDayOfWeek">1</property>	<!-- default is 1, which means that the week starts with Sunday.-->	    
+			<property name="monthDescs">
+				<block name="BaseBlock">
+					<property name="0" type="String">{desc:mstrWeb.3852|Jan}</property>
+					<property name="1" type="String">{desc:mstrWeb.3853|Feb}</property>
+					<property name="2" type="String">{desc:mstrWeb.3854|Mar}</property>		
+					<property name="3" type="String">{desc:mstrWeb.3855|Apr}</property>	
+					<property name="4" type="String">{desc:mstrWeb.3856|May}</property>	
+					<property name="5" type="String">{desc:mstrWeb.3857|Jun}</property>	
+					<property name="6" type="String">{desc:mstrWeb.3858|Jul}</property>	
+					<property name="7" type="String">{desc:mstrWeb.3859|Aug}</property>	
+					<property name="8" type="String">{desc:mstrWeb.3860|Sep}</property>	
+					<property name="9" type="String">{desc:mstrWeb.3861|Oct}</property>
+					<property name="10" type="String">{desc:mstrWeb.3862|Nov}</property>
+					<property name="11" type="String">{desc:mstrWeb.3863|Dec}</property>																																											
+				</block>
+			</property>
+			<property name="dayDescs">
+                <block name="BaseBlock">
+                    <property name="0" type="String">{desc:mstrWeb.1968|S}</property>
+                    <property name="1" type="String">{desc:mstrWeb.1969|M}</property>
+                    <property name="2" type="String">{desc:mstrWeb.1970|T}</property>     
+                    <property name="3" type="String">{desc:mstrWeb.1971|W}</property> 
+                    <property name="4" type="String">{desc:mstrWeb.1972|T}</property> 
+                    <property name="5" type="String">{desc:mstrWeb.1973|F}</property> 
+                    <property name="6" type="String">{desc:mstrWeb.1974|S}</property>
+                    <property name="7" type="String">{desc:mstrWeb.1968|S}</property> 
+                </block>
+            </property>  		    
+		</assignments>
+	</block>

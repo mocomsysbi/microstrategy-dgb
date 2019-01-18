@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarSwapAxesButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbSwapAxes</property>
+		<property name="tooltip">{desc:mstrWeb.3534|Swap Rows and Columns}</property>
+		<property name="cmdid">swapAxes</property>		
+	</assignments>
+</block>

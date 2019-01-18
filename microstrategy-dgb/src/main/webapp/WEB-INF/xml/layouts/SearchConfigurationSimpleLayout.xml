@@ -1,0 +1,32 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <table cellspacing="0" cellpadding="0" border="0">
+    <colgroup>
+      <col width="*"/>
+      <col width="20"/>
+      <col width="*"/>
+    </colgroup>
+    <tr>
+      <td style="vertical-align: top">
+        <div class="mstrSearchSections">
+          <div id="nameSection">
+            <mstrlayout:render name="searchNameTitle"/>
+            <br />
+            <mstrlayout:render name="searchNameTextInputBox"/>
+            <br />
+            <mstrlayout:render name="requiredLabelForSearchName"/>
+            <br />
+          </div>
+        </div>
+      </td>
+      <td>&nbsp;</td>
+      <td style="vertical-align: top">
+        <div style="vertical-align: top">
+          <mstrlayout:render name="searchDetails"/>
+          <mstrlayout:render name="newSearchLink"/>
+          <mstrlayout:render name="searchTypeLink"/>
+        </div>
+      </td>
+    </tr>
+  </table>
+</mstrlayout:layout>

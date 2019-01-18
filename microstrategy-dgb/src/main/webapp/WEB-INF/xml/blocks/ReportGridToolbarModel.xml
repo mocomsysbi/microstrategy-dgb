@@ -1,0 +1,46 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptToolbarModel" name="ReportGridToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1232" name="ToolbarDynamicListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="cmdid">selectedVisualization</property>
+          <property name="listenerMethods">onvischange</property>
+        </block>
+        <block listElementKey="K1233" name="BaseBlock"/>
+        <block listElementKey="gridStyles" name="ToolbarAutostyleList">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1234" name="BaseBlock"/>
+        <block listElementKey="K1235" name="ToolbarBandingButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+          <property name="enabledFeatures">enable-grid-format-editor</property>
+        </block>
+        <block listElementKey="K1236" name="ToolbarOutlineButton">
+          <property name="listenerMethods">onReportReload</property>
+        </block>
+        <block listElementKey="K1237" name="BaseBlock"/>
+        <block listElementKey="K1238" name="ToolbarMergeColHeadersButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+          <property name="enabledFeatures">enable-grid-format-editor</property>
+        </block>
+        <block listElementKey="K1239" name="ToolbarMergeRowHeadersButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1240" name="BaseBlock"/>
+        <block listElementKey="K1241" name="ToolbarLockRowHeadersButton"/>
+        <block listElementKey="K1242" name="ToolbarLockColHeadersButton"/>
+        <block listElementKey="K1243" name="BaseBlock"/>
+        <block listElementKey="K1244" name="ToolbarFitToContentsButton">
+          <property name="listenerMethods">ongridselectionschange,columnswidthchange</property>
+        </block>
+        <block listElementKey="K1245" name="ToolbarFitToWindowButton">
+          <property name="listenerMethods">ongridselectionschange,columnswidthchange</property>
+        </block>
+        <block listElementKey="K1246" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

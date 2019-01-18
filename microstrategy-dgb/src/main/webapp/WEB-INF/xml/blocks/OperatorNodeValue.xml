@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		OperatorNodeValue is an ExpressionNodeValue representing a logical operator.
+	-->
+	<block name="OperatorNodeValue" inherits="ExpressionNodeValue">
+		<definition>
+			<property name="function" type="Integer" />
+			<property name="propertyStr" type="String" />
+			<property name="mrpFunction" type="Integer" />
+			<property name="functionType" type="Integer" />
+			<property name="props" type="Block" />
+		</definition>
+		<assignments>
+			<property name="nodeType">4</property> <!-- Operator -->
+		</assignments>
+	</block>

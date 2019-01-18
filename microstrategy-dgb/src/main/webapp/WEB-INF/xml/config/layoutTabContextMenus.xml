@@ -1,0 +1,19 @@
+        <shortcut-list-set name="layoutTabContextMenus" version="1.0">
+  <shortcut-list name="layoutTab" feature-id="rw-editable-view-mode-eplus">
+	 
+    <shortcut name="rename" feature-id="documents-design-mode" base-bone="rwb_RWMultiLayoutTabStripStyle" desc-id="mstrWeb.5740" desc="Rename" dhtml-show="checkShowContextMenuOption('rn')" onclick="processContextMenu('rn')"/>
+  	<!-- 
+    <shortcut name="s1" desc="-" feature-id="documents-design-mode" base-bone="rwb_RWMultiLayoutTabStripStyle" dhtml-show="checkShowContextMenuOption('rn')"/>
+    -->
+    <shortcut name="delete" feature-id="documents-design-mode" base-bone="rwb_RWMultiLayoutTabStripStyle" desc-id="mstrWeb.5913" desc="Delete" dhtml-show="checkShowContextMenuOption('del')" onclick="processContextMenu('del')"/>
+    
+    <shortcut name="s2" desc="-" feature-id="documents-design-mode" base-bone="rwb_RWMultiLayoutTabStripStyle" dhtml-show="checkShowContextMenuOption('del')"/>
+
+	<shortcut name="moveLeft" feature-id="documents-design-mode" base-bone="rwb_RWMultiLayoutTabStripStyle" desc-id="mstrWeb.5914" desc="Move Left" dhtml-show="checkShowContextMenuOption('ml')" onclick="processContextMenu('ml')"/>
+        
+    <shortcut name="moveRight" feature-id="documents-design-mode" base-bone="rwb_RWMultiLayoutTabStripStyle" desc-id="mstrWeb.5915" desc="Move Right" dhtml-show="checkShowContextMenuOption('mr')" onclick="processContextMenu('mr')"/>
+    
+    <shortcut name="layoutVisEditor" feature-id="documents-design-mode;visualizations-supported;visualizations-available-for-rw-layouts;enable-vis-editor" base-bone="rwb_RWMultiLayoutTabStripStyle" desc-id="mstrWeb.7582" desc="Layout Custom Visualizations..." dhtml-show="checkShowContextMenuOption('lv')" onclick="processContextMenu('lv')"/>
+    
+  </shortcut-list>
+</shortcut-list-set>

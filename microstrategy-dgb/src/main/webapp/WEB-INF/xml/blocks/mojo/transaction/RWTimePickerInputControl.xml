@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWTimePickerInputControl" inherits="RWDataInputObject">
+    <definition>
+        <!-- The interval value -->
+        <property name="itv" type="Integer"/>
+    </definition>
+</block>

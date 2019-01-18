@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		Change Tracking BaseModel is a generic data model.  
+	-->
+	<block name="ChangeTrackingModel" inherits="BaseModel">
+		<assignments>
+			<property name="scriptClass">mstr.models.ChangeTrackingModel</property>
+		</assignments>
+	</block>

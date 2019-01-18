@@ -1,0 +1,19 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="SubMenuControlModel" inherits="MenuControlModel">
+	<definition>
+		<!-- StyleCatalog style used to load the sub menu. -->
+		<property name="style" type="String"/>
+		
+		<!-- Model name used for load the submenu -->
+		<property name="menuModel" type="String"/>
+		
+		<!-- Optional layouts that will be called at transforming time -->
+		<property name="layouts" type="String"/>
+		
+		<!-- extraCssClass that will be attached next to the cssClass -->
+		<property name="cssClass" type="String"/>
+	</definition>
+	<assignments>
+		<property name="type">SUBMENU</property>
+	</assignments>
+</block>

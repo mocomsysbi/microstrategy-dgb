@@ -1,0 +1,200 @@
+<!--
+    This is the StyleCatalog DTD. The StyleCatalog is used by Microstrategy Web
+    to define the collection of Styles used by the application to generate
+    the HTML output associated with a WebBean.
+
+    Microstrategy Web separates the logical representation of data into two different
+    objects: WebBeans (or simply Beans) and Transform. A Bean is the object that holds the data
+    and has the business logic to retrieve and manipulate this data. A Transform is
+    only responsible to consume such data and to generate certain output that can
+    be interpreted by the end-user (typically HTML).
+
+    Clearly the same data can be represented in multiple ways; for each one a
+    different Transform can be created. But even further a Transform itself provides mechanisms
+    to customize the output it generates through FormalParameters and Layout files.
+
+    Through a Style, the application identifies what Transform to use,
+    what values to assign to such FormalParameters and what Layout file to use.
+
+    This catalog allows the application to easily use the same Transform to generate different
+    HTML outputs. It also allows customers to customize the application
+    to their needs without any programming experience, simply by modifying
+    parameters in this XML file.
+
+-->
+
+<!--
+    ======================== Common attributes ========================
+
+    These are attributes common to all nodes. They are defined
+    in the AbstractConfigurationElement class and are used mostly for customizations.
+    The attributes include:
+        1. config-src: When specified, the definition of the node is loaded from
+                an external file specified by the value of this parameter.
+                If the node itself contains other attributes and children, these
+                values are merged into the contents from the external definition,
+                the in-line values will take precedence over the external values.
+        2. deleted: When specified, this element is deleted from the list of elements
+                of its parent node. Typically used in customizations to delete
+                the element from the list of elements defined out of the box.
+        3. use-default: When "false", the inline contents of this node will replace
+                the contents of any default values, including values specified through
+                a config-src, a default node, or any other prevous sources. This is
+                also typically used in customizations to replace the out of the box
+                definition of a node with this one.
+        4. position: By default, all child nodes are appended to the collection of children
+                in the order they're found in the xml; when this attribute is specified,
+                it allows to change this default ordering and the node is appended
+                in the given position.
+
+ -->
+<!ENTITY % commonattrs
+ "config-src    CDATA        #IMPLIED
+  deleted       (1)          #IMPLIED
+  use-default   (true|false) #IMPLIED
+  position      CDATA        #IMPLIED "
+>
+
+
+<!ELEMENT StyleCatalog (BeanDefns?, LayoutParserDefns?, TransformDefns?, LayoutSourceDefns?, MapperDefns?, StyleMaps?, Styles?)>
+<!ATTLIST StyleCatalog %commonattrs;>
+<!ATTLIST StyleCatalog name CDATA #IMPLIED>
+<!ATTLIST StyleCatalog description CDATA #IMPLIED>
+<!ATTLIST StyleCatalog version NMTOKEN "2.0">
+
+<!ELEMENT BeanDefns (BeanDefn*)>
+<!ATTLIST BeanDefns %commonattrs;>
+
+<!ELEMENT BeanDefn EMPTY>
+<!ATTLIST BeanDefn %commonattrs;>
+<!ATTLIST BeanDefn name ID #REQUIRED>
+<!ATTLIST BeanDefn class NMTOKEN #IMPLIED>
+<!ATTLIST BeanDefn description CDATA #IMPLIED>
+
+<!ELEMENT TransformDefns (TransformDefn+)>
+<!ATTLIST TransformDefns %commonattrs;>
+
+<!ELEMENT TransformDefn EMPTY>
+<!ATTLIST TransformDefn %commonattrs;>
+<!ATTLIST TransformDefn name ID #REQUIRED>
+<!ATTLIST TransformDefn class NMTOKEN #IMPLIED>
+<!ATTLIST TransformDefn progID NMTOKEN #IMPLIED>
+<!ATTLIST TransformDefn layout_parser CDATA #IMPLIED>
+
+
+<!-- A MapperDefns element represents a collection of MapperDefn entries. -->
+<!ELEMENT MapperDefns (MapperDefn*)>
+
+<!-- A MapperDefn element represents the definition of a Style Mapper object.
+     Such an object can be queried to determine if a request for a style name
+     should be "mapped" to another style. 
+     1) A MapperDefn can have no children.
+     2) A MapperDefn has a name (required) which identifies this Mapper class
+        in subsequent MapCondition clauses.
+     3) A MapperDefn has a class (required) which is the fully qualified class
+        name of the Mapper class.  
+     4) A MapperDefn has an optional description which can be used for
+        administrative purposes.
+-->
+<!ELEMENT MapperDefn EMPTY>
+<!ATTLIST MapperDefn name ID #REQUIRED>
+<!ATTLIST MapperDefn class NMTOKEN #REQUIRED>
+<!ATTLIST MapperDefn description CDATA "">
+
+<!-- A StyleMaps element represents a collection of StyleMap entries. -->
+<!ELEMENT StyleMaps (StyleMap*)>
+
+<!-- A StyleMap element represents a way to map an incoming request for a 
+     style (by its name) to another name.  This happens transparently in the
+     context of the StyleCatalog.getTransformByStyle method.  When the request
+     arrives, the Style Catalog will evaluate each MapCondition or MapDefault
+     until a match is found.  By definition, a MapDefault always matches.
+     Therefore, it is best that a single MapDefault element appear at the end
+     of the list.
+     1) A StyleMap has ZERO or MORE MapCondition OR MapDefault clauses. Each
+        child element is evaluated in the order it is listed.  If no conditions
+        or defaults are specified, then there is no mapping of the style name:
+        it remains as is.
+     2) A StyleMap has a REQUIRED from_style attribute to identify the name
+        of the style being mapped.
+-->
+<!ELEMENT StyleMap (MapCondition*, MapDefault?)>
+<!ATTLIST StyleMap from_style NMTOKEN #REQUIRED>
+
+<!-- A MapCondition element represents one possible set of conditions that are
+     checked and, if met, may indicate what the new style name should be.
+     1) A MapCondition has no child elements.
+     2) A MapCondition has a mapper attribute which identifies the Mapper
+        to use.
+     3) A MapCondition has an optional addl_data attribute that may be used by 
+        the mapper to determine whether the condition has been met.  This data
+        is sent AS IS and not evaluated by the Style Catalog.  Each Mapper may
+        define the structure of this string as it sees fit.
+	 4) Mappers may operate in one of two modes: they may evaluate a condition
+	    and define the style name to use (it may be one of several different 
+	    alternatives).  Consider the use of a Mapper object to perform per-user
+	    or per-group Style mapping.  User 'JohnDoe' can request a style 'ABC'
+	    and a mapper may choose to map his request to a per-user style (e.g.,
+	    'ABC_JohnDoe') or a per-grup style (e.g., 'ABC_Marketing').  In this 
+	    case, the Mapper object explicitly specifies the style name to use.
+	    Alternatively, if a condition is met, the Mapper may allow the style
+	    to be selected by the user configuring the Style Catalog.  In this case,
+	    the 'to_style' attribute is required to be set to the style to choose.
+-->
+<!ELEMENT MapCondition EMPTY>
+<!ATTLIST MapCondition mapper IDREF #REQUIRED>
+<!ATTLIST MapCondition addl_data CDATA #IMPLIED>
+<!ATTLIST MapCondition to_style NMTOKEN #IMPLIED>
+
+<!-- A MapDefault element represents a default value to specify for the mapping.
+     1) A MapDefault has no children.
+     2) A MapDefault has a required to_style attribute which defines the default
+        mapping of the incoming style.
+-->
+<!ELEMENT MapDefault EMPTY>
+<!ATTLIST MapDefault to_style NMTOKEN #REQUIRED>
+
+<!ELEMENT Styles (Style+)>
+<!ATTLIST Styles %commonattrs;>
+
+<!ELEMENT Style (ActualParameters?, Layouts?)>
+<!ATTLIST Style %commonattrs; >
+<!ATTLIST Style name CDATA #REQUIRED>
+<!ATTLIST Style description CDATA #IMPLIED>
+<!ATTLIST Style transform CDATA #IMPLIED>
+
+<!ELEMENT ActualParameters (ActualParameter*)>
+<!ATTLIST ActualParameters %commonattrs;>
+
+<!ELEMENT ActualParameter EMPTY>
+<!ATTLIST ActualParameter %commonattrs; >
+<!ATTLIST ActualParameter name NMTOKEN #REQUIRED>
+<!ATTLIST ActualParameter type NMTOKEN #IMPLIED>
+<!ATTLIST ActualParameter value CDATA #IMPLIED>
+<!ATTLIST ActualParameter order NMTOKEN #IMPLIED>
+<!ATTLIST ActualParameter source NMTOKEN #IMPLIED>
+
+<!ELEMENT LayoutParserDefns (LayoutParserDefn*)>
+<!ATTLIST LayoutParserDefns %commonattrs;>
+<!ATTLIST LayoutParserDefns global_parser CDATA #IMPLIED>
+
+<!ELEMENT LayoutParserDefn EMPTY>
+<!ATTLIST LayoutParserDefn %commonattrs; >
+<!ATTLIST LayoutParserDefn name ID #REQUIRED>
+<!ATTLIST LayoutParserDefn class NMTOKEN #IMPLIED>
+
+<!ELEMENT LayoutSourceDefns (LayoutSourceDefn*)>
+<!ATTLIST LayoutSourceDefns %commonattrs;>
+
+<!ELEMENT LayoutSourceDefn EMPTY>
+<!ATTLIST LayoutSourceDefn %commonattrs; >
+<!ATTLIST LayoutSourceDefn name ID #REQUIRED>
+<!ATTLIST LayoutSourceDefn class NMTOKEN #IMPLIED>
+
+<!ELEMENT Layouts (Layout?)>
+<!ATTLIST Layouts %commonattrs;>
+
+<!ELEMENT Layout (#PCDATA)>
+<!ATTLIST Layout %commonattrs; >
+<!ATTLIST Layout layout_source CDATA #IMPLIED>
+<!ATTLIST Layout order NMTOKEN #IMPLIED>

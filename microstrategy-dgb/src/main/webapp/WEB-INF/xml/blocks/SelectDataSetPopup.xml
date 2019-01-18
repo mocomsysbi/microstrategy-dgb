@@ -1,0 +1,118 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="SelectDataSetPopup">
+  <assignments>
+    <property name="id">SelectDataSetPopup1</property>
+    <property name="visible">true</property>
+    <property name="modelPath">parent/models/0</property>
+    <property name="loadCmds">!FetchBlock|"1"|model</property>
+    <property name="reloadCmds">!FetchBlock|"1"|model</property>
+    <property name="title">{desc:mstrWeb.3413|Select Dataset}</property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K1443" name="TextButton">
+          <property name="cmds">Unpop||parent;</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K1444" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+          <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- target viewer -->
+    <property name="contentView">
+      <block name="VBox">
+        <property name="modelPath">parent/model</property>
+        <property name="children">
+          <list>
+            <block listElementKey="K1445" name="ListBrowser">
+              <property name="cssText">margin:4px</property>
+              <property name="modelPath">parent/model</property>
+              <property name="availableView/width">400px</property>
+              <property name="availableView/multiSelect">true</property>
+              <property name="availableView/allowBrowseAttribute">false</property>
+              <property name="availableView/allowBrowseHierarchy">false</property>
+              <!-- path pulldown: -->
+              <property name="pathView">
+                <block name="TreePulldown">
+                  <property name="caption">{desc:mstrWeb.3414|Select your dataset report below}</property>
+                  <property name="modelPath">parent/model/getContainerTree()</property>
+                  <property name="cmds">BrowseContainerTreeNode|model/getSelectedNode()|parent/model</property>
+                  <property name="cssText">width:300px</property>
+                  <property name="popup/width">325px</property>
+                  <!-- To support multiple roots in pulldown, we assume the tree will have a dummy node whose "tp" equlas to 0. -->
+                  <property name="popup/hideRootNodeTypes">-1</property>
+                </block>
+              </property>
+              <!-- path up button: -->
+              <property name="pathUpButton">
+                <block name="ToolButton">
+                  <property name="tooltip">{desc:mstrWeb.1152|Up One Level}</property>
+                  <property name="iconClass">mstrBGIcon_tbUpFolder</property>
+                  <property name="cmds">BrowseContainerParent||parent/model</property>
+                  <property name="modelPath">parent/model</property>
+                </block>
+              </property>
+              <!-- search box: -->
+              <property name="searchView">
+                <block name="TextBoxWithIcon">
+                  <property name="cmds">Search||parent/model</property>
+                  <property name="caption">{desc:mstrWeb.538|Search for:}</property>
+                  <property name="cssText">width:225px;</property>
+                  <property name="iconTooltip">{desc:mstrWeb.10|Search}</property>
+                  <property name="iconClass">mstrBGIcon_tbSearch</property>
+                </block>
+              </property>
+              <!-- fetch buttons: -->
+              <property name="fetchView">
+                <block name="FetchControl">
+                  <property name="modelPath">parent/model</property>
+                  <property name="cmds">FetchBlock||parent/model</property>
+                </block>
+              </property>
+            </block>
+            <block listElementKey="K1446" name="CheckBox">
+              <property name="caption">{desc:mstrWeb.4939|Add with formatting}</property>
+              <property name="cssText">margin-left:5px</property>
+              <property name="valueField">addWithFormatting</property>
+              <property name="modelPath">parent/model</property>
+              <property name="visibleField">!model/targetKey:-1</property>
+            </block>
+			<block listElementKey="K1449" name="TextLink">
+				<property name="caption">{desc:mstrWeb.13836|Add External Data}</property>
+				<property name="cmds">Unpop||parent/parent;OpenImportData||parent/model</property>
+				<property name="visibleField">model/allowImport</property>
+				<property name="modelPath">parent/model</property>
+				<property name="cssClass">-ds-import</property>
+			</block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- ok button -->
+        <block listElementKey="K1447" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">!SelectDataset||parent/model;ResetScrollArea||parent/contentView/children/0/availableView;Unpop||parent;</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K1448" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">ResetScrollArea||parent/contentView/children/0/availableView;ClearSearch||parent/contentView/children/0/searchView;Unpop||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		SelectDataSetPopup is a popup used by the rw object browser for selecting a data set
+		to include in the document.  It contains a view for selecting a target (typically a 
+		report or folder), which may support folder browsing, search & incremental fetch, plus 
+		OK and Cancel buttons.
+	-->

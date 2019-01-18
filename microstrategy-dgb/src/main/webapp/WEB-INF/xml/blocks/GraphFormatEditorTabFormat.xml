@@ -1,0 +1,592 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="GraphFormatEditorTabFormat">
+  <assignments>
+    <property name="scriptClass">mstr.views.GraphFormatTabView</property>
+    <property name="title">Format Graph - Format</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="modelPath">parent/model/items/1</property>
+    <property name="helpTopic">Format_Graph_dialog_Format.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K2048" name="HBox">
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2049" name="ListPulldown">
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/mainCat</property>
+              </block>
+              <block listElementKey="K2050" name="ListPulldown">
+                <property name="height">auto</property>
+                <property name="cssText">margin-left:20px;</property>                
+                <property name="modelPath">parent/model/subCat</property>
+                <property name="visibleField">parent/model/subCat_visible</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2051" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3899|Format}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/textFormatField_visible</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2052" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2053" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.2969|Show}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="valueField">show</property>
+                      <property name="visibleField">model/show_visible</property>
+                      <property name="cssText">margin-top:5px</property>
+                    </block>
+                    <block listElementKey="K2054" name="HTextBox">
+                      <property name="valueField">titleContent</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="totalSize">30</property>
+                      <property name="visibleField">model/titleContent_visible</property>
+                      <property name="cssText">margin-left:10px</property>
+                    </block>
+                    <block listElementKey="K2090" name="InfoIcon">
+                      <property name="value">{desc:mstrWeb.3898}&#13;&#10;{desc:mstrWeb.3886}&#13;&#10;{desc:mstrWeb.3887}&#13;&#10;{desc:mstrWeb.3888}&#13;&#10;{desc:mstrWeb.3889}&#13;&#10;{desc:mstrWeb.3890}&#13;&#10;{desc:mstrWeb.3891}&#13;&#10;{desc:mstrWeb.3892}&#13;&#10;{desc:mstrWeb.3893}&#13;&#10;{desc:mstrWeb.3894}&#13;&#10;{desc:mstrWeb.3895}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="visibleField">model/titleContent_visible</property>
+                    </block>  
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2055" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3721|Position:}</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/titlePosition</property>
+                <property name="visibleField">parent/model/titlePosition_visible</property>
+              </block>
+              <block listElementKey="K2056" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2057" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.4972|Tooltips}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="valueField">tooltipsShow</property>
+                      <property name="visibleField">model/tooltipsShow_visible</property>
+                    </block>
+                    <block listElementKey="K2058" name="HTextBox">
+                      <property name="valueField">tooltipsEditor</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="totalSize">50</property>
+                      <property name="visibleField">model/tooltipsEditor_visible</property>
+                      <property name="cssText">margin-left:10px</property>
+                    </block>
+                    <block listElementKey="K2092" name="InfoIcon">
+                      <property name="value">{desc:mstrWeb.3898}&#13;&#10;{desc:mstrWeb.5703}&#13;&#10;{desc:mstrWeb.5704}&#13;&#10;{desc:mstrWeb.7514}&#13;&#10;{desc:mstrWeb.7507}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="visibleField">model/tooltipsEditor_visible_ie</property>
+                    </block>
+					<block listElementKey="K2100" name="InfoIcon">
+                      <property name="value">{desc:mstrWeb.3898}&#13;&#10;{desc:mstrWeb.5703}&#13;&#10;{desc:mstrWeb.5704}&#13;&#10;{desc:mstrWeb.7514}&#13;&#10;{desc:mstrWeb.7507}&#13;&#10;{desc:mstrWeb.7508}&#13;&#10;{desc:mstrWeb.7509}&#13;&#10;{desc:mstrWeb.7510}&#13;&#10;{desc:mstrWeb.7511}&#13;&#10;{desc:mstrWeb.7512}&#13;&#10;{desc:mstrWeb.7513}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="visibleField">model/tooltipsEditor_visible_ie_ScatterBubble</property>
+                    </block>    
+                    <block listElementKey="K2059" name="InfoIcon">
+                      <property name="value">{desc:mstrWeb.3897|See online help for list of available macros}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="visibleField">model/tooltipsEditor_visible_ff</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2060" name="FontFormatter">
+                <property name="modelPath">parent/model</property>
+                <property name="nameModelPath">fontName</property>
+                <property name="styleModelPath">textBoldItalic</property>
+                <property name="sizeModelPath">fontSize</property>
+                <property name="underlineField">textUnderline</property>
+                <property name="strikeoutField">textStrikeout</property>
+                <property name="colorModelPath">fontColor</property>
+                <property name="enabledField">fontName_enabled</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2061" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2885|Fill}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/oldFillField_visible</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2062" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2063" name="ColorPicker">
+                      <property name="caption">{desc:mstrWeb.2060|Color:}</property>
+                      <property name="modelPath">parent/model/fillColor</property>
+                      <property name="enabledField">parent/model/fillColor_enabled</property>
+                      <property name="popup/viewFlags">14</property>
+                    </block>
+                    <block listElementKey="K2064" name="Slider">
+                      <property name="caption">{desc:mstrWeb.4715|Transparency:}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="enabledField">parent/model/areaAlpha_enabled</property>
+                      <property name="height">5px;</property>
+                      <property name="width">250px;</property>
+                      <property name="enableClickJumps">true</property>
+                      <property name="cssClass">Slider</property>
+                      <property name="cssText">margin-left:20px</property>
+                      <property name="thumbCssClass">SliderThumb</property>
+                      <property name="tooltipCssClass">SliderTooltip</property>
+                      <property name="borderStyle">1px solid #B2B2B2</property>
+                      <property name="animationStep">1</property>
+                      <property name="showTooltip">true</property>
+                      <property name="tooltipFunction">function f(v){return ((1-v/255) * 100).toFixed(0) + '%';}</property>
+                      <property name="xField">areaAlpha</property>
+                      <property name="xMin">255</property>
+                      <property name="xMax">0</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2065" name="ListPulldown">
+                <property name="caption">{desc:mstrWeb.4716|Effect:}</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/bevelType</property>
+                <property name="enabledField">parent/model/bevelType_enabled</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2066" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3546|Line}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/oldLineField_visible</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2067" name="ColorPicker">
+                <property name="caption">{desc:mstrWeb.2060|Color:}</property>
+                <property name="modelPath">parent/model/lineColor</property>
+                <property name="enabledField">parent/model/lineColor_enabled</property>
+                <property name="popup/viewFlags">11</property>
+              </block>
+            </list>
+          </property>
+        </block>
+		  <!-- Series Marker start-->
+		<block listElementKey="MarkerFormat" name="FieldSet">
+			<property name="legend">{desc:mstrWeb.3899|Format}</property>
+			<property name="modelPath">parent/model</property>
+			<property name="visibleField">model/markerShowFormatField_visible</property>
+			<property name="children">
+				<list>
+					<block listElementKey="MarkerShow" name="CheckBox">
+						<property name="caption">{desc:mstrWeb.2969|Show}</property>
+						<property name="modelPath">parent/model</property>
+						<property name="valueField">markerShow</property>
+                    </block>
+				</list>
+			</property>
+		</block>
+		<block listElementKey="MarkerShapeFormat" name="FieldSet">
+			<property name="legend">{desc:mstrWeb.3578|Shape}</property>
+			<property name="modelPath">parent/model</property>
+			<property name="visibleField">model/markerFormatField_visible</property>
+			<property name="enabledField">parent/model/markerShow</property>
+			<property name="children">
+				<list>
+					<block listElementKey="MarkerShapeHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="ShapeList" name="ListPulldown">
+									<property name="horizontalCaption">{desc:mstrWeb.9734|Shape:}</property>
+									<property name='popup/width'>50px</property>
+									<property name="modelPath">parent/model/markerShape</property>
+								</block>
+								<block listElementKey="bevelTypeList" name="ListPulldown">
+									<property name="id">markerBevelType</property>
+									<property name="horizontalCaption">{desc:mstrWeb.4716|Effect:}</property>
+									<property name="cssText">margin-left:90px;</property>
+									<property name="enabledField">!parent/parent/parent/parent/model/items/0/roundedEffect</property>  
+									<property name="modelPath">parent/model/markerBevelType</property>
+								</block>
+							</list>
+						</property>
+					</block>
+					<block listElementKey="MarkerSizeHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="MarkerSizeLabel" name="TextLabel">
+									<property name="value">{desc:mstrWeb.9735|Size:}</property>
+									<property name="cssText">margin-top:20px</property> 
+								</block>
+								<block listElementKey="MarkerSize" name="HTextBox">
+									<property name="modelPath">parent/model</property>
+									<property name="valueField">markerSize</property>
+									<property name="totalSize">4</property>
+									<property name="cssText">margin-top:20px;</property> 
+									<property name="validator">
+                            			<block name="FieldValidator">
+										  <property name="required">true</property>
+										  <property name="type">1</property>
+										  <property name="min">5</property>
+                                          <property name="max">100</property>
+										</block>
+									</property> 
+								</block>
+								<block listElementKey="MarkerColor" name="ColorPicker">
+									<property name="horizontalCaption">{desc:mstrWeb.3063|Color:}</property>
+									<property name="modelPath">parent/model/fillColor</property>
+									<property name="cssText">margin-top:15px;margin-left:100px;</property>
+									<property name="popup/viewFlags">14</property>
+								</block>
+							</list>
+						</property>
+					</block>
+					<block listElementKey="MarkerTransHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="MarkerTransparency" name="Slider">
+								  <property name="caption">{desc:mstrWeb.4715|Transparency:}</property>
+								  <property name="modelPath">parent/model</property>
+								  <property name="height">5px;</property>
+								  <property name="width">300px;</property>
+								  <property name="enableClickJumps">true</property>
+								  <property name="cssClass">Slider</property>
+								  <property name="cssText">margin-top:20px</property>
+								  <property name="thumbCssClass">SliderThumb</property>
+								  <property name="tooltipCssClass">SliderTooltip</property>
+								  <property name="borderStyle">1px solid #B2B2B2</property>
+								  <property name="animationStep">1</property>
+								  <property name="showTooltip">true</property>
+								  <property name="enabledField">!parent/parent/parent/parent/model/items/0/roundedEffect</property>
+								  <property name="tooltipFunction">function f(v){return ((1-v/255) * 100).toFixed(0) + '%';}</property>
+								  <property name="xField">areaAlpha</property>
+								  <property name="xMin">255</property>
+								  <property name="xMax">0</property>
+								</block>
+								<block listElementKey="MarkerTransText" name="HTextBox">
+									<property name="id">MarkerTransTextBox</property>
+									<property name="modelPath">parent/model</property>
+									<property name="valueField">markerAlphaText</property>
+								    <property name="enabledField">!parent/parent/parent/parent/model/items/0/roundedEffect</property>									
+									<property name="totalSize">3</property>
+									<property name="cssText">margin-top:30px;margin-left:10px;</property>
+									<property name="validator">
+                            			<block name="FieldValidator">
+										  <property name="required">true</property>
+										  <property name="type">1</property>
+										  <property name="min">0</property>
+										  <property name="max">100</property>
+										</block>
+									</property> 
+								</block>
+								<block listElementKey="MarkerPercentLabel" name="TextLabel">
+									<property name="value">%</property>
+									<property name="cssText">margin-top:30px;</property>
+								</block>
+							</list>
+						</property>
+					</block>
+				</list>
+			</property>
+		</block>
+		<!-- Series Marker end-->
+		<!--Marker border start-->
+		<block listElementKey="MarkerBorderFormat" name="FieldSet">
+			<property name="legend">{desc:mstrWeb.9736|Border}</property>
+			<property name="modelPath">parent/model</property>
+			<property name="visibleField">model/markerFormatField_visible</property>
+			<property name="enabledField">parent/model/markerShow</property>
+			<property name="children">
+				<list>
+					<block listElementKey="MarkerBSHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="MarkerBSLabel" name="TextLabel">
+									<property name="value">{desc:mstrWeb.3059|Style:}</property>
+									<property name="cssText">margin-top:20px;</property>
+								</block>
+								<block listElementKey="MarkerBorderStyle" name="ListPulldown">
+									<property name="width">130px</property>
+									<property name="cssText">margin-top:15px;</property>
+									<property name="modelPath">parent/model/markerBorderStyle</property>
+								</block>
+								<block listElementKey="MarkerBorderThickness" name="ListPulldown">
+									<property name="horizontalCaption">{desc:mstrWeb.9737|Thickness:}</property>
+									<property name="modelPath">parent/model/markerBorderThickness</property>
+									<property name='popup/width'>40px</property>
+									<property name="cssText">margin-top:16px;margin-left:20px</property> 
+								</block>
+								<block listElementKey="SeriesBorderThicknessLabel" name="TextLabel">
+									<property name="value">pt</property>
+									<property name="cssText">margin-top:23px;margin-left:5px</property>
+								</block>
+							</list>	
+						</property>
+					</block>
+					<block listElementKey="MarkerBCHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="MarkerBorderColorLabel" name="TextLabel">
+									<property name="value">{desc:mstrWeb.3063|Color:}</property>
+									<property name="cssText">margin-top:20px</property> 
+								</block>
+								<block listElementKey="MarkerBorderColor" name="ColorPicker">
+									<property name="modelPath">parent/model/markerBorderColor</property>
+									<property name="cssText">margin-top:15px;</property>
+									<property name="popup/viewFlags">14</property>
+								</block>
+							</list>
+						</property>
+					</block>
+					<block listElementKey="MarkerBTHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="MarkerBorderTransparency" name="Slider">
+								  <property name="caption">{desc:mstrWeb.4715|Transparency:}</property>
+								  <property name="modelPath">parent/model</property>
+								  <property name="height">5px;</property>
+								  <property name="width">300px;</property>
+								  <property name="enableClickJumps">true</property>
+								  <property name="cssClass">Slider</property>
+								  <property name="cssText">margin-top:20px</property>
+								  <property name="thumbCssClass">SliderThumb</property>
+								  <property name="tooltipCssClass">SliderTooltip</property>
+								  <property name="borderStyle">1px solid #B2B2B2</property>
+								  <property name="animationStep">1</property>
+								  <property name="showTooltip">true</property>
+								  <property name="tooltipFunction">function f(v){return ((1-v/255) * 100).toFixed(0) + '%';}</property>
+								  <property name="xField">markerBorderAlpha</property>
+								  <property name="xMin">255</property>
+								  <property name="xMax">0</property>
+								</block>
+								<block listElementKey="MarkerBorderTransText" name="HTextBox">
+									<property name="modelPath">parent/model</property>
+									<property name="valueField">markerBorderAlphaText</property>
+									<property name="totalSize">3</property>
+									<property name="cssText">margin-top:30px;margin-left:10px;</property>
+									<property name="validator">
+										<block name="FieldValidator">
+											<property name="required">true</property>
+											<property name="type">1</property>
+											<property name="min">0</property>
+											<property name="max">100</property>
+										</block>
+									</property> 
+								</block>
+								<block listElementKey="MarkerBorderPercentLabel" name="TextLabel">
+									<property name="value">%</property>
+									<property name="cssText">margin-top:30px;</property>
+								</block>
+							</list>
+						</property>
+					</block>
+				</list>
+			</property>	
+		</block>
+		<!--Marker border start-->
+		  
+		<!--Series area start-->
+		<block listElementKey="AreaFormat" name="FieldSet">
+			<property name="legend">{desc:mstrWeb.2885|Fill}</property>
+			<property name="modelPath">parent/model</property>
+			<property name="visibleField">model/seriesAreaFormatField_visible</property>
+			<property name="children">
+				<list>
+					<block listElementKey="AreaFillColor" name="ColorPicker">
+						<property name="horizontalCaption">{desc:mstrWeb.2060|Color:}</property>
+						<property name="modelPath">parent/model/fillColor</property>
+						<property name="visibleField">parent/model/fillColor_visible</property>
+						<property name="popup/viewFlags">14</property>
+					</block>  
+					<block listElementKey="IncreDecreColorHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="visibleField">parent/model/increDecreColorField_visible</property>
+						<property name="children">
+							<list>
+								<block listElementKey="IncreFillColor" name="ColorPicker">
+									<property name="horizontalCaption">{desc:mstrWeb.9874|Increment Color:}</property>
+									<property name="modelPath">parent/model/increfillColor</property>
+									<property name="popup/viewFlags">14</property>
+								</block>
+								<block listElementKey="DecreFillColor" name="ColorPicker">
+									<property name="horizontalCaption">{desc:mstrWeb.9875|Decrement Color:}</property>
+									<property name="modelPath">parent/model/decreFillColor</property>
+									<property name="cssText">margin-left:10px;</property>
+									<property name="popup/viewFlags">14</property>
+								</block>
+							</list>
+						</property>
+					</block>
+					<block listElementKey="ShapeBevelTypeList" name="ListPulldown">
+		                <property name="horizontalCaption">{desc:mstrWeb.4716|Effect:}</property>
+		                <property name="enabledField">!parent/parent/parent/model/items/0/roundedEffect</property>  
+		                <property name="modelPath">parent/model/bevelType</property>
+		                <property name="visibleField">parent/model/AFTransparencyField_visible</property>
+		                <property name="cssText">margin-top:20px</property>
+		            </block>
+					<block listElementKey="AFTransparencyHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="AreaFillTransparency" name="Slider">
+								  <property name="caption">{desc:mstrWeb.4715|Transparency:}</property>
+								  <property name="modelPath">parent/model</property>
+								  <property name="visibleField">parent/model/AFTransparencyField_visible</property>
+								  <property name="enabledField">!parent/parent/parent/parent/model/items/0/roundedEffect</property>
+								  <property name="height">5px;</property>
+								  <property name="width">300px;</property>
+								  <property name="enableClickJumps">true</property>
+								  <property name="cssClass">Slider</property>
+								  <property name="cssText">margin-top:20px</property>
+								  <property name="thumbCssClass">SliderThumb</property>
+								  <property name="tooltipCssClass">SliderTooltip</property>
+								  <property name="borderStyle">1px solid #B2B2B2</property>
+								  <property name="animationStep">1</property>
+								  <property name="showTooltip">true</property>
+								  <property name="tooltipFunction">function f(v){return ((1-v/255) * 100).toFixed(0) + '%';}</property>
+								  <property name="xField">areaAlpha</property>
+								  <property name="xMin">255</property>
+								  <property name="xMax">0</property>
+								</block>
+								<block listElementKey="AreaFillTransText" name="HTextBox">
+									<property name="modelPath">parent/model</property>
+									<property name="visibleField">parent/model/AFTransparencyField_visible</property>
+									<property name="enabledField">!parent/parent/parent/parent/model/items/0/roundedEffect</property>
+									<property name="valueField">markerAlphaText</property>
+									<property name="totalSize">3</property>
+									<property name="cssText">margin-top:30px;margin-left:10px;</property>
+									<property name="validator">
+                            			<block name="FieldValidator">
+										  <property name="required">true</property>
+										  <property name="type">1</property>
+										  <property name="min">0</property>
+										  <property name="max">100</property>
+										</block>
+									</property> 
+								</block>
+								<block listElementKey="SeriesLinePercentLabel" name="TextLabel">
+									<property name="value">%</property>
+									<property name="visibleField">parent/model/AFTransparencyField_visible</property>
+									<property name="cssText">margin-top:30px;</property>
+								</block>
+							</list>
+						</property>
+					</block>
+				</list>
+			</property>
+		</block>
+		<!--Series area end-->
+		  
+		<!--Series Lines start-->
+		<block listElementKey="LineFormat" name="FieldSet">
+			<!--property name="legend">Line/Border Format</property-->
+			<property name="legend">{desc:mstrWeb.9740|Line/Border}</property>
+			<property name="modelPath">parent/model</property>
+			<property name="visibleField">model/seriesLineFormatField_visible</property>
+			<property name="children">
+				<list>
+					<block listElementKey="SeriesLineColor" name="ColorPicker">
+						<property name="horizontalCaption">{desc:mstrWeb.3063|Color:}</property>
+						<property name="modelPath">parent/model/lineColor</property>
+						<property name="popup/viewFlags">14</property>
+					</block>
+					<block listElementKey="SLStyleHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="SeriesLineStyleLabel" name="TextLabel">
+									<property name="value">{desc:mstrWeb.3059|Style:}</property>
+									<property name="cssText">margin-top:20px;</property>
+								</block>
+								<block listElementKey="SeriesLineStyle" name="ListPulldown">
+									<property name="width">130px</property>
+									<property name="cssText">margin-top:15px;</property>
+									<property name="modelPath">parent/model/seriesLineStyle</property>
+								</block>
+							</list>
+						</property>
+					</block>
+					<block listElementKey="SLThicknessHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="SeriesLineThickness" name="ListPulldown">
+									<property name="horizontalCaption">{desc:mstrWeb.9737|Thickness:}</property>
+									<property name="modelPath">parent/model/seriesLineThickness</property>
+									<property name="visibleField">parent/model/seriesLineThickness_visible</property>
+									<property name='popup/width'>3.75em</property>
+									<property name="cssText">margin-top:18px;</property> 
+								</block>
+								<block listElementKey="SeriesLineThicknessLabel" name="TextLabel">
+									<property name="value">pt</property>
+									<property name="visibleField">parent/model/seriesLineThickness_visible</property>
+									<property name="cssText">margin-top:23px;margin-left:5px</property>
+								</block>
+							</list>
+						</property>
+					</block>
+					<block listElementKey="SLTransparencyHbox" name="HBox">
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block listElementKey="SeriesLineTransparency" name="Slider">
+								  <property name="caption">{desc:mstrWeb.4715|Transparency:}</property>
+								  <property name="modelPath">parent/model</property>
+								  <property name="height">5px;</property>
+								  <property name="width">300px;</property>
+								  <property name="enableClickJumps">true</property>
+								  <property name="cssClass">Slider</property>
+								  <property name="cssText">margin-top:20px</property>
+								  <property name="thumbCssClass">SliderThumb</property>
+								  <property name="tooltipCssClass">SliderTooltip</property>
+								  <property name="borderStyle">1px solid #B2B2B2</property>
+								  <property name="animationStep">1</property>
+								  <property name="showTooltip">true</property>
+								  <property name="tooltipFunction">function f(v){return ((1-v/255) * 100).toFixed(0) + '%';}</property>
+								  <property name="xField">lineAlpha</property>
+								  <property name="xMin">255</property>
+								  <property name="xMax">0</property>
+								</block>
+								<block listElementKey="SeriesLineTransText" name="HTextBox">
+									<property name="modelPath">parent/model</property>
+									<property name="valueField">seriesLineAlphaText</property>
+									<property name="totalSize">3</property>
+									<property name="cssText">margin-top:30px;margin-left:10px;</property>
+									<property name="validator">
+                            			<block name="FieldValidator">
+										  <property name="required">true</property>
+										  <property name="type">1</property>
+										  <property name="min">0</property>
+										  <property name="max">100</property>
+										</block>
+									</property> 
+								</block>
+								<block listElementKey="SeriesLinePercentLabel" name="TextLabel">
+									<property name="value">%</property>
+									<property name="cssText">margin-top:30px;</property>
+								</block>
+							</list>
+						</property>
+					</block>
+				</list>
+			</property>
+		</block>
+		<!--Series line end-->
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+        GraphFormatTabFormat is the "Format" tab of the properties editor.
+    -->

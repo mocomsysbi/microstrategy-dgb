@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition for Button.
+--> 
+<block name="RWButtonDef" inherits="RWEditableTextDef">
+	<definition>
+        <!-- Display style. 0 means text field, 1-6 means six button style -->
+        <property name="dpst" type="Integer" />
+        
+        <!-- Background highlight color -->
+        <property name="bhlc" type="String" />
+        
+        <!-- Font highlight color -->
+        <property name="fhlc" type="String" />
+        
+        <!-- Normal url for icon image -->
+        <property name="nmurl" type="String" />
+        
+        <!-- Highlight url for icon image -->
+        <property name="hlurl" type="String" />
+        
+        <!-- Fill Effect -->
+        <property name="fe" type="Integer" />
+	</definition>
+</block>

@@ -1,0 +1,16 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWSaveTask">
+	<basicInfo desc="This Task provides the save a document.">
+		<parameter name="msgID" desc="The Message ID of a previously executed RWBean." required="true" type="guid"/>
+		<parameter name="folderID" desc="The folder where the document is to be saved" required="true" type="guid"/>
+		<parameter name="objName" desc="The desired document name" required="true" />
+		<parameter name="objDesc" desc="The desired document description" required="false" />
+		<parameter name="saveAsFlags" desc="The save as flag. Set it to 1 if you want to overwrite the existing object. See EnumDSSXMLDocSaveAsFlags for details" required="false" defvalue="0" type="int"/>
+		<parameter name="skipRebuild" desc="This flag indicate we do not rbd for SaveRWTask" required="false" defvalue="false" type="boolean"/>
+	</basicInfo>	
+	
+	<!--
+		This information describes how the task is defined in terms of an existing bean.
+	-->
+	<beanInfo name="rwb" bean-type="RWBean"/>
+</beanTask>

@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ViewBook is a scrollable collection of views, which register themselves as views to a collection of models. -->
+	<block name="ViewBook" inherits="BaseView,ViewBookChildContainer">
+		<definition>
+			<!-- The collection of views displayed by this ViewStack. -->
+			<property name="views" type="List" />	
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.ViewBook</property>
+			<property name="layoutClass">mstr.layouts.ViewRoll</property>
+			<property name="cssClass">ViewRoll</property>
+		</assignments>
+	</block>

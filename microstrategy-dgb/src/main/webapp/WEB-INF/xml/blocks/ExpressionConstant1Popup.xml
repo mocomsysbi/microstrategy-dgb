@@ -1,0 +1,78 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionConstant1Popup is a popup used by ExpressionEditor for editing the first constant
+		of a metric or attribute form qualification.  It displays a view for editing the constant
+		value (typically a TextBox), plus ok and cancel buttons.
+	-->
+	<block name="ExpressionConstant1Popup" inherits="BaseView">
+		<definition>
+			<!-- The view for entering a constant, typically a TextBox. -->
+			<property name="textView" type="Block" />
+
+			<!-- The view for launching a browser of values, typically a TextLink. -->
+			<property name="browseView" type="Block" />
+
+			<!-- The view for launching a file import GUI, typically a TextLink. -->
+			<property name="importView" type="Block" />
+			
+			<!-- The OK button to apply the user's input and close this popup. -->
+			<property name="okButton" type="Block" />
+			
+			<!-- The Cancel button to discard the user's input and close this popup. -->
+			<property name="cancelButton" type="Block" />
+		</definition>
+		<assignments>
+			<property name="id">ExpressionConstant1Popup1</property>
+			<property name="layoutClass">mstr.layouts.ExpressionConstantPopup</property>
+			<property name="cssClass">Popup</property>
+			<property name="modelPath">opener/model/answer/getConstant1CloneModel(opener.model)</property>
+			<property name="popOrientation">0</property>
+			<property name="CommandEnabledUnpop" type="Boolean">true</property>
+			<property name="textView">
+				<block name="CalendarAndTimePicker">
+					<property name="caption">{desc:mstrWeb.5901|Enter value:}</property>
+					<property name="modelPath">parent/model/getCalendarTimePicker()</property>
+					<property name="cssText">width: 170px</property>
+				</block>
+			</property>
+			<property name="browseView">
+				<block name="TextLink">
+					<property name="caption">{desc:mstrWeb.5902|Browse values...}</property>
+					<property name="modelPath">parent/model</property>
+					<property name="cmds">Unpop||parent;OpenPopup|"ExpressionFormValues1Popup1"|parent/opener</property>
+				</block>
+			</property>
+           <property name="importView">
+				<block name="TextLink">
+					<property name="caption">{desc:mstrWeb.5903|Import file...}</property>
+					<property name="modelPath">parent/model</property>
+					<property name="cmds">Unpop||parent;UpdateInListFunction||parent/opener/model;OpenPopup|"ExpressionFileImport1Popup1"|parent/opener</property>
+				</block>
+			</property>
+			<property name="okButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.2397|OK}</property>
+					<property name="onclick"><![CDATA[
+						var view = mstr.$obj(this.id),
+							popupView = view && view.props.parent,
+							model = popupView && popupView.props.model,
+							vs = model && model.props.validationStatus,
+							sc = vs && vs.statusCode;
+						if (!sc || (sc == mstr.Enum.Validation.STATUSCODE.VALID)) {
+							return view.fireCommands();
+						} else {	
+							var msg = model && model.props.message;
+							if (msg) alert(msg);
+						}
+					]]></property>
+					<property name="cmds">Unpop||parent;EditConditionConstant1|parent/model/valueString|parent/opener/model</property>
+				</block>
+			</property>
+			<property name="cancelButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.2399|Cancel}</property>
+					<property name="cmds">Unpop||parent</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

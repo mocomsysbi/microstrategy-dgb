@@ -1,0 +1,39 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- PromptSaveManyAnswers view is the view to save a prompt answer when "allow any number of answers per answer" -->
+	<block name="PromptSaveManyAnswers" inherits="PromptSaveOneAnswer">
+		<definition>
+			<property name="loadSavedAnswerButton" type="Block"/>
+			<property name="getSavedAnswerNameButton" type="Block"/>
+		</definition>
+		<assignments>
+			<!-- <property name="id">PromptSaveManyAnswers</property> -->
+			<property name="cssClass">PromptSaveManyAnswers</property>
+			<property name="layoutClass">mstr.layouts.PromptSaveCheckbox2</property>
+			<property name="saveAnswerCaption">{desc:mstrWeb.5851|Save this answer}</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="name" type="String">{desc:mstrWeb.2211|Name:}</property>
+					<property name="required" type="String">{desc:mstrWeb.5926|(Required)}</property>
+					<property name="setAsDefault" type="String">{desc:mstrWeb.5141|Set as default}</property>
+				</block>
+			</property>
+			<property name="loadSavedAnswerButton">
+				<block name="ListToolButton">
+					<!-- <property name="id">loadSavedAnswerButton</property> -->
+					<property name="cssText">background-image: url(../style/mstr/images/tbOpen.png);width:21px;height:21px;margin:1px;</property>
+					<property name="popupId">PromptSavedAnswersSimplePopup</property>
+					<property name="modelPath">parent/model/savedAnswers</property> <!-- point to the list -->
+					<property name="horizontalCaption">{desc:mstrWeb.5852|Load Answers}</property>
+				</block>
+			</property>
+			<property name="getSavedAnswerNameButton">
+				<block name="ListToolButton">
+					<!-- <property name="id">getSavedAnswerNameButton</property> -->
+					<property name="cssText">background: url(../style/mstr/images/tbPulldown.gif) no-repeat center center;width:13px;height:21px;margin:1px;</property>
+					<property name="popupId">PromptGetSavedAnswerNamePopup</property>
+					<property name="modelPath">parent/model/savedAnswers</property> <!-- point to the list -->
+					<property name="visible">false</property> <!-- hide this until PM decides on the final spec -->
+				</block>
+			</property>
+		</assignments>
+	</block>

@@ -1,0 +1,57 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+  <mstrlayout:if name="havePreferencesChanged" base="bean"><mstrlayout:then>
+    <mstrlayout:if name="hasValidationErrors" base="bean"><mstrlayout:then>
+        <div class="mstrPrefUpdateConfirmation">
+            <div class="mstrStandardHighlighted">
+                <mstrlayout:render name="descriptor">
+	               <mstrlayout:argument type="string" value="mstrWeb.459"/>
+	            </mstrlayout:render>
+	        </div>
+            <mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="string" value="mstrWeb.460"/>
+            </mstrlayout:render>
+        </div>
+    </mstrlayout:then><mstrlayout:else>
+        <div class="mstrPrefUpdateConfirmation">
+            <div class="mstrStandardHighlighted">
+		          <mstrlayout:render name="descriptor">
+		            <mstrlayout:argument type="string" value="mstrWeb.453"/>
+		          </mstrlayout:render>
+		    </div>
+	          <mstrlayout:render name="descriptor">
+	            <mstrlayout:argument type="string" value="mstrWeb.454"/>
+	          </mstrlayout:render>
+   	          <mstrlayout:slot name="post-save">
+             </mstrlayout:slot>
+        </div>
+    </mstrlayout:else></mstrlayout:if>
+  </mstrlayout:then></mstrlayout:if>
+
+  <div class="mstrPanelPortrait">
+    <div class="mstrPanelTitleBar">
+        <div class="mstrPanelTitle">
+            <mstrlayout:render name="title"/>
+        </div>
+    </div>
+    <mstrlayout:slot name="contents">
+    </mstrlayout:slot>
+
+    <div class="mstrPanelButtonBar">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <colgroup>
+          <col width="70%"/>
+          <col width="30%"/>
+        </colgroup>
+        <tr>
+          <td valign="top">
+            <mstrlayout:render name="applyChanges"/>
+          
+            <mstrlayout:render name="loadDefaults"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</mstrlayout:layout>

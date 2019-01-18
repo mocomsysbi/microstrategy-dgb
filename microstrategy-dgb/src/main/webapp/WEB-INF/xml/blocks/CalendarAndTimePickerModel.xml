@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="CalendarAndTimePickerModel" inherits="BaseModel">
+	    <definition>
+			<property name="multiSelect" type="Boolean" />		
+			<property name="dataType" type="Integer" />		
+			<property name="calendar" type="Block" />	
+			<property name="timePicker" type="Block" />					
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ConstantPromptAnswer</property>
+			<property name="multiSelect">false</property>		
+		    <property name="dataType">14</property> <!-- default type: Date -->
+		    <property name="calendar">
+		    	<block name="CalendarModel"/>
+		    </property>
+		    <property name="timePicker">
+		    	<block name="TimePickerModel"/>		
+		    </property>    
+		</assignments>
+	</block>

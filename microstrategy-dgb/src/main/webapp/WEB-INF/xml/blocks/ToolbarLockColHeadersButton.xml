@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarLockColHeadersButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbLockColHeaders</property>
+        <property name="tooltip">{desc:mstrWeb.2567|Lock Column Headers}</property>
+        <property name="cmdid">checkLockColHeader</property>
+        <property name="visibleFeatures">lock-grid-headers</property>
+        <property name="listenerMethods">ongridselectionschange</property>
+	</assignments>
+</block>

@@ -1,0 +1,147 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/UserDefault.xml">
+        <mstrlayout:replace slot="contents">
+            <div class="mstrPanelBody">
+                <table cellspacing="0" cellpadding="2" class="preferenceList">
+                    <tr>
+                        <td valign="top" style="width:18%;">
+                            <span class="prefs-input">
+                                <mstrlayout:render name="descriptor"> <!--Descriptor:Dots per inch (DPI) -->
+                                    <mstrlayout:argument type="String" value="mstrWeb.3032" />
+                                </mstrlayout:render>
+                            </span>
+                        </td>
+                        <td>
+                            <mstrlayout:render name="TextBox">
+                                <mstrlayout:argument type="string"
+                                    value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDpiConversion" />
+                                <mstrlayout:argument type="string" value="6" />
+                                <mstrlayout:argument type="string" value="6" />
+                            </mstrlayout:render>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr style="height: 1px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" style="width:18%;">
+                            <span class="prefs-input">
+                                <mstrlayout:render name="descriptor"> <!-- Documents: -->
+                                    <mstrlayout:argument type="String" value="mstrWeb.12180" />
+                                </mstrlayout:render>
+                            </span>
+                        </td>
+                        <td>
+                            <table cellspacing="0" cellpadding="2" class="preferenceList">
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsComboBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceGridDensity" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.3055" /> <!--Descriptor: Alignment grid density -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsComboBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceMarqueeSelectionStyle" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.3596" /> <!--Descriptor:Selection Behaviour -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsComboBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDocumentWidthMode" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.4679" /> <!--Descriptor:Document Width Mode Calculationr -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsComboBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDocumentSectionHeightMode" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.4678" /> <!--Descriptor:Document Section Height Mode Calculation -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsCheckBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceEnableFlashViewMode" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.4844" />  <!--Descriptor:Enable Flash View Mode -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsCheckBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceOfficeExportRefresh" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.3735" />  <!--Descriptor:Allow MicroStrategy Office to refresh Documents after exporting 
+                                                to Excel -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsCheckBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceFloatingApplySelectorButton" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.5032" />  <!--Descriptor:Use floating toolbar to apply selector changes -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr style="height: 1px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" style="width:18%;">
+                            <span class="prefs-input">
+                                <mstrlayout:render name="descriptor"> <!-- Dossiers:: -->
+                                    <mstrlayout:argument type="String" value="mstrWeb.15436" />
+                                </mstrlayout:render>
+                            </span>
+                        </td>
+                        <td>
+                            <table cellspacing="0" cellpadding="2" class="preferenceList">
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsComboBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceEmbedFontsIVEFlash" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.8302" /> <!--Descriptor:Embed Fonts in Visual Exploration Mode -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mstrlayout:render name="AsComboBox">
+                                            <mstrlayout:argument type="string"
+                                                value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDefaultColorThemeForAnalysis" />
+                                            <mstrlayout:argument type="string" value="mstrWeb.15461" />   <!--Descriptor:Default color theme for new Dossier -->
+                                        </mstrlayout:render>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </mstrlayout:replace>
+    </mstrlayout:include>
+
+</mstrlayout:layout>

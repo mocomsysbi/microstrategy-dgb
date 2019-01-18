@@ -1,0 +1,30 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides "data" information about a single layout in a RWD.
+--> 
+<block name="RWLayout">
+    <definition>
+        <!-- The key associated with this layout -->
+        <property name="k" type="String" />
+        
+        <!-- Whether the data for this layout is loaded. This affects the remaining
+             properties of this block. If not loaded, these properties are undefined. -->
+        <property name="loaded" type="Boolean" />
+        
+        <!-- A RWGroupBys Block -->
+        <property name="gbys" type="Block" />
+        
+        <!-- The sections in this layout. They are organized as an Array with each
+             element a Block of type RWSection. -->
+        <property name="sections" type="List" />
+        
+        <!--  The estimated minimum height of the layout (with units, e.g., "px"). -->
+        <property name="mh" type="String" />
+        
+        <!--  The incremental fetch setting for this layout. -->
+        <property name="ifs" type="Block" />
+        
+        <!-- A Map of Xtab styles -->
+        <property name="xtabStyles" type="Block"/>        
+    </definition>
+</block>

@@ -1,0 +1,768 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+ <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptBaseLayout_widget.xml">
+  <!-- settings -->
+  <mstrlayout:replace slot="generalSettings">
+   <mstrlayout:base id="search" method="com.microstrategy.web.objects.WebObjectsPrompt#getSearchRestriction" base="prompt" />
+  </mstrlayout:replace>
+  <!-- ============================ Model ======================================== -->
+  <mstrlayout:replace slot="modelContent">
+   <mstrlayout:bSetProperty path="type" value="OBJECT" />
+
+   <mstrlayout:bSetProperty path="answer">
+    <mstrlayout:block name="ListPromptAnswerModel">
+     <mstrlayout:bSetProperty path="required" method="com.microstrategy.web.objects.WebPrompt#isRequired" base="prompt" />
+     <mstrlayout:bSetProperty path="min" method="com.microstrategy.web.objects.WebPrompt#getMin" base="prompt" />
+     <mstrlayout:bSetProperty path="max" method="com.microstrategy.web.objects.WebPrompt#getMax" base="prompt" />
+     <mstrlayout:bSetProperty path="allowAddAlways" value="true" />
+	 <mstrlayout:bSetProperty path="sortResult" value="true" />
+            <mstrlayout:if method="hasError">
+            	<mstrlayout:then>
+		            <mstrlayout:bSetProperty path="message" method="getErrorMessage"/>
+		            <mstrlayout:bSetProperty path="validationStatus/statusCode" value="999"/> <!-- mstr.Enum.Validation.STATUSCODE.INVALID -->
+            	</mstrlayout:then>
+            </mstrlayout:if>
+
+     <mstrlayout:bSetProperty path="allowedItemFormName" value="" />
+     <mstrlayout:bSetProperty path="allowedItemFormValues" value="" />
+  	 <mstrlayout:bSetProperty path="allowNavAboveSearchRoot" method="getPropertyValue">
+    	<mstrlayout:argument value="AllowNavigationBeyondSearchRoot"/>
+ 	 </mstrlayout:bSetProperty>
+     <!-- override previous settings -->
+     <mstrlayout:if method="isHICartStyle">
+      <mstrlayout:then>
+		<mstrlayout:bSetProperty path="sortResult" value="false" />
+       <mstrlayout:bSetProperty path="allowedItemFormName" value="icon" />
+       <mstrlayout:bSetProperty path="allowedItemFormValues" value="" />
+       <mstrlayout:bSetProperty path="prohibitedItemFormValues" value="f,f_sc" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+	 <mstrlayout:if method="isCartStyle">
+     		<mstrlayout:then>
+     			 <mstrlayout:bSetProperty path="sortResult" value="false" />
+     		</mstrlayout:then>
+     </mstrlayout:if>
+     <mstrlayout:if method="isTreeStyle">
+      <mstrlayout:then>
+		 <mstrlayout:bSetProperty path="sortResult" value="false" />
+       <mstrlayout:bSetProperty path="allowedItemFormName" value="icon" />
+       <mstrlayout:bSetProperty path="allowedItemFormValues" value="" />
+       <mstrlayout:bSetProperty path="prohibitedItemFormValues" value="f,f_sc" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+     <!-- available -->
+
+     <!-- available : predefined List / search result -->
+     <mstrlayout:if method="isAvailableFolderAvailable">
+      <!-- only when it is available -->
+      <mstrlayout:then>
+
+       <mstrlayout:if method="isHICartStyle">
+        <mstrlayout:then>
+         <mstrlayout:if operator="isNull" base="search">
+          <mstrlayout:then>
+           <!-- predefined list still use non hi style -->
+           <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+            <mstrlayout:argument value="WidgetFolderSimpleStyle" />
+			<mstrlayout:argument value="sortedItems"/>
+			<mstrlayout:argument type="boolean" value="false"/>
+           </mstrlayout:bSetProperty>
+          </mstrlayout:then>
+          <mstrlayout:else>
+           <mstrlayout:if method="getPropertyValue" value="3">
+            <mstrlayout:argument value="AllowNavigationBeyondSearchRoot" />
+            <mstrlayout:then>
+             <!-- hierarchical style is only when you have the allow navigation property set to 3 -->
+             <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+              <mstrlayout:argument value="WidgetFolderSimpleHierarchicalStyle" />
+             </mstrlayout:bSetProperty>
+            </mstrlayout:then>
+            <mstrlayout:else>
+             <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+              <mstrlayout:argument value="WidgetFolderSimpleStyle" />
+             </mstrlayout:bSetProperty>
+            </mstrlayout:else>
+           </mstrlayout:if>
+          </mstrlayout:else>
+         </mstrlayout:if>
+        </mstrlayout:then>
+        <mstrlayout:else>
+         <mstrlayout:if method="isTreeStyle">
+          <mstrlayout:then>
+           <mstrlayout:if operator="isNull" base="search">
+            <mstrlayout:then>
+             <!-- predefined list still use style -->
+             <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+              <mstrlayout:argument value="WidgetFolderSimpleStyle" />
+		      <mstrlayout:argument value="sortedItems"/>
+			  <mstrlayout:argument type="boolean" value="false"/>		 
+             </mstrlayout:bSetProperty>
+            </mstrlayout:then>
+            <mstrlayout:else>
+             <mstrlayout:if method="getPropertyValue" value="3">
+              <mstrlayout:argument value="AllowNavigationBeyondSearchRoot" />
+              <mstrlayout:then>
+               <!-- hierarchical style is only when you have the allow navigation property set to 3 -->
+               <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+                <mstrlayout:argument value="WidgetFolderSimpleHierarchicalStyle" />
+               </mstrlayout:bSetProperty>
+              </mstrlayout:then>
+              <mstrlayout:else>
+               <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+                <mstrlayout:argument value="WidgetFolderSimpleStyle" />
+               </mstrlayout:bSetProperty>
+              </mstrlayout:else>
+             </mstrlayout:if>
+            </mstrlayout:else>
+           </mstrlayout:if>
+          </mstrlayout:then>
+          <mstrlayout:else>
+          
+		    <mstrlayout:if operator="isNull" base="search">
+              <mstrlayout:then>   
+                <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+			       <mstrlayout:argument value="WidgetFolderSimpleStyle" />
+				   <mstrlayout:argument value="sortedItems"/>
+			       <mstrlayout:argument type="boolean" value="false"/>		   
+		        </mstrlayout:bSetProperty>
+              </mstrlayout:then>
+              <mstrlayout:else>
+			    <mstrlayout:bSetProperty path="available" method="getAvailableFolderWidget">
+			       <mstrlayout:argument value="WidgetFolderSimpleStyle" />
+		        </mstrlayout:bSetProperty>  
+			  </mstrlayout:else>
+            </mstrlayout:if>
+          </mstrlayout:else>
+         </mstrlayout:if>
+        </mstrlayout:else>
+       </mstrlayout:if>
+       
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <!-- send search information for later retrieval -->
+       <mstrlayout:if operator="isNotNull" base="search">
+        <mstrlayout:then>
+         <mstrlayout:bSetProperty path="available">
+          <mstrlayout:block name="ListModel">
+           <mstrlayout:bSetProperty path="searchXML" method="com.microstrategy.web.objects.WebSearch#getXML" base="search"/>
+           <mstrlayout:bSetProperty path="dataSourcesXML" method="com.microstrategy.web.objects.WebObjectInfo#getDataSources" base="search"/>
+           <mstrlayout:bSetProperty path="objectType" method="getSearchTypes" />
+           <!-- javascript needs tp of container to invoke the service -->
+           <mstrlayout:bSetProperty path="container">
+            <mstrlayout:block name="ItemInfo">
+             <mstrlayout:bSetProperty path="tp" value="8" />
+             <mstrlayout:bSetProperty path="stp" value="-1" />
+             <mstrlayout:bSetProperty path="icon" value="p" />
+             <mstrlayout:bSetProperty path="n" method="getDescriptor">
+             	<mstrlayout:argument value="73" type="int"/> <!-- Search Results: -->
+             </mstrlayout:bSetProperty>
+            </mstrlayout:block>
+           </mstrlayout:bSetProperty>
+          </mstrlayout:block>
+         </mstrlayout:bSetProperty>
+        </mstrlayout:then>
+       </mstrlayout:if>
+      </mstrlayout:else>
+     </mstrlayout:if>
+
+	   <!-- showing none?? -->
+	   <mstrlayout:if name="shouldRenderNoneOption">
+	      <mstrlayout:then>
+	       <mstrlayout:bSetProperty path="available/prefixItems">
+		        <mstrlayout:block name="ItemInfo">
+	                <mstrlayout:bSetProperty path="dssid" value="0"/>
+	                <mstrlayout:bSetProperty path="tp" value="0"/>
+		         <mstrlayout:bSetProperty path="n" method="getDescriptor">
+		          <mstrlayout:argument type="int" value="181" />
+		          <!-- Descriptor: - none - -->
+		         </mstrlayout:bSetProperty>
+		        </mstrlayout:block>
+		       </mstrlayout:bSetProperty>
+	      </mstrlayout:then>
+	   </mstrlayout:if>
+       <mstrlayout:if method="isPulldownStyle">
+       	<mstrlayout:then>
+	   		<mstrlayout:bSetProperty path="available/autoSelectFirstItem" value="true"/>
+       	</mstrlayout:then>
+       </mstrlayout:if>
+	   
+     <!-- set up hierarchical property no matter the prompt is showing or not -->
+     <mstrlayout:if method="isUseFolderStructure">
+      <mstrlayout:then>
+         <mstrlayout:if method="isTrimmedTree">
+    		<mstrlayout:then>
+		       <mstrlayout:bSetProperty path="available/hierarchical" value="false" /> <!--  So we do not try to perform non-recursive search from client side -->
+		    </mstrlayout:then>
+		    <mstrlayout:else>
+		       <mstrlayout:bSetProperty path="available/hierarchical" value="true" />
+		    </mstrlayout:else>
+		 </mstrlayout:if>
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="available/hierarchical" value="false" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+    <!-- controll how to override the selected after task call, only for non-cart -->
+	<mstrlayout:if method="isTreeStyle">
+		<mstrlayout:else>
+			<mstrlayout:if method="isCartStyle">
+				<mstrlayout:else>
+					<mstrlayout:bSetProperty path="available/keepSelectionsAfterRequest" value="true"/>
+				</mstrlayout:else>
+			</mstrlayout:if>
+		</mstrlayout:else>
+	</mstrlayout:if>
+
+     <mstrlayout:if method="isAnswerComplex" base="bean">
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="isComplex" value="true" />
+       <mstrlayout:bSetProperty path="complexString" method="getDefaultAnswerAsString" />
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <!-- selected list -->
+       <mstrlayout:bSetProperty path="selected">
+        <mstrlayout:block name="ListModel">
+
+         <!-- list of answer -->
+         <mstrlayout:list id="obj" name="getAnswer">
+          <mstrlayout:if operator="isNotNull" base="obj">
+           <mstrlayout:then>
+            <!-- if obj != null -->
+            <mstrlayout:bSetProperty path="items">
+             <mstrlayout:block name="ItemInfo">
+              <mstrlayout:bSetProperty path="dssid" method="getID" base="obj" />
+              <mstrlayout:bSetProperty path="n" method="getDisplayName" base="obj" />
+              <mstrlayout:bSetProperty path="desc" method="getDescription" base="obj" />
+              <mstrlayout:bSetProperty path="icon" method="getObjectInfoCssName">
+               <mstrlayout:argument list="obj" type="com.microstrategy.web.objects.WebObjectInfo" />
+              </mstrlayout:bSetProperty>
+              <mstrlayout:bSetProperty path="tp" method="getType" base="obj" />
+	          <mstrlayout:if method="com.microstrategy.web.objects.WebObjectInfo#getType" value="12" base="obj"> <!-- attribute -->
+	                    <mstrlayout:then>
+	                          <!-- locked? -->
+	                          <mstrlayout:base id="dimAtt" method="getDimensionAttribute"
+	                                base="obj">
+	                                <mstrlayout:onexception />
+	                          </mstrlayout:base>
+	                          <mstrlayout:if operator="isNull" base="dimAtt">
+	                                <mstrlayout:then>
+	                                      <mstrlayout:bSetProperty path="locked" value="false" />
+	                                </mstrlayout:then>
+	                                <mstrlayout:else>
+	                                      <mstrlayout:if method="getLockType" value="2" base="dimAtt">
+	                                            <mstrlayout:then> <!-- Custom -->
+	                                                  <mstrlayout:bSetProperty path="locked" value="true" />
+	                                            </mstrlayout:then>
+	                                            <mstrlayout:else>
+	                                                  <mstrlayout:bSetProperty path="locked" value="false" />
+	                                            </mstrlayout:else>
+	                                      </mstrlayout:if>
+	                                </mstrlayout:else>
+	                          </mstrlayout:if>
+	                    </mstrlayout:then>
+	          </mstrlayout:if>
+             </mstrlayout:block>
+            </mstrlayout:bSetProperty>
+           </mstrlayout:then>
+          </mstrlayout:if>
+         </mstrlayout:list>
+        </mstrlayout:block>
+       </mstrlayout:bSetProperty>
+      </mstrlayout:else>
+     </mstrlayout:if>
+    </mstrlayout:block>
+
+   </mstrlayout:bSetProperty>
+  </mstrlayout:replace>
+
+  <!-- ============================ View ======================================== -->
+  <mstrlayout:replace slot="viewContent">
+   <!-- Visible? -->
+   <mstrlayout:if method="isOneByOneDisplayMode">
+    <mstrlayout:else>
+     <mstrlayout:bSetProperty path="visible" value="true" />
+    </mstrlayout:else>
+   </mstrlayout:if>
+
+   <mstrlayout:bSetProperty path="complexAnswerView">
+    <mstrlayout:block name="TextDiv">
+     <mstrlayout:bSetProperty path="modelPath" value="parent/model/answer/complexString" />
+    </mstrlayout:block>
+   </mstrlayout:bSetProperty>
+
+   <mstrlayout:if method="isCheckboxStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView">
+      <mstrlayout:block name="ListBrowser">
+       <!-- checkboxes: -->
+       <mstrlayout:if method="getPropertyValue" value="1">
+        <mstrlayout:argument value="Arrangement" />
+        <mstrlayout:then>
+         <mstrlayout:if method="getPropertyValue" value="0">
+          <mstrlayout:argument value="ArrangementSize" />
+          <mstrlayout:then>
+           <mstrlayout:bSetProperty path="availableView">
+            <mstrlayout:block name="FastCheckList" />
+           </mstrlayout:bSetProperty>
+          </mstrlayout:then>
+          <mstrlayout:else>
+           <mstrlayout:bSetProperty path="availableView">
+            <mstrlayout:block name="CheckList" />
+           </mstrlayout:bSetProperty>
+          </mstrlayout:else>
+         </mstrlayout:if>
+        </mstrlayout:then>
+        <mstrlayout:else>
+         <mstrlayout:bSetProperty path="availableView">
+          <mstrlayout:block name="CheckList" />
+         </mstrlayout:bSetProperty>
+        </mstrlayout:else>
+       </mstrlayout:if>
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isRadioStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView">
+      <mstrlayout:block name="ListBrowser">
+       <!-- radio buttons: -->
+       <mstrlayout:if method="getPropertyValue" value="1">
+        <mstrlayout:argument value="Arrangement" />
+        <mstrlayout:then>
+         <mstrlayout:if method="getPropertyValue" value="0">
+          <mstrlayout:argument value="ArrangementSize" />
+          <mstrlayout:then>
+           <mstrlayout:bSetProperty path="availableView">
+            <mstrlayout:block name="FastRadioList" />
+           </mstrlayout:bSetProperty>
+          </mstrlayout:then>
+          <mstrlayout:else>
+           <mstrlayout:bSetProperty path="availableView">
+            <mstrlayout:block name="RadioList" />
+           </mstrlayout:bSetProperty>
+          </mstrlayout:else>
+         </mstrlayout:if>
+        </mstrlayout:then>
+        <mstrlayout:else>
+         <mstrlayout:bSetProperty path="availableView">
+          <mstrlayout:block name="RadioList" />
+         </mstrlayout:bSetProperty>
+        </mstrlayout:else>
+       </mstrlayout:if>
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isPulldownStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView">
+      <mstrlayout:block name="ListBrowser">
+       <!-- list: -->
+       <mstrlayout:bSetProperty path="availableView">
+        <mstrlayout:block name="ListPulldown">
+         <!-- width -->
+         <mstrlayout:if method="getPropertyValue" value="0">
+          <mstrlayout:argument value="WidthMode" />
+          <mstrlayout:else>
+           <mstrlayout:bSetProperty path="width" method="getPropertyWidthValue" />
+          </mstrlayout:else>
+         </mstrlayout:if>
+         <!-- height -->
+         <mstrlayout:if method="getPropertyValue" value="0">
+          <mstrlayout:argument value="HeightMode" />
+          <mstrlayout:then>
+            <mstrlayout:bDeleteProperty path="height" />
+          </mstrlayout:then>
+          <mstrlayout:else>
+           <mstrlayout:bSetProperty path="height" method="getPropertyHeightValue" />
+          </mstrlayout:else>
+         </mstrlayout:if>
+         <!-- show description? -->
+         <mstrlayout:if method="getPreferenceValueReplaceNull" value="1">
+          <mstrlayout:argument value="showObjectDescription" />
+          <mstrlayout:argument value="" />
+          <mstrlayout:then>
+           <mstrlayout:bSetProperty path="showDescriptions" value="true" />
+          </mstrlayout:then>
+         </mstrlayout:if>
+        </mstrlayout:block>
+       </mstrlayout:bSetProperty>
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isListStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView">
+      <mstrlayout:block name="ListBrowser">
+       <!-- list: -->
+       <mstrlayout:bSetProperty path="availableView">
+        <mstrlayout:block name="FastListView" />
+       </mstrlayout:bSetProperty>
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isHICartStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView">
+      <mstrlayout:block name="ListCart">
+       <!-- list cart: -->
+       <mstrlayout:bSetProperty path="upButton/visible" value="true" />
+       <mstrlayout:bSetProperty path="downButton/visible" value="true" />
+       <mstrlayout:bSetProperty path="pathView">
+        <!-- path pulldown: -->
+        <mstrlayout:block name="TreePulldown">
+         <mstrlayout:bSetProperty path="caption" value="{desc:mstrWeb.5299|Look in:}" />
+         <mstrlayout:bSetProperty path="modelPath" value="parent/model/available/getContainerTree()" />
+         <mstrlayout:bSetProperty path="cmds" value="BrowseContainerTreeNode|model/getSelectedNode()|parent/model/available" />
+        </mstrlayout:block>
+       </mstrlayout:bSetProperty>
+       <mstrlayout:bSetProperty path="pathUpButton">
+        <!-- path up button: -->
+        <mstrlayout:block name="ToolButton">
+         <mstrlayout:bSetProperty path="tooltip" value="{desc:mstrWeb.2304|Up One Level}" />
+         <mstrlayout:bSetProperty path="modelPath" value="parent/model/available/getContainerTree()" />
+         <mstrlayout:bSetProperty path="cmds" value="BrowseContainerParent||parent/model/available" />
+         <mstrlayout:bSetProperty path="cssText" value="background-image: url(../style/mstr/images/tbUpFolder.png)" />
+        </mstrlayout:block>
+       </mstrlayout:bSetProperty>
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isCartStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView">
+      <mstrlayout:block name="ListCart">
+       <mstrlayout:bSetProperty path="upButton/visible" value="true" />
+       <mstrlayout:bSetProperty path="downButton/visible" value="true" />
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isTreeStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView">
+      <mstrlayout:block name="TreeCart">
+       <mstrlayout:bSetProperty path="upButton/visible" value="true" />
+       <mstrlayout:bSetProperty path="downButton/visible" value="true" />
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <!-- common properties, may override later according to different style -->
+   <mstrlayout:bSetProperty path="simpleAnswerView/modelPath" value="parent/model/answer/available" />
+   <mstrlayout:bSetProperty path="simpleAnswerView/availableView/modelPath" value="parent/model" />
+   <mstrlayout:bSetProperty path="simpleAnswerView/availableView/allowBrowseAttribute" value="false" />
+   <mstrlayout:bSetProperty path="simpleAnswerView/availableView/allowBrowseHierarchy" value="false" />
+   <mstrlayout:if method="showSearchBox">
+    <mstrlayout:then>
+     <!-- search box: -->
+     <mstrlayout:bSetProperty path="simpleAnswerView/searchView">
+      <mstrlayout:block name="TextBoxWithIcon">
+       <mstrlayout:bSetProperty path="cmds" value="Search||parent/model" />
+       <mstrlayout:bSetProperty path="caption" method="getDescriptor">
+        <mstrlayout:argument type="int" value="538" />
+        <!-- Search for: -->
+       </mstrlayout:bSetProperty>
+       <mstrlayout:bSetProperty path="iconTooltip" method="getDescriptor">
+        <mstrlayout:argument type="int" value="10" /><!-- Search -->
+       </mstrlayout:bSetProperty>
+          <mstrlayout:bSetProperty path="iconClass" value="mstrBGIcon_tbSearch" />
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="showIncrementalFetch">
+    <mstrlayout:then>
+     <!-- fetch buttons:-->
+     <mstrlayout:bSetProperty path="simpleAnswerView/fetchView">
+      <mstrlayout:block name="FetchControl">
+       <mstrlayout:bSetProperty path="cmds" value="FetchBlock||parent/model" />
+       <mstrlayout:bSetProperty path="modelPath" value="parent/model" />
+       <mstrlayout:bSetProperty path="targetViewPath" value="parent"/>
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <!-- individual styles' properties -->
+   <mstrlayout:if method="isCheckboxStyle">
+    <mstrlayout:then>
+     <mstrlayout:if method="getPropertyValue" value="1">
+      <mstrlayout:argument value="Arrangement" />
+      <mstrlayout:then>
+       <!-- vertical -->
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/horizontal" value="false" />
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <!-- horizontal -->
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/horizontal" value="true" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- arrangementSize -->
+     <mstrlayout:bSetProperty path="simpleAnswerView/availableView/arrangementSize" method="getPropertyValue">
+      <mstrlayout:argument value="ArrangementSize" />
+     </mstrlayout:bSetProperty>
+     <!-- width -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="WidthMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/width" method="getPropertyWidthValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- height -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="HeightMode" />
+      <mstrlayout:then>
+        <mstrlayout:bDeleteProperty path="simpleAnswerView/availableView/height" />
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/height" method="getPropertyHeightValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- show description? -->
+     <mstrlayout:if method="getPreferenceValueReplaceNull" value="1">
+      <mstrlayout:argument value="showObjectDescription" />
+      <mstrlayout:argument value="" />
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/showDescriptions" value="true" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isRadioStyle">
+    <mstrlayout:then>
+     <mstrlayout:if method="getPropertyValue" value="1">
+      <mstrlayout:argument value="Arrangement" />
+      <mstrlayout:then>
+       <!-- vertical -->
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/horizontal" value="false" />
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <!-- horizontal -->
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/horizontal" value="true" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- arrangementSize -->
+     <mstrlayout:bSetProperty path="simpleAnswerView/availableView/arrangementSize" method="getPropertyValue">
+      <mstrlayout:argument value="ArrangementSize" />
+     </mstrlayout:bSetProperty>
+     <!-- width -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="WidthMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/width" method="getPropertyWidthValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- height -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="HeightMode" />
+      <mstrlayout:then>
+        <mstrlayout:bDeleteProperty path="simpleAnswerView/availableView/height" />
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/height" method="getPropertyHeightValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- show description? -->
+     <mstrlayout:if method="getPreferenceValueReplaceNull" value="1">
+      <mstrlayout:argument value="showObjectDescription" />
+      <mstrlayout:argument value="" />
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/showDescriptions" value="true" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isListStyle">
+    <mstrlayout:then>
+     <mstrlayout:if method="isSingleListStyle">
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/multiSelect" value="false" />
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/multiSelect" value="true" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- width -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="WidthMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/width" method="getPropertyWidthValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- height -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="HeightMode" />
+      <mstrlayout:then>
+        <mstrlayout:bDeleteProperty path="simpleAnswerView/availableView/height" />
+      </mstrlayout:then>
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/height" method="getPropertyHeightValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- show description? -->
+     <mstrlayout:if method="getPreferenceValueReplaceNull" value="1">
+      <mstrlayout:argument value="showObjectDescription" />
+      <mstrlayout:argument value="" />
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/showDescriptions" value="true" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+     <mstrlayout:if method="showSearchBox">
+      <mstrlayout:then>
+       <!-- search box: -->
+       <mstrlayout:bSetProperty path="simpleAnswerView/searchView/targetPath" value="parent/model" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isHICartStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView/modelPath" value="parent/model/answer/getListCartModel()" />
+     <mstrlayout:bSetProperty path="simpleAnswerView/availableView/modelPath" value="parent/model/availableFiltered" />
+     <!-- show description? -->
+     <mstrlayout:if method="getPreferenceValueReplaceNull" value="1">
+      <mstrlayout:argument value="showObjectDescription" />
+      <mstrlayout:argument value="" />
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/showDescriptions" value="true" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/selectedView/showDescriptions" value="true" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+     <!-- width -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="WidthMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/width" method="getPropertyWidthValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- height -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="HeightMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/height" method="getPropertyHeightValue" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/selectedView/height" method="getPropertyHeightValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <mstrlayout:if method="showSearchBox">
+      <mstrlayout:then>
+       <!-- search box: -->
+       <mstrlayout:bSetProperty path="simpleAnswerView/searchView/cmds" value="Search||parent/model/available" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+     <mstrlayout:if method="showIncrementalFetch">
+      <mstrlayout:then>
+       <!-- fetch buttons: -->
+       <mstrlayout:bSetProperty path="simpleAnswerView/fetchView/cmds" value="FetchBlock||parent/model/available" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/fetchView/modelPath" value="parent/model/available" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/fetchView/targetViewPath" value="parent/availableView"/>
+      </mstrlayout:then>
+     </mstrlayout:if>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isCartStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView/availableView/modelPath" value="parent/model/availableFiltered" />
+     <mstrlayout:bSetProperty path="simpleAnswerView/modelPath" value="parent/model/answer/getListCartModel()" />
+     <!-- show description? -->
+     <mstrlayout:if method="getPreferenceValueReplaceNull" value="1">
+      <mstrlayout:argument value="showObjectDescription" />
+      <mstrlayout:argument value="" />
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/showDescriptions" value="true" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/selectedView/showDescriptions" value="true" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+     <!-- width -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="WidthMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/width" method="getPropertyWidthValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- height -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="HeightMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/height" method="getPropertyHeightValue" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/selectedView/height" method="getPropertyHeightValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <mstrlayout:if method="showSearchBox">
+      <mstrlayout:then>
+       <!-- search box: -->
+       <mstrlayout:bSetProperty path="simpleAnswerView/searchView/cmds" value="Search||parent/model/available" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+     <!-- fetch buttons:-->
+     <mstrlayout:if method="showIncrementalFetch">
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="simpleAnswerView/fetchView/cmds" value="FetchBlock||parent/model/available" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/fetchView/modelPath" value="parent/model/available" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/fetchView/targetViewPath" value="parent/availableView"/>
+      </mstrlayout:then>
+     </mstrlayout:if>
+    </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:if method="isTreeStyle">
+    <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView/availableView/modelPath" value="parent/model/available" />
+     <mstrlayout:bSetProperty path="simpleAnswerView/modelPath" value="parent/model/answer/getTreeCartModel()" />
+	 <mstrlayout:if method="isTrimmedTree">
+   		<mstrlayout:then>
+	    	<mstrlayout:bSetProperty path="simpleAnswerView/availableView/autoCollapse" value="true" />
+	    </mstrlayout:then>
+	 </mstrlayout:if>
+     <!-- show description? -->
+     <mstrlayout:if method="getPreferenceValueReplaceNull" value="1">
+      <mstrlayout:argument value="showObjectDescription" />
+      <mstrlayout:argument value="" />
+      <mstrlayout:then>
+       <mstrlayout:bSetProperty path="simpleAnswerView/selectedView/showDescriptions" value="true" />
+      </mstrlayout:then>
+     </mstrlayout:if>
+     <!-- width -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="WidthMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/width" method="getPropertyWidthValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- height -->
+     <mstrlayout:if method="getPropertyValue" value="0">
+      <mstrlayout:argument value="HeightMode" />
+      <mstrlayout:else>
+       <mstrlayout:bSetProperty path="simpleAnswerView/availableView/height" method="getPropertyHeightValue" />
+       <mstrlayout:bSetProperty path="simpleAnswerView/selectedView/height" method="getPropertyHeightValue" />
+      </mstrlayout:else>
+     </mstrlayout:if>
+     <!-- search box: -->
+     <mstrlayout:bSetProperty path="simpleAnswerView/searchView/modelPath" value="parent/model/available" />
+     <mstrlayout:bSetProperty path="simpleAnswerView/searchView/cmds" value="Search||parent/model/available" />
+    </mstrlayout:then>
+   </mstrlayout:if>
+  </mstrlayout:replace>
+ </mstrlayout:include>
+
+
+</mstrlayout:layout>

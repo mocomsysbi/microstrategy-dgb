@@ -1,0 +1,57 @@
+<shortcut-list-set base-bean="rb" name="reportWSContextMenus" version="1.0">
+  <shortcut-list name="report_ob_menu">
+    <!-- filter context-menus -->
+    <shortcut name="addToFilter" desc="[Add to filter]" desc-id="mstrWeb.2022" feature-id="check-design-filter-mode;use-report-filter-editor"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('af');" dhtml-show="selections.checkShowContextMenuOption('af');" dhtml-enabled="selections.isMulti() == false" />
+
+    <shortcut name="addAsPrompt" desc="[Add Prompt To Filter]" desc-id="mstrWeb.4462" feature-id="check-design-filter-mode;use-report-filter-editor;!is-view-report"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('aup')" dhtml-show="selections.checkShowContextMenuOption('aup');" dhtml-enabled="selections.isMulti() == false" />
+
+    <shortcut name="addAQPrompt" desc="[Add Qualification Prompt To Filter]" desc-id="mstrWeb.4463" feature-id="check-design-filter-mode;use-report-filter-editor;!is-view-report"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('aaqp')" dhtml-show="selections.checkShowContextMenuOption('aaqp');" dhtml-enabled="selections.isMulti() == false" />
+
+    <shortcut name="addElementsPrompt" desc="[Add Element Prompt To Filter]" desc-id="mstrWeb.4464" feature-id="check-design-filter-mode;use-report-filter-editor;!is-view-report"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('aelp')" dhtml-show="selections.checkShowContextMenuOption('aelp');" dhtml-enabled="selections.isMulti() == false" />
+
+    <!-- grid contex-menus -->
+    <shortcut name="addToGrid" desc="[Add to Grid]" desc-id="mstrWeb.2021" feature-id="check-design-template-mode;web-pivot;report-objects-window"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('ag');" dhtml-show="selections.checkShowContextMenuOption('ag');" />
+
+    <shortcut name="delete" desc="[Remove from Report]" desc-id="mstrWeb.2216" feature-id="check-design-template-mode;web-pivot;modify-report-list;!is-view-report"
+        builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportWSDelete"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('rr');" dhtml-show="selections.checkShowContextMenuOption('rr');" />
+
+    <shortcut name="deleteDerivedMetric" desc="[Remove from Report]" desc-id="mstrWeb.2216" feature-id="check-design-template-mode;web-pivot;remove-derived-metric-from-report"
+        builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportWSDelete"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('rr');" dhtml-show="selections.checkShowContextMenuOption('rm');" />
+	<shortcut name="renameGrid" desc="[Rename...]" desc-id="mstrWeb.3358"
+		base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('rn');" dhtml-show="selections.checkShowContextMenuOption('rn');" />
+    <shortcut name="editDerivedMetric" desc="[Edit...]" desc-id="mstrWeb.3224"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('edm');" dhtml-show="selections.checkShowContextMenuOption('edm');" />
+	<shortcut name="insertMetric" desc="[Insert New Metric...]" desc-id="mstrWeb.2212"  enable-feature-id="enable-insert-new-metric"  feature-id="insert-new-metric"
+		base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('inm');" dhtml-show="selections.checkShowContextMenuOption('inm');" />
+    <shortcut name="attForms" desc="[Attribute Forms]" desc-id="mstrWeb.2890" feature-id="check-design-template-mode;set-attributeform-display"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" dhtml-show="selections.buildAttFormSubMenu();" dhtml-enabled="selections.isMulti() == false" />
+
+    <shortcut name="drElements" desc="[Derived Elements...]" desc-id="mstrWeb.5423" enable-feature-id="save_derived_elements, define_derived_elements"
+        base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('deopen')" dhtml-show="selections.checkShowContextMenuOption('deopen');" dhtml-enabled="selections.isMulti() == false" />
+
+    <shortcut name="s1" desc="-" />
+
+    <shortcut name="addShortcutMetric" desc="[Insert Metric]" desc-id="mstrWeb.3322"
+            base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" dhtml-show="selections.checkShowContextMenuOption('addsm');">
+        <shortcut-list name="shortcutMetricOptions">
+			<shortcut name="addAvg" desc="[Average]" desc-id="mstrWeb.2122"
+	           base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricAvg')" />
+	        <shortcut name="addCount" desc="[Count]" desc-id="mstrWeb.2123"
+	           base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricCount')" />
+	        <shortcut name="addMax" desc="[Maximum]" desc-id="mstrWeb.2125"
+	           base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricMax')" />
+			<shortcut name="addMin" desc="[Minimum]" desc-id="mstrWeb.2127"
+	           base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricMin')" />
+	        <shortcut name="addSum" desc="[Sum]" desc-id="mstrWeb.2131"
+	           base-bone="tbWkSet_ObjectBrowserReportWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricSum')" />
+        </shortcut-list>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

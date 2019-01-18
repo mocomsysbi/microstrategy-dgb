@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="JoinBehaviorTable" inherits="BaseView">
+    <definition>
+        <property name="caption" type="String" />
+        <property name="valueField" type="String" />
+    </definition>
+    <assignments>
+        <property name="scriptClass">mstr.views.JoinBehaviorTable</property>
+        <property name="layoutClass">mstr.layouts.JoinBehaviorTable</property>
+        <property name="modelPath">parent/model</property>
+    </assignments>
+</block>

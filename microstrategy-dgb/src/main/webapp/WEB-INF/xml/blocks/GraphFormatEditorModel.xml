@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+
+<block name="GraphFormatEditorModel" inherits="ListModel">
+	<definition>	
+		<property name="targetPath" type="String" />
+		<property name="listenerMethods" type="String" />		
+	</definition>
+	<assignments>
+		<property name="scriptClass">mstr.models.GraphEditorModel</property>
+		<property name="targetPath">#rwb_viewer</property>
+		<property name="listenerMethods">onGraphPropertiesReady</property>		
+		<property name="selectedIndicesList">0</property>
+		<property name="disableList" type="Boolean">false</property>
+		<property name="lockedTab" type="String">-1</property>						
+		<property name="valueForm">id</property>
+		<property name="items">
+			<list>
+                <block name="GraphFormatEditorGeneralModel" listElementKey="general" />
+                <block name="GraphFormatEditorFormatModel"  listElementKey="format" />
+                <block name="GraphFormatEditorNumberModel"  listElementKey="number" />
+                <block name="GraphFormatEditorAxesModel" listElementKey="axes"/>
+                <block name="GraphFormatEditorAdvancedModel" listElementKey="advanced"/>
+                <block name="GraphFormatEditorOptionsModel" listElementKey="options"/>
+                
+			</list>
+		</property>
+	</assignments>
+	</block>

@@ -1,0 +1,9 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div style="width: 100%">
+        <mstrlayout:render name="bodyMessage"/>
+    </div>
+    <div style="width: 100%">
+        <mstrlayout:render name="content"/>
+    </div>
+</mstrlayout:layout>

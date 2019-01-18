@@ -1,0 +1,34 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ListModel" name="TriStateListModel">
+  <definition>
+    <property name="CommandEnabledSingleSelectNextAndLoop" type="Boolean"/>
+    <!-- These comma separated list of index items will be excluded while doing the loop trough the elements -->
+    <property name="ExcludedItemsOnLoop" type="String" />
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.models.TriStateListModel</property>
+    <property name="CommandEnabledSingleSelectNextAndLoop">true</property>
+    <property name="valueForm">dssid</property>
+    <property name="items">
+      <list>
+        <block listElementKey="K1521" name="ItemInfo">
+          <property name="dssid">-1</property>
+          <property name="n">{desc:mstrWeb.6029|Unknown}</property>
+        </block>
+        <block listElementKey="K1522" name="ItemInfo">
+          <property name="dssid">1</property>
+          <property name="n">{desc:mstrWeb.6030|On}</property>
+        </block>
+        <block listElementKey="K1523" name="ItemInfo">
+          <property name="dssid">0</property>
+          <property name="n">{desc:mstrWeb.6031|Off}</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- 
+		TriStateListModel is a data model which contains a static list of three items.
+		These items represent three states - On, Off and Unknown This data model is 
+		used to represent the data model for a TriStateCheckBox
+	-->

@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="NonEditableArea" inherits="BaseView">
+	   <assignments>
+	        <property name="layoutClass">mstr.layouts.nonEditableArea</property>
+			<property name="cssClass">AnnotationView</property>
+			<property name="modelPath">parent/model</property>
+	   </assignments>
+	</block>

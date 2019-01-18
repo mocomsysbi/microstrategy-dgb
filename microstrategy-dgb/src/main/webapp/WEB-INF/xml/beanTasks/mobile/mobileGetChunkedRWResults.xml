@@ -1,0 +1,24 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MobileChunkedRWResultsTask">
+	<basicInfo desc="This task retrieves the results of a grid report execution, in chunked format.">
+		<parameter name="messageID" desc="the message ID" required="true"/>
+		<parameter name="documentState" desc="The state of the report in XML format" required="false"/>
+		<parameter name="chunkRowLimit" desc="The maximum number of rows in a chunk (-1 for unlimited rows)." required="false"/>
+		<parameter name="compressionVersion" desc="The type of compression to use (0 for no compression; 2 for GZIP)." required="false"/>
+		<parameter name="maxResultSize" desc="The maximum size, in bytes, for a grid data chunk." required="false"/>
+		<parameter name="graphHeight" desc="The height of the graph to display." required="true"/>
+		<parameter name="graphWidth" desc="The width of the graph to display." required="true"/>
+		<parameter name="graphType" desc="The type of the graph to render." required="false"/>
+    <parameter name="sendRawValues" desc="Whether data values should be raw or formatted." required="false"/>
+    <parameter name="graphDataVersion" desc="The version of graph data (1 (default) for original format; 2 to add graph data header)" required="false" />
+	</basicInfo>
+
+	<!-- run report event -->
+	<eventInfo eventID="2048001"/>
+
+	<beanInfo name="rwb" bean-type="RWBean">
+		<style name="MobileChunkedRWStyle">
+			<actualParameter name="chunkRowLimit" value="chunkRowLimit" source="parameter"/>
+		</style>
+	</beanInfo>
+</beanTask>

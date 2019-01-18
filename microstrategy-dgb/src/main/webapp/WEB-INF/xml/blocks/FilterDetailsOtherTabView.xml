@@ -1,0 +1,137 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="FilterDetailsOtherTabView">
+  <assignments>
+    <property name="title">{desc:mstrWeb.5429|Filter Details - Other}</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="modelPath">parent/parent/model/tabModels/items/2</property>
+	<property name="helpTopic">Report_Details_Properties_dialog_box__Filter_details_-_Other_tab.htm</property>  
+    <property name="children">
+      <list>
+        <block listElementKey="K579" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4513|In List Condition/Attribute Element Prompts}</property>
+          <property name="cssText"> clear:both</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K580" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K581" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.4514|Show attribute name for In List conditions:}: </property>
+                      <property name="modelPath">parent/model/san</property>
+                      <property name="popup/height">80px</property>
+                    </block>
+                    <block listElementKey="K582" name="HTextBox">
+                      <property name="caption">{desc:mstrWeb.5392|Separator after attribute name:}:</property>
+                      <property name="valueField">SAAN</property>
+                      <property name="cssText">margin-top:5px</property>
+                      <property name="modelPath">parent/model</property>
+                    </block>
+                    <block listElementKey="K583" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5768|New line after attribute name}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/caan</property>
+                    </block>
+                    <block listElementKey="K584" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5393|Separator between last two elements:}:</property>
+                      <property name="modelPath">parent/model/SBLT</property>
+                      <property name="cssText">margin-top:10px</property>
+                      <property name="popup/height">100px</property>
+                    </block>
+                    <block listElementKey="K585" name="HTextBox">
+                      <property name="caption">{desc:mstrWeb.5394|Custom separator:}:</property>
+                      <property name="valueField">CDLT</property>
+                      <property name="cssText">margin-left:27px;margin-top:5px</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="enabledField">parent/model/SBLT/selectedIndices:1</property>
+                    </block>
+                    <block listElementKey="K586" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5769|New line between elements}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/cbe</property>
+                    </block>
+                    <block listElementKey="K587" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.4518|Trim elements}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/te</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K588" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4519|Qualification Conditions}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K589" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4520|Use names and symbols for operators:}</property>
+                <property name="modelPath">parent/model/unso</property>
+                <property name="cssText">margin-left:10px;</property>
+                <property name="popup/height">60px</property>
+              </block>
+              <block listElementKey="K590" name="TriStateCheckBox">
+                <property name="caption">{desc:mstrWeb.5395|Include Attribute form names in Attribute Qualification conditions}</property>
+                <property name="valueField">selectedIndicesList</property>
+                <property name="modelPath">parent/model/iafn</property>
+                <property name="cssText">margin-left:10px;</property>
+              </block>
+              <block listElementKey="K591" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5690|Dynamic Dates:}</property>
+                <property name="modelPath">parent/model/DTDD</property>
+                <property name="cssText">margin-left:10px;</property>
+                <property name="popup/height">60px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K592" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4525|Logical Operators}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K593" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K594" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.4523|Parentheses around conditions:}:</property>
+                      <property name="modelPath">parent/model/pacs</property>
+                      <property name="popup/height">80px</property>
+                    </block>
+                    <block listElementKey="K595" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5665|New line between conditions:}</property>
+                      <property name="modelPath">parent/model/cbc</property>
+                      <property name="popup/height">80px</property>
+                    </block>
+                    <block listElementKey="K596" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5666|Spacing:}</property>
+                      <property name="modelPath">parent/model/EXCS</property>
+                      <property name="popup/height">60px</property>
+                      <property name="cssText">margin-left:10px;</property>
+                      <property name="enabledField">parent/model/cbc/selectedIndices:0,2,3</property>
+                    </block>
+                    <block listElementKey="K597" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.4525|Logical operator between conditions:}</property>
+                      <property name="modelPath">parent/model/lobc</property>
+                      <property name="popup/height">100px</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		FilterDetailsOtherTab is the "Filter Details Other" tab of the details editor.
+	-->

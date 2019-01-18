@@ -1,0 +1,142 @@
+<shortcut-list name="paperTypesRWPicker" version="1.0">
+	
+	<shortcut desc="2A 46.81&quot; x 66.18&quot;" desc-id="mstrWeb.6202" name="2A">
+		<attributes>
+            <attribute name="value" value="2A,46.81,66.18" />
+            <attribute name="desktopKey" value="1" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="A0 33.11&quot; x 46.81&quot;" desc-id="mstrWeb.6203" name="a0">
+		<attributes>
+            <attribute name="value" value="A0,33.11,46.81" />
+            <attribute name="desktopKey" value="2" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="A1 23.39&quot; x 33.11&quot;" desc-id="mstrWeb.6204" name="a1">
+		<attributes>
+            <attribute name="value" value="A1,23.39,33.11" />
+            <attribute name="desktopKey" value="3" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="A2 16.54&quot; x 23.39&quot;" desc-id="mstrWeb.6205" name="a2">
+		<attributes>
+            <attribute name="value" value="A2,16.54,23.39" />
+            <attribute name="desktopKey" value="4" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="A3 11.69&quot; x 16.54&quot;" desc-id="mstrWeb.1345" name="a3">
+		<attributes>
+            <attribute name="value" value="A3,11.69,16.54" />
+            <attribute name="desktopKey" value="5" />
+        </attributes>
+	</shortcut>
+	<shortcut desc="A4 8.27&quot; x 11.69&quot;" desc-id="mstrWeb.34" name="a4">
+		<attributes>
+            <attribute name="value" value="A4,8.27,11.69" />
+            <attribute name="desktopKey" value="6" />
+        </attributes>
+	</shortcut>
+	<shortcut desc="A5 5.83&quot; x 8.27&quot;" desc-id="mstrWeb.5875" name="a5">
+		<attributes>
+            <attribute name="value" value="A5,5.83,8.27" />
+            <attribute name="desktopKey" value="7" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="A6 4.13&quot; x 5.83&quot;" desc-id="mstrWeb.6206" name="a6">
+		<attributes>
+            <attribute name="value" value="A6,4.13,5.83" />
+            <attribute name="desktopKey" value="8" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="A7 2.91&quot; x 4.13&quot;" desc-id="mstrWeb.6207" name="a7">
+		<attributes>
+            <attribute name="value" value="A7,2.91,4.13" />
+            <attribute name="desktopKey" value="9" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="A8 2.09&quot; x 2.91&quot;" desc-id="mstrWeb.6208" name="a8">
+		<attributes>
+            <attribute name="value" value="A8,2.09,2.91" />
+            <attribute name="desktopKey" value="10" />
+        </attributes>
+	</shortcut>
+
+	<shortcut desc="C 17&quot; x 22&quot;" desc-id="mstrWeb.6209" name="c">
+		<attributes>
+            <attribute name="value" value="C,17,22" />
+            <attribute name="desktopKey" value="11" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="D 23&quot; x 34&quot;" desc-id="mstrWeb.6210" name="d">
+		<attributes>
+            <attribute name="value" value="D,22,34" />
+            <attribute name="desktopKey" value="12" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="E 34&quot; x 44&quot;" desc-id="mstrWeb.6211" name="e">
+		<attributes>
+            <attribute name="value" value="E,34,44" />
+            <attribute name="desktopKey" value="13" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="Executive 7.25&quot; x 10.5&quot;" desc-id="mstrWeb.5876" name="executive">
+		<attributes>
+            <attribute name="value" value="Executive,7.25,10.5" />
+            <attribute name="desktopKey" value="14" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="F 28&quot; x 40&quot;" desc-id="mstrWeb.6212" name="f">
+		<attributes>
+            <attribute name="value" value="F,28,40" />
+            <attribute name="desktopKey" value="15" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="Ledger 11&quot; x 17&quot;" desc-id="mstrWeb.6213" name="ledger">
+		<attributes>
+            <attribute name="value" value="Ledger,11,17" />
+            <attribute name="desktopKey" value="16" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="Legal 8.5&quot; x 14&quot;" desc-id="mstrWeb.32" name="legal">
+		<attributes>
+            <attribute name="value" value="Legal,8.5,14" />
+            <attribute name="desktopKey" value="17" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="Letter 8.5&quot; x 11&quot;" desc-id="mstrWeb.29" name="letter">
+		<attributes>
+            <attribute name="value" value="Letter,8.5,11" />
+            <attribute name="desktopKey" value="18" />
+        </attributes>
+	</shortcut>
+	
+	<shortcut desc="Super A3/B 13&quot; x 19&quot;" desc-id="mstrWeb.6214" name="super">
+		<attributes>
+            <attribute name="value" value="Super A3/B,13,19" />
+            <attribute name="desktopKey" value="19" />
+        </attributes>
+	</shortcut>
+	
+	<!-- Desktop doesn't have this type  -->
+	<shortcut desc="Folio 8.5&quot; x 13&quot;" desc-id="mstrWeb.35" name="folio">
+		<attributes>
+            <attribute name="value" value="Folio,8.5,13" />
+            <attribute name="desktopKey" value="20" />
+        </attributes>
+	</shortcut>
+	 
+</shortcut-list>

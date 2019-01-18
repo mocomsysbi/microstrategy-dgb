@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarGraphLegendButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbLegend</property>
+		<property name="tooltip">{desc:mstrWeb.2403|Legend}</property>
+		<property name="cmdid">legend</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarToggleTotalsButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbToggleTotals</property>
+        <property name="tooltip">{desc:mstrWeb.6193|Show Totals}</property>
+        <property name="cmdid">comboToggleButton</property>
+	</assignments>
+</block>

@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- This is the model used for the 'Margins' tab of the Report Services document properties editor. -->
+	<block name="RWPageSetupMarginsModel" inherits="EditorBoneTranslator">
+		<definition>
+			<property name="marginTabEnabled" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="categoryText">{desc:mstrWeb.1897|Page Setup}</property>
+			<property name="titleText">{desc:mstrWeb.3688|Margins}</property>
+			<property name="fields">MarginLeft|MarginTop|MarginRight|MarginBottom|minimumPrintArea</property>
+			
+			<property name="visibleField">marginTabEnabled</property>
+			<property name="marginTabEnabled">true</property>
+		</assignments>
+	</block>

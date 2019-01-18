@@ -1,0 +1,445 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptDispId, so its tab id is tabPromptDispId -->
+<mstrlayout:layout>
+        <table width="80%">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td>
+                    <mstrlayout:render method="descriptor">
+                        <mstrlayout:argument value="5234" type="int"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <input class="mstrInputTextLong" type="text" name="title" id="p_title" size="50" cmdid="setTitle" onkeyup="microstrategy.bone('tabPromptDispId').updateText(this);this.modified=true;">
+                        <mstrlayout:attr name="addTitleAsValue"/>
+                    </input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mstrlayout:render method="descriptor">
+                        <mstrlayout:argument value="5754" type="int"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <textarea class="mstrPromptDescription" rows="5" cols="50" name="desc" id="p_desc" cmdid="setDesc" onkeyup="microstrategy.bone('tabPromptDispId').updateText(this);this.modified=true;">
+                        <mstrlayout:render name="description"/>
+                    </textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <hr/>
+        <table width="80%">
+            <tr> 
+                <td colspan="2">
+                    <mstrlayout:if name="isRequired">
+                        <mstrlayout:then>
+                            <input type="checkbox" name="required" id="p_required" cmdid="setRequired" value="required" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);" checked="checked"/>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="required" id="p_required" cmdid="setRequired" value="required" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);"/>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="p_required"> <mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5237" /></mstrlayout:render></label>
+                    <p/>
+                </td>
+            </tr>
+        </table>
+            <!-- ==================div for Date prompt ======================================== -->
+            <mstrlayout:if name="isDatePrompt">
+                <mstrlayout:then>
+                    <mstrlayout:render name="text">
+                        <mstrlayout:argument value="&lt;div id='vp_minmax_date' style='display:block'&gt;"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+                <mstrlayout:else>
+                    <mstrlayout:render name="text">
+                        <mstrlayout:argument value="&lt;div id='vp_minmax_date' style='display:none'&gt;"/>
+                    </mstrlayout:render>
+                </mstrlayout:else>
+            </mstrlayout:if>
+        <table width="80%">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td>
+                    <mstrlayout:if name="hasMin">
+                        <mstrlayout:argument value="14" type="int"/> 
+                        <mstrlayout:then>
+                            <input type="checkbox" name="vp_d_min_check" id="vp_d_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').appendTime(getObj('vp_d_min_value'), true);microstrategy.bone('tabPromptDispId').updateMinDate(getObj('vp_d_min_value'));" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_d_min_value,vp_d_min_calendar,vp_h_min_value,vp_m_min_value,vp_s_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="vp_d_min_check" id="vp_d_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').appendTime(getObj('vp_d_min_value'), true);microstrategy.bone('tabPromptDispId').updateMinDate(getObj('vp_d_min_value'));">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_d_min_value,vp_d_min_calendar,vp_h_min_value,vp_m_min_value,vp_s_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="vp_d_min_check"> <mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5441" /></mstrlayout:render> </label>
+                </td>
+                <td>
+                    <input type="text" name="vp_d_min_value" id="vp_d_min_value" cmdid="setMinVal" DPN="vp_d_min_check" NONZERO="1" FLDID="3643" onkeyup="microstrategy.bone('tabPromptDispId').updateMinDate(this);">
+                        <mstrlayout:attr name="addMinValueAttr">
+                            <mstrlayout:argument value="14" type="int"/>
+                        </mstrlayout:attr>
+                    </input>
+                    <input type="text" id="vp_d_min_date" style="display:none" onkeyup="var minValue=getObj('vp_d_min_value');minValue.value = this.value;microstrategy.bone('tabPromptDispId').appendTime(getObj('vp_d_min_value'));microstrategy.bone('tabPromptDispId').updateMinDate(getObj('vp_d_min_value'));"/>
+                        <mstrlayout:render name="calendar">
+                            <mstrlayout:argument value="vp_d_min_date"/> <!-- text box name -->
+                            <mstrlayout:argument value="vp_d_min_calendar"/> <!-- calendar button name -->
+                            <mstrlayout:argument value=""/> <!-- max restriction -->
+                            <mstrlayout:argument value=""/> <!-- min restriction -->
+                        </mstrlayout:render>
+                        <mstrlayout:render name="timePicker">
+                            <mstrlayout:argument value="vp_min_timepicker"/> <!-- time picker field -->
+                            <mstrlayout:argument value="microstrategy.bone('tabPromptDispId').appendTime(getObj('vp_d_min_value'));"/> <!-- onChange event -->
+                            <mstrlayout:argument value="vp_h_min_value"/> <!-- hour picker name -->
+                            <mstrlayout:argument value="vp_m_min_value"/> <!-- minute picker name -->
+                            <mstrlayout:argument value="vp_s_min_value"/> <!-- second picker name -->
+                            <mstrlayout:argument value="vp_d_min_check"/> <!-- depend field name -->
+                        </mstrlayout:render>
+                    <p/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mstrlayout:if name="hasMax">
+                        <mstrlayout:argument value="14" type="int"/>
+                        <mstrlayout:then>
+                            <input type="checkbox" name="vp_d_max_check" id="vp_d_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').appendTime(getObj('vp_d_max_value'), true);microstrategy.bone('tabPromptDispId').updateMaxDate(getObj('vp_d_max_value'));" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_d_max_value,vp_d_max_calendar,vp_h_max_value,vp_m_max_value,vp_s_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="vp_d_max_check" id="vp_d_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').appendTime(getObj('vp_d_max_value'), true);microstrategy.bone('tabPromptDispId').updateMaxDate(getObj('vp_d_max_value'));">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_d_max_value,vp_d_max_calendar,vp_h_max_value,vp_m_max_value,vp_s_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="vp_d_max_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5442" /></mstrlayout:render></label>
+                </td>
+                <td>
+                    <input type="text" name="vp_d_max_value" id="vp_d_max_value" cmdid="setMaxVal" DPN="vp_d_max_check" NONZERO="1" FLDID="3642" onkeyup="microstrategy.bone('tabPromptDispId').updateMaxDate(this);">
+                        <mstrlayout:attr name="addMaxValueAttr">
+                            <mstrlayout:argument value="14" type="int"/>
+                        </mstrlayout:attr>
+                    </input>
+                    <input type="text" id="vp_d_max_date" style="display:none" onkeyup="var maxValue=getObj('vp_d_max_value');maxValue.value = this.value;microstrategy.bone('tabPromptDispId').appendTime(getObj('vp_d_max_value'));microstrategy.bone('tabPromptDispId').updateMaxDate(getObj('vp_d_max_value'));"/>
+                        <mstrlayout:render name="calendar">
+                            <mstrlayout:argument value="vp_d_max_date"/> <!-- text box name -->
+                            <mstrlayout:argument value="vp_d_max_calendar"/> <!-- calendar button name -->
+                            <mstrlayout:argument value=""/> <!-- max restriction -->
+                            <mstrlayout:argument value=""/> <!-- min restriction -->
+                        </mstrlayout:render>
+                        <mstrlayout:render name="timePicker">
+                            <mstrlayout:argument value="vp_max_timepicker"/> <!-- time picker field -->
+                            <mstrlayout:argument value="microstrategy.bone('tabPromptDispId').appendTime(getObj('vp_d_max_value'));"/> <!-- onChange event -->
+                            <mstrlayout:argument value="vp_h_max_value"/> <!-- hour picker name -->
+                            <mstrlayout:argument value="vp_m_max_value"/> <!-- minute picker name -->
+                            <mstrlayout:argument value="vp_s_max_value"/> <!-- second picker name -->
+                            <mstrlayout:argument value="vp_d_max_check"/> <!-- depend field name -->
+                        </mstrlayout:render>
+                    <p/>
+                </td>
+            </tr>
+        </table>
+        <mstrlayout:render name="text">
+            <mstrlayout:argument value="&lt;/div&gt;"/>
+        </mstrlayout:render>
+            <!-- ==================div for Numeric prompt ======================================== -->
+            <mstrlayout:if name="isNumericPrompt">
+                <mstrlayout:then>
+                    <mstrlayout:render name="text">
+                        <mstrlayout:argument value="&lt;div id='vp_minmax_num' style='display:block'&gt;"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+                <mstrlayout:else>
+                    <mstrlayout:render name="text">
+                        <mstrlayout:argument value="&lt;div id='vp_minmax_num' style='display:none'&gt;"/>
+                    </mstrlayout:render>
+                </mstrlayout:else>
+            </mstrlayout:if>
+        <table width="80%">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td>
+                    <mstrlayout:if name="hasMin">
+                        <mstrlayout:argument value="6" type="int"/> 
+                        <mstrlayout:then>
+                            <input type="checkbox" name="vp_num_min_check" id="vp_num_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateMinValue(getObj('vp_num_min_value'));" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_num_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="vp_num_min_check" id="vp_num_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateMinValue(getObj('vp_num_min_value'));">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_num_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="vp_num_min_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5441" /></mstrlayout:render></label>
+                </td>
+                <td>
+                    <input type="text" name="vp_num_min_value" id="vp_num_min_value" cmdid="setMinVal" DPN="vp_num_min_check" DTY="2" FLDID="3643" LE="vp_num_max_value" onkeyup="microstrategy.bone('tabPromptDispId').updateMinValue(this);">
+                        <mstrlayout:attr name="addMinValueAttr">
+                            <mstrlayout:argument value="6" type="int"/>
+                        </mstrlayout:attr>
+                    </input>
+                    <p/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mstrlayout:if name="hasMax">
+                        <mstrlayout:argument value="6" type="int"/>
+                        <mstrlayout:then>
+                            <input type="checkbox" name="vp_num_max_check" id="vp_num_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateMaxValue(getObj('vp_num_max_value'));" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_num_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="vp_num_max_check" id="vp_num_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateMaxValue(getObj('vp_num_max_value'));">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_num_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="vp_num_max_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5442" /></mstrlayout:render></label>
+                </td>
+                <td>
+                    <input type="text" name="vp_num_max_value" id="vp_num_max_value" cmdid="setMaxVal" DPN="vp_num_max_check" DTY="2" FLDID="3642" GE="vp_num_min_value" onkeyup="microstrategy.bone('tabPromptDispId').updateMaxValue(this);">
+                        <mstrlayout:attr name="addMaxValueAttr">
+                            <mstrlayout:argument value="6" type="int"/>
+                        </mstrlayout:attr>
+                    </input><p/>
+                </td>
+            </tr>
+        </table>
+        <mstrlayout:render name="text">
+            <mstrlayout:argument value="&lt;/div&gt;"/>
+        </mstrlayout:render>
+
+            <!-- ==================div for Text prompt ======================================== -->
+            <mstrlayout:if name="isTextPrompt">
+                <mstrlayout:then>
+                    <mstrlayout:render name="text">
+                        <mstrlayout:argument value="&lt;div id='vp_minmax_text' style='display:block'&gt;"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+                <mstrlayout:else>
+                    <mstrlayout:render name="text">
+                        <mstrlayout:argument value="&lt;div id='vp_minmax_text' style='display:none'&gt;"/>
+                    </mstrlayout:render>
+                </mstrlayout:else>
+            </mstrlayout:if>
+        <table width="80%">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td>
+                    <mstrlayout:if name="hasMin">
+                        <mstrlayout:argument value="8" type="int"/> 
+                        <mstrlayout:then>
+                            <input type="checkbox" name="vp_text_min_check" id="vp_text_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateText(getObj('vp_text_min_value'));" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_text_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="vp_text_min_check" id="vp_text_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateText(getObj('vp_text_min_value'));">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_text_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="vp_text_min_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="6147" /></mstrlayout:render></label>
+                </td>
+                <td>
+                    <input type="text" name="vp_text_min_value" id="vp_text_min_value" cmdid="setMinVal" DPN="vp_text_min_check" NONZERO="1" DTY="2" FLDID="3643" LE="vp_text_max_value" onkeyup="microstrategy.bone('tabPromptDispId').updateText(this);">
+                        <mstrlayout:attr name="addMinValueAttr">
+                            <mstrlayout:argument value="8" type="int"/>
+                        </mstrlayout:attr>
+                    </input>
+                    <p/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mstrlayout:if name="hasMax">
+                        <mstrlayout:argument value="8" type="int"/>
+                        <mstrlayout:then>
+                            <input type="checkbox" name="vp_text_max_check" id="vp_text_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateText(getObj('vp_text_max_value'));" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_text_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="vp_text_max_check" id="vp_text_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateText(getObj('vp_text_max_value'));">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_text_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="vp_text_max_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="6148" /></mstrlayout:render></label> 
+                </td>
+                <td>
+                    <input type="text" name="vp_text_max_value" id="vp_text_max_value" cmdid="setMaxVal" DPN="vp_text_max_check" NONZERO="1" DTY="2" FLDID="3642" GE="vp_text_min_value" onkeyup="microstrategy.bone('tabPromptDispId').updateText(this);">
+                        <mstrlayout:attr name="addMaxValueAttr">
+                            <mstrlayout:argument value="8" type="int"/>
+                        </mstrlayout:attr>
+                    </input><p/>
+                </td>
+            </tr>
+        </table>
+        <mstrlayout:render name="text">
+            <mstrlayout:argument value="&lt;/div&gt;"/>
+        </mstrlayout:render>
+
+
+            <!-- ==================div for Big Decimal prompt ======================================== -->
+            <mstrlayout:if name="isBigDecPrompt">
+                <mstrlayout:then>
+                    <mstrlayout:render name="text">
+                        <mstrlayout:argument value="&lt;div id='vp_minmax_bigdec' style='display:block'&gt;"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+                <mstrlayout:else>
+                    <mstrlayout:render name="text">
+                        <mstrlayout:argument value="&lt;div id='vp_minmax_bigdec' style='display:none'&gt;"/>
+                    </mstrlayout:render>
+                </mstrlayout:else>
+            </mstrlayout:if>
+        <table width="80%">
+            <colgroup>
+                  <col width="30%"/>
+                  <col width="70%"/>
+            </colgroup>
+            <tr>
+                <td>
+                    <mstrlayout:if name="hasMin">
+                        <mstrlayout:argument value="30" type="int"/> 
+                        <mstrlayout:then>
+                            <input type="checkbox" name="vp_bigdec_min_check" id="vp_bigdec_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateMinValue(getObj('vp_bigdec_min_value'));" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_bigdec_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="vp_bigdec_min_check" id="vp_bigdec_min_check" cmdid="setHasMin" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateMinValue(getObj('vp_bigdec_min_value'));">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_bigdec_min_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="vp_bigdec_min_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5441" /></mstrlayout:render></label>
+                </td>
+                <td>
+                    <input type="text" name="vp_bigdec_min_value" id="vp_bigdec_min_value" cmdid="setMinVal" DPN="vp_bigdec_min_check" DTY="2" LE="vp_bigdec_max_value" FLDID="3643" onkeyup="microstrategy.bone('tabPromptDispId').updateMinValue(this);">
+                        <mstrlayout:attr name="addMinValueAttr">
+                            <mstrlayout:argument value="30" type="int"/>
+                        </mstrlayout:attr>
+                    </input>
+                    <p/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mstrlayout:if name="hasMax">
+                        <mstrlayout:argument value="30" type="int"/>
+                        <mstrlayout:then>
+                            <input type="checkbox" name="vp_bigdec_max_check" id="vp_bigdec_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateMaxValue(getObj('vp_bigdec_max_value'));" checked="checked">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_bigdec_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <input type="checkbox" name="vp_bigdec_max_check" id="vp_bigdec_max_check" cmdid="setHasMax" onclick="microstrategy.bone('tabPromptDispId').updateCheck(this);microstrategy.bone('tabPromptDispId').updateMaxValue(getObj('vp_bigdec_max_value'));">
+                                <mstrlayout:attr name="addDisableObjs">
+                                    <mstrlayout:argument value="vp_bigdec_max_value"/>
+                                </mstrlayout:attr>
+                            </input>
+                        </mstrlayout:else>
+                    </mstrlayout:if>
+                    <label for="vp_bigdec_max_check"><mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5442" /></mstrlayout:render></label>
+                </td>
+                <td>
+                    <input type="text" name="vp_bigdec_max_value" id="vp_bigdec_max_value" cmdid="setMaxVal" DPN="vp_bigdec_max_check" DTY="2" GE="vp_bigdec_min_value" FLDID="3642" onkeyup="microstrategy.bone('tabPromptDispId').updateMaxValue(this);">
+                        <mstrlayout:attr name="addMaxValueAttr">
+                            <mstrlayout:argument value="30" type="int"/>
+                        </mstrlayout:attr>
+                    </input><p/>
+                </td>
+            </tr>
+        </table>
+        <mstrlayout:render name="text">
+            <mstrlayout:argument value="&lt;/div&gt;"/>
+        </mstrlayout:render>
+        <!-- ================================================================================== -->
+        
+        <mstrlayout:if name="showUserAnswerRestriction">
+            <mstrlayout:then>
+                <table width="80%">
+                    <colgroup>
+                          <col width="30%"/>
+                          <col width="70%"/>
+                    </colgroup>
+                    <tr>
+                        <td>
+                            <mstrlayout:render name="Descriptor"><mstrlayout:argument type="int" value="5240" /></mstrlayout:render>
+                        </td>
+                        <td>
+                            <select size="1" name="pAnsAllowed" id="p_ansAllowed" cmdid="setPAnswerAllowed" onchange="microstrategy.bone('tabPromptDispId').updateAnswerRestrictionList(this);">
+                                <mstrlayout:list id="allow" name="getPersonalAnswersAllowedList">
+                                    <option>
+                                        <mstrlayout:attr name="addOptionAttr">
+                                            <mstrlayout:argument list="allow"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:attr>
+                                        <mstrlayout:render name="optionText">
+                                            <mstrlayout:argument list="allow"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:render>
+                                    </option>
+                                </mstrlayout:list>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </mstrlayout:then>
+        </mstrlayout:if>
+        <!-- the prompt name used by save and save as event to pass in new name generated from client side, if any. -->
+        <input type="hidden" name="p_name" id="p_name" cmdid="setName">
+            <mstrlayout:attr name="addNameAsValue"/>
+        </input>
+</mstrlayout:layout>

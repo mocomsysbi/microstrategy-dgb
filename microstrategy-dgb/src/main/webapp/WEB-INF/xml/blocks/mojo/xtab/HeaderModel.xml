@@ -1,0 +1,47 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="HeaderModel" inherits="BaseBlock">
+	<definition>
+			<!-- Unique Index to Element Map. -->
+			<property name="idx" type="Integer" />
+
+			<!-- row span -->
+			<property name="rs" type="Integer" />
+			
+			<!-- col span -->
+	    	<property name="cs" type="Integer" />
+      
+      		<!-- title unit index -->
+			<property name="tui" type="Integer" />
+
+			<property name="ui" type="Integer" />
+
+			<property name="cni" type="Integer" />
+
+            <!-- base form type semantics -->
+            <property name="ts" type="Integer" />		
+
+			<property name="v" type="String" />
+			
+			<!--  action type -->
+			<property name="at" type="Integer" />
+
+			<!--  parent index (row, col). block -> HeaderPosition -->
+			<property name="pi" type="Block" />
+
+			<!-- Ordinal. -->
+			<property name="o" type="Integer" />
+			
+        	<!-- sort order. Missing -> none, true->ascending, false->descending -->
+			<property name="so" type="Boolean" />
+
+			<!--  Metric Index. Only pertinent to metric headers  -->
+			<property name="mix" type="Integer" />
+			
+			<!--  form index. Only pertinent to attribute headers  -->
+			<property name="fi" type="Integer" />
+			
+			<!-- transaction action value -->
+			<property name="tav" type="Integer"/>
+	</definition>
+</block>
+

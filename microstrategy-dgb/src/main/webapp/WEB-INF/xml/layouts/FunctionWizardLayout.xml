@@ -1,0 +1,82 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+     <div id="step1" class="mstrFormulaEditor">
+            <div class="mstrFormulaEditorFunctionCategory">
+                <mstrlayout:render name="availableCategory" />
+            </div>
+            <div class="mstrFormulaEditorFunctionList">
+                <mstrlayout:render name="availableFunction"/>                
+            </div>
+            <div class="mstrFunctionSyntaxCointainer">
+                <div id="fe1_functionSyntax" class="mstrHighlighted"></div>
+                <div id="fe1_functionDes" class="mstrFormulaEditorDescription"></div>
+                <br/>
+            </div>
+            <hr/>
+       </div>
+      <div id="step2" class="mstrFormulaEditor2">
+          <fieldset>
+              <legend><mstrlayout:render name="functionName" /></legend>
+              <table id="fe2_allargsSec" class="mstrFormulaEditorParams">
+                  <mstrlayout:list id="param" name="getFunctionParameterList">
+                      <tr>
+                          <td>
+                            <mstrlayout:render name="paramName">
+                              <mstrlayout:argument list="param" type="com.microstrategy.web.objects.WebFunctionParameter"/>
+                            </mstrlayout:render>
+                          </td>
+                          <td>
+                            <mstrlayout:render name="paramInput">
+                              <mstrlayout:argument list="param" type="com.microstrategy.web.objects.WebFunctionParameter"/>
+                            </mstrlayout:render>
+                          </td>
+                      </tr>
+                  </mstrlayout:list>
+                  <mstrlayout:list id="prop" name="getFunctionExposedPropertyList">
+                      <tr>
+                          <td>
+                            <mstrlayout:render name="propName">
+                              <mstrlayout:argument list="prop" type="com.microstrategy.web.objects.WebFunctionProperty"/>
+                            </mstrlayout:render>
+                          </td>
+                          <td>
+                            <mstrlayout:render name="propInput">
+                              <mstrlayout:argument list="prop" type="com.microstrategy.web.objects.WebFunctionProperty"/>                                
+                            </mstrlayout:render>
+                          </td>
+                      </tr>
+                  </mstrlayout:list>        
+                  <mstrlayout:if name="hasBreakBySection">
+                      <mstrlayout:then>
+                      <tr>
+                          <td><mstrlayout:render name="breakBySectionName"/></td>
+                          <td><mstrlayout:render name="breakBySectionInput"/></td>
+                      </tr>
+                      </mstrlayout:then>
+                  </mstrlayout:if>
+                  <mstrlayout:if name="hasSortBySection">
+                      <mstrlayout:then>
+                        <tr>
+                            <td><mstrlayout:render name="sortBySectionName"></mstrlayout:render></td>
+                            <td><mstrlayout:render name="sortBySectionInput"></mstrlayout:render></td>
+                            <td>&nbsp;</td>
+                            <td><mstrlayout:render name="sortByDirectionAsRadioButtons"></mstrlayout:render></td>
+                        </tr>                            
+                      </mstrlayout:then>
+                 </mstrlayout:if>
+              </table>
+          </fieldset>
+          <div id="fe2_funcDesc" class="mstrFormulaEditorDescription">
+              <mstrlayout:render name="functionDescription"/>                
+          </div>
+          <div class="mstrFormulaEditorDescription"><span id="fe2_argumentName"></span><span id="fe2_argumentDescription"></span></div>
+          <hr/>
+          <div class="mstrFormulaEditorResult">
+          <span>
+            <mstrlayout:render name="Descriptor">
+                <mstrlayout:argument type="int" value="4567"/>
+            </mstrlayout:render>
+          </span>
+          <span id="fe2_fmlaResult"/></div>
+       </div>
+</mstrlayout:layout>

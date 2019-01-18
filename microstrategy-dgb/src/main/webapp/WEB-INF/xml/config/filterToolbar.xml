@@ -1,0 +1,20 @@
+<shortcut-list-set name="filterToolbar" version="1.0" javascript-file="mstrFilterToolbar.js" feature-id="dhtml">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="filterTb" use-container="true" use-default="false">
+    <attributes>
+      <attribute name="class" source="const" type="string" value="mstrToolbarGroup"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <!-- shortcut desc="Save" desc-id="mstrWeb.118" name="tbSave" type="buttonLabel"-->
+    <shortcut desc="Save" desc-id="mstrWeb.118" name="tbSaveReport" type="buttonLabel" onclick="return microstrategy.bone('fexb_pane').submitSaveFilterLink(this, event);">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumEditableObjectAppBeanEvents.WebEventEditableObjectSave"/>
+    </shortcut>
+    <shortcut desc="SaveAs" desc-id="mstrWeb.1896" name="tbSaveAs" type="buttonLabel" onclick="return microstrategy.bone('fexb_pane').submitSaveFilterLink(this, event);">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumEditableObjectAppBeanEvents.WebEventEditableObjectOpenSaveAs"/>
+    </shortcut>
+    <shortcut desc="Close" desc-id="mstrWeb.2102" name="tbClose" type="buttonLabel" enable-feature-id="has-previous-pages" href="#" onclick="microstrategy.bone('fexb_pane').onClose();"/>
+  </shortcut-list>
+</shortcut-list-set>

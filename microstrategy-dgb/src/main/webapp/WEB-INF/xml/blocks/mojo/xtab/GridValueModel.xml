@@ -1,0 +1,34 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="GridValueModel" inherits="BaseBlock">
+	<definition>
+            <!-- key -->
+			<property name="k" type="String" />
+            <!-- metric value -->
+            <property name="v" type="String" />
+
+            <!-- css class name -->
+			<property name="cni" type="Integer" />
+
+			<!--  parent indices.  Block with properties left and right each representing -> HeaderPosition -->
+			<property name="pi" type="Block" />
+
+			<!--  metric index. Index of the metric (with template metrics collection) that this value corresonds to -->
+			<!--  this value is serialized only if there is a non static action type associated -->
+			<property name="mix" type="Integer" />
+
+			<!--  action type -->
+			<property name="at" type="Integer" />
+			
+			<!-- threshold type -->
+			<property name="ty" type="Integer" />
+			
+			<!-- threshold index -->
+			<property name="ti" type="Integer" />
+			
+			<!--  raw (unformatted) value -->
+			<property name="rv" type="String" />
+			
+			<!-- transaction action value -->
+			<property name="tav" type="Integer"/>
+	</definition>
+</block>

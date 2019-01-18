@@ -1,0 +1,111 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="FilterDetailsGeneralTabView">
+  <assignments>
+    <property name="title">{desc:mstrWeb.295|General}</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="modelPath">parent/parent/model/tabModels/items/0</property>
+	<property name="helpTopic">Report_Details_Properties__General_tab.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K533" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.1924|Report Details}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="cssText"> clear:both;</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K534" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K535" name="TextLabel">
+                      <property name="value">{desc:mstrWeb.5375|Sections included in Report Details:}</property>
+                      <property name="cssClass">RDFieldSetHeaderLabel</property>
+                    </block>
+                    <block listElementKey="K536" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5125|Report Description}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/RDRD</property>
+                    </block>
+                    <block listElementKey="K537" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.3950|Prompt Details}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/RDPD</property>
+                    </block>
+                    <block listElementKey="K538" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5373|Filter Details}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/RDFD</property>
+                    </block>
+                    <block listElementKey="K539" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5131|Template Details}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/RDTD</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K540" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3950|Prompt Details}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K541" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5376|Include Prompt Titles:}</property>
+                <property name="modelPath">parent/model/PDTI</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="popup/height">60px</property>
+              </block>
+              <block listElementKey="K542" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5664|Replacement string for unanswered prompts:}</property>
+                <property name="modelPath">parent/model/PDUA</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="popup/height">100px</property>
+              </block>
+              <block listElementKey="K543" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4515|Show attribute name for Attribute Element Prompts:}</property>
+                <property name="modelPath">parent/model/sanep</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="popup/height">80px</property>
+              </block>
+              <block listElementKey="K544" name="TriStateCheckBox">
+                <property name="caption">{desc:mstrWeb.5804|Include unused prompts}</property>
+                <property name="valueField">selectedIndicesList</property>
+                <property name="modelPath">parent/model/IUPD</property>
+                <property name="cssText">margin-left:10px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K545" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4526|Miscellaneous}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField"/>
+          <property name="children">
+            <list>
+              <block listElementKey="K546" name="ListPulldown">
+                <property name="caption">{desc:mstrWeb.5764|Use delimiters around report object names}</property>
+                <property name="modelPath">parent/model/daon</property>
+                <property name='id'>useDelimiter</property>
+                <property name="cssText">margin-left:20px</property>
+                <property name="popup/height">80px</property>
+                <property name="popup/width">240px</property>
+              </block>
+              <block listElementKey="K547" name="TriStateCheckBox">
+                <property name="caption">{desc:mstrWeb.5389|Use aliases in Filter Details}</property>
+                <property name="valueField">selectedIndicesList</property>
+                <property name="modelPath">parent/model/FDOA</property>
+                <property name="cssText">margin-left:10px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--   FilterDetailsGeneralTabView is the "General" tab of the properties editor.  -->

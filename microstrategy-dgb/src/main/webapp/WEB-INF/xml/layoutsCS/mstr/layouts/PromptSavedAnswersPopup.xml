@@ -1,0 +1,49 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	on_model_set_validationStatus="mstr.behaviors.Generic.on_model_set_validationStatus(view, model, rootTag, context)"			   
+	on_set_visible="mstr.behaviors.Popup.on_set_visible(view, model, rootTag, context)">
+  <div style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}">
+    <table width="100%"
+           cellspacing="0"
+           cellpadding="0"
+           id="{@id}">
+      <tbody>
+        <tr>
+          <td class="{@cssPrefix}{@cssClass}CellTopButtonBar">
+            <table cellspacing="0"
+                   cellpadding="0">
+              <tbody>
+                <tr>
+                  <td>
+                    <mstrlayout:wRender name="renameButton">
+                    </mstrlayout:wRender>
+                  </td>
+                  <td>
+                    <mstrlayout:wRender name="deleteButton">
+                    </mstrlayout:wRender>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="{@cssPrefix}{@cssClass}CellContents">
+            <div class="{@cssPrefix}{@cssClass}OpaqueContainer">
+              <mstrlayout:wRender name="contentView">
+              </mstrlayout:wRender>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="{@cssPrefix}{@cssClass}CellButtonBar">
+            <mstrlayout:wRender name="okButton">
+            </mstrlayout:wRender>
+            <mstrlayout:wRender name="cancelButton">
+            </mstrlayout:wRender>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</mstrlayout:layout>

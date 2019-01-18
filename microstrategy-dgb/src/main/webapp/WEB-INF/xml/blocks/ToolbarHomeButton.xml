@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarHomeButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbHome</property>
+		<property name="tooltip">{desc:mstrWeb.1|Home}</property>
+		<property name="cmdid">openHome</property>
+		<property name="visibleFeatures">page-full-screen-mode</property>
+		<property name="listenerMethods">onScreenModeChange</property>
+	</assignments>
+</block>

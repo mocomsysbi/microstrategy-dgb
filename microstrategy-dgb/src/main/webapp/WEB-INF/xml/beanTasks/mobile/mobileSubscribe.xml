@@ -1,0 +1,16 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MobileSubscriptionTask">
+	  <basicInfo desc="This task performs the subscription from the mobile device.">
+    	<parameter name="objectID" desc="the report/document ID" required="true"/>
+    	<parameter name="objectType" desc="type of the object (report/document)" required="true"/>
+    	<parameter name="triggerID" desc="the trigger ID" required="true"/>
+    	<parameter name="events" desc="event string" required="false"/>
+    	<parameter name="messageId" desc="report message id" required="false"/>
+    	<parameter name="stateId" desc="report state id" required="false"/>
+    	<parameter name="beanName" desc="name of the bean" required="false"/>
+    	<!-- Set the default mobile client type as BlackBerry for compatibility -->
+    	<parameter name="mobileClientType" desc="the client type for mobile subscriptions" required="false" defvalue="1"/>
+ 	 </basicInfo>
+  	<beanInfo name="sb" bean-type="SubscriptionBean">
+  	</beanInfo>
+</beanTask>

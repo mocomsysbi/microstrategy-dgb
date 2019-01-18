@@ -1,0 +1,184 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="0" class="preferenceList">
+            <colgroup>
+                   <col width="30%"/>
+                   <col width="70%"/>
+            </colgroup>
+            <tr>
+              <td valign="top">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--Descriptor:View prompts: -->
+                    <mstrlayout:argument type="string" value="mstrWeb.1039" />
+                  </mstrlayout:render>
+                </span>
+              </td>
+              <td>
+                <mstrlayout:render name="AsRadio">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferencePromptsMode" />
+                  <mstrlayout:argument type="string" value="vertical" />
+                </mstrlayout:render>
+                <br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferencePromptsRequiredFirst" />
+                  <mstrlayout:argument type="string" value="mstrWeb.1042" />  <!--Descriptor:Always display required prompts first-->
+                </mstrlayout:render>
+                <br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceShowPromptDetails" />
+                  <mstrlayout:argument type="string" value="mstrWeb.3949" />  <!--Descriptor:Display Prompt Details in Report Page-->
+                </mstrlayout:render>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan="2">
+				  <hr />
+			  </td>
+			</tr>
+			<tr>
+              <td valign="top">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--Descriptor:Case sensitivity: -->
+                    <mstrlayout:argument type="string" value="mstrWeb.5542" />
+                  </mstrlayout:render>
+                </span>
+              </td>
+			  <td>
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferencePromptsMatchCaseSensitivity" />
+                  <mstrlayout:argument type="string" value="mstrWeb.2716" />  <!--Descriptor:Match case sensitivity by default-->
+                </mstrlayout:render>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan="2">
+				  <hr />
+			  </td>
+			</tr>
+			<tr>
+              <td valign="top">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--Descriptor:Report Message: -->
+                    <mstrlayout:argument type="string" value="mstrWeb.5543" />
+                  </mstrlayout:render>
+                </span>
+              </td>
+			  <td>
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferencePromptsRenameReport" />
+                  <mstrlayout:argument type="string" value="mstrWeb.5431" />
+                </mstrlayout:render>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan="2">
+				  <hr />
+			  </td>
+			</tr>
+			<tr>
+              <td valign="top">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--Descriptor:Element import: -->
+                    <mstrlayout:argument type="string" value="mstrWeb.5975" />
+                  </mstrlayout:render>
+                </span>
+              </td>
+			  <td>
+                <div>
+                  <mstrlayout:render name="AsTextBox">
+                    <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferencePromptsUploadFileExtensions" />
+                    <mstrlayout:argument type="string" value="" />
+                    <mstrlayout:argument type="string" value="" />
+                    <mstrlayout:argument type="string" value="mstrWeb.1306" /> <!--Descriptor:Allowed file extensions:-->
+                  </mstrlayout:render>
+                  <br />&nbsp;&nbsp;&nbsp;
+                  <span class="prefs-content-small-text">
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="string" value="mstrWeb.1307" /> <!--Descriptor:Note: Separate each extension with comas (i.e: ext1, ext2, ext3). -->
+                    </mstrlayout:render>
+                  </span>
+                  <br />
+                  <mstrlayout:render name="AsTextBox">
+                    <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferencePromptsMaxUploadFileSize" />
+                    <mstrlayout:argument type="string" value="5" />
+                    <mstrlayout:argument type="string" value="5" />
+                    <mstrlayout:argument type="string" value="mstrWeb.1308" /> <!--Descriptor:Maximum size of the files to upload:-->
+                  </mstrlayout:render>&nbsp;Kb
+                  <br />
+                  <mstrlayout:render name="AsTextBox">
+                    <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferencePromptsMaxElementsToImport" />
+                    <mstrlayout:argument type="string" value="6" />
+                    <mstrlayout:argument type="string" value="6" />
+                    <mstrlayout:argument type="string" value="mstrWeb.1377" /> <!--Descriptor:Maximum number of elements to import:-->
+                  </mstrlayout:render>&nbsp;
+                  <br />
+                </div>
+			  </td>
+			</tr>
+			<tr>
+			  <td colspan="2">
+				  <hr />
+			  </td>
+			</tr>
+            <tr>
+              <td valign="top">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--Descriptor:Object Descriptions: -->
+                    <mstrlayout:argument type="string" value="mstrWeb.5544" />
+                  </mstrlayout:render>
+                </span>
+              </td>
+              <td>
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceShowObjectDescription" />
+                  <mstrlayout:argument type="string" value="mstrWeb.5173" />
+                </mstrlayout:render>
+              </td>
+            </tr>
+			<tr>
+			  <td colspan="2">
+				  <hr />
+			  </td>
+			</tr>
+			<tr>
+              <td valign="top">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--Descriptor:Personal answers: -->
+                    <mstrlayout:argument type="string" value="mstrWeb.5545" />
+                  </mstrlayout:render>
+                </span>
+              </td>
+              <td>
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumPromptPropertyNamesAndValues.PROPERTY_PROJECTANSWERRESTRICTION" />
+                  <mstrlayout:argument type="string" value="mstrWeb.5697" /> <!--Descriptor:Enable personal answers -->
+                </mstrlayout:render>
+              </td>
+            </tr>
+			<tr>
+			  <td colspan="2">
+				  <hr />
+			  </td>
+			</tr>
+			<tr>
+              <td valign="top" style="width:1%">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!--Descriptor:Custom styles: -->
+                    <mstrlayout:argument type="string" value="mstrWeb.5546" />
+                  </mstrlayout:render>
+                </span>
+              </td>
+			  <td style="width:99%">
+				<mstrlayout:render name="adminPromptCustomStyles"/> 
+				<br />
+              </td>
+            </tr>
+          </table>
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

@@ -1,0 +1,29 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single object in metadata.
+-->
+<block name="DynamicRecipientList">
+    <definition>
+        
+        <!-- The DSS ID of the object -->
+        <property name="did" type="String" />
+        
+        <!-- The name of the object. -->
+        <property name="n" type="String" />
+        
+        <!-- The mapping project id of the DRL object. -->
+        <property name="pid" type="String" /> 
+        
+        <!-- The mapping project name of the DRL object. -->
+        <property name="pn" type="String" />
+        
+        <!-- The mapping content id of the DRL object. -->
+        <property name="cntid" type="String" />
+        
+        <!-- The mapping content name of the DRL object. -->
+        <property name="cntn" type="String" />
+        
+        <!-- The DRL mapping fields -->
+        <property name="dmf" type="Block" />
+    </definition>
+</block>

@@ -1,0 +1,30 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="VBox" name="PromptSavedAnswersSimplePopup">
+  <assignments>
+    <property name="id">PromptSavedAnswersSimplePopup</property>
+    <property name="cssClass">Popup</property>
+    <property name="cssText">width: 200px; padding: 3px; filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+    <property name="modelPath">opener/model</property>
+    <property name="popOrientation">1</property>
+    <property name="CommandEnabledUnpop" type="Boolean">true</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K826" name="ListView">
+          <property name="modelPath">parent/model</property>
+          <property name="multiSelect">false</property>
+          <property name="cmds">!ClickListItem;LoadSavedAnswer|model/getSelectedItem()|model/parent;Unpop||parent</property>
+          <property name="allowBrowseFolder">false</property>
+          <property name="allowBrowseAttribute">false</property>
+          <property name="allowBrowseHierarchy">false</property>
+          <property name="showItemsDuringRequest">true</property>
+          <!-- prevent IE7 hang issue -->
+        </block>
+        <block listElementKey="K827" name="TextLink">
+          <property name="caption">{desc:mstrWeb.2643|More options...}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="cmds">Unpop||parent;OpenPopup|"PromptSavedAnswersPopup"|parent/opener</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

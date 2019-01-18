@@ -1,0 +1,97 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="Slider" inherits="BaseView">
+		<definition>
+			<!-- Optional text to display above the slider. -->
+			<property name="caption" type="String" />
+
+			<!-- The orientation of the slider.  Could be 'h' (for horizontal),
+				'v' (for vertical) or 'b' (for both). -->
+			<property name="orientation" type="String" />
+
+			<!-- The origin (start) of the slider.  Values are 1 through 8 for
+				the cardinal points beginning at top left (1), top (2), top right (3),
+				etc. -->
+			<property name="origin" type="Integer" />
+
+			<!-- The minimum value of the x axis -->
+			<property name="xMin" type="Integer" />
+
+			<!-- The maximum value of the x axis -->
+			<property name="xMax" type="Integer" />
+
+			<!-- The minimum value of the y axis -->
+			<property name="yMin" type="Integer" />
+
+			<!-- The maximum value of the y axis -->
+			<property name="yMax" type="Integer" />
+
+			<!-- The width of the slider element (excluding caption). -->
+			<property name="width" type="String" />
+			
+			<!-- The height of the slider element (excluding caption). -->
+			<property name="height" type="String" />
+			
+			<!-- The name of the css class to use for the slider thumb. -->
+			<property name="thumbCssClass" type="String" />
+
+			<!-- The name of the field in the model that will track the x
+				axis of the slider. -->
+			<property name="xField" type="String" />
+
+			<!-- The name of the field in the model that will track the y
+				axis of the slider. -->
+			<property name="yField" type="String" />
+
+			<!-- The name of the field in the model that will determine the 
+				background-color of the slider (optional). -->
+			<property name="bgField" type="String" />
+
+			<!-- The border style of the slider element (excluding caption).  We need to 
+				specify it here so that we can enforce that it be uniform for all 4 sides.. -->
+			<property name="borderStyle" type="String" />
+			
+			<!-- A boolean indicating whether to support drag and drop on the slider thumb. -->
+			<property name="dnd" type="Boolean" />
+
+			<!--  A boolean value indicating whether the slider thumb itself should be moved during dnd operations
+				or whether a ghost should be created and moved. -->
+			<property name="dndGhost" type="Boolean" />
+
+			<!-- Animate the thumb. -->
+			<property name="animate" type="Boolean" />
+
+			<!-- The number of steps in thumb animations. -->
+			<property name="animationStep" type="Integer" />
+
+			<!-- A boolean indicating whether to show a tooltip on mouse over. -->
+			<property name="showTooltip" type="Boolean" />
+			
+			<property name="tooltipFunction" type="String"/>
+
+			<!-- The name of the css class to use for the slider tooltip. -->
+			<property name="tooltipCssClass" type="String" />
+
+			<!-- A boolean value indicating whether clicking the slider track should make
+				the thumb jump to that point or increment (or decrement) by one unit. -->
+			<property name="enableClickJumps" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.Slider</property>
+			<property name="layoutClass">mstr.layouts.Slider</property>
+			<property name="showTooltip">false</property>
+			<property name="enableClickJumps">true</property>
+			<property name="orientation">h</property>
+			<property name="origin">8</property>
+			<property name="xMin">0</property>
+			<property name="xMax">1</property>
+			<property name="yMin">0</property>
+			<property name="yMax">1</property>
+			<property name="width">96px</property>
+			<property name="height">10px</property>
+			<property name="borderStyle">0px solid transparent</property>
+			<property name="animate">true</property>
+			<property name="animationStep">5</property>
+			<property name="dnd">true</property>
+			<property name="dndGhost">false</property>
+		</assignments>
+	</block>

@@ -1,0 +1,147 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="DocumentTabWatermark">
+  <assignments>
+    <property name="title">{desc:mstrWeb.3538|Document Properties} - {desc:mstrWeb.4590|Watermark}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Watermark.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K402" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4590|Watermark}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K403" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4590|Watermark}:</property>
+                <property name="modelPath">parent/model/WatermarkType</property>
+                <property name="popup/height">80px</property>
+              </block>
+              <block listElementKey="K404" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4595|Text:}</property>
+                <property name="valueField">WatermarkText</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">42</property>
+                <property name="maxlength">255</property>
+                <property name="cssText">margin-top:2px</property>
+                <property name="visibleField">model/WatermarkType/selectedIndices:2</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="required">true</property>
+                  </block>
+                </property>
+              </block>
+              <block listElementKey="K405" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/WatermarkType/selectedIndices:2</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K406" name="FontPreview">
+                      <property name="caption">{desc:mstrWeb.2172|Font:}</property>
+                      <property name="cssText">margin-right:2px</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="fontFamily">WatermarkFontName</property>
+                      <property name="fontSize">WatermarkFontSize</property>
+                      <property name="boldItalic">WatermarkFontBoldItalic</property>
+                      <property name="textUnderline">WatermarkFontUnderline</property>
+                      <property name="textStrikeout">WatermarkFontStrikeout</property>
+                      <property name="fontColor">WatermarkFontColor</property>
+                    </block>
+                    <block listElementKey="K407" name="VBox">
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K408" name="TextDiv">
+                            <property name="cssText">font-size:0pt;height:18px;visibility:hidden;</property>
+                          </block>
+                          <block listElementKey="K409" name="ToolButton">
+                            <property name="tooltip">{desc:mstrWeb.1918|Format}</property>
+                            <property name="cssText">background-image: url(../style/mstr/images/tbAdvancedFormatting.gif);</property>
+                            <property name="modelPath">parent/parent/model</property>
+                            <property name="cmds">OpenModalPopup|"FontFormatEditorWatermark",viewProps|</property>
+                            <property
+                              name="CommandEnabledOpenModalPopup" type="Boolean">true</property>
+                            <property name="viewProps" type="Block">
+                              <block name="BaseBlock">
+                                <property
+                                  name="contentView/children/0/nameModelPath" type="String">WatermarkFontName</property>
+                                <property
+                                  name="contentView/children/0/styleModelPath" type="String">WatermarkFontBoldItalic</property>
+                                <property
+                                  name="contentView/children/0/sizeModelPath" type="String">WatermarkFontSize</property>
+                                <property
+                                  name="contentView/children/0/underlineField" type="String">WatermarkFontUnderline</property>
+                                <property
+                                  name="contentView/children/0/strikeoutField" type="String">WatermarkFontStrikeout</property>
+                                <property
+                                  name="contentView/children/0/colorModelPath" type="String">WatermarkFontColor</property>
+                                <!--																	<property type="String" name="contentView/children/0/nameModelPath">#RWDocPropertiesEditorModel1/items/9/WatermarkFontName</property>
+																	<property type="String" name="contentView/children/0/styleModelPath">#RWDocPropertiesEditorModel1/items/9/WatermarkFontBoldItalic</property>
+																	<property type="String" name="contentView/children/0/sizeModelPath">#RWDocPropertiesEditorModel1/items/9/WatermarkFontSize</property>
+																	<property type="String" name="contentView/children/0/underlineField">#RWDocPropertiesEditorModel1/items/9/WatermarkFontUnderline</property>
+																	<property type="String" name="contentView/children/0/strikeoutField">#RWDocPropertiesEditorModel1/items/9/WatermarkFontStrikeout</property>
+																	<property type="String" name="contentView/children/0/colorModelPath">#RWDocPropertiesEditorModel1/items/9/WatermarkFontColor</property> -->
+                              </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K410" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4597|Size font automatically}</property>
+                <property name="valueField">AutoFontSize</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/WatermarkType/selectedIndices:2</property>
+              </block>
+              <block listElementKey="K411" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4598|Washout}</property>
+                <property name="valueField">TextWashout</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/WatermarkType/selectedIndices:2</property>
+              </block>
+              <block listElementKey="K412" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4599|Orientation:}</property>
+                <property name="modelPath">parent/model/TextOrientation</property>
+                <property name="visibleField">parent/model/WatermarkType/selectedIndices:2</property>
+              </block>
+              <block listElementKey="K413" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/WatermarkType/selectedIndices:3</property>
+                <property name="children">
+					<list>
+		              <block listElementKey="K414" name="HTextBox">
+		                <property name="caption">{desc:mstrWeb.4602|Source:}</property>
+		                <property name="valueField">ImageSource</property>
+		                <property name="modelPath">parent/model</property>
+		                <property name="totalSize">48</property>
+		                <property name="validator">
+		                  <block name="FieldValidator">
+		                    <property name="required">true</property>
+		                  </block>
+		                </property>
+		              </block>
+		              <block listElementKey="K415" name="ImagePreview">
+		                <property name="valueField" type="String">ImageSource</property>
+		                <property name="modelPath">parent/model</property>
+		                <property name="visibleField">parent/parent/parent/visible</property>
+		              </block>
+		              <block listElementKey="K416" name="ListPulldown">
+		                <property name="horizontalCaption">{desc:mstrWeb.4603|Scale:}</property>
+		                <property name="modelPath">parent/model/ImageScale</property>
+		              </block>
+					</list>
+		        </property>
+		      </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		DocumentTabWatermark is the "Document Properties - Watermark" tab of the document properties editor.
+	-->

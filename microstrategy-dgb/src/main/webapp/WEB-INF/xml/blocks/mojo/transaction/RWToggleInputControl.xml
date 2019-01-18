@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWToggleInputControl" inherits="RWDataInputObject">
+  <definition>
+    <!-- The value list -->
+    <property name="vls" type="List"/>
+    <!-- Image url for the unset state-->
+    <property name="ust" type="String"/>
+  </definition>
+</block>

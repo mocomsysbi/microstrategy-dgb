@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		CrosstabCell a unit of data for a CrosstabModel, typically rendered in a CrosstabView 
+		as a table cell.
+	-->
+	<block name="CrosstabCell" inherits="BaseBlock">
+		<definition>
+			<!-- The column span of the cell's value (default = 1). -->
+			<property name="colSpan" type="Integer" />			
+
+			<!-- The row span of the cell's value (default = 1). -->
+			<property name="rowSpan" type="Integer" />			
+
+			<!-- The cell's value. -->
+			<property name="value" type="String" />			
+			
+			<!-- Unique identifier for cell's formatting properties set. -->
+			<property name="cssClass" type="String" />
+		</definition>
+	</block>

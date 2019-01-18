@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single section in a RWD.
+--> 
+<block name="RWSectionDef" inherits="RWUnitDef">
+    <definition>
+        <!-- The key of the RWGroupBy Block associated with this section -->
+        <property name="gby" type="String" />
+        
+        <!-- Whether or not this section is horizontal -->
+        <property name="horiz" type="Boolean" />
+        
+        <!-- the docked section property -->
+        <property name="dk" type="Integer" />
+    </definition>
+</block>

@@ -1,0 +1,93 @@
+<!DOCTYPE aggregatingTaskFactory SYSTEM "dtds/aggregatingTaskFactory.dtd">
+<aggregatingTaskFactory isPrivate="true">
+  <tasks>
+  <task registerAs="ipaAcknowledgeAlerts" class="com.microstrategy.web.ipa.tasks.AcknowledgeAlertsTask"/>
+	    <task registerAs="ipaGetAlerts" class="com.microstrategy.web.ipa.tasks.GetAlertsTask"/>
+		<task registerAs="ipaGetAlertsCount" class="com.microstrategy.web.ipa.tasks.GetAlertsCountTask"/>
+	    <task registerAs="ipaGetKIStatus" class="com.microstrategy.web.ipa.tasks.GetKIStatusTask" adminTask="true"/>
+	    <task registerAs="ipaDoAction" class="com.microstrategy.web.ipa.tasks.DoActionTask" adminTask="true"/>
+	    <task registerAs="ipaValidateActionParam" class="com.microstrategy.web.ipa.tasks.ValidateActionParamTask" adminTask="true"/>
+	    <task registerAs="ipaGetSystemCheckWithConfig" class="com.microstrategy.web.ipa.tasks.GetSystemCheckWithConfigTask" adminTask="true"/>
+	    <task registerAs="ipaGetKIConfigurationEntries" class="com.microstrategy.web.ipa.tasks.GetKIConfigurationEntries" adminTask="true"/>
+	    <task registerAs="ipaSaveConfigurationEntry" class="com.microstrategy.web.ipa.tasks.SaveConfigurationEntryTask" adminTask="true"/>
+	    <task registerAs="ipaValidateConfigurationEntries" class="com.microstrategy.web.ipa.tasks.ValidateConfigurationEntriesTask" adminTask="true"/>
+	    <task registerAs="ipaGetMachine" class="com.microstrategy.web.ipa.tasks.GetMachinesTask" adminTask="true"/>
+	    <task registerAs="ipaGetProduct" class="com.microstrategy.web.ipa.tasks.GetProductsTask" adminTask="true"/>
+	    <task registerAs="ipaGetKnowledgeItem" class="com.microstrategy.web.ipa.tasks.GetKnowledgeItemsTask" adminTask="true"/>
+		<task registerAs="ipaGetKI" class="com.microstrategy.web.ipa.tasks.GetKIItemsForMachinesTask" adminTask="true"/>
+		<task registerAs="copyConfigurations" class="com.microstrategy.web.ipa.tasks.CopyConfigurationsTask" adminTask="true"/>
+	    <task registerAs="ipaGetCounters" class="com.microstrategy.web.ipa.tasks.GetCountersTask" adminTask="true"/>
+	    <task registerAs="ipaToggleRTAlerting" class="com.microstrategy.web.ipa.tasks.ToggleRTAlertingTask" adminTask="true"/>   
+	    <task registerAs="ipaGetSharedConfigurationEntries" class="com.microstrategy.web.ipa.tasks.GetSharedConfigurationEntriesTask" adminTask="true"/>   
+	    <task registerAs="ipaSetAlertReadStatus" class="com.microstrategy.web.ipa.tasks.SetAlertReadStatusTask"/>
+	    <task registerAs="addPerformanceCounter" class="com.microstrategy.web.ipa.tasks.AddPerformanceCounterTask"/>
+	    <task registerAs="getPerformanceCounterData" class="com.microstrategy.web.ipa.tasks.GetPerformanceCountersDataTask"/>
+	    <task registerAs="CRCommandExecutionTask" class="com.microstrategy.web.ipa.tasks.CRCommandExecutionTask"/>
+	    <task registerAs="CRBaseTask" class="com.microstrategy.web.ipa.tasks.CRBaseTask" adminTask="true"/>
+        <task registerAs="getSuggestionsTask" class="com.microstrategy.web.ipa.tasks.GetSuggestionsTask" adminTask="true"/>
+	    <task registerAs="getMHAConnectionDetailsTask" class="com.microstrategy.web.ipa.tasks.GetMHAConnectionDetailsTask" adminTask="true"/>
+	    <task registerAs="getTokenizedStringTask" class="com.microstrategy.web.ipa.tasks.GetTokenizedStringTask" adminTask="true"/>
+	    <task registerAs="getTopologyTask" class="com.microstrategy.web.ipa.tasks.GetTopologyTask" adminTask="true"/>
+	    <task registerAs="getTopologyTaskJSON" class="com.microstrategy.web.ipa.tasks.GetTopologyTaskJSON" adminTask="true"/>
+	    <task registerAs="getThresholdDefTask" class="com.microstrategy.web.ipa.tasks.GetIPAThresholdDefinition"/>
+	    <task registerAs="setThresholdDefTask" class="com.microstrategy.web.ipa.tasks.SetIPAThresholdDefinition" adminTask="true"/>
+	    <task registerAs="getEnvDefConfigTask" class="com.microstrategy.web.ipa.tasks.GetEnvDefConfigTask"/>
+	    <task registerAs="updateEnvDefConfigTask" class="com.microstrategy.web.ipa.tasks.UpdateEnvDefConfigTask" adminTask="true"/>
+	    <task registerAs="updateConfigItemTask" class="com.microstrategy.web.ipa.tasks.UpdateConfigItemTask" adminTask="true"/>
+	    <task registerAs="getEnvironmentTaskJSON" class="com.microstrategy.web.ipa.tasks.GetEnvironmentTaskJSON"/>
+	    <task registerAs="getEnvironmentNameTask" class="com.microstrategy.web.ipa.tasks.GetEnvironmentNameTask"/>
+	    <task registerAs="updateTopologyTask" class="com.microstrategy.web.ipa.tasks.UpdateTopologyTask" adminTask="true"/>
+	    <task registerAs="IPALoginTask" class="com.microstrategy.web.ipa.tasks.IPALoginTask"/>
+	    <task registerAs="IPALogoutTask" class="com.microstrategy.web.ipa.tasks.IPALogoutTask"/>
+	    <task registerAs="MHALoginTask" class="com.microstrategy.web.ipa.tasks.MHALoginTask" />
+	    <task registerAs="MHALogoutTask" class="com.microstrategy.web.ipa.tasks.MHALogoutTask" adminTask="true"/>
+		<task registerAs="MHATopologyTask" class="com.microstrategy.web.ipa.tasks.MHATopologyTask"/>
+	    <task registerAs="addHCAgentToMHATask" class="com.microstrategy.web.ipa.tasks.AddHCAgentToMHATask" adminTask="true"/>
+		<task registerAs="removeHCAgentFromMHATask" class="com.microstrategy.web.ipa.tasks.RemoveHCAgentFromMHATask" adminTask="true"/>
+		<task registerAs="resolveMachineNameTask" class="com.microstrategy.web.ipa.tasks.ResolveMachineNameTask" adminTask="true"/>
+	    <task registerAs="deleteMHATask" class="com.microstrategy.web.ipa.tasks.DeleteMHATask" adminTask="true"/>
+	    <task registerAs="getMHAStatusTask" class="com.microstrategy.web.ipa.tasks.GetMHAStatusTask"/>
+	    <task registerAs="getIPATemplateFilesTask" class="com.microstrategy.web.ipa.tasks.GetIPATemplateFilesTask" adminTask="true"/>
+	    <task registerAs="delIPATemplateFilesTask" class="com.microstrategy.web.ipa.tasks.DelIPATemplateFilesTask" adminTask="true"/>
+	    <task registerAs="getIPAPropertiesTask" class="com.microstrategy.web.ipa.tasks.GetIPAPropertiesTask" adminTask="true"/>
+	    <task registerAs="getIPALoginSettingsTask" class="com.microstrategy.web.ipa.tasks.GetIPALoginSettingsTask"/>
+	    <task registerAs="updateIPAPropertiesTask" class="com.microstrategy.web.ipa.tasks.UpdateIPAPropertiesTask" adminTask="true"/>
+	<task registerAs="updateServerProperties" class="com.microstrategy.web.ipa.tasks.UpdateServerPropertiesTask" adminTask="true"/>
+	<task registerAs="saveIPAPropertiesTask" class="com.microstrategy.web.ipa.tasks.SaveIPAPropertiesTask" adminTask="true"/>
+	<task registerAs="webServerValidationTask" class="com.microstrategy.web.ipa.tasks.WebServerValidationTask" adminTask="true"/>
+	    <task registerAs="internalWebServerValidationTask" class="com.microstrategy.web.ipa.tasks.InternalWebServerValidationTask" adminTask="true"/>
+	    <task registerAs="getIPASessionState" class="com.microstrategy.web.ipa.tasks.GetIPASessionStateTask" adminTask="true"/>
+	    <task registerAs="checkIncrementalLoginTask" class="com.microstrategy.web.ipa.tasks.CheckIncrementalLoginTask"/>
+		<task registerAs="getIServerSessionStateTask" class="com.microstrategy.web.ipa.tasks.GetIServerSessionStateTask" adminTask="true"/>
+		<task registerAs="checkUserPrivilegesTask" class="com.microstrategy.web.ipa.tasks.CheckUserPrivilegesTask"/>
+		<task registerAs="emServerValidationTask" class="com.microstrategy.web.ipa.tasks.EMServerValidationTask" adminTask="true"/>
+	    <task registerAs="emGetSchedulesTask" class="com.microstrategy.web.ipa.tasks.EMGetSchedulesTask" adminTask="true"/>
+		<task registerAs="emGetSchedulesTask" class="com.microstrategy.web.ipa.em.tasks.EMGetSchedulesTask" adminTask="true"/>
+		<task registerAs="emGetISvrProjectsTask" class="com.microstrategy.web.ipa.em.tasks.EMGetISvrProjectsTask" adminTask="true"/>
+		<task registerAs="emIServersLoginTask" class="com.microstrategy.web.ipa.em.tasks.IServersLoginTask" adminTask="true"/>
+		<task registerAs="emGetAvailableProjsTask" class="com.microstrategy.web.ipa.em.tasks.EMGetAvailableProjectsTask" adminTask="true"/>
+		<task registerAs="emGetProjsTask" class="com.microstrategy.web.ipa.em.tasks.EMGetProjectsTask" adminTask="true"/>
+		<task registerAs="emGetEMEnvsTask" class="com.microstrategy.web.ipa.em.tasks.EMGetEnvironmentsTask" adminTask="true"/>
+		<task registerAs="emGetEnvInfoTask" class="com.microstrategy.web.ipa.em.tasks.EMGetEnvironmentInfoTask" adminTask="true"/>
+		<task registerAs="emMonEnvAdminTask" class="com.microstrategy.web.ipa.em.tasks.EMMonitoredEnvAdminTask" adminTask="true"/>
+		<task registerAs="emGetMonitoredProjTask" class="com.microstrategy.web.ipa.em.tasks.EMGetMonitoredProjectsTask" adminTask="true"/>
+		<task registerAs="emGetLogSettingsTask" class="com.microstrategy.web.ipa.em.tasks.EMGetLoggingSettingsTask" adminTask="true"/>
+		<task registerAs="emGetStatus" class="com.microstrategy.web.ipa.em.tasks.EMGetStatusTask" adminTask="true"/>
+		<task registerAs="emCredValidationTask" class="com.microstrategy.web.ipa.em.tasks.CredentialsValidationTask" adminTask="true"/>
+		<task registerAs="emDataLoadsAdminTask" class="com.microstrategy.web.ipa.em.tasks.EMDataLoadsAdminTask" adminTask="true"/>
+		<task registerAs="getIPAWebCMUserProcedureTask" class="com.microstrategy.web.ipa.tasks.GetIPAWebCMUserProcedureTask" adminTask="true"/>
+		<task registerAs="saveIPAWebCMUserProcedureTask" class="com.microstrategy.web.ipa.tasks.SaveIPAWebCMUserProcedureTask" adminTask="true"/>
+		<task registerAs="getODBCDsnTask" class="com.microstrategy.web.ipa.tasks.GetODBCDsnTask" adminTask="true"/>
+		<task registerAs="getDBMSListTask" class="com.microstrategy.web.ipa.tasks.GetDBMSListTask" adminTask="true"/>
+		<task registerAs="validateIServerTask" class="com.microstrategy.web.ipa.tasks.ValidateIServerTask" adminTask="true"/>
+		<task registerAs="iServerActionTask" class="com.microstrategy.web.ipa.tasks.IServerAdminTask" adminTask="true"/>
+		<task registerAs="getEnvironmentDetails" class="com.microstrategy.web.ipa.tasks.GetEnvironmentDetailsTask"/>
+		<task registerAs="getServerConnectionInfo" class="com.microstrategy.web.ipa.tasks.GetServerConnectionInfoTask"/>
+		<task registerAs="CRConnectionLessCommandTask" class="com.microstrategy.web.ipa.tasks.CRConnectionLessCommandTask" adminTask="true"/>
+		<task registerAs="validateIServerList" class="com.microstrategy.web.ipa.tasks.ValidateIServerListTask" adminTask="true"/>
+		<task registerAs="verifyUserNamePassWord" class="com.microstrategy.web.ipa.tasks.VerifyUserLoginTask" adminTask="true"/>
+		<task registerAs="resolveServerName" class="com.microstrategy.web.ipa.tasks.ResolveServerNameTask" adminTask="true"/>
+		<task registerAs="getIPAPrivilegesTask" class="com.microstrategy.web.ipa.tasks.IPAGetPrivilegesTask"/>
+		<task registerAs="getConfiguration" class="com.microstrategy.web.ipa.tasks.GetConfigurationTask" adminTask="true"/>
+  </tasks>
+</aggregatingTaskFactory>

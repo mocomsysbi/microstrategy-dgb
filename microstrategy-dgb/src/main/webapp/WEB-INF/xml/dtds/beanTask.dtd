@@ -1,0 +1,161 @@
+<!--
+	A beanTask element defines a single Task based on a Web Bean or a
+	Web Component.
+	1) A beanTask consists of a REQUIRED basicInfo, ZERO or MORE eventInfo
+	   and a REQUIRED beanInfo element, in that order.  If NO eventInfo 
+	   elements are specified, it is assumed that either no events need to 
+	   be handled or the event to handle is selected dynamically. In latter 
+	   case, a base class must be specified to programmatically select an 
+	   event (or events) to process.
+	2) A beanTask has an OPTIONAL 'registerAs' attribute that specifies
+       the identifier for this Task. If omitted, it is the base name
+       of the file that contains the Task definition.
+	3) A beanTask has an OPTIONAL 'class' attribute which specifies the
+	   base class for this implementation. If set, it must be a subclass
+	   of WebComponentTask. If omitted, then WebComponentTask is used.
+-->
+<!ELEMENT beanTask (basicInfo, eventInfo*, beanInfo)>
+<!ATTLIST beanTask registerAs NMTOKEN #IMPLIED>
+<!ATTLIST beanTask adminTask (true | false) "false">
+<!ATTLIST beanTask class NMTOKEN #IMPLIED>
+<!ATTLIST beanTask deleted NMTOKEN #IMPLIED>
+<!ATTLIST beanTask privileges CDATA #IMPLIED>
+
+<!--
+	A basicInfo element defines the "metadata" for this Task.
+	1) A basicInfo element can contain ZERO or MORE parameter elements.
+	   Each parameter element declares a parameter of the Task. It is 
+	   encouraged to declare all parameters as this makes the interface
+	   to the Task very clear and explicit. In this way, changes to the
+	   underlying event (e.g., its arguments) can be shielded from the 
+	   user of the Task. 
+	2) A basicInfo element has an OPTIONAL 'desc' attribute to provide
+	   a textual description for the Task.
+-->
+<!ELEMENT basicInfo (parameter*)>
+<!ATTLIST basicInfo desc CDATA #IMPLIED>
+
+<!--
+	A parameter element defines the metadata for a single Task parameter.
+	1) A parameter element does not allow any children.
+	2) A parameter element has a REQUIRED 'name'. Parameters names should
+	   URL friendly identifiers.
+	3) A parameter element has an OPTIONAL 'desc' (textual description)
+	   attribute.
+	4) A parameter element has an OPTIONAL 'required' parameter which
+	   conveys whether the specified parameter is required for the Task
+	   to work properly. If omitted, it is assumed to not be required.
+	5) A parameter element has an OPTIONAL 'defvalue' attribute which 
+	   specifies a "default value". If the parameter is not included
+	   in the Task invocation, the default value is supplied. This is 
+	   not the same as a parameter which has an empty value. In this case,
+	   the default value is not applied. This allows the Task designer
+	   to distinguish between non-existent and empty parameters.
+-->
+<!ELEMENT parameter EMPTY>
+<!ATTLIST parameter name NMTOKEN #REQUIRED>
+<!ATTLIST parameter desc CDATA #IMPLIED>
+<!ATTLIST parameter required (true | false) "false">
+<!ATTLIST parameter defvalue CDATA #IMPLIED>
+<!ATTLIST parameter deleted NMTOKEN #IMPLIED>
+<!ATTLIST parameter type NMTOKEN #IMPLIED>
+<!ATTLIST parameter validator NMTOKEN #IMPLIED>
+<!ATTLIST parameter hidden (true | false) "false">
+<!ATTLIST parameter type NMTOKEN #IMPLIED>
+<!ATTLIST parameter validator NMTOKEN #IMPLIED>
+
+<!--
+	An eventInfo element specifies an underlying Event that implements
+	the "data collection" portion of this Task.
+	1) An eventInfo element contains ZERO or MORE argument elements.
+	2) An eventInfo element has a REQUIRED 'eventID' attribute which is
+	   the numeric identifier for the event. 
+-->
+<!ELEMENT eventInfo (argument*)>
+<!ATTLIST eventInfo eventID NMTOKEN #REQUIRED>
+<!ATTLIST eventInfo deleted NMTOKEN #IMPLIED>
+
+<!--
+	An argument element specifies the assignment or handling of a single
+	event argument. This is provided as a way to define how values are
+	assigned to event arguments. Not all event arguments need to be 
+	declared here, especially if they are optional or not overridden.
+	1) An argument element may not contain any children.
+	2) An argument element has a REQUIRED 'name' attribute. It refers to
+	   the name of the event argument.
+	3) An argument element has a REQUIRED 'value' attribute. This is used
+	   to compute a value to for the event argument. How it is interpreted
+	   is controlled by the next attribute ('source').
+	4) An argument element has an OPTIONAL 'source' attribute. This 
+	   defines how 'value' should be interpreted. If 'source' is 'const',
+	   then the value is a constant value and assigned directly.
+	   If 'source' is 'parameter', then 'value' is really a parameter
+	   name, whose value should be used instead. This allows a Task
+	   designer to present a clear, understandable interface
+	   (in terms of the declared parameters) and map the values
+	   of those parameters to event arguments, style names, and actual
+	   parameter values. If omitted, 'const' is assumed.
+-->
+<!ELEMENT argument EMPTY>
+<!ATTLIST argument name NMTOKEN #REQUIRED>
+<!ATTLIST argument value CDATA #REQUIRED>
+<!ATTLIST argument source (const | parameter) "const">
+<!ATTLIST argument deleted NMTOKEN #IMPLIED>
+
+<!-- 
+	A beanInfo element specifies the underlying Web Bean (or Web Component) 
+	that is created to handle this Task.
+	1) A beanInfo element has ZERO or ONE style children. A style element
+	   represents a style in the Style Catalog.
+	2) A beanInfo element has an OPTIONAL 'name' property which is the
+	   name to apply to the bean instance (via setName).
+	3) A beanInfo element has an OPTIONAL 'bean-type' property which
+	   identifies the bean to instantiate. Examples include "ReportBean",
+	   "FolderBean" and others. See EnumSysBeanNames for a list of valid
+	   values. If omitted, an "empty" Bean object is used. It returns no data,
+	   but can be used with any transform.
+-->
+<!ELEMENT beanInfo (style?)>
+<!ATTLIST beanInfo name NMTOKEN #IMPLIED>
+<!ATTLIST beanInfo bean-type NMTOKEN #IMPLIED>
+
+<!--
+	A style element defines a style in the Style Catalog and (through the
+	use of the actualParameter element) how actual parameters are
+	overridden.
+	1) A style element has ZERO or MORE actualParameter children.
+	2) A style element has a REQUIRED 'name' attribute to specify the
+	   name of the style in the catalog. How this name is interpreted is
+	   controlled by the next attribute ('source').
+	3) A style element has an OPTIONAL 'source' attribute which specifies
+	   how this name is interpreted. If 'source' is 'const' then 'name' is
+	   the actual name of the style in the style catalog. If 'source' is
+	   'parameter', then 'name' is the name of a Task parameter. The value
+	   of this parameter is the actual style name used. If omitted,
+	   'source' is assumed to be 'const'.
+-->
+<!ELEMENT style (actualParameter*)>
+<!ATTLIST style name NMTOKEN #REQUIRED>
+<!ATTLIST style source (const | parameter) "const">
+<!ATTLIST argument deleted NMTOKEN #IMPLIED>
+
+<!--
+	An actualParameter element represents the assignment of a single
+	actual parameter when the style (and associated transform) is
+	instantiated.
+	1) An actualParameter element does not allow any children.
+	2) An actualParameter element has a REQUIRED 'name' attribute.
+	3) An actualParameter element has a REQUIRED 'value' attribute. How it
+	   is interpreted depends on the 'source' attribute.
+	4) An actualParameter element has an OPTIONAL 'source' attribute. If
+	   'source' is 'const', then the 'value' attribute is a constant 
+	   value assigned directly. If 'source' is 'parameter', then 'value'
+	   is the name of a Task parameter. The value of this parameter is
+	   assigned instead. If omitted, 'source' is assumed to be
+	   'const'.
+-->
+<!ELEMENT actualParameter EMPTY>
+<!ATTLIST actualParameter name NMTOKEN #REQUIRED>
+<!ATTLIST actualParameter value CDATA #REQUIRED>
+<!ATTLIST actualParameter source (const | parameter) "const">
+<!ATTLIST actualParameter deleted NMTOKEN #IMPLIED>

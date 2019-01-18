@@ -1,0 +1,185 @@
+<errors version="1.0">
+  <error code="4" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="The address name already exists. Please choose a different name." desc-id="mstrWeb.2316"/>
+  </error>
+  <error code="-1" displayError="false" showContactInfo="false" target="monitorLogin" useOriginalMessage="false"/>
+  <error code="-2" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.829"/>
+  </error>
+  <error code="-3" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.503"/>
+  </error>
+  <error code="-4" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.832"/>
+  </error>
+  <error code="-6" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.423"/>
+  </error>
+  <error code="-7" target="login" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.1334"/>
+  </error>
+  <error code="-8" target="login" useOriginalMessage="false"/>
+  <error code="-9" target="noAccess" useOriginalMessage="true"/>
+  <error code="-11" target="welcome" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.1334"/>
+  </error>
+  <error code="-13" target="" useOriginalMessage="true"/>
+  <error code="-14" target="login" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.469"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+    <message XMLmerge_id="3" desc="" desc-id="mstrWeb.470"/>
+    <message XMLmerge_id="4" desc=" " desc-id=""/>
+    <message XMLmerge_id="5" desc="" desc-id="mstrWeb.456"/>
+  </error>
+  <error code="-15" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.977"/>
+  </error>
+  <error code="-16" target="" useOriginalMessage="true"/>
+  <error code="-17" target="" useOriginalMessage="true"/>
+  <error code="-18" target="" useOriginalMessage="true"/>
+  <error code="-20" target="" useOriginalMessage="true"/>
+  <error code="-21" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.948"/>
+  </error>
+  <error code="-22" displayError="true" showContactInfo="false" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.460"/>
+    <title desc="" desc-id="mstrWeb.459"/>
+  </error>
+  <error code="-24" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.1839"/>
+  </error>
+  <error code="-37" displayError="true" showContactInfo="false" target="login" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.422"/>
+  </error>
+  <error code="-39" displayError="true" showContactInfo="true" target="error" useOriginalMessage="true">
+    <title desc="An error has occurred on this page." desc-id="mstrWeb.1167"/>
+  </error>
+  <error code="-40" displayError="true" showContactInfo="true" target="error" useOriginalMessage="true">
+    <title desc="MicroStrategy Web not licensed" desc-id="mstrWeb.3963"/>
+  </error>
+  <error code="-41" displayError="true" showContactInfo="true" target="error" useOriginalMessage="true">
+    <title desc="Temporary license expiration" desc-id="mstrWeb.3965"/>
+  </error>
+  <error code="-42" displayError="true" showContactInfo="true" target="error" useOriginalMessage="true">
+    <title desc="Product activation" desc-id="mstrWeb.3968"/>
+  </error>
+  <error code="-2147468986" target="" useOriginalMessage="true"/>
+  <error code="-2147270982" target="login" useOriginalMessage="true"/>
+  <error code="-2147205282" target="welcome" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.462"/>
+  </error>
+  <error code="-2147205409" target="login" useOriginalMessage="true"/>
+  <error code="-2147205408" target="login" useOriginalMessage="true"/>
+  <error code="-2147205406" target="login" useOriginalMessage="true"/>
+  <error code="-2147205271" target="login" useOriginalMessage="true"/>
+  <error code="-2147216380" target="login" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.2424"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+    <message XMLmerge_id="3" desc="" desc-id="mstrWeb.1186"/>
+  </error>
+  <error code="-2147207418" target="login" useOriginalMessage="true">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.823"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+  </error>
+  <error code="-2147209056" target="login" useOriginalMessage="true">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.823"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+  </error>
+  <error code="-2147207419" target="login" useOriginalMessage="true">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.823"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+  </error>
+  <error code="-2147209151" target="login" useOriginalMessage="true">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.823"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+  </error>
+  <error code="-2147214578" target="login" useOriginalMessage="true">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.823"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+  </error>
+  <error code="-2147213792" target="login" useOriginalMessage="true">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.823"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+  </error>
+  <error code="-2147209183" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.450"/>
+  </error>
+  <error code="-2147206923" target="login" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.937"/>
+  </error>
+  <error code="-2147216961" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.463"/>
+  </error>
+  <error code="-2147216953" target="login" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.331"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+    <message XMLmerge_id="3" desc="" desc-id="mstrWeb.888"/>
+  </error>
+  <error code="-2147205087" target="login" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.331"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+    <message XMLmerge_id="3" desc="" desc-id="mstrWeb.888"/>
+  </error>
+  <error code="-2147216965" target="login" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.468"/>
+  </error>
+  <error code="-2147216959" target="monitorLogin" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.422"/>
+  </error>
+  <error code="-2147216960" target="chPwd" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.498"/>
+  </error>
+  <error code="-2147216972" target="chPwd" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.470"/>
+  </error>
+  <error code="-2147216963" target="chPwd" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.498"/>
+  </error>
+  <error code="-2147217373" target="saveAs" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.680"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+    <message XMLmerge_id="3" desc="" desc-id="mstrWeb.681"/>
+  </error>
+  <error code="-2147214579" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.985"/>
+  </error>
+  <error code="-2147214581" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.1010"/>
+  </error>
+  <error code="-2147209160" target="saveAs" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.682"/>
+  </error>
+  <error code="-2147213500" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.1418"/>
+  </error>
+  <error code="-2147216986" target="" useOriginalMessage="true">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.823"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+  </error>
+  <error code="-2147217090" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="" desc-id="mstrWeb.899"/>
+    <message XMLmerge_id="2" desc=" " desc-id=""/>
+  </error>
+  <error code="-2147074340" target="" useOriginalMessage="false"/>
+  <error code="-2147214570" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="You do not have sufficient permission to access the resource you requested. If the problem persists, please contact the MicroStrategy Server Administrator." desc-id="mstrWeb.743"/>
+  </error>
+  <error code="-2147216373" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="The object does not exist in the metadata." desc-id="mstrWeb.639"/>
+  </error>
+  <error code="-2147209053" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="You have reached the maximum number of messages per user. Please contact the Administrator." desc-id="mstrWeb.559"/>
+  </error>
+  <error code="-2147209164" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="The maximum number of jobs per project has been reached. Please contact the Administrator." desc-id="mstrWeb.15806"/>
+  </error>
+  <error code="-2147205473" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="The History List for this Intelligence Server is full. To run a report, you must delete one or more messages from the History List on one of the projects running on this Server." desc-id="mstrWeb.2465"/>
+  </error>
+  <error code="-2147212544" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="Too many rows were returned from MicroStrategy Server. The Administrator can change the maximum number of rows to be returned through MicroStrategy Desktop." desc-id="mstrWeb.590"/>
+  </error>
+  <error code="-2147206497" target="" useOriginalMessage="false">
+    <message XMLmerge_id="1" desc="Your request has timed out. Please try again later." desc-id="mstrWeb.109"/>
+  </error>
+</errors>

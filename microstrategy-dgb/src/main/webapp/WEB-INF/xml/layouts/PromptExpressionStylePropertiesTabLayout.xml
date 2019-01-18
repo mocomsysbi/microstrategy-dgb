@@ -1,0 +1,16 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- in pageconfig.xml this tab's name is tabPromptQ -->
+<mstrlayout:layout>
+	<div id="advPropDiv_1" style="display:none;">
+		<mstrlayout:include file="/WEB-INF/xml/layouts/PromptAdvancedProperties_Option.xml"/>	
+	</div>
+	<div id="advPropDiv_2" style="display:none;">
+		<mstrlayout:include file="/WEB-INF/xml/layouts/PromptAdvancedProperties_Pulldown.xml"/>		
+	</div>
+	<div id="advPropDiv_3" style="display:none;">
+		<mstrlayout:include file="/WEB-INF/xml/layouts/PromptAdvancedProperties_List.xml"/>		
+	</div>
+	<div id="advPropDiv_4" style="display:none;">
+		<mstrlayout:include file="/WEB-INF/xml/layouts/PromptAdvancedProperties_Hierarchical.xml"/>		
+	</div>
+</mstrlayout:layout>

@@ -1,0 +1,42 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="LayoutTabLayout">
+  <assignments>
+    <property name="title">{desc:mstrWeb.6024|Layout Properties} - {desc:mstrWeb.3437|Layout}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">properties_dialog_layout_properties_layout.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K780" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3437|Layout}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K781" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.6025|Tab name:}</property>
+                <property name="valueField">TabName</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">20</property>
+                <property name="maxlength">31</property>
+              </block>
+              <block listElementKey="K782" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4013|Use shared Page Header/Footer}</property>
+                <property name="valueField">tabMPHF</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K783" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.6150|Automatically maintain targets for all selectors in this layout}</property>
+                <property name="valueField">Autowire</property>
+                <property name="modelPath">parent/model</property>
+              </block>                   
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		LayoutTabLayout is the "Layout Properties - Layout" tab of the document properties editor.
+	-->

@@ -1,0 +1,40 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.subs"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.ncSubs"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.ncFileSubs"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.ncPrintSubs"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.ncSendNow"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.mobileSubs"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="PageSetupHTML"/>
+  </mstrlayout:render> 
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.rwb"/>
+    <mstrlayout:argument value="RWMultiLayoutTabStripStyle"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.pbb"/>
+    <mstrlayout:argument value="GroupByStyle"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.rwb"/>
+    <mstrlayout:argument value="RWDocumentViewStyle"/>
+  </mstrlayout:render>
+  <mstrlayout:render name="bean">
+    <mstrlayout:argument value="rwframe.rwb"/>
+    <mstrlayout:argument value="RWIncrementalFetchStyle"/>
+  </mstrlayout:render>
+</mstrlayout:layout>

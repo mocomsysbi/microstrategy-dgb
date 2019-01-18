@@ -1,0 +1,32 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="SelectDataSetModel" inherits="ListModel">
+		<definition>
+			<!-- The key of the element this editor will target.  Only used for linking a dataset to an empty template.  -->
+			<property name="targetKey" type="String" />
+			<!-- The datasetId for the dataset which will be replaced-->
+			<property name="oldDSID" type="String"/>
+			<!-- The datasetType for the dataset which will be replaced-->
+			<property name="oldDSType" type="String"/>
+			<!-- Indicates whether its replace single dataset or all the datasets-->
+			<property name="ReplaceAllDS" type="Boolean"/>			
+			<!-- Indicates whether the dataset should be linked with formatting to an empty template. -->
+			<property name="addWithFormatting" type="Boolean" />
+			<!-- Indicates whether the open import link should be available. -->
+			<property name="allowImport" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="valueForm">did</property>
+			<property name="addWithFormatting">true</property>
+			<property name="scriptClass">mstr.models.SelectDataSetModel</property>
+			<property name="blockBegin">0</property>
+			<property name="blockCount">20</property>
+			<!-- subtypes also work in object type restrictions folder, grid report, graph report, grid-graph report, report cube, emma cube -->
+			<property name="objectType">2048,768,769,774,776,779</property>
+			<property name="allowedItemFormName">tp</property>
+			<property name="prohibitedItemFormValues">8</property>
+			<property name="hierarchical">true</property>
+			<property name="keepFolders">true</property>			
+			<property name="container">
+			</property>
+		</assignments>
+	</block>

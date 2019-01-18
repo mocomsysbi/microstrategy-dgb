@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- PopUpEditor is an Editor which is displayed hovering over the GUI contents, rather than inline. -->
+	<block name="PopUpEditor" inherits="Editor">
+		<definition>
+			<!-- Optional CSS style for a shadow display beside Editor. -->
+			<property name="cssShadow" type="String" />
+		</definition>
+		<assignments>
+			<property name="visible">false</property>
+			<property name="cssShadow">progid:DXImageTransform.Microsoft.Shadow(Color=#BFBEBD,Direction=135,Strength=4)</property>
+		</assignments>
+	</block>

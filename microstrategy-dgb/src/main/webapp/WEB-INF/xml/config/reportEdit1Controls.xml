@@ -1,0 +1,20 @@
+<shortcut-list name="edit1" feature-id="is-viewable-report">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="rb" desc="Undo" desc-id="mstrWeb.3540" enable-feature-id="enable-report-undo;is-not-visualization-mode" feature-id="!dhtml;not-datamart;!check-design-mode" name="tbUndo" type="button">
+      <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_UNDO"/>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbUndoAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-report-undo;is-not-visualization-mode" value="tbUndoAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" desc="Redo" desc-id="mstrWeb.3541" enable-feature-id="enable-report-redo;is-not-visualization-mode" feature-id="!dhtml;not-datamart;!check-design-mode" name="tbRedo" type="button">
+      <event XMLmerge_id="1" base-bean="rb" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_REDO"/>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbRedoAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-report-redo;is-not-visualization-mode" value="tbRedoAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>

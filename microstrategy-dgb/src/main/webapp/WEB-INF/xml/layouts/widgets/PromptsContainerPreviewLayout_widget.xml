@@ -1,0 +1,12 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!-- Put a div around, and a css prefix, so we can hide several items which should not appear for editor.
+-->
+<mstrlayout:layout>
+	<div class="mstrPromptCreationEditorPreview">
+		<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptsContainerLayout_widget.xml">
+		    <mstrlayout:replace slot="PromptEditor">
+		        <mstrlayout:bSetProperty path="cancelButton/onclick" value="microstrategy.bone('promptsContainer_PromptsContainerEditorStyle').closeEditor();"/>
+		    </mstrlayout:replace>
+		</mstrlayout:include>
+	</div>
+</mstrlayout:layout>

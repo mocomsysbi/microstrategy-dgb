@@ -1,0 +1,77 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ListView is a rich list view with icons &amp; hyperlinks for navigation. -->
+	<block name="ListView" inherits="BaseView">
+		<definition>
+			<!-- The text to display above the ListView. -->
+			<property name="caption" type="String"/>
+
+			<!-- Optional CSS specification of height for the scroll area of the list view. -->
+			<property name="height" type="String"/>
+
+			<!-- Optional CSS specification of width for the scroll area of the list view. -->
+			<property name="width" type="String"/>
+
+			<!-- Optional prefix name of the CSS class for rendering list items.  -->
+			<property name="itemCSSPrefix" type="String"/>
+
+			<!-- Fqcn of the object to use for rendering list items. -->
+			<property name="itemRendererClass" type="String"/>
+			
+			<!-- Fqcn of the view to use for rendering list header (parent) item. -->
+			<property name="headerView" type="Block"/>
+
+			<!-- True indicates that GUI should render an icon next to each list item name. -->
+			<property name="showIcons" type="Boolean"/>
+
+			<!-- True indicates that GUI should render both list item names and descriptions. -->
+			<property name="showDescriptions" type="Boolean"/>
+
+			<!-- If true, allows user to view items during a Waiting message. -->
+			<property name="showItemsDuringRequest" type="Boolean"/>
+
+			<!-- If true, checkboxes are shown; if false, radio buttons. -->
+			<property name="multiSelect" type="Boolean"/>
+
+			<!-- Flags for enabling/disabling browse features in the GUI. -->
+			<property name="allowBrowseFolder" type="Boolean"/>
+			<property name="allowBrowseAttribute" type="Boolean"/>
+			<property name="allowBrowseHierarchy" type="Boolean"/>
+			
+			<!-- Tells the view whether to ignore keystrokes for command execution. -->
+			<property name="ignoreKeyStrokes" type="Boolean" />
+			
+			<!-- Optional list of commands to execute when the list is double-clicked by an end-user. -->
+			<property name="cmdsDblClick" type="String"/>
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.ListView</property>
+			<property name="layoutClass">mstr.layouts.ListView</property>
+			<property name="itemRendererClass">mstr.itemrenderers.ListView</property>
+			<property name="cssClass">ListBlock</property>
+			<property name="height">150px</property>
+			<property name="itemCSSPrefix">ListBlockItem</property>
+			<property name="showIcons">true</property>
+			<property name="showDescriptions">false</property>
+			<property name="multiSelect">true</property>
+			<property name="cmds">ClickListItem;BrowseListItem||model</property>
+			<property name="allowBrowseFolder">true</property>
+			<property name="allowBrowseAttribute">true</property>
+			<property name="allowBrowseHierarchy">true</property>
+			<!-- Indicates whether the ClickListItem command is enabled for this view. -->
+			<property name="CommandEnabledClickListItem" type="Boolean">true</property>
+			<!-- Indicates whether the BrowseListItem command is enabled for this view. -->
+			<property name="CommandEnabledBrowseListItem" type="Boolean">true</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="emptyText" type="String">{desc:mstrWeb.257|(none)}</property>
+					<property name="errorText" type="String">{desc:mstrWeb.5810|Error loading contents.}</property>
+                    <property name="errorDetailsText" type="String">{desc:mstrWeb.5811|Details...}</property>
+					<property name="searchRequiredText" type="String">{desc:mstrWeb.6026|Please enter search criteria. List may be long.}</property>
+					<property name="waitingText" type="String">{desc:mstrWeb.5674|Loading...}</property>
+					<property name="loadingText" type="String">{desc:mstrWeb.5674|Loading...}</property>
+					<property name="requestTimeOutText" type="String">{desc:mstrWeb.5781|Request timed out.}</property>
+					<property name="requestCancelledText" type="String">{desc:mstrWeb.5780|Request cancelled.}</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

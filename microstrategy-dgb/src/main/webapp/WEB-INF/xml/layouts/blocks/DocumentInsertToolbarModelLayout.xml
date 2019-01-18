@@ -1,0 +1,12 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+	<mstrlayout:bSetProperty path="targetPath" method="getRequestParameterValue">
+	    <mstrlayout:argument type="String" value="viewer" />
+	    <mstrlayout:argument type="String" value="#rwb_viewer" />
+	</mstrlayout:bSetProperty>
+	<mstrlayout:bEditBlock path="items[selectors]" method="addWidgetsToModel">
+		<mstrlayout:argument type="int" value="111" />
+		<mstrlayout:argument type="boolean" value="false" />
+	</mstrlayout:bEditBlock>
+</mstrlayout:layout>

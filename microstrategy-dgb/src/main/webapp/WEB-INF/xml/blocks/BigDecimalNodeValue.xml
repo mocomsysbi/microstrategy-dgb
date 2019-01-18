@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		BigDecimalNodeValue is an ExpressionNodeValue representing a large real number.
+	-->		
+	<block name="BigDecimalNodeValue" inherits="ExpressionNodeValue">
+		<definition>
+			<property name="value" type="String" />
+		</definition>
+		<assignments>
+			<property name="nodeType">10</property> <!-- BigDecimal -->
+		</assignments>
+	</block>

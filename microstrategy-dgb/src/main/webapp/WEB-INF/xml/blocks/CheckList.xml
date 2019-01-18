@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- CheckList is a list of checkboxes, arranged single-file or in a rectangle. -->
+	<block name="CheckList" inherits="ListView">
+		<definition>
+			<!-- If true, list is order LRTB.  Otherwise, list is ordered TBLR. -->
+			<property name="horizontal" type="Boolean" />
+
+			<!-- If horizontal, number of items per row; otherwise, number of items per column (0 = unlimited). -->
+			<property name="arrangementSize" type="Integer" />
+			
+			<!-- If true and if multiSelect is true, indicates that selecting an item should not clear previous selections. -->
+			<property name="isCheckList" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="cssClass">CheckList</property>
+			<property name="itemRendererClass">mstr.itemrenderers.CheckList</property>
+			<property name="itemCSSPrefix">CheckListItem</property>
+			<property name="multiSelect">true</property>
+			<property name="isCheckList">true</property>
+			<property name="height">auto</property>	<!-- overwrites default ListView height (150px) -->
+		</assignments>
+	</block>

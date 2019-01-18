@@ -1,0 +1,61 @@
+<!-- 1. A "default file" is used to set the properties of a Widget, whether
+	 those properties are scalar-valued, list-value or object-valued.  As such, the 
+	 root node of a default file is a 'widget' element.
+	 2. As a Widget is simply a collection of properties and a renderer,
+	 the 'widget' element has any number of 'property' or 'renderer' children.
+	 3. Ideally, we'd like to state that a 'widget' has ZERO or ONE 'renderer'
+	 elements. However, to do that, we'd need to specify that all properties come
+	 before (or after) all renderer nodes.  Alternatively, we can freely intersperse
+	 'property' and 'renderer' elements with the knowledge that subsequent 'renderer'
+	 elements override prior ones (whereas each 'property' element is appended to a
+	 larger list.
+-->
+<!ELEMENT widget (property | renderer)* >
+
+<!-- A 'widget' has a 'name' property which is optional. When it is the root
+	 node of the default file, it represents a specific Widget that was
+	 identified in the WIDGET LIBRARY configuration file.  As such, its name is not required.
+	 However, a 'widget' element may be the value of a property.  In such a case,
+	 if the intent is to initialize that this child component, then a 'name' attribute
+	 is required.
+ -->
+<!ATTLIST widget name NMTOKEN #IMPLIED>
+
+<!-- 1. The main way to initialize a Widget is by initializing its 
+	 properties. A 'property' node may be scalar-valued (in which case, its 
+	 content is character data [#PCDATA]), or object-valued (in which case, its 
+	 content is a 'widget' element) or list-valued (in which case, its content 
+	 is a 'list' element).
+	 2. While we would like to restrict a property element's content to be a single 
+	 value, we cannot represent that restriction through a DTD.  Any "mixed content"
+	 (elements that may contain character data as well as markup) must place #PCDATA
+	 as the first alternative (along with other tags) along with a ZERO or MORE 
+	 modifier.
+-->
+<!ELEMENT property (#PCDATA | widget | list)*>
+
+<!-- A 'property' has a required 'name' attribute.
+-->
+<!ATTLIST property name NMTOKEN #REQUIRED>
+
+<!-- 1. A property has an optional 'type' attribute which defines what kind of
+	 value may be saved in the property: String, Integer, Boolean, Widget or List.
+	 2. The 'type' attribute is required when the property element appears in a
+	 definition element; when inside an assignments element it is optional.  If 
+	 present, then they may define properties specific to a single output mode. 
+-->
+<!ATTLIST property type (String | Integer | Boolean | Widget | List) #IMPLIED>
+
+<!-- A 'renderer' represents the assignment of a rendering component to this
+	 Widget.  Ideally, all of these assignments should occur within
+	 a WIDGET LIBRARY configuration file.
+-->
+<!ELEMENT renderer EMPTY>
+
+<!-- A 'renderer' element has a required 'fqcn' attribute which identifies the Java
+	 class to use as this renderer. -->
+<!ATTLIST renderer fqcn NMTOKEN #REQUIRED>
+
+<!-- Finally, a list-valued property may contain any number of s
+	 or other lists. -->
+<!ELEMENT list (list | widget)* >

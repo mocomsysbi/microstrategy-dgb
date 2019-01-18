@@ -1,0 +1,118 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ReportInstanceModel" name="SampleMQPromptModel">
+  <assignments>
+    <property name="promptQuestions">
+      <block name="ListModel">
+        <property name="items">
+          <list>
+            <block listElementKey="K1436" name="PromptQuestionModel">
+              <property name="index">0</property>
+              <property name="title">AQ prompt.</property>
+              <property name="meaning">An expression prompt on a single AQ condition.</property>
+              <property name="answer">
+                <block name="ExpressionPromptAnswerModel">
+                  <property name="required">true</property>
+                  <property name="min">1</property>
+                  <property name="max">3</property>
+                  <property name="formCategory">1</property>
+                  <property name="functionCategory">Metric</property>
+                  <property name="defaultMetricLevel">1</property>
+                  <!-- The list of available attributes: -->
+                  <property name="available">
+                    <block name="SampleFolderListModel"/>
+                    <!-- for sample folder contents, see above -->
+                  </property>
+                  <!-- The expression answer: -->
+                  <property name="wasselected" type="Block">
+                    <block name="ExpressionModel">
+                      <property name="flattenedNodes">
+                        <list>
+                          <!-- The Equals operator node: -->
+                          <block listElementKey="K1437" name="TreeNode">
+                            <property name="path">0</property>
+                            <property name="value">
+                              <block name="OperatorNodeValue">
+                                <property name="expressionType">10</property>
+                                <!-- Metric Qual -->
+                                <property name="function">6</property>
+                                <!-- Equals -->
+                                <property name="nodeDimtyType">4</property>
+                                <!-- Output Level -->
+                                <property name="dimtyObject">
+                                  <!-- A custom metric dimty level defined by 2 Attributes: -->
+                                  <block name="ExprDimtyObject">
+                                    <property name="canContinue">true</property>
+                                    <property name="filterRest">true</property>
+                                    <property name="units">
+                                    <list>
+                                    <block listElementKey="K1438" name="ExprDimtyUnit">
+                                    <property name="unitType">-1</property>
+                                    <property name="aggregation">1</property>
+                                    <property name="filtering">1</property>
+                                    <property name="relativePosition">0</property>
+                                    <property name="target">
+                                    <block name="ItemInfo">
+                                    <property name="dssid">idCountry</property>
+                                    <property name="n">Country</property>
+                                    <property name="icon">a</property>
+                                    </block>
+                                    </property>
+                                    </block>
+                                    <block listElementKey="K1439" name="ExprDimtyUnit">
+                                    <property name="unitType">-1</property>
+                                    <property name="aggregation">1</property>
+                                    <property name="filtering">1</property>
+                                    <property name="relativePosition">0</property>
+                                    <property name="target">
+                                    <block name="ItemInfo">
+                                    <property name="dssid">idRegion</property>
+                                    <property name="n">Region</property>
+                                    <property name="icon">a</property>
+                                    </block>
+                                    </property>
+                                    </block>
+                                    </list>
+                                    </property>
+                                  </block>
+                                </property>
+                              </block>
+                            </property>
+                          </block>
+                          <!-- The Form Shortcut node: -->
+                          <block listElementKey="K1440" name="TreeNode">
+                            <property name="path">0/0</property>
+                            <property name="value">
+                              <block name="ShortcutNodeValue">
+                                <property name="target">
+                                  <block name="ItemInfo">
+                                    <property name="dssid">idSales</property>
+                                    <property name="n">Sales ($)</property>
+                                    <property name="icon">m</property>
+                                  </block>
+                                </property>
+                              </block>
+                            </property>
+                          </block>
+                          <!-- The constant node: -->
+                          <block listElementKey="K1441" name="TreeNode">
+                            <property name="path">0/1</property>
+                            <property name="value">
+                              <block name="ConstantNodeValue">
+                                <property name="constantValue">0</property>
+                              </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </property>
+                </block>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- A sample model of a Report Instance with 1 MQ Prompt question. -->

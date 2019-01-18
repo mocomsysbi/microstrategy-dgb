@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape-config>
+    <layers>
+        <layer id="11001"  title="Country"    scope="4"    ml="/WEB-INF/xml/maps/lookupTables/a0.json"/>
+        <layer id="11002"  title="Level 1"    scope="4"    ml="/WEB-INF/xml/maps/lookupTables/a1.json"/>
+        <layer id="11003"  title="Level 2"    scope="4"    ml="/WEB-INF/xml/maps/lookupTables/a2.json"/>
+        <layer id="11004"  title="Level 3"    scope="4"    ml="/WEB-INF/xml/maps/lookupTables/a3.json"/>
+        <layer id="11005"  title="Level 4"    scope="4"    ml="/WEB-INF/xml/maps/lookupTables/a4.json"/>
+        <layer id="11006"  title="Level 5"    scope="4"    ml="/WEB-INF/xml/maps/lookupTables/a5.json"/>
+        <layer id="11007"  title="Zip Code"    scope="4"    ml="/WEB-INF/xml/maps/lookupTables/p2.json"/>
+    </layers>
+    <shapes>
+        <shape id="100"
+            desc="US States"
+            descWeb="mstrweb.9229"
+            descFlash="mstr.1622"
+            descDesktop="26973"
+            roleId="2"
+            default="true"
+            type="Polygon"
+            shapeKey="name"
+            shapeCat="1003" />
+
+        <shape id="200"
+            desc="State Abbreviations"
+            descWeb="mstrweb.9229"
+            descFlash="mstr.1622"
+            descDesktop="26973"
+            roleId="2"
+            type="Polygon"
+            shapeKey="abbr"
+            shapeCat="1003" />
+
+        <shape id="300"
+            desc="ZipCode"
+            descWeb="mstrweb.9229"
+            descFlash="mstr.1622"
+            descDesktop="26973"
+            roleId="8"
+            default="true"
+            type="Polygon"
+            shapeKey="name"
+            shapeCat="1005" />
+
+        <shape id="4"
+            desc="Countries of the world"
+            descWeb="mstrweb.9229"
+            descFlash="mstr.1622"
+            descDesktop="26973"
+            roleId="3"
+            default="true"
+            type="Polygon"
+            shapeKey="name"
+            shapeCat="1002" />
+
+        <shape id="5"
+            desc="World Admin Divisions"
+            descWeb="mstrweb.9229"
+            descFlash="mstr.1622"
+            descDesktop="26973"
+            roleId="2"
+            type="Polygon"
+            shapeCat="1003"
+            shapeKey="name" />
+
+        <shape id="6"
+            desc="US Counties"
+            descWeb="mstrweb.9229"
+            descFlash="mstr.1622"
+            descDesktop="26973"
+            roleId="9"
+            default="true"
+            type="Polygon"
+            sfr="2"
+            shapeKey="abbr"
+            shapeCat="1004" />
+
+        <shape id="2101"
+            custom="true"
+            default="true"
+            desc="Country"
+            descWeb="mstrweb.7674"
+            roleId="3"
+            type="Polygon"
+            shapeKey="name,country_code"
+            layerId="11001" />
+
+        <shape id="2102"
+            custom="true"
+            default="true"
+            desc="Level 1 (e.g., state)"
+            descWeb="mstrweb.15745"
+            roleId="2"
+            type="Polygon"
+            shapeKey="name_ascii,name,name_abbr"
+            layerId="11002" />
+
+        <shape id="2103"
+            custom="true"
+            default="true"
+            desc="Level 2 (e.g., city)"
+            descWeb="mstrweb.15746"
+            roleId="1"
+            type="Polygon"
+            shapeKey="name_ascii,name"
+            layerId="11003" />
+
+        <shape id="2104"
+            custom="true"
+            default="true"
+            desc="Level 3 (e.g., district)"
+            descWeb="mstrweb.15747"
+            roleId="0"
+            type="Polygon"
+            shapeKey="name_ascii,name"
+            layerId="11004" />
+
+        <shape id="2105"
+            custom="true"
+            default="true"
+            desc="Level 4 (e.g., place)"
+            descWeb="mstrweb.15748"
+            roleId="0"
+            type="Polygon"
+            shapeKey="name_ascii,name"
+            layerId="11005" />
+
+        <shape id="2106"
+            custom="true"
+            default="true"
+            desc="Level 5 (e.g., municipality)"
+            descWeb="mstrweb.15749"
+            roleId="0"
+            type="Polygon"
+            shapeKey="name_ascii,name"
+            layerId="11006" />
+
+        <shape id="2107"
+            custom="true"
+            default="true"
+            desc="Postal Code"
+            descWeb="mstrweb.15750"
+            roleId="8"
+            type="Polygon"
+            shapeKey="zip_code"
+            layerId="11007" />
+    </shapes>
+    <roles>
+        <role id="1" name="City" />
+        <role id="2" name="State" />
+        <role id="3" name="Country" />
+        <role id="4" name="Location" />
+        <role id="5" name="Latitiude" />
+        <role id="6" name="Longitude" />
+        <role id="7" name="Other" />
+        <role id="8" name="ZipCode" />
+        <role id="9" name="County" />
+    </roles>
+</shape-config>

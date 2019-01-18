@@ -1,0 +1,53 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:bContext defaultContentType="JSON" />
+		<mstrlayout:block name="TitleUnitModel">
+		    <mstrlayout:bSetProperty path="n" method="getName">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+		    </mstrlayout:bSetProperty>
+		    <mstrlayout:bSetProperty path="rs" method="getRowspan">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+		    </mstrlayout:bSetProperty>
+		    <mstrlayout:bSetProperty path="cs" method="com.microstrategy.web.objects.WebTitleUnit#getSpan" base="titleUnit" />
+		    <mstrlayout:bSetProperty path="css" method="getCssClass">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+		    </mstrlayout:bSetProperty>
+		    <mstrlayout:bSetProperty path = "es" method="getElementsBlock" >
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+		    </mstrlayout:bSetProperty>
+            <mstrlayout:bSetProperty path="so" method="getSortOrder">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+            </mstrlayout:bSetProperty>
+            <mstrlayout:bSetProperty path="id" method="getUnitID">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+            </mstrlayout:bSetProperty>
+            <mstrlayout:bSetProperty path="otp" method="getUnitDssType">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+            </mstrlayout:bSetProperty>
+            <mstrlayout:bSetProperty path="fid" method="getFormID">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+            </mstrlayout:bSetProperty>
+            <mstrlayout:bSetProperty path="ftp" method="getFormType">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+            </mstrlayout:bSetProperty>
+		    <!-- 
+            <mstrlayout:bSetProperty path="a" method="getAxis">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+            </mstrlayout:bSetProperty>
+             -->
+		    <!--  drill path  -->
+            <mstrlayout:bSetProperty path="at" method="getActionType">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+            </mstrlayout:bSetProperty>
+		    <mstrlayout:bSetProperty path="dp" method="getDrillPathBlock">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+		    </mstrlayout:bSetProperty>
+			<!--  selector control  -->
+		    <mstrlayout:bSetProperty path="sc" method="getSelectorBlock">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+		    </mstrlayout:bSetProperty>
+		    <mstrlayout:bSetProperty path="lm" method="getLinkMapBlock">
+		        <mstrlayout:argument type="com.microstrategy.web.objects.WebTitleUnit" base="titleUnit" />
+		    </mstrlayout:bSetProperty>
+		</mstrlayout:block> <!-- titleUnitModel -->                                                                            
+</mstrlayout:layout>

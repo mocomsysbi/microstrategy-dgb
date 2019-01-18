@@ -1,0 +1,139 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- This is the model used for the 'Advanced' tab of the Report Services properties editor. -->
+    <block name="PropertiesEditorAdvancedModel" inherits="EditorBoneTranslator">
+        <definition>
+            <property name="advancedTabEnabled" type="Boolean" />
+            <property name="setTransition" type="Block"/>
+            <property name="setTransDuration" type="Block"/>
+            <property name="expandPanels" type="Block"/>
+            <property name="showDataGrid" type="Block"/>
+        </definition>
+        <assignments>
+            <property name="scriptClass">mstr.bones.editors.ActionsBoneTranslator</property>
+            <property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+            <property name="titleText">{desc:mstrWeb.702|Advanced}</property>
+            <property name="visibleField">advancedTabEnabled</property>
+            <property name="advancedTabEnabled">true</property>
+            <property name="fields">showFlushMsg|isPanelStack|ClipOnExport|setTransition|setTransDuration|showTransition|panelOverflowSpacing|panelOverflowSpacingEnabled|expandPanels|allowPanelsToSplitAcrossPages|gridJoinType|showJoinBehavior</property>
+            <property name="setTransition">
+              <block name="ListModel">
+                <property name="selectedIndicesList">0</property>
+                <property name="valueForm">dssid</property>
+                <property name="items">
+                  <list>
+                    <block listElementKey="K876" name="ItemInfo">
+                      <property name="dssid">None</property>
+                      <property name="n">{desc:mstrWeb.2057|None}</property>
+                    </block>
+                    <block listElementKey="K877" name="ItemInfo">
+                      <property name="dssid">Auto</property>
+                      <property name="n">{desc:mstrWeb.4946|Automatic}</property>
+                    </block>
+                    <block listElementKey="K878" name="ItemInfo">
+                      <property name="dssid">Blur</property>
+                      <property name="n">{desc:mstrWeb.4906|Blur}</property>
+                    </block>
+                    <block listElementKey="K879" name="ItemInfo">
+                      <property name="dssid">Fade</property>
+                      <property name="n">{desc:mstrWeb.4912|Fade}</property>
+                    </block>
+                    <block listElementKey="K880" name="ItemInfo">
+                      <property name="dssid">Glow</property>
+                      <property name="n">{desc:mstrWeb.4905|Glow}</property>
+                    </block>
+                    <block listElementKey="K881" name="ItemInfo">
+                      <property name="dssid">GlowWithBlur</property>
+                      <property name="n">{desc:mstrWeb.4904|Glow with Blur}</property>
+                    </block>
+                    <block listElementKey="K1530" name="ItemInfo">
+                      <property name="dssid">Iris</property>
+                      <property name="n">{desc:mstrWeb.4907|Iris}</property>
+                    </block>
+                    <block listElementKey="K882" name="ItemInfo">
+                      <property name="dssid">WipeDown</property>
+                      <property name="n">{desc:mstrWeb.4908|Wipe Down}</property>
+                    </block>
+                    <block listElementKey="K883" name="ItemInfo">
+                      <property name="dssid">WipeLeft</property>
+                      <property name="n">{desc:mstrWeb.4910|Wipe Left}</property>
+                    </block>
+                    <block listElementKey="K884" name="ItemInfo">
+                      <property name="dssid">WipeRight</property>
+                      <property name="n">{desc:mstrWeb.4911|Wipe Right}</property>
+                    </block>
+                    <block listElementKey="K885" name="ItemInfo">
+                      <property name="dssid">WipeUp</property>
+                      <property name="n">{desc:mstrWeb.4909|Wipe Up}</property>
+                    </block>
+                    <block listElementKey="K886" name="ItemInfo">
+                      <property name="dssid">ZoomBlur</property>
+                      <property name="n">{desc:mstrWeb.4913|Zoom and Blur}</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </property>
+            <property name="setTransDuration">
+              <block name="ListModel">
+                <property name="selectedIndicesList">0</property>
+                <property name="valueForm">dssid</property>
+                <property name="items">
+                  <list>
+                    <block listElementKey="K887" name="ItemInfo">
+                      <property name="dssid">-1</property>
+                      <property name="n">{desc:mstrWeb.4946|Automatic}</property>
+                    </block>
+                    <block listElementKey="K888" name="ItemInfo">
+                      <property name="dssid">2000</property>
+                      <property name="n">{desc:mstrWeb.4898|Very slow}</property>
+                    </block>
+                    <block listElementKey="K889" name="ItemInfo">
+                      <property name="dssid">1500</property>
+                      <property name="n">{desc:mstrWeb.4899|Slow}</property>
+                    </block>
+                    <block listElementKey="K890" name="ItemInfo">
+                      <property name="dssid">1000</property>
+                      <property name="n">{desc:mstrWeb.4900|Medium}</property>
+                    </block>
+                    <block listElementKey="K891" name="ItemInfo">
+                      <property name="dssid">700</property>
+                      <property name="n">{desc:mstrWeb.4901|Fast}</property>
+                    </block>
+                    <block listElementKey="K892" name="ItemInfo">
+                      <property name="dssid">400</property>
+                      <property name="n">{desc:mstrWeb.4902|Very fast}</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </property>
+
+
+             <property name="expandPanels">
+		      <block name="ListModel">
+		        <property name="selectedIndicesList">0</property>
+		        <property name="valueForm">dssid</property>
+		        <property name="items">
+		          <list>
+		            <block listElementKey="K936" name="ItemInfo">
+		              <property name="dssid">0</property>
+		              <property name="n">{desc:mstrWeb.2057|None}</property>
+		            </block>
+		            <block listElementKey="K937" name="ItemInfo">
+		              <property name="dssid">1</property>
+		              <property name="n">{desc:mstrWeb.2069|Vertical}</property>
+		            </block>
+		            <block listElementKey="K938" name="ItemInfo">
+		              <property name="dssid">2</property>
+		              <property name="n">{desc:mstrWeb.2066|Horizontal}</property>
+		            </block>
+		          </list>
+		        </property>
+		      </block>
+		    </property>
+
+            <property name="showDataGrid">
+            </property>
+
+        </assignments>
+    </block>

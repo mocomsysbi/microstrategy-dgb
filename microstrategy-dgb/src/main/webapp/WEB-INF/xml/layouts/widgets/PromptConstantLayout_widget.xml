@@ -1,0 +1,69 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/PromptBaseLayout_widget.xml">
+		<!-- model -->
+		<mstrlayout:replace slot="modelContent">
+	        <mstrlayout:bSetProperty path="type" value="CONSTANT"/>
+	        <mstrlayout:bSetProperty path="answer">
+	          <mstrlayout:block name="ConstantPromptAnswerModel">
+	            <mstrlayout:bSetProperty path="dataType" method="getPromptDataType"/>
+	            <mstrlayout:bSetProperty path="required" method="isRequired" base="prompt"/>
+	            <mstrlayout:bSetProperty path="min" method="getMin"/>
+	            <mstrlayout:bSetProperty path="max" method="getMax"/>
+	            <mstrlayout:bSetProperty path="dateFormat" method="getDateFormat"/> 
+	            <mstrlayout:bSetProperty path="firstDayOfWeek" method="getFirstDayOfWeek"/> 	             					
+	            <mstrlayout:bSetProperty path="timeFormat" method="getTimeFormat"/>	
+	            <mstrlayout:bSetProperty path="decimalSep" method="getDecimalSep"/>
+	            <mstrlayout:bSetProperty path="thousandSep" method="getThousandSep"/>
+	            <mstrlayout:if method="hasError">
+	            	<mstrlayout:then>
+			            <mstrlayout:bSetProperty path="message" method="getErrorMessage"/>
+			            <mstrlayout:bSetProperty path="validationStatus/statusCode" value="999"/> <!-- mstr.Enum.Validation.STATUSCODE.INVALID -->
+	            	</mstrlayout:then>
+	            </mstrlayout:if>
+	            <mstrlayout:if method="isAnswerComplex">
+	              <mstrlayout:then>
+	                <mstrlayout:bSetProperty path="isComplex" value="true"/>
+	                <mstrlayout:bSetProperty path="complexString" method="getAnswer"/>
+                    <mstrlayout:if method="isDynamicDatePrompt">
+                      <mstrlayout:then>
+                        <mstrlayout:bSetProperty path="valueString" method="getResolvedDynamicDate"/>    
+                      </mstrlayout:then>
+                    </mstrlayout:if>
+                  </mstrlayout:then>
+	              <mstrlayout:else>
+	                <mstrlayout:bSetProperty path="valueString" method="getAnswer"/>
+	              </mstrlayout:else>
+	            </mstrlayout:if>
+	          </mstrlayout:block>
+	        </mstrlayout:bSetProperty>
+		</mstrlayout:replace>
+	
+		<!-- view -->
+		<mstrlayout:replace slot="viewContent">
+	        <mstrlayout:bSetProperty path="simpleAnswerView">
+	          <mstrlayout:block name="CalendarAndTimePicker">
+	            <mstrlayout:bSetProperty path="modelPath" value="parent/model/answer/getCalendarTimePicker()"/>
+	            <mstrlayout:if method="getPropertyValue" value="0">
+	              <mstrlayout:argument value="ShowTime"/>
+	              <mstrlayout:then>
+	                <mstrlayout:bDeleteProperty path="timePicker"/>
+	              </mstrlayout:then>
+	            </mstrlayout:if>
+	            <!-- width -->
+		         <mstrlayout:if method="getPropertyValue" value="0">
+		          <mstrlayout:argument value="WidthMode" />
+		          <mstrlayout:else>
+		           <mstrlayout:bSetProperty path="width" method="getPropertyWidthValue" />
+		          </mstrlayout:else>
+		         </mstrlayout:if>
+	          </mstrlayout:block>
+	        </mstrlayout:bSetProperty>
+	        <mstrlayout:bSetProperty path="complexAnswerView">
+	          <mstrlayout:block name="TextDiv">
+	            <mstrlayout:bSetProperty path="modelPath" value="parent/model/answer/complexString"/>
+	          </mstrlayout:block>
+	        </mstrlayout:bSetProperty>
+		</mstrlayout:replace>
+	</mstrlayout:include>
+</mstrlayout:layout>

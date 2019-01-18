@@ -1,0 +1,51 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <div class="mstrPanelTitleBar">
+        <span class="mstrPanelTitle">
+            <mstrlayout:render name="title"/>
+        </span>
+    </div>
+    <div class="mstrPanelBody">
+      <table cellspacing="0" cellpadding="0" class="preferenceList">
+        <tr>
+          <td valign="top">
+            <mstrlayout:render name="MacroPulldown"/>
+            <br /><br />
+          </td>
+        </tr>
+        
+		<tr>
+          <td valign="top">
+            <span class="prefs-content-bold-text">
+              <mstrlayout:render name="descriptor">  <!-- Header: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.1932"/>
+              </mstrlayout:render>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"  style="padding-left:20px">
+            <mstrlayout:render name="PDFReportHeader"/>
+          </td>
+        </tr>
+        
+      </table>
+    </div>
+
+    <div class="mstrPanelButtonBar">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <colgroup>
+          <col width="70%"/>
+          <col width="30%"/>
+        </colgroup>
+        <tr>
+          <td valign="top">
+            <mstrlayout:render name="ApplyChanges"/>
+            <mstrlayout:render name="CancelButton"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</mstrlayout:layout>

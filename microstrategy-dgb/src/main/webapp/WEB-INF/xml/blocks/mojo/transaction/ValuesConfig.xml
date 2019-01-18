@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="ValuesConfig" inherits="CalculatedConfig">
+	<definition>
+		<!-- The input values, 1 for "manual" and 0 for "calculated" -->
+		<property name="ipt" type="Integer"/>
+		<!-- The possible preset values list -->
+		<property name="vls" type="List"/>
+	</definition>
+</block>

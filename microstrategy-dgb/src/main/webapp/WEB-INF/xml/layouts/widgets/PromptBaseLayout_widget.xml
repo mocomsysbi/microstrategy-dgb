@@ -1,0 +1,111 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:base id="pb" method="getPromptBean" base="bean"/>
+	<mstrlayout:base id="prompt" method="getWebPrompt" base="pb"/>
+	<mstrlayout:slot name="generalSettings"/>
+	<mstrlayout:if method="isDisplayingModel">
+	    <mstrlayout:then>
+	      <mstrlayout:block name="PromptQuestionModel">
+	        <mstrlayout:bSetProperty path="index" method="getPromptIndex"/>
+<!--	        <mstrlayout:bSetProperty path="type" value="CONSTANT"/> -->
+	        <mstrlayout:bSetProperty path="n" method="getPromptName"/>
+	        <mstrlayout:bSetProperty path="namePrefixForSingleSavedAnswer" method="getNamePrefixForSingleSavedAnswer"/>
+	        <mstrlayout:bSetProperty path="title" method="getPromptTitle"/>
+	        <mstrlayout:bSetProperty path="meaning" method="getPromptMeaning"/>
+	        <mstrlayout:bSetProperty path="instructions" method="getRestriction"/>
+	        <mstrlayout:bSetProperty path="displayStyle" method="getDisplayStyleName" />
+					
+				<!--=================== slot for content of model =======================-->
+			<mstrlayout:slot name="modelContent"/>
+	        
+	        <mstrlayout:bSetProperty path="savingAnswer" method="getDefaultSavingAnswer"/>
+			<mstrlayout:if method="usingDefaultAnswer">
+            	<mstrlayout:then>
+	            	<mstrlayout:base id="defaultAns" method="getDefaultAnswer" base="transform"/>
+	            	<mstrlayout:bSetProperty path="answer/container">
+	                    <mstrlayout:block name="SavedAnswer">
+	                      <mstrlayout:bSetProperty path="dssid" method="getID" base="defaultAns"/>
+	                      <mstrlayout:bSetProperty path="n" method="getDisplayName" base="defaultAns"/>
+	                      <mstrlayout:bSetProperty path="desc" method="getDescription" base="defaultAns"/>
+	                      <mstrlayout:bSetProperty path="stp" method="getSubType" base="defaultAns"/>
+	                      <mstrlayout:bSetProperty path="icon" method="getObjectInfoCssName">
+	                        <mstrlayout:argument list="defaultAns" type="com.microstrategy.web.objects.WebObjectInfo"/>
+	                      </mstrlayout:bSetProperty>
+	                      <mstrlayout:bSetProperty path="tp" method="getType" base="defaultAns"/>
+	                      <mstrlayout:bSetProperty path="isDefault" method="isDefaultAnswer">
+	                      	<mstrlayout:argument list="defaultAns" type="com.microstrategy.web.objects.WebPromptAnswer"/>
+	                      </mstrlayout:bSetProperty>
+	                      <mstrlayout:bSetProperty path="isAutoClose" method="isAutoCloseAnswer">
+	                      	<mstrlayout:argument list="defaultAns" type="com.microstrategy.web.objects.WebPromptAnswer"/>
+	                      </mstrlayout:bSetProperty>
+	                    </mstrlayout:block>
+		            </mstrlayout:bSetProperty>
+		       	</mstrlayout:then>
+            </mstrlayout:if>
+
+			<!-- user answers. common to all prompt types, should move to central place. -->
+	        <mstrlayout:bSetProperty path="savedAnswers">
+	        	<mstrlayout:block name="PromptSavedAnswers">
+	        		<mstrlayout:list id="obj" method="getSavedAnswers">
+	                  <mstrlayout:bSetProperty path="items">
+	                    <mstrlayout:block name="SavedAnswer">
+	                      <mstrlayout:bSetProperty path="dssid" method="getID" base="obj"/>
+	                      <mstrlayout:bSetProperty path="n" method="getDisplayName" base="obj"/>
+	                      <mstrlayout:bSetProperty path="desc" method="getDescription" base="obj"/>
+	                      <mstrlayout:bSetProperty path="stp" method="getSubType" base="obj"/>
+	                      <mstrlayout:bSetProperty path="icon" value="pa"/>
+	                      <mstrlayout:bSetProperty path="tp" method="getType" base="obj"/>
+	                      <mstrlayout:bSetProperty path="isDefault" method="isDefaultAnswer">
+	                      	<mstrlayout:argument list="obj" type="com.microstrategy.web.objects.WebPromptAnswer"/>
+	                      </mstrlayout:bSetProperty>
+	                      <mstrlayout:bSetProperty path="isAutoClose" method="isAutoCloseAnswer">
+	                      	<mstrlayout:argument list="obj" type="com.microstrategy.web.objects.WebPromptAnswer"/>
+	                      </mstrlayout:bSetProperty>
+	                    </mstrlayout:block>
+	                  </mstrlayout:bSetProperty>
+	        		</mstrlayout:list>
+	        	</mstrlayout:block>
+	        </mstrlayout:bSetProperty>
+			<mstrlayout:bSetProperty path="answerRestriction" method="getAnswerRestriction"/>
+	      
+			<!-- Specify parameters used for events -->
+	        <mstrlayout:bSetProperty path="extendedProperties">
+	          <mstrlayout:block name="PromptQuestionExtendedProperties">
+	            <mstrlayout:bSetProperty path="beanPath" method="getPath" base="pb"/>
+	            <mstrlayout:bSetProperty path="answerOption" method="getAnswerOption"/>
+	            <mstrlayout:bSetProperty path="answerFormat" method="getAnswerFormat"/>
+	          </mstrlayout:block>
+	        </mstrlayout:bSetProperty>
+	      
+		  </mstrlayout:block>
+	    </mstrlayout:then>
+	    <mstrlayout:else>
+	      <mstrlayout:block name="PromptQuestionView">
+			  
+			<!-- ============== slot for view ======================= -->  
+			<mstrlayout:slot name="viewContent"/>
+			  
+	        <!-- populate saveAnswerView, common to all prompt type, need to move to a central place. -->
+			<mstrlayout:if method="allowSingleUserAnswer"> <!-- single answer -->
+				<mstrlayout:then>
+					<mstrlayout:bSetProperty path="saveAnswerView">
+						<mstrlayout:block name="PromptSaveOneAnswer">
+							<mstrlayout:bSetProperty path="modelPath" value="parent/model"/>
+						</mstrlayout:block>
+					</mstrlayout:bSetProperty>
+				</mstrlayout:then>
+			</mstrlayout:if>
+			<mstrlayout:if method="allowMultipleUserAnswer"> <!-- multiple answer -->
+				<mstrlayout:then>
+					<mstrlayout:bSetProperty path="saveAnswerView">
+						<mstrlayout:block name="PromptSaveManyAnswers">
+							<mstrlayout:bSetProperty path="modelPath" value="parent/model"/>
+							<mstrlayout:bSetProperty path="loadSavedAnswerButton/visible" method="hasSavedAnswers" base="transform"/> <!-- if no saved answer, hide the load button -->
+						</mstrlayout:block>
+					</mstrlayout:bSetProperty>
+				</mstrlayout:then>
+			</mstrlayout:if> 
+		  </mstrlayout:block> 
+		</mstrlayout:else>
+	</mstrlayout:if>
+</mstrlayout:layout>

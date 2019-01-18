@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name = "TransactionInput">
+    <definition>
+        <!-- column index in the transaction report -->
+        <property name = "tix" type = "Integer" />
+            
+        <!-- dss id of a transaction attribute or a transaction metric-->
+        <property name = "did" type = "String" />
+
+        <!-- dss id of attribute form -->
+        <property name = "fid" type = "String" /> 
+        
+        <!-- data type: string, integer, number, boolean, date -->
+        <property name = "dtp" type = "Integer" />
+
+        <!-- display name: opportunity@ID, Amount, ... -->
+        <property name = "n" type = "String" />
+        
+         <!-- transaction flag -->
+        <property name = "fg" type = "Integer" />
+    </definition>
+</block>

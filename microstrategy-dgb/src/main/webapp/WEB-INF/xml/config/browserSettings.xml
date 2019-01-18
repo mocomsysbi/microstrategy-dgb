@@ -1,0 +1,36 @@
+  <browser-settings version="1.0">
+    <browser-setting desc="Report Frame Formatting Toolbar - HTML Mode." name="frame_ft" value="0"/>
+    <browser-setting desc="Report Frame Report Toolbar" name="rt" value="1"/>
+    <browser-setting desc="Display the pageby and groupby section" name="pbs" value="1"/>
+    <browser-setting desc="Show the dock left section opened." name="lTbar" value="1"/>
+    <browser-setting desc="Show the need help section opened." name="hlp" value="0"/>
+    <browser-setting desc="Allow auto apply for view filter" name="avf" value="1"/>
+    <browser-setting desc="Shows the iframe conponent in the interface" name="iframeVisible" value="0"/>
+    <browser-setting desc="Disable Automatic Login for NT and Guest Modes" name="autoLogin" value="1"/>
+    <browser-setting desc="Width of the object browser in report and Report Services" name="obW" value="250"/>
+    <browser-setting desc="Height of the object browser in report and Report Services" name="obH" value="400"/>
+    <browser-setting desc="Width of the Folder Tree View on folder pages " name="ltW" value="200"/> 
+    <browser-setting desc="height of the left toolbar on all pages" name="ltH" value="600"/> 
+    <browser-setting desc="Height of the object browser contents in report and Report Services" name="obCH" value="350"/>
+    <browser-setting desc="Display the accordion in view mode for Report" name="accordionReportView" value="0"/>
+    <browser-setting desc="The current tab of the accordion for Report" name="accordionReportTab" value="workingSet"/>
+    <browser-setting desc="Display the accordion in view mode for Report Services" name="obView" value="0"/>
+    <browser-setting desc="Display the accordion in design mode for Report Services" name="obDesign" value="1"/>
+    <browser-setting desc="The current tab of the accordion for Report Services" name="accordionRWTab" value="workingSet"/>
+    <browser-setting desc="Display format of the object browser in report" name="obDF" value="list"/>
+    <browser-setting desc="Report Services Grid Toolbar" name="rwgrt" value="0"/>
+    <browser-setting desc="Report Services Graph Toolbar" name="rwghft" value="0"/>
+    <browser-setting desc="Report Frame Report Filter in Design Mode (DHTML)" name="frame_rfe_1" value="1"/>
+    <browser-setting desc="Report Frame View Filter in Design Mode (DHTML)" name="frame_vfe_1" value="1"/>
+    <browser-setting desc="Display Prompt index section in DHTML mode" name="promptIndex" value="1"/>
+    <browser-setting desc="The minimum printable area" name="printArea" value="0.5"/>
+    <browser-setting desc="Allow auto apply for thresholds" name="thap" value="1"/>
+    <browser-setting desc="Store User Color Theme Name" name="colorTheme" value="Red"/>
+	<browser-setting desc="page setup dialog – HTML Mode" name="PageSetupHTML" value="0"/>
+	<browser-setting desc="Search Page Current Tab Index" name="sidx" value="0"/>
+	<browser-setting desc="Search Page Side Panel Status - expanded" name="sps" value="1"/>
+	<browser-setting desc="Stores User Font Family Name" name="fontFamily" value="Tahoma,Arial,Verdana,Microsoft Sans Serif"/>
+	<browser-setting desc="Stores User Color Theme Name" name="fontSize" value="8"/>
+    <browser-setting desc="Stores the last message id viewed" name="lastMsgID" value=""/>
+    <browser-setting desc="Exclude Shortcut objects from search results in Report All Object Browser" name="exs" value="false"/>
+  </browser-settings>

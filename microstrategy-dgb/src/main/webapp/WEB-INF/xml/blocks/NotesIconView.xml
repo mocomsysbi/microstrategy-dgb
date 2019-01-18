@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="NotesIconView" inherits="BaseView">
+		<definition>
+		    <property name="cssIconClass" type="String"/>
+		    <property name="title" type="String"/>
+		    <property name="iconId" type="String"/>
+		</definition>    
+		<assignments>
+			<property name="id">NotesIconView_view</property>
+			<property name="layoutClass">mstr.layouts.NotesIcon</property>
+			<property name="cssClass">NotesIconContainer</property>
+			<property name="cssIconClass">NotesIcon</property>
+			<property name="title">{desc:mstrWeb.6027|Notes...}</property>
+			<property name="iconId">notesIcon</property>
+			<property name="visible">true</property>
+		</assignments>
+	</block>

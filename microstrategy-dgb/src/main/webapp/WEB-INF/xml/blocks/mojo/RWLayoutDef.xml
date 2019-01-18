@@ -1,0 +1,40 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides "definition" information about a single layout in a RWD.
+--> 
+<block name="RWLayoutDef" inherits="HasFormats">
+    <definition>
+        <!-- The key associated with this layout -->
+        <property name="k" type="String" />
+        
+        <!-- The title of the layout tab. Always available, even if layout is not "loaded" -->
+        <property name="title" type="String" />
+        
+        <!-- Whether the definition for this layout is loaded. This affects the remaining
+             properties of this block. If not loaded, these properties are undefined. -->
+        <property name="loaded" type="Boolean" />
+        
+        <!-- A bitwise flag indicating the supported orientations for this layout. -->
+        <property name="or" type="Integer" />
+        
+        <!-- The units in this layout. They are organized as a Map, with the key for 
+             the map being the key for the unit. The value of the map is a Block of type
+             RWUnitDef -->
+        <property name="units" type="Block" />
+        
+        <!-- Indicates whether the layout contains horizontal data or not. -->
+        <property name="horiz" type="Boolean" />
+        
+        <!-- This property stores the values of the all the Control Group By Objects and their corresponding targets for a given layout. -->
+        <property name="cgbMap" type="Block" />
+        
+        <!-- Indicates whether this layout has an auto width. -->
+        <property name="aw" type="Boolean" />
+        
+        <!-- Indicates whether the group by for this layout should be displayed or not -->
+        <property name="dpb" type="Boolean" />        
+        
+        <!-- The Zoom Factor for this document (0.75 == 75%, 1 == 100%, 4 == 400%) -->
+        <property name="zf" type="Double" />
+    </definition>
+</block>

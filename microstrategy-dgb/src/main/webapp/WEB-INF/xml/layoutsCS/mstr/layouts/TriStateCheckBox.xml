@@ -1,0 +1,17 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])"
+	on_set_enabled="mstr.behaviors.TriStateCheckBox.on_set_enabled(view,model,rootTag)"
+	on_model_hashadd_selectedIndices="mstr.behaviors.TriStateCheckBox.on_model_hashadd_selectedIndices(view, model, rootTag);">
+  <div class="{@cssPrefix}{@cssClass}"   style="{@cssText}"  id="{@id}">
+	  <table cellpadding="0" cellspacing="0">
+		  <tr>
+			  <td>
+	  				<div class="{@cssPrefix}{@cssClass}Off"  onclick="if (mstr.$obj('{@id}').props['enabled']) mstr.$obj('{@id}').fireCommands();"/>
+	  		  </td>
+	  		  <td>		
+	  				<span class="{@cssPrefix}{@cssClass}Caption" onclick="if (mstr.$obj('{@id}').props['enabled']) mstr.$obj('{@id}').fireCommands()">{@caption}</span> 
+			  </td>
+		  </tr>
+	  </table>
+  </div>
+</mstrlayout:layout>

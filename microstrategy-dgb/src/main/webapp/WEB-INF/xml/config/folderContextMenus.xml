@@ -1,0 +1,398 @@
+<shortcut-list-set base-bean="fb" name="folderContextMenus"
+    version="1.0">
+    <shortcut-list name="default">
+        <shortcut name="open" desc="[Open folder]" desc-id="mstrWeb.979"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderOpen" />
+        <shortcut name="run" desc="[Run...]" desc-id="mstrWeb.5700"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRun" />
+        <shortcut base-bone="folderAllModes" name="republish" desc="[Republish]"
+            desc-id="mstrWeb.9242" feature-id="web-execute-cube-report"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.RepublishCube" />
+        <shortcut base-bone="folderAllModes" name="edit" desc="[Edit...]"
+            desc-id="mstrWeb.3224"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderEdit" />
+        <shortcut base-bone="folderAllModes" name="editDI" desc="Edit SuperCube" desc-id="mstrWeb.15805"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.EditWithAppschema" />
+        <shortcut base-bone="folderAllModes" name="schedule" desc="[Schedule]"
+            desc-id="mstrWeb.1085"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ScheduleCube" />
+        <shortcut name="copy" desc="[Copy...]" desc-id="mstrWeb.3354"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderCopy"
+            iframe="true">
+            <event
+                event-id="com.microstrategy.web.app.beans.EnumFrameEditorEvents.WebEventOpen"
+                base-bean="OMD">
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentObjectId"
+                    value="@oid@" />
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentObjectType"
+                    value="@oty@" />
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentAction"
+                    source="enum"
+                    enumname="com.microstrategy.web.app.beans.ObjectManipulationDialogBean.ACT_COPY" />
+            </event>
+        </shortcut>
+        <shortcut name="move" desc="[Move...]" desc-id="mstrWeb.3355"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderMove"
+            iframe="true">
+            <event
+                event-id="com.microstrategy.web.app.beans.EnumFrameEditorEvents.WebEventOpen"
+                base-bean="OMD">
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentObjectId"
+                    value="@oid@" />
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentObjectType"
+                    value="@oty@" />
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentAction"
+                    source="enum"
+                    enumname="com.microstrategy.web.app.beans.ObjectManipulationDialogBean.ACT_MOVE" />
+            </event>
+        </shortcut>
+        <shortcut name="new" desc="[New]" desc-id="mstrWeb.5232"
+            feature-id="create-objects-or-folder"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderNew">
+            <shortcut-list name="new">
+                <shortcut base-bean="fb" desc="Folder" desc-id="mstrWeb.3373"
+                    name="newFolder" feature-id="create-folder" iframe="true">
+                    <event base-bean="OMDCreateFolder"
+                        event-id="com.microstrategy.web.app.beans.EnumFrameEditorEvents.WebEventOpen">
+                        <argument
+                            name="com.microstrategy.web.app.beans.EnumOMDCreateFolderEvents.OMDCreateFolderEventArgumentTargetName"
+                            value="fb" />
+                    </event>
+                </shortcut>
+                <shortcut name="groupnew1" desc="-" />
+                <shortcut base-bean="fb" desc="Report" desc-id="mstrWeb.1279"
+                    name="newReport" feature-id="create-view-reports" iframe="false">
+                    <event
+                        event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreate" />
+                </shortcut>
+                <shortcut base-bean="fb" desc="Document" desc-id="mstrWeb.239"
+                    name="newDocument" feature-id="template-documents;documents-design-mode"
+                    iframe="false">
+                    <event
+                        event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreateDocument" />
+                </shortcut>
+                <shortcut base-bean="fb" desc="Dossier" desc-id="mstrWeb.15452"
+                    name="newHTML5VI" feature-id="dhtml;create-analysis" iframe="false" type="button"
+                    onclick="microstrategy.bone('folderAllModes').commands.exec('newBlankVI');" />
+                <!-- Removed these 2 entries as they were meant for debugging purposes
+                <shortcut base-bean="fb" desc="HTML5 VI" desc-id=""
+                    append-state="true" name="newVI"
+                    onclick="microstrategy.bone('folderAllModes').commands.exec('newIVEHTML5VI');"
+                    type="button" feature-id="dhtml;create-analysis;flashvi" href="#"
+                    iframe="false" />
+                <shortcut base-bean="fb" desc="Flash VI" desc-id=""
+                    append-state="true" name="newFlashVI"
+                    onclick="microstrategy.bone('folderAllModes').commands.exec('newIVE');"
+                    type="button" feature-id="dhtml;create-analysis;!flashvi" href="#"
+                    iframe="false" /> -->
+                <shortcut name="newPrompt" desc="[Prompt]" feature-id="use-prompt-editor"
+                    desc-id="mstrWeb.4465">
+                    <shortcut-list name="new">
+                        <shortcut name="createPrompt" desc="[Create Prompt...]"
+                            desc-id="mstrWeb.4466">
+                            <event XMLmerge_id="1"
+                                event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenCreatePromptPage" />
+                        </shortcut>
+                        <shortcut name="HQPrompt" desc="[Hierarchy Qualification...]"
+                            desc-id="mstrWeb.5209"
+                            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderNewPrompt">
+                            <event
+                                event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreatePrompt">
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectType"
+                                    value="3" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentPromptExpressionType"
+                                    value="16" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentFolderId"
+                                    value="@__bone__.folderId@" />
+                            </event>
+                        </shortcut>
+                        <shortcut name="AQPrompt" desc="[Attribute Qualification...]"
+                            desc-id="mstrWeb.5210"
+                            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderNewPrompt">
+                            <event
+                                event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreatePrompt">
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectType"
+                                    value="3" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentPromptExpressionType"
+                                    value="17" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentFolderId"
+                                    value="@__bone__.folderId@" />
+                            </event>
+                        </shortcut>
+                        <shortcut name="elementPrompt" desc="[Attribute Element...]"
+                            desc-id="mstrWeb.4467"
+                            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderNewPrompt">
+                            <event
+                                event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreatePrompt">
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectType"
+                                    value="2" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentFolderId"
+                                    value="@__bone__.folderId@" />
+                            </event>
+                        </shortcut>
+                        <shortcut name="MQPrompt" desc="[Metric Qualification...]"
+                            desc-id="mstrWeb.5211"
+                            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderNewPrompt">
+                            <event
+                                event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreatePrompt">
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectType"
+                                    value="3" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentPromptExpressionType"
+                                    value="10" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentFolderId"
+                                    value="@__bone__.folderId@" />
+                            </event>
+                        </shortcut>
+                        <shortcut name="objectPrompt" desc="[Object...]" desc-id="mstrWeb.4469"
+                            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderNewPrompt">
+                            <event
+                                event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreatePrompt">
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectType"
+                                    value="4" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentFolderId"
+                                    value="@__bone__.folderId@" />
+                            </event>
+                        </shortcut>
+                        <shortcut name="valuePrompt" desc="[Value...]" desc-id="mstrWeb.4468"
+                            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderNewPrompt">
+                            <event
+                                event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreatePrompt">
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectType"
+                                    value="1" />
+                                <argument
+                                    name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentFolderId"
+                                    value="@__bone__.folderId@" />
+                            </event>
+                        </shortcut>
+                    </shortcut-list>
+                </shortcut>
+                <shortcut name="newFilter" desc="[Filter...]" desc-id="mstrWeb.1281"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderNewFilter">
+                    <event
+                        event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenFilterEditor">
+                        <argument
+                            name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentIsNew"
+                            value="true" />
+                        <argument
+                            name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentFolderId"
+                            value="@__bone__.folderId@" />
+                    </event>
+                </shortcut>
+                <shortcut name="newCGE" desc="Custom Group" desc-id="mstrWeb.2105"
+                    onclick="microstrategy.bone('folderAllModes').commands.exec('newCGE');"
+                    feature-id="web-use-custom-group-editor">
+                </shortcut>
+                <shortcut name="Metric" desc="[Metric]" desc-id="mstrWeb.4779"
+                    feature-id="create-metric"
+                    onclick="microstrategy.bone('folderAllModes').commands.exec('newFSE');">
+                    <!-- <shortcut-list name="Metric"> <shortcut name="newME" desc="[Formula
+                        Metric]" desc-id="mstrWeb.9473" onclick="microstrategy.bone('folderAllModes').commands.exec('newME');"
+                        /> <shortcut name="newFSE" desc="Function Metric" onclick="microstrategy.bone('folderAllModes').commands.exec('newFSE');"
+                        /> <shortcut name="newSME" desc="Simple Metric" onclick="microstrategy.bone('folderAllModes').commands.exec('newSME');"
+                        /> </shortcut-list> -->
+                </shortcut>
+            </shortcut-list>
+        </shortcut>
+        <shortcut name="group1" desc="-" />
+        <shortcut name="create-shortcut" desc="[Create Shortcut...]"
+            desc-id="mstrWeb.3356"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderCreateShortcut"
+            iframe="true">
+            <event
+                event-id="com.microstrategy.web.app.beans.EnumFrameEditorEvents.WebEventOpen"
+                base-bean="OMD">
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentObjectId"
+                    value="@oid@" />
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentObjectType"
+                    value="@oty@" />
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentAction"
+                    source="enum"
+                    enumname="com.microstrategy.web.app.beans.ObjectManipulationDialogBean.ACT_CREATE_SHORTCUT" />
+            </event>
+        </shortcut>
+        <shortcut name="delete" desc="[Delete...]" desc-id="mstrWeb.3357"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderDelete" />
+       <shortcut name="findDependents" desc="Find Dependents..." desc-id="mstrWeb.14490"
+            dhtml-show="microstrategy.bone('folderAllModes').commands.queryVisible('canFindDependents');"
+            onclick="microstrategy.bone('folderAllModes').commands.exec('findDependents');" />
+        <shortcut name="rename" desc="[Rename...]" desc-id="mstrWeb.3358"
+            base-bone="$transform_id" onclick="enableRenameField('@oty@','@oid@');"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderInlineRename" />
+        <shortcut name="create-document" desc="Create Document"
+            desc-id="mstrWeb.2918"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderCreateDocumentFromReport" />
+        <shortcut name="create-report" desc="Create Report" desc-id="mstrWeb.5"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderCreateReportFromCube" />
+        <shortcut name="create-analysis" desc="Create Dossier"
+            desc-id="mstrWeb.14825" feature-id="dhtml;create-analysis;!flashvi"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderCreateHTML5VIFromReport">
+        </shortcut>
+        <shortcut name="create-analysis-flash" desc="Create Dossier"
+            desc-id="mstrWeb.14825" feature-id="dhtml;create-analysis;flashvi"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderCreateAnalysisFromReport" />
+        <shortcut name="create-document from analysis" desc="*[Convert to Document]*"
+            desc-id="mstrWeb.5180" feature-id="documents-design-mode"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderCreateDocumentFromAnalysis" />
+		<shortcut name="create-document-from-theme" desc="Create Document"
+            desc-id="mstrWeb.2918"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderCreateDocumentFromTheme" />
+        <shortcut name="runas" desc="[Run as]" desc-id="mstrWeb.5215"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunAs">
+            <shortcut-list name="viewmodes">
+                <shortcut name="vmexpress" desc="[Express]" desc-id="mstrWeb.11694"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false">
+                    <properties>
+                        <property name="viewMediaId" value="1" />
+                        <property name="oty" value="55" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmview" desc="[View]" desc-id="mstrWeb.3066"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false">
+                    <properties>
+                        <property name="viewMediaId" value="1" />
+                        <property name="oty" value="3" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vminteractive" desc="[Interactive]"
+                    desc-id="mstrWeb.14529"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false">
+                    <properties>
+                        <property name="viewMediaId" value="2" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmeditable" desc="[Editable]" desc-id="mstrWeb.4694"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false">
+                    <properties>
+                        <property name="viewMediaId" value="4" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmflash" desc="[Flash]" desc-id="mstrWeb.14513"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false">
+                    <properties>
+                        <property name="viewMediaId" value="8" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmexportpdf" desc="[Export to PDF]"
+                    desc-id="mstrWeb.5212"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false" target="mstrExportWindow">
+                    <properties>
+                        <property name="viewMediaId" value="32" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmexportexcel" desc="[Export to Excel]"
+                    desc-id="mstrWeb.5213"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false" target="mstrExportWindow">
+                    <properties>
+                        <property name="viewMediaId" value="16" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmexporthtml" desc="[Export to HTML]"
+                    desc-id="mstrWeb.5301"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false" target="mstrExportWindow">
+                    <properties>
+                        <property name="viewMediaId" value="64" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmexportflash" desc="[Export to Flash]"
+                    desc-id="mstrWeb.14528"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false" target="mstrExportWindow">
+                    <properties>
+                        <property name="viewMediaId" value="128" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmexportexcelplaintext" desc="[Export to Excel with plain text]"
+                    desc-id="mstrWeb.5303"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false" target="mstrExportWindow">
+                    <properties>
+                        <property name="viewMediaId" value="256" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmexportcsv" desc="[Export to CSV]"
+                    desc-id="mstrWeb.5304"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false" target="mstrExportWindow">
+                    <properties>
+                        <property name="viewMediaId" value="512" />
+                    </properties>
+                </shortcut>
+                <shortcut name="vmexportplaintext" desc="[Export to Plain Text]"
+                    desc-id="mstrWeb.5305"
+                    builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderRunViewMedia"
+                    iframe="false" target="mstrExportWindow">
+                    <properties>
+                        <property name="viewMediaId" value="1024" />
+                    </properties>
+                </shortcut>
+
+            </shortcut-list>
+        </shortcut>
+        <shortcut name="group2" desc="-" />
+        <shortcut name="openInLibrary" desc="[Open in Library]" desc-id="mstrWeb.15933"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderOpenInLibrary" />
+        <!-- <shortcut name="acl" desc="[Share ...]" desc-id="mstrWeb.8101" onclick="microstrategy.bone('folderAllModes').commands.exec('openACL');"
+            feature-id="web-use-sharing-editor" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderDisplayProperties">
+            </shortcut> -->
+        <shortcut name="sharing" desc="[Share ...]" desc-id="mstrWeb.8101"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderShareLink" />
+
+        <shortcut name="download" desc="[Download Dossier]" desc-id="mstrWeb.15260"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderExportMstr" target="mstrExportWindow" />
+
+        <!-- <shortcut name="export-link" desc="[Show Link...]" desc-id="mstrWeb.8210"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderExportLink"/> -->
+        <shortcut name="properties" desc="[Properties...]" desc-id="mstrWeb.3359"
+            builder-class-name="com.microstrategy.web.app.transforms.contextmenus.FolderDisplayProperties"
+            iframe="true">
+            <event
+                event-id="com.microstrategy.web.app.beans.EnumFrameEditorEvents.WebEventOpen"
+                base-bean="OMD">
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentObjectId"
+                    value="@oid@" />
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentObjectType"
+                    value="@oty@" />
+                <argument
+                    name="com.microstrategy.web.app.beans.EnumObjectManipulationDialogEvents.ObjectManipulationEventArgumentAction"
+                    source="enum"
+                    enumname="com.microstrategy.web.app.beans.ObjectManipulationDialogBean.ACT_PROPERTIES" />
+            </event>
+        </shortcut>
+        <!-- <shortcut name="export-link" desc="[Export Link...]" desc-id="mstrWeb.8043"
+            onclick="microstrategy.bone('folderAllModes').commands.exec('exportLink');">
+            </shortcut> -->
+    </shortcut-list>
+</shortcut-list-set>

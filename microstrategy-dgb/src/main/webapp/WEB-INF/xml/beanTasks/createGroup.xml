@@ -1,0 +1,42 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.CreateGroupTask" privileges="EnableAdministrationFromWeb">
+	<basicInfo desc="This Task provides the ability to create user group. Includes the ability to set the basic parameters for user group. For setting multiple parameters, we use caret to seperate them.">
+		<!-- parameter for create event -->
+		<parameter name="parents" desc="The parent id of the group to create" required="false" />
+		<parameter name="description" desc="The description of the group to create" required="false" />
+		<parameter name="groupName" desc="The full name of the group to create" required="true" />
+		<parameter name="children" desc="The children of the group to create"  required="false" />
+	</basicInfo>
+	<!--
+		"32768008" is the EnumUserEntityBeanEvents.USER_ENTITY_EVENT_INIT_AS_NEW.
+	-->
+	<eventInfo eventID="32768008">
+	</eventInfo>
+	
+	<!--
+		"32768001" is the EnumUserEntityBeanEvents.USER_ENTITY_EVENT_MODIFY_BASIC.
+	-->
+	<eventInfo eventID="32768001">	
+		<argument name="fullName" value="groupName" source="parameter"  />
+		<argument name="saveNow" value="1" />
+	</eventInfo>
+	
+	<!--
+		"8192001" is the EnumGroupBeanEvents.GROUP_EVENT_MODIFY_CHILDREN.
+	-->
+	<eventInfo eventID="8192001">
+	</eventInfo>
+	
+	<!--
+		"32768007" is the EnumUserEntityBeanEvents.USER_ENTITY_EVENT_SAVE.
+	-->
+	<eventInfo eventID="32768007">	
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'ugb' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="ugb" bean-type="UserGroupBean">
+	</beanInfo>
+</beanTask>

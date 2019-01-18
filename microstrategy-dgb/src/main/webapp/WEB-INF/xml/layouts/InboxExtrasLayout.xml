@@ -1,0 +1,6 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:render name="refreshHistoryList"/>
+    <mstrlayout:render name="clearHistoryList"/>
+    <mstrlayout:render name="expandMessages"/>
+</mstrlayout:layout>

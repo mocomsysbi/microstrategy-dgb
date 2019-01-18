@@ -1,0 +1,32 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div>
+    <mstrlayout:attr name="getMainDivAttributes" />
+    <mstrlayout:render name="genericValidationErrorMessage" />
+    <mstrlayout:render name="filterTree" />
+    <mstrlayout:if name="isAddWizardRequested">
+      <mstrlayout:then>
+        <table border="0" width="100%">
+          <mstrlayout:render name="addWizardTransition" />
+          <tr>
+            <td align="center" valign="middle" />
+            <td />
+            <td align="left">
+              <mstrlayout:render name="separator" />
+              <mstrlayout:if name="isNotDhtml">
+                <mstrlayout:then>
+                  <span class="mstrHighlighted" style="color:#cc0000">
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="int" value="2200" />
+                  </mstrlayout:render>&#160;</span>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:render name="addWizardDropdown" />
+              <mstrlayout:render name="addWizardButtons" />
+            </td>
+          </tr>
+        </table>
+      </mstrlayout:then>
+    </mstrlayout:if>
+  </div>
+</mstrlayout:layout>

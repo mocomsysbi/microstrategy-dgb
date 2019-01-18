@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ListBrowser is a container for a view of a ListModel, with optional views
+		for browsing the ListModel's path, for search, and incremental fetch. -->		
+	<block name="ListBrowser" inherits="BaseView">
+		<definition>
+			<property name="pathView" type="Block" />
+			<property name="pathUpButton" type="Block" />
+			<property name="searchView" type="Block" />
+			<property name="availableView" type="Block" />
+			<property name="fetchView" type="Block" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ListBrowser</property>
+			<property name="cssClass">ListBrowser</property>
+			<property name="availableView">
+				<block name="FastListView">
+					<property name="caption">{desc:mstrWeb.1408|Available:}</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

@@ -1,0 +1,58 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:slot name="navigationButtons">
+        <div class="mstrPathIcons">
+            <mstrlayout:render name="HomeButton"/>
+            <mstrlayout:render name="BackButton"/>
+            <mstrlayout:render name="ForwardButton"/>
+            <mstrlayout:render name="ParentUpButton"/>
+        </div>
+    </mstrlayout:slot>
+    <div class="mstrPathText pinned hidden">
+        <div class="mstrPathTextAncestors">
+            <div class="mstrPathBreadCrumbs hidden">
+            	<span class="mstrPathBreadCrumbsParent">
+                	<mstrlayout:render name="Parent"/>
+                </span>
+                <span class="mstrPathBreadCrumbsPullArrow"/>
+                <span class="mstrPathDelim">&gt;</span>
+                <div class="mstrPathBreadCrumbsAncestors hidden">
+                    <mstrlayout:list id="Ancestors" name="getObjectPathFolderAncestors">
+                        <mstrlayout:argument type="int" value="0"/>
+                        <mstrlayout:argument type="boolean" value="true"/>
+                        <mstrlayout:argument type="boolean" value="true"/>
+                        <span>
+                            <mstrlayout:render name="Ancestor">
+                                <mstrlayout:argument list="Ancestors" type="com.microstrategy.web.objects.WebFolder"/>
+                            </mstrlayout:render>
+                        </span>
+                    </mstrlayout:list>
+                    <span>
+                        <mstrlayout:render name="LinkForDesktop"/>
+                    </span>                    
+                </div>
+            </div>
+            <div class="mstrPathAncestors">
+                <mstrlayout:slot name="linkForDesktop">
+                    <span class="mstrPathFirst">
+                        <mstrlayout:render name="LinkForDesktop"/>
+                    </span>
+                    <span class="mstrPathDelim">&gt;</span>
+                </mstrlayout:slot>
+                <mstrlayout:list id="Ancestors" name="getObjectPathFolderAncestors">
+                    <mstrlayout:argument type="int" value="1"/>
+                    <span>
+                        <mstrlayout:render name="Ancestor">
+                            <mstrlayout:argument list="Ancestors" type="com.microstrategy.web.objects.WebFolder"/>
+                        </mstrlayout:render>
+                    </span>
+                    <span class="mstrPathDelim">&gt;</span>
+                </mstrlayout:list>
+            </div>
+        </div>
+        <div class="mstrPathTextCurrent">
+            <mstrlayout:render name="CurrentItem"/>
+        </div>
+    </div>
+    <div class="mstrSpacer"></div>
+</mstrlayout:layout>

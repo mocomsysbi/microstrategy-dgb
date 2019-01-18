@@ -1,0 +1,136 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="TabModel" name="GraphFormatEditorNumberModel">
+  <definition>
+    <property name="gfnTime" type="Block"/>
+    <property name="gfnFraction" type="Block"/>
+    <property name="gfnDate" type="Block"/>
+    <property name="seriesLabels" type="Block"/>
+    <property name="gfnCat" type="Block"/>
+    <property name="gfnNegativeNumbers" type="Block"/>
+    <property name="gfnDecimalPlaces" type="Integer"/>
+    <property name="gfnCurrencyPosition" type="Block"/>
+    <property name="Red" type="String"/>
+  </definition>
+  <assignments>
+    <property name="tabId">Number</property>
+    <property name="titleText">{desc:mstrWeb.3434|Number}</property>
+    <property name="categoryText">{desc:mstrWeb.3899|Format}</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="visibleField">num_visible</property>      
+    <property name="scriptClass">mstr.models.GraphNumberTabModel</property>
+    <property name="Red">{desc:mstrWeb.2519|Red}</property>
+    <property name="storeFields">gfnCat|gfnTime|gfnFraction|gfnDate|gfnDecimalPlaces|gfnCurrencySymbol|gfnCurrencyPosition|gfnNegativeNumbers|gfnThousandSeparator</property>
+    <property name="actionFields">seriesLabels</property>
+    <property name="seriesLabels">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+      </block>
+    </property>
+    <property name="gfnCat">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1965" name="ItemInfo">
+              <property name="dssid">-2</property>
+              <property name="n">{desc:mstrWeb.2171|Default}</property>
+            </block>
+            <block listElementKey="K1966" name="ItemInfo">
+              <property name="dssid">9</property>
+              <property name="n">{desc:mstrWeb.2378|General}</property>
+            </block>
+            <block listElementKey="K1967" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2050|Fixed}</property>
+            </block>
+            <block listElementKey="K1968" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2051|Currency}</property>
+            </block>
+            <block listElementKey="K1969" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2052|Date}</property>
+            </block>
+            <block listElementKey="K1970" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.2170|Time}</property>
+            </block>
+            <block listElementKey="K1971" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.2053|Percentage}</property>
+            </block>
+            <block listElementKey="K1972" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">{desc:mstrWeb.2054|Fraction}</property>
+            </block>
+            <block listElementKey="K1973" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.2055|Scientific}</property>
+            </block>
+            <block listElementKey="K1974" name="ItemInfo">
+              <property name="dssid">10</property>
+              <property name="n">{desc:mstrWeb.6121|From Grid}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="gfnNegativeNumbers">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1975" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">-1234</property>
+            </block>
+            <block listElementKey="K1976" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">1234 [{desc:mstrWeb.2519|Red}]</property>
+              <property name="cssText">color:red</property>
+            </block>
+            <block listElementKey="K1977" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">(1234)</property>
+            </block>
+            <block listElementKey="K1978" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">(1234) [{desc:mstrWeb.2519|Red}]</property>
+              <property name="cssText">color:red</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="gfnDecimalPlaces">0</property>
+    <property name="gfnCurrencyPosition">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1979" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2167|Left}</property>
+            </block>
+            <block listElementKey="K1980" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2166|Right}</property>
+            </block>
+            <block listElementKey="K1981" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2183|Left with space}</property>
+            </block>
+            <block listElementKey="K1982" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.2182|Right with space}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>

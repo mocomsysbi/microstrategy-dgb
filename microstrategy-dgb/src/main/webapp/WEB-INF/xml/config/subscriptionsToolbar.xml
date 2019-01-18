@@ -1,0 +1,30 @@
+<shortcut-list-set name="subscriptionsToolbar" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrMenuExtraToolbar mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="folderView" use-container="true" use-default="false">
+    <attributes>
+      <attribute name="class" source="const" type="string" value="mstrToolbarGroup"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="View: List" desc-id="mstrWeb.3382" name="tbListView" type="button" check-feature-id="enable-subscriptions-icon-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeSubscriptionsViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentSubscriptionsViewMode" value="SubscriptionsListStyle"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentNCSubscriptionsViewMode" value="NCSubscriptionsListStyle"/>
+      </event>
+      <attributes>
+        <attribute name="src" feature-id="accessibility" value="tbListViewAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="View: Icon" desc-id="mstrWeb.3381" name="tbLargeIcons" type="button" check-feature-id="enable-subscriptions-list-view">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventChangeSubscriptionsViewMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentSubscriptionsViewMode" value="SubscriptionsIconStyle"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentNCSubscriptionsViewMode" value="NCSubscriptionsIconStyle"/>
+      </event>
+      <attributes>
+        <attribute name="src" feature-id="accessibility" value="tbLargeIconsAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

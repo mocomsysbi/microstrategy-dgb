@@ -1,0 +1,9 @@
+<widget>
+    <title desc="Report Writer Wizard"/>
+    <footer>
+		<button type="1" title-desc="&lt; Previous" enable-feature-id="previous-step" javaScript="addURLAsHiddenInputsToForm(this, previousEventID);" event-id="53002" base-bean="ReportWizard"/>
+		<button type="1" title-desc="Next &gt;" enable-feature-id="next-step" javaScript="if(promptFunctionsScript) BuildUserSelections();addURLAsHiddenInputsToForm(this, executionEventID);" event-id="53001" base-bean="ReportWizard"/>
+		<button type="1" title-desc="Finish" javaScript="if(promptFunctionsScript) BuildUserSelections();addURLAsHiddenInputsToForm(this, executionEventID);" event-id="53004" base-bean="ReportWizard"/>
+		<button type="1" title-desc="Cancel" event-id="53003" base-bean="ReportWizard"/>
+	</footer>
+</widget>

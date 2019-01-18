@@ -1,0 +1,25 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/UserDefault.xml">
+    <mstrlayout:replace slot="contents">
+      <div class="mstrPanelBody">
+        <table cellspacing="0" cellpadding="2" class="preferenceList">
+          <tr class="mstrShowFooterPref">
+             <td valign="top" style="width:18%;">
+               <span class="prefs-input">
+                 <mstrlayout:render name="descriptor"> <!--desc="Footer" -->
+                   <mstrlayout:argument type="string" value="mstrWeb.1933" />
+                 </mstrlayout:render>
+               </span>
+             </td>
+             <td valign="top">
+               <mstrlayout:render name="FooterPath"/>
+               <br />
+             </td>
+          </tr>
+        </table>
+      </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

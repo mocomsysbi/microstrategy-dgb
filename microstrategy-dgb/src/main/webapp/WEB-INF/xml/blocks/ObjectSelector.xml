@@ -1,0 +1,93 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="ObjectSelector">
+  <assignments>
+    <property name="id">ObjectSelector1</property>
+    <property name="cssText">width:450px;</property>
+    <property name="visible">false</property>
+    <property name="modelPath"/>
+    <property name="title">{desc:mstrWeb.5722|Select Objects}</property>
+	<property name="helpTopic">Select_Objects_dialog_box_.htm</property>
+    <property name="contentView">
+      <block name="ListCart">
+        <property name="cssText">margin:4px</property>
+        <property name="modelPath">parent/model</property>
+        <property name="availableView/width">194px</property>
+        <property name="availableView/allowBrowseFolder">true</property>
+        <property name="availableView/allowBrowseAttribute">false</property>
+        <property name="availableView/allowBrowseHierarchy">false</property>
+        <property name="selectedView/width">194px</property>
+        <!-- path pulldown: -->
+        <property name="pathView">
+          <block name="TreePulldown">
+            <property name="caption">{desc:mstrWeb.5299|Look in:}</property>
+            <property name="modelPath">parent/model/available/getContainerTree()</property>
+            <property name="cmds">BrowseContainerTreeNode|model/getSelectedNode()|parent/model/available</property>
+            <property name="cssText">width:150px</property>
+            <!-- To support multiple roots in pulldown, we assume the tree will have a dummy node whose "tp" equlas to 0. -->
+            <property name="popup/hideRootNodeTypes">-1</property>
+          </block>
+        </property>
+        <!-- path up button: -->
+        <property name="pathUpButton">
+          <block name="ToolButton">
+            <property name="tooltip">{desc:mstrWeb.2304|Up One Level}</property>
+            <property name="modelPath">parent/model/available</property>
+            <property name="cmds">BrowseContainerParent||parent/model/available</property>
+            <property name="iconClass">mstrBGIcon_tbUpFolder</property>
+          </block>
+        </property>
+        <!-- search box: -->
+        <property name="searchView">
+          <block name="TextBoxWithIcon">
+            <!--							<property name="layoutClass">mstr.layouts.HTextBoxWithIcon</property> -->
+            <property name="cmds">Search||parent/model/available</property>
+            <property name="caption">{desc:mstrWeb.538|Search for:}</property>
+            <property name="iconTooltip">{desc:mstrWeb.10|Search}</property>
+            <property name="iconClass">mstrBGIcon_tbSearch</property>
+          </block>
+        </property>
+        <!-- fetch buttons: -->
+        <property name="fetchView">
+          <block name="FetchControl">
+            <property name="modelPath">parent/model/available</property>
+            <property name="cmds">FetchBlock||parent/model/available</property>
+          </block>
+        </property>
+      </block>
+    </property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K802" name="TextButton">
+          <property name="cmds">Unpop||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K803" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+		  <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- ok button -->
+        <block listElementKey="K804" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">Unpop||parent</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K805" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">Unpop||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- ObjectSelector is a floating editor with a shopping cart in it, which can select multiple objects.
+	It expects a ListCartModel to be its Model
+	 -->

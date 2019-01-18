@@ -1,0 +1,156 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="RWDocumentMobileModel">
+  <definition>
+    <property name="docMobileTabEnabled" type="Boolean"/>
+    <property name="MobileDataView" type="Block"/>
+    <property name="PreLoadAllPanels" type="Block"/>
+    <property name="layoutBarStyle" type="Block"/>
+    <property name="layoutBarPosition" type="Block"/>
+    <property name="layoutBarPosition2" type="Block"/>    
+    <property name="DocumentThemeColor" type="Block"/>
+    <property name="SmartClientDoc" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.bones.editors.DocMobileBoneTranslator</property>
+    <property name="categoryText">{desc:mstrWeb.3588|Document Properties}</property>
+    <property name="titleText">{desc:mstrWeb.5943|Mobile}</property>
+    <property name="fields">MobileDataView|layoutBarPosition|layoutBarStyle|enableGraphTooltips|EnableZoom|EnableCopyForText|EnableCopyForGridCell|DocumentThemeColor|EnableExport|SmartClientDoc|EnableSwipingToSwitchLayout|OfflineOnCube|ShowOfflineUCOnCubeConfig|MakePrivate</property>
+    <property name="visibleField">docMobileTabEnabled</property>
+    <property name="docMobileTabEnabled">true</property>
+    <property name="MobileDataView">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1354" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5590|Tabular Interactive}</property>
+            </block>
+            <block listElementKey="K1355" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.5591|Original Layout}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="PreLoadAllPanels">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K898" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.6106|All Panels of All Panel Stacks}</property>
+            </block>
+            <block listElementKey="K899" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.6107|Current Panel Only of All Panel Stacks}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    
+    <property name="layoutBarStyle">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="layoutBarStyletabs" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.7573|Tabs}</property>
+            </block>
+            <block listElementKey="layoutBarStyleswipe" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.7574|Swipe}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    
+    <property name="layoutBarPosition">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">1</property>
+        <property name="items">
+          <list>
+            <block listElementKey="layoutBarPositiontop" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.7575|Top}</property>
+            </block>
+            <block listElementKey="layoutBarPositionbtm" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.7576|Bottom}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    
+    <property name="layoutBarPosition2">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="layoutBarPositionbtm" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.7576|Bottom}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    
+	<property name="DocumentThemeColor">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="documentThemeColorApp" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.11462|Application theme color}</property>
+            </block>
+            <block listElementKey="documentThemeColorDark" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.8958|Dark}</property>
+            </block>
+			<block listElementKey="documentThemeColorLight" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.8959|Light}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+     <property name="SmartClientDoc">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">2</property>
+        <property name="items">
+          <list>
+            <block listElementKey="disableLocalTxn" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.13299|Disable smart client}</property>
+            </block>
+            <block listElementKey="enableLocalTxn" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.13300|Enable smart client}</property>
+            </block>
+            <block listElementKey="UseProjectLevel" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.13214|Use project-level behavior}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Advanced' tab of the Report Services document properties editor. -->

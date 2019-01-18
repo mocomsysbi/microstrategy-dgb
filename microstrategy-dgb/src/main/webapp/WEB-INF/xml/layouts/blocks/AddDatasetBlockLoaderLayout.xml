@@ -1,0 +1,78 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+	<mstrlayout:block name="BlockContainer">
+		<mstrlayout:bSetProperty path="models">
+			<mstrlayout:block name="SelectDataSetModel">
+				<mstrlayout:bSetProperty path="blockCount" method="getPreferenceValueReplaceNull">
+					<mstrlayout:argument type="String" value="objectsBlockCount" />
+					<mstrlayout:argument type="String" value="25" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="targetKey" method="getRequestParameterValueEncoded">
+					<mstrlayout:argument type="String" value="targetKey" />
+					<mstrlayout:argument type="String" value="-1" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="oldDSID" method="getRequestParameterValueEncoded">
+					<mstrlayout:argument type="String" value="oldDSID" />	
+					<mstrlayout:argument type="String" value="" />				
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="ReplaceAllDS" method="getRequestParameterValue">
+					<mstrlayout:argument type="String" value="ReplaceAllDS" />	
+					<mstrlayout:argument type="String" value="false" />				
+				</mstrlayout:bSetProperty>								
+				<mstrlayout:bSetProperty path="oldDSType" method="getRequestParameterValueEncoded">
+					<mstrlayout:argument type="String" value="oldDSType" />	
+					<mstrlayout:argument type="String" value="3" />				
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="containerTree">
+					<mstrlayout:block name="TreeModel">
+					  <mstrlayout:bSetProperty path="valueForm" value="did" />
+					  <mstrlayout:bSetProperty path="selectedPathList" method="getCurrentFolderPath">
+						<mstrlayout:argument type="int" value="1" />
+					  </mstrlayout:bSetProperty>
+					  <mstrlayout:list id="folder" method="getFlattenedContextFolderList">
+							<mstrlayout:argument type="int" value="1" />
+							<mstrlayout:base id="FolderObject" method="getValue" base="folder"/>
+							<mstrlayout:bSetProperty path="flattenedNodes">
+							  <mstrlayout:block name="TreeNode">
+								<mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+								<mstrlayout:bSetProperty path="value">
+									<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+								</mstrlayout:bSetProperty>
+								<mstrlayout:bSetProperty path="value/did" method="getID" base="FolderObject" />
+							  </mstrlayout:block>
+							</mstrlayout:bSetProperty>
+					  </mstrlayout:list>
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="objectType" method="getRequestParameterValueEncoded">
+					<mstrlayout:argument type="String" value="objectType" />
+					<mstrlayout:argument type="String" value="2048,768,769,774,776,779" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:if name="isFeatureAvailable">
+						<mstrlayout:argument value="web-import-data" />
+						<mstrlayout:then>
+							<mstrlayout:if name="getRequestParameterValueEncoded" value="-1">
+								<mstrlayout:argument type="String" value="targetKey" />
+								<mstrlayout:argument type="String" value="-1" />
+								<mstrlayout:then>
+					                <mstrlayout:bSetProperty path="allowImport" value="true"/>
+								</mstrlayout:then>
+							</mstrlayout:if>
+						</mstrlayout:then>	
+				</mstrlayout:if>				
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+		<mstrlayout:bSetProperty path="views">
+			<mstrlayout:block name="SelectDataSetPopup">
+				<mstrlayout:bSetProperty path="contentView/children[0]/availableView/multiSelect" method="getRequestParameterValue">
+					<mstrlayout:argument type="String" value="multiSelect" />
+					<mstrlayout:argument type="String" value="true" />
+				</mstrlayout:bSetProperty>
+				<!-- Help Button -->
+				<mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+				<mstrlayout:bSetProperty path="helpTopic" method="getHelpTopic"/>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:block>
+</mstrlayout:layout>

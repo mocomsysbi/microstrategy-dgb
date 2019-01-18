@@ -1,0 +1,29 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- PromptQuestion is a container for answering a prompt question. -->
+	<block name="PromptQuestionView" inherits="BaseView">
+		<definition>
+			<!-- The definition of the view that should be used for collecting an answer from the user. -->
+			<property name="simpleAnswerView" type="Block" />
+
+			<!-- The definition of the view that should be used for display a read-only default answer to the user. -->
+			<property name="complexAnswerView" type="Block" />
+			<!-- The view for saving a new answer. For "allow only one answer per prompt" case, this will be a simple checkbox view
+			For "allow any number of answers per prompt" case, this will be checkbox along with textbox, etc. -->
+			<property name="saveAnswerView" type="Block" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.PromptQuestion</property>
+			<property name="cssClass">PromptQuestion</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="required" type="String">{desc:mstrWeb.5926|(Required)}</property>
+					<property name="simpleAnswerViewCaption" type="String">{desc:mstrWeb.1069|Your selection:}</property>
+					<property name="complexAnswerViewCaption" type="String">{desc:mstrWeb.1071|Default selection:}</property>
+					<property name="emptyAnswerViewCaption" type="String">{desc:mstrWeb.1068|Prompt not answered}</property>
+					<property name="backToTop" type="String">{desc:mstrWeb.330|Back to top}</property>
+					<property name="loading" type="String">{desc:mstrWeb.2901|Loading...}</property>
+					<property name="noSelectionViewCaption" type="String">{desc:mstrWeb.3520|No selection}</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

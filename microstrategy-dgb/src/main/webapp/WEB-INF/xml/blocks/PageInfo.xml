@@ -1,0 +1,66 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="BaseModel" name="PageInfo">
+  <definition>
+    <!-- The collection of user palette colors. -->
+    <property name="userPalette" type="Block"/>
+    <!-- The current message ID -->
+    <property name="messageID" type="String"/>
+    <!-- The current root bean path -->
+    <property name="beanPath" type="String"/>
+    <!-- User locale info -->
+    <property name="userInfo" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="id">mstrPageInfo</property>
+    <property name="scriptClass">mstr.models.BaseModel</property>
+    <property name="userPalette">
+      <block name="ColorPickerModel">
+        <property name="maxSize">8</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K806" name="ItemInfo">
+              <property name="dssid">transparent</property>
+              <property name="n">{desc:mstrWeb.2133|Custom:} transparent</property>
+            </block>
+            <block listElementKey="K807" name="ItemInfo">
+              <property name="dssid">transparent</property>
+              <property name="n">{desc:mstrWeb.2133|Custom:} transparent</property>
+            </block>
+            <block listElementKey="K808" name="ItemInfo">
+              <property name="dssid">transparent</property>
+              <property name="n">{desc:mstrWeb.2133|Custom:} transparent</property>
+            </block>
+            <block listElementKey="K809" name="ItemInfo">
+              <property name="dssid">transparent</property>
+              <property name="n">{desc:mstrWeb.2133|Custom:} transparent</property>
+            </block>
+            <block listElementKey="K810" name="ItemInfo">
+              <property name="dssid">transparent</property>
+              <property name="n">{desc:mstrWeb.2133|Custom:} transparent</property>
+            </block>
+            <block listElementKey="K811" name="ItemInfo">
+              <property name="dssid">transparent</property>
+              <property name="n">{desc:mstrWeb.2133|Custom:} transparent</property>
+            </block>
+            <block listElementKey="K812" name="ItemInfo">
+              <property name="dssid">transparent</property>
+              <property name="n">{desc:mstrWeb.2133|Custom:} transparent</property>
+            </block>
+            <block listElementKey="K813" name="ItemInfo">
+              <property name="dssid">transparent</property>
+              <property name="n">{desc:mstrWeb.2133|Custom:} transparent</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="userInfo">
+      <block name="BaseModel">
+        <property name="decimalSeparator" type="String">.</property>
+        <property name="dpi" type="Integer">96</property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- PageInfo is a model that contains general information about the current page.  It is not specific
+		to RWD or Report view. -->

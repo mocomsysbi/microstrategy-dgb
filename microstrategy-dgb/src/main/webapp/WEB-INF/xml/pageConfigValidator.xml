@@ -1,0 +1,58 @@
+<validator version="1.0">
+  <validation type="page" path="/framework/folderpage-mapping/mapping/@target-page" />
+  <validation type="enum" path="/framework/folderpage-mapping/mapping/@named-page" />
+
+  <validation type="number" path="/framework/errors/error/@code" />
+  <validation type="boolean" path="/framework/errors/error/@displayError" />
+  <validation type="boolean" path="/framework/errors/error/@showContactInfo" />
+  <validation type="page" path="/framework/errors/error/@target" />
+  <validation type="boolean" path="/framework/errors/error/@useOriginalMessage" />
+  <validation type="boolean" path="/framework/errors/error/@allowIframe" />
+
+  <validation type="desc-id" path="/framework/errors/error/message/@desc-id" />
+  <validation type="desc-id" path="/framework/errors/error/title/@desc-id" />
+
+  <validation type="bean" path="/framework/export-formats/export-format/@bean-type" />
+  <validation type="desc-id" path="/framework/export-formats/export-format/@desc-id" />
+  <validation type="number" path="/framework/export-formats/export-format/@max-cols" />
+  <validation type="number" path="/framework/export-formats/export-format/@max-rows" />
+  <validation type="style" path="/framework/export-formats/export-format/@style" />
+  <validation type="enum" path="/framework/export-formats/export-format/@view-mode" />
+
+  <validation type="boolean" path="/framework/menus/shortcut-list-set/shortcut-list/@use-default" />
+
+  <validation type="boolean" path="/framework/menus/shortcut-list-set/shortcut-list/shotcut/@append-state" />
+  <validation type="desc-id" path="/framework/menus/shortcut-list-set/shortcut-list/shotcut/@desc-id" />
+  <validation type="boolean" path="/framework/menus/shortcut-list-set/shortcut-list/shotcut/@iframe" />
+
+  <validation type="boolean" path="/framework/pages/page/templates/template/shortcut-list-set/shortcut-list/@use-default" />
+
+  <validation type="boolean" path="/framework/pages/page/templates/template/shortcut-list-set/shortcut-list/shotcut/@append-state" />
+  <validation type="desc-id" path="/framework/pages/page/templates/template/shortcut-list-set/shortcut-list/shotcut/@desc-id" />
+  <validation type="boolean" path="/framework/pages/page/templates/template/shortcut-list-set/shortcut-list/shotcut/@iframe" />
+
+  <validation type="enum" path="/framework/menus/shortcut-list-set/shortcut-list/shotcut/event/@event-id" />
+
+  <validation type="enum" path="/framework/menus/shortcut-list-set/shortcut-list/shotcut/event/argument/@name" />
+
+  <validation type="style" path="/framework/styles/style/@name" />
+
+  <validation type="source" path="/framework/styles/style/properties/property/@source" />
+  <validation type="type" path="/framework/styles/style/properties/property/@type" />
+
+  <validation type="style" path="/framework/pages/page/web-beans/web-bean/styles/style/@name" />
+
+  <validation type="source" path="/framework/pages/page/web-beans/web-bean/styles/style/properties/property/@source" />
+  <validation type="type" path="/framework/pages/page/web-beans/web-bean/styles/style/properties/property/@type" />
+
+  <validation type="boolean" path="/framework/pages/page/@default" />
+  <validation type="desc-id" path="/framework/pages/page/@desc-id" />
+  <validation type="boolean" path="/framework/pages/page/@login-required" />
+  <validation type="boolean" path="/framework/pages/page/@track" />
+
+  <validation type="desc-id" path="/framework/pages/page/templates/template/@error-title-id" />
+
+  <validation type="boolean" path="/framework/pages/page/templates/template/page-sections/@use-default" />
+
+  <validation type="file" path="/framework/pages/page/templates/template/page-sections/page-section/@file-name" />
+</validator>

@@ -1,0 +1,55 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TextAreaWithImport is a textarea view for entering long text input.  Beneath the textarea,
+		 a GUI for importing the contents of a local file are displayed. -->
+	<block name="TextAreaWithImport" inherits="BaseView">
+		<definition>
+			<!-- The text to display on the TextBox's GUI. -->
+			<property name="caption" type="String" />
+
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+
+			<!-- The number of rows of text visible in the scrolling area of the textarea. -->
+			<property name="rows" type="Integer" />
+
+			<!-- The number of columns of text visible in the scrolling area of the textarea. -->
+			<property name="cols" type="Integer" />
+
+			<!-- True if TextBox's contents cannot be edited by end-user. -->
+			<property name="readonly" type="Boolean" />
+			<!-- Maximum size of the file to upload -->
+			<property name="maxFileSize" type="Integer"/>
+			<!-- Maximum size of elements in the file to upload -->
+			<property name="maxElements" type="Integer"/>
+			<!-- Delimiter used in upload file -->
+			<property name="inputDelimiter" type="String"/>
+			<!-- Delimiter used when elements imported into qualification -->
+			<property name="outputDelimiter" type="String"/>
+			<!-- Allowed file extensions for upload file -->
+			<property name="validFileExtensions" type="String"/>
+			
+			<!-- If true, validation will fire whenever the textarea's contents are changed. 
+				 If false, validation will not fire and must be called programmatically, if desired. -->
+			<property name="validateOnChange" type="Boolean" />
+			
+			<!-- If true, the textarea's contents will be formatted whenever validation occurs.
+				 If false, the textarea's contents will remain unchanged when validation occurs. -->
+			<property name="formatOnValidate" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.TextAreaWithImport</property>
+			<property name="cssClass">TextAreaWithImport</property>
+			<property name="rows">5</property>
+			<property name="cols">60</property>
+			<property name="validFileExtensions">{pref:promptsUploadFileExtensions|txt,csv}</property>
+			<property name="validateOnChange">true</property>
+			<property name="formatOnValidate">true</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="invalidText" type="String">{desc:mstrWeb.1261|The file contains an invalid extension. The file extensions allowed are: ##}</property>
+					<property name="emptyText" type="String">{desc:mstrWeb.3380|Please enter valid name}</property>
+                    <property name="importLabel" type="String">{desc:mstrWeb.8118|Import}</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

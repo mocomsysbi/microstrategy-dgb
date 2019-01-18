@@ -1,0 +1,99 @@
+<shortcut-list-set name="reportCrosstabToolbar" feature-id="is-viewable-report" version="1.0">
+  <attributes>
+    <attribute name="at" value="UniqueReportID"/>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+
+  <shortcut-list name="dialogs">
+    <shortcut base-bean="rb" desc="[Add View Filter Condition...]" desc-id="mstrWeb.1986" feature-id="!dhtml;use-view-filter-editor" iframe="true" name="tbViewFilter" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventAddViewFilterCondition"/>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbViewFilterAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;use-view-filter-editor" value="tbViewFilterAcc.gif"/>
+      </attributes>
+    </shortcut>
+  	<shortcut base-bean="rb" desc="[Sort...]" desc-id="mstrWeb.1888" enable-feature-id="enable-sort;is-not-visualization-mode" feature-id="!dhtml;web-sort" iframe="true" name="tbSort" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="sortEditor"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbSortAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-sort;is-not-visualization-mode" value="tbSortAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" desc="[Drill...]" desc-id="mstrWeb.2113" enable-feature-id="enable-drill-editor;is-not-visualization-mode" feature-id="!dhtml;drill-editor" iframe="true" name="tbDrill" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="drillEditor"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbDrillAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-drill-editor;is-not-visualization-mode" value="tbDrillAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  
+  <shortcut-list name="metrics">
+    <shortcut base-bean="rb" desc="[Insert New Metric...]" desc-id="mstrWeb.2212" enable-feature-id="enable-insert-new-metric;is-not-visualization-mode" feature-id="!dhtml;insert-new-metric" iframe="true" name="tbInsertNewMetricHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenFormularEditor">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentFormularEditorActiveElement" value="0"/>
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentFormularEditorAbsoluteIndex" value="false"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbInsertNewMetricAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-insert-new-metric;is-not-visualization-mode" value="tbInsertNewMetricAcc.gif"/>
+      </attributes>
+    </shortcut>
+  	<shortcut base-bean="rb" check-feature-id="check-show-attribute-forms" desc="[Attribute Forms]" desc-id="mstrWeb.2890" feature-id="!dhtml;show-attribute-forms" enable-feature-id="!check-graph-mode;is-not-visualization-mode;" iframe="true" name="tbAttributeFormsHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_SET_PROPERTY_VALUES" state="checked">
+        <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_SET_PROPERTY_VALUE" value="4!Template Formatting!LongNames!0"/>
+      </event>
+      <event XMLmerge_id="2" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_SET_PROPERTY_VALUES" state="unchecked">
+        <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_SET_PROPERTY_VALUE" value="4!Template Formatting!LongNames!4"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbAttributeFormsAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;!check-graph-mode;is-not-visualization-mode" value="tbAttributeFormsAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" check-feature-id="check-show-subtotals" desc="[Show Totals]" desc-id="mstrWeb.6193" enable-feature-id="enable-show-subtotals;is-not-visualization-mode" feature-id="!dhtml;show-totals;show-subtotals" iframe="true" name="tbToggleTotalsHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_SHOW_SUBTOTALS" state="checked">
+        <argument enumname="com.microstrategy.web.beans.EnumReportBeanEvents.HIDE_SUB_TOTALS" name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_SHOW_SUBTOTALS" source="enum"/>
+      </event>
+      <event XMLmerge_id="2" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_SHOW_SUBTOTALS" state="unchecked">
+        <argument enumname="com.microstrategy.web.beans.EnumReportBeanEvents.SHOW_SUB_TOTALS" name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_SHOW_SUBTOTALS" source="enum"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbToggleTotalsAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-show-subtotals;is-not-visualization-mode" value="tbToggleTotalsAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rb" desc="[Edit Totals...]" desc-id="mstrWeb.3310" enable-feature-id="enable-show-totals;is-not-visualization-mode" feature-id="show-totals;!dhtml;orionIServer" iframe="true" name="tbTotalsHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventOpenReportFrameElement">
+        <argument name="com.microstrategy.web.app.beans.EnumReportFrameEvents.WebEventArgumentReportFrameElementName" value="subtotalEditor"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbTotalsAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-show-totals;is-not-visualization-mode" value="tbTotalsAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  
+  <shortcut-list name="thresholds">
+    <shortcut base-bean="rb" check-feature-id="check-show-threshold-formatting" desc="[Thresholds]" desc-id="mstrWeb.3647" enable-feature-id="enable-show-threshold-formatting;is-not-visualization-mode" feature-id="!dhtml" iframe="true" name="tbThresholdsHTML" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_SET_THRESHOLDS_DISPLAY" state="unchecked">
+        <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_ENABLE_THRESHOLD_DISPLAY" value="1"/>
+      </event>
+      <event XMLmerge_id="2" event-id="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_SET_THRESHOLDS_DISPLAY" state="checked">
+        <argument name="com.microstrategy.web.beans.EnumReportBeanEvents.REPORT_EVENT_ARGUMENT_ENABLE_THRESHOLD_DISPLAY" value="0"/>
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbThresholdsAccD.gif"/>
+          <attribute name="src" feature-id="accessibility;enable-show-threshold-formatting;is-not-visualization-mode" value="tbThresholdsAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  
+</shortcut-list-set>

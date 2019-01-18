@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for Custom Group Objects.
+--> 
+<block name="CustomGroup" inherits="WebObjectInfo">
+  <definition>
+    <!-- The Custom Group Elements Collection -->
+    <property name="items" type="List" />
+  
+    
+    <!-- The Custom Group Properties Block -->
+    <property name="cgp" type="Block" />
+    
+    <!-- The parent folder id -->
+    <property name="pf" type="String" />
+  </definition>
+  
+</block>

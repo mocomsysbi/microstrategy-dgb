@@ -1,0 +1,44 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+
+<!--
+    GridFormatTargets is a grouping of all the format targets available
+    for a grid. 
+  -->
+<block name="GridFormatTargets" inherits="BaseBlock">
+  <definition>
+    <!-- default formats -->
+    <property name="de" type="Block" />
+    <!-- Grid border formats -->
+    <property name="gb" type="Block" />
+    <!-- All grid cell formats -->
+    <property name="agc" type="Block" />
+    <!-- Formats for row axis -->
+    <property name="ra" type="Block" />
+    <!-- Formats for column axis -->
+    <property name="ca" type="Block" />
+    <!-- Formats for all metrics -->
+    <property name="am" type="Block" />
+    <!-- 
+      List of formats for each template unit
+      Contains blocks of type GridFormatTemplateUnit
+     -->
+    <property name="u" type="List" />
+  </definition>
+  <assignments>
+    <property name="gb">
+      <block name="GridFormatObject" />
+    </property>
+    <property name="agc">
+      <block name="GridFormatLevel" />
+    </property>
+    <property name="ra">
+      <block name="GridFormatLevel" />
+    </property>
+    <property name="ca">
+      <block name="GridFormatLevel" />
+    </property>
+    <property name="am">
+      <block name="GridFormatLevel" />
+    </property>
+  </assignments>
+</block>

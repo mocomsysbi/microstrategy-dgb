@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE beanTask SYSTEM "beanTask.dtd">
+<beanTask adminTask="false" class="com.microstrategy.web.app.tasks.ExportDocumentTask" registerAs="exportDocument">
+  <basicInfo desc="This Task exports a Report in binary format with the specified executionMode.">
+    <parameter name="rwb" desc="The state of the RWBean" required="false" type="simplestring"/>
+	<parameter name="objectID" desc="The object ID of the Document to execute." required="false" />
+	<parameter name="messageID" desc="The Message ID of a previously executed Document." required="false" />
+    <parameter name="originMessageID" desc="The parameter to specify the prompt answers using the previous message ID" required="false"/>
+    <parameter name="promptsAnswerXML" desc="The parameter to specify the prompt answers using the prompt answer xml" required="false"/>
+    <parameter name="elementsPromptAnswers" desc="The parameter to specify the answers for the element prompts" required="false"/>
+    <parameter name="valuePromptAnswers" desc="The parameter to specify the answers for the value prompts" required="false" />
+    <parameter name="objectsPromptAnswers" desc="The parameter to specify the answers for the object prompts" required="false"/>
+    <parameter name="linkAnswers" desc="The parameter to specify the answers for the prompts using the link Answers" required="false"/>
+    <parameter name="executionMode" desc="The parameter to specify the execution mode to run the document. See EnumRWExecutionModes for details." required="false" defvalue="3"/>
+    <parameter name="maxWait" desc="The time to wait for the polling. Set this value to 0 (zero) if you don't need to poll for results" required="false"/>
+    <parameter name="expandPageBy" desc="The parameter to specify if user want's to expand the page-by elements." required="false" defvalue="false" type="boolean"/>
+    <parameter name="showAllLayouts" desc="The parameter to specify if user wants to show all of the layouts or just the current layout." required="false" defvalue="false" type="boolean"/>
+    <parameter name="excelVersion" desc="The parameter to specify the version of excel user want's to use the report to convert to.  See EnumExcelVersion for details." required="false" type="int"/>
+    <parameter name="keepPolling" desc="The parameter to specify whether we would keep polling between client and web server to keep the session alive" required="false" type="boolean"/>
+    <parameter name="executeDefaultPromptOrFail" desc="The parameter to specify whether we should execute with default prompt answer and fail if there is no default answer" required="false" type="boolean" defvalue="false"/>
+    <parameter name="webUrl" desc="Web url to include in the xml sent to the i-server" required="false" />
+    <parameter name="onetierVersion" desc="The version of the onetier (desktop) client" required="false" type="int"/>
+  	<parameter name="gridKey" desc="String specifying the grid/graph to be exported" required="false"/>
+	<parameter name="desiredElements" desc="List of desired group by units. Each unit consists of attribute ID and element ID. All list elements are separated by '\u001F'." required="false" type="simplestring"/>
+  </basicInfo>
+  
+  <eventInfo eventID="2048001" >
+      <argument name="doNotAutoReprompt" value="true" />
+    </eventInfo>
+  
+  <beanInfo name="rwb" bean-type="RWBean"/>
+  
+</beanTask>

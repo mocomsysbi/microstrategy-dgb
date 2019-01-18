@@ -1,0 +1,33 @@
+<!DOCTYPE blockLibrary SYSTEM "../dtds/blockLibrary.dtd">
+<blockLibrary>
+
+    <!-- Define a set of macros that are used in this library. -->
+    <macros>
+    	<!-- This macro is used to retrieve localized descriptors from the server side
+    	     message bundles. Arguments:
+    	     1: Descriptor ID {Required}
+    	     2: Default Text (used when descriptor cannot be found)
+    	     Arguments are separated by a vertical bar ('|').
+    	-->
+    	<macro name="desc" fqcn="com.microstrategy.web.blocks.macros.BPMDescriptor" />
+    	<!-- This macro is used to retrieve system property from the server side
+    	     Arguments:
+    	     1: property name {Required}
+    	     2: controller name (when this is missing, means search for global property)
+    	     Arguments are separated by a vertical bar ('|').
+    	-->
+    	<macro name="controllerParam" fqcn="com.microstrategy.web.blocks.macros.BPMControllerParameter" />
+    	
+    	<!-- This macro is used to retrieve the value of a user preference. Arguments:
+    	     1: The name of the user preference {Required}
+    	     2: Default Text (used when preference cannot be found)
+    	     Arguments are separated by a vertical bar ('|').
+    	-->
+    	<macro name="pref" fqcn="com.microstrategy.web.blocks.macros.BPMPreference" />
+    	
+    </macros>
+    
+    <!-- Include all blocks in the current directory. -->
+    <includeDir recurse="true" />
+    
+</blockLibrary>

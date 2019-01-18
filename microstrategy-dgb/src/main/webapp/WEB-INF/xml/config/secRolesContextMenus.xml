@@ -1,0 +1,12 @@
+<shortcut-list-set name="secRolesContextMenus" version="1.0">
+  <shortcut-list name="default">
+    <shortcut name="edit" desc="[Edit...]" desc-id="mstrWeb.4470" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.AdminFolderEdit" />
+    <shortcut name="group1" desc="-" />
+    <shortcut name="delete" desc="[Delete...]" desc-id="mstrWeb.4471" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.AdminFolderDelete" />
+    <shortcut name="group2" desc="-" />
+    <shortcut desc="[New Security Role...]" desc-id="mstrWeb.5960" name="newSR" feature-id="create-security-roles">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventCreateSecurityRole">
+      </event>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

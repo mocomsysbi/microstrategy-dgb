@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd" >
+
+<!-- 
+  GridFormatTemplateUnit is a grouping of properties that pertain to a specific unit on the
+  template. It inherits the properties of GridFormatLevel
+ -->
+<block name="GridFormatTemplateUnit" inherits="GridFormatLevel">
+  <definition>
+    <!-- Name of grid template unit -->
+    <property name="n" type="String" />
+    <!-- DssID of grid template unit -->
+    <property name="dssid" type="String" />
+    <!-- Axis on which grid template unit resides -->
+    <property name="axis" type="Integer" />
+    <!-- Position on axis that template unit resides -->
+    <property name="pos" type="Integer" />
+  </definition>
+</block>

@@ -1,0 +1,33 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		TreeModel is a data model which contains a hierarchial tree of
+		nodes.  Each tree node can contain any generic value Block.
+		The top level of the tree is defined by a single "rootNode".
+		The rootNode may have 0, 1, or many children nodes, which may
+		also have any arbitrary number of children nodes.
+		TreeModel is typically used to describe a tree of folders in metadata, 
+		or a hierarchy of attributes and elements.
+	-->
+	<block name="TreeModel" inherits="BaseModel">
+		<definition>
+			<!-- Root node of the tree. Maximum of 1 allowed per tree.-->
+			<property name="rootNode" type="Block" />
+
+			<!-- A flat listing of the nodes of the tree, where each node
+				 also includes path information so that the tree structure
+				 may be reconstructed from the flat list. -->
+			<property name="flattenedNodes" type="List" />
+
+			<!-- The name of the property used to compare node values (typically, "dssid"). -->
+			<property name="valueForm" type="String" />
+
+			<!-- Optional command-delimited list of the paths of the selected nodes of this 
+				 tree. If undefined, we assume no nodes are selected. -->
+			<property name="selectedPathList" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.TreeModel</property>
+			<property name="valueForm">dssid</property>
+			<property name="CommandEnabledFetchBlock" type="Boolean">true</property>
+		</assignments>
+	</block>

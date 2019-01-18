@@ -1,0 +1,103 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptToolbarModel" name="ReportFormattingToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1192" name="ToolbarFormatUnitList">
+          <property name="listenerMethods">ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K1193" name="ToolbarFormatValueList">
+          <property name="listenerMethods">ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K1194" name="BaseBlock"/>
+        <block listElementKey="fontFamily" name="ToolbarFontFamilyList">
+          <property name="listenerMethods">ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="fontSize" name="ToolbarFontSizeList">
+          <property name="listenerMethods">ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="K1195" name="BaseBlock"/>
+        <block listElementKey="K1196" name="ToolbarBoldButton">
+          <property name="listenerMethods">ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="K1197" name="ToolbarItalicButton">
+          <property name="listenerMethods">ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="K1198" name="ToolbarUnderlineButton">
+          <property name="listenerMethods">ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="K1199" name="BaseBlock"/>
+        <block listElementKey="K1200" name="ToolbarTextAlignList">
+          <property name="visibleFeatures">grid-graph-formatting</property>
+          <property name="listenerMethods">ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K1201" name="BaseBlock"/>
+        <block listElementKey="K1202" name="ToolbarCurrencyButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1203" name="ToolbarIntlCurrencyButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1204" name="ToolbarPercentButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1205" name="ToolbarCommaButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1206" name="BaseBlock"/>
+        <block listElementKey="K1207" name="ToolbarIncreaseDecimalButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1208" name="ToolbarDecreaseDecimalButton">
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1209" name="BaseBlock"/>
+        <block listElementKey="fillColor" name="ToolbarFillColorPicker">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="lineColor" name="ToolbarLineColorPicker">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="fontColor" name="ToolbarFontColorPicker">
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onGraphPropertiesReady</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="K1210" name="BaseBlock"/>
+        <block listElementKey="K1211" name="ToolbarBorderPicker">
+          <property name="listenerMethods">ongridselectionschange</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+        </block>
+        <block listElementKey="K1212" name="ToolbarLineStylePicker">
+          <property name="listenerMethods">ongridselectionschange</property>
+          <property name="visibleFeatures">grid-graph-formatting</property>
+       	</block>
+        <block listElementKey="K1213" name="BaseBlock"/>
+        <block listElementKey="K1214" name="ToolbarButtonModel">
+          <property name="id">tbAdvancedFormatting</property>
+          <property name="tooltip">{desc:mstrWeb.5522|Advanced Grid Formatting}</property>
+          <property name="cmdid">gridEditor</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K1215" name="ToolbarButtonModel">
+          <property name="id">tbAdvancedGraphFormatting</property>
+          <property name="tooltip">{desc:mstrWeb.5523|Advanced Graph Formatting}</property>
+          <property name="cmdid">openGraphFormatter</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K1216" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

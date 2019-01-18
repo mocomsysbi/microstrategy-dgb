@@ -1,0 +1,54 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <!-- This is the model used for the 'General' tab of the Graph Format editor. -->
+    <block name="GraphFormatEditorGeneralModel" inherits="TabModel">
+        <definition>
+            <property name="majorType" type="Block" />        
+            <property name="minorType" type="Block" />  
+            <property name="maxCategories" type="Integer" />
+            <property name="maxSeries" type="Integer" />
+            <property name="curvedLines" type="Boolean" />
+            <property name="antiAliasing" type="Boolean" />
+            <property name="roundedEffect" type="Boolean" />     
+            <property name="maxBarSizeType" type="Block" />                               
+        </definition>    
+        
+        <assignments>
+            <property name="tabId">General</property>
+            <property name="titleText">{desc:mstrWeb.3447|General}</property>
+            <property name="categoryText">{desc:mstrWeb.3899|Format}</property>
+            <property name="scriptClass">mstr.models.GraphGeneralTabModel</property>
+            <property name="visible">true</property>    
+            <property name="enabled">true</property>
+            <property name="visibleField">gen_visible</property>            
+            <property name="storeFields">majorType|minorType|maxCategories|maxSeries|curvedLines|antiAliasing|roundedEffect|maxBarSizeType|maxBarSizeValue</property>                        
+            <property name="majorType">
+                <block name="ListModel">    
+                    <property name="valueForm">dssid</property>
+                </block>
+            </property>            
+            <property name="minorType">
+                <block name="ListModel">    
+                    <property name="valueForm">dssid</property>
+                </block>
+            </property>
+
+			<property name="maxBarSizeType">
+				<block name="ListModel">
+					<property name="selectedIndicesList">1</property>
+					<property name="valueForm">dssid</property>
+					<property name="items">
+						<list>
+							<block listElementKey="BarTypeAuto" name="ItemInfo">
+								<property name="dssid">0</property>
+								<property name="n">{desc:mstrWeb.4531|Automatic}</property>
+							</block>
+							<block listElementKey="BarTypeManual" name="ItemInfo">
+								<property name="dssid">1</property>
+								<property name="n">{desc:mstrWeb.8262|Manual}</property>
+							</block>
+						</list>
+					</property>
+				</block>
+			</property>
+        </assignments>
+    </block>

@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for a Constant Node
+-->
+<block name="ConstantNode" inherits="PromptableExpNode">
+    <definition>
+         <!-- value of the node  -->
+      <property name="v" type="String" /> 
+  
+          <!-- datatype of the node  -->
+      <property name="dtp" type="Integer" />
+
+     </definition>
+</block>

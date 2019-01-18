@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- InfoIcon is a UIComponent for displaying information icon, with information shown as tooltip. -->
+	<block name="InfoIcon" inherits="BaseView">
+		<definition>
+			<!-- information tooltip shown when mouseover the icon -->
+			<property name="value" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.InfoIcon</property>
+			<property name="cssClass">InfoIcon</property>
+		</assignments>
+	</block>

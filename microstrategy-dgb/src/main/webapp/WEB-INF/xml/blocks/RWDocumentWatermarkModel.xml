@@ -1,0 +1,99 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="RWDocumentWatermarkModel">
+  <definition>
+    <property name="watermarkTabEnabled" type="Boolean"/>
+    <property name="WatermarkType" type="Block"/>
+    <property name="WatermarkFontName" type="Block"/>
+    <property name="WatermarkFontBoldItalic" type="Block"/>
+    <property name="WatermarkFontSize" type="Block"/>
+    <property name="WatermarkFontColor" type="Block"/>
+    <property name="TextOrientation" type="Block"/>
+    <property name="ImageScale" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="categoryText">{desc:mstrWeb.3588|Document Properties}</property>
+    <property name="titleText">{desc:mstrWeb.4590|Watermark}</property>
+    <property name="fields">WatermarkType|WatermarkText|WatermarkFontName|WatermarkFontBoldItalic|WatermarkFontSize|WatermarkFontStrikeout|WatermarkFontUnderline|WatermarkFontColor|AutoFontSize|TextWashout|TextOrientation|ImageSource|ImageScale</property>
+    <property name="visibleField">watermarkTabEnabled</property>
+    <property name="watermarkTabEnabled">true</property>
+    <property name="WatermarkType">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1370" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4591|Use project watermark}</property>
+            </block>
+            <block listElementKey="K1371" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4592|No watermark}</property>
+            </block>
+            <block listElementKey="K1372" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.8432|Text Watermark (PDF Only)}</property>
+            </block>
+            <block listElementKey="K1373" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.4594|Image watermark}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="TextOrientation">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1374" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4600|Diagonal}</property>
+            </block>
+            <block listElementKey="K1375" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4601|Horizontal}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="ImageScale">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1376" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.4604|Auto}</property>
+            </block>
+            <block listElementKey="K1377" name="ItemInfo">
+              <property name="dssid">300</property>
+              <property name="n">300%</property>
+            </block>
+            <block listElementKey="K1378" name="ItemInfo">
+              <property name="dssid">200</property>
+              <property name="n">200%</property>
+            </block>
+            <block listElementKey="K1379" name="ItemInfo">
+              <property name="dssid">150</property>
+              <property name="n">150%</property>
+            </block>
+            <block listElementKey="K1380" name="ItemInfo">
+              <property name="dssid">100</property>
+              <property name="n">100%</property>
+            </block>
+            <block listElementKey="K1381" name="ItemInfo">
+              <property name="dssid">50</property>
+              <property name="n">50%</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Watermark' tab of the Report Services document properties editor. -->

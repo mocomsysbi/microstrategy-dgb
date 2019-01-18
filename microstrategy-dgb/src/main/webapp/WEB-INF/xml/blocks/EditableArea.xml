@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="EditableArea" inherits="BaseView">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.editableArea</property>
+			<property name="cssClass">EditableArea</property>
+			<property name="modelPath">parent/model</property>
+			<property name="cssText">padding:0px 0px 0px 0px</property>
+		</assignments>
+	</block>

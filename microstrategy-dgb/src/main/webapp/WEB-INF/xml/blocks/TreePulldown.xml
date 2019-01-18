@@ -1,0 +1,29 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TreePulldown is a rich pulldown which pops open a TreeView. Typically the popup
+		 shares the same model (a TreeModel) as the TreePulldown.  -->
+	<block name="TreePulldown" inherits="TreeView,PulldownProperties">
+		<assignments>
+			<property name="scriptClass">mstr.views.Pulldown</property>
+			<property name="layoutClass">mstr.layouts.Pulldown</property>
+			<property name="cssClass">ListPulldown</property>
+			<property name="itemRendererClass">mstr.itemrenderers.ListPulldownView</property>
+			<property name="itemCSSPrefix">ListBlockItem</property>
+			<property name="multiSelect">false</property>
+			<property name="modelClass">mstr.models.TreeModel</property>
+			<property name="showIcons">true</property>
+			<property name="popup">
+				<block name="TreeView">
+					<property name="visible">false</property>
+					<property name="cssText">filter:progid:DXImageTransform.Microsoft.Shadow(color='#A6A6A6',Direction=135,Strength=4)</property>
+					<property name="width">200px</property>
+					<property name="modelPath">parent/model</property>
+					<property name="allowExpandCollapse">false</property>
+					<property name="multiSelect">false</property>
+					<property name="cmds">!ClickTreeNode;FireCommands||opener;Unpop</property>
+					<property name="CommandEnabledUnpop" type="Boolean">true</property>
+					<property name="popOrientation">1</property>	<!-- Indicates that this popup is vertically oriented. -->
+					<property name="hideRootNodeTypes">-1</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

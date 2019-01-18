@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about a Filter.
+-->
+<block name="Filter" inherits="WebObjectInfo">
+    <definition>
+        <!-- The XML representation of the filter. -->
+        <property name="xml" type="String" /> 
+    </definition>
+</block>

@@ -1,0 +1,174 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PageSetupTabPage">
+  <assignments>
+    <property name="title">{desc:mstrWeb.1897|Page Setup} - {desc:mstrWeb.3687|Page}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Page.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="page" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3687|Page}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="hbox" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="vbox" name="VBox">
+                      <property name="modelPath">parent/model</property>
+                      <property name="cssText">margin-right:40px</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K814" name="ListPulldown">
+                            <property name="caption">{desc:mstrWeb.3027|Paper Size:}</property>
+                            <property name="modelPath">parent/model/PaperType</property>
+                            <property name="descriptors/emptyText">{desc:mstrWeb.3678|Custom}</property>
+                          </block>
+                          <block listElementKey="width" name="HTextBox">
+                            <property name="caption">{desc:mstrWeb.3003|Width:}</property>
+                            <property name="valueField">PageWidth</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="cssText">margin-top:4px;</property>
+                            <property name="totalSize">7</property>
+                            <property name="maxlength">7</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="required">true</property>
+                                <property name="type">7</property>
+                                <property name="greaterThan">model/parent/items/1/MarginLeft;model/parent/items/1/MarginRight;model/parent/items/1/minimumPrintArea</property>
+                                <property name="errMessage">{desc:mstrWeb.6049|The printable area size is not valid. Please check your paper size and margin dimensions}</property>
+                              </block>
+                            </property>
+                          </block>
+                          <block listElementKey="height" name="HTextBox">
+                            <property name="caption">{desc:mstrWeb.2982|Height:}</property>
+                            <property name="valueField">PageHeight</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="cssText">margin-top:4px;</property>
+                            <property name="totalSize">7</property>
+                            <property name="maxlength">7</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="required">true</property>
+                                <property name="type">7</property>
+                                <property name="greaterThan">model/parent/items/1/MarginTop;model/parent/items/1/MarginBottom</property>
+                              </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K815" name="RadioList">
+                      <property name="caption">{desc:mstrWeb.3028|Orientation:}</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="modelPath">parent/model/PaperOrientation</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K816" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3019|Scaling}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K817" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K818" name="RadioList">
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                      <property name="modelPath">parent/model/Scaling</property>
+                    </block>
+                    <block listElementKey="K819" name="VBox">
+                      <property name="modelPath">parent/model</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K820" name="HTextBox">
+                            <property name="captionSuffix">%</property>
+                            <property name="valueField">ScalePercentage</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="totalSize">4</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="required">true</property>
+                                <property name="type">1</property>
+                                <property name="min">10</property>
+                                <property name="max">1000</property>
+                              </block>
+                            </property>
+                          </block>
+                          <block listElementKey="K821" name="HTextBox">
+                            <property name="captionSuffix">{desc:mstrWeb.3024|page(s) wide by}</property>
+                            <property name="valueField">ScalePagesWide</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="totalSize">4</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="required">true</property>
+                                <property name="exceptions">;</property>
+                                <!-- TQMS 236034: this field can take blank as exception -->
+                                <property name="type">1</property>
+                                <property name="min">1</property>
+                                <property name="max">9999</property>
+                              </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K822" name="HTextBox">
+                      <property name="captionSuffix">{desc:mstrWeb.3025|tall}</property>
+                      <property name="valueField">ScalePagesTall</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="cssText">margin-top:19px</property>
+                      <property name="totalSize">4</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="required">false</property>
+                          <property name="exceptions">;</property>
+                          <!-- TQMS 236034: this field can take blank as exception -->
+                          <property name="type">1</property>
+                          <property name="min">1</property>
+                          <property name="max">9999</property>
+                        </block>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K823" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3026|Scale Page Header/Footer}</property>
+                <property name="valueField">ScalePageHeaderFooter</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K824" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3002|Horizontal fit}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K825" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3011|Overflow:}</property>
+                <property name="modelPath">parent/model/SectionHorizontalOverflow</property>
+                <property name="popup/height">40px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PageSetupTabPage is the "Page" tab of the Page Setup editor.
+	-->

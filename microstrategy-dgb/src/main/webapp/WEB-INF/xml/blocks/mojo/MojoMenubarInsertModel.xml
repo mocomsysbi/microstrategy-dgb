@@ -1,0 +1,44 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoMenubarInsertModel" inherits="MojoToolbarButtonModel">
+    <assignments>
+		<property name="n">insert</property>
+		<property name="desc">{desc:mstrWeb.2919|Insert}</property>
+		<property name="items">
+			<list>
+			    <block name="MojoToolbarButtonModel">
+                    <property name="n">import</property>
+                    <property name="desc">{desc:mstrWeb.15416|Browse Objects...}</property>
+                    <property name="cmd">importMSTR</property>
+                    <property name="visibleFeatures">export;download-analysis</property>
+                </block>
+				<block name="MojoToolbarButtonModel">
+                    <property name="n">addDS</property>
+                    <property name="desc">{desc:mstrWeb.11780|Add Data}</property>
+                    <property name="visibleFeatures">analysis-import-data</property>
+                    <property name="items">
+                        <list>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">importFile</property>
+                                <property name="desc">{desc:mstrWeb.14303|New Data...}</property>
+                                <property name="cmd">importFile</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">dlmt</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">addDS</property>
+                                <property name="desc">{desc:mstrWeb.13573|Existing Dataset...}</property>
+                                <property name="cmd">addDataset</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">newDS</property>
+                                <property name="desc">{desc:mstrWeb.15397|Existing Objects...}</property>
+                                <property name="cmd">createDataset</property>
+                            </block>
+                        </list>
+                    </property>
+                </block>
+   			</list>
+		</property>
+	</assignments>
+</block>

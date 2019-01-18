@@ -1,0 +1,98 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <mstrlayout:render name="ancestorsSelector"/>
+            </td>
+            <td>
+                <mstrlayout:render name="openParentLink"/>
+            </td>
+        </tr>
+    </table>
+    <mstrlayout:render name="searchSection"/>
+    <!-- TQMS 216982 - 13) In HTML mode we need to wrap everything in the form
+    <div>
+        <span id="name_label">
+            <mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="string" value="mstrWeb.2157"/>
+            </mstrlayout:render>
+        </span>
+        <mstrlayout:render name="searchBox"/>
+        <mstrlayout:render name="searchButton"/>
+    </div>
+    -->
+    <div sty="fileList">
+        <div class="mstrSmallIconView">
+            <mstrlayout:list id="subfolders" name="getSubfolders">
+                <div>
+                    <mstrlayout:attr name="getObjectAttributes">
+                        <mstrlayout:argument list="subfolders" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:attr>
+                    
+                     <!-- added to generate layered icons -->                        
+                     <mstrlayout:render name="layeredIconInfo">
+                         <mstrlayout:argument list="subfolders" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                         <mstrlayout:argument type="boolean" value="false"/> 
+                     </mstrlayout:render>
+                            
+                    
+                    <mstrlayout:render name="nameInfo">
+                        <mstrlayout:argument list="subfolders" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:render>
+                </div>
+            </mstrlayout:list>
+            <mstrlayout:if name="shouldRenderFolderLinks">
+                <mstrlayout:then>
+                    <mstrlayout:list id="folderLinks" name="getFolderLinkList">
+                       <!-- 
+                        <mstrlayout:render name="folderLink">
+                            <mstrlayout:argument list="folderLinks" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        </mstrlayout:render>
+                       -->
+                       
+                        
+                        <div>
+                              <mstrlayout:attr name="getLinkAttributes">
+                                  <mstrlayout:argument list="folderLinks" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                              </mstrlayout:attr>
+                              
+                              <!-- added to generate layered icon -->
+                              <mstrlayout:render name="layeredIconInfo"> 
+                                  <mstrlayout:argument list="folderLinks" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                  <mstrlayout:argument type="boolean" value="true"/>                                            
+                              </mstrlayout:render>
+                              
+                              <mstrlayout:render name="nameInfo">
+                                  <mstrlayout:argument list="folderLinks" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                              </mstrlayout:render> 
+                        </div>
+                                
+                                
+                    </mstrlayout:list>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            <mstrlayout:list id="folderObjects" name="getFolderObjects">
+                <div>
+                    <mstrlayout:attr name="getContextMenuAttributes">
+                        <mstrlayout:argument list="folderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:attr>
+                    <mstrlayout:attr name="getObjectAttributes">
+                        <mstrlayout:argument list="folderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:attr>
+                    
+                    <!-- added to generate layered icon -->
+                    <mstrlayout:render name="layeredIconInfo"> 
+                        <mstrlayout:argument list="folderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:argument type="boolean" value="false"/>
+                    </mstrlayout:render>
+                                        
+                    <mstrlayout:render name="nameInfo">
+                        <mstrlayout:argument list="folderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:render>
+                </div>
+            </mstrlayout:list>
+        </div>
+    </div>
+    <mstrlayout:render name="incrementalFetch"/>
+</mstrlayout:layout>

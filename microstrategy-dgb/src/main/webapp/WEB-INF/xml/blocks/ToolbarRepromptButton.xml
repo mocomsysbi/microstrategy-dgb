@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarRepromptButton" inherits="ToolbarButtonModel">
+	<assignments>
+	    <property name="id">tbReprompt</property>
+	    <property name="tooltip">{desc:mstrWeb.119|Re-prompt}</property>
+	    <property name="cmdid">reprompt</property>
+	    <property name="visibleFeatures">reprompt</property>
+	</assignments>
+</block>

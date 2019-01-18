@@ -1,0 +1,170 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabAlignment">
+  <assignments>
+    <property name="title">{desc:mstrWeb.1918|Format} - {desc:mstrWeb.3435|Alignment}</property>
+    <property name="modelPath">parent/model/items/12</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Alignment.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K953" name="PropertiesEditorSelectors"/>
+        <block listElementKey="K954" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2065|Text Alignment}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K955" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.2066|Horizontal}:</property>
+                <property name="modelPath">parent/model/Horizontal</property>
+                <property name="enabledField">parent/model/enableHorizontal</property>
+                <property name="visibleField">!parent/model/isOneGrid</property>
+                <property name="popup/height">80px</property>
+              </block>
+              <block listElementKey="K956" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.2066|Horizontal}:</property>
+                <property name="modelPath">parent/model/GridHorizontal</property>
+                <property name="visibleField">parent/model/isOneGrid</property>
+                <property name="popup/height">100px</property>
+              </block>
+              <block listElementKey="K957" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.2069|Vertical}:</property>
+                <property name="modelPath">parent/parent/model/Vertical2</property>
+                <property name="visibleField">parent/model/isOneGrid</property>
+                <property name="popup/height">80px</property>
+              </block>
+              <block listElementKey="K959" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/isSelector</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K960" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.2069|Vertical}:</property>
+                      <property name="modelPath">parent/model/SelectorVertical</property>
+                      <property name="popup/height">60px</property>
+                    </block>
+                    <block listElementKey="K961" name="TextLabel">
+                      <property name="value">{desc:mstrWeb.4875|(Flash Only)}</property>
+                      <property name="cssText">padding:6px 10px</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K962" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2884|Text Control}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showTextControl</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K963" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.2070|Wrap Text}</property>
+                <property name="valueField">TextWrap</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K964" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5159|Text Direction:}</property>
+                <property name="modelPath">parent/model/TextDirection</property>
+                <property name="visibleField">parent/model/isText</property>
+                <property name="popup/height">60px</property>
+              </block>
+              <block listElementKey="K965" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5159|Text Direction:}</property>
+                <property name="modelPath">parent/model/TextDirectionGrid</property>
+                <property name="visibleField">parent/model/isOneGrid</property>
+                <property name="popup/height">40px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="padding" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2883|Padding}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showPadding</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K966" name="HBox">
+                <property name="padding">2</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="horizontal" name="VBox">
+                      <property name="children">
+                        <list>
+                          <block listElementKey="left" name="TextBox">
+                            <property name="caption">{desc:mstrWeb.2173|Left:}</property>
+                            <property name="valueField">LeftPadding</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">7</property>
+                                <property name="min">0</property>
+                                <property name="required">true</property>
+                              </block>
+                            </property>
+                          </block>
+                          <block listElementKey="right" name="TextBox">
+                            <property name="caption">{desc:mstrWeb.2174|Right:}</property>
+                            <property name="valueField">RightPadding</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">7</property>
+                                <property name="min">0</property>
+                                <property name="required">true</property>
+                              </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="vertical" name="VBox">
+                      <property name="cssText">margin-left:5px</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="top" name="TextBox">
+                            <property name="caption">{desc:mstrWeb.2061|Top:}</property>
+                            <property name="valueField">TopPadding</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">7</property>
+                                <property name="min">0</property>
+                                <property name="required">true</property>                                
+                              </block>
+                            </property>
+                          </block>
+                          <block listElementKey="bottom" name="TextBox">
+                            <property name="caption">{desc:mstrWeb.2062|Bottom:}</property>
+                            <property name="valueField">BottomPadding</property>
+                            <property name="modelPath">parent/parent/parent/model</property>
+                            <property name="totalSize">7</property>
+                            <property name="validator">
+                              <block name="FieldValidator">
+                                <property name="type">7</property>
+                                <property name="min">0</property>
+                                <property name="required">true</property>                                
+                              </block>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesTabAlignment is the "Format - Alignment" tab of the properties editor.
+	-->

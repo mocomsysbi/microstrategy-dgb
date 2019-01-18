@@ -1,0 +1,30 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarTextBoxModel" inherits="ToolbarControlModel">
+		<definition>
+			<!-- The value of the text box -->
+			<property name="value" type="String" />
+			
+			<!-- The TextBox caption -->
+			<property name="caption" type="String" />
+
+			<!-- The TextBox size -->
+			<property name="totalSize" type="String" />
+			
+			<!-- The validator as it's pushed to the view -->
+			<property name="validator" type="Block" />
+			
+			<!-- Text boxes don't send to the target after they change.  Instead they queue their changes with their parent (toolbar)
+				by a group id.  This property stores that id.  -->
+			<property name="queueGroup" type="String" />
+			
+			<!-- If the queue group will be submited when pressing enter  -->
+			<property name="submitQueueOnEnter" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="type">TEXTBOX</property>
+			<property name="scriptClass">mstr.models.TextBoxModel</property>
+			<property name="toolbarHelper">
+				<block name="ToolbarTextBoxHelper" />
+			</property>
+		</assignments>
+	</block>

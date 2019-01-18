@@ -1,0 +1,20 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ApplyRWClientManipulation">
+	<!-- 
+		This Task is used to set the layout of a Report Writer document.
+	-->
+	<basicInfo desc="This Task sets a layout of a Report Writer document. It does not return any content. Instead, it merely communicates this change to the Intelligence Server">
+		<parameter name="layoutKey" desc="Specifies the key of the layout to set." required="true" />
+		<parameter name="rwb" desc="The state of the Report Writer Bean." required="true" type="simplestring"/>
+	</basicInfo>
+	
+	<!-- REPORT_WRITER_EVENT_SET_CURRENT_LAYOUT -->
+	<eventInfo eventID="2048093">
+		<argument name="sectionKey" value="layoutKey" source="parameter" />
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing Bean.
+	-->
+	<beanInfo name="rwb" bean-type="RWBean"/>
+</beanTask>

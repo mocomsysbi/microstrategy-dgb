@@ -1,0 +1,12 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_enabled="rootTag.disabled = !view.props['enabled']; rootTag.style.cursor=(rootTag.disabled) ? 'default' : 'pointer'; "
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'inline', 'none', view.props['visible'])">
+  <input style="{@cssText}"
+         title="{@tooltip}"
+         class="{@cssPrefix}{@cssClass}"
+         id="{@id}"
+         value="{@caption}"
+         type="button"
+         onclick="{@onclick}">
+  </input>
+</mstrlayout:layout>

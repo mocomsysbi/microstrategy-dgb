@@ -1,0 +1,119 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about locale related setting. 
+--> 
+<block name="LocaleInfo">
+    <definition>
+        <!-- Date time related locale information.  -->
+        <property name="datetime" type="Block" />
+        <!-- Number related locale information.  -->
+        <property name="number" type="Block"/>
+        <!-- Color related locale information.  -->
+        <property name="color" type="Block"/>
+        <!-- Expression related locale information.  -->
+        <property name="expression" type="Block"/>
+        <!-- Validation related locale information.  -->
+        <property name="validation" type="Block"/>       
+         
+    </definition>
+    <assignments>
+            <property name="datetime">
+                        <block name="BaseBlock">
+					        <!-- The list of month short format names information.  -->
+					        <property name="MONTHNAME_SHORT" type="Block" />
+					        <!-- The list of month full names information.  -->
+					        <property name="MONTHNAME_FULL" type="Block" />
+                            <!-- The list of day short format names information.  -->
+                            <property name="dayShortNames" type="Block" />
+                            <!-- The list of day full names information.  -->
+                            <property name="dayNames" type="Block" />
+					        <!-- The date input format information.  -->
+					        <property name="DATEINPUTFORMATS" type="Block" />
+					        <!-- The time input format information.  -->
+					        <property name="TIMEINPUTFORMATS" type="Block" />
+					        <!-- The date output format information.  -->
+					        <property name="DATEOUTPUTFORMAT" type="String" />
+					        <!-- The time output format information.  -->
+					        <property name="TIMEOUTPUTFORMAT" type="String" />
+							<!-- The date display format for browser -->
+					        <property name="DATEDISPLAYFORMAT" type="String" />
+					        <!-- The time display format for browser -->
+					        <property name="TIMEDISPLAYFORMAT" type="String" />
+					        <!-- The AM name information.  -->
+					        <property name="AM_NAME" type="String" />
+					        <!-- The PM name information.  -->
+					        <property name="PM_NAME" type="String" />
+                            <property name="TWODIGITYEARSTART" type="String" />					        
+                        </block>
+            </property>
+            <property name="number">
+                <block name="BaseBlock">
+			        <!-- The number input format information.  -->
+			        <property name="NUMBERINPUTFORMATS" type="Block" />
+			        <!-- The integer input format information.  -->
+			        <property name="INTEGERINPUTFORMATS" type="Block" />
+			        <!-- The number output format information.  -->
+			        <property name="NUMBEROUTPUTFORMAT" type="String" />
+			        <!-- The integer output format information.  -->
+			        <property name="INTEGEROUTPUTFORMAT" type="String" />
+			        <property name="DECIMALSEPARATOR" type="String" />
+			        <property name="THOUSANDSEPARATOR" type="String" />
+                </block>
+            </property>
+            <property name="expression">
+                <block name="BaseBlock">
+			        <!-- The metric validation level information.  -->
+			        <property name="METRICVALIDATIONLEVEL" type="String" />
+			        <!-- The integer input format information.  -->
+			        <property name="PRESERVEWHITESPACE" type="Boolean" />
+			        <!-- Include functions' name and id. A list of ObjectInfo block  -->
+			        <property name="Include" type="List" />
+			        <!-- Include functions' name and id. A list of ObjectInfo block  -->
+			        <property name="BranchQual" type="List" />
+			        <!-- Include functions' name and id. A list of ObjectInfo block  -->
+			        <property name="RootOperator" type="List" />
+			        <!-- Include functions' name and id. A list of ObjectInfo block  -->
+			        <property name="ExprType" type="List" />
+			        <!-- Include functions' name and id. A list of ObjectInfo block  -->
+			        <property name="DimtyLevels" type="List" />
+			        <!-- Attribute Qualification operators' name and id. A list of ObjectInfo block  -->
+			        <property name="Attribute" type="List" />
+			        <!-- Metric Qualification operators' name and id. A list of ObjectInfo block  -->
+			        <property name="Metric" type="List" />
+			        <!-- MDX Attribute Qualification operators' name and id. A list of ObjectInfo block  -->
+			        <property name="MDXAttribute" type="List" />
+			        <!-- MDX Metric Qualification operators' name and id. A list of ObjectInfo block  -->
+			        <property name="MDXMetric" type="List" />
+			        <!-- SAP Attribute Qualification operators' name and id. A list of ObjectInfo block  -->
+			        <property name="SAPAttribute" type="List" />
+			        <!-- Metric Rank/Percentage operators' name and id. A list of ObjectInfo block  -->
+			        <property name="MetricRP" type="List" />
+			        <!-- Element Qualification operators' name and id. A list of ObjectInfo block  -->
+			        <property name="Element" type="List" />
+                </block>           
+            </property>
+            <property name="validation">
+                        <block name="BaseBlock">
+                            <property name="requiredFieldError" type="String" />
+                            <property name="invalidCharError" type="String" />
+                            <property name="invalidDateStringError" type="String" />
+                            <property name="invalidNumericFormatError" type="String" />
+                            <property name="invalidValueInListError" type="String" />                            
+                            <property name="outofRangeError" type="String" />
+                            <property name="noLessMinError" type="String" />
+                            <property name="noGreaterMaxError" type="String" />
+                            <property name="failRegexTestError" type="String" />
+                            <property name="integerDataType" type="String" /> 
+                            <property name="numericDataType" type="String" />
+                            <property name="dateDataType" type="String" />                                                      
+                        </block>
+            </property>                 
+            <property name="color">
+                        <block name="BaseBlock">
+		                    <property name="colors" type="List" />
+		                    <property name="userPalette" type="List" />
+                        </block>
+            </property>                 
+    </assignments>    
+</block>
+        

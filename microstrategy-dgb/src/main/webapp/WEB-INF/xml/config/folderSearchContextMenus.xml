@@ -1,0 +1,10 @@
+<shortcut-list-set name="folderSearchContextMenus" config-src="/WEB-INF/xml/config/folderContextMenus.xml">
+  <shortcut-list name="default">
+    <shortcut name="new">
+      <shortcut-list name="new">
+        <shortcut name="newFolder" deleted="1"/>
+        <shortcut name="groupnew1" deleted="1" />
+      </shortcut-list>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

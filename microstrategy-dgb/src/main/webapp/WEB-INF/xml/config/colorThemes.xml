@@ -1,0 +1,28 @@
+<shortcut-list name="colorThemePicker" version="1.0">
+    <shortcut desc="Red" desc-id="mstrWeb.2280" name="ctRed">
+        <attributes>
+            <attribute name="value" value="Red"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Blue" desc-id="mstrWeb.2268" name="ctBlue">
+        <attributes>
+            <attribute name="value" value="Blue"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Carbon" desc-id="mstrWeb.5586" name="ctCarbon">
+        <attributes>
+            <attribute name="value" value="Carbon"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Gray" desc-id="mstrWeb.5585" name="ctGray">
+        <attributes>
+            <attribute name="value" value="Gray"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Black" desc-id="mstrWeb.2266" name="ctBlack">
+        <attributes>
+            <attribute name="value" value="Black"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>
+

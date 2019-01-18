@@ -1,0 +1,55 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="TabModel" name="GraphFormatEditorAdvancedModel">
+  <definition>
+    <property name="seriesLayout" type="Block"/>
+    <property name="lockFontSize" type="Block"/>
+    <property name="showSubtotals" type="Boolean"/>
+  </definition>
+  <assignments>
+    <property name="tabId">Advanced</property>
+    <property name="titleText">{desc:mstrWeb.4082|Advanced}</property>
+    <property name="categoryText">{desc:mstrWeb.3899|Format}</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="visibleField">adv_visible</property>      
+    <property name="storeFields">seriesLayout|lockFontSize|showSubtotals</property>
+    <property name="seriesLayout">
+      <block name="ListModel">
+        <property name="selectedIndicesList">1</property>
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1946" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.3715|By Row}</property>
+            </block>
+            <block listElementKey="K1947" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.3716|By Column}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="lockFontSize">
+      <block name="ListModel">
+        <property name="selectedIndicesList">1</property>
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1948" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.3718|Absolute - Does not change with the size of graph}</property>
+            </block>
+            <block listElementKey="K1949" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.3719|Relative - Change depending on the size of the graph}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="showSubtotals">false</property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Advanced' tab of the Graph Format editor. -->

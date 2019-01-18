@@ -1,0 +1,23 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+			<mstrlayout:block name="BlockContainer">
+				<mstrlayout:bSetProperty path="models">
+					<mstrlayout:block name="GraphGradientEditorModel">
+						<mstrlayout:bSetProperty path="color1"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="color2"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="views">
+					<mstrlayout:block name="GraphGradientEditor">
+					  <!-- Help Button -->
+						<mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+						<mstrlayout:bSetProperty path="helpTopic" method="getHelpTopic"/>					
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:block>
+</mstrlayout:layout>

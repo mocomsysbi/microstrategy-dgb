@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about an element Prompt's answer. 
+-->
+<block name="ElementsPromptAnswer" inherits="Fetchable,PromptAnswer">
+    <definition>
+        <!-- A list of Element Blocks. -->
+        <property name="elms" type="List" />
+    </definition>
+</block>

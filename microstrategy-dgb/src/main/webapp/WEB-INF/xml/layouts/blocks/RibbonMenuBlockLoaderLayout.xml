@@ -1,0 +1,20 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+	<mstrlayout:block name="BlockContainer">
+		<mstrlayout:bEditBlock path="" method="loadMenuModel"/>
+		<mstrlayout:bSetProperty path="views">
+			<mstrlayout:block name="MenuBook">
+				<mstrlayout:bSetProperty path="useFixedPosition" method="getRequestParameterValue">
+					<mstrlayout:argument type="String" value="useFixedPosition" />
+					<mstrlayout:argument type="String" value="true" />
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="id" method="getMenuId"/>
+				<mstrlayout:bSetProperty path="cssText" method="getRequestParameterValueEncoded">
+					<mstrlayout:argument type="String" value="cssText" />
+					<mstrlayout:argument type="String" value="top:0;left:0" />
+				</mstrlayout:bSetProperty>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:block>
+</mstrlayout:layout>

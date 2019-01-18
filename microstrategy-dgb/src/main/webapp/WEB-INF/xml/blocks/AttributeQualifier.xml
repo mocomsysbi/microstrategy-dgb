@@ -1,0 +1,122 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		AttributeQualifier is a BaseQualifier with additional properties for viewing an attribute
+		form qualification.
+	-->
+	<block name="AttributeQualifier" inherits="BaseQualifier">
+		<definition>			
+			<!-- The view for choosing the attribute form for this qualifier.  -->
+			<property name="formView" type="Block" />
+
+			<!-- The view for launching a value browser for the first constant; typically a TextLink.  -->
+			<property name="browse1View" type="Block" />
+
+			<!-- The view for launching a GUI for importing values for the first constant; typically a TextLink.  -->
+			<property name="import1View" type="Block" />
+
+			<!-- The view for launching a value browser for the second constant; typically a TextLink.  -->
+			<property name="browse2View" type="Block" />
+			
+			<!-- The view for choosing the expression type (Qualify or Select). -->
+			<property name="exprTypeView" type="Block" />
+			
+			<!-- The view for choosing the function (In List, Not in List) for an element selection.  -->
+			<property name="listFunctionView" type="Block" />
+
+			<!-- The view for displaying the elements currently selected. -->
+			<property name="elementsView" type="Block" />
+			
+			<!-- The view for launching an editor to edit the elementsView contents; typically a TextLink. -->
+			<property name="editElementsView" type="Block" />
+			
+			<!-- The view for launching an editor to edit the elementsView contents; typically a TextLink. -->
+			<property name="browseElementsView" type="Block" />
+			
+			<!-- The view for clearing the elementsView contents; typically a TextLink. -->
+			<property name="clearElementsView" type="Block" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.AttributeQualifier</property>
+			<property name="targetView/caption">{desc:mstrWeb.2149|Attribute:}</property>
+			<property name="expressionType">2</property>
+			<property name="formView">
+				<block name="ListPulldown">
+					<property name="caption">{desc:mstrWeb.5906|Form:}</property>
+					<property name="showItemsDuringRequest">true</property>
+					<property name="modelPath">parent/model/getFormListModel()</property>
+					<property name="cmds">EditConditionForm|model/getSelectedItem()|parent/model/selected</property>
+				</block>
+			</property>
+			<property name="browse1View">
+				<block name="TextLink">
+					<property name="caption">{desc:mstrWeb.5902|Browse values...}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="cmds">OpenPopup|"ExpressionFormValues1Popup1"</property>
+					<property name="hideEnterValuesLink" type="Boolean">true</property>
+				</block>
+			</property>
+			<property name="import1View">
+				<block name="TextLink">
+					<property name="caption">{desc:mstrWeb.5903|Import file...}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="cmds">UpdateInListFunction||parent/model/selected;OpenPopup|"ExpressionFileImport1Popup1"</property>
+				</block>
+			</property>
+			<property name="browse2View">
+				<block name="TextLink">
+					<property name="caption">{desc:mstrWeb.5902|Browse values...}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="cmds">OpenPopup|"ExpressionFormValues2Popup1"</property>
+					<property name="hideEnterValuesLink" type="Boolean">true</property>
+				</block>
+			</property>
+			<property name="exprTypeView">
+				<block name="RadioList">
+					<property name="modelPath">parent/model/getExprTypeListModel()</property>
+					<property name="cmds">!ClickListItem;EditConditionExprType|model/getSelectedItem()|parent/model/selected</property>
+					<property name="height">auto</property>
+				</block>
+			</property>
+			<property name="listFunctionView">
+				<block name="ListPulldown">
+					<property name="visible">false</property>
+					<property name="caption">{desc:mstrWeb.5904|Is:}</property>
+					<property name="modelPath">parent/model/getElementsFunctionListModel()</property>
+					<property name="cmds">EditConditionFunction|model/getSelectedItem()|parent/model/selected</property>
+				</block>
+			</property>
+			<property name="elementsView">
+				<block name="FastListView">
+					<property name="visible">false</property>
+					<property name="modelPath">parent/model/getElementsListModel()</property>
+				</block>
+			</property>
+			<property name="editElementsView">
+				<block name="TextLink">
+					<property name="visible">false</property>
+					<property name="caption">{desc:mstrWeb.3224|Edit...}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="cmds">OpenPopup|"ExpressionElementsPopup2"</property>
+					<property name="CommandEnabledOpenPopup" type="Boolean">true</property>
+				</block>
+			</property>
+			<property name="browseElementsView">
+				<block name="TextLink">
+					<property name="visible">false</property>
+					<property name="caption">{desc:mstrWeb.7928|Browse elements...}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="cmds">OpenPopup|"ExpressionElementsPopup2"</property>
+					<property name="CommandEnabledOpenPopup" type="Boolean">true</property>
+				</block>
+			</property>
+			<property name="clearElementsView">
+				<block name="TextLink">
+					<property name="visible">false</property>
+					<property name="caption">{desc:mstrWeb.1763|Clear All}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="cmds">OpenPopup|"ExpressionElementsPopup2"</property>
+					<property name="CommandEnabledOpenPopup" type="Boolean">true</property>
+				</block>
+			</property>
+		</assignments>
+	</block>		 

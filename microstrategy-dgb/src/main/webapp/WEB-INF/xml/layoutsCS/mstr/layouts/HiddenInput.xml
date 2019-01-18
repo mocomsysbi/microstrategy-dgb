@@ -1,0 +1,8 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT">
+    <input 
+            blockId="{@id}"
+            modelId="{@model/id}"
+            value="{@value}"
+            type="hidden">
+    </input>
+</mstrlayout:layout>

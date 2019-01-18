@@ -1,0 +1,20 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the three lists of sort options(rules) for Advanced Sort Editor.
+--> 
+<block name="SortOptionsList">
+    <definition>
+        <!-- The text to be displayed in the pulldown -->
+        <property name="rows" type="List"/>
+        
+        <!-- Sort value -->
+        <property name="cols" type="List" />
+        
+        <!-- Previous applied rules  -->
+        <property name="appliedRows" type="List" />
+        <property name="appliedCols" type="List" />
+
+        <!-- Indicates if use hierarchical sort -->
+        <property name="hierarchicalSort" type="Block" />
+    </definition>
+</block>

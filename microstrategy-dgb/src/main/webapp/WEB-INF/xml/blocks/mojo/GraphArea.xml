@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents an area in a graph (whether it originated from a Report or RW Document).
+--> 
+<block name="GraphArea">
+    <definition>
+        <!-- The type of the shape for this area. See EnumDSSXMLAreaShapes -->
+        <property name="shape" type="Integer" />
+        
+        <!-- The coordinates of the area (in a comma separated list) -->
+        <property name="coords" type="String" />
+        
+        <!-- The tooltip of the area -->
+        <property name="tooltip" type="String" />
+    </definition>
+</block>

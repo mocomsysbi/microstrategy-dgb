@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="PromptQuestionViewRoll" inherits="ViewRoll">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.PromptQuestionViewRoll</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="loading" type="String">{desc:mstrWeb.2901|Loading...}</property>
+					<property name="pwait" type="String">{desc:mstrWeb.5927|Please wait}</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

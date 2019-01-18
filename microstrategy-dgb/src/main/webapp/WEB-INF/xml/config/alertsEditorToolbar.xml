@@ -1,0 +1,88 @@
+<shortcut-list-set javascript-file="mstrEditorToolbar.js" name="alertsEditorToolbar" feature-id="dhtml;show-alerts-button" script-class="mstrEditorToolbar" version="1.0">
+  <attributes>
+    <attribute name="ty" value="tool" />
+    <attribute name="dg" value="3" />
+    <attribute name="or" value="1" />
+    <attribute name="ors" value="3" />
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="metricSelector">
+    <attributes>
+      <attribute name="ty" value="btng" />
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut name="tbMetrics" type="pulldown" desc="Select Metric" desc-id="">
+      <attributes>
+        <attribute name="cmdtp" value="3"/>
+        <attribute name="cmdid" value="ateMetrics"/>
+        <attribute name="cmdpk" value="tbMetricsPicker"/>
+      </attributes>
+      <shortcut-list name="tbMetricsPicker">
+        <attributes>
+          <attribute name="ty" value="pkr"/>
+        </attributes>
+        <shortcut desc="blank" desc-id="mstrWeb.3522" name="pkrMetrics"/>
+      </shortcut-list>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="subExpressionEdit">
+    <attributes>
+      <attribute name="ty" value="btng" />
+        <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut type="button" desc="[Add Condition]" desc-id="mstrWeb.1994" feature-id="" name="tbAddExpression">
+      <attributes>
+        <attribute name="cmdtp" value="0" />
+        <attribute name="cmdid" value="ateAddSE" />
+      </attributes>
+    </shortcut>
+    <shortcut type="button" desc="[Clear All]" desc-id="mstrWeb.1763" feature-id="" name="tbClearExpression">
+      <attributes>
+        <attribute name="cmdtp" value="0" />
+        <attribute name="cmdid" value="ateClearSE" />
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="format">
+    <attributes>
+      <attribute name="ty" value="btng" />
+        <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut type="button" desc="[Cell Formatting...]" desc-id="mstrWeb.4580" feature-id="" name="tbFormat">
+      <attributes>
+        <attribute name="cmdtp" value="0" />
+        <attribute name="cmdid" value="ateFormat" />
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="scope" feature-id="">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut type="button" desc="[Format Metric only]" desc-id="mstrWeb.4582" name="tbMetricOnly">
+      <attributes>
+        <attribute name="cmdtp" value="1"/>
+        <attribute name="cmdid" value="ateScope"/>
+        <attribute name="cmdvl" value="1"/>
+        <attribute name="class" value="disabled"/>
+      </attributes>
+    </shortcut>
+    <shortcut type="button" desc="[Format subtotals only]" desc-id="mstrWeb.4584" name="tbSubOnly">
+      <attributes>
+        <attribute name="cmdtp" value="1"/>
+        <attribute name="cmdid" value="ateScope"/>
+        <attribute name="cmdvl" value="2"/>
+        <attribute name="class" value="disabled"/>
+      </attributes>
+    </shortcut>
+    <shortcut type="button" desc="[Format Metric and subtotals]" desc-id="mstrWeb.4583" name="tbMetricAndSub">
+      <attributes>
+        <attribute name="cmdtp" value="1"/>
+        <attribute name="cmdid" value="ateScope"/>
+        <attribute name="cmdvl" value="3"/>
+        <attribute name="class" value="disabled"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>	
+</shortcut-list-set>

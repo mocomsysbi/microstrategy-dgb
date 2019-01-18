@@ -1,0 +1,28 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%"
+		id="tblReportLayout">
+		<tr>
+			<td id="tdReportLayoutCenter" colspan="1" rowspan="1">
+				<div class="report-center mstrWeb">
+					<mstrlayout:if name="isNonViewableReport">
+						<mstrlayout:then>
+							<mstrlayout:render
+								name="nonViewableMessage" />
+						</mstrlayout:then>
+						<mstrlayout:else>
+							<mstrlayout:if name="isGridEmpty">
+								<mstrlayout:then>
+									<mstrlayout:render name="emptyGrid" />
+								</mstrlayout:then>
+								<mstrlayout:else>
+									<mstrlayout:render name="grid" />
+								</mstrlayout:else>
+							</mstrlayout:if>
+						</mstrlayout:else>
+					</mstrlayout:if>
+				</div>
+			</td>
+		</tr>
+	</table>
+</mstrlayout:layout>

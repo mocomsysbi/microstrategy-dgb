@@ -1,0 +1,24 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+
+	<basicInfo desc="To change the unset state of a selector, send the unitKeyContext or the controlKey">
+		<parameter name="unitKeyContext" desc="" required="false" />
+        <parameter name="ctlKey" desc="" required="false" />
+        <parameter name="zoomFactor" desc="Zoom factor of the document" required="false" type="float" />
+	</basicInfo>	
+
+	<!-- rwUnsetSelectorControl event  -->
+	<eventInfo eventID="2048128"/>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.
+	-->
+	<beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWDocumentMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="2" />
+            <actualParameter name="zoomFactor" value="zoomFactor" source="parameter"/>
+        </style>
+    </beanInfo>
+</beanTask>
+

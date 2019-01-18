@@ -1,0 +1,21 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="RibbonListModel" inherits="ListModel">
+	<definition>
+		<!-- The path to get the object this toolbar will interact with. -->
+		<property name="targetPath" type="String" />
+
+		<property name="visible" type="Boolean" />
+		
+		<!-- The features to check to see if this toolbar should be available to the user. -->
+		<property name="features" type="String" />
+		
+		<!-- Used by any model loaded with a task that is contained within this block, ie: subMenus -->
+		<property name="styleName" type="String"/>
+		
+	</definition>	
+	<assignments>
+		<property name="scriptClass">mstr.models.Toolbar</property>
+		<property name="valueForm">id</property>
+		<property name="visible">true</property>
+	</assignments>
+</block>

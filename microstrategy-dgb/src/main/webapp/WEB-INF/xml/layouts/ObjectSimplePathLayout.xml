@@ -1,0 +1,11 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<div class="mstrPathText">
+		<span class="mstrPathFirst">
+	      	<mstrlayout:render name="LinkForDesktop"/>
+      	</span>
+		<span class="mstrPathDelim">&gt;</span> 	
+      	<mstrlayout:render name="CurrentItem"/>
+   	</div>
+   	<div class="mstrSpacer"></div>
+</mstrlayout:layout>

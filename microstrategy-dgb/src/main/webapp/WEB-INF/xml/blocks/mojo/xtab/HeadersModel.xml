@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="HeadersModel" inherits="BaseBlock">
+	<definition>
+			<!-- An array of header items -->
+			<property name="items" type="List" />
+	</definition>
+</block>

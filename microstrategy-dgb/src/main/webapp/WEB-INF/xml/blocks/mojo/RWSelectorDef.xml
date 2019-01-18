@@ -1,0 +1,146 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition portion of a Report Writer Unit.
+--> 
+<block name="RWSelectorDef" inherits="RWUnitDef">
+    <definition>
+        <!-- Control Type. See c.m.webapi.EnumDSSXMLRWControlType -->
+        <property name="ct" type="String" />
+
+        <!-- Control key context -->
+        <property name="ck" type="String" />
+         
+        <!-- Control key -->
+        <property name="ckey" type="String" />
+
+        <!-- Control Style. See c.m.w.o.rw.EnumRWControlStyle for details --> 
+        <property name="style" type="Integer" />
+
+        <!-- Control Orientation Vertical ? -->
+        <property name="horiz" type="Boolean" />
+        
+        <!-- Control Orientation Behavior: Auto/Set -->
+        <property name="ob" type="Integer" />
+
+        <!-- Can Multi Select ? --> 
+        <property name="multi" type="Boolean" />
+
+        <!-- Width Mode. com.microstrategy.web.objects.rw.EnumRWHeightWidthMode --> 
+        <property name="wm" type="Integer" />
+
+        <!-- Height Mode com.microstrategy.web.objects.rw.EnumRWHeightWidthMode --> 
+        <property name="hm" type="Integer" />
+
+        <!-- Item Width Mode com.microstrategy.web.objects.rw.EnumRWItemWidthMode --> 
+        <property name="iwm" type="Integer" />
+
+        <!-- Control Target Keys. While a list would be more generic, the fact is that client side should need this list ONLY to send it back when selection is changed.   -->
+        <property name="tks" type="String" />
+        
+        <!-- Control Dataset Target Keys -->
+        <property name="dsTks" type="String" />
+        
+        <property name="ssc" type="String" />
+        
+        <property name="sstyle" type="Integer" />
+        
+        <!-- This property stores an array of custom group by nodes -->
+        <property name="cgb" type="Block"/>
+        
+        <!-- This property stores the title string -->
+        <property name="ttl" type="String" />
+        
+        <!-- This property stores the selection mode -->
+        <property name="include" type="Boolean" />
+
+        <!-- Indicates that a panel selector should appear as docked to the panel stack (for mobile). -->
+        <property name="dk" type="Boolean" />
+        
+        <!-- This is the value of the FormattingView WindowState property.
+             0 == Normal, 1 == Minimized, 2 == Maximized.
+        -->
+        <property name="ds" type="Integer" />   
+        
+        <!-- Control Sub Type. com.microstrategy.web.objects.rw.EnumWebControlSubType -->
+        <property name="subTp" type="Integer" />     
+        
+        <!-- This property stores the data source of the selector -->
+        <property name="dsrc" type="String" />   
+        
+        <!-- This property stores the data filter mode of the selector -->
+        <property name="dfm" type="Integer" />   
+
+        <!-- source object id 
+            optional, only used for mertic condition selector and UC on dataset selector -->
+        <property name="srcid" type="String" />
+
+        <!-- source object type
+            optional, only used for mertic condition selector-->
+        <property name="srct" type="Integer" /> 
+        
+        <!-- source object name
+             optional, only used for search box selector-->
+        <property name="srcn" type="String" />
+        
+        <!-- the flag indicate whether the element list need search on server by other request; -->
+        <property name="sos" type="Boolean" />                       
+        
+        <!-- data filter mode -->        
+        <property name="dfm" type="String" />
+        
+        <!-- Selector unset status -->        
+        <property name="sus" type="Integer" />
+        
+        <!-- Selector unset count -->        
+        <property name="suc" type="Integer" />
+        
+        <!-- the minimum selection count -->
+        <property name="min" type="Integer" />
+        
+        <!--  the maximum selection count -->
+        <property name="max" type="Integer" />
+        
+        <!--  the prop indicate the no selection behavior, 
+            0: empty as no selection; 1: empty as unset; 2: empty as all-->
+        <property name="nsb" type="Integer" />  
+        
+        <!-- This property stores the dataset id -->
+        <property name="dsid" type="String" />
+        
+        <!-- Form ID for search selector -->
+        <property name="sfid" type="String" />  
+         
+        <!-- Form data type -->
+        <property name="sfdt" type="Integer" />   
+        
+        <!--  "show all", the flag indicate whether current selector is support "all" option in the element list -->
+        <property name="showall" type="Boolean" />
+        
+        <!-- Stores the alias for the "All" item in selectors. -->
+        <property name="allStr" type="String" />
+        
+        <!-- This property stores the dataset id -->
+        <property name="dsid" type="String" />     
+        
+        <!-- Form ID for search selector -->
+        <property name="sfid" type="String" />     
+        
+        <!-- Form data type -->
+        <property name="sfdt" type="Integer" />     
+        
+        <!-- Show Element Count -->
+        <property name="sec" type="Boolean" />
+        
+        <!-- Indicates whether the selector is collapsed in the HTML5 VI filter panel. -->
+        <property name="clp" type="Boolean" />
+        
+        <!-- Indicates whether the selector supports totals. -->
+        <property name="btot" type="Boolean" />
+        
+        <!-- Indicates whether the selector currently has totals enabled. -->
+        <property name="htot" type="Boolean" />
+        
+        <!-- Search forms for search selector -->
+        <property name="sfs" type="List" />
+    </definition> 
+</block>

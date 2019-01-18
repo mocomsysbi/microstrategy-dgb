@@ -1,0 +1,60 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:bContext defaultContentType="JSON" />
+  <mstrlayout:if name="isIFrameRequest">
+	<mstrlayout:else>
+      <![CDATA[
+        <textarea id="rwRibbonToolbarModel" class="mstrJSON">
+      ]]>
+      <mstrlayout:block name="DocumentToolbarModel">
+		<mstrlayout:bSetProperty path="id" value="rwRibbonToolbarModel" /> 
+		<mstrlayout:bSetProperty path="selectedToolbar" method="getSelectedToolbarId" />
+		<mstrlayout:bSetProperty path="targetPath" method="getDefaultTargetPath"/>
+		<mstrlayout:bSetProperty path="beanPath" method="getBeanPath"/>
+		
+
+		<mstrlayout:if name="isFeatureAvailable">
+			<mstrlayout:argument value="rw-analysis-view-mode;!is-doc-visualization-mode;" />
+			<mstrlayout:then>
+				<mstrlayout:bSetProperty path="targetPath" value="#rwb_RWAnalysisSWFStyle" />
+			</mstrlayout:then>	
+			<mstrlayout:else>
+				<mstrlayout:if name="isFeatureAvailable">
+					<mstrlayout:argument value="rw-flash-view-mode;!is-doc-visualization-mode;" />
+					<mstrlayout:then>
+						<mstrlayout:bSetProperty path="targetPath" value="#rwb_RWFlashViewStyle" />
+					</mstrlayout:then>
+				</mstrlayout:if>
+			</mstrlayout:else>	
+		</mstrlayout:if>						
+		
+		<!-- Fills the ToolbarModel with the ribbon information retrieved from the page config of the page 'report'  -->
+		<mstrlayout:bEditBlock path="" method="loadRibbon"/>
+		
+		<mstrlayout:bEditBlock path="" method="processToolbarEvents" />
+		
+ 		<!-- Replaces the model placeholder with the real toolbar model based on the selected toolbar preference of the user -->
+		<mstrlayout:bEditBlock path="" method="loadSelectedModel" />
+		
+	  </mstrlayout:block>
+      <![CDATA[
+	   </textarea>
+        <textarea id="rwRibbonToolbar" class="mstrJSON">
+      ]]>
+      <mstrlayout:block name="DocumentToolbar">
+		<mstrlayout:bSetProperty path="modelPath" value="#rwRibbonToolbarModel" />
+
+		<mstrlayout:bEditBlock path="" method="loadRibbonView"/>
+		
+	  </mstrlayout:block>
+      <![CDATA[
+	   </textarea>
+      ]]>
+	  <mstrlayout:juilLayouts rootBlockName="DocumentToolbar" />
+      <script type="text/javascript">
+	      mstr.$register('rwRibbonToolbarModel', self);
+	      mstr.$register('rwRibbonToolbar', self).render();
+      </script>
+    </mstrlayout:else>
+  </mstrlayout:if>	
+</mstrlayout:layout>

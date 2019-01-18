@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="LastUpdateView" inherits="BaseView">
+		<definition>
+			<!-- The id of the object this view is targeting. -->
+			<property name="target" type="String" /> 
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.LastUpdateView</property>
+			<property name="cssClass">MenuLastUpdated</property>
+			<property name="visible">true</property>
+		</assignments>
+	</block>

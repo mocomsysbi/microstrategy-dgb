@@ -1,0 +1,98 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<table cellpadding="2" cellspacing="2"  width="100%">
+		<tr>
+			<td>
+				<label><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="5967"/></mstrlayout:render></label>
+			</td>
+		</tr>
+		<tr>
+			<td class="mstrWHL-LinksTD">
+				<mstrlayout:render name="LinkList" />
+			</td>
+		</tr>
+		</table>
+		<table width="100%">
+		<tr>
+			<td>
+				<mstrlayout:render name="LinkInfoBegin" />
+				<mstrlayout:render name="LinkName" />
+				<fieldset>
+					<legend><mstrlayout:render name="descriptor"><mstrlayout:argument type="int" value="5968"/></mstrlayout:render></legend>
+					<table cellspacing="0" cellpadding="0" width="100%">
+						<tr>
+							<td>
+								<mstrlayout:render
+									name="TypeInputForURL" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render name="URLInput" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render name="TypeInputForMobileURL" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render name="MobileURLSelector" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render
+									name="TypeInputForObject" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render
+									name="ObjectSelector" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render name="PromptList"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render
+									name="PromptTypeSelector" />
+							</td>
+						</tr>
+												<tr>
+							<td>
+								<mstrlayout:render
+									name="FormSelector" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render
+									name="ElementSelector" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mstrlayout:render
+									name="SelectorOptions" />
+							</td>
+						</tr>
+					</table>
+
+				</fieldset>
+				<mstrlayout:render name="LinkInfoEnd" />
+			</td>
+			</tr>
+			<tr>
+				<td>
+					<mstrlayout:render name="OpenInNewWindow" />
+				</td>
+			</tr>
+		</table>
+
+</mstrlayout:layout>

@@ -1,0 +1,32 @@
+<shortcut-list name="gaugeNeedleStylePicker" version="1.0">
+    <shortcut desc="[Simple]" desc-id="mstrWeb.4860" name="pkrSimple">
+        <attributes>
+            <attribute name="value" value="0"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Simple With Extended Base]" desc-id="mstrWeb.4932" name="pkrSimpleWithBase">
+        <attributes>
+            <attribute name="value" value="1"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Steeple]" desc-id="mstrWeb.4933" name="pkrSteeple">
+        <attributes>
+            <attribute name="value" value="3"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Rectangular]" desc-id="mstrWeb.4862" name="pkrRectangular">
+        <attributes>
+            <attribute name="value" value="5"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Thin]" desc-id="mstrWeb.4863" name="pkrThin">
+        <attributes>
+            <attribute name="value" value="6"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Thin With Extended Base]" desc-id="mstrWeb.4934" name="pkrThinLong">
+        <attributes>
+            <attribute name="value" value="7"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

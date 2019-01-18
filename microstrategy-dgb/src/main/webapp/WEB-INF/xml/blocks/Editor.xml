@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Editor is a panel with a button bar for acting upon a model. -->
+	<block name="Editor" inherits="VBox">
+		<definition>
+			<!-- Container of views (typically buttons) which direct the Editor as a whole. -->
+			<property name="buttonBar" type="Block" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.Editor</property>
+			<property name="layoutClass">mstr.layouts.Editor</property>
+			<property name="cssClass">Editor</property>
+		</assignments>
+	</block>

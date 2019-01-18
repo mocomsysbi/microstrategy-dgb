@@ -1,0 +1,155 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="LayoutTabColor">
+  <assignments>
+    <property name="title">{desc:mstrWeb.6024|Layout Properties} - {desc:mstrWeb.3436|Color and Lines}</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Color.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K753" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2885|Fill}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K754" name="ColorPicker">
+                <property name="horizontalCaption">{desc:mstrWeb.2060|Color:}</property>
+                <property name="modelPath">parent/model/LayoutFillColor</property>
+                <property name="popup/viewFlags">11</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K755" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2886|Borders}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">!model/isNavigationDocument</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K756" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="K757" name="RadioList">
+                      <property name="modelPath">parent/parent/model/LayoutBorderStyle</property>
+                      <property name="cssClass">NPCheckList</property>
+                      <property name="height">auto</property>
+                    </block>
+                    <block listElementKey="K758" name="ViewStack">
+                      <property name="modelPath">parent/parent/model/LayoutBorderStyle</property>
+                      <property name="cssText">margin-left:5px</property>
+                      <property name="views">
+                        <list>
+                          <block listElementKey="K759" name="VBox"/>
+                          <block listElementKey="K760" name="VBox">
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K761" name="HBox">
+                                  <property name="padding">1</property>
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K762" name="ListPulldown">
+                                    <property name="modelPath">parent/parent/parent/parent/parent/model/LayoutAllStyle</property>
+                                    </block>
+                                    <block listElementKey="K763" name="ColorPicker">
+                                    <property name="modelPath">parent/parent/parent/parent/parent/model/LayoutAllColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K764" name="HBox">
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K765" name="VBox">
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K766" name="TextLabel">
+                                    <property name="value">{desc:mstrWeb.2173|Left:}</property>
+                                    <property name="cssText">line-height:25px;</property>
+                                    </block>
+                                    <block listElementKey="K767" name="TextLabel">
+                                    <property name="value">{desc:mstrWeb.2174|Right:}</property>
+                                    <property name="cssText">line-height:25px;</property>
+                                    </block>
+                                    <block listElementKey="K768" name="TextLabel">
+                                    <property name="value">{desc:mstrWeb.2061|Top:}</property>
+                                    <property name="cssText">line-height:25px;</property>
+                                    </block>
+                                    <block listElementKey="K769" name="TextLabel">
+                                    <property name="value">{desc:mstrWeb.2062|Bottom:}</property>
+                                    <property name="cssText">line-height:25px;</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                                <block listElementKey="K770" name="VBox">
+                                  <property name="modelPath">parent/parent/parent/parent/model</property>
+                                  <property name="cssText">margin-left:2px;</property>
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K771" name="ListPulldown">
+                                    <property name="modelPath">parent/model/LayoutLeftStyle</property>
+                                    <property name="cssText">width:62px</property>
+                                    </block>
+                                    <block listElementKey="K772" name="ListPulldown">
+                                    <property name="modelPath">parent/model/LayoutRightStyle</property>
+                                    <property name="cssText">width:62px</property>
+                                    </block>
+                                    <block listElementKey="K773" name="ListPulldown">
+                                    <property name="modelPath">parent/model/LayoutTopStyle</property>
+                                    <property name="cssText">width:62px</property>
+                                    </block>
+                                    <block listElementKey="K774" name="ListPulldown">
+                                    <property name="modelPath">parent/model/LayoutBottomStyle</property>
+                                    <property name="cssText">width:62px</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                                <block listElementKey="K775" name="VBox">
+                                  <property name="modelPath">parent/parent/parent/parent/model</property>
+                                  <property name="cssText">margin-left:2px;</property>
+                                  <property name="children">
+                                    <list>
+                                    <block listElementKey="K776" name="ColorPicker">
+                                    <property name="modelPath">parent/model/LayoutLeftColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    </block>
+                                    <block listElementKey="K777" name="ColorPicker">
+                                    <property name="modelPath">parent/model/LayoutRightColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    </block>
+                                    <block listElementKey="K778" name="ColorPicker">
+                                    <property name="modelPath">parent/model/LayoutTopColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    </block>
+                                    <block listElementKey="K779" name="ColorPicker">
+                                    <property name="modelPath">parent/model/LayoutBottomColor</property>
+                                    <property name="popup/viewFlags">10</property>
+                                    </block>
+                                    </list>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		LayoutTabColor is the "Layout - Color" tab of the document properties editor.
+	-->

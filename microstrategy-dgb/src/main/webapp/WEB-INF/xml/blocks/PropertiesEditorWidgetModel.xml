@@ -1,0 +1,59 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorWidgetModel">
+  <definition>
+    <property name="widgetTabEnabled" type="Boolean"/>
+    <property name="NonFlashRender" type="Block"/>
+    <property name="widgetName" type="String"/>
+    <property name="FlashDisplayEnabled" type="Boolean"/>
+    <property name="DHTMLDisplayEnabled" type="Boolean"/>
+    <property name="iPhoneDisplayEnabled" type="Boolean"/>
+    <property name="iPadDisplayEnabled" type="Boolean"/>
+    <property name="AndroidDisplayEnabled" type="Boolean"/>
+    <property name="AndroidTabletDisplayEnabled" type="Boolean"/>
+    <property name="FlashDisplayLabel" type="Boolean"/>
+    <property name="DHTMLDisplayLabel" type="Boolean"/>
+    <property name="iPhoneDisplayLabel" type="Boolean"/>
+    <property name="iPadDisplayLabel" type="Boolean"/>
+    <property name="AndroidDisplayLabel" type="Boolean"/>
+    <property name="AndroidTabletDisplayLabel" type="Boolean"/>
+    <property name="PDFExcelDisplayLabel" type="Boolean"/>
+    <property name="OpenVisPropsEditor" type="Boolean"/>
+    <property name="showSecondaryDataProviders" type="Boolean"/>
+    <property name="ADisplayEnabled" type="Boolean"/>
+    <property name="WidgetProps" type="String"/>
+    <property name="SecondaryDataProvidersValue" type="String"/>
+  </definition>
+  <assignments>
+    <property name="id">widgetBoneTranslator</property>
+    <property name="scriptClass">mstr.bones.editors.WidgetBoneTranslator</property>
+    <property name="categoryText">{desc:mstrWeb.434|Properties}</property>
+    <property name="titleText">{desc:mstrWeb.4921|Widget}</property>
+    <property name="fields">isOneGrid|FlashDisplay|DHTMLDisplay|iPhoneDisplay|iPadDisplay|AndroidDisplay|AndroidTabletDisplay|widgetName|FlashDisplayEnabled|DHTMLDisplayEnabled|iPhoneDisplayEnabled|iPadDisplayEnabled|AndroidDisplayEnabled|AndroidTabletDisplayEnabled|FlashDisplayLabel|DHTMLDisplayLabel|iPhoneDisplayLabel|iPadDisplayLabel|AndroidDisplayLabel|AndroidTabletDisplayLabel|PDFExcelDisplayLabel|OpenVisPropsEditor|NonFlashRender|WidgetProps|widgetId|SecondaryDataProvidersValue|wasFullScreen</property>
+    <property name="visibleField">widgetTabEnabled</property>
+    <property name="widgetTabEnabled">true</property>
+    <property name="ADisplayEnabled">false</property>
+    <property name="NonFlashRender">
+      <block name="ListModel">
+        <property name="selectedIndicesList">0</property>
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K2124" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4943|Show Grid or Graph}</property>
+            </block>
+            <block listElementKey="K2125" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4923|Show Placeholder}</property>
+            </block>
+            <block listElementKey="K2126" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4944|Hide Grid or Graph}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Widget' tab of the Report Services properties editor. -->

@@ -1,0 +1,52 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name = "RWTransactions" >
+    <definition>
+    <!-- key context for grid or field group -->
+    <property name = "keyCtx" type = "String" />
+    
+    <!-- indicate whether this is a grid/graph or a field group -->
+    <property name = "tp" type = "Integer" />
+    
+    <!-- dssid of the associated transaction report -->
+    <property name = "txRptId" type = "String" />
+    
+    <!-- name of the associated transaction report -->
+    <property name = "txRptName" type = "String" />
+
+    <!-- Change type -->
+    <property name = "ctp" type = "Integer" />
+    
+    <!-- Auto record number -->
+    <property name = "arn" type = "Integer" />
+    
+    <!-- Auto recalculation -->
+    <property name = "arc" type = "Boolean" />
+    
+    <!-- Indicate whether to show the indicator of changed cell/field -->
+    <property name = "sci" type = "Boolean" />
+    
+    <!-- Default values for input controls -->
+    <property name = "dfvs" type = "List" />
+    
+    <!-- list of grid objects/fields (Transactable Block)-->
+    <property name = "tscObjs" type = "List" />
+    
+    <!-- list of datasets in RW (RWDataSet Block)-->
+    <property name = "ds" type = "List" />
+
+    <!-- CSI plain text for local transaction -->
+    <property name="offPlainText" type = "String" />
+
+    <!-- dataset id for local transaction -->
+    <property name="tgtDsId" type = "String" />
+
+    <!-- dataset name for local transaction -->
+    <property name="tgtDsName" type = "String" />
+
+    <!-- control key for local transaction -->
+    <property name="localCtlKey" type="String" />
+
+    <!-- CSI token stream -->
+    <property name="localCsiTknStrm" type="Block" />
+  </definition>
+</block>

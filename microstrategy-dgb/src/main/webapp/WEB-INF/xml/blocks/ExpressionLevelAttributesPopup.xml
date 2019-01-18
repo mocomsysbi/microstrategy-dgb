@@ -1,0 +1,14 @@
+
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!-- ExpressionLevelAttributesPopup is an ObjectSelector popup specifically launched by the ExpressionEditor
+	 to choose attributes for a custom dimensionality level of a metric qualification.
+	 -->
+<block name="ExpressionLevelAttributesPopup" inherits="MetricQualifierLevelAttributesPopup">
+	<assignments>
+		<property name="id">ExpressionLevelAttributesPopup1</property>
+		<property name="modelPath">opener/model/parent/parent/getLevelCartModel()</property>
+		<property name="title">{desc:mstrWeb.5929|Select Attributes}</property>
+		<!-- ok button -->
+		<property name="cmdButtons[0]/cmds">Unpop||parent;EditConditionLevelAttributes|parent/model/selected/items|parent/opener/model</property>
+</assignments>
+</block>

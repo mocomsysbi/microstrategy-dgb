@@ -1,0 +1,165 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="0" class="pdfPreferenceList">
+            <tr>
+              <td>
+                <mstrlayout:render name="ExportSection"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+              	<span class="prefs-content-text">
+                  <mstrlayout:render name="descriptor"> <!-- Page Header and Footer: -->
+                    <mstrlayout:argument type="String" value="mstrWeb.5110"/>
+                  </mstrlayout:render>
+              	</span>
+              	<mstrlayout:render name="HeaderAndFooterButton">
+                  <mstrlayout:argument value="printHeaderFooter"/>
+              	</mstrlayout:render>                  
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+              	<span class="prefs-content-text">
+                  <mstrlayout:render name="descriptor"> <!-- Report Header: -->
+                    <mstrlayout:argument type="String" value="mstrWeb.5163"/>
+                  </mstrlayout:render>
+              	</span>
+              	<mstrlayout:render name="PDFReportHeaderButton"/>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <mstrlayout:render name="Scaling"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <mstrlayout:render name="GridGraphSamePage"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <mstrlayout:render name="Orientation"/>
+              </td>
+            </tr>
+
+			<tr>
+              <td>
+                <mstrlayout:render name="CoverPageFilterDetails"/>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                    	<mstrlayout:render name="CoverPageDetailsContents"/>	              	
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>		              	
+                 	    <span class="prefs-content-text">
+		                  <mstrlayout:render name="descriptor"> <!-- Cover page location: -->
+		                    <mstrlayout:argument type="String" value="mstrWeb.5115"/>
+		                  </mstrlayout:render>
+		              	</span>		              	
+		              	<br/>
+		              	<mstrlayout:render name="CoverPageLocation"/>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <mstrlayout:render name="ExpandPageBy"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <mstrlayout:render name="PaperSize"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <mstrlayout:render name="MarginTitle"/>
+
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td align="center">
+                      <mstrlayout:render name="MarginLeft"/>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td align="center">
+                      <mstrlayout:render name="MarginRight"/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td align="center">
+                      <mstrlayout:render name="MarginTop"/>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td align="center">
+                      <mstrlayout:render name="MarginBottom"/>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <table border="0" cellspacing="0" cellpadding="0" id="max-header-footer">
+                  <tr>
+                    <td><mstrlayout:render name="MaxHeaderSize"/></td>
+                  </tr>
+                  <tr>
+                    <td><mstrlayout:render name="MaxFooterSize"/></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <mstrlayout:render name="UseBMPGraphs"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <mstrlayout:render name="EmbedFonts"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <mstrlayout:render name="ProjectHeaderAndFooter"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <mstrlayout:render name="Options"/>
+              </td>
+            </tr>
+
+          </table>
+
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

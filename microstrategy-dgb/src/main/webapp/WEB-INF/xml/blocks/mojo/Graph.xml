@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents data associated with a Graph (whether it originates from a Report or RW Document).
+--> 
+<block name="Graph">
+    <definition>
+        <!-- List of GraphArea blocks -->
+        <property name="as" type="List"/>
+    </definition>
+</block>

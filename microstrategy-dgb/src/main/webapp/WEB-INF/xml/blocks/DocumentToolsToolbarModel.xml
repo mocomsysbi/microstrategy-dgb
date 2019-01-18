@@ -1,0 +1,70 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwToolbarModel" name="DocumentToolsToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K426" name="ToolbarDualStateButtonModel">
+          <property name="id">tbDatasetObjects</property>
+          <property name="tooltip">{desc:mstrWeb.2943|Dataset Objects}</property>
+          <property name="cmdid">datasetObjPanel</property>
+          <property name="visibleFeatures">dataset-objects-list;rw-interactive-view-mode-eplus;is-not-visible-document-visualization;not-navigation-document</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K427" name="ToolbarDualStateButtonModel">
+          <property name="id">tbOutlinePanel</property>
+          <property name="tooltip">{desc:mstrWeb.5854|Document Structure}</property>
+          <property name="cmdid">outlinePanel</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K428" name="ToolbarNotesButton">
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+          <property name="visibleFeatures">not-navigation-document</property>
+        </block>
+        <block listElementKey="K429" name="ToolbarReportsButton">
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+          <property name="visibleFeatures">not-navigation-document</property>
+        </block>
+        <block listElementKey="K430" name="BaseBlock"/>
+        <block listElementKey="K431" name="ToolbarDualStateButtonModel">
+          <property name="id">tbPageBy</property>
+          <property name="tooltip">{desc:mstrWeb.2941|Grouping}</property>
+          <property name="cmdid">groupBy</property>
+          <property name="listenerMethods">onstatechange</property>
+          <property name="visibleFeatures">!rw-flash-view-mode;rw-interactive-view-mode;rw-groupby-not-empty;not-navigation-document</property>
+        </block>
+        <block listElementKey="K432" name="ToolbarDualStateButtonModel">
+          <property name="id">tbPageBy</property>
+          <property name="tooltip">{desc:mstrWeb.2941|Grouping}</property>
+          <property name="cmdid">groupBy</property>
+          <property name="listenerMethods">onstatechange</property>
+          <property name="visibleFeatures">!rw-flash-view-mode;!rw-interactive-view-mode;not-navigation-document</property>
+        </block>
+        <block listElementKey="K433" name="ToolbarDualStateButtonModel">
+          <property name="id">tbPageBy</property>
+          <property name="tooltip">{desc:mstrWeb.2941|Grouping}</property>
+          <property name="cmdid">toggleFlashGrouping</property>
+          <property name="visibleFeatures">rw-flash-view-mode;not-navigation-document</property>
+          <property name="enabledFeatures">rw-groupby-not-empty</property>
+          <property name="listenerMethods">onFlashGroupByChange</property>
+        </block>
+        <block listElementKey="K434" name="BaseBlock"/>
+        <block listElementKey="K435" name="ToolbarDualStateButtonModel">
+          <property name="id">tbSnapGrid</property>
+          <property name="tooltip">{desc:mstrWeb.3550|Alignment Grid}</property>
+          <property name="cmdid">grid</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus;not-navigation-document</property>
+          <property name="listenerMethods">onselectionchange,onstatechange</property>
+        </block>
+        <block listElementKey="K436" name="ToolbarDualStateButtonModel">
+          <property name="id">tbRulers</property>
+          <property name="tooltip">{desc:mstrWeb.3551|Rulers}</property>
+          <property name="cmdid">rulers</property>
+          <property name="visibleFeatures">check-design-mode</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K437" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

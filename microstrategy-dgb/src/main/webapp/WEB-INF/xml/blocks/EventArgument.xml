@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Info block for containing information about an Event argument.  Must use either an const-value, enum-value
+		or getter-value (but only one). -->
+	<block name="EventArgument" inherits="BaseBlock">
+		<definition>
+			<!-- The name of the parameter (must be a FQCN from an Enumeration). -->
+			<property name="n" type="String" />
+			
+			<!-- The constant value of the parameter. -->
+			<property name="value" type="String" />
+			
+			<!-- The type of parameter value (0 = constant, 1 = enum, 2 = getter). -->
+			<property name="type" type="Integer" />
+		</definition>
+		<assignments>
+			<property name="type">0</property>
+		</assignments>
+	</block>

@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- FastListView is an extended ListView for rendering large lists of items.  It renders
+		 the items on demand as the user scrolls thru the list, thus keeping page loading times down.  -->	
+	<block name="FastListView" inherits="ListView,FastListProperties">
+	   <assignments>
+            <property name="modelPushedProps">!width</property>
+       </assignments>
+	</block>

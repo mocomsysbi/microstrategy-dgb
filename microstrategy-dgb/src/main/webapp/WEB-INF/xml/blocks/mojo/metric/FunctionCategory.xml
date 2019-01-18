@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for a function category.
+--> 
+<block name="FunctionCategory">
+  <definition>
+    <!-- Name of the function category -->
+    <property name="n" type="String" />
+    <property name="did" type="String"/>    
+    <!-- Description of the function category -->
+    <property name="desc" type="String" />
+    <!-- A list of functions in this category -->
+    <property name="fns" type="List" />
+  </definition>
+</block>

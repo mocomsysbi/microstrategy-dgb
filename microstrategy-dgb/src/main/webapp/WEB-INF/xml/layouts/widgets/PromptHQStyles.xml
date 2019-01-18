@@ -1,0 +1,167 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+ <!-- style -->
+ <mstrlayout:if name="isTreeStyle">
+  <mstrlayout:then>
+   <mstrlayout:bSetProperty path="simpleAnswerView">
+    <mstrlayout:if method="getPropertyValue" value="0">
+     <mstrlayout:argument value="AllowInterExpressionOperatorChange" />
+     <mstrlayout:then>
+      <mstrlayout:block name="FlatExpressionTreeCart">
+	   <mstrlayout:bSetProperty path="availableView/hideRootNodeTypes" value="-1,8"/>
+       <mstrlayout:if method="getPropertyValue" value="0">
+        <mstrlayout:argument value="AllowRootOperatorChange" />
+        <mstrlayout:then>
+         <mstrlayout:bDeleteProperty path="rootOperatorView" />
+        </mstrlayout:then>
+       </mstrlayout:if>
+      </mstrlayout:block>
+     </mstrlayout:then>
+     <mstrlayout:else>
+      <!-- if filter editor style -->
+      <mstrlayout:block name="ExpressionTreeCart" >
+		  <mstrlayout:bSetProperty path="availableView/hideRootNodeTypes" value="-1,8"/>
+	  </mstrlayout:block>
+     </mstrlayout:else>
+    </mstrlayout:if>
+   </mstrlayout:bSetProperty>
+
+   <!-- hide single filter? -->
+   <mstrlayout:if method="shouldHideSingleFilter">
+     <mstrlayout:then>
+ 		<mstrlayout:bSetProperty path="simpleAnswerView/availableView/singleFilterCssClass" value="noSingleFilter"/>
+     </mstrlayout:then>
+   </mstrlayout:if>
+
+   <mstrlayout:bSetProperty path="simpleAnswerView/modelPath" value="parent/model/answer/getTreeCartModel()" />
+   <!-- search box: -->
+   <mstrlayout:if method="showSearchBox">
+   <mstrlayout:then>
+   
+   <mstrlayout:bSetProperty path="simpleAnswerView/searchView">
+    <mstrlayout:block name="SearchField">
+     <mstrlayout:bSetProperty path="modelPath" value="parent/model/available"/>
+     <mstrlayout:bSetProperty path="searchBox/cmds" value="Search||model" />
+     <mstrlayout:bSetProperty path="searchBox/caption" method="getDescriptor">
+      <mstrlayout:argument type="int" value="538" />
+      <!-- Search for: -->
+     </mstrlayout:bSetProperty>
+     <mstrlayout:bSetProperty path="searchBox/iconTooltip" method="getDescriptor">
+      <mstrlayout:argument type="int" value="10" />
+      <!-- Search -->
+     </mstrlayout:bSetProperty>
+     <mstrlayout:bSetProperty path="searchBox/iconClass" value="mstrBGIcon_tbSearch" />
+     <mstrlayout:bSetProperty path="matchCaseBox/valueField" value="searchMatchCase"/>
+     <mstrlayout:bSetProperty path="matchCaseBox/enabledField" value="model/searchMatchCaseAvailable"/>
+</mstrlayout:block>
+   </mstrlayout:bSetProperty>
+   </mstrlayout:then>
+  </mstrlayout:if>
+  </mstrlayout:then>
+  <mstrlayout:else>
+   <!-- HI list -->
+   <mstrlayout:bSetProperty path="simpleAnswerView">
+    <mstrlayout:if method="getPropertyValue" value="0">
+     <mstrlayout:argument value="AllowInterExpressionOperatorChange" />
+     <mstrlayout:then>
+      <mstrlayout:block name="FlatExpressionListCart">
+       <mstrlayout:if method="getPropertyValue" value="0">
+        <mstrlayout:argument value="AllowRootOperatorChange" />
+        <mstrlayout:then>
+         <mstrlayout:bDeleteProperty path="rootOperatorView" />
+        </mstrlayout:then>
+       </mstrlayout:if>
+      </mstrlayout:block>
+     </mstrlayout:then>
+     <mstrlayout:else>
+      <!-- if filter editor style -->
+      <mstrlayout:block name="ExpressionListCart" />
+     </mstrlayout:else>
+    </mstrlayout:if>
+   </mstrlayout:bSetProperty>
+   <!-- cart: -->
+   <mstrlayout:bSetProperty path="simpleAnswerView/modelPath" value="parent/model/answer/getListCartModel()" />
+   <mstrlayout:bSetProperty path="simpleAnswerView/pathView">
+    <!-- path pulldown: -->
+    <mstrlayout:block name="TreePulldown">
+     <mstrlayout:bSetProperty path="caption" value="{desc:mstrWeb.5299|Look in:}" />
+     <mstrlayout:bSetProperty path="modelPath" value="parent/model/available/getContainerTree()" />
+     <mstrlayout:bSetProperty path="cmds" value="BrowseContainerTreeNode|model/getSelectedNode()|parent/model/available" />
+     <!-- hide single filter? -->
+     <mstrlayout:if method="shouldHideSingleFilter">
+       <mstrlayout:then>
+       <mstrlayout:bSetProperty path="popup/singleFilterCssClass" value="noSingleFilter"/>
+       </mstrlayout:then>
+     </mstrlayout:if>
+    </mstrlayout:block>
+   </mstrlayout:bSetProperty>
+   <mstrlayout:bSetProperty path="simpleAnswerView/pathUpButton">
+    <!-- path up button: -->
+    <mstrlayout:block name="ToolButton">
+     <mstrlayout:bSetProperty path="tooltip" value="{desc:mstrWeb.2304|Up One Level}" />
+     <mstrlayout:bSetProperty path="modelPath" value="parent/model/available/getContainerTree()" />
+     <mstrlayout:bSetProperty path="cmds" value="BrowseContainerParent||parent/model/available" />
+     <mstrlayout:bSetProperty path="cssText" value="background-image: url(../style/mstr/images/tbUpFolder.png)" />
+    </mstrlayout:block>
+   </mstrlayout:bSetProperty>
+     <!-- search box: -->
+     <mstrlayout:if method="showSearchBox">
+      <mstrlayout:then>
+     <mstrlayout:bSetProperty path="simpleAnswerView/searchView">
+     <mstrlayout:block name="SearchField">
+       <mstrlayout:bSetProperty path="modelPath" value="parent/model/available"/>
+       <mstrlayout:bSetProperty path="searchBox/cmds" value="Search||model" />
+       <mstrlayout:bSetProperty path="searchBox/caption" method="getDescriptor">
+        <mstrlayout:argument type="int" value="538" />
+        <!-- Search for: -->
+       </mstrlayout:bSetProperty>
+       <mstrlayout:bSetProperty path="searchBox/iconTooltip" method="getDescriptor">
+        <mstrlayout:argument type="int" value="10" />
+        <!-- Search -->
+       </mstrlayout:bSetProperty>
+       <mstrlayout:bSetProperty path="searchBox/iconClass" value="mstrBGIcon_tbSearch" />
+       <mstrlayout:bSetProperty path="matchCaseBox/valueField" value="searchMatchCase"/>
+       <mstrlayout:bSetProperty path="matchCaseBox/enabledField" value="model/searchMatchCaseAvailable"/>
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+      </mstrlayout:then>
+  </mstrlayout:if>
+     <!-- fetch buttons: -->
+     <mstrlayout:bSetProperty path="simpleAnswerView/fetchView">
+      <mstrlayout:block name="FetchControl">
+       <mstrlayout:bSetProperty path="cmds" value="FetchBlock||parent/model/available" />
+       <mstrlayout:bSetProperty path="modelPath" value="parent/model/available" />
+       <mstrlayout:bSetProperty path="targetViewPath" value="parent/availableView"/>
+      </mstrlayout:block>
+     </mstrlayout:bSetProperty>
+   <!-- header element -->
+   <mstrlayout:bSetProperty path="simpleAnswerView/availableView/headerView">
+    <mstrlayout:block name="DataExplorerHeaderView" />
+   </mstrlayout:bSetProperty>
+
+  </mstrlayout:else>
+ </mstrlayout:if>
+ <!-- show description? -->
+ <mstrlayout:if method="getPreferenceValueReplaceNull" value="Yes">
+  <mstrlayout:argument value="showObjectDescription" />
+  <mstrlayout:argument value="" />
+  <mstrlayout:then>
+   <mstrlayout:bSetProperty path="simpleAnswerView/availableView/showDescriptions" value="true" />
+  </mstrlayout:then>
+ </mstrlayout:if>
+ <!-- width -->
+ <mstrlayout:if method="getPropertyValue" value="0">
+  <mstrlayout:argument value="WidthMode" />
+  <mstrlayout:else>
+   <mstrlayout:bSetProperty path="simpleAnswerView/width" method="getPropertyWidthValue" />
+  </mstrlayout:else>
+ </mstrlayout:if>
+ <!-- height -->
+ <mstrlayout:if method="getPropertyValue" value="0">
+  <mstrlayout:argument value="HeightMode" />
+  <mstrlayout:else>
+   <mstrlayout:bSetProperty path="simpleAnswerView/availableView/height" method="getPropertyHeightValue" />
+   <mstrlayout:bSetProperty path="simpleAnswerView/selectedView/height" method="getPropertyHeightValue" />
+  </mstrlayout:else>
+ </mstrlayout:if>
+</mstrlayout:layout>

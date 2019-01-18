@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about a Property. See WebProperty.
+-->
+<block name="Property">
+    <definition>
+        <!-- The name of the property. See WebProperty.getName() -->
+        <property name="n" type="String" />
+
+        <!-- The value of the property. See WebProperty.getValue() -->
+        <property name="v" type="String" />
+    </definition>
+</block>

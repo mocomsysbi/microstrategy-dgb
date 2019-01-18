@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		ExpressionTreeCart is a view on an ExpressionTreeCartModel; that is, a shopping cart view
+		with a TreeModel view and an ExpressionModel view.
+		Button views allow users to add/remove/group/ungroup conditions in the ExpressionEditor.
+		TO DO: should the button views be moved into the Expression Editor? or an ExpressionBrowser middleman?
+	-->
+	<block name="ExpressionTreeCart" inherits="TreeCart,ExpressionCartProperties">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ExpressionListCart</property>
+			<property name="cssClass">ListCart</property>
+			<property name="showMoveButtons">true</property>
+			<property name="selectedView">
+				<block name="ExpressionEditor">
+					<property name="caption">{desc:mstrWeb.1409|Selected:}</property>
+					<property name="modelPath">parent/model/selected</property>
+					<property name="multiSelect">true</property>
+					<property name="width">99%</property>
+				</block>
+			</property>
+			<property name="removeButton/cmds">Delete||parent/model/selected</property>
+			<property name="removeButton/modelPath">parent/model/selected</property>
+			<property name="addAllButton/visible">false</property>
+			<property name="removeAllButton/visible">false</property>
+			<property name="upButton/visible">true</property>
+			<property name="downButton/visible">true</property>
+		</assignments>
+	</block>

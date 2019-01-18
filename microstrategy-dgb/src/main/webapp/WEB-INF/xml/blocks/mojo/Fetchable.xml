@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<block name="Fetchable">
+    <definition>
+		<!-- The block begin -->
+        <property name="bb" type="Integer" />
+		<!-- The block count -->
+        <property name="bc" type="Integer" />
+		<!-- The Total Size -->   
+        <property name="sz" type="Integer" />
+		<!-- If returned all available data -->   
+        <property name="raad" type="Boolean" />
+	</definition>
+</block>

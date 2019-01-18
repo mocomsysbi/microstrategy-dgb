@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ColorPickerListView is a rich list of color swatches. -->
+	<block name="ColorPickerListView" inherits="ListView">
+		<definition>
+			<!-- The css class to be use for each color swatch. -->
+			<property name="itemCssClass" type="String" />
+
+			<!-- A Boolean indicating whether tranparent colors should be rendered in the ListView. -->
+			<property name="renderTransparent" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="itemRendererClass">mstr.itemrenderers.ColorPickerListView</property>
+			<property name="cssClass">ColorsView</property>
+			<property name="itemCssClass">ColorPop</property>
+			<property name="renderTransparent">false</property>
+			<property name="showItemsDuringRequest">true</property>
+			<property name="multiSelect">false</property>
+			<property name="allowBrowseFolder">false</property>
+			<property name="allowBrowseAttribute">false</property>
+			<property name="allowBrowseHierarchy">false</property>
+		</assignments>
+	</block>

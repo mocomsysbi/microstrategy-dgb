@@ -1,0 +1,78 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+<![CDATA[
+  <folders name=" 
+]]>
+<mstrlayout:render name="CurFolderName"> </mstrlayout:render>
+<![CDATA[
+  " id=" 
+]]>
+<mstrlayout:render name="CurFolderID"> </mstrlayout:render>
+<![CDATA[
+  " acg=" 
+]]>
+<mstrlayout:render name="CurFolderAccessGranted"> </mstrlayout:render>
+<![CDATA[
+  ">
+  <path>
+]]>
+
+<mstrlayout:render name="CurFolderPath"> </mstrlayout:render>
+<![CDATA[
+  </path>
+]]>
+<mstrlayout:list id="FolderObjects" name="getFolderObjects">
+<![CDATA[
+      <obj acg=" 
+]]>
+<mstrlayout:render name="ObjectAccessGranted">
+	<mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo" />
+</mstrlayout:render>
+<![CDATA[
+  ">
+  <n>
+]]>
+          <mstrlayout:render name="ObjectName">
+            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo" />
+          </mstrlayout:render>
+<![CDATA[          
+        </n>
+        <d>
+]]>
+          <mstrlayout:render name="ObjectDescription">
+            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo" />
+          </mstrlayout:render>
+<![CDATA[          
+        </d>
+        <id>
+]]>
+          <mstrlayout:render name="ObjectID">
+            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo" />
+          </mstrlayout:render>
+<![CDATA[          
+        </id>
+        <t>
+]]>
+          <mstrlayout:render name="ObjectType">
+            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo" />
+          </mstrlayout:render>
+<![CDATA[          
+        </t>  
+        <st>
+]]>
+          <mstrlayout:render name="ObjectSubType">
+            <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo" />
+          </mstrlayout:render>
+<![CDATA[          
+        </st>  
+      </obj>
+]]>      
+      <mstrlayout:render name="ShortcutInfo"> <!-- Write out "<srtct>1</srtct>" if the object is a shortcut -->
+      	<mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo" />
+      </mstrlayout:render>
+      <mstrlayout:next list="FolderObjects" />
+    </mstrlayout:list>
+<![CDATA[
+  </folders>
+]]>
+</mstrlayout:layout>

@@ -1,0 +1,37 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name = "Transactable" >
+    <definition>
+      <!-- display name -->
+      <property name = "n" type = "String" />
+      
+      <!-- type indicating whether it's an attribute form, a metric or a rw field -->
+      <property name = "tp" type = "Integer" />
+      
+      <!-- dss id for attribute or metric on the grid. For grid object only -->
+      <property name = "did" type = "String" />
+      
+      <!-- form id. For attribute form only -->
+      <property name = "fid" type = "String" />
+      
+      <!-- unit key. For rw field only -->
+      <property name = "key" type = "String" />
+      
+      <!-- mapping only. Which means this object cannot be set as editable and given an input control -->
+      <property name = "mo" type = "Boolean" />
+        
+      <!-- editable -->
+      <property name = "edt" type = "Integer" />
+      
+      <!-- required -->
+      <property name = "req" type = "Integer" />
+      
+      <!-- column index of associated transaction input. Corresponding to tix property of TransactionInput block. Optional-->
+      <property name = "tix" type = "Integer" />
+      
+      <!-- if this unit is set as editable, it has an input Control corrsponding to it. This holds the control information-->
+      <property name="ctl" type = "Block"/>
+
+      <!-- text name for textfield -->
+      <property name="tn" type = "String" />
+    </definition>
+</block>

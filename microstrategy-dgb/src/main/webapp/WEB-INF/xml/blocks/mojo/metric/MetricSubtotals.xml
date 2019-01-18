@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains subtotals for a metric.
+--> 
+<block name="MetricSubtotals">
+  <definition>
+    <!-- The Total subtotal Block -->
+    <property name="tot" type="Block" />
+    
+    <!-- The Aggregation subtotal Block -->
+    <property name="agg" type="Block" />
+    
+    <!-- The available subtotals -->
+    <property name="avs" type="List" />
+  </definition>
+</block>

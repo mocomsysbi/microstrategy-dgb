@@ -1,0 +1,41 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="DocumentTemplateViewToolbarModel" name="DocumentGraphToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K144" name="ToolbarGraphMajorList">
+          <property name="listenerMethods">ongridselectionschange,onselectionchange,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K145" name="ToolbarGraphMinorList">
+          <property name="listenerMethods">ongridselectionschange,onselectionchange,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K146" name="ToolbarGraphLegendButton">
+          <property name="listenerMethods">ongridselectionschange,onselectionchange,onGraphPropertiesReady</property>
+        </block>             
+        <block listElementKey="K147" name="ToolbarGraphValuesButton">
+          <property name="listenerMethods">ongridselectionschange,onselectionchange,onGraphPropertiesReady</property>
+        </block>   
+        <block listElementKey="K148" name="BaseBlock"/>
+        <block listElementKey="K149" name="ToolbarSeriesByRowButton">
+          <property name="listenerMethods">onselectionchange,onDocReload,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K150" name="ToolbarSeriesByColButton">
+          <property name="listenerMethods">onselectionchange,onDocReload,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K151" name="BaseBlock"/>
+        <block listElementKey="K152" name="ToolbarGraphAutoArrangeButton">
+          <property name="listenerMethods">onselectionchange,onDocReload,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K153" name="BaseBlock"/>
+        <block listElementKey="K154" name="ToolbarGraphCategoriesText">
+        	<property name="listenerMethods">onselectionchange,onDocReload,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K155" name="ToolbarGraphSeriesText">
+        	<property name="listenerMethods">onselectionchange,onDocReload,onGraphPropertiesReady</property>
+        </block>
+        <block listElementKey="K156" name="ToolbarGraphSubmitButton"/>
+        <block listElementKey="K157" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

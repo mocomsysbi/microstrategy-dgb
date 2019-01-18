@@ -1,0 +1,15 @@
+<shortcut-list-set name="promptToolbar" version="1.0" feature-id="dhtml">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="promptTb" use-container="true" use-default="false">
+    <attributes>
+      <attribute name="class" source="const" type="string" value="mstrToolbarGroup"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Save" desc-id="mstrWeb.118" name="tbSaveReport" type="buttonLabel" onclick="microstrategy.bone('promptTabMgr_PromptDialogStyle').onSave(); return false;"/>
+    <shortcut desc="SaveAs" desc-id="mstrWeb.1896" name="tbSaveAs" type="buttonLabel" onclick="microstrategy.bone('promptTabMgr_PromptDialogStyle').onSaveAs(); return false;"/>
+    <shortcut desc="Close" desc-id="mstrWeb.2102" name="tbClose" type="buttonLabel" enable-feature-id="has-previous-pages" href="#" onclick="microstrategy.bone('promptTabMgr_PromptDialogStyle').onClose();"/>
+  </shortcut-list>
+</shortcut-list-set>

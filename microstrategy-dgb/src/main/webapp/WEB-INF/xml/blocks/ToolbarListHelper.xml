@@ -1,0 +1,6 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarListHelper" inherits="ToolbarControlHelper">
+		<assignments>
+			<property name="scriptClass">mstr.models.ToolbarListHelper</property>
+		</assignments>
+	</block>

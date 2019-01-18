@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarIncreaseDecimalButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbIncreaseDecimal</property>
+		<property name="tooltip">{desc:mstrWeb.2189|Increase Decimal}</property>
+		<property name="cmdid">IncreaseDecimal</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

@@ -1,0 +1,153 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwDataMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1603" name="ToolbarRefreshButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.773|Refresh}</property>
+          <property name="visibleFeatures">check-execute-mode;quicklinks-refresh</property>
+        </block>
+        <block listElementKey="K1604" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.4975|Regenerate}</property>
+          <property name="cmdid">regenerate</property>
+          <property name="visibleFeatures">check-execute-mode;reexecute</property>
+          <property name="enabledFeatures">enable-reexecute</property>
+        </block>
+        <block listElementKey="K1605" name="ToolbarReExecuteRwdButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3758|Re-run}</property>
+          <property name="visibleFeatures">check-execute-mode;reexecute</property>
+        </block>
+        <block listElementKey="K1606" name="ToolbarRepromptButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.119|Re-prompt}</property>
+        </block>
+        <block listElementKey="K1607" name="BaseBlock"/>
+        <block listElementKey="K1608" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3246|Add Dataset...}</property>
+          <property name="cmdid">openSelectDatasetEditor</property>
+          <property name="visibleFeatures">manage-datasets;rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K1609" name="BaseBlock"/>
+        <block listElementKey="K1610" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3199|Sort Document...}</property>
+          <property name="cmdid">edtSortRW</property>
+          <property name="visibleFeatures">web-sort;frame-element-enabled;rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K1611" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3200|Sort Grid...}</property>
+          <property name="cmdid">edtSortGrid</property>
+          <property name="visibleFeatures">web-sort;frame-element-enabled;rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K1612" name="BaseBlock"/>
+        <block listElementKey="K1613" name="ToolbarGridButton">
+          <property name="text">{desc:mstrWeb.3547|Grid}</property>
+          <property name="type">MENU</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K1614" name="ToolbarGraphButton">
+          <property name="text">{desc:mstrWeb.3548|Graph}</property>
+          <property name="type">MENU</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K1615" name="ToolbarGridGraphButton">
+          <property name="text">{desc:mstrWeb.3684|Graph and Grid}</property>
+          <property name="type">MENU</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K2099" name="ToolbarWidgetButton">
+          <property name="text">{desc:mstrWeb.4921|Widget}</property>
+          <property name="type">MENU</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1616" name="BaseBlock"/>
+        <block listElementKey="K1617" name="ToolbarSwapAxesButton">
+          <property name="text">{desc:mstrWeb.3480|Swap Rows and Columns}</property>
+          <property name="type">MENU</property>
+          <property name="visibleFeatures">web-pivot;rw-editable-view-mode-eplus;dhtml</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1618" name="ToolbarInsertMetricButton">
+          <property name="cmdid">edtDMetric</property>
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.2212|Insert New Metric...}</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1619" name="ToolbarRenameButton">
+          <property name="cmdid">edtRename</property>
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3358|Rename...}</property>
+          <property name="visibleFeatures">frame-element-enabled;rename-edit-object;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1620" name="ToolbarToggleTotalsButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.6193|Show Totals}</property>
+          <property name="visibleFeatures">dhtml;show-totals;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1621" name="ToolbarEditTotalsButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.3310|Edit Totals...}</property>
+          <property name="cmdid">edtSubtotals</property>
+          <property name="visibleFeatures">orionIServer;dhtml;show-totals;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1622" name="ToolbarButtonModel">
+          <property name="type">MENU</property>
+          <property name="id">tbTotalsOldIServer</property>
+          <property name="text">{desc:mstrWeb.3310|Edit Totals...}</property>
+          <property name="cmdid">edtSubtotalsOldIServer</property>
+          <property name="visibleFeatures">!orionIServer;dhtml;show-totals;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1623" name="ToolbarButtonModel">
+          <property name="type">MENU</property>
+          <property name="id">tbViewFilter</property>
+          <property name="text">{desc:mstrWeb.3938|Edit View Filter...}</property>
+          <property name="cmdid">vfeRWGrid</property>
+          <property name="visibleFeatures">use-view-filter-editor;frame-element-enabled;dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1624" name="ToolbarButtonModel">
+          <property name="type">MENU</property>
+          <property name="id">tbViewFilterNonEditable</property>
+          <property name="text">{desc:mstrWeb.3939|View Filter...}</property>
+          <property name="cmdid">vfeRWGrid</property>
+          <property name="visibleFeatures">!use-view-filter-editor;frame-element-enabled;dhtml;rw-editable-view-mode-eplus</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="rwHideNullZeros" name="ToolbarToggleHideNullsButton">
+          <property name="text">{desc:mstrWeb.9847|Hide Nulls/Zeros}</property>
+          <property name="type">MENU</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K1625" name="BaseBlock"/>
+        <block listElementKey="K1628" name="ToolbarThresholdsButton">
+          <property name="type">MENU</property>
+          <property name="text">{desc:mstrWeb.5996|Toggle Thresholds}</property>
+          <property name="cmdid">ShowThreshold</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1626" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.3647|Thresholds}</property>
+          <property name="menuModel">RwDataThresholdsMenu</property>
+          <property name="visibleFeatures">use-basoradv-threshold-editor</property>
+          <property name="cmdid">thresholdsMenu</property>
+        </block>
+        <block listElementKey="K1627" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.3789|Conditional Formatting}</property>
+          <property name="menuModel">RwDataConditionalFormattingMenu</property>
+          <property name="visibleFeatures">use-basoradv-threshold-editor</property>
+          <property name="cmdid">openBasicConditionalFormatting</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

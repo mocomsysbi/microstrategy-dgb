@@ -1,0 +1,27 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarButtonModel" inherits="ToolbarControlModel">
+	<definition>
+		<!-- The string to be displayed as the title of the button. -->
+		<property name="tooltip" type="String" />
+		
+		<!-- The text option for the menus-->
+		<property name="text" type="String"/>
+		
+		<!-- The cssClass for the menus-->
+		<property name="extraCssClass" type="String"/>
+		
+		<!-- The id that the menu layout will use as id for the anchor element of the menu option -->
+		<property name="htmlId" type="String"/>
+		
+		<!-- The string to be displayed next to the text of the option, usually shortcuts as F5 or Ctrl-V -->
+		<property name="shortcutText" type="String"/>
+		
+	</definition>
+	<assignments>
+		<property name="scriptClass">mstr.models.ToolbarButtonModel</property>
+		<property name="type">BUTTON</property>
+		<property name="toolbarHelper">
+			<block name="ToolbarButtonHelper" />
+		</property>
+	</assignments>
+</block>

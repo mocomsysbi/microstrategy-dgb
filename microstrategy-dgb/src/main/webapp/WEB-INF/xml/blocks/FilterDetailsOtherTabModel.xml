@@ -1,0 +1,252 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ChangeTrackingModel" name="FilterDetailsOtherTabModel">
+  <definition>
+    <!-- In List Condition/ Attribute Element Prompts -->
+    <property name="san" type="Block"/>
+    <!-- showAttribName -->
+    <property name="SAAN" type="String"/>
+    <!-- separatorAfterAttribName -->
+    <property name="caan" type="Block"/>
+    <!-- carriageReturnAfterAttribName -->
+    <property name="SBLT" type="Block"/>
+    <!-- separatorBetweenLastTwo -->
+    <property name="CDLT" type="String"/>
+    <!-- customSeparator -->
+    <property name="cbe" type="Block"/>
+    <!-- carriageReturnBetweenElements -->
+    <property name="te" type="Block"/>
+    <!-- trimElements -->
+    <!-- Qualification Conditions -->
+    <property name="unso" type="Block"/>
+    <!-- useSymbolsForOperators -->
+    <property name="iafn" type="Block"/>
+    <!-- attribFormNameInAQConditions -->
+    <property name="DTDD" type="Block"/>
+    <!-- dynamicDates -->
+    <!-- Logical Operators -->
+    <property name="pacs" type="Block"/>
+    <!-- parenthesesAroundConditions -->
+    <property name="cbc" type="Block"/>
+    <!-- carriageReturnBetweenConditions -->
+    <property name="EXCS" type="Block"/>
+    <!-- spacing -->
+    <property name="lobc" type="Block"/>
+    <!-- logicalOperatorBetweenConditions -->
+  </definition>
+  <assignments>
+    <property name="enabled" type="Boolean">true</property>
+    <!-- In List Condition/ Attribute Element Prompts -->
+    <property name="san">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K548" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K549" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.218|No}</property>
+            </block>
+            <block listElementKey="K550" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.219|Yes}</property>
+            </block>
+            <block listElementKey="K551" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4529|Repeated}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!--<property name="SAAN" >space+=+space</property>-->
+    <property name="caan">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="SBLT">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K552" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K553" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.1823|custom}</property>
+            </block>
+            <block listElementKey="K554" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2344|or}</property>
+            </block>
+            <block listElementKey="K555" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.308|and}</property>
+            </block>
+            <block listElementKey="K556" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.1052|comma}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!--<property name="CDLT" >comma+space</property>-->
+    <property name="cbe">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="te">
+      <block name="TriStateListModel"/>
+    </property>
+    <!-- Qualification Conditions -->
+    <property name="unso">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K557" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K558" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.5412|Symbols}</property>
+            </block>
+            <block listElementKey="K559" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5413|Names}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="iafn">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="DTDD">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K560" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K561" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.5688|Show dates}</property>
+            </block>
+            <block listElementKey="K562" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5689|Show expression}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!-- Logical Operators -->
+    <property name="pacs">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K563" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K564" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.218|No}</property>
+            </block>
+            <block listElementKey="K565" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.219|Yes}</property>
+            </block>
+            <block listElementKey="K566" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.4946|Automatic}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="cbc">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K567" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K568" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.218|No}</property>
+            </block>
+            <block listElementKey="K569" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.219|Yes}</property>
+            </block>
+            <block listElementKey="K570" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4946|Automatic}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="EXCS">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K571" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K572" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.5668|One line (1)}</property>
+            </block>
+            <block listElementKey="K573" name="ItemInfo">
+              <property name="dssid">\n\n</property>
+              <property name="n">{desc:mstrWeb.5669|Two lines (2)}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="lobc">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K574" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K575" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.218|No}</property>
+            </block>
+            <block listElementKey="K576" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.219|Yes}</property>
+            </block>
+            <block listElementKey="K577" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4532|And Only}</property>
+            </block>
+            <block listElementKey="K578" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.4533|Or Only}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>

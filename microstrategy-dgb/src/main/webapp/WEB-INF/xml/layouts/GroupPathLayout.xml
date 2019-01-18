@@ -1,0 +1,35 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+    <div class="mstrPathIcons">
+
+        <mstrlayout:render name="GoHome"/>
+        <mstrlayout:render name="GoOneUp"/>
+    </div>
+    <div class="mstrPathText">
+        <mstrlayout:render name="GoServer" />
+        <mstrlayout:render name="Delimiter"/>
+
+        <mstrlayout:render name="GoUserManager" />
+        <mstrlayout:render name="Delimiter"/>
+
+        <mstrlayout:list id="ancestors" name="getAncestorsList">
+            <span>
+                <mstrlayout:render name="Ancestor">
+                    <mstrlayout:argument list="ancestors" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                </mstrlayout:render>
+            </span>
+            <mstrlayout:render name="Delimiter"/>
+        </mstrlayout:list>
+
+        <mstrlayout:if name="shouldRenderEveryoneAsParent">
+            <mstrlayout:then>
+                <mstrlayout:render name="EveryoneAsAncestor"/>
+                <mstrlayout:render name="Delimiter"/>
+            </mstrlayout:then>
+        </mstrlayout:if>
+
+        <mstrlayout:render name="CurrentItem"/>
+
+    </div>
+</mstrlayout:layout>

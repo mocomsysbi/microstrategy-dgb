@@ -1,0 +1,80 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="GraphFormatEditor">
+  <assignments>
+    <property name="id">GraphFormatEditor</property>
+    <property name="title">{desc:mstrWeb.3589|Format: Graph}</property>
+    <property name="visible">true</property>
+    <property name="reloadCmds">!ReinitializeModel||model</property>
+    <property name="loadCmds">!ReinitializeModel||model</property>
+    <property name="modelPath">parent/models/0</property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K1775" name="TextButton">
+          <property name="cmds">CancelChanges||parent/model;Unpop||parent;ResetValidationStatus||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K1776" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+          <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- target viewer -->
+    <property name="contentView">
+      <block name="HBox">
+        <property name="children">
+          <list>
+            <block listElementKey="K1777" name="ListView">
+              <property name="modelPath">parent/parent/model</property>
+              <property name="itemRendererClass">mstr.itemrenderers.TabTreeList</property>
+              <property name="multiSelect">false</property>
+              <property name="showIcons">false</property>
+              <property name="height">550px</property>
+              <property name="width">120px</property>
+              <property name="enabledField">!model/disableList</property>
+              <property name="cssClass">LeftListBlock</property>
+            </block>
+            <block listElementKey="K1778" name="ViewStack">
+              <property name="modelPath">parent/parent/model</property>
+              <property name="height">550px</property>
+              <property name="views">
+                <list>
+                  <block listElementKey="K1779" name="GraphFormatEditorTabGeneral"/>
+                  <block listElementKey="K1780" name="GraphFormatEditorTabFormat"/>
+                  <block listElementKey="K1781" name="GraphFormatEditorTabNumber"/>
+                  <block listElementKey="K1782" name="GraphFormatEditorTabAxes"/>
+                  <block listElementKey="K1783" name="GraphFormatEditorTabAdvanced"/>
+                  <block listElementKey="K1784" name="GraphFormatEditorTabOptions"/>
+                </list>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- ok button -->
+        <block listElementKey="K1785" name="TextButton">
+          <property name="caption">{desc:mstrWeb.134|Apply}</property>
+          <property name="cmds">!CheckValidationStatus||parent;!ApplyChanges||parent/model;ResetValidationStatus||parent</property>
+        </block>
+        <!-- ok button -->
+        <block listElementKey="K1786" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">!CheckValidationStatus||parent;OkChanges||parent/model;Unpop||parent;ResetValidationStatus||parent</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K1787" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">CancelChanges||parent/model;Unpop||parent;ResetValidationStatus||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

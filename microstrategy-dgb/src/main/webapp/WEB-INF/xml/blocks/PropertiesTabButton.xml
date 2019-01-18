@@ -1,0 +1,102 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabButton">
+  <assignments>
+    <property name="title">{desc:mstrWeb.434|Properties} - {desc:mstrWeb.6457|Button}</property>
+    <property name="modelPath">parent/model/items/8</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Image.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="Arrangement" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.9857|Arrangement}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="DisplayStyle" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.3059|Style:}</property>
+                <property name="enabledField">!parent/model/isInsideNavBar</property>
+                <property name="modelPath">parent/model/DisplayStyle</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2218" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2922|Image}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2219" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.9858|Normal state source:}</property>
+                <property name="extraCssClass">required-sign</property>
+                <property name="captionSuffix">*</property>
+                <property name="valueField">NormalURL</property>
+                <property name="enabledField">parent/model/normalURLEnable</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">47</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="required">true</property>
+                    <property name="regEx">\S+</property>
+                    <property name="errMessage">{desc:mstrWeb.3878|Please enter a non-empty string in the following field:}</property>
+                  </block>
+                </property>
+              </block>
+              <block listElementKey="K2220" name="ImagePreview">
+                <property name="valueField" type="String">NormalURL</property>
+                <property name="modelPath">parent/model</property>
+                <property name="cssPrefix">small</property>
+                <property name="visibleField">parent/parent/visible</property>
+              </block>
+            </list>
+            <list>
+              <block listElementKey="K2221" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.9859|Highlight state source:}</property>
+                <property name="valueField">HighlightURL</property>
+                <property name="enabledField">parent/model/highlightURLEnable</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">47</property>
+              </block>
+              <block listElementKey="K2222" name="ImagePreview">
+                <property name="valueField" type="String">HighlightURL</property>
+                <property name="modelPath">parent/model</property>
+                <property name="cssPrefix">small</property>
+                <property name="visibleField">parent/parent/visible</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2223" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3265|Actions}</property>
+          <property name="visibleField">!parent/model/multiButtons</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2236" name="TextLabel">
+                <property name="value">{desc:mstrWeb.9860|Before configuring actions all changes need to be applied which is not reversible.}</property>
+              </block>
+              <block listElementKey="K2224" name="HBox">
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2225" name="TextLabel">
+                      <property name="value">{desc:mstrWeb.9861|Configure actions on this button:}</property>
+                      <property name="cssText">line-height:22px;margin-right:5px;</property>
+                    </block>
+                    <block listElementKey="K2226" name="ToolButton">
+                      <property name="enabledField">!parent/parent/parent/parent/model/hasChanges</property>
+                      <property name="cssText">background-image: url(../style/mstr/images/gear-icon.png);</property>
+                      <property name="cmds">OpenWebHyperLinkEditor||parent/parent/parent/parent/model</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+    PropertiesTabImage is the "Properties - Image" tab of the properties editor.
+  -->

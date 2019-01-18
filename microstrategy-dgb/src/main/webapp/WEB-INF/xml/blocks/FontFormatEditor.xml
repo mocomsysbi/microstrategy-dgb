@@ -1,0 +1,52 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="FontFormatEditor">
+  <assignments>
+    <property name="id">FontFormatEditor</property>
+    <property name="title">{desc:mstrWeb.6023|Font Formatting}</property>
+    <property name="zIndex">1001</property>
+    <property name="modelPath">opener/model</property>
+    <property name="visible">true</property>
+    <property name="helpTopic">Formatting_Font.htm</property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K650" name="TextButton">
+          <property name="cmds">Unpop||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K651" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+          <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- target viewer -->
+    <property name="contentView">
+      <block name="VBox">
+        <property name="children">
+          <list>
+            <block listElementKey="K652" name="FontFormatter">
+              <property name="modelPath">parent/parent/model</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- close button -->
+        <block listElementKey="K653" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">Unpop||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		FontFormatEditor is a popup used for formatting fonts.
+	-->

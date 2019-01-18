@@ -1,0 +1,91 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorNumberModel">
+  <definition>
+    <property name="numberTabEnabled" type="Boolean"/>
+    <property name="unitSelectorChange" type="String"/>
+    <property name="tabName" type="String"/>
+    <property name="Date" type="Block"/>
+    <property name="Time" type="Block"/>
+    <property name="Fraction" type="Block"/>
+    <property name="Red" type="String"/>
+    <property name="Category" type="Block"/>
+    <property name="NegativeNumbers" type="Block"/>
+    <property name="DecimalPlaces" type="Integer"/>
+    <property name="CurrencyPosition" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="categoryText">{desc:mstrWeb.1918|Format}</property>
+    <property name="titleText">{desc:mstrWeb.3434|Number}</property>
+    <property name="scriptClass">mstr.bones.editors.NumberPropertiesBoneTranslator</property>
+    <property name="fields">Category|NegativeNumbers|DecimalPlaces|ThousandSeparator|CurrencySymbol|CurrencyPosition|Format</property>
+    <property name="visibleField">numberTabEnabled</property>
+    <property name="numberTabEnabled">true</property>
+    <property name="unitSelectorChange">|Grid|</property>
+    <property name="tabName">number</property>
+    <property name="Red">{desc:mstrWeb.2519|Red}</property>
+    <property name="Category">
+      <block name="NumberFormatModel"/>
+    </property>
+    <property name="NegativeNumbers">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K936" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">-1234</property>
+            </block>
+            <block listElementKey="K937_1" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">-1234 [{desc:mstrWeb.2519|Red}]</property>
+              <property name="cssText">color:red</property>
+            </block>
+            <block listElementKey="K937" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">1234 [{desc:mstrWeb.2519|Red}]</property>
+              <property name="cssText">color:red</property>
+            </block>
+            <block listElementKey="K938" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">(1234)</property>
+            </block>
+            <block listElementKey="K939" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">(1234) [{desc:mstrWeb.2519|Red}]</property>
+              <property name="cssText">color:red</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="DecimalPlaces">0</property>
+    <property name="CurrencyPosition">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K940" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.2167|Left}</property>
+            </block>
+            <block listElementKey="K941" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.2166|Right}</property>
+            </block>
+            <block listElementKey="K942" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.2183|Left with space}</property>
+            </block>
+            <block listElementKey="K943" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.2182|Right with space}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Font' tab of the Report Services properties editor. -->

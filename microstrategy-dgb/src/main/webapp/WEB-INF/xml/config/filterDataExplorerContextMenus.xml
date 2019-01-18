@@ -1,0 +1,9 @@
+<shortcut-list-set base-bean="deb" name="dataExplorerContextMenus" version="1.0">
+  <shortcut-list name="object">
+    <shortcut name="addDimensionElementToFilter" desc="Add To Filter" desc-id="mstrWeb.2022" base-bone="deb_FilterDataExplorerStyleObjectBrowser" onclick="selections.processContextMenu('ef')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.AddDimensionElementToFilter" />
+    <shortcut name="addDimensionAttributeToFilter" desc="Add To Filter" desc-id="mstrWeb.2022" base-bone="deb_FilterDataExplorerStyleObjectBrowser"  onclick="selections.processContextMenu('af')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.AddDimensionAttributeToGridOrFilter" dhtml-show="selections.checkShowContextMenuOption('af')" dhtml-enabled="!microstrategy.bone('deb_FilterDataExplorerStyleObjectBrowser').selections.isMulti()" />
+    <shortcut name="addAQPrompt" desc="Add Qualification Prompt To Filter" desc-id="mstrWeb.4463" base-bone="deb_FilterDataExplorerStyleObjectBrowser"  onclick="selections.processContextMenu('aaqp')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.AddDimensionAttributeToGridOrFilter" dhtml-show="selections.checkShowContextMenuOption('aaqp')" dhtml-enabled="!microstrategy.bone('deb_FilterDataExplorerStyleObjectBrowser').selections.isMulti()" feature-id="use-prompt-editor"/>
+    <shortcut name="addElementsPrompt" desc="Add Element Prompt To Filter" desc-id="mstrWeb.4464" base-bone="deb_FilterDataExplorerStyleObjectBrowser"  onclick="selections.processContextMenu('aelp')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.AddDimensionAttributeToGridOrFilter" dhtml-show="selections.checkShowContextMenuOption('aelp')" dhtml-enabled="!microstrategy.bone('deb_FilterDataExplorerStyleObjectBrowser').selections.isMulti()" feature-id="use-prompt-editor"/>
+  </shortcut-list>
+</shortcut-list-set>
+

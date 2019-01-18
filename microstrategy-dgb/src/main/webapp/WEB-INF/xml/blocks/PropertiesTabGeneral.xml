@@ -1,0 +1,451 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabGeneral">
+  <assignments>
+    <property name="title">{desc:mstrWeb.434|Properties} - {desc:mstrWeb.295|General}</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="modelPath">parent/model/items/0</property>
+    <property name="helpTopic">Properties_dialog_General.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1023" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.295|General}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1024" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.2211|Name:}</property>
+                <property name="valueField">Name</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">20</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="required">true</property>
+                  </block>
+                </property>
+                <property name="enabledField">!model/isSection</property>
+              </block>
+              <block listElementKey="K1025" name="Label">
+                <property name="caption">{desc:mstrWeb.2961|Type:}</property>
+                <property name="valueField">SubType</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="DisplayText" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.8229|Display Text:}</property>
+                <property name="valueField">DisplayText</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/isActionSelector</property>
+              </block>
+              <block listElementKey="K1026" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.5053|Tooltip:}</property>
+                <property name="valueField">ToolTip</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/showTooltip</property>
+                <property name="totalSize">50</property>
+              </block>
+              <block listElementKey="K1027" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.2963|Visible}</property>
+                <property name="valueField">Visible</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1028" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3628|Visible in Web view mode}</property>
+                <property name="valueField">VisibleHTML</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/showVisibleInHTMLViewMode</property>
+                <property name="enabledField">model/Visible</property>
+                <property name="cssText">margin-left: 20px;</property>
+              </block>
+              <block listElementKey="K1049" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.9295|Dock to top of screen (Mobile only)}</property>
+                <property name="valueField">docked</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/isPageHeaderSection</property>
+              </block>
+              <block listElementKey="K1051" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.9296|Dock to bottom of screen (Mobile only)}</property>
+                <property name="valueField">docked</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">model/isPageFooterSection</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1029" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.2964|Navigation}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/showNavigationProps</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1030" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3592|Is hyperlink}</property>
+                <property name="valueField">IsLink</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1031" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.2965|Hyperlink:}</property>
+                <property name="valueField">Link</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">50</property>
+                <property name="enabledField">model/IsLink</property>
+              </block>
+              <block listElementKey="K1032" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3593|Open in new window}</property>
+                <property name="valueField">NewWin</property>
+                <property name="enabledField">model/IsLink</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="ifwTargetFS" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.9742|Information Windows}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/ShowInfoWindowTargets</property>
+          <property name="children">
+            <list>
+              <block listElementKey="ifwTarget" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4727|Panel Stack}:</property>
+                <property name="modelPath">parent/model/getDynamicListModel("availablePanelStacks","EditFieldTargetInfoWin")</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1033" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4538|HTML Container}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/showHTMLContainer</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1034" name="RadioList">
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/HTMLType</property>
+              </block>
+              <block listElementKey="K1035" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4556|IFrame Source:}</property>
+                <property name="valueField">IFrameSource</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/HTMLType/selectedIndices:1</property>
+                <property name="totalSize">40</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1036" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4557|Portal Window}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/showPortal</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1037" name="TriStateCheckBox">
+                <property name="caption">{desc:mstrWeb.4558|Show Title Bar}</property>
+                <property name="modelPath">parent/model/titleTriState</property>
+                <property name="cssClass">TriStateCheckBox2</property>
+              </block>
+              <block listElementKey="K1038" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4756|Title:}</property>
+                <property name="valueField">PortalTitle</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1039" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4559|Display State:}</property>
+                <property name="modelPath">parent/model/PortalState</property>
+                <property name="enabledField">parent/model/IsPortal</property>
+                <property name="disabledModelValue">0</property>
+              </block>
+              <block listElementKey="K1048" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.9754|Show export options on title bar:}</property>
+                <property name="modelPath">parent/model/ExportOptions</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="PanelStackSection" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4727|Panel Stacks}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/showPanelStackTitle</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1041" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4558|Show title bar}</property>
+                <property name="valueField">IsPortal</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="EnableHorizontalSwipeToChange" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8058|Allow current panel to be changed without selector}</property>
+                <property name="valueField">EnableHorizontalSwipeToChange</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <!-- hide for Polaris-->
+              <!--<block listElementKey="SwipePanelStyle" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.|Display style for changing panels (Mobile only):}</property>
+                <property name="modelPath">parent/model/SwipePanelStyle</property>
+                <property name="enabledField">parent/model/EnableHorizontalSwipeToChange</property>
+              </block> -->
+              <block listElementKey="ifwProps" name="HBox">
+                <property name="children">
+                  <list>
+              		<block listElementKey="UseAsInformationWindow" name="CheckBox">
+                		<property name="caption">{desc:mstrWeb.8120|Use as information window}</property>
+                		<property name="valueField">UseAsInformationWindow</property>
+                		<property name="modelPath">parent/parent/model</property>
+                		<property name="cssText">margin-top:6px</property>
+              		</block>
+              		<block listElementKey="ifwPlacement" name="ListPulldown">
+                		<property name="horizontalCaption">{desc:mstrWeb.9815|Placement:}</property>
+                		<property name="modelPath">parent/parent/model/InformationWindowPlacement</property>
+                		<property name="enabledField">parent/parent/model/UseAsInformationWindow</property>
+                		<property name="cssText">margin-left:20px</property>
+              		</block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="ifwPropsMobileOnly" name="TextLabel">
+                <property name="value">{desc:mstrWeb.8319|Mobile Only:}</property>
+                <property name="cssText">margin-left:24px;text-decoration: underline;</property>
+              </block>
+              <block listElementKey="ifwModeAndPosition" name="HBox">
+                <property name="children">
+                  <list>
+              		<block listElementKey="InfoWindowMode" name="ListPulldown">
+                		<property name="horizontalCaption">{desc:mstrWeb.9813|Window mode:}</property>
+                		<property name="modelPath">parent/parent/model/InfoWindowMode</property>
+                		<property name="enabledField">parent/parent/model/UseAsInformationWindow</property>
+                		<property name="cssText">margin-left:24px</property>
+              		</block>
+              		<block listElementKey="ifwPosition" name="ListPulldown">
+                		<property name="horizontalCaption">{desc:mstrWeb.3721|Position:}</property>
+                		<property name="modelPath">parent/parent/model/InfoWindowPosition</property>
+                		<property name="enabledField">parent/parent/model/InfoWindowPositionEnabled</property>
+                		<property name="cssText">margin-left:20px</property>
+              		</block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="TabCloseToDismissInfoWindow" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.9814|Dismiss only when 'Close' button is tapped}</property>
+                <property name="valueField">TabCloseToDismissInfoWindow</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">parent/model/UseAsInformationWindow</property>
+                <property name="cssText">margin-left:24px</property>
+              </block>
+              <block listElementKey="DisplayInPartialScreen" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.11966|Display in partial screen per panel stack size on mobile phone}</property>
+                <property name="valueField">DisplayInPartialScreen</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">parent/model/UseAsInformationWindow</property>
+                <property name="cssText">margin-left:24px</property>
+              </block>
+              <block listElementKey="InitialSliding" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="InitialSlidingInWidth" name="HTextBox">
+                      <property name="caption">{desc:mstrWeb.12278|Initial sliding in width:}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="enabledField">parent/model/InitialSlidingInWidthEnabled</property>
+                      <property name="valueField">InitialSlidingInWidth</property>
+                      <property name="cssText">margin-left:36px;</property>
+                      <property name="totalSize">7</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="required">true</property>
+                          <property name="type">7</property>
+                          <property name="min">0</property>
+                        </block>
+                      </property>
+                    </block>
+                    <block listElementKey="InitialSlidingInHeight" name="HTextBox">
+                      <property name="caption">{desc:mstrWeb.12279|Initial sliding in height:}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="enabledField">parent/model/InitialSlidingInHeightEnabled</property>
+                      <property name="valueField">InitialSlidingInHeight</property>
+                      <property name="cssText">margin-left:12px;</property>
+                      <property name="totalSize">7</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="required">true</property>
+                          <property name="type">7</property>
+                          <property name="min">0</property>
+                        </block>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="ShowAsCollapsiblePanel" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.11967|Show as collapsible panel (Mobile only)}</property>
+                <property name="valueField">ShowAsCollapsiblePanel</property>
+                <property name="visibleField">model/isFilterPanel</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">!parent/model/UseAsInformationWindow</property>
+              </block>
+              <block listElementKey="ResetToFirstPanelWhenTargeted" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.9036|Reset to first panel when targeted (Mobile only)}</property>
+                <property name="valueField">ResetToFirstPanelWhenTargeted</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="fpAutoSubmit" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8969|Automatically apply selector changes}</property>
+                <property name="valueField">fpAutoSubmit</property>
+                <property name="visibleField">model/isFilterPanel</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1042" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5054|Title:}</property>
+                <property name="modelPath">parent/model/TitleBarDisplay</property>
+                <property name="enabledField">parent/model/IsPortal</property>
+              </block>
+              <block listElementKey="K1043" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4792|Custom Title}:</property>
+                <property name="valueField">PortalTitle</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/panelCustomTitle</property>
+              </block>
+              <block listElementKey="K1044" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.6108|Pre-load (DHTML Only):}</property>
+                <property name="modelPath">parent/model/PSPreLoadAllPanels</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="fsDisplayMode" name="FieldSet">
+            <property name="legend">{desc:mstrWeb.4963|Display Mode}</property>
+            <property name="modelPath">parent/model</property>
+            <property name="visibleField">model/showTableDisplayMode</property>
+            <property name="children">
+                <list>
+                    <block listElementKey="ifwProps_Table" name="HBox">
+                        <property name="children">
+                            <list>
+                                <block listElementKey="UseAsInformationWindow_Table" name="CheckBox">
+                                    <property name="caption">{desc:mstrWeb.8120|Use as information window}</property>
+                                    <property name="valueField">UseAsInformationWindow</property>
+                                    <property name="modelPath">parent/parent/model</property>
+                                    <property name="cssText">margin-top:6px</property>
+                                </block>
+                                <block listElementKey="ifwPlacement_Table" name="ListPulldown">
+                                    <property name="horizontalCaption">{desc:mstrWeb.9815|Placement:}</property>
+                                    <property name="modelPath">parent/parent/model/InformationWindowPlacement</property>
+                                    <property name="enabledField">parent/parent/model/UseAsInformationWindow</property>
+                                    <property name="cssText">margin-left:20px</property>
+                                </block>
+                            </list>
+                        </property>
+                    </block>
+                    <block listElementKey="ShowTitleBar_Table" name="CheckBox">
+                        <property name="caption">{desc:mstrWeb.4558|Show title bar}</property>
+                        <property name="valueField">IsPortal</property>
+                        <property name="modelPath">parent/model</property>
+                        <property name="enabledField">parent/model/UseAsInformationWindow</property>
+                        <property name="cssText">margin-left:20px;</property>
+                    </block>
+                    <block listElementKey="Title_Table" name="ListPulldown">
+                        <property name="horizontalCaption">{desc:mstrWeb.5054|Title:}</property>
+                        <property name="modelPath">parent/model/TitleBarDisplay</property>
+                        <property name="enabledField">parent/model/IsPortal</property>
+                        <property name="cssText">margin-left:24px;</property>
+                    </block>
+                    <block listElementKey="CustomTitle_Table" name="HTextBox">
+                        <property name="caption">{desc:mstrWeb.4792|Custom Title}:</property>
+                        <property name="valueField">PortalTitle</property>
+                        <property name="modelPath">parent/model</property>
+                        <property name="enabledField">model/panelCustomTitle</property>
+                        <property name="cssText">margin-left:24px;</property>
+                    </block>
+                    <block listElementKey="ifwPropsMobileOnly_Table" name="TextLabel">
+                        <property name="value">{desc:mstrWeb.8319|Mobile Only:}</property>
+                        <property name="cssText">margin-left:24px;text-decoration: underline;</property>
+                    </block>
+                    <block listElementKey="ifwModeAndPosition_Table" name="HBox">
+                        <property name="children">
+                            <list>
+                                <block listElementKey="InfoWindowMode_Table" name="ListPulldown">
+                                    <property name="horizontalCaption">{desc:mstrWeb.9813|Window mode:}</property>
+                                    <property name="modelPath">parent/parent/model/InfoWindowMode</property>
+                                    <property name="enabledField">parent/parent/model/UseAsInformationWindow</property>
+                                    <property name="cssText">margin-left:24px</property>
+                                </block>
+                                <block listElementKey="ifwPosition_Table" name="ListPulldown">
+                                    <property name="horizontalCaption">{desc:mstrWeb.3721|Position:}</property>
+                                    <property name="modelPath">parent/parent/model/InfoWindowPosition</property>
+                                    <property name="enabledField">parent/parent/model/InfoWindowPositionEnabled</property>
+                                    <property name="cssText">margin-left:20px</property>
+                                </block>
+                            </list>
+                        </property>
+                    </block>
+                </list>
+            </property>
+        </block>
+        <!--  TitleBar for RW Selectors -->
+        <block listElementKey="K1045" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4728|Selector}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/hasSelectorTitle</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1046" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4558|Show Title Bar}</property>
+                <property name="enabledField">!parent/model/isInFilterPanel</property>
+                <property name="valueField">IsPortal</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1047" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4756|Title:}</property>
+                <property name="valueField">PortalTitle</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="showElementCount" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.9289|Show Element Count}</property>
+                <property name="valueField">ShowElementCount</property>
+                <property name="visibleField">parent/model/hasElemCount</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2220" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5943|Mobile}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/ShowMobile</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1030" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.9812|Set application badge to value of this field}</property>
+                <property name="valueField">SetBadgeToValueOnField</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="iOSOnlyCopyFS" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.9818|Copy (iOS only)}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/iOSOnlyCopyVisible</property>
+          <property name="children">
+            <list>
+              <block listElementKey="iOSOnlyCopyForTextRL" name="RadioList">
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/TextCopyMode</property>
+                <property name="visibleField">parent/model/isText</property>
+              </block>
+              <!-- block listElementKey="iOSOnlyCopyForGridCellRL" name="RadioList">
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/GridCellCopyMode</property>
+                <property name="visibleField">parent/model/isOneGrid</property>
+              </block-->
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesTabGeneral is the "General" tab of the properties editor.
+	-->

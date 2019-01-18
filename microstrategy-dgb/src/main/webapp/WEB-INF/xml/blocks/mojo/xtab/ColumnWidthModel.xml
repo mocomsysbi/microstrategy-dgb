@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ColumnWidthModel" inherits="BaseBlock">
+	<definition>
+            <!-- width -->
+            <property name="w" type="String" />
+	</definition>
+</block>

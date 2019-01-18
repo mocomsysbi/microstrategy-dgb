@@ -1,0 +1,7 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:render name= "title"/>
+  <div>
+    <mstrlayout:render name= "stepContent"/>
+  </div>
+</mstrlayout:layout>

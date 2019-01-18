@@ -1,0 +1,739 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:bContext defaultContentType="JSON" encoders="JSON,SCRIPT"/>
+    <script type="text/javascript">
+    <![CDATA[
+		mstr.Settings.DataExplorer.AUTOEXPANDONDRILL =
+    ]]>
+    <mstrlayout:render method="autoExpandOnDrill"/>
+    <![CDATA[
+		;
+		mstr.Settings.Locale.ID =
+    ]]>
+    <mstrlayout:render method="localeID"/>
+    <![CDATA[
+		;
+		mstr.Settings.Locale.DECIMALSEP = '
+    ]]>
+    <mstrlayout:render method="decimalSep"/>
+    <![CDATA[
+		';
+		mstr.Settings.Locale.THOUSANDSEP = '
+    ]]>
+    <mstrlayout:render method="thousandSep"/>
+    <![CDATA[
+		';
+		mstr.Settings.Locale.MONTHNAME_SHORT = ['
+    ]]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3852" type="int"/> <!-- Jan -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3853" type="int"/> <!-- Feb -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3854" type="int"/> <!-- Mar -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3855" type="int"/> <!-- Apr -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3856" type="int"/> <!-- May -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3857" type="int"/> <!-- Jun -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3858" type="int"/> <!-- Jul -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3859" type="int"/> <!-- Aug -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3860" type="int"/> <!-- Sep -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3861" type="int"/> <!-- Oct -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3862" type="int"/> <!-- Nov -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="3863" type="int"/> <!-- Dec -->
+      </mstrlayout:render> <![CDATA[']]]>
+    <![CDATA[
+		;
+		mstr.Settings.Locale.MONTHNAME_FULL = ['
+    ]]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1956" type="int"/> <!-- January -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1957" type="int"/> <!-- February -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1958" type="int"/> <!-- March -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1959" type="int"/> <!-- April -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1960" type="int"/> <!-- May -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1961" type="int"/> <!-- June -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1962" type="int"/> <!-- July -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1963" type="int"/> <!-- August -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1964" type="int"/> <!-- September -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1965" type="int"/> <!-- October -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1966" type="int"/> <!-- November -->
+      </mstrlayout:render> <![CDATA[',']]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="1967" type="int"/> <!-- December -->
+      </mstrlayout:render> <![CDATA[']]]>
+    <![CDATA[
+		;
+		mstr.Settings.Locale.DATEINPUTFORMATS = [
+    ]]>
+    <mstrlayout:render method="dateInputFormats"/>
+    <![CDATA[
+		];
+		mstr.Settings.Locale.TIMEINPUTFORMATS = [
+    ]]>
+    <mstrlayout:render method="timeInputFormats"/>
+    <![CDATA[
+		];
+		mstr.Settings.Locale.NUMBERINPUTFORMATS = [
+    ]]>
+    <mstrlayout:render method="numberInputFormats"/>
+    <![CDATA[
+		];
+		mstr.Settings.Locale.INTEGERINPUTFORMATS = [
+    ]]>
+    <mstrlayout:render method="integerInputFormats"/>
+    <![CDATA[
+		];
+		mstr.Settings.Locale.DATEOUTPUTFORMAT = '
+    ]]>
+    <mstrlayout:render method="dateOutputFormat"/>
+    <![CDATA[
+		';
+		mstr.Settings.Locale.TIMEOUTPUTFORMAT = '
+    ]]>
+    <mstrlayout:render method="timeOutputFormat"/>
+    <![CDATA[
+		';
+		mstr.Settings.Locale.NUMBEROUTPUTFORMAT = '
+    ]]>
+    <mstrlayout:render method="numberOutputFormat"/>
+    <![CDATA[
+		';
+		mstr.Settings.Locale.INTEGEROUTPUTFORMAT = '
+    ]]>
+    <mstrlayout:render method="integerOutputFormat"/>
+    <![CDATA[
+		';
+		mstr.Settings.Locale.AM_NAME = '
+    ]]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="5987" type="int"/> <!-- AM -->
+      </mstrlayout:render>
+    <![CDATA[
+		';
+		mstr.Settings.Locale.PM_NAME = '
+    ]]>
+      <mstrlayout:render method="numberAndDateFormatDescriptor">
+        <mstrlayout:argument value="5988" type="int"/> <!-- PM -->
+      </mstrlayout:render>
+      <![CDATA[
+		';
+		mstr.Settings.Locale.YEAR_WARNING = '
+    ]]>
+      <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="7839" type="int"/> <!-- Please enter a number between ## and ### -->
+      </mstrlayout:render>
+    <![CDATA[
+		';
+    mstr.Settings.TaskBlockCountMap = {
+    '*' : -1,
+    'searchMetadata' : 
+    ]]>
+    <mstrlayout:render method="preferenceValue">
+        <mstrlayout:argument value="objectsBlockCount"/>
+    </mstrlayout:render>
+    <![CDATA[
+    ,
+    'browseElements' :     
+    ]]>
+    <mstrlayout:render method="preferenceValue">
+        <mstrlayout:argument value="elementsBlockCount"/>
+    </mstrlayout:render>
+    <![CDATA[
+    ,
+    'browseHierarchy' :     
+    ]]>
+    <mstrlayout:render method="preferenceValue">
+        <mstrlayout:argument value="elementsBlockCount"/>
+    </mstrlayout:render>
+    <![CDATA[
+    };
+    
+    mstr.Settings.App = {};
+	mstr.Settings.App.rootFolder =
+    ]]>
+    <mstrlayout:block name="ItemInfo">
+		<mstrlayout:bSetProperty path="dssid" method="getRootFolderId"/>
+		<mstrlayout:bSetProperty path="tp" value="8"/>
+	</mstrlayout:block>
+    <![CDATA[
+		;
+	mstr.Settings.App.namedFolders = {
+		'26':
+    ]]>
+    <mstrlayout:block name="ItemInfo">
+		<mstrlayout:bSetProperty path="dssid" method="getNamedFolderId">
+			<mstrlayout:argument value="26" type="int"/>               <!-- EnumDSSXMLFolderNames.DssXmlFolderNameSchemaAttributes -->
+		</mstrlayout:bSetProperty>
+		<mstrlayout:bSetProperty path="tp" value="8"/>
+	</mstrlayout:block>
+    <![CDATA[
+		};
+    ]]>
+    </script>
+    
+    
+ <!-- function operators for expression prompt -->
+	<mstrlayout:base id="exprGUIBean" method="getExpressionPromptGUIBean" base="transform">
+	</mstrlayout:base>
+	<mstrlayout:if operator="isNotNull" base="exprGUIBean">
+		<mstrlayout:then>
+      
+        <script type="text/javascript">
+      <![CDATA[
+      
+      mstr.Settings.Expression.METRICVALIDATIONLEVEL = 
+      ]]>
+      <mstrlayout:render method="metricValidationLevel"/>
+      <![CDATA[
+		;
+		mstr.Settings.Expression.PRESERVEWHITESPACE =
+      ]]>
+      <mstrlayout:render method="preferenceValue">
+        <mstrlayout:argument value="promptsPreserveWhiteSpace"/>
+      </mstrlayout:render>
+      <![CDATA[
+      ;
+     mstr.Settings.Functions.Include = [
+      {'dssid' : '1', 'n' : '
+      ]]>
+      <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="3945" type="int"/> <!-- Include-->
+      </mstrlayout:render> <![CDATA[
+        '},
+      {'dssid' : '2', 'n' : '
+      ]]>
+      <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="3946" type="int"/> <!-- Exclude-->
+      </mstrlayout:render> <![CDATA[
+        '}
+     ];
+     ]]>
+     
+     <![CDATA[
+     mstr.Settings.Functions.BranchQual = [
+      {'dssid' : '1', 'n' : '
+      ]]>
+      <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="5282" type="int"/> <!-- AND -->
+      </mstrlayout:render> <![CDATA[
+      '},
+	  {'dssid' : '2', 'n' : '
+	  ]]>
+	  <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="5283" type="int"/> <!-- OR -->
+      </mstrlayout:render> <![CDATA[
+	  '},
+	  {'dssid' : '3', 'n' : '
+	  ]]>
+	  <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="5924" type="int"/> <!-- AND NOT -->
+      </mstrlayout:render> <![CDATA[
+	  '},
+	  {'dssid' : '4', 'n' : '
+	  ]]>
+	  <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="5925" type="int"/> <!-- OR NOT -->
+      </mstrlayout:render> <![CDATA[
+	  '}
+     ];
+     ]]>
+     
+     <![CDATA[
+     mstr.Settings.Functions.RootOperator = [
+     {'dssid' : 19, 'n' : ' 
+     ]]>
+     <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="534" type="int"/> <!-- All selections-->
+      </mstrlayout:render> <![CDATA[
+       '},
+     {'dssid' : 20, 'n' : ' 
+     ]]>
+     <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="535" type="int"/> <!-- Any selection-->
+      </mstrlayout:render> <![CDATA[
+       '}
+	 ]; 
+     ]]> 
+     
+     <![CDATA[
+     mstr.Settings.Functions.ExprType = [
+     {'dssid' : 2, 'n' : ' 
+     ]]>
+     <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="546" type="int"/> <!-- Qualify -->
+      </mstrlayout:render> <![CDATA[
+       '},
+     {'dssid' : 5, 'n' : ' 
+     ]]>
+     <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="547" type="int"/> <!-- Select -->
+      </mstrlayout:render> <![CDATA[
+       '}
+	 ]; 
+     ]]>
+     
+      <![CDATA[
+     mstr.Settings.DimtyLevels = [
+     {'dssid' : 0, 'n' : ' 
+     ]]>
+     <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="2412" type="int"/> <!-- Default -->
+      </mstrlayout:render> <![CDATA[
+       '},
+     {'dssid' : 1, 'n' : ' 
+     ]]>
+     <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="4779" type="int"/> <!-- Metric -->
+      </mstrlayout:render> <![CDATA[
+       '},
+     {'dssid' : 2, 'n' : ' 
+     ]]>
+     <mstrlayout:render method="descriptor">
+        <mstrlayout:argument value="1279" type="int"/> <!-- Report -->
+      </mstrlayout:render> <![CDATA[
+       '}
+	 ]; 
+     ]]>
+     
+      <![CDATA[
+			 mstr.Settings.Functions.Attribute = [
+			]]>
+			<mstrlayout:base id="AQOpts" method="getOperators" base="exprGUIBean">
+				<mstrlayout:argument value="1" type="int"/> <!-- ExpressionHelper.ATTR_OPERATORS -->
+			</mstrlayout:base>
+			<mstrlayout:render method="gUIOperators">
+				<mstrlayout:argument base="AQOpts" type="[Lcom.microstrategy.web.app.beans.GUIOperator;"/>
+      </mstrlayout:render> <![CDATA[
+			];
+			]]>
+			<![CDATA[
+			 mstr.Settings.Functions.Metric = [
+			]]>
+			<mstrlayout:base id="MQOpts" method="getOperators" base="exprGUIBean">
+				<mstrlayout:argument value="2" type="int"/> <!-- ExpressionHelper.METRIC_OPERATORS -->
+			</mstrlayout:base>
+			<mstrlayout:render method="gUIOperators">
+				<mstrlayout:argument base="MQOpts" type="[Lcom.microstrategy.web.app.beans.GUIOperator;"/>
+      </mstrlayout:render> <![CDATA[
+			];
+			]]>
+			<![CDATA[
+			 mstr.Settings.Functions.MDXAttribute = [
+			]]>
+			<mstrlayout:base id="MDXAQOpts" method="getOperators" base="exprGUIBean">
+				<mstrlayout:argument value="4" type="int"/> <!-- ExpressionHelper.MDX_ATTR_OPERATORS -->
+			</mstrlayout:base>
+			<mstrlayout:render method="gUIOperators">
+				<mstrlayout:argument base="MDXAQOpts" type="[Lcom.microstrategy.web.app.beans.GUIOperator;"/>
+      </mstrlayout:render> <![CDATA[
+			];
+			]]>
+			<![CDATA[
+			 mstr.Settings.Functions.MDXMetric = [
+			]]>
+			<mstrlayout:base id="MDXMQOpts" method="getOperators" base="exprGUIBean">
+				<mstrlayout:argument value="5" type="int"/> <!-- ExpressionHelper.MDX_METRIC_OPERATORS -->
+			</mstrlayout:base>
+			<mstrlayout:render method="gUIOperators">
+				<mstrlayout:argument base="MDXMQOpts" type="[Lcom.microstrategy.web.app.beans.GUIOperator;"/>
+      </mstrlayout:render> <![CDATA[
+			];
+			]]>
+			<![CDATA[
+			 mstr.Settings.Functions.SAPAttribute = [
+			]]>
+			<mstrlayout:base id="SAPAQOpts" method="getOperators" base="exprGUIBean">
+				<mstrlayout:argument value="6" type="int"/> <!-- ExpressionHelper.MDX_SAP_ATTR_OPERATORS -->
+			</mstrlayout:base>
+			<mstrlayout:render method="gUIOperators">
+				<mstrlayout:argument base="SAPAQOpts" type="[Lcom.microstrategy.web.app.beans.GUIOperator;"/>
+      </mstrlayout:render> <![CDATA[
+			];
+			]]>
+			<![CDATA[
+			 mstr.Settings.Functions.Element = [
+			]]>
+			<mstrlayout:base id="SAPAQOpts" method="getOperators" base="exprGUIBean">
+				<mstrlayout:argument value="7" type="int"/> <!-- ExpressionHelper.ATTR_LIST_OPERATORS -->
+			</mstrlayout:base>
+			<mstrlayout:render method="gUIOperators">
+				<mstrlayout:argument base="SAPAQOpts" type="[Lcom.microstrategy.web.app.beans.GUIOperator;"/>
+      </mstrlayout:render> <![CDATA[
+			];
+        
+			]]>
+      
+       <![CDATA[
+        mstr.Settings.App.LevelPopupContainerTree = 
+      ]]>
+          <mstrlayout:block name="TreeModel">
+            <mstrlayout:bSetProperty path="selectedPathList" method="getFlattenedContextFolderPath">
+            <mstrlayout:argument type="int" value="3" />
+            </mstrlayout:bSetProperty>
+            <mstrlayout:list id="folder" method="getFlattenedContextFolderList">
+              <mstrlayout:argument type="int" value="3" />
+              <mstrlayout:base id="FolderObject" method="getValue" base="folder"/>
+              <mstrlayout:bSetProperty path="flattenedNodes">
+                <mstrlayout:block name="TreeNode">
+                <mstrlayout:bSetProperty path="path" method="getLocation" base="folder"/>
+                <mstrlayout:bSetProperty path="value">
+                  <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+                </mstrlayout:bSetProperty>
+                </mstrlayout:block>
+              </mstrlayout:bSetProperty>
+            </mstrlayout:list>
+          </mstrlayout:block>
+      <![CDATA[
+        ;
+    ]]>    
+    </script>
+    
+		</mstrlayout:then>
+	</mstrlayout:if>
+
+	
+	<!-- end of function operators -->
+    <!-- TEXTAREA that contains our JSON representation -->
+    <mstrlayout:bContext defaultContentType="JSON" encoders="JSON,HTML"/>
+    <textarea rows="1" cols="20" id="jsonPromptEditor" class="mstrJSON">
+    <mstrlayout:block name="PromptEditor">
+		<mstrlayout:if method="isForDefinition">
+			<mstrlayout:then>
+				<mstrlayout:bSetProperty path="autoResize" value="false"/>
+			</mstrlayout:then>
+			<mstrlayout:else>
+				<mstrlayout:if method="isForSubscription">
+		            <mstrlayout:then>
+		                <mstrlayout:bSetProperty path="autoResize" value="true"/>
+		            </mstrlayout:then>
+                    <mstrlayout:else>
+				        <mstrlayout:bSetProperty path="autoResize" value="true"/>
+			         </mstrlayout:else>
+		         </mstrlayout:if>
+	         </mstrlayout:else>
+		</mstrlayout:if>
+        <mstrlayout:if method="displayPromptOneByOne">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="book">
+              <mstrlayout:block name="ViewStack">    <!-- one by one mode -->
+				<mstrlayout:bSetProperty path="height" value="100%"/>	<!-- overwrite default "auto" -->
+              </mstrlayout:block>
+            </mstrlayout:bSetProperty>
+          </mstrlayout:then>
+          <mstrlayout:else>
+            <mstrlayout:bSetProperty path="book">
+              <mstrlayout:block name="PromptQuestionViewRoll"/>   <!-- all prompts on one page -->
+            </mstrlayout:bSetProperty>
+          </mstrlayout:else>
+        </mstrlayout:if>
+        <mstrlayout:bSetProperty path="book/modelPath" value="parent/model/promptQuestions"/>
+        <mstrlayout:list id="promptIndexList" base="bean" name="getPromptAppBeans">
+            <!-- Append an entry to the book "pages" list... -->
+            <mstrlayout:bAppendList path="book/views" method="getPromptPageWidget">
+                <mstrlayout:argument list="promptIndexList" type="com.microstrategy.web.app.beans.PromptAppBean"/>
+                <mstrlayout:argument type="boolean" value="false"/> <!-- model=false; view = true -->
+            </mstrlayout:bAppendList>
+            <mstrlayout:next list="promptIndexList"/>
+        </mstrlayout:list>
+        <mstrlayout:if method="canDisplayIncrementalFetchButtons">
+          <mstrlayout:then>
+            <mstrlayout:bSetProperty path="previousButton/visible" value="true"/>
+            <mstrlayout:bSetProperty path="nextButton/visible" value="true"/>
+            <mstrlayout:bSetProperty path="previousButton/enabled" value="false"/>
+          </mstrlayout:then>
+          <mstrlayout:else>
+            <mstrlayout:bDeleteProperty path="previousButton" />
+            <mstrlayout:bDeleteProperty path="nextButton" />
+          </mstrlayout:else>
+        </mstrlayout:if>
+<!--        <mstrlayout:bSetProperty path="previousButton/visible" method="canDisplayIncrementalFetchButtons"/>-->
+<!--        <mstrlayout:bSetProperty path="nextButton/visible" method="canDisplayIncrementalFetchButtons"/>-->
+        
+        <mstrlayout:bSetProperty path="saveButton/visible" method="canSavePrompt"/>
+        <mstrlayout:bSetProperty path="finishButton/caption" method="getExecuteButtonLabel"/>
+        <mstrlayout:bSetProperty path="toc/visible" method="isMultiplePrompt"/>
+        <mstrlayout:bSetProperty path="cancelButton/visible" method="canCancelPrompt"/>
+        <mstrlayout:bSetProperty path="messageNameView/visible" method="shouldDisplayRenameMessage"/>
+        <mstrlayout:slot name="PromptEditor"/>
+    </mstrlayout:block>
+    </textarea>
+
+    <!-- Generate the JavaScript for the Layouts referenced in the 0th root block -->
+    <mstrlayout:juilLayouts rootBlockName="PromptEditor"/>
+        
+    <!-- Are we in JSON MODE? -->
+    <!-- TEXTAREA that contains our JSON representation -->
+    <textarea rows="1" cols="20" id="jsonPromptReportInstanceModel" class="mstrJSON">
+    <mstrlayout:block name="ReportInstanceModel">
+	    <mstrlayout:base id="ownerBean" method="getContainerBean" base="transform"/>
+		<mstrlayout:if operator="isNotNull" base="ownerBean">
+			<mstrlayout:then>
+				<mstrlayout:bSetProperty path="objectInfo">
+					<mstrlayout:block name="ItemInfo">
+						<mstrlayout:bSetProperty path="dssid" method="getObjectID" base="ownerBean"/>
+						<mstrlayout:bSetProperty path="n" method="getObjectName" base="ownerBean"/>
+						<mstrlayout:bSetProperty path="desc" value="" />
+						<mstrlayout:bSetProperty path="icon" value="" />
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="messageInfo">
+					<mstrlayout:block name="ItemInfo">
+						<!--
+						<mstrlayout:bSetProperty path="dssid" method="getMessageID" base="ownerBean"/>
+						<mstrlayout:bSetProperty path="n" method="getDisplayName" base="ownerBean"/>
+						-->
+						<mstrlayout:bSetProperty path="desc" value="" />
+						<mstrlayout:bSetProperty path="icon" value="" />
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+				
+				<mstrlayout:bSetProperty path="messageName">
+					  <mstrlayout:block name="ConstantPromptAnswerModel">
+						<mstrlayout:bSetProperty path="valueString" method="getDisplayName" base="ownerBean"/>
+			            <mstrlayout:bSetProperty path="dateFormat" method="getDateFormat"/> 
+	            		<mstrlayout:bSetProperty path="firstDayOfWeek" method="getFirstDayOfWeek"/> 			             					
+			            <mstrlayout:bSetProperty path="timeFormat" method="getTimeFormat"/>	 	        	
+					</mstrlayout:block>  	            
+				</mstrlayout:bSetProperty>
+			</mstrlayout:then>
+		</mstrlayout:if>
+		        
+		<mstrlayout:bSetProperty path="extendedProperties">
+            <mstrlayout:block name="ReportInstanceExtendedProperties">
+                <mstrlayout:bSetProperty path="beanPath" method="getPromptsBeanPath"/>
+                <mstrlayout:bSetProperty path="beanType" method="getContainerBeanType"/>
+                <mstrlayout:bSetProperty path="isReprompt" method="isReprompted"/>
+				<mstrlayout:if operator="isNotNull" base="ownerBean">
+					<mstrlayout:then>
+		                <mstrlayout:bSetProperty path="ownerBeanPath" method="getPath" base="ownerBean"/>
+					</mstrlayout:then>
+				</mstrlayout:if>
+            </mstrlayout:block>
+        </mstrlayout:bSetProperty>
+        
+        <mstrlayout:bSetProperty path="promptQuestions">
+            <mstrlayout:block name="ListModel">
+                <mstrlayout:bSetProperty path="valueForm" value="id"/>
+                <mstrlayout:bSetProperty path="selectedIndicesList" method="getCurrentPromptPosition"/>
+                <mstrlayout:list id="promptIndexList" base="bean" name="getPromptAppBeans">
+                    <mstrlayout:bAppendList path="items" method="getPromptPageWidget">
+                        <mstrlayout:argument list="promptIndexList" type="com.microstrategy.web.app.beans.PromptAppBean"/>
+                        <mstrlayout:argument type="boolean" value="true"/> <!-- model=true; view = false -->
+                    </mstrlayout:bAppendList>
+                </mstrlayout:list>
+            </mstrlayout:block> 
+        </mstrlayout:bSetProperty>
+        <mstrlayout:slot name="ReportInstanceModel"/>
+    </mstrlayout:block>
+    </textarea>
+
+    <![CDATA[
+    <iframe class="mstrFrameProcessor" name="mstrFrameProcessor1" id="mstrFrameProcessor1" src="../html/Empty.html" style="display: none;height: 200px; width: 200px">
+    </iframe>
+    
+    ]]>
+    <textarea rows="1" cols="20" id="jsonPromptFrameProcessor" class="mstrJSON">
+    <mstrlayout:block name="FrameProcessor">
+        <mstrlayout:bSetProperty path="frameName" value="mstrFrameProcessor1" />
+    </mstrlayout:block>
+    </textarea>
+    <textarea rows="1" cols="20" id="jsonPromptFetchBlockPopup" class="mstrJSON">
+    <mstrlayout:block name="FetchBlockPopup">
+        <mstrlayout:bSetProperty path="id" value="FetchBlockPopup1" />
+    </mstrlayout:block>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="FetchBlockPopup" />
+	<textarea rows="1" cols="20" id="jsonPromptSavedAnswersPopup" class="mstrJSON">
+    	<mstrlayout:block name="PromptSavedAnswersPopup"/>
+    </textarea>
+    <mstrlayout:juilLayouts rootBlockName="PromptSavedAnswersPopup" />
+    <textarea rows="1" cols="20" id="jsonPromptGetSavedAnswerNamePopup" class="mstrJSON">
+    	<mstrlayout:block name="PromptGetSavedAnswerNamePopup"/>
+    </textarea>
+    <mstrlayout:juilLayouts rootBlockName="PromptGetSavedAnswerNamePopup" />
+    <textarea rows="1" cols="20" id="jsonPromptGetSavedAnswerSimplePopup" class="mstrJSON">
+    	<mstrlayout:block name="PromptSavedAnswersSimplePopup"/>
+    </textarea>
+    <mstrlayout:juilLayouts rootBlockName="PromptSavedAnswersSimplePopup" />
+     
+    <script type="text/javascript">
+    	<!-- Register this JSON object with the factory -->
+    	self.mstrView = mstr.$register('jsonPromptEditor', self);
+        self.mstrModel = mstr.$register('jsonPromptReportInstanceModel', self);
+        mstrView.setModel(mstrModel);
+        mstrView.render();
+        <!-- add this to stop the curtain. Otherwise, when popup shown, 8.x javascript will 
+      cover the entire window with a curtian for a few seconds then hide it. This will make
+      our popup glitching. -->
+      window.iframe.notifyParent = function(){};
+      mstr.$deferRegister('jsonPromptFrameProcessor', self);
+      mstr.$register('jsonPromptFetchBlockPopup', self);
+      mstr.$register('jsonPromptSavedAnswersPopup', self);
+      mstr.$register('jsonPromptGetSavedAnswerNamePopup', self);
+      mstr.$register('jsonPromptGetSavedAnswerSimplePopup', self);
+    </script>
+   
+  <mstrlayout:if operator="isNotNull" base="exprGUIBean">
+		<mstrlayout:then>
+			
+    <textarea rows="1" cols="20" id="jsonPromptExpressionBranchQualPopup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionBranchQualPopup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionBranchQualPopup" />
+    
+    <textarea rows="1" cols="20" id="jsonPromptExpressionTargetPopup" class="mstrJSON">
+    	<mstrlayout:block name="ExpressionTargetPopup"/>
+    </textarea>
+    <mstrlayout:juilLayouts rootBlockName="ExpressionTargetPopup" />
+    <textarea rows="1" cols="20" id="jsonPromptExpressionFormPopup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionFormPopup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionFormPopup" />
+  
+    <textarea rows="1" cols="20" id="jsonPromptExpressionFunctionPopup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionFunctionPopup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionFunctionPopup" />
+  
+  
+  	<textarea rows="1" cols="20" id="jsonPromptExpressionConstant1Popup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionConstant1Popup"/>
+    </textarea>
+    
+	<mstrlayout:juilLayouts rootBlockName="ExpressionConstant1Popup" />
+
+    <textarea rows="1" cols="20" id="jsonPromptExpressionConstant2Popup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionConstant2Popup">
+      <mstrlayout:bDeleteProperty path="importView" />
+    </mstrlayout:block>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionConstant2Popup" />
+
+    <textarea rows="1" cols="20" id="jsonPromptExpressionLevelPopup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionLevelPopup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionLevelPopup" />
+
+    <textarea rows="1" cols="20" id="jsonPromptExpressionTypePopup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionTypePopup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionTypePopup" />
+
+    <textarea rows="1" cols="20" id="jsonPromptExpressionElementsPopup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionElementsPopup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionElementsPopup" />
+	
+    <textarea rows="1" cols="20" id="jsonPromptExpressionElementsPopup2" class="mstrJSON">
+    <mstrlayout:block name="ExpressionElementsPopup"> <!-- popup used by non-cart -->
+        <mstrlayout:bSetProperty path="id" value="ExpressionElementsPopup2" />
+        <mstrlayout:bSetProperty path="modelPath" value="opener/model/answer/getElementsCartModel(opener.model)" />
+	</mstrlayout:block>
+    </textarea>
+
+    <textarea rows="1" cols="20" id="jsonPromptRMCPopup" class="mstrJSON">
+    <mstrlayout:block name="RMCPopup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="RMCPopup" />
+
+    <textarea rows="1" cols="20" id="jsonPromptExpressionFormValues1Popup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionFormValues1Popup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionFormValues1Popup" />
+
+    <textarea rows="1" cols="20" id="jsonPromptExpressionFormValues2Popup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionFormValues2Popup"/>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionFormValues2Popup" />
+   
+    <textarea rows="1" cols="20" id="jsonPromptExpressionFileImport1Popup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionFileImport1Popup">
+    	<mstrlayout:bSetProperty path="contentView/maxFileSize" method="getMaxUploadFileSize"/>
+    	<mstrlayout:bSetProperty path="contentView/maxElements" method="getPreferenceValue">
+    		<mstrlayout:argument value="promptsMaxElementsToImport"/>
+    	</mstrlayout:bSetProperty>
+    	<mstrlayout:bSetProperty path="contentView/validFileExtensions" method="getPreferenceValue">
+    		<mstrlayout:argument value="promptsUploadFileExtensions"/>
+    	</mstrlayout:bSetProperty>
+    </mstrlayout:block>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionFileImport1Popup" />
+    
+
+    <textarea rows="1" cols="20" id="jsonPromptExpressionLevelAttributesPopup" class="mstrJSON">
+    <mstrlayout:block name="ExpressionLevelAttributesPopup">
+		<mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+	</mstrlayout:block>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="ExpressionLevelAttributesPopup" />
+
+    <textarea rows="1" cols="20" id="jsonPromptMetricQualifierLevelAttributesPopup" class="mstrJSON">
+    <mstrlayout:block name="MetricQualifierLevelAttributesPopup">
+		<mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+	</mstrlayout:block>
+    </textarea>
+	<mstrlayout:juilLayouts rootBlockName="MetricQualifierLevelAttributesPopup" />
+	
+    <script type="text/javascript">
+    mstr.$register('jsonPromptExpressionBranchQualPopup', self);
+    mstr.$register('jsonPromptExpressionTargetPopup', self);
+    mstr.$register('jsonPromptExpressionFormPopup', self);
+    mstr.$register('jsonPromptExpressionFunctionPopup', self);
+    mstr.$register('jsonPromptExpressionConstant1Popup', self);
+    mstr.$register('jsonPromptExpressionConstant2Popup', self);
+    mstr.$register('jsonPromptExpressionLevelPopup', self);
+    mstr.$register('jsonPromptExpressionTypePopup', self);
+    mstr.$register('jsonPromptExpressionElementsPopup', self);
+    mstr.$register('jsonPromptExpressionElementsPopup2', self);
+    mstr.$register('jsonPromptRMCPopup', self);
+    mstr.$register('jsonPromptExpressionFormValues1Popup', self);
+    mstr.$register('jsonPromptExpressionFormValues2Popup', self);
+    mstr.$register('jsonPromptExpressionFileImport1Popup', self);
+    mstr.$register('jsonPromptExpressionFileImport2Popup', self);
+    mstr.$register('jsonPromptExpressionLevelAttributesPopup', self);
+    mstr.$register('jsonPromptMetricQualifierLevelAttributesPopup', self);
+    </script>
+	
+   </mstrlayout:then>
+   </mstrlayout:if>
+</mstrlayout:layout>

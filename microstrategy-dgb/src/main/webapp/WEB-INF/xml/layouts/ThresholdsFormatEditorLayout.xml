@@ -1,0 +1,34 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="thresholdSetting">
+        <div class="thresholdName">
+            <mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="string" value="mstrWeb.2211"/> 
+            </mstrlayout:render> 
+            &nbsp;&nbsp;
+            <mstrlayout:render name="nameInput"/>
+        </div>
+        
+        <!-- TQMS 352996: use checkbox to display hide option in some cases -->
+        <mstrlayout:if name="isShowReplaceSelect">
+            <mstrlayout:then>
+                <div class="thresholdReplace">
+                    <mstrlayout:render name="replaceCheckbox"/>
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="string" value="mstrWeb.5998"/> 
+                    </mstrlayout:render>
+                    <div class="thresholdReplaceOptions">
+                        <mstrlayout:render name="replaceSelectbox"/>
+                    </div>
+                </div>            
+            </mstrlayout:then>
+            <mstrlayout:else>
+                <div>
+                    <mstrlayout:render name="hideCheckbox"/>
+                </div>  
+            </mstrlayout:else>
+        </mstrlayout:if>
+    </div>
+    <mstrlayout:render name="controlBar"/>
+    <mstrlayout:render name="tabContainerBody"/>
+</mstrlayout:layout>

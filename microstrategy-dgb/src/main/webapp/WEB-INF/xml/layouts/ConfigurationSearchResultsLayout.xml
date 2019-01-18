@@ -1,0 +1,154 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+    <mstrlayout:if name="isEmptyList">
+        <mstrlayout:then>
+            <mstrlayout:render name="EmptyList" />
+        </mstrlayout:then>
+        <mstrlayout:else>
+
+    <mstrlayout:render name="SearchResultsCount" />
+
+    <mstrlayout:render name="IncrementalFetch" />
+
+    <table class="mstrListView" cellspacing="0" id="SearchResults" style="display:block">
+        <mstrlayout:attr name="addSummaryAttribute" />
+        <colgroup>
+            <col class="typ" />
+            <col class="nam" />
+            <mstrlayout:if name="includesObjectType">
+                <mstrlayout:argument type="int" value="8704" />
+                <mstrlayout:then>
+                    <col class="log" />
+                </mstrlayout:then>
+            </mstrlayout:if>
+            <col class="own" />
+            <mstrlayout:if name="includesObjectType">
+                <mstrlayout:argument type="int" value="8704" />
+                <mstrlayout:then>
+                    <col class="stat" />
+                </mstrlayout:then>
+            </mstrlayout:if>
+            <col class="mod" />
+            <col class="des" />
+            <col class="act s" />
+        </colgroup>
+        <thead>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="945"/>
+                    </mstrlayout:render>
+                </td>
+                <mstrlayout:if name="includesObjectType">
+                    <mstrlayout:argument type="int" value="8704" />
+                    <mstrlayout:then>
+                        <td>
+                            <mstrlayout:render name="Descriptor">
+                                <mstrlayout:argument type="int" value="4020"/>
+                            </mstrlayout:render>
+                        </td>
+                    </mstrlayout:then>
+                </mstrlayout:if>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="60"/>
+                    </mstrlayout:render>
+                </td>
+                <mstrlayout:if name="includesObjectType">
+                    <mstrlayout:argument type="int" value="8704" />
+                    <mstrlayout:then>
+                        <td>
+                            <mstrlayout:render name="Descriptor">
+                                <mstrlayout:argument type="int" value="4021"/>
+                            </mstrlayout:render>
+                        </td>
+                    </mstrlayout:then>
+                </mstrlayout:if>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="61"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="39"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="3265"/>
+                    </mstrlayout:render>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+        <mstrlayout:list id="configObjects" name="getSortedList">
+            <tr>
+                <td>
+                    <mstrlayout:render name="LayeredIconInfo">
+                        <mstrlayout:argument list="configObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:argument type="boolean" value="true" />
+                        <mstrlayout:argument type="boolean" value="false" />
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="NameInfo">
+                        <mstrlayout:argument list="configObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:render>
+                </td>
+                <mstrlayout:if name="includesObjectType">
+                    <mstrlayout:argument type="int" value="8704" />
+                    <mstrlayout:then>
+                        <td>
+                            <mstrlayout:render name="AbbreviationInfo">
+                                <mstrlayout:argument list="configObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                <mstrlayout:argument type="boolean" value="true"/>
+                            </mstrlayout:render>
+                        </td>
+                    </mstrlayout:then>
+                </mstrlayout:if>
+                <td>
+                    <mstrlayout:render name="OwnerInfo">
+                        <mstrlayout:argument list="configObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:render>
+                </td>
+                <mstrlayout:if name="includesObjectType">
+                    <mstrlayout:argument type="int" value="8704" />
+                    <mstrlayout:then>
+                        <td>
+                            <mstrlayout:render name="isUserEnabled">
+                                <mstrlayout:argument list="configObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                <mstrlayout:argument type="boolean" value="true"/>
+                            </mstrlayout:render>
+                        </td>
+                    </mstrlayout:then>
+                </mstrlayout:if>
+                <td>
+                    <mstrlayout:render name="ModifiedInfo">
+                        <mstrlayout:argument list="configObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="DescriptionInfo">
+                        <mstrlayout:argument list="configObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:argument type="boolean" value="true"/>
+                    </mstrlayout:render>
+                </td>
+                <td style="whitespace:nowrap">
+                    <mstrlayout:render name="EditInfo">
+                        <mstrlayout:argument list="configObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:argument type="boolean" value="false"/>
+                    </mstrlayout:render>
+                </td>
+            </tr>
+        </mstrlayout:list>
+        </tbody>
+    </table>
+
+    <mstrlayout:render name="IncrementalFetch" />
+
+        </mstrlayout:else>
+    </mstrlayout:if>
+</mstrlayout:layout>

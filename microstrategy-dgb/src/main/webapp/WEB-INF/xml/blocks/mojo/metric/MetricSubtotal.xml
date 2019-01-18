@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains a subtotal for metric.
+    
+    This block definition may be a little confused. Generally, a subtotal has two parts: 
+    definition metric and implementation metric. In the Metric Editor scenario, only "Sum" and
+    "Aggregation" may contain implementation metric. To make the JSON simple, for the specific two, 
+    "did"/"t"/"st" inherits from "WebObjectInfo" represents the implementation metric, and "dm" is for the 
+    definition metric. While for other subtotals, only "did"/"t"/"st" are used to represent the definition metric.
+--> 
+<block name="MetricSubtotal" inherits="WebObjectInfo">
+  <definition>
+    <!-- The definition metric. This is only used for "Sum" and "Aggregation" subtotals. -->
+    <property name="dm" type="Block" />
+    
+  </definition>
+</block>

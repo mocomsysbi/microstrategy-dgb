@@ -1,0 +1,158 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="GradientEditorModel" name="GraphGradientEditorModel">
+  <definition>
+    <!-- Used for custom gradients -->
+    <property name="transitionType" type="Block"/>
+    <!-- Used for custom gradients -->
+    <property name="angle" type="Integer"/>
+    <!-- Used for custom gradients -->
+    <property name="xOffset" type="Integer"/>
+    <!-- Used for custom gradients -->
+    <property name="yOffset" type="Integer"/>
+  </definition>
+  <assignments>
+    <property name="scriptClass">mstr.models.GraphGradientEditor</property>
+    <property name="gradientType/items">
+      <list>
+        <block listElementKey="K710" name="ItemInfo">
+          <property name="dssid">3</property>
+          <property name="n">{desc:mstrWeb.4950|Diagonal Up}</property>
+        </block>
+        <block listElementKey="K711" name="ItemInfo">
+          <property name="dssid">4</property>
+          <property name="n">{desc:mstrWeb.4951|Diagonal Down}</property>
+        </block>
+        <block listElementKey="K712" name="ItemInfo">
+          <property name="dssid">5</property>
+          <property name="n">{desc:mstrWeb.4952|From Corner}</property>
+        </block>
+        <block listElementKey="K713" name="ItemInfo">
+          <property name="dssid">6</property>
+          <property name="n">{desc:mstrWeb.4953|From Center}</property>
+        </block>
+        <block listElementKey="K714" name="ItemInfo">
+          <property name="dssid">7</property>
+          <property name="n">{desc:mstrWeb.2056|Custom}</property>
+        </block>
+      </list>
+    </property>
+    <property name="variantsCache">
+      <list>
+        <block listElementKey="K697" name="ListModel">
+          <property name="items">
+            <list>
+              <block listElementKey="K700" name="ItemInfo">
+                <property name="flashOnly" type="Boolean">false</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K701" name="ListModel">
+          <property name="items">
+            <list>
+              <block listElementKey="K704" name="ItemInfo">
+                <property name="flashOnly" type="Boolean">false</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K715" name="ListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K716" name="ItemInfo">
+                <property name="dssid">14,135,100,0</property>
+              </block>
+              <block listElementKey="K717" name="ItemInfo">
+                <property name="dssid">14,135,0,100</property>
+              </block>
+              <block listElementKey="K718" name="ItemInfo">
+                <property name="dssid">14,135,50,50</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K719" name="ListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K720" name="ItemInfo">
+                <property name="dssid">14,45,100,0</property>
+              </block>
+              <block listElementKey="K721" name="ItemInfo">
+                <property name="dssid">14,45,0,100</property>
+              </block>
+              <block listElementKey="K722" name="ItemInfo">
+                <property name="dssid">14,45,50,50</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K723" name="ListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K724" name="ItemInfo">
+                <property name="dssid">10,0,0,0</property>
+              </block>
+              <block listElementKey="K725" name="ItemInfo">
+                <property name="dssid">10,0,100,0</property>
+              </block>
+              <block listElementKey="K726" name="ItemInfo">
+                <property name="dssid">10,0,100,100</property>
+              </block>
+              <block listElementKey="K727" name="ItemInfo">
+                <property name="dssid">10,0,0,100</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K728" name="ListModel">
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="items">
+            <list>
+              <block listElementKey="K729" name="ItemInfo">
+                <property name="dssid">10,0,50,50</property>
+              </block>
+              <block listElementKey="K730" name="ItemInfo">
+                <property name="dssid">10,45,50,50</property>
+              </block>
+              <block listElementKey="K731" name="ItemInfo">
+                <property name="dssid">9,0,50,50</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+    <property name="transitionType">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K732" name="ItemInfo">
+              <property name="dssid">14</property>
+              <property name="n">{desc:mstrWeb.4888|Linear}</property>
+            </block>
+            <block listElementKey="K733" name="ItemInfo">
+              <property name="dssid">10</property>
+              <property name="n">{desc:mstrWeb.4862|Rectangular}</property>
+            </block>
+            <block listElementKey="K734" name="ItemInfo">
+              <property name="dssid">9</property>
+              <property name="n">{desc:mstrWeb.4889|Circular}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="angle">0</property>
+    <property name="xOffset">0</property>
+    <property name="yOffset">0</property>
+  </assignments>
+</block>

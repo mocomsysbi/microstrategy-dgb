@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single GroupBy in a Report Writer document.
+--> 
+<block name="RWGroupBy">
+    <definition>
+        <!-- The key for our GroupBy -->
+        <property name="k" type="String" />
+        
+        <!-- The group by level. See c.m.w.o.rw.EnumRWGroupByLevels for details -->
+        <property name="lvl" type="Integer" />
+        
+        <!-- The GroupByUnit block. A Block of type RWGroupByUnit -->
+        <property name="unit" type="Block" />
+    </definition>
+</block>

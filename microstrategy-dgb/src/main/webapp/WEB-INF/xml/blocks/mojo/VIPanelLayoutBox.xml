@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single subsection in a RWD.
+--> 
+<block name="VIPanelLayoutBox">
+    <definition>
+        <!-- Indicates the type of this layout block ("b" for box, or "c" for child). -->
+        <property name="t" type="String" />
+        
+        <!-- The percentage of the parent this box child should occupy, or the fixed length in pixels if the box is fixed length. -->
+        <property name="l" type="Integer" />
+        
+        <!-- A flag indicating if the box is fixed length. -->
+        <property name="f" type="Boolean" />
+        
+        <!-- The orientation of this box ("v" for vertical, "h" for horizontal). -->
+        <property name="o" type="String" />
+        
+        <!-- The RWUnit key of this box child.. -->
+        <property name="k" type="String" />
+        
+        <!-- A collection of VIPanelLayoutBox that represent the children of this box child.. -->
+        <property name="children" type="List" />
+    </definition>
+</block>

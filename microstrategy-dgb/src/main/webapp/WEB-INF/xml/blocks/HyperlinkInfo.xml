@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Info block for containing information about a hyperlink. -->
+	<block name="HyperlinkInfo" inherits="BaseBlock">
+		<definition>
+			<!-- The HREF of the hyperlink. -->
+			<property name="href" type="String" />
+			
+			<!-- Whether to include the state of the page in the href. -->
+			<property name="append-state" type="Boolean" />
+			
+			<!-- An optional list of UrlParamInfo blocks. -->
+			<property name="params" type="List" />
+
+			<!-- Whether to open a the link in a new window. -->
+			<property name="use-window-open" type="Boolean" />
+			
+			<!-- The target where the href should be executed.  This property will be ignored if the use-window-open
+				property is set. -->
+			<property name="target" type="String" />
+			
+			<!-- Indicates that hyperlink should target the iframe.  This property will be ignored if the target
+				property is set. -->
+			<property name="iframe" type="Boolean" />
+		</definition>
+	</block>

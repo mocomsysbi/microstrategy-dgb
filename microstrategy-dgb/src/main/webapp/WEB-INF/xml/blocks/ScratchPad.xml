@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ScratchPad" inherits="BaseView">
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ScratchPad</property>
+			<property name="modelPath">parent/model/addition</property>
+			<property name="cssClass">ScratchPad</property>
+			<property name="cssText">padding-left:0px;padding-right:0px</property>
+		</assignments>
+	</block>

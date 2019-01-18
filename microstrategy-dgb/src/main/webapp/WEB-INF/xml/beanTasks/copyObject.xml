@@ -1,0 +1,22 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+    <basicInfo desc="Copy an object">
+        <parameter name="srcKey" desc="The object key" required="true" />
+        <parameter name="newKey" desc="The new object key" required="true" />
+        <parameter name="sKey" desc="The section key" required="false" />
+    </basicInfo>
+
+    <!-- REPORT_WRITER_EVENT_COPY_OBJECT  -->
+    <eventInfo eventID="2048036">
+        <argument name="srcKey" source="parameter" value="srcKey" />
+        <argument name="newKey" source="parameter" value="newKey" />
+        <argument name="sKey" source="parameter" value="sKey" />
+        <argument name="applyNow" value="true" />
+    </eventInfo>
+    
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWIVEMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="3" />
+        </style>
+    </beanInfo>
+</beanTask>

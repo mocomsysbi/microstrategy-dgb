@@ -1,0 +1,54 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="mstrBrowser">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <div>
+                        <mstrlayout:render name="ancestors"/>
+                    </div>
+                </td>
+                <td>
+                    <mstrlayout:render name="openParent"/>
+                </td>
+            </tr>
+        </table>
+        <div style="position:relative">
+        <div sty="fileList">
+            <div class="mstrSmallIconView">
+                <mstrlayout:list id="contents" name="getContents" base="bean">
+                   	<mstrlayout:if name="isHidden">
+                            <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+                            <mstrlayout:then>
+                            <!-- filter out the hidden object -->
+                            </mstrlayout:then>
+                            <mstrlayout:else> 
+							  <div>
+                                <mstrlayout:attr name="getUnitAttributes">
+                                   <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+                                </mstrlayout:attr>
+							    <!-- <span class="image"><span></span></span> -->                        
+                                <mstrlayout:render name="layeredIconInfo"><!-- replace <span> above to dynamically set style class... -->
+                                   <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+                                </mstrlayout:render>
+                        
+                               <mstrlayout:render name="unit">
+                                  <mstrlayout:argument list="contents" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+                               </mstrlayout:render>
+                              </div>
+                           </mstrlayout:else>
+                   </mstrlayout:if>
+                </mstrlayout:list>
+            </div>
+        </div>
+        </div>
+        <mstrlayout:render name="objectCount"/>
+		<mstrlayout:if name="shouldDisplayErrorMessage">
+    		<mstrlayout:then>
+    			<mstrlayout:render name="Descriptor">
+                	<mstrlayout:argument type="int" value="96"/><!-- Error -->
+                </mstrlayout:render>:&nbsp;<mstrlayout:render name="errorMessage"/>
+	    	</mstrlayout:then>
+  		</mstrlayout:if>
+    </div>
+</mstrlayout:layout>

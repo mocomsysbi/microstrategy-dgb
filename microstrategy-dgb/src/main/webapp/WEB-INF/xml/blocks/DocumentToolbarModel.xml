@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="DocumentToolbarModel" inherits="RibbonToolbarModel">
+	<assignments>
+		<property name="features">!page-full-screen-mode</property>
+		<property name="toolbarModels">
+			<block name="ListModel">
+				<property name="valueForm">dssid</property>
+				<property name="selectedIndicesList">0</property>
+			</block>
+		</property>
+	</assignments>
+</block>

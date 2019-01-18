@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block contains information about all of the Group Bys in this RWD.
+-->
+<block name="RWGroupBys">
+    <definition>
+      <!-- The title for the GroupBys, typically the word, "GROUPING:" in English locales -->
+      <property name="title" type="String" />
+      <!-- A boolean to show or hide RWGroupBy blocks -->
+      <property name="showGroupby" type="Boolean" />
+      
+      <!-- An ordered list of RWGroupBy Blocks -->
+      <property name="groupbys" type="List" />
+    </definition>
+    <assignments>
+        <property name="title">{desc:mstrWeb.3312}</property>
+    </assignments>
+</block>

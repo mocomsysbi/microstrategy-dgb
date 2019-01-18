@@ -1,0 +1,249 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:bContext defaultContentType="JSON" />
+			<mstrlayout:block name="BlockContainer">
+				<mstrlayout:bSetProperty path="models">
+					<mstrlayout:block name="PropertiesEditorModel">
+						<!-- Request parameters -->
+						<mstrlayout:bSetProperty path="lockedTab" method="getRequestParameterValueEncoded">
+							<mstrlayout:argument type="String" value="lockedTab" />
+							<mstrlayout:argument type="String" value="-1" />
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="selectedIndicesList" method="getRequestParameterValueEncoded">
+							<mstrlayout:argument type="String" value="selectedIndicesList" />
+							<mstrlayout:argument type="String" value="0" />
+						</mstrlayout:bSetProperty>
+						<!-- Color Tab Model -->
+						<mstrlayout:bSetProperty path="items[color]/FillColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/SelectionColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/AllStyle"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/BorderStylesModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/AllColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/LeftStyle"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/BorderStylesModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/LeftColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/TopStyle"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/BorderStylesModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/TopColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/RightStyle"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/BorderStylesModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/RightColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/BottomStyle"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/BorderStylesModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/BottomColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/LineSettingColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[color]/BackgroundHighlightColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[font]/FontHighlightColor"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<!-- Font Tab Model -->
+						<mstrlayout:bSetProperty path="items[font]/font"> 
+							<mstrlayout:block name="ListModel">
+								<mstrlayout:bSetProperty path="valueForm" value="n" />
+								<mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+								<mstrlayout:list id="ffList" method="getPickerList">
+									<mstrlayout:argument type="String" value="fontPicker" />
+									<mstrlayout:bSetProperty path="items">
+										<mstrlayout:block name="ItemInfo">
+											<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="ffList" />
+											</mstrlayout:bSetProperty>
+										</mstrlayout:block>
+									</mstrlayout:bSetProperty>
+								</mstrlayout:list>
+							</mstrlayout:block>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[font]/BoldItalic"> 
+							<mstrlayout:block name="ListModel">
+								<mstrlayout:bSetProperty path="valueForm" value="dssid" />
+								<mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+								<mstrlayout:list id="fsList" method="getPickerList">
+									<mstrlayout:argument type="String" value="stylePicker" />
+									<mstrlayout:bSetProperty path="items">
+										<mstrlayout:block name="ItemInfo">
+											<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fsList" />
+											</mstrlayout:bSetProperty>
+											<mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fsList" />
+												<mstrlayout:argument type="String" value="value::const" />
+											</mstrlayout:bSetProperty>
+										</mstrlayout:block>
+									</mstrlayout:bSetProperty>
+								</mstrlayout:list>
+							</mstrlayout:block>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[font]/fsize"> 
+							<mstrlayout:block name="ListModel">
+								<mstrlayout:bSetProperty path="valueForm" value="n" />
+								<mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+								<mstrlayout:list id="fzList" method="getPickerList">
+									<mstrlayout:argument type="String" value="sizePicker" />
+									<mstrlayout:bSetProperty path="items">
+										<mstrlayout:block name="ItemInfo">
+											<mstrlayout:bSetProperty path="n" method="getListAttribute">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fzList" />
+												<mstrlayout:argument type="String" value="value::const" />
+											</mstrlayout:bSetProperty>
+										</mstrlayout:block>
+									</mstrlayout:bSetProperty>
+								</mstrlayout:list>
+							</mstrlayout:block>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[font]/color"> 
+							<mstrlayout:include file="/WEB-INF/xml/layouts/blocks/ColorPickerModelLayout.xml"/>
+						</mstrlayout:bSetProperty>
+						<!-- Number Tab Model -->
+						<mstrlayout:bSetProperty path="items[number]/Date"> 
+							<mstrlayout:block name="ListModel">
+								<mstrlayout:bSetProperty path="valueForm" value="dssid" />
+								<mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+								<mstrlayout:list id="dateList" method="getPickerList">
+									<mstrlayout:argument type="String" value="datePicker" />
+									<mstrlayout:bSetProperty path="items">
+										<mstrlayout:block name="ItemInfo">
+											<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="dateList" />
+											</mstrlayout:bSetProperty>
+											<mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="dateList" />
+												<mstrlayout:argument type="String" value="value::const" />
+											</mstrlayout:bSetProperty>
+										</mstrlayout:block>
+									</mstrlayout:bSetProperty>
+								</mstrlayout:list>
+							</mstrlayout:block>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[number]/Time"> 
+							<mstrlayout:block name="ListModel">
+								<mstrlayout:bSetProperty path="valueForm" value="dssid" />
+								<mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+								<mstrlayout:list id="timeList" method="getPickerList">
+									<mstrlayout:argument type="String" value="timePicker" />
+									<mstrlayout:bSetProperty path="items">
+										<mstrlayout:block name="ItemInfo">
+											<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="timeList" />
+											</mstrlayout:bSetProperty>
+											<mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="timeList" />
+												<mstrlayout:argument type="String" value="value::const" />
+											</mstrlayout:bSetProperty>
+										</mstrlayout:block>
+									</mstrlayout:bSetProperty>
+								</mstrlayout:list>
+							</mstrlayout:block>
+						</mstrlayout:bSetProperty>
+						<mstrlayout:bSetProperty path="items[number]/Fraction"> 
+							<mstrlayout:block name="ListModel">
+								<mstrlayout:bSetProperty path="valueForm" value="dssid" />
+								<mstrlayout:bSetProperty path="selectedIndicesList" value="0" />
+								<mstrlayout:list id="fractionList" method="getPickerList">
+									<mstrlayout:argument type="String" value="fractionPicker" />
+									<mstrlayout:bSetProperty path="items">
+										<mstrlayout:block name="ItemInfo">
+											<mstrlayout:bSetProperty path="n" method="getShortcutDescriptor">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fractionList" />
+											</mstrlayout:bSetProperty>
+											<mstrlayout:bSetProperty path="dssid" method="getListAttribute">
+												<mstrlayout:argument type="com.microstrategy.web.app.Shortcut" base="fractionList" />
+												<mstrlayout:argument type="String" value="value::const" />
+											</mstrlayout:bSetProperty>
+										</mstrlayout:block>
+									</mstrlayout:bSetProperty>
+								</mstrlayout:list>
+							</mstrlayout:block>
+						</mstrlayout:bSetProperty>
+					</mstrlayout:block>
+				</mstrlayout:bSetProperty>
+				<mstrlayout:bSetProperty path="views">
+					<mstrlayout:block name="PropertiesEditor">
+					  <!-- Help Button -->
+						<mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+						<mstrlayout:bSetProperty path="helpTopic" method="getHelpTopic"/>
+					  <!-- Unit of measurement -->
+					    <!-- General Tab -->
+					      <!-- InitialSlidingInWidth and InitialSlidingInHeight -->
+					        <mstrlayout:bSetProperty path="contentView/children[viewStack]/views[general]/children[PanelStackSection]/children[InitialSliding]/children[InitialSlidingInWidth]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[general]/children[PanelStackSection]/children[InitialSliding]/children[InitialSlidingInHeight]/captionSuffix" method="getMeasurementUnitLabel"/>
+						<!-- Layout Tab -->
+						  <!-- Left and Top -->
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[position]/children[units]/children[left]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[position]/children[units]/children[top]/captionSuffix" method="getMeasurementUnitLabel"/>
+						  <!-- Object Height and Width -->
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[unit]/children[width]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[unit]/children[width]/validator/max" method="convertUnit">
+								<mstrlayout:argument type="String" value="56" />
+							</mstrlayout:bSetProperty>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[unit]/children[height]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[unit]/children[height]/validator/max" method="convertUnit">
+								<mstrlayout:argument type="String" value="56" />
+							</mstrlayout:bSetProperty>
+						  <!-- Section Height and Width -->
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[section]/children[vertical]/children[height]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[section]/children[vertical]/children[height]/validator/max" method="convertUnit">
+								<mstrlayout:argument type="String" value="56" />
+							</mstrlayout:bSetProperty>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[section]/children[vertical]/children[max]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[section]/children[vertical]/children[max]/validator/max" method="convertUnit">
+								<mstrlayout:argument type="String" value="56" />
+							</mstrlayout:bSetProperty>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[section]/children[horizontal]/children[width]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[section]/children[horizontal]/children[width]/validator/max" method="convertUnit">
+								<mstrlayout:argument type="String" value="56" />
+							</mstrlayout:bSetProperty>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[section]/children[horizontal]/children[max]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[section]/children[horizontal]/children[max]/validator/max" method="convertUnit">
+								<mstrlayout:argument type="String" value="56" />
+							</mstrlayout:bSetProperty>
+						  <!-- Line Length -->
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[line]/children[length]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[size]/children[line]/children[length]/validator/max" method="convertUnit">
+								<mstrlayout:argument type="String" value="56" />
+							</mstrlayout:bSetProperty>
+						  <!-- Title Height -->
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[title]/children[height]/captionSuffix" method="getMeasurementUnitLabel"/>
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[title]/children[height]/validator/max" method="convertUnit">
+								<mstrlayout:argument type="String" value="56" />
+							</mstrlayout:bSetProperty>
+							<!-- Graph Export Overflow -->
+							<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[layout]/children[grid]/children[options]/children[graphExportOverflow]/captionSuffix" method="getMeasurementUnitLabel"/>
+						<!-- Alignment Tab -->
+						<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[align]/children[padding]/children[0]/children[horizontal]/children[left]/captionSuffix" method="getMeasurementUnitLabel"/>
+						<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[align]/children[padding]/children[0]/children[horizontal]/children[right]/captionSuffix" method="getMeasurementUnitLabel"/>
+						<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[align]/children[padding]/children[0]/children[vertical]/children[top]/captionSuffix" method="getMeasurementUnitLabel"/>
+						<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[align]/children[padding]/children[0]/children[vertical]/children[bottom]/captionSuffix" method="getMeasurementUnitLabel"/>
+						<!-- Advanced Tab -->
+						<!-- FontFormatter -->
+						<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[font]/children[1]/children[0]/children[0]/children[effects]/visibleField" value="!parent/parent/model/isButton"/>
+						<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[font]/children[1]/children[0]/children[1]/children[color]/visibleField" value="!parent/parent/model/isButton"/>
+						<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[font]/children[1]/children[0]/children[1]/children[preview]/visibleField" value="!parent/parent/model/isButton"/>
+						  <!-- Export spacing -->
+						<mstrlayout:bSetProperty path="contentView/children[viewStack]/views[advanced]/children[advancedExportFS]/children[panelOverflowSpacing]/captionSuffix" method="getMeasurementUnitLabel"/>
+			</mstrlayout:block>
+		</mstrlayout:bSetProperty>
+	</mstrlayout:block>
+</mstrlayout:layout>

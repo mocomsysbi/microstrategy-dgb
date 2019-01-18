@@ -1,0 +1,129 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptToolbarModel" name="ReportViewToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listAction="insert" listElementKey="K1316"
+          listItem="SaveBtn" name="ToolbarButtonModel">
+          <property name="id">tbNew</property>
+          <property name="tooltip">{desc:mstrWeb.1895|New}</property>
+          <property name="cmdid">new</property>
+          <property name="visibleFeatures">new-report</property>
+        </block>
+        <block listAction="insert" listElementKey="K1317"
+          listItem="SaveBtn" name="ToolbarButtonModel">
+          <property name="id">tbConvertToDoc</property>
+          <property name="tooltip">{desc:mstrWeb.2918|Create Document}</property>
+          <property name="cmdid">createDocFromRpt</property>
+          <property name="visibleFeatures">documents-design-mode;is-viewable-report;use-report-access-right</property>
+        </block>
+        <block listAction="insert" listElementKey="createIVEFromRpt" name="ToolbarButtonModel">
+          <property name="id">tbConvertToIVE</property>
+          <property name="tooltip">{desc:mstrWeb.14825|Create Dossier}</property>
+          <property name="cmdid">createIVEFromRpt</property>
+          <property name="visibleFeatures">dhtml;create-analysis;flashvi</property>
+        </block>
+        <block listAction="insert" listElementKey="createHTML5IVEFromRpt" name="ToolbarButtonModel">
+          <property name="id">tbConvertToIVE</property>
+          <property name="tooltip">{desc:mstrWeb.14825|Create Dossier}</property>
+          <property name="cmdid">createHTML5IVEFromRpt</property>
+          <property name="visibleFeatures">dhtml;create-analysis;!flashvi</property>
+        </block>
+        <block listElementKey="K1318" name="BaseBlock"/>
+        <block listElementKey="K1319" name="ToolbarDualStateButtonModel">
+          <property name="id">tbObjectBrowser</property>
+          <property name="tooltip">{desc:mstrWeb.1951|Report Objects}</property>
+          <property name="cmdid">objBrowser</property>
+          <property name="visibleFeatures">is-viewable-report;report-objects-window</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1320" name="ToolbarDualStateButtonModel">
+          <property name="id">tbAllObjects</property>
+          <property name="tooltip">{desc:mstrWeb.1952|All Objects}</property>
+          <property name="cmdid">allObjects</property>
+          <property name="visibleFeatures">not-datamart;object-browser-editor;!is-view-report;modify-report-list</property>
+          <property name="listenerMethods">onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1321" name="ToolbarNotesButton">
+          <property name="visibleFeatures">is-viewable-report;web-is-notes-available</property>
+          <property name="listenerMethods">onstatechange,onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1322" name="ToolbarReportsButton">
+          <property name="listenerMethods">onstatechange,onObjectBrowserTabChange</property>
+        </block>
+        <block listElementKey="K1323" name="BaseBlock"/>
+        <block listElementKey="K1324" name="ToolbarDualStateButtonModel">
+          <property name="id">tbPageBy</property>
+          <property name="tooltip">{desc:mstrWeb.2725|Page-By Axis}</property>
+          <property name="cmdid">pageBy</property>
+          <property name="visibleFeatures">is-viewable-report;show-pageby</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1325" name="ToolbarDualStateButtonModel">
+          <property name="id">tbReportFilter</property>
+          <property name="tooltip">{desc:mstrWeb.1983|Report Filter}</property>
+          <property name="cmdid">reportFilter</property>
+          <property name="visibleFeatures">report-filter;!is-view-report</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1326" name="ToolbarDualStateButtonModel">
+          <property name="id">tbCubeFilter</property>
+          <property name="tooltip">{desc:mstrWeb.4979|Cube Filter}</property>
+          <property name="cmdid">reportFilter</property>
+          <property name="visibleFeatures">report-filter;!is-view-report</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1327" name="ToolbarDualStateButtonModel">
+          <property name="id">tbViewFilter</property>
+          <property name="tooltip">{desc:mstrWeb.1984|View Filter}</property>
+          <property name="cmdid">viewFilter</property>
+          <property name="visibleFeatures">use-view-filter-editor;not-datamart</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1328" name="ToolbarDualStateButtonModel">
+          <property name="id">tbDetails</property>
+          <property name="tooltip">{desc:mstrWeb.1924|Report Details}</property>
+          <property name="cmdid">reportDetails</property>
+          <property name="listenerMethods">onstatechange</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K1329" name="ToolbarDualStateButtonModel">
+          <property name="id">tbPromptDetails</property>
+          <property name="tooltip">{desc:mstrWeb.3950|Prompt Details}</property>
+          <property name="cmdid">promptDetails</property>
+          <property name="visibleFeatures">show-prompt-details;reprompt</property>
+          <property name="listenerMethods">onstatechange</property>
+        </block>
+        <block listElementKey="K1330" name="BaseBlock"/>
+        <block listElementKey="K1331" name="ToolbarDualStateButtonModel">
+          <property name="id">tbPivotButtons</property>
+          <property name="tooltip">{desc:mstrWeb.136|Show Pivot Buttons}</property>
+          <property name="cmdid">togglePivot</property>
+          <property name="visibleFeatures">web-pivot;is-viewable-report</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1332" name="ToolbarDualStateButtonModel">
+          <property name="id">tbSortButtons</property>
+          <property name="tooltip">{desc:mstrWeb.2701|Show Sort Buttons}</property>
+          <property name="cmdid">toggleSort</property>
+          <property name="visibleFeatures">web-sort;is-viewable-report</property>
+          <property name="listenerMethods">ongridselectionschange</property>
+        </block>
+        <block listElementKey="K1333" name="ToolbarDualStateButtonModel">
+          <property name="id">tbGraphZones</property>
+          <property name="tooltip">{desc:mstrWeb.5686|Graph Zones}</property>
+          <property name="cmdid">toggleGraphZones</property>
+          <property name="listenerMethods">ongridselectionschange,onstatechange</property>
+        </block>
+        <block listElementKey="K1334" name="BaseBlock"/>
+        <block listElementKey="K1335" name="ToolbarButtonModel">
+          <property name="id">tbReportOptions</property>
+          <property name="tooltip">{desc:mstrWeb.4968|Report Options...}</property>
+          <property name="cmdid">gridOptions</property>
+          <property name="visibleFeatures">not-datamart;enable-grid-options;is-not-visualization-mode;is-viewable-report</property>
+        </block>
+        <block listElementKey="K1336" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,22 @@
+<map-decorations>
+	<map-style-list name="ajax">
+		<map-style id="4" desc="Desert Theme" desc-id="mstrWeb.10848"  >
+			<json><![CDATA[[ { "featureType": "landscape", "elementType": "geometry", "stylers": [ { "color": "#fcc159" } ] },{ "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#779694" } ] },{ "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [ { "visibility": "on" }, { "weight": 0.5 }, { "color": "#808080" } ] },{ "featureType": "poi", "stylers": [ { "visibility":"off" } ] },{ } ]]]></json>
+		</map-style>
+		<map-style id="5" desc="Blank Theme" desc-id="mstrWeb.10849" >
+			<json><![CDATA[[ { "featureType": "water", "stylers": [ { "color": "#70baab" } ] },{ "featureType": "administrative", "stylers": [ { "visibility": "off" } ] },{ "featureType": "landscape", "stylers": [ { "color":"#f7ebba" }, { "visibility": "on" } ] }]]]></json>
+		</map-style>
+		<map-style id="6" desc="Ice Theme" desc-id="mstrWeb.10850" >
+			<json><![CDATA[[ { "featureType": "landscape", "stylers": [ { "color": "#f9f9f9" } ] },{ "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#86d4fc" } ] },{ } ]]]></json>
+		</map-style>
+		<map-style id="7" desc="Dark Theme" desc-id="mstrWeb.10851" >
+			<json><![CDATA[[ { "featureType": "landscape", "stylers": [ { "color": "#161616" } ] },{ "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [ { "visibility": "on" }, { "color": "#e0e0e0" },{ "weight": 0.3 } ] },{ "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [ { "visibility": "on" }, { "color": "#ffffff" } ] },{ "featureType": "administrative", "elementType":"labels.text.stroke", "stylers": [ { "color": "#808080" }, { "visibility": "on" }, { "weight": 0.3 } ] },{ "featureType": "water", "elementType": "geometry.fill", "stylers": [ { "color": "#3f3f3f" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road", "stylers": [ { "visibility": "off" } ] },{ "featureType": "water", "elementType": "labels.text.stroke", "stylers":[ { "color": "#808080" }, { "visibility": "off" } ] },{ "featureType": "water", "elementType": "labels.text.fill", "stylers": [ { "color": "#808080" } ] },{ } ]]]></json>
+		</map-style>
+		<map-style id="8" desc="Nature Theme" desc-id="mstrWeb.10852"> 
+			<json><![CDATA[[ { "featureType": "water", "elementType": "geometry.fill", "stylers": [ { "color": "#cee29a" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative","elementType": "geometry.stroke", "stylers": [ { "visibility": "on" }, { "weight": 0.4 }, { "color": "#e07e0a" } ] },{ },{ "featureType": "landscape", "stylers": [ { "color": "#7a9b1f" } ] },{ "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [ { "weight": 0.1 }, { "color": "#ffffff" } ] },{ "featureType": "administrative", "elementType": "labels.text.stroke","stylers": [ { "color": "#808080" }, { "weight": 0.2 } ] },{ "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [ { "visibility": "on" }, { "color": "#557205" } ] },{ } ]]]></json>
+		</map-style>
+		<map-style id="9" desc="Arctic Theme" desc-id="mstrWeb.10853"> 
+			<json><![CDATA[[ { "featureType": "water", "elementType": "geometry.fill", "stylers": [ { "color": "#93c6d8" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative","elementType": "geometry.stroke", "stylers": [ { "visibility": "on" }, { "weight": 0.4 }, { "color": "#e07e0a" } ] },{ },{ "featureType": "landscape", "stylers": [ { "color": "#000000" } ] },{ "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [ { "weight": 0.1 }, { "color": "#ffffff" } ] },{ "featureType": "administrative", "elementType": "labels.text.stroke","stylers": [ { "color": "#808080" }, { "weight": 0.2 } ] },{ "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [ { "visibility": "on" }, { "color": "#5f6060" } ] },{ "featureType": "landscape" },{ },{ },{ } ]]]></json>
+		</map-style>
+	</map-style-list>
+</map-decorations>

@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarUndoButton" inherits="ToolbarButtonModel">
+	<assignments>
+	    <property name="id">tbUndo</property>
+	    <property name="tooltip">{desc:mstrWeb.3540|Undo}</property>
+	    <property name="cmdid">undo</property>
+	</assignments>
+</block>

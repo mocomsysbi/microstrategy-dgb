@@ -1,0 +1,19 @@
+<shortcut-list-set name="preferencesToolbar" javascript-file="mstrPickerImpl.js" version="1.0" feature-id="dhtml">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="prefTb" use-container="true" use-default="false">
+    <attributes>
+      <attribute name="class" source="const" type="string" value="mstrToolbarGroup"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Save" desc-id="mstrWeb.118" name="tbSave" type="button" onclick="var form = getObj('PreferenceForm'); if (!form) {return false;} createHiddenInput(form, '25003', 'Apply'); form.submit(); return false;"/>
+    <shortcut append-state="true" desc="Preferences" desc-id="" href="" iframe="false" name="prefs" type="bean" bean-style="PreferencesToolbarStyle"/>
+    <shortcut desc="Close" desc-id="mstrWeb.2102" name="tbClose" type="buttonLabel" enable-feature-id="has-previous-pages">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenHistoryPage">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentRelativePageNumber" value="-1"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

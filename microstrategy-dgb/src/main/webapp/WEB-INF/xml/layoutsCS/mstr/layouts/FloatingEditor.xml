@@ -1,0 +1,44 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	titleBar="return rootTag.firstChild.rows[0]"
+    on_set_visible="mstr.behaviors.FloatingEditor.on_set_visible(view, model, rootTag)">
+    <div class="{@cssPrefix}{@cssClass}Curtain" style="z-index:{@zIndex};">
+	  <table cellspacing="0"
+	         style="{@cssText}"
+	         cellpadding="0"
+	         class="{@cssPrefix}{@cssClass}"
+	         id="{@id}">
+	    <tbody>
+	      <tr class="{@cssPrefix}{@cssClass}Title" onselectstart="return false">
+	        <td>{@title}</td>
+	        <td>
+			  <mstrlayout:wIterate name="titleButtons"
+		                           id="button">
+			  	  <mstrlayout:wRender name="button">
+			      </mstrlayout:wRender>
+			  </mstrlayout:wIterate>
+	        </td>
+	      </tr>
+	      <tr>
+	      	<td colspan="2"><div class="{@cssPrefix}{@cssClass}Message"><div>{@message}</div></div></td>
+	      </tr>
+	      <tr>
+	        <td colspan="2" class="{@cssPrefix}{@cssClass}CellContents">
+	          <mstrlayout:wRender name="contentView">
+	          </mstrlayout:wRender>
+	          <div class="{@cssPrefix}{@cssClass}CellContentsDivider"></div>
+	        </td>
+	      </tr>
+	      <tr>
+	        <td colspan="2" class="{@cssPrefix}{@cssClass}CellButtonBar">
+			  <mstrlayout:wIterate name="cmdButtons"
+		                           id="button">
+			  	  <mstrlayout:wRender name="button">
+			      </mstrlayout:wRender>
+			  </mstrlayout:wIterate>
+	        </td>
+	      </tr>
+	    </tbody>
+	  </table>
+	  <div class="mstrCurtain"></div>
+	</div>
+</mstrlayout:layout>

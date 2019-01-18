@@ -1,0 +1,8 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MojoRWEventsTask">
+    <basicInfo desc="This task pivots an RWD Grid and serializes the partial results.">
+        <parameter name="params" desc="The Message ID of a previously executed Report Writer Document." required="true" />
+    </basicInfo>    
+
+    <beanInfo name="rwb" bean-type="RWBean"/>
+</beanTask>

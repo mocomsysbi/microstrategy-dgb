@@ -1,0 +1,114 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents a runtime instance of a Report Writer document.
+--> 
+<block name="RWInstance">
+    <definition>
+        <!-- The RW Bean State -->
+        <property name="bs" type="String" />
+
+		<!-- The RW Bean Message ID -->
+		<property name="mid" type="String" />
+		
+		<!-- The RW Bean Message State ID -->
+        <property name="stid" type="Integer" />
+		
+		<!-- The RW Bean path -->
+		<property name="bp" type="String" />
+		
+		<!--  The ID of the document object -->
+		<property name="oid" type="String"/>
+		
+		<!-- The name of the RWD -->
+		<property name="n" type="String" />		
+		
+		<!-- The RWD description -->
+		<property name="dsc" type="String" />
+		
+        <!--  The DSS ID of the parent folder. -->
+        <property name="pfid" type="String" />
+        
+        <!-- If the parent folder is a system folder, this is the named folder ID -->
+        <property name="sysFolder" type="Integer"/>
+        
+        <!-- Whether the parent folder is hidden -->
+        <property name="pfh" type="Boolean"/>        
+        
+        <!-- The ID of the folder to save to. -->
+        <property name="sfid" type="String" /> 
+		
+		<!-- The DPI resolution for this document -->
+		<property name="dpi" type="Integer" />
+    	
+    	<!-- ZoomType: 0=Static; 1=Fit Width; 2=Fit Page -->
+		<property name="zt" type="Integer"/>
+		        
+        <!-- An instance of a RWDefinition Block -->
+        <property name="defn" type="Block" />
+        
+        <!-- An instance of a RWData Block. This would not be accessible
+             if we were trying to use this block in Design mode. -->
+        <property name="data" type="Block" />
+        
+        <!-- This is the key of the current layout. -->
+        <property name="currlaykey" type="String" />
+        
+        <!-- A block containing the values for the "Export Options" dialog. -->
+        <property name="exopt" type="Block" />
+        
+        <!-- A boolean to indicate that the document is dirty (has changed since it was saved). -->
+        <property name="dty" type="Boolean" />
+        
+        <!-- A boolean to indicate whether the document is new created -->
+        <property name="isnew" type="Boolean" />
+        
+        <!-- A block include -->                
+        <property name="prefs" type="Block" />   
+        
+        <!-- If the document contains UC selectors -->
+        <property name="huc" type="Boolean" />
+        
+        <!-- The partial update units keys which are joined with ITEM_SEPARATOR -->
+        <property name="pukeys" type="String" />
+
+        <!-- The water mark information of the document, WaterMark block -->
+        <property name="wm" type="Block"/>
+        
+        <!-- Indicates if the document should be displayed in "Full Screen Mode". -->
+        <property name="fs" type="Boolean" />
+        
+        <!-- The position of the layout selector (0 = top, 1 = bottom) -->
+        <property name="tsp" type="Integer" />
+        
+        <!-- The style of the layout selector (0 = tabs, 1 = swipe) -->
+        <property name="tss" type="Integer" />
+
+        <!-- Apply group bys to all layouts (0 = default (2.1.1m) behavior, 1 = apply only to a single layout, 2 = apply to all layouts) -->
+        <property name="agb" type="Integer"/>     
+        
+        <!-- Document Refresh interval (-1 = no fresh) -->
+        <property name="rf" type="Integer"/>
+        
+		<!-- Indicate whether the dialog before save should be shown -->
+        <property name="showDialogBeforeSave" type="Boolean"/>    
+        
+		<!-- A boolean to indicate whether the document is readonly -->
+        <property name="isRWReadonly" type="Boolean" />    
+        
+        <!-- Alignment configuration for Button -->
+        <property name="btncfg" type="List" />
+        
+        <!-- The ID seed for newly created units. -->
+        <property name="seed" type="Integer" />
+        
+        <!-- Flag that tells us is the delta xml was applied fully to the personal view. //US72098-->
+        <property name="isPVPartialExecution" type="Boolean" />
+
+        <!-- The current Place Holder Index //DE51901 -->
+        <property name="phIndex" type="Integer" />
+        
+        <!-- Flag to indicate if the instance contains prompts, answered or not -->
+        <property name="hasPrompted" type="Integer" />
+    </definition>
+</block>
+       

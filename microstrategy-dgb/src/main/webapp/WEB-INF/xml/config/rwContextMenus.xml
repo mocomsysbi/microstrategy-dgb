@@ -1,0 +1,309 @@
+<shortcut-list-set name="rwContextMenus" version="1.0">
+  <shortcut-list name="default"/>
+  <shortcut-list name="rw_context_menu">
+
+    <shortcut name="drillRWD" desc="[Drill]" desc-id="mstrWeb.145" base-bone="rwb_viewer" feature-id="check-execute-mode" dhtml-show="commands.queryEnabled('showDrillSubmenu');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.RWDrill"/>
+    <shortcut name="hlNavText" desc="[Links]" desc-id="mstrWeb.5752" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('links');" feature-id="web-drill-and-link" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.TextHyperLinkNavigation">
+      <properties>
+        <property name="supportedTypes" value="obj.106,obj.102"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="drillSeperator" desc="-"/>
+
+    <shortcut name="cut" desc="[Cut]" desc-id="mstrWeb.3554" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('cut')" dhtml-show="commands.queryEnabled('cutq');"/>
+    <shortcut name="copy" desc="[Copy]" desc-id="mstrWeb.3555" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('copy')" dhtml-show="commands.queryEnabled('copyq');"/>
+
+    <shortcut name="paste" desc="[Paste]" desc-id="mstrWeb.3556" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('paste')" dhtml-show="commands.queryEnabled('paste');"/>
+
+    <shortcut name="pasteFormat" desc="[Paste format]" desc-id="mstrWeb.3557" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('pasteFormat')" dhtml-show="commands.queryEnabled('pasteFormat');">
+      <properties>
+        <property name="supportedTypes" value="obj.8,obj.106,obj.107,obj.102,obj.105,obj.101"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="s1" desc="-"/>
+
+    <shortcut name="duplicate" desc="[Duplicate]" desc-id="mstrWeb.3558" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('duplicate')" dhtml-show="commands.queryEnabled('copyq');"/>
+
+    <shortcut name="delete" desc="[Delete]" desc-id="mstrWeb.3559" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('delete')" dhtml-show="commands.queryEnabled('deleteq');"/>
+
+    <shortcut name="s2" desc="-"/>
+
+    <shortcut name="functionBuilder" desc="[Insert Function]" desc-id="mstrWeb.4562" feature-id="documents-design-mode;!rw-interactive-view-mode;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('showFunctionBuilder')" dhtml-enabled="commands.queryEnabled('showInsertFunction');" dhtml-show="commands.queryEnabled('insertFunctionVisible')">
+      <properties>
+        <property name="supportedTypes" value="obj.106"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="s3" desc="-"/>
+
+    <shortcut name="autoSizeImg" desc="[Restore Default Size]" desc-id="mstrWeb.3560" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('autoSizeImg')" dhtml-enabled="commands.queryEnabled('imgready');">
+      <properties>
+        <property name="supportedTypes" value="obj.102"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="s4" desc="-"/>
+
+    <shortcut name="align" desc="[Align]" desc-id="mstrWeb.3498" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('alignGrid')">
+      <shortcut name="alignLeft" desc="[Align Left]" desc-id="mstrWeb.3499" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'AlignLeft')" dhtml-show="commands.queryEnabled('AlignLeft')"/>
+
+      <shortcut name="alignCenter" desc="[Align Center]" desc-id="mstrWeb.3500" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'AlignCenter')" dhtml-show="commands.queryEnabled('AlignCenter')"/>
+
+      <shortcut name="alignRight" desc="[Align Right]" desc-id="mstrWeb.3501" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'AlignRight')" dhtml-show="commands.queryEnabled('AlignRight')"/>
+
+      <shortcut name="alignTop" desc="[Align Top]" desc-id="mstrWeb.3502" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'AlignTop')" dhtml-show="commands.queryEnabled('AlignTop')"/>
+
+      <shortcut name="alignMiddle" desc="[Align Middle]" desc-id="mstrWeb.3503" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'AlignMiddle')" dhtml-show="commands.queryEnabled('AlignMiddle')"/>
+
+      <shortcut name="alignBottom" desc="[Align Bottom]" desc-id="mstrWeb.3504" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'AlignBottom')" dhtml-show="commands.queryEnabled('AlignBottom')"/>
+
+      <shortcut name="alignToGrid" desc="[Align To Grid]" desc-id="mstrWeb.3505" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'AlignToGrid')" dhtml-show="commands.queryEnabled('alignGrid')"/>
+
+      <shortcut name="s4a" desc="-"/>
+
+      <shortcut name="distHoriz" desc="[Distribute Horizontally]" desc-id="mstrWeb.3506" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'DistHoriz')" dhtml-show="commands.queryEnabled('DistHoriz')"/>
+
+      <shortcut name="distVert" desc="[Distribute Vertically]" desc-id="mstrWeb.3507" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objalign', 'DistVert')" dhtml-show="commands.queryEnabled('DistVert')"/>
+    </shortcut>
+
+    <shortcut name="size" desc="[Size]" desc-id="mstrWeb.3508" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('sizeToGrid')">
+      <shortcut name="sizeToGrid" desc="[To Grid]" desc-id="mstrWeb.3509" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objsize', 'Grid')" dhtml-show="commands.queryEnabled('sizeToGrid')"/>
+
+      <shortcut name="toTallest" desc="[To Tallest]" desc-id="mstrWeb.3510" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objsize', 'Tallest')" dhtml-show="commands.queryEnabled('toTallest')"/>
+
+      <shortcut name="toShortest" desc="[To Shortest]" desc-id="mstrWeb.3511" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objsize', 'Shortest')" dhtml-show="commands.queryEnabled('toShortest')"/>
+
+      <shortcut name="toNarrowest" desc="[To Narrowest]" desc-id="mstrWeb.3512" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objsize', 'Narrowest')" dhtml-show="commands.queryEnabled('toNarrowest')"/>
+
+      <shortcut name="toWidest" desc="[To Widest]" desc-id="mstrWeb.3513" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('objsize', 'Widest')" dhtml-show="commands.queryEnabled('toWidest')"/>
+    </shortcut>
+
+    <shortcut name="order" desc="[Order]" desc-id="mstrWeb.3095" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('showOrderCtxMenu')">
+      <shortcut name="sendToBack" desc="[Send to Back]" desc-id="mstrWeb.3099" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('sendTo', 'back')"/>
+
+      <shortcut name="sendToFront" desc="[Bring to Front]" desc-id="mstrWeb.3100" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('sendTo', 'front')"/>
+
+      <shortcut name="sendToOneBack" desc="[Send Backward]" desc-id="mstrWeb.3101" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('sendTo', 'oneBack')"/>
+
+      <shortcut name="sendToOneFront" desc="[Bring Forward]" desc-id="mstrWeb.3102" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('sendTo', 'oneFront')"/>
+    </shortcut>
+
+    <shortcut name="s5" desc="-"/>
+
+    <shortcut name="setDefaults" desc="[Set Control Default]" desc-id="mstrWeb.3097" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('setDefaults')" dhtml-show="commands.queryEnabled('setCtrlDft');">
+      <properties>
+        <property name="supportedTypes" value="obj.106,obj.107,obj.102,obj.105,obj.101,obj.52,obj.8,obj.111"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="applyDefaults" desc="[Apply Control Defaults]" desc-id="mstrWeb.3098" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('applyDefaults')" dhtml-show="commands.queryEnabled('applyCtrlDft');" dhtml-enabled="!microstrategy.bone('rwb_viewer').commands.queryState('appliedThemeAsLink')">
+      <properties>
+        <property name="supportedTypes" value="obj.106,obj.107,obj.102,obj.105,obj.101,obj.52,obj.8,obj.111"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="unlinkDefaults" desc="[Unlink Defaults from Theme]" desc-id="mstrWeb.14572" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="microstrategy.getViewerBone().doc.commands.exec('unlinkTheme')" dhtml-enabled="commands.queryState('appliedThemeAsLink')"/>
+
+    <shortcut name="s5_1" desc="-"/>
+
+    <shortcut name="viewMode" desc="[View Mode]" desc-id="mstrWeb.3564" feature-id="menu-grid-mode">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+      <shortcut name="gridMode" desc="[Grid View]" desc-id="mstrWeb.3561" feature-id="menu-grid-mode" base-bone="rwb_viewer" onclick="commands.exec('gridMode')" dhtml-enabled="commands.queryEnabled('gridMode');" dhtml-checked="commands.queryState('gridMode')"/>
+
+      <shortcut name="graphMode" desc="[Graph View]" desc-id="mstrWeb.3562" feature-id="menu-grid-mode" base-bone="rwb_viewer" onclick="commands.exec('graphMode')" dhtml-enabled="commands.queryEnabled('graphMode');" dhtml-checked="commands.queryState('graphMode')"/>
+
+      <shortcut name="gridGraphMode" desc="[Grid and Graph View]" desc-id="mstrWeb.3563" feature-id="menu-grid-mode" base-bone="rwb_viewer" onclick="commands.exec('gridGraphMode')" dhtml-enabled="commands.queryEnabled('gridGraphMode');" dhtml-checked="commands.queryState('gridGraphMode')"/>
+
+      <shortcut name="flashMode" desc="[Widget]" desc-id="mstrWeb.4921" feature-id="visualizations-supported;visualizations-available-for-rw-grids" base-bone="rwb_viewer" onclick="commands.exec('visFlashMode')" dhtml-checked="commands.queryState('visFlashMode')" dhtml-show="commands.queryVisible('visFlashMode');"/>
+
+      <shortcut name="ajaxMode" desc="[AJAX]" desc-id="mstrWeb.5676" feature-id="visualizations-supported;visualizations-available-for-rw-grids" base-bone="rwb_viewer" onclick="commands.exec('visAjaxMode')" dhtml-checked="commands.queryState('visAjaxMode')" dhtml-show="commands.queryVisible('visAjaxMode');"/>
+
+    </shortcut>
+
+
+    <shortcut name="s6" desc="-"/>
+
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Swap Rows and Columns]" desc-id="mstrWeb.3480" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;swapAxes&apos;)" feature-id="dhtml;web-pivot;frame-element-enabled;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data8" onclick="microstrategy.getViewerBone().commands.exec(&apos;swapAxes&apos;);">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="sortGrid" desc="[Sort Grid...]" desc-id="mstrWeb.3200" base-bone="rwb_viewer" dhtml-enabled="commands.queryEnabled('edtSortGrid')" dhtml-show="commands.queryEnabled('isNotLinkedGrid')" feature-id="web-sort;check-execute-mode;frame-element-enabled;dhtml;rw-interactive-view-mode-eplus" onclick="commands.exec('edtSortGrid');">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="showSubtotals" base-bone="rwb_viewer" desc="[Show Totals]" desc-id="mstrWeb.6193" dhtml-enabled="commands.queryEnabled('comboToggleButton')" dhtml-checked="commands.queryState('comboToggleButton')" feature-id="dhtml;show-totals;show-subtotals" onclick="commands.exec('comboToggleButton');">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="editTotals" base-bone="rwb_viewer" desc="[Edit Totals...]" desc-id="mstrWeb.3310" dhtml-show="commands.queryEnabled('edtSubtotals')" feature-id="frame-element-enabled;dhtml;show-totals" onclick="commands.exec('edtSubtotals');">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+
+    <shortcut name="viewFilter" desc="Edit View Filter..." desc-id="mstrWeb.3938" feature-id="use-view-filter-editor" base-bone="rwb_viewer" onclick="commands.exec('vfeRWGrid')" dhtml-show="commands.queryEnabled('vfeRWGrid');">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="viewFilterNonEditable" desc="View Filter..." desc-id="mstrWeb.3939" feature-id="!use-view-filter-editor" base-bone="rwb_viewer" onclick="commands.exec('vfeRWGrid')" dhtml-show="commands.queryEnabled('vfeRWView');">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="hideNullsOrZeros" desc="[Hide Nulls/Zeros]" desc-id="mstrWeb.9847" base-bone="rwb_viewer" feature-id="rw-editable-view-mode-eplus" onclick="commands.exec('toggleHideNullsOrZeros');" dhtml-checked="commands.queryState('toggleHideNullsOrZeros');" dhtml-show="commands.queryEnabled('toggleHideNullsOrZeros');">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="s7" desc="-"/>
+
+    <shortcut name="condFormat" desc="[Conditional Formatting]" desc-id="mstrWeb.3789" feature-id="use-basoradv-threshold-editor" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('openBasicConditionalFormatting');">
+      <shortcut name="sCondFormat" desc="[Visual...]" desc-id="mstrWeb.5995" feature-id="use-basic-threshold-editor" base-bone="rwb_viewer" onclick="commands.exec('openBasicConditionalFormatting')"/>
+
+      <shortcut name="aCondFormat" desc="[Advanced...]" desc-id="mstrWeb.4606" feature-id="use-advanced-threshold-editor" base-bone="rwb_viewer" onclick="commands.exec('openAdvConditionalFormatting')"/>
+    </shortcut>
+
+    <shortcut name="thresholdEditors" desc="[Thresholds]" desc-id="mstrWeb.3647" feature-id="use-basoradv-threshold-editor" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('openSimpleThresholdEditor');">
+      <shortcut name="simpleThresholdEditor" desc="[Visual...]" desc-id="mstrWeb.5995" feature-id="use-basic-threshold-editor" base-bone="rwb_viewer" onclick="commands.exec('openSimpleThresholdEditor')"/>
+
+      <shortcut name="advThresholdEditor" desc="[Advanced...]" desc-id="mstrWeb.4606" feature-id="use-advanced-threshold-editor" base-bone="rwb_viewer" onclick="commands.exec('openAdvThresholdEditor')"/>
+    </shortcut>
+
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Insert New Metric...]" desc-id="mstrWeb.2212" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtDMetric&apos;)" feature-id="frame-element-enabled;dhtml;insert-new-metric;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data3" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtDMetric&apos;);">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut append-state="true" base-bean="rwframe.rwb" base-bone="rwb_viewer" desc="[Rename...]" desc-id="mstrWeb.2453" dhtml-enabled="microstrategy.getViewerBone().commands.queryEnabled(&apos;edtRename&apos;)" feature-id="frame-element-enabled;dhtml;rename-edit-object;rw-interactive-view-mode-eplus" href="#" iframe="false" name="data4" onclick="microstrategy.getViewerBone().commands.exec(&apos;edtRename&apos;);">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="resizeColRows" base-bone="rwb_viewer" desc="[Resize Columns and Rows]" desc-id="mstrWeb.2591" dhtml-show="commands.queryEnabled('edtResize')" feature-id="grid-layout;check-execute-mode;frame-element-enabled;dhtml;" onclick="commands.exec('edtResize');">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="selectTargets" desc="[Select Targets]" desc-id="mstrWeb.4799" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('isNotLinkedGridOrNoGrid') &amp;&amp; !microstrategy.bone('rwb_viewer').commands.queryState('isDSAsTarget')" onclick="commands.exec('sct')">
+      <properties>
+        <property name="supportedTypes" value="obj.111"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="createSelector" desc="[Create Panel Selector]" desc-id="mstrWeb.4796" feature-id="documents-design-mode;rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" dhtml-show="commands.queryVisible('showCreatePanelSelector')" onclick="commands.exec('cps')">
+      <properties>
+        <property name="supportedTypes" value="obj.8"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="s8" desc="-" feature-id="rw-editable-view-mode-eplus;"/>
+
+    <shortcut name="graphFormat" desc="[Format Graph...]" desc-id="mstrWeb.3570" feature-id="show-graph-format-editor" base-bone="rwb_viewer" onclick="commands.exec('openGraphFormatter')" dhtml-show="commands.queryEnabled('openGraphFormatter');">
+      <properties>
+        <property name="supportedTypes" value="obj.52"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="format" desc="[Properties and Formatting...]"  desc-id="mstrWeb.5356" feature-id="!rw-interactive-view-mode-full-screen-reporter" base-bone="rwb_viewer" dhtml-show="commands.queryVisible('showPropertiesAndFormatting')" onclick="commands.exec('edtProps')"/>
+
+    <!-- <shortcut name="applyTheme" desc="[Apply Theme...]"  desc-id="" feature-id="!rw-interactive-view-mode-full-screen-reporter" base-bone="rwb_viewer" dhtml-show="commands.queryVisible('showApplyThemeOnNode')" onclick="commands.exec('applyThemeOnNode')"/> -->
+
+    <shortcut name="configTransaction" desc="[Configure Transaction...]" desc-id="mstrWeb.8240" feature-id="rw-editable-view-mode-eplus;configure-transactions;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('transactionEdit')" dhtml-show="commands.queryEnabled('transactionEdit')"/>
+
+    <shortcut name="condTransaction" desc="[Transaction Conditions...]" desc-id="mstrWeb.13215" feature-id="rw-editable-view-mode-eplus;configure-transactions;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('transactionCondition')" dhtml-show="commands.queryEnabled('transactionCondition')"/>
+
+    <shortcut name="hprLink" desc="Edit Links..." desc-id="mstrWeb.6191" feature-id="rw-editable-view-mode-eplus;design-mode;web-edit-drilling-and-links" base-bone="rwb_viewer" onclick="commands.exec('WebHyperLinkEditor')" dhtml-show="commands.queryEnabled('showWebHyperLinkEditor')">
+      <properties>
+        <property name="supportedTypes" value="obj.106,obj.102"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="filterFormatting" desc="*Report Details Properties...*" desc-id="mstrWeb.5635" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('FilterDetailsProperties')" dhtml-enabled="commands.queryEnabled('FilterDetailsProperties');" dhtml-show="commands.queryEnabled('ShowFilterDetailsProperties');">
+      <properties>
+        <property name="supportedTypes" value="obj.106"/>
+      </properties>
+    </shortcut>
+
+    <shortcut name="addButton" desc="*Add Button*" desc-id="mstrWeb.9889" feature-id="documents-design-mode;rw-editable-view-mode-eplus;" dhtml-show="commands.query" base-bone="rwb_viewer" onclick="commands.exec('addButtonToNavBar')">
+      <properties>
+        <property name="supportedTypes" value="obj.8"/>
+      </properties>
+    </shortcut>
+
+  </shortcut-list>
+
+  <shortcut-list name="rw_subsection_menu" feature-id="rw-editable-view-mode-eplus">
+    <shortcut name="sectionAbove" desc="[Insert section above]" desc-id="mstrWeb.2920" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('mngSections', 'above')" dhtml-show="commands.queryEnabled('mngSections');"/>
+
+    <shortcut name="sectionLeft" desc="[Insert section left]" desc-id="mstrWeb.3998" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('mngSections', 'left')" dhtml-show="commands.queryEnabled('mngHorizontalSections');"/>
+
+    <shortcut name="sectionBelow" desc="[Insert section below]" desc-id="mstrWeb.2921" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('mngSections', 'below')" dhtml-show="commands.queryEnabled('mngSections');"/>
+
+    <shortcut name="sectionRight" desc="[Insert section right]" desc-id="mstrWeb.3999" feature-id="documents-design-mode" base-bone="rwb_viewer" onclick="commands.exec('mngSections', 'right')" dhtml-show="commands.queryEnabled('mngHorizontalSections');"/>
+
+    <shortcut name="s1" desc="-"/>
+
+    <shortcut name="paste" desc="[Paste]" desc-id="mstrWeb.3556" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('paste')" dhtml-show="commands.queryEnabled('paste');"/>
+
+    <shortcut name="s2" desc="-"/>
+
+    <shortcut name="sectionDelete" desc="[Delete section]" desc-id="mstrWeb.3217" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('mngSections', 'delete')" dhtml-show="commands.queryEnabled('deleteSubsection');"/>
+
+    <shortcut name="s3" desc="-"/>
+
+    <shortcut name="setDefaults" desc="[Set Control Default]" desc-id="mstrWeb.3097" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('setDefaults')" dhtml-show="commands.queryEnabled('setCtrlDft');"/>
+
+    <shortcut name="applyDefaults" desc="[Apply Control Defaults]" desc-id="mstrWeb.3098" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('applyDefaults')" dhtml-show="commands.queryEnabled('applyCtrlDft')" dhtml-enabled="commands.queryState('appliedThemeAsLink')"/>
+
+    <shortcut name="condFormat" desc="[Conditional Formatting]" desc-id="mstrWeb.3789" feature-id="use-basoradv-threshold-editor" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('openBasicConditionalFormatting');">
+      <shortcut name="sCondFormat" desc="[Visual...]" desc-id="mstrWeb.5995" feature-id="use-basic-threshold-editor" base-bone="rwb_viewer" onclick="commands.exec('openBasicConditionalFormatting')"/>
+
+      <shortcut name="aCondFormat" desc="[Advanced...]" desc-id="mstrWeb.4606" feature-id="use-advanced-threshold-editor" base-bone="rwb_viewer" onclick="commands.exec('openAdvConditionalFormatting')"/>
+    </shortcut>
+
+    <shortcut name="condFormatHidSec" desc="[Conditional Formatting]" desc-id="mstrWeb.3789" feature-id="use-basoradv-threshold-editor" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('openConditionalFormattingForHiddenSections');">
+      <shortcut name="sCondFormatHidSec" desc="[Visual...]" desc-id="mstrWeb.5995" feature-id="use-basic-threshold-editor" base-bone="rwb_viewer" onclick="commands.exec('openBasicCondtFmtForHiddenSec')"/>
+
+      <shortcut name="aCondFormatHidSec" desc="[Advanced...]" desc-id="mstrWeb.4606" feature-id="use-advanced-threshold-editor" base-bone="rwb_viewer" onclick="commands.exec('openAdvCondtFmtForHiddenSec')"/>
+
+    </shortcut>
+
+    <shortcut name="s4" desc="-"/>
+
+    <shortcut name="rulers" desc="[Ruler]" desc-id="mstrWeb.3566" feature-id="rw-editable-view-mode-eplus" base-bone="rwb_viewer" onclick="commands.exec('rulers')" dhtml-checked="rulerOn" dhtml-show="microstrategy.DISPLAY_MODE == microstrategy.DESIGN_MODE &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryEnabled('ssRuler')"/>
+
+    <shortcut name="toggleGroupBy" desc="[Grouping]" desc-id="mstrWeb.3567" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('toggleGroupBy')" dhtml-checked="commands.queryState('groupBy')"/>
+
+    <shortcut name="s5" desc="-"/>
+
+    <shortcut name="properties" desc="[Properties and Formatting...]" desc-id="mstrWeb.5356" feature-id="rw-editable-view-mode-eplus;not-navigation-document" base-bone="rwb_viewer" onclick="commands.exec('edtProps')"/>
+
+    <!-- <shortcut name="applyTheme" desc="[Apply Theme...]"  desc-id=""  feature-id="rw-editable-view-mode-eplus;not-navigation-document"  base-bone="rwb_viewer" dhtml-show="commands.queryVisible('showApplyThemeOnNode')" onclick="commands.exec('applyThemeOnNode')"/> -->
+
+    <shortcut name="configTransaction" desc="[Configure Transaction...]" desc-id="mstrWeb.8240" feature-id="rw-editable-view-mode-eplus;configure-transactions" base-bone="rwb_viewer" onclick="commands.exec('transactionEdit')" dhtml-show="commands.queryEnabled('transactionEdit')"/>
+
+    <shortcut name="groupProperties" desc="[Grouping Properties...]" desc-id="mstrWeb.2942" feature-id="documents-design-mode;not-navigation-document" base-bone="rwb_viewer" dhtml-show="commands.queryEnabled('groupProp')" onclick="commands.exec('groupProp')"/>
+
+  </shortcut-list>
+  <shortcut-list config-src="/WEB-INF/xml/config/rwInsertMenu.xml" name="rw_insert_menu"/>
+  <shortcut-list config-src="/WEB-INF/xml/config/gridLocalDataMenu.xml" name="gridLocalDataMenu"/>
+  <shortcut-list config-src="/WEB-INF/xml/config/controlLocalDataMenu.xml" name="controlLocalDataMenu"/>
+</shortcut-list-set>

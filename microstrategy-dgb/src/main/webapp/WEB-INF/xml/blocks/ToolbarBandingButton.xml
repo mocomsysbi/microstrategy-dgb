@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarBandingButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbBanding</property>
+		<property name="tooltip">{desc:mstrWeb.3646|Banding}</property>
+		<property name="cmdid">tbanding</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

@@ -1,0 +1,152 @@
+<shortcut-list name="graphTypes" version="1.0">
+    <shortcut desc="[Vertical area]" desc-id="mstrWeb.338" name="pkrGraph1" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="1"/>
+            <attribute name="class" value="tbGraph1"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Horizontal area]" desc-id="mstrWeb.339" name="pkrGraph2" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="2"/>
+            <attribute name="class" value="tbGraph2"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Vertical bar]" desc-id="mstrWeb.340" name="pkrGraph4" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="4"/>
+            <attribute name="class" value="tbGraph4"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Horizontal bar]" desc-id="mstrWeb.341" name="pkrGraph8" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="8"/>
+            <attribute name="class" value="tbGraph8"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Vertical line]" desc-id="mstrWeb.342" name="pkrGraph16" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="16"/>
+            <attribute name="class" value="tbGraph16"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Horizontal line]" desc-id="mstrWeb.343" name="pkrGraph32" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="32"/>
+            <attribute name="class" value="tbGraph32"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Pie]" desc-id="mstrWeb.344" name="pkrGraph64" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="64"/>
+            <attribute name="class" value="tbGraph64"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Scatter]" desc-id="mstrWeb.345" name="pkrGraph128" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="128"/>
+            <attribute name="class" value="tbGraph128"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Polar]" desc-id="mstrWeb.346" name="pkrGraph256" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="256"/>
+            <attribute name="class" value="tbGraph256"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Radar]" desc-id="mstrWeb.347" name="pkrGraph512" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="512"/>
+            <attribute name="class" value="tbGraph512"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Bubble]" desc-id="mstrWeb.348" name="pkrGraph1024" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="1024"/>
+            <attribute name="class" value="tbGraph1024"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[HiLo... Stock]" desc-id="mstrWeb.349" name="pkrGraph2048" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="2048"/>
+            <attribute name="class" value="tbGraph2048"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Histogram]" desc-id="mstrWeb.350" name="pkrGraph4096" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="4096"/>
+            <attribute name="class" value="tbGraph4096"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[3D risers]" desc-id="mstrWeb.351" name="pkrGraph8192" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="8192"/>
+            <attribute name="class" value="tbGraph8192"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[3D floating]" desc-id="mstrWeb.352" name="pkrGraph16384" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="16384"/>
+            <attribute name="class" value="tbGraph16384"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[3D connect group]" desc-id="mstrWeb.353" name="pkrGraph32768" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="32768"/>
+            <attribute name="class" value="tbGraph32768"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[3D connect series]" desc-id="mstrWeb.354" name="pkrGraph65536" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="65536"/>
+            <attribute name="class" value="tbGraph65536"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[3D surface]" desc-id="mstrWeb.355" name="pkrGraph131072" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="131072"/>
+            <attribute name="class" value="tbGraph131072"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[3D scatter]" desc-id="mstrWeb.356" name="pkrGraph262144" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="262144"/>
+            <attribute name="class" value="tbGraph262144"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Guage]" desc-id="mstrWeb.3153" name="pkrGraph524288" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="524288"/>
+            <attribute name="class" value="tbGraph524288"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Funnel]" desc-id="mstrWeb.3154" name="pkrGraph1048576" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="1048576"/>
+            <attribute name="class" value="tbGraph1048576"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Pareto]" desc-id="mstrWeb.3155" name="pkrGraph2097152" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="2097152"/>
+            <attribute name="class" value="tbGraph2097152"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Box Plot]" desc-id="mstrWeb.3156" name="pkrGraph4194304" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="4194304"/>
+            <attribute name="class" value="tbGraph4194304"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Gantt]" desc-id="mstrWeb.3533" name="pkrGraph8388608" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="8388608"/>
+            <attribute name="class" value="tbGraph8388608"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Combination]" desc-id="mstrWeb.5576" name="pkrGraph16777216" type="pickeroption">
+        <attributes>
+            <attribute name="value" value="16777216"/>
+            <attribute name="class" value="tbGraph16777216"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

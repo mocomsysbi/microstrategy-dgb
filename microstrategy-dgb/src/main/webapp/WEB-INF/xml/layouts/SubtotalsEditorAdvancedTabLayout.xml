@@ -1,0 +1,57 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <fieldset class="advancedSubtotalSec">
+        <legend class="titleOption"><mstrlayout:render name="advancedTotalsDropDown"></mstrlayout:render></legend>
+        <table class="advancedSubtotal">
+            <tr>
+                <td rowspan="3" class="selectRadio"><mstrlayout:render name="advancedByPositionRadioButton"></mstrlayout:render></td>
+                <td>                    
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="string" value="mstrWeb.4072"/><!-- Rows: -->
+                    </mstrlayout:render>
+                </td>
+                <td><mstrlayout:render name="advancedByPositionRowsDropDown"></mstrlayout:render></td>                
+            </tr>
+            <tr>
+                <td>
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="string" value="mstrWeb.4073"/><!-- Columns: -->
+                    </mstrlayout:render>
+                </td>
+                <td><mstrlayout:render name="advancedByPositionColumnsDropDown"></mstrlayout:render></td>
+            </tr> 
+            <tr>         
+                <td>
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="string" value="mstrWeb.4074"/><!-- Pages -->
+                    </mstrlayout:render>
+                </td>
+                <td><mstrlayout:render name="advancedByPositionPagesDropDown"></mstrlayout:render></td>                                                                
+            </tr>            
+            <tr>                
+                <td rowspan="2" class="selectRadio"><mstrlayout:render name="advancedAcrossLevelRadioButton"></mstrlayout:render></td>
+                <td colspan="2">
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="string" value="mstrWeb.4075"/><!-- Select Levels: -->
+                    </mstrlayout:render>                    
+                </td>                
+            </tr>
+            <tr>
+                <td class="selectedUnits" colspan="2">
+                   <mstrlayout:list id="unit" name="getSubtotalUnits">
+                        <div>
+                                <mstrlayout:render name="advancedSelectedLevelsUnits">
+                                    <mstrlayout:argument type="com.microstrategy.web.objects.WebObjectInfo" list="unit"/>                                    
+                                </mstrlayout:render>
+                        </div>
+                   </mstrlayout:list>    
+                </td>
+            </tr>            
+        </table>
+        <div id="undefinedAdvancedTab" class="undefinedSec">
+            <mstrlayout:render name="descriptor">
+                <mstrlayout:argument type="string" value="mstrWeb.4076"/><!--Subtotals defined in this report cannot be represented in Web. Defining subtotals using the above options will override them.* -->
+            </mstrlayout:render>                                
+       </div>
+    </fieldset>
+</mstrlayout:layout>

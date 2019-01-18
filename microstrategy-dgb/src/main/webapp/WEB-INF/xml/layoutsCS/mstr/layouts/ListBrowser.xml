@@ -1,0 +1,35 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_pathView="mstr.behaviors.Generic.set_css_display(rootTag.firstChild, 'table', 'none', view.props['pathView'])"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <table cellspacing="0"
+           cellpadding="0"
+           class="{@cssPrefix}{@cssClass}TablePathView">
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellPathView">
+          <mstrlayout:wRender name="pathView">
+          </mstrlayout:wRender>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellPathUpButton">
+          <mstrlayout:wRender name="pathUpButton">
+          </mstrlayout:wRender>
+        </td>
+      </tr>
+    </table>
+    <div class="{@cssPrefix}{@cssClass}ContainerSearchView">
+      <mstrlayout:wRender name="searchView">
+      </mstrlayout:wRender>
+    </div>
+    <div class="{@cssPrefix}{@cssClass}ContainerAvailableView">
+      <mstrlayout:wRender name="availableView">
+        Loading...
+      </mstrlayout:wRender>
+    </div>
+    <div class="{@cssPrefix}{@cssClass}CellFetchView">
+      <mstrlayout:wRender name="fetchView">
+      </mstrlayout:wRender>
+    </div>
+  </div>
+</mstrlayout:layout>

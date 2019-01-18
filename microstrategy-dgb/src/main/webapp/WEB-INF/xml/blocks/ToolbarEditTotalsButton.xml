@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarEditTotalsButton" inherits="ToolbarButtonModel">
+	<assignments>
+        <property name="id">tbTotals</property>
+        <property name="tooltip">{desc:mstrWeb.3310|Edit Totals...}</property>
+	</assignments>
+</block>

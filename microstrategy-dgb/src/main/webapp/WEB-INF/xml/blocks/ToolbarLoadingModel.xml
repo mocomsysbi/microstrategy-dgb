@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ToolbarModel" name="ToolbarLoadingModel">
+  <definition>
+    <!-- The RibbonToolbarModel uses this property to determine whether to request the toolbar. -->
+    <property name="requestToolbar" type="Boolean"/>
+  </definition>
+  <assignments>
+    <property name="requestToolbar">true</property>
+    <property name="items">
+      <list>
+        <block listElementKey="K1516" name="ToolbarLoadingText">
+          <property name="toolbarHelper">
+            <block name="ToolbarControlHelper">
+              <property name="visible">true</property>
+            </block>
+          </property>
+        </block>
+        <block listElementKey="K1517" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

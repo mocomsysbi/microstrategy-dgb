@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarFontFamilyList" inherits="ToolbarListModel">
+	<assignments>
+		<property name="valueForm">n</property>
+		<property name="selectedIndicesList">0</property>
+		<property name="cmdid">FontFamily</property>
+		<property name="popup/itemRendererClass" type="String">mstr.itemrenderers.FontList</property>
+		<property name="width">160px</property>
+		<property name="descriptors|emptyText" type="String">{desc:mstrWeb.3535|Font}</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

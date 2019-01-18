@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ToolbarControlHelper is a generic model for managing toolbar control state. -->
+	<block name="ToolbarControlHelper" inherits="BaseModel">
+		<definition>
+			<!-- Indicates whether listening views should be visible. -->
+			<property name="visible" type="Boolean" />
+
+			<!-- Indicates whether listening views should be enabled. -->
+			<property name="enabled" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ToolbarControlHelper</property>
+		</assignments>
+	</block>

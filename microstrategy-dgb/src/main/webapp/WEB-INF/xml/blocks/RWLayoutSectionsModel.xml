@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- This is the model used for the 'Layout' tab of the Report Services document properties editor. -->
+	<block name="RWLayoutSectionsModel" inherits="EditorBoneTranslator">
+		<definition>
+			<property name="layoutSectionsTabEnabled" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="categoryText">{desc:mstrWeb.5615|Layout Properties}</property>
+			<property name="titleText">{desc:mstrWeb.4783|Sections}</property>
+			
+			<property name="visibleField">layoutSectionsTabEnabled</property>
+			<property name="layoutSectionsTabEnabled">true</property>
+		</assignments>
+	</block>

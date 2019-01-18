@@ -1,0 +1,16 @@
+<shortcut-list-set name="userMgrContextMenus" version="1.0">
+  <shortcut-list name="default">
+    <shortcut name="edit" desc="[Edit...]" desc-id="mstrWeb.4470" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.UserMgrEdit" />
+    <shortcut name="group1" desc="-" />
+    <shortcut name="delete" desc="[Delete...]" desc-id="mstrWeb.4471" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.UserMgrDelete" />
+    <shortcut name="group2" desc="-" />
+    <shortcut name="new" desc="[New...]" desc-id="mstrWeb.1895" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.UserMgrNew" >
+        <shortcut-list name="new">
+            <shortcut name="newGroup" desc="[New Group...]" desc-id="mstrWeb.5882" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.UserMgrNewGroup" />
+            <shortcut name="newUser" desc="[New User...]" desc-id="mstrWeb.5881" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.UserMgrNewUser" />
+        </shortcut-list>
+    </shortcut>
+    <shortcut name="newUser" desc="[New User...]" desc-id="mstrWeb.5881" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.UserMgrNewUserStandalone" />
+    <shortcut name="newGroup" desc="[New Group...]" desc-id="mstrWeb.5882" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.UserMgrNewGroupStandalone" />
+  </shortcut-list>
+</shortcut-list-set>

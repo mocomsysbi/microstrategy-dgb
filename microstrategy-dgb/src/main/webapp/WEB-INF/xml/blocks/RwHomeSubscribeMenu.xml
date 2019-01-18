@@ -1,0 +1,49 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwHomeSubscribeMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1679" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5008|History List...}</property>
+          <property name="cmdid">scheduleHL</property>
+          <property name="visibleFeatures">scheduling</property>
+        </block>
+        <block listElementKey="K1680" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5009|Mobile...}</property>
+          <property name="cmdid">mobileSubs</property>
+          <property name="visibleFeatures">use-mobile;mobile-view-document</property>
+          <property name="enabledFeatures">enable-scheduling-mobile</property>
+        </block>
+        <block listElementKey="K1681" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5068|E-mail...}</property>
+          <property name="cmdid">ncSubs</property>
+          <property name="visibleFeatures">scheduled-email</property>
+          <property name="enabledFeatures">enable-scheduled-email</property>
+        </block>
+        <block listElementKey="K1682" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3250|File...}</property>
+          <property name="cmdid">ncFileSubs</property>
+          <property name="visibleFeatures">scheduled-file-export</property>
+          <property name="enabledFeatures">enable-scheduled-file-export</property>
+        </block>
+        <block listElementKey="K1683" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3251|Printer...}</property>
+          <property name="cmdid">ncPrintSubs</property>
+          <property name="visibleFeatures">scheduled-print</property>
+          <property name="enabledFeatures">enable-scheduled-print</property>
+        </block>
+        <block listElementKey="K1684" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.11728|FTP}</property>
+          <property name="cmdid">ncFtpSubs</property>
+          <property name="visibleFeatures">scheduled-ftp</property>
+          <property name="enabledFeatures">enable-scheduled-ftp</property>
+        </block>
+        <block listElementKey="K1685" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14368|Cache Update...}</property>
+          <property name="cmdid">ncCacheSubs</property>
+          <property name="visibleFeatures">enable-scheduling</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

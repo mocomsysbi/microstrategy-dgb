@@ -1,0 +1,16 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <div class="mstrPanelPortrait" id="divHistoryConfirm">
+      <div class="mstrPanelTitleBar">
+        <mstrlayout:render name="removeTitle"/>
+      </div>
+      <div class="mstrPanelBody">
+        <div class="message">
+          <mstrlayout:render name="confirmationMessage"/>
+        </div>
+      </div>
+      <div class="mstrPanelButtonBar">
+        <mstrlayout:render name="buttonBar"/>
+      </div>
+    </div>
+</mstrlayout:layout>

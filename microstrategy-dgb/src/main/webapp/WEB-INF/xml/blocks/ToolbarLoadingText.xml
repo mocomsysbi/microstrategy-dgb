@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarLoadingText" inherits="ToolbarTextModel">
+	<definition>
+		<!-- An extra CSS className that will be pushed from the model to the view. -->
+		<property name="extraCssClass" type="String" />
+	</definition>
+	<assignments>
+		<property name="isButton">false</property>
+		<property name="value">{desc:mstrWeb.2901|Loading...}</property>
+		<property name="extraCssClass">toolbarLoadingText</property>
+		<property name="visibleBeforeTarget">true</property>
+	</assignments>
+</block>

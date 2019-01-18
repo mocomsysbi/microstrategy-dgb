@@ -1,0 +1,712 @@
+<shortcut-list name="timePicker" version="1.0">
+<shortcut name="pkrTime10310" feature-id="1031" desc="03:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10311" feature-id="1031" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10312" feature-id="1031" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10313" feature-id="1031" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10314" feature-id="1031" desc="07.4.98 3:41 PM">
+<attributes>
+<attribute name="value" value="dd.m.yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10315" feature-id="1031" desc="07.4.98 03:41">
+<attributes>
+<attribute name="value" value="dd.m.yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10316" feature-id="1031" desc="3:41:46">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10317" feature-id="1031" desc="3:41">
+<attributes>
+<attribute name="value" value="h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10318" feature-id="1031" desc="3:41 Uhr">
+<attributes>
+<attribute name="value" value="h.mm \U\hr"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="03:41:00" name="pkrTime20550" feature-id="2055">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="03:41 h" name="pkrTime20551" feature-id="2055">
+<attributes>
+<attribute name="value" value="hh:mm h"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41 Uhr" name="pkrTime205522" feature-id="2055">
+<attributes>
+<attribute name="value" value="h:mm Uhr"/>
+</attributes>
+</shortcut>
+
+
+<shortcut name="pkrTime10330" feature-id="1033" desc="3:41">
+<attributes>
+<attribute name="value" value="h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10331" feature-id="1033" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10332" feature-id="1033" desc="3:41:46">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10333" feature-id="1033" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10334" feature-id="1033" desc="4/7/98 3:41">
+<attributes>
+<attribute name="value" value="M/d/yy h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10335" feature-id="1033" desc="4/7/98 3:41 PM">
+<attributes>
+<attribute name="value" value="M/d/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10336" feature-id="1033" desc="04/07/98 3:41">
+<attributes>
+<attribute name="value" value="MM/dd/yy h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10337" feature-id="1033" desc="04/07/98 3:41 PM">
+<attributes>
+<attribute name="value" value="MM/dd/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime30820" feature-id="3082" desc="03:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime30821" feature-id="3082" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime30822" feature-id="3082" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime30823" feature-id="3082" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime30824" feature-id="3082" desc="07-4-98 3:41 PM">
+<attributes>
+<attribute name="value" value="dd-m-yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime30825" feature-id="3082" desc="07-4-98 03:41">
+<attributes>
+<attribute name="value" value="dd-m-yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime30826" feature-id="3082" desc="3:41:46">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime30827" feature-id="3082" desc="03H 41'">
+<attributes>
+<attribute name="value" value="hh\H mm'"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime10360" feature-id="1036" desc="03:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10361" feature-id="1036" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10362" feature-id="1036" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10363" feature-id="1036" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10364" feature-id="1036" desc="4/07/98 3:41 PM">
+<attributes>
+<attribute name="value" value="m/dd/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10365" feature-id="1036" desc="4/07/98 03:41">
+<attributes>
+<attribute name="value" value="m/dd/yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10366" feature-id="1036" desc="03.41">
+<attributes>
+<attribute name="value" value="hh.mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10367" feature-id="1036" desc="3h 41">
+<attributes>
+<attribute name="value" value="h \h mm"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime20600" feature-id="2060" desc="3:41:46">
+<attributes>
+<attribute name="value" value="H:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20601" feature-id="2060" desc="15:41:46">
+<attributes>
+<attribute name="value" value="HH:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20602" feature-id="2060" desc="3.41">
+<attributes>
+<attribute name="value" value="H.mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20603" feature-id="2060" desc="3h 41">
+<attributes>
+<attribute name="value" value="H' h 'mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20604" feature-id="2060" desc="3h 41m 46s">
+<attributes>
+<attribute name="value" value="H' h 'm' min 's' s '"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="03:41:00" name="pkrTime41080" feature-id="4108">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="03:41 h" name="pkrTime41081" feature-id="4108">
+<attributes>
+<attribute name="value" value="hh:mm h"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime10400" feature-id="1040" desc="03:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10401" feature-id="1040" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10402" feature-id="1040" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10403" feature-id="1040" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10404" feature-id="1040" desc="07/4/98 3:41 PM">
+<attributes>
+<attribute name="value" value="dd/m/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10405" feature-id="1040" desc="07/4/98 03:41">
+<attributes>
+<attribute name="value" value="dd/m/yy hh:mm"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="03:41:00" name="pkrTime20640" feature-id="2064">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="15:41 h" name="pkrTime20642" feature-id="2064">
+<attributes>
+<attribute name="value" value="H:mm h"/>
+</attributes>
+</shortcut>
+
+
+<shortcut name="pkrTime10410" feature-id="1041" desc="03&#x6642;41&#x5206;">
+<attributes>
+<attribute name="value" value="hh&#x6642;mm&#x5206;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10411" feature-id="1041" desc="03&#x6642;41&#x5206;46&#x79D2;">
+<attributes>
+<attribute name="value" value="hh&#x6642;mm&#x5206;ss&#x79D2;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10412" feature-id="1041" desc="03:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10413" feature-id="1041" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10414" feature-id="1041" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10415" feature-id="1041" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10416" feature-id="1041" desc="1998/4/7 3:41 PM">
+<attributes>
+<attribute name="value" value="yyyy/m/d h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10417" feature-id="1041" desc="1998/4/7 03:41">
+<attributes>
+<attribute name="value" value="yyyy/m/d hh:mm"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime10420" feature-id="1042" desc="03&#xC2DC; 41&#xBD84;">
+<attributes>
+<attribute name="value" value="hh&#xC2DC; mm&#xBD84;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10421" feature-id="1042" desc="03&#xC2DC; 41&#xBD84; 46&#xCD08;">
+<attributes>
+<attribute name="value" value="hh&#xC2DC; mm&#xBD84; ss&#xCD08;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10422" feature-id="1042" desc="03:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10423" feature-id="1042" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10424" feature-id="1042" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10425" feature-id="1042" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10426" feature-id="1042" desc="1998-4-7 3:41 PM">
+<attributes>
+<attribute name="value" value="yyyy-m-d h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10427" feature-id="1042" desc="1998-4-7 03:41">
+<attributes>
+<attribute name="value" value="yyyy-m-d hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10428" feature-id="1042" desc="3:41:46">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime10460" feature-id="1046" desc="03:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10461" feature-id="1046" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10462" feature-id="1046" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10463" feature-id="1046" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10464" feature-id="1046" desc="7/4/98 3:41 PM">
+<attributes>
+<attribute name="value" value="d/m/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10465" feature-id="1046" desc="7/4/98 03:41">
+<attributes>
+<attribute name="value" value="d/m/yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10466" feature-id="1046" desc="3.41.46">
+<attributes>
+<attribute name="value" value="h.mm.ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10467" feature-id="1046" desc="3.41">
+<attributes>
+<attribute name="value" value="h.mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10468" feature-id="1046" desc="3:41">
+<attributes>
+<attribute name="value" value="h:mm"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime10530" feature-id="1053" desc="3:41">
+<attributes>
+<attribute name="value" value="h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10531" feature-id="1053" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10532" feature-id="1053" desc="kl 03:41">
+<attributes>
+<attribute name="value" value="kl hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10533" feature-id="1053" desc="kl 03:41:46">
+<attributes>
+<attribute name="value" value="kl hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10534" feature-id="1053" desc="1998-04-07 3:41 PM">
+<attributes>
+<attribute name="value" value="yyyy-mm-dd h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10535" feature-id="1053" desc="1998-04-07 03:41">
+<attributes>
+<attribute name="value" value="yyyy-mm-dd hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10536" feature-id="1053" desc="kl' 3:41">
+<attributes>
+<attribute name="value" value="kl' h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10537" feature-id="1053" desc="3:41:46">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime20570" feature-id="2057" desc="3:41">
+<attributes>
+<attribute name="value" value="h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20571" feature-id="2057" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20572" feature-id="2057" desc="3:41:46">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20573" feature-id="2057" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20574" feature-id="2057" desc="7/4/98 3:41">
+<attributes>
+<attribute name="value" value="d/m/yy h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20575" feature-id="2057" desc="7/4/98 3:41 PM">
+<attributes>
+<attribute name="value" value="d/m/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20576" feature-id="2057" desc="07/04/98 3:41">
+<attributes>
+<attribute name="value" value="dd/mm/yy h:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20577" feature-id="2057" desc="07/04/98 3:41 PM">
+<attributes>
+<attribute name="value" value="dd/mm/yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime20520" feature-id="2052" desc="03:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20521" feature-id="2052" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20522" feature-id="2052" desc="03:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20523" feature-id="2052" desc="3:41:46">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20524" feature-id="2052" desc="3:41:46 PM">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20525" feature-id="2052" desc="03&#x65F6;41&#x5206;">
+<attributes>
+<attribute name="value" value="hh&#x65F6;mm&#x5206;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime20526" feature-id="2052" desc="03&#x65F6;41&#x5206;46&#x79D2;">
+<attributes>
+<attribute name="value" value="hh&#x65F6;mm&#x5206;ss&#x79D2;"/>
+</attributes>
+</shortcut>
+
+<shortcut name="pkrTime10280" feature-id="1028" desc="15:41:46">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10281" feature-id="1028" desc="3:41:46">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10282" feature-id="1028" desc="15:41">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10286" feature-id="1028" desc="3:41 PM">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10283" feature-id="1028" desc="1998/4/7 15:41">
+<attributes>
+<attribute name="value" value="yyyy/m/d hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10284" feature-id="1028" desc="15&#x6642;41&#x5206;">
+<attributes>
+<attribute name="value" value="hh&#x6642;mm&#x5206;"/>
+</attributes>
+</shortcut>
+<shortcut name="pkrTime10285" feature-id="1028" desc="15&#x6642;41&#x5206;46&#x79D2;">
+<attributes>
+<attribute name="value" value="hh&#x6642;mm&#x5206;ss&#x79D2;"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="3:41" name="pkrTime10430" feature-id="1043">
+<attributes>
+<attribute name="value" value="h:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="3.41" name="pkrTime10431" feature-id="1043">
+<attributes>
+<attribute name="value" value="h.mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41 PM" name="pkrTime10432" feature-id="1043">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="03:41:00" name="pkrTime10433" feature-id="1043">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41:00 PM" name="pkrTime10434" feature-id="1043">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="03:41:00 uur" name="pkrTime10435" feature-id="1043">
+<attributes>
+<attribute name="value" value="hh:mm:ss uur"/>
+</attributes>
+</shortcut>
+<shortcut desc="03.41.00 uur" name="pkrTime10436" feature-id="1043">
+<attributes>
+<attribute name="value" value="hh.mm.ss uur"/>
+</attributes>
+</shortcut>
+<shortcut desc="7-04-98 3:41 PM" name="pkrTime10437" feature-id="1043">
+<attributes>
+<attribute name="value" value="d-mm-yy h:mm AM/PM"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="15:41" name="pkrTime10301" feature-id="1030">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="15:41:46" name="pkrTime10302" feature-id="1030">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41 PM" name="pkrTime10303" feature-id="1030">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41:46 PM" name="pkrTime10304" feature-id="1030">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="04-07-98 15:41:46" name="pkrTime10305" feature-id="1030">
+<attributes>
+<attribute name="value" value="mm-dd-yy hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98 15:41" name="pkrTime10306" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd-mm-yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98 15:41:46" name="pkrTime10307" feature-id="1030">
+<attributes>
+<attribute name="value" value="dd-mm-yy hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="07-04-98 15:41" name="pkrTime10308" feature-id="1030">
+<attributes>
+<attribute name="value" value="mm-dd-yy hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="1998-04-07 15:41" name="pkrTime10309" feature-id="1030">
+<attributes>
+<attribute name="value" value="yyyy-mm-dd hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="15:41" name="pkrTime10490" feature-id="1049">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41 PM" name="pkrTime10491" feature-id="1049">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="15:41:46" name="pkrTime10492" feature-id="1049">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41:46 PM" name="pkrTime10493" feature-id="1049">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98 3:41 PM" name="pkrTime10494" feature-id="1049">
+<attributes>
+<attribute name="value" value="dd/mm/yy h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="07/04/98 15:41" name="pkrTime10495" feature-id="1049">
+<attributes>
+<attribute name="value" value="dd/mm/yy hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41:46" name="pkrTime10496" feature-id="1049">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+
+<shortcut desc="15:41" name="pkrTime10457" feature-id="1045">
+<attributes>
+<attribute name="value" value="hh:mm"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41 PM" name="pkrTime10458" feature-id="1045">
+<attributes>
+<attribute name="value" value="h:mm AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="15:41:46" name="pkrTime10459" feature-id="1045">
+<attributes>
+<attribute name="value" value="hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41:46 PM" name="pkrTime10450" feature-id="1045">
+<attributes>
+<attribute name="value" value="h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="98-04-97 3:41 PM" name="pkrTime10451" feature-id="1045">
+<attributes>
+<attribute name="value" value="yy-mm-dd h:mm:ss AM/PM"/>
+</attributes>
+</shortcut>
+<shortcut desc="98-04-07 15:41" name="pkrTime10452" feature-id="1045">
+<attributes>
+<attribute name="value" value="yy-mm-dd hh:mm:ss"/>
+</attributes>
+</shortcut>
+<shortcut desc="3:41:46" name="pkrTime10453" feature-id="1045">
+<attributes>
+<attribute name="value" value="h:mm:ss"/>
+</attributes>
+</shortcut>
+</shortcut-list>

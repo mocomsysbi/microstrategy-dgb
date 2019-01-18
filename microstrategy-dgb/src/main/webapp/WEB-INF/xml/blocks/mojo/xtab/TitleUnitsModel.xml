@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="TitleUnitsModel" inherits="BaseBlock">
+	<definition>
+			<!-- An array of title Units -->
+			<property name="items" type="List" />
+	</definition>
+</block>

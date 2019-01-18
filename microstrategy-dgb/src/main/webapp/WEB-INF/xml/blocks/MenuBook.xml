@@ -1,0 +1,30 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MenuBook" inherits="ViewBook">
+	<definition>
+		<!-- Indicates that the floating menu has a fixed position and should not be adjusted to fit within
+			the visible viewport of the parent element. -->
+		<property name="useFixedPosition" type="Boolean" />
+	</definition>
+	<assignments>
+		<property name="scriptClass">mstr.views.FloatingMenuBook</property>
+		<property name="layoutClass">mstr.layouts.FloatingMenuBook</property>
+		<property name="cssClass">FloatingMenu</property>
+		<property name="useFixedPosition">true</property>
+		<property name="modelPath">parent/models/0</property>
+		
+		<property name="childViewTypes">
+			<block name="BaseBlock">
+				<property name="default" type="Block">
+					<block name="MenuSeparator" />
+				</property>
+				<property name="MENU" type="Block">
+					<block name="MenuControl" />
+				</property>
+				<property name="SUBMENU" type="Block">
+					<block name="SubMenuControl" />
+				</property>
+			</block>
+		</property>
+		
+	</assignments>
+</block>

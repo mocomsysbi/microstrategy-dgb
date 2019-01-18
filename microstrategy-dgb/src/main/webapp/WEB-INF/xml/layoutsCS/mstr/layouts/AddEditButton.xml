@@ -1,0 +1,12 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_privilege="rootTag.style.display = (model.get('privilege') == 'edit')? 'inline':'none';"
+    on_set_visible="rootTag.style.display = (model.get('privilege') == 'edit')? 'inline':'none';">
+  <input style="{@cssText}"
+         title="{@tooltip}"
+         class="{@cssPrefix}{@cssClass}"
+         id="{@id}"
+         value="{@caption}"
+         type="button"
+         onclick="return mstr.$obj(this.id).fireCommands()">
+  </input>
+</mstrlayout:layout>

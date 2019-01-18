@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarSubmitButtonModel" inherits="BaseModel">
+	<definition>
+		<!-- A string containing a constant value that specifies what type of view should be instantiated by the Toolbar view. -->
+		<property name="type" type="String" />
+
+		<!-- The string to be displayed as the title of the button. -->
+		<property name="tooltip" type="String" />
+
+		<!-- The commands that that the button view should submit. -->
+		<property name="cmds" type="String" />
+
+		<!-- The name of the queue group that this button will submit for.  -->
+		<property name="queueGroup" type="String" />
+		
+		<!-- An optional string containing comma-delimited features to be checked for visibility status.  NOTE: This will override the call
+		 	to execVisible for the cmdid. -->
+		 <property name="visibleFeatures" type="String" />
+
+		<!-- An optional string containing comma-delimited features to be checked for enabled status.  NOTE: This will override the call
+		 	to execEnabled for the cmdid. -->
+		 <property name="enabledFeatures" type="String" />
+		
+	</definition>
+	<assignments>
+		<property name="type">SUBMITBUTTON</property>
+	</assignments>
+</block>

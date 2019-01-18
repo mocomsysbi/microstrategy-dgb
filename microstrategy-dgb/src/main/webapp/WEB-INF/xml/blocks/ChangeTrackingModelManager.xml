@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		Change Tracking Model Manager manages ChangeTrackingModels
+	-->
+	<block name="ChangeTrackingModelManager" inherits="BaseModel">
+		<assignments>
+			<property name="scriptClass">mstr.models.ChangeTrackingModelManager</property>
+		</assignments>
+	</block>

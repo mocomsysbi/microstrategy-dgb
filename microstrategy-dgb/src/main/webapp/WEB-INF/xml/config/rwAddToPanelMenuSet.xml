@@ -1,0 +1,3 @@
+<shortcut-list-set name="rw-addToPanel-menu" version="1.0">
+  <shortcut-list config-src="/WEB-INF/xml/config/rwAddToPanelMenu.xml" name="AddToPanel" hidden='true'/>
+</shortcut-list-set>

@@ -1,0 +1,280 @@
+<shortcut-list name="majorpicker" version="1.0">
+    <attributes>
+      <attribute name="ty" value="pkr"/>
+    </attributes>
+    <shortcut desc="Vertical area" desc-id="mstrWeb.338" name="pkr1" base-bean="rb" feature-id="dhtml-or-graph-major-1">
+      <attributes>
+        <attribute name="value" value="1"/>
+        <attribute name="class" value="graph1" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp1_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="1" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Horizontal area" desc-id="mstrWeb.339" name="pkr2" base-bean="rb" feature-id="dhtml-or-graph-major-2">
+      <attributes>
+        <attribute name="value" value="2"/>
+        <attribute name="class" value="graph2" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp2_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="2" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Vertical bar" desc-id="mstrWeb.340" name="pkr4" base-bean="rb" feature-id="dhtml-or-graph-major-4">
+      <attributes>
+        <attribute name="value" value="4"/>
+        <attribute name="class" value="graph4" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp4_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="4" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Horizontal bar" desc-id="mstrWeb.341" name="pkr8" base-bean="rb" feature-id="dhtml-or-graph-major-8">
+      <attributes>
+        <attribute name="value" value="8"/>
+        <attribute name="class" value="graph8" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp8_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="8" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Vertical line" desc-id="mstrWeb.342" name="pkr16" base-bean="rb" feature-id="dhtml-or-graph-major-16">
+      <attributes>
+        <attribute name="value" value="16"/>
+        <attribute name="class" value="graph16" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp16_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="16" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Horizontal line" desc-id="mstrWeb.343" name="pkr32" base-bean="rb" feature-id="dhtml-or-graph-major-32">
+      <attributes>
+        <attribute name="value" value="32"/>
+        <attribute name="class" value="graph32" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp32_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="32" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Pie" desc-id="mstrWeb.344" name="pkr64" base-bean="rb" feature-id="dhtml-or-graph-major-64">
+      <attributes>
+        <attribute name="value" value="64"/>
+        <attribute name="class" value="graph64" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp64_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="64" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Scatter" desc-id="mstrWeb.345" name="pkr128" base-bean="rb" feature-id="dhtml-or-graph-major-128">
+      <attributes>
+        <attribute name="value" value="128"/>
+        <attribute name="class" value="graph128" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp128_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="128" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Polar" desc-id="mstrWeb.346" name="pkr256" base-bean="rb" feature-id="dhtml-or-graph-major-256">
+      <attributes>
+        <attribute name="value" value="256"/>
+        <attribute name="class" value="graph256" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp256_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="256" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Radar" desc-id="mstrWeb.347" name="pkr512" base-bean="rb" feature-id="dhtml-or-graph-major-512">
+      <attributes>
+        <attribute name="value" value="512"/>
+        <attribute name="class" value="graph512" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp512_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="512" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Bubble" desc-id="mstrWeb.348" name="pkr1024" base-bean="rb" feature-id="dhtml-or-graph-major-1024">
+      <attributes>
+        <attribute name="value" value="1024"/>
+        <attribute name="class" value="graph1024" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp1024_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="1024" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="HiLo... Stock" desc-id="mstrWeb.349" name="pkr2048" base-bean="rb" feature-id="dhtml-or-graph-major-2048">
+      <attributes>
+        <attribute name="value" value="2048"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="class" value="graph2048" feature-id="dhtml"/>
+        <attribute name="src" value="grtp2048_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="2048" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Histogram" desc-id="mstrWeb.350" name="pkr4096" base-bean="rb" feature-id="dhtml-or-graph-major-4096">
+      <attributes>
+        <attribute name="value" value="4096"/>
+        <attribute name="class" value="graph4096" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp4096_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="4096" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Gauge" desc-id="mstrWeb.3153" name="pkr524288" base-bean="rb" feature-id="dhtml-or-graph-major-524288">
+      <attributes>
+        <attribute name="value" value="524288"/>
+        <attribute name="class" value="graph524288" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp524288_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="524288" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Funnel" desc-id="mstrWeb.3154" name="pkr1048576" base-bean="rb" feature-id="dhtml-or-graph-major-1048576">
+      <attributes>
+        <attribute name="value" value="1048576"/>
+        <attribute name="class" value="graph1048576" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp1048576_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="1048576" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Pareto" desc-id="mstrWeb.3155" name="pkr2097152" base-bean="rb" feature-id="dhtml-or-graph-major-2097152">
+      <attributes>
+        <attribute name="value" value="2097152"/>
+        <attribute name="class" value="graph2097152" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp2097152_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="2097152" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Box Plot" desc-id="mstrWeb.3156" name="pkr4194304" base-bean="rb" feature-id="dhtml-or-graph-major-4194304">
+      <attributes>
+        <attribute name="value" value="4194304"/>
+        <attribute name="class" value="graph4194304" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp4194304_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="4194304" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="Gantt" desc-id="mstrWeb.3533" name="pkr8388608" base-bean="rb" feature-id="dhtml-or-graph-major-8388608">
+      <attributes>
+        <attribute name="value" value="8388608"/>
+        <attribute name="class" value="graph8388608" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp8388608_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="8388608" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D risers" desc-id="mstrWeb.351" name="pkr8192" base-bean="rb" feature-id="dhtml-or-graph-major-8192">
+      <attributes>
+        <attribute name="value" value="8192"/>
+        <attribute name="class" value="graph8192" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp8192_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="8192" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3d floating" desc-id="mstrWeb.352" name="pkr16384" base-bean="rb" feature-id="dhtml-or-graph-major-16384">
+      <attributes>
+        <attribute name="value" value="16384"/>
+        <attribute name="class" value="graph16384" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp16384_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="16384" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3d connect group" desc-id="mstrWeb.353" name="pkr32768" base-bean="rb" feature-id="dhtml-or-graph-major-32768">
+      <attributes>
+        <attribute name="value" value="32768"/>
+        <attribute name="class" value="graph32768" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp32768_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="32768" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D connect series" desc-id="mstrWeb.354" name="pkr65536" base-bean="rb" feature-id="dhtml-or-graph-major-65536">
+      <attributes>
+        <attribute name="value" value="65536"/>
+        <attribute name="class" value="graph65536" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp65536_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="65536" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D surface" desc-id="mstrWeb.355" name="pkr131072" base-bean="rb" feature-id="dhtml-or-graph-major-131072">
+      <attributes>
+        <attribute name="value" value="131072"/>
+        <attribute name="class" value="graph131072" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp131072_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="131072" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+    <shortcut desc="3D scatter" desc-id="mstrWeb.356" name="pkr262144" base-bean="rb" feature-id="dhtml-or-graph-major-262144">
+      <attributes>
+        <attribute name="value" value="262144"/>
+        <attribute name="class" value="graph262144" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp262144_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="262144" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+	<shortcut desc="Combination" desc-id="" name="pkr16777216" base-bean="rb" feature-id="dhtml-or-graph-major-16777216"> 
+      <attributes>
+        <attribute name="value" value="16777216"/>
+        <attribute name="class" value="graph16777216" feature-id="dhtml"/>
+        <attribute name="class" value="graphType" feature-id="!dhtml"/>
+        <attribute name="src" value="grtp16777216_2.gif" feature-id="!dhtml"/>
+        <attribute name="ftt" value="1" feature-id="dhtml"/>
+        <attribute name="ftv" value="16777216" feature-id="dhtml"/>
+        <attribute name="ftc" value="1" feature-id="dhtml"/>
+      </attributes>
+    </shortcut>
+</shortcut-list>

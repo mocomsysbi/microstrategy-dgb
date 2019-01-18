@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="WidthConfig" inherits="BaseBlock">
+	<definition>
+		<!-- Width mode: 0-Automatic, 1-Manual -->
+		<property name="wm" type="Integer" />
+		<!-- Width -->
+		<property name="w" type="Double" />
+	</definition>
+</block>

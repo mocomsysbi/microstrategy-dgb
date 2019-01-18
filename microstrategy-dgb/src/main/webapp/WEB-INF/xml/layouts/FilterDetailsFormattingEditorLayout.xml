@@ -1,0 +1,141 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <table cellspacing="0" cellpadding="0" class="filterDetailsFmt" style="table-layout:fixed" width="500">
+        <colgroup>
+            <col style="width: 65%;"></col>
+            <col style="width: 35%;"></col>
+        </colgroup>
+        <tr>
+            <td colspan="2">
+                <hr />
+                <span class="title">
+                    <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="string" value="mstrWeb.4513"/> <!--In List Condition/Attribute Element Prompts-->
+                    </mstrlayout:render>
+                </span> 
+                <br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4514"/></mstrlayout:render><!--Show attribute name for In List conditions--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="ShowANForList" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4515"/></mstrlayout:render><!--Show attribute name for Attribute Element Prompts--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="ShowANForAEPrompts" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4516"/></mstrlayout:render><!--Carriage return after attribute name--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="ShowCarriageReturnAfterAN" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4517"/></mstrlayout:render><!--Carriage return between elements--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="ShowCarriageReturnBetweenElements" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4518"/></mstrlayout:render><!--Trim elements--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="TrimElements" /><br /><br />
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <hr />
+                <span class="title"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4519"/></mstrlayout:render><!--Qualification Conditions--></span>
+                <br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4520"/></mstrlayout:render><!--Use names or symbols for operators--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="UseNamesOrSymbols" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4521"/></mstrlayout:render><!--Include Attribute form names in AQ conditions--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="IncludeAFNamesInAQConditions" /><br /><br />
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <hr />
+                <span class="title"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4522"/></mstrlayout:render><!--Logical Operators--></span>
+                <br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4523"/></mstrlayout:render><!--Parentheses around conditions--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="ParanthesisAroundConditions" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4524"/></mstrlayout:render><!--Carriage returns between conditions--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="CarriageReturnBetweenConditions" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4525"/></mstrlayout:render><!--Logical operator between conditions--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="LogicalOperatorBetweenConditions" /><br /><br />
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <hr />
+                <span class="title"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4526"/></mstrlayout:render><!--Miscellaneous--></span>
+                <br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4527"/></mstrlayout:render><!--Expand Shortcut Filters--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="ExpandShortcutFilters" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="a" for="a"><mstrlayout:render name="descriptor"><mstrlayout:argument type="string" value="mstrWeb.4528"/></mstrlayout:render><!--Use delimeters around MD Object names--></label>&nbsp;<br /><br />
+            </td>
+            <td>
+                <mstrlayout:render name="UseDelimitersAroundMDObjNames" /><br /><br />
+            </td>
+        </tr>
+    </table>
+    
+</mstrlayout:layout>

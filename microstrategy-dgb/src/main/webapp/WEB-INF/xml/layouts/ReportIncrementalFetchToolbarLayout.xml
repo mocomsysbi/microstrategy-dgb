@@ -1,0 +1,94 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:if name="isGraphAvailable">
+	<mstrlayout:then>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <colgroup>
+            <mstrlayout:if name="isOutlineModeAvailable">
+                <mstrlayout:then>
+                    <col width="1%" />
+                </mstrlayout:then>
+            </mstrlayout:if>
+        </colgroup>
+        <tbody>
+            <tr>
+                <mstrlayout:if name="isOutlineModeAvailable">
+                    <mstrlayout:then>
+                        <td>
+                            <mstrlayout:render name="OutlineModeLevels" />
+                        </td>
+                    </mstrlayout:then>
+                </mstrlayout:if>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <mstrlayout:if name="isDhtml">
+                                    <mstrlayout:then>
+                                                <mstrlayout:if name="isRowIncrementalFetchAvailable">
+                                                    <mstrlayout:then>
+                                                        <td>
+                                                            <mstrlayout:render name="RowIncrementalFetch" />
+                                                        </td>
+                                                    </mstrlayout:then>
+                                                </mstrlayout:if>
+                                    </mstrlayout:then>
+                                    <mstrlayout:else>
+                                        <mstrlayout:if name="isRowIncrementalFetchAvailable">
+                                            <mstrlayout:then>
+                                                <td>
+                                                    <mstrlayout:render name="RowIncrementalFetch" />
+                                                </td>
+                                            </mstrlayout:then>
+                                        </mstrlayout:if>
+                                    </mstrlayout:else>
+                                </mstrlayout:if>
+                                <mstrlayout:if name="isReportStylesAvailable">
+                                    <mstrlayout:then>
+                                        <td>
+                                            <mstrlayout:render name="ReportStyles" />
+                                        </td>
+                                    </mstrlayout:then>
+                                </mstrlayout:if>
+                                <mstrlayout:if name="isPivotButtonsAvailable">
+                                    <mstrlayout:then>
+                                        <td>
+                                            <mstrlayout:render name="ShowPivotButtons" />
+                                        </td>
+                                    </mstrlayout:then>
+                                </mstrlayout:if>
+                                <mstrlayout:if name="isSortButtonsAvailable">
+                                    <mstrlayout:then>
+                                        <td>
+                                            <mstrlayout:render name="ShowSortButtons" />
+                                        </td>
+                                    </mstrlayout:then>
+                                </mstrlayout:if>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td align="right">
+                    <mstrlayout:if name="isRowCountAvailable">
+                        <mstrlayout:then>
+                            <mstrlayout:render name="RowCount" />
+                        </mstrlayout:then>
+                    </mstrlayout:if>
+                    
+                    <mstrlayout:if name="isColumnCountAvailable">
+                        <mstrlayout:then>
+                            <span class="mstrColumnFetch">
+	                            <mstrlayout:render name="columnsIncrementalFetchPrevious" />
+	                            <mstrlayout:render name="ColumnCount" />
+	                            <mstrlayout:render name="columnsIncrementalFetchNext" />
+                            </span>
+                        </mstrlayout:then>
+                    </mstrlayout:if>
+                     
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </mstrlayout:then>
+    </mstrlayout:if>
+</mstrlayout:layout>

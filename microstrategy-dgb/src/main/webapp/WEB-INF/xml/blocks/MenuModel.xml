@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MenuModel" inherits="RibbonListModel">
+<!-- We are using this block as a common block for the menu hierarchy -->
+	<definition>
+		<!-- The id of the ribbonBlock id, this is used to look for it since it is not part of the 
+		hierarchy of the block since this is being loaded independently by a task, we need a reference to the ribbon
+		when executing custom events, since the resolved event is defined on the ribbon -->
+		<property name="ribbonId" type="String" />
+	</definition>
+</block>

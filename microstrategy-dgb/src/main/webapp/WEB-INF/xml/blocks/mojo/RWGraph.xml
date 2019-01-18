@@ -1,0 +1,5 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the data portion of a Template node that holds a Graph.
+--> 
+<block name="RWGraph" inherits="Graph,RWTemplate" />

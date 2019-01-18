@@ -1,0 +1,40 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ListCartModel is a data model which contains 2 ListModels,
+		"available" and "selected".  ListCartModel typically is used
+		to move list items from "available" to "selected", and vice versa.
+	-->
+	<block name="ListCartModel" inherits="BaseModel">
+		<definition>
+			<!-- List of available items (typically a ListModel Block). -->
+			<property name="available" type="Block" />
+
+			<!-- List of selected items (typically a ListModel Block). -->
+			<property name="selected" type="Block" />
+			
+			<!-- Optional form name used to determine which items are allowed in answer.
+				 E.g., if set to "tp", then only items with form "tp" = some values (see 
+				 the "allowedItemFormValues" property) will be allowed. -->
+			<property name="allowedItemFormName" type="String" />
+			
+			<!-- Optional comma-delimited list of form values for item that are allowed in answer.
+				 To continue the example above for "allowedItemFormName", if
+				 "allowedItemFormValues" = "a,m" then only items with "tp" = "a" or "m" are allowed. -->
+			<property name="allowedItemFormValues" type="String" />
+
+			<!-- Optional comma-delimited list of form values for item that are NOT allowed in answer.
+				 To continue the example above for "allowedItemFormName", if
+				 "prohibitedItemFormValues" = "f,f_sc" then items with "tp" = "f" or "f_sc" are NOT allowed. -->
+			<property name="prohibitedItemFormValues" type="String" />
+
+			<!-- If true, this flag prevents available items from being removed once they are selected. -->
+			<property name="keepAvailableItems" type="Boolean" />
+
+			<!-- If true, this flag tells the cart to preserve the sort order of the "available" list items
+				 when moving items from "selected" back to "available". -->
+			<property name="keepAvailableSorted" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ListCart</property>
+		</assignments>
+	</block>

@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- RadioList is a list of radio buttons, arranged single-file or in a rectangle. 
+		 It is a CheckList with single-selection only. -->
+	<block name="RadioList" inherits="CheckList">
+		<assignments>
+			<property name="itemCSSPrefix">RadioListItem</property>
+			<property name="multiSelect">false</property>
+		</assignments>
+	</block>

@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ToolbarListPulldown is a rich pulldown which pops open a ListView. Typically the popup
+		 shares the same model (a ListModel) as the ListPulldown.  -->
+	<block name="ToolbarListPulldown" inherits="ToolbarControl,ListPulldown">
+		<assignments>
+			<property name="modelPushedProps">!popup|itemRendererClass,!showIcons,!descriptors|emptyText</property>
+		</assignments>
+	</block>

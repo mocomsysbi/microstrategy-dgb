@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionPromptAnswerExtendedProperties is a collection of extended properties belonging to the
+		ExpressionPromptAnswerModel Block (see below).  These properties are used when applying prompt answers.
+	-->
+	<block name="ExpressionPromptAnswerExtendedProperties" inherits="BaseBlock">
+		<definition>
+			<property name="key" type="String" />
+			<property name="pt" type="String" />
+			<property name="pin" type="String" />
+			<property name="did" type="String" />
+			<property name="tp" type="String" />
+		</definition>	
+	</block>

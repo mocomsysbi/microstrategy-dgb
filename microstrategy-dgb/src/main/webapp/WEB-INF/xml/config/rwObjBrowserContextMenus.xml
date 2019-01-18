@@ -1,0 +1,225 @@
+<shortcut-list-set name="rwObjBrowserContextMenus" version="1.0">
+  <shortcut-list name="default" />
+
+  
+  <shortcut-list name="rwobjbrowser_context_menu">
+    <shortcut name="addToGrouping" desc="[Add to grouping]" desc-id="mstrWeb.2958" feature-id="rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addToGrouping')" dhtml-show="selections.enableContextMenuItem('addToGrouping')">
+      <properties>
+        <property name="supportedTypes" value="12,47,1" />
+      </properties>
+    </shortcut>
+    
+    <shortcut name="addObjectToSection" desc="[Add to Section as Dynamic Text]" desc-id="mstrWeb.3493" feature-id="rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addToSectionAsDynamic')" dhtml-show="selections.enableContextMenuItem('addToSection')"> 
+      <properties>
+        <property name="supportedTypes" value="12,47,4,21,1,100,101" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="addToSectionAsStatic" desc="[Add to Section as Static Text]" desc-id="mstrWeb.3494" feature-id="rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addToSectionAsStatic')" dhtml-show="selections.enableContextMenuItem('addToSectionAsStatic')">
+      <properties>
+        <property name="supportedTypes" value="12,47,4,21,1,100,101" />
+      </properties>
+    </shortcut>
+    
+    <shortcut name="addToSectionAsMetricQual" desc="[Add Element Selector]" desc-id="mstrWeb.4956" feature-id="rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addToSectionAsSelector')" dhtml-show="selections.enableContextMenuItem('addToSectionAsSelector')">
+      <properties>
+        <property name="supportedTypes" value="12,47" />
+      </properties>
+    </shortcut>
+    
+    <shortcut name="addToSectionAsSelector" desc="Add Metric Slider" desc-id="mstrWeb.8150" feature-id="rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addToSectionAsSelector')" dhtml-show="selections.enableContextMenuItem('addToSectionAsSelector')">
+      <properties>
+        <property name="supportedTypes" value="4,100,101" />
+      </properties>
+    </shortcut>
+    
+    <shortcut name="s1" desc="-" />
+
+    <shortcut name="addToSectionWithFormat" desc="[Add to section with Formatting]" desc-id="mstrWeb.3492" feature-id="rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addToSectionWithFormat')" dhtml-show="selections.enableContextMenuItem('addToSectionWithFormat')">
+      <properties>
+        <property name="supportedTypes" value="3" />
+      </properties>
+    </shortcut>
+        
+    <shortcut name="addToSection" desc="[Add to section without formatting]" desc-id="mstrWeb.3491" feature-id="rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addToSection')" dhtml-show="selections.enableContextMenuItem('addToSection')">
+      <properties>
+        <property name="supportedTypes" value="3" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="addToSectionAsShortcut" desc="[Add to section as shortcut]" desc-id="mstrWeb.4537" feature-id="manage-datasets;rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addToSectionAsShortcut')" dhtml-show="selections.enableContextMenuItem('addToSectctionAsShortcut')">
+      <properties>
+        <property name="supportedTypes" value="3" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="s2" desc="-" />
+    
+    <shortcut name="setPrimeDataSet" desc="*Set as grouping and sorting dataset*" desc-id="mstrWeb.2959" feature-id="documents-design-mode;manage-datasets" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="confirmSetPrimeDataSet()" dhtml-show="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.getDataSetId() != microstrategy.primeDataSetId &amp;&amp; microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isMulti() == false"> 
+      <properties>
+        <property name="supportedTypes" value="3" />
+      </properties>
+    </shortcut>
+	
+	<shortcut append-state="true" base-bean="rwframe.rwb" desc="[Replace Dataset]" desc-id="mstrWeb.8039" feature-id="dhtml;manage-datasets;rw-editable-view-mode-eplus" 
+		href="#" iframe="true" name="replaceDataset" onclick="microstrategy.getViewerBone().commands.exec(&apos;openReplaceDataSetEditor&apos;,microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.getDataSetId());"
+		dhtml-show=" microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isMulti() == false" >
+		  <properties>
+        <property name="supportedTypes" value="3" />
+      </properties>
+		</shortcut>   
+		<shortcut append-state="true" base-bean="rwframe.rwb" desc="[Replace All Datasets]" desc-id="mstrWeb.8048" feature-id="dhtml;manage-datasets;rw-editable-view-mode-eplus" 
+		href="#" iframe="true" name="replaceAllDataset" onclick="microstrategy.getViewerBone().commands.exec(&apos;openReplaceDataSetEditor&apos;);"
+		dhtml-show="microstrategy.getViewerBone().hasMultiDatasets()" >
+		  <properties>
+        <property name="supportedTypes" value="3" />
+      </properties>
+		</shortcut> 
+    <shortcut name="deleteDataSet" desc="[Delete from document]" desc-id="mstrWeb.2960" feature-id="manage-datasets;rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="confirmDeleteDataSet()" dhtml-show="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isMulti() == false">
+      <properties>
+        <property name="supportedTypes" value="3" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="JoinBehavior" desc="[Join Behavior]" desc-id="mstrWeb.4571" feature-id="documents-design-mode;manage-datasets" 
+        base-bone="reportObjs_RWWorkingSetStyle" dhtml-show="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isMulti() == false">
+      <properties>
+        <property name="supportedTypes" value="3" />
+      </properties>
+
+        <shortcut name="primaryJoinDataset" desc="[Primary (outer join)]" desc-id="mstrWeb.14476" feature-id="" base-bone="reportObjs_RWWorkingSetStyle" onclick="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.setPrimaryJoinDataset(true)" dhtml-checked="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isPrimaryJoinDataset()">
+          <properties>
+            <property name="supportedTypes" value="3" />
+          </properties>
+        </shortcut>
+
+        <shortcut name="secondaryJoinDataset" desc="[Secondary (inner join)]" desc-id="mstrWeb.14477" feature-id="" base-bone="reportObjs_RWWorkingSetStyle" onclick="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.setPrimaryJoinDataset(false)" dhtml-checked="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isPrimaryJoinDataset() == false">
+          <properties>
+            <property name="supportedTypes" value="3" />
+          </properties>
+        </shortcut>
+
+    </shortcut>
+
+    <shortcut name="s3" desc="-" />
+
+    <shortcut name="addSummaryMetric" desc="[Insert Summary Metric]" desc-id="mstrWeb.3771"  
+        base-bone="reportObjs_RWWorkingSetStyle" dhtml-show="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isMulti() == false">
+      <properties>
+        <property name="supportedTypes" value="4,100,101" />
+      </properties>      
+      <shortcut name="addSummaryMetricAvg" desc="[Average]" desc-id="mstrWeb.2122"  
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricAvg')" />
+    
+      <shortcut name="addSummaryMetricCount" desc="[Count]" desc-id="mstrWeb.2123"   
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricCount')" />
+
+      <shortcut name="addSummaryMetricMax" desc="[Maximum]" desc-id="mstrWeb.2125"   
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricMax')" />
+
+      <shortcut name="addSummaryMetricMin" desc="[Minimum]" desc-id="mstrWeb.2127"   
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricMin')" />
+
+      <shortcut name="addSummaryMetricStdDev" desc="[Standard Deviation]" desc-id="mstrWeb.2130"   
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricStdDev')" />
+
+      <shortcut name="addSummaryMetricSum" desc="[Sum]" desc-id="mstrWeb.2131"   
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricSum')" />
+
+      <shortcut name="addSummaryMetricVar" desc="[Variance]" desc-id="mstrWeb.2132"   
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricVar')" />
+    </shortcut>
+    
+    <shortcut name="addShortcutMetric" desc="[Insert Metric]" desc-id="mstrWeb.3322" feature-id="insert-new-metric" 
+        base-bone="reportObjs_RWWorkingSetStyle" dhtml-show="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isMulti() == false">
+      <properties>
+        <property name="supportedTypes" value="12" />
+      </properties>
+	  <shortcut name="addAvg" desc="[Average]" desc-id="mstrWeb.2122"  
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricAvg')" />
+      <shortcut name="addCount" desc="[Count]" desc-id="mstrWeb.2123"  
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricCount')" />
+      <shortcut name="addMax" desc="[Maximum]" desc-id="mstrWeb.2125"  
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricMax')" />
+	  <shortcut name="addMin" desc="[Minimum]" desc-id="mstrWeb.2127"  
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricMin')" />
+      <shortcut name="addSum" desc="[Sum]" desc-id="mstrWeb.2131"  
+              base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addShortcutMetricSum')" />
+    </shortcut>
+
+    <shortcut name="addUserMetric" desc="[Insert new metric...]" desc-id="mstrWeb.2212" feature-id="insert-new-metric" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addUserMetric')" dhtml-show="selections.enableContextMenuItem('addUserMetric')">
+      <properties>
+        <property name="supportedTypes" value="3,12,47,4,21,1,100,101" />
+      </properties>
+    </shortcut>
+    
+    <shortcut name="addDerivedAttr" desc="[Insert New Attribute...]" desc-id="mstrWeb.11613" feature-id="insert-new-metric" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('addDerivedAttr')" dhtml-show="selections.enableContextMenuItem('addDerivedAttr')">
+      <properties>
+        <property name="supportedTypes" value="3,12,47,4,21,1,100,101" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="editDerivedAttr" desc="[Edit..]" desc-id="mstrWeb.3224" feature-id="rename-edit-object" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('editDerivedAttr')" dhtml-show="selections.enableContextMenuItem('editDerivedAttr')">
+      <properties>
+        <property name="supportedTypes" value="12" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="editUserMetric" desc="[Edit..]" desc-id="mstrWeb.3224" feature-id="rename-edit-object" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('editUserMetric')" dhtml-show="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isMulti() == false">
+      <properties>
+        <property name="supportedTypes" value="100, 101" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="formatUserMetric" desc="[Number Format...]" desc-id="mstrWeb.3573" feature-id="number-formatting" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('formatUserMetric')" dhtml-show="microstrategy.bone('reportObjs_RWWorkingSetStyle').selections.isMulti() == false">
+      <properties>
+        <property name="supportedTypes" value="100,101" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="removeUserMetric" desc="[Delete from Document]" desc-id="mstrWeb.2960" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('removeUserMetric')" dhtml-show="selections.isSameType()">
+      <properties>
+        <property name="supportedTypes" value="100,101" />
+      </properties>
+    </shortcut>
+    
+    <shortcut name="removeDerivedAttr" desc="[Delete from Document]" desc-id="mstrWeb.2960" 
+        base-bone="reportObjs_RWWorkingSetStyle" onclick="selections.processContextMenu('removeDerivedAttr')" dhtml-show="selections.enableContextMenuItem('removeDerivedAttr')">
+      <properties>
+        <property name="supportedTypes" value="12" />
+      </properties>
+    </shortcut>
+
+    <shortcut name="attributeLinking" desc="[Link to]" desc-id="mstrWeb.9747" feature-id="rw-editable-view-mode-eplus;"
+        base-bone="reportObjs_RWWorkingSetStyle" dhtml-enabled="selections.enableAttributeLinking()">
+      <properties>
+        <property name="supportedTypes" value="12" />
+      </properties>
+      <shortcut name="loading" desc="[Loading...]" desc-id="mstrWeb.2901"  base-bone="reportObjs_RWWorkingSetStyle" dhtml-show="selections.loadAttributeLinkTarget()" />
+    </shortcut>
+    
+    <shortcut name="attributeUnlinking" desc="[Unlink]" desc-id="mstrWeb.9748" feature-id="rw-editable-view-mode-eplus;" 
+        base-bone="reportObjs_RWWorkingSetStyle" dhtml-enabled="selections.enableAttributeUnlinking()" onclick="selections.confirmAttributeUnlinking()" dhtml-show="selections.enableContextMenuItem('attributeUnlinking')">
+      <properties>
+        <property name="supportedTypes" value="12" />
+      </properties>
+    </shortcut>
+  </shortcut-list>
+
+</shortcut-list-set>

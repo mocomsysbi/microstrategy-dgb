@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TextLabel is a UIComponent for displaying read-only text in a scrollable area, with an optional caption. -->
+	<block name="TextLabel" inherits="BaseView">
+		<definition>
+			<!-- Optional value of TextBox contents. -->
+			<property name="value" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.TextLabel</property>
+			<property name="cssClass">TextLabel</property>
+		</assignments>
+	</block>

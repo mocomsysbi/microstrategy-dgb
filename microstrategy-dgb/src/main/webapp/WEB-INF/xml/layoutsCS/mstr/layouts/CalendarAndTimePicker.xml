@@ -1,0 +1,45 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_dataType="mstr.behaviors.CalendarAndTimePicker.on_model_set_dataType(view, model, rootTag)"
+    on_model_set_valueString="mstr.behaviors.CalendarAndTimePicker.on_model_set_valueString(view, model, rootTag)"
+    on_model_set_validationStatus="mstr.behaviors.CalendarAndTimePicker.on_model_set_validationStatus(view, model, rootTag, view.props.id + '_txt')"
+    openerArea="return rootTag.childNodes[1].rows[0].cells[1].firstChild"
+    on_set_enabled="mstr.behaviors.CalendarAndTimePicker.on_set_enabled(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.TextBox.on_set_visible(view, model, rootTag)">
+  <div title="{@tooltip}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <div class="{@cssPrefix}{@cssClass}Caption">
+      <label for="{@id}_txt">
+        {@caption}
+      </label>
+    </div>
+    <table cellspacing="0"
+           cellpadding="0">
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}CellTextBox">
+          <input maxlength="{@maxlength}"
+                 onblur="return mstr.behaviors.CalendarAndTimePicker.onblur_dayinput('{@id}',this,arguments[0]);"
+                 onkeypress="if (!mstr.utils.ISW3C) return mstr.behaviors.CalendarAndTimePicker.onkeypress_dayinput('{@id}','{@id}_txt', arguments[0]);"
+                 onkeydown="if (mstr.utils.ISW3C)return mstr.behaviors.CalendarAndTimePicker.onkeypress_dayinput('{@id}','{@id}_txt',arguments[0]);"
+                 name="{@id}_txt"
+                 style="{@cssText}; width:{@width};"
+                 id="{@id}_txt"
+                 size="{@size}"
+                 type="{@inputType}">
+          </input>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellCalendarButton">
+          <img onmousedown="return mstr.behaviors.CalendarAndTimePicker.onmousedown_icon('{@id}',this)"
+               src="../images/calendar.gif"
+               id="{@id}_cal_icon"
+               width="34">
+          </img>
+        </td>
+        <td>
+          <mstrlayout:wRender name="timePicker">
+          </mstrlayout:wRender>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

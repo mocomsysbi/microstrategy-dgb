@@ -1,0 +1,79 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div>
+    <mstrlayout:render name="descriptor">
+       <mstrlayout:argument type="string" value="mstrWeb.4080"/><!-- Select Subtotal Functions:-->
+    </mstrlayout:render>      
+  </div>
+  <div class="simpleSubtotalContainer">
+  <table cellpadding="0" cellspacing="0" class="simpleSubtotalSec mstrListView">
+    <col/>
+    <col class="checkColumn"/>
+    <col class="checkColumn"/>
+    <thead>
+	    <tr>
+	      <td>&nbsp;</td>
+	      <td>
+	        <mstrlayout:render name="descriptor">
+	          <mstrlayout:argument type="string" value="mstrWeb.2032"/>
+	        </mstrlayout:render>
+	      </td>
+	      <td>
+	        <mstrlayout:render name="descriptor">
+	          <mstrlayout:argument type="string" value="mstrWeb.3329"/>
+	        </mstrlayout:render>
+	      </td>
+	    </tr>
+	</thead>
+	<tbody>
+	    <mstrlayout:list id="subtotalObj" name="getAvailableSubtotals">
+	      <tr>
+	        <td>
+	          <mstrlayout:render name="subtotalName">
+	            <mstrlayout:argument type="com.microstrategy.web.objects.WebTemplateSubtotal" list="subtotalObj"/>
+	          </mstrlayout:render>
+	        </td>
+	        <td>
+	          <mstrlayout:render name="allSubtotalCheckbox">
+	            <mstrlayout:argument type="com.microstrategy.web.objects.WebTemplateSubtotal" list="subtotalObj"/>
+	          </mstrlayout:render>
+	        </td>
+	        <td>
+	          <mstrlayout:render name="grandTotalCheckbox">
+	            <mstrlayout:argument type="com.microstrategy.web.objects.WebTemplateSubtotal" list="subtotalObj"/>
+	          </mstrlayout:render>
+	        </td>
+	      </tr>
+	      <mstrlayout:next list="subtotalObj"/>
+	      <mstrlayout:if name="isSubtotalNotNull">
+	        <mstrlayout:argument list="subtotalObj" type="com.microstrategy.web.objects.WebTemplateSubtotal"/>
+	        <mstrlayout:then>
+		      <tr class="band">
+		        <td>
+		          <mstrlayout:render name="subtotalName">
+		            <mstrlayout:argument type="com.microstrategy.web.objects.WebTemplateSubtotal" list="subtotalObj"/>
+		          </mstrlayout:render>
+		        </td>
+		        <td>
+		          <mstrlayout:render name="allSubtotalCheckbox">
+		            <mstrlayout:argument type="com.microstrategy.web.objects.WebTemplateSubtotal" list="subtotalObj"/>
+		          </mstrlayout:render>
+		        </td>
+		        <td>
+		          <mstrlayout:render name="grandTotalCheckbox">
+		            <mstrlayout:argument type="com.microstrategy.web.objects.WebTemplateSubtotal" list="subtotalObj"/>
+		          </mstrlayout:render>
+		        </td>
+		      </tr>      
+		      <mstrlayout:next list="subtotalObj"/>
+		    </mstrlayout:then>
+		  </mstrlayout:if>
+		</mstrlayout:list>
+	</tbody>
+  </table>
+  </div>
+  <br></br>
+  <div id="simpleUndefinedSec"> 
+      <mstrlayout:render name="undefinedSimpleTabSection"/>
+  </div>          
+</mstrlayout:layout>

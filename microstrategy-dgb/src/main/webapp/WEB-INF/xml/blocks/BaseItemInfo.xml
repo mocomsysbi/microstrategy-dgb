@@ -1,0 +1,26 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ItemInfo is any generic metadata or warehouse data item.
+		For example: a folder, an attribute, an attribute element.
+	-->
+	<block name="BaseItemInfo" inherits="BaseBlock">
+		<definition>
+			<!-- Unique identifier (e.g., a report ID, the ID form of an attribute element). -->
+			<property name="dssid" type="String" />
+
+			<!-- Name of the item (e.g., a report name, the display name of an attribute element). -->
+			<property name="n" type="String" />
+
+			<!-- Description of the item (optional). Undefined for attribute elements. -->
+			<property name="desc" type="String" />
+
+			<!-- Optional icon representation of item (e.g., f = folder, ae = attribute element).  -->
+			<property name="icon" type="String" />
+
+			<!-- Optional text for setting style properties -->
+			<property name="cssText" type="String" />
+			
+			<!-- Optional text for setting style properties -->
+			<property name="cssClass" type="String" />
+		</definition>
+	</block>

@@ -1,0 +1,4 @@
+<providers>
+    <!-- Facebook login provider -->
+    <provider mode="1" class="com.microstrategy.web.app.DefaultFacebookLoginProvider" />
+</providers>

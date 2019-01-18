@@ -1,0 +1,1255 @@
+<graph_format_info>
+	<graph_major_types>
+		<graph_major_type n="verticalArea" t="1" did="338"/>
+		
+		<graph_major_type n="horizontalArea" t="2" did="339"/>
+		
+		<graph_major_type n="verticalBar" t="4" did="340"/>
+		
+		<graph_major_type n="horizontalBar" t="8" did="341"/>
+		
+		<graph_major_type n="verticalLine" t="16" did="342"/>
+		
+		<graph_major_type n="horizontalLine" t="32" did="343"/>
+		
+		<graph_major_type n="pie" t="64" did="344"/>
+		
+		<graph_major_type n="scatter" t="128" did="345"/>
+		
+		<graph_major_type n="polar" t="256" did="346"/>
+		
+		<graph_major_type n="radar" t="512" did="347"/>
+		
+		<graph_major_type n="bubble" t="1024" did="348"/>
+		
+		<graph_major_type n="hiLoStock" t="2048" did="349"/>
+		
+		<graph_major_type n="histogram" t="4096" did="350"/>
+		
+		<graph_major_type n="gauge" t="524288" did="3153"/>
+		
+		<graph_major_type n="funnel" t="1048576" did="3154"/>
+		
+		<graph_major_type n="pareto" t="2097152" did="3155"/>
+		
+		<graph_major_type n="boxPlot" t="4194304" did="3156"/>
+		
+		<graph_major_type n="gantt" t="8388608" did="3533"/>
+		
+		<graph_major_type n="3DRisers" t="8192" did="351"/>
+		
+		<graph_major_type n="3DFloating" t="16384" did="352"/>
+
+		<graph_major_type n="3DConnectGroup" t="32768" did="353"/>
+
+		<graph_major_type n="3DConnectSeries" t="65536" did="354"/>
+
+		<graph_major_type n="3DSurface" t="131072" did="355"/>
+		
+		<graph_major_type n="3DScatter" t="262144" did="356"/>
+
+		<graph_major_type n="combination" t="16777216" did="5576"/>	
+		
+		<graph_major_type n="hichert" t="33554432" did="9833"/>
+	</graph_major_types>
+	
+	<graph_minor_types>
+		<graph_minor_type n="abs1" did="358" t="1">
+			<attribute name="mjs" value="51"/>
+		</graph_minor_type>		
+
+		<graph_minor_type n="abs2" did="358" t="128">
+			<attribute name="mjs" value="12"/>
+		</graph_minor_type>
+	
+		<graph_minor_type n="bipolarAbs1" did="360" t="4">
+			<attribute name="mjs" value="51"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisAbs1" did="362" t="16">
+			<attribute name="mjs" value="51"/>
+		</graph_minor_type>
+
+        <graph_minor_type n="bipolarAbs2" did="360" t="256">
+            <attribute name="mjs" value="12"/>
+        </graph_minor_type>
+        
+        <graph_minor_type n="duAxisAbs2" did="362" t="512">
+            <attribute name="mjs" value="12"/>
+        </graph_minor_type>
+        		
+		<graph_minor_type n="stacked" did="359" t="2">
+			<attribute name="mjs" value="63"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="bipolarStac" did="361" t="8">
+			<attribute name="mjs" value="63"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisStac" did="363" t="32">
+			<attribute name="mjs" value="63"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="percent1" did="364" t="64">
+			<attribute name="mjs" value="63"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="clus" did="3305" t="1">
+			<attribute name="mjs" value="12"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="bipolarClus" did="3307" t="4">
+			<attribute name="mjs" value="12"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisClus" did="3306" t="16">
+			<attribute name="mjs" value="12"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="pie" did="344" t="1">
+			<attribute name="mjs" value="64"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="ringPie" did="368" t="2">
+			<attribute name="mjs" value="64"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="multiPropPies" did="371" t="16">
+			<attribute name="mjs" value="64"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="multiPropRingPies" did="372" t="32">
+			<attribute name="mjs" value="64"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="xyScatter" did="407" t="1">
+			<attribute name="mjs" value="128"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisXYcatter" did="375" t="2">
+			<attribute name="mjs" value="128"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="polarCoChart" did="379" t="1">
+			<attribute name="mjs" value="256"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisPolarChart" did="380" t="2">
+			<attribute name="mjs" value="256"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="RadarLine" did="382" t="1">
+			<attribute name="mjs" value="512"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="RadarStackedLine" did="3849" t="64">
+			<attribute name="mjs" value="512"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisRadarLine" did="384" t="4">
+			<attribute name="mjs" value="512"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisRadarStackedLine" did="3850" t="128">
+			<attribute name="mjs" value="512"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="RadarArea" did="3851" t="16">
+			<attribute name="mjs" value="512"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="RadarStackedArea" did="383" t="32">
+			<attribute name="mjs" value="512"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisRadarArea" did="5884" t="256">
+			<attribute name="mjs" value="512"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisRadarStackedArea" did="385" t="8">
+			<attribute name="mjs" value="512"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="bubble" did="348" t="1">
+			<attribute name="mjs" value="1024"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="bubbleDuAxis" did="386" t="2">
+			<attribute name="mjs" value="1024"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="HiLow" did="408" t="1">
+			<attribute name="mjs" value="2048"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="HiLowOpen" did="388" t="4">
+			<attribute name="mjs" value="2048"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="HiLowOpenClose" did="390" t="16">
+			<attribute name="mjs" value="2048"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="VerHist" did="392" t="1">
+			<attribute name="mjs" value="4096"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="HorHist" did="393" t="2">
+			<attribute name="mjs" value="4096"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="bars" did="394" t="1">
+			<attribute name="mjs" value="8192"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="pyramids" did="395" t="2">
+			<attribute name="mjs" value="8192"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="octagons" did="396" t="4">
+			<attribute name="mjs" value="8192"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="cutCorBars" did="397" t="8">
+			<attribute name="mjs" value="8192"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="cubes" did="398" t="1">
+			<attribute name="mjs" value="16384"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="spheres" did="399" t="2">
+			<attribute name="mjs" value="16384"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="areas" did="400" t="1">
+			<attribute name="mjs" value="98304"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="ribbons" did="401" t="2">
+			<attribute name="mjs" value="98304"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="steps" did="402" t="4">
+			<attribute name="mjs" value="98304"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="3DSurface" did="355" t="1">
+			<attribute name="mjs" value="131072"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="3DSideSurface" did="403" t="2">
+			<attribute name="mjs" value="131072"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="3DHoneycombSurface" did="404" t="4">
+			<attribute name="mjs" value="131072"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="3DXYZScatterChart" did="405" t="1">
+	        <attribute name="mjs" value="262144"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="standard" did="3157" t="1">
+			<attribute name="mjs" value="3670016"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="percent2" did="364" t="2">
+			<attribute name="mjs" value="2097152"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="boxWhiskers" did="3264" t="1">
+			<attribute name="mjs" value="4194304"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="gantt" did="3533" t="1">
+			<attribute name="mjs" value="8388608"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="barArea" did="5577" t="1">
+			<attribute name="mjs" value="16777216"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="barLine" did="5578" t="2">
+			<attribute name="mjs" value="16777216"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="areaLine" did="5582" t="4">
+			<attribute name="mjs" value="16777216"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisbarArea" did="5579" t="8">
+			<attribute name="mjs" value="16777216"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisBarLine" did="5580" t="16">
+			<attribute name="mjs" value="16777216"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="duAxisAreaLine" did="5581" t="32">
+			<attribute name="mjs" value="16777216"/>
+		</graph_minor_type> 
+		
+		<!-- Hichert Minor Types -->
+		<graph_minor_type n="lipstickVertical" did="9834" t="1">
+			<attribute name="mjs" value="33554432"/>
+		</graph_minor_type>	
+		
+		<graph_minor_type n="lipstickHorizontal" did="9835" t="2">
+			<attribute name="mjs" value="33554432"/>
+		</graph_minor_type>
+		
+		<graph_minor_type n="overlappingBarsVertical" did="9836" t="4">
+			<attribute name="mjs" value="33554432"/>		
+		</graph_minor_type>
+		
+		<graph_minor_type n="OverlappingBarsHorizontal" did="9837" t="8">
+			<attribute name="mjs" value="33554432"/>
+		</graph_minor_type>
+	</graph_minor_types>
+	
+    <graph_objects>
+		<!-- all xxx target -->
+        <graph_object n="allText" did="3904" goid="10000">
+            <attribute name="spTp" value="67108863"/>
+			<attribute name="spCat" value="1"/>     
+        </graph_object>    
+
+		<graph_object n="allTitles" did="3907" goid="10001">
+            <attribute name="spTp" value="67108863"/>  
+			<attribute name="spCat" value="1"/> 
+        </graph_object>           
+
+		<graph_object n="allAxes" did="3909" goid="10002">
+            <attribute name="spTp" value="33554431"/>  
+			<attribute name="spCat" value="529"/>  
+        </graph_object>
+		
+		<graph_object n="allDataValues" did="3919" goid="260">
+            <attribute name="spTp" value="31715263"/>  	
+            <incTps>
+            	<incTp mj="33554432" mn="4,8"/>
+            </incTps>	    
+			<attribute name="spCat" value="593"/>    
+        </graph_object>  
+        
+        <graph_object n="HichertDataValue" did="3920" goid="260">
+            <incTps>
+            	<incTp mj="33554432" mn="1,2"/>
+            </incTps>			    
+			<attribute name="spCat" value="593"/>
+			<attribute name="seriesRelated" value="0,1"/>    
+        </graph_object>  
+        
+		<graph_object n="allOPILBLValues" did="3919" goid="418">
+            <attribute name="spTp" value="1048640"/>   
+			<attribute name="spCat" value="593"/>     
+        </graph_object>   
+        
+        <graph_object n="allOPILBLLabels" did="6119" goid="338">
+            <attribute name="spTp" value="1048640"/>   
+            <attribute name="spCat" value="17"/>     
+        </graph_object>  
+		
+		<!--Feature 300183-->
+        <graph_object n="allDataMarkers" did="9741" goid="286">
+            <attribute name="spTp" value="8146416"/>
+            <incTps>
+                <incTp mj="512" mn="1,4,64,128"/>
+                <incTp mj="2097152" mn="2"/>
+            </incTps>  
+			<attribute name="spTpMult" value="24923647"/>
+            <attribute name="spCat" value="6"/> 
+        </graph_object> 	
+			
+		<!-- individual objects -->   
+        <graph_object n="background" did="3905" goid="1">
+            <attribute name="spTp" value="67108863"/>    
+			<attribute name="spCat" value="6"/>   
+        </graph_object>
+
+		<graph_object n="frame" did="3906" goid="2">
+            <attribute name="spTp" value="66592767"/>  
+			<attribute name="spCat" value="6"/>     
+        </graph_object>  	
+		
+		<graph_object n="legend" did="2403" goid="9">
+            <attribute name="spTp" value="62656511"/> 
+			<attribute name="spCat" value="55"/>      
+        </graph_object>  	  
+
+		<graph_object n="legendArea" did="3941" goid="6">
+            <attribute name="spTp" value="62656511"/> 
+			<attribute name="spCat" value="6"/>      
+        </graph_object>   
+
+		<graph_object n="gauge" did="3930" goid="444">
+            <attribute name="spTp" value="524288"/> 
+			<attribute name="spCat" value="6"/>      
+        </graph_object>          
+		
+		<graph_object n="title" did="3297" goid="5">
+            <attribute name="spTp" value="67108863"/> 
+			<attribute name="spCat" value="31"/>     
+        </graph_object>   	
+		
+        <graph_object n="subTitle" did="3298" goid="4">
+            <attribute name="spTp" value="67108863"/>
+			<attribute name="spCat" value="31"/>       
+        </graph_object> 			 
+
+		<graph_object n="footNote" did="3299" goid="3">
+            <attribute name="spTp" value="67108863"/>  
+			<attribute name="spCat" value="31"/>    
+        </graph_object>   
+
+		<graph_object n="2DO1Title" did="3301" goid="293">
+            <attribute name="spTp" value="65014335"/> 
+			<attribute name="spCat" value="31"/>     
+        </graph_object>  
+
+        <graph_object n="2DXTitle" did="6196" goid="293">
+            <attribute name="spTp" value="5504"/> 
+            <attribute name="spCat" value="31"/>     
+        </graph_object>  
+        
+        <graph_object n="2DYTitle" did="3302" goid="299">
+            <attribute name="spTp" value="12589184"/>  
+            <incTps>
+                <incTp mj="1" mn="1,2,64"/>
+                <incTp mj="2" mn="1,2,64"/>
+                <incTp mj="4" mn="1,2,64,128"/>
+                <incTp mj="8" mn="1,2,64,128"/>
+                <incTp mj="16" mn="1,2,64"/>
+                <incTp mj="32" mn="1,2,64"/>            
+                <incTp mj="128" mn="1"/>              
+                <incTp mj="256" mn="1"/>
+                <incTp mj="512" mn="1,16,32,64"/>
+                <incTp mj="1024" mn="1"/>
+                <incTp mj="2097152" mn="1"/>  
+                <incTp mj="16777216" mn="1,2,4"/>                  
+            </incTps>               
+            <attribute name="spCat" value="31"/>  
+        </graph_object>  
+        		
+		<graph_object n="2DY1Title" did="3303" goid="299">
+            <incTps>
+                <incTp mj="1" mn="4,8,16,32"/>
+                <incTp mj="2" mn="4,8,16,32"/>
+                <incTp mj="4" mn="4,8,16,32,256,512"/>
+                <incTp mj="8" mn="4,8,16,32,256,512"/>
+                <incTp mj="16" mn="4,8,16,32"/>
+                <incTp mj="32" mn="4,8,16,32"/>
+                <incTp mj="128" mn="2"/>
+                <incTp mj="256" mn="2"/>
+                <incTp mj="512" mn="4,8,128,256"/>
+                <incTp mj="1024" mn="2"/>
+                <incTp mj="2048" mn="2"/>
+                <incTp mj="2097152" mn="2"/>
+                <incTp mj="16777216" mn="8,16,32"/>
+            </incTps>  
+			<attribute name="spCat" value="31"/>  
+        </graph_object>  
+
+		<graph_object n="2DY2Title" did="3304" goid="305">
+            <incTps>
+                <incTp mj="1" mn="4,8,16,32"/>
+                <incTp mj="2" mn="4,8,16,32"/>
+                <incTp mj="4" mn="4,8,16,32,256,512"/>
+                <incTp mj="8" mn="4,8,16,32,256,512"/>
+                <incTp mj="16" mn="4,8,16,32"/>
+                <incTp mj="32" mn="4,8,16,32"/>
+				<incTp mj="128" mn="2"/>
+				<incTp mj="256" mn="2"/>
+                <incTp mj="512" mn="4,8,128,256"/>
+				<incTp mj="1024" mn="2"/>
+				<incTp mj="2048" mn="2"/>
+				<incTp mj="2097152" mn="2"/>
+				<incTp mj="16777216" mn="8,16,32"/>
+			</incTps>  
+			<attribute name="spCat" value="31"/>  
+        </graph_object>  
+
+		<graph_object n="3DColTitle" did="3301" goid="515">
+            <attribute name="spTp" value="253952"/>    
+			<attribute name="spCat" value="25"/>  
+        </graph_object>  
+		
+        <graph_object n="3DRowTitle" did="3300" goid="555">
+            <attribute name="spTp" value="253952"/>  
+			<attribute name="spCat" value="25"/>    
+        </graph_object>  
+
+        <graph_object n="3DXTitle" did="6196" goid="555">
+            <attribute name="spTp" value="262144"/>    
+            <attribute name="spCat" value="25"/>  
+        </graph_object>  
+        
+        <graph_object n="3DZTitle" did="6197" goid="515">
+            <attribute name="spTp" value="262144"/>  
+            <attribute name="spCat" value="25"/>    
+        </graph_object> 
+        
+		<graph_object n="3DLYTitle" did="5958" goid="534">
+            <attribute name="spTp" value="516096"/>  
+			<attribute name="spCat" value="31"/>    
+        </graph_object>  		
+
+	    <graph_object n="3DRYTitle" did="5959" goid="561">
+            <attribute name="spTp" value="516096"/>   
+			<attribute name="spCat" value="31"/>  
+        </graph_object>       		
+
+		<graph_object n="2DO1Label" did="3636" goid="272">
+            <attribute name="spTp" value="65014335"/>  
+			<attribute name="spCat" value="23"/>    
+        </graph_object> 
+
+		<graph_object n="2DX1Label" did="3637" goid="290">
+            <attribute name="spTp" value="5504"/> 
+			<attribute name="spCat" value="535"/>     
+        </graph_object> 
+
+        <graph_object n="2DYLabel" did="3635" goid="296">
+            <attribute name="spTp" value="13113472"/> 
+            <incTps>
+                <incTp mj="1" mn="1,2,64"/>
+                <incTp mj="2" mn="1,2,64"/>
+                <incTp mj="4" mn="1,2,64,128"/>
+                <incTp mj="8" mn="1,2,64,128"/>
+                <incTp mj="16" mn="1,2,64"/>
+                <incTp mj="32" mn="1,2,64"/>            
+                <incTp mj="128" mn="1"/>              
+                <incTp mj="256" mn="1"/>
+                <incTp mj="512" mn="1,16,32,64"/>
+                <incTp mj="1024" mn="1"/>
+                <incTp mj="512" mn="1,16,32,64"/>
+                <incTp mj="2097152" mn="1"/>     
+                <incTp mj="16777216" mn="1,2,4"/>              
+            </incTps>   
+            <attribute name="spCat" value="535"/>    
+        </graph_object> 
+        
+		<graph_object n="2DZLabel" did="6195" goid="-2">
+            <attribute name="spTp" value="1024"/>    <!-- special case for for bubble report -->         
+			<attribute name="spCat" value="512"/>    
+        </graph_object> 
+		
+		<graph_object n="2DY1Label" did="3638" goid="296">
+            <incTps>
+                <incTp mj="1" mn="4,8,16,32"/>
+                <incTp mj="2" mn="4,8,16,32"/>
+                <incTp mj="4" mn="4,8,16,32,256,512"/>
+                <incTp mj="8" mn="4,8,16,32,256,512"/>
+                <incTp mj="16" mn="4,8,16,32"/>
+                <incTp mj="32" mn="4,8,16,32"/>
+                <incTp mj="128" mn="2"/>
+                <incTp mj="256" mn="2"/>
+                <incTp mj="512" mn="4,8,128,256"/>
+                <incTp mj="1024" mn="2"/>
+                <incTp mj="2048" mn="2"/>
+                <incTp mj="2097152" mn="2"/>
+                <incTp mj="16777216" mn="8,16,32"/>
+            </incTps>   
+			<attribute name="spCat" value="535"/>  
+        </graph_object> 
+        
+        <graph_object n="2DY2Label" did="3639" goid="302">
+            <incTps>
+                <incTp mj="1" mn="4,8,16,32"/>
+                <incTp mj="2" mn="4,8,16,32"/>
+                <incTp mj="4" mn="4,8,16,32,256,512"/>
+                <incTp mj="8" mn="4,8,16,32,256,512"/>
+                <incTp mj="16" mn="4,8,16,32"/>
+                <incTp mj="32" mn="4,8,16,32"/>
+                <incTp mj="128" mn="2"/>
+                <incTp mj="256" mn="2"/>
+                <incTp mj="512" mn="4,8,128,256"/>
+                <incTp mj="1024" mn="2"/>
+                <incTp mj="2048" mn="2"/>
+                <incTp mj="2097152" mn="2"/>
+                <incTp mj="16777216" mn="8,16,32"/>
+            </incTps>   
+            <attribute name="spCat" value="535"/>  
+        </graph_object> 
+		
+		<graph_object n="3DColHeader" did="3636" goid="512">
+            <attribute name="spTp" value="253952"/>    
+			<attribute name="spCat" value="23"/>  
+        </graph_object> 
+		
+		<graph_object n="3DRowHeader" did="3633" goid="552">
+            <attribute name="spTp" value="253952"/> 
+			<attribute name="spCat" value="23"/>    
+        </graph_object> 
+        
+        <graph_object n="3DXHeader" did="3637" goid="552">
+            <attribute name="spTp" value="262144"/>    
+            <attribute name="spCat" value="23"/>  
+        </graph_object> 
+        
+        <graph_object n="3DZHeader" did="6195" goid="512">
+            <attribute name="spTp" value="262144"/> 
+            <attribute name="spCat" value="23"/>    
+        </graph_object>        
+		
+		<graph_object n="3DLYHeader" did="3728" goid="531">
+            <attribute name="spTp" value="516096"/>    
+			<attribute name="spCat" value="535"/>   
+        </graph_object> 
+		
+		<graph_object n="3DRYHeader" did="3729" goid="558">
+            <attribute name="spTp" value="516096"/>
+			<attribute name="spCat" value="535"/>     
+        </graph_object> 
+		
+		<graph_object n="pieGroupLabel" did="3910" goid="339">
+            <attribute name="spTp" value="64"/>  
+			<attribute name="spCat" value="535"/>    
+        </graph_object> 
+        
+        <graph_object n="funnelGroupLabel" did="3911" goid="339">
+            <attribute name="spTp" value="1048576"/>  
+            <attribute name="spCat" value="535"/>    
+        </graph_object> 
+		
+		<graph_object n="gaugeTitle" did="3908" goid="450">
+            <attribute name="spTp" value="524288"/>  
+			<attribute name="spCat" value="1"/>     
+        </graph_object> 				
+		
+		<!-- series related objects -->
+		<!-- 1.riser -->		
+        <graph_object n="areaRiser" did="3913" goid="286">
+            <attribute name="spTp" value="3"/>
+			<attribute name="spTpMult" value="16777279"/>
+			<attribute name="spCat" value="6"/>  
+			 <!-- set begin and end series index. 'all' means go through all sereies, '0' means first one, '-1' means last one -->
+			<attribute name="seriesRelated" value="0,-1"/>
+        </graph_object> 
+		
+        <graph_object n="barRiser" did="3914" goid="286">
+            <attribute name="spTp" value="44042252"/>
+			<attribute name="spTpMult" value="60819519"/>
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object> 		 
+		
+		<graph_object n="dataMarker" did="3917" goid="286">
+			<attribute name="spTp" value="263600"/>
+			<attribute name="spTpMult" value="17040831"/>
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>   
+		
+		<graph_object n="3DRiser" did="3928" goid="286">
+            <attribute name="spTp" value="253952"/>            
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>   	
+    		
+		<graph_object n="histograms" did="3926" goid="286">
+            <attribute name="spTp" value="4096"/>
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>   
+        
+		<graph_object n="hilowRiser" did="" goid="286">
+            <attribute name="spTp" value="2048"/>
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>          
+		
+		<graph_object n="funnelSlice" did="3918" goid="286">
+            <attribute name="spTp" value="1048576"/>
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>   
+		
+		<graph_object n="radarLine" did="3915" goid="258">
+            <incTps>
+                <incTp mj="512" mn="1,4,64,128"/>
+            </incTps>			
+			<attribute name="spCat" value="2"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>  
+		
+		<graph_object n="radarRiser" did="3913" goid="286">
+            <incTps>
+                <incTp mj="512" mn="8,16,32,256"/>
+            </incTps>			
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>  
+		
+		<graph_object n="radarDataMarker" did="3917" goid="286">
+            <incTps>
+                <incTp mj="512" mn="1,4,64,128"/>
+            </incTps>    		
+			<attribute name="spCat" value="6"/>  	
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>   	
+		
+		<graph_object n="gaugeNeedle" did="3931" goid="286">
+            <attribute name="spTp" value="524288"/>
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,1"/> 
+        </graph_object>   
+		
+		<graph_object n="gaugeMarker" did="3917" goid="286">
+            <attribute name="spTp" value="524288"/>
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="1, -1"/>    
+        </graph_object>   
+        
+		<graph_object n="pieSlice" did="3916" goid="286">
+            <attribute name="spTp" value="64"/>
+			<attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object> 
+		
+		<!-- data marker of Pareto Percent for last series-->
+		<graph_object n="paretoDM" did="3917" goid="286">
+            <incTps>
+                <incTp mj="2097152" mn="2"/>
+            </incTps>
+            <attribute name="spCat" value="6"/>  
+            <attribute name="seriesRelated" value="-2,-1"/>    
+        </graph_object> 
+        
+		<!-- 2.dataText -->
+        <graph_object n="dataValue" did="3920" goid="260">
+            <attribute name="spTp" value="65015743"/>
+			<attribute name="spCat" value="593"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object> 
+
+        <graph_object n="3DDataValue" did="3920" goid="518">
+            <attribute name="spTp" value="253952"/>
+            <attribute name="spCat" value="593"/>  
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object> 
+        
+        <graph_object n="spDataValue" did="3919" goid="260">
+            <attribute name="spTp" value="528384"/>
+            <attribute name="spCat" value="593"/>  
+            <attribute name="seriesRelated" value="0,1"/>    
+        </graph_object> 
+
+        <graph_object n="3DScatterDataValue" did="3919" goid="518">
+            <attribute name="spTp" value="262144"/>
+            <attribute name="spCat" value="593"/>  
+            <attribute name="seriesRelated" value="0,1"/>    
+        </graph_object> 
+                
+        <graph_object n="paretoDataValue" did="3920" goid="260">
+            <incTps>
+                <incTp mj="2097152" mn="2"/>
+            </incTps>
+            <attribute name="spCat" value="593"/>  
+            <attribute name="seriesRelated" value="-2,-1"/>    
+        </graph_object> 
+        
+		<!-- 3.lblValue -->
+        <graph_object n="pieValue" did="3922" goid="418">
+            <attribute name="spTp" value="64"/>
+			<attribute name="spCat" value="593"/>
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object> 		   
+		
+        <graph_object n="funnelValue" did="3923" goid="418">
+            <attribute name="spTp" value="1048576"/>
+			<attribute name="spCat" value="593"/>
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>		
+		
+		<!-- 4.pieFeelerLabel -->
+        <graph_object n="pieLabel" did="3921" goid="338">
+            <attribute name="spTp" value="64"/>
+			<attribute name="spCat" value="17"/>
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>  
+		
+        <graph_object n="funnelLabel" did="3932" goid="338">
+            <attribute name="spTp" value="1048576"/>
+			<attribute name="spCat" value="17"/>
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object>     		          
+		
+		<!-- 5.dataLine -->
+        <graph_object n="line" did="3915" goid="258">
+			<attribute name="spTp" value="432"/>
+			<attribute name="spTpMult" value="50332095"/>
+			<attribute name="spCat" value="2"/>
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object> 
+        
+        <graph_object n="bubbleLine" did="3915" goid="258">
+			<attribute name="spTp" value="1024"/>
+			<attribute name="spCat" value="2"/>
+            <attribute name="seriesRelated" value="0,-1"/>    
+        </graph_object> 
+          	
+        <!-- data marker of Pareto Percent for last series-->
+        <graph_object n="paretoLine" did="3915" goid="258">
+            <incTps>
+                <incTp mj="2097152" mn="2"/>
+            </incTps>
+            <attribute name="spCat" value="2"/>
+            <attribute name="seriesRelated" value="-2,-1"/>    
+        </graph_object> 
+        		
+		<!-- 6.boxPlot -->
+		<graph_object n="box" did="3927" goid="329">
+            <attribute name="spTp" value="4194304"/>
+			<attribute name="spCat" value="6"/>
+            <attribute name="seriesRelated" value="0,4"/>    
+        </graph_object>
+		
+		<graph_object n="boxDataMarker" did="3917" goid="329">
+            <attribute name="spTp" value="4194304"/>
+			<attribute name="spCat" value="6"/>
+            <attribute name="seriesRelated" value="5,-1"/>    
+        </graph_object>	
+		
+		<!-- fake objects for Axes -->
+        <graph_object n="XAxis" did="-1" goid="-1">
+            <attribute name="spTp" value="267648"/>
+            <attribute name="spCat" value="6"/>  
+        </graph_object> 
+		
+        <graph_object n="Y1Axis" did="-1" goid="-1">
+            <attribute name="spTp" value="32505791"/> <!-- only pie and funnel is not supported -->
+            <attribute name="spCat" value="6"/>  
+        </graph_object> 
+
+		<graph_object n="Y2Axis" did="-1" goid="-1">
+            <incTps>
+                <incTp mj="1" mn="4,8,16,20,32"/>
+                <incTp mj="2" mn="4,8,16,20,32"/>
+                <incTp mj="4" mn="4,8,16,20,32,256,512"/>
+                <incTp mj="8" mn="4,8,16,20,32,256,512"/>
+                <incTp mj="16" mn="4,8,16,20,32"/>
+                <incTp mj="32" mn="4,8,16,20,32"/>
+                <incTp mj="128" mn="2"/>
+                <incTp mj="256" mn="2"/>
+                <incTp mj="1024" mn="2"/>
+                <incTp mj="2048" mn="2"/>
+                <incTp mj="16777216" mn="8,16,32"/>
+            </incTps> 
+            <attribute name="spCat" value="6"/>  
+        </graph_object> 
+		
+        <graph_object n="ZAxis" did="-1" goid="-1">
+            <attribute name="spTp" value="263168"/> <!-- bubble, 3D Scatter -->
+            <attribute name="spCat" value="6"/>  
+        </graph_object> 	
+        
+        <graph_object n="O1MajorLine" did="-1" goid="273">
+            <attribute name="spCat" value="2"/>  
+        </graph_object>     
+        
+        <graph_object n="O1MinorLine" did="-1" goid="274">
+            <attribute name="spCat" value="2"/>  
+        </graph_object>     
+        
+        <graph_object n="Y1MajorLine" did="-1" goid="297">
+            <attribute name="spCat" value="2"/>  
+        </graph_object>     
+        
+        <graph_object n="Y1MinorLine" did="-1" goid="298">
+            <attribute name="spCat" value="2"/>  
+        </graph_object>  
+ 
+        <graph_object n="UserLine1" did="-1" goid="414">
+            <attribute name="spCat" value="2"/>  
+        </graph_object>  
+        
+        <graph_object n="UserLine2" did="-1" goid="415">
+            <attribute name="spCat" value="2"/>  
+        </graph_object> 
+        
+        <graph_object n="UserLine3" did="-1" goid="416">
+            <attribute name="spCat" value="2"/>  
+        </graph_object> 
+
+        <graph_object n="UserLine4" did="-1" goid="417">
+            <attribute name="spCat" value="2"/>  
+        </graph_object>   
+    </graph_objects>
+    
+    <graph_attributes>
+		<!-- data types:
+			unknown: 0; string : 1; integer : 2; float : 3; boolean :4 -->
+		<!-- general tab --> 
+        <graph_attribute n="roundedEffect" gaid="10123" dt="2" dv="0">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>     
+		
+		<graph_attribute n="curvedLines" gaid="804" dt="4" dv="false">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>   
+		
+		<graph_attribute n="antiAliasing" gaid="881" dt="2" dv="0">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>  
+        
+        <!-- false:auto, true:manual -->
+        <graph_attribute n="maxBarSizeType" gaid="1002" dt="4" dv="false">
+        	<attribute name="nullObj" value="true"/>
+        </graph_attribute> 
+        
+        <graph_attribute n="maxBarSizeValue" gaid="1003" dt="3" dv="0.9">
+        	<attribute name="nullObj" value="true"/>
+        </graph_attribute> 
+		
+        <!-- format tab --> 
+        <graph_attribute n="show" gaid="-1" dt="4" dv="false">
+            <expts>
+                <expt goid="3" new_goid="9999" new_gaid="596"/>
+                <expt goid="418" new_goid="9999" new_gaid="205"/>
+                <expt goid="418_x" new_goid="9999" new_gaid="-205"/>
+                <expt goid="338" new_goid="9999" new_gaid="205"/>
+                <expt goid="338_x" new_goid="9999" new_gaid="-205"/>
+				<expt goid="5" new_goid="9999" new_gaid="598"/>
+				<expt goid="4" new_goid="9999" new_gaid="597"/>
+				<expt goid="9" new_goid="9999" new_gaid="116"/>
+				<expt goid="260_x" new_goid="9999" new_gaid="247"/>
+				<expt goid="518_x" new_goid="9999" new_gaid="247"/>
+				<expt goid="518" new_goid="9999" new_gaid="247"/>
+                <expt goid="260" new_goid="9999" new_gaid="247"/>				
+				<expt goid="293" new_goid="9999" new_gaid="124"/>
+				<expt goid="299" new_goid="9999" new_gaid="125"/>
+				<expt goid="305" new_goid="9999" new_gaid="126"/>
+				<expt goid="339" new_goid="9999" new_gaid="206"/>
+				<expt goid="515" new_goid="9999" new_gaid="319"/>
+				<expt goid="534" new_goid="9999" new_gaid="322"/>
+				<expt goid="555" new_goid="9999" new_gaid="326"/>
+				<expt goid="561" new_goid="9999" new_gaid="324"/>
+				<expt goid="512" new_goid="9999" new_gaid="318"/>
+				<expt goid="531" new_goid="9999" new_gaid="321"/>
+				<expt goid="558" new_goid="9999" new_gaid="323"/>
+				<expt goid="552" new_goid="9999" new_gaid="325"/>
+				<expt goid="272" new_goid="9999" new_gaid="-117"/>
+				<expt goid="450" new_goid="9999" new_gaid="117"/>
+				<expt goid="290" new_goid="9999" new_gaid="-127"/>
+				<expt goid="296" new_goid="9999" new_gaid="-128"/>
+				<expt goid="302" new_goid="9999" new_gaid="-129"/>
+            </expts>
+			<attribute name="catId" value="16"/>  <!-- catId map to value we config in spCat in graph objects -->
+        </graph_attribute>
+
+        <graph_attribute n="dataTextShow" gaid="-113" dt="1" dv="1">
+            <expts>
+                <expt goid="260" new_goid="9999"/>
+                <expt goid="418" new_goid="9999"/>
+                <expt goid="518" new_goid="9999"/>
+            </expts>
+            <attribute name="catId" value="16"/>
+        </graph_attribute>
+        		
+        <graph_attribute n="titleContent" gaid="9999" dt="1" dv="">
+            <expts>
+                <expt goid="534" new_goid="299"/>
+                <expt goid="561" new_goid="299"/> 
+            </expts>
+			<attribute name="catId" value="8"/>
+        </graph_attribute>		
+
+        <graph_attribute n="titleOriContent" gaid="10001" dt="1" dv="">
+            <attribute name="catId" value="8"/>
+        </graph_attribute>
+        		
+        <graph_attribute n="tooltipsShow" gaid="10041" dt="4" dv="">
+			<attribute name="nullObj" value="true"/>
+			<expts>
+                <expt goid="9999_x" new_gaid="10004"/>
+            </expts>
+			<attribute name="catId" value="64"/>
+        </graph_attribute>  
+		
+		<graph_attribute n="tooltipsEditor" gaid="10042" dt="1" dv="">
+			<attribute name="nullObj" value="true"/>
+            <expts>
+                <expt goid="9999_x" new_gaid="10005"/>
+            </expts>
+			<attribute name="catId" value="64"/>
+        </graph_attribute>  				    		 
+        
+        <graph_attribute n="titlePosition" gaid="644" dt="2" dv="1">
+            <attribute name="nullObj" value="true"/>
+            <attribute name="catId" value="32"/>
+        </graph_attribute>  
+		
+		<graph_attribute n="fontName" gaid="576" dt="1" dv="defFont">
+			<attribute name="catId" value="1"/>
+		</graph_attribute> 
+		
+		<graph_attribute n="fontSize" gaid="603" dt="2" dv="-1">
+			<attribute name="catId" value="1"/>
+        </graph_attribute> 
+		
+		<!-- attribute value stand for "bold", "italic", "underline", "strikeout", and use hex value for "all xxx" object-->
+        <graph_attribute n="fontStyle" gaid="584" dt="2" dv="-1">
+			<attribute name="catId" value="1"/>
+        </graph_attribute> 
+		
+        <graph_attribute n="fontColor" gaid="574" dt="1" dv="424242">	
+            <attribute name="catId" value="1"/>
+        </graph_attribute> 
+        				
+		<graph_attribute n="fillColor" gaid="564" dt="1" dv="transparent">
+            <expts>
+                <expt goid="286" new_goid="9999" new_gaid="556"/>	
+                <expt goid="256" new_goid="9999" new_gaid="556"/>	
+                <expt goid="350" new_goid="9999" new_gaid="556"/>	
+                <expt goid="341" new_goid="9999" new_gaid="556"/>	     
+                <expt goid="520" new_goid="9999" new_gaid="556"/>	
+                <expt goid="329" new_goid="9999" new_gaid="556"/>                                                             	
+            </expts>
+			<attribute name="catId" value="4"/>
+        </graph_attribute>
+        
+        <!-- hichert -->
+        <graph_attribute n="increfillColor" gaid="10142" dt="1" dv="transparent">
+        	<expts>
+                <expt goid="286" new_goid="28600"/>	
+        	</expts>
+			<attribute name="catId" value="2"/>
+        </graph_attribute>
+        
+        <graph_attribute n="decreFillColor" gaid="10143" dt="1" dv="transparent">
+        	<expts>
+                <expt goid="286" new_goid="28600"/>	
+        	</expts>
+			<attribute name="catId" value="2"/>
+        </graph_attribute>
+		
+		<graph_attribute n="fillEffect" gaid="10002" dt="2" dv="0">
+			<attribute name="catId" value="4"/>
+		</graph_attribute>
+		
+		<graph_attribute n="gradientColor" gaid="567" dt="1" dv="FFFFFF,FFFFFF,0,0,0,0">
+            <attribute name="catId" value="4"/>
+        </graph_attribute>		
+		
+		<graph_attribute n="bevelType" gaid="879" dt="2" dv="0">    <!-- map to FillEffect section in the page -->
+            <attribute name="catId" value="4"/>
+        </graph_attribute>
+				
+		<graph_attribute n="areaAlpha" gaid="608" dt="3" dv="255">
+            <attribute name="catId" value="4"/>
+        </graph_attribute>
+        
+		<graph_attribute n="lineAlpha" gaid="609" dt="3" dv="255">
+            <attribute name="catId" value="4"/>
+        </graph_attribute>
+        
+		<graph_attribute n="fontAlpha" gaid="610" dt="3" dv="255">
+            <attribute name="catId" value="4"/>
+        </graph_attribute>                
+
+        <graph_attribute n="areaTransparent" gaid="563" dt="4" dv="false">    
+            <attribute name="catId" value="4"/>
+        </graph_attribute> 
+        
+        <graph_attribute n="lineTransparent" gaid="587" dt="4" dv="false">    
+            <attribute name="catId" value="4"/>
+        </graph_attribute> 
+        				
+		<graph_attribute n="lineColor" gaid="588" dt="1" dv="transparent">
+            <expts>
+                <expt goid="444" new_goid="1319" new_gaid="564"/>                                                                              
+            </expts>		
+            <attribute name="catId" value="2"/>
+        </graph_attribute>
+        
+        <graph_attribute n="fontBoxStyle" gaid="601" dt="2" dv="0"/>
+        			
+		<!-- number tab -->	
+        <graph_attribute n="numberFormat" gaid="-616" dt="1" dv="9,,,,,,"> <!-- value is combined for many number format settings -->
+            <expts>
+				<expt goid="260" new_goid="286" new_gaid="-616"/>
+				<expt goid="418" new_goid="286" new_gaid="-616"/>	
+				<expt goid="518" new_goid="286" new_gaid="-616"/>		
+				<expt goid="272" new_goid="9999" new_gaid="618"/>
+                <expt goid="272" new_goid="9999" new_gaid="618"/>
+                <expt goid="290" new_goid="9999" new_gaid="618"/>
+                <expt goid="531" new_goid="9999" new_gaid="619"/>
+                <expt goid="558" new_goid="9999" new_gaid="619"/>
+                <expt goid="296" new_goid="9999" new_gaid="619"/>
+                <expt goid="302" new_goid="9999" new_gaid="620"/>
+                <expt goid="512" new_goid="9999" new_gaid="621"/>
+                <expt goid="552" new_goid="9999" new_gaid="621"/>
+                <expt goid="-2" new_goid="9999" new_gaid="621"/>
+				<expt goid="10002" new_goid="9999" new_gaid="10077"/>
+            </expts>	
+            <attribute name="catId" value="512"/>
+		</graph_attribute>	
+		
+        <!-- axes tab --> 
+        <graph_attribute n="dualAxisAuto" gaid="10054" dt="4" dv="false">
+			<attribute name="nullObj" value="true"/>
+		</graph_attribute>	
+		
+        <graph_attribute n="seriesOnY2" gaid="140" dt="4" dv="false">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>  
+
+        <graph_attribute n="gridStepOnX" gaid="647" dt="1" dv="">
+            <attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="128"/>
+        </graph_attribute>  
+						
+		<graph_attribute n="gridStepOnY1" gaid="645" dt="1" dv="">
+            <attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="128"/>
+        </graph_attribute>
+		
+        <graph_attribute n="gridStepOnY2" gaid="646" dt="1" dv="">
+            <attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="128"/>
+        </graph_attribute>		
+		
+        <graph_attribute n="gridStepOnZ" gaid="665" dt="1" dv="">
+            <attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="128"/>
+        </graph_attribute>      
+				 
+        <graph_attribute n="ScaleX" gaid="92" dt="1" dv="">
+            <attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="256"/>			
+        </graph_attribute> 
+				
+		<graph_attribute n="ScaleY1" gaid="93" dt="1" dv="">
+            <attribute name="nullObj" value="true"/>	
+			<attribute name="catId" value="256"/>  		
+        </graph_attribute> 
+		
+		<graph_attribute n="ScaleY2" gaid="94" dt="1" dv="">
+            <attribute name="nullObj" value="true"/>	
+			<attribute name="catId" value="256"/>  		
+        </graph_attribute> 
+
+        <graph_attribute n="ScaleZ" gaid="659" dt="1" dv="">
+            <attribute name="nullObj" value="true"/>   
+            <attribute name="catId" value="256"/>          
+        </graph_attribute>         
+
+		<!-- advanced tab --> 
+		<graph_attribute n="lockFontSize" gaid="604" dt="2" dv="0">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute> 
+		
+		<!-- option tab -->
+		<graph_attribute n="gaugeStyle" gaid="795" dt="2" dv="6">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>   
+		
+		<graph_attribute n="gaugeBorderStyle" gaid="796" dt="2" dv="4">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>   
+		
+		<graph_attribute n="gaugeBorderThick" gaid="797" dt="2" dv="25">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>   
+		
+		<graph_attribute n="gaugeRangeThick" gaid="10060" dt="2" dv="25">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>   
+		
+		<graph_attribute n="gaugeStartAngle" gaid="799" dt="2" dv="325">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>   
+		
+		<graph_attribute n="gaugeStopAngle" gaid="800" dt="2" dv="215">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>
+		
+		<graph_attribute n="gaugeNeedleStyle" gaid="801" dt="2" dv="2">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>   
+
+        <graph_attribute n="gaugeQBShow" gaid="10120" dt="2" dv="0">
+            <attribute name="nullObj" value="true"/>
+        </graph_attribute>  
+		
+		<!--Feature 300183-->
+		<!--Series Line-->
+		<graph_attribute n="lineShow" gaid="96" dt="1" dv="3">
+			<attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="seriesLineStyle" gaid="589" dt="2" dv="0">
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="seriesLineThickness" gaid="605" dt="1" dv="1">
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="seriesLineAlphaText" gaid="609" dt="3" dv="255">
+            <attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<!--Series Marker-->
+		<graph_attribute n="markerShow" gaid="96" dt="1" dv="3">
+			<attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="markerShape" gaid="683" dt="2" dv="0">
+			<attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="markerBevelType" gaid="879" dt="2" dv="0">
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="markerSize" gaid="671" dt="1" dv="30">
+			<attribute name="nullObj" value="true"/>
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="markerColor" gaid="564" dt="1" dv="0">
+            <expts>
+                <expt goid="286" new_goid="9999" new_gaid="556"/>	
+                <expt goid="256" new_goid="9999" new_gaid="556"/>	
+                <expt goid="350" new_goid="9999" new_gaid="556"/>	
+                <expt goid="341" new_goid="9999" new_gaid="556"/>	     
+                <expt goid="520" new_goid="9999" new_gaid="556"/>	
+                <expt goid="329" new_goid="9999" new_gaid="556"/>                                                             	
+            </expts>
+			<attribute name="catId" value="2"/>
+        </graph_attribute>
+		
+		<graph_attribute n="markerAlphaText" gaid="608" dt="3" dv="255">
+			<attribute name="catId" value="2"/>
+        </graph_attribute>
+		
+		<graph_attribute n="markerBorderStyle" gaid="589" dt="2" dv="0">
+			<attribute name="catId" value="2"/>
+        </graph_attribute>
+		
+		<graph_attribute n="markerBorderThickness" gaid="605" dt="1" dv="1">
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="markerBorderColor" gaid="588" dt="1" dv="0">
+            <expts>
+                <expt goid="444" new_goid="1319" new_gaid="564"/>                                                                              
+            </expts>	
+			<attribute name="catId" value="2"/>	
+        </graph_attribute>
+		
+		<graph_attribute n="markerBorderAlpha" gaid="609" dt="3" dv="255">
+			<attribute name="catId" value="2"/>
+		</graph_attribute>
+		
+		<graph_attribute n="markerBorderAlphaText" gaid="609" dt="3" dv="255">
+			<attribute name="catId" value="2"/>
+		</graph_attribute>                   		
+    </graph_attributes>
+</graph_format_info>

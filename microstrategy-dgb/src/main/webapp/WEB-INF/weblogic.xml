@@ -1,0 +1,23 @@
+<weblogic-web-app  
+  xmlns="http://www.bea.com/ns/weblogic/weblogic-web-app" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-web-app http://www.bea.com/ns/weblogic/weblogic-web-app/1.0/weblogic-web-app.xsd">
+
+  <security-role-assignment>
+    <role-name>admin</role-name>
+    <principal-name>Administrators</principal-name>
+  </security-role-assignment>
+
+  <charset-params>
+    <input-charset>
+      <resource-path>*</resource-path>
+      <java-charset-name>8859_1</java-charset-name>
+    </input-charset>
+    <charset-mapping>
+      <iana-charset-name>UnicodeLittle</iana-charset-name>
+      <java-charset-name>8859_1</java-charset-name>
+    </charset-mapping>
+  </charset-params>
+
+</weblogic-web-app>
+

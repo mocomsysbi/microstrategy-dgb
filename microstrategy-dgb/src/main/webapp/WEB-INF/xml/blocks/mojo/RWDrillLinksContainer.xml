@@ -1,0 +1,19 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+	A container that holds an array of Drill Links.
+--> 
+<block name="RWDrillLinksContainer">
+    <definition>
+    	<!-- 
+    		The target of the hyper-link. 
+        	If the value of this property is "_blank", then the browser will open a new window.
+        	Otherwise, if it has an empty value, then the browser will remain in the same window.
+        	This property controls all elements under the "items" property. 
+        -->
+        <property name="target" type="String" />
+        <!-- 
+        	The "items" property contains an array of Blocks. Each element in the Array is a RWDrillLink.
+        -->
+        <property name="items" type="List" />
+    </definition>
+</block>

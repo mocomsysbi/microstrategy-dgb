@@ -1,0 +1,118 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+    <mstrlayout:if name="isEmptyList">
+        <mstrlayout:then>
+            <mstrlayout:render name="EmptyList" />
+        </mstrlayout:then>
+        <mstrlayout:else>
+
+    <table class="mstrListView" cellspacing="0" id="FolderList">
+        <mstrlayout:attr name="addSummaryAttribute" />
+        <colgroup>
+            <col class="typ" />
+            <col class="nam" />
+            <col class="own" />
+            <col class="mod" />
+            <col class="des" />
+            <mstrlayout:if name="isActionsTabAvailable">
+                <mstrlayout:then>
+                    <col class="act" />
+                </mstrlayout:then>
+            </mstrlayout:if>
+        </colgroup>
+        <thead>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="945"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="60"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="61"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="Descriptor">
+                        <mstrlayout:argument type="int" value="39"/>
+                    </mstrlayout:render>
+                </td>
+                <mstrlayout:if name="isActionsTabAvailable">
+                    <mstrlayout:then>
+                        <td>
+                            <mstrlayout:render name="Descriptor">
+                                <mstrlayout:argument type="int" value="3265"/>
+                            </mstrlayout:render>
+                        </td>
+                    </mstrlayout:then>
+                </mstrlayout:if>
+            </tr>
+        </thead>
+        <tbody>
+        <mstrlayout:list id="FolderObjects" name="getSortedList">
+            <tr>
+                <mstrlayout:attr name="getListItemAttributes"><!-- add CSS class to TR tag -->
+                    <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                </mstrlayout:attr>
+                <td>
+                    <mstrlayout:attr name="getContextMenuAttributes">
+                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:attr>
+                    <mstrlayout:render name="LayeredIconInfo">
+                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:argument type="boolean" value="true"/>
+                        <mstrlayout:argument type="boolean" value="false"/> <!-- listView -->
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:attr name="getContextMenuAttributes">
+                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:attr>
+                    <mstrlayout:render name="NameInfo">
+                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="OwnerInfo">
+                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="ModifiedInfo">
+                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                    </mstrlayout:render>
+                </td>
+                <td>
+                    <mstrlayout:render name="DescriptionInfo">
+                        <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                        <mstrlayout:argument type="boolean" value="true"/>
+                    </mstrlayout:render>
+                </td>
+                 <mstrlayout:if name="isActionsTabAvailable">
+                    <mstrlayout:then>
+                        <td style="whitespace:nowrap">
+                            <mstrlayout:render name="EditInfo">
+                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                <mstrlayout:argument type="boolean" value="false"/>
+                            </mstrlayout:render>
+                            <mstrlayout:render name="DeleteInfo">
+                                <mstrlayout:argument list="FolderObjects" type="com.microstrategy.web.objects.WebObjectInfo"/>
+                                <mstrlayout:argument type="boolean" value="false"/>
+                            </mstrlayout:render>
+                        </td>
+                      </mstrlayout:then>
+                </mstrlayout:if>
+            </tr>
+        </mstrlayout:list>
+        </tbody>
+    </table>
+        </mstrlayout:else>
+    </mstrlayout:if>
+</mstrlayout:layout>

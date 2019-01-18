@@ -1,0 +1,15 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrToolbarCaption mstrFTExecLabel">
+    <mstrlayout:render name="labelTitle"/>
+  </div>
+  <div class="mstrToolbarCaption">
+    <mstrlayout:render name="filterInfo"/>
+  </div>
+  <div class="mstrToolbarCaption">
+    <mstrlayout:render name="templateInfo"/>
+  </div>
+  <div class="execBtn">
+    <mstrlayout:render name="reportInfo"/>
+  </div>
+</mstrlayout:layout>

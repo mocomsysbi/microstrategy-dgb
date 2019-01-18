@@ -1,0 +1,35 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/UserDefault.xml">
+
+    <mstrlayout:replace slot="post-save">
+      <mstrlayout:if name="isLoginRequired" base="bean"><mstrlayout:then>
+        <mstrlayout:render name="descriptor">
+          <mstrlayout:argument type="string" value="mstrWeb.3455"/>
+        </mstrlayout:render>
+        <br />
+      </mstrlayout:then></mstrlayout:if>
+    </mstrlayout:replace>
+
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="2" class="preferenceList">
+            <tr>
+              <td valign="top" style="width:18%;">
+                <span class="prefs-input">
+                  <mstrlayout:render name="descriptor"> <!-- Logout: -->
+                    <mstrlayout:argument type="String" value="mstrWeb.3451"/>
+                  </mstrlayout:render>
+                </span>
+              </td>
+              <td>
+                <p><mstrlayout:render name="CancelRequestsSection"/></p>
+                <p><mstrlayout:render name="RemoveFinishedJobsSection"/></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

@@ -1,0 +1,8 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:list id="toolbars" name="getToolbarBeans" base="bean">
+		<mstrlayout:render name="toolbar">
+			<mstrlayout:argument type="com.microstrategy.web.app.beans.ToolbarBean" list="toolbars"/>
+		</mstrlayout:render>
+    </mstrlayout:list>
+</mstrlayout:layout>

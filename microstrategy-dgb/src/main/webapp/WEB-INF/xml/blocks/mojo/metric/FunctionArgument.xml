@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for a function argument. It may be a function parameter or a property.
+--> 
+<block name="FunctionArgument">
+  <definition>
+    <!-- Name of the function argument -->
+    <property name="n" type="String" />
+    <!-- Description of the function argument -->
+    <property name="desc" type="String" />
+    <!-- Data type of the function argument -->
+    <property name="dtp" type="Integer" />
+    <!-- Default value for this argument -->
+    <property name="dfv" type="String" />
+    <!-- Object type of this function argument -->
+    <property name="t" type="Integer" />
+  </definition>
+</block>

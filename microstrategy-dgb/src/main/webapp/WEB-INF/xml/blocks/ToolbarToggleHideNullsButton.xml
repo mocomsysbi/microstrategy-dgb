@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarToggleHideNullsButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbToggleHideNulls</property>
+        <property name="tooltip">{desc:mstrWeb.9847|Hide Nulls/Zeros}</property>
+        <property name="cmdid">toggleHideNullsOrZeros</property>
+	</assignments>
+</block>

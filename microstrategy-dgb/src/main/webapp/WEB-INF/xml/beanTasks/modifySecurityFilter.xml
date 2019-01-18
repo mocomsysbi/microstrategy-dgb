@@ -1,0 +1,21 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ModifySecurityFilterTask" privileges="EnableAdministrationFromWeb">
+	<basicInfo desc="This Task provides the ability to modify the security filters for a user or a group. For setting multiple parameters, we use caret to seperate them.">
+		<parameter name="userEntityID" desc="The user or group to be modified" required="true" />
+		<parameter name="securityFilters" desc="The securtiry filters of the user or group. It includes the information about the user's security filters per project. For the parameter's format see: com.microstrategy.web.app.tasks.ModifySecurityFilterTask#securityFilerParam" required="true" type="simplestring"/>
+	</basicInfo>
+
+	<!--
+		"32768004" is the EnumUserEntityBeanEvents.USER_ENTITY_EVENT_MODIFY_SECURITY_FILTER
+	-->
+	<eventInfo eventID="32768004">
+		 <argument name="saveNow" value="1"/>   
+	</eventInfo>
+
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'ub' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="ub" bean-type="UserBean">
+	</beanInfo>
+</beanTask>

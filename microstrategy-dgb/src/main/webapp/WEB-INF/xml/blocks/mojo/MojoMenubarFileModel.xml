@@ -1,0 +1,150 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoMenubarFileModel" inherits="MojoToolbarButtonModel">
+    <assignments>
+        <property name="n">file</property>
+        <property name="desc">{desc:mstrWeb.489|File}</property>
+        <property name="pm">1</property>
+        <property name="items">
+            <list>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">newVI</property>
+                    <property name="desc">{desc:mstrWeb.15259|New Dossier}</property>
+                    <property name="cmd">newVI</property>
+                    <property name="visibleFeatures">create-analysis</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">openVI</property>
+                    <property name="desc">{desc:mstrWeb.11792|Open...}</property>
+                    <property name="cmd">openVI</property>
+                    <property name="visibleFeatures">open-analysis</property>
+                </block>
+
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">save</property>
+                    <property name="desc">{desc:mstrWeb.118|Save}</property>
+                    <property name="cmd">dSave</property>
+                    <property name="visibleFeatures">save-analysis</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">savePromptOption</property>
+                    <property name="desc">{desc:mstrWeb.15681|Change Prompt Option and Save}</property>
+                    <property name="cmd">savePromptOption</property>
+                    <property name="visibleFeatures">reprompt;save-analysis</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">saveAs</property>
+                    <property name="desc">{desc:mstrWeb.1896|Save As...}</property>
+                    <property name="cmd">saveAs</property>
+                    <property name="visibleFeatures">save-analysis</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">exportPDF</property>
+                    <property name="desc">{desc:mstrWeb.5212|Export to PDF}</property>
+                    <property name="cmd">printPDF</property>
+                    <property name="visibleFeatures">html5-export-to-pdf</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">shareByLink</property>
+                    <property name="desc">{desc:mstrWeb.12430|Share...}</property>
+                    <property name="cmd">ShowSharingEditor</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">print</property>
+                    <property name="desc">{desc:mstrWeb.2109|Print...}</property>
+                    <property name="cmd">print</property>
+                    <property name="visibleFeatures">print;enable-print;web-export-to-pdf;not-navigation-document</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">download</property>
+                    <property name="desc">{desc:mstrWeb.15260|Download Dossier}</property>
+                    <property name="cmd">exportMSTR</property>
+                    <property name="visibleFeatures">export;download-analysis</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">import</property>
+                    <property name="desc">{desc:mstrWeb.15261|Import Dossier}</property>
+                    <property name="cmd">importMSTR</property>
+                    <property name="visibleFeatures">export;download-analysis</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">addtoHistoryList</property>
+                    <property name="desc">{desc:mstrWeb.1982|Add to History List}</property>
+                    <property name="cmd">saveToInbox</property>
+                    <property name="visibleFeatures">add-history-list;not-navigation-document</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">scheduleToHistoryList</property>
+                    <property name="desc">{desc:mstrWeb.11796|Schedule Delivery to History List...}</property>
+                    <property name="cmd">scheduleHL</property>
+                    <property name="visibleFeatures">scheduling</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">scheduleToEmail</property>
+                    <property name="desc">{desc:mstrWeb.13888|Schedule Delivery to Email...}</property>
+                    <property name="cmd">scheduleEmail</property>
+                    <property name="visibleFeatures">scheduled-email</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">sendNow</property>
+                    <property name="desc">{desc:mstrWeb.2249|Send Now...}</property>
+                    <property name="cmd">sendNow</property>
+                    <property name="visibleFeatures">scheduling;use-immediate-delivery;web-export-to-pdf;enable-pdf</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">createPersonalView</property>
+                    <property name="desc">{desc:mstrWeb.11797|Create Personal View...}</property>
+                    <property name="cmd">createPersonalView</property>
+                    <property name="visibleFeatures">not-navigation-document</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">reprompt</property>
+                    <property name="desc">{desc:mstrWeb.119|Re-prompt}</property>
+                    <property name="cmd">reprompt</property>
+                    <property name="visibleFeatures">reprompt</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">docProps</property>
+                    <property name="desc">{desc:mstrWeb.15262|Dossier Properties...}</property>
+                    <property name="cmd">docProps</property>
+                    <property name="visibleFeatures">edit-ive</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">docProps</property>
+                    <property name="desc">{desc:mstrWeb.5180|Convert to Document}</property>
+                    <property name="cmd">convertToDoc</property>
+                    <property name="visibleFeatures">documents-design-mode</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">dlmt</property>
+                </block>
+
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">closeVI</property>
+                    <property name="desc">{desc:mstrWeb.2102|Close}</property>
+                    <property name="cmd">close</property>
+                </block>
+            </list>
+        </property>
+    </assignments>
+</block>

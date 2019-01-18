@@ -1,0 +1,35 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd" >
+<!-- 
+  GridFormatLevel contains sets of properties for each different level of format.
+ -->
+<block name="GridFormatLevel" inherits="BaseBlock">
+  <definition>
+    <!-- All format Levels -->
+    <property name="a" type="Block" />
+    <!-- All header formats -->
+    <property name="h" type="Block" />
+    <!-- All value formats -->
+    <property name="v" type="Block" />
+    <!-- All subtotal header formats -->
+    <property name="sn" type="Block" />
+    <!-- All subtotal value formats -->
+    <property name="sv" type="Block" />
+  </definition>
+  <assignments>
+    <property name="a">
+      <block name="GridFormatObject"/>
+    </property>
+    <property name="h">
+      <block name="GridFormatObject"/>
+    </property>
+    <property name="v">
+      <block name="GridFormatObject"/>
+    </property>
+    <property name="sn">
+      <block name="GridFormatObject"/>
+    </property>
+    <property name="sv">
+      <block name="GridFormatObject"/>
+    </property>
+  </assignments>
+</block>

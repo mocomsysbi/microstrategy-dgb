@@ -1,0 +1,532 @@
+<VisualizationGallery>
+  <VisualizationTemplates>
+      <VisualizationTemplate id="0" iconURL="../swf/images/visualizationGallery/visualizationTemplates/grid/grid.png" visualizationId="Grid" minAttributeCount="0" minMetricCount="0" text="mstr.1100" tooltip="mstr.1143">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="1" iconURL="../swf/images/visualizationGallery/visualizationTemplates/heatMap/heatMap.png" visualizationId="HeatMap2" minAttributeCount="1" minMetricCount="0" text="mstr.1101" tooltip="mstr.1144">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Grouping" type="nm" rule="1" additionalRule="Range(1-)" widgetProp=""/>
+          <DropZone id="SizeBy" type="m" rule="1" additionalRule="1" widgetProp="ml"/>
+          <DropZone id="ColorBy" type="m" rule=">1?2:1" additionalRule=">1?2:1" widgetProp="ml"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(3-)" widgetProp="am"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="2" iconURL="../swf/images/visualizationGallery/visualizationTemplates/googleMap/googleMap.png" visualizationId="Map" minAttributeCount="1" minMetricCount="0" text="mstr.1102" tooltip="mstr.1145">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Latitude" type="nm" rule="1" additionalRule="1" widgetProp="flat"/>
+          <DropZone id="Longitude" type="nm" rule="2" additionalRule="2" widgetProp="flong"/>
+          <DropZone id="GeoAttr" type="nm" rule="1" additionalRule="1" widgetProp="ga"/>
+          <DropZone id="ColorBy" type="m" rule="1" additionalRule="1" widgetProp="cmt"/>
+          <DropZone id="AdditionalAttributes" type="nm" rule="1" additionalRule="1" widgetProp="tooltip"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="6" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalBarStacked.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1106" tooltip="mstr.1149">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="-2" additionalRule="-2,Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">2?1,5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="1" additionalRule=">2?2:(>1?1),4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Bar"/>
+          <Properties Subtype="Stacked"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="7" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalBarClustered.png" visualizationId="GraphMatrix2" minAttributeCount="0" minMetricCount="1" text="mstr.1107" tooltip="mstr.1150">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="-2" additionalRule="-2,Range(6-)" widgetProp="Rows"/>         
+          <DropZone id="Columns" type="nm" additionalRule=">2?1,5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="1" additionalRule=">2?2:1,4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:2" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:-3)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Bar"/>
+          <Properties Subtype="Clustered"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="8" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalBarPercent.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1148" tooltip="mstr.1148">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="-2" additionalRule="-2,Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">2?1,5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="1" additionalRule=">2?2:(>1?1),4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Bar"/>
+          <Properties Subtype="Percent"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="9" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalBarStacked.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1109" tooltip="mstr.1152">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule=">2?1,Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="1" additionalRule=">2?2:(>1?1),4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Bar"/>
+          <Properties Subtype="Stacked"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="10" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalBarClustered.png" visualizationId="GraphMatrix2" minAttributeCount="0" minMetricCount="1" text="mstr.1110" tooltip="mstr.1153">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule=">2?1,Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="1" additionalRule=">2?2:1,4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:2" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:-3)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Bar"/>
+          <Properties Subtype="Clustered"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="11" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalBarPercent.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1151" tooltip="mstr.1151">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule=">2?1,Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="1" additionalRule=">2?2:(>1?1),4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Bar"/>
+          <Properties Subtype="Percent"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="12" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalLineStacked.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1112" tooltip="mstr.1155">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" rule="-2" additionalRule="-2,Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">2?(HasDate?2:1),5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="HasDate?-1:1" additionalRule=">2?(HasDate?-1:2):(>1?1),4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Line"/>
+          <Properties Subtype="Stacked"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="13" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalLineAbsolute.png" visualizationId="GraphMatrix2" minAttributeCount="1" minMetricCount="1" text="mstr.1113" tooltip="mstr.1156">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" additionalRule="-2,Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">2?(HasDate?2:1),5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="HasDate?-1:1,-2" additionalRule=">2?(HasDate?-1:2):(>1:1),4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="-3" additionalRule=">2?3:(>1?2:(>0?1:-3))" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Line"/>
+          <Properties Subtype="Clustered"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="14" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalLinePercent.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1154" tooltip="mstr.1154">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" rule="-2" additionalRule="-2,Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">2?(HasDate?2:1),5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="HasDate?-1:1" additionalRule=">2?(HasDate?-1:2):(>1?1),4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Line"/>
+          <Properties Subtype="Percent"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="15" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalLineStacked.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1115" tooltip="mstr.1158">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" additionalRule=">2?(HasDate?2:1),Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="HasDate?-1:1" additionalRule=">2?(HasDate?-1:2):(>1?1),4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Line"/>
+          <Properties Subtype="Stacked"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="16" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalLineAbsolute.png" visualizationId="GraphMatrix2" minAttributeCount="1" minMetricCount="1" text="mstr.1116" tooltip="mstr.1159">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" additionalRule=">2?(HasDate?2:1),Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule="-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="HasDate?-1:1,-2" additionalRule=">2?(HasDate?-1:2):(>1:1),4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="-3" additionalRule=">2?3:(>1?2:(>0?1:-3))" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Line"/>
+          <Properties Subtype="Clustered"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="17" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalLinePercent.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1157" tooltip="mstr.1157">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" additionalRule=">2?(HasDate?2:1),Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="HasDate?-1:1" additionalRule=">2?(HasDate?-1:2):(>1?1),4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Line"/>
+          <Properties Subtype="Percent"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>      
+      <VisualizationTemplate id="18" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixCircleScatterXY.png" visualizationId="GraphMatrix2" minAttributeCount="0" minMetricCount="2" text="mstr.1118" tooltip="mstr.1161">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule=">2?2:(>1?1),Range(4-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule=">2?1,-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,3" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="2" additionalRule="2,4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="1" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="1" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(5-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Circle"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="19" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixCircleScatterGrid.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="0" text="mstr.1119" tooltip="mstr.1162">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule="4,Range(7-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">2?1" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="2" additionalRule=">2?3:2,6" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="1" additionalRule=">2?2:1,5" widgetProp="YAxis"/>
+          <DropZone id="ColorBy" type="m" rule="1" additionalRule="1" widgetProp="ColorBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(2-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Circle"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="21" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixCircleBubbleXY.png" visualizationId="GraphMatrix2" minAttributeCount="0" minMetricCount="2" text="mstr.1121" tooltip="mstr.1164">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule=">2?2:(>1?1),Range(4-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule=">2?1,-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1,>3?3" additionalRule="1,>3?3" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="2,4" additionalRule="2,4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="1" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="1" additionalRule=">2?3:(>1?2:1)" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" rule=">2?3:2" additionalRule=">2?3:2,5" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Circle"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="22" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixCircleBubbleGrid.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1122" tooltip="mstr.1165">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule="4,Range(7-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">2?1" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="2" additionalRule=">2?3:2,6" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="1" additionalRule=">2?2:1,5" widgetProp="YAxis"/>
+          <DropZone id="ColorBy" type="m" rule=">1?2:1" additionalRule=">1?2:1" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" rule="1" additionalRule="1" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(3-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Circle"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="30" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalAreaStacked.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1716" tooltip="mstr.1716">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" rule="-2" additionalRule="Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">1?(HasDate?2:1),4" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="HasDate?-1:1" additionalRule=">1?(HasDate?-1:2):1,3,-2" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,3,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule="" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule="-3" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Area"/>
+          <Properties Subtype="Stacked"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="31" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalAreaPercent.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1715" tooltip="mstr.1715">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" rule="-2" additionalRule="Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">1?(HasDate?2:1),4" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="HasDate?-1:1" additionalRule=">1?(HasDate?-1:2):1,3,-2" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,3,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule="" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule="-3" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Area"/>
+          <Properties Subtype="Percent"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="32" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixVerticalAreaAbsolute.png" visualizationId="GraphMatrix2" minAttributeCount="1" minMetricCount="1" text="mstr.1717" tooltip="mstr.1717">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" additionalRule="-2,Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule=">2?(HasDate?2:1),5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" rule="HasDate?-1:1,-2" additionalRule=">2?(HasDate?-1:2):(>1:1),4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="m" rule="1" additionalRule="1,2,3,4,5" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="-3" additionalRule=">2?3:(>1?2:(>0?1:-3))" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Area"/>
+          <Properties Subtype="Clustered"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="40" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalAreaStacked.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1719" tooltip="mstr.1719">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" additionalRule=">1?(HasDate?2:1),4,Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,3,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="HasDate?-1:1" additionalRule=">1?(HasDate?-1:2):1,3,-2" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule="" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule="-3" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Area"/>
+          <Properties Subtype="Stacked"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="41" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalAreaPercent.png" visualizationId="GraphMatrix2" minAttributeCount="2" minMetricCount="1" text="mstr.1718" tooltip="mstr.1718">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" additionalRule=">1?(HasDate?2:1),4,Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,3,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="HasDate?-1:1" additionalRule=">1?(HasDate?-1:2):1,3,-2" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" rule="2" additionalRule="" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="2" additionalRule="-3" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Area"/>
+          <Properties Subtype="Percent"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="42" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graphMatrix/graphMatrixHorizontalAreaAbsolute.png" visualizationId="GraphMatrix2" minAttributeCount="1" minMetricCount="1" text="mstr.1720" tooltip="mstr.1720">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" additionalRule=">2?(HasDate?2:1),Range(5-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" additionalRule="-2" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="m" rule="1" additionalRule="1,2,3,4,5" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" rule="HasDate?-1:1,-2" additionalRule=">2?(HasDate?-1:2):(>1:1),4" widgetProp="YAxis"/>
+          <DropZone id="BreakBy" type="nm" additionalRule=">2?3:(>1?2:1)" widgetProp="BreakBy"/>
+          <DropZone id="ColorBy" type="nm" rule="-3" additionalRule=">2?3:(>1?2:(>0?1:-3))" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Area"/>
+          <Properties Subtype="Clustered"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="33" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/horizontalBarGraphDualAxis.png" visualizationId="Graph" minAttributeCount="1" minMetricCount="2" text="mstr.1130" tooltip="mstr.1173" majorType="8" minorType="16">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="43" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/verticalBarGraphDualAxis.png" visualizationId="Graph" minAttributeCount="1" minMetricCount="2" text="mstr.1132" tooltip="mstr.1175" majorType="4" minorType="16">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="36" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/horizontalLineGraphDualAxis.png" visualizationId="Graph" minAttributeCount="1" minMetricCount="2" text="mstr.1134" tooltip="mstr.1177" majorType="32" minorType="16">
+        <DropZonesResolution filterDate="true">
+          <DropZone id="Rows" type="nm" rule="HasDate?-1:1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="49" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/verticalLineGraphDualAxis.png" visualizationId="Graph" minAttributeCount="1" minMetricCount="2" text="mstr.1136" tooltip="mstr.1179" majorType="16" minorType="16">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="38" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/horizontalAreaGraphDualAxis.png" visualizationId="Graph" minAttributeCount="1" minMetricCount="2" text="mstr.1138" tooltip="mstr.1181" majorType="2" minorType="16">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="54" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/verticalAreaGraphDualAxis.png" visualizationId="Graph" minAttributeCount="1" minMetricCount="2" text="mstr.1140" tooltip="mstr.1183" majorType="1" minorType="16">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="56" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/combinationBarAreaGraph.png" visualizationId="Graph" minAttributeCount="1" minMetricCount="2" text="mstr.1141" tooltip="mstr.1184" majorType="16777216" minorType="1">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="57" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/combinationBarAreaGraphDualAxis.png" visualizationId="Graph" minAttributeCount="1" minMetricCount="2" text="mstr.1142" tooltip="mstr.1185" majorType="16777216" minorType="8">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" rule="1" additionalRule="Range(1-)"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2"/>
+          <DropZone id="Metrics" type="m" rule="1,2" additionalRule="Range(1-)"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="58" iconURL="../swf/images/visualizationGallery/visualizationTemplates/network/network.png" visualizationId="NetViz" minAttributeCount="1" minMetricCount="0" text="mstr.1332" tooltip="mstr.1333">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="FromItem" type="nm" rule="1" additionalRule="1" widgetProp="fromitem"/>
+          <DropZone id="ToItem" type="nm" rule="2" additionalRule="2" widgetProp="toitem"/>
+          <DropZone id="EdgeColor" type="m" rule="1" additionalRule="1" widgetProp="edgecolorby"/>
+          <DropZone id="EdgeSize" type="m" rule="" additionalRule="3" widgetProp="edgesizeby"/>
+          <DropZone id="NodeSize" type="m" rule="" additionalRule="2" widgetProp="nodesizeby"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="59" iconURL="../swf/images/visualizationGallery/visualizationTemplates/imageLayout/imageLayout.png" visualizationId="ImageLayout" minAttributeCount="1" minMetricCount="1" text="mstr.1349" tooltip="mstr.1350">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="GeoAttr" type="nm" rule="1" additionalRule="1" widgetProp="ga"/>
+          <DropZone id="ColorBy" type="m" rule="1" additionalRule="1" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" rule="" additionalRule="" widgetProp="SizeBy"/>
+          <DropZone id="Tooltip" type="m" additionalRule="Range(3-)" widgetProp="Tooltip"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="60" iconURL="../swf/images/visualizationGallery/visualizationTemplates/googleMap/googleMapDensity.png" visualizationId="Map" minAttributeCount="1" minMetricCount="0" text="mstr.1351" tooltip="mstr.1352">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Latitude" type="nm" rule="1" additionalRule="1" widgetProp="flat"/>
+          <DropZone id="Longitude" type="nm" rule="2" additionalRule="2" widgetProp="flong"/>
+          <DropZone id="GeoAttr" type="nm" rule="1" additionalRule="1" widgetProp="ga"/>
+          <DropZone id="AdditionalAttributes" type="nm" rule="1" additionalRule="1" widgetProp="tooltip"/>
+          <Properties mtp="4"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="61" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/pie.png" visualizationId="GraphMatrix2" minAttributeCount="1" minMetricCount="0" text="mstr.1103" tooltip="mstr.1146">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule="4, Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2, 5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" additionalRule="2" widgetProp="XAxis"/>
+          <DropZone id="XAxis" type="m" additionalRule="4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" additionalRule="3" widgetProp="YAxis"/>
+          <DropZone id="YAxis" type="m" additionalRule="5" widgetProp="YAxis"/>
+          <DropZone id="Slice" type="nm" rule="1" additionalRule="1" widgetProp="Slice"/>
+          <DropZone id="Angle" type="m" rule="1" additionalRule="1,2" widgetProp="Angle"/>
+          <DropZone id="ColorBy" type="nm" rule="1" additionalRule="1" widgetProp="ColorBy"/>
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Pie"/>
+          <Properties Subtype="Automatic"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="62" iconURL="../swf/images/visualizationGallery/visualizationTemplates/graph/ring.png" visualizationId="GraphMatrix2" minAttributeCount="1" minMetricCount="0" text="mstr.1104" tooltip="mstr.1147">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Rows" type="nm" additionalRule="4, Range(6-)" widgetProp="Rows"/>
+          <DropZone id="Columns" type="nm" rule="-2" additionalRule="-2, 5" widgetProp="Columns"/>
+          <DropZone id="XAxis" type="nm" additionalRule="2" widgetProp="XAxis"/>
+          <DropZone id="XAxis" type="m" additionalRule="4" widgetProp="XAxis"/>
+          <DropZone id="YAxis" type="nm" additionalRule="3" widgetProp="YAxis"/>
+          <DropZone id="YAxis" type="m" additionalRule="5" widgetProp="YAxis"/>
+          <DropZone id="Slice" type="nm" rule="1" additionalRule="1" widgetProp="Slice" />
+          <DropZone id="Angle" type="m" rule="1" additionalRule="1,2" widgetProp="Angle" />
+          <DropZone id="ColorBy" type="nm" rule="1" additionalRule="1" widgetProp="ColorBy" />
+          <DropZone id="SizeBy" type="m" additionalRule="3" widgetProp="SizeBy"/>
+          <DropZone id="AdditionalMetrics" type="m" additionalRule="Range(6-)" widgetProp="AdditionalMetrics"/>
+          <Properties Shape="Ring"/>
+          <Properties Subtype="Automatic"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="69" iconURL="../swf/images/visualizationGallery/visualizationTemplates/esriMap/esriMap.png" visualizationId="ESRIMap" minAttributeCount="1" minMetricCount="0" text="mstr.1874" tooltip="mstr.1875">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Latitude" type="nm" rule="1" additionalRule="1" widgetProp="lat"/>
+          <DropZone id="Longitude" type="nm" rule="2" additionalRule="2" widgetProp="lng"/>
+          <DropZone id="GeoAttr" type="nm" rule="1" additionalRule="1" widgetProp="ma"/>
+          <DropZone id="ColorBy" type="m" rule="1" additionalRule="1" widgetProp="cmt"/>
+          <DropZone id="AdditionalAttributes" type="nm" rule="1" additionalRule="1" widgetProp="tooltip"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="70" iconURL="../swf/images/visualizationGallery/visualizationTemplates/imageLayout/imageLayout.png" visualizationId="ESRIMap" minAttributeCount="1" minMetricCount="0" text="mstr.1918" tooltip="mstr.1918">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="GeoAttr" type="nm" rule="1" additionalRule="1" widgetProp="ma"/>
+          <DropZone id="ColorBy" type="m" rule="1" additionalRule="1" widgetProp="cmt"/>
+          <DropZone id="AdditionalAttributes" type="nm" rule="1" additionalRule="1" widgetProp="tooltip"/>
+          <Properties sa="1"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+      <VisualizationTemplate id="71" iconURL="../swf/images/visualizationGallery/visualizationTemplates/googleMap/googleMapDensity.png" visualizationId="ESRIMap" minAttributeCount="1" minMetricCount="0" text="mstr.1920" tooltip="mstr.1920">
+        <DropZonesResolution filterDate="false">
+          <DropZone id="Latitude" type="nm" rule="1" additionalRule="1" widgetProp="lat"/>
+          <DropZone id="Longitude" type="nm" rule="2" additionalRule="2" widgetProp="lng"/>
+          <DropZone id="GeoAttr" type="nm" rule="1" additionalRule="1" widgetProp="ma"/>
+          <DropZone id="AdditionalAttributes" type="nm" rule="1" additionalRule="1" widgetProp="tooltip"/>
+          <Properties mtp="4"/>
+        </DropZonesResolution>
+      </VisualizationTemplate>
+  </VisualizationTemplates>
+  <VisualizationGroups>
+    <VisualizationGroup id="0" iconURL="../swf/images/visualizationGallery/visualizationGroups/grid.png" text="mstr.1186" tooltip="mstr.1198">
+      <VisualizationTemplateId>0</VisualizationTemplateId>
+    </VisualizationGroup>
+    <VisualizationGroup id="1" iconURL="../swf/images/visualizationGallery/visualizationGroups/heatMap.png" text="mstr.1187" tooltip="mstr.1199">
+      <VisualizationTemplateId>1</VisualizationTemplateId>
+    </VisualizationGroup>
+    <VisualizationGroup id="2" iconURL="../swf/images/visualizationGallery/visualizationGroups/googleMap.png" iconURLSecondary="../swf/images/visualizationGallery/visualizationGroups/imageLayout.png" text="mstr.1188" tooltip="mstr.1200" tooltipSecondary="mstr.1350">
+      <VisualizationTemplateId>69</VisualizationTemplateId>
+      <VisualizationTemplateId>71</VisualizationTemplateId>
+      <VisualizationTemplateId>70</VisualizationTemplateId>
+    </VisualizationGroup>
+      <VisualizationGroup id="3" iconURL="../swf/images/visualizationGallery/visualizationGroups/network.png" text="mstr.1332" tooltip="mstr.1333">
+      <VisualizationTemplateId>58</VisualizationTemplateId>
+      </VisualizationGroup>
+    <VisualizationGroup id="4" iconURL="../swf/images/visualizationGallery/visualizationGroups/graphMatrixBar.png" text="mstr.1190" tooltip="mstr.1202">
+      <VisualizationTemplateId>7</VisualizationTemplateId>
+      <VisualizationTemplateId>6</VisualizationTemplateId>
+      <VisualizationTemplateId>8</VisualizationTemplateId>
+      <VisualizationTemplateId>10</VisualizationTemplateId>
+      <VisualizationTemplateId>9</VisualizationTemplateId>
+      <VisualizationTemplateId>11</VisualizationTemplateId>
+    </VisualizationGroup>   
+    <VisualizationGroup id="5" iconURL="../swf/images/visualizationGallery/visualizationGroups/graphMatrixLine.png" text="mstr.1191" tooltip="mstr.1203">
+      <VisualizationTemplateId>13</VisualizationTemplateId>
+      <VisualizationTemplateId>12</VisualizationTemplateId>
+      <VisualizationTemplateId>14</VisualizationTemplateId>
+      <VisualizationTemplateId>16</VisualizationTemplateId>
+      <VisualizationTemplateId>15</VisualizationTemplateId>
+      <VisualizationTemplateId>17</VisualizationTemplateId>
+    </VisualizationGroup>
+    <VisualizationGroup id="6" iconURL="../swf/images/visualizationGallery/visualizationGroups/graphMatrixArea.png" text="mstr.1714" tooltip="mstr.1714">
+      <VisualizationTemplateId>32</VisualizationTemplateId>
+      <VisualizationTemplateId>30</VisualizationTemplateId>
+      <VisualizationTemplateId>31</VisualizationTemplateId>
+      <VisualizationTemplateId>42</VisualizationTemplateId>
+      <VisualizationTemplateId>40</VisualizationTemplateId>
+      <VisualizationTemplateId>41</VisualizationTemplateId>
+    </VisualizationGroup>
+    <VisualizationGroup id="7" iconURL="../swf/images/visualizationGallery/visualizationGroups/graphMatrixCircle.png" text="mstr.1192" tooltip="mstr.1204">
+      <VisualizationTemplateId>18</VisualizationTemplateId>
+      <VisualizationTemplateId>19</VisualizationTemplateId>
+      <VisualizationTemplateId>21</VisualizationTemplateId>
+      <VisualizationTemplateId>22</VisualizationTemplateId>
+    </VisualizationGroup>
+    <VisualizationGroup id="8" iconURL="../swf/images/visualizationGallery/visualizationGroups/pie.png" text="mstr.1189" tooltip="mstr.1201">
+      <VisualizationTemplateId>61</VisualizationTemplateId>
+      <VisualizationTemplateId>62</VisualizationTemplateId>
+    </VisualizationGroup>
+    <VisualizationGroup id="9" iconURL="../swf/images/visualizationGallery/visualizationGroups/dualAxisGraph.png" text="mstr.1721" tooltip="mstr.1721">
+      <VisualizationTemplateId>43</VisualizationTemplateId>
+      <VisualizationTemplateId>33</VisualizationTemplateId>
+      <VisualizationTemplateId>49</VisualizationTemplateId>
+      <VisualizationTemplateId>36</VisualizationTemplateId>
+      <VisualizationTemplateId>54</VisualizationTemplateId>
+      <VisualizationTemplateId>38</VisualizationTemplateId>
+      <VisualizationTemplateId>57</VisualizationTemplateId>
+    </VisualizationGroup>
+    <VisualizationGroup id="10" iconURL="../swf/images/visualizationGallery/visualizationGroups/combinationGraph.png" text="mstr.1197" tooltip="mstr.1209">
+      <VisualizationTemplateId>56</VisualizationTemplateId>
+    </VisualizationGroup>
+  </VisualizationGroups>
+</VisualizationGallery>

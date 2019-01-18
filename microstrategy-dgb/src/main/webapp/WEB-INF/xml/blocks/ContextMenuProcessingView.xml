@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--	ContextMenuProcessingView is a view to show the on the ondemand context menus-->
+	<block name="ContextMenuProcessingView" inherits="BaseView">
+		<assignments>
+			<property name="id">cmmViewID</property>
+			<property name="scriptClass"> mstr.views.ContextMenuProcessingView</property>
+		</assignments>
+	</block>

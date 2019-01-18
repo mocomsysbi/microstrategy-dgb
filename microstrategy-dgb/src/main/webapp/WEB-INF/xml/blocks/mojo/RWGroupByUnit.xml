@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single GroupBy Unit in a Report Writer document.
+-->
+<block name="RWGroupByUnit">
+    <definition>
+        <!-- The type of the GroupByUnit. RWGROUP_SPECIAL == 1, RWGROUP_ATTRIBUTE == 2, ...
+             See c.m.w.o.rw.EnumRWGroupByTypes for details -->
+        <property name="t" type="Integer" />
+        
+        <!-- The target of the GroupByUnit. A Block of type WebObjectInfo. -->
+        <property name="target" type="Block" />
+        
+        <!-- The style of the GroupBy: Individual == 1, All == 2, Both == 3.
+             See c.m.webapi.EnumDSSXMLRWPageByStyle -->
+        <property name="style" type="Integer" />
+        
+        <!-- A list of elements. Each Block is of type Element -->
+        <property name="elms" type="List" />
+        
+        <!-- The index of the selected element. -->
+        <property name="idx" type="Integer" />
+    </definition>
+</block>

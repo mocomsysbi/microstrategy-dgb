@@ -1,0 +1,28 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<div class="title">*Please select object by moving them from left to right*</div>
+	<br />
+	<table>
+		<colgroup>
+			<col width="45%"/>
+			<col width="10%"/>		
+		    <col width="45%"/>
+		</colgroup>
+		<tr>
+			<td>*Available objects*</td>
+			<td></td>
+			<td>*Selected objects</td>
+		</tr>
+		<tr>
+			<td>
+				<mstrlayout:render name="Browser" />
+			</td>
+			<td>
+				<div id="addBtn" class="mstrIcon-btn mstrIcon-btnArrowRight"></div> 
+				<br/>
+				<div id="removeBtn" class="mstrIcon-btn mstrIcon-btnArrowLeft"></div>
+			</td>
+			<td><mstrlayout:render name="CurrentSelections" /></td>
+		</tr>
+	</table>
+</mstrlayout:layout>

@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- FetchPreview is a FetchControl that can display a preview of the dataset to be fetched
+		 before the actual fetch. -->
+	<block name="FetchPreview" inherits="FetchControl">
+		<definition>
+			<!-- Command ids that this view call when a preview is requested. -->
+			<property name="showPreviewCmds" type="String" />
+
+			<!-- Command ids that this view call when a preview is to be closed. -->
+			<property name="hidePreviewCmds" type="String" />
+
+			<!-- Optional string to be displayed before the number of total items. -->
+			<property name="captionPrefix" type="String" />
+
+			<!-- Optional string to be displayed after the number of total items. -->
+			<property name="captionSuffix" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.FetchPreview</property>
+			<property name="cssClass">FetchPreview</property>
+		</assignments>
+	</block>

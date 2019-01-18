@@ -1,0 +1,23 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ModifyChildrenTask" privileges="EnableAdministrationFromWeb">
+	<basicInfo desc="This Task provides the ability to modify the users in a group. Customer need to list all the children they want to put for the group. For setting multiple parameters, we use caret to seperate them.">
+        <!-- parameter for modify event -->
+        <parameter name="userGroupID" desc="The user groupu ID to modify the user members" required="true" type="guid"/>
+		<parameter name="children" desc="The children of the user group to modify. It includes the infromation about children id and children type. Customer need to list all the children they want to put for the group. For the parameter's format see: com.microstrategy.web.app.tasks.ModifyChildrenTask#childrenParam" required="true" />
+	</basicInfo>
+
+	<!--
+		"8192001" is the EnumGroupBeanEvents.GROUP_EVENT_MODIFY_CHILDREN.
+	-->
+	<eventInfo eventID="8192001">
+		<argument name="saveNow" value="1" />
+	</eventInfo>
+	
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'ugb' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="ugb" bean-type="UserGroupBean">
+	</beanInfo>
+</beanTask>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block contains information for a generic incremental fetch block.
+-->
+<block name="IncFetch">
+    <definition>
+      <!-- The number of pages. -->
+      <property name="np" type="Integer" />
+
+      <!-- The page size -->
+      <property name="ps" type="Integer" />
+      
+      <!-- The index of the current page. -->
+      <property name="cp" type="Integer" />
+      
+      <!-- A block to hold descriptors used by the client-side Incremental Fetch control. -->
+      <property name="ds" type="Block" />
+
+    </definition>
+    <assignments>
+        <property name="ds">
+            <block>
+		        <property name="f" type="String">{desc:mstrWeb.4046|First}</property>
+		        <property name="p" type="String">{desc:mstrWeb.1058|Previous}</property>
+		        <property name="n" type="String">{desc:mstrWeb.1059|Next}</property>
+		        <property name="l" type="String">{desc:mstrWeb.4049|Last}</property>
+		        <property name="pgs" type="String">{desc:mstrWeb.5972|## of ### pages}</property>
+		        <property name="gt" type="String">{desc:mstrWeb.5878|Go to:}</property>
+		        <property name="v" type="String">{desc:mstrWeb.6079|This field should be # between ## and ###.}</property>
+		        <property name="a" type="String">{desc:mstrWeb.5879|Access Page Directly}</property>
+		        <property name="ap" type="String">{desc:mstrWeb.134|Apply}</property>
+            </block>
+        </property>
+    </assignments>
+</block>

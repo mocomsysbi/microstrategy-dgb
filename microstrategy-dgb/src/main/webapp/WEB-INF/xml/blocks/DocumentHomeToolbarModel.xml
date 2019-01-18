@@ -1,0 +1,135 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwToolbarModel" name="DocumentHomeToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K218" name="ToolbarButtonModel">
+          <property name="id">tbAddToHistoryList</property>
+          <property name="tooltip">{desc:mstrWeb.1982|Add to History List}</property>
+          <property name="cmdid">saveToInbox</property>
+          <property name="visibleFeatures">add-history-list;not-navigation-document</property>
+          <property name="enabledFeatures">enable-add-history-list</property>
+          <property name="listenerMethods">onselectionchange,onDocReload</property>
+        </block>
+        <block listElementKey="rwTbCtPersonalView" name="ToolbarButtonModel">
+          <property name="id">tbCreatePersonalView</property>
+          <property name="tooltip">{desc:mstrWeb.9173|Create Personal View}</property>
+          <property name="cmdid">createPersonalView</property>
+          <property name="visibleFeatures">not-navigation-document</property>
+        </block>
+        <block listElementKey="rwTbCtShareURL" name="ToolbarButtonModel">
+          <property name="id">tbShareURL</property>
+          <property name="tooltip">{desc:mstrWeb.8101|Share}</property>
+          <property name="cmdid">ShowSharingEditor</property>
+          <property name="visibleFeatures">scheduling</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+        <block listElementKey="K219" name="ToolbarButtonModel">
+          <property name="id">tbPDF</property>
+          <property name="tooltip">{desc:mstrWeb.1877|PDF}</property>
+          <property name="cmdid">printPDF</property>
+          <property name="visibleFeatures">dhtml;web-export-to-pdf;enable-pdf;!show-rw-export-options;!document-html-view-mode;not-navigation-document</property>
+        </block>
+        <block listElementKey="K220" name="ToolbarButtonModel">
+          <property name="id">tbPrint</property>
+          <property name="tooltip">{desc:mstrWeb.314|Print}</property>
+          <property name="cmdid">printPDF</property>
+          <property name="visibleFeatures">print;enable-print;web-export-to-pdf;not-navigation-document;!rw-analysis-view-mode</property>
+        </block>
+        <block listElementKey="K221" name="ToolbarButtonModel">
+          <property name="id">tbSend</property>
+          <property name="tooltip">{desc:mstrWeb.2249|Send Now...}</property>
+          <property name="cmdid">sendNow</property>
+          <property name="visibleFeatures">use-immediate-delivery;not-navigation-document</property>
+          <property name="enabledFeatures">enable-send-now</property>
+        </block>
+        <block listElementKey="K222" name="ToolbarButtonModel">
+          <property name="id">tbScheduled</property>
+          <property name="tooltip">{desc:mstrWeb.4675|Schedule delivery to History List}</property>
+          <property name="cmdid">scheduleHL</property>
+          <property name="visibleFeatures">scheduling;not-navigation-document</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+        <block listElementKey="K223" name="ToolbarDynamicListModel">
+          <property name="title" type="String">{desc:mstrWeb.246|Export}</property>
+          <property name="id">tbExportPicker</property>
+          <property name="valueForm">dssid</property>
+          <property name="type">PICKERBUTTON</property>
+          <property name="cmdid">export</property>
+          <property name="updateOnClick" type="Boolean">true</property>
+          <property name="useDynamicBtnImg" type="String">true</property>
+          <property name="popup|ignoreSelection" type="Boolean">true</property>
+          <property name="enableReselect">true</property>
+          <property name="visibleFeatures">show-rw-export-menu;not-navigation-document;!rw-analysis-view-mode</property>
+          <property name="width">65px</property>
+        </block>
+        <block listElementKey="K224" name="BaseBlock"/>
+        <block listElementKey="K225" name="ToolbarDynamicListModel">
+          <property name="visibleFeatures">!rw-analysis-view-mode</property>
+          <property name="valueForm">dssid</property>
+          <property name="selectedIndicesList">0</property>
+          <property name="cmdid">zoom</property>
+          <property name="width">125px</property>
+          <property name="toolbarHelper/visible">true</property>
+        </block>
+        <block listElementKey="K226" name="BaseBlock"/>
+        <block listElementKey="K227" name="ToolbarRefreshButton">
+          <property name="visibleFeatures">check-execute-mode;quicklinks-refresh;page-full-screen-mode</property>
+          <property name="listenerMethods">onselectionchange,onScreenModeChange</property>
+        </block>
+        <block listElementKey="K228" name="ToolbarReExecuteRwdButton">
+          <property name="listenerMethods">onselectionchange,onScreenModeChange</property>
+        </block>
+        <block listElementKey="K229" name="ToolbarRepromptButton">
+          <property name="visibleFeatures">check-execute-mode;reprompt</property>
+          <property name="listenerMethods">onselectionchange</property>
+        </block>
+        <block listElementKey="K2221" name="ToolbarButtonModel">
+          <property name="visibleFeatures">check-execute-mode;page-full-screen-mode;auto-refresh</property>
+          <property name="id">tbStopAutoRefresh</property>
+          <property name="tooltip">*Pause Auto Refresh*</property>
+          <property name="cmdid">toggleAutoRefresh</property>
+        </block>
+        <block listElementKey="K230" name="BaseBlock"/>
+        <block listElementKey="K232" name="ToolbarNormalModeButton">
+          <property name="visibleFeatures">!rw-ive-mode-available;check-execute-mode;page-full-screen-mode;!page-full-screen-mode-only;!rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="K233" name="ToolbarFullScreenButton">
+          <property name="visibleFeatures">check-execute-mode;!page-full-screen-mode</property>
+        </block>
+        <block listElementKey="K234" name="BaseBlock"/>
+        <block listElementKey="iveHelp" name="ToolbarButtonModel">
+          <property name="id">tbHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="cmdid">IVEHelp</property>
+          <property name="visibleFeatures">rw-ive-mode-available;!rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="close" name="ToolbarButtonModel">
+          <property name="id">tbClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+          <property name="cmdid">close</property>
+          <property name="visibleFeatures">rw-ive-mode-available;!rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="rwTbResetDocGP" name="BaseBlock"/>
+        <block listElementKey="rwTbResetDoc" name="ToolbarButtonModel">
+          <property name="id">tbResetDocument</property>
+          <property name="tooltip">{desc:mstrWeb.11168|Reset Selections}</property>
+          <property name="cmdid">resetSelections</property>
+          <property name="visibleFeatures">rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="oivmTbTogglePathBar" name="ToolbarButtonModel">
+          <property name="id">tbTogglePathBar</property>
+          <property name="tooltip">{desc:mstrWeb.13996|Show Navigation Bar}</property>
+          <property name="cmdid">togglePathbar</property>
+          <property name="visibleFeatures">rw-optimized-interactive-view-mode</property>
+        </block>
+        <block listElementKey="ToolbarCloseButton" name="ToolbarButtonModel">
+          <property name="id">tbClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+          <property name="cmdid">close</property>
+          <property name="visibleFeatures">check-execute-mode;page-full-screen-mode;rw-optimized-interactive-view-mode</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		TreeCartModel is a data model which contains 1 TreeModel, "available", and
+		1 ListModel, "selected".  TreeCartModel typically is used
+		to add items from "avaiable" to "selected".
+	-->
+	<block name="TreeCartModel" inherits="ListCartModel">
+		<assignments>
+			<property name="scriptClass">mstr.models.TreeCart</property>
+		</assignments>
+	</block>

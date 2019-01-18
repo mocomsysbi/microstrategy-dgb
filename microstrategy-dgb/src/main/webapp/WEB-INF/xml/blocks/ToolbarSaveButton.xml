@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarSaveButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbSave</property>
+		<property name="tooltip">{desc:mstrWeb.1896|Save As...}</property>
+		<property name="cmdid">save</property>
+	</assignments>
+</block>

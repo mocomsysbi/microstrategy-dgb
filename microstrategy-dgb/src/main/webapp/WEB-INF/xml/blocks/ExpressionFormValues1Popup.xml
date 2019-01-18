@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ExpressionElementsPopup" name="ExpressionFormValues1Popup">
+  <assignments>
+    <property name="id">ExpressionFormValues1Popup1</property>
+    <property name="modelPath">opener/model/answer/getFormValues1CartModel(opener.model)</property>
+    <property name="contentView/children">
+      <list>
+        <block listElementKey="K465" name="TextLink">
+          <property name="caption">{desc:mstrWeb.5909|Enter values...}</property>
+          <property name="modelPath">parent/parent/opener/model</property>
+          <property name="cmds">Unpop||parent/parent;OpenPopup|"ExpressionConstant1Popup1"|parent/parent/opener</property>
+          <property name="visibleField">!parent/parent/opener/hideEnterValuesLink</property>
+        </block>
+      </list>
+    </property>
+    <property name="okButton/cmds">Unpop||parent;EditConditionFormValues1|parent/model|parent/opener/model</property>
+  </assignments>
+</block>

@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ListTextDiv is a TextDiv whose layout renders a list of items as a paragraph of ready-only text. -->
+	<block name="ListTextDiv" inherits="TextDiv">
+		<definition>
+			<!-- The text to display on the TextBox's GUI. -->
+			<property name="caption" type="String" />
+
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+
+			<!-- Optional value of TextBox contents. -->
+			<property name="value" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ListTextDiv</property>
+			<property name="cssClass">ListTextDiv</property>
+		</assignments>
+	</block>

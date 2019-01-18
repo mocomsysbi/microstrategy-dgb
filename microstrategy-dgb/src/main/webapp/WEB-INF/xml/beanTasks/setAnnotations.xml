@@ -1,0 +1,30 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask>
+	<!-- 
+		This information is used to provide "metadata" about this task. In general, it includes
+		names, descriptions and whether the parameters are required or not. 
+	-->
+	<basicInfo desc="This Task provides the ability to save the annotations of a report or document.">
+		<parameter name="objectID" desc="Specifies the DSSID of the report or document" required="true"/>
+		<parameter name="objectType" desc="Specifies the type of object - report or document. From EnumDssXmlObjectTypes" required="true" />
+		<parameter name="annotation" desc="Specifies the annotations for the report or document" required="true" />
+		<parameter name="isAppend" desc="Specifies whether to append the annotation at the end or to update the entire annotation for the report or document" defvalue="0"/>
+		<parameter name="locale" desc="Specifies whether the locale to use when formatting the annotation entry date" defvalue="1033"/>
+	</basicInfo>
+
+	<!--
+		This information describes how the task is defined in terms of an existing 
+		Event. 4109001 is EnumAnnotationBeanEvents.ANNOTATION_BEAN_EVENT_SET_TARGET
+		4109003 is EnumAnnotationBeanEvents.ANNOTATION_BEAN_EVENT_SET_ANNOTATION
+	-->
+	<eventInfo eventID="4109001" />
+	<eventInfo eventID="4109003" />
+
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  
+	-->
+	<beanInfo name="ab" bean-type="AnnotationBean">
+		<style name="SaveAnnotationsStyle" />
+	</beanInfo>
+</beanTask>

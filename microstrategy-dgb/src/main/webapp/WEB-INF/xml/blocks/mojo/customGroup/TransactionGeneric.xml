@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Embedded Filter Qualification
+-->
+<block name="TransactionGeneric" inherits="ExpNode">
+    <definition>
+        <!-- Function (operator) -->
+        <property name="fn" type="Integer" />
+        
+        <!-- Function type if not present it is assumed to be generic. -->
+        <property name="fnt" type="Integer" />
+    </definition>
+</block>

@@ -1,0 +1,51 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_model_set_readyState="mstr.behaviors.FetchControl.on_model_set_readyState(view, model, rootTag)"
+    on_set_enabled="mstr.behaviors.FetchControl.on_set_enabled(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.FetchControl.on_set_visible(view, model, rootTag)">
+  <table title="{@tooltip}"
+         cellspacing="0"
+         style="{@cssText}"
+         cellpadding="0"
+         class="{@cssPrefix}{@cssClass}"
+         id="{@id}">
+    <tbody>
+      <tr>
+        <td>
+            <img title="{@descriptors/fetchFirstCaption}"
+                 src="../images/1ptrans.gif"
+                 align="absmiddle"
+                 onclick="mstr.behaviors.FetchControl.fireFetchCommand('{@id}', 'FetchFirst')">
+            </img>
+        </td>
+        <td>
+            <img title="{@descriptors/fetchPreviousCaption}"
+                 src="../images/1ptrans.gif"
+                 align="absmiddle"
+                 onclick="mstr.behaviors.FetchControl.fireFetchCommand('{@id}', 'FetchPrevious')">
+            </img>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellText">
+          <div onmouseout="this.className = this.className.replace(/Hover/,'')"
+               onmousedown="mstr.behaviors.FetchControl.on_mousedown('{@id}')"
+               class="{@cssPrefix}{@cssClass}Text"
+               onmouseover="if (!this.disabled) this.className += 'Hover'">
+          </div>
+        </td>
+        <td>
+            <img title="{@descriptors/fetchNextCaption}"
+                 src="../images/1ptrans.gif"
+                 align="absmiddle"
+                 onclick="mstr.behaviors.FetchControl.fireFetchCommand('{@id}', 'FetchNext')">
+            </img>
+        </td>
+        <td>
+            <img title="{@descriptors/fetchLastCaption}"
+                 src="../images/1ptrans.gif"
+                 align="absmiddle"
+                 onclick="mstr.behaviors.FetchControl.fireFetchCommand('{@id}', 'FetchLast')">
+            </img>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mstrlayout:layout>

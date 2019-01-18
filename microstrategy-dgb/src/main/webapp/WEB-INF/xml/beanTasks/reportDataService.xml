@@ -1,0 +1,13 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ReportDataServiceTask">
+
+	<basicInfo desc="This Task provides the ability to login, transform a report with the style specified by the caller and logout."/>
+
+	<!-- run report event -->
+	<eventInfo eventID="4001" />
+	
+	<!--
+		This information describes how the task is defined in terms of an existing Bean.
+	-->
+	<beanInfo name="rb" bean-type="ReportBean"/>
+</beanTask>

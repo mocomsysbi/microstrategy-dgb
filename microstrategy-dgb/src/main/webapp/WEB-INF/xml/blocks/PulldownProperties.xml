@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="PulldownProperties" inherits="BaseBlock">
+		<definition>
+			<!-- Fqcn of the javascript class that represents this pulldown's model. -->
+			<property name="modelClass" type="String" />
+
+			<!-- Optional prefix name of the CSS class for rendering the pulldown's current selection.  -->
+			<property name="itemCSSPrefix" type="String" />
+
+			<!-- Fqcn of the object to use for rendering the pulldown's current selection. -->
+			<property name="itemRendererClass" type="String" />
+			
+			<!-- True indicates that GUI should render an icon next to the current selection. -->
+			<property name="showIcons" type="Boolean" />
+
+			<!-- The Block that this pulldown pops open, typically a ListView or TreeView. -->
+			<property name="popup" type="Block" />			
+			
+			<!-- The id string of the Block that this pulldown pops open, typically a ListView or TreeView -->
+			<property name="popupId" type="String" />		
+			
+			<property name="showSingleItemListAsLabel" type="Boolean"/>	
+		</definition>
+	</block>

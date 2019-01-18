@@ -1,0 +1,10 @@
+<shortcut-list-set base-bean="fb" name="groupbyContextMenus" feature-id="rw-editable-view-mode-eplus;" version="1.0">
+  <shortcut-list name="default">
+    <shortcut name="sort" desc="[Sort]" desc-id="mstrWeb.144" feature-id="web-sort;rw-editable-view-mode-eplus;" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageBySort" />
+    <shortcut name="attrForms" desc="[Attribute Forms]" desc-id="mstrWeb.2890"  feature-id="rw-editable-view-mode-eplus;" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByAttrForms" />
+    <shortcut name="pivot" desc="[Pivot]" desc-id="mstrWeb.1889"  feature-id="rw-editable-view-mode-eplus;" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByPivot" />
+    <shortcut name="remove" desc="[Remove]" desc-id="mstrWeb.190"  feature-id="rw-editable-view-mode-eplus;" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByRemove" />
+    <shortcut name="s1" desc="-" />
+    <shortcut name="properties" desc="[Group Properties...]"  desc-id="mstrWeb.2942" feature-id="rw-editable-view-mode-eplus;" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByProperties" />
+  </shortcut-list>
+</shortcut-list-set>

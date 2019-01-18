@@ -1,0 +1,40 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="PropertiesEditorEffectsModel">
+  <definition>
+    <property name="effectsTabEnabled" type="Boolean"/>
+    <property name="b3dstyle" type="Block"/>
+    <property name="tabName" type="String" />
+  </definition>
+  <assignments>
+    <property name="tabName">effect</property>
+    <property name="categoryText">{desc:mstrWeb.1918|Format}</property>
+    <property name="scriptClass">mstr.bones.editors.EffectsPropertiesBoneTranslator</property>
+    <property name="titleText">{desc:mstrWeb.2038|Effects}</property>
+    <property name="fields">show3dBorders|showCorners|isRoundShape|enabled3d|b3dstyle|b3dweight|HasDropShadow|DropShadow|HasRoundedCorners|Radius|TopCornersOnly|HasAlpha|alphaOpacity|showTranslucent|Transparency|Blur</property>
+    <property name="visibleField">effectsTabEnabled</property>
+    <property name="effectsTabEnabled">true</property>
+    <property name="b3dstyle" type="Block">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K869" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4762|Raised}</property>
+            </block>
+            <block listElementKey="K870" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4763|Sunken}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="broadcastProperties">
+  		<block name="BaseBlock">
+  			<property name="enabled3d" type="Boolean">true</property>
+  		</block>
+  	</property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Alignment' tab of the Report Services properties editor. -->

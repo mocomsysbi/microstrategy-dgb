@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarFontColorPicker" inherits="ToolbarColorPickerModel">
+	<assignments>
+		<property name="id">tbFontColor</property>
+		<property name="cmdid">FontColor</property>
+		<property name="tooltip">{desc:mstrWeb.2187|Text Color}</property>
+		<property name="lastColor">#000000</property>
+		<property name="popup|viewFlags">10</property>
+		<property name="enableReselect">true</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

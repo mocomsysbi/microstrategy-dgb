@@ -1,0 +1,17 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:if name="isSingleObjectSelectionMode">
+		<mstrlayout:then>
+			<mstrlayout:render name="bean">
+				<mstrlayout:argument value="ObjectSelector"/>
+				<mstrlayout:argument value="SingleObjectSelectorStyle"/>
+			</mstrlayout:render>
+		</mstrlayout:then>
+		<mstrlayout:else>
+			<mstrlayout:render name="bean">
+				<mstrlayout:argument value="ObjectSelector"/>
+				<mstrlayout:argument value="MultipleObjectSelectorStyle"/>
+			</mstrlayout:render>
+		</mstrlayout:else>
+	</mstrlayout:if>
+</mstrlayout:layout>

@@ -1,0 +1,18 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+    <basicInfo desc="This task provides the ability to manipluate the RWBean using muliple events. ">
+        <parameter name="messageID" desc="The Message ID of a previously executed Report Writer Document." required="false" type="guid"/>    
+        <parameter name="events" desc="The serialized string of multiple events." required="false"/>
+        <parameter name="styleName" desc="The style used to transform the RWBean." required="false" defvalue="RWDocumentMojoStyle" type="simplestring"/> 
+    </basicInfo>
+
+    <eventInfo eventID="1024001" >
+       <argument name="events" value="events" source="parameter"  />
+    </eventInfo>
+
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="styleName" source="parameter" >
+                <actualParameter name="treesToRender" source="const" value="3" />
+        </style> 
+    </beanInfo>
+</beanTask>

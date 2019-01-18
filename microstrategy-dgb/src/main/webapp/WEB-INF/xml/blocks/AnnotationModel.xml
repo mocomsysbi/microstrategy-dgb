@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="AnnotationModel" inherits="BaseModel">
+	    <definition>
+			<property name="value" type="String" />
+			<property name="addition" type="Block" />
+			<property name="mode" type="String"/>
+			<property name="privilege" type="String"/>
+			<property name="CommandEnabledSetMode" type="Boolean"/>
+			<property name="objectID" type="String"/>
+			<property name="objectType" type="String"/>
+			<property name="postfixLen" type="Integer"/>
+		</definition>
+		<assignments>
+		    <property name="id">annotationModel</property>
+			<property name="scriptClass">mstr.models.AnnotationModel</property>
+			<property name="CommandEnabledSetMode">true</property>
+			<property name="postfixLen">2</property>
+			<property name="addition">
+			    <block name="AnnotationAddition">
+			        <property name="id">addition</property>
+			    </block>
+			</property>
+		</assignments>
+	</block>

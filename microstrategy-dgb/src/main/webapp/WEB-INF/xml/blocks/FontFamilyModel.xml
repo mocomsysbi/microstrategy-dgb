@@ -1,0 +1,126 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ListModel" name="FontFamilyModel">
+  <assignments>
+    <property name="valueForm">n</property>
+    <property name="selectedIndicesList">0</property>
+    <property name="items">
+      <list>
+        <block listElementKey="K615" name="ItemInfo">
+          <property name="n">Arial</property>
+        </block>
+        <block listElementKey="K616" name="ItemInfo">
+          <property name="n">Arial Black</property>
+        </block>
+        <block listElementKey="K617" name="ItemInfo">
+          <property name="n">Arial Narrow</property>
+        </block>
+        <block listElementKey="K618" name="ItemInfo">
+          <property name="n">Batang</property>
+        </block>
+        <block listElementKey="K619" name="ItemInfo">
+          <property name="n">Book Antiqua</property>
+        </block>
+        <block listElementKey="K620" name="ItemInfo">
+          <property name="n">Bookman Old Style</property>
+        </block>
+        <block listElementKey="K621" name="ItemInfo">
+          <property name="n">Bookshelf Symbol 1</property>
+        </block>
+        <block listElementKey="K622" name="ItemInfo">
+          <property name="n">Bookshelf Symbol 2</property>
+        </block>
+        <block listElementKey="K623" name="ItemInfo">
+          <property name="n">Bookshelf Symbol 3</property>
+        </block>
+        <block listElementKey="K624" name="ItemInfo">
+          <property name="n">Comic Sans MS</property>
+        </block>
+        <block listElementKey="K625" name="ItemInfo">
+          <property name="n">Courier New</property>
+        </block>
+        <block listElementKey="K626" name="ItemInfo">
+          <property name="n">Garamond</property>
+        </block>
+        <block listElementKey="K627" name="ItemInfo">
+          <property name="n">Haettenschweiler</property>
+        </block>
+        <block listElementKey="FontHelvetica" name="ItemInfo">
+          <property name="n">Helvetica</property>
+        </block>
+        <block listElementKey="K628" name="ItemInfo">
+          <property name="n">Impact</property>
+        </block>
+        <block listElementKey="K629" name="ItemInfo">
+          <property name="n">Lucida Console</property>
+        </block>
+        <block listElementKey="K630" name="ItemInfo">
+          <property name="n">Lucida Sans Unicode</property>
+        </block>
+        <block listElementKey="K631" name="ItemInfo">
+          <property name="n">Map Symbols</property>
+        </block>
+        <block listElementKey="K632" name="ItemInfo">
+          <property name="n">Marlett</property>
+        </block>
+        <block listElementKey="K633" name="ItemInfo">
+          <property name="n">MingLiU</property>
+        </block>
+        <block listElementKey="K634" name="ItemInfo">
+          <property name="n">Monotype Corsiva</property>
+        </block>
+        <block listElementKey="K635" name="ItemInfo">
+          <property name="n">Monotype Sorts</property>
+        </block>
+        <block listElementKey="K636" name="ItemInfo">
+          <property name="n">MS Gothic</property>
+        </block>
+        <block listElementKey="K637" name="ItemInfo">
+          <property name="n">MS Outlook</property>
+        </block>
+        <block listElementKey="K638" name="ItemInfo">
+          <property name="n">Microsoft Sans Serif</property>
+        </block>
+        <block listElementKey="K639" name="ItemInfo">
+          <property name="n">MT Extra</property>
+        </block>
+        <block listElementKey="K6391" name="ItemInfo">
+          <property name="n">OpenSans-SemiBold</property>
+        </block>
+        <block listElementKey="K6392" name="ItemInfo">
+          <property name="n">OpenSans-Regular</property>
+        </block>
+        <block listElementKey="K640" name="ItemInfo">
+          <property name="n">SimSun</property>
+        </block>
+        <block listElementKey="K641" name="ItemInfo">
+          <property name="n">Symbol</property>
+        </block>
+        <block listElementKey="K642" name="ItemInfo">
+          <property name="n">Tahoma</property>
+        </block>
+        <block listElementKey="K643" name="ItemInfo">
+          <property name="n">Times New Roman</property>
+        </block>
+        <block listElementKey="K644" name="ItemInfo">
+          <property name="n">Trebuchet MS</property>
+        </block>
+        <block listElementKey="K645" name="ItemInfo">
+          <property name="n">Verdana</property>
+        </block>
+        <block listElementKey="K646" name="ItemInfo">
+          <property name="n">Webdings</property>
+        </block>
+        <block listElementKey="K647" name="ItemInfo">
+          <property name="n">Wingdings</property>
+        </block>
+        <block listElementKey="K648" name="ItemInfo">
+          <property name="n">Wingdings 2</property>
+        </block>
+        <block listElementKey="K649" name="ItemInfo">
+          <property name="n">Wingdings 3</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- Used for any editor that has the font family list control. -->

@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarDecreaseDecimalButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbDecreaseDecimal</property>
+		<property name="tooltip">{desc:mstrWeb.2188|Decrease Decimal}</property>
+		<property name="cmdid">DecreaseDecimal</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

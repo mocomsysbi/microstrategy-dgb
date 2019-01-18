@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarRenameButton" inherits="ToolbarButtonModel">
+	<assignments>
+        <property name="id">tbRenameEdit</property>
+        <property name="tooltip">{desc:mstrWeb.1914|Rename/Edit Objects...}</property>
+	</assignments>
+</block>

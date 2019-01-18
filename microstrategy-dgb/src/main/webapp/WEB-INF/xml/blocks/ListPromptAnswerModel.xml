@@ -1,0 +1,59 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		ListPromptAnswerModel is an answer to a PromptQuestionModel which edits a ListModel.
+		In ListPromptAnswerModel, a simple answer's value is specified by a list of objects (e.g., attributes,
+		metrics, etc).  This list is maintained in the "selected" property.  Additionally, the "available" property
+		specifies a list of objects from which the end-user may choose an answer.  Also, the optional "min" and "max" 
+		properties define further restrictions on the end-user's selections.
+		-->
+	<block name="ListPromptAnswerModel" inherits="PromptAnswerModel">
+		<definition>
+			<!-- Optional minimum amount of objects required for a simple answer to this Object Prompt. -->
+			<property name="min" type="Integer" />
+
+			<!-- Optional max amount of objects allowed for a simple answer to this Object Prompt. -->
+			<property name="max" type="Integer" />
+			
+			<!-- ListModel of available objects from which the end-user may choose a simple answer. -->
+			<property name="available" type="Block" />
+
+			<!-- ListModel of selected objects that form the default simple answer. -->
+			<property name="selected" type="Block" />
+			
+			<!-- Optional form name used to determine which items are allowed in answer.
+				 E.g., if set to "tp", then only items with form "tp" = some values (see 
+				 the "allowedItemFormValues" property) will be allowed. -->
+			<property name="allowedItemFormName" type="String" />
+			
+			<!-- Optional comma-delimited list of form values for item that are allowed in answer.
+				 To continue the example above for "allowedItemFormName", if
+				 "allowedItemFormValues" = "a,m" then only items with "tp" = "a" or "m" are allowed. -->
+			<property name="allowedItemFormValues" type="String" />
+
+			<!-- Optional comma-delimited list of form values for item that are NOT allowed in answer.
+				 To continue the example above for "allowedItemFormName", if
+				 "prohibitedItemFormValues" = "f,f_sc" then items with "tp" = "f" or "f_sc" are NOT allowed. -->
+			<property name="prohibitedItemFormValues" type="String" />
+
+			<!-- If true, this flag prevents available items from being removed once they are selected. -->
+			<property name="keepAvailableItems" type="Boolean" />
+			
+			<!-- Indicate, which type of navigation can be performed, if there is a search. see EnumPromptPropertyNamesAndValues -->
+			<property name="allowNavAboveSearchRoot" type="Integer" />
+
+			<!-- If true, this flag tells the cart to preserve the sort order of the "available" list items
+				 when moving items from "selected" back to "available". -->
+			<property name="keepAvailableSorted" type="Boolean" />
+
+			<!-- Optional flag; if set to true, the model enables the Add command always, regardless of the max property. -->
+			<property name="allowAddAlways" type="Boolean" />
+			
+			<!-- Optional flag; if set to true, we'll sort the items in the selected list by index . -->
+			<property name="sortResult" type="Boolean" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ListPromptAnswer</property>
+			<property name="keepAvailableItems">{pref:cartItemKeptInCartAvailable|false}</property>
+			<property name="allowNavAboveSearchRoot">3</property>
+		</assignments>
+	</block>

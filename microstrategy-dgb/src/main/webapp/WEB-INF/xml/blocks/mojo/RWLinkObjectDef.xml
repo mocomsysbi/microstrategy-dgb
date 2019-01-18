@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+	The definition of the Link-typed object. Currently TextFields and Images use the RWLinkObject Block. 
+	It inherits the RWUnitDef, but has two additional components: 
+	1. An inherited LinkInfo, meaning it contains Hyperlink information
+	2. A "dl" property, which is used to generate the pop-up menu.  
+--> 
+<block name="RWLinkObjectDef" inherits="RWUnitDef,LinkInfo">
+    <definition>
+    	<!-- The property that holds RWDrillLinksContainer -->
+    	<property name="dl" type="Block" />
+    	
+    	<property name="ifw" type="String" />
+    </definition>
+</block>

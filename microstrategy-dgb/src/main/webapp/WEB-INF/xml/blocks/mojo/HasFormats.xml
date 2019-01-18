@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for "formatted" entities.
+--> 
+<block name="HasFormats">
+    <definition>
+        <!-- The formatting information for this unit. A Block of type WebFormat. -->
+        <property name="fmts" type="Block" />
+    </definition>
+</block>

@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents alignment configuration of one display style for Button.
+    Transfer only data used in express mode (mojo)
+--> 
+<block name="ButtonAlignments">
+    <definition>
+        <!-- Minimum spacing between icon and caption -->
+        <property name="minsp" type="Integer" />
+        
+        <!-- Minimum caption size -->
+        <property name="mincs" type="Integer" />
+    </definition>
+</block>

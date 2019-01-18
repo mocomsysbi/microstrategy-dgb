@@ -1,0 +1,57 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabTheme">
+	<assignments>
+		<property name="title">{desc:mstrWeb.1918|Format} - {desc:mstrWeb.12083|Theme}</property>
+		<property name="modelPath">parent/model/items/14</property>
+		<property name="width">530px</property>
+		<property name="height">100%</property>
+		<property name="visible">true</property>
+		<property name="children">
+			<list>
+				<block listElementKey="themelist" name="FieldSet">
+					<property name="legend">{desc:mstrWeb.12083|Theme}</property>
+					<property name="modelPath" type="String">parent/model</property>
+					<property name="visible">true</property>
+					<property name="children">
+						<list>
+							<block listElementKey="appliedThemeType" name="ListPulldown">
+								<property name="horizontalCaption">{desc:mstrWeb.14569|Apply Format from Theme:}</property>
+	                            <property name="modelPath">parent/model/appliedThemeTypes</property>
+	                            <property name="popup/height">auto</property>
+                            </block>
+							<block listElementKey="box1" name="HBox">
+								<property name="visibleField">parent/model/showCustomThemePicker</property>
+				                <property name="children">
+				                  <list>
+				                  	<block listElementKey="themePath" name="HTextBox">
+                						<property name="valueField">appliedThemePath</property>
+            							<property name="modelPath">parent/parent/model</property>
+                						<property name="totalSize">60</property>
+                						<property name="cssClass">CustomThemePathBox</property>
+                						<property name="enabled">false</property>
+				                  	</block>
+				                  	<block listElementKey="button1" name="TextButton">
+            							<property name="caption">{desc:mstrWeb.6571|Browse...}</property>
+                						<property name="tooltip">{desc:mstrWeb.14574|Browse to choose a custom theme}</property>
+                						<property name="cmds">BrowseTheme||parent/parent/model</property>
+				                  	</block>
+				                  </list>
+				                </property>
+							</block>
+							<block listElementKey="applyAsList" name="RadioList">
+								<property name="modelPath">parent/model/appliedThemeAsTypes</property>
+								<property name="visibleField">parent/model/showAppliedThemeAsType</property>
+								<property name="cssClass">NPCheckList</property>
+								<property name="horizontal">true</property>
+								<property name="height">auto</property>
+							</block>
+						</list>
+					</property>
+				</block>
+			</list>
+		</property>
+	</assignments>
+</block>
+<!--
+		PropertiesTabTheme is the "Format - Theme" tab of the properties editor.
+	-->

@@ -1,0 +1,6 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="GridValuesModel" inherits="BaseBlock">
+	<definition>
+            <property name="items" type="List" />
+	</definition>
+</block>

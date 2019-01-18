@@ -1,0 +1,21 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about a single object in metadata.
+-->
+<block name="RWDocumentView">
+    <definition>
+        <!-- view name -->
+        <property name="n" type="String" />
+        
+        <!-- screen resolution X -->
+        <property name="srx" type="Integer" />
+        
+        <!-- screen resolution Y -->
+        <property name="sry" type="Integer" />
+        <!-- screen density -->
+        <property name="sd" type="Integer" />
+
+        <!-- orientation. -->
+        <property name="ori" type="Integer" />
+    </definition>
+</block>

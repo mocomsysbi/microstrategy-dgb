@@ -1,0 +1,31 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name = "DataDrivenConfig" >
+	<definition>
+      <!-- Data Source Type -->
+      <property name = "dst" type = "Integer" />
+
+      <!-- Data Source ID -->
+      <property name = "dsid" type = "String" />
+
+      <!-- Control Source Type -->
+      <property name = "cst" type = "Integer" />
+
+      <!-- Control Source ID -->
+      <property name = "csid" type = "String" />
+
+      <!-- Writeback formID -->
+      <property name = "wfid" type = "String" />
+      
+      <!-- Displayed formID -->
+      <property name = "dfid" type = "String" />
+      
+      <!-- Match formID -->
+      <property name = "mfid" type = "String" />
+      
+      <!-- Sort formID -->
+      <property name = "sortfmid" type = "String" />
+      
+      <!-- Sort direction -->
+      <property name = "sortdir" type = "Integer" />
+	</definition>
+</block>

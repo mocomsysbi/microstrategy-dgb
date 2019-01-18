@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarGraphAutoArrangeButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbAutoArrange</property>
+		<property name="tooltip">{desc:mstrWeb.4834|Auto Arrange}</property>
+		<property name="cmdid">autoArrange</property>
+		<property name="visibleFeatures">!check-design-mode;simple-graph-formatting</property>
+	</assignments>
+</block>

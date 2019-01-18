@@ -1,0 +1,124 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="2" class="preferenceList">
+            <tr>
+              <td valign="top" style="width:18%;">
+                <span class="prefs-input">
+	              <mstrlayout:render name="descriptor"> <!-- Common Drill Preferences: -->
+	                  <mstrlayout:argument type="String" value="mstrWeb.5535"/>
+	              </mstrlayout:render>
+                </span>
+              </td>
+              <td>
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceGroupContextMenuDrillPathsByType" />
+                  <mstrlayout:argument type="string" value="mstrWeb.3386" />  <!--Descriptor:Group drill options on the drill context menu according to the drill path type-->
+                </mstrlayout:render>          
+                <br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceSortSetNamesAndDrillPaths" />
+                  <mstrlayout:argument type="string" value="mstrWeb.3387" />  <!--Descriptor:Sort drill paths and set names alphabetically-->
+                </mstrlayout:render>          
+                <br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDrillDisableHyperlinkDrill" />
+                  <mstrlayout:argument type="string" value="mstrWeb.3315" />  <!--Descriptor:Disable hyperlink drilling-->
+                </mstrlayout:render>          
+                <br /><br />
+                <span class="prefs-content-text">
+                  <mstrlayout:render name="descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.5775"/> <!-- Descriptor: Enable drilling options on metric values in grids -->
+                  </mstrlayout:render>
+                </span>
+                <br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDrillShowMetricValueLink" />
+                  <mstrlayout:argument type="string" value="mstrWeb.2877" />  <!--Descriptor:Display default drilling path as a link-->
+                </mstrlayout:render>          
+                <br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDrillShowMetricValueRMC" />
+                  <mstrlayout:argument type="string" value="mstrWeb.2878" />  <!--Descriptor:Display context sensitive menu-->
+                </mstrlayout:render>          
+                <br /><br />
+                <mstrlayout:render name="AsComboBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDrillKeepParent" />
+                  <mstrlayout:argument type="string" value="mstrWeb.5866" /> <!--Descriptor:Keep parent while drilling: -->
+                </mstrlayout:render>
+                <br /><br />
+                <mstrlayout:render name="AsComboBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDrillRetainThresholds" />
+                  <mstrlayout:argument type="string" value="mstrWeb.2700" /> <!--Descriptor:Keep thresholds while drilling -->
+                </mstrlayout:render>
+                <br /><br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceDrillOpenInNewWindow" />
+                  <mstrlayout:argument type="string" value="mstrWeb.3864" />  <!--Descriptor:Open drill results in a new window-->
+                </mstrlayout:render>          
+                <br /><br />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><hr style="height: 1px;"/></td>
+            </tr>
+            <tr>
+              <td valign="top" style="width:18%;">
+                <span class="prefs-input">
+	              <mstrlayout:render name="descriptor"> <!-- Report Drill Preferences: -->
+	                  <mstrlayout:argument type="String" value="mstrWeb.5538"/>
+	              </mstrlayout:render>
+                </span>
+              </td>
+              <td valign="top">
+                <mstrlayout:render name="DrillMode" />
+                <br /><br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceEnableContextMenuDrill" />
+                  <mstrlayout:argument type="string" value="mstrWeb.3388" />  <!--Descriptor:Enable context menu drilling-->
+                </mstrlayout:render>          
+                <br /><br />
+                <mstrlayout:render name="Label">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceAdvancedDrillingContextMenuDisplay" />
+                  <mstrlayout:argument type="string" value="mstrWeb.3383" /> <!--Descriptor:Display advanced drill options as: -->
+                </mstrlayout:render>
+                <br />
+                <mstrlayout:render name="AsRadio">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceAdvancedDrillingContextMenuDisplay" />
+                  <mstrlayout:argument type="string" value="vertical" />
+                </mstrlayout:render>
+                <br /><br />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><hr style="height: 1px;"/></td>
+            </tr>
+            <tr>
+              <td valign="top" style="width:18%;">
+                <span class="prefs-input">
+	              <mstrlayout:render name="descriptor"> <!-- Report Services Drill Preferences: -->
+	                  <mstrlayout:argument type="String" value="mstrWeb.5536"/>
+	              </mstrlayout:render>
+                </span>
+              </td>
+              <td valign="top">
+                <mstrlayout:render name="AsComboBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceRWDrillMode" />
+                  <mstrlayout:argument type="string" value="mstrWeb.148" /> <!--Descriptor:Drill options: -->
+                </mstrlayout:render>
+                <br /><br />
+                <mstrlayout:render name="AsComboBox"> 
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceRWDrillWithinMode" />
+                  <mstrlayout:argument type="String" value="mstrWeb.5537"/> <!-- Drill within behavior: -->
+                </mstrlayout:render>
+                <br /><br />
+              </td>
+            </tr>
+          </table>
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

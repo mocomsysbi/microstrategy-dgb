@@ -1,0 +1,97 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		BaseView is a generic view on a generic data model. A "view"
+		is a visible GUI component that is rendered on the browser.
+		The view is represented in the browser's memory by an instance
+		of a javascript class, whose name is specified by the view's
+		"scriptClass" property.
+		The view is typically associated with a single model, showing
+		the end-user some data from that model.  The end-user may
+		interact with the view (e.g., clicking on it) to execute commands
+		on the data model.
+	-->
+	<block name="BaseView" inherits="BaseBlock">
+		<definition>
+			<!-- Unique identifier. -->
+			<property name="id" type="String" />
+			
+			<!-- FQCN of the javascript representation of this view. -->
+			<property name="scriptClass" type="String" />
+			
+			<!-- The data model for this view (typically a subclass of BaseModel Block). 
+				 Typically only used if the data model will not be shared across multiple views.
+				 -->
+			<property name="model" type="Block" />
+
+			<!-- The path of the data model for this view.  An alternative to the "model"
+				 property, "modelPath" allows multiple views to be associated with a single model.
+				 It also allows a view to point to a model on-the-fly at run-time. -->
+			<property name="modelPath" type="String" />
+
+			<!-- FQCN of the layout XML that defines this view's HTML. -->
+			<property name="layoutClass" type="String" />
+
+			<!-- The CSS className of the HTML root tag for this view (without prefix). -->
+			<property name="cssClass" type="String" />
+			
+			<!-- An extra CSS className that may be included after the cssClass (dependent on the layout). -->
+			<property name="extraCssClass" type="String" />
+
+			<!-- This optional prefix will be concatenated with the "cssClass" property to
+				 form the className of the HTML root tag. -->
+			<property name="cssPrefix" type="String" />
+
+			<!-- Optional CSS style text.  Can be used to override or enhance formatting from "cssClass". -->
+			<property name="cssText" type="String" />
+
+			<!-- If true, this view's HTML should be rendered visible for the end-user.
+				 If undefined, assumed to be true.  -->
+			<property name="visible" type="Boolean" />
+
+			<!-- If true, this view should respond to user interaction.
+				 If undefined, assumed to be true. -->
+			<property name="enabled" type="Boolean" />
+
+			<!-- Generic lookup table of localized strings used by view's GUI. -->
+			<property name="descriptors" type="Block" />
+			
+			<!-- Optional pause after this view renders itself, before rendering child views (if any), in milliseconds. -->
+			<property name="pauseBeforeRenderingChildren" type="Integer" />
+
+			<!-- Optional property used only when this view is "pop"ed up by another view.
+				 Specifies where this view should be positioned when first displayed.
+				 0 = Context menu, position at the mouse cursor; 1 = vertical, position below opener view. -->
+			<property name="popOrientation" type="Integer" />		
+			
+			<!-- Optional command ids that this BaseView will call when fired. -->
+			<property name="cmds" type="String" />
+			
+			<!-- Optional field name used to determine this views enabled state. -->
+			<property name="enabledField" type="String" />
+
+			<!-- Optional field name used to determine this views visible state. -->
+			<property name="visibleField" type="String" />
+			
+			<!-- A comma delimited string of view properties that should be read from 
+				the model.  NOTE: These properties will not override any values that were
+				set in the view. -->
+			<property name="modelPushedProps" type="String" />
+			
+			<!-- An optional validator. -->
+			<property name="validator" type="Block" />
+			
+			<!-- The current validation status. -->
+			<property name="validationStatus" type="Block" />
+			
+			<!-- We introduce a new property for all views, say "popupPolicy" (type=string).  The property can have one of two values:  "open" & "toggle".  
+				"open" means that if you click on the view when it has a popup open, the popup will stay open.  
+				"toggle" means that if you click on the view when it has a popup open, the popup will get auto-closed.
+				Default will be open. Undefined is assumed as open.
+			-->
+			<property name="popupPolicy" type="String" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.BaseView</property>
+			<property name="cssPrefix">mstr</property>
+		</assignments>
+	</block>

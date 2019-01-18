@@ -1,0 +1,70 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+
+<table cellpadding="0" cellspacing="3">
+
+    <mstrlayout:if name="isUser">
+        <mstrlayout:then>
+                <tr>
+                    <td>
+                        <mstrlayout:render name="nTAuthenticationLabel" />
+                    </td>
+                    <td>
+                        <mstrlayout:render name="nTAuthenticationField" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <mstrlayout:render name="dBLoginLabel" />
+                    </td>
+                    <td>
+                        <mstrlayout:render name="dBLoginField" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <mstrlayout:render name="dBPasswordLabel" />
+                    </td>
+                    <td>
+                        <mstrlayout:render name="dBPasswordField" />
+                    </td>
+                </tr>                
+                
+        </mstrlayout:then>
+    </mstrlayout:if>
+
+                <tr>
+                    <td>
+                        <mstrlayout:render name="lDAPLoginLabel" />
+                    </td>
+                    <td>
+                        <mstrlayout:render name="lDAPLoginField" />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <mstrlayout:render name="TrustAuthLoginLabel" />
+                    </td>
+                    <td>
+                        <mstrlayout:render name="TrustAuthLoginField" />
+                    </td>
+                </tr>
+
+    <mstrlayout:if name="isUser">
+        <mstrlayout:then>
+                <tr>
+                    <td colspan="2">
+                        <mstrlayout:render name="isStandardAuthAllowedField" />
+                        <mstrlayout:render name="isStandardAuthAllowedLabel" />
+                    </td>
+                </tr>
+        </mstrlayout:then>
+    </mstrlayout:if>
+
+</table>
+
+
+</mstrlayout:layout>

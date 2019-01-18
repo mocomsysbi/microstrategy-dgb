@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nameConversions>
+<!--
+  Scope for ESRI - 1
+  Scope for MSTR - 2
+  Scope for MapBox - 4
+-->
+
+    <elem id="1" n="Russia" scope="1">Russian Federation</elem>
+
+    <elem id="100" n="United States" scope="4" role="3">USA</elem>
+    <elem id="101" n="Vietnam" scope="4" role="3">Viet Nam</elem>
+    <elem id="102" n="Russian Federation" scope="4" role="3">Russia</elem>
+    <elem id="103" n="Réunion" scope="4" role="3">Reunion</elem>
+    <elem id="104" n="Bosnia and Herzegovina" scope="4" role="3">Bosnia Herzegovina</elem>
+    <elem id="105" n="British Indian Ocean Territory" scope="4" role="3">British Indian Ocean Territory (the)</elem>
+    <elem id="106" n="Cocos Islands" scope="4" role="3">Cocos (Keeling) Islands (the)</elem>
+    <elem id="107" n="Curacao" scope="4" role="3">Curaçao</elem>
+    <elem id="108" n="Faroe Islands" scope="4" role="3">Faroe</elem>
+    <elem id="109" n="Heard Island and McDonald Islands" scope="4" role="3">Heard and McDonald Islands</elem>
+    <elem id="110" n="Northern Mariana Islands" scope="4" role="3">Northern Mariana Islands (the)</elem>
+    <elem id="111" n="Saint Vincent and the Grenadines" scope="4" role="3">Saint Vincent and Grenadines</elem>
+    <elem id="112" n="Vatican City" scope="4" role="3">Vatican City State</elem>
+    <elem id="113" n="The Former Yugoslav Republic of Macedonia" scope="4" role="3">Macedonia</elem>
+    <elem id="114" n="Turks and Caicos Islands" scope="4" role="3">Turks and Caicos</elem>
+    <elem id="115" n="Côte d'Ivoire" scope="4" role="3">Ivory Coast</elem>
+    <elem id="116" n="Sint Maarten" scope="4" role="3">Sint Maarten (Dutch part)</elem>
+    <elem id="117" n="Palestinian Territory" scope="4" role="3">Palestine, State of</elem>
+    <elem id="118" n="Republic of the Congo" scope="4" role="3">Congo</elem>
+    <elem id="119" n="Congo DRC" scope="4" role="3">Democratic Republic of Congo</elem>
+    <elem id="120" n="Democratic Republic of the Congo" scope="4" role="3">Democratic Republic of Congo</elem>
+    <elem id="121" n="East Timor" scope="4" role="3">Timor Leste</elem>
+    <elem id="122" n="Timor-Leste" scope="4" role="3">Timor Leste</elem>
+
+    <elem id="201" n="Mayaro Rio Claro" scope="4" role="2">Mayaro/Rio Claro</elem>
+    <elem id="202" n="British Columbia" scope="4" role="2">British Columbia / Colombie-Britannique</elem>
+    <elem id="203" n="Colombie-Britannique" scope="4" role="2">British Columbia / Colombie-Britannique</elem>
+    <elem id="204" n="New Brunswick" scope="4" role="2">New Brunswick / Nouveau-Brunswick</elem>
+    <elem id="205" n="Nouveau-Brunswick" scope="4" role="2">New Brunswick / Nouveau-Brunswick</elem>
+    <elem id="206" n="Nova Scotia" scope="4" role="2">Nova Scotia / Nouvelle-Écosse</elem>
+    <elem id="207" n="Nouvelle-Écosse" scope="4" role="2">Nova Scotia / Nouvelle-Écosse</elem>
+    <elem id="208" n="Prince Edward Island" scope="4" role="2">Prince Edward Island / Île-du-Prince-Édouard</elem>
+    <elem id="209" n="Île-du-Prince-Édouard" scope="4" role="2">Prince Edward Island / Île-du-Prince-Édouard</elem>
+    <elem id="210" n="Newfoundland and Labrador" scope="4" role="2">Newfoundland and Labrador / Terre-Neuve-et-Labrador</elem>
+    <elem id="211" n="Terre-Neuve-et-Labrador" scope="4" role="2">Newfoundland and Labrador / Terre-Neuve-et-Labrador</elem>
+    <elem id="212" n="Graubünden" scope="4" role="2">Graubünden / Grigioni / Grischun</elem>
+    <elem id="213" n="Grigioni" scope="4" role="2">Graubünden / Grigioni / Grischun</elem>
+    <elem id="214" n="Grischun" scope="4" role="2">Graubünden / Grigioni / Grischun</elem>
+    <elem id="215" n="Fribourg" scope="4" role="2">Fribourg / Freiburg</elem>
+    <elem id="216" n="Freiburg" scope="4" role="2">Fribourg / Freiburg</elem>
+    <elem id="217" n="Bern" scope="4" role="2">Bern / Berne</elem>
+    <elem id="218" n="Berne" scope="4" role="2">Bern / Berne</elem>
+    <elem id="219" n="Bolama" scope="4" role="2">Bolama/Bijagos</elem>
+    <elem id="220" n="Valais" scope="4" role="2">Valais / Wallis</elem>
+    <elem id="221" n="Wallis" scope="4" role="2">Valais / Wallis</elem>
+    <elem id="222" n="Valle d'Aosta" scope="4" role="2">Valle d'Aosta / Vallée d'Aoste</elem>
+    <elem id="223" n="Vallée d'Aoste" scope="4" role="2">Valle d'Aosta / Vallée d'Aoste</elem>
+    <elem id="224" n="Northwest Territories" scope="4" role="2">Northwest Territories / Territoires du Nord-Ouest</elem>
+    <elem id="225" n="Territoires du Nord-Ouest" scope="4" role="2">Northwest Territories / Territoires du Nord-Ouest</elem>
+    <elem id="226" n="Quebec" scope="4" role="2">Quebec / Québec</elem>
+    <elem id="227" n="Québec" scope="4" role="2">Quebec / Québec</elem>
+
+    <elem id="228" n="Bezirk Maloja" scope="4" role="1">Bezirk Maloja / Distretto di Maloggia</elem>
+    <elem id="229" n="Distretto di Maloggia" scope="4" role="1">Bezirk Maloja / Distretto di Maloggia</elem>
+    <elem id="230" n="Bolzano" scope="4" role="1">Bolzano / Bozen</elem>
+    <elem id="231" n="Bozen" scope="4" role="1">Bolzano / Bozen</elem>
+    <elem id="232" n="Valle d'Aosta" scope="4" role="1">Valle d'Aosta / Vallée d'Aoste</elem>
+    <elem id="233" n="Vallée d'Aoste" scope="4" role="1">Valle d'Aosta / Vallée d'Aoste</elem>
+    <elem id="234" n="Greater Sudbury" scope="4" role="1">Greater Sudbury / Grand Sudbury</elem>
+    <elem id="235" n="Grand Sudbury" scope="4" role="1">Greater Sudbury / Grand Sudbury</elem>
+    <elem id="236" n="Bezirk See" scope="4" role="1">Bezirk See / District du Lac</elem>
+    <elem id="237" n="District du Lac" scope="4" role="1">Bezirk See / District du Lac</elem>
+
+    <elem id="300" n="Keelung" scope="4" role="2">Keelung City</elem>
+    <elem id="301" n="Tianjin" scope="4" role="2">Tianjin Shi</elem>
+    <elem id="302" n="Taoyuan" scope="4" role="2">Taoyuan County</elem>
+    <elem id="303" n="Tibet" scope="4" role="2">Xizang Zizhiqu</elem>
+    <elem id="304" n="Xizang" scope="4" role="2">Xizang Zizhiqu</elem>
+    <elem id="305" n="Yilan" scope="4" role="2">Yilan County</elem>
+    <elem id="306" n="Guangdong" scope="4" role="2">Guangdong Sheng</elem>
+    <elem id="307" n="Jiangsu" scope="4" role="2">Jiangsu Sheng</elem>
+    <elem id="308" n="Liaoning" scope="4" role="2">Liaoning Sheng</elem>
+    <elem id="309" n="Aomen Tebie Xingzhengqu" scope="4" role="2">Aomen Tebie Xingzhengqu / Macau</elem>
+    <elem id="310" n="Macau" scope="4" role="2">Aomen Tebie Xingzhengqu / Macau</elem>
+    <elem id="311" n="Henan" scope="4" role="2">Henan Sheng</elem>
+    <elem id="312" n="Xinjiang" scope="4" role="2">Xinjiang Weiwu'er Zizhiqu</elem>
+    <elem id="313" n="Shanxi" scope="4" role="2">Shanxi Sheng</elem>
+    <elem id="314" n="Hainan" scope="4" role="2">Hainan Sheng</elem>
+    <elem id="315" n="Fujian" scope="4" role="2">Fujian Sheng</elem>
+    <elem id="316" n="Chongqing" scope="4" role="2">Chongqing Shi</elem>
+    <elem id="317" n="Xianggang Tebie Xingzhengqu" scope="4" role="2">Xianggang Tebie Xingzhengqu / Hongkong</elem>
+    <elem id="318" n="Hongkong" scope="4" role="2">Xianggang Tebie Xingzhengqu / Hongkong</elem>
+    <elem id="319" n="Hong Kong" scope="4" role="2">Xianggang Tebie Xingzhengqu / Hongkong</elem>
+    <elem id="320" n="Jilin" scope="4" role="2">Jilin Sheng</elem>
+    <elem id="321" n="Anhui" scope="4" role="2">Anhui Sheng</elem>
+    <elem id="322" n="Shanghai" scope="4" role="2">Shanghai Shi</elem>
+    <elem id="323" n="Qinghai" scope="4" role="2">Qinghai Sheng</elem>
+    <elem id="324" n="Sichuan" scope="4" role="2">Sichuan Sheng</elem>
+    <elem id="325" n="Zhejiang" scope="4" role="2">Zhejiang Sheng</elem>
+    <elem id="326" n="Guizhou" scope="4" role="2">Guizhou Sheng</elem>
+    <elem id="327" n="Neimenggu" scope="4" role="2">Neimenggu Zizhiqu</elem>
+    <elem id="328" n="Inner Mongolia" scope="4" role="2">Neimenggu Zizhiqu</elem>
+    <elem id="329" n="Hubei" scope="4" role="2">Hubei Sheng</elem>
+    <elem id="330" n="Hunan" scope="4" role="2">Hunan Sheng</elem>
+    <elem id="331" n="Jiangxi" scope="4" role="2">Jiangxi Sheng</elem>
+    <elem id="332" n="Shaanxi" scope="4" role="2">Shaanxi Sheng</elem>
+    <elem id="333" n="Beijing" scope="4" role="2">Beijing Shi</elem>
+    <elem id="334" n="Guangxi" scope="4" role="2">Guangxi Zhuangzu Zizhiqu</elem>
+    <elem id="335" n="Shandong" scope="4" role="2">Shandong Sheng</elem>
+    <elem id="336" n="Hebei" scope="4" role="2">Hebei Sheng</elem>
+    <elem id="337" n="Heilongjiang" scope="4" role="2">Heilongjiang Sheng</elem>
+    <elem id="338" n="Yunnan" scope="4" role="2">Yunnan Sheng</elem>
+    <elem id="339" n="Ningxia" scope="4" role="2">Ningxia Huizu Zizhiqu</elem>
+    <elem id="340" n="Gansu" scope="4" role="2">Gansu Sheng</elem>
+    <elem id="341" n="Jiangsu" scope="4" role="2">Jiangsu Sheng</elem>
+    <elem id="342" n="Miaoli" scope="4" role="2">Miaoli County</elem>
+    <elem id="343" n="Hsinchu" scope="4" role="2">Hsinchu County</elem>
+    <elem id="344" n="Lienchiang" scope="4" role="2">Lienchiang County</elem>
+    <elem id="345" n="Changhua" scope="4" role="2">Changhua County</elem>
+    <elem id="346" n="Chiayi" scope="4" role="2">Chiayi County</elem>
+    <elem id="347" n="Yunlin" scope="4" role="2">Yunlin County</elem>
+    <elem id="348" n="Taichung" scope="4" role="2">Taichung City</elem>
+    <elem id="349" n="Tainan" scope="4" role="2">Tainan City</elem>
+    <elem id="350" n="Chiayi" scope="4" role="2">Chiayi City</elem>
+    <elem id="351" n="Pingtung" scope="4" role="2">Pingtung County</elem>
+    <elem id="352" n="Nantou" scope="4" role="2">Nantou County</elem>
+    <elem id="353" n="Hualien" scope="4" role="2">Hualien County</elem>
+    <elem id="354" n="Penghu" scope="4" role="2">Penghu County</elem>
+    <elem id="355" n="Taipei" scope="4" role="2">Taipei City</elem>
+    <elem id="356" n="Taitung" scope="4" role="2">Taitung County</elem>
+    <elem id="357" n="Kinmen" scope="4" role="2">Kinmen County</elem>
+    <elem id="358" n="Kaohsiung" scope="4" role="2">Kaohsiung City</elem>
+    <elem id="359" n="New Taipei" scope="4" role="2">New Taipei City</elem>
+    <elem id="360" n="Hsinchu" scope="4" role="2">Hsinchu City</elem>
+
+    <elem id="361" n="Xianggang Tebie Xing Zhengqu" scope="4" role="1">Xianggang Tebie Xing Zhengqu / Hongkong</elem>
+    <elem id="362" n="Hongkong" scope="4" role="1">Xianggang Tebie Xing Zhengqu / Hongkong</elem>
+    <elem id="363" n="Hong Kong" scope="4" role="1">Xianggang Tebie Xing Zhengqu / Hongkong</elem>
+    <elem id="364" n="Xianggang" scope="4" role="1">Xianggang Tebie Xing Zhengqu / Hongkong</elem>
+    <elem id="365" n="Aomen Tebie Xing Zhengqu" scope="4" role="1">Aomen Tebie Xing Zhengqu / Macau</elem>
+    <elem id="366" n="Aomen" scope="4" role="1">Aomen Tebie Xing Zhengqu / Macau</elem>
+    <elem id="367" n="Macau" scope="4" role="1">Aomen Tebie Xing Zhengqu / Macau</elem>
+    <elem id="368" n="Beijing" scope="4" role="1">Beijing Shi</elem>
+    <elem id="369" n="Tianjin" scope="4" role="1">Tianjin Shi</elem>
+    <elem id="370" n="Shanghai" scope="4" role="1">Shanghai Shi</elem>
+    <elem id="371" n="Chongqing" scope="4" role="1">Chongqing Shi</elem>
+
+    <!-- Regions of France - to be used with Boundaries Level 1 - State -->
+    <elem id="401" n="Grand-Est" scope="4">Alsace-Champagne-Ardenne-Lorraine</elem>
+    <elem id="402" n="Grand Est" scope="4">Alsace-Champagne-Ardenne-Lorraine</elem>
+    <elem id="403" n="Hauts-de-France" scope="4">Nord-Pas-de-Calais-Picardie</elem>
+    <elem id="404" n="Hauts de France" scope="4">Nord-Pas-de-Calais-Picardie</elem>
+    <elem id="405" n="Nouvelle-Aquitaine" scope="4">Aquitaine-Limousin-Poitou-Charentes</elem>
+    <elem id="406" n="Nouvelle Aquitaine" scope="4">Aquitaine-Limousin-Poitou-Charentes</elem>
+    <elem id="407" n="Occitanie" scope="4">Languedoc-Roussillon-Midi-Pyrénées</elem>
+</nameConversions>

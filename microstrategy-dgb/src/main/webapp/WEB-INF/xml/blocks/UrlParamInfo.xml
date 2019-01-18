@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Info block for containing information about a parameter for hyperlinks. -->
+	<block name="UrlParamInfo" inherits="BaseBlock">
+		<definition>
+			<!-- The name of the parameter. -->
+			<property name="n" type="String" />
+			
+			<!-- The value of the parameter which can be a String value or a path value. -->
+			<property name="value" type="String" />
+		</definition>
+	</block>

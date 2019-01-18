@@ -1,0 +1,58 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		CrosstabModel is an ordered list of data objects, called "rows".
+	-->
+	<block name="CrosstabModel" inherits="BaseModel">
+		<definition>
+			<!-- Unique identifier of the I-Server message corresponding to this model. -->
+			<property name="msgId" type="String" />
+			
+			<!-- Unique identifier of the state of the I-Server message corresponding to this model. -->
+			<property name="stateId" type="String" />
+
+			<!-- An ordered list of CrosstabRow Blocks. -->
+			<property name="rows" type="List" />
+
+			<!-- A hashtable of row-cell data encoded in a string.  Used as an alternative to the
+				"rows" property in large grids for performance optimization. -->
+			<property name="cellStrings" type="Block" />
+			
+			<!-- The index (1-based) of the first row. -->
+			<property name="rowBlockBegin" type="Integer" />
+
+			<!-- The maximum number of rows that this model may fetch at any given time. -->
+			<property name="rowBlockCount" type="Integer" />
+						
+			<!-- The index (1-based) of the first column. -->
+			<property name="columnBlockBegin" type="Integer" />
+
+			<!-- The maximum number of columns that this model may fetch at any given time. -->
+			<property name="columnBlockCount" type="Integer" />
+			
+			<!-- The total number of rows (including data outside the current fetch window). -->
+			<property name="totalRows" type="Integer" />
+			
+			<!-- The total number of columns (including data outside the current fetch window). -->
+			<property name="totalColumns" type="Integer" />
+
+			<!-- If true, row headers are merged across rows using rowSpan in header data cells.  -->
+			<property name="mergedRowHeaders" type="Integer" />
+
+			<!-- If true, column headers are merged across columns using colSpan in header data cells.  -->
+			<property name="mergedColumnHeaders" type="Integer" />
+			
+			<!-- Formatting rules for this model, in CSS syntax. -->
+			<property name="cssRules" type="String" />
+			
+			<!-- A list of ListModels which represent the page-by options for this model.  -->
+			<property name="pageByInfo" type="List" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.Crosstab</property>
+			<property name="cellStrings">
+				<block name="BaseBlock">
+					<property name="cellString1" type="String" />
+				</block>
+			</property>
+		</assignments>
+	</block>

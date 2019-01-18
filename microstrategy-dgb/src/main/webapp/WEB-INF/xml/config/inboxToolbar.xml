@@ -1,0 +1,13 @@
+<shortcut-list-set name="inboxToolbar" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrMenuExtraToolbar mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="inboxTb" use-container="true" use-default="false">
+    <attributes>
+      <attribute name="class" source="const" type="string" value="mstrToolbarGroup"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut append-state="true" desc="Inbox" desc-id="" href="" iframe="false" name="inbox" type="bean" bean-style="HistoryListToolbarStyle"/>
+  </shortcut-list>
+</shortcut-list-set>

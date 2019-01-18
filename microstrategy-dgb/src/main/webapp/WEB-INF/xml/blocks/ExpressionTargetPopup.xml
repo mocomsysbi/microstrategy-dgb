@@ -1,0 +1,89 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionTargetPopup is a popup used by ExpressionEditor for editing the target of 
+		a subexpression, typically either a metric qualifier, attribute qualifier, or attribute element list.
+		It contains a view for selecting a target (typically an attibute or metric), which may support
+		folder browsing, search & incremental fetch, plus OK and Cancel buttons.
+	-->
+	<block name="ExpressionTargetPopup" inherits="BaseView">
+		<definition>
+			<!-- The view for selecting a target, typically a ListBrowser. -->
+			<property name="contentView" type="Block" />
+
+			<!-- The OK button to apply the user's input and close this popup. -->
+			<property name="okButton" type="Block" />
+			
+			<!-- The Cancel button to discard the user's input and close this popup. -->
+			<property name="cancelButton" type="Block" />
+		</definition>
+		<assignments>
+			<property name="id">ExpressionTargetPopup1</property>
+			<property name="layoutClass">mstr.layouts.Popup</property>
+			<property name="cssClass">Popup</property>
+			<property name="visible">false</property>
+			<property name="modelPath">opener/model/answer/getTargetListModel(opener.model)</property>
+			<property name="popOrientation">0</property>
+			<property name="CommandEnabledUnpop" type="Boolean">true</property>
+			<!-- target viewer -->
+			<property name="contentView">
+				<block name="ListBrowser">
+					<property name="modelPath">parent/model</property>
+					<!-- list box(inherited from ListBrowser): -->
+					<property name="availableView/caption">{desc:mstrWeb.1408|Available:}</property>
+					<property name="availableView/width">200px</property>
+					<property name="availableView/multiSelect">false</property>
+					<!-- path pulldown: -->
+					<property name="pathView">
+						<block name="TreePulldown">
+							<property name="caption">{desc:mstrWeb.5299|Look in:}</property>
+							<property name="modelPath">parent/model/getContainerTree()</property>
+							<property name="cmds">BrowseContainerTreeNode|model/getSelectedNode()|parent/model</property>
+						</block>
+					</property>
+					<!-- path up button: -->
+					<property name="pathUpButton">
+						<block name="ToolButton">
+						     <property name="tooltip">{desc:mstrWeb.1152|Up One Level}</property>
+						     <property name="cssText">background-image: url(../style/mstr/images/tbUpFolder.png)</property>
+						     <property name="cmds">BrowseContainerParent||parent/model</property>
+						     <property name="modelPath">parent/model</property>
+					    </block>
+					</property>
+					<!-- search box: -->
+					<property name="searchView">
+						<block name="SearchField">
+							<property name="searchBox/cmds">Search||parent/parent/model</property>
+							<property name="searchBox/caption">{desc:mstrWeb.538|Search for:}</property>
+							<property name="searchBox/iconTooltip">{desc:mstrWeb.4325|Search}</property>
+							<property name="searchBox/iconClass">mstrBGIcon_tbSearch</property>
+							<property name="matchCaseBox/modelPath">parent/parent/model</property>
+							<property name="matchCaseBox/valueField">searchMatchCase</property>
+							<property name="matchCaseBox/enabledField">parent/parent/model/searchMatchCaseAvailable</property>
+						</block>
+					</property>
+					<!-- fetch buttons: -->
+					<property name="fetchView">
+						<block name="FetchControl">
+							<property name="modelPath">parent/model</property>
+							<property name="cmds">FetchBlock||parent/model</property>
+						</block>
+					</property>
+				</block>
+			</property>
+			<!-- ok button -->
+			<property name="okButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.2397|OK}</property>
+					<property name="cmds">EditConditionTarget|parent/model/getSelectedItem()|parent/opener/model;Unpop||parent;</property>
+					<property name="enabledField">parent/model/selectedCount</property>
+				</block>
+			</property>
+			<!-- cancel button -->
+			<property name="cancelButton">
+				<block name="TextButton">
+					<property name="caption">{desc:mstrWeb.2399|Cancel}</property>
+					<property name="cmds">Unpop||parent</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

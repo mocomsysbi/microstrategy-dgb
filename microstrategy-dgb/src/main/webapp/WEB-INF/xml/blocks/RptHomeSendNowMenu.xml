@@ -1,0 +1,57 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RptMenuModel" name="RptHomeSendNowMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1574" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5008|History List}</property>
+          <property name="cmdid">subs</property>
+          <property name="visibleFeatures">scheduling</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+        <block listElementKey="K1575" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5009|Mobile}</property>
+          <property name="cmdid">mobileSubs</property>
+          <property name="visibleFeatures">is-viewable-report;use-mobile</property>
+          <property name="enabledFeatures">enable-scheduling-mobile</property>
+        </block>
+        <block listElementKey="K1576" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.5068|Email}</property>
+          <property name="cmdid">ncSubs</property>
+          <property name="visibleFeatures">is-viewable-report;scheduled-email</property>
+          <property name="enabledFeatures">enable-scheduled-email</property>
+        </block>
+        <block listElementKey="K1577" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3250|File}</property>
+          <property name="cmdid">ncFileSubs</property>
+          <property name="visibleFeatures">is-viewable-report;scheduled-file-export</property>
+          <property name="enabledFeatures">enable-scheduled-file-export</property>
+        </block>
+        <block listElementKey="K1578" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3251|Printer}</property>
+          <property name="cmdid">ncPrintSubs</property>
+          <property name="visibleFeatures">is-viewable-report;scheduled-print</property>
+          <property name="enabledFeatures">enable-scheduled-print</property>
+        </block>
+        <block listElementKey="K1579" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.11728|FTP}</property>
+          <property name="cmdid">ncFtpSubs</property>
+          <property name="visibleFeatures">is-viewable-report;scheduled-ftp</property>
+          <property name="enabledFeatures">enable-scheduled-ftp</property>
+        </block>
+        <block listElementKey="K1580" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14368|Cache}</property>
+          <property name="cmdid">ncCacheSubs</property>
+          <property name="visibleFeatures">is-viewable-report;scheduling</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+        <block listElementKey="K1581" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14374|Cube Refresh}</property>
+          <property name="cmdid">ncCacheSubs</property>
+          <property name="visibleFeatures">is-intelligent-cube;is-non-viewable-report;scheduling</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

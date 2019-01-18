@@ -1,0 +1,240 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabWidget">
+  <assignments>
+    <property name="title">{desc:mstrWeb.434|Properties} - {desc:mstrWeb.4921|Widget}</property>
+    <property name="modelPath">parent/model/items/5</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">true</property>
+    <property name="helpTopic">Properties_dialog_Flash.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K2130" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.7722|Widget Selection}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField" type="String">model/isOneGrid</property>
+          <property name="children">
+            <list>
+	          <block listElementKey="warning" name="TextLabel">
+	            <property name="cssText">padding-top:4px;white-space:normal;</property>
+	            <property name="value">{desc:mstrWeb.11810|This widget was previously running in full screen on mobile devices; this property has been deprecated.  If you click OK in this dialog, the full screen property will be removed from the widget.}</property>
+                <property name="modelPath" type="String">parent/model</property>
+                <property name="visibleField" type="String">model/wasFullScreen</property>
+	          </block>
+              <block listElementKey="K2131" name="HBox">
+                <property name="cssText">text-align:left;margin-top:10px;</property>
+                <property name="modelPath" type="String">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2132" name="TextLabel">
+                      <property name="cssText">padding-top:4px;</property>
+                      <property name="value">{desc:mstrWeb.7721|Widget:}</property>
+                    </block>
+                    <block listElementKey="K225" name="TextLink">
+                      <property name="caption">widgetName</property>
+                      <property name="cmds">OpenWidgets|props/element|model</property>
+                      <property name="cssText">background-color:#ffffff;</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="valueField" type="String">widgetName</property>
+                      <property name="enabledField">model/widgetTabEnabled</property>
+                      <property name="layoutClass">mstr.layouts.ClickableText</property>
+                      <property name="cssCaption" type="String">padding-left:3px;padding-right:4px;border:1px solid #808080;</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2166" name="HBox">
+                <property name="cssText">text-align:left;margin-top:10px;</property>
+                <property name="modelPath" type="String">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2163" name="TextLabel">
+                      <property name="cssText">padding-top:4px;</property>
+                      <property name="value">{desc:mstrWeb.7723|Alternative Display}:</property>
+                    </block>
+                    <block listElementKey="K2158" name="ListPulldown">
+                      <property name="modelPath">parent/model/NonFlashRender</property>
+                      <property name="enabledField">parent/model/ADisplayEnabled</property>
+                      <property name="width">123px</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2133" name="HBox">
+                <property name="cssText">text-align:left;margin-top:10px;</property>
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2134" name="HBox">
+                      <property name="modelPath">parent/model</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2143" name="VBox">
+                            <property name="cssText">border:1px solid gray;border-right:0px;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2136" name="TextLabel">
+                                  <property name="cssText">padding-left:6px;width:134px;font-weight:bold;height:20px;padding-top:3px;border-bottom:1px solid gray;background:#D9DDE0 url(images/theme/red/panelHeader.gif) repeat-x scroll left top !important;</property>
+                                  <property name="value">{desc:mstrWeb.7752|Display widget in}</property>
+                                </block>
+                                <block listElementKey="K2145" name="CheckBox">
+                                  <property name="cssText">height:20px;padding-top:3px;border-bottom:1px solid gray;background-color:#F5F5F4;</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">FlashDisplay</property>
+                                  <property name="enabledField">model/FlashDisplayEnabled</property>
+                                  <property name="caption">{desc:mstrWeb.14513|Flash (deprecated)}</property>
+                                </block>
+                                <block listElementKey="K2149" name="CheckBox">
+                                  <property name="cssText">height:20px;padding-top:3px;border-bottom:1px solid gray;</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">iPhoneDisplay</property>
+                                  <property name="enabledField">model/iPhoneDisplayEnabled</property>
+                                  <property name="caption">{desc:mstrWeb.7725|iPhone}</property>
+                                </block>
+                                <block listElementKey="K2150" name="CheckBox">
+                                  <property name="cssText">height:20px;padding-top:3px;border-bottom:1px solid gray;background-color:#F5F5F4;</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">iPadDisplay</property>
+                                  <property name="enabledField">model/iPadDisplayEnabled</property>
+                                  <property name="caption">{desc:mstrWeb.7726|iPad}</property>
+                                </block>
+                                <block listElementKey="K2213" name="CheckBox">
+                                  <property name="cssText">height:20px;padding-top:3px;border-bottom:1px solid gray;</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">AndroidDisplay</property>
+                                  <property name="enabledField">model/AndroidDisplayEnabled</property>
+                                  <property name="caption">{desc:mstrWeb.8433|Android Phone}</property>
+                                </block>
+                                <block listElementKey="K2214" name="CheckBox">
+                                  <property name="cssText">height:20px;padding-top:3px;border-bottom:1px solid gray;background-color:#F5F5F4;</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">AndroidTabletDisplay</property>
+                                  <property name="enabledField">model/AndroidTabletDisplayEnabled</property>
+                                  <property name="caption">{desc:mstrWeb.8434|Android Tablet}</property>
+                                </block>
+                                <block listElementKey="K2146" name="CheckBox">
+                                  <property name="cssText">height:20px;padding-top:3px;border-bottom:1px solid gray;</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">DHTMLDisplay</property>
+                                  <property name="enabledField">model/DHTMLDisplayEnabled</property>
+                                  <property name="caption">{desc:mstrWeb.7724|DHTML}</property>
+                                </block>
+                                <block listElementKey="K2139" name="TextLabel">
+                                  <property name="cssText">padding-left:24px;height:20px;padding-top:3px;border-bottom:1px solid gray;color:gray;background-color:#F5F5F4;</property>
+                                  <property name="value">{desc:mstrWeb.1877|PDF}</property>
+                                </block>
+                                <block listElementKey="K2140" name="TextLabel">
+                                  <property name="cssText">padding-left:24px;height:20px;padding-top:3px;color:gray;</property>
+                                  <property name="value">{desc:mstrWeb.3958|Excel}</property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K2151" name="VBox">
+                      <property name="cssText">width:180px;border:1px solid gray;text-align:left</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2152" name="TextLabel">
+                            <property name="cssText">font-weight:bold;height:20px;padding:3px 0 0 6px;border-bottom:1px solid gray;background:#D9DDE0 url(images/theme/red/panelHeader.gif) repeat-x scroll left top !important;</property>
+                            <property name="value">{desc:mstrWeb.7753|Will render as}</property>
+                          </block>
+                          <block listElementKey="K2153" name="TextFieldLabel">
+                            <property name="cssText">height:20px;padding:3px 0 0 6px;border-bottom:1px solid gray;background-color:#F5F5F4;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="valueField" type="String">FlashDisplayLabel</property>
+                          </block>
+                          <block listElementKey="K2154" name="TextFieldLabel">
+                            <property name="cssText">height:20px;padding:3px 0 0 6px;border-bottom:1px solid gray;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="valueField" type="String">iPhoneDisplayLabel</property>
+                          </block>
+                          <block listElementKey="K2164" name="TextFieldLabel">
+                            <property name="cssText">height:20px;padding:3px 0 0 6px;border-bottom:1px solid gray;background-color:#F5F5F4;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="valueField" type="String">iPadDisplayLabel</property>
+                          </block>
+                          <block listElementKey="K2215" name="TextFieldLabel">
+                            <property name="cssText">height:20px;padding:3px 0 0 6px;border-bottom:1px solid gray;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="valueField" type="String">AndroidDisplayLabel</property>
+                          </block>
+                          <block listElementKey="K2216" name="TextFieldLabel">
+                            <property name="cssText">height:20px;padding:3px 0 0 6px;border-bottom:1px solid gray;background-color:#F5F5F4;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="valueField" type="String">AndroidTabletDisplayLabel</property>
+                          </block>
+                          <block listElementKey="K2165" name="TextFieldLabel">
+                            <property name="cssText">height:20px;padding:3px 0 0 6px;border-bottom:1px solid gray;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="valueField" type="String">DHTMLDisplayLabel</property>
+                          </block>
+                          <block listElementKey="K2159" name="TextFieldLabel">
+                            <property name="cssText">height:20px;padding:3px 0 0 6px;border-bottom:1px solid gray;background-color:#F5F5F4;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="valueField" type="String">PDFExcelDisplayLabel</property>
+                          </block>
+                          <block listElementKey="K2160" name="TextFieldLabel">
+                            <property name="cssText">height:20px;padding:3px 0 0 6px;</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="valueField" type="String">PDFExcelDisplayLabel</property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2161" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-top:10px;</property>
+                <property name="visibleField">model/OpenVisPropsEditor</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2162" name="TextLabel">
+                      <property name="value">{desc:mstrWeb.7727|Widget Properties:}</property>
+                      <property name="cssText">padding-top:4px;</property>
+                    </block>
+                    <block listElementKey="K2105" name="ToolButton">
+                      <property name="cssText">background-image:url(../style/mstr/images/visProps.gif);</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="cmds">OpenVisPropsEditor||model</property>
+                      <property name="enabledField">model/widgetTabEnabled</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1015" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5849|Secondary Data Providers}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">parent/model/showSecondaryDataProviders</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1016" name="SimpleListCart">
+                <property name="visibleField">parent/model/showSecondaryDataProviders</property>
+                <property name="modelPath">parent/model/getDynamicCartModel("availableSecondaryDataProviders","SecondaryDataProviders")</property>
+                <property name="showMoveButtons">false</property>
+                <property name="upButton/visible">true</property>
+                <property name="downButton/visible">true</property>
+                <property name="availableView/height">110px</property>
+                <property name="availableView/width">200px</property>
+                <property name="selectedView/height">110px</property>
+                <property name="selectedView/width">200px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+        PropertiesTabFlash is the "Properties - Widget" tab of the properties editor.
+    -->

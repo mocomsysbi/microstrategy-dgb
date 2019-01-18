@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- Label is a non-editable control with the structure: "caption: value".  -->
+	<block name="Label" inherits="BaseView">
+		<definition>
+			<!-- The caption to appear to the left of the field value. -->
+			<property name="caption" type="String" />
+
+			<!-- The name of the model property that will supply the value. -->
+			<property name="valueField" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.Label</property>
+			<property name="cssClass">Label</property>
+		</assignments>
+	</block>

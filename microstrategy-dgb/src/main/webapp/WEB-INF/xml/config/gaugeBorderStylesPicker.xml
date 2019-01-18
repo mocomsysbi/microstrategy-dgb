@@ -1,0 +1,37 @@
+<shortcut-list name="gaugeBorderStylePicker" version="1.0">
+    <shortcut desc="[None]" desc-id="mstrWeb.4853" name="pkrNone">
+        <attributes>
+            <attribute name="value" value="0"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Simple Circle]" desc-id="mstrWeb.4854" name="pkrSimple">
+        <attributes>
+            <attribute name="value" value="1"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[3D Circle]" desc-id="mstrWeb.4855" name="pkr3D">
+        <attributes>
+            <attribute name="value" value="2"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Embossed]" desc-id="mstrWeb.4935" name="pkrEmboss">
+        <attributes>
+            <attribute name="value" value="3"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[3D Donut]" desc-id="mstrWeb.4857" name="pkrDonut">
+        <attributes>
+            <attribute name="value" value="4"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Metallic]" desc-id="mstrWeb.4858" name="pkrMetallic">
+        <attributes>
+            <attribute name="value" value="5"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="[Clipped]" desc-id="mstrWeb.4859" name="pkrClipped">
+        <attributes>
+            <attribute name="value" value="6"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarPercentButton" inherits="ToolbarButtonModel">
+	<assignments>
+		<property name="id">tbPercent</property>
+		<property name="tooltip">{desc:mstrWeb.2191|Percentage Style}</property>
+		<property name="cmdid">Percent</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

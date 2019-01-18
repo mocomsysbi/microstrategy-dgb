@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<block name="SearchResult" inherits="Fetchable">
+    <definition>
+        <!-- The name pattern of the search. -->
+        <property name="searchPattern" type="String" />
+        
+        <!-- NameWildCards of the search.  -->
+        <property name="nameWildcards" type="Integer" />
+                
+        <!-- The Items collection returned by the search. -->
+        <property name="items" type="List" />
+        
+    </definition>
+</block>

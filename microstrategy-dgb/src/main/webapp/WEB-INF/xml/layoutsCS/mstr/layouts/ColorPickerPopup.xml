@@ -1,0 +1,15 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	on_set_viewFlags="mstr.behaviors.ColorPickerPopup.resolveViewFlags(view);"
+    on_set_visible="mstr.itemrenderers.ColorPickerListView.on_set_visible(view, model, rootTag)">
+  <div style="{@cssText}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <mstrlayout:wIterate name="children"
+                         id="child">
+		<div class="{@cssPrefix}{@cssClass}Item">
+			<mstrlayout:wRender name="child">
+			</mstrlayout:wRender>
+		</div>
+	</mstrlayout:wIterate>
+  </div>
+</mstrlayout:layout>

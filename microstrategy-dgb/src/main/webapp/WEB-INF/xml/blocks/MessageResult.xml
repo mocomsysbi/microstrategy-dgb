@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		MessageResult block defines information about an Intelligence Server
+		message: its ID, status and state. When serialized to XML, we will use
+		the element name of "msg".
+		
+		NOTE TO DEVELOPER: Please be careful in modifications to this Block.
+		It is used in the Task infrastructure in the TaskRequestContext.createMessageResultBlock.
+		Block or property modifications must be coordinated with Tasks that use it.
+	-->
+	<block name="MessageResult" annotation="xml:elementName=msg">
+		<definition>
+			<!-- The message id for the result  -->
+			<property name="id" type="String" />
+
+			<!-- The state id for the result -->
+			<property name="st" type="String" />
+			
+			<!-- The status of the result message -->
+			<property name="status" type="String" />
+		</definition>
+	</block>

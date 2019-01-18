@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RWTextInputControl" inherits="RWDataInputObject, WidthConfig">
+    <definition>
+        <!-- The maximum length -->
+        <property name="ml" type="Integer"/>
+        <!-- Use password entry mask-->
+        <property name="psw" type="Boolean" />
+        <!-- The minimum length -->
+        <property name="mnl" type="Integer"/>
+        <!-- Enable the max value? -->
+        <property name="emax" type="Boolean"/>
+        <!-- The max value -->
+        <property name="max" type="Double"/>
+        <!-- Enable the min value? -->
+        <property name="emin" type="Boolean"/>
+        <!-- The min value -->
+        <property name="min" type="Double"/>
+        <!-- The validation mechanism, 0-no validation, 1-phone number, 2-email address, 3-US zip code, 4-social security number, 5-regular expression -->
+        <property name="vm" type="Integer"/>
+        <!-- Regular expression -->
+        <property name="rgx" type="String"/>
+    </definition>
+</block>

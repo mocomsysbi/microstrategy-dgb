@@ -1,0 +1,12 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		PromptQuestionExtendedProperties is a collection of extended properties belonging to the
+		PromptQuestionModel Block (see below).  These properties are used when applying prompt answers.
+	-->
+	<block name="PromptQuestionExtendedProperties" inherits="BaseBlock">
+		<definition>
+			<property name="beanPath" type="String" />
+			<property name="answerOption" type="String" />
+			<property name="answerFormat" type="String" />
+		</definition>	
+	</block>

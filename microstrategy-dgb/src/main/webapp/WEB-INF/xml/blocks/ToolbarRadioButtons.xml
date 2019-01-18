@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarRadioButtons" inherits="ToolbarControl,ListView">
+		<assignments>
+			<property name="cssClass">ToolbarRadioBtns</property>
+			<property name="itemRendererClass">mstr.itemrenderers.ToolbarRadioButtons</property>
+			<property name="itemCSSPrefix">ToolbarButton</property>
+			<property name="height">24</property>
+			<property name="modelPushedProps">!width</property>
+			<property name="ignoreKeyStrokes">true</property>
+		</assignments>
+	</block>

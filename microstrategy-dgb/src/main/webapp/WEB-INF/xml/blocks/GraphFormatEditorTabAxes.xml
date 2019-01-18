@@ -1,0 +1,413 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="GraphFormatEditorTabAxes">
+  <assignments>
+    <property name="title">Format Graph - Axes</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="modelPath">parent/model/items/3</property>
+    <property name="helpTopic">Format_Graph_dialog_Axes.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K2002" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3186|Axes Values and Scales}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2003" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2004" name="VBox">
+                      <!-- X Axis -->
+                      <property name="modelPath">parent/model</property>
+                      <property name="visibleField">model/maxScaleX_visible</property>
+                      <property name="cssText">width:210px</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2093" name="TextLabel">
+                            <property name="value">{desc:mstrWeb.3731|X Axis Values - Use Manual Setting for:}</property>
+                            <property name="cssText">margin-bottom:5px;white-space:normal</property>
+                          </block>
+                          <block listElementKey="K2005" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2006" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">maxScaleCKX</property>
+                                </block>
+                                <block listElementKey="K2007" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2099|Maximum Value:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">maxScaleX</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="greaterThan">model/minScaleX</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2008" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2009" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">minScaleCKX</property>
+                                </block>
+                                <block listElementKey="K2010" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2100|Minimum Value:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">minScaleX</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="lessThan">model/maxScaleX</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2011" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2012" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">gridIntervalCKX</property>
+                                </block>
+                                <block listElementKey="K2013" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2101|Grid Interval:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">gridIntervalX</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="min">0</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K2014" name="VBox">
+                      <!-- Y1 Axis -->
+                      <property name="modelPath">parent/model</property>
+                      <property name="visibleField">model/gridIntervalY1_visible</property>
+                      <property name="cssText">width:210px</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2094" name="TextLabel">
+                            <property name="value">{desc:mstrWeb.3732|Y1 Axis Values - Use Manual Setting for:}</property>
+                            <property name="cssText">margin-bottom:5px;white-space:normal</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="visibleField">!model/is3DGraph</property>
+                          </block>
+                          <block listElementKey="K2097" name="TextLabel">
+                            <property name="value">{desc:mstrWeb.3730|Y Axis Values - Use Manual Setting for:}</property>
+                            <property name="cssText">margin-bottom:5px;white-space:normal</property>
+                            <property name="modelPath">parent/model</property>
+                            <property name="visibleField">model/is3DGraph</property>
+                          </block>
+                          <block listElementKey="K2015" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2016" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">maxScaleCKY1</property>
+                                  <property name="enabledField">model/maxScaleCKY1_enabled</property>
+                                </block>
+                                <block listElementKey="K2017" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2099|Maximum Value:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">maxScaleY1</property>
+                                  <property name="enabledField">model/maxScaleY1_enabled</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="greaterThan">model/minScaleY1</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2018" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2019" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">minScaleCKY1</property>
+                                  <property name="enabledField">model/minScaleCKY1_enabled</property>
+                                </block>
+                                <block listElementKey="K2020" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2100|Minimum Value:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">minScaleY1</property>
+                                  <property name="enabledField">model/minScaleY1_enabled</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="lessThan">model/maxScaleY1</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2021" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2022" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">gridIntervalCKY1</property>
+                                </block>
+                                <block listElementKey="K2023" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2101|Grid Interval:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">gridIntervalY1</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="min">0</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+              <block listElementKey="K2024" name="HBox">
+                <property name="cssText">margin-top:20px</property>
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K2025" name="VBox">
+                      <!-- Y2 Axis -->
+                      <property name="modelPath">parent/model</property>
+                      <property name="visibleField">model/maxScaleY2_visible</property>
+                      <property name="cssText">width:210px</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2095" name="TextLabel">
+                            <property name="value">{desc:mstrWeb.3733|Y2 Axis Values - Use Manual Setting for:}</property>
+                            <property name="cssText">margin-bottom:5px;white-space:normal</property>
+                          </block>
+                          <block listElementKey="K2026" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2027" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">maxScaleCKY2</property>
+                                </block>
+                                <block listElementKey="K2028" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2099|Maximum Value:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">maxScaleY2</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="greaterThan">model/minScaleY2</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2029" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2030" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">minScaleCKY2</property>
+                                </block>
+                                <block listElementKey="K2031" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2100|Minimum Value:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">minScaleY2</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="lessThan">model/maxScaleY2</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2032" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2033" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">gridIntervalCKY2</property>
+                                </block>
+                                <block listElementKey="K2034" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2101|Grid Interval:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">gridIntervalY2</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="min">0</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                    <block listElementKey="K2035" name="VBox">
+                      <!-- Z Axis -->
+                      <property name="modelPath">parent/model</property>
+                      <property name="visibleField">model/maxScaleZ_visible</property>
+                      <property name="cssText">width:210px</property>
+                      <property name="children">
+                        <list>
+                          <block listElementKey="K2096" name="TextLabel">
+                            <property name="value">{desc:mstrWeb.5957|Z Axis Values - Use Manual Setting for:}</property>
+                            <property name="cssText">margin-bottom:5px;white-space:normal</property>
+                          </block>
+                          <block listElementKey="K2036" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2037" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">maxScaleCKZ</property>
+                                </block>
+                                <block listElementKey="K2038" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2099|Maximum Value:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">maxScaleZ</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="greaterThan">model/minScaleZ</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2039" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2040" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">minScaleCKZ</property>
+                                </block>
+                                <block listElementKey="K2041" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2100|Minimum Value:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">minScaleZ</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="lessThan">model/maxScaleZ</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                          <block listElementKey="K2042" name="HBox">
+                            <property name="modelPath">parent/model</property>
+                            <property name="children">
+                              <list>
+                                <block listElementKey="K2043" name="CheckBox">
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="valueField">gridIntervalCKZ</property>
+                                </block>
+                                <block listElementKey="K2044" name="HTextBox">
+                                  <property name="caption">{desc:mstrWeb.2101|Grid Interval:}</property>
+                                  <property name="modelPath">parent/model</property>
+                                  <property name="totalSize">10</property>
+                                  <property name="valueField">gridIntervalZ</property>
+                                  <property name="validator">
+                                    <block name="FieldValidator">
+                                    <property name="type">7</property>
+                                    <property name="min">0</property>
+                                    </block>
+                                  </property>
+                                </block>
+                              </list>
+                            </property>
+                          </block>
+                        </list>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K2045" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5759|Dual Y options}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/maxScaleY2_visible</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K2046" name="RadioList">
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/dualAxisAuto</property>
+              </block>
+              <block listElementKey="K2047" name="ListCart">
+                <property name="modelPath">parent/model/dualOptionItems</property>
+                <property name="cssText">margin:4px</property>
+                <property name="availableView/width">200px</property>
+                <property name="availableView/caption">{desc:mstrWeb.5954|Y1 Axis:}</property>
+                <property name="selectedView/width">200px</property>
+                <property name="selectedView/caption">{desc:mstrWeb.5955|Y2 Axis:}</property>
+                <property name="availableView/enabledField">parent/parent/model/dualAxisAuto_enabled</property>
+                <property name="selectedView/enabledField">parent/parent/model/dualAxisAuto_enabled</property>
+                <property name="addButton/enabledField">parent/parent/model/dualAxisAuto_enabled</property>
+                <property name="removeButton/enabledField">parent/parent/model/dualAxisAuto_enabled</property>
+                <property name="addAllButton/visible">false</property>
+                <property name="removeAllButton/visible">false</property>
+                <property name="upButton/visible">false</property>
+                <property name="downButton/visible">false</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

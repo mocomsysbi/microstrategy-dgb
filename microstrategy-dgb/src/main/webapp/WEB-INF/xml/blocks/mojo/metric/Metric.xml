@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties and token stream for a metric.
+--> 
+<block name="Metric" inherits="WebObjectInfo">
+  <definition>
+    <!-- The Metric Properties Block -->
+    <property name="mps" type="Block" />
+    
+    <!-- Data type of the metric -->
+    <property name="datp" type="Block" />
+    
+    <!-- Metric formats including header_format and grid_format -->
+    <property name="fmt" type="Block" />
+    
+    <!-- The token stream -->
+    <property name="tks" type="Block" />
+    
+    <!-- The subtotals -->
+    <property name="sbs" type="Block" />
+  </definition>
+</block>

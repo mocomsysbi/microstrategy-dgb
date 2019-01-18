@@ -1,0 +1,17 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- HBox is a container for laying out view Blocks horizontally on-screen.  -->
+	<block name="HBox" inherits="BaseView,Container">
+		<definition>
+			<!-- Amount of padding to be applied uniformly around each of the children. -->
+			<property name="padding" type="Integer" />
+			
+			<!-- Horizontal alignment within the cells. -->
+			<property name="hAlign" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.HBox</property>
+			<property name="cssClass">HBox</property>
+			<property name="padding">0</property>
+			<property name="hAlign">left</property>
+		</assignments>
+	</block>

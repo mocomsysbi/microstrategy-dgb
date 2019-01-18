@@ -1,0 +1,7 @@
+<widget>
+    <title desc="Select Dataset" desc-id="mstrWeb.3413"/>
+    <footer>
+        <button type="1" id="finishWizard" title-desc="OK" title-desc-id="mstrWeb.1442" enable-feature-id="required-completed" event-id="53004" base-bean="ReportWizard"/>
+        <button type="1" button-style="1" title-desc="Cancel" title-desc-id="mstrWeb.3416" javaScript="microstrategy.bone('ReportWizard_WizardTransformStyle').closeEditor();" event-id="" base-bean="ReportWizard"/>
+    </footer>
+</widget>

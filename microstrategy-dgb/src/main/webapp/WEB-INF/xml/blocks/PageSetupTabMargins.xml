@@ -1,0 +1,101 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		PageSetupTabMargins is the "Margins" tab of the Page Setup editor.
+	-->
+	<block name="PageSetupTabMargins" inherits="Tab">
+		<assignments>
+			<property name="title">{desc:mstrWeb.1897|Page Setup} - {desc:mstrWeb.3688|Margins}</property>
+			<property name="width">450px</property>
+			<property name="height">100%</property>
+			<property name="visible">false</property>
+			<property name="helpTopic">Properties_dialog_Margins.htm</property>			
+			<property name="children">
+				<list>
+					<block name="FieldSet" listElementKey="margins">
+						<property name="legend">{desc:mstrWeb.3688|Margins}</property>
+						<property name="modelPath">parent/model</property>
+						<property name="children">
+							<list>
+								<block name="HBox" listElementKey="hbox">
+									<property name="padding">2</property>
+									<property name="children">
+										<list>
+											<block name="VBox" listElementKey="horizontal">
+												<property name="children">
+													<list>
+														<block name="TextBox" listElementKey="left">
+															<property name="caption">{desc:mstrWeb.2173|Left:}</property>
+															<property name="valueField">MarginLeft</property>
+															<property name="modelPath">parent/parent/parent/model</property>
+															<property name="totalSize">7</property>
+															<property name="validator">
+																<block name="FieldValidator">
+																	<property name="required">true</property>
+																	<property name="type">7</property>
+																	<property name="min">0</property>
+																	<property name="lessThan">model/parent/items/0/PageWidth|model/MarginRight;model/minimumPrintArea</property>
+																</block>
+															</property>
+														</block>
+														<block name="TextBox" listElementKey="right">
+															<property name="caption">{desc:mstrWeb.2174|Right:}</property>
+															<property name="valueField">MarginRight</property>
+															<property name="modelPath">parent/parent/parent/model</property>
+															<property name="totalSize">7</property>
+															<property name="validator">
+																<block name="FieldValidator">
+																	<property name="required">true</property>
+																	<property name="type">7</property>
+																	<property name="min">0</property>
+																	<property name="lessThan">model/parent/items/0/PageWidth|model/MarginLeft;model/minimumPrintArea</property>
+																</block>
+															</property>
+														</block>
+													</list>
+												</property>
+											</block>
+											<block name="VBox" listElementKey="vertical">
+											<property name="cssText">padding-left:45px</property>
+												<property name="children">
+													<list>
+														<block name="TextBox" listElementKey="top">
+															<property name="caption">{desc:mstrWeb.2061|Top:}</property>
+															<property name="valueField">MarginTop</property>
+															<property name="modelPath">parent/parent/parent/model</property>
+															<property name="totalSize">7</property>
+															<property name="validator">
+																<block name="FieldValidator">
+																	<property name="required">true</property>
+																	<property name="type">7</property>
+																	<property name="min">0</property>
+																	<property name="lessThan">model/parent/items/0/PageHeight|model/MarginBottom;model/minimumPrintArea</property>
+																</block>
+															</property>
+														</block>
+														<block name="TextBox" listElementKey="bottom">
+															<property name="caption">{desc:mstrWeb.2062|Bottom:}</property>
+															<property name="valueField">MarginBottom</property>
+															<property name="modelPath">parent/parent/parent/model</property>
+															<property name="totalSize">7</property>
+															<property name="validator">
+																<block name="FieldValidator">
+																	<property name="required">true</property>
+																	<property name="type">7</property>
+																	<property name="min">0</property>
+																	<property name="lessThan">model/parent/items/0/PageHeight|model/MarginTop;model/minimumPrintArea</property>
+																</block>
+															</property>
+														</block>
+													</list>
+												</property>
+											</block>
+										</list>
+									</property>
+								</block>
+							</list>
+						</property>
+					</block>				
+				</list>
+			</property>	
+		</assignments>
+	</block>

@@ -1,0 +1,56 @@
+<whitelist>
+    <mobile-whitelist>
+        <command id="guap" desc="GetUserAllPrivileges"/>
+        <command id="gi" desc="GetInboxMsgs"/>
+        <command id="grtex" desc="GetResultEx"/>
+        <command id="msts" desc="MobileStatisticsLog"/>
+        <command id="drl" desc="Drill"/>
+        <command id="sti" desc="SaveToInbox"/>
+        <command id="rr" desc="RunReport"/>
+        <command id="get_web_contents" desc="GetWebContents"/>
+        <command id="get_images" desc="GetImages"/>
+        <command id="get_web_folder_links" desc="GetWebFolderLinks"/>
+        <command id="ri" desc="RemoveInboxMsgs"/>
+        <command id="rbd" desc="RebuildDocument"/>
+        <command id="rfrs" desc="Refresh"/>
+        <command id="go" desc="GetObjects"/>
+        <command id="save_address" desc="SaveAddress"/>
+        <command id="gwdavo" desc="GetWebDAVObjects"/>
+        <command id="dsvas" desc="DocumentSaveAs"/>
+        <command id="saseg" desc="SaveAsSegment"/>
+        <command id="updmn" desc="UpdateMsgName"/>
+        <command id="get_schedules_of_report_or_document" desc="getSchedulesOfReportOrDocument"/>
+        <command id="check_Subscription_ACL" desc="checkSubscriptionACL"/>
+        <command id="get_associatedusers_of_report_or_document" desc="getAssociatedusersOfReportOrDocument"/>
+        <command id="ro" desc="runDocument"/>
+        <command id="get_binary_data" desc="Get Binary Data"/>
+    </mobile-whitelist>
+    <web-whitelist>
+    </web-whitelist>
+    <library-whitelist>
+        <command id="guap" desc="GetUserAllPrivileges"/>
+        <command id="gi" desc="GetInboxMsgs"/>
+        <command id="grtex" desc="GetResultEx"/>
+        <command id="msts" desc="MobileStatisticsLog"/>
+        <command id="drl" desc="Drill"/>
+        <command id="sti" desc="SaveToInbox"/>
+        <command id="rr" desc="RunReport"/>
+        <command id="get_web_contents" desc="GetWebContents"/>
+        <command id="get_images" desc="GetImages"/>
+        <command id="get_web_folder_links" desc="GetWebFolderLinks"/>
+        <command id="ri" desc="RemoveInboxMsgs"/>
+        <command id="rbd" desc="RebuildDocument"/>
+        <command id="rfrs" desc="Refresh"/>
+        <command id="go" desc="GetObjects"/>
+        <command id="save_address" desc="SaveAddress"/>
+        <command id="gwdavo" desc="GetWebDAVObjects"/>
+        <command id="dsvas" desc="DocumentSaveAs"/>
+        <command id="saseg" desc="SaveAsSegment"/>
+        <command id="updmn" desc="UpdateMsgName"/>
+        <command id="get_schedules_of_report_or_document" desc="getSchedulesOfReportOrDocument"/>
+        <command id="check_Subscription_ACL" desc="checkSubscriptionACL"/>
+        <command id="get_associatedusers_of_report_or_document" desc="getAssociatedusersOfReportOrDocument"/>
+        <command id="ro" desc="runDocument"/>
+        <command id="get_binary_data" desc="Get Binary Data"/>
+    </library-whitelist>
+</whitelist>

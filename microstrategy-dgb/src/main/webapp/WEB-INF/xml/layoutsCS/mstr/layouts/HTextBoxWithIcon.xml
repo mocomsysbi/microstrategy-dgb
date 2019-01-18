@@ -1,0 +1,40 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_enabled="mstr.behaviors.TextBoxWithIcon.on_set_enabled(view, model, rootTag)"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])">
+  <div title="{@tooltip}"
+       class="{@cssPrefix}{@cssClass}"
+       id="{@id}">
+    <table cellspacing="0"
+           cellpadding="0"
+           class="{@cssPrefix}{@cssClass}Table">
+      <tr>
+        <td class="{@cssPrefix}{@cssClass}Caption">
+          <label for="{@id}_txt">
+            {@caption}
+          </label>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellInput">
+          <input maxlength="{@maxlength}"
+                 onkeypress="return mstr.behaviors.TextBoxWithIcon.onkeypress(arguments[0], self, '{@id}', this.value)"
+                 name="{@id}_txt"
+                 style="{@cssText}"
+                 id="{@id}_txt"
+                 size="{@size}"
+                 type="{@inputType}">
+          </input>
+        </td>
+        <td class="{@cssPrefix}{@cssClass}CellIcon">
+          <div class="{@cssPrefix}ToolButtonRoundedRight">
+            <img title="{@iconTooltip}"
+                 onmouseout="mstr.behaviors.ToolButtonRounded.unhover(this.parentNode)"
+                 style="{@iconCSSText}"
+                 src="../images/1ptrans.gif"
+                 onmouseover="mstr.behaviors.ToolButtonRounded.hover(this.parentNode)"
+                 onclick="return mstr.behaviors.TextBoxWithIcon.fire('{@id}', this.parentNode.parentNode.previousSibling.childNodes[0].value)">
+            </img>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

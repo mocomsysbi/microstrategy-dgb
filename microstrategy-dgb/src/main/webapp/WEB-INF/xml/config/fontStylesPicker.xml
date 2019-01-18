@@ -1,0 +1,22 @@
+<shortcut-list name="stylePicker" version="1.0">
+    <shortcut desc="Regular" desc-id="mstrWeb.3440" name="0">
+        <attributes>
+            <attribute name="value" value="0"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Bold" desc-id="mstrWeb.2718" name="1">
+        <attributes>
+            <attribute name="value" value="1"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Italic" desc-id="mstrWeb.2719" name="2">
+        <attributes>
+            <attribute name="value" value="2"/>
+        </attributes>
+    </shortcut>
+    <shortcut desc="Bold Italic" desc-id="mstrWeb.3441" name="3">
+        <attributes>
+            <attribute name="value" value="3"/>
+        </attributes>
+    </shortcut>
+</shortcut-list>

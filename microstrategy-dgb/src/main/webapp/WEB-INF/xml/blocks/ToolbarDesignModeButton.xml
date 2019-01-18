@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarDesignModeButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbDesignMode</property>
+        <property name="tooltip">{desc:mstrWeb.3067|Design Mode}</property>
+	</assignments>
+</block>

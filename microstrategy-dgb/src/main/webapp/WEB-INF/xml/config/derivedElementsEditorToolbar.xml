@@ -1,0 +1,77 @@
+<shortcut-list-set javascript-file="mstrEditorToolbar.js" name="derivedElementsEditorToolbar" feature-id="dhtml" script-class="mstrDerivedElementToolbar" version="1.0">
+  <attributes>
+    <attribute name="at" value="deed_DerivedElementsEditorStyle"/>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="de_group">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+      <attribute name="ty" value="btng"/>
+    </attributes>
+    <shortcut desc="New" desc-id="mstrWeb.4996" feature-id="dhtml" enable-feature-id="" name="tbNewGroup" type="textcombo" textCombo-tooltip-desc-id="mstrWeb.6175">
+      <attributes>
+        <attribute name="cmdtp" value="4" />
+        <attribute name="cmdid" value="add" />
+        <attribute name="cmdvl" value="109015"/>
+        <attribute name="cmdpk" value="deGroupPicker"/>
+      </attributes>
+      <shortcut-list name="deGroupPicker" config-src="/WEB-INF/xml/config/derivedElmtGroupPicker.xml">
+      </shortcut-list>
+    </shortcut>
+    <shortcut desc="Format" desc-id="mstrWeb.1918" feature-id="dhtml" enable-feature-id="" name="tbDeFormat" type="button">
+        <attributes>
+            <attribute name="cmdid" value="format" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Rename" desc-id="mstrWeb.1388" feature-id="dhtml" enable-feature-id=""  name="tbDeRename" type="button">
+        <attributes>
+            <attribute name="cmdid" value="rename" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Delete" desc-id="mstrWeb.629" feature-id="dhtml" enable-feature-id="" name="tbDeleteGroup" type="button">
+      <attributes>
+        <attribute name="cmdid" value="delete" />
+      </attributes>
+    </shortcut>
+    <shortcut desc="Delete All" desc-id="mstrWeb.5186" feature-id="dhtml" enable-feature-id="" name="tbDeleteAllGroup" type="button">
+      <attributes>
+        <attribute name="cmdid" value="deleteall" />
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="de_nav">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+      <attribute name="ty" value="btng"/>
+    </attributes>
+    <shortcut desc="move Up" desc-id="mstrWeb.138" feature-id="dhtml" enable-feature-id="" name="tbUpGroup" type="button">
+      <attributes>
+        <attribute name="cmdid" value="moveup" />
+      </attributes>
+    </shortcut>
+    <shortcut desc="Move Down" desc-id="mstrWeb.139" feature-id="dhtml" enable-feature-id="" name="tbDownGroup" type="button">
+      <attributes>
+        <attribute name="cmdid" value="movedown" />
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="de_opt">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+      <attribute name="ty" value="btng"/>
+    </attributes>
+    <shortcut desc="Save New Element" desc-id="mstrWeb.6176" name="tbSave" dhtml-enabled="microstrategy.bone('deed_DerivedElementsEditorStyle').commands.queryEnabled('save')"  type="button">
+        <attributes>
+            <attribute name="cmdid" value="save" />
+        </attributes>
+    </shortcut>
+    <shortcut desc="Link Derived Elements" desc-id="mstrWeb.6178" name="tbImport" dhtml-enabled="microstrategy.bone('deed_DerivedElementsEditorStyle').commands.queryEnabled('import')" type="button">
+        <attributes>
+            <attribute name="cmdid" value="import" />
+        </attributes>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

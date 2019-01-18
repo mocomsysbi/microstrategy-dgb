@@ -1,0 +1,837 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+    <mstrlayout:replace slot="contents">
+      <div class="mstrPanelBody">
+        <table cellspacing="0" cellpadding="2" class="preferenceList">
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Link to Consume Web application: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.15331"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="LibraryWebBaseURL"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Link to Consume Web application: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.15809"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="ConnectorWebBaseURL"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Default start page: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.259"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="Start"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top" style="width:18%;">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Color theme: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.5584"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <div class="mstrColorThemeList">
+                <mstrlayout:render name="ColorThemeDropDownList"/>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Language -->
+                  <mstrlayout:argument type="String" value="mstrWeb.1341"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <table id="locale-section">
+                <tr>
+                  <td>
+                    <mstrlayout:render name="languageDropDownList"/>
+                  </td>
+                  <td/>
+                </tr>
+                <tr>
+                  <td class="prefs-content-text">
+                    <mstrlayout:render name="serverLocaleHeader"/>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="serverLocaleDropDownList"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="prefs-content-text">
+                    <mstrlayout:render name="metadataLocaleHeader"/>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="metadataLocaleDropDownList"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="prefs-content-text">
+                    <mstrlayout:render name="warehouseDataLocaleHeader"/>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="warehouseDataLocaleDropDownList"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="prefs-content-text">
+                    <mstrlayout:render name="messagesLocaleHeader"/>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="messagesLocaleDropDownList"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="prefs-content-text">
+                    <mstrlayout:render name="unitsHeader"/>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="unitsDropDownList"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="prefs-content-text">
+                    <mstrlayout:render name="timeZoneHeader"/>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="timeZoneDropDownList"/>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Dynamic HTML: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.1981"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="useDhtml"/>
+              <p>
+                <mstrlayout:render name="AllowDhtml"/>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Accessibility Mode: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.1882"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="508"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <mstrlayout:if name="canDisplayDropDownMenus">
+            <mstrlayout:then>
+              <tr>
+                <td valign="top">
+                  <span class="prefs-input">
+                    <mstrlayout:render name="descriptor"> <!-- Drop Down Menus: -->
+                      <mstrlayout:argument type="String" value="mstrWeb.2221"/>
+                    </mstrlayout:render>
+                  </span>
+                </td>
+                <td>
+                  <mstrlayout:render name="dropDownMenus"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <hr style="height: 1px;"/>
+                </td>
+              </tr>
+            </mstrlayout:then>
+          </mstrlayout:if>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Data Display: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.3158"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="TrimWarehouseData"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Sort: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.144"/>
+                </mstrlayout:render>:
+              </span>
+            </td>
+            <td>
+              <p>
+                <mstrlayout:render name="HierarchicalSort"/>
+              </p>
+              <p>
+                <mstrlayout:render name="MaxSort"/>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Search: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.703"/>
+                </mstrlayout:render>:
+              </span>
+            </td>
+            <td>
+              <div id="search-section">
+                <p>
+                  <mstrlayout:render name="MaxSearch"/>
+                </p>
+                <p>
+                  <mstrlayout:render name="WorkingSet"/>
+                </p>
+                  <p>
+                      <mstrlayout:render name="SearchObjectTypes" />
+                  </p>
+                  <p>
+                     <mstrlayout:render name="QuickSearch" />
+                  </p>
+                   <p>
+                     <mstrlayout:render name="AutoComplete" />
+                  </p>
+                  <p>
+                     <mstrlayout:render name="EnableGridViewSearch" />
+                  </p>
+                  <mstrlayout:if name="isDhtml">
+                  <mstrlayout:then>
+                      <p class="search-grid-objects">
+                          <mstrlayout:render name="descriptor"> <!-- Search for: -->
+                              <mstrlayout:argument type="String" value="mstrWeb.538"/>
+                          </mstrlayout:render>
+                          <mstrlayout:render name="GridSearchObjectTypes" />
+                      </p>
+                  </mstrlayout:then>
+                  </mstrlayout:if>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Refresh report: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.1014"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="RefreshReport"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Document Caching: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.4976"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="AsCheckBox">
+                <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceCreateDSCachesOnRWExecution" />
+                <mstrlayout:argument type="string" value="mstrWeb.4974" /> <!--Descriptor: Create or Update Dataset Caches For Document Executions From MicroStrategy Web-->
+              </mstrlayout:render>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Incremental fetch -->
+                  <mstrlayout:argument type="String" value="mstrWeb.855"/>
+                </mstrlayout:render>:
+              </span>
+            </td>
+            <td>
+              <div id="inc-fetch-section">
+                <p>
+                  <mstrlayout:render name="ElementsIncrementalFetch"/>
+                </p>
+                <p>
+                  <mstrlayout:render name="ObjectsIncrementalFetch"/>
+                </p>
+                <p>
+                  <span class="prefs-content-small-text">
+                    <mstrlayout:render name="descriptor"> <!-- Note: These options do not apply to prompts and filter editors containing predefined lists of elements or objects.-->
+                      <mstrlayout:argument type="String" value="mstrWeb.1004"/>
+                    </mstrlayout:render>
+                  </span>
+                </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Wait Page -->
+                  <mstrlayout:argument type="String" value="mstrWeb.622"/>
+                </mstrlayout:render>:
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="Wait"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+         <mstrlayout:if name="enableAutomaticSessionRecovery">
+         <mstrlayout:then>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Session timeout warning: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.11862"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <p>
+                <mstrlayout:render name="WarningSessionTimeout" />
+              </p>
+              <p>
+                <mstrlayout:render name="MaxSessionIdleTime" />
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          </mstrlayout:then>
+        </mstrlayout:if>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Administrator contact info: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.101"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="Contact"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Font style: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.2723"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="FontStyleOption"/>
+              <mstrlayout:render name="FontStyle"/>
+              <mstrlayout:render name="FontSize"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Output Formats -->
+                  <mstrlayout:argument type="String" value="mstrWeb.3485"/>
+                </mstrlayout:render>:
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="PDFPrint"/>
+              <br />
+              <mstrlayout:render name="ExportReuseNewWindow"/>
+              <br />
+              <table>
+                <tr>
+                  <td>
+                    <mstrlayout:render name="FullScreenModeDescriptorReports"/>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="FullScreenModeBehaviorReports"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mstrlayout:render name="FullScreenModeDescriptorDocuments"/>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="FullScreenModeBehaviorDocuments"/>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- OLAP Services Reports -->
+                  <mstrlayout:argument type="String" value="mstrWeb.3848"/>
+                </mstrlayout:render>:
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="SaveAsVersionWarning"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Cart-style selections: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.3880"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="KeepInCart"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Qualification: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.5531"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <table>
+                <tr>
+                  <td>
+                    <mstrlayout:render name="descriptor"> <!-- Default Operators for Metric Qualification: -->
+                      <mstrlayout:argument type="String" value="mstrWeb.5532"/>
+                    </mstrlayout:render>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="ComboBox">
+                      <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceMQDefaultOperator" />
+                    </mstrlayout:render>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mstrlayout:render name="descriptor"> <!-- Default Operators for Attribute Qualification: -->
+                      <mstrlayout:argument type="String" value="mstrWeb.5533"/>
+                    </mstrlayout:render>
+                  </td>
+                  <td>
+                    <mstrlayout:render name="ComboBox">
+                      <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceAQHQDefaultOperator" />
+                    </mstrlayout:render>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <mstrlayout:render name="AsCheckBox">
+                      <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferencePromptsPreserveWhiteSpace" />
+                      <mstrlayout:argument type="string" value="mstrWeb.5432" /> <!--Descriptor:Preserve white space in prompts answers and filter expressions-->
+                    </mstrlayout:render>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Hierarchy browsing: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.5530"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="AsCheckBox">
+                <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceAutoExpandAttributeInHierarchy" />
+                <mstrlayout:argument type="string" value="mstrWeb.5433" /> <!--Descriptor:Expand Attributes automatically when there is only one browsing option-->
+              </mstrlayout:render>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Custom Visualizations -->
+                  <mstrlayout:argument type="String" value="mstrWeb.4633"/>
+                </mstrlayout:render>:
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="EnableVisEditor"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Report Creation: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.15135"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="ReportCreation"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Save Options: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.5359"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <div>
+                <table>
+                  <tr> <!-- Save Button Default Behavior -->
+                    <td>
+                      <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="String" value="mstrWeb.11166"/>
+                      </mstrlayout:render>
+                    </td>
+                    <td>
+                      <mstrlayout:render name="askBeforeSaveChanges">
+                        <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceAskBeforeSaveChanges" />
+                      </mstrlayout:render>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <mstrlayout:render name="AsCheckBox">
+                        <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceShowAdvancedSaveOptions" />
+                        <mstrlayout:argument type="string" value="mstrWeb.5526" /> <!--Descriptor:Display advanced options-->
+                      </mstrlayout:render>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <mstrlayout:render name="descriptor">
+                        <mstrlayout:argument type="String" value="mstrWeb.7980"/>
+                      </mstrlayout:render>
+                    </td>
+                    <td>
+                      <mstrlayout:render name="savePromptedReportAs">
+                        <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceSaveAsPromptOption" />
+                        <mstrlayout:argument type="string" value="mstrSaveAsOptions" />
+                      </mstrlayout:render>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div class="mstrSaveAsOptions">
+                        <mstrlayout:attr name="getControlledDivAttr">
+                          <mstrlayout:argument type="String" value="mstrSaveAsOptions"/>
+                        </mstrlayout:attr>
+                        <mstrlayout:render name="AsCheckBox">
+                          <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceSaveAsKeepPromptAnswers" />
+                          <mstrlayout:argument type="string" value="mstrWeb.3670" />
+                        </mstrlayout:render>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <mstrlayout:render name="AsCheckBox">
+                        <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceCopyNameTranslations" />
+                        <mstrlayout:argument type="string" value="mstrWeb.9762" /> <!--Descriptor:Copy names from all other languages -->
+                      </mstrlayout:render>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Derived elements: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.9788"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="AsCheckBox">
+                <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceAskBeforeLinkedDerivedElementsChanges" />
+                <mstrlayout:argument type="string" value="mstrWeb.9789" /> <!--Descriptor:Warn that changes to stand-alone derived elements from within a report or document will only be local to such report or document-->
+              </mstrlayout:render>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- DESCRIPTOR: Object Management: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.7522"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="AsCheckBox">
+                <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceAllowOMDLinksAncestorsBrowse" />
+                <mstrlayout:argument type="string" value="mstrWeb.7521" /> <!-- DESCRIPTOR: Allow users to navigate till project root on Copy, Move and Create Shortcut dialogs.-->
+              </mstrlayout:render>
+            </td>
+          </tr>
+          <!-- Navigation Bar preferences -->
+            <tr>
+            <td valign="top">
+              <span class="prefs-input" tabindex="0">
+                <mstrlayout:render name="descriptor"> <!-- Derived elements: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.8145"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+             <table>
+              <mstrlayout:if name="canDisplayDropDownMenus">
+               <mstrlayout:then>
+	              <tr>
+	               <td>
+		              <mstrlayout:render name="AsCheckBox">
+		                <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceShowFeedbackBtn" />
+		                <mstrlayout:argument type="string" value="mstrWeb.14382" /> <!--Descriptor:-->
+		              </mstrlayout:render>
+	                </td>
+	               </tr>
+                </mstrlayout:then>
+               </mstrlayout:if>
+               
+               <tr>
+               <td>
+                  <mstrlayout:render name="AsCheckBox">
+                    <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceShowBtnInNavBar" />
+                    <mstrlayout:argument type="string" value="mstrWeb.14383" /> <!--Descriptor:-->
+                  </mstrlayout:render>
+                </td>
+               </tr><tr>
+               <td>
+                  <mstrlayout:render name="AsCheckBox">
+                    <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceShowFolderUpBtnInNavBar" />
+                    <mstrlayout:argument type="string" value="mstrWeb.14384" /> <!--Descriptor:-->
+                  </mstrlayout:render>
+                </td>
+               </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input">
+                <mstrlayout:render name="descriptor"> <!-- Images: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.2922"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="AsCheckBox">
+                <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceEnableEmbeddedImages" />
+                <mstrlayout:argument type="string" value="mstrWeb.15524" /> <!--Descriptor:In addition to URL based images, allow users to embed images within Dossiers and Documents.-->
+              </mstrlayout:render>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <span class="prefs-input" tabindex="0">
+                <mstrlayout:render name="descriptor"> <!-- Preview Images: -->
+                  <mstrlayout:argument type="String" value="mstrWeb.15227"/>
+                </mstrlayout:render>
+              </span>
+            </td>
+            <td>
+              <mstrlayout:render name="AsCheckBox">
+                <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceShowPreviews" />
+                <mstrlayout:argument type="string" value="mstrWeb.15228" /> <!--Descriptor:Show preview images on Recents -->
+              </mstrlayout:render>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <hr style="height: 1px;"/>
+            </td>
+          </tr>
+          <!-- End Navigation Bar preferences -->          
+          <!-- Feature Flag preferences -->
+          <mstrlayout:render name="featureInfoList"/>
+          <!-- End Feature Flag preferences -->
+        </table>
+      </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

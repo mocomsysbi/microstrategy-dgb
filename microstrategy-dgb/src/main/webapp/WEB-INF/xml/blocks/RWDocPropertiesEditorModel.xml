@@ -1,0 +1,32 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+    <block name="RWDocPropertiesEditorModel" inherits="BoneTranslatorManager">
+        <assignments>
+            <property name="id">RWDocPropertiesEditorModel1</property>
+            <property name="boneId">rwb_viewer</property>
+            <property name="boneCmdId">DocPropertyChanges</property>
+            <property name="selectedIndicesList">0</property>
+            <property name="valueForm">id</property>
+            <property name="lockedTab" type="String">-1</property>
+            <property name="disableList" type="Boolean">false</property>
+            <property name="items">
+                <list>
+                    <block name="RWPageSetupPageModel" listElementKey="page" />
+                    <block name="RWPageSetupMarginsModel" listElementKey="margins" />
+
+                    <block name="RWLayoutLayoutModel" listElementKey="layout" />
+                    <block name="RWLayoutColorModel" listElementKey="color" />
+                    <block name="RWLayoutSectionsModel" listElementKey="sections" />
+                    <block name="RWLayoutMobileModel" listElementKey="layoutMobile" />
+                    <block name="RWLayoutIncFetchModel" listElementKey="incFetch" />
+
+                    <block name="RWDocumentDocumentModel" listElementKey="document" />
+                    <block name="RWDocumentExportModel" listElementKey="export" />
+                    <block name="RWDocumentTOCModel" listElementKey="toc" />
+                    <block name="RWDocumentWatermarkModel" listElementKey="h2o" />
+                    <block name="RWDocumentMobileModel" listElementKey="docMobile" />
+                    <block name="RWDocumentDeliveryModel" listElementKey="delivery" />
+                    <block name="RWDocumentAdvancedModel" listElementKey="advanced" />
+                </list>
+            </property>
+        </assignments>
+    </block>

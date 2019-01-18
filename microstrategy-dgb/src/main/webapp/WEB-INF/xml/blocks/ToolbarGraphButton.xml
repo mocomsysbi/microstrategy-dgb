@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarGraphButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbGraph</property>
+        <property name="cmdid">graphMode</property>
+	</assignments>
+</block>

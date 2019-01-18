@@ -1,0 +1,53 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="LayoutTabMobile">
+  <assignments>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="modelPath">parent/model/items/5</property>
+    <property name="helpTopic">properties_dialog_box_layout_properties_mobile.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="iphoneipadfs" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5943|Mobile}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K739" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.6164|Supported Orientations:}</property>
+                <property name="modelPath">parent/model/SupportedOrientations</property>
+              </block>
+              <block listElementKey="FitPDFContentHeight" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.7570|Optimize layout for micro-application}</property>
+                <property name="valueField">FitPDFContentHeight</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="DisplayPageByBar" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8436|Display page-by interface}</property>
+                <property name="valueField">DisplayPageByBar</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="DisplayRePromptIcon" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.8437|Display filter interface}</property>
+                <property name="valueField">DisplayRePromptIcon</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        
+        <!-- 
+        <block listElementKey="iPadfs" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.7726|iPad}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              
+            </list>
+          </property>
+        </block>
+         -->
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,15 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.BlockLoaderTask">
+	<!-- 
+		This Task is used to dynamically load a Block from the Block Library. The 
+		Block tree is populated by the associated Style and returned to the caller.
+	-->
+	<basicInfo desc="This Task can load a Report">
+		<parameter name="styleName" desc="Specifies the Style to use from the Style Catalog." required="true" type="simplestring"/>
+		<parameter name="juil" desc="Whether the Block tree is being constructed for the Javascript UI Library" required="false" defvalue="false" type="boolean"/>
+	</basicInfo>
+	
+	<beanInfo name="rb" bean-type="ReportBean">
+		<style name="styleName" source="parameter" />
+	</beanInfo>
+</beanTask>

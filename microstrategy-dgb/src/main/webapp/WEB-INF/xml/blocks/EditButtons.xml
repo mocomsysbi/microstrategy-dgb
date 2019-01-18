@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="EditButtons" inherits="BaseView">
+		<definition>
+			<property name="okButton" type="Block"/>
+			<property name="cancelButton" type="Block"/>
+		</definition>
+		<assignments>
+		    <property name="scriptClass">mstr.views.BaseView</property>
+		    <property name="layoutClass">mstr.layouts.AnnotationEditButtons</property>
+		    <property name="cssClass">AnnotationButtons</property>
+		    <property name="modelPath">parent/model</property>
+		    <property name="okButton">
+		    	<block name="AnnotationOKButton">
+		    		<property name="id">okButton</property>
+		    	</block>
+		    </property>
+		    <property name="cancelButton">
+		    	<block name="AnnotationCancelButton">
+		    	    <property name="id">cancelButton</property>
+		    	</block>
+		    </property>
+		</assignments>
+	</block>

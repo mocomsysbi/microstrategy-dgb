@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="HeadersListModel" inherits="BaseBlock">
+	<definition>
+			<!-- An array of headers -->
+			<property name="items" type="List" />
+
+            <!-- col widths --> 
+            <property name="cws" type="List" />
+
+            <!-- is visible -->
+            <property name="show" type="Boolean" />
+	</definition>
+</block>

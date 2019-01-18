@@ -1,0 +1,28 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- FastTileProperties is a set of properties supported by "Fast" Views on ListModels.
+		 "Fast" views are for rendering large lists of items.  They render
+		 the items on demand as the user scrolls thru the list, thus keeping page loading times down.  -->	
+	<block name="FastTileProperties">
+		<definition>
+			<!-- FQCN of the javascript representation of this view. -->
+			<property name="scriptClass" type="String" />
+
+			<!-- Fqcn of the object to use for rendering list items. -->
+			<property name="itemRendererClass" type="String" />
+
+			<!-- If true, list items are rendered on demand.  Otherwise, all items are rendered immediately. -->
+			<property name="renderListItemsOnScroll" type="Boolean" />
+
+			<!-- Determines how many list items are rendered initially, before scrolling. -->
+			<property name="initialListItemRenderCount" type="Integer" />
+			
+			<property name="itemsPerRow" type="Integer"/>
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.FastTileView</property>
+			<property name="itemRendererClass">mstr.itemrenderers.FastTileView</property>
+			<property name="renderListItemsOnScroll">true</property>
+			<property name="initialListItemRenderCount">9</property>
+			<property name="itemsPerRow">1</property>
+		</assignments>
+	</block>

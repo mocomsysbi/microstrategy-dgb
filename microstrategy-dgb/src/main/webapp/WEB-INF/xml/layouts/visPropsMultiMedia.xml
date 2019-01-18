@@ -1,0 +1,30 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if name="isValidGrid">
+        <mstrlayout:then>
+            <![CDATA[
+        <style type="text/css">
+            .leftCheckbox {
+            	padding-left: 4px;
+            }
+        </style>
+     ]]>
+        <table>
+            <tr>
+                <td colspan="2" class="leftCheckbox">
+                    <mstrlayout:render name="checkbox">
+                        <mstrlayout:argument type="String" value="sut" />
+                        <mstrlayout:argument type="String" value="" />
+                        <mstrlayout:argument type="String" value="0" />
+                    </mstrlayout:render>
+                    <span>
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="string" value="mstrWeb.14576" />
+                        </mstrlayout:render>
+                    </span>
+                </td>
+            </tr>
+        </table>
+        </mstrlayout:then>
+    </mstrlayout:if>
+</mstrlayout:layout>

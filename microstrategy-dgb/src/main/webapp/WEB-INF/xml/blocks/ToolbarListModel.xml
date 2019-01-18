@@ -1,0 +1,25 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		ListModel is a data model which contains a generic list of items.
+		Each item is typically represented by an ItemInfo Block.
+		ListModel also contains information about the list, such as block
+		properties for incremental fetching, and a path tree.
+	-->
+	<block name="ToolbarListModel" inherits="ToolbarControlModel,ListModel">
+		<definition>          
+            <!-- toolbar popup ID -->
+            <property name="popup|id" type="String" />
+            <!-- toolbar popup width - this will be pushed to FastListView -->
+            <property name="width" type="String" />
+            <!-- True indicates that GUI should render an icon next to the current selection -->
+			<property name="showIcons" type="Boolean" />
+        </definition>
+        
+        
+        <assignments>
+			<property name="type">LIST</property>
+			<property name="toolbarHelper">
+				<block name="ToolbarListHelper" />
+			</property>
+		</assignments>
+	</block>

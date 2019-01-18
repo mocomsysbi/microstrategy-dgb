@@ -1,0 +1,11 @@
+<shortcut-list-set base-bean="fb" name="PageByContextMenus" version="1.0">
+  <shortcut-list name="default">
+    <shortcut name="drill" desc="[Drill]" desc-id="mstrWeb.145" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportPageByCellDrill" dhtml-enabled="var ogrid = null; var pageBy = microstrategy.findBone(microstrategy.activeCXMenu); if(pageBy)ogrid = pageBy.gridBone; if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('rmcPageByDrilling');"/>
+    <shortcut name="hlNavGrid" feature-id="web-drill-and-link" desc="[Links]" desc-id="mstrWeb.5752" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByHyperLinkNavigation"/>
+    <shortcut name="pivot" desc="[Pivot]" desc-id="mstrWeb.1889" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByPivot" />
+    <shortcut name="remove" desc="[Remove from Grid]" desc-id="mstrWeb.2214" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByRemove" />
+    <shortcut name="delete" desc="[Remove from Report]" desc-id="mstrWeb.2216" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByDelete" />
+    <shortcut name="rename" desc="[Rename...]" desc-id="mstrWeb.2453" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByRename" />
+    <shortcut name="hprLink" desc="Edit Links..." desc-id="mstrWeb.6191" feature-id="web-edit-drilling-and-links" dhtml-enabled="var ogrid = null; var pageBy = microstrategy.findBone(microstrategy.activeCXMenu); if(pageBy)ogrid = pageBy.gridBone; if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('showPageByHyperLinkEditor')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.PageByHyperLinkEdit"/>
+  </shortcut-list>
+</shortcut-list-set>

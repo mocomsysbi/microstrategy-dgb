@@ -1,0 +1,70 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="BaseView" name="ExpressionElementsPopup">
+  <definition>
+    <!-- The view for entering a constant, typically a TextBox. -->
+    <property name="contentView" type="Block"/>
+    <!-- The OK button to apply the user's input and close this popup. -->
+    <property name="okButton" type="Block"/>
+    <!-- The Cancel button to discard the user's input and close this popup. -->
+    <property name="cancelButton" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="id">ExpressionElementsPopup1</property>
+    <property name="layoutClass">mstr.layouts.Popup</property>
+    <property name="cssClass">Popup</property>
+    <property name="modelPath">opener/model/answer/getElementsCartModel(opener.model)</property>
+    <property name="popOrientation">0</property>
+    <property name="CommandEnabledUnpop" type="Boolean">true</property>
+    <property name="contentView">
+      <block name="VBox">
+        <property name="modelPath">parent/model</property>
+        <property name="children">
+          <list>
+            <!-- cart of elements -->
+            <block listElementKey="K464" name="ListCart">
+              <property name="modelPath">parent/model</property>
+              <property name="showMoveButtons">false</property>
+              <!-- search box: -->
+              <property name="searchView">
+                <block name="SearchField">
+                  <!-- <property name="modelPath">parent/model/available</property> -->
+                  <property name="searchBox/cmds">Search||parent/parent/model/available</property>
+                  <property name="searchBox/caption">{desc:mstrWeb.538|Search for:}</property>
+                  <property name="searchBox/iconTooltip">{desc:mstrWeb.4325|Search}</property>
+                  <property name="searchBox/iconClass">mstrBGIcon_tbSearch</property>
+                  <property name="matchCaseBox/modelPath">parent/parent/model/available</property>
+                  <property name="matchCaseBox/valueField">searchMatchCase</property>
+                  <property name="matchCaseBox/enabledField">parent/parent/model/available/searchMatchCaseAvailable</property>
+                </block>
+              </property>
+              <!-- fetch buttons: -->
+              <property name="fetchView">
+                <block name="FetchControl">
+                  <property name="modelPath">parent/model/available</property>
+                  <property name="cmds">FetchBlock||parent/model/available</property>
+                </block>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="okButton">
+      <block name="TextButton">
+        <property name="caption">{desc:mstrWeb.2397|OK}</property>
+        <property name="cmds">Validate||parent/model;Unpop||parent;EditConditionElements|parent/model/selected/getItems()|parent/opener/model</property>
+      </block>
+    </property>
+    <property name="cancelButton">
+      <block name="TextButton">
+        <property name="caption">{desc:mstrWeb.2399|Cancel}</property>
+        <property name="cmds">Unpop||parent</property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!--
+		ExpressionElementsPopup is a popup used by ExpressionEditor for selecting Attribute elements in
+		an Attribute Element list subexpression.
+		It is a shopping cart of Attribute elements.
+	-->

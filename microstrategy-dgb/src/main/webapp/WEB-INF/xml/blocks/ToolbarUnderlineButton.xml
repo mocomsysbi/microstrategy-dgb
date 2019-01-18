@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarUnderlineButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbUnderline</property>
+		<property name="tooltip">{desc:mstrWeb.2720|Underline}</property>
+		<property name="cmdid">Underline</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="HeaderPosition" inherits="BaseBlock">
+	<definition>
+			<!--  Row Index  -->
+			<property name="ri" type="Integer" />
+			<!--  ColIndex  -->
+			<property name="ci" type="Integer" />
+	</definition>
+</block>

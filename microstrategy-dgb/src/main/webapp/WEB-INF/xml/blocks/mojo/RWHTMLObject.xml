@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about the data of a Report Writer html object.
+--> 
+<block name="RWHTMLObject" inherits="RWValueObject">
+    <definition>
+    	<!-- The raw data of the html text. -->
+        <property name="rv" type="String" />
+    </definition>
+</block>

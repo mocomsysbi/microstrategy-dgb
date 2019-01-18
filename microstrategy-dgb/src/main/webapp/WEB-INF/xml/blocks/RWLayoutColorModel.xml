@@ -1,0 +1,31 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- This is the model used for the 'Color and Borders' tab of the Report Services document properties editor. -->
+	<block name="RWLayoutColorModel" inherits="EditorBoneTranslator">
+		<definition>
+			<property name="layoutColorTabEnabled" type="Boolean" />
+
+			<property name="LayoutFillColor" type="Block" />
+			<property name="LayoutBorderStyle" type="Block" />
+			<property name="LayoutAllStyle" type="Block" />
+			<property name="LayoutAllColor" type="Block" />
+			<property name="LayoutLeftStyle" type="Block" />
+			<property name="LayoutLeftColor" type="Block" />
+			<property name="LayoutRightStyle" type="Block" />
+			<property name="LayoutRightColor" type="Block" />
+			<property name="LayoutTopStyle" type="Block" />
+			<property name="LayoutTopColor" type="Block" />
+			<property name="LayoutBottomStyle" type="Block" />
+			<property name="LayoutBottomColor" type="Block" />
+		</definition>
+		<assignments>
+			<property name="categoryText">{desc:mstrWeb.5615|Layout Properties}</property>
+			<property name="titleText">{desc:mstrWeb.5616|Color and Borders}</property>
+			<property name="fields">LayoutFillColor|LayoutBorderStyle|LayoutAllStyle|LayoutAllColor|LayoutLeftStyle|LayoutLeftColor|LayoutRightStyle|LayoutRightColor|LayoutTopStyle|LayoutTopColor|LayoutBottomStyle|LayoutBottomColor|RWColorTabTitle|isNavigationDocument</property>
+			<property name="visibleField">layoutColorTabEnabled</property>
+			<property name="layoutColorTabEnabled">true</property>
+			
+			<property name="LayoutBorderStyle">
+				<block name="BorderOptionsModel" />
+			</property>
+		</assignments>
+	</block>

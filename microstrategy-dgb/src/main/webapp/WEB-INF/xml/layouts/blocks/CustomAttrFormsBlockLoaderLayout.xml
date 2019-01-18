@@ -1,0 +1,16 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:bContext defaultContentType="JSON" />
+  <mstrlayout:block name="BlockContainer">
+    <mstrlayout:bSetProperty path="models">
+      <mstrlayout:block name="BaseModel" />
+    </mstrlayout:bSetProperty>  
+    <mstrlayout:bSetProperty path="views">
+      <mstrlayout:block name="CustomAttrForms">
+        <mstrlayout:bSetProperty path="modelPath" value="parent/models/0" />        
+        <mstrlayout:bSetProperty path="visible" value="true" />
+        <mstrlayout:bSetProperty path="helpPath" method="getHelpPath"/>
+      </mstrlayout:block>
+    </mstrlayout:bSetProperty>  
+  </mstrlayout:block>
+</mstrlayout:layout>  

@@ -1,0 +1,21 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+	on_model_set_enabled="mstr.behaviors.Generic.set_css_display(rootTag.lastChild, 'block', 'none', !model.get('enabled'))"
+    on_set_visible="mstr.behaviors.Tab.on_set_visible(rootTag, view, model)">
+	<div class="{@cssPrefix}{@cssClass}" style="width: {@width}; height: {@height}; position: relative">
+		<mstrlayout:wIterate name="headerControls"
+							 id="ctrl">
+		  	  <mstrlayout:wRender name="ctrl">
+		      </mstrlayout:wRender>
+		</mstrlayout:wIterate>
+<!--		<div class="{@cssPrefix}{@cssClass}Title">{@title}</div>
+		<hr /> -->
+		<mstrlayout:wIterate name="children"
+							 id="child">
+			<div class="{@cssPrefix}{@cssClass}Item">
+		  	  <mstrlayout:wRender name="child">
+		      </mstrlayout:wRender>
+		    </div>
+		</mstrlayout:wIterate>
+		<div class="{@cssPrefix}{@cssClass}Disabled">{@disabledMessage}</div>
+	</div>
+</mstrlayout:layout>

@@ -1,0 +1,15 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<!--
+Supports partial css updates. This Block represents the css of a grid,
+and exists as an entry value in the styles map maintained by the
+MojoRWDTransform. By default this value will replace an existing one,
+denoted by the property "app" or append with a setting of false; if true,
+the css should be appended to the existing value.
+ -->
+<block name="GridStylesModel" inherits="BaseBlock">
+	<definition>
+			<!-- whether to append or replace: true == append, false (default) == replace  -->
+			<property name="app" type="Boolean" />
+			<property name="css" type="String" />
+	</definition>
+</block>

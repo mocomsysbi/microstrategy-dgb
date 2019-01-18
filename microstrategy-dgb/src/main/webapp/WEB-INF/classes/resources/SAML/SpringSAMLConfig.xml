@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+              http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <!-- Enable auto-wiring -->
+    <context:annotation-config/>
+
+    <!-- Scan for auto-wiring classes in spring saml packages -->
+    <context:component-scan base-package="org.springframework.security.saml">
+        <context:exclude-filter type="regex" expression=">org.bouncycastle.*"/>
+    </context:component-scan>
+    <context:component-scan base-package="com.microstrategy.auth.saml.config">
+        <context:exclude-filter type="regex" expression=">org.bouncycastle.*"/>
+    </context:component-scan>
+    
+    <!-- Initialization of OpenSAML library-->
+    <bean class="com.microstrategy.auth.saml.ConfigPostProcessor"/>
+
+    <!-- SP Metadata  -->
+    <bean id="SPMetadata" class="org.opensaml.util.resource.ClasspathResource">
+        <constructor-arg value="/resources/SAML/SPMetadata.xml"/>
+    </bean>
+    
+    <bean id="spExtendedMetadata" class="org.springframework.security.saml.metadata.ExtendedMetadata">
+        <property name="local" value="true"/>
+        <property name="signingKey" value="signkey"/>   
+        <!-- Uncomment and configure this property if you want to encrypt SAML responses -->
+        <!-- <property name="encryptionKey" value="encryptkey"/> -->      
+    </bean>
+
+    <!-- Storage of cryptographic keys -->
+    <bean id="keyManager" class="org.springframework.security.saml.key.JKSKeyManager">
+        <constructor-arg value="classpath:resources/SAML/SamlKeystore.jks"/>
+        <constructor-arg type="java.lang.String" value="{KEY STORE PASSWORD}"/>
+        <constructor-arg>
+            <map>
+                <entry key="signkey" value="{SIGNING KEY PASSWORD}"/>
+                <!-- Uncomment and configure the line below to enable SAML response encryption -->
+                <!-- <entry key="encryptKey" value="{ENCRYPTION KEY PASSWORD}"/> -->
+            </map>
+        </constructor-arg>
+        <!-- We don't want any default keys -->
+        <constructor-arg type="java.lang.String" value="xxxx"/>
+    </bean>
+    
+    <!-- Unsecured pages -->
+    <security:http security="none" pattern="/css/**"/>
+    <security:http security="none" pattern="/html/**"/>
+    <security:http security="none" pattern="/images/**"/>
+    <security:http security="none" pattern="/javascript/**"/>
+    <security:http security="none" pattern="/javascript-libraries/**"/>
+    <security:http security="none" pattern="/resBundles/**"/>
+    <security:http security="none" pattern="/style/**"/>
+    <security:http security="none" pattern="/ui/**"/>
+    <security:http security="none" pattern="/VisFramework/**"/>
+    <security:http security="none" pattern="/jsp/SSOLoginError.jsp"/>
+
+    <!-- SAML-secured pages -->
+    <security:http entry-point-ref="samlEntryPoint" use-expressions="false">
+        <security:csrf disabled="true"/>
+        <security:intercept-url pattern="/servlet/mstrWebAdmin" access="ROLE_admin"/>
+        <security:intercept-url pattern="/servlet/taskAdmin" access="ROLE_admin"/>
+        <security:intercept-url pattern="/servlet/taskViewer" access="ROLE_admin"/>
+        <security:intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY"/>
+		
+        <security:custom-filter ref="requestContextFilter" before="FORM_LOGIN_FILTER"/>
+        <security:custom-filter position="BASIC_AUTH_FILTER" ref="samlFilter"/>
+        <security:request-cache ref="requestCache"/>
+    </security:http>
+
+	<bean id="requestContextFilter" class="org.springframework.web.filter.RequestContextFilter"/>
+
+    <!-- Redirect user after failed login -->
+    <bean id="failureRedirectHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+        <property name="useForward" value="true"/>
+        <property name="defaultFailureUrl" value="/jsp/SSOLoginError.jsp"/>
+    </bean>
+    
+    <bean id="requestCache" class="com.microstrategy.auth.saml.NoXHRSessionRequestCache"/>
+
+    <!-- This bean maps SSO user groups to roles that are used to restrict user access to resources that cannot be
+         controlled by IServer.  
+     -->    
+    <bean id="roleBuilder" class="com.microstrategy.auth.saml.SAMLDefaultRoleBuilder">
+          <constructor-arg>
+              <map>
+                  <entry key="admin" value="{Admin groups}"/>
+              </map>
+          </constructor-arg>
+    </bean>
+    
+    <bean id="idpMetadata" class="org.opensaml.util.resource.ClasspathResource">
+        <constructor-arg value="/resources/SAML/IDPMetadata.xml"/>
+    </bean>
+
+    <!-- Bean responsible for extracting user information from SAML Assertion -->    
+    <bean id="userDetails" class="com.microstrategy.auth.saml.SAMLUserDetailsServiceImpl">
+        <!-- SAML Attribute mapping -->
+        <property name="displayNameAttributeName" value="DisplayName" />
+        <property name="dnAttributeName" value="DistinguishedName" />
+        <property name="emailAttributeName" value="EMail" />
+        <property name="groupAttributeName" value="Groups" />
+        
+        <!-- Parser for user group information -->
+        <property name="groupParser" ref="groupParser" />
+        <!-- Bean responsible for mapping user groups to roles -->
+        <property name="roleBuilder" ref="roleBuilder"/>
+    </bean>
+
+    <!-- Beans for parsing group information -->
+    <bean id="groupParser" class="com.microstrategy.auth.saml.SAMLSimpleGroupParser"/>
+    
+    <!-- Filters for processing of SAML messages -->
+    <bean id="samlFilter" class="org.springframework.security.web.FilterChainProxy">
+        <security:filter-chain-map request-matcher="ant">
+            <security:filter-chain pattern="/saml/login/**" filters="samlEntryPoint"/>
+            <security:filter-chain pattern="/saml/logout/**" filters="samlLogoutFilter"/>
+            <security:filter-chain pattern="/saml/SSO/**" filters="samlWebSSOProcessingFilter"/>
+            <security:filter-chain pattern="/saml/SingleLogout/**" filters="samlLogoutProcessingFilter"/>
+        </security:filter-chain-map>
+    </bean>
+
+    <!-- Handler deciding where to redirect user after successful login -->
+    <bean id="successRedirectHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+        <property name="defaultTargetUrl" value="/"/>
+    </bean>
+
+    <!-- Handler for successful logout -->
+    <bean id="successLogoutHandler" class="org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler">
+        <property name="defaultTargetUrl" value="/logout.jsp"/>
+    </bean>
+
+    <security:authentication-manager alias="authenticationManager">
+        <!-- Register authentication manager for SAML provider -->
+        <security:authentication-provider ref="samlAuthenticationProvider"/>
+    </security:authentication-manager>
+
+    <!-- Logger for SAML messages and events -->
+    <bean id="samlLogger" class="org.springframework.security.saml.log.SAMLDefaultLogger"/>
+
+    <!-- Entry point to initialize authentication, default values taken from properties file -->
+    <bean id="samlEntryPoint" class="com.microstrategy.auth.saml.SAMLEntryPointWrapper">
+        <property name="defaultProfileOptions">
+            <bean class="org.springframework.security.saml.websso.WebSSOProfileOptions">
+                <property name="includeScoping" value="false"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- SAML Authentication Provider responsible for validating of received SAML messages -->
+    <bean id="samlAuthenticationProvider" class="org.springframework.security.saml.SAMLAuthenticationProvider">
+        <property name="userDetails" ref="userDetails" />
+    </bean>
+
+    <!-- Provider of default SAML Context -->
+    <bean id="contextProvider" class="org.springframework.security.saml.context.SAMLContextProviderImpl"/>
+
+    <!-- Processing filter for WebSSO profile messages -->
+    <bean id="samlWebSSOProcessingFilter" class="com.microstrategy.auth.saml.SAMLProcessingFilterWrapper">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="authenticationSuccessHandler" ref="successRedirectHandler"/>
+        <property name="authenticationFailureHandler" ref="failureRedirectHandler"/>
+    </bean>
+
+    <!-- Logout handler terminating local session -->
+    <bean id="logoutHandler"
+          class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler">
+        <property name="invalidateHttpSession" value="true"/>
+    </bean>
+
+    <!-- Override default logout processing filter with the one processing SAML messages -->
+    <bean id="samlLogoutFilter" class="org.springframework.security.saml.SAMLLogoutFilter">
+        <constructor-arg index="0" ref="successLogoutHandler"/>
+        <constructor-arg index="1" ref="logoutHandler"/>
+        <constructor-arg index="2" ref="logoutHandler"/>
+    </bean>
+
+    <!-- Filter processing incoming logout messages -->
+    <!-- First argument determines URL user will be redirected to after successful global logout -->
+    <bean id="samlLogoutProcessingFilter" class="org.springframework.security.saml.SAMLLogoutProcessingFilter">
+        <constructor-arg index="0" ref="successLogoutHandler"/>
+        <constructor-arg index="1" ref="logoutHandler"/>
+    </bean>
+
+    <!-- Class loading incoming SAML messages from httpRequest stream -->
+    <bean id="processor" class="org.springframework.security.saml.processor.SAMLProcessorImpl">
+        <constructor-arg>
+            <list>
+                <ref bean="redirectBinding"/>
+                <ref bean="postBinding"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- SAML 2.0 WebSSO Assertion Consumer -->
+    <bean id="webSSOprofileConsumer" class="org.springframework.security.saml.websso.WebSSOProfileConsumerImpl">
+		<property name="maxAuthenticationAge" value="2592000"/> <!-- 30 days -->
+    </bean>
+
+    <!-- SAML 2.0 Holder-of-Key WebSSO Assertion Consumer -->
+    <bean id="hokWebSSOprofileConsumer" class="org.springframework.security.saml.websso.WebSSOProfileConsumerHoKImpl"/>
+
+    <!-- SAML 2.0 Web SSO profile -->
+    <bean id="webSSOprofile" class="org.springframework.security.saml.websso.WebSSOProfileImpl"/>
+
+    <!-- SAML 2.0 Holder-of-Key Web SSO profile -->
+    <bean id="hokWebSSOProfile" class="org.springframework.security.saml.websso.WebSSOProfileConsumerHoKImpl"/>
+
+    <!-- SAML 2.0 ECP profile -->
+    <bean id="ecpprofile" class="org.springframework.security.saml.websso.WebSSOProfileECPImpl"/>
+
+    <!-- SAML 2.0 Logout Profile -->
+    <bean id="logoutprofile" class="org.springframework.security.saml.websso.SingleLogoutProfileImpl"/>
+
+    <!-- Bindings, encoders and decoders used for creating and parsing messages -->
+    <bean id="postBinding" class="org.springframework.security.saml.processor.HTTPPostBinding">
+        <constructor-arg ref="parserPool"/>
+        <constructor-arg ref="velocityEngine"/>
+    </bean>
+
+    <bean id="redirectBinding" class="org.springframework.security.saml.processor.HTTPRedirectDeflateBinding">
+        <constructor-arg ref="parserPool"/>
+    </bean>
+    
+    <!-- Metadata configuration -->
+    <bean id="metadataManager" class="org.springframework.security.saml.metadata.CachingMetadataManager">
+        <constructor-arg>
+            <list>
+                <!-- IDP Metadata -->
+			    <bean id="idpMetadataDelegate" class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
+			        <constructor-arg>
+			            <bean class="org.opensaml.saml2.metadata.provider.ResourceBackedMetadataProvider">
+			                <constructor-arg>
+			                    <bean class="java.util.Timer"/>
+			                </constructor-arg>
+			                <constructor-arg ref="idpMetadata"/>
+			                <property name="parserPool" ref="parserPool"/>
+			            </bean>
+			        </constructor-arg>
+			        <constructor-arg>
+			            <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
+			                <property name="idpDiscoveryEnabled" value="false"/>
+			            </bean>
+			        </constructor-arg>
+			        <property name="metadataTrustCheck" value="false"/>                    
+			    </bean>
+			    <!-- SP metadata configuration  -->
+			    <bean id="spMetadataDelegate" class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
+			        <constructor-arg>
+			            <bean class="org.opensaml.saml2.metadata.provider.ResourceBackedMetadataProvider">
+			                <constructor-arg>
+			                    <bean class="java.util.Timer"/>
+			                </constructor-arg>
+			                <constructor-arg ref="SPMetadata" />
+			                <property name="parserPool" ref="parserPool"/>
+			            </bean>
+			        </constructor-arg>
+			        <constructor-arg ref="spExtendedMetadata">
+			        </constructor-arg>
+			    </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- Initialization of the velocity engine -->
+    <bean id="velocityEngine" class="org.springframework.security.saml.util.VelocityFactory" factory-method="getEngine"/>
+
+    <!-- XML parser pool needed for OpenSAML parsing -->
+    <bean id="parserPool" class="org.opensaml.xml.parse.StaticBasicParserPool" init-method="initialize">
+        <property name="builderFeatures">
+            <map>
+                <entry key="http://apache.org/xml/features/dom/defer-node-expansion" value="false"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="parserPoolHolder" class="org.springframework.security.saml.parser.ParserPoolHolder"/>
+
+</beans>

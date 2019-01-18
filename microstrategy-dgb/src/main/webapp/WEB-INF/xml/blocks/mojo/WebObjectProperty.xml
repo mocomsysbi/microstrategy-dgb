@@ -1,0 +1,27 @@
+<!DOCTYPE block SYSTEM "../../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about the property of an object in metadata.
+-->
+<block name="WebObjectProperty">
+    <definition>
+
+        <!-- The name of the property. -->
+        <property name="n" type="String" /> 
+        
+        <!-- The id of the property. -->
+        <property name="pri" type="Integer" />
+        
+        <!-- The data type of the property. -->
+        <property name="dt" type="Integer" />
+        
+        <!-- The default value of the property. -->
+        <property name="pdv" type="String" />
+        
+        <!-- Whether use default. -->
+        <property name="pru" type="String" />   <!-- Are we sure to send String type? -->
+        
+        <!-- The value of the property. -->
+        <property name="v" type="String" />
+        
+    </definition>
+</block>

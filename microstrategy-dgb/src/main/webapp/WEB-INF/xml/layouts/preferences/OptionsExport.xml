@@ -1,0 +1,150 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <div class="mstrPanelTitleBar">
+      <span class="mstrPanelTitle">
+        <mstrlayout:render name="title" />
+      </span>
+    </div>
+    <div class="mstrPanelBody">
+      <div class="exportLeftBlock">
+        <div class="exportOptsElemWider">
+          <mstrlayout:render name="ExportSection" />
+        </div>
+          <mstrlayout:render name="ExportLimitsMessage" />
+        <mstrlayout:if name="isGraphOptions">
+          <mstrlayout:then>
+            <div class="exportOptsElemWider">
+              <mstrlayout:render name="ExportFormatGraphs" />
+            </div>
+          </mstrlayout:then>
+          <mstrlayout:else>
+            <div class="exportOptsElemWider">
+              <mstrlayout:render name="ExportFormatGrids" />
+            </div>
+          </mstrlayout:else>
+        </mstrlayout:if>
+        <br/>
+        <div class="exportOptsElemWider">
+          <mstrlayout:render name="ExportReportTitle" />
+        </div>
+        <mstrlayout:if name="isReportPageByNotEmpty">
+          <mstrlayout:then>
+            <div class="exportOptsElemWider">
+              <mstrlayout:render name="ExportPageByInfo" />
+            </div>
+          </mstrlayout:then>
+        </mstrlayout:if>
+        <div class="exportOptsElemWider">
+          <mstrlayout:render name="ExportFilterDetails" />
+        </div>
+        <div class="exportOptsElemWider">
+          <mstrlayout:render name="OverlapGridTitles" />
+        </div>
+        <mstrlayout:if name="isFeatureAvailable">
+          <mstrlayout:argument type="string" value="iserver-supports-excel-formatting" />
+          <mstrlayout:then>
+            <mstrlayout:if name="isReportPageByNotEmpty">
+              <mstrlayout:then>
+                <div class="exportOptsElemWider">
+                  <mstrlayout:render name="ExpandPageByFields" />
+                </div>
+              </mstrlayout:then>
+            </mstrlayout:if>
+          </mstrlayout:then>
+        </mstrlayout:if>
+      </div>
+      <div>
+        <div class="exportOptsElem" id="25002_label">
+          <mstrlayout:render name="descriptor">
+            <!-- Export Header and Footer: -->
+            <mstrlayout:argument type="String" value="mstrWeb.5107" />
+          </mstrlayout:render>
+          <mstrlayout:render name="HeaderAndFooterButton">
+            <mstrlayout:argument value="excelHeaderFooter" />
+          </mstrlayout:render>          
+        </div>
+        <div class="exportHeading exportOptsElem">
+          <mstrlayout:render name="descriptor">
+            <!-- Excel options: -->
+            <mstrlayout:argument type="String" value="mstrWeb.5108" />
+          </mstrlayout:render>
+        </div>
+        <div class="exportOptsBlock">
+          <div class="exportOptsElem">
+            <mstrlayout:render name="ExportMetricValuesAsText" />
+          </div>
+          <div class="exportOptsElem">
+            <mstrlayout:render name="ExportHeaderAsText" />
+          </div>
+        </div>
+        <mstrlayout:if name="isFeatureAvailable">
+          <mstrlayout:argument type="string" value="iserver-supports-excel-formatting" />
+          <mstrlayout:then>
+            <div class="exportHeading exportOptsElem">
+              <mstrlayout:render name="descriptor">
+                <!-- Excel with formatting options: -->
+                <mstrlayout:argument type="String" value="mstrWeb.5109" />
+              </mstrlayout:render>
+            </div>
+            <div class="exportOptsBlock">
+              <mstrlayout:if name="isReportPageByNotEmpty">
+                <mstrlayout:then>
+                  <mstrlayout:if name="isNotExcel2000">
+                    <mstrlayout:then>
+                      <div class="exportOptsElem">
+                        <mstrlayout:render name="UseSeparateSheets" />
+                      </div>
+                    </mstrlayout:then>
+                  </mstrlayout:if>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if name="isGraphOptions">
+                <mstrlayout:then>
+                  <div class="exportOptsElem">
+                    <mstrlayout:render name="UseLiveChartGraphs" />
+                  </div>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if name="isNotExcel2000">
+                <mstrlayout:then>
+                  <div class="exportOptsElem">
+                    <mstrlayout:render name="EmbedImages" />
+                  </div>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if name="isFeatureAvailable">
+                <mstrlayout:argument type="string" value="useOffice" />
+                <mstrlayout:then>
+                  <div class="exportOptsElem">
+                    <mstrlayout:render name="ReportOfficeRefresh" />
+                  </div>
+                </mstrlayout:then>
+              </mstrlayout:if>
+            </div>
+          </mstrlayout:then>
+        </mstrlayout:if>
+      </div>
+      <div class="exportClearingBlock"></div>
+    </div>
+    <div class="mstrPanelButtonBar">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td valign="top">                    
+            <mstrlayout:if name="isFeatureAvailable">
+              <mstrlayout:argument type="string" value="preferences"/>
+              <mstrlayout:then>
+				<mstrlayout:render name="DoNotPrompt" />	        
+              </mstrlayout:then>
+            </mstrlayout:if>            
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="right">
+            <mstrlayout:render name="ExportButton" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</mstrlayout:layout>

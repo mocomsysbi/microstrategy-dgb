@@ -1,0 +1,45 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- SimpleListCart is a shopping cart with 2 ListVeiw of ListModels. -->
+	<block name="ListUpDown" inherits="BaseView">
+		<definition>
+			<property name="caption" type="String" />
+			<property name="upButton" type="Block" />
+			<property name="downButton" type="Block" />
+			<property name="availableView" type="Block"/>
+			<property name="upButton" type="Block"/>
+			<property name="downButton" type="Block"/>
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ListUpDown</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="loading" type="String">{desc:mstrWeb.2901|Loading...}</property>
+				</block>
+			</property>
+			<property name="availableView">
+				<block name="ListView">
+					<property name="width">300px</property>
+					<property name="modelPath">parent/model</property>
+					<property name="cmds">!ClickListItem;BrowseListItem||parent/model/available</property>
+					<property name="cmdsDblClick">Add||parent/model</property>
+					<property name="multiSelect">false</property>
+				</block>
+			</property>
+			<property name="upButton">
+				<block name="ToolButton">
+					<property name="visible">true</property>
+					<property name="tooltip">{desc:mstrWeb.138|Move Up}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbUp.gif)</property>
+					<property name="cmds">!Up||parent/model</property>
+				</block>
+			</property>
+			<property name="downButton">
+				<block name="ToolButton">
+					<property name="visible">true</property>
+					<property name="tooltip">{desc:mstrWeb.139|Move Down}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbDown.gif)</property>
+					<property name="cmds">!Down||parent/model</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

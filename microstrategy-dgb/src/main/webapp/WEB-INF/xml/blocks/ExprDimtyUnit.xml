@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		An ExprDimtyUnit is a unit of dimensionality (typically an attribute) contained by an
+		ExprDimtyObject, which represents the dimensionality of an expression node.  The ExprDimtyObject
+		may contain 0, 1 or more ExprDimtyUnits in its "units" list property.
+	-->
+	<block name="ExprDimtyUnit" inherits="BaseBlock">
+		<definition>
+			<property name="unitType" type="Integer" />
+			<property name="aggregation" type="Integer" />
+			<property name="filtering" type="Integer" />
+			<property name="groupBy" type="Boolean" />
+			<property name="relativePosition" type="Integer" />
+			<property name="displayId" type="String" />
+			<property name="displayName" type="String" />
+			<property name="target" type="Block" />
+		</definition>
+	</block>

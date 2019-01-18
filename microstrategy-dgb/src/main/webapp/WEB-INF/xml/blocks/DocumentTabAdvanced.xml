@@ -1,0 +1,180 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="DocumentTabAdvanced">
+  <assignments>
+    <property name="title">{desc:mstrWeb.3538|Document Properties} - {desc:mstrWeb.702|Advanced}</property>
+    <property name="width">465px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Adv.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K355" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.3437|Layout}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K356" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5624|Show single layout tab}</property>
+                <property name="valueField">ShowTabsForSingleLayout</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K362" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.9271|Apply grouping selection to all layouts}</property>
+                <property name="valueField">ApplyGBToAllLayouts</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        
+        <block listElementKey="panelStacks" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.6104|Panel Stacks (DHTML Only)}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1042" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.6105|Pre-load:}</property>
+                <property name="modelPath">parent/model/PreLoadAllPanels</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        
+        <block listElementKey="K357" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.1910|Data}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K358" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5626|Trim sections for which no metric value data is available}</property>
+                <property name="valueField">TrimNoSectionData</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K359" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.5625|Remove groups that contain null elements}</property>
+                <property name="valueField">RemoveNullGroups</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="removeMissingUnitsList" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.10982|Remove Missing Units:}</property>
+                <property name="modelPath">parent/model/RemoveMissingUnits</property>
+              </block>
+              <block listElementKey="singleSourceGrid" name="ListPulldown">
+              	<property name="horizontalCaption">{desc:mstrWeb.14487|Document grids from multiple datasets:}</property>
+              	<property name="modelPath">parent/model/SingleSourceGrid</property>
+              </block>
+              <block listElementKey="RWLevelMCEJoin" name="ListPulldown">
+              	<property name="horizontalCaption">{desc:mstrWeb.14624|Data combination:}</property>
+              	<property name="modelPath">parent/model/RWLevelMCEJoin</property>
+              	<property name="enabledField">!model/model/SingleSourceGrid</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K360" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.14513|Flash (deprecated)}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K361" name="TextBox">
+                <property name="caption">{desc:mstrWeb.5627|Embed the following fonts:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="valueField">EmbeddedFonts</property>
+                <property name="totalSize">70</property>
+                <property name="maxlength">255</property>
+                <property name="cssText">margin-top: 3px; width: 405px;</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="schedules" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.9020|Schedules for Subscriptions}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="visibleField">model/canBeScheduled</property>
+          <property name="children">
+            <list>
+		      <block listElementKey="scheduleType" name="RadioList">
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/getDynamicListModel("scheduleTypesModel","scheduleType")</property>
+              </block>
+	          <block listElementKey="schedulesListCartFieldSet" name="FieldSet">
+	            <property name="modelPath">parent/model</property>
+	            <property name="enabledField">model/scheduleType/selectedIndices:2</property>
+	            <property name="cssClass">schedulesListCart mstrFieldset</property>
+	            <property name="children">
+	              <list>
+		              <block listElementKey="scheduleListCart" name="SimpleListCart">
+			           <property name="modelPath">parent/model/getDynamicCartModel("availableSchedules","selectedSchedules")</property>
+			           <property name="id">schedulesListCart</property>
+			           <property name="cssText">margin-left: 20px;</property>
+			           <property name="showMoveButtons">false</property>
+			           <property name="availableView/height">110px</property>
+			           <property name="availableView/width">190px</property>
+			           <property name="selectedView/height">110px</property>
+			           <property name="selectedView/width">190px</property>
+			          </block>
+	              </list>
+	            </property>
+	          </block>
+            </list>
+          </property>
+        </block>
+		<block listElementKey="autoRefresh" name="FieldSet">
+		  <property name="legend">{desc:mstrWeb.14560|Refresh (Presentation Mode and Mobile Clients Only)}</property>
+		  <property name="modelPath">parent/model</property>
+		  <property name="children">
+			<list>
+			  <block listElementKey="K2212" name="HBox">
+                <property name="modelPath">parent/model</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="refreshDocument" name="CheckBox">
+                      <property name="caption">{desc:mstrWeb.9077|Automatically refresh every}</property>
+                      <property name="cssText">margin-top: 3px;</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="valueField">RefreshDocument</property>
+                    </block>
+                    <block listElementKey="refreshFrequency" name="HTextBox">
+                      <property name="captionSuffix">{desc:mstrWeb.7773|seconds}</property>
+                      <property name="modelPath">parent/model</property>
+                      <property name="valueField">RefreshFrequency</property>
+                      <property name="enabledField">model/RefreshDocument</property>
+                      <property name="cssText">margin-top:0px;</property>
+                      <property name="totalSize">3</property>
+                      <property name="maxlength">3</property>
+                      <property name="validator">
+                        <block name="FieldValidator">
+                          <property name="required">true</property>
+                          <property name="type">1</property>
+                          <property name="min">1</property>
+                          <property name="max">999</property>
+                        </block>
+                      </property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+			</list>
+          </property>
+		</block>
+        <block listElementKey="selector" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4728|Selector}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="consistentSelections" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.14161|Keep selections of different targets consistent}</property>
+                <property name="valueField">KeepControlTargetsConsistent</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+        DocumentTabAdvanced is the "Document Properties - Advanced" tab of the document properties editor.
+    -->

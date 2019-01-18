@@ -1,0 +1,43 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="GraphFormatEditorTabAdvanced">
+  <assignments>
+    <property name="title">Format Graph - Advanced</property>
+    <property name="width">450px</property>
+    <property name="height">100%</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="modelPath">parent/model/items/4</property>
+    <property name="helpTopic">Format_Graph_dialog_Advanced.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1998" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5587|Advanced}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1999" name="RadioList">
+                <property name="caption">{desc:mstrWeb.3714|Set series:}</property>
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/seriesLayout</property>
+              </block>
+              <block listElementKey="K2000" name="RadioList">
+                <property name="caption">{desc:mstrWeb.3717|Font and line resizing:}</property>
+                <property name="cssClass">NPCheckList</property>
+                <property name="height">auto</property>
+                <property name="modelPath">parent/model/lockFontSize</property>
+                <property name="visibleField">parent/model/lockFontSize_visible</property>
+              </block>
+              <block listElementKey="K2001" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.3720|Show subtotals}</property>
+                <property name="valueField">showSubtotals</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">parent/model/showSubtotals_visible</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

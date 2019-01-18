@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ToolButton is a clickable image without a caption (typically, a toolbar button). -->
+	<block name="ToolButton" inherits="BaseView">
+		<definition>
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+
+			<!-- Javascript handler for responding to user clicks. -->
+			<property name="onclick" type="String" />
+
+			<!-- Optional reference to UIComponent which this TextButton may act upon when clicked. -->
+			<property name="targetPath" type="String" />
+			
+			<!-- class for the icon, typically background image 
+				TQMS issue 339212: Get a 'this page contains both secure and nonsecure items' pop-up warning when Web is deployed under HTTPS for the Prompt page in Orion in IE
+     			Work around is to refer a background image through class instead of using a inline style for the <code>elem</code>
+			-->
+			<property name="iconClass" type="String"/>
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.ToolButtonRounded</property>
+			<property name="cssClass">ToolButtonRounded</property>
+		</assignments>
+	</block>

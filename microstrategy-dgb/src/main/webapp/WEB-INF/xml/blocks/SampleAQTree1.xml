@@ -1,0 +1,56 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ExpressionModel" name="SampleAQTree1">
+  <assignments>
+    <property name="flattenedNodes">
+      <list>
+        <!-- The Equals operator node: -->
+        <block listElementKey="K1425" name="TreeNode">
+          <property name="path">0</property>
+          <property name="value">
+            <block name="OperatorNodeValue">
+              <property name="expressionType">2</property>
+              <!-- Attr Form Qual -->
+              <property name="function">6</property>
+              <!-- Equals -->
+            </block>
+          </property>
+        </block>
+        <!-- The Form Shortcut node: -->
+        <block listElementKey="K1426" name="TreeNode">
+          <property name="path">0/0</property>
+          <property name="value">
+            <block name="FormShortcutNodeValue">
+              <property name="attribute">
+                <block name="ItemInfo">
+                  <property name="dssid">idCustomer</property>
+                  <property name="n">Customer</property>
+                  <property name="icon">a</property>
+                  <property name="tp">12</property>
+                </block>
+              </property>
+              <property name="form">
+                <block name="ItemInfo">
+                  <property name="dssid">idLastName</property>
+                  <property name="n">Last Name</property>
+                  <property name="icon">af</property>
+                  <property name="tp">21</property>
+                  <property name="dtp">8</property>
+                </block>
+              </property>
+            </block>
+          </property>
+        </block>
+        <!-- The constant node: -->
+        <block listElementKey="K1427" name="TreeNode">
+          <property name="path">0/1</property>
+          <property name="value">
+            <block name="ConstantNodeValue">
+              <property name="constantValue">Saylor</property>
+            </block>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!-- A sample ExpressionModel whose tree has just 1 AQ condition. -->

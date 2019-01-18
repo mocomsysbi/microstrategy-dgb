@@ -1,0 +1,16 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.RWManipulationTask">
+    <basicInfo desc="This task moves a layout within the document.">
+        <parameter name="sectionKey" desc="The key of the layout to move"  required="true" />
+        <parameter name="beforeKey" desc="The key of the layout the moved layout will appear before"  required="true" />
+    </basicInfo>    
+
+    <!-- REPORT WRITER EVENT REMOVE OBJECT  -->
+    <eventInfo eventID="2048095" />
+    
+    <beanInfo name="rwb" bean-type="RWBean">
+        <style name="RWDocumentMojoStyle">
+            <actualParameter name="treesToRender" source="const" value="2" />
+        </style>
+    </beanInfo>
+</beanTask>

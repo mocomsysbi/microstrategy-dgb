@@ -1,0 +1,98 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the formatting properties for a given WebFormat.
+--> 
+<block name="FormatModel">
+    <definition>
+        <!-- Font-Family -->
+        <property name="ff" type="String" />
+        
+        <!-- Font-Size -->
+        <property name="fsz" type="Integer" />
+        
+        <!-- Font Weight -->
+        <property name="fw" type="Boolean" />
+        
+        <!-- Font Italics -->
+        <property name="fit" type="Boolean" />
+        
+        <!-- Font Underline -->
+        <property name="fun" type="Boolean" />
+        
+        <!-- Font Strikeout -->
+        <property name="fst" type="Boolean" />
+        
+        <!-- Font Color -->
+        <property name="fc" type="String" />
+        
+        <!-- Background Color -->
+        <property name="bc" type="String" />
+        
+        <!-- Background Fill Style -->
+        <property name="bgs" type="Integer" />
+        
+        <!-- Gradient color -->
+        <property name="gdc" type="String" />
+        
+        <!-- Gradient angle -->
+        <property name="gda" type="Integer" />
+        
+        <!-- Align Horizontal -->
+        <property name="alh" type="Integer" />
+        
+        <!-- Align Vertical -->
+        <property name="alv" type="Integer" />
+        
+        <!-- Text Wrap -->
+        <property name="atw" type="Boolean" />
+        
+        <!-- Text Direction -->
+        <property name="atd" type="Integer" />
+        
+        <!-- Border Top Color -->
+        <property name="btc" type="String" />
+        
+        <!-- Border Right Color -->
+        <property name="brc" type="String" />
+        
+        <!-- Border Bottom Color -->
+        <property name="bbc" type="String" />
+        
+        <!-- Border Left Color -->
+        <property name="blc" type="String" />
+        
+        <!-- Border Top Style -->
+        <property name="bts" type="Integer" />
+        
+        <!-- Border Right Style -->
+        <property name="brs" type="Integer" />
+        
+        <!-- Border Bottom Style -->
+        <property name="bbs" type="Integer" />
+        
+        <!-- Border Left Style -->
+        <property name="bls" type="Integer" />
+        
+        <!-- Line Color -->
+        <property name="lc" type="String" />
+        
+        <!-- Line Style -->
+        <property name="ls" type="Integer" />
+        
+        <!-- Line Weight -->
+        <property name="lw" type="Integer" />
+        
+        <!-- Top Padding -->
+        <property name="tp" type="Double" />
+        
+        <!-- Right Padding -->
+        <property name="rp" type="Double" />
+                
+        <!-- Bottom Padding -->
+        <property name="bp" type="Double" />
+                
+        <!-- Left Padding -->
+        <property name="lp" type="Double" />
+        
+    </definition>
+</block>

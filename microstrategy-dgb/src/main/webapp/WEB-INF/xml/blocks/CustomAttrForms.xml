@@ -1,0 +1,64 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="CustomAttrForms">
+  <assignments>
+    <property name="id">CustomAttrForms1</property>
+    <property name="visible">false</property>
+    <property name="title">{desc:mstrWeb.2890|Attribute Forms}</property>
+    <property name="helpTopic">attribute_forms_dialog_box_for_selectors.htm</property>
+    <property name="contentView">
+      <block name="VBox">
+	    <property name="cssText">width:300px;height:150px</property>
+	    <property name="visible">true</property>
+	    <property name="modelPath">parent/model</property>
+	    <property name="children">
+	      <list>      
+	        <block listElementKey="K2207" name="SimpleListCart">
+	          <property name="modelPath">parent/parent/opener/getAttrFormsCartModel()</property>
+	          <property name="showMoveButtons">true</property>
+	          <property name="availableView/height">110px</property>
+	          <property name="availableView/width">120px</property>
+	          <property name="selectedView/height">110px</property>
+	          <property name="selectedView/width">120px</property>
+	          <property name="upButton/visible">true</property>
+	          <property name="downButton/visible">true</property>
+	        </block>
+	      </list>
+	      </property>
+      </block>
+    </property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K2208" name="TextButton">
+          <property name="cmds">Unpop||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+          <property name="cmds">CancelSelectAttrForms||parent/opener;Unpop||parent</property>
+        </block>
+        <block listElementKey="K2209" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+          <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- ok button -->
+        <block listElementKey="K2210" name="TextButton">
+          <property name="id">cafOkButton</property>
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">SelectAttrForms|parent/contentView/children/0/model|parent/opener;Unpop||parent</property>
+          <property name="enabledField">parent/opener/attrBone/okBtnEnable</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K2211" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">CancelSelectAttrForms||parent/opener;Unpop||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

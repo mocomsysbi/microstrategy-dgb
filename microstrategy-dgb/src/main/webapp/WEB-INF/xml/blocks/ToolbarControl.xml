@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- An abstract view for setting enabled and visible states of Toolbar controls. -->
+	<block name="ToolbarControl" inherits="BaseView">
+		<assignments>
+			<property name="enabledField">model/toolbarHelper/enabled</property>
+			<property name="visibleField">model/toolbarHelper/visible</property>
+		</assignments>
+	</block>

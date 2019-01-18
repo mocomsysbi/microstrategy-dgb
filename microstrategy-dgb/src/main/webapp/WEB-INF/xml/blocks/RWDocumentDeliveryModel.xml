@@ -1,0 +1,54 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="EditorBoneTranslator" name="RWDocumentDeliveryModel">
+  <definition>
+    <property name="deliveryTabEnabled" type="Boolean"/>
+    <property name="canBeScheduled" type="Boolean"/>
+    <property name="scheduleTypesModel" type="Block"/>
+
+    <!-- flag indicating whether Delivery visible for current document -->
+    <property name="canBeSubscribed" type="Boolean"/>
+
+    <!-- Define a list of options to config User Subscription -->
+    <property name="userTypesModel" type="Block"/>
+
+    <!-- A JSON object representing users/acls selected for subscription. -->
+    <property name="selectedUsers" type="String"/>
+
+    <!-- A JSON object representing the list of supported User Rights for User Subscription. -->
+    <property name="userSubscribeRights" type="String"/>
+
+
+      <!-- A message to show when Delivery is not supported, like for a new document. -->
+      <property name="notAllowedMsg" type="String"/>
+  </definition>
+  <assignments>
+    <property name="categoryText">{desc:mstrWeb.3588|Document Properties}</property>
+    <property name="titleText">{desc:mstrWeb.9029|Delivery}</property>
+    <property name="fields">canBeScheduled|scheduleTypesModel|canBeSubscribed|userTypesModel|selectedUsers|userSubscribeRights</property>
+    <property name="deliveryTabEnabled">true</property>
+    <property name="visibleField">deliveryTabEnabled</property>
+    <property name="userTypesModel">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+              <block listElementKey="allowNone" name="ItemInfo">
+                  <property name="dssid">1</property>
+                  <property name="n">{desc:mstrWeb.11282|Do not allow users to subscribe to this Document}</property> <!-- TODO: update descriptor -->
+              </block>
+            <block listElementKey="allowAll" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.11283|Allow all users to subscribe to this Document}</property> <!-- TODO: update descriptor -->
+            </block>
+            <block listElementKey="allowUserSelected" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.11284|Only allow specific users to subscribe to this Document}</property> <!-- TODO: update descriptor -->
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="notAllowedMsg">{desc:mstrWeb.11285|You must save this document before you can allow users to subscribe it.}</property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Delivery' tab of the Report Services document properties editor. -->

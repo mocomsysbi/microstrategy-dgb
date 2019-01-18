@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition of the root node in a Report Writer document.
+--> 
+<block name="RWRootNodeDefn">
+    <definition>
+        <!-- The root node key. -->
+        <property name="k" type="String" />
+        
+        <!-- Indicates if the HTML5 VI dataset objects panel is visible. -->
+        <property name="dsv" type="Boolean" />
+        
+        <!-- The width of the HTML5 VI dataset objects panel. -->
+        <property name="dsw" type="String" />
+    </definition>
+</block>

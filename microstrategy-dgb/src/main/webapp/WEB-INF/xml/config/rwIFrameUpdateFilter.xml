@@ -1,0 +1,87 @@
+<events>
+    <!-- selector control operations - Graph -->
+    <event id="2048082">
+        <updateFilter beanNames="rw_view_area,rwlastupdate" />
+    </event>
+    <!-- selector control operations - Grid -->
+    <event id="2048084">
+        <updateFilter beanNames="rw_view_area,rwlastupdate" />
+    </event>
+    
+    <!-- set Document Zoom Property -->
+    <event id="2048091">
+        <updateFilter beanNames="rw_view_area,rw_design_area,rwlastupdate" />
+    </event>
+    
+    <!-- View Bean Events -->
+    <!-- VIEW_EVENT_REMOVE_TEMPLATE_UNIT -->
+    <event id="4096008">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+    </event>
+
+    <!-- VIEW_EVENT_ADD_METRIC -->  
+    <event id="4096028">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+    </event>
+  
+    <!-- VIEW_EVENT_REMOVE_METRIC -->  
+    <event id="4096027">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+    </event>
+  
+    <!-- VIEW_EVENT_CHANGE_STYLE -->
+    <event id="4096014">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+    </event>
+    
+    <!-- VIEW_EVENT_ADD_TEMPLATE_UNIT -->
+  <event id="4096007">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+    </event>
+  
+    <!-- VIEW_EVENT_SORT -->
+  <event id="4096003">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+    </event>
+  
+  <!-- VIEW_EVENT_PIVOT -->
+  <event id="4096002">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+  </event>
+   
+  <!-- VIEW_EVENT_ADD_FORM -->
+  <event id="4096038">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+  </event>   
+  
+  <!-- VIEW_EVENT_REMOVE_FORM -->
+  <event id="4096039">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+  </event>   
+
+  <!-- VIEW_EVENT_MOVE_METRIC -->
+  <event id="4096009">
+      <updateFilter beanNames="rw_view_area,rwlastupdate"/>
+  </event>   
+
+  <!-- VIEW_EVENT_SET_PROPERTY_VALUES -->
+  <event id="4096001">
+      <updateFilter beanNames="rwgrt,rw_view_area,rwlastupdate"/>
+  </event>   
+    
+  <!-- VIEW_EVENT_SET_COLUMN_SCENARIO -->
+  <event id="4096036">
+      <updateFilter beanNames="rwgrt,rw_view_area,rwlastupdate"/>
+  </event>   
+    
+  <!-- VIEW_EVENT_SET_ROW_SCENARIO -->
+  <event id="4096037">
+      <updateFilter beanNames="rwgrt,rw_view_area,rwlastupdate"/>
+  </event>   
+    
+  <!-- VIEW_EVENT_SHOW_BANDING -->
+  <event id="4096033">
+      <updateFilter beanNames="rwgrt,rw_view_area,rwlastupdate"/>
+  </event>   
+        
+</events>

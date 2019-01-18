@@ -1,0 +1,10 @@
+<mstrlayout:layout xmlns:mstrlayout="http://microstrategy.com/web/2008/CSLAYOUT"
+    on_set_visible="mstr.behaviors.Generic.set_css_display(rootTag, 'block', 'none', view.props['visible'])"
+    on_model_set_value="rootTag.value=(model.get('value'))?model.get('value'):'';">
+  <textArea style="{@cssText}"
+            class="{@cssPrefix}{@cssClass}"
+            onkeyup="mstr.$obj('{@id}').getModel().updateValue((this.value &amp;&amp; this.value.length!=0)?this.value:'');"
+            onblur="mstr.$obj('{@id}').getModel().updateValue((this.value &amp;&amp; this.value.length!=0)?this.value:'');"
+	        id="{@id}">
+  </textArea>
+</mstrlayout:layout>

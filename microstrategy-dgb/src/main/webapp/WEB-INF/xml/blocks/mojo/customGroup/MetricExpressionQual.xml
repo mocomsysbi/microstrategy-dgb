@@ -1,0 +1,31 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Metric Expression Qualification
+-->
+<block name="MetricExpressionQual" inherits="ExpNode">
+    <definition>
+        <!-- Metric ObjectInfo -->
+        <property name="m" type="Block" />
+        
+        <!-- Function (operator) -->
+        <property name="fn" type="Integer" />
+        
+        <!-- Function type if not present it is assumed to be generic. -->
+        <property name="fnt" type="Integer" />
+        
+        <!-- Metric2 ObjectInfo -->
+        <property name="m2" type="Block" />
+        
+        <!-- Metric3 ObjectInfo (used in between operator)-->
+        <property name="m3" type="Block" />
+        
+        <!-- Constant (support metric between constant and metric) -->
+        <property name="c2"	type="Block" />
+        
+        <!-- Constant (support metric between metric and constant) -->
+        <property name="c3" type="Block" />
+        
+        <!-- Dimty Object  -->
+        <property name="dmy" type="Block" />
+    </definition>
+</block>

@@ -1,0 +1,22 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Single Metric Qualification
+-->
+<block name="SingleMetricQual" inherits="PromptableExpNode">
+    <definition>
+        <!-- Metric ObjectInfo -->
+        <property name="m" type="Block" />
+        
+        <!-- Function (operator) -->
+        <property name="fn" type="Integer" />
+        
+        <!-- Function type if not present it is assumed to be generic. -->
+        <property name="fnt" type="Integer" />
+    
+        <!-- List of constants ConstantNode -->
+        <property name="cs" type="List" />
+        
+        <!-- Dimty Object  -->
+        <property name="dmy" type="Block" />
+    </definition>
+</block>

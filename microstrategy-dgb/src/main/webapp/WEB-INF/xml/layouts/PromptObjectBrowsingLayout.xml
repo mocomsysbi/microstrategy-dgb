@@ -1,0 +1,81 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:include file="/WEB-INF/xml/layouts/PromptObjectLayout.xml">
+        <mstrlayout:replace slot="s1">
+          <mstrlayout:if name="isThereAnyFolderToRender">
+            <mstrlayout:then>
+              <div class="prmObjectBrowsing">
+				<div class="path">
+					<mstrlayout:render name="foldersPath"/>
+				</div>
+				<div class="subfolders">
+					<mstrlayout:render name="subFolderPullDown"/>
+				</div>
+				<mstrlayout:if name="isSearchAvailable">
+				<mstrlayout:then>
+                    <mstrlayout:if name="isDhtmlMode">
+                        <mstrlayout:then>
+                            <div class="search" onkeydown="return promptSubmitSearchForEnterKey(this, event);">
+                                <mstrlayout:render name="search"/>
+                            </div>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+                            <div class="search">
+                                <mstrlayout:render name="search"/>
+                            </div>
+                        </mstrlayout:else>
+                        </mstrlayout:if>
+                </mstrlayout:then>
+				</mstrlayout:if>
+				<table class="mstrCart" cellspacing="0">
+				<tbody>
+				<tr>
+					<td class="mstrCartAvailable">
+						<div class="listHeader">
+							<mstrlayout:render name="label">
+								<mstrlayout:argument type="int" value="3487"/>
+								<mstrlayout:argument type="string" value="unitsToAdd"/>
+							</mstrlayout:render>
+						</div>
+						<div class="list">
+							<mstrlayout:render name="available"/>
+						</div>
+						<div class="fetch">
+							<mstrlayout:render name="incrementalFetch"/>
+						</div>
+					</td>
+					<td class="mstrCartButtons">
+						<mstrlayout:render name="add"/>
+						<mstrlayout:render name="remove"/>
+					</td>
+					<td class="mstrCartSelected">
+						<div class="listHeader">
+							<mstrlayout:render name="label">
+								<mstrlayout:argument type="int" value="3488"/>
+								<mstrlayout:argument type="string" value="unitsToRemove"/>
+							</mstrlayout:render>
+						</div>
+						<div class="list">
+							<mstrlayout:render name="selected"/>
+						</div>
+					</td>
+					<mstrlayout:if name="isUpAndDownAvailable">
+					<mstrlayout:then>
+					<td class="mstrCartButtons">
+						<mstrlayout:render name="up"/>
+						<mstrlayout:render name="down"/>
+					</td>
+					</mstrlayout:then>
+					</mstrlayout:if>
+				</tr>
+				</tbody>
+				</table>
+              </div>
+            </mstrlayout:then>
+            <mstrlayout:else>
+              <mstrlayout:render name="parentPromptContent"/>
+            </mstrlayout:else>
+          </mstrlayout:if>
+        </mstrlayout:replace>
+    </mstrlayout:include>
+</mstrlayout:layout>

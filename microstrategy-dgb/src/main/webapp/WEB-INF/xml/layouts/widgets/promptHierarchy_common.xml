@@ -1,0 +1,177 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/promptExpression_common.xml">
+		<mstrlayout:replace slot="available">
+			<mstrlayout:bSetProperty path="available">
+				<mstrlayout:block name="ListModel">
+
+					<!-- container tree -->
+					<mstrlayout:bSetProperty path="containerTree">
+						<mstrlayout:block name="TreeModel">
+		                  <mstrlayout:bSetProperty path="selectedPathList" method="getCurrentTreeNodeLocation"/>
+		                  <mstrlayout:list id="ancestors" method="getFlattenedAvailablesAncestors">
+		                    <mstrlayout:base id="FolderObject" method="getValue" base="ancestors"/> <!-- the WebObjectInfo of the ancestor node -->
+		                    <!-- Add a new FlattenedTreeNode to this list... -->
+		                    <mstrlayout:bSetProperty path="flattenedNodes">
+		                      <mstrlayout:block name="TreeNode">
+		                        <mstrlayout:bSetProperty path="path" method="getLocation" base="ancestors"/>
+		                        <mstrlayout:bSetProperty path="value">
+						            <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>
+								</mstrlayout:bSetProperty>
+		                      </mstrlayout:block>
+		                    </mstrlayout:bSetProperty>
+		                  </mstrlayout:list>
+						</mstrlayout:block>
+					</mstrlayout:bSetProperty>
+                  
+                    <mstrlayout:if method="getPropertyValue" value="3">
+                      <mstrlayout:argument value="AllowNavigationBeyondSearchRoot"/>
+                      <mstrlayout:else>
+                        <mstrlayout:bSetProperty path="containerTree/flattenedNodes[0]/value/n" method="getDescriptor">
+                              <mstrlayout:argument value="73" type="int"/> <!-- Search Results: -->
+                        </mstrlayout:bSetProperty>
+                        <mstrlayout:bDeleteProperty path="containerTree/flattenedNodes[0]/value/dssid"/>
+                      </mstrlayout:else>
+                    </mstrlayout:if>
+          
+
+					<mstrlayout:bSetProperty path="blockBegin" method="getAvailableBlockBegin"/>
+					<mstrlayout:bSetProperty path="blockCount" method="getAvailableBlockCount"/>
+					<mstrlayout:bSetProperty path="totalSize" method="getAvailableTotalCount"/>
+	                <mstrlayout:if method="getPreferenceValueReplaceNull" operator="eq" value="1">
+	                	<mstrlayout:argument value="promptsMatchCaseSensitivity"/>
+	                	<mstrlayout:argument value="0"/>
+	                	<mstrlayout:then>
+	                		<mstrlayout:bSetProperty path="searchMatchCase" value="true"/>
+	                	</mstrlayout:then>
+	                	<mstrlayout:else>
+	                		<mstrlayout:bSetProperty path="searchMatchCase" value="false"/>
+	                	</mstrlayout:else>
+	                </mstrlayout:if>
+					
+					<!-- items -->
+					<mstrlayout:if method="isAttributeExpandedToElements">
+						<mstrlayout:then>	<!-- render elements -->
+		                    <mstrlayout:list id="elem" name="getAttributeOrElementList">
+		                      <mstrlayout:bSetProperty path="items">
+		                        <mstrlayout:block name="ItemInfo">
+		                          <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebElement#getElementID" base="elem"/>
+		                          <mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebElement#getDisplayName" base="elem"/>
+		                          <mstrlayout:bSetProperty path="emt" method="com.microstrategy.web.objects.WebElement#getElementType" base="elem"/>
+		                          <mstrlayout:bSetProperty path="icon" value="ae"/>
+		                          <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebElement#getDisplayUnitType" base="elem"/>
+		                        </mstrlayout:block>
+		                      </mstrlayout:bSetProperty>
+		                    </mstrlayout:list>
+                            <mstrlayout:bSetProperty path="leafElements" method="isLeafAttribute" />
+							<mstrlayout:bSetProperty path="rmc">
+								<mstrlayout:block name="ListModel">
+				
+									<mstrlayout:list id="drillPathsDown" name="getDrillDownPaths">
+									<mstrlayout:bSetProperty path="items">
+									  <mstrlayout:block name="DrillPath">
+										<mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebDisplayUnit#getID" base="drillPathsDown"/>
+										<mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebDisplayUnit#getDisplayName" base="drillPathsDown"/>
+										<mstrlayout:bSetProperty path="desc" method="getDescriptor">
+								        	<mstrlayout:argument type="int" value="6161" /><!-- Dril Down -->
+								        </mstrlayout:bSetProperty>
+										<mstrlayout:bSetProperty path="icon" value="a"/>
+										<mstrlayout:bSetProperty path="drillDir" value="down"/>
+										<mstrlayout:bSetProperty path="tp" value="12"/>
+										<!-- locked? -->
+										<mstrlayout:if method="getLockType" value="2" base="drillPathsDown">
+										  <mstrlayout:then> <!-- Custom -->
+											<mstrlayout:bSetProperty path="locked" value="true"/>
+										  </mstrlayout:then>
+										  <mstrlayout:else>
+											<mstrlayout:bSetProperty path="locked" value="false"/>
+										  </mstrlayout:else>
+										</mstrlayout:if>
+							            <!-- filters -->
+							            <mstrlayout:base id="filterList" method="getFilters" base="drillPathsDown"/>
+							            <mstrlayout:if method="size" value="0" base="filterList">
+							            	<mstrlayout:else>   <!-- not empty -->
+									            <mstrlayout:list id="filter" method="elements" base="filterList">
+									            	<mstrlayout:bSetProperty path="filters">
+													  <mstrlayout:block name="ItemInfo">
+													    <!-- Set all of the scalar properties on this item. -->
+													    <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebObjectInfo#getID" base="filter"/>
+													    <mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebObjectInfo#getDisplayName" base="filter"/>
+													    <mstrlayout:bSetProperty path="desc" method="com.microstrategy.web.objects.WebObjectInfo#getDescription" base="filter"/>
+													    <mstrlayout:bSetProperty path="icon" method="getCssName">
+													      <mstrlayout:argument list="filter" type="com.microstrategy.web.objects.WebObjectInfo"/>
+													    </mstrlayout:bSetProperty>
+													    <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebObjectInfo#getType" base="filter"/>
+													    <mstrlayout:bSetProperty path="stp" method="com.microstrategy.web.objects.WebObjectInfo#getSubType" base="filter"/>
+													  </mstrlayout:block>
+												  	</mstrlayout:bSetProperty>
+									            </mstrlayout:list>
+							            	</mstrlayout:else>
+							            </mstrlayout:if>
+									  </mstrlayout:block>
+									</mstrlayout:bSetProperty>
+									</mstrlayout:list>
+									<!-- only when preference promptsKeepFilterOnDrill is set, show drill up path -->
+									<mstrlayout:if method="getPreferenceValue" value="1">
+										<mstrlayout:argument value="promptsKeepFilterOnDrill"/>
+										<mstrlayout:then>
+											<mstrlayout:list id="drillPathsUp" name="getDrillUpPaths">
+											<mstrlayout:bSetProperty path="items">
+											  <mstrlayout:block name="DrillPath">
+												<mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebDisplayUnit#getID" base="drillPathsUp"/>
+												<mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebDisplayUnit#getDisplayName" base="drillPathsUp"/>
+												<mstrlayout:bSetProperty path="desc" value="Drill Up"/>
+												<mstrlayout:bSetProperty path="icon" value="a"/>
+												<mstrlayout:bSetProperty path="drillDir" value="up"/>
+												<mstrlayout:bSetProperty path="tp" value="12"/>
+												<!-- locked? -->
+												<mstrlayout:if method="getLockType" value="2" base="drillPathsUp">
+												  <mstrlayout:then> <!-- Custom -->
+													<mstrlayout:bSetProperty path="locked" value="true"/>
+												  </mstrlayout:then>
+												  <mstrlayout:else>
+													<mstrlayout:bSetProperty path="locked" value="false"/>
+												  </mstrlayout:else>
+												</mstrlayout:if>
+											  </mstrlayout:block>
+											</mstrlayout:bSetProperty>
+											</mstrlayout:list>
+										</mstrlayout:then>
+									</mstrlayout:if>
+				
+								</mstrlayout:block>
+							</mstrlayout:bSetProperty>
+						</mstrlayout:then>
+						<mstrlayout:else>   <!-- render folder, hierarchy or attribute -->
+							<mstrlayout:list id="FolderObject" method="getAttributeOrElementList">	
+								<mstrlayout:bSetProperty path="items">
+									<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml"/>			
+								</mstrlayout:bSetProperty>
+							</mstrlayout:list>
+						</mstrlayout:else>
+					</mstrlayout:if>
+					
+				</mstrlayout:block>
+			</mstrlayout:bSetProperty>
+		</mstrlayout:replace>
+
+		<mstrlayout:replace slot="answerEnd">
+			<!-- search -->
+	        <mstrlayout:if operator="isNotNull" base="search">
+	          <mstrlayout:then>
+	            <mstrlayout:bSetProperty path="available/searchXML" method="com.microstrategy.web.objects.WebSearch#getXML" base="search"/>
+	            <mstrlayout:bSetProperty path="available/dataSourcesXML" method="com.microstrategy.web.objects.WebObjectInfo#getDataSources" base="search"/>
+	            <mstrlayout:bSetProperty path="available/objectType" method="getSearchTypes"/>
+	          </mstrlayout:then>
+	        </mstrlayout:if>
+					
+			<mstrlayout:bSetProperty path="available/elementSearchRequired" method="isSearchRequired" />
+            <!-- XDA report may not allow element search -->
+			<mstrlayout:bSetProperty path="available/elementSearchDisabled" method="isElementSearchDisabled" />
+			
+			<mstrlayout:bSetProperty path="available/dimensionId" method="getSingleHierarchyID" base="bean" />
+		</mstrlayout:replace>
+
+	</mstrlayout:include>
+	
+</mstrlayout:layout>

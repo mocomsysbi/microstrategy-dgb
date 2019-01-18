@@ -1,0 +1,37 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <table class="pane" cellspacing="1">
+      <mstrlayout:if name="isEditableOrEmpty">
+        <mstrlayout:then>      
+          <tr>
+            <td>
+              <form id="vfep" method="post" action="">
+                <mstrlayout:attr name="getFormAttributes" />
+                <mstrlayout:render name="eventHiddenInputs"/>
+	              <div class="mstrPanelTitleBar">
+	                <mstrlayout:render name="emptyFilterMessage" />
+	                <mstrlayout:if name="isEditable">
+	                  <mstrlayout:then>
+	                    <span class="mstrPanelTitleOptions">
+	                        <mstrlayout:render name="headerAddCondition" />
+	                        <mstrlayout:render name="headerClearAll" />
+	                    </span>
+	                  </mstrlayout:then>
+	                </mstrlayout:if>
+	              </div>
+              </form>              
+            </td>
+          </tr>
+        </mstrlayout:then>
+      </mstrlayout:if>
+      <tr>
+        <td class="mstrPanelBody">
+          <div id="containerDiv" class="mstr-filter-containerDiv">
+            <mstrlayout:render name="ViewFilter" />
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mstrlayout:layout>

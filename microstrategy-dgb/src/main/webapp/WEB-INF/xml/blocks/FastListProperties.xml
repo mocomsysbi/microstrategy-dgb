@@ -1,0 +1,33 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- FastListProperties is a set of properties supported by "Fast" Views on ListModels.
+		 "Fast" views are for rendering large lists of items.  They render
+		 the items on demand as the user scrolls thru the list, thus keeping page loading times down.  -->	
+	<block name="FastListProperties">
+		<definition>
+			<!-- FQCN of the javascript representation of this view. -->
+			<property name="scriptClass" type="String" />
+
+			<!-- Fqcn of the object to use for rendering list items. -->
+			<property name="itemRendererClass" type="String" />
+
+			<!-- If true, list items are rendered on demand.  Otherwise, all items are rendered immediately. -->
+			<property name="renderListItemsOnScroll" type="Boolean" />
+
+			<!-- Determines how many list items are rendered initially, before scrolling. -->
+			<property name="initialListItemRenderCount" type="Integer" />
+			
+			<!-- Determines if the selected items should look like selected -->
+			<property name="ignoreSelection" type="Boolean" />
+			
+			<!-- Determines if the spaces in each item should be replaced with embedded space pattern (\u00a0) -->
+			<property name="shouldReplaceSpace" type="Boolean"/>
+			
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.FastListView</property>
+			<property name="itemRendererClass">mstr.itemrenderers.FastListView</property>
+			<property name="renderListItemsOnScroll">true</property>
+			<property name="initialListItemRenderCount">10</property>
+			<property name="shouldReplaceSpace">false</property>
+		</assignments>
+	</block>

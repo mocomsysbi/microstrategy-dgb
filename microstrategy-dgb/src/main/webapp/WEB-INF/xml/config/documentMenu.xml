@@ -1,0 +1,79 @@
+<shortcut-list-set name="document-menu" version="1.0">
+  <shortcut-list desc="File" desc-id="mstrWeb.489" name="document" use-default="false">
+    <shortcut append-state="true" base-bean="db" desc="Add to History List" desc-id="mstrWeb.1982" enable-feature-id="enable-add-history-list" feature-id="add-history-list" href="#" iframe="false" name="document1">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_SAVE_TO_INBOX"/>
+    </shortcut>
+    <shortcut append-state="true" base-bean="db" desc="Subscribe" desc-id="mstrWeb.4697" feature-id="dhtml;nc-enabled" href="#" iframe="false" name="document3">
+      <shortcut append-state="true" base-bean="subs" desc="History List..." desc-id="mstrWeb.4674" enable-feature-id="enable-scheduling" feature-id="scheduling" href="#" iframe="true" name="document3_1">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="subs"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>
+    </shortcut>
+      <shortcut append-state="true" base-bean="ncSubs" desc="E-mail..." desc-id="mstrWeb.5068" enable-feature-id="enable-scheduled-email" feature-id="scheduled-email" href="#" iframe="true" name="document3_2">
+          <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+              <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSubs"/>
+              <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+        </event>
+      </shortcut>
+      <shortcut append-state="true" base-bean="ncFileSubs" desc="File..." desc-id="mstrWeb.3250" enable-feature-id="enable-scheduled-file-export" feature-id="scheduled-file-export-menu" href="#" iframe="true" name="document3_3">
+          <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+              <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncFileSubs"/>
+              <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+        </event>
+      </shortcut>
+    </shortcut>
+    <shortcut append-state="true" base-bean="ncSendNow" desc="Send Now..." desc-id="mstrWeb.2249" enable-feature-id="enable-send-now" feature-id="dhtml;use-immediate-delivery" href="#" iframe="true" name="document4">
+          <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+              <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSendNow"/>
+              <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentShowBean" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" desc="-" desc-id="" href="#" iframe="false" name="document5"/>
+    <shortcut append-state="true" desc="Print" desc-id="mstrWeb.2109" feature-id="print" href="#" iframe="false" name="document6" target="mstrExportWindow">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPrintDocument"/>
+    </shortcut>
+
+    <shortcut append-state="true" desc="Export" feature-id="export;document-uses-excel-export-format" desc-id="mstrWeb.2110" href="#" iframe="false" name="document7" onclick="submitExportForm(this.href,this.target)" target="mstrExportWindow" use-window-open="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenExportDocument"/>
+    </shortcut>
+    <shortcut append-state="true" desc="Export" feature-id="export;!document-uses-excel-export-format" desc-id="mstrWeb.2110" href="#" iframe="false" name="document14" onclick="submitExportForm(this.href,this.target,true)" target="mstrExportWindow" use-window-open="false">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenExportDocument"/>
+    </shortcut>
+
+    <shortcut append-state="true" desc="-" desc-id="mstrWeb.0" href="#" iframe="false" name="document8"/>
+    <shortcut append-state="true" base-bean="db" desc="Re-run document" desc-id="mstrWeb.3758" enable-feature-id="enable-reexecute" feature-id="reexecute" href="#" iframe="false" name="document9">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_ARGUMENT_REPROMPT" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_ARGUMENT_REEXECUTE_FRESH" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="db" desc="Refresh" desc-id="mstrWeb.773" feature-id="refresh" href="#" iframe="false" name="document10">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_ARGUMENT_REPROMPT" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_ARGUMENT_REEXECUTE_FRESH" value="false"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="db" desc="Re-prompt" desc-id="mstrWeb.119" feature-id="reprompt" href="#" iframe="false" name="document11">
+      <event XMLmerge_id="1" base-bean="db" event-id="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumDocumentBeanEvents.DOCUMENT_EVENT_ARGUMENT_REPROMPT" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="db" desc="Document Details" desc-id="mstrWeb.2145" feature-id="report-details" href="#" iframe="false" name="document12">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventGetDocumentDetails">
+        <argument base-bean="db" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentMessageID" sys-bean="com.microstrategy.web.beans.DocumentBean" value="messageID"/>
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentAllowExecute" value="0"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="db" check-feature-id="check-show-related-reports" desc="Related Reports" desc-id="mstrWeb.3783" href="#" iframe="false" name="document13" dhtml-checked="microstrategy.bone(&apos;relatedReports&apos;)" onclick="microstrategy.toggleRelatedReports();">
+      <event XMLmerge_id="1" action="uncheck" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSetPermanentBrowserSetting" state="checked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingName" value="lTbar"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingValue" value="0"/>
+      </event>
+      <event XMLmerge_id="2" action="check" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSetPermanentBrowserSetting" state="unchecked">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingName" value="lTbar"/>
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBrowserSettingValue" value="1"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

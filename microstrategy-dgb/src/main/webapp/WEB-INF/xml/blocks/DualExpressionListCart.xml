@@ -1,0 +1,65 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="DualExpressionListCart" inherits="ListBrowser,DualExpressionCartProperties">
+		<definition>
+			<property name="selectedIncludesView" type="Block" />
+			<property name="addIncludeButton" type="Block" />
+			<property name="removeIncludeButton" type="Block" />
+			<property name="selectedExcludesView" type="Block" />
+			<property name="addExcludeButton" type="Block" />
+			<property name="removeExcludeButton" type="Block" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.DualExpressionListCart</property>
+			<property name="cssClass">DualListCart</property>
+			<property name="availableView/modelPath">parent/model/available</property>
+			<property name="availableView/height">216px</property>
+			<property name="selectedIncludesView">
+				<block name="ExpressionEditor">
+					<property name="caption">{desc:mstrWeb.3947|Include:}</property>
+					<property name="modelPath">parent/model/getSelectedIncludesModel()</property>
+					<property name="multiSelect">true</property>
+					<property name="showForms">false</property>
+				</block>
+			</property>
+			<property name="selectedExcludesView">
+				<block name="ExpressionEditor">
+					<property name="caption">{desc:mstrWeb.3948|Exclude:}</property>
+					<property name="modelPath">parent/model/getSelectedExcludesModel()</property>
+					<property name="multiSelect">true</property>
+					<property name="showForms">false</property>
+				</block>
+			</property>
+			<property name="addIncludeButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.4447|Add}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbAdd.gif)</property>
+					<property name="cmds">Add|parent/model/getSelectedIncludesModel()|parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="removeIncludeButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.4448|Remove}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbRemove.gif)</property>
+					<property name="cmds">Delete||parent/model/getSelectedIncludesModel()</property>
+					<property name="modelPath">parent/model/getSelectedIncludesModel()</property>
+				</block>
+			</property>
+			<property name="addExcludeButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.4447|Add}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbAdd.gif)</property>
+					<property name="cmds">Add|parent/model/getSelectedExcludesModel()|parent/model</property>
+					<property name="modelPath">parent/model</property>
+				</block>
+			</property>
+			<property name="removeExcludeButton">
+				<block name="ToolButton">
+					<property name="tooltip">{desc:mstrWeb.4448|Remove}</property>
+					<property name="cssText">background-image: url(../style/mstr/images/tbRemove.gif)</property>
+					<property name="cmds">Delete||parent/model/getSelectedExcludesModel()</property>
+					<property name="modelPath">parent/model/getSelectedExcludesModel()</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

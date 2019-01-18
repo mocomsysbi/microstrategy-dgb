@@ -1,0 +1,29 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties for Metric Properties.
+--> 
+<block name="MetricProperties">
+  <definition>
+    <!-- All children join property -->
+    <property name="acj" type="Integer" />
+    
+    <!-- Metric type property -->
+    <property name="mt" type="Integer" />
+    
+    <!-- Decomposable/Smart total property -->
+    <property name="stl" type="Integer" />
+    
+    <!-- Is aggregate from base property -->
+    <property name="afb" type="Integer" />
+    
+    <!-- Is aggregate from base style property -->
+    <property name="sfb" type="Integer" />
+    
+    <!-- From base flag - Dynamic Aggregation and Subtotal behavior property -->
+    <property name="fbf" type="Integer" />
+    
+    <!-- The metric can be set to smart -->
+    <property name="cbs" type="Boolean" />
+    
+  </definition>
+</block>

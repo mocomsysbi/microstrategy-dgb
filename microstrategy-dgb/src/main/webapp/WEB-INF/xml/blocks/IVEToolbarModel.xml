@@ -1,0 +1,21 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="DocumentHomeToolbarModel" name="IVEToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1388_ive" name="ToolbarSaveButton">
+            <property name="cmdid">quickSave</property>
+            <property name="tooltip">{desc:mstrWeb.15459|Save Dossier}</property>
+            <property name="visibleFeatures">save-report;enable-save-report;rw-ive-mode-available;save-analysis</property>
+        </block>
+        <block listElementKey="ive" name="ToolbarButtonModel">
+          <property name="id">tbActionBar</property>
+          <property name="tooltip">{desc:mstrWeb.3265|Actions}</property>
+          <property name="cmdid">toggleActionBar</property>
+          <property name="visibleFeatures">scheduling</property>
+          <property name="enabledFeatures">enable-scheduling</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,6 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="ToolbarColorPickerHelper" inherits="ToolbarControlHelper">
+		<assignments>
+			<property name="scriptClass">mstr.models.ToolbarColorPickerHelper</property>
+		</assignments>
+	</block>

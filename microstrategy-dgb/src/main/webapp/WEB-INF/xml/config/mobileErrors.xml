@@ -1,0 +1,179 @@
+  <errors version="1.0">
+
+    <error code="-2147205002" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You do not have the required privilege to access this resource." desc-id="mstrWeb.14776"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147213784" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You do not have the required privilege to open the page." desc-id="mstrWeb.14777"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147214578" displayError="true" showContactInfo="false" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The username or password you entered is incorrect." desc-id="mstrWeb.10672"/>
+    </error>
+
+    <error code="-2147212488" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Your account is not linked to a MicroStrategy account." desc-id="mstrWeb.14778"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147071867" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The size of the result binary exceeds the limit set by the client request." desc-id="mstrWeb.14779"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147466604" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The page could not be displayed because cube is not published or dataset returns an error. Please publish the cube or contact your administrator for help." desc-id="mstrWeb.14780"/>
+    </error>
+
+    <error code="-2147216959" displayError="true" showContactInfo="false" target="login" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The username or password you entered is incorrect." desc-id="mstrWeb.10672"/>
+    </error>
+
+    <error code="-2147216965" displayError="true" showContactInfo="true" target="login" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Your account has been disabled." desc-id="mstrWeb.14781"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147216960" displayError="true" showContactInfo="false" target="chPwd" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Your password has expired. You will need to change it in order to connect." desc-id="mstrWeb.498"/>
+    </error>
+
+    <error code="-2147216963" displayError="true" showContactInfo="false" target="chPwd" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Your password has expired. You will need to change it in order to connect." desc-id="mstrWeb.498"/>
+    </error>
+
+    <error code="-2147209183" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The project is offline now. If the problem persists, please contact your administrator for help." desc-id="mstrWeb.14782"/>
+    </error>
+
+    <error code="-2147209151" displayError="true" showContactInfo="true" target="welcome" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The project could not be found." desc-id="mstrWeb.14783"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147206923" displayError="true" showContactInfo="true" target="welcome" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The contents of this page could not be displayed because the Intelligence Server is not running. Please contact the Administrator." desc-id="mstrWeb.937"/>
+    </error>
+
+    <error code="-2147207419" displayError="true" showContactInfo="true" target="login" useOriginalMessage="true">
+      <message XMLmerge_id="1" desc="The contents of this page could not be displayed because the Intelligence Server is not running. Please contact the Administrator." desc-id="mstrWeb.937"/>
+    </error>
+
+    <error code="-2147216373" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The page could not be displayed." desc-id="mstrWeb.14784"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147213792" displayError="true" showContactInfo="true" target="login" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Standard authentication is not allowed. Please specify a correct authentication mode or contact your administrator for help." desc-id="mstrWeb.14785"/>
+    </error>
+
+    <error code="-2147209056" displayError="true" showContactInfo="true" target="login" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Maximum number of Server users exceeded." desc-id="mstrWeb.3346"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please try again. If the problem persists, contact the Administrator." desc-id="mstrWeb.2556"/>
+    </error>
+
+    <error code="-2147216961" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You do not have access rights to the selected project." desc-id="mstrWeb.463"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147216380" displayError="true" showContactInfo="true" target="login" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The page could not be displayed." desc-id="mstrWeb.14784"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147216953" displayError="true" showContactInfo="true" target="login" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You cannot log in as Windows user." desc-id="mstrWeb.14786"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147205087" displayError="true" showContactInfo="true" target="login" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You cannot log in as Windows user." desc-id="mstrWeb.14786"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147214570" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You do not have the required privilege to open the page." desc-id="mstrWeb.14777"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147072513" displayError="true" showContactInfo="true" target="login" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You have reached the maximum number of password attempts." desc-id="mstrWeb.14787"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147216972" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You are not allowed to change your password." desc-id="mstrWeb.470"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147205282" displayError="true" showContactInfo="true" target="welcome" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The contents of this page could not be displayed because the Intelligence Server is not running. Please contact the Administrator." desc-id="mstrWeb.937"/>
+    </error>
+
+    <error code="-2147352571" displayError="true" showContactInfo="false" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Error when answering the prompt. Please review your answer(s)." desc-id="mstrWeb.899"/>
+    </error>
+
+    <error code="-2147217090" displayError="true" showContactInfo="false" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Error when answering the prompt. Please review your answer(s)." desc-id="mstrWeb.899"/>
+    </error>
+
+    <error code="-2147216992" displayError="true" showContactInfo="false" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Error when answering the prompt. Please review your answer(s)." desc-id="mstrWeb.899"/>
+    </error>
+
+    <error code="-2147206497" displayError="true" showContactInfo="false" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="Your request has timed out. Please try again later." desc-id="mstrWeb.109"/>
+    </error>
+
+    <error code="-2147202391" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The page could not be displayed." desc-id="mstrWeb.14784"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147205473" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The page could not be displayed." desc-id="mstrWeb.14784"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147209053" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You have reached the maximum number of messages per user. Please contact the Administrator." desc-id="mstrWeb.559"/>
+    </error>
+
+    <error code="-2147209164" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The maximum number of jobs per project has been reached. Please contact the Administrator." desc-id="mstrWeb.15806"/>
+    </error>
+    
+    <error code="-2147214579" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="You do not have the required privilege to open the page." desc-id="mstrWeb.14777"/>
+      <message XMLmerge_id="2" desc=" " desc-id=""/>
+      <message XMLmerge_id="3" desc="Please contact your Administrator." desc-id="mstrWeb.456"/>
+    </error>
+
+    <error code="-2147209192" displayError="true" showContactInfo="true" target="" useOriginalMessage="false">
+      <message XMLmerge_id="1" desc="The project is idle now. If the problem persists, please contact your administrator for help." desc-id="mstrWeb.14788"/>
+    </error>
+
+  </errors>

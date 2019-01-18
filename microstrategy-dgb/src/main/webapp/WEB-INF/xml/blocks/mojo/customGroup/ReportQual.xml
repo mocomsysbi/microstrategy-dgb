@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Report Qualification
+-->
+<block name="ReportQual" inherits="ExpNode">
+    <definition>
+        <!-- Report ObjectInfo -->
+        <property name="r" type="Block" />
+    </definition>
+</block>

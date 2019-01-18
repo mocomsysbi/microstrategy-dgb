@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition portion of a Report Writer Unit.
+--> 
+<block name="RWUnitDef" inherits="HasFormats">
+    <definition>
+        <!-- The type of the Unit. For example, 1 == RWUNIT_GROUPBY, 2 == RWUNIT_HEADER, ...
+             See c.m.w.o.rw.EnumRWUnitTypes for details -->
+        <property name="t" type="Integer" />
+        
+
+        <!-- The name of this object -->
+        <property name="n" type="String"/>
+
+        <!-- Map of thresholds, if any.. -->
+        <property name="thresholds" type="Block" />
+        
+        <!-- The tooltip for this object -->
+        <property name="tooltip" type="String" />
+        
+        <!-- Then name of this object -->
+        <property name="n" type="String"/>
+    </definition>
+</block>

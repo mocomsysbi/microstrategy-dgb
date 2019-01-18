@@ -1,0 +1,273 @@
+<shortcut-list-set javascript-file="standardToolbar.js" name="rwStandardToolbarFSM" script-class="mstrStdToolbarImpl" version="1.0">
+  <attributes>
+    <attribute name="dg" value="3"/>
+    <attribute name="or" value="1"/>
+    <attribute name="ors" value="3"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+  <shortcut-list name="save">
+     <attributes>
+       <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Save As" desc-id="mstrWeb.1896" feature-id="save-report;enable-save-report" name="tbSave" type="button">
+      <event XMLmerge_id="1" base-bean="rwframe.rwb" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventRWSaveAs">
+        <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentApplyChangesFirst" value="false"/>
+        <argument base-bean="rwframe.rwb" name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentReportParentFolderID" sys-bean="com.microstrategy.web.beans.RWBean" value="parentID"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="Print" desc-id="mstrWeb.314" feature-id="print;enable-print;web-export-to-pdf"  name="tbPrintOptions" type="button" onclick="microstrategy.getViewerBone().commands.exec('printPDF');return false;">
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list feature-id="show-apply-button" name="Edit3">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Apply" desc-id="mstrWeb.3519" name="tbApply" type="button">
+      <attributes>
+        <attribute name="cmdid" value="apply"/>
+        <attribute name="class" value="disabled"/>
+        <attribute name="disabled" value="true"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="file1" feature-id="dhtml">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut desc="Design" desc-id="mstrWeb.3067" feature-id="dhtml;documents-design-mode;" check-feature-id="check-design-mode" name="tbDesignMode" type="button">
+        <attributes>
+            <attribute name="cmdid" value="rwChangeDesignMode"/>
+            <attribute name="cmdvl" value="1"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Express Mode" desc-id="mstrWeb.11694" feature-id="rw-static-view-mode-available" check-feature-id="rw-static-view-mode;" name="tbStaticViewMode" type="button">
+    	<attributes>
+            <attribute name="cmdid" value="rwCurrentViewMode"/>
+            <attribute name="cmdvl" value="1"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Interactive Mode" desc-id="mstrWeb.14530" feature-id="rw-interactive-view-mode-available" check-feature-id="rw-interactive-view-mode;" name="tbInteractiveViewMode" type="button">
+    	<attributes>
+            <attribute name="cmdid" value="rwCurrentViewMode"/>
+            <attribute name="cmdvl" value="2"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Editable Mode" desc-id="mstrWeb.4691" feature-id="rw-editable-view-mode-available" check-feature-id="rw-editable-view-mode;" name="tbEditableViewMode" type="button">
+    	<attributes>
+            <attribute name="cmdid" value="rwCurrentViewMode"/>
+            <attribute name="cmdvl" value="4"/>
+    	</attributes>
+    </shortcut>
+    <shortcut desc="Flash Mode" desc-id="mstrWeb.14531" feature-id="rw-flash-view-mode-available" enable-feature-id="rw-flash-view-mode-enabled" check-feature-id="rw-flash-view-mode;" name="tbFlashViewMode" type="button">
+    	<attributes>
+            <attribute name="cmdid" value="rwCurrentViewMode"/>
+            <attribute name="cmdvl" value="8"/>
+    	</attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="visualizations" feature-id="visualizations-supported;visualizations-available-for-rw;visualization-enabled">
+    <attributes>
+      <attribute name="ty" value="btng" />
+      <attribute name="nowrap" value="1" />
+    </attributes>
+    <shortcut base-bean="rwframe.rwb" desc="[View: Flash]" desc-id="mstrWeb.14513" feature-id="visualizations-supported;visualization-enabled;visualizations-available-for-rw" name="tbRWFlash" type="button" iframe="false">
+      <attributes>
+        <attribute name="cmdtp" value="2" />
+        <attribute name="cmdid" value="docVisualizationMode" />
+        <attribute name="cmdvl" value="50" />
+        <attribute name="style" value="display: none; visibility: hidden;" /><!-- hidden by default, will be displayed on the client side if needed -->
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rwframe.rwb" desc="Custom Visualizations" desc-id="mstrWeb.4633" feature-id="visualizations-supported;is-doc-visualization-mode" name="tbVisualizations" type="pulldown" iframe="false">
+      <attributes>
+        <attribute name="cmdtp" value="3" />
+        <attribute name="cmdid" value="docSelectedVisualization" />
+        <attribute name="cmdpk" value="docVisualizationsPicker" />
+        <attribute name="style" value="display: none; visibility: hidden;" /><!-- hidden by default, will be displayed on the client side if needed -->
+      </attributes>
+      <shortcut-list feature-id="visualizations-supported" name="docVisualizationsPicker">
+        <attributes>
+          <attribute name="ty" value="pkr" />
+        </attributes>
+        <shortcut desc="[blank]" desc-id="mstrWeb.3522" name="pkrVis1" />
+      </shortcut-list>
+    </shortcut>
+  </shortcut-list><shortcut-list name="file3" feature-id="pdf;enable-pdf;!show-rw-export-options;!document-html-view-mode">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut append-state="true" base-bean="rwframe.rwb" desc="Print" desc-id="mstrWeb.314" feature-id="pdf;enable-pdf;web-export-to-pdf"  name="tbPrintOptions" type="button" onclick="microstrategy.getViewerBone().commands.exec('printPDF');return false;">
+      <attributes>
+        <attribute name="src" feature-id="accessibility" value="tbPrintAcc.gif"/>
+      </attributes>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="Data">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="rwframe.rwb" desc="Refresh" desc-id="mstrWeb.773" feature-id="check-execute-mode;quicklinks-refresh" name="tbRefresh" type="button">
+      <event XMLmerge_id="1" base-bean="rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REPROMPT" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REEXECUTE_FRESH" value="false"/>
+      </event>
+    </shortcut>
+    <shortcut base-bean="rwframe.rwb" desc="[Re-run document]" desc-id="mstrWeb.3758" enable-feature-id="enable-reexecute" feature-id="check-execute-mode;reexecute" name="tbReExecute" type="button">
+      <event XMLmerge_id="1" base-bean="rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REPROMPT" value="false"/>
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REEXECUTE_FRESH" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut append-state="true" base-bean="rwb" desc="Re-prompt" desc-id="mstrWeb.119" enable-feature-id="enable-reprompt" feature-id="reprompt" name="tbReprompt" type="button">
+      <event XMLmerge_id="1" base-bean="rwb" event-id="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_REFRESH">
+        <argument name="com.microstrategy.web.beans.EnumRWBeanEvents.REPORT_WRITER_EVENT_ARGUMENT_REPROMPT" value="true"/>
+      </event>
+    </shortcut>
+    <shortcut base-bean="ncSendNow" desc="Send" desc-id="mstrWeb.2249" enable-feature-id="enable-send-now" feature-id="dhtml;use-immediate-delivery" iframe="true" name="tbSend" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="ncSendNow"/>
+      </event>
+    </shortcut>
+    <shortcut base-bean="subs" desc="Subscribe" desc-id="mstrWeb.2108" enable-feature-id="enable-scheduling" feature-id="scheduling" iframe="true" name="tbScheduled" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventShowBean">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentBean" value="subs"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="export">
+    <attributes>
+      <attribute name="ty" value="btng"/>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+      <shortcut base-bean="rwframe.rwb" desc="[Export]" desc-id="mstrWeb.246" feature-id="dhtml" name="pkrExp" type="combo">
+        <attributes>
+          <attribute name="cmdid" value="export" />
+          <attribute name="cmdtp" value="4" />
+          <attribute name="cmdpk" value="exportPicker" />
+        </attributes>
+        <shortcut-list name="exportPicker">
+            <attributes>
+              <attribute name="ty" value="pkr" />
+            </attributes>
+          <shortcut append-state="true" base-bean="rwframe.rwb" desc="Excel" desc-id="mstrWeb.3958" feature-id="web-export-to-excel;enable-export;" target="mstrExportWindow" name="pkrrwExcel" type="pickeroption">
+            <attributes>
+              <attribute name="target" value="mstrExportWindow"/>
+              <attribute name="execMode" value="4"/>
+              <attribute name="default" value="true"/>
+            </attributes>
+          </shortcut>
+          <shortcut append-state="true" base-bean="rwframe.rwb" desc="PDF" desc-id="mstrWeb.1877" feature-id="web-export-to-pdf;enable-pdf;document-html-view-mode" target="mstrExportWindow" name="pkrrwPDF" type="pickeroption">
+            <attributes>
+              <attribute name="target" value="mstrExportWindow"/>
+              <attribute name="execMode" value="3"/>
+            </attributes>
+          </shortcut>
+          <shortcut append-state="true" base-bean="rwframe.rwb" desc="HTML" desc-id="mstrWeb.3957" feature-id="web-export-to-html;enable-html-export;document-html-view-mode" target="mstrExportWindow" name="pkrrwHTML" type="pickeroption">
+            <attributes>
+              <attribute name="target" value="mstrExportWindow"/>
+              <attribute name="execMode" value="-1"/>
+            </attributes>
+          </shortcut>
+          <shortcut append-state="true" base-bean="rwframe.rwb" desc="Flash" desc-id="mstrWeb.14513" feature-id="web-export-to-flash;enable-flash" name="pkrrwFlash" type="pickeroption">
+            <attributes>
+              <attribute name="target" value="mstrExportWindow"/>
+              <attribute name="execMode" value="7"/>
+            </attributes>         
+          </shortcut>
+        </shortcut-list>
+    </shortcut>
+  </shortcut-list>
+  
+  <shortcut-list name="zoom" feature-id="dhtml;rw-interactive-view-mode-eplus">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+      <attribute name="ty" value="btng"/>
+    </attributes>
+    <shortcut desc="%" name="tbZoom" type="pulldown">
+      <attributes>
+        <attribute name="cmdid" value="zoom"/>
+        <attribute name="cmdtp" value="3"/>
+        <attribute name="cmdpk" value="zoomPicker"/>
+      </attributes>
+      <shortcut-list name="zoomPicker">
+        <attributes>
+          <attribute name="ty" value="pkr"/>
+        </attributes>
+        <shortcut desc="400%" name="zoompkr400">
+          <attributes>
+            <attribute name="id" value="zoompkr400"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="300%" name="zoompkr300">
+          <attributes>
+            <attribute name="id" value="zoompkr300"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="200%" name="zoompkr200">
+          <attributes>
+            <attribute name="id" value="zoompkr200"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="150%" name="zoompkr150">
+          <attributes>
+            <attribute name="id" value="zoompkr150"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="125%" name="zoompkr125">
+          <attributes>
+            <attribute name="id" value="zoompkr125"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="100%" name="zoompkr100">
+          <attributes>
+            <attribute name="id" value="zoompkr100"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="75%" name="zoompkr75">
+          <attributes>
+            <attribute name="id" value="zoompkr75"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="50%" name="zoompkr50">
+          <attributes>
+            <attribute name="id" value="zoompkr50"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="25%" name="zoompkr25">
+          <attributes>
+            <attribute name="id" value="zoompkr25"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="Fit Width" desc-id="mstrWeb.4809" name="zoompkrWidth">
+          <attributes>
+            <attribute name="id" value="zoompkrWidth"/>
+          </attributes>
+        </shortcut>
+        <shortcut desc="Fit Page" desc-id="mstrWeb.4808" name="zoompkrPage">
+          <attributes>
+            <attribute name="id" value="zoompkrPage"/>
+          </attributes>
+        </shortcut>
+      </shortcut-list>
+    </shortcut>
+  </shortcut-list>
+  <shortcut-list name="fullscreen">
+    <attributes>
+      <attribute name="nowrap" value="1"/>
+    </attributes>
+    <shortcut base-bean="rwframe" desc-id="mstrWeb.1898" desc="Browse Parent Folder" feature-id="check-execute-mode;page-full-screen-mode" name="tbBrowseParentFSM" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumFrameEvents.WebEventBrowseParentFolder">
+      </event>
+      <attributes>
+          <attribute name="src" feature-id="accessibility" value="tbReturnAcc.gif"/>
+      </attributes>
+    </shortcut>
+    <shortcut base-bean="rwframe" desc-id="mstrWeb.4665" desc="Restore Normal Screen Mode" feature-id="check-execute-mode;page-full-screen-mode" name="tbNormalMode" type="button">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumPageEvents.WebEventSwitchScreenMode">
+        <argument name="com.microstrategy.web.app.beans.EnumPageEvents.WebEventArgumentScreenMode" value="1"/>
+      </event>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

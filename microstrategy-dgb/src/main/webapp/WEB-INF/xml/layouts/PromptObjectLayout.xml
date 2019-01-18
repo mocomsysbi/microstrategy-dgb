@@ -1,0 +1,32 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:if name="isPromptSummaryEnabled">
+    <mstrlayout:then>
+      <mstrlayout:render name="promptSummaryTitle"/>
+      <mstrlayout:render name="promptSummaryAnswer"/>
+    </mstrlayout:then>
+    <mstrlayout:else>
+      <div class="mstrPanelTitleBar">
+          <mstrlayout:render name="promptTitle"/>
+          <mstrlayout:render name="promptBackToTopAnchor"/>
+      </div>
+      <mstrlayout:render name="promptErrorMessage"/>
+      <mstrlayout:render name="promptMeaning"/>
+      <mstrlayout:render name="promptRestrictions"/>
+      <mstrlayout:if name="areThereAvailableSelections">
+        <mstrlayout:then>
+            <mstrlayout:slot name="s1"/>
+        </mstrlayout:then>
+        <mstrlayout:else>
+          <mstrlayout:render name="promptNoSelectionsAvailable"/>
+        </mstrlayout:else>
+      </mstrlayout:if>
+      	<mstrlayout:if name="isAnswerComplex">
+      	  <mstrlayout:then>
+      	    <mstrlayout:render name="promptDefaultAnswer"/>
+      	  </mstrlayout:then>
+      	</mstrlayout:if>
+      <mstrlayout:render name="promptHiddenInputs"/>
+    </mstrlayout:else>
+  </mstrlayout:if>
+</mstrlayout:layout>

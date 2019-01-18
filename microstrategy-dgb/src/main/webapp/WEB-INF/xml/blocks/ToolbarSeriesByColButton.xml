@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarSeriesByColButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+		<property name="id">tbSerByCol</property>
+		<property name="tooltip">{desc:mstrWeb.3712|Series by Column}</property>
+		<property name="cmdid">seriesByColumn</property>
+		<property name="toolbarHelper/visible">true</property>
+	</assignments>
+</block>

@@ -1,0 +1,21 @@
+<!-- 1. A widget consists of ONE or MORE property elements.
+	 2. Each property element defines a single property (name and type).
+-->
+<!ELEMENT widget (property+)>
+
+<!-- A 'property' has no children: it merely defines the name and type of a property
+     which is a direct child of this Widget.
+-->
+<!ELEMENT property EMPTY >
+
+<!-- 1. A property has a required 'name' attribute which defines the simple name of 
+	 the property.
+	 2. The 'name' attribute must conform to the name of a valid XML element 
+	 (NMTOKEN).
+-->
+<!ATTLIST property name NMTOKEN #REQUIRED>
+
+<!-- 1. A property has a required 'type' attribute which defines what kind of
+	 value may be saved in the property: String, Integer, Boolean, Widget or List.
+-->
+<!ATTLIST property type (String | Integer | Boolean | Widget | List) #REQUIRED>

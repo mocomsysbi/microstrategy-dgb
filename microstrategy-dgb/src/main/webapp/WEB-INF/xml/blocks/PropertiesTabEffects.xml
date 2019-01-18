@@ -1,0 +1,159 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabEffects">
+  <assignments>
+    <property name="title">{desc:mstrWeb.1918|Format} - {desc:mstrWeb.2038|Effects}</property>
+    <property name="modelPath">parent/model/items/13</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Effects.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1000" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4759|3D Border}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/show3dBorders</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1001_RS" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4760|Enable 3D Borders}</property>
+                <property name="valueField">enabled3d</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">!parent/model/isRoundShape</property>
+              </block>
+              <block listElementKey="K1001" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4760|Enable 3D Borders} {desc:mstrWeb.4875|(Flash Only)}</property>
+                <property name="valueField">enabled3d</property>
+                <property name="visibleField">parent/model/isRoundShape</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1002" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4761|Effect:}</property>
+                <property name="modelPath">parent/model/b3dstyle</property>
+                <property name="enabledField">parent/model/enabled3d</property>
+                <property name="popup/height">40px</property>
+              </block>
+              <block listElementKey="K1003" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.3439|Weight:}</property>
+                <property name="valueField">b3dweight</property>
+                <property name="modelPath">parent/model</property>
+                <property name="totalSize">5</property>
+                <property name="maxlength">4</property>
+                <property name="enabledField">model/enabled3d</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="type">1</property>
+                    <property name="min">1</property>
+                    <property name="max">1584</property>
+                  </block>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1004" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4765|Drop Shadows}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1005" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4767|Enable Drop Shadows}</property>
+                <property name="valueField">HasDropShadow</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+              <block listElementKey="K1006" name="Slider">
+                <property name="caption">{desc:mstrWeb.4769|Distance:}</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/HasDropShadow</property>
+                <property name="height">5px;</property>
+                <property name="width">198px;</property>
+                <property name="enableClickJumps">true</property>
+                <property name="cssClass">Slider</property>
+                <property name="thumbCssClass">SliderThumb</property>
+                <property name="tooltipCssClass">SliderTooltip</property>
+                <property name="borderStyle">1px solid #B2B2B2</property>
+                <property name="animationStep">1</property>
+                <property name="showTooltip">true</property>
+                <property name="xField">DropShadow</property>
+                <property name="xMin">1</property>
+                <property name="xMax">20</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1007" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4960|Corners} {desc:mstrWeb.4875|(Flash Only)}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showCorners</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1008" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4877|Use Rounded Corners}</property>
+                <property name="valueField">HasRoundedCorners</property>
+                <property name="modelPath">parent/model</property>
+                <property name="visibleField">!parent/model/isRoundShape</property>
+              </block>
+              <block listElementKey="K1009" name="Slider">
+                <property name="caption">{desc:mstrWeb.4959|Rounded corner radius}:</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/HasRoundedCorners</property>
+                <property name="height">5px;</property>
+                <property name="width">198px;</property>
+                <property name="enableClickJumps">true</property>
+                <property name="cssClass">Slider</property>
+                <property name="thumbCssClass">SliderThumb</property>
+                <property name="tooltipCssClass">SliderTooltip</property>
+                <property name="borderStyle">1px solid #B2B2B2</property>
+                <property name="animationStep">1</property>
+                <property name="showTooltip">true</property>
+                <property name="xField">Radius</property>
+                <property name="xMin">1</property>
+                <property name="xMax">20</property>
+              </block>
+              <block listElementKey="K1010" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.4876|Top Corners Only}</property>
+                <property name="valueField">TopCornersOnly</property>
+                <property name="modelPath">parent/model</property>
+                <property name="enabledField">model/HasRoundedCorners</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="translucentSetting" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.11310|Translucent (iOS only)}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">model/showTranslucent</property>
+          <property name="children">
+            <list>
+              <block listElementKey="pstransparency" name="HTextBox">
+                <property name="caption">{desc:mstrWeb.4715|Transparency:}</property>
+                <property name="captionSuffix">%</property>
+                <property name="modelPath">parent/model</property>
+                <property name="valueField">Transparency</property>
+                <property name="cssText">margin-top:0px;</property>
+                <property name="totalSize">3</property>
+                <property name="maxlength">3</property>
+                <property name="validator">
+                  <block name="FieldValidator">
+                    <property name="required">true</property>
+                    <property name="type">1</property>
+                    <property name="min">0</property>
+                    <property name="max">100</property>
+                  </block>
+                </property>
+              </block>
+              <block listElementKey="enableBlurEffect" name="CheckBox">
+                <property name="caption">{desc:mstrWeb.11311|Enable blur effect}</property>
+                <property name="valueField">Blur</property>
+                <property name="modelPath">parent/model</property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesTabEffects is the "Format - Effects" tab of the properties editor.
+	-->

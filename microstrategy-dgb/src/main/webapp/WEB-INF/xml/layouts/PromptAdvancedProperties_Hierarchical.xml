@@ -1,0 +1,124 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+        <span class="title">*Properties for Hiearchical List style</span>
+        <p/>
+        <table width="70%" cellspacing="2">
+            <tr>
+                <td>
+                    *Font style: &nbsp;
+                    <select name="op_hList_fontStyle" id="op_hList_fontStyle" class="promptDropDown">
+                            <mstrlayout:list id="style" name="getFontStyleList">
+                                <option>
+                                    <mstrlayout:attr name="addOptionAttr">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:attr>
+                                    <mstrlayout:render name="optionText">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:render>
+                                </option>
+                            </mstrlayout:list>          
+                    </select>
+                </td>
+                <td>
+                    Font size:&nbsp;
+                    <select name="op_hList_fontSize" id="op_hList_fontSize" class="promptDropDown">
+                            <mstrlayout:list id="style" name="getFontSizeList">
+                                <option>
+                                    <mstrlayout:attr name="addOptionAttr">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:attr>
+                                    <mstrlayout:render name="optionText">
+                                        <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                    </mstrlayout:render>
+                                </option>
+                            </mstrlayout:list>          
+                    </select>
+                </td>
+            </tr>
+            <mstrlayout:if name="showObjectDescriptionInProperties">
+                <mstrlayout:then>
+                    <tr>
+                        <td>
+                            Object descriptions: 
+                        </td>
+                        <td>
+                            <select name="op_hList_desc_location" id="op_hList_desc_location" class="promptDropDown">
+                                    <mstrlayout:list id="style" name="getDescLocationList">
+                                        <option>
+                                            <mstrlayout:attr name="addOptionAttr">
+                                                <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                            </mstrlayout:attr>
+                                        <mstrlayout:render name="optionText">
+                                            <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                        </mstrlayout:render>
+                                        </option>
+                                    </mstrlayout:list>          
+                            </select>
+                        </td>
+                    </tr>
+                </mstrlayout:then>
+            </mstrlayout:if>
+        <tr>
+            <td>
+                Allow Navigation: 
+            </td>
+            <td>
+                <select name="op_hList_navigation" id="op_hList_navigation" class="promptDropDown">
+                        <mstrlayout:list id="style" name="getNavigationList">
+                            <option>
+                                <mstrlayout:attr name="addOptionAttr">
+                                    <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                                </mstrlayout:attr>
+                            <mstrlayout:render name="optionText">
+                                <mstrlayout:argument list="style"  type="com.microstrategy.web.app.transforms.AbstractPromptEditorTransform$ListItem"/>
+                            </mstrlayout:render>
+                            </option>
+                        </mstrlayout:list>          
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="op_hList_setBrowsingRoot" id="op_hList_setBrowsingRoot"/>
+                <label for="op_hList_setBrowsingRoot"> &nbsp;Set folder browsing root </label>
+            </td>
+            <td>
+                <input type="text" name="op_hList_browsing_root" id="op_hList_browsing_root" value="Public Folder" class="textBoxMedium" />
+                &nbsp;<input type="button" name="op_hList_browing_root_selector" id="op_hList_browing_root_selector" value="..." class="promptBtnInline" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" name="op_hList_showSearch" id="op_hList_showSearch"/> 
+                <label for="op_hList_showSearch"> *Show search box </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" name="op_hList_setCusListSize" id="op_hList_setCusListSize"/> 
+                <label for="op_hList_setCusListSize"> *Custom list size </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;Height&nbsp;
+                <input type="text" name="op_hList_custHeight" id="op_hList_custHeight" value="15" class="textBoxShort"/>
+                &nbsp;inches
+            </td>
+            <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;Width&nbsp;
+                <input type="text" name="op_hList_custWidth" id="op_hList_custWidth" value="15" class="textBoxShort"/>
+                &nbsp;inches
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="p_option_selectLayoutDef" id="p_option_selectLayoutDef_hier"/>
+                <label for="p_option_selectLayoutDef_hier"> &nbsp;Layout definition source </label>
+            </td>
+            <td>
+                <input type="file" name="layoutFile" value="\\was-ewang25\shared\217660.htm" class="textBoxLong"/>
+            </td>
+        </tr>
+    </table>
+</mstrlayout:layout>

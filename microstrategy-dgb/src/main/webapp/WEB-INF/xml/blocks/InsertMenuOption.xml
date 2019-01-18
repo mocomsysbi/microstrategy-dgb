@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="InsertMenuOption" inherits="MenuOption">
+		<assignments>
+			<property name="extraCssClass">mnuInsert</property>
+			<property name="cssClass">MenuOption</property>
+		</assignments>
+	</block>

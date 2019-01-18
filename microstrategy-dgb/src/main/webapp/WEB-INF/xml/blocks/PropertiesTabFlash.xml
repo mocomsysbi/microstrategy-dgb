@@ -1,0 +1,62 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="PropertiesTabFlash">
+  <assignments>
+    <property name="title">{desc:mstrWeb.434|Properties} - {desc:mstrWeb.14513|Flash (deprecated)}</property>
+    <property name="modelPath">parent/model/items/7</property>
+    <property name="width">530px</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="helpTopic">Properties_dialog_Flash.htm</property>
+    <property name="children">
+      <list>
+        <block listElementKey="K1011" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.4921|Widget}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField" type="String">model/isOneGrid</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1012" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.4942|Selected Widget:}</property>
+                <property name="modelPath">parent/model/getDynamicListModel("availableWidgets","setWidget")</property>
+              </block>
+              <block listElementKey="K1013" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5733|DHTML Rendering:}</property>
+                <property name="modelPath">parent/model/setWidgetDhtmlRender</property>
+                <property name="visibleField">parent/model/showWidgetDhtmlRender</property>
+              </block>
+              <block listElementKey="K1014" name="ListPulldown">
+                <property name="horizontalCaption">{desc:mstrWeb.5734|PDF &amp; Excel Rendering:}</property>
+                <property name="modelPath">parent/model/setWidgetRender</property>
+                <property name="enabledField">!parent/model/setWidget/selectedIndices:0</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K1015" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5849|Secondary Data Providers}</property>
+          <property name="modelPath" type="String">parent/model</property>
+          <property name="visibleField">parent/model/showSecondaryDataProviders</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K1016" name="SimpleListCart">
+                <property name="visibleField">parent/model/showSecondaryDataProviders</property>
+                <property name="modelPath">parent/model/getDynamicCartModel("availableSecondaryDataProviders","SecondaryDataProviders")</property>
+                <property name="showMoveButtons">false</property>
+                <property name="upButton/visible">true</property>
+				<property name="downButton/visible">true</property>
+                <property name="availableView/height">110px</property>
+                <property name="availableView/width">200px</property>
+                <property name="selectedView/height">110px</property>
+                <property name="selectedView/width">200px</property>
+              </block>
+            </list>
+          </property>
+        </block>
+        
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		PropertiesTabFlash is the "Properties - Flash" tab of the properties editor.
+	-->

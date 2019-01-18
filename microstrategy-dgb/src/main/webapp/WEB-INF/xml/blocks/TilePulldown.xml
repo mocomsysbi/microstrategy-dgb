@@ -1,0 +1,24 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ListPulldown is a rich pulldown which pops open a ListView. Typically the popup
+		 shares the same model (a ListModel) as the ListPulldown.  -->
+	<block name="TilePulldown" inherits="ListPulldown">
+		<assignments>
+			<property name="popup">
+				<block name="FastTileView">
+					<property name="itemCSSPrefix">TileViewItem</property>
+					<property name="visible">false</property>
+					<property name="showItemsDuringRequest">true</property>
+					<property name="initialListItemRenderCount">12</property>
+					<property name="modelPath">parent/model</property>
+					<property name="multiSelect">false</property>
+					<property name="cmds">!ClickListItem;Unpop;FireCommands||opener</property>
+					<property name="CommandEnabledUnpop" type="Boolean">true</property>
+					<property name="allowBrowseFolder">false</property>
+					<property name="allowBrowseAttribute">false</property>
+					<property name="allowBrowseHierarchy">false</property>
+					<property name="popOrientation">1</property>	<!-- Indicates that this popup is vertically oriented. -->
+				    <property name="itemsPerRow">4</property>
+				</block>
+			</property>
+		</assignments>
+	</block>

@@ -1,0 +1,37 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwHomeExportMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1641" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3958|Excel}</property>
+          <property name="cmdid">exportExcel</property>
+          <property name="visibleFeatures">web-export-to-excel;enable-export</property>
+          <property name="extraCssClass">mnuExport</property>
+          <property name="htmlId">mnuExcel</property>
+        </block>
+        <block listElementKey="K1642" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.3957|HTML}</property>
+          <property name="cmdid">exportHtml</property>
+          <property name="visibleFeatures">web-export-to-html;enable-html-export</property>
+          <property name="extraCssClass">mnuExport</property>
+          <property name="htmlId">mnuHTML</property>
+        </block>
+        <block listElementKey="K1643" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.1877|PDF}</property>
+          <property name="cmdid">printPDF</property>
+          <property name="visibleFeatures">web-export-to-pdf;enable-pdf</property>
+          <property name="extraCssClass">mnuExport</property>
+          <property name="htmlId">mnuPDF</property>
+        </block>
+        <block listElementKey="K1644" name="MenuControlModel">
+          <property name="text">{desc:mstrWeb.14513|Flash}</property>
+          <property name="cmdid">exportFlash</property>
+          <property name="visibleFeatures">rw-flash-view-mode-enabled;web-export-to-flash;enable-flash</property>
+          <property name="extraCssClass">mnuExport</property>
+          <property name="htmlId">mnuFlash</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

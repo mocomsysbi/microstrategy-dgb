@@ -1,0 +1,37 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:if name="isListEmpty">
+        <mstrlayout:else>
+            <div class="mstrPanelPortrait">
+                <div class="mstrPanelTitleBar mstrPageByTitleBar">
+                    <span class="mstrPanelTitle">
+                        <mstrlayout:render name="EditorTitle" />
+                    </span>
+                </div>
+                <div class="mstrPanelTitleBar-inlineBody">
+                    <mstrlayout:attr name="getAttributesBody" />
+                    <mstrlayout:list id="units" name="getUnits" base="bean">
+                        <span class="pgby">
+                            <mstrlayout:attr name="getAttributesUnit">
+                                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+                            </mstrlayout:attr>
+                            <mstrlayout:render name="SortButtons">
+                                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+                            </mstrlayout:render>
+                            <mstrlayout:render name="Alias">
+                                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+                            </mstrlayout:render>
+                            <mstrlayout:render name="SelectedElementLabel">
+                                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+                            </mstrlayout:render>
+                            <mstrlayout:render name="PivotButtons">
+                                <mstrlayout:argument list="units" type="com.microstrategy.web.app.beans.PageByUnit" />
+                            </mstrlayout:render>
+                        </span>
+                    </mstrlayout:list>
+                    <mstrlayout:render name="SubmitButton" />
+                </div>
+            </div>
+        </mstrlayout:else>
+    </mstrlayout:if>
+</mstrlayout:layout>

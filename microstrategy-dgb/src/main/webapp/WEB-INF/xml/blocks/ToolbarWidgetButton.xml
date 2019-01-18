@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarWidgetButton" inherits="ToolbarDualStateButtonModel">
+	<assignments>
+        <property name="id">tbFlashMode</property>
+        <property name="cmdid">visFlashMode</property>
+	</assignments>
+</block>

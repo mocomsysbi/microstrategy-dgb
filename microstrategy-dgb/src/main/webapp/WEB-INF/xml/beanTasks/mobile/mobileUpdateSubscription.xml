@@ -1,0 +1,12 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MobileUpdateSubscriptionTask">
+	<basicInfo desc="This task performs the editing of a subscription from the mobile device.">
+		<parameter name="events" desc="the event string" required="true" />
+		<parameter name="beanName" desc="the bean name" required="true" />
+		<!-- Set the default mobile client type as BlackBerry for compatibility -->
+		<parameter name="mobileClientType" desc="the client type for mobile subscriptions" required="false" defvalue="1" />
+	</basicInfo>
+	<eventInfo eventID="1024001" />
+	<beanInfo name="sb" bean-type="SubscriptionBean">
+	</beanInfo>
+</beanTask>

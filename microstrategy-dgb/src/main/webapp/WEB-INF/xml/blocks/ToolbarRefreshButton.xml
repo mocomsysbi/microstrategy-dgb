@@ -1,0 +1,8 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarRefreshButton" inherits="ToolbarButtonModel">
+	<assignments>
+        <property name="id">tbRefresh</property>
+        <property name="tooltip">{desc:mstrWeb.773|Refresh}</property>
+        <property name="cmdid">refresh</property>
+	</assignments>
+</block>

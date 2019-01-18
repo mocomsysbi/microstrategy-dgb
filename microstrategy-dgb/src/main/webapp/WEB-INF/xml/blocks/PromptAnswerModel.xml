@@ -1,0 +1,125 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		PromptAnswerModel is the base Block that represents a generic response 
+		to a PromptQuestionModel.  It contains properties which can define and 
+		restrict the answer, such as "required" and "isComplex".  
+		An answer is said to be either "simple" or "complex".  If an answer is complex, 
+		its value is described by the "complexString" property.  If the answer is not complex, 
+		its value is defined by some other property, whose structure depends on the type of the PromptQuestionModel.
+		Those structures are defined in the subclasses of PromptAnswerModel (see subsequent Blocks below).
+		-->
+	<block name="PromptAnswerModel" inherits="BaseModel">
+		<definition>
+			<!-- If true, an answer is required. -->
+			<property name="required" type="Boolean" />
+			
+			<!-- If true, indicates answer value is complex. Assumed false by default. -->
+			<property name="isComplex" type="Boolean" />
+
+			<!-- If "isComplex" = true, "complexString" contains the display string for the complex answer. -->
+			<property name="complexString" type="String" />
+
+			<!-- Optional error message or warning.  Typically used for validating user responses. -->
+			<property name="message" type="String" />
+			<property name="validationStatus" type="Block"/>
+
+			<!-- Generic lookup of additional properties provided by server for this PromptAnswerModel.
+				 This can be used as a convenient repository for application-specific data, if needed. -->
+			<property name="extendedProperties" type="Block" />
+			<!-- if this answer is a named answer, this is its info -->
+			<property name="container" type="Block"/>
+			<property name="CommandEnabledRename" type="Boolean"/>
+			
+			<property name="descriptors" type="Block" />
+			
+			<!-- The following properties below are used by PromptAnswers that may include dates/times,
+			     such as ConstantPromptAnswer models and ExpressionPromptAnswer models.  These were
+			     previously nested into a child block under the "calendar" property, but that property
+				 has been removed and these properties have moved up the block tree.
+			     -->
+
+			<!-- Useful for views who wish to drive their display from a model-given format string. -->
+			<property name="timeFormat" type="String" />
+
+			<!-- Useful for views who wish to drive their display from a model-given format string. -->
+			<property name="dateFormat" type="String" />		
+
+		    <!-- the starting year for 21th century. -->
+		    <property name="TwoDigitStart" type="Integer"/>
+		    
+		    <!-- 1 = Week starts on Sunday. -->
+		    <property name="firstDayOfWeek" type="Integer" /> 
+
+		    <!-- Descriptors for months. -->  
+		    <property name="monthDescs" type="Block" />
+		    
+		    <!-- Descriptors for days. -->
+		    <property name="dayDescs" type="Block" /> 
+			
+			<!-- Descriptors for AM, PM. --> 	
+		    <property name="timeDescs" type="Block" />													
+		</definition>
+		<assignments>
+			<property name="CommandEnabledRename">true</property>
+			<property name="validationStatus">
+					<block name="BaseBlock">
+						<property name="statusCode" type="Integer">0</property> <!-- default to mstr.Enum.Validation.STATUSCODE.VALID -->
+					</block>
+			</property>
+			<property name="descriptors">
+				<block name="BaseBlock">
+					<property name="truncatedWarning" type="String">{desc:mstrWeb.7946|The number of elements to import is larger than the maximum number permitted for this project. The imported list will be truncated to ## elements. Click OK to import the truncated element list.}</property>
+					<property name="minLengthWarning" type="String">{desc:mstrWeb.5710|You have entered a value that is shorter than the one allowed for this prompt. Please enter a longer value.}</property>
+					<property name="maxLengthWarning" type="String">{desc:mstrWeb.5711|You have entered a value that is longer than the one allowed for this prompt. Please enter a shorter value.}</property>
+					<property name="minValueWarning" type="String">{desc:mstrWeb.5712|You have entered a value that is less than the one allowed for this prompt. Please enter a greater value.}</property>
+					<property name="maxValueWarning" type="String">{desc:mstrWeb.5713|You have entered a value that is greater than the one allowed for this prompt. Please enter a lesser value.}</property>
+					<property name="minCountWarning" type="String">{desc:mstrWeb.5714|You have made fewer selections than are required for this prompt. Please make more selections.}</property>
+					<property name="maxCountWarning" type="String">{desc:mstrWeb.5715|You have made more selections than are allowed for this prompt.  Please remove some selections.}</property>
+					<property name="requiredWarning" type="String">{desc:mstrWeb.5716|This prompt requires an answer.}</property>
+					<property name="dataTypeWarning" type="String">{desc:mstrWeb.5717|You have an entered an invalid answer.  Please enter a value of the correct data type.}</property>
+					<property name="noPersonalAnswerNameWarning" type="String">{desc:mstrWeb.5718|Personal answers require a name.}</property>
+					<property name="incompleteCondition" type="String">{desc:mstrWeb.5916|The condition for your answer is not completed.}</property>
+					<property name="invalidPersonalAnswerNameWarning" type="String">{desc:mstrWeb.5917|You have entered an invalid personal answer name. It cannot contain any of the following characters: "\", """, "[" and "]".}</property>
+				</block>
+			</property>
+
+			<property name="timeFormat">hh:mm:ss</property>		 
+		    <property name="dateFormat">mm/dd/yyyy</property>
+		    <property name="TwoDigitStart">2029</property>
+		    <property name="firstDayOfWeek">1</property>
+			<property name="timeDescs">
+                <block name="BaseBlock">
+                    <property name="0" type="String">{desc:mstrWeb.5987|AM}</property>
+                    <property name="1" type="String">{desc:mstrWeb.5988|PM}</property>
+                </block>
+            </property>  		    
+			<property name="monthDescs">
+				<block name="BaseBlock">
+					<property name="0" type="String">{desc:mstrWeb.3852|Jan}</property>
+					<property name="1" type="String">{desc:mstrWeb.3853|Feb}</property>
+					<property name="2" type="String">{desc:mstrWeb.3854|Mar}</property>		
+					<property name="3" type="String">{desc:mstrWeb.3855|Apr}</property>	
+					<property name="4" type="String">{desc:mstrWeb.3856|May}</property>	
+					<property name="5" type="String">{desc:mstrWeb.3857|Jun}</property>	
+					<property name="6" type="String">{desc:mstrWeb.3858|Jul}</property>	
+					<property name="7" type="String">{desc:mstrWeb.3859|Aug}</property>	
+					<property name="8" type="String">{desc:mstrWeb.3860|Sep}</property>	
+					<property name="9" type="String">{desc:mstrWeb.3861|Oct}</property>
+					<property name="10" type="String">{desc:mstrWeb.3862|Nov}</property>
+					<property name="11" type="String">{desc:mstrWeb.3863|Dec}</property>																																											
+				</block>
+			</property>
+			<property name="dayDescs">
+                <block name="BaseBlock">
+                    <property name="0" type="String">{desc:mstrWeb.1968|S}</property>
+                    <property name="1" type="String">{desc:mstrWeb.1969|M}</property>
+                    <property name="2" type="String">{desc:mstrWeb.1970|T}</property>     
+                    <property name="3" type="String">{desc:mstrWeb.1971|W}</property> 
+                    <property name="4" type="String">{desc:mstrWeb.1972|T}</property> 
+                    <property name="5" type="String">{desc:mstrWeb.1973|F}</property> 
+                    <property name="6" type="String">{desc:mstrWeb.1974|S}</property>
+                    <property name="7" type="String">{desc:mstrWeb.1968|S}</property> 
+                </block>
+            </property>  		    
+		</assignments>
+	</block>

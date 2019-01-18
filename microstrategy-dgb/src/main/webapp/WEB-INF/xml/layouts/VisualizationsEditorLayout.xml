@@ -1,0 +1,9 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:render name="visualizationsEnabled"/>
+	<mstrlayout:render name="cart"/>
+	<mstrlayout:render name="setVisualizationMode"/>
+	<mstrlayout:render name="secondaryDataSources"/>
+	<mstrlayout:render name="visPropsEditorButton"/>
+	<mstrlayout:render name="MobileOptions"/>
+</mstrlayout:layout>

@@ -1,0 +1,274 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:if name="isValidGrid">
+		<mstrlayout:then>		
+    	<![CDATA[
+        <style type="text/css">
+            .t {
+                width:100%;
+                padding:2px 2px 2px 10px;
+            }   
+            .b {
+                text-align:left;
+                padding-right:10px; 
+            }
+            .b select{
+            	width: 100%; 
+            }
+            .c {
+                text-align:left;
+                padding-right:10px; 
+            }
+            .c select{
+            	width: 80%; 
+            }
+            .leftpadding {	
+            	padding-left: 9px;
+            	width: 121px; 
+            }
+            .leftCheckbox {
+            	padding-left: 4px; 
+            }
+            .p {
+            	max-width:225px; 
+            	display: inline-block; 
+            }
+            .b input {
+				height:14px;
+			}
+            .h {
+                background: black; 
+                color: white;
+                text-align:left;
+                padding-left:5px; 
+            }
+        </style>
+     	]]>
+			<table class="t" id="iphone-table">
+				<tr>
+					<td colspan="2">
+						<mstrlayout:render name="MarkerTypeRadio"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div id="marker">
+							<fieldset>
+								<legend>
+									&nbsp;
+									<mstrlayout:render name="descriptor">
+										<mstrlayout:argument type="string" value="mstrWeb.4965" /> <!-- Descriptor: Flash Only: -->
+									</mstrlayout:render>&nbsp;
+								</legend>
+								<table>
+									<tr>
+										<td class="leftpadding">
+											<mstrlayout:render name="descriptor">
+												<mstrlayout:argument type="string" value="mstrWeb.8011" /> <!-- Descriptor: Band 1 -->
+											</mstrlayout:render>
+										</td>
+										<td class="b">
+											<mstrlayout:render name="Textbox">
+												<mstrlayout:argument type="String" value="ib1" /> <!-- Property Name -->
+												<mstrlayout:argument type="String" value="" /> <!--  extra attributes -->
+												<mstrlayout:argument type="String" value="images/quickThresholdImgs/balloonpp_red.png" /> <!--  default value -->
+											</mstrlayout:render>
+										</td>
+									</tr>
+									<tr>
+										<td class="leftpadding">
+											<mstrlayout:render name="descriptor">
+												<mstrlayout:argument type="string" value="mstrWeb.8012" /> <!-- Descriptor: Band 2 -->
+											</mstrlayout:render>
+										</td>
+										<td class="b">
+											<mstrlayout:render name="Textbox">
+												<mstrlayout:argument type="String" value="ib2" /> <!-- Property Name -->
+												<mstrlayout:argument type="String" value="" /> <!--  extra attributes -->
+												<mstrlayout:argument type="String" value="images/quickThresholdImgs/balloonpp_yellow.png" /> <!--  default value -->
+											</mstrlayout:render>
+										</td>
+									</tr>
+									<tr>
+										<td class="leftpadding">
+											<mstrlayout:render name="descriptor">
+												<mstrlayout:argument type="string" value="mstrWeb.8013" /> <!-- Descriptor: Band 3 -->
+											</mstrlayout:render>
+										</td>
+										<td class="b">
+											<mstrlayout:render name="Textbox">
+												<mstrlayout:argument type="String" value="ib3" /> <!-- Property Name -->
+												<mstrlayout:argument type="String" value="" /> <!--  extra attributes -->
+												<mstrlayout:argument type="String" value="images/quickThresholdImgs/balloonpp_green.png" /> <!--  default value -->
+											</mstrlayout:render>
+										</td>
+									</tr>
+								</table>
+							</fieldset>				
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div id="bubble">
+							<fieldset>
+								<legend>
+									&nbsp;<mstrlayout:render name="descriptor">
+										<mstrlayout:argument type="string" value="mstrWeb.4965" /> <!-- Descriptor: Flash Only: -->
+									</mstrlayout:render>&nbsp;
+								</legend>
+								<table>
+									<tr>
+										<td class="leftpadding">
+											<mstrlayout:render name="descriptor">
+												<mstrlayout:argument type="string" value="mstrWeb.8011" /> <!-- Descriptor: Band 1 -->
+											</mstrlayout:render>
+										</td>
+										<td class="b">
+											<mstrlayout:render name="ColorPicker">
+												<mstrlayout:argument type="String" value="bc1" /> <!-- Property Name -->
+												<mstrlayout:argument type="String" value="#FF0000" /> <!--  default value -->
+											</mstrlayout:render>
+										</td>
+									</tr>
+									<tr>
+										<td class="leftpadding">
+											<mstrlayout:render name="descriptor">
+												<mstrlayout:argument type="string" value="mstrWeb.8012" /> <!-- Descriptor: Band 2 -->
+											</mstrlayout:render>
+										</td>
+										<td class="b">
+											<mstrlayout:render name="ColorPicker">
+												<mstrlayout:argument type="String" value="bc2" /> <!-- Property Name -->
+												<mstrlayout:argument type="String" value="#FFFF00" /> <!--  default value -->
+											</mstrlayout:render>
+										</td>
+									</tr>
+									<tr>
+										<td class="leftpadding">
+											<mstrlayout:render name="descriptor">
+												<mstrlayout:argument type="string" value="mstrWeb.8013" /> <!-- Descriptor: Band 3 -->
+											</mstrlayout:render>
+										</td>
+										<td class="b">
+											<mstrlayout:render name="ColorPicker">
+												<mstrlayout:argument type="String" value="bc3" /> <!-- Property Name -->
+												<mstrlayout:argument type="String" value="#00FF00" /> <!--  default value -->
+											</mstrlayout:render>
+										</td>
+									</tr>
+								</table>
+							</fieldset>
+						</div>
+					</td>
+				</tr>
+				<mstrlayout:if name="isRW">
+					<mstrlayout:then>
+						<tr>
+							<td colspan="2">
+								<fieldset>
+									<legend>
+										&nbsp;
+										<mstrlayout:render name="descriptor">
+											<mstrlayout:argument type="string" value="mstrWeb.8319" /> <!-- Descriptor: Mobile Only: -->
+										</mstrlayout:render>
+										&nbsp;
+									</legend>
+									<mstrlayout:if name="hasSecondaryDataProvider">
+										<mstrlayout:then>
+											<div class="h">
+												<mstrlayout:render name="descriptor">
+													<mstrlayout:argument type="string" value="mstrWeb.8050" /> <!-- Descriptor: Affinity Configuration -->
+												</mstrlayout:render>
+											</div>
+											<table>
+												<tr>
+													<td class="leftpadding">
+														<mstrlayout:render name="descriptor">
+															<mstrlayout:argument type="string"
+																value="mstrWeb.8320" /> <!-- Descriptor: Line Thickness Metric: -->
+														</mstrlayout:render>
+													</td>
+													<td>
+														<mstrlayout:render name="MetricsPulldown">
+															<mstrlayout:argument type="String" value="mlt" /> <!-- Property Name -->
+															<mstrlayout:argument type="String" value="2" /> <!--  default index -->
+														</mstrlayout:render>
+													</td>
+												</tr>
+												<tr>
+													<td class="leftpadding">
+														<mstrlayout:render name="descriptor">
+															<mstrlayout:argument type="string" value="mstrWeb.8321" /> <!-- Descriptor: Line Color Metric:  -->
+														</mstrlayout:render>
+													</td>
+													<td>
+														<mstrlayout:render name="MetricsPulldown">
+															<mstrlayout:argument type="String" value="mlc" /> <!-- Property Name -->
+															<mstrlayout:argument type="String" value="1" /> <!--  default index -->
+														</mstrlayout:render>
+													</td>
+												</tr>
+											</table>
+										</mstrlayout:then>
+										<mstrlayout:else>
+											<mstrlayout:render name="descriptor">
+												<mstrlayout:argument type="string" value="mstrWeb.8103" /> <!-- Descriptor: To use Affinity Configuration you must have Secondary Data Provider set -->
+											</mstrlayout:render>
+										</mstrlayout:else>
+									</mstrlayout:if>
+								</fieldset>
+							</td>
+						</tr>
+			
+					</mstrlayout:then>
+				</mstrlayout:if>       
+							
+				<tr>
+					<td colspan="2" class="leftCheckbox">
+						<mstrlayout:render name="checkbox">
+							<mstrlayout:argument type="String" value="ut" />
+						</mstrlayout:render>
+						<span>
+							<mstrlayout:render name="descriptor">
+								<mstrlayout:argument type="string" value="mstrWeb.8016" /> <!-- Descriptor: Use Metric Threshold -->
+							</mstrlayout:render>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="leftpadding">
+						<mstrlayout:render name="descriptor">
+							<mstrlayout:argument type="string" value="mstrWeb.8014" /> <!-- Descriptor: Image Map -->
+	        			</mstrlayout:render>
+					</td>
+					<td class="c">
+						<div class="p">
+							<mstrlayout:render name="Textbox">
+								<mstrlayout:argument type="String" value="mf" /> <!-- Property Name -->
+								<mstrlayout:argument type="String" value="" /> <!--  extra attributes -->
+								<mstrlayout:argument type="String" value="VisFramework/map/USAMarkerMapCoords.html" /> <!--  default value -->
+							</mstrlayout:render>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="leftpadding">
+						<mstrlayout:render name="descriptor">
+							<mstrlayout:argument type="string" value="mstrWeb.8015" /> <!-- Descriptor: Background Color -->
+	        			</mstrlayout:render>
+					</td>
+					<td class="b">
+						<mstrlayout:render name="ColorPicker">
+							<mstrlayout:argument type="String" value="bc" /> <!-- Property Name -->
+							<mstrlayout:argument type="String" value="#FFFFFF" /> <!--  default value -->
+						</mstrlayout:render>
+					</td>
+				</tr>
+			</table>
+		</mstrlayout:then>
+		<mstrlayout:else>
+			<mstrlayout:render name="ValidationError" />
+		</mstrlayout:else>
+	</mstrlayout:if>
+</mstrlayout:layout>

@@ -1,0 +1,12 @@
+<shortcut-list-set name="rw-menus" version="1.0">
+  <shortcut-list desc="[File]" desc-id="mstrWeb.489" name="file" use-default="false">
+    <shortcut append-state="true" desc="[Save]" desc-id="mstrWeb.118" feature-id="" href="#" iframe="true" name="document1">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumEditableObjectAppBeanEvents.WebEventEditableObjectSave">
+      </event>
+    </shortcut>
+    <shortcut append-state="true" desc="[Save As]" desc-id="mstrWeb.1896" feature-id="" href="#" iframe="true" name="document2">
+      <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumEditableObjectAppBeanEvents.WebEventEditableObjectOpenSaveAs">
+      </event>
+    </shortcut>
+  </shortcut-list>
+</shortcut-list-set>

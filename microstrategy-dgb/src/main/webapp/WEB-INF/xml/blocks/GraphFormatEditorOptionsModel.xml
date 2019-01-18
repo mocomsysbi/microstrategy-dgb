@@ -1,0 +1,114 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="TabModel" name="GraphFormatEditorOptionsModel">
+  <definition>
+    <property name="gaugeStyle" type="Block"/>
+    <property name="gaugeBorderStyle" type="Block"/>
+    <property name="gaugeNeedleStyle" type="Block"/>
+    <property name="gaugeBorderThick" type="Integer"/>
+    <property name="gaugeRangeThick" type="Integer"/>
+    <property name="gaugeStartAngle" type="Integer"/>
+    <property name="gaugeStopAngle" type="Integer"/>
+  </definition>
+  <assignments>
+    <property name="tabId">Options</property>
+    <property name="titleText">{desc:mstrWeb.1146|Options}</property>
+    <property name="categoryText">{desc:mstrWeb.3899|Format}</property>
+    <property name="scriptClass">mstr.models.GraphOptionsTabModel</property>    
+    <property name="storeFields">gaugeStyle|gaugeNeedleStyle|gaugeBorderStyle|gaugeBorderThick|gaugeRangeThick|gaugeStartAngle|gaugeStopAngle</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="visibleField">opt_visible</property>
+    <property name="gaugeStyle">
+      <block name="ListModel">
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1983" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4995|Old}</property>
+            </block>
+            <block listElementKey="K1984" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.4996|New}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="gaugeNeedleStyle">
+      <block name="ListModel">
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1985" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4860|Simple}</property>
+            </block>
+            <block listElementKey="K1986" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4932|Simple With Extended Base}</property>
+            </block>
+            <block listElementKey="K1987" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.4933|Steeple}</property>
+            </block>
+            <block listElementKey="K1988" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">{desc:mstrWeb.4862|Rectangular}</property>
+            </block>
+            <block listElementKey="K1989" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.4863|Thin}</property>
+            </block>
+            <block listElementKey="K1990" name="ItemInfo">
+              <property name="dssid">7</property>
+              <property name="n">{desc:mstrWeb.4934|Thin With Extended Base}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="gaugeBorderStyle">
+      <block name="ListModel">
+        <property name="selectedIndicesList">0</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1991" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.4853|None}</property>
+            </block>
+            <block listElementKey="K1992" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.4854|Simple Circle}</property>
+            </block>
+            <block listElementKey="K1993" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.4855|3D Circle}</property>
+            </block>
+            <block listElementKey="K1994" name="ItemInfo">
+              <property name="dssid">3</property>
+              <property name="n">{desc:mstrWeb.4856|Embossed}</property>
+            </block>
+            <block listElementKey="K1995" name="ItemInfo">
+              <property name="dssid">4</property>
+              <property name="n">{desc:mstrWeb.4857|3D Donut}</property>
+            </block>
+            <block listElementKey="K1996" name="ItemInfo">
+              <property name="dssid">5</property>
+              <property name="n">{desc:mstrWeb.4858|Metallic}</property>
+            </block>
+            <block listElementKey="K1997" name="ItemInfo">
+              <property name="dssid">6</property>
+              <property name="n">{desc:mstrWeb.4859|Clipped}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="gaugeBorderThick">5</property>
+    <property name="gaugeRangeThick">5</property>
+    <property name="gaugeStartAngle">0</property>
+    <property name="gaugeStopAngle">180</property>
+  </assignments>
+</block>
+<!-- This is the model used for the 'Options' tab of the Graph Format editor. -->

@@ -1,0 +1,47 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- 
+		ExpressionEditor is a view on an ExpressionModel for editing the tree of that model.
+	-->
+	<block name="ExpressionEditor" inherits="BaseView">
+		<definition>
+			<!-- The text to display above the TreeView. -->
+			<property name="caption" type="String" />
+
+			<!-- Optional CSS specification of height for the scroll area of the tree view. -->
+			<property name="height" type="String" />
+
+			<!-- Optional CSS specification of width for the scroll area of the tree view. -->
+			<property name="width" type="String" />
+
+			<!-- If true, checkboxes are shown; if false, radio buttons. -->
+			<property name="multiSelect" type="Boolean" />
+
+			<!-- Fqcn of the object to use for rendering tree nodes. -->
+			<property name="itemRendererClass" type="String" />
+
+			<!-- Optional prefix name of the CSS class for rendering tree node items.  -->
+			<property name="itemCSSPrefix" type="String" />
+
+			<!-- Optional flag; if true, hides the display of form names in attribute qualifications. -->
+			<property name="showForms" type="Boolean" />
+
+			<!-- Optional flag; if true, shows the dimensionality in Metric Qualifications.  False by default. -->
+			<property name="showMetricLevel" type="Boolean" />
+			
+			<!-- Optional flag; if true, expression text is not hyperlinked. False by default. -->
+			<property name="readOnly" type="Boolean" />
+			
+			<!-- Optional setting to limit the number of elements displayed in an Attribute Element selection. 
+				 Unlimited by default. -->
+			<property name="maxElementsDisplay" type="Integer" />
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.views.ExpressionEditor</property>
+			<property name="layoutClass">mstr.layouts.ExpressionEditor</property>
+			<property name="itemRendererClass">mstr.itemrenderers.ExpressionEditor</property>
+			<property name="cssClass">ExprEditor</property>
+			<property name="height">150px</property>
+			<property name="cmds">ClickExprNode;EditExprNode</property>
+			<property name="popupPolicy">toggle</property>
+		</assignments>
+	</block>

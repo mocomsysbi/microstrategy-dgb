@@ -1,0 +1,937 @@
+<framework desc="This is the framework defintion xml for mstr Web application" name="mstrFramework" version="1.0">
+  <browser-settings config-src="/WEB-INF/xml/config/browserSettings.xml"/>
+  <errors config-src="/WEB-INF/xml/config/errors.xml"/>
+  <toolbars>
+    <shortcut-list-set config-src="/WEB-INF/xml/config/userMgrToolbar.xml" name="userMgrToolbar"/>
+    <shortcut-list-set config-src="/WEB-INF/xml/config/srToolbar.xml" name="srToolbar"/>
+  </toolbars>
+  <folder-links config-src="/WEB-INF/xml/config/folderLinks.xml"/>
+  <menus>
+  </menus>
+  <pages>
+    <page default="true" login-required="true" name="-1">
+      <templates>
+        <template XMLmerge_id="1" error-desc="An error has occurred on this page." error-title-id="mstrWeb.1167" file-name="/jsp/mstrWeb.jsp">
+          <page-sections use-default="false">
+            <page-section file-name="/jsp/serverAdmin/Server_ShortcutsBar.jsp" name="header"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Generic_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/Empty.jsp" name="dockTop"/>
+            <page-section file-name="/jsp/Empty.jsp" name="dockLeft"/>
+            <page-section file-name="/jsp/Empty.jsp" name="dockRight"/>
+            <page-section file-name="/jsp/Empty.jsp" name="dockBottom"/>
+            <page-section file-name="/jsp/Generic_Error.jsp" name="error"/>
+            <page-section file-name="/jsp/Generic_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/Empty.jsp" name="footer"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Links.jsp" name="links"/>
+            <page-section file-name="/jsp/ServerAdminPathOptions.jsp" name="path_options"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="false">
+              <shortcut desc-id="mstrWeb.4017" desc="[User Manager]" feature-id="access-to-user-manager" iframe="false" name="um">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenTopLevelUserGroups"/>
+              </shortcut>
+              <shortcut desc-id="mstrWeb.5746" desc="Security Role Manager" feature-id="access-to-security-role-manager" iframe="false" name="srt">
+                  <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenSecurityRolesFolder">
+                      <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSearchString" value="*"/>
+                    <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentObjectType" value="44"/>
+                    <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentSearchDomain" value="3"/>
+                  </event>
+              </shortcut>
+            </shortcut-list>
+          </shortcut-list-set>
+        </template>
+        <template XMLmerge_id="2" error-desc="" error-title-id="mstrWeb.1167" file-name="/jsp/Wait.jsp" status="com.microstrategy.web.beans.EnumRequestStatus.WebBeanRequestProcessing">
+          <page-sections use-default="false">
+            <page-section file-name="/jsp/serverAdmin/Server_ShortcutsBar.jsp" name="header"/>
+            <page-section file-name="/jsp/Generic_Error.jsp" name="error"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Generic_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/Wait_Links.jsp" name="links"/>
+          </page-sections>
+          <shortcut-list-set name="default">
+            <shortcut-list name="toolbar" use-default="false">
+              <shortcut desc="User Manager" feature-id="access-to-user-manager" iframe="false" name="um">
+                <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenTopLevelUserGroups"/>
+              </shortcut>
+            </shortcut-list>
+          </shortcut-list-set>
+        </template>
+      </templates>
+      <web-beans>
+      	<web-bean name="pathBean" persist-mode="1" sys-bean="PathBean"/>
+      	<web-bean name="ssb" persist-mode="2" sys-bean="SearchBean">
+          <init-properties>
+            <property name="maxWait" source="const" type="int" value="2000"/>
+            <property name="pollingFrequency" source="const" type="int" value="100"/>
+          </init-properties>
+          <request-properties>
+            <property name="folderID" source="request" type="string" value="folderId"/>
+            <property name="folderType" source="request" type="int" value="folderType"/>
+            <property name="namePattern" source="request" type="string" value="name"/>
+            <property name="types" source="const" type="string" feature-id="access-to-user-manager" value="8704,8705"/>
+            <property name="types" source="const" type="string" feature-id="!access-to-user-manager;access-to-security-role-manager" value="44"/>
+            <property name="domain" source="enum" type="int" value="com.microstrategy.webapi.EnumDSSXMLSearchDomain.DssXmlSearchDomainRepository"/>
+          </request-properties>
+        </web-bean>
+      </web-beans>
+    </page>
+    <page desc="Main Servlet for Help" desc-id="" feature-id="" login-required="false" name="adminHelp" track="false">
+      <templates>
+        <template XMLmerge_id="1" file-name="/servlet/mstrWeb">
+          <page-sections use-default="false"/>
+        </template>
+      </templates>
+    </page>
+    <page default="false" desc="Welcome" desc-id="mstrWeb.38" login-required="false" name="welcome">
+      <templates>
+        <template XMLmerge_id="1" error-desc="Error in the Administrator page" error-title-id="mstrWeb.938">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/Empty.jsp" name="header"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Empty_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/Servers_Links.jsp" name="links"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Footer.jsp" name="footer"/>
+          </page-sections>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="adminBean" persist-mode="2" sys-bean="AdminBean">
+          <init-properties>
+            <property name="showUnConnectedServers" source="const" type="boolean" value="false"/>
+          </init-properties>
+          <styles>
+            <style name="ClusterListStyle"/>
+          </styles>
+        </web-bean>
+      </web-beans>
+    </page>
+
+    <page default="false" desc="Error page" desc-id="mstrWeb.3444" login-required="false" name="error">
+      <templates>
+        <template XMLmerge_id="1" file-name="/jsp/Error_Template.jsp">
+          <page-sections use-default="true"/>
+        </template>
+      </templates>
+    </page>
+
+    <page desc="About" desc-id="mstrWeb.1142" feature-id="" login-required="false" name="about" persist-mode="8" track="false">
+      <templates>
+        <template XMLmerge_id="1">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/serverAdmin/AboutInfo_Content.jsp" name="content"/>
+              <page-section file-name="/jsp/Empty.jsp" name="header"/>
+			  <page-section file-name="/jsp/AboutPage_Path.jsp" name="path"/>
+          </page-sections>
+        </template>
+      </templates>
+    </page>
+
+    <page desc="Login" desc-id="mstrWeb.26" feature-id="" login-required="false" name="login" persist-mode="8" track="false">
+      <javascripts>
+        <javascript base-bean="" event="onload" feature-id="!is-portlet;!usher-authentication-enabled" javascript-code="focusLogin();" name="onLoad1"/>
+        <javascript base-bean="" event="onload" feature-id="usher-authentication-enabled" javascript-code="mstrLoginUtils.startUsher()" name="onLoad2"/>
+      </javascripts>
+      <templates>
+        <template XMLmerge_id="1" error-title-id="mstrWeb.806">
+          <page-sections use-default="true">
+              <page-section file-name="/jsp/Empty.jsp" name="header"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Empty_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/Login_Links.jsp" name="links"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Login_Footer.jsp" name="footer"/>
+          </page-sections>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="lb" persist-mode="2" sys-bean="LoginBean">
+          <request-properties>
+            <property name="errorMessageCode" source="request" type="string" value="errMsg"/>
+          </request-properties>
+          <styles>
+            <style name="LoginStyle"/>
+          </styles>
+        </web-bean>
+      </web-beans>
+    </page>
+
+    <page desc="Logout" desc-id="mstrWeb.8" feature-id="" login-required="false" name="logout" persist-mode="8" track="false">
+      <templates>
+        <template XMLmerge_id="1" error-title-id="mstrWeb.819">
+          <page-sections use-default="true">
+              <page-section file-name="/jsp/Empty.jsp" name="header"/>
+            <page-section file-name="/jsp/serverAdmin/Server_Empty_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/Logout_Links.jsp" name="links"/>
+          </page-sections>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="logout" persist-mode="0" sys-bean="LogoutBean">
+          <styles>
+            <style name="LogoutStyle"/>
+          </styles>
+        </web-bean>
+      </web-beans>
+    </page>
+
+    <page default="false" desc="Home" desc-id="mstrWeb.1" login-required="true" name="desktop">
+      <templates>
+        <template XMLmerge_id="1" error-desc="Error in the Administrator page" error-title-id="mstrWeb.938">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/Desktop_Links.jsp" name="links"/>
+            <page-section file-name="/jsp/serverAdmin/AdminBasic_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/ServerDesktop_Content.jsp" name="content"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+        </template>
+      </templates>
+    </page>
+
+         <page name="architect_mg" desc="Architect"  feature-id="" login-required="true" track="true">
+          <templates>
+            <template XMLmerge_id="1">
+              <page-sections use-default="true">
+                 <page-section file-name="/jsp/Desktop_Links.jsp" name="links"/>
+                 <page-section file-name="/jsp/serverAdmin/ProjectManager_Path.jsp" name="path"/>
+                 <page-section file-name="/jsp/serverAdmin/Projects_Manager.jsp" name="content"/>
+              </page-sections>
+            </template>
+          </templates>
+    </page>
+
+    <page desc="Security Role Manager" desc-id="mstrWeb.5746" login-required="true" name="secRoleFolder" track="true" class="com.microstrategy.web.app.beans.SimplePageComponentImpl">
+      <templates>
+        <template XMLmerge_id="1" iframe="true" show-wait="true">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/serverAdmin/SRFolder_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/SRFolder_Toolbar.jsp" name="dockTop"/>
+            <page-section file-name="/jsp/serverAdmin/SRFolder_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/serverAdmin/SRFolder_Links.jsp" name="links"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+          <web-components>
+            <web-component base-bean="srFolder" feature-id="" is-container="false" name="srFolder_browser" style-name="securityRolesViewMode" style-type="pref"/>
+            <web-component base-bean="srTb" feature-id="" is-container="false" name="secRole_toolbar" style-name="ToolbarStyle" style-type="catalog"/>
+          </web-components>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="srFolder" persist-mode="2" sys-bean="FolderBean" event-handler="com.microstrategy.web.app.beans.AggregatedFolderEventHandler">
+            <init-properties>
+                 <property name="objectID" source="const" type="string" value="73F7482411D3596C60001B8F67019608"/>
+            </init-properties>
+        </web-bean>
+          <web-bean event-handler="" name="srTb" persist-mode="1" sys-bean="ToolbarBean">
+              <init-properties>
+                  <property name="targetBeanPath" source="const" type="string" value="srFolder"/>
+                  <property name="toolbarName" source="const" type="string" value="srToolbar"/>
+              </init-properties>
+              <styles>
+                  <style name="ToolbarStyle"/>
+              </styles>
+          </web-bean>
+      </web-beans>
+    </page>
+
+    <page desc="[Edit Security Role]" desc-id="mstrWeb.4472" login-required="true" name="editSecRole" track="false" allow-cancel="false">
+      <templates>
+        <template XMLmerge_id="1" iframe="true" show-wait="true">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/serverAdmin/SecurityRole_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/SREdit_Links.jsp" name="links"/>
+            <page-section file-name="/jsp/serverAdmin/SREdit_Content.jsp" name="content"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+          <web-components>
+            <web-component base-bean="srSelector" feature-id="" is-container="false" name="srSelector" style-name="SecurityRoleUserEntitiesSelectorStyle" style-type="catalog"/>
+          </web-components>
+        </template>
+      </templates>
+
+      <event-maps>
+        <event-map id="3122" map-id="1048576003" target="sr"/>
+      </event-maps>
+
+      <web-beans>
+        <web-bean name="sr" persist-mode="2" sys-bean="SecurityRoleBean">
+          <request-properties>
+            <property name="objectID" source="request" type="string" value="sRoleId"/>
+          </request-properties>
+        </web-bean>
+        <web-bean name="srSelector" persist-mode="2" sys-bean="SecurityRoleUserEntitiesSelectorBean">
+          <init-properties>
+            <property name="targetBeanPath" source="const" type="string" value="sr"/>
+          </init-properties>
+          <web-beans>
+            <web-bean name="srSelBrowser" persist-mode="2" sys-bean="UserEntitiesBrowserBean">
+              <init-properties>
+                <property name="blockSize" source="const" type="int" value="10"/>
+              </init-properties>
+            </web-bean>
+          </web-beans>
+        </web-bean>
+        <web-bean name="srMgr" persist-mode="2" sys-bean="TabManagerBean">
+          <init-properties>
+            <property name="targetBeanPath" source="const" type="string" value="sr"/>
+          </init-properties>
+          <request-properties>
+            <property name="currentTab" source="request" type="int" value="currentTab"/>
+          </request-properties>
+          <styles>
+            <style name="AdminSecRoleTabManagerStyle"/>
+          </styles>
+          <web-beans>
+            <web-bean name="tbSRGen" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="1"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.3447"/>
+                <property name="targetBeanPath" source="const" type="string" value="sr"/>
+                <property name="features" source="const" type="string" value="view-security-role-properties"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="Security_Role_Editor__General_tab.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="sr"/>
+                    <property name="styleName" source="const" type="string" value="SecurityRoleEditorGeneralStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+            <web-bean name="tbSRMembers" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="2"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4025"/>
+                <property name="targetBeanPath" source="const" type="string" value="srSelector"/>
+                <property name="features" source="const" type="string" value="assign-security-roles"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="Security_Role_Editor__Members_tab.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="srSelector"/>
+                    <property name="styleName" source="const" type="string" value="SecurityRoleUserEntitiesSelectorStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+          </web-beans>
+        </web-bean>
+      </web-beans>
+    </page>
+
+    <page desc="[User Manager]" desc-id="mstrWeb.4017" login-required="true" name="topGroups" track="true" feature-id="access-to-user-manager">
+      <templates>
+        <template XMLmerge_id="1" show-wait="true">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/serverAdmin/TopGroups_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/UserManager_Toolbar.jsp" name="dockTop"/>
+            <page-section file-name="/jsp/serverAdmin/TopLevelGroups_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/serverAdmin/TopGroups_Links.jsp" name="links"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+          <web-components>
+            <web-component base-bean="topGroupsTb" feature-id="" is-container="false" name="userMgr_toolbar" style-name="ToolbarStyle" style-type="catalog"/>
+          </web-components>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="gpb" persist-mode="2" sys-bean="UserEntitiesBean">
+          <init-properties>
+            <property name="blockSize" source="const" type="int" value="18" />
+            <property name="sourceType" source="enum" type="int" value="com.microstrategy.web.beans.EnumUserEntitiesSourceTypes.UserEntitiesSourceTypeTopLevelGroups"/>
+          </init-properties>
+        </web-bean>
+          <web-bean event-handler="" name="topGroupsTb" persist-mode="1" sys-bean="ToolbarBean">
+              <init-properties>
+                  <property name="targetBeanPath" source="const" type="string" value="gpb"/>
+                  <property name="toolbarName" source="const" type="string" value="userMgrToolbar"/>
+              </init-properties>
+              <styles>
+                  <style name="ToolbarStyle"/>
+              </styles>
+          </web-bean>
+      </web-beans>
+    </page>
+
+    <page desc="[User Manager]" desc-id="mstrWeb.4017" login-required="true" name="groups" track="true" feature-id="access-to-user-manager">
+      <templates>
+        <template XMLmerge_id="1" show-wait="true">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/serverAdmin/UserManager_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/UserManager_Toolbar.jsp" name="dockTop"/>
+            <page-section file-name="/jsp/serverAdmin/UserManager_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/serverAdmin/UserManager_Links.jsp" name="links"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+          <web-components>
+            <web-component base-bean="groupTb" feature-id="" is-container="false" name="userMgr_toolbar" style-name="ToolbarStyle" style-type="catalog"/>
+          </web-components>
+        </template>
+      </templates>
+      <web-beans>
+          <web-bean event-handler="" name="groupTb" persist-mode="1" sys-bean="ToolbarBean">
+              <init-properties>
+                  <property name="targetBeanPath" source="const" type="string" value="ugb"/>
+                  <property name="toolbarName" source="const" type="string" value="userMgrToolbar"/>
+              </init-properties>
+              <styles>
+                  <style name="ToolbarStyle"/>
+              </styles>
+          </web-bean>
+        <web-bean name="ugb" persist-mode="2" sys-bean="UserGroupBean">
+          <init-properties>
+            <property name="blockSize" source="const" type="int" value="18" />
+            <property name="flags" source="const" type="int" value="268452935" />
+          </init-properties>
+          <request-properties>
+            <property name="objectID" source="request" type="string" value="groupID"/>
+          </request-properties>
+        </web-bean>
+        <web-bean name="path" persist-mode="2" sys-bean="GroupPathBean">
+          <request-properties>
+            <property name="targetBeanPath" source="const" type="string" value="ugb"/>
+          </request-properties>
+        </web-bean>
+      </web-beans>
+    </page>
+
+    <page desc="Configuration Search" desc-id="mstrWeb.5997" login-required="true" name="search" track="false">
+      <addons>
+        <addon name="com.microstrategy.web.app.addons.SearchSupportedTypesAddon">
+          <properties>
+            <property name="typeRestriction" source="const" type="string" value="8704,8705,44"/>
+          </properties>
+        </addon>
+      </addons>
+      <event-maps>
+        <event-map id="3016" map-id="2003" target="sb">
+          <argument id="3001" map-id="2010"/>
+          <argument id="3009" map-id="2008"/>
+          <argument id="3008" map-id="2011"/>
+          <argument id="3007" map-id="2012"/>
+        </event-map>
+      </event-maps>
+      <templates>
+        <template XMLmerge_id="1">
+          <page-sections use-default="true">
+          	<page-section file-name="/jsp/serverAdmin/AdminSearch_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/SearchConfiguration_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/serverAdmin/AdminSearch_Links.jsp" name="links"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+        </template>
+      </templates>
+      <web-beans>
+        <web-bean name="sb" persist-mode="2" sys-bean="AdminSearchBean">
+          <init-properties>
+            <property name="maxWait" source="const" type="int" value="2000"/>
+            <property name="maxObjects" source="const" type="int" value="500" />
+            <property name="pollingFrequency" source="const" type="int" value="100"/>
+            <property name="types" source="const" type="string" feature-id="access-to-user-manager" value="8704,8705"/>
+            <property name="types" source="const" type="string" feature-id="!access-to-user-manager;access-to-security-role-manager" value="44"/>
+            <property name="domain" source="enum" type="int" value="com.microstrategy.webapi.EnumDSSXMLSearchDomain.DssXmlSearchDomainRepository"/>
+          </init-properties>
+          <request-properties>
+            <property name="advanced" source="request" type="boolean" value="advanced"/>
+            <property name="namePattern" source="request" type="string" value="name"/>
+          </request-properties>
+          <web-beans>
+            <web-bean name="results" persist-mode="2" sys-bean="FolderBean" event-handler="com.microstrategy.web.app.beans.AggregatedFolderEventHandler">
+              <styles>
+                <style name="FolderConfigurationSearchResults"/>
+              </styles>
+            </web-bean>
+          </web-beans>
+        </web-bean>
+      </web-beans>
+    </page>
+
+    <page desc="[Edit User]" desc-id="mstrWeb.4473" login-required="true" name="editUser" track="false" feature-id="access-to-user-manager" allow-cancel="false">
+      <templates>
+        <template XMLmerge_id="1" iframe="true" show-wait="true">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/serverAdmin/UserEdit_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/UserEdit_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/serverAdmin/UserEdit_Links.jsp" name="links"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+          <web-components>
+            <web-component base-bean="selector" feature-id="" is-container="false" name="selector" style-name="UserEntitiesSelectorTreeCartStyle" style-type="catalog"/>
+            <web-component base-bean="fb" feature-id="" is-container="false" name="browser" style-name="FolderStyleAdminBrowser" style-type="catalog"/>
+            <web-component base-bean="sfb" feature-id="" is-container="false" name="securityFilterDef" style-name="SecurityFilterStyle" style-type="catalog"/>
+            <web-component base-bean="contacts" feature-id="" is-container="false" name="contactBrowser" style-name="UserContactsBrowserCartStyle" style-type="catalog"/>
+            <web-component base-bean="addresses" feature-id="" is-container="false" name="addressList" style-name="UserAddressListStyle" style-type="catalog"/>
+          </web-components>
+        </template>
+      </templates>
+      <web-beans>
+
+        <web-bean name="frame" feature-id="use-security-filter-manager" persist-mode="2" sys-bean="SecurityFilterFrameBean">
+         <init-properties>
+             <property name="targetBeanPath" source="const" type="string" value="ub"/>
+         </init-properties>
+         <web-beans>
+            <web-bean name="fb" persist-mode="2" sys-bean="FolderBean" event-handler="com.microstrategy.web.app.beans.AggregatedFolderEventHandler">
+                <init-properties>
+                    <property name="sysFolder" source="const" type="int" value="69"/>
+                </init-properties>
+                <styles>
+                    <style name="FolderStyleAdminBrowser"/>
+                </styles>
+            </web-bean>
+            <web-bean name="sfb" sys-bean="SecurityFilterBean">
+                <styles>
+                    <style name="SecurityFilterStyle"/>
+                </styles>
+            </web-bean>
+         </web-beans>
+        <styles>
+            <style name="SecurityFilterFrameStyle"/>
+        </styles>
+        </web-bean>
+
+        <web-bean name="ub" persist-mode="2" sys-bean="UserBean">
+          <request-properties>
+            <property name="objectID" source="request" type="string" value="userId"/>
+          </request-properties>
+        </web-bean>
+
+        <web-bean feature-id="use-contact-manager" name="addresses" persist-mode="2" sys-bean="UserAddressListBean">
+            <init-properties>
+                <property name="targetBeanPath" source="const" type="string" value="ub"/>
+            </init-properties>
+        </web-bean>
+
+        <web-bean feature-id="configure-contact-data-profile" name="contacts" persist-mode="2" sys-bean="UserContactsBrowserBean">
+          <init-properties>
+            <property name="targetBeanPath" source="const" type="string" value="ub"/>
+            <property name="blockCount" source="const" type="int" value="10"/>
+          </init-properties>
+        </web-bean>
+
+        <web-bean name="path" persist-mode="2" sys-bean="GroupPathBean">
+          <init-properties>
+            <property name="browsingPath" source="const" type="string" value="groups.path"/>
+            <property name="targetBeanPath" source="const" type="string" value="ub"/>
+          </init-properties>
+        </web-bean>
+        <web-bean name="selector" persist-mode="2" sys-bean="UserEntitiesSelectorBean">
+          <init-properties>
+            <property name="targetBeanPath" source="const" type="string" value="ub"/>
+            <property name="blockSize" source="const" type="int" value="10" />
+          </init-properties>
+        </web-bean>
+        <web-bean name="entMgr" persist-mode="2" sys-bean="TabManagerBean">
+          <init-properties>
+            <property name="targetBeanPath" source="const" type="string" value="ub"/>
+          </init-properties>
+          <request-properties>
+            <property name="currentTab" source="request" type="int" value="currentTab"/>
+          </request-properties>
+          <styles>
+            <style name="AdminUserEntityTabManagerStyle"/>
+          </styles>
+          <web-beans>
+            <web-bean name="tbEntGen" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="1"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.3447"/>
+                <property name="targetBeanPath" source="const" type="string" value="ub"/>
+                <property name="features" source="const" type="string" value="view-user-properties"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="User_Editor_General.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="ub"/>
+                    <property name="styleName" source="const" type="string" value="UserEntityEditorGeneralStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+            <web-bean name="tbEntPriv" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="2"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4475"/>
+                <property name="targetBeanPath" source="const" type="string" value="ub"/>
+                <property name="features" source="const" type="string" value="modify-project-access"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="User_Editor_Project_Access.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="ub"/>
+                    <property name="styleName" source="const" type="string" value="UserPrivilegesStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+
+            <web-bean name="tbEntSF" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="3"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4476"/>
+                <property name="targetBeanPath" source="const" type="string" value="frame"/>
+                <property name="features" source="const" type="string" value="use-security-filter-manager;is-security-filter-manager-accessible"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="User_Editor_Sec_Filter.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="frame"/>
+                    <property name="styleName" source="const" type="string" value="SecurityFilterFrameStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+
+            <web-bean name="tbEntSel" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="4"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4477"/>
+                <property name="targetBeanPath" source="const" type="string" value="ub"/>
+                <property name="features" source="const" type="string" value="configure-group-membership"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="User_Editor_Groups.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="selector"/>
+                    <property name="styleName" source="const" type="string" value="UserEntitiesSelectorTreeCartStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+            <web-bean name="tbEntAuth" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="5"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4478"/>
+                <property name="targetBeanPath" source="const" type="string" value="ub"/>
+                <property name="features" source="const" type="string" value="link-to-external-accounts"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="User_Editor_Authentication.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="ub"/>
+                    <property name="styleName" source="const" type="string" value="UserEntityEditorAuthenticationStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+            <web-bean name="tbEntAddresses" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="7"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.1140"/>
+                <property name="features" source="const" type="string" value="use-contact-manager"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="User_Editor__Addresses_tab.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="addresses"/>
+                    <property name="styleName" source="const" type="string" value="UserAddressListStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+            <web-bean name="tbEntContact" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="6"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.5636"/>
+                <property name="targetBeanPath" source="const" type="string" value="contacts"/>
+                <property name="features" source="const" type="string" value="configure-contact-data-profile"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="User_Editor__Contacts_tab.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="contacts"/>
+                    <property name="styleName" source="const" type="string" value="UserContactsBrowserCartStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+          </web-beans>
+        </web-bean>
+      </web-beans>
+      <event-maps>
+        <event-map id="3116" map-id="32768008" target="ub">
+          <argument id="3001" map-id="32768006"/>
+        </event-map>
+      </event-maps>
+    </page>
+
+    <page desc="[Edit Group]" desc-id="mstrWeb.4474" login-required="true" name="editGroup" track="false" feature-id="access-to-user-manager" allow-cancel="false">
+      <templates>
+        <template XMLmerge_id="1" iframe="true" show-wait="true">
+          <page-sections use-default="true">
+            <page-section file-name="/jsp/serverAdmin/GroupEdit_Path.jsp" name="path"/>
+            <page-section file-name="/jsp/serverAdmin/GroupEdit_Content.jsp" name="content"/>
+            <page-section file-name="/jsp/serverAdmin/UserEdit_Links.jsp" name="links"/>
+          </page-sections>
+          <shortcut-list-set>
+            <shortcut-list name="toolbar" use-default="true"/>
+          </shortcut-list-set>
+          <web-components>
+            <web-component base-bean="g_selector" feature-id="" is-container="false" name="selector" style-name="UserEntitiesSelectorTreeCartStyle" style-type="catalog"/>
+            <web-component base-bean="g_members" feature-id="" is-container="false" name="members" style-name="UserEntitiesSelectorTreeCartStyle" style-type="catalog"/>
+            <web-component base-bean="g_fb" feature-id="" is-container="false" name="browser" style-name="FolderStyleAdminBrowser" style-type="catalog"/>
+            <web-component base-bean="g_sfb" feature-id="" is-container="false" name="securityFilterDef" style-name="SecurityFilterStyle" style-type="catalog"/>
+          </web-components>
+        </template>
+      </templates>
+      <web-beans>
+
+        <web-bean name="g_top" persist-mode="2" sys-bean="UserEntitiesBean">
+          <init-properties>
+            <property name="sourceType" source="const" type="int" value="1" /><!-- top level groups -->
+          </init-properties>
+        </web-bean>
+
+        <web-bean name="g_frame" feature-id="use-security-filter-manager" persist-mode="2" sys-bean="SecurityFilterFrameBean">
+         <init-properties>
+             <property name="targetBeanPath" source="const" type="string" value="gb"/>
+         </init-properties>
+         <web-beans>
+            <web-bean name="g_fb" persist-mode="2" sys-bean="FolderBean" event-handler="com.microstrategy.web.app.beans.AggregatedFolderEventHandler">
+                <init-properties>
+                    <property name="sysFolder" source="const" type="int" value="69"/>
+                </init-properties>
+                <styles>
+                    <style name="FolderStyleAdminBrowser"/>
+                </styles>
+            </web-bean>
+            <web-bean name="g_sfb" sys-bean="SecurityFilterBean">
+                <styles>
+                    <style name="SecurityFilterStyle"/>
+                </styles>
+            </web-bean>
+         </web-beans>
+        <styles>
+            <style name="SecurityFilterFrameStyle"/>
+        </styles>
+        </web-bean>
+
+        <web-bean name="gb" persist-mode="2" sys-bean="UserGroupBean">
+            <request-properties>
+                <property name="objectID" source="request" type="string" value="groupId"/>
+            </request-properties>
+        </web-bean>
+        <web-bean name="g_path" persist-mode="2" sys-bean="GroupPathBean">
+          <init-properties>
+            <property name="browsingPath" source="const" type="string" value="groups.path"/>
+            <property name="targetBeanPath" source="const" type="string" value="gb"/>
+          </init-properties>
+        </web-bean>
+        <web-bean name="g_selector" persist-mode="2" sys-bean="UserEntitiesSelectorBean">
+          <init-properties>
+            <property name="targetBeanPath" source="const" type="string" value="gb"/>
+            <property name="blockSize" source="const" type="int" value="10" />
+            <property name="topLevelGroupsUserEntityBean" source="const" type="string" value="g_top" />
+          </init-properties>
+        </web-bean>
+        <web-bean name="g_members" persist-mode="2" sys-bean="UserEntitiesSelectorBean">
+          <init-properties>
+            <property name="targetBeanPath" source="const" type="string" value="gb"/>
+            <property name="selectionType" source="enum" type="int" value="com.microstrategy.web.app.beans.UserEntitiesSelectorBean.SELECT_MEMBERS"/>
+            <property name="blockSize" source="const" type="int" value="10" />
+            <property name="topLevelGroupsUserEntityBean" source="const" type="string" value="g_top" />
+          </init-properties>
+        </web-bean>
+        <web-bean name="g_entMgr" persist-mode="2" sys-bean="TabManagerBean">
+          <init-properties>
+            <property name="targetBeanPath" source="const" type="string" value="gb"/>
+          </init-properties>
+          <request-properties>
+            <property name="currentTab" source="request" type="int" value="currentTab"/>
+          </request-properties>
+          <styles>
+            <style name="AdminUserEntityTabManagerStyle"/>
+          </styles>
+          <web-beans>
+            <web-bean name="g_tbEntGen" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="1"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.3447"/>
+                <property name="targetBeanPath" source="const" type="string" value="gb"/>
+                <property name="features" source="const" type="string" value="view-group-properties"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="Group_Editor_General.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="gb"/>
+                    <property name="styleName" source="const" type="string" value="UserEntityEditorGeneralStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+            <web-bean name="g_tbEntPriv" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="2"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4475"/>
+                <property name="targetBeanPath" source="const" type="string" value="gb"/>
+                <property name="features" source="const" type="string" value="modify-project-access"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="Group_Editor_Project_Access.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="gb"/>
+                    <property name="styleName" source="const" type="string" value="UserPrivilegesStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+
+            <web-bean name="g_tbEntSF" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="3"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4476"/>
+                <property name="targetBeanPath" source="const" type="string" value="ub"/>
+                <property name="features" source="const" type="string" value="use-security-filter-manager"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="Group_Editor_Sec_Filter.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="g_frame"/>
+                    <property name="styleName" source="const" type="string" value="SecurityFilterFrameStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+
+            <web-bean name="g_tbEntSel" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="4"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4477"/>
+                <property name="targetBeanPath" source="const" type="string" value="gb"/>
+                <property name="features" source="const" type="string" value="configure-group-membership;is-not-everyone-group"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="Group_Editor_Groups.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="g_selector"/>
+                    <property name="styleName" source="const" type="string" value="UserEntitiesSelectorTreeCartStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+            <web-bean name="g_tbEntMemb" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="5"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4025"/>
+                <property name="targetBeanPath" source="const" type="string" value="gb"/>
+                <property name="features" source="const" type="string" value="configure-group-membership"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="Group_Editor_Members.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="g_members"/>
+                    <property name="styleName" source="const" type="string" value="UserEntitiesSelectorTreeCartStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+            <web-bean name="g_tbEntAuth" persist-mode="0" sys-bean="AdminTabBean">
+              <init-properties>
+                <property name="tabRepresented" source="const" type="int" value="6"/>
+                <property name="tabLabelId" source="const" type="string" value="mstrWeb.4478"/>
+                <property name="targetBeanPath" source="const" type="string" value="gb"/>
+                <property name="features" source="const" type="string" value="link-to-external-accounts"/>
+                <property name="helpType" source="enum" type="string" value="com.microstrategy.web.app.utils.HelpHelper.HELP_TYPE_ADMIN"/>
+                <property name="helpTopic" source="const" type="string" value="Group_Editor_Authentication.htm"/>
+              </init-properties>
+              <styles>
+                <style name="AdminEditorTabStyle">
+                  <properties>
+                    <property name="beanName" source="const" type="string" value="gb"/>
+                    <property name="styleName" source="const" type="string" value="UserEntityEditorAuthenticationStyle"/>
+                  </properties>
+                </style>
+              </styles>
+            </web-bean>
+          </web-beans>
+        </web-bean>
+      </web-beans>
+      <event-maps>
+        <event-map id="3117" map-id="32768008" target="gb">
+          <argument id="3001" map-id="32768006"/>
+        </event-map>
+      </event-maps>
+    </page>
+    <page desc="This is the default page used as iframe content" allow-cancel="false" class="com.microstrategy.web.app.beans.NewWindowPageComponentImpl" login-required="false" name="iframeIdle" track="false" use-default="false">
+      <templates>
+        <template XMLmerge_id="1" file-name="/jsp/iframe_Idle.jsp" />
+      </templates>
+    </page>
+    <page desc="Login Warning" desc-id="mstrWeb.26" feature-id="" login-required="false" name="loginWarning" persist-mode="8" track="false">
+        <templates>
+            <template XMLmerge_id="1" error-title-id="mstrWeb.2914">
+                <page-sections use-default="true">
+                    <page-section file-name="/jsp/Empty.jsp" name="error"/>
+                    <page-section file-name="/jsp/Empty.jsp" name="header"/>
+                    <page-section file-name="/jsp/Login_Links.jsp" name="links"/>
+                    <page-section file-name="/jsp/LoginWarning_Content.jsp" name="content"/>
+                </page-sections>
+                <shortcut-list-set name="default" use-default="false"/>
+            </template>
+        </templates>
+        <web-beans>
+            <web-bean name="lb" persist-mode="2" sys-bean="LoginBean">
+                <request-properties>
+                    <property name="errorMessageCode" source="request" type="string" value="errMsg"/>
+                </request-properties>
+                <styles>
+                    <style name="LoginContinueStyle"/>
+                </styles>
+            </web-bean>
+        </web-beans>
+    </page>
+    <page desc="Access Denied page" desc-id="mstrWeb.726" feature-id="" login-required="false" name="noAccess" persist-mode="8" track="false">
+        <templates>
+            <template XMLmerge_id="1" error-title-id="mstrWeb.726">
+                <page-sections use-default="true"/>
+                <shortcut-list-set name="default" use-default="false"/>
+            </template>
+        </templates>
+    </page>
+    <page default="false" desc="Error page" desc-id="mstrWeb.3444" login-required="false" name="CSRFConfirmation">
+      <templates>
+        <template XMLmerge_id="1" file-name="/jsp/Error_Template.jsp">
+          <page-sections use-default="true"/>
+        </template>
+      </templates>
+    </page>
+  </pages>
+</framework>
+

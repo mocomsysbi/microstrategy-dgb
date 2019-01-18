@@ -1,0 +1,54 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="PromptEditor" name="SampleMQPromptView">
+  <assignments>
+    <property name="book">
+      <block name="ViewStack">
+        <property name="modelPath">parent/model/promptQuestions</property>
+        <property name="views">
+          <list>
+            <!-- List w/cart style with search and fetch  -->
+            <block listElementKey="K1442" name="PromptQuestionView">
+              <property name="simpleAnswerView">
+                <block name="MetricQualifier">
+                  <property name="modelPath">parent/model/answer</property>
+                  <!-- path pulldown: -->
+                  <property name="pathView">
+                    <block name="TreePulldown">
+                      <property name="caption">Look in:</property>
+                      <property name="modelPath">parent/model/available/getContainerTree()</property>
+                      <property name="cmds">BrowseFolder|model/getSelectedItem()|parent/model/available</property>
+                    </block>
+                  </property>
+                  <!-- search box: -->
+                  <property name="searchView">
+                    <block name="TextBoxWithIcon">
+                      <property name="cmds">Search||parent/model/available</property>
+                      <property name="caption">Search for:</property>
+                      <property name="iconTooltip">Search</property>
+                      <property name="iconCSSText">background-image: url(../style/mstr/images/tbSearch.gif)</property>
+                    </block>
+                  </property>
+                  <!-- list box: -->
+                  <property name="targetView">
+                    <block name="FastListView">
+                      <property name="modelPath">parent/model/getTargetListModel()</property>
+                      <property name="cmds">BrowseListItem;!ClickListItem;EditConditionTarget|model/getSelectedItem()|parent/model/selected</property>
+                    </block>
+                  </property>
+                  <!-- fetch buttons: -->
+                  <property name="fetchView">
+                    <block name="FetchControl">
+                      <property name="modelPath">parent/model/available</property>
+                      <property name="cmds">FetchBlock||parent/model/available</property>
+                    </block>
+                  </property>
+                </block>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>
+<!-- A sample view of a Report with a single MQ Prompt question. -->

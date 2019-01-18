@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarNormalModeButton" inherits="ToolbarButtonModel">
+	<assignments>
+        <property name="id">tbNormalMode</property>
+        <property name="tooltip">{desc:mstrWeb.4665|Restore Normal Screen Mode}</property>
+        <property name="cmdid">toggleScreenMode</property>
+        <property name="visibleFeatures">page-full-screen-mode</property>
+        <property name="listenerMethods">onScreenModeChange</property>
+	</assignments>
+</block>

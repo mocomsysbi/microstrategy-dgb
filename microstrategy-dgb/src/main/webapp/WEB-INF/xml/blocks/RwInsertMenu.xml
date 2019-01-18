@@ -1,0 +1,153 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwMenuModel" name="RwInsertMenu">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K1721" name="MenuControlModel">
+          <property name="htmlId">mnuInsertTxt</property>
+          <property name="text">{desc:mstrWeb.3544|Text}</property>
+          <property name="cmdid">currentControl;106</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1722" name="MenuControlModel">
+          <property name="htmlId">mnuInsertImg</property>
+          <property name="text">{desc:mstrWeb.3545|Image}</property>
+          <property name="cmdid">currentControl;102</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1723" name="MenuControlModel">
+          <property name="htmlId">mnuInsertLne</property>
+          <property name="text">{desc:mstrWeb.3546|Line}</property>
+          <property name="cmdid">currentControl;105</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1724" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.2923|Shape}</property>
+          <property name="menuModel">RwInsertShapeMenu</property>
+          <property name="cmdid">shapesSubmenu</property>
+          <property name="cssClass">SubMenuOption</property>
+          <property name="htmlId">mnuInsertShp</property>
+          <property name="extraCssClass">mnuInsert</property>
+        </block>
+        <block listElementKey="K1725" name="MenuControlModel">
+          <property name="htmlId">mnuInsertRpt</property>
+          <property name="text">{desc:mstrWeb.1279|Report}</property>
+          <property name="cmdid">currentControl;52|R</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="visibleFeatures">modify-grid-level-in-documents</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1726" name="MenuControlModel">
+          <property name="htmlId">mnuInsertGrd</property>
+          <property name="text">{desc:mstrWeb.3238|Grid}</property>
+          <property name="cmdid">currentControl;52</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="visibleFeatures">modify-grid-level-in-documents</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1727" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.115|Graph}</property>
+          <property name="menuModel">RwInsertGraphMenu</property>
+          <property name="cmdid">graphSubMenu</property>
+          <property name="cssClass">SubMenuOption</property>
+          <property name="htmlId">mnuInsertGrp</property>
+          <property name="extraCssClass">mnuInsert</property>
+        </block>
+        <block listElementKey="K1728" name="MenuControlModel">
+          <property name="htmlId">mnuInsertPnl</property>
+          <property name="text">{desc:mstrWeb.4727|Panel Stack}</property>
+          <property name="cmdid">currentControl;8</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="mnuInsertFP" name="MenuControlModel">
+          <property name="htmlId">mnuInsertFltrPnl</property>
+          <property name="text">{desc:mstrWeb.8966|Filter Panel}</property>
+          <property name="cmdid">currentControl;8|FP</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>        
+        <block listElementKey="mnuInsertTC" name="MenuControlModel">
+          <property name="htmlId">mnuInsertTC</property>
+          <property name="text">{desc:mstrWeb.11172|Table Control (Mobile)}</property>
+          <property name="cmdid">currentControl;8|TC</property>
+          <property name="notForPanel" type="Boolean">true</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="visibleFeatures">configure-transactions</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1729" name="MenuControlModel">
+          <property name="htmlId">mnuInsertHtm</property>
+          <property name="text">{desc:mstrWeb.4538|HTML Container}</property>
+          <property name="cmdid">currentControl;107</property>
+          <property name="listenerMethods">insertionControlModified</property>
+          <property name="visibleFeatures">documents-design-mode;create-html-container</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1730" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.4728|Selector}</property>
+          <property name="menuModel">RwInsertSelectorMenu</property>
+          <property name="layouts">/WEB-INF/xml/layouts/blocks/InsertSelectorMenuLayout.xml</property>
+          <property name="cmdid">selectorSubMenu</property>
+          <property name="cssClass">SubMenuOption</property>
+          <property name="htmlId">mnuInsertSel</property>
+          <property name="extraCssClass">mnuInsert</property>
+        </block>
+        <block listElementKey="K1731" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.4771|Widgets}</property>
+          <property name="menuModel">RwInsertWidgetMenu</property>
+          <property name="cmdid">widgetsSubMenu</property>
+          <property name="cssClass">SubMenuOption</property>
+          <property name="htmlId">mnuInsertWdg</property>
+          <property name="extraCssClass">mnuInsert</property>
+        </block>
+        <block listElementKey="K1788" name="SubMenuControlModel">
+          <property name="text">{desc:mstrWeb.6457|Button}</property>
+          <property name="menuModel">RwInsertButtonMenu</property>
+          <property name="cmdid">buttonSubMenu</property>
+          <property name="cssClass">SubMenuOption</property>
+          <property name="htmlId">mnuInsertBtn</property>
+          <property name="extraCssClass">mnuInsert</property>
+        </block>
+        <block listElementKey="K1732" name="BaseBlock">
+          <property name="notForPanel" type="Boolean">true</property>
+        </block>
+        <block listElementKey="K1733" name="SubMenuControlModel">
+          <property name="notForPanel" type="Boolean">true</property>
+          <property name="text">{desc:mstrWeb.2924|Auto-text}</property>
+          <property name="menuModel">RwInsertAutotextMenu</property>
+          <property name="cmdid">autotext</property>
+          <property name="extraCssClass">SubMenuOption</property>
+        </block>
+        <block listElementKey="K1734" name="BaseBlock">
+          <property name="notForPanel" type="Boolean">true</property>
+        </block>
+        <block listElementKey="K1735" name="MenuControlModel">
+          <property name="notForPanel" type="Boolean">true</property>
+          <property name="text">{desc:mstrWeb.2920|Insert section above}</property>
+          <property name="cmdid">insertSectionAbove</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1736" name="MenuControlModel">
+          <property name="notForPanel" type="Boolean">true</property>
+          <property name="text">{desc:mstrWeb.2921|Insert section below}</property>
+          <property name="cmdid">insertSectionBelow</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+        <block listElementKey="K1737" name="BaseBlock">
+          <property name="notForPanel" type="Boolean">true</property>
+        </block>
+        <block listElementKey="K1738" name="MenuControlModel">
+          <property name="notForPanel" type="Boolean">true</property>
+          <property name="text">{desc:mstrWeb.5883|Layout...}</property>
+          <property name="visibleFeatures">documents-design-mode;rw-interactive-view-mode-eplus</property>
+          <property name="cmdid">addNewLayout</property>
+          <property name="extraCssClass">MenuOption mnuInsert</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

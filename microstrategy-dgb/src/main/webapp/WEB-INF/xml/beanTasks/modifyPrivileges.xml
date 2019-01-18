@@ -1,0 +1,23 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.ModifyPrivilegesTask" privileges="EnableAdministrationFromWeb">
+	<basicInfo desc="This Task provides the ability to modify the privileges for a user or a group. Task can not change the privilege category and privilege id at one call. For setting multiple parameters, we use caret to seperate them.">
+		<parameter name="userEntityID" desc="The user or group to be modified" required="true" />
+		<parameter name="privilegeCategories" desc="The privilege categories of the user or group. For the parameter's format see: com.microstrategy.web.app.tasks.ModifyPrivilegesTask#privilegeCategoriesParam" required="false" type="simplestring"/>
+		<parameter name="privilegeID" desc="The privilege Id of the user or group. A value from com.microstrategy.webapi.EnumDSSXMLPrivilegeTypes" required="false" type="simplestring"/>
+	</basicInfo>
+
+	<!--
+		"32768003" is the EnumUserEntityBeanEvents.USER_ENTITY_EVENT_MODIFY_PRIVILEGES
+	-->
+	<eventInfo eventID="32768003">
+		 <argument name="privId" value="privilegeID" source="parameter"  />
+		 <argument name="saveNow" value="1"/>   
+	</eventInfo>
+
+	<!--
+		This information describes how the task is defined in terms of an existing
+		Bean.  The name of the bean is 'ub' (to be able to restore the bean state from request). 
+	-->
+	<beanInfo name="ub" bean-type="UserBean">
+	</beanInfo>
+</beanTask>

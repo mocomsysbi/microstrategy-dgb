@@ -1,0 +1,100 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents a runtime parameters of a data import wizard.
+--> 
+<block name="DIParams">
+    <definition>
+        <!-- privilege to import a database -->
+        <property name="ImportDatabase" type="Integer" />
+
+        <!-- privilege to access data from local files, url etc -->
+        <property name="AccessDataFromFiles" type="Integer" />
+
+        <!-- privilege to access data from cloud app -->
+        <property name="AccessDataFromCloudApp" type="Integer" />
+
+		<!-- Privilege to create a report -->
+		<property name="CreateViewReport" type="Integer" />
+		
+        <!-- Privilege to create an analysis -->
+        <property name="CreateReportServices" type="Integer" />
+        
+        <!-- Privilege to create subscriptions -->
+        <property name="Subscriptions" type="Integer" />
+        
+        <!-- Privilege to share cubes -->
+        <property name="Share" type="Integer" />
+        
+        <!-- Privilege to delete cubes -->
+        <property name="Delete" type="Integer" />
+        
+        <!-- Privilege to republish cubes -->
+        <property name="Republish" type="Integer" />
+        
+        <!-- Privilege to set OAuth parameters -->
+        <property name="Admin" type="Boolean" />
+        
+        <!--  Privilege to create a document -->
+		<property name="CreateAnalysis" type="Integer" />
+		<property name="CreateReportServices" type="Integer"/>
+		
+		<!-- File Upload size limit -->
+		<property name="UploadSizeLimit" type="Integer" />		
+		
+        <!--  Cube quota of the user -->
+        <property name="CubeQuota" type="Integer" />
+
+	    <!--  Enable URL Import  -->
+        <property name="EnableURLImport" type="Boolean" />
+        
+        <!--  Enable HTTP Import  -->
+        <property name="EnableHttpImport" type="Boolean" />
+        
+        <!--  Enable FTP Import  -->
+        <property name="EnableFTPImport" type="Boolean" />
+        
+        <!--  Enable File Import  -->
+        <property name="EnableFileImport" type="Boolean" />
+        
+        <!-- The code passed in by iserver when launching DI. This indicates refresh/edit -->
+        <property name="StatusCode" type="Integer"/>
+        
+        <!-- parent folder id of the cube to edit/refresh -->
+        <property name="FolderId" type="String"/>        
+        
+        <!-- Cube name of the data import cube to refresh/edit -->
+        <property name="CubeName" type="String" /> 
+		
+		<!-- Cube desc of the data import cube -->
+		<property name="CubeDesc" type="String" />
+		
+		<!-- ID of the cube to refresh/edit -->
+		<property name="ReportId" type="String" />
+    	
+    	<!-- Message ID -->
+		<property name="MsgId" type="String"/>
+		        
+        <!-- ID of the analysis to launch after import is done -->
+        <property name="AnalysisId" type="String" />
+        
+        <!-- The source application that launched data import wizard -->
+        <property name="DataImportSource" type="String" />
+        
+        <!-- Is this a mass distribution dashboard -->
+        <property name="isMDD" type="Boolean" />
+        
+        <!-- ID of the document -->
+        <property name="DocumentID" type="String" />
+        
+        <!-- Refresh mode -->
+        <property name="RefreshMode" type="Integer" />
+        
+        <!-- Is the application launched as full screen -->
+        <property name="FullScreen" type="Boolean" />
+        
+        <!-- CLoud edition of the product -->
+        <property name="CloudEdition" type="String" />
+        
+    </definition>
+</block>
+       

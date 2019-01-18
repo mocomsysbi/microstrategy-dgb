@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<!--
+    This Block contains properties and tokens for a token stream.
+--> 
+<block name="TokenStream">
+  <definition>
+    
+    <!-- A search results folder for resolving name ambiguity -->
+    <property name="srfd" type="Block" />
+    
+    <!-- The token list -->
+    <property name="items" type="List" />
+    
+    <!-- The reject error code -->
+    <property name="rjec" type="String" />
+    
+    <!-- The reject error description -->
+    <property name="rjed" type="String" />
+    
+    <!-- The metric edit type {EnumDSSXMLMetricEditType} -->
+    <property name="met" type="String" />
+  </definition>
+</block>

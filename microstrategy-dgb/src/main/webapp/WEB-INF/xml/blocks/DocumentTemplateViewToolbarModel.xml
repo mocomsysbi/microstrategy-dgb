@@ -1,0 +1,34 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="RwToolbarModel" name="DocumentTemplateViewToolbarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block listElementKey="K416" name="ToolbarGridButton">
+          <property name="tooltip">{desc:mstrWeb.3547|Grid}</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onvischange</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K417" name="ToolbarGraphButton">
+          <property name="tooltip">{desc:mstrWeb.3548|Graph}</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onvischange</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K418" name="ToolbarGridGraphButton">
+          <property name="tooltip">{desc:mstrWeb.3684|Graph and Grid}</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onvischange</property>
+          <property name="visibleFeatures">rw-editable-view-mode-eplus</property>
+        </block>
+        <block listElementKey="K419" name="ToolbarFlashButton">
+          <property name="id">tbGridFlash</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onvischange</property>
+        </block>
+        <block listElementKey="K420" name="ToolbarAjaxButton">
+          <property name="id">tbGridAjax</property>
+          <property name="listenerMethods">onselectionchange,ongridselectionschange,onvischange</property>
+        </block>
+        <block listElementKey="K421" name="ToolbarGridVisList"/>
+        <block listElementKey="K422" name="BaseBlock"/>
+      </list>
+    </property>
+  </assignments>
+</block>

@@ -1,0 +1,199 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+      <mstrlayout:if name="isValidGrid">
+      <mstrlayout:then>
+      <![CDATA[  
+      	<style type="text/css">
+	      	.leftpadding {
+            	padding-left: 9px;
+            	width: 140px; 
+            	vertical-align: top; 
+	        }
+	        .visProps .visPropsColorPicker {
+	       		width: 18px !important; 
+	        }  
+	        .visProps .mstrPulldown {  
+		        width: 25px;
+		        background-position: 18px 8px;
+		    }
+		    #visPropsEditor_visPropsIPhoneTimeSeriesStyle .timeseriesSelectedTab {
+		    	border: 1px solid #cecece;
+		    	margin-top:3px;
+		    	padding-bottom:10px;
+		    }	
+		    #visPropsEditor_visPropsIPhoneTimeSeriesStyle .mstrColorPicker {
+		    	background-color: #e5e5e5; 
+		    }	 
+		    #visPropsEditor_visPropsIPhoneTimeSeriesStyle .mstrTabSetTabSelected {
+		    	background-color: #fafafa !important;
+		    }
+		    #visPropsEditor_visPropsIPhoneTimeSeriesStyle .mstrColorPicker #pkr {
+				display: none;
+			}
+	    </style>
+     ]]>        
+            <mstrlayout:render name="Tabs">
+            <mstrlayout:argument type="string" value="mstrWeb.11023,mstrWeb.12431" /> <!-- Descriptor: Interval, Formatting -->
+            </mstrlayout:render>
+      <![CDATA[  
+            <div class="timeseriesSelectedTab" id="Intervals" ty="tab" curtab="1" >
+                     <textarea id="visPropsIPhoneTimeSeriesEditorModel" class="mstrJSON">
+            ]]>
+                        <mstrlayout:bContext defaultContentType="JSON" />
+                        <mstrlayout:block name="IPhoneTimeSeriesEditorModel">
+                              <mstrlayout:bEditList path="nodes/items" method="populateNodes"/>
+                              <mstrlayout:bEditBlock path="" method="populateTemplateInfo"/>
+                        </mstrlayout:block>
+                         <![CDATA[
+                           </textarea>
+                          <textarea id="visPropsIPhoneTimeSeriesEditor" class="mstrJSON">
+                         ]]>
+                        <mstrlayout:block name="IPhoneTimeSeriesEditor"/>
+                        
+                         <![CDATA[
+                           </textarea>
+                         ]]>
+                        <mstrlayout:juilLayouts rootBlockName="IPhoneTimeSeriesEditor" />
+                        <script type="text/javascript">
+                        (function(){
+                            var m = mstr.$register('visPropsIPhoneTimeSeriesEditorModel', self);
+                            var v = mstr.$register('visPropsIPhoneTimeSeriesEditor', self); 
+                            v.setModel(m);
+                            v.render();
+                        })();
+                        </script>
+            <![CDATA[  
+            </div>
+            <div class="timeseriesSelectedTab" id="Formatting" ty="tab" curtab="2" >     
+			            ]]>
+			    <table class="visProps">   
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.3905"/> <!-- Descriptor: Background -->
+				            </mstrlayout:render>
+				        </td> 
+				        <td>
+							<mstrlayout:render name="colorPicker">
+								<mstrlayout:argument type="String" value="fbg" />
+								<mstrlayout:argument type="string" value="#000000"/>
+							</mstrlayout:render>
+						</td>
+					</tr>
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.11024"/> <!-- Descriptor: Line and text -->
+				            </mstrlayout:render>
+				        </td> 
+				        <td>   
+							<mstrlayout:render name="colorPicker">
+								<mstrlayout:argument type="String" value="flt" />
+								<mstrlayout:argument type="string" value="#ffffff"/>
+							</mstrlayout:render>
+						</td>
+					</tr>    
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.3632"/> <!-- Descriptor: Series -->
+				            </mstrlayout:render>
+				        </td> 
+				        <td> 
+				        	<mstrlayout:render name="ColorPickerMarix">
+								<mstrlayout:argument type="String" value="fs" />
+							</mstrlayout:render>
+						</td>
+					</tr>       
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.11025"/> <!-- Descriptor: Background transparency -->
+				            </mstrlayout:render>
+				            </td>
+				            <td>
+					            <mstrlayout:render name="selectBox">
+					              <mstrlayout:argument type="String" value="fbt"/>
+					              <mstrlayout:argument type="String" value="0^0%|20^20%|40^40%|60^60%|80^80%|100^100%"/>
+					              <mstrlayout:argument type="String" value="0%"/>
+					            </mstrlayout:render>
+					        </td> 
+					</tr>    
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.12432"/> <!-- Descriptor: Use slider as Selector-->
+				            </mstrlayout:render>
+				        </td> 
+				        <td>   
+							<mstrlayout:render name="checkbox">
+								<mstrlayout:argument type="String" value="sas" />
+								<mstrlayout:argument type="String" value=""/>
+								<mstrlayout:argument type="String" value="0" />
+							</mstrlayout:render>
+						</td>
+					</tr>    
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.11026"/> <!-- Descriptor: Condense labels-->
+				            </mstrlayout:render>
+				        </td> 
+				        <td>   
+							<mstrlayout:render name="checkbox">
+								<mstrlayout:argument type="String" value="fcl" />
+								<mstrlayout:argument type="String" value=""/>
+								<mstrlayout:argument type="String" value="1" />
+							</mstrlayout:render>
+						</td>
+					</tr>    
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.11027"/> <!-- Descriptor: Custom axis scale-->
+				            </mstrlayout:render>
+				        </td> 
+				        <td>   
+							<mstrlayout:render name="checkbox">
+								<mstrlayout:argument type="String" value="fcas" />
+								<mstrlayout:argument type="String" value="onchange^microstrategy.bone('visPropsEditor_visPropsIPhoneTimeSeriesStyle').greyOutMinMaxAxisValue();"/>
+								<mstrlayout:argument type="String" value="0" />
+							</mstrlayout:render>
+						</td>
+					</tr>    
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.11029"/> <!-- Descriptor: Maximum axis value-->
+				            </mstrlayout:render>
+				        </td> 
+				        <td> 
+							<mstrlayout:render name="textbox">
+								<mstrlayout:argument type="String" value="fmaav" />
+								<mstrlayout:argument type="String" value="isValid^microstrategy.bone('visPropsEditor_visPropsIPhoneTimeSeriesStyle').validateAxisValue();"/>
+							</mstrlayout:render>
+						</td>
+					</tr>    
+					<tr>
+						<td class="leftpadding">
+							<mstrlayout:render name="descriptor">
+				               <mstrlayout:argument type="string" value="mstrWeb.11028"/> <!-- Descriptor: Minimum axis value-->
+				            </mstrlayout:render>
+				        </td> 
+				        <td>   
+							<mstrlayout:render name="textbox">
+								<mstrlayout:argument type="String" value="fmiav" />
+							</mstrlayout:render>
+						</td>
+					</tr>    
+				</table>
+            <![CDATA[             
+            </div>
+            ]]>
+      </mstrlayout:then>
+    <mstrlayout:else>
+      <mstrlayout:render name="ValidationError" />
+    </mstrlayout:else>
+  </mstrlayout:if>        
+</mstrlayout:layout>
+

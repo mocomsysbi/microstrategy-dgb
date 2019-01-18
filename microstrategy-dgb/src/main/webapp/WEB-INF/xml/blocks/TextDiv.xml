@@ -1,0 +1,18 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- TextDiv is a UIComponent for displaying read-only text in a scrollable area, with an optional caption. -->
+	<block name="TextDiv" inherits="BaseView">
+		<definition>
+			<!-- The text to display on the TextBox's GUI. -->
+			<property name="caption" type="String" />
+
+			<!-- Optional tooltip text. -->
+			<property name="tooltip" type="String" />
+
+			<!-- Optional value of TextBox contents. -->
+			<property name="value" type="String" />
+		</definition>
+		<assignments>
+			<property name="layoutClass">mstr.layouts.TextDiv</property>
+			<property name="cssClass">TextDiv</property>
+		</assignments>
+	</block>

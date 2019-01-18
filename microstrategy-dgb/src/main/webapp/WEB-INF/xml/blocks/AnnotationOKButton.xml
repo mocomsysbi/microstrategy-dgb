@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="AnnotationOKButton" inherits="TextButton">
+		<assignments>
+        	<property name="caption">{desc:mstrWeb.2397|OK}</property>
+        	<property name="modelPath">parent/model</property>
+        	<property name="cssClass">Button</property>
+        	<property name="cmds">Update|"false"|parent/parent;!ValidateEdit|model/value|model;!ValidateEdit|model/value|parent/parent;Save||model;SetMode|"add"|model;Resize||parent/parent</property>
+    	</assignments>
+    </block>

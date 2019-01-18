@@ -1,0 +1,166 @@
+<shortcut-list-set name="reportCellContextMenus" version="1.0">
+  <!--
+    The default shortcut-list represents the set of shortcuts (context-menu-items)
+    that will be appended to a cell in case an specialized shortcut-list
+    for a given cell-type doesn't exist. The specialized cases are:
+        - "title": For RowTitle and ColumnTitle cells
+        - "header": For RowHeader and ColumnHeader cells
+        - "metricValue": For metric values
+        - "cell": For other cells.
+
+    Notice that this XML only includes a specilized "metricValue" group.
+
+    -->
+  <shortcut-list name="default">
+    <shortcut name="drillGrid" desc="[Drill]" desc-id="mstrWeb.145" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDrill" dhtml-show="!(microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryState('isOLAP'))" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('rmcDrilling');"/>
+    <shortcut name="FilterOnSelections" desc="[Filter On Selections]" desc-id="mstrWeb.1022" dhtml-show="!(microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryState('isOLAP'))" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('fos');"  feature-id="embedded-template-node;filteronselection-editor;enable-filteronselection-editor" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('fos');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellFilterOnSelections"/>
+    <shortcut name="hlNavGrid" feature-id="web-drill-and-link" desc="[Links]" desc-id="mstrWeb.5752" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('links');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellHyperLinkNavigation"/>
+    <shortcut name="sort" desc="[Sort]" desc-id="mstrWeb.2217" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellSort">
+        <shortcut-list name="sortOptions">
+        <shortcut name="sortAsc" desc="[Ascending]" desc-id="mstrWeb.1885" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellSortAscending"/>
+        <shortcut name="sortDesc" desc="[Descending]" desc-id="mstrWeb.1886" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellSortDescending"/>
+        <shortcut name="sortColAsc" desc="[Ascending]" desc-id="mstrWeb.1885" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellSortColAscending"/>
+        <shortcut name="sortColDesc" desc="[Descending]" desc-id="mstrWeb.1886" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellSortColDescending"/>
+        <!-- Remove this old Custom sort editor in favor of the New Custom Sort editor   -->
+        <!--  
+        <shortcut name="sortCustom" desc="[Custom...]" desc-id="mstrWeb.5870" dhtml-enabled="if (microstrategy.bone('rwb_viewer'))microstrategy.bone('rwb_viewer').commands.queryEnabled('derivedElementsCM'); else true;" dhtml-show="microstrategy.DISPLAY_MODE == microstrategy.VIEW_MODE" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellCustomSort"/>
+        -->
+        <shortcut name="sortCustomNew" desc="[Custom...]" desc-id="mstrWeb.5870" dhtml-enabled="if (microstrategy.bone('rwb_viewer'))microstrategy.bone('rwb_viewer').commands.queryEnabled('derivedElementsCM'); else true;" dhtml-show="microstrategy.DISPLAY_MODE == microstrategy.VIEW_MODE" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellNewCustomSort"/>
+        </shortcut-list>
+    </shortcut>
+    <shortcut name="sortGridCell" desc="[Sort Grid...]" desc-id="mstrWeb.3200"  builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAdvancedSort"/>
+
+    <shortcut name="showSubtotalsCell" base-bone="rwb_viewer" desc="[Show Subtotals]" desc-id="mstrWeb.2118" dhtml-enabled="microstrategy.bone('rwb_viewer').commands.queryEnabled('tsubtotals')" dhtml-checked="microstrategy.bone('rwb_viewer').commands.queryState('tsubtotals')" feature-id="embedded-template-node;dhtml;show-totals;show-subtotals" onclick="microstrategy.bone('rwb_viewer').commands.exec('tsubtotals');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDefaultMenu"/>
+    <shortcut name="editTotalsCell" base-bone="rwb_viewer" desc="[Edit Totals...]" desc-id="mstrWeb.3310" dhtml-enabled="microstrategy.bone('rwb_viewer').commands.queryEnabled('hasmetrics')" feature-id="embedded-template-node;frame-element-enabled;dhtml;show-totals" onclick="microstrategy.bone('rwb_viewer').commands.exec('edtSubtotals');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDefaultMenu"/>
+    <shortcut name="viewFilter" base-bone="rwb_viewer" desc="Edit View Filter..." desc-id="mstrWeb.3938" onclick="commands.exec('vfeRWGrid')" feature-id="use-view-filter-editor;rw-interactive-view-mode-eplus" dhtml-show="commands.queryEnabled('vfeRWGrid');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDefaultMenu"/>
+    <shortcut name="hideNullsOrZeros" base-bone="rwb_viewer" desc="[Hide Nulls/Zeros]" desc-id="mstrWeb.9847" dhtml-show="commands.queryEnabled('toggleHideNullsOrZeros');" onclick="commands.exec('toggleHideNullsOrZeros');" dhtml-checked="commands.queryState('HideNullsOrZeros')" feature-id="rw-interactive-view-mode-eplus" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDefaultMenu"/>
+    <shortcut name="s1" desc="-" feature-id="embedded-template-node"/>
+    <shortcut name="newMetricGrid" desc="[Insert Metric]" desc-id="mstrWeb.3322" feature-id="embedded-template-node;rw-interactive-view-mode-eplus" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellInsertMetric">
+        <shortcut-list name="metricOptions">
+            <shortcut name="pctTotal" desc="[Percent to Total]" desc-id="mstrWeb.3323" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellInsertPercentToTotalMetric">
+                <shortcut-list name="pctTotalOptions">
+            <shortcut name="pctRows" desc="[Over Rows]" desc-id="mstrWeb.3326" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellPercentOverRowsMetric"/>
+            <shortcut name="pctCols" desc="[Over Columns]" desc-id="mstrWeb.3327" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellPercentOverColumnsMetric"/>
+            <shortcut name="pctPages" desc="[Over Pages]" desc-id="mstrWeb.3328" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellPercentOverPagesMetric"/>
+            <shortcut name="pctGT" desc="[Grand Total]" desc-id="mstrWeb.3329" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellPercentGrandTotalMetric"/>
+            <shortcut name="pctEach" desc="[For Each]" desc-id="mstrWeb.3330" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellPercentForEachMetric"/>
+          </shortcut-list>
+        </shortcut>
+        <shortcut name="transformation" desc="[Transformation]" desc-id="mstrWeb.3324" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellTransformationMetric"/>
+        <shortcut name="rank" desc="[Rank]" desc-id="mstrWeb.2789" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellRankMetric"/>
+        <shortcut desc="-" name="mvSeparator1"/>
+        <shortcut append-state="true" desc="[New...]" desc-id="mstrWeb.1895" enable-feature-id="enable-insert-new-metric" dhtml-show="(microstrategy.EXECUTION_SCOPE == microstrategy.REPORT_EXECUTION &amp;&amp; microstrategy.DISPLAY_MODE == microstrategy.VIEW_MODE)" feature-id="insert-new-metric" href="#" iframe="true" name="newMtRpt" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.commands.exec('newMetric');" />
+        <shortcut append-state="true" base-bone="rwb_viewer" desc="[New...]" desc-id="mstrWeb.1895" dhtml-show="(microstrategy.EXECUTION_SCOPE == microstrategy.RWD_EXECUTION)" dhtml-enabled="microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryEnabled('edtDMetric')" feature-id="frame-element-enabled;dhtml;insert-new-metric;" href="#" iframe="false" name="newMtRWD" onclick="microstrategy.bone('rwb_viewer').commands.exec('edtDMetric');"/>
+        </shortcut-list>
+    </shortcut>
+
+    <shortcut name="addShortcutMetric" desc="[Insert Metric]" desc-id="mstrWeb.3322" feature-id="embedded-template-node;rw-interactive-view-mode-eplus" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportTitleInsertMetric">
+        <shortcut-list name="metricOptions">
+		<shortcut name="addAvg" desc="[Average]" desc-id="mstrWeb.2122" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAddShortcutMetric">
+			<properties>
+				<property name="shortcutMetricType" value="4" />
+			</properties>
+		</shortcut>
+        <shortcut name="addCount" desc="[Count]" desc-id="mstrWeb.2123" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAddShortcutMetric">
+			<properties>
+				<property name="shortcutMetricType" value="1" />
+			</properties>
+		</shortcut>
+		<shortcut name="addMax" desc="[Maximum]" desc-id="mstrWeb.2125" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAddShortcutMetric">
+			<properties>
+				<property name="shortcutMetricType" value="3" />
+			</properties>
+		</shortcut>
+        <shortcut name="addMin" desc="[Minimum]" desc-id="mstrWeb.2127" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAddShortcutMetric">
+			<properties>
+				<property name="shortcutMetricType" value="2" />
+			</properties>
+		</shortcut>
+        <shortcut name="addSum" desc="[Sum]" desc-id="mstrWeb.2131" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAddShortcutMetric">
+			<properties>
+				<property name="shortcutMetricType" value="5" />
+			</properties>
+		</shortcut>
+        </shortcut-list>
+    </shortcut>
+    <shortcut name="s2" desc="-" feature-id="embedded-template-node"/>
+
+    <shortcut name="createGridControlAutowireOff" desc="[Use as Selector...]" desc-id="mstrWeb.6152" base-bone="rwb_viewer" feature-id="rw-editable-view-mode-eplus" dhtml-show="commands.queryState('hasNoTargets') &amp;&amp; !microstrategy.bone('rwb_viewer').autoWire" dhtml-enabled="microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryEnabled('editSelector')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellActionControlEditor"/>
+    <shortcut name="createGridControlAutowireOn" desc="[Use as Selector]" desc-id="mstrWeb.7483" base-bone="rwb_viewer" feature-id="rw-editable-view-mode-eplus" dhtml-show="commands.queryState('hasNoTargets') &amp;&amp; microstrategy.bone('rwb_viewer').autoWire" dhtml-enabled="microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryEnabled('editSelector')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellSelectorControlEditor"/>
+    <shortcut name="editGridControl" desc="[Edit Selector...]" desc-id="mstrWeb.4964" base-bone="rwb_viewer" feature-id="rw-editable-view-mode-eplus" dhtml-show="!microstrategy.bone('rwb_viewer').commands.queryState('hasNoTargets')" dhtml-enabled="microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryEnabled('editSelector')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellActionControlEditor"/>
+    <shortcut name="removeGridControl" desc="[Remove Selector]" desc-id="mstrWeb.6151" base-bone="rwb_viewer" feature-id="rw-editable-view-mode-eplus" dhtml-show="!microstrategy.bone('rwb_viewer').commands.queryState('hasNoTargets')" dhtml-enabled="commands.queryEnabled('Autowire')" onclick="microstrategy.bone('rwb_viewer').commands.exec('removeTargets')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellActionControlEditor"/>
+    <shortcut name="selectControlTarget" desc="[Select  Targets]" desc-id="mstrWeb.4724" base-bone="rwb_viewer" feature-id="rw-editable-view-mode-eplus" dhtml-show="(microstrategy.EXECUTION_SCOPE == microstrategy.RWD_EXECUTION)" dhtml-enabled="microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryEnabled('editSelector')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.SelectControlTargets"/>
+    <shortcut name="mvSeparator2" desc="-"/>
+
+    <shortcut name="createSelectorControl" desc="[Create Selector Control]" desc-id="mstrWeb.4725" base-bone="rwb_viewer" feature-id="rw-editable-view-mode-eplus" dhtml-show="(microstrategy.EXECUTION_SCOPE == microstrategy.RWD_EXECUTION)" dhtml-enabled="microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryEnabled('editSelector')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.CreateSelectorControl"/>
+    <shortcut name="createSelectorControl" desc="[Create Selector Control]" desc-id="mstrWeb.4725" base-bone="rwb_viewer" feature-id="rw-editable-view-mode-eplus" dhtml-show="(microstrategy.EXECUTION_SCOPE == microstrategy.RWD_EXECUTION)" dhtml-enabled="microstrategy.bone('rwb_viewer') &amp;&amp; microstrategy.bone('rwb_viewer').commands.queryEnabled('editSelector')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.CreateSelectorControl"/>
+
+    <shortcut name="moveGrid" desc="[Move]" desc-id="mstrWeb.1889" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMove" dhtml-show="$check-subMenu-existence$">
+        <shortcut-list name="pivotOptions">
+        <shortcut name="mvPageBy" desc="[To Page By]" desc-id="mstrWeb.1892" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('p');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMoveToPageBy"/>
+        <shortcut name="mvToCols" desc="[To Columns]" desc-id="mstrWeb.1891" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('c');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMoveToColumns"/>
+        <shortcut name="mvToRows" desc="[To Rows]" desc-id="mstrWeb.1890" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('c');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMoveToRows"/>
+        <shortcut desc="-" name="mvSeparator1"/>
+        <shortcut name="mvLeft" desc="[Left]" desc-id="mstrWeb.2167" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('l');" dhtml-enabled="microstrategy.EXECUTION_SCOPE == microstrategy.RWD_EXECUTION || (microstrategy.findBone(microstrategy.activeCXMenu) &amp;&amp; microstrategy.findBone(microstrategy.activeCXMenu).commands.queryEnabled('moveLeft'))" dhtml-show="microstrategy.EXECUTION_SCOPE != microstrategy.RWD_EXECUTION || (microstrategy.findBone(microstrategy.activeCXMenu) &amp;&amp; microstrategy.findBone(microstrategy.activeCXMenu).commands.queryEnabled('showLeft'))" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMoveLeft"/>
+        <shortcut name="mvUp" desc="[Up]" desc-id="mstrWeb.152" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('u');" dhtml-enabled="microstrategy.EXECUTION_SCOPE == microstrategy.RWD_EXECUTION || (microstrategy.findBone(microstrategy.activeCXMenu) &amp;&amp; microstrategy.findBone(microstrategy.activeCXMenu).commands.queryEnabled('moveUp'))" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMoveUp"/>
+        <shortcut name="mvRight" desc="[Right]" desc-id="mstrWeb.2166" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('r');" dhtml-enabled="microstrategy.EXECUTION_SCOPE == microstrategy.RWD_EXECUTION || (microstrategy.findBone(microstrategy.activeCXMenu) &amp;&amp; microstrategy.findBone(microstrategy.activeCXMenu).commands.queryEnabled('moveRight'))" dhtml-show="microstrategy.EXECUTION_SCOPE != microstrategy.RWD_EXECUTION || (microstrategy.findBone(microstrategy.activeCXMenu) &amp;&amp; microstrategy.findBone(microstrategy.activeCXMenu).commands.queryEnabled('showRight'))" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMoveRight"/>
+        <shortcut name="mvDown" desc="[Down]" desc-id="mstrWeb.153" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('d');" dhtml-enabled="microstrategy.EXECUTION_SCOPE == microstrategy.RWD_EXECUTION || (microstrategy.findBone(microstrategy.activeCXMenu) &amp;&amp; microstrategy.findBone(microstrategy.activeCXMenu).commands.queryEnabled('moveDown'))" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMoveDown"/>
+      </shortcut-list>
+    </shortcut>
+    <shortcut name="metricFilter" desc="[Filter On...]" desc-id="mstrWeb.3879" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMetricFilter">
+      <shortcut-list name="mfOptions">
+        <shortcut name="mfClear" desc="[Clear]" desc-id="mstrWeb.2827" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('mfc');" iframe="true" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMetricFilterEdit"/>
+        <shortcut name="mfTop10" desc="[Top N...]" desc-id="mstrWeb.5151" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('mftop');" iframe="true"/>
+        <shortcut name="mfFilterOn" desc="[Edit Condition...]" desc-id="mstrWeb.5152" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('mfedit');" iframe="true" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellMetricFilterEdit"/>
+        <shortcut name="mfAddCondition" desc="[Add Condition...]" desc-id="mstrWeb.4414" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('mfadd');" iframe="true"/>
+      </shortcut-list>
+    </shortcut>
+    <shortcut name="filterOnGrid" desc="[Filter On]" desc-id="mstrWeb.3879" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellFilterOn"/>
+    <shortcut name="keepOnGrid" desc="[Keep on Grid]" desc-id="mstrWeb.9509" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellKeepOnGrid"/>
+    <shortcut name="rmGrid" desc="[Remove from Grid]" desc-id="mstrWeb.2214" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellRemoveFromGrid"/>
+	<shortcut name="rmRpt" desc="[Remove from Report]" desc-id="mstrWeb.2216" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellRemoveFromReport"/>
+    <shortcut name="fmtGrid" desc="[Advanced Formating...]" desc-id="mstrWeb.2215" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellFormat"/>
+    <shortcut append-state="true" desc="[Thresholds]" desc-id="mstrWeb.3647"  feature-id="embedded-template-node;use-basoradv-threshold-editor;!check-design-mode" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellThresholds">
+        <shortcut desc="[Visual...]" desc-id="mstrWeb.5995" name="visualThresholds" feature-id="use-basic-threshold-editor" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellVisualThresholds"/>
+        <shortcut desc="[Advanced...]" desc-id="mstrWeb.4606" name="advancedThresholds" feature-id="use-advanced-threshold-editor" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAdvancedThresholds"/>
+    </shortcut>
+    <shortcut append-state="true" desc="Alerts" desc-id="mstrWeb.5653"  feature-id="embedded-template-node;show-alerts-button" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAlert">
+    	<shortcut name="Mobile Alert" desc="Mobile Notification..." desc-id="mstrWeb.8037" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAlertMobile" onclick="microstrategy.toggleEditor('', 'alertsEditor');" feature-id="embedded-template-node;subscribe-to-alert;use-mobile"/>
+    	<shortcut name="Email Alert" desc="Email Notification..." desc-id="mstrWeb.8038" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAlertEmail" onclick="microstrategy.toggleEditor('', 'alertsEditor');" feature-id="embedded-template-node;subscribe-to-alert;scheduled-email"/>
+   </shortcut>
+    <shortcut name="editGrid" desc="[Rename...]" desc-id="mstrWeb.3358"  feature-id="embedded-template-node;!check-design-mode" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellRename"/>
+    <shortcut name="renameGrid" desc="[Edit...]" desc-id="mstrWeb.3224"  feature-id="embedded-template-node;!check-design-mode" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellEditDerived"/>
+    <shortcut name="atFrmGrid" desc="[Attribute Forms]" feature-id="embedded-template-node;show-detailed-attribute-form-options" desc-id="mstrWeb.2890" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAttributeForms"/>
+    <shortcut name="atFrmGrid2" desc="[Edit Attribute Forms...]" enable-feature-id="enable-modify-attribute-forms" feature-id="embedded-template-node;set-attributeform-display;!show-detailed-attribute-form-options" desc-id="mstrWeb.5634" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellAttributeFormEditor"/>
+    <shortcut name="drElts" desc="[Derived Elements...]" desc-id="mstrWeb.5423" feature-id="embedded-template-node" dhtml-show="microstrategy.DISPLAY_MODE == microstrategy.VIEW_MODE" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDerivedElements"/>
+    <shortcut name="clearDrElts" desc="[Clear Derived Elements...]" desc-id="mstrWeb.5748" dhtml-show="microstrategy.DISPLAY_MODE == microstrategy.VIEW_MODE" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellClearDerivedElements"/>
+    <shortcut name="quickListGroup" desc="[Create Group]" desc-id="mstrWeb.5414" feature-id="embedded-template-node" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('deList');" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands &amp;&amp; ((microstrategy.EXECUTION_SCOPE == microstrategy.REPORT_EXECUTION) || microstrategy.bone('rwb_viewer').commands.queryEnabled('customGroupCM')))ogrid.commands.queryEnabled('deList');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDEQuickGroupOperator"/>
+    <shortcut name="quickCalGroup" desc="[Create Calculation]" desc-id="mstrWeb.5415" feature-id="embedded-template-node" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDEQuickGroup" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands &amp;&amp; ogrid.commands &amp;&amp; ((microstrategy.EXECUTION_SCOPE == microstrategy.REPORT_EXECUTION) || microstrategy.bone('rwb_viewer').commands.queryEnabled('createCalculationCM')))ogrid.commands.queryEnabled('deCalc');"/>
+    <shortcut name="resizeColRows" base-bone="rwb_viewer" desc="[Resize Columns and Rows]" desc-id="mstrWeb.2591" dhtml-enabled="commands.queryEnabled('edtResize')" feature-id="embedded-template-node;grid-layout;check-execute-mode;frame-element-enabled;dhtml;" onclick="commands.exec('edtResize');" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDefaultMenu"/>
+    <shortcut name="hprLink" desc="Edit Links..." desc-id="mstrWeb.6191" feature-id="embedded-template-node;web-edit-drilling-and-links" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('showWebHyperLinkEditor')" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellHyperLink"/>
+  </shortcut-list>
+<!--
+    This is the shortcut-list with the group of context-menu-items
+    that will be applied to metric values cells. It's defined separetly
+    since most of the normal context-menu-items do not apply to metric values.
+ -->
+  <shortcut-list name="metricValue">
+    <shortcut name="drillGrid" desc="[Drill]" desc-id="mstrWeb.145" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellDrill"/>
+    <shortcut name="hlNavGrid" feature-id="web-drill-and-link" desc="[Links]" desc-id="mstrWeb.5752"  builder-class-name="com.microstrategy.web.app.transforms.contextmenus.ReportCellHyperLinkNavigation"/>
+  </shortcut-list>
+<!--
+    This is the shortcut-list with the sub-items of the quickCalGroup context-menu-item.
+    They are defined as a seperate group for performance reasons: in this way
+    the quickCalGroup context-menu-item of each cell shares the same
+    submenu and therefore it's only calculated once:
+ -->
+  <shortcut-list name="quickCalOptions">
+    <shortcut name="groupSum" desc="[Add]" desc-id="mstrWeb.2156" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('deSum');" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('deSum');"/>
+    <shortcut name="groupAvg" desc="[Average]" desc-id="mstrWeb.2122" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('deAvg');" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('deAvg');"/>
+    <shortcut name="groupMin" desc="[Least]" desc-id="mstrWeb.5868" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('deMin');" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('deMin');"/>
+    <shortcut name="groupMax" desc="[Greatest]" desc-id="mstrWeb.5869" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('deMax');" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('deMax');"/>
+    <shortcut desc="-" name="qgSeparator1"/>
+    <shortcut name="groupMinus" desc="[Substract]" desc-id="mstrWeb.5419" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('deMinus');" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('deMinus');"/>
+    <shortcut name="groupDivide" desc="[Divide]" desc-id="mstrWeb.5420" onclick="var bone = microstrategy.findBone(microstrategy.activeCXMenu); bone.processContextMenus('deDivide');" dhtml-enabled="var ogrid = microstrategy.findBone(microstrategy.activeCXMenu); if(ogrid &amp;&amp; ogrid.commands)ogrid.commands.queryEnabled('deDivide');"/>
+  </shortcut-list>
+</shortcut-list-set>

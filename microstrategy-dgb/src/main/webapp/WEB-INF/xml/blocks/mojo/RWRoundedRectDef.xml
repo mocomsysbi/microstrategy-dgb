@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides information about the definition of a single rounded rectangle in a RWD.
+--> 
+<block name="RWRoundedRectDef" inherits="RWUnitDef">
+	<definition>
+		<!-- Indicates the radius of corners (in pixels) -->
+		<property name="r" type="Integer" />
+		
+		<!-- Should only the top corners be rounded? -->
+		<property name="topc" type="Boolean" />
+	</definition>
+</block>

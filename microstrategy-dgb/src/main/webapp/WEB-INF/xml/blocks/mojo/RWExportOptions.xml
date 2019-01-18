@@ -1,0 +1,23 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the properties for the Export Options dialog.
+--> 
+<block name="RWExportOptions">
+    <definition>
+        <!-- Whether to prompt the user with the "Export Options" dialog. -->
+        <property name="s" type="Boolean" />
+        
+        <!-- Whether to use a "new" window for showing the exported document. -->
+        <property name="n" type="Boolean" /> 
+        
+        <!-- The export mode. -->
+        <property name="m" type="Integer" />
+
+        <!-- The export range. -->
+        <property name="r" type="Integer" />
+        
+        <!-- A block containing descriptors for the "Export Options" dialog. -->
+        <property name="ds" type="Block" />
+    </definition>
+</block>
+       

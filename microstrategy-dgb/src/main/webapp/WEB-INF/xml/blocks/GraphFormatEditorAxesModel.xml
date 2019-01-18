@@ -1,0 +1,48 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="TabModel" name="GraphFormatEditorAxesModel">
+  <definition>
+    <property name="dualAxisAuto" type="Block"/>
+    <property name="dualOptionItems" type="Block"/>
+  </definition>
+  <assignments>
+    <property name="tabId">Axes</property>
+    <property name="titleText">{desc:mstrWeb.3901|Axes}</property>
+    <property name="categoryText">{desc:mstrWeb.3899|Format}</property>
+    <property name="visible">true</property>
+    <property name="enabled">true</property>
+    <property name="visibleField">axs_visible</property>      
+    <property name="scriptClass">mstr.models.GraphAxesTabModel</property>
+    <property name="storeFields">gridIntervalCKX|gridIntervalCKY1|gridIntervalCKY2|gridIntervalCKZ|maxScaleCKX|minScaleCKX|maxScaleCKY1|minScaleCKY1|maxScaleCKY2|minScaleCKY2|maxScaleCKZ|minScaleCKZ|gridIntervalX|gridIntervalY1|gridIntervalY2|gridIntervalZ|maxScaleX|minScaleX|maxScaleY1|minScaleY1|maxScaleY2|minScaleY2|maxScaleZ|minScaleZ|dualAxisAuto|dualOptionItems|is3DGraph</property>
+    <!-- Dual Y Options Settings -->
+    <property name="dualAxisAuto">
+      <block name="ListModel">
+        <property name="selectedIndicesList"/>
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K1950" name="ItemInfo">
+              <property name="dssid">0</property>
+              <property name="n">{desc:mstrWeb.5952|Assign odd series to Y1 axis and
+                                even series to Y2 axis}</property>
+            </block>
+            <block listElementKey="K1951" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5953|Manually assign series to each axis}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <property name="dualOptionItems">
+      <block name="ListCartModel">
+		<property name="scriptClass">mstr.models.ListCartWithSwap</property>
+        <property name="available">
+          <block name="ListModel"/>
+        </property>
+        <property name="selected">
+          <block name="ListModel"/>
+        </property>
+      </block>
+    </property>
+  </assignments>
+</block>

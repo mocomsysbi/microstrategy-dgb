@@ -1,0 +1,30 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block provides "definition" information about units like button and links in the path bar.
+--> 
+<block name="PathBarUnitDef">
+    <definition>
+        
+        <!-- The name of this item. -->
+        <property name="n" type="String" />
+        
+        <!-- The href of this item. -->
+        <property name="href" type="String" />
+        
+        <!-- The descption of this item. -->
+        <property name="desc" type="String" />
+        
+        <!-- The descption of this item. -->
+        <property name="user" type="String" />
+        
+        <!-- Whether this item is enabled or not -->
+        <property name="en" type="Boolean" />
+
+        <!-- Whether this item should be visible or rendered -->
+        <property name="visible" type="Boolean" />
+        
+        <!-- The items of this item. -->
+        <property name="items" type="List" />
+               
+    </definition>
+</block>

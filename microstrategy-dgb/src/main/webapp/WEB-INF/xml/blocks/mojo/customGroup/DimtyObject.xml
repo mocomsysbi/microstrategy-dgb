@@ -1,0 +1,16 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Dimty Object
+-->
+<block name="DimtyObject">
+     <definition>
+         <!-- Can Continue property  -->
+    <property name="cc" type="Boolean" /> 
+
+         <!-- Filter Restriction property  -->
+    <property name="fres" type="Boolean" /> 
+
+         <!-- Dimty Units collection  -->
+    <property name="uts" type="List" />
+     </definition>
+</block>

@@ -1,0 +1,59 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ExpressionCartProperties" inherits="BaseBlock">
+  <definition>
+    <property name="newConditionButton" type="Block" />
+    <property name="importFileButton" type="Block" />
+    <property name="deleteConditionsButton" type="Block" />
+    <property name="groupConditionsButton" type="Block" />
+    <property name="ungroupConditionsButton" type="Block" />
+    <property name="descriptors" type="Block" />
+  </definition>
+  <assignments>
+    <property name="descriptors">
+      <block name="BaseBlock">
+        <property name="loading" type="String">{desc:mstrWeb.2901|Loading...}</property>
+      </block>
+    </property>
+    <property name="newConditionButton">
+      <block name="ToolButton">
+        <property name="tooltip">{desc:mstrWeb.5893|New Condition}</property>
+        <property name="iconClass">mstrBGIcon_tbNew</property>
+        <property name="cmds">Add||parent/model</property>
+        <property name="modelPath">parent/model/selected</property>
+      </block>
+    </property>
+    <property name="importFileButton">
+      <block name="ToolButton">
+        <property name="tooltip">{desc:mstrWeb.5903|Import file...}</property>
+        <property name="iconClass">mstrBGIcon_tbImportFile</property>
+        <property name="cmds">!ImportFile||parent/model/selected;UpdateInListFunction||parent/model/selected;OpenPopup|"ExpressionFileImport1Popup1"|parent/selectedView</property>
+        <property name="modelPath">parent/model/selected</property>
+        <property name="visibleField">parent/model/selected/allowFileImport</property>
+      </block>
+    </property>
+    <property name="deleteConditionsButton">
+      <block name="ToolButton">
+        <property name="tooltip">{desc:mstrWeb.5894|Delete Conditions}</property>
+        <property name="iconClass">mstrBGIcon_tbDelete</property>
+        <property name="cmds">Delete||parent/model/selected</property>
+        <property name="modelPath">parent/model/selected</property>
+      </block>
+    </property>
+    <property name="groupConditionsButton">
+      <block name="ToolButton">
+        <property name="tooltip">{desc:mstrWeb.5895|Group Conditions}</property>
+        <property name="iconClass">mstrBGIcon_tbGroupConditions</property>
+        <property name="cmds">Group||parent/model/selected</property>
+        <property name="modelPath">parent/model/selected</property>
+      </block>
+    </property>
+    <property name="ungroupConditionsButton">
+      <block name="ToolButton">
+        <property name="tooltip">{desc:mstrWeb.5896|Ungroup Conditions}</property>
+        <property name="iconClass">mstrBGIcon_tbUngroupConditions</property>
+        <property name="cmds">Ungroup||parent/model/selected</property>
+        <property name="modelPath">parent/model/selected</property>
+      </block>
+    </property>
+  </assignments>
+</block>

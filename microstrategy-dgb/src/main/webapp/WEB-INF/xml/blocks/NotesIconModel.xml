@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<block name="NotesIconModel" inherits="BaseModel">
+		<assignments>
+			<property name="scriptClass">mstr.models.NotesIconModel</property>
+			<property name="id">NotesIconModel_model</property>
+		</assignments>
+	</block>

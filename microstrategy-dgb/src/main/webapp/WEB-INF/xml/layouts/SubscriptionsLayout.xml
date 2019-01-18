@@ -1,0 +1,186 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+	<mstrlayout:if name="hasSubscriptions">
+		<mstrlayout:then>
+            
+            <mstrlayout:if name="shouldShowPersonalViewSubscriptionsList">
+                <mstrlayout:argument type="boolean" value="true"/>
+                <mstrlayout:then>
+                    <div class="mstrTitle">
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="String" value="mstrWeb.9824"/>
+                        </mstrlayout:render>
+                        <span class="mstrIcon-inline">
+                            <mstrlayout:render name="userHelpAnchor">
+                                <mstrlayout:argument type="String" value="Export_on_schedule.htm"/>
+                            </mstrlayout:render>
+                        </span>
+                    </div>
+                    <mstrlayout:render name="personalViewSubscriptions">
+                        <mstrlayout:argument type="boolean" value="true"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            
+            <mstrlayout:if name="shouldShowPersonalViewSubscriptionsList">
+                <mstrlayout:argument type="boolean" value="false"/>
+                <mstrlayout:then>
+                    <div class="mstrTitle">
+                        <mstrlayout:render name="descriptor">
+                            <mstrlayout:argument type="String" value="mstrWeb.9172"/>
+                        </mstrlayout:render>
+                        <span class="mstrIcon-inline">
+                            <mstrlayout:render name="userHelpAnchor">
+                                <mstrlayout:argument type="String" value="Export_on_schedule.htm"/>
+                            </mstrlayout:render>
+                        </span>
+                    </div>
+                    <mstrlayout:render name="personalViewSubscriptions">
+                        <mstrlayout:argument type="boolean" value="false"/>
+                    </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+            
+			<mstrlayout:if name="shouldShowSubscriptionsList">
+				<mstrlayout:argument type="int" value="16"/>
+				<mstrlayout:then>
+							<div class="mstrTitle">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="String" value="mstrWeb.5001"/> <!-- History List Subscriptions -->
+								</mstrlayout:render>
+								<span class="mstrIcon-inline">
+									<mstrlayout:render name="userHelpAnchor">
+										<mstrlayout:argument type="String" value="History_List_on_schedule.htm"/>
+									</mstrlayout:render>
+								</span>
+							</div>
+							<mstrlayout:render name="subscriptionsByDeliveryMode">
+								<mstrlayout:argument type="int" value="16"/>
+							</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+			
+			
+			
+			<mstrlayout:if name="shouldShowSubscriptionsList">
+				<mstrlayout:argument type="int" value="128"/>
+				<mstrlayout:then>
+
+							<div class="mstrTitle">
+								<mstrlayout:render name="descriptor">
+									<mstrlayout:argument type="String" value="mstrWeb.5002"/> <!-- Mobile Subscriptions -->
+								</mstrlayout:render>
+								<span class="mstrIcon-inline">
+									<mstrlayout:render name="userHelpAnchor">
+										<mstrlayout:argument type="String" value="Send_report_to_Mobile.htm"/>
+									</mstrlayout:render>
+								</span>
+							</div>
+							<mstrlayout:render name="subscriptionsByDeliveryMode">
+								<mstrlayout:argument type="int" value="128"/>
+							</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+			
+            <mstrlayout:if name="shouldShowSubscriptionsList">
+                <mstrlayout:argument type="int" value="64"/>
+                <mstrlayout:then>
+
+                            <div class="mstrTitle">
+                                <mstrlayout:render name="descriptor">
+                                    <mstrlayout:argument type="String" value="mstrWeb.14385"/> <!-- Cube / Cache Update Subscriptions -->
+                                </mstrlayout:render>
+                                <span class="mstrIcon-inline">
+                                    <mstrlayout:render name="userHelpAnchor">
+                                        <mstrlayout:argument type="String" value="cache_on_schedule.htm"/>
+                                    </mstrlayout:render>
+                                </span>
+                            </div>
+                            <mstrlayout:render name="subscriptionsByDeliveryMode">
+                                <mstrlayout:argument type="int" value="64"/>
+                            </mstrlayout:render>
+                </mstrlayout:then>
+            </mstrlayout:if>
+			
+			<mstrlayout:if name="shouldShowSubscriptionsList">
+				<mstrlayout:argument type="int" value="1"/>
+				<mstrlayout:then>
+					<div class="mstrTitle">
+						<mstrlayout:render name="descriptor">
+							<mstrlayout:argument type="String" value="mstrWeb.5003"/> <!-- E-mail Subscriptions -->
+						</mstrlayout:render>
+						<span class="mstrIcon-inline">
+							<mstrlayout:render name="userHelpAnchor">
+								<mstrlayout:argument type="String" value="Email_on_schedule.htm"/>
+							</mstrlayout:render>
+						</span>
+					</div>
+					<mstrlayout:render name="subscriptionsByDeliveryMode">
+						<mstrlayout:argument type="int" value="1"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+				<mstrlayout:if name="shouldShowSubscriptionsList">
+				<mstrlayout:argument type="int" value="8192"/>
+				<mstrlayout:then>
+					<div class="mstrTitle">
+						<mstrlayout:render name="descriptor">
+							<mstrlayout:argument type="String" value="mstrWeb.11732"/> <!-- FTP Subscriptions -->
+						</mstrlayout:render>
+						<span class="mstrIcon-inline">
+							<mstrlayout:render name="userHelpAnchor">
+								<mstrlayout:argument type="String" value="ExportFTP_on_schedule.htm"/>
+							</mstrlayout:render>
+						</span>
+					</div>
+					<mstrlayout:render name="subscriptionsByDeliveryMode">
+						<mstrlayout:argument type="int" value="8192"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+			
+			<mstrlayout:if name="shouldShowSubscriptionsList">
+				<mstrlayout:argument type="int" value="2"/>
+				<mstrlayout:then>
+					<div class="mstrTitle">
+						<mstrlayout:render name="descriptor">
+							<mstrlayout:argument type="String" value="mstrWeb.5004"/> <!-- File Subscriptions -->
+						</mstrlayout:render>
+						<span class="mstrIcon-inline">
+							<mstrlayout:render name="userHelpAnchor">
+								<mstrlayout:argument type="String" value="Export_on_schedule.htm"/>
+							</mstrlayout:render>
+						</span>
+					</div>
+					<mstrlayout:render name="subscriptionsByDeliveryMode">
+						<mstrlayout:argument type="int" value="2"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+			
+			<mstrlayout:if name="shouldShowSubscriptionsList">
+				<mstrlayout:argument type="int" value="4"/>
+				<mstrlayout:then>
+					<div class="mstrTitle">
+						<mstrlayout:render name="descriptor">
+							<mstrlayout:argument type="String" value="mstrWeb.5005"/> <!-- Print Subscriptions -->
+						</mstrlayout:render>
+						<span class="mstrIcon-inline">
+							<mstrlayout:render name="userHelpAnchor">
+								<mstrlayout:argument type="String" value="Print_on_schedule.htm"/>
+							</mstrlayout:render>
+						</span>
+					</div>
+					<mstrlayout:render name="subscriptionsByDeliveryMode">
+						<mstrlayout:argument type="int" value="4"/>
+					</mstrlayout:render>
+				</mstrlayout:then>
+			</mstrlayout:if>
+            
+		</mstrlayout:then>
+		<mstrlayout:else>
+			<mstrlayout:render name="showMessage"/>
+		</mstrlayout:else>
+	</mstrlayout:if>
+	
+</mstrlayout:layout>

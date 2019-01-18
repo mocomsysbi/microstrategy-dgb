@@ -1,0 +1,78 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+
+<!-- 
+  GridFormatObject is a grouping of all the different format properties
+ -->
+
+<block name="GridFormatObject" inherits="BaseBlock">
+  <definition>
+    <!-- Gradient Values: FillColor,GradientColor,GradientAngle,14,GradientXOffset,GradientYOffset -->
+    <property name="gr" type="String" />
+    <!-- Fill style -->
+    <property name="fty" type="String" />
+    <!-- Background color: Hex encode RGB -->
+    <property name="bg" type="String" />
+    <!-- Overall border style.  Possible values are 0: no border, 1: all borders the same, and 2: custom borders -->
+    <property name="bd" type="Integer" />
+    <!-- Border color: Top -->
+    <property name="btc" type="String" />
+    <!-- Border color: Left -->
+    <property name="blc" type="String" />
+    <!-- Border color: Right -->
+    <property name="brc" type="String" />
+    <!-- Border color: bottom -->
+    <property name="bbc" type="String" />
+    <!-- Border style: Top -->
+    <property name="bts" type="Integer" />
+    <!-- Border style: Left -->
+    <property name="bls" type="Integer" />
+    <!-- Border style: Right -->
+    <property name="brs" type="Integer" />
+    <!-- Border style: Bottom -->
+    <property name="bbs" type="Integer" />
+    <!-- Font Family -->
+    <property name="ff" type="String" />
+    <!-- Bold -->
+    <property name="fw" type="Integer" />
+    <!-- Italics -->
+    <property name="fs" type="Integer" />
+    <!-- Font Size -->
+    <property name="fz" type="Integer" />
+    <!-- Underline -->
+    <property name="fu" type="Boolean" />
+    <!-- Strikethrough -->
+    <property name="ft" type="Boolean" />
+    <!-- Font Color -->
+    <property name="c" type="String" />
+    <!-- Number Category -->
+    <property name="nct" type="Integer" />
+    <!-- Number decimal places -->
+    <property name="ndp" type="Integer" />
+    <!-- Number thousands separator-->
+    <property name="nth" type="Boolean" />
+    <!-- Number currency symbol -->
+    <property name="ncs" type="String" />
+    <!-- Number currency position-->
+    <property name="ncp" type="Integer" />
+    <!-- Negative numbers -->
+    <property name="nnn" type="Integer" />
+    <!-- Number format -->
+    <property name="nfs" type="String" />
+    <!-- Hoizontal text alignment -->
+    <property name="hz" type="Integer" />
+    <!-- Vertical text alignment -->
+    <property name="vt" type="Integer" />
+    <!-- Text Wrap -->
+    <property name="tw" type="Boolean" />
+    <!-- Text Direction -->
+    <property name="td" type="Integer" />
+    <!-- Padding left -->
+    <property name="lp" type="String" />
+    <!-- Padding right -->
+    <property name="rp" type="String" />
+    <!-- Padding top -->
+    <property name="tp" type="String" />
+    <!-- Padding bottom -->
+    <property name="bp" type="String" />
+  </definition>
+</block>

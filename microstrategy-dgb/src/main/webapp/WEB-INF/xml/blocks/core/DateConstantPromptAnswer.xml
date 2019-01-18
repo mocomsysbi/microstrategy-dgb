@@ -1,0 +1,37 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains information about a dynamic Date-type constant Prompt answer. 
+-->
+<block name="DateConstantPromptAnswer" inherits="ConstantPromptAnswer">
+    <definition>
+        <!-- Dynamic Time Type. See com.microstrategy.webapi.EnumDSSXMLDynamicTime for details -->
+        <property name="dttp" type="Integer" />
+        
+        <!-- Dynamic Date Offset -->
+        <property name="ddoff" type="Integer" />
+        
+        <!-- Dynamic Year -->
+        <property name="dyear" type="Integer" />
+        
+        <!-- Dynamic Month -->
+        <property name="dmon" type="Integer" />
+        
+        <!-- Dynamic Week -->
+        <property name="dweek" type="Integer" />
+        
+        <!-- Dynamic Day of Week -->
+        <property name="ddow" type="Integer" />
+        
+        <!-- Dynamic Day -->
+        <property name="dday" type="Integer" />
+        
+        <!-- Dynamic Month Offset -->
+        <property name="dmoff" type="Integer" />
+        
+        <!-- Dynamic Hour -->
+        <property name="dhour" type="Integer" />
+        
+        <!-- Dynamic Minute -->
+        <property name="dmin" type="Integer" />
+    </definition>
+</block>

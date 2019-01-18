@@ -1,0 +1,11 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!-- ToolButton is a clickable image without a caption (typically, a toolbar button). -->
+	<block name="SubMenuControl" inherits="MenuControl">
+		<assignments>
+			<property name="scriptClass">mstr.views.FloatingMenuOption</property>
+			<property name="cssClass">SubMenuOption</property>
+			<property name="cmds">OpenSubMenu</property>
+			<property name="hasMenu">true</property>
+			<property name="modelPushedProps">text,shortcutText,htmlId,cssClass,extraCssClass</property>
+		</assignments>
+	</block>

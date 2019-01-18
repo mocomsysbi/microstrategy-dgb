@@ -1,0 +1,79 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ChangeTrackingModel" name="FilterDetailsTemplateTabModel">
+  <definition>
+    <!-- Contents -->
+    <property name="TDVT" type="Block"/>
+    <!-- unitsFromViewOrBase -->
+    <property name="TDTN" type="Block"/>
+    <!-- includeBaseTemplateName -->
+    <property name="TDTD" type="Block"/>
+    <!-- includeTemplateDesc -->
+    <property name="TDNM" type="Block"/>
+    <!-- includeNonMetricTemplateUnits -->
+    <property name="TDTM" type="Block"/>
+    <!-- includeMetrics -->
+    <property name="MDDN" type="Block"/>
+    <!-- includeDimensionality -->
+    <property name="MDTF" type="Block"/>
+    <!-- includeTransformation -->
+    <property name="MDFM" type="Block"/>
+    <!-- includeFormula -->
+    <property name="MDCD" type="Block"/>
+    <!-- includeConditionality -->
+    <property name="MDCM" type="Block"/>
+    <!-- includeConditionalMetricsOnly -->
+  </definition>
+  <assignments>
+    <property name="enabled" type="Boolean">true</property>
+    <property name="TDVT">
+      <block name="ListModel">
+        <property name="valueForm">dssid</property>
+        <property name="items">
+          <list>
+            <block listElementKey="K598" name="ItemInfo">
+              <property name="dssid">-1</property>
+              <property name="n">{desc:mstrWeb.5404|Inherit}</property>
+            </block>
+            <block listElementKey="K599" name="ItemInfo">
+              <property name="dssid">1</property>
+              <property name="n">{desc:mstrWeb.5965|Base Template}</property>
+            </block>
+            <block listElementKey="K600" name="ItemInfo">
+              <property name="dssid">2</property>
+              <property name="n">{desc:mstrWeb.5966|View Template}</property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!--2-->
+    <property name="TDTN">
+      <block name="TriStateListModel"/>
+    </property>
+    <!--2-->
+    <property name="TDTD">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="TDNM">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="TDTM">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="MDDN">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="MDTF">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="MDFM">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="MDCD">
+      <block name="TriStateListModel"/>
+    </property>
+    <property name="MDCM">
+      <block name="TriStateListModel"/>
+    </property>
+  </assignments>
+</block>

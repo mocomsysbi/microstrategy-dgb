@@ -1,0 +1,10 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+This block contains properties for Generic Qualification
+-->
+<block name="GenericQual" inherits="PromptableExpNode">
+    <definition>
+        <!-- XML string -->
+        <property name="xml" type="String" />
+    </definition>
+</block>

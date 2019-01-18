@@ -1,0 +1,21 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:include file="/WEB-INF/xml/layouts/PromptObjectLayout.xml">
+        <mstrlayout:replace slot="s1">
+          <div class="prmCheckbox">
+            <mstrlayout:list id="prompt" name="getPromptsList">
+              <div>
+                <mstrlayout:render name="promptCheckbox">
+                  <mstrlayout:argument list="prompt" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+                </mstrlayout:render>
+                <mstrlayout:render name="displayNameLabel">
+                  <mstrlayout:argument list="prompt" type="com.microstrategy.web.objects.WebDisplayUnit"/>
+                </mstrlayout:render>
+                <mstrlayout:next list="prompt"/>
+              </div>
+            </mstrlayout:list>
+            <div class="mstrSpacer"/>
+          </div>
+        </mstrlayout:replace>
+    </mstrlayout:include>
+</mstrlayout:layout>

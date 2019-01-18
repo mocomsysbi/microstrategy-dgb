@@ -1,0 +1,99 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="GradientEditor">
+  <assignments>
+    <property name="id">GradientEditor</property>
+    <property name="title">{desc:mstrWeb.4785|Gradients}</property>
+    <property name="modelPath">parent/models/0</property>
+    <property name="zIndex">1001</property>
+    <property name="visible">true</property>
+    <property name="helpTopic">Gradients_Dialog_Box.htm</property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K685" name="TextButton">
+          <property name="cmds">Unpop||parent;ResetValidationStatus||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K686" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+          <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- target viewer -->
+    <property name="contentView">
+      <block name="VBox">
+        <property name="children">
+          <list>
+            <block listElementKey="K687" name="FieldSet">
+              <property name="legend">{desc:mstrWeb.4880|Colors}</property>
+              <property name="modelPath" type="String">parent/parent/model</property>
+              <property name="children">
+                <list>
+                  <block listElementKey="K688" name="ColorPicker">
+                    <property name="horizontalCaption">{desc:mstrWeb.4881|Color 1:}</property>
+                    <property name="modelPath">parent/model/color1</property>
+                    <property name="popup/viewFlags">10</property>
+                  </block>
+                  <block listElementKey="K689" name="ColorPicker">
+                    <property name="horizontalCaption">{desc:mstrWeb.4882|Color 2:}</property>
+                    <property name="modelPath">parent/model/color2</property>
+                    <property name="popup/viewFlags">10</property>
+                  </block>
+                </list>
+              </property>
+            </block>
+            <block listElementKey="shadingStyles" name="FieldSet">
+              <property name="legend">{desc:mstrWeb.4948|Shading Styles}</property>
+              <property name="children">
+                <list>
+                  <block listElementKey="K690" name="HBox">
+                    <property name="modelPath" type="String">parent/parent/parent/model</property>
+                    <property name="children">
+                      <list>
+                        <block listElementKey="K691" name="RadioList">
+                          <property name="modelPath">parent/model/gradientType</property>
+                          <property name="cssClass">NPCheckList</property>
+                          <property name="height">auto</property>
+                          <property name="cssText">margin-right:10px;</property>
+                        </block>
+                        <block listElementKey="K692" name="ListView">
+                          <property name="caption">{desc:mstrWeb.4887|Variants}:</property>
+                          <property name="itemRendererClass">mstr.itemrenderers.GradientListView</property>
+                          <property name="cssClass">GradientListView</property>
+                          <property name="modelPath">parent/model/variants</property>
+                          <property name="multiSelect">false</property>
+                          <property name="height">auto</property>
+                          <property name="width">270px</property>
+                          <property name="visibleField">!parent/model/gradientType/selectedIndices:6</property>
+                        </block>
+                      </list>
+                    </property>
+                  </block>
+                </list>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- ok button -->
+        <block listElementKey="K693" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">!CheckValidationStatus||parent;!SelectValue|parent/model/gradient|parent/opener/model;Unpop||parent;ResetValidationStatus||parent</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K694" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">Unpop||parent;ResetValidationStatus||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>

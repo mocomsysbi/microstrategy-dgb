@@ -1,0 +1,155 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="FloatingEditor" name="InsertLayoutEditor">
+  <assignments>
+    <property name="id">InsertLayoutEditor1</property>
+    <property name="title">{desc:mstrWeb.5628|Insert Layout}</property>
+    <property name="visible">true</property>
+    <property name="modelPath">parent/models/0</property>
+    <property name="reloadCmds">ClearSelect||model/newDashboardLayouts;FetchData||model/existingLayouts</property>
+    <property name="CommandEnabledResetValidationStatus">true</property>
+    <!-- title buttons -->
+    <property name="titleButtons">
+      <list>
+        <block listElementKey="K741" name="TextButton">
+          <property name="cmds">Unpop||parent</property>
+          <property name="cssClass">Icon-btn mstrIcon-btnClose</property>
+          <property name="tooltip">{desc:mstrWeb.2102|Close}</property>
+        </block>
+        <block listElementKey="K742" name="TextButton">
+          <property name="cssClass">Icon-btn mstrIcon-btnHelp</property>
+          <property name="tooltip">{desc:mstrWeb.1143|Help}</property>
+          <property name="visibleField">parent/CommandEnabledShowHelp</property>
+          <property name="cmds">ShowHelp|parent.getHelpLink()|parent</property>
+        </block>
+      </list>
+    </property>
+    <!-- target viewer -->
+    <property name="contentView">
+      <block name="VBox">
+        <property name="modelPath">parent/model</property>
+        <property name="children">
+          <list>
+            <block listElementKey="K743" name="ListView">
+              <property name="cssClass">ListBlockTabbed</property>
+              <property name="itemCSSPrefix">ListBlockTabbedItem</property>
+              <property name="modelPath">parent/model/tabList</property>
+              <property name="multiSelect">false</property>
+              <property name="showIcons">false</property>
+              <property name="height">20px</property>
+              <property name="width">520px</property>
+              <property name="allowBrowseAttribute">false</property>
+              <property name="allowBrowseHierarchy">false</property>
+            </block>
+            <block listElementKey="K744" name="ViewStack">
+              <property name="modelPath">parent/model/tabList</property>
+              <property name="cssClass">TabbedMenuBody</property>
+              <property name="height">350px</property>
+              <property name="width">520px</property>
+              <property name="views">
+                <list>
+                  <block listElementKey="K745" name="VBox">
+                    <property name="children">
+                      <list>
+                        <block listElementKey="K746" name="VerticalTileListView">
+                          <property name="id">NewDashboardLayoutsListView</property>
+                          <property name="modelPath">parent/parent/parent/model/newDashboardLayouts</property>
+                          <property name="height">330px</property>
+                          <property name="width">510px</property>
+                          <property name="cssText">margin: 5px; padding-top: 5px;</property>
+                        </block>
+                      </list>
+                    </property>
+                  </block>
+				  <block listElementKey="K751" name="VBox">
+					<property name="modelPath">parent/parent/model/newDocumentLayouts</property> 
+                    <property name="children">
+                      <list>
+                        <block listElementKey="K752" name="VerticalTileListView">
+                          <property name="id">NewDocumentLayoutsListView</property>
+						  <property name="modelPath">parent/model</property>
+                          <property name="height">330px</property>
+                          <property name="width">510px</property>
+                          <property name="cssText">margin: 5px; padding-top: 5px;</property>
+                        </block>
+                      </list>
+                    </property>
+                  </block>
+                  <block listElementKey="K747" name="VBox">
+                    <property name="modelPath">parent/parent/model/existingLayouts</property>
+                    <property name="children">
+                      <list>
+                        <block listElementKey="K748" name="ListBrowser">
+                          <property name="modelPath">parent/model</property>
+                          <property name="cssText">margin:5px;padding:10px</property>
+                          <property name="availableView/height">220px</property>
+                          <property name="availableView/width">490px</property>
+                          <property name="availableView/multiSelect">false</property>
+                          <!-- path pulldown: -->
+                          <property name="pathView">
+                            <block name="TreePulldown">
+                              <property name="caption">{desc:mstrWeb.5629|Select a document below:}</property>
+                              <property name="modelPath">parent/model/getContainerTree()</property>
+                              <property name="cmds">BrowseContainerTreeNode|model/getSelectedNode()|parent/model</property>
+                              <property name="cssText">width:350px</property>
+                              <property name="popup/width">325px</property>
+                              <!-- To support multiple roots in pulldown, we assume the tree will have a dummy node whose "tp" equlas to 0. -->
+                              <property name="popup/hideRootNodeTypes">-1</property>
+                            </block>
+                          </property>
+                          <!-- path up button: -->
+                          <property name="pathUpButton">
+                            <block name="ToolButton">
+                              <property name="tooltip">{desc:mstrWeb.1152|Up One Level}</property>
+                              <property name="iconClass">mstrBGIcon_tbUpFolder</property>
+                              <property name="cmds">BrowseContainerTreeNode|model/getContainerTree()/getSelectedNode()/parent|parent/model</property>
+                              <property name="modelPath">parent/model</property>
+                            </block>
+                          </property>
+                          <!-- search box: -->
+                          <property name="searchView">
+                            <block name="TextBoxWithIcon">
+                              <property name="cmds">Search||parent/model</property>
+                              <property name="caption">{desc:mstrWeb.538|Search for:}</property>
+                              <property name="cssText">width:225px;</property>
+                              <property name="iconTooltip">{desc:mstrWeb.10|Search}</property>
+                              <property name="iconClass">mstrBGIcon_tbSearch</property>
+                            </block>
+                          </property>
+                          <!-- fetch buttons: -->
+                          <property name="fetchView">
+                            <block name="FetchControl">
+                              <property name="modelPath">parent/model</property>
+                              <property name="cmds">FetchBlock||parent/model</property>
+                            </block>
+                          </property>
+                        </block>
+                      </list>
+                    </property>
+                  </block>
+                </list>
+              </property>
+            </block>
+          </list>
+        </property>
+      </block>
+    </property>
+    <!-- cmd buttons -->
+    <property name="cmdButtons">
+      <list>
+        <!-- ok button -->
+        <block listElementKey="K749" name="TextButton">
+          <property name="caption">{desc:mstrWeb.1442|OK}</property>
+          <property name="cmds">!SubmitModel||parent/model;Unpop||parent</property>
+        </block>
+        <!-- cancel button -->
+        <block listElementKey="K750" name="TextButton">
+          <property name="caption">{desc:mstrWeb.221|Cancel}</property>
+          <property name="cmds">Unpop||parent</property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		InsertLayoutEditor is a popup used for inserting new or existing layouts into a Report Services document.
+	-->

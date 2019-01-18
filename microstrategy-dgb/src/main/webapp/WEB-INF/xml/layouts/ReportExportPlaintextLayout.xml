@@ -1,0 +1,10 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:render name="header"/>
+  <mstrlayout:render name="reportName"/>
+  <mstrlayout:render name="newLine"/>
+  <mstrlayout:render name="filterDetails"/>
+  <mstrlayout:render name="pageByInfo"/>
+  <mstrlayout:render name="report"/> 
+  <mstrlayout:render name="footer"/>
+</mstrlayout:layout>

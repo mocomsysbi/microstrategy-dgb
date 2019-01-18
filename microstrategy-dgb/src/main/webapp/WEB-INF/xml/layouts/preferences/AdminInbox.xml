@@ -1,0 +1,81 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+
+    <mstrlayout:replace slot="post-save">
+      <mstrlayout:if name="isLoginRequired" base="bean"><mstrlayout:then>
+        <mstrlayout:render name="descriptor">
+          <mstrlayout:argument type="string" value="mstrWeb.3953"/>
+        </mstrlayout:render>
+        <br />
+      </mstrlayout:then></mstrlayout:if>
+    </mstrlayout:replace>
+
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="0" class="preferenceList">
+            <tr>
+              <td>
+                <mstrlayout:render name="Label">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceInboxMode" />
+                  <mstrlayout:argument type="string" value="mstrWeb.275" /> <!--Descriptor:Add reports and documents to my history list: -->
+                </mstrlayout:render>
+                <br />
+                <mstrlayout:render name="AsRadio">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceInboxMode" />
+                  <mstrlayout:argument type="string" value="horizontal" />
+                </mstrlayout:render>
+                <br /><br />
+                <mstrlayout:render name="Label">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceWorkingSetSize" />
+                  <mstrlayout:argument type="string" value="mstrWeb.724" /> <!--Descriptor:If manually, how many of the most recently run reports and documents do you want to keep available for manipulation? -->
+                </mstrlayout:render>&nbsp;
+                <mstrlayout:render name="TextBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceWorkingSetSize" />
+                  <mstrlayout:argument type="string" value="4" />
+                  <mstrlayout:argument type="string" value="4" />
+                </mstrlayout:render>&nbsp;&nbsp;
+                <mstrlayout:render name="Descriptor">
+                  <mstrlayout:argument type="string" value="mstrWeb.2100" /> <!--Descriptor:Minimum Value: -->
+                </mstrlayout:render>&nbsp;3
+                <br />
+                <span class="prefs-content-small-text">
+                  <mstrlayout:render name="Descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.725" /> <!--Descriptor:Note: These reports and documents will be active even if they are not saved into the history list. -->
+                  </mstrlayout:render>
+                </span>
+                <br /><br />
+                <mstrlayout:render name="Label">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceInboxReuseMessage" />
+                  <mstrlayout:argument type="string" value="mstrWeb.4670" /> <!--Descriptor:The results of scheduled reports get added to the History List. -->
+                </mstrlayout:render>
+                <br />&nbsp;&nbsp;
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceInboxReuseMessage" />
+                  <mstrlayout:argument type="string" value="mstrWeb.4671" />  <!--Descriptor:The new report will overwrite older versions of it.-->
+                </mstrlayout:render>          
+                <br />
+                <span class="prefs-content-small-text">
+                  <mstrlayout:render name="Descriptor">
+                    <mstrlayout:argument type="string" value="mstrWeb.1092" /> <!--Descriptor:This option is automatically turned on for users without access to the History List. -->
+                  </mstrlayout:render>
+                </span>
+                <br /><br />
+                <mstrlayout:render name="AsComboBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceScheduledRWDFormat" />
+                  <mstrlayout:argument type="string" value="mstrWeb.5948" /> <!--Descriptor:Pre-generate export in subscriptions-->
+                </mstrlayout:render>
+                <br /><br />
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceNewHistoryListMessageUponReprompt" />
+                  <mstrlayout:argument type="string" value="mstrWeb.4984" />  <!--Descriptor:Reprompting a report or document in the History List will create a new History List entry.-->
+                </mstrlayout:render>          
+                <br /><br />
+              </td>
+            </tr>
+          </table>
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

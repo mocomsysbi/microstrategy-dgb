@@ -1,0 +1,63 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+	<!--
+		ExpressionModel is a TreeModel whose nodes represent a MicroStrategy filter expression.
+	-->
+	<block name="ExpressionModel" inherits="TreeModel">
+		<definition>
+			<!-- Comma-delimited list of expression types allowed for any conditions added to this model. 
+				 (10 = metric qual, 2 = attribute form qual, 5 = attribute element list qual). 
+				 If missing, all expression types are allowed. -->
+			<property name="allowedExpressionTypes" type="String" />
+
+			<!-- The default expression type for any conditions added to this model. 
+				 (10 = metric qual, 2 = attribute form qual, 5 = attribute element list qual). -->
+			<property name="defaultExpressionType" type="Integer" />
+				 
+			<!-- The default expression type for any new ATTRIBUTE conditions added to this model. 
+				 (2 = attribute form qual, 5 = attribute element list qual). -->
+			<property name="defaultAttributeExpressionType" type="Integer" />
+
+			<!-- The default AND/OR operator for the root of this model's expression answer.
+				 (19 = AND, 20 = OR). -->
+			<property name="defaultBranchQualId" type="Integer" />
+
+			<!-- Optional list of function objects that are allowed in qualifications. -->
+			<property name="allowedFunctions" type="List" />
+
+			<!-- The default function for any new Form/Metric condition added to this model
+				 without a specified function.  Syntax = "<func_type>,<func_id>" -->
+			<property name="defaultFunction" type="String" />
+
+			<!-- The default function for any new Attribute Form qualifier conditions added to this model
+				 without a specified function.  Syntax = "<func_type>,<func_id>". 
+				 If unspecified, the "defaultFunction" property will be applied. -->
+			<property name="defaultAttributeFunction" type="String" />
+
+			<!-- The default function for any new Attribute Element list conditions added to this model
+				 without a specified function.  Syntax = "<func_type>,<func_id>". 
+				 If unspecified, the "defaultFunction" property will be applied. -->
+			<property name="defaultListFunction" type="String" />
+
+			<!-- The default metric function for any new Metric conditions added to this model
+				 without a specified function.  Syntax = "<func_type>,<func_id>". 
+				 If unspecified, the "defaultFunction" property will be applied. -->
+			<property name="defaultMetricFunction" type="String" />
+
+			<!-- The default metric level for any new Metric conditions added to this model.
+				 (0 = default, 1 = metric, 2 = report). -->
+			<property name="defaultMetricLevel" type="Integer" />
+
+			<!-- Optional flag; if set to false, prohibits grouping of condition; otherwise, allowed. -->
+			<property name="allowGrouping" type="Boolean" />
+
+			<!-- Optional flag; if set to false, prohibits importing attribute form values from disk files. -->
+			<property name="allowFileImport" type="Boolean" />
+			
+			<!-- Optional flag; if set to false, prohibits browse elements link in constant popup. -->
+			<property name="allowElementBrowse" type="Boolean"/>
+						
+		</definition>
+		<assignments>
+			<property name="scriptClass">mstr.models.ExpressionModel</property>
+		</assignments>
+	</block>

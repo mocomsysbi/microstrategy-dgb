@@ -1,0 +1,9 @@
+<!DOCTYPE block SYSTEM "../../../dtds/blockLibrary.dtd">
+<block name="RangeConfig" inherits="BaseBlock">
+	<definition>
+		<!-- The min value -->
+		<property name="min" type="String"/>
+		<!-- The max value -->
+		<property name="max" type="String"/>
+	</definition>
+</block>

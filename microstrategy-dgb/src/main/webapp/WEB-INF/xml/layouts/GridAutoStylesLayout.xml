@@ -1,0 +1,6 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+    <mstrlayout:render name="label"/>
+    <mstrlayout:render name="list"/>
+    <mstrlayout:render name="submitButton"/>
+</mstrlayout:layout>

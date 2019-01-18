@@ -1,0 +1,51 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <mstrlayout:include file="/WEB-INF/xml/layouts/preferences/AdminDefault.xml">
+    <mstrlayout:replace slot="contents">
+        <div class="mstrPanelBody">
+          <table cellspacing="0" cellpadding="2" class="preferenceList">
+            <tr>
+              <td>
+                <mstrlayout:render name="Label">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceGraphSize" />
+                  <mstrlayout:argument type="string" value="mstrWeb.269" /> <!--Descriptor:Graph Size -->
+                </mstrlayout:render>
+                <br />
+                <mstrlayout:render name="AsRadio">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceGraphSize" />
+                  <mstrlayout:argument type="string" value="vertical" />
+                </mstrlayout:render>
+                <mstrlayout:render name="AsTextBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceGraphWidth" />
+                  <mstrlayout:argument type="string" value="4" />
+                  <mstrlayout:argument type="string" value="4" />
+                  <mstrlayout:argument type="string" value="mstrWeb.272" /> <!--Descriptor:Width:-->
+                </mstrlayout:render>&nbsp;
+                <mstrlayout:render name="AsTextBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceGraphHeight" />
+                  <mstrlayout:argument type="string" value="4" />
+                  <mstrlayout:argument type="string" value="4" />
+                  <mstrlayout:argument type="string" value="mstrWeb.271" /> <!--Descriptor:Height:-->
+                </mstrlayout:render>
+                <br /><br />
+                <mstrlayout:render name="AsComboBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceGraphImageFormat" />
+                  <mstrlayout:argument type="string" value="mstrWeb.374" /> <!--Descriptor:Image format:-->
+                </mstrlayout:render>
+                <br /><br />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mstrlayout:render name="AsCheckBox">
+                  <mstrlayout:argument type="string" value="com.microstrategy.web.objects.EnumWebPreferences.WebPreferenceGraphShowGridGraph" />
+                  <mstrlayout:argument type="string" value="mstrWeb.796" />  <!--Descriptor:Show graph reports by default in 'Grid and Graph' view mode-->
+                </mstrlayout:render>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </mstrlayout:replace>
+  </mstrlayout:include>
+
+</mstrlayout:layout>

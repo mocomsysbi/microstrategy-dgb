@@ -1,0 +1,23 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <table cellpadding="0" cellspacing="1" border="0" class="mstrAttForms">
+    <mstrlayout:if name="showAttributeList">
+      <mstrlayout:then>
+        <tr>
+          <td valign="top" style="word-wrap:normal;">
+            <mstrlayout:render name="descriptor">
+              <mstrlayout:argument type="string" value="mstrWeb.2892"/>
+            </mstrlayout:render>&nbsp;&nbsp;
+            <mstrlayout:render name="attributeList"/>
+            <mstrlayout:render name="submitButton"/>
+          </td>
+        </tr>
+      </mstrlayout:then>
+    </mstrlayout:if>
+    <tr>
+      <td>
+        <mstrlayout:render name="cart"/>
+      </td>
+    </tr>
+  </table>
+</mstrlayout:layout>

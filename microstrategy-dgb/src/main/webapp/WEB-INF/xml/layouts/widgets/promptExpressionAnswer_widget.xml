@@ -1,0 +1,245 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<!--
+  The layout file who include this file needs to provide "answer" base.
+-->
+<mstrlayout:layout>
+  <mstrlayout:block name="ExpressionModel">
+    <!-- list of flattened nodes in answer expression tree -->
+    <mstrlayout:list id="flattenedNode" base="answer">
+      <mstrlayout:if operator="isNotNull" base="flattenedNode">
+        <mstrlayout:then><!-- if obj != null -->
+          <mstrlayout:base id="node" method="com.microstrategy.utils.FlattenedTreeNode#getValue" base="flattenedNode" />
+          <mstrlayout:base id="dimty" method="com.microstrategy.web.objects.WebNode#getDimensionality" base="node" />
+          <mstrlayout:bSetProperty path="flattenedNodes">
+            <mstrlayout:block name="TreeNode">
+              <mstrlayout:bSetProperty path="path" method="com.microstrategy.utils.FlattenedTreeNode#getLocation" base="flattenedNode" />
+              <mstrlayout:if method="com.microstrategy.web.objects.WebNode#getNodeType" value="1" base="node"><!-- form shortcut -->
+                <mstrlayout:then>
+                  <mstrlayout:base id="FolderObject" method="com.microstrategy.web.objects.WebFormShortcutNode#getAttributeInfo" base="node" />
+                  <mstrlayout:base id="form" method="com.microstrategy.web.objects.WebFormShortcutNode#getFormInfo" base="node" />
+                  <mstrlayout:bSetProperty path="value">
+                    <mstrlayout:block name="FormShortcutNodeValue">
+                      <!-- specific property for this node -->
+                      <!-- attribute -->
+                      <mstrlayout:bSetProperty path="attribute">
+                        <mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml" />
+                      </mstrlayout:bSetProperty>
+                      <!-- attribute form -->
+                      <mstrlayout:bSetProperty path="form">
+                        <mstrlayout:block name="ItemInfo">
+                          <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebAttributeForm#getID" base="form" />
+                          <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebAttributeForm#getType" base="form" />
+                          <!--                                       <mstrlayout:bSetProperty path="otp" method="com.microstrategy.web.objects.WebAttributeForm#getType" base="form"/> -->
+                          <mstrlayout:bSetProperty path="dtp" method="com.microstrategy.web.objects.WebAttributeForm#getBaseAttributeFormDataType" base="form" />
+                          <mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebAttributeForm#getUseName" base="form" />
+                          <mstrlayout:bSetProperty path="desc" method="com.microstrategy.web.objects.WebAttributeForm#getUseDescription" base="form" />
+                          <mstrlayout:bSetProperty path="icon" method="getObjectInfoCssName">
+                            <mstrlayout:argument base="form" type="com.microstrategy.web.objects.WebObjectInfo" />
+                          </mstrlayout:bSetProperty>
+                          <mstrlayout:base id="browseForms" method="getBrowseForms" base="FolderObject" />
+                          <mstrlayout:if operator="isNull" base="browseForms">
+                            <mstrlayout:else>
+                              <mstrlayout:if method="contains" base="browseForms">
+                                <mstrlayout:argument base="form" type="com.microstrategy.web.objects.WebAttributeForm" />
+                                <mstrlayout:then>
+                                  <mstrlayout:bSetProperty path="isBrowseForm" value="true" />
+                                </mstrlayout:then>
+                                <mstrlayout:else>
+                                  <mstrlayout:bSetProperty path="isBrowseForm" value="false" />
+                                </mstrlayout:else>
+                              </mstrlayout:if>
+                            </mstrlayout:else>
+                          </mstrlayout:if>
+                        </mstrlayout:block>
+                      </mstrlayout:bSetProperty>
+                    </mstrlayout:block>
+                  </mstrlayout:bSetProperty>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if method="com.microstrategy.web.objects.WebNode#getNodeType" value="2" base="node"><!-- elements object -->
+                <mstrlayout:then>
+                  <mstrlayout:base id="elems" method="com.microstrategy.web.objects.WebElementsObjectNode#getElements" base="node" />
+                  <mstrlayout:if method="com.microstrategy.web.objects.WebElements#size" base="elems" value="0" operator="gt">
+                    <mstrlayout:then>
+                      <mstrlayout:base id="firstElem" method="com.microstrategy.web.objects.WebElements#get" base="elems">
+                        <mstrlayout:argument value="0" type="int" />
+                      </mstrlayout:base>
+                      <mstrlayout:base id="att" method="com.microstrategy.web.objects.WebElement#getAttribute" base="firstElem" />
+                      <mstrlayout:base id="attributeForms" method="getAttForms" base="transform">
+                        <mstrlayout:argument base="att" type="com.microstrategy.web.objects.WebAttribute" />
+                        <mstrlayout:argument value="1" type="int" /><!-- EnumWebDisplayedForms.WebDisplayedFormsBrowse browse forms??? -->
+                      </mstrlayout:base>
+                      <mstrlayout:bSetProperty path="value">
+                        <mstrlayout:block name="ElementsObjectNodeValue">
+                          <!-- specific property for this node -->
+                          <!-- elements -->
+                          <mstrlayout:list id="elem" method="getElementsAsList">
+                            <mstrlayout:argument base="elems" type="com.microstrategy.web.objects.WebElements" />
+                            <mstrlayout:bSetProperty path="elementsCollection">
+                              <mstrlayout:block name="ItemInfo">
+                                <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebElement#getElementID" base="elem" />
+                                <mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebElement#getDisplayName" base="elem" />
+                                <mstrlayout:bSetProperty path="emt" method="com.microstrategy.web.objects.WebElement#getElementType" base="elem" />
+                                <mstrlayout:bSetProperty path="icon" value="ae" />
+                                <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebElement#getDisplayUnitType" base="elem" />
+                              </mstrlayout:block>
+                            </mstrlayout:bSetProperty>
+                          </mstrlayout:list>
+                        </mstrlayout:block>
+                      </mstrlayout:bSetProperty>
+                    </mstrlayout:then>
+                  </mstrlayout:if>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if method="com.microstrategy.web.objects.WebNode#getNodeType" value="3" base="node"><!-- constant -->
+                <mstrlayout:then>
+                  <mstrlayout:bSetProperty path="value">
+                    <mstrlayout:block name="ConstantNodeValue">
+                      <!-- specific property for this node -->
+                      <mstrlayout:bSetProperty path="constantDataType" method="getType" base="node" />
+                      <mstrlayout:bSetProperty path="constantValue" method="getValue" base="node" />
+                    </mstrlayout:block>
+                  </mstrlayout:bSetProperty>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if method="com.microstrategy.web.objects.WebNode#getNodeType" value="4" base="node"><!-- operator -->
+                <mstrlayout:then>
+                  <mstrlayout:bSetProperty path="value">
+                    <mstrlayout:block name="OperatorNodeValue">
+                      <!-- specific property for this node -->
+                      <!--														<mstrlayout:bSetProperty path="functionType" method="getFunctionType" base="node"/>  -->
+                      <mstrlayout:bSetProperty path="function" method="getIserverNodeFunction">
+                        <mstrlayout:argument base="node" type="com.microstrategy.web.objects.WebOperatorNode" />
+                      </mstrlayout:bSetProperty>
+                      <mstrlayout:bSetProperty path="propertyStr" method="com.microstrategy.web.objects.WebOperatorNode#getPropertyString" base="node" />
+                      <!--														<mstrlayout:bSetProperty path="mrpFunction" method="" base="node"/> -->
+                      <!--														<mstrlayout:bSetProperty path="props" method="" base="node"/> -->
+                    </mstrlayout:block>
+                  </mstrlayout:bSetProperty>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if method="com.microstrategy.web.objects.WebNode#getNodeType" value="5" base="node"><!-- shortcut -->
+                <mstrlayout:then>
+                  <mstrlayout:base id="target" method="getTarget" base="node" />
+                  <mstrlayout:bSetProperty path="value">
+                    <mstrlayout:block name="ShortcutNodeValue">
+                      <!-- specific property for this node -->
+                      <!-- target -->
+                      <mstrlayout:if method="getType" value="12" base="target">
+                        <mstrlayout:then>
+                		  <mstrlayout:base id="FolderObject" method="getTarget" base="node" />
+                		  <mstrlayout:bSetProperty path="target">
+                      		<mstrlayout:include file="/WEB-INF/xml/layouts/widgets/WidgetFolderItemLayout.xml" />
+                		  </mstrlayout:bSetProperty>
+                        </mstrlayout:then>
+                        <mstrlayout:else>
+	                      <mstrlayout:bSetProperty path="target">
+	                        <mstrlayout:block name="ItemInfo">
+	                          <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebObjectInfo#getID" base="target" />
+	                          <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebObjectInfo#getType" base="target" />
+                              <mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebObjectInfo#getDisplayName" base="target" />
+                              <mstrlayout:bSetProperty path="desc" method="com.microstrategy.web.objects.WebObjectInfo#getDescription" base="target" />
+                              <mstrlayout:bSetProperty path="icon" method="getObjectInfoCssName">
+                                <mstrlayout:argument base="target" type="com.microstrategy.web.objects.WebObjectInfo" />
+                              </mstrlayout:bSetProperty>
+                            </mstrlayout:block>
+	                      </mstrlayout:bSetProperty>
+                      </mstrlayout:else>
+                      </mstrlayout:if>
+                    </mstrlayout:block>
+                  </mstrlayout:bSetProperty>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if method="com.microstrategy.web.objects.WebNode#getNodeType" value="6" base="node"><!-- Time -->
+                <mstrlayout:then>
+                  <mstrlayout:bSetProperty path="value">
+                    <mstrlayout:block name="ConstantNodeValue">
+                      <!-- specific property for this node -->
+                      <mstrlayout:bSetProperty path="constantDataType" value="16" /> <!-- DssXmlDataTypeTimeStamp -->
+                      <mstrlayout:bSetProperty path="constantValue" method="getTime" base="node" />
+                      <mstrlayout:bSetProperty path="nodeType" value="6" /> <!-- Time -->
+                    </mstrlayout:block>
+                  </mstrlayout:bSetProperty>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if method="com.microstrategy.web.objects.WebNode#getNodeType" value="7" base="node"><!-- Relationship -->
+                <mstrlayout:then>
+                  <mstrlayout:bSetProperty path="value">
+                    <mstrlayout:block name="RelationshipNodeValue">
+                      <!-- specific property for this node -->
+                      <mstrlayout:bSetProperty path="applySubExpression" method="getApplySubExpression" base="node" />
+                      <mstrlayout:bSetProperty path="useSchema" method="getUseSchema" base="node" />
+                      <!--														<mstrlayout:bSetProperty path="relationship" method="" base="node"/> -->
+                    </mstrlayout:block>
+                  </mstrlayout:bSetProperty>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <mstrlayout:if method="com.microstrategy.web.objects.WebNode#getNodeType" value="10" base="node"><!-- BigDecimal -->
+                <mstrlayout:then>
+                  <mstrlayout:bSetProperty path="value">
+                    <mstrlayout:block name="ConstantNodeValue">
+                      <!-- specific property for this node -->
+                      <mstrlayout:bSetProperty path="constantDataType" value="30" /> <!--  DssXmlDataTypeBigDecimal  -->
+                      <mstrlayout:bSetProperty path="constantValue" method="getValue" base="node" />
+                    </mstrlayout:block>
+                  </mstrlayout:bSetProperty>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <!-- common properties for expression nodes -->
+              <mstrlayout:bSetProperty path="value/expressionType" method="com.microstrategy.web.objects.WebNode#getExpressionType" base="node" />
+              <!--  <mstrlayout:bSetProperty path="value/nodeType" method="com.microstrategy.web.objects.WebNode#getNodeType" base="node" /> -->
+              <mstrlayout:bSetProperty path="value/nodeDimtyType" method="com.microstrategy.web.objects.WebNode#getDimensionalityType" base="node" />
+              <mstrlayout:bSetProperty path="value/dataType" method="com.microstrategy.web.objects.WebNode#getDataType" base="node" />
+              <mstrlayout:if method="com.microstrategy.web.objects.WebDimty#size" operator="gt" value="0" base="dimty">
+                <mstrlayout:then>
+                  <mstrlayout:bSetProperty path="value/dimtyObject">
+                    <mstrlayout:block name="ExprDimtyObject">
+                      <mstrlayout:bSetProperty path="canContinue" method="com.microstrategy.web.objects.WebDimty#getCanContinue" base="dimty" />
+                      <mstrlayout:bSetProperty path="filterRest" method="com.microstrategy.web.objects.WebDimty#getFilterRest" base="dimty" />
+                      <mstrlayout:list id="dimUnit" method="com.microstrategy.web.objects.WebDimty#elements" base="dimty">
+                        <mstrlayout:base id="target" method="com.microstrategy.web.objects.WebDimtyUnit#getTarget" base="dimUnit" />
+                        <mstrlayout:bSetProperty path="units">
+                          <mstrlayout:block name="ExprDimtyUnit">
+                            <mstrlayout:bSetProperty path="unitType" method="com.microstrategy.web.objects.WebDimtyUnit#getUnitType" base="dimUnit" />
+                            <mstrlayout:bSetProperty path="aggregation" method="com.microstrategy.web.objects.WebDimtyUnit#getAggregation" base="dimUnit" />
+                            <mstrlayout:bSetProperty path="filtering" method="com.microstrategy.web.objects.WebDimtyUnit#getFiltering" base="dimUnit" />
+                            <mstrlayout:bSetProperty path="groupBy" method="com.microstrategy.web.objects.WebDimtyUnit#getGroupBy" base="dimUnit" />
+                            <mstrlayout:bSetProperty path="relativePosition" method="com.microstrategy.web.objects.WebDimtyUnit#getRelativePosition" base="dimUnit" />
+                            <!--																					<mstrlayout:bSetProperty path="displayId" method="" base="dimUnit"/> -->
+                            <mstrlayout:bSetProperty path="displayName" method="com.microstrategy.web.objects.WebDimtyUnit#getDisplayName" base="dimUnit" />
+                            <mstrlayout:if operator="isNotNull" base="target">
+                              <mstrlayout:then>
+                                <mstrlayout:bSetProperty path="target">
+                                  <mstrlayout:block name="ItemInfo">
+                                    <mstrlayout:bSetProperty path="dssid" method="com.microstrategy.web.objects.WebObjectInfo#getID" base="target" />
+                                    <mstrlayout:bSetProperty path="tp" method="com.microstrategy.web.objects.WebObjectInfo#getType" base="target" />
+                                    <!--                                                <mstrlayout:bSetProperty path="otp" method="com.microstrategy.web.objects.WebObjectInfo#getType" base="target"/> -->
+                                    <mstrlayout:bSetProperty path="n" method="com.microstrategy.web.objects.WebObjectInfo#getDisplayName" base="target" />
+                                    <mstrlayout:bSetProperty path="desc" method="com.microstrategy.web.objects.WebObjectInfo#getDescription" base="target" />
+                                    <mstrlayout:bSetProperty path="icon" method="getObjectInfoCssName">
+                                      <mstrlayout:argument base="target" type="com.microstrategy.web.objects.WebObjectInfo" />
+                                    </mstrlayout:bSetProperty>
+                                  </mstrlayout:block>
+                                </mstrlayout:bSetProperty>
+                              </mstrlayout:then>
+                            </mstrlayout:if>
+                          </mstrlayout:block>
+                        </mstrlayout:bSetProperty>
+                      </mstrlayout:list>
+                    </mstrlayout:block>
+                  </mstrlayout:bSetProperty>
+                </mstrlayout:then>
+              </mstrlayout:if>
+              <!--									<mstrlayout:bSetProperty path="nv/limitUnitId" method="getLimitUnitId" base="node"/>
+                <mstrlayout:bSetProperty path="nv/limitGroupId" method="getLimitGroupId" base="node"/>
+                <mstrlayout:bSetProperty path="nv/limitType" method="getLimitType" base="node"/>
+              -->
+              <mstrlayout:bSetProperty path="value/displayName" method="com.microstrategy.web.objects.WebNode#getDisplayName" base="node" />
+              <!--									<mstrlayout:bSetProperty path="nv/emet"/> -->
+            </mstrlayout:block><!-- end of FlattenedTreeNode widget -->
+          </mstrlayout:bSetProperty>
+        </mstrlayout:then>
+      </mstrlayout:if>
+    </mstrlayout:list>
+  </mstrlayout:block>
+</mstrlayout:layout>

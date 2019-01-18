@@ -1,0 +1,7 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ToolbarEditFormsButton" inherits="ToolbarButtonModel">
+	<assignments>
+        <property name="id">tbEditAttributeForms</property>
+        <property name="tooltip">{desc:mstrWeb.5634|Edit Attribute Forms...}</property>
+	</assignments>
+</block>

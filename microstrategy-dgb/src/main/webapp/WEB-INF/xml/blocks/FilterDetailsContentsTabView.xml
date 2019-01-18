@@ -1,0 +1,138 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="Tab" name="FilterDetailsContentsTabView">
+  <assignments>
+    <property name="title">{desc:mstrWeb.5428|Filter Details - Contents}</property>
+    <property name="height">100%</property>
+    <property name="visible">false</property>
+    <property name="modelPath">parent/parent/model/tabModels/items/1</property>
+	<property name="helpTopic">Report_Details_Properties_dialog_box__Filter_Details_-_Contents_tab.htm</property>  
+    <property name="children">
+      <list>
+        <block listElementKey="K479" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.295|General}</property>
+          <property name="cssText"> clear:both</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K480" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K481" name="TextLabel">
+                      <property name="value">{desc:mstrWeb.5378|Sections included in Filter Details:}</property>
+                    </block>
+                    <block listElementKey="K482" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.1983|Report Filter}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/FDRF</property>
+                    </block>
+                    <block listElementKey="K483" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5379|Report Filter Name:}</property>
+                      <property name="modelPath">parent/model/FDFN</property>
+                      <property name="cssText">margin-top:7px;margin-left:17px</property>
+                      <property name="enabledField">parent/model/FDRF/selectedIndices:0,1</property>
+                      <property name="popup/height">80px</property>
+                    </block>
+                    <block listElementKey="K484" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5380|Report Filter Description}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="cssText">margin-left:17px</property>
+                      <property name="modelPath">parent/model/FDFD</property>
+                      <property name="enabledField">parent/model/FDRF/selectedIndices:0,1</property>
+                    </block>
+                    <block listElementKey="K485" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.1984|View Filter}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/FDVF</property>
+                    </block>
+                    <block listElementKey="K486" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5807|View Filter - only for View Reports}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/FDVF</property>
+                    </block>
+                    <block listElementKey="K487" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5381|Metric Qualification in View Filter}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="cssText">margin-left:17px</property>
+                      <property name="modelPath">parent/model/IMQVF</property>
+                      <property name="enabledField">parent/model/FDVF/selectedIndices:0,1</property>
+                    </block>
+                    <block listElementKey="K488" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5427|Report Limits}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/FDRL</property>
+                    </block>
+                    <block listElementKey="K489" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.6071|Drill Filter}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/FDUF</property>
+                    </block>
+                    <block listElementKey="K490" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5430|Security Filter}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/RDSF</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+        <block listElementKey="K491" name="FieldSet">
+          <property name="legend">{desc:mstrWeb.5383|Additional Options}</property>
+          <property name="modelPath">parent/model</property>
+          <property name="children">
+            <list>
+              <block listElementKey="K492" name="VBox">
+                <property name="modelPath">parent/model</property>
+                <property name="cssText">margin-left:10px</property>
+                <property name="children">
+                  <list>
+                    <block listElementKey="K493" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5765|Include filter type name}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/FDLS</property>
+                    </block>
+                    <block listElementKey="K494" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5652|Show empty expressions}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="cssText">margin-left:17px</property>
+                      <property name="modelPath">parent/model/FDSE</property>
+                      <property name="enabledField">parent/model/FDLS/selectedIndices:0,1</property>
+                    </block>
+                    <block listElementKey="K495" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.5659|Show Report Limits:}</property>
+                      <property name="modelPath">parent/model/FDOR</property>
+                      <property name="cssText">margin-top:10px</property>
+                      <property name="popup/height">60px</property>
+                    </block>
+                    <block listElementKey="K496" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5766|New line after filter type name}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/FDCR</property>
+                    </block>
+                    <block listElementKey="K497" name="TriStateCheckBox">
+                      <property name="caption">{desc:mstrWeb.5767|New line between filter types}</property>
+                      <property name="valueField">selectedIndicesList</property>
+                      <property name="modelPath">parent/model/FDSP</property>
+                    </block>
+                    <block listElementKey="K498" name="ListPulldown">
+                      <property name="horizontalCaption">{desc:mstrWeb.4527|Expand Shortcut Filters:} </property>
+                      <property name="modelPath">parent/model/escf</property>
+                      <property name="cssText">margin-top:10px</property>
+                      <property name="popup/height">80px</property>
+                    </block>
+                  </list>
+                </property>
+              </block>
+            </list>
+          </property>
+        </block>
+      </list>
+    </property>
+  </assignments>
+</block>
+<!--
+		FilterDetailsContentsTab is the "General" tab of the properties editor.
+	-->

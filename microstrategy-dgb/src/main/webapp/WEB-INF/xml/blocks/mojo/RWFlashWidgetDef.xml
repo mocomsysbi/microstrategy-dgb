@@ -1,0 +1,31 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<!--
+    This Block represents the definition portion of a Flash Widget node.
+--> 
+<block name="RWFlashWidgetDef" inherits="RWUnitDef">
+	<definition>
+
+		<!-- This is the value of the FormattingView WindowState property.
+		     0 == Normal, 1 == Minimized, 2 == Maximized.
+		-->
+		<property name="ds" type="Integer" />	
+	
+		<!-- A path to the SWF file to use. -->
+		<property name="swf" type="String" />
+		
+		<!-- Secondary Data Providers: A comma separated list of secondary data providers. -->
+		<property name="sdp" type="String" />
+		
+		<!-- A custom URL to be used with this visualization. -->
+		<property name="curl" type="String" />
+		
+		<!-- A custom XML to be used with this visualization.  -->
+		<property name="cxml" type="String" />
+		
+		<!-- An additional set of Flash Vars used when instantiating the SWF file. -->
+		<property name="vars" type="String" /> 
+	</definition>
+	<assignments>
+		<property name="t">113</property>
+	</assignments>
+</block>

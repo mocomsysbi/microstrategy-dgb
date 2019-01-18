@@ -1,0 +1,12 @@
+<shortcut-list-set base-bean="inbox" name="inboxContextMenus" version="1.0">
+  <shortcut-list name="default">
+    <shortcut name="export" desc="[Export...]" desc-id="mstrWeb.2110" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.InboxExport" />
+    <shortcut name="pdf" desc="[PDF...]" desc-id="mstrWeb.2111" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.InboxPDF"  />
+    <shortcut name="group1" desc="-" />
+    <shortcut name="unread" desc="[Mark as unread]" desc-id="mstrWeb.194"  builder-class-name="com.microstrategy.web.app.transforms.contextmenus.InboxUnread" />
+    <shortcut name="delete" desc="[Delete...]" desc-id="mstrWeb.3357" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.InboxDelete" />
+    <shortcut name="rename" desc="[Rename...]" desc-id="mstrWeb.3358" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.InboxRename" />
+    <shortcut name="group2" desc="-" />
+    <shortcut name="details" desc="[Details...]" desc-id="mstrWeb.5811" builder-class-name="com.microstrategy.web.app.transforms.contextmenus.InboxDetails" />
+  </shortcut-list>
+</shortcut-list-set>

@@ -1,0 +1,17 @@
+<!DOCTYPE beanTask SYSTEM "../dtds/beanTask.dtd">
+<beanTask class="com.microstrategy.web.app.tasks.MobileChunkedGraphResultsTask">
+	<basicInfo desc="This task retrieves the results of a graph report execution, in chunked format.">
+		<parameter name="messageID" desc="The message ID to obtain results for" required="true"/>
+		<parameter name="stateID" desc="The state ID to obtain results for" required="false" defvalue="0"/>
+		<parameter name="width" desc="The desired graph image width, in pixels" required="false" defvalue="0"/>
+		<parameter name="height" desc="The desired graph image height in pixels" required="false" defvalue="0"/>
+		<parameter name="imgType" desc="The desired graph image type" required="false" defvalue="4"/>
+	</basicInfo>
+
+	<!-- run report event -->
+	<eventInfo eventID="4001"/>
+
+	<beanInfo name="rb" bean-type="ReportBean">
+		<style name="MobilePreambleXMLStyle"/>
+	</beanInfo>
+</beanTask>
