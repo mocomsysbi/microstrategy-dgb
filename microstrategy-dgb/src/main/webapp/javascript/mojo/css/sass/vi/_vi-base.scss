@@ -1,0 +1,59 @@
+/**
+  Some base styles shared by vi app and some apps that build on top of vi app, e.g., Library Web 
+**/
+@import './vi-global-ws';
+@import '../normalize';
+@import '../clearfix';  
+
+/** BEGIN: Generic Rules **/
+body {
+    font-size: 8pt;
+    // VI is a full-screen app and will not allow scrollbars - We need to evaluate how to handle edge cases that require it.
+    overflow: hidden;
+    touch-action: manipulation !important;
+    @include user-select(none);
+}
+
+body.mstrWeb {
+    &,
+    &.mojo-theme-light {
+        color: #333 !important;
+    }
+    &.mojo-theme-dark {
+        color: #cdcdcd !important;
+    }
+}
+
+.unselectable {
+    @include user-select(none);
+
+    * {
+        // Use important here so as to not increase the number of selectors for each of the resize handlers.
+        cursor: default !important;
+    }
+}
+/** END: Generic Rules **/
+
+/** Stiching Rules for the grid **/
+/* .fsbp_0 {} not used */
+
+.fsbp_1 {
+    vertical-align:top      !important;
+    border-bottom-color: transparent !important;
+}
+
+.fsbp_2 {
+    border-bottom-color: transparent !important;
+    border-top-color: transparent !important;
+    text-decoration: none !important;
+}
+
+.fsbp_3 {
+    border-top-color: transparent !important;
+    text-decoration: none !important;
+}
+/** End: Stiching Rules for the grid **/
+
+// Include the CSS bundle specific for VI since it doesn't include the Data Import specific CSS.
+@import '../bundles/vi-gm';
+$env:web;

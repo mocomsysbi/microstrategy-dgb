@@ -1,0 +1,1 @@
+mstrmojo.mstr.EnumNodeProperties={NORMAL:0,DRILL:1,CONDITION:2};

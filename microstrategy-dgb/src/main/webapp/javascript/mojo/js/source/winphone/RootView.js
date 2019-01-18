@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.android.medium.RootView","mstrmojo.winphone._IsMobileBookletWinPhone");mstrmojo.winphone.RootView=mstrmojo.declare(mstrmojo.android.medium.RootView,[mstrmojo.winphone._IsMobileBookletWinPhone],{scriptClass:"mstrmojo.winphone.RootView"});}());

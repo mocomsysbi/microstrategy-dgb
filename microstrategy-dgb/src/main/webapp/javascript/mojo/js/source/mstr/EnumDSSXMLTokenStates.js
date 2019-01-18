@@ -1,0 +1,1 @@
+mstrmojo.mstr.EnumDSSXMLTokenStates={Error:-1,Reserved:0,Initial:1,Okay:2};

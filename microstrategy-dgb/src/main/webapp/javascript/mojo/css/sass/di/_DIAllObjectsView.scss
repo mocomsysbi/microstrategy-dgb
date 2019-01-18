@@ -1,0 +1,227 @@
+.mstrmojo-di-allObjects-dialog{
+  .mstrmojo-Editor-content{
+    width:1010px;
+    height:448px;
+    box-sizing: border-box;
+  }
+  .all-objects-header{
+    padding: 5px 0 0 5px;
+  }
+  .mstrmojo-ui-SearchBox{
+    @extend %noShadow;
+    background-color: #fff;
+    width: 250px;
+    float: left;
+    margin: 5px 0;
+    .mstrmojo-ui-sb-btn {
+      display:none;
+    }
+    .mstrmojo-ui-sb-input{
+      float: left;
+      border: none;
+      margin: 0 -22px 0 0;
+      width: 100%;
+      @include box-sizing(border-box);
+      height: 24px;
+      line-height: 24px;
+      border-radius: 3px;
+      outline: none;
+      background: #fff url(images/wh/search_sprite.png) no-repeat 230px 5px;
+      padding-left: 6px;
+      padding-right: 20px;
+      font: 11px Arial;
+      color: rgba(68,70,74,0.35);
+    }
+    .mstrmojo-ui-sb-input:focus{
+      color:#000;
+    }
+    .mstrmojo-ui-sb-input::-webkit-input-placeholder {
+      text-align: center;
+    }
+    .mstrmojo-ui-sb-input::-moz-placeholder {
+      text-align: center;
+    }
+  }
+  .distribution-key-box{
+    float:right;
+    .mstrmojo-ME-Pulldown{
+      width: 100px;
+      position: relative;
+      .mstrmojo-ME-Pulldown-popupNode{
+        position: absolute;
+        left: -1px; //align to left border of the dropdown box.
+      }
+    }
+    .mstrmojo-di-distribution-number-input{
+      border: 1px solid #b5b5b5;
+      border-radius: 3px;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.2), 0 1px 0 0 rgba(0,0,0,0.1);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.2), 0 1px 0 0 rgba(0,0,0,0.1);
+      -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.2), 0 1px 0 0 rgba(0,0,0,0.1);
+      padding-left: 5px;
+    }
+  }
+  .attribute-metric-box{
+  }
+
+  .mstrmojo-di-all-objects-grid {
+    overflow: hidden;
+  }
+}
+
+.mstrmojo-di-Pulldown-scrollOnHover{
+  overflow-y: hidden;
+  &:hover{
+    overflow-y: auto;
+  }
+}
+
+.workstation {
+  @import "../refine/_RefineVariables-ws";
+  .mstrmojo-Editor.mstrmojo-di-allObjects-dialog.modal {
+    width: 1010px;
+    height: 581px;
+    //.edt-title-btn.mstrmojo-Editor-help {
+    //  display: none !important;
+    //}
+
+    .all-objects-header {
+      display: inline-block !important;
+      float: right;
+      margin: -10px 0px 0px 0;
+      padding-top: 10px;
+      box-sizing: border-box;
+      width: 978px;
+      padding-left: 0;
+      height: 26px;
+    }
+
+    .mstrmojo-Editor-content {
+      height: 480px;
+      margin-bottom: 20px;
+    }
+
+    .attribute-metric-box {
+      width: 978px;
+      height: 442px;
+      box-sizing: border-box;
+      margin-top: 36px;
+      td {
+        &:first-child {
+          .mstrmojo-DataGrid {
+            border-right: none;
+          }
+        }
+        .mstrmojo-DataGrid {
+          width: 489px;
+          height: 420px;
+          box-sizing: border-box;
+          border: 1px solid #cacaca;
+        }
+      }
+    }
+
+    .mstrmojo-DataGrid-headerTable td{
+      //background-color: $popupHeaderFillColor;
+      //background-color: #FAFAFA;
+      background-color: #E7E8E8;
+      border-color: rgba(68, 70, 73, 0.15);
+    }
+
+    .mstrmojo-DataGrid-headerText{
+      border-left:none;
+      border-bottom: none;
+      border-right: none;
+      //border-right: $dataPreviewDarkBorder;
+      font-size: 12px;
+      font-weight: bold;
+      //padding-left: 8px;
+    }
+
+    .mstrmojo-di-all-objects-grid.lockHeader .mstrmojo-DataRow{
+      box-sizing: border-box;
+      border-bottom: 1px solid transparent;
+      box-sizing: border-box;
+      height: 26px;
+      font-size: 12px;
+      background-color: #FFFFFF;
+
+      &:hover {
+        background-color: rgba(68, 70, 73, 0.06);
+      }
+      &.selected {
+        background-color: rgba(68, 70, 73, 0.1);
+      }
+
+      .mstrmojo-di-mappingitem.sfa {
+        padding-left: 10px;
+      }
+      .mappingitem-icon.mstrmojo-di-datapreview-headerIcon {
+        margin-left: 0px;
+      }
+
+      .mstrmojo-Label.attribute-form-label {
+        padding-left: 8px;
+      }
+
+      .multiform-attribute-index-box { //mfa part
+        span.mstrmojo-CheckBox {
+          height: 26px;
+          box-sizing: border-box;
+          padding: 3px 5px 0;
+          input {
+            height: 18px;
+          }
+        }
+      }
+      .multiform-attribute {
+        .mstrmojo-di-mappingitem, .attribute-forms-list .item {
+          height: 24px;
+        }
+      }
+
+    }
+  }
+
+  .mstrmojo-di-allObjects-dialog{
+    .all-objects-header{
+      .mstrmojo-Label.distribution-key-caption{
+        margin: 8px 7px 10px 10px;
+      }
+      #DI-Dist-Key-Selector{
+        margin: 0 15px 5px 0px;
+        border: none;
+        width: 150px;
+        .mstrmojo-DropDownButton-boxNode{
+          background: none #fff;
+          height: 26px;
+          box-sizing: border-box;
+        }
+      }
+      .mstrmojo-Label.distribution-number-caption{
+        margin: 5px;
+      }
+      #DI-Dist-Num-Input{
+        margin-left: 2px;
+        box-shadow: none;
+        width: 48px;
+      }
+    }
+    .mstrmojo-Editor-buttons{
+      padding-top: 0;
+    }
+
+    .mstrmojo-ListBase.mstrmojo-ui-Menu {
+      box-shadow: none;
+      font-size: 12px;
+    }
+  }
+}
+
+#DI-All-Metrics-View {
+  .mstrmojo-DataGrid-headerText {
+    .header-text {
+      margin-left: 6px;
+    }
+  }
+}

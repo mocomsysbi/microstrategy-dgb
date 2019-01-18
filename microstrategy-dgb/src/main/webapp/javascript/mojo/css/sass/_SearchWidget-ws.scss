@@ -1,0 +1,109 @@
+@import 'theme-mixins-ws';
+
+.workstation {
+  .mstrmojo-SearchWidget {
+
+    &.mstrmojo-SearchBox-Wrapper {
+      font-family: $wsvi-normal-font-family;
+    }
+
+    %search-box-base {
+      height: 18px;
+      border-width: 0;
+      background-color: transparent;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
+
+    height: $wsvi-input-control-height - 2px;
+    margin: 0;
+    border-radius: 3px;
+    border-collapse: separate;
+
+    .mstrmojo-ui-Pulldown {
+      @include box-shadow(transparent, 0, 0, 0);
+      @include border-radius(0);
+      .mstrmojo-ui-Pulldown-text {
+        @include border-radius(0);
+        @include box-shadow(transparent, 0, 0, 0);
+        border: none;
+        @include wsvi-dropdown-icon();
+      }
+    }
+
+    .mstrmojo-SearchBox{
+      padding: 0 0 0 6px;
+      .mstrmojo-SearchBox-input{
+        width: 100%;
+        padding: 0;
+        &::-ms-clear { // To hide the X clear button for IE
+          display: none;
+        }
+      }
+    }
+
+    .mstrmojo-SearchBox-clear{
+      border: 0;
+      background-color: transparent;
+    }
+
+    .mstrmojo-SearchBox-search{
+      @include wsvi-icon-magnifier;
+      &.clear {
+        @include wsvi-icon-clear-cross;
+      }
+    }
+
+    td:nth-child(3),
+    td:nth-child(4) {
+      width: 22px;
+    }
+
+    .mstrmojo-SearchBox .mstrmojo-SearchBox-input {
+      @extend %search-box-base;
+    }
+
+    .mstrmojo-SearchBox-bg {
+      @extend %search-box-base;
+
+      .mstrmojo-SearchBox-search {
+        @extend %search-box-base;
+        height: 18px;
+      }
+    }
+
+  }
+
+  // DE73902: in dossier, "mojo-theme-light" and "Workstation" are class of the same element.
+  &.mojo-theme-light,
+  .mojo-theme-light {
+    .mstrmojo-SearchWidget {
+      background-color: #FFFFFF;
+      border: 1px solid $wsvi-ui-border-gray-light-theme;
+      @include box-shadow($wsvi-input-shadow-light-theme, 0, 1px, 1px, true);
+      &.disabled {		
+        background-color: #dddddd;		
+      }
+      .mstrmojo-ui-Pulldown {
+        .mstrmojo-ui-Pulldown-text {
+          background: transparent url(#{$vi-img-path}/dropdown_arrow.svg) 100% 0 no-repeat;
+          &:active {
+            background: transparent url(#{$vi-img-path}/dropdown_arrow.svg) 100% -30px no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .mojo-theme-dark{
+    .mstrmojo-SearchWidget{
+      background-color: #28282a;
+      @include box-shadow(rgba(29, 29, 30, 0.75), 0, 1px, 1px, true);
+      border: 1px solid #4C4E50;
+      border: 1px solid rgba(76, 78, 80, 0.83);
+      .mstrmojo-SearchBox-search.clear{
+        background-position: -24px -193px;
+      }
+    }
+  }
+}

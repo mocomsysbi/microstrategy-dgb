@@ -1,0 +1,48 @@
+@import '../../../../global';
+
+/** BEGIN: vi.rw.selectors._IsDocSelector **/
+.vi-DocSelector {
+    position: relative;
+
+    .content {
+        overflow: hidden;
+        position: relative;
+        @include box-sizing();
+
+        .mstrmojo-SimpleObjectInputBox {
+            @include box-shadow(rgba(0, 0, 0, 0.1), 1px, 0, 1px);
+
+            border-color: #b5b5b5;
+
+            .item .elem {
+                background: #dff1fc;
+                border-color: #aeddf7;
+                line-height: 1.75em;
+            }
+        }
+    }
+
+    .filter {
+        display: none;
+    }
+}
+
+.mojo-theme-dark {
+  .vi-DocSelector {
+    .content {
+      .mstrmojo-SimpleObjectInputBox {
+        background-color: #28282a;
+        border-color: rgba(76, 78, 80, 0.83);
+        @include box-shadow(rgba(29, 29, 30, 1), 0, 0, 4px, true, 1px);
+
+        .item .elem {
+          background: #2a4251;
+          border-color: #0c75ad;
+          color: #24a2e7;
+          line-height: 1.75em;
+        }
+      }
+    }
+  }
+}
+/** END: vi.rw.selectors._IsDocSelector **/

@@ -1,0 +1,296 @@
+@import '../../../vi/vi-global';
+
+/*
+Spec:
+https://home.microstrategy.com/dept/technology/projects/msonepro/Documents/design%20specification/Connect%20to%20Server/DesktopServerConnectivitySpec.xlsx
+*/
+.mstrmojo-Editor.mstrmojo-ViProjectBrowser {
+/********Defaults********/
+    div.mstrmojo-Editor-content{
+        padding : 16px 18px;
+    }
+    .message{
+        display: none !important;
+        line-height: 16px;
+        margin-bottom: 16px;
+    }
+    .mstrmojo-SaveAs-OB{
+        display: none !important;
+        margin-bottom: 16px;
+        position: relative;
+        padding-top: 0;
+        .mstrmojo-SearchBox{
+            padding-left: 70px;
+            .mstrmojo-SearchBox-input{
+                width: 230px;
+                height: 19px;
+            }
+        }
+        .mstrmojo-ListIcon{
+            background-image: url(#{$vi-img-path}/listView.png);
+            &.isc{
+                background-image: url(#{$vi-img-path}/lsShortcut.gif) !important;
+            }
+        }
+        .msrmojo-save-label{ //yes msrmojo-save-label, there is a typo on the object browser
+            width: 70px;
+            padding: 0;
+        }
+
+        .mstrmojo-OB-titleTable{
+            .mstrmojo-DropDownButton{
+                width: 257px;
+                .mstrmojo-DropDownButton-boxNode{
+                    width: 253px;
+                }
+                .extra img.mstrmojo-TreeNode-state {
+                    background: none;
+                }
+
+                .separator .mstrmojo-TreeNode-div {
+                    height: 1px;
+                    border-top: 1px solid #aaa;
+                    margin-top: 4px;
+                }
+            }
+        }
+
+        .mstrmojo-SearchBox-clear,
+        .mstrmojo-SearchBox-search{
+            height: 20px;
+        }
+        &.mstrmojo-ObjectBrowser{
+            .mstrmojo-OBListItemIcon.up{
+                width: 26px;
+                height: 22px;
+                cursor: pointer;
+                background: url(#{$vi-menu-icons}) -240px 0px;
+                &:hover{
+                    background-position: -240px -30px;
+                }
+                &:active{
+                    background-position: -240px -60px;
+                }
+                &.disabled{
+                    opacity: .50;
+                    background-position: -240px 0px;
+                }
+            }
+        }
+        .mstrmojo-createfolder{
+            display: none !important;
+            position: absolute;
+            right: 0;
+            font-size: 0;
+            padding: 0;
+            top: 31px;
+            width: 26px;
+            height: 22px;
+            cursor: pointer;
+            background: url(#{$vi-menu-icons}) -270px 0px;
+            &:hover{
+                background-position: -270px -30px;
+            }
+            &:active{
+                background-position: -270px -60px;
+            }
+        }
+        .mstrmojo-IncFetch{
+            height: 20px;
+            .mstrmojo-IncFetch-content{
+                visibility: hidden;
+                max-width: 250px;
+            }
+        }
+
+        .mstrmojo-OB-booklet,
+        .searchBox{
+            display: none !important;
+        }
+
+    }
+    .mstrmojo-Input-Panel{
+        display: none !important;
+        margin: 0;
+        .mstrmojo-Label{
+            width: 70px;
+        }
+        .mstrmojo-TextArea.mstrmojo-SaveAsEditor-descInput,
+        .mstrmojo-TextBox.mstrmojo-SaveAsEditor-nameInput{
+            width: 294px;
+            margin: 0;
+        }
+        .mstrmojo-TextBox.mstrmojo-SaveAsEditor-nameInput{
+            margin-bottom: 8px;
+        }
+        .mstrmojo-TextBox{
+            margin: 0 0 8px 0;
+        }
+    }
+    .mstrmojo-Editor-buttonBar{
+        .okButton{
+            display: none !important;
+        }
+        .loginButton{
+            display: none !important;
+        }
+        .openButton{
+            display: none !important;
+        }
+    }
+    .showBrowserLabels{
+        display: none !important;
+        position: absolute;
+        right: 18px;
+        cursor: pointer;
+        color: #007ebe;
+        &:hover{
+            text-decoration: underline;
+        }
+        &.showBrowser{
+            bottom: 95px;
+        }
+        &.hideBrowser{
+            bottom: 107px;
+        }
+    }
+    .loadingBox{
+        display: none !important;
+        background: url(#{$vi-img-path}/spinner_white.gif) no-repeat center center;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        position: absolute;
+    }
+    .mstrmojo-loginToProjectBox {
+        display: none !important;
+    }
+/*********end defaults***********/
+
+
+    &.login{
+        .mstrmojo-loginToProjectBox {
+            display: block !important;
+        }
+        .mstrmojo-Editor-buttonBar{
+            .loginButton{
+                display: block !important;
+
+                &.hide {
+                  display: none !important;
+                }
+            }
+        }
+    }
+
+    &.ready{
+        .mstrmojo-loginToProjectBox {
+            display: block !important;
+        }
+    }
+
+    &.saveTo{
+        &.ready{
+            .mstrmojo-Input-Panel{
+                display: block !important;
+            }
+            .mstrmojo-Editor-buttonBar{
+                .okButton{
+                    display: block !important;
+                }
+            }
+            .showBrowserLabels{
+                &.hideBrowser{
+                    display: none !important;
+                }
+                &.showBrowser{
+                    display: block !important;
+                }
+            }
+
+            .mstrmojo-SaveAs-OB {
+                display: block !important;
+                margin-bottom: 0;
+            }
+
+            &.browsing{
+                .mstrmojo-SaveAs-OB {
+                    margin-bottom: 16px;
+                    .mstrmojo-OB-booklet {
+                        display: block !important;
+                    }
+                    .searchBox {
+                        display: table !important;
+                    }
+                    .mstrmojo-createfolder {
+                        display: block !important;
+                    }
+                    &.show-inc-fetch{
+                        .mstrmojo-IncFetch-content{
+                            visibility: visible;
+                        }
+                    }
+                }
+                .showBrowserLabels{
+                    &.hideBrowser{
+                        display: block !important;
+                    }
+                    &.showBrowser{
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.openFrom{
+        &.ready{
+            .mstrmojo-Editor-buttonBar{
+                .openButton{
+                    display: block !important;
+                }
+            }
+            .mstrmojo-SaveAs-OB{
+                display: block !important;
+                .mstrmojo-createfolder{ //Can't create folder on "open" mode
+                    display: none !important;
+                }
+
+                .mstrmojo-OB-booklet {
+                    display: block !important;
+                }
+                .searchBox {
+                    display: table !important;
+                }
+                &.show-inc-fetch{
+                    .mstrmojo-IncFetch-content{
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+    /******Loading overlay***/
+    &.loading{
+        .loadingBox{
+            display: block !important;
+        }
+    }
+
+    &.selectingProject{
+        .mstrmojo-loginToProjectBox {
+            display: block !important;
+        }
+    }
+}
+
+// Styling the word Preferences in the alert message to look like a string.
+.mstrmojo-Editor {
+    .mstrmojo-ot-prefs-link {
+        color: $vi-color-font-link;
+        cursor: pointer;
+    }
+}

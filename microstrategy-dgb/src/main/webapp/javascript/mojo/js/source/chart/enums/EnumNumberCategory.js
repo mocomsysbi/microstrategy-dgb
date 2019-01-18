@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumNumberCategory={Default:-2,Fixed:0,Currency:1,Date:2,Time:3,Percentage:4,Fraction:5,Scientific:6,Custom:7,Special:8,General:9,FromGrid:10};

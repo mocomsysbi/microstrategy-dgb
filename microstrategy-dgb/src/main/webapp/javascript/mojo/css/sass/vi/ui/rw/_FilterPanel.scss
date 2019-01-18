@@ -1,0 +1,138 @@
+@import '../../vi-global';
+@import '../../themes';
+
+/** BEGIN: Filter Panel **/
+.mstrmojo-VIFilterPanel {
+	height: 100%;
+    min-height: 96px;
+    position: relative;
+
+    .mstrmojo-DocSubPanel-content {
+        overflow: visible;
+
+        .fp-divider {
+            height: 0;
+
+            @include single-transition($property: height, $duration: 150ms, $function: ease-out);
+
+            @include box-shadow($theme-light-offset-highlight-color, 0, 1px, 0);
+            border-bottom: 1px solid $theme-light-base-highlight-color;
+
+            &:first-child {
+                border-bottom: 0;
+                @include box-shadow(#fff, 0, 0, 0);
+            }
+        }
+
+        .fp-empty-msgbox {
+            color: #878788;
+            padding: 9px;
+            line-height: 18px;
+        }
+
+        .fp-empty-msgbox.hide {
+          	display: none;
+        }
+
+      .mstrmojo-VIPanelPortlet {
+            padding: 8px 9px;
+            position: relative;
+
+            .mstrmojo-VIPanel-titlebar {
+                .title-text {
+                    cursor: pointer;
+                }
+
+                .right-toolbar {
+                    float: right;
+
+                    .item.mnu {
+                        .icn {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            .mstrmojo-VIPanel-content {
+              .mstrmojo-DocSelector{
+                .content {
+                  overflow: hidden;
+                }
+
+                .item.selected {
+                  text-decoration: none;
+                }
+              }
+              @extend %line-through;
+            }
+
+            .splitter {
+                bottom: -3px;
+            }
+
+            // #947007
+            .mstrmojo-scrollbar-host .mstrmojo-scrolltrack.vertical {
+                right: 0;
+            }
+        }
+    }
+
+    .mstrmojo-DocSubPanel-content.fp-empty-center {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+}
+
+.mstrmojo-ui-MenuEditor {
+    .mstrmojo-VIPanelPortlet {
+        margin: 0;
+    }
+
+    .mstrmojo-VIPanelPortlet {
+        .left-toolbar .mstrmojo-Image {
+            background: transparent url(#{$vi-img-path}/menu_icons.png) no-repeat 0 -197px;
+        }
+
+        .mstrmojo-VITitleBar.collapsed .left-toolbar .mstrmojo-Image {
+            background-position: 0 -226px;
+        }
+
+        .mstrmojo-VITitleBar.small .title-text .mstrmojo-EditableLabel {
+            font-size: 8pt;
+            padding: 0 3px;
+        }
+    }
+}
+
+.mstrmojo-VIPanel-titlebar.VisFilter .left-toolbar .mstrmojo-Image {
+    background-image: none;
+}
+
+.filterPanel-confirm{
+  .mstrmojo-Editor-content{
+    .mstrmojo-Label{
+      line-height: 18px;
+      margin: 8px 0px;
+      &:before {
+        position: relative;
+        top: 4px;
+        content: url(#{$vi-img-path}/prompt.png);
+      }
+    }
+  }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VIFilterPanel {
+        .mstrmojo-DocSubPanel-content {
+            .fp-divider {
+                @include box-shadow($theme-dark-offset-highlight-color, 0, 1px, 0);
+                border-bottom-color: $theme-dark-base-highlight-color;
+            }
+        }
+    }
+}
+
+/** END: Filter Panel **/

@@ -1,0 +1,63 @@
+@import '../../theme-mixins-ws';
+
+.mstrmojo-error-content {
+    @include wsvi-alert-content(-100px, 0, 10px);
+    padding-right: 0px;
+    word-break: break-word;
+    overflow: hidden;
+    &:before {
+        background: url(#{$vi-img-path}/notification.svg) no-repeat scroll -168px -63px;
+    }
+
+    .scroll-container {
+        max-height: 265px;
+
+        > DIV {
+            padding-bottom: 8px;
+            padding-right: $wsvi-editor-content-padding;
+        }
+
+        .contact.invisible {
+            display: none;
+        }
+    }
+
+    .contact.invisible {
+        display: none;
+    }
+
+    .toggle-details-link {
+        &:before {
+            width: 20px;
+            height: 20px;
+            background: url("images/DI/workstation/workstation.svg") no-repeat -50px -290px;
+            position: absolute;
+            content: '';
+            margin-left: -22px;
+        }
+
+        &.hide {
+            display: none;
+        }
+
+        color: $wsvi-primary-blue;
+        padding: 12px 0 0 20px;
+        cursor: default;
+        width: auto;
+        position: relative;
+    }
+
+    .error-details {
+        display: none;
+    }
+
+    &.show-details {
+        .toggle-details-link:before {
+            background-position: -10px -290px;
+        }
+
+        .error-details {
+            display: block;
+        }
+    }
+}

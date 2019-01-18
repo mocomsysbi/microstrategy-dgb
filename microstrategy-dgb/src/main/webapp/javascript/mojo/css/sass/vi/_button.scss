@@ -1,0 +1,61 @@
+@import '../global';
+
+/** BEGIN: VI Buttons **/
+.mojo-theme-dark {
+  .mstrmojo-Button.mstrmojo-WebButton {
+    border-color: #0f0f10;
+    @include linear-gradient(#3d3e3f, #373839);
+    @include box-shadow(#47484b, 0, 1px, 1px, false);
+
+    .mstrmojo-Button-text {
+      color: #eaeaea;
+      text-shadow:0px 1px 1px rgba(0, 0, 0, 0.3);
+      @include box-shadow(#4b4c4d, 0, 0, 2px, true);
+    }
+
+    &:hover {
+      @include linear-gradient(#313233, #2d2e2f);
+    }
+
+    &:active {
+      @include linear-gradient(#3d3e3f, #373839);
+      .mstrmojo-Button-text {
+        @include box-shadow(#1b1b1b, 0, 0, 17px, true);
+      }
+    }
+
+    &.hot {
+      background: #2f9ad3 none;
+      .mstrmojo-Button-text {
+        @include box-shadow(#3ba7e1, 0, 0, 4px, true);
+      }
+
+      &:hover {
+        background-color: #92d2f4;
+      }
+
+      &:active {
+        background-color: #2384b7;
+
+        .mstrmojo-Button-text {
+          @include box-shadow(#1e1e1e, 0, 0, 17px, true);
+        }
+      }
+    }
+
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:active{
+      border-color: #0f0f10;
+      @include linear-gradient(#3d3e3f, #373839);
+
+      .mstrmojo-Button-text {
+        color: #606163;
+        @include box-shadow(#4b4c4d, 0, 0, 2px, true);
+        text-shadow:none;
+      }
+    }
+  }
+}
+
+/** END: VI Buttons **/

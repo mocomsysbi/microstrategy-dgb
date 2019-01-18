@@ -1,0 +1,30 @@
+/** BEGIN:  TransformationContainer **/
+.mstrmojo-ar-trns-gridbox {
+  overflow: hidden;
+  background-color: white;
+  box-sizing: border-box;
+  &.even {
+    background-color: #EEEEEE;
+  }
+}
+
+.mstrmojo-ar-trns-dataGrid {
+  border: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dropFeedback {
+  &.hasOwnAvatar {
+    border: 2px #4787ef solid;
+  }
+  border: 2px #4787ef solid;
+}
+
+.mstrmojo-ar-trns-content {
+  display: block !important;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+}
+/** END: TransformationContainer **/

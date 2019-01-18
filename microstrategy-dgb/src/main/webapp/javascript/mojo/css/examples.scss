@@ -1,0 +1,30 @@
+@import 'sass/global';
+@import 'sass/normalize';
+@import 'sass/clearfix';
+
+/** BEGIN: Generic Rules **/
+body {
+    font: Trebuchet MS, Arial 12pt/50px;
+    overflow: hidden;
+}
+
+body.mstrWeb {
+    &,
+    &.mojo-theme-light {
+        color: #333 !important;
+    }
+    &.mojo-theme-dark {
+        color: #cdcdcd !important;
+    }
+}
+/** END: Generic Rules **/
+
+$violet: rgb(41, 62, 106);
+$indigo: rgb(59, 89, 152);
+$blue: rgb(116, 170, 247);
+$green: rgb(119, 186, 155);
+$gold: rgb(182, 167, 84);
+
+// Include the CSS bundle specific for VI since it doesn't include the Data Import specific CSS.
+@import 'sass/bundles/mojo-examples';
+@import 'sass/base-themes';

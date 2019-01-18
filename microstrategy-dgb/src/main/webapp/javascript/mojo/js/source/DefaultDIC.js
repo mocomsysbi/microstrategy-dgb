@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo._IsInputControl");mstrmojo.DefaultDIC=mstrmojo.declare(mstrmojo.Widget,null,{scriptClass:"mstrmojo.DefaultDIC",isDummy:true,showInPopup:function(){mstrmojo.alert("The control style has not been supported yet.");}});}());

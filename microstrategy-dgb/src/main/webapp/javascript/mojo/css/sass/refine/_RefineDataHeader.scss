@@ -1,0 +1,75 @@
+.refine-data-header {
+  padding-left: 9px;
+  position: relative;
+}
+
+.refine-data-header-text {
+  margin-right: 23px;
+}
+
+.refine-data-header-text .mstrmojo-InlineEditBox {
+  height: 21px;
+  line-height: 21px;
+  .mstrmojo-InlineEditBox-text {
+    max-width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.columnNumber2 {
+  .refine-data-header-text .mstrmojo-InlineEditBox {
+    .mstrmojo-InlineEditBox-text {
+      max-width: 225px;
+    }
+  }
+}
+
+.columnNumber3 {
+  .refine-data-header-text .mstrmojo-InlineEditBox {
+    .mstrmojo-InlineEditBox-text {
+      max-width: 150px;
+    }
+  }
+}
+
+.columnNumber4 {
+  .refine-data-header-text .mstrmojo-InlineEditBox {
+    .mstrmojo-InlineEditBox-text {
+      max-width: 115px;
+    }
+  }
+}
+
+.refine-data-header-menu {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.mstrmojo-Button.refine {
+  height: 15px;
+  width: 14px;
+  //background: transparent url(vi/images/menu_icons.png) -60px 2px no-repeat;
+  background: url(images/DI/workstation/workstation.svg) no-repeat -2050px -193px; //WS
+}
+
+.mstrmojo-InlineEditBox-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.refine-data-header .mstrmojo-InlineEditBox-edit {
+  position: relative;
+  z-index: 2;
+}
+
+.workstation{
+  .mstrmojo-refine-opacity{
+    opacity: .9;
+  }
+}

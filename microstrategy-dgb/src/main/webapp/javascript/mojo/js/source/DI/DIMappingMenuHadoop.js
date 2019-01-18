@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Obj");var constants=mstrmojo.DI.DIConstants,menuItems=constants.menuItems;mstrmojo.DI.DIMappingMenuHadoop=mstrmojo.declare(mstrmojo.DI.DIMappingMenu,null,{scriptClass:"mstrmojo.DI.DIMappingMenuHadoop",queryVisible:function queryVisible(item){var visible=true;if(this._super){visible=this._super(item);}return visible;}});}());

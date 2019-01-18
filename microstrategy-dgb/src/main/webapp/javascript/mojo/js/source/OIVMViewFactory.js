@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.DocDataService");mstrmojo.OIVMViewFactory=mstrmojo.declare(null,null,{scriptClass:"mstrmojo.OIVMViewFactory",newDocDataService:function newDocDataService(props){return new mstrmojo.DocDataService(props);}});}());

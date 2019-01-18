@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.mstr.WebOI");mstrmojo.mstr.WebAttributeForm=mstrmojo.declare(mstrmojo.mstr.WebOI,null,{scriptClass:"mstrmojo.mstr.WebAttributeForm",t:21});})();

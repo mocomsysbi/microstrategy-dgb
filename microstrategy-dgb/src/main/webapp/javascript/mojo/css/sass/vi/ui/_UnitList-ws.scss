@@ -1,0 +1,304 @@
+@import 'rw/UnitContainer';
+@import 'unit-list-props-ws';
+
+.workstation {
+    /** BEGIN: Unit List **/
+    %unit-list-base {
+        @include disable-text-selection();
+
+        background: transparent none 0 50% no-repeat;
+        border: 0px solid transparent;
+        cursor: pointer;
+        display: block;
+        font-family: $wsvi-normal-font-family;
+        font-size: $wsvi-normal-font-size;
+        font-style: $wsvi-normal-font-style;
+        height: $wsvi-panel-row-height;
+        line-height: normal;
+        margin: 0 0 0 13px;
+        padding-left: 21px;
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        .txt {
+            padding-top: $wsvi-normal-font-padding-top;
+            display: inline-block;
+        }
+    }
+
+    .mstrmojo-VIUnitList {
+        .unit {
+            @extend %unit-list-base;
+            cursor: default;
+
+            // Styling for selected menu items.
+            %menu-item-selected {
+                background-color: $wsvi-menu-item-selected-color;
+                color: $wsvi-menu-font-selected-color;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                @include transform(translate(0, -50%));
+                left: 0;
+                width: 18px;
+                height: 18px;
+                background: transparent url(#{$vi-img-path}/unitList/icon_dataset_sprite.png) 1000px 1000px no-repeat;
+            }
+
+            &.ic4 {
+                &:before {
+                    @include wsvi-icon-metric;
+                }
+                &.is-mh:before {
+                    @include wsvi-icon-metric-header;
+                }
+            }
+
+            &.ic4d:before {
+                @include wsvi-icon-derived-metric;
+            }
+
+            &.ic12:before {
+                @include wsvi-icon-attribute;
+            }
+
+            &.ic12.st3076:before {
+                @include wsvi-icon-recursive-attribute;
+            }
+
+            &.ic12d,
+            &.ic47.st12033 {
+                &:before {
+                    @include wsvi-icon-derived-attribute;
+                }
+            }
+
+            &.ic47.st12033.nde4ra {
+                &:before {
+                    @include wsvi-icon-recursive-derived-attribute;
+                }
+            }
+
+            &.ic12g:before {
+                @include wsvi-icon-geographic-attribute;
+            }
+
+            &.ic12t:before {
+                @include wsvi-icon-time-attribute;
+            }
+
+            &.ic14:before {
+                @include wsvi-icon-hierarchy;
+            }
+
+            &.ic1:before {
+                @include wsvi-icon-custom-group;
+            }
+            &.ic47:before {
+                @include wsvi-icon-custom-group;
+            }
+            &.ic12de:before {
+                @include wsvi-icon-attribute;
+            }
+            &.ic21:before {
+                @include wsvi-icon-attribute-form;
+            }
+
+            &.hidden {
+                display: none;
+            }
+
+            &.isAttrLink {
+                &.ic12,
+                &.ic12g,
+                &.ic12d,
+                &.ic12t,
+                &.ic12de {
+                    div.mark {
+                        width: 15px;
+                        height: 15px;
+                        position: absolute;
+                        right: 16px;
+                        top: 4px;
+                        background: transparent url($vi-menu-icons) 0 0 no-repeat;
+                        border: 1px solid transparent;
+                        border-radius: 2px;
+                    }
+                }
+            }
+
+            //        .mstrmojo-EditableLabel {
+            //            height: 100%;
+            //            position: static;
+            //            width: 99%;
+            //        }
+
+            &.isAvatar {
+                @include avatar-common-style;
+            }
+        }
+
+        /** BEGIN: Icon for avatar's drop state **/
+        &.hasOwnAvatar {
+            &:after {
+                @include avatar-icon-common-style;
+            }
+
+            &.add:after {
+                @include icon-style('add');
+            }
+
+            &.replace:after {
+                @include icon-style('replace');
+            }
+
+            &.move:after {
+                @include icon-style('move');
+            }
+
+            &.remove:after {
+                @include icon-style('remove');
+            }
+
+            &.no-op:after {
+                display: none;
+            }
+        }
+        /** END: Icon for avatar's drop state **/
+    }
+
+    .mstrmojo-VIDatasetObjects .mstrmojo-VIPanelPortlet .mstrmojo-VIPanel-content .mstrmojo-Label {
+        @extend %unit-list-base;
+
+        cursor: default;
+        padding-left: 1px;
+    }
+
+    .unselectable .mstrmojo-VIUnitList .unit {
+        &.open,
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    /** END: Unit List **/
+
+    /** BEGIN: Unit List Themes **/
+    .mojo-theme-light {
+        .mstrmojo-VIUnitList {
+            .unit {
+                color: $theme-light-color;
+
+                &.open {
+                    @extend %menu-item-selected;
+                }
+                &:hover {
+                    background-color: $wsvi-hover-gray-light-theme;
+                    color: $wsvi-menu-font-hover-color;
+                }
+                &.selected {
+                    @extend %menu-item-selected;
+                }
+
+                &.isAttrLink {
+                    div.mark {
+                        background-position: -118px -29px;
+                    }
+                    &.noId{
+                        div.mark {
+                            background-position: -118px -89px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mojo-theme-dark {
+        .mstrmojo-VIUnitList {
+            .unit {
+                color: $theme-dark-color;
+
+                &.open,
+                &:hover {
+                    background-color: $theme-dark-panel-hover-background-color;
+                }
+
+                &.isAttrLink {
+                    div.mark {
+                        background-position: -118px -229px;
+                    }
+                    &.noId{
+                        div.mark {
+                            background-position: -118px -289px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // For unit list avatar
+    .mstrmojo-VIUnitList {
+        &.hasOwnAvatar {
+            &.noIcon:after {
+                display: none;
+            }
+            &.hasIcon:after {
+                display: block;
+            }
+        }
+
+        &.mojo-theme-light {
+            .unit.isAvatar {
+                &.ic4,
+                &.ic4d {
+                    @include light-color-unit-metric;
+                }
+
+                &.is-mh {
+                    @include light-color-unit-template-metric;
+                }
+
+                &.ic1,
+                &.ic12,
+                &.ic12d,
+                &.ic12t,
+                &.ic12de,
+                &.ic12g,
+                &.ic14,
+                &.ic47 {
+                    @include light-color-unit-attribute;
+                }
+            }
+        }
+
+        &.mojo-theme-dark {
+            .unit.isAvatar {
+                &.ic4,
+                &.ic4d {
+                    @include dark-color-unit-metric;
+                }
+
+                &.is-mh {
+                    @include dark-color-unit-template-metric;
+                }
+
+                &.ic1,
+                &.ic12,
+                &.ic12d,
+                &.ic12t,
+                &.ic12de,
+                &.ic12g,
+                &.ic14,
+                &.ic47 {
+                    @include dark-color-unit-attribute;
+                }
+            }
+        }
+    }
+    /** END: Unit List Themes **/
+}

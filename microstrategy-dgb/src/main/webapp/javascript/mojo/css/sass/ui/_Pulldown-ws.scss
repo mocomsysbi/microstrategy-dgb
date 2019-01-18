@@ -1,0 +1,97 @@
+@import '../theme-mixins-ws';
+
+.workstation {
+    /** START: Pulldown **/
+    .mstrmojo-ui-Pulldown {
+        position: relative;
+
+        .mstrmojo-ui-Pulldown-text {
+            @include wsvi-dropdown-text($wsvi-input-control-height, ($wsvi-input-control-height - 2px) );
+            @include box-sizing();
+            padding: 0 20px 0 6px;
+        }
+
+        &.disabled {
+            .mstrmojo-ui-Pulldown-text {
+                opacity: 0.5;
+            }
+        }
+
+        &.ctrl-contrast {
+            border: 1px solid transparent;
+        }
+
+        .mstrmojo-PopupList {
+            @include box-shadow($wsvi-panel-shadow, 0, 2, 8px);
+            @include box-sizing();
+
+            @if $env == 'web' {
+                background: $wsvi-primary-white !important;
+                border: 1px solid $wsvi-ui-border-gray !important;
+            }
+            @else {
+                background: $wsvi-primary-white;
+                border: 1px solid $wsvi-ui-border-gray;
+            }
+            margin-top: 3px;
+            overflow: hidden;
+            padding: 5px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 4;//DE69340:Increase the z-index of popuplist to greater than TOC which is 3
+
+            .item {
+                @include ellipsis-text();
+
+                cursor: default;
+                line-height: 26px;
+                padding: 2px 9px 1px 9px;
+                font-size: 11px;
+
+                &.disabled {
+                    opacity: 0.7;
+                }
+
+                &.hidden {
+                    display: none;
+                }
+            }
+
+            .item.separator {
+                @include box-shadow(rgb(247, 247, 247), 0, 1px, 0);
+
+                border-bottom: 1px solid #d1d1d1;
+                padding: 0px;
+                pointer-events: none;
+                cursor: default;
+                margin-top: 3px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+    /** END: Pulldown **/
+
+    // DE71404
+    .mojo-theme-dark {
+        &.mstrmojo-ui-Pulldown {
+            .mstrmojo-PopupList {
+                @include box-shadow(rgba($wsvi-pure-black, 0.1), 0, 1px, 2px);
+
+                background: $wsvi-darktheme-fill !important;
+                border: rgba($wsvi-primary-white, 0.15) solid 1px !important;
+
+                .item {
+                    color: $wsvi-darktheme-white !important;
+
+                    &.selected {
+                        background-color: $wsvi-primary-blue !important;
+                    }
+
+                    &:hover {
+                        background-color: rgba($wsvi-pure-black, 0.2) !important;
+                    }
+                }
+            } 
+        }
+    }
+}

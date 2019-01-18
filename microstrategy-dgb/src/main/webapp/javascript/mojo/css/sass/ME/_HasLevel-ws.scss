@@ -1,0 +1,47 @@
+@import '../vi/vi-global-ws';
+
+.mstrmojo-ME-LCT {
+  .addFilterBox {
+    padding-top: 7px;
+    .btnAddFilter {
+      padding-left: 22px;
+      color: $wsvi-link-blue;
+      @include wsvi-icon-empty-filter;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.hasFilter {
+        @include wsvi-icon-has-filter;
+      }
+
+      &.disabled {
+        color: $wsvi-primary-black;
+        background: none;
+        opacity: 1;
+        padding-left: 0;
+        &:hover {
+          cursor: default;
+        }
+      }
+
+      .mstrmojo-Button-text {
+        background-color: $wsvi-primary-white;
+      }
+    }
+
+    .btnClearFilter {
+      color: $wsvi-link-blue;
+      float: right;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .mstrmojo-Button-text {
+        background-color: $wsvi-primary-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import 'global';
+
+/** BEGIN: TextArea **/
+.mstrmojo-TextArea {
+    @include box-sizing();
+
+    line-height: 22px;
+    padding: 0 3px;
+
+    // Make the empty text lighter.
+    &.mstrmojo-empty {
+        color: #878788;
+    }
+}
+/** END: TextArea **/

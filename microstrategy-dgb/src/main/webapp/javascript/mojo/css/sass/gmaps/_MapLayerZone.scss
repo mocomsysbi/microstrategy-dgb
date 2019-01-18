@@ -1,0 +1,359 @@
+@import '../vi/vi-global';
+@import '../vi/workstation-global';
+@import '../vi/vi-icons';
+@import '../vi/ui/unit-list-props-ws';
+
+/** BEGIN: MapLayerZone **/
+@mixin layerItem-unit-icon {
+    height: 18px;
+    left: 6px;
+    position: absolute;
+    top: 2px;
+    width: 18px;
+    background: url(#{$vi-img-path}/dataset.svg) no-repeat -990px -30px transparent;
+    opacity: 0.75;
+    &:hover {
+        background: url(#{$vi-img-path}/dataset.svg) no-repeat -990px -30px transparent;
+        opacity: 1;
+    }
+}
+
+/*
+$bg: normal background, hover background
+$select-bg: focus, select
+$border: normal border
+$hover-border: focus border, hover border
+$select-border: selected border
+font-color: normal font color
+$hover-font-color: focus font color, hover font color, selected font color
+*/
+@mixin color-map-layer-unit($bg, $select-bg, $border, $hover-border, $select-border, $font-color,$hover-font-color ) {
+    .inner-wrap {
+        border: 1px solid $border;
+        color: $font-color;
+
+        background-color: $bg;
+        .zone {
+            background-color: $bg;
+            //DE106076 Add another entry point in the dropzone to for showing/hiding layers
+            height: 100%;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 20px;
+        }
+
+        &:hover {
+            border: 1px solid $hover-border;
+            background-color: $bg;
+            color: $hover-font-color;
+             //DE106076 Add another entry point in the dropzone to for showing/hiding layers
+             .zone.eye.state-show {
+                background: url(../../../style/images/Map_toolbar_sprite.svg) -360px -58px no-repeat;
+                display: block;
+            }
+            .zone.eye.state-invisible {
+                background: url(../../../style/images/Map_toolbar_sprite.svg) -380px -28px no-repeat;
+                display: block;
+                opacity: 0.3;
+            }
+        }
+        .zone.eye.state-hide:not(.state-invisible) {
+            background: url(../../../style/images/Map_toolbar_sprite.svg) -380px -28px no-repeat;
+            display: block;
+        }
+
+    }
+
+    &.select {
+        .inner-wrap,
+        .inner-wrap:hover{
+            // 1px border for selected state
+            border-color: $select-border;
+            background-color: $select-bg;
+            color: $hover-font-color;
+            .zone {
+                background-color: $select-bg;
+            }
+        }
+    }
+}
+
+
+.mstrmojo-ui-MapLayerZone {
+
+    .MapLayerItemContainer.mstrmojo-VIUnitList {
+        border: none;
+        & > div {
+            padding-bottom: 0;
+        }
+
+        .MapLayerItemContainer-container {
+            min-height: 25px;
+            overflow-x: hidden !important;
+            overflow-y: hidden !important;
+
+            // reset
+            &, .unit, .unit .outer-wrap, .unit .outer-wrap .inner-wrap {
+                padding: 0;
+                margin: 0;
+                // border: 0;
+                height: auto;
+                width: auto;
+                position: static;
+                font-size: 100%;
+            }
+
+            .unit {
+                height: 26px;
+                margin: -1px 0 0;
+                position: relative;
+
+                &:before {
+                    background-image: none;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                }
+
+                .hidden {
+                    display: none;
+                }
+
+                &:first-child {
+                    margin-top: 1px;
+                }
+
+                &:last-child {
+                    margin-bottom: 1px;
+                }
+
+                .outer-wrap {
+                    border-radius: 3px;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: 2px 3px;
+
+                    .inner-wrap {
+                        border-radius: 3px;
+                        display: block;
+                        font-size: 12px;
+                        font-style: normal;
+                        height: 100%;
+                        padding-left: 24px;
+                        padding-right: 24px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        vertical-align: middle;
+                        line-height: 22px;//overwrite workstation VIUnitList Unit line-height:normal
+
+                        .txt {
+                            height: 100%;
+                            padding-left: 5px;
+                            padding-top: 0; //Overwrite workstation unit List padding-top 4px
+                        }
+
+                        .icon {
+                            @include layerItem-unit-icon;
+                        }
+                    }
+
+                }
+
+                $dnd-cue-color: #34abeb;
+                @mixin dnd-cue-line-base {
+                    background-color: $dnd-cue-color;
+                    content: "";
+                    position: absolute;
+                    left: 1px;
+                    right: 1px;
+                    height: 1px;
+                }
+
+                // Drag is targeting top of unit.
+                &.dragInTop {
+                    &:after {
+                        @include dnd-cue-line-base;
+                        top: 0;
+                    }
+                }
+
+                // Drag is targeting bottom of unit.
+                &.dragInBottom {
+                    &:after {
+                        @include dnd-cue-line-base();
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.MapLayerItemContainer-container .MapLayerZoneItem.unit.isAvatar {
+    .icon {
+        @include layerItem-unit-icon;
+    }
+}
+
+.mstrmojo-ui-MapLayerZone {
+    min-height: 50px;
+    @include border-radius(3px);
+    overflow: hidden;
+
+    .link-btn {
+        clear: both;
+        float: left;
+        @include box-sizing();
+        cursor: pointer;
+        height: 22px;
+        margin: 3px 3px 0 3px;
+        padding: 5px 5px 3px 5px;
+        font-weight: bold;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &.disabled {
+        opacity: 0.5;
+    }
+}
+
+.mojo-theme-light {
+
+    $light-border-unit: 1px solid #AEDDF7;
+    $light-color-bg-unit: #B9E7F7;
+    $light-font-color: #2F81B7;
+
+    .mstrmojo-ui-MapLayerZone {
+        .MapLayerItemContainer.mstrmojo-VIUnitList {
+
+            border: none;
+            box-shadow: none;
+
+            //Format map layer styles
+            .outer-wrap{
+                /*$bg: normal background, hover background
+                $select-bg: focus, select
+                $border: normal border
+                $hover-border: focus border, hover border
+                $select-border: selected border
+                font-color: normal font color
+                $hover-font-color: focus font color, hover font color, selected font color
+                */
+                //($bg, $select-bg, $border, $hover-border, $select-border, $font-color,$hover-font-color )
+                @include color-map-layer-unit(
+                        $wsvi-capsule-fill-off,
+                        $wsvi-capsule-fill-normal,
+                        $wsvi-capsule-border-off,
+                        $wsvi-capsule-border-normal,
+                        $wsvi-primary-blue,
+                        $wsvi-capsule-font-normal,
+                        $wsvi-link-blue
+                );
+            }
+
+            .unit {
+
+                margin: 1px 0 0; //To keep unit space 3px. For darktheme, space between units is outer-warp margin 2+2, and unit margin -1px, (2+2-1)px. For lightTheme, space between units is outer-warp margin 2 + 2, and inner-wrap border 1+1, unit margin 1px, (2+2-1-1+1) px
+                .inner-wrap {
+                    box-sizing: content-box !important;
+
+                    .txt {
+                        &:focus {
+                            background-color: $wsvi-capsule-fill-normal;
+                            color: $wsvi-primary-black;
+                            opacity: 1.0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .MapLayerItemContainer-container .MapLayerZoneItem.unit.isAvatar {
+        border: $light-border-unit;
+        background-color: $light-color-bg-unit;
+        color: $light-font-color;
+    }
+
+    .mstrmojo-ui-MapLayerZone {
+        border: 1px solid #B5B5B5;
+        background-color: #FFFFFF;
+
+        .link-btn {
+            color: #007EBE;
+        }
+    }
+}
+
+.mojo-theme-dark {
+
+    $dark-border-unit: 1px solid #0074AF;
+    $dark-color-bg-unit: #294252;
+    $dark-font-color: #14A1EA;
+
+    .mstrmojo-ui-MapLayerZone {
+        .MapLayerItemContainer.mstrmojo-VIUnitList {
+
+            border: none;
+            box-shadow: none;
+
+            .unit {
+                height: 28px;//For dark theme, since outer-wrap contains 2px margin, 1px border, to make normal inner-wrap line height to 22px, here unit height should be (22+6) px
+                .outer-wrap {
+                    border: $dark-border-unit;
+                    background-color: $dark-color-bg-unit;
+
+                    &:hover {
+                        border: 1px solid #0074AF;
+                        background-color: #1B282A;
+                    }
+
+                    &.select {
+                        border: 2px solid #34ABEB;
+                        background-color: #294252;
+                        .inner-wrap{
+                            line-height: 20px;//For dark theme, since selected unit border is 2px, resulting inner-wrap only has height of 20px
+                        }
+                    }
+
+                    .inner-wrap {
+
+                        .txt {
+                            color: $dark-font-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .MapLayerItemContainer-container .MapLayerZoneItem.unit.isAvatar {
+        border: $dark-border-unit;
+        background-color: $dark-color-bg-unit;
+        color: $dark-font-color;
+    }
+
+    .mstrmojo-ui-MapLayerZone {
+        border: 1px solid rgba(#4c4e50, 0.83);
+        background-color: #28282A;
+
+        .link-btn {
+            color: #34ABEB;
+        }
+    }
+}
+
+/** END: MapLayerZoneContainer **/

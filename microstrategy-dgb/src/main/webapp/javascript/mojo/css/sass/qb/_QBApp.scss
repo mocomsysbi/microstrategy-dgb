@@ -1,0 +1,47 @@
+@import 'qb-common'; // qb-common should be imported once and only once which contains the rest css not belonging to any qb widgets or shared by multiple qb widgets.
+@import 'QBAlertDialog';
+
+/* QueryBuilder Waiting Dialog */
+.mstrmojo-qb-WaitBox {
+  width: 280px;
+  height: auto;
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(125, 125, 125, 0.6);
+  background-color: #fafafa !important;
+  cursor: progress;
+
+  .mstrmojo-Editor-content{
+    height: 70px;
+    padding: 0px;
+    border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;
+  }
+}
+
+.mstrmojo-Editor-curtain.wide {
+  background: black;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: progress;
+}
+
+.mstrmojo-qb-Wait {
+  background: transparent url(images/preloader_balls.gif) no-repeat scroll center 25px;
+  height: 60px;
+  width: 60px;
+  margin: 0 auto;
+  opacity: 0.65;
+  float: left;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=65);
+  position: relative;
+}
+
+.mstrmojo-qb-Message{
+  font-family: arial;
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+  margin-top: 25px;
+  float: right;
+  width: 200px;
+}

@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumClippedBorderShapeType={CBST_PANEL:0,CBST_SECTOR:1,CBST_ARCH_WITH_BASE:2,CBST_ARCH:3};

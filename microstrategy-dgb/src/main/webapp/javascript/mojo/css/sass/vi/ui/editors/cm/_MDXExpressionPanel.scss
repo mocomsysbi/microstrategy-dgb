@@ -1,0 +1,36 @@
+// sass path: ../../../../
+@import '../../../../vi/workstation-global';
+@import '../../../../vi/vi-icons';
+@import '../../../../theme-mixins-ws';
+@import '../../../../Button-ws';
+
+.workstation .mstrmojo-MDXExpressionPanel {
+	.mstrmojo-Label {
+	  font-weight: bold;
+
+	  &.clearBtn {
+	    float: right;
+	    font-weight: normal;
+	    color: $wsvi-font-gray;
+	    text-decoration: none;
+	    cursor: auto;
+
+	    &.enabled {
+	      color: $wsvi-link-blue;
+
+	      &:hover {
+	        text-decoration: underline;
+	        cursor: pointer;
+	      }
+	    }
+	  }
+	}
+
+	.mstrmojo-PassThroughExpressionInputBox {
+	  background-color: white;
+
+	  .mstrmojo-TokenInputBox-edit {
+	  	padding: 0 5px;
+	  }
+	}
+}

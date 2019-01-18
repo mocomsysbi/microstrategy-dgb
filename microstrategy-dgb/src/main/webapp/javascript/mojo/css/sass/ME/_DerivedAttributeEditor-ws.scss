@@ -1,0 +1,67 @@
+/** DA Editor **/
+
+.mstrmojo-mstrDLE {
+    .mstrmojo-Editor-content {
+        padding-left: 0;
+    }
+    .mstrmojo-MetricIDE .mstrmojo-DA-obContainer {
+        border-left: none;
+    }
+}
+
+.mstrmojo-DAEditor{
+    &.mstrmojo-DLEditor { //dynamic link editor
+        .mstrmojo-MEBox {
+            margin: 5px 0px 0;
+            border: 1px solid $wsvi-ui-border-gray;
+            height: auto;
+
+            .mstrmojo-TokenInputBox{
+                height: 120px;
+            }
+        }
+
+        .mstrmojo-ME-nameEditBox {
+            margin-bottom: 0;
+        }
+
+        .mstrmojo-DL-Label{
+            display: inline-block;
+            padding-top: 10px;
+            margin-bottom: 0;
+            line-height: 19px;
+        }
+
+        .mstrmojo-Editor-buttons {
+            border-top: 1px solid $wsvi-ui-border-gray;
+        }
+    }
+
+    .mstrmojo-MEBox {
+        margin-top: 10px;
+        height: 288px;
+    }
+
+    .mstrmojo-MEBox-status {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .mstrmojo-DA-nameLabel {
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+    .mstrmojo-ME-nameInput {
+        margin: 0 0 0 8px;
+    }
+}
+
+
+.mstrmojo-dnd-avatar .mstrmojo-VIUnitList .item.unit {
+    line-height: 26px;
+}
+
+.mstrmojo-DAE-form-label {
+    font-weight: bold;
+}

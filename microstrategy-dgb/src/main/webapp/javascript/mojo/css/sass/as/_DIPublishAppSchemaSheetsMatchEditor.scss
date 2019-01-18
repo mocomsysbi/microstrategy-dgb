@@ -1,0 +1,22 @@
+.mstrmojo-di-appschema-sheetsmatch-editor {
+    width: 600px;
+    height: 400px;
+    .mstrmojo-Editor-content {
+        .mstrmojo-DataGrid.mstrmojo-di-tablesheets-list {
+            height: 260px;
+            .mstrmojo-DataGrid-headerContainer {
+                .mstrmojo-DataGrid-headerTable {
+                    .mstrmojo-DataGrid-headerText {
+                        border: none;
+                    }
+                }
+            }
+            .mstrmojo-DropDownButton.mstrmojo-Pulldown.down {
+                height: auto;
+                .mstrmojo-DropDownButton-boxNode.mstrmojo-Pulldown-boxNode {
+                    border: none;
+                }
+            }
+        }
+    }
+}

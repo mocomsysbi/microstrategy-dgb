@@ -1,0 +1,54 @@
+@import '../../../global';
+
+/** BEGIN: ColorWheel **/
+.mstrmojo-ui-ColorWheel {
+    position: relative;
+
+    .cwHue {
+        background: transparent url(#{$mojo-img-path}/ui/hue-wheel.png) 50% 50% no-repeat;
+        cursor: crosshair;
+        height: 155px;
+        position: relative;
+        width: 155px;
+    }
+
+    .cwColorField {
+        @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 3px, true);
+        @include box-sizing();
+
+        background: transparent url(#{$mojo-img-path}/ui/color-field.png) 50% 50% no-repeat;
+        cursor: crosshair;
+        height: 83px;
+        left: 36px;
+        position: absolute;
+        top: 36px;
+        width: 83px;
+    }
+
+    $cw-inner-handle-size: 8;
+    $cw-inner-border-size: 2;
+    $cw-outer-handle-size: $cw-inner-handle-size + $cw-inner-border-size;
+    $cw-radius-factor: 0.75;
+
+    .cwHandle {
+        @include border-radius(#{$cw-outer-handle-size * $cw-radius-factor}px);
+        border: #{$cw-inner-border-size * 1.5}px solid #fff;
+
+        height: #{$cw-outer-handle-size}px;
+        left: 0;
+        margin: -8px 0 0 -8px;
+        position: absolute;
+        top: 0;
+        width: #{$cw-outer-handle-size}px;
+
+        div {
+            @include border-radius(#{$cw-inner-handle-size * $cw-radius-factor}px);
+
+            border: #{$cw-inner-border-size}px solid #000;
+            height: #{$cw-inner-handle-size}px;
+            margin: -1px 0 0 -1px;
+            width: #{$cw-inner-handle-size}px;
+        }
+    }
+}
+/** END: ColorWheel **/

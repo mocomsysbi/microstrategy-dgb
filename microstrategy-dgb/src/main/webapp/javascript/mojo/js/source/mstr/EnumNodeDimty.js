@@ -1,0 +1,1 @@
+mstrmojo.mstr.EnumNodeDimty={NodeDimtyReserved:0,NodeDimtyNone:1,NodeDimtyContinuation:2,NodeDimtyExclusiveContinuation:3,NodeDimtyOutputLevel:4,NodeDimtyBreakBy:5,NodeDimtyEmbedded:6,NodeDimtyUnspecified:7};

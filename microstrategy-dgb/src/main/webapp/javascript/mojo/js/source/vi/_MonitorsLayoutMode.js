@@ -1,0 +1,1 @@
+(function(){mstrmojo.vi._MonitorsLayoutMode=mstrmojo.provide("mstrmojo.vi._MonitorsLayoutMode",{onLayoutModeChange:function(evt){if(this._super){this._super(evt);}},init:function init(props){this._super(props);if(mstrApp.attachEventListener){mstrApp.attachEventListener("layoutModeChange",this.id,"onLayoutModeChange");}}});}());

@@ -1,0 +1,216 @@
+// style for mapping panel
+
+  //.mapping-panel {
+  //  float: left;
+  //  //border: 1px solid #c6e5fc;
+  //  border-left: 1px solid #c6e5fc;
+  //  border-right: 1px solid #c6e5fc;
+  //}
+  //
+  //.mapping-content {
+  //  float: left;
+  //}
+
+
+
+
+.mstrmojo-di-mappingpanel-tablelist {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  overflow-y: auto;
+  overflow-x: auto;
+
+  font-family: Arial;
+  font-size: 9pt;
+  border-bottom: 1px solid #c6e5fc;
+  background: #B1B1B1;
+
+  .tablelist-item {
+    padding-left: 5px;
+    height: 20px;
+    color: #000000;
+  }
+
+  .tablelist-item.selected {
+    color: #FFFFFF;
+  }
+
+  .tablelist-item:hover {
+    background-color: #D3E9FB;
+  }
+  .selected{
+    font-weight: bold;
+  }
+
+
+}
+
+.mstrmojo-di-mapping-panel {
+  .table-list {
+
+    // title bar style
+    .titlebar-table {
+      width: 100%;
+      height: 20px;
+      background-color: lightgray;
+      color: $preiviewFontColor;
+      font-weight: bold;
+      font-size: 11px;
+
+      .titlebar-label {
+        margin-left: 5px;
+      }
+      .titlebar-button {
+        width: 10px;
+        margin-right: 5px;
+        float: right;
+      }
+    }
+  }
+
+  .unusedOption {
+    border-bottom: 1px solid #c6e5fc;
+  }
+
+  //.mstrmojo-di-mappingitem {
+  //  position: relative;
+  //}
+}
+
+
+
+
+//.mstrmojo-di-TableView {
+//  .mstrmojo-di-mappingitem:hover, .mstrmojo-di-mappingitem.hover{
+//    background-color: #D3E9FB;
+//  }
+//}
+//
+//.mapping-panel {
+//  .mstrmojo-di-mappingitem:hover, .mstrmojo-di-mappingitem.hover{
+//    background-color: #D3E9FB;
+//  }
+//}
+//
+//.mstrmojo-di-mappingitem:hover .mappingitem-menu {
+//  display: block;
+//}
+
+.mstrmojo-di-tableitem {
+  width: 100%;
+  height: 22px;
+  color: #000000;
+  position: relative;
+
+  .mstrmojo-di-tableitem-icon {
+    float: left;
+    width: 20px;
+    margin-left: 5px;
+    position: absolute;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    top: 2px;
+
+  }
+  .mstrmojo-di-tableitem-icon.t1{
+    background-image: url(images/DI/file-small.png);
+    background-repeat: no-repeat;
+    height: 20px;
+    float: left;
+    width: 20px;
+    margin-left: 5px;
+  }
+  .mstrmojo-di-tableitem-icon.t7{
+    background-image: url(images/wh/object_icons.png);
+    background-position: 3px -22px;
+    height: 20px;
+    float: left;
+    width: 20px;
+    margin-left: 5px;
+
+  }
+  .mstrmojo-di-tableitem-name {
+    float: left;
+    margin-left: 3px;
+    text-overflow: ellipsis;
+    position: absolute;
+    left: 25px;
+    right: 0;
+  }
+
+  .mstrmojo-InlineEditBox-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .mstrmojo-di-tableitem-button {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background-image:url(../../../style/mstr/images/archlistView.png);
+    background-repeat:no-repeat;
+    background-position: 0px -256px;
+    vertical-align: middle;
+    display: none;
+    position: absolute;
+    right: 5px;
+  }
+}
+
+
+.mstrmojo-di-tableitem.selected {
+  color: #FFFFFF;
+}
+.mstrmojo-di-tableitem:hover {
+  background: #D3E9FB;
+}
+
+.mstrmojo-di-tableitem:hover .mstrmojo-di-tableitem-button {
+  display: block;
+}
+
+.resize-handler {
+  cursor: row-resize;
+  height: 10px;
+  width: 100%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  background-image: url(../../../style/mstr/images/qbsplitbg.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.resize-handler-avatar {
+  position: absolute;
+  height: 2px;
+  background-color: yellow;
+}
+
+.mstrmojo-di-inputNameBox {
+  width: 560px;
+  height: auto;
+  background: #D8EBFB url(images/gradient_bg_lightblue_short.png) repeat-x scroll 0 38px;
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:10px;
+
+  .mstrmojo-di-inputNameBox-text {
+    margin: 15px;
+    color: #333333;
+    font-family: Arial;
+    font-size: 12px;
+  }
+
+  .mstrmojo-di-inputNameBox-inputText {
+    color: #333333;
+    font-family: Arial;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-right: 5px;
+  }
+}

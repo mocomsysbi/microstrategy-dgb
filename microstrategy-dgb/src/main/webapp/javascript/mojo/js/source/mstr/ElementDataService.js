@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.hash");mstrmojo.mstr.ElementDataService=mstrmojo.provide("mstrmojo.mstr.ElementDataService",{getElements:function getElements(params,callback){var req=mstrmojo.hash.copy(params,{});req.taskId=req.taskId||"browseElements";mstrApp.serverRequest(req,callback,{showWait:true,hideWait:true,delay:true,silent:req.silent});}});}());

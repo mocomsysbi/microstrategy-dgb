@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="396px" height="176px" viewBox="0 0 396 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 17 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="toolbar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-17-Copy">
+            <text id="left-top-of-each-ico" font-family="SFUIDisplay-Semibold, SF UI Display" font-size="9" font-weight="500" fill="#444649">
+                <tspan x="0" y="11">left top of each icon(0+30n, 0+30n), each icon 18*18px</tspan>
+            </text>
+            <g id="Group" transform="translate(0.000000, 30.000000)">
+                <rect id="Rectangle-168" fill="#D8D8D8" opacity="0" x="0" y="0" width="18" height="18"></rect>
+                <polygon id="Triangle-8" fill="#444649" transform="translate(9.000000, 9.000000) scale(-1, -1) rotate(90.000000) translate(-9.000000, -9.000000) " points="9 5 13 13 5 13"></polygon>
+            </g>
+            <g id="Group-2" transform="translate(30.000000, 30.000000)">
+                <rect id="Rectangle-168-Copy" fill="#D8D8D8" opacity="0" x="0" y="0" width="18" height="18"></rect>
+                <polygon id="Triangle-8" fill="#444649" transform="translate(10.000000, 9.000000) scale(1, -1) rotate(90.000000) translate(-10.000000, -9.000000) " points="10 5 14 13 6 13"></polygon>
+            </g>
+            <text id="Disable" font-family="SFUIDisplay-Semibold, SF UI Display" font-size="6" font-weight="500" fill="#8D8D8D">
+                <tspan x="0" y="57">Disable</tspan>
+            </text>
+            <text id="normal" font-family="SFUIDisplay-Semibold, SF UI Display" font-size="6" font-weight="500" fill="#444649">
+                <tspan x="0" y="23">normal</tspan>
+            </text>
+            <text id="40%" font-family="SFUIDisplay-Semibold, SF UI Display" font-size="8" font-weight="500" fill="#444649">
+                <tspan x="0" y="75">40%</tspan>
+            </text>
+            <text id="40%-copy" font-family="SFUIDisplay-Semibold, SF UI Display" font-size="8" font-weight="500" fill="#444649">
+                <tspan x="31" y="75">40%</tspan>
+            </text>
+            <g id="+-new-copy-2" transform="translate(60.000000, 30.000000)">
+                <rect id="Rectangle-2961-Copy-9" fill="#00FFA0" opacity="0" x="0" y="0" width="18" height="18"></rect>
+                <g id="16x16add_bt-copy-2" transform="translate(5.000000, 5.000000)" fill="#4A4A4A">
+                    <g id="add">
+                        <path d="M3.6,3.6 L0.407719612,3.6 C0.182122231,3.6 0,3.7790861 0,4 C0,4.21445312 0.182542288,4.4 0.407719612,4.4 L3.6,4.4 L3.6,7.59228039 C3.6,7.81787777 3.7790861,8 4,8 C4.21445312,8 4.4,7.81745771 4.4,7.59228039 L4.4,4.4 L7.59228039,4.4 C7.81787777,4.4 8,4.2209139 8,4 C8,3.78554687 7.81745771,3.6 7.59228039,3.6 L4.4,3.6 L4.4,0.407719612 C4.4,0.182122231 4.2209139,-1.03949773e-13 4,-1.03990354e-13 C3.78554688,-1.04029748e-13 3.6,0.182542288 3.6,0.407719612 L3.6,3.6 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

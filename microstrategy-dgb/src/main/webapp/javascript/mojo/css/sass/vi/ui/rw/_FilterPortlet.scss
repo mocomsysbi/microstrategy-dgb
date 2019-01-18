@@ -1,0 +1,33 @@
+@import "../../vi-global";
+@import '../../themes';
+
+.mstrmojo-VIFilterPanel {
+    .mstrmojo-DocSubPanel-content .mstrmojo-VIPanelPortlet.showFPBorder {
+        border: solid 1px #23A3D3;
+        padding: 7px 8px;
+    }
+
+    .showSplitter {
+      margin-left: -9px;
+      opacity: 1.0;
+      width: 100%;
+
+      &.mojo-theme-light {
+          @include box-shadow(#ffffff, 0, 1px, 0, true);
+          background-color: #f2f2f2;
+          border-top: 1px solid #DCDCDC;
+      }
+
+      &.mojo-theme-dark {
+        @include box-shadow(#3d3e42, 0, 1px, 0, true);
+        background-color: #37383a;
+        border-top: 1px solid #2b2b2e;
+      }
+    }
+
+    .mstrmojo-VIPanelPortlet.expanded {
+        border: $wsvi-primary-blue 2px solid;
+        box-shadow: 0 1px 6px 3px rgba($wsvi-primary-black, 0.1);
+        background-color: white;
+    }
+}

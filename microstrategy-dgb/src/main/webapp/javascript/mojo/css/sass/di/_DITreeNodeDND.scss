@@ -1,0 +1,14 @@
+
+.mstrmojo-di-tree-node-dnd-list {
+  .empty-indicator {
+    padding-left: 18px;
+    opacity: 0.5;
+    display: none;
+  }
+  &.expanded.empty {
+    height: 40px;
+    .empty-indicator {
+      display: block;
+    }
+  }
+}

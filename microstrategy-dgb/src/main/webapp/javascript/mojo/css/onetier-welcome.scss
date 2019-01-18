@@ -1,0 +1,26 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: Arial;
+    line-height: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+// Include the CSS bundle for all the dynamically loaded JS bundles.
+@import 'sass/bundles/onetier-welcome';
+@import "sass/clearfix";
+@import "sass/base-themes";
+
+// Include file for CSS overrides specific to onetier
+@import "sass/onetier/onetier-welcome-overrides";
+
+//#VIRevamp
+@import "sass/vi/workstation-global";
+html, body {
+    &.workstation {
+        font-family: $wsvi-normal-font-family;
+    }
+}

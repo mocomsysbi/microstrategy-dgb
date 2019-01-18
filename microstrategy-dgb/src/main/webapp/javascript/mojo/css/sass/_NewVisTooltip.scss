@@ -1,0 +1,81 @@
+@import 'vi/workstation-global';
+@import 'global-mixins';
+
+div.new-vis-tooltip {
+  position: absolute;
+  z-index: 1001;/*make tooltip above on context menu*/
+  background-color: $wsvi-primary-white;
+  border: 1px solid $wsvi-tooltip-border-color;
+  padding: 10px;
+  min-width: 120px;
+  @include box-sizing(border-box);
+  @include box-shadow($wsvi-panel-shadow, 1px, 2px, 8px);
+  @include border-radius($wsvi-box-radius);
+  font-family: $wsvi-font-family;
+  font-size: 12px;
+  color: $wsvi-primary-black;
+  overflow: hidden;
+
+  .new-vis-tooltip-container-wrapper {
+    overflow: hidden;
+  }
+
+  .new-vis-tooltip-container {
+    @include box-sizing(content-box);//DE83037;Overwrite the global box-sizing property in Library
+  }
+
+  .new-vis-tooltip-table {
+    display: table;
+    border-spacing: 0;
+    table-layout: fixed;
+    //word-wrap: break-word;
+    //white-space: normal;
+  }
+
+  td {
+    line-height: 14px;
+    padding-right: 16px;
+    text-align: left;
+    vertical-align: top;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+  }
+
+  td:last-child {
+    padding-right: 0;
+  }
+
+  td.metric {
+    text-align: right;
+  }
+
+  thead {
+    td.header {
+      font-size: 11px;
+      color: rgba($wsvi-primary-black, 0.5);
+      border-bottom: 1px solid rgba($wsvi-primary-black, 0.15);
+      padding-bottom: 4px;
+    }
+  }
+
+  tbody {
+    td {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    td.firstRow {
+      padding-top: 10px;
+    }
+
+    td.name {
+      color: rgba($wsvi-primary-black, 0.5);
+      text-align: right;
+    }
+  }
+
+
+}
+
+
+

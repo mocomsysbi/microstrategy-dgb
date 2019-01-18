@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumLayout={LO_ABSOLUTE:0,LO_CLUSTER:1,LO_STACKED:2,LO_PERCENT:3};

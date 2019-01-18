@@ -1,0 +1,30 @@
+.mstrmojo-Join-Options {
+    .mstrmojo-Editor-content {
+        .mstrmojo-Label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .mstrmojo-RadioList {
+            height: 108px;
+            margin-bottom: 10px;
+            .mstrmojo-QB-radiolist-item {
+                height: 26px;
+                input, label {
+                    height: 100%;
+                }
+            }
+        }
+        .mstrmojo-DropDownButton {
+            height: 26px;
+            .mstrmojo-Pulldown-boxNode.mstrmojo-DropDownButton-boxNode {
+                padding: 0;
+                width: 86px;
+                line-height: 26px;
+                .mstrmojo-Pulldown-iconNode {
+                    background-position-y: 5px !important;
+                }
+            }
+        }
+    }
+}

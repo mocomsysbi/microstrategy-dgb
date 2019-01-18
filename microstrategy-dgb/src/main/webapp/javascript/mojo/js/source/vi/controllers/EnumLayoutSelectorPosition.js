@@ -1,0 +1,1 @@
+mstrmojo.vi.controllers.EnumLayoutSelectorPosition={TOP:0,BOTTOM:1,LEFT:2};

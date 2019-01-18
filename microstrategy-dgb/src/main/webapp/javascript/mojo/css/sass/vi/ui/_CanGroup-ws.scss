@@ -1,0 +1,135 @@
+@import '../workstation-global';
+
+$background-color-selected: #9dc8f6;
+
+// Grouping
+.workstation {
+  .mstrmojo-UnitContainer {
+    .groupingOverlay {
+      display: none;
+    }
+
+    &.grouping .mstrmojo-VITitleBar .right-toolbar .mstrmojo-VITitleToolbar {
+      visibility: hidden;
+
+      .visible {
+        visibility: hidden;
+      }
+    }
+  }
+
+  .mstrmojo-UnitContainer.grouping {
+    .groupingOverlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1100;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      overflow: hidden;
+
+      .mstrmojo-scrollNode {
+        height: 100%;
+      }
+
+      .mstrmojo-scrolltrack {
+        display: none;
+      }
+
+      .btnGroup {
+        margin: 10px;
+        display: none;
+        width: 70px;
+      }
+
+      .btnMenu {
+        right: 6px;
+        top: 2px;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        background: #FFFFFF url(vi/images/dataset.svg) -62px -32px no-repeat;
+        display: none;
+      }
+
+      &.disabled {
+        background-color: rgba(#e1e1e1, 0.3);
+      }
+
+      &.highlight {
+        background-color: rgba($background-color-selected, 0.5);
+        border: 2px solid $wsvi-primary-blue;
+      }
+    }
+
+    &.selected {
+      .groupingOverlay {
+        background-color: rgba($background-color-selected, 0.30);
+        border-color: $wsvi-primary-blue;
+      }
+
+      &.lastSelected {
+        .btnGroup,
+        .hasHorizontal .mstrmojo-scrolltrack.horizontal {
+          display: block;
+        }
+      }
+    }
+
+    &.inactive {
+      opacity: 1;
+    }
+
+  }
+
+  .mstrmojo-UnitContainer.selected.grouping {
+    box-shadow: none;
+  }
+
+  .hasGroup .mstrmojo-UnitContainer.grouping {
+    .groupingOverlay.highlight {
+      &:hover .btnMenu {
+        display: block;
+      }
+    }
+
+    &.selected .groupingOverlay {
+      &:hover .btnMenu {
+        display: block;
+      }
+    }
+  }
+
+  .previewMode {
+    .mstrmojo-UnitContainer.grouping{
+      &.selected.lastSelected .btnGroup {
+        display: none;
+      }
+    }
+
+    .hasGroup .mstrmojo-UnitContainer.grouping {
+      .groupingOverlay {
+        &.highlight:hover .btnMenu {
+          display: none;
+        }
+
+        &.disabled {
+          background-color: transparent;
+        }
+      }
+
+      &.selected .groupingOverlay {
+        &:hover .btnMenu {
+          display: none;
+        }
+
+        background-color: rgba($background-color-selected, 0.30);
+      }
+    }
+  }
+
+}

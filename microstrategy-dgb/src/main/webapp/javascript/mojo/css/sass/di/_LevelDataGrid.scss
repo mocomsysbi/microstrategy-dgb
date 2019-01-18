@@ -1,0 +1,11 @@
+.mstrmojo-DataGrid-headerTable td {
+  padding-right: 4px;
+  border-right: 1px solid #cbcbcb;
+  background-color: #e5e5e5;
+  //@include linear-gradient($preiviewHeaderStart, $preiviewHeaderEnd);
+
+  .mstrmojo-DataGrid-resizeHandle{
+    height: calc(100% - -12px); //workaround YUI problem
+    margin-top: -12px;
+  }
+}

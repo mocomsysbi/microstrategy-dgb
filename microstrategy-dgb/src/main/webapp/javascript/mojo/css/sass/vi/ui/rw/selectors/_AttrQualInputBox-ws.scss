@@ -1,0 +1,243 @@
+.workstation {
+  .Attr-Qual-InputBox {
+    .mstrmojo-TextBox {
+      width: 100%
+    }
+    .mstrmojo-Box {
+      padding: 4px 0; //total height 30px
+    }
+    .input-label {
+      font-size: inherit;
+      width: 40%;
+    }
+
+    // TQMS 989151
+    .mstrmojo-DateTextBox {
+      width: 60%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      border: 1px solid #B5B8C8;
+      border-radius: 3px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
+      text-align: left; //DE29122, set text-align explicitly to avoid mis-alignment
+
+      .mstrmojo-DateTextBox-input {
+        box-sizing: border-box;
+        height: 22px;
+        line-height: normal;
+        padding: 0 3px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
+        text-decoration: inherit;
+        width: 80%;
+        width: calc(100% - 18px);
+        width: -moz-calc(100% - 18px);
+        width: -webkit-calc(100% - 18px);
+        width: -o-calc(100% - 18px);
+        border: 0;
+        border-right: 1px solid #B5B8C8;
+      }
+      .mstrmojo-DateTextBox-icon {
+        left: 80%;
+        left: calc(100% - 18px);
+        left: -moz-calc(100% - 18px);
+        left: -webkit-calc(100% - 18px);
+        left: -o-calc(100% - 15px);
+        right: 0;
+        width: 15px;
+        height: 15px;
+        margin-top: 3px;
+        margin-bottom: 1px;
+        margin-left: 1px;
+      }
+    }
+
+    .mstrmojo-Box.onerow {
+      .input-label {
+        width: 45px;
+      }
+    }
+    .mstrmojo-Box.onerow.to-box {
+      padding-left: 20px;
+    }
+  }
+
+  .mojo-theme-light {
+    .Attr-Qual-InputBox {
+      .mstrmojo-DateTextBox {
+        .mstrmojo-DateTextBox-icon {
+          background: url(#{$vi-img-path}/calendar_lighttheme.png);;
+        }
+      }
+    }
+  }
+
+  // TQMS 989151
+  // DE71404
+  .mojo-theme-dark {
+    .Attr-Qual-InputBox {
+      .mstrmojo-DateTextBox {
+        border: rgba($wsvi-primary-white, 0.15) solid 1px;
+        box-shadow: rgba($wsvi-pure-black, 0.1) 0 1px 2px;
+
+        .mstrmojo-DateTextBox-input {
+          background-color: transparent;
+          color: $wsvi-darktheme-white;
+        }
+
+        .mstrmojo-DateTextBox-icon {
+          @include wsvi-icon-size;
+          background: transparent url('#{$vi-img-path}/dark_theme_icons.svg') -30px -90px no-repeat;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .mstrmojo-Calendar-month,
+    .mstrmojo-Calendar-year,
+    .mstrmojo-Calendar-hour,
+    .mstrmojo-Calendar-minute,
+    .mstrmojo-Calendar-second {
+      border: 1px solid #595959;
+    }
+  }
+
+  .strikeout {
+    .Attr-Qual-InputBox {
+      .mstrmojo-DateTextBox-input {
+        text-decoration: line-through;
+      }
+    }
+  }
+  /*
+   * There is no datetextbox calendar widget, so put the css here since it is used by AQ
+   */
+  .mstrmojo-DateTextBox-calendar {
+
+    @mixin calendar-arrow($increase: 1) {
+      transform: rotate($increase*90deg);
+      -ms-transform: rotate($increase*90deg);
+      -webkit-transform: rotate($increase*90deg);
+      cursor: pointer;
+      border: none;
+      margin: 2px;
+      height: 22px;
+      width: 22px;
+    }
+
+    .mstrmojo-Calendar-decrease,
+    .mstrmojo-Calendar-increase {
+      background: transparent url(#{$vi-img-path}/menu_icons.png) -56px 2px no-repeat;
+      &:hover {
+        background-position: -56px -28px;
+      }
+    }
+
+    .mstrmojo-Calendar {
+      width: 200px;
+      border-radius: 2px;
+
+      .mstrmojo-Calendar-header {
+        line-height: 25px;
+        height: 25px;
+      }
+
+      .mstrmojo-Calendar-body {
+        height: 175px;
+
+        .mstrmojo-Calendar-dayView {
+          top: 5px;
+          &.ddSelected {
+
+            .mstrmojo-Calendar-day-pre,
+            .mstrmojo-Calendar-day-cur,
+            .mstrmojo-Calendar-day-next {
+              cursor: not-allowed;
+              &:hover {
+                cursor: not-allowed;
+                border-radius: 2px;
+              }
+            }
+          }
+        }
+
+        table {
+          margin: 0px auto 0px;
+        }
+
+        .mstrmojo-Calendar-day-pre,
+        .mstrmojo-Calendar-day-cur,
+        .mstrmojo-Calendar-day-next {
+          &.disabled {
+            color: #969696;
+          }
+        }
+
+      }
+
+      .mstrmojo-Calendar-decrease {
+        @include calendar-arrow(1);
+      }
+
+      .mstrmojo-Calendar-increase {
+        @include calendar-arrow(3);
+      }
+
+      .mstrmojo-Calendar-day-pre,
+      .mstrmojo-Calendar-day-cur,
+      .mstrmojo-Calendar-day-next {
+
+        height: 22px;
+        line-height: 22px;
+        width: 22px;
+
+        &.selected {
+          border-radius: 2px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          border-radius: 2px;
+        }
+
+      }
+
+      .mstrmojo-Calendar-advanced {
+        border-top: 1px solid #9B9B9B;
+        padding: 10px;
+
+        .dateRadioList,
+        .dateAdjustBox,
+        .previewLabel,
+        .previewBox {
+          margin-bottom: 10px;
+        }
+
+        .previewLabel,
+        .previewBox {
+          text-align: left;
+        }
+
+        .dateRadioList .mstrmojo-RadioListHoriz-item {
+          margin-right: 10px;
+        }
+
+        .dateAdjustBox {
+          .mstrmojo-ui-Pulldown, .mstrmojo-Stepper {
+            width: 60px;
+            margin-right: 10px;
+          }
+          .mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text {
+              height: 26px;
+            }
+          }
+        }
+
+        .tdLabel {
+          text-align: left;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+}

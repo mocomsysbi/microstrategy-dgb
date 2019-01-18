@@ -1,0 +1,71 @@
+@import "RefineVariables";
+
+.refine-facet-panel {
+  background-color: $containerFillColor;
+  border: 1px solid $containerBorderColor;
+}
+
+.browsing-panel-header {
+  position: relative;
+}
+
+.browsing-panel-indicator {
+  position: absolute;
+  width: 50%;
+  margin: 5px;
+  top: 0em;
+  left: 20%;
+  text-align: center;
+  background-color: #fff;
+  padding: 4px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.browsing-panel-controls {
+  position: relative;
+  padding: 7px;
+  text-align: right;
+}
+
+.browsing-panel-controls-refresh {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+}
+
+.button, a.button {
+  display: inline-block;
+  overflow: visible;
+  font-size: 1em;
+  line-height: 1.4;
+  color: #000;
+  text-decoration: none;
+  padding: 1px 6px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  background: #eee;
+  white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.button:hover, a.button:hover {
+  border: 1px solid #666;
+}
+
+.button:active, a.button:active {
+  border: 1px solid #000;
+}
+
+ul.facets-container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; //ljing 940034
+  &:hover{
+    overflow: auto;
+  }
+}

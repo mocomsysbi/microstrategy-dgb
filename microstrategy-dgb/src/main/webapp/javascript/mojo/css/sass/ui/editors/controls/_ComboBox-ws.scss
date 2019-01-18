@@ -1,0 +1,64 @@
+.workstation{
+     /** BEGIN: ComboBox **/
+    .mstrmojo-ui-ComboBox {
+        .preview {
+            .mstrmojo-TextBox {
+                @include ellipsis-text();
+
+                background: transparent;
+                line-height: 18px;
+                padding: 1px 0;
+                text-align: center;
+                border: none;
+                height: 100%;
+                &.mstrmojo-TextBox-ErrValidation {
+                    border: 1px solid #fabd29;
+                }
+            }
+        }
+
+        .mstrmojo-PopupList {
+            @include box-sizing();
+
+            max-height: 96px;
+            overflow: auto;
+            width: 50px;
+
+            .item {
+                cursor: pointer;
+                padding: 0 6px;
+                text-align: left;
+
+                &.selected {
+                    background: #f7f7f7;
+                    font-weight: normal;
+                }
+
+                &:hover {
+                    background: #f0f0f0;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-ui-PreviewButton {
+        &.mstrmojo-ui-ComboBox {
+            .preview {
+                .mstrmojo-TextBox {
+                    @include box-shadow(transparent, 0, 0, 0, true);
+                    // No background color on label so that the inner glow on the parent element is visible.
+                    background: transparent;
+                    border-color: transparent; //VI Remap
+                }
+            }
+
+            .mstrmojo-PopupList {
+                margin-top: 3px;
+                margin-right: 2px;// Set this to ensure child 100% width is the same with parent
+                overflow: hidden;
+                right: 1px;
+            }
+        }
+    }
+    /** END: ComboBox **/
+}

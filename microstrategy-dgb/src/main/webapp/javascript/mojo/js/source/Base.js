@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.hash");var $H=mstrmojo.hash;mstrmojo.Base=mstrmojo.declare(null,null,{scriptClass:"mstrmojo.Base",init:function init(props){$H.copy(props,this);if(this.postApplyProperties){this.postApplyProperties();}}});}());

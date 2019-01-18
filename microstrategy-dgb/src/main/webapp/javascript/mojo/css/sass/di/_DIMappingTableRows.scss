@@ -1,0 +1,298 @@
+@import 'platform-variables';
+
+/*QB TABLE VIEW Simple Tree widget*/
+.mstrmojo-di-mappingRows,
+.mstrmojo-di-TableView {
+
+  .mstrmojo-di-mappingRows.mstrmojo-SimpleTree {
+    border-top: 0;
+    //min-height: 97px;
+    overflow: hidden; //mizhang TQMS 933527, spec in IE8/9
+    max-width: inherit;
+    //max-height: 230px;
+
+    box-sizing: border-box;
+    padding-bottom: 2px;
+    &.attrRows {
+      border-bottom: 1px solid #c9c9c9;
+      padding-bottom: 3px;
+    }
+
+    &.mask {
+      border: 2px solid #34abeb;
+      box-sizing: border-box;
+    }
+    & > ul { //YGUO TQMS-951224
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+    }
+    &:hover {
+      @include scrollBar();
+      overflow-y: auto;
+
+    }
+    li {
+      padding-left: 5px;
+      padding-right: 4px;
+      line-height: 0;
+      background: none;
+      &.dzMask > .item {
+        background-color: #eaeaea !important;
+        font-weight: bold;
+
+        .di-item-n {
+          margin-left: 2px;
+        }
+      }
+
+      &.selected > .item {
+        background-color: #defbe6;
+        border-radius: 4px;
+        border: 1px solid #4AD5AE;
+      }
+      //TQMS-923331
+      ul {
+        display: none;
+      }
+      &.open ul {
+        display: inline-block;
+        width: 100%;
+      }
+      .item .mstrmojo-InlineEditBox.edit, .item .mstrmjo-InlineEditBox:hover {
+        border: none;
+      }
+      .item .mstrmojo-InlineEditBox-text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .item .mstrmojo-InlineEditBox-input {
+        background-color: transparent;
+        font-size: 12px;
+        margin-left: 1px;
+        margin-top: -1px;
+      }
+      .mstrmojo-di-rename-box {
+        float: left;
+        width: 69%;
+      }
+    }
+
+    li.leaf {
+      background: none;
+    }
+  }
+  //YGUO TQMS-943496 Add the icons as the spec's requirement
+  .mstrmojo-di-mappingRows.mstrmojo-SimpleTree.expand {
+    li {
+      padding-left: 15px;
+      background: url("images/DI/collapse_button.png") no-repeat 6px 7px;
+    }
+    li.open {
+      background: url("images/DI/expand_button.png") no-repeat 6px 7px;
+    }
+    li.open .item {
+      height: auto;
+    }
+  }
+
+  .mstrmojo-di-mappingRows.mstrmojo-SimpleTree .tp12 .linked {
+    background: url(images/DI/workstation/workstation.svg) no-repeat -480px -2px;
+    float: right;
+    width: 20px;
+    height: 20px;
+  }
+
+  .item {
+    position: relative;
+    border: 1px solid transparent;
+    //width: inherit;
+    height: 21px; //YGUO TQMS-972365
+    &:hover {
+      background-color: RGBA(68, 70, 73, 0.06);
+      .di-item-mn {
+        right: 6px;
+        opacity: 1;
+      }
+    }
+
+    .di-item-ic {
+      background: transparent url(#{$wh-img-path}/object_icons.png) no-repeat center center;
+      margin: 4px 5px 0px 4px;
+      line-height: 22px;
+      width: 12px;
+      height: 12px;
+      overflow: hidden;
+      display: block;
+      float: left;
+    }
+
+    .di-item-n {
+      white-space: nowrap;
+      text-overflow: ellipsis; //TQMS-920548
+      -ms-user-select: none;
+      overflow: hidden;
+      width: calc(100% - 25px);
+      display: inline-block; //TQMS-922599
+      line-height: 21px;
+    }
+
+    &.linked .di-item-n{
+      width: calc(100% - 50px);
+    }
+
+    .ipa {
+      font-style: italic;
+    }
+
+    .hasEditableText {
+      white-space: nowrap;
+      width: 72%;
+    }
+    .di-item-mn {
+      background: url(images/DI/workstation/workstation.svg) no-repeat -2045px -195px;
+      transform: scale(1.2);
+      margin: 3px;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 6px;
+      top: 0;
+      -webkit-transition: opacity 300ms;
+      opacity: 1;
+      visibility: visible;
+      cursor: pointer;
+    }
+
+  }
+  .mstrmojo-di-tv-header.item:hover {
+    background-color: RGBA(68, 70, 73, 0.1);
+  }
+  li[level="0"] > .item {
+    &.tp12 .di-item-ic {
+      background-image: url(images/DI/icon_att.png);
+    }
+    //mizhang TQMS 939288
+    &.tp12.geo .di-item-ic {
+      background-image: url(images/DI/icon_geo.png);
+    }
+    &.tp12.time .di-item-ic {
+      background-image: url(images/DI/icon_time.png);
+    }
+    &.tp12.recursive .di-item-ic {
+      background: transparent url("#{$di-img-path}/hierarchy_icons.svg") -10px -10px no-repeat;
+    }
+
+    &.tp4 .di-item-ic {
+      background-image: url(images/DI/icon_metric.png);
+    }
+  }
+
+  li.leaf[level="1"] > .item {
+    &.tp12 .di-item-ic,
+    &.tp4 .di-item-ic {
+      background: url(images/DI/icon_att_form.png);
+    }
+  }
+  //TQMS 992965:The inline editor box is 1 pixel higher than the ordinary list item
+  .mstrmojo-InlineEditBox {
+    height: 21px;
+    line-height: 21px;
+    &:hover {
+      border: 1px solid transparent;
+    }
+  }
+
+  &.hierarchy {
+    li[level="0"] > .item {
+      &.tp12:not(.recursive),&.tp4 {
+        .di-item-ic {
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+        }
+        .di-item-n {
+          color: #c4c4c4;
+        }
+      }
+    }
+  }
+}
+
+.mstrmojo-di-mappingRows.hasOwnAvatar {
+  position: absolute;
+  padding: 0 10px 0 0;
+  margin: 2px;
+  opacity: 0.6;
+  z-index: 100000;
+  width: 150px;
+  > li {
+    border: 1px solid #4AD5AE;
+    background-color: #defbe6 !important;
+    padding: 0 0;
+    line-height: 21px;
+    border-radius: 4px;
+    .di-item-mn,
+    ul {
+      display: none;
+    }
+  }
+
+  > div:last-child {
+    height: 16px;
+    display: none;
+    margin-top: 5px;
+    padding-left: 5px;
+    background: #ffffff;
+    opacity: 0.85;
+    font: 11px arial;
+    color: #515151;
+    min-width: 80px;
+  }
+
+  &.enabled > div:last-child {
+    display: block;
+  }
+}
+
+//.hierarchyTableToolip{
+//  max-width: 300px;
+//  word-wrap: break-word;
+//}
+
+.workstation {
+  .mstrmojo-di-TableView {
+    li[level="0"] > .item {
+      &.tp12 .di-item-ic {
+        //background: transparent url("vi/images/dataset.svg") -123px -32px no-repeat;
+        background: transparent url("images/DI/vertical icons.svg") no-repeat -4px -113px;
+        height: 14px;
+        margin-top: 2px;
+      }
+      //mizhang TQMS 939288
+      &.tp12.geo .di-item-ic {
+        background: transparent url("vi/images/dataset.svg") -153px -31px no-repeat;
+        //background: transparent url("images/DI/vertical icons.svg") no-repeat -4px -152px;
+        height: 15px;
+        margin-top: 2px;
+      }
+      &.tp12.time .di-item-ic {
+        background: transparent url("vi/images/dataset.svg") -183px -32px no-repeat;
+        height: 14px;
+        margin-top: 2px;
+      }
+      &.tp12.recursive .di-item-ic {
+        background: transparent url("#{$di-img-path}/hierarchy_icons.svg") -10px -10px no-repeat;
+        height: 14px;
+        margin-top: 2px;
+      }
+
+      &.tp4 .di-item-ic {
+        background: transparent url("vi/images/dataset.svg") -393px -32px no-repeat;
+        //background: transparent url("images/DI/vertical icons.svg") no-repeat -4px -133px;
+        height: 14px;
+        margin-top: 2px;
+      }
+    }
+  }
+}

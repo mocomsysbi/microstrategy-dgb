@@ -1,0 +1,166 @@
+@import '../../../global-mixins';
+@import '../../vi-global';
+
+/** Start: Dashboard Styles Editor */
+.mstrmojo-Editor.DashboardStyles {
+    .mstrmojo-Editor-content {
+        padding: 16px 18px;
+        td {
+            vertical-align: top;
+
+            .mstrmojo-vi-EditorGroup {
+                > .mstrmojo-Label {
+                    font-weight: bold;
+                    height: 20px;
+                    line-height: 20px;
+
+                    &.title,
+                    &.canvas,
+                    &.container {
+                        padding-top: 13px;
+                    }
+
+                    &.font-container {
+                      font-weight: normal;
+                    }
+                }
+
+                @mixin buttonBarStyle($topCompensation: 0) {
+                    > .mstrmojo-ui-ButtonBar {
+                        @include box-sizing();
+                        margin: #{3+$topCompensation}px 0 4px 0;
+                        border-collapse: separate;
+                    }
+                }
+
+                @include buttonBarStyle();
+                .mstrmojo-Box.ctrl-group {
+                    > .mstrmojo-ui-Pulldown {
+                        margin: 4px 0 5px 0;
+                    }
+                    @include buttonBarStyle(5);
+                    > .mstrmojo-vi-TwoColumnProp {
+                        padding: 4px 0;
+                    }
+                }
+
+                .mstrmojo-vi-TwoColumnProp.noValue {
+                    .mstrmojo-ColorPickerBtn {
+                        .preview {
+                            position: relative;
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                top: -2px; right: -2px; bottom: -2px; left: -2px;
+                                @include border-radius(3px 0 0 3px);
+                                background-image: url("#{$vi-img-path}/question_mark.png");
+                            }
+                        }
+                        .slash {
+                            display: none !important;
+                        }
+                    }
+                }
+            }
+
+            .mstrmojo-DashboardStylesEditor-preview {
+                margin-left: 18px;
+                width: 467px;
+                height: 386px;
+                border: 10px solid #9a9b9e;
+                position: relative;
+
+                .mstrmojo-Label {
+                    font-family: inherit;
+                }
+
+                @mixin sizeAndPosition($width, $height, $x, $y, $x-prop: left, $y-prop: top) {
+                    @include box-sizing();
+                    position: absolute;
+                    #{$x-prop}: $x;
+                    #{$y-prop}: $y;
+                    width: $width;
+                    height: $height;
+                }
+
+                .canvasPrev {
+                    @include sizeAndPosition(408px, 335px, 58px, 50px);
+                }
+
+                .containerFillPrev {
+                    @include sizeAndPosition(397px, 303px, 64px, 77px);
+                }
+
+                .themePrev {
+                    background-position: -2px -1px;
+                    @include sizeAndPosition(100%, 100%, 0, 0);
+                }
+
+                .containerBorderPrev {
+                    @include sizeAndPosition(397px, 323px, 64px, 57px);
+                }
+
+                .titlePrev {
+                    @include sizeAndPosition(395px, 19px, 65px, 58px);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    padding: 0 26px 0 6px;
+                    line-height: 19px;
+                }
+
+                .visTextsPrev {
+                    .verticalAxis {
+                        @include sizeAndPosition(auto, auto, 368px, 35px, right, bottom);
+                        .text {
+                            height: 46px;
+                            text-align: right;
+                        }
+                    }
+                    .horizonalAxis {
+                        @include sizeAndPosition(auto, auto, 148px, 16px, left, bottom);
+                        .text {
+                            display: inline-block;
+                            width: 80px;
+                        }
+                    }
+                    .legend {
+                        @include sizeAndPosition(auto, auto, 397px, 194px);
+                        .TextContainer {
+                            padding: 11px 0 0 15px;
+                            .text {
+                                height: 17px;
+                            }
+                        }
+                    }
+                }
+
+
+                &[themeClassName="mojo-theme-light"] {
+                    .themePrev {
+                        background-image: url("#{$vi-img-path}/preview_light_theme.png");
+                    }
+                }
+
+                &[themeClassName="mojo-theme-dark"] {
+                    color: #d7d7d7;
+
+                    .themePrev {
+                        background-image: url("#{$vi-img-path}/preview_dark_theme.png");
+                    }
+                }
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        td {
+            .mstrmojo-Editor-button {
+                margin: 0;
+            }
+            &:first-child .mstrmojo-Editor-button {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+/** End: Dashboard Styles Editor */

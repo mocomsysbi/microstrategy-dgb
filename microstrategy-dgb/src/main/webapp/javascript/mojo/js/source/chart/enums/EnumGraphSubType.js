@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumGraphSubType={GST_NULL:0,GST_BIPOLAR:1,GST_DUALAXIS:2};

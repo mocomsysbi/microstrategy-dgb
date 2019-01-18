@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumTrendLineIndex={TLI_Y1:0,TLI_Y2:1,TLI_BOTH:2};

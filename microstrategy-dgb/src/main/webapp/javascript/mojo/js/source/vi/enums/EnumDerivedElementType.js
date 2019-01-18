@@ -1,0 +1,1 @@
+mstrmojo.vi.enums.EnumDerivedElementType={LIST:1,CALCULATION:2,RESIDUE:4};

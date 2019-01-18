@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSGraphFontRotation={Automatic:-1,Normal:0,RotateHotel:1,Rotate90:2,Rotate180:3,Rotate270:4,Rotate45:5,Rotate315:6,Custom:7};

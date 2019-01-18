@@ -1,0 +1,14 @@
+/** BEGIN: DocLayout **/
+.mstrmojo-VIDocLayout {
+  position: absolute;
+}
+
+.mstrmojo-VIDocument-top-selector,
+.mstrmojo-VIDocument-selector {
+    background-color: $wsvi-background-gray;
+}
+
+.mstrmojo-VIDocLayout-content .mstrmojo-DocSection {
+    position: relative;
+}
+/** END: DocLayout **/

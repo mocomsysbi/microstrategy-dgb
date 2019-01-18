@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumMarkerShape={MS_Rectangle:0,MS_XShape:1,MS_PlusSymbolthin:2,MS_PlusSymbolthick:3,MS_Circle:4,MS_Diamond:5,MS_Triangle:6,MS_Square:7,MS_Star:8,MS_Area:9,MS_Star45:10};

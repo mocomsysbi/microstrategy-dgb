@@ -1,0 +1,206 @@
+@import '_DITableStatusList.scss';
+
+.refreshMode, .subscribeMode{
+  .mstrmojo-di-tablestatuslist {
+    height: 388px;
+
+    .mstrmojo-di-tablestatuslist-list {
+      max-height: 360px;
+
+      .mstrmojo-DataGrid-headerText {
+        margin-left: 3px;
+        &.label {
+          margin-left: 0px;
+        }
+
+        .refresh-policy-label{
+          float: left;
+        }
+
+        .refresh-policy-icon{
+          float: left;
+          margin: 2px 0 0 3px;
+        }
+
+        .refresh-policy-icon img{
+          width: 16px;
+          height: 16px;
+          background: url(#{$mojo-img-path}/bt_info.svg) 0 0 no-repeat;
+          vertical-align: top;
+        }
+
+        .refresh-policy-icon:hover img, .refresh-policy-icon:focus img{
+          background: url(#{$mojo-img-path}/bt_info_selected.svg) 0 0 no-repeat;
+        }
+      }
+
+      .tablestatus-header.refresh {
+        margin: 0px 0px 0px 2px;
+      }
+
+      // style for the stack dataWidget
+      .tablestatus-col.stack.pulldown {
+        margin: 0px 7px;
+      }
+
+      &.lockHeader.hasVertical.mstrmojo-scrollbar-host {
+        overflow: hidden;
+        border-bottom-width: 1px;
+      }
+    }
+  }
+}
+
+.mstrmojo-DataGrid.mstrmojo-di-tablestatuslist-list.lockHeader{
+  .mstrmojo-DataGrid-itemsContainer td{
+      border-color:#CCCCCC transparent transparent ;
+      border-width:1px 0 0 ;
+  }
+}
+
+.mstrmojo-di-tablestatuslist {
+  margin: 6px 0px 0px 0px;
+
+  .mstrmojo-di-tablestatuslist-list {
+
+    .mstrmojo-DataGrid-headerText {
+      margin-left: 0;
+      color: #444649;
+    }
+
+    .tablestatus-header.refresh {
+      margin: 0px 0px 0px 5px;
+    }
+
+    .tristate.tablestatus-header.refresh, .tristate.tablestatus-header.refresh.grayed.checked {
+      background: transparent url(#{$mojo-img-path}/checkbox.svg) -2px -24px no-repeat;
+    }
+
+    .tristate.tablestatus-header.refresh.disabled {
+      background-position: -2px 1px;
+    }
+
+    .tristate.tablestatus-header.refresh.checked {
+      background-position: -2px 1px;
+    }
+
+    .tablestatus-header.sourceFilter {
+      .filterLink {
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .deleteFilter {
+        width: 18px;
+        height: 18px;
+        margin-left: 1px;
+        margin-top: 1px;
+        background: transparent url(#{$mojo-img-path}/DI/clear-normal.svg) 0 0 no-repeat;
+        &:hover {
+          background: transparent url(#{$mojo-img-path}/DI/clear-hover_click.svg) 0 0 no-repeat;
+        }
+      }
+    }
+
+    .tablestatus-col {
+      margin-left: 5px;
+    }
+
+    .tablestatus-col.tableNameBox {
+      margin: 9px 5px 5px 3px;
+
+      .tableNameBox-name {
+        padding-left: 0px;
+      }
+
+      .tableNameBox-stack {
+        .mstrmojo-FileUploadBox {
+          .mstrmojo-FileUploadBox-buttonDiv {
+            .mstrmojo-FileUploadBox-button {
+              // reset
+              background: #FFFFFF;
+            }
+          }
+        }
+      }
+    }
+
+    .tablestatus-col.refreshBox {
+      .refreshCheckbox {
+        margin: 3px 5px 4px;
+        &.disabled {
+          opacity: 0.45;
+        }
+      }
+    }
+
+    .tablestatus-col.sourceFilterBox .mstrmojo-Label {
+      margin-left: 7px;
+      &.disabled {
+        color: rgba(68, 70, 73, 0.45);
+      }
+    }
+
+    .tablestatus-col.alternateSourceBox {
+      .alternateSource.active {
+        text-decoration: none;
+        margin-left: 7px;
+      }
+    }
+
+    .tablestatus-col.stack.pulldown {
+      .mstrmojo-DropDownButton.mstrmojo-Pulldown {
+        width: 240px;
+        margin: 0px;
+      }
+    }
+
+    // style for the stack dataWidget
+    .tablestatus-col.stack.pulldown {
+      font-size: 11px;
+    }
+  }
+}
+
+.mstrmojo-di-SelectAlternateSource-editor {
+  .mstrmojo-Editor-buttons {
+    background-color: rgb(250, 250, 250);
+  }
+
+  .mstrmojo-Editor-buttonBox {
+    .mstrmojo-WebButton {
+      min-width: 72px;
+      height: 26px;
+    }
+  }
+}
+
+.mstrmojo-di-SelectURLAlternateSource-editor.mstrmojo-Editor.modal {
+  .mstrmojo-di-view.mstrmojo-di-view-popup {
+    .mstrmojo-di-layout {
+      .mstrmojo-di-fileUpload.mstrmojo-di-fu {
+        .mstrmojo-di-URLUpload-urlInput {
+          .mstrmojo-DI-DIAuthenticationButton.mstrmojo-ui-Pulldown.mstrmojo-di-add-authentication {
+            .mstrmojo-DI-DIAuthenticationButton-text.mstrmojo-ui-Pulldown-text {
+              height: 28px; // DE54141
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mstrmojo-di-scheduleEMMA.subscribeMode.modal {
+  .tableNameBox-name {
+    width: 110px !important;
+  }
+}
+
+.mstrmojo-di-tablestatuslist  {
+  .mstrmojo-DataGrid.mstrmojo-di-tablestatuslist-list.lockHeader {
+    .mstrmojo-DataGrid-itemsScrollBox.mstrmojo-scrollNode{
+      padding-right: 18px !important;
+      margin-right: -18px !important;
+    }
+  }
+}

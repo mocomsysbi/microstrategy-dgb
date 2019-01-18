@@ -1,0 +1,683 @@
+@import '../vi/workstation-global';
+@import '../vi/vi-icons';
+@import '../di/color-variables';
+@import '../global-mixins';
+
+$searchbar-width: 174px;
+$ctrl-border-normal: $wsvi-ui-border-gray 1px solid;
+$searchbar-border-focus: $wsvi-primary-blue 1px solid;
+$ctrl-box-shadow: $wsvi-ui-border-gray 0 1px 6px 0px;
+$ctrl-item-width: 28px;    // exclude border
+$ctrl-item-height: 22px;
+$ctrl-item-height-gl: 28px;
+$item-padding-left: 28px;
+$font-size: 11px;
+$icon-background: url(../../../style/images/Map_toolbar_sprite.svg) no-repeat;
+$ctrl-z-index: 2000;  // should be larger than layer and legend
+
+@mixin layerLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  padding-left: $item-padding-left;
+  padding-right: 10px;
+}
+
+@mixin ctrlPanel {
+  background-color: $wsvi-primary-white;
+  box-shadow: $ctrl-box-shadow;
+  border: $ctrl-border-normal;
+  border-radius: $wsvi-box-radius;
+}
+
+@mixin icon {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  height: 14px;
+  width: 18px;
+}
+
+div.mstrMapToolBarBoxNew {
+  position: relative;
+  z-index: $ctrl-z-index;
+  font-size: $font-size;
+
+  .map-toolbar-searchbar {
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    font-size: $font-size;
+    line-height: 14px;
+
+    .mstrmojo-SearchWidget {
+      @include ctrlPanel;
+      width: $searchbar-width;
+      height: 30px;
+      background-clip: content-box;
+
+      &.focus {
+        border: $searchbar-border-focus;
+      }
+      
+      input.mstrmojo-SearchBox-input {
+        text-align: center;
+        letter-spacing: 0.1px;
+        color: $wsvi-primary-black;
+      }
+
+      input.mstrmojo-SearchBox-input:focus {
+        text-align: left;
+      }
+    }
+
+    .layerLabel {
+      @include layerLabel;
+      color: rgba($primary-black, 0.5);
+      position: relative;
+      padding-top: 3px;
+      padding-bottom: 3px;
+
+      &:before {
+        @include icon;
+        background: $icon-background;
+        background-position: -410px -32px;
+      }
+
+      &.geo:before {
+        background-position: -440px -32px;
+      }
+
+      &.hideMenuTitle {
+        display: none !important;
+      }
+    }
+
+    .suggestionList {
+      @include ctrlPanel;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      //DE97011 set min width instead of width.
+      min-width: $searchbar-width;
+      overflow: hidden;
+      margin-top: 3px;
+      padding: 5px 0;
+
+      &:hover {
+        overflow: auto;
+      }
+
+      .suggestionBlock:not(:first-child) {
+        padding-top: 5px;
+        border-top: $wsvi-splitline-gray 1px solid;
+      }
+
+      //DE97011 when text overflowed, show '...' instead of being clipped.
+      .suggestionBlock {
+        .mstrmojo-Label div {
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+     }
+
+    .searchSuggestion {
+      max-height: 130px;
+      overflow: hidden;
+
+      &:hover {
+        overflow: auto;
+      }
+
+      .item {
+        @include layerLabel;
+        cursor: pointer;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        position: relative;
+
+        &:before {
+          @include icon;
+          top: 6px;
+          background: $icon-background;
+        }
+
+        &.geo:before {
+          background-position: -470px -153px;
+        }
+        &.elem:before {
+          background-position: -470px -33px;
+        }
+
+        &.selected  {
+          &:before {
+            background-position: -470px -63px;
+          }
+
+          background-color: $wsvi-primary-blue;
+          color: white;
+
+          &:hover {
+            background-color: #1471df;
+          }
+        }
+        &:hover {
+          background-color: rgba($primary-black, 0.06);
+        }
+      }
+
+      &.sub .item {
+        &.elem {
+          background-position: 4px;
+        }
+      }
+    }
+  }
+
+  .map-toolbar-mapCtrlBar {
+    @include ctrlPanel;
+    position: absolute;
+    display: flex;
+    right: 42px;
+    padding: 3px 2px;
+
+    .map-toolbar-selection {
+      border-right: solid 1px $wsvi-splitline-gray;
+    }
+
+    .map-toolbar-ctrl {
+      width: $ctrl-item-width;
+      height: $ctrl-item-height;
+      background: $icon-background;
+
+      &.mstrtbMapRectangleSearch {
+        background-position: -265px -28px;
+
+        &.selected {
+          background-position: -265px -58px;
+        }
+      }
+      &.mstrtbMapFreeSelectButton {
+        background-position: -295px -28px;
+
+        &.selected {
+          background-position: -295px -58px;
+        }
+      }
+      &.mstrtbMapCircleSelectButton {
+        background-position: -325px -28px;
+
+        &.selected {
+          background-position: -325px -58px;
+        }
+      }
+      &.map-toolbar-layerCtrl {
+        background-position: -205px -28px;
+        padding-left: 1px;
+
+        &.open {
+          background-position: -205px -58px;
+        }
+      }
+
+      &.map-toolbar-styleCtrl {
+        background-position: -236px -28px;
+
+        &.open {
+          background-position: -236px -58px;
+        }
+      }
+      &.map-toolbar-moreCtrl {
+        background-position: -175px -28px;
+
+        &.open {
+          background-position: -175px -58px;
+        }
+
+        .moreCtrlSelector {
+          width: 28px;
+          height: 22px;
+          background: none;
+
+          .moreCtrlSelector-boxNode {
+            padding: 0 0 0 0;
+            border: none;
+          }
+
+          .moreCtrlBox {
+            background-color: #FFF;
+            box-shadow: rgba(68, 70, 73, 0.2) 0 1px 6px 0px;
+            border: rgba(68, 70, 73, 0.2) 1px solid;
+            border-radius: 2px;
+            bottom: 36px;
+            right: 0;
+            padding: 10px 10px 10px 10px;
+            line-height: 26px;
+
+            label {
+              display: inline !important;
+            }
+            .disabled {
+              background-position: -3px -98px;
+              color: #a0a7ac;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+
+      .mstrtbMapGridSelector {
+        width: $ctrl-item-width;
+        height: $ctrl-item-height;
+        background: none;
+
+        .layerSelectBox {
+          @include ctrlPanel;
+          bottom: 33px;
+          right: 0;
+
+          .left-toolbar,
+          .visible-icn .icn {
+            width: 26px;
+            height: 26px;
+          }
+
+          .left-toolbar .mstrmojo-Image {
+            margin-left: 4px;
+            background-position: -510px -30px;
+
+            img {
+              display: none;
+            }
+          }
+
+          .title-text {
+            width: calc(100% - 50px);
+            display: flex;
+            align-items: center;
+
+            .mstrmojo-EditableLabel {
+              padding: 0;
+              margin-top: 3px;
+              cursor: default;
+            }
+
+            .source-vis {
+              width: 11px;
+              height: 11px;
+              background: url($wsvi-target-selector-icons-sprite);
+              background-position: -21px -152px;
+              padding-left: 5px;
+              margin-left: 5px;
+            }
+          }
+
+          .right-toolbar {
+            width: 26px;
+            top: auto;
+            position: absolute;
+            right: 0;
+
+            .mstrmojo-VITitleToolbar {
+              margin: 0;
+            }
+
+            .visible-icn {
+              .icn {
+                background: $icon-background;
+                border: none;
+                box-shadow: none;
+                margin: 0;
+              }
+
+              &.state-show .icn {
+                background-position: -356px -56px;
+              }
+
+              &.state-hide {
+                &.state-invisible {
+                  opacity: 0.35;
+                }
+                .icn {
+                  background-position: -376px -26px;
+                }
+              }
+            }
+          }
+
+          .map-layer-portlet {
+            min-width: 150px;
+
+            &.disableExpand .mstrmojo-VIPanel-titlebar .mstrmojo-VITitleBar .mstrmojo-Image {
+              background-position: -510px -90px;
+            }
+
+            .mstrmojo-VITitleBar {
+              overflow: hidden;
+
+              &.collapsed .mstrmojo-Image {
+                background-position: -510px -60px;
+              }
+            }
+            // DE97838 always show the eye icon in the titlebar whether hover or not
+            // deleted css for state-show
+            .mstrmojo-VIPanel-content {
+              padding: 6px 10px 6px 26px;
+              background-color: rgba($wsvi-primary-black, 0.05);
+
+              .mstrmojo-CheckBox {
+                height: 14px;
+                margin-top: 4px;
+              }
+
+              .unit-name {
+                margin-left: 17px;
+                font-size: 10px;
+                color: $wsvi-primary-black;
+                opacity: 0.6;
+                height: 12px;
+                padding-bottom: 4px;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mapStyleSelectVBox {
+      width: $ctrl-item-width;
+      height: $ctrl-item-height;
+    }
+  }
+}
+
+// Style popup dialog of map style list
+.mstrmojo-ListBase.mstrmojo-ui-Menu.mapStylesMenuNew {
+  @include ctrlPanel;
+  font-size: $font-size;
+  padding: 8px 8px 0 8px;
+  background-color: $wsvi-primary-white !important;
+ 
+  //DE109748 delete top/bottom style, add width style.
+  left: auto !important;
+  right: 0 !important;
+  width: 218px;
+  @include box-sizing(content-box);
+
+  .mstrmojo-ui-Menu-item-container {
+    overflow: hidden;
+  
+    .mstrmojo-ui-Menu-item {
+      float: left;
+      height: 70px;
+      width: 105px;
+      padding: 0;
+      margin-bottom: 8px;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      border: 0.5px $wsvi-border-gray solid;
+      border-radius: $wsvi-box-radius;
+      //DE109748 adapt to different browser
+      @include box-sizing(border-box);
+      background: url('../../../style/images/mapbox_styles_sprite.svg') no-repeat;
+
+      &:nth-child(odd) {
+        margin-right: 8px;
+      }
+
+      div {
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        height: 16px;
+        line-height: 16px;
+
+        &.state {
+          display: none;
+          margin-bottom: 36px;
+          background-color: $wsvi-primary-blue;
+          color: $wsvi-primary-white;
+          border-radius: $wsvi-box-radius $wsvi-box-radius 0 0;
+        }
+
+        &.label {
+          color: $wsvi-primary-black;
+          background-color: rgba($wsvi-primary-white, 0.46);
+          border-radius: 0 0 $wsvi-box-radius $wsvi-box-radius;
+          padding: 0;
+        }
+      }
+
+      &:hover {
+        border: 1px $wsvi-primary-blue solid;
+      }
+
+      &.selected {
+        border: 1px $wsvi-primary-blue solid;
+
+        &:before {
+          //DE111925 do not display tick because there is not enough space in some language(Spanish)
+          display: none;
+        }
+
+        .state {
+          display: block;
+        }
+      }
+
+      /* Map Type thumbnail images for Mapbox */
+      &.CSS_MAPBOX_Street {
+        background-position: 0 0;
+      }
+      &.CSS_MAPBOX_Basic {
+        background-position: -115px 0;
+      }
+      &.CSS_MAPBOX_Light {
+        background-position: 0 -80px;
+      }
+      &.CSS_MAPBOX_Dark {
+        background-position: -115px -80px;
+      }
+      &.CSS_MAPBOX_Topographic {
+        background-position: 0 -160px;
+      }
+      &.CSS_MAPBOX_Physical {
+        background-position: -115px -160px;
+      }
+      &.CSS_MAPBOX_Relief {
+        background-position: 0 -240px;
+      }
+      &.CSS_MAPBOX_Satellite {
+        background-position: -115px -240px;
+      }
+      &.CSS_MAPBOX_SatelliteStreet {
+        background-position: 0 -320px;
+      }
+      &.CSS_MAPBOX_White {
+        background-position: -115px -320px;
+      }
+      &.CSS_MAPBOX_Bright {
+        background-position: 0 0;
+      }
+      &.CSS_MAPBOX_LightGrey {
+        background-position: 0 0;
+      }
+      &.CSS_MAPBOX_LakeGreen {
+        background-position: 0 0;
+      }
+      &.CSS_MAPBOX_SummerLand {
+        background-position: 0 0;
+      }
+      &.CSS_MAPBOX_SteelBlue {
+        background-position: 0 0;
+      }
+    }
+  }
+}
+
+
+
+// This is for styling mapbox built-in components
+.mstrmojo-Map {
+  .mapboxgl-canvas {
+    cursor: default;
+  }
+
+  // bottom left section
+  .mapboxgl-ctrl-bottom-left {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: flex-end;
+
+    .mapboxgl-ctrl {
+      margin-bottom: 6px;
+    }
+  }
+
+  .mapboxgl-ctrl-attrib.mapboxgl-compact:after {
+    left: 0;
+    opacity: 0.6;
+  }
+
+  .mapboxgl-ctrl-attrib.mapboxgl-compact {
+    padding-left: 24px;
+    padding-right: 3px;
+    border-radius: 12px 3px 3px 12px;
+    margin-bottom: 4px;
+  }
+
+  .mapboxgl-ctrl-bottom-left a.mapboxgl-ctrl-logo {
+    height: 23px;
+  }
+
+  // bottom right section
+  .mapboxgl-ctrl-bottom-right {
+    display: none;
+    z-index: $ctrl-z-index !important;
+
+    .mapboxgl-ctrl {
+      margin: 0 6px 6px 0;
+      border: $ctrl-border-normal;
+      border-radius: $wsvi-box-radius;
+      box-shadow: $ctrl-box-shadow;
+      cursor: default;
+
+      &.mapboxgl-ctrl-reset {
+        width: 30px;
+        height: 30px;
+        background: white $icon-background;
+        background-position: -55px -25px;
+        box-sizing: border-box;
+
+        &:active {
+          background-position: -55px -85px;
+        }
+      }
+
+      .mapboxgl-ctrl-icon {
+        background: $icon-background;
+        border-bottom: 0;
+
+        &.mapboxgl-ctrl-zoom-in {
+          background-position: -85px -26px;
+          &:active {
+            background-position: -85px -86px;
+          }
+        }
+
+        &.mapboxgl-ctrl-zoom-out {
+          background-position: -115px -26px;
+          &:active {
+            background-position: -115px -86px;
+          }
+        }
+
+        &.mapboxgl-ctrl-compass {
+          background-position: -145px -145px;
+
+          .mapboxgl-ctrl-compass-arrow {
+            width: 18px;
+            height: 18px;
+            background: $icon-background;
+            background-position: -150px -30px;
+          }
+
+          &:active {
+            background-position: -145px -175px;
+
+            .mapboxgl-ctrl-compass-arrow {
+              background-position: -150px -90px;
+            }
+          }
+        }
+      }
+    }
+
+    .mapboxgl-ctrl-group {
+      padding: 2px 0;
+
+      > button {
+        width: $ctrl-item-width;
+        height: $ctrl-item-height-gl;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.mstrMapToolBarBoxNew .layerSelectBox,
+.mstrMapToolBarBoxNew .moreCtrlBox,
+.mapStylesMenuNew {
+  .mstrmojo-Tooltip-arrow {
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: 21px;
+    bottom: 0px;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: " ";
+      display: block;
+      height: 0;
+      width: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid transparent;
+      opacity: 1;
+      -moz-transform: scale(.9999); /*A hack to avoid Firefox blurred border*/
+    }
+
+    &:before {
+      border-top-color: $wsvi-ui-border-gray;
+      bottom: -8px;
+    }
+    &:after {
+      border-top-color: $wsvi-primary-white;
+      bottom: -6px;
+    }
+  }
+}
+
+// Show map toolbar only for hover or selected vis
+div.mstrMapToolBarBoxNew,
+.mstrmojo-Map .mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+.mstrmojo-UnitContainer.mstrmojo-VIBox.selected,
+.mstrmojo-Map:hover {
+  div.mstrMapToolBarBoxNew,
+  .mapboxgl-ctrl-bottom-right {
+    display: block;
+  }
+}
+
+

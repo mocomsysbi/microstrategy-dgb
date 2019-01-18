@@ -1,0 +1,766 @@
+@import '../_global.scss';
+
+/** Start Filter Editor **/
+@mixin indentVisible {
+    .mstrmojo-indent {
+        display: inline;
+        &.disable {
+            display: none;
+        }
+    }
+}
+.mstrmojo-FE-datasetExpr {
+    .mstrmojo-andor-contents {
+        .mstrmojo-relation {
+            .mstrmojo-andor-contents {
+                .mstrmojo-outdent {
+                    display: none;
+                    &.disable {
+                        display: inline;
+                    }
+                }
+                .mstrmojo-andor-contents {
+                    .mstrmojo-outdent {
+                        display: inline;
+                        &.disable {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .multi {
+        & > .mstrmojo-itemwrap {
+            & > .mstrmojo-cond {
+                & > .mstrmojo-cond-prefix {
+                    @include indentVisible;
+                }
+            }
+            & > .mstrmojo-andor {
+                & > .mstrmojo-andor-prefix {
+                    @include indentVisible;
+                }
+            }
+            & > .mstrmojo-relation {
+                & > .mstrmojo-relation-prefix {
+                    @include indentVisible;
+                }
+            }
+        }
+
+    }
+}
+
+.mstrmojo-FE-limitExpr {
+    .mstrmojo-andor-contents {
+        .mstrmojo-andor-contents {
+            .mstrmojo-outdent {
+                display: none;
+                &.disable {
+                    display: inline;
+                }
+            }
+        }
+    }
+    .multi {
+        & > .mstrmojo-itemwrap {
+            & > .mstrmojo-cond {
+                & > .mstrmojo-cond-prefix {
+                    .mstrmojo-indent {
+                        display: none;
+                        &.disable {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+            & > .mstrmojo-andor {
+                & > .mstrmojo-andor-prefix {
+                    .mstrmojo-indent {
+                        display: none;
+                        &.disable {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .per-metric-limit {
+        .mstrmojo-andor-contents {
+            .mstrmojo-andor-contents {
+                .mstrmojo-outdent {
+                    display: inline;
+                    &.disable {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .multi {
+            & > .mstrmojo-itemwrap {
+                & > .mstrmojo-cond {
+                    & > .mstrmojo-cond-prefix {
+                        .mstrmojo-indent {
+                            display: inline;
+                            &.disable {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                & > .mstrmojo-andor {
+                    & > .mstrmojo-andor-prefix {
+                        .mstrmojo-indent {
+                            display: inline;
+                            &.disable {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mstrmojo-FE-addCondition {
+    margin: 5px 5px 4px 5px;
+    color: #007EBE;
+    border: 0px;
+    font-weight: bold;
+
+    &:hover {
+        .mstrmojo-text {
+            text-decoration: underline;
+        }
+        .mstrmojo-Button {
+            cursor: pointer;
+        }
+    }
+
+  .mstrmojo-Button {
+    vertical-align: top;
+    margin-top: 1px;
+    background: transparent url(images/filter-editor-icons.png) no-repeat -93px -8px scroll;
+    padding: 0px 2px 0px 25px;
+  }
+  .mstrmojo-text {
+        background-color: #EEEEEE;
+        line-height: 15px;
+    }
+}
+
+.mstrmojo-FE-content {
+    border: 1px solid #B5B5B5;
+    box-shadow: 1px 1px 0px #DDDDDD;
+    overflow: auto;
+    height: 400px;
+    width: 100%;
+    background-color: white;
+    position: relative; /*IE7*/
+    margin-top: 10px;
+    color: #444649;
+}
+
+.mstrmojo-FE-expr-list {
+    max-height: 373px;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin: 0 0 0px;
+    padding: 0px 0 0 0px;
+    position: relative;
+}
+
+.mstrmojo-FE-expr-header {
+    font-size: 8pt;
+    padding: 5px 8px 4px 8px;
+    color: #9C9C9C;
+
+    &.tl {
+        border-top: 2px dotted #9C9C9C;
+    }
+}
+
+.mstrmojo-FE-exprTool {
+    padding: 3px;
+    background-color: #EEEEEE;
+    position: relative;
+}
+
+.mstrmojo-FE-andOrPopup {
+    width: auto;
+  .mstrmojo-Editor-buttons{
+    padding: 0px;
+  }
+}
+
+
+.mstrmojo-moveToViewFilter {
+    width: 18px;
+    height: 16px;
+    background: transparent url(#{$mstr-img-path}/moveToViewFilter.gif) no-repeat;
+}
+
+.mstrmojo-moveToViewLimit {
+    width: 18px;
+    height: 16px;
+    background: transparent url(#{$mstr-img-path}/moveToViewLimit.gif) no-repeat;
+}
+
+/* CSS for new view filter editor */
+
+/**Start of Relation node**/
+.mstrmojo-relationNode {
+    border: 1px solid #85bfd4;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0px 0px 5px 5px;
+    position: relative;
+    &:hover {
+        .mstrmojo-relationNode-inf {
+            .mstrmojo-del {
+                display: inline;
+            }
+        }
+    }
+    .mstrmojo-relation-childTreeNode {
+        margin-top: 5px;
+        .mstrmojo-andor {
+            color: #9C9C9C;
+        }
+        & > .mstrmojo-ListBase2 > .mstrmojo-ListBase2-itemsContainer > .mstrmojo-itemwrap {
+            & > .mstrmojo-ConditionNode,
+            & > .mstrmojo-dynamic {
+                .mstrmojo-del {
+                    display: none;
+                }
+            }
+        }
+
+    }
+    &:hover {
+        .mstrmojo-relation-convert-text {
+            display: inline-block;
+        }
+    }
+    &.selected {
+        padding: 3px 5px 3px 5px;
+        background-color: #D5F2FC;
+    }
+  .mstrmojo-at,
+  .mstrmojo-dmy {
+    display: none;
+  }
+}
+
+.mstrmojo-relationNode-inf {
+    height: 27px;
+    margin-left: 15px;
+    .mstrmojo-relation-prefix-text,
+    .mstrmojo-textset,
+    .mstrmojo-relation-postfix-text {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 27px;
+        color: #9C9C9C;
+    }
+    .mstrmojo-textset,
+    .mstrmojo-relation-postfix-text {
+      margin-left: 10px;
+    }
+    .mstrmojo-textset {
+        max-width: 300px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #007EBE;
+        font-weight: bold;
+        &:hover{
+          text-decoration: underline;
+          cursor: pointer;
+        }
+    }
+    .mstrmojo-del {
+        position: absolute;
+        right: 5px;
+    }
+}
+
+.mstrmojo-relation-childTreeNode {
+    .mstrmojo-cond-contents .mstrmojo-textset {
+        margin-left: 10px;
+    }
+}
+
+.mstrmojo-relation-convert-text {
+    line-height: 27px;
+    vertical-align: middle;
+    float: right;
+    margin-right: 30px;
+    display: none;
+    color: #5A9EBD;
+}
+
+.mstrmojo-FE {
+    width: 785px;
+
+    & > .mstrmojo-Editor-content {
+        padding-bottom: 16px;
+    }
+
+    .mstrmojo-rw-ConditionWalk {
+        margin-top: 10px;
+    }
+    .mstrmojo-expr {
+        margin: 0 0 0px;
+        padding: 5px 0 20px 10px;
+    }
+    .mstrmojo-FE-andOrPopup {
+      &.mstrmojo-Editor {
+        &>.mstrmojo-Editor-content{
+          border-bottom: none;
+          &:after {
+            border-top: none;
+          }
+        }
+        &>.mstrmojo-Editor-buttons{
+          padding: 0px;
+        }
+      }
+    }
+
+    .mstrmojo-cond-prefix,
+    .mstrmojo-relation-prefix,
+    .mstrmojo-dynamic-prefix {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    .mstrmojo-Editor-buttonBar {
+        width: 100%;
+
+        .mstrmojo-Button {
+            width: auto;
+        }
+    }
+    .mstrmojo-FE-expr-list {
+      max-height: none;
+    }
+    .mstrmojo-FE-content {
+      height: auto;
+        .mstrmojo-FE-expr-list {
+            // mstrmojo-FE-exprTool is 31px high.
+            // TODO
+            min-height: 369px; // 400 - 31
+            max-height: 769px; // 800 - 31
+        }
+      .mstrmojo-expr {
+        padding: 4px 6px 6px 4px;
+      }
+    }
+    .mstrmojo-cond-contents {
+        border: 1px #93E3BC solid;
+        background-color: #DEFBE6;
+        border-radius: 2px;
+        padding: 5px;
+        .mstrmojo-textset {
+          line-height: 17px;
+        }
+
+        box-shadow: #93E3BC 1px 1px 5px 0px;
+
+        &.selected,
+        &:hover {
+            background-color: #AEEFC0;
+            border: 1px solid #93E3BC;
+        }
+
+        .mstrmojo-lock{
+            display: none;
+            width: 10px;
+            margin: 6px;
+        }
+		
+		&.locked{
+            &.selected,
+			&:hover{
+				background-color: #DEFBE6;
+			}
+			.mstrmojo-del{
+				display: none;
+			}
+            .mstrmojo-lock{
+                display: inline;
+            }
+
+            .mstrmojo-onhover-bl{
+                display: block;
+            }
+		}
+
+        .mstrmojo-textset {
+            margin-left: 5px;
+        }
+
+        .mstrmojo-add-cond {
+            display: none;
+        }
+    }
+		
+    .mstrmojo-relationNode-inf,
+    .mstrmojo-cond-tools {
+        .mstrmojo-del {
+            height: 15px;
+            background: url(#{$mojo-img-path}/d1.png) no-repeat 2px 3px;
+            margin: 6px 0px 0px 2px;
+            &:hover {
+                background: url(#{$mojo-img-path}/d2.png) no-repeat 2px 3px;
+            }
+        }
+    }
+
+    .mstrmojo-andor-prefix {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .mstrmojo-andor-prefix,
+    .mstrmojo-cond-prefix,
+    .mstrmojo-dynamic-prefix,
+    .mstrmojo-relation-prefix{
+      white-space: normal;
+      &:hover{
+        background-color: #EEEEEE;
+      }
+    }
+
+    .mstrmojo-andor-tools {
+        .mstrmojo-create-set-text,
+        .mstrmojo-indent,
+        .mstrmojo-outdent {
+            float: right;
+        }
+
+        .mstrmojo-create-set-text {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            line-height: inherit;
+        }
+
+        .mstrmojo-outdent,
+        .mstrmojo-indent {
+            width: auto;
+            background-image: none;
+            color: #007EBE;
+            padding: 0 8px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.mstrmojo-ConditionNode .mstrmojo-textset.mstrmojo-cond-text {
+    word-wrap: break-word;
+    color: #00B392;
+}
+/**End of relation node**/
+
+/*Start of Create set node and Rename node*/
+.mstrmojo-create-set-text,
+.mstrmojo-rename-text {
+    position: absolute;
+    right: 22px;
+    vertical-align: middle;
+    line-height: 20px;
+    color: #007EBE;
+    padding: 0 8px;
+    display: none;
+    background-color: #AEEFC0;
+}
+
+.mstrmojo-rename-text {
+    right: 106px;
+}
+
+.mstrmojo-relation .mstrmojo-onhoverparent:hover .mstrmojo-create-set-text,
+.noRelation.mstrmojo-onhoverparent:hover .mstrmojo-create-set-text {
+    display: none;
+}
+
+.mstrmojo-onhoverparent {
+  &:hover {
+    .mstrmojo-create-set-text,
+    .mstrmojo-rename-text {
+      display: inline;
+    }
+  }
+}
+.mstrmojo-create-set-text,
+.mstrmojo-relation-convert-text,
+.mstrmojo-rename-text {
+  &:hover {
+    color: #007EBE;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+/*End of Create set node and Rename node*/
+.mstr-ie8 .mstrmojo-ui-CheckList .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+  margin-right: 0px;
+  padding-right: 0px;
+}
+/** Dynamic node **/
+.mstrmojo-dynamic {
+    .mstrmojo-rename {
+        background: transparent url(#{$mojo-img-path}/textfield_rename.png) no-repeat;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        display: none;
+        margin-left: 15px;
+    }
+    .renaming:hover .mstrmojo-rename {
+        display: none;
+    }
+    &:hover .mstrmojo-rename {
+        display: inline;
+    }
+}
+
+.mstrmojo-dynamicNode {
+    border: 1px #E8D097 solid;
+    background-color: #FDF4D3;
+    border-radius: 2px;
+    color: #DF7F02;
+    margin-left: 3px;
+    position: relative;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    box-shadow: #E8D097 1px 1px 5px 0px;
+    .mstrmojo-textset {
+        line-height: 17px;
+    }
+    &.selected {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    &.selected,
+    &:hover {
+        background-color: #FFE4B4;
+    }
+    &.glow .mstrmojo-textset {
+        text-shadow: 0px 0px 15px rgba(236, 171, 64, 1);
+    }
+}
+
+.mstrmojo-dynamicNode-info {
+    margin-left: 5px;
+    .mstrmojo-textset {
+        border: 0px;
+        transition: .2s ease-in-out;
+        font-weight: bold;
+        padding: 0px 3px;
+        &.editable {
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 5px #F4B958;
+            font-weight: normal;
+            &:hover {
+                cursor: inherit;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.mstrmojo-dynamic-prefix {
+    height: 1.3em;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    position: relative; /* to position the hover toolbar */
+}
+
+//TQMS 865603, DI in VI style problem
+.mstrmojo-cond-prefix  {
+  .mstrmojo-text.mstrmojo-andor {line-height: normal; }
+  IMG {vertical-align: middle;}
+}
+
+.mstrmojo-ListBase2 .mstrmojo-itemwrap:first-child > .mstrmojo-dynamic > .mstrmojo-dynamic-prefix {
+    display: none;
+}
+
+.multi > .mstrmojo-itemwrap > .mstrmojo-dynamic > .mstrmojo-dynamic-prefix .mstrmojo-indent {
+    display: inline;
+    &.disable {
+        display: none;
+    }
+}
+
+.mstrmojo-del {
+    display: none;
+}
+
+.mstrmojo-onhoverparent:hover .mstrmojo-del {
+    display: inline;
+}
+
+/**End of Relation filter**/
+
+.mstrmojo-StatusButton {
+    & > div {
+        display: inline-block;
+    }
+    .menuButton {
+        background: url(#{$vi-img-path}/icons.png) no-repeat scroll 0 0 transparent;
+        background-position: -3px -23px;
+        height: 14px;
+        width: 13px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        &:hover {
+            border-color: #C8C880;
+            border-radius: 3px;
+        }
+    }
+    .mstrmojo-ui-Menu {
+        background-color: #474747;
+        color: #E9E9E9;
+        border-radius: 5px;
+        box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .6);
+        border: none;
+        .item > DIV.micn,
+        .mstrmojo-ui-Menu .item > DIV.arw {
+            background: transparent url(#{$mojo-img-path}/filter-editor-icons.png) no-repeat -92px -5px scroll;
+            width: 18px;
+            height: 18px;
+        }
+        .mstrmojo-ui-Menu-item {
+            padding: 0 5px 0 30px;
+            &:hover {
+                background-color: #1B1B1B;
+            }
+        }
+    }
+}
+
+.mstrmojo-FE.mstrmojo-ConditionNode.hasOwnAvatar {
+    opacity: 0.7;
+    margin: 10px;
+}
+
+/** End Filter Editor **/
+
+
+.CreateSet-Editor {
+    min-width: 400px;
+    max-width: 450px;
+    max-height: 400px;
+    border-radius: 9px;
+    box-shadow: 0px 0px 5px #9E9E9D;
+    background-color: #F5F5F5;
+    .mstrmojo-Editor-titlebar {
+        height: 28px;
+    }
+    .mstrmojo-Editor-content {
+        padding: 7px 15px;
+        /*checkbox style*/
+        input[type=checkbox] {
+            visibility: hidden; /*hides default checkboxes*/
+            margin: 0px -8px;
+        }
+        .RelatedBy-Box,
+        .Attributes-Box {
+            padding: 8px 0;
+            &.mstrmojo-CheckBox label {
+                text-indent: 20px;
+            }
+        }
+        .RelatedBy-Box .Label,
+        .Attributes-Box .Label {
+            font-weight: bold;
+            &:before {
+                content: "*";
+                position: absolute;
+                left: 6px;
+                top: 12px;
+                color: #FF0000;
+            }
+        }
+        .RelatedBy-Box .Pulldown {
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+        .Attributes-Box .CheckList {
+            height: 150px;
+            overflow: auto;
+            padding-top: 10px;
+            overflow: hidden;
+            .mstrmojo-CheckList-item label {
+                background: transparent url(#{$vi-img-path}/unitList/attribute.png) no-repeat 22px 6px;
+            }
+        }
+        .mstrmojo-ui-Checkbox {
+            width: auto;
+            background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) -2px -26px no-repeat;
+            cursor: pointer;
+            display: block;
+            line-height: 20px;
+            padding: 0 4px 0 20px;
+            margin-left: -5px;
+            margin-top: -3px;
+            float: left;
+            &.checked {
+                background-position: -2px -2px;
+            }
+        }
+        .mstrmojo-ui-CheckList {
+            .item {
+                &.selected {
+                    background-position: -6px -1px
+                }
+            }
+        }
+        .mstrmojo-ui-Pulldown .mstrmojo-ui-Pulldown-text{
+            padding: 5px 20px 4px 6px;
+        }
+    }
+}
+
+.mstrmojo-FE .CreateSet-Editor {
+    .mstrmojo-Editor-content {
+        border-bottom: none;
+        &:after {
+            border-bottom: 1px solid #E2E2E3;
+            box-shadow: 0 1px 1px #FFFFFF;
+        }
+    }
+    .mstrmojo-Editor-title-container {
+        border-bottom: none;
+        &:after {
+            border-bottom: 1px solid #E2E2E3;
+            box-shadow: 0 1px 1px #FFFFFF;
+        }
+    }
+    .mstrmojo-Editor-buttons .mstrmojo-WebButton {
+        margin: 0 0 0 14px;
+        min-width: 60px;
+        padding: 0px;
+    }
+}
+
+// #977496
+.mstr-ie8 {
+    &.mojo-theme-light {
+         .mstrmojo-ui-Pulldown .mstrmojo-ui-Pulldown-text,
+         .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown .mstrmojo-ui-Pulldown-text:after,
+         .mstrmojo-ui-PreviewButton .btn {
+              background-color: #eaebeb;
+              background-image: url("vi/images/pulldown-sprite.png");
+        }
+    }
+}

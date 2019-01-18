@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Obj");mstrmojo.DI.model.HistoryList=mstrmojo.declare(mstrmojo.Obj,null,{scriptClass:"mstrmojo.DI.model.HistoryList",hasSentToHistoryList:false,canSendToHistoryList:false});}());

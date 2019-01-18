@@ -1,0 +1,56 @@
+@import '../../../vi/vi-global';
+
+.mstrmojo-Box.ot-server-cfg {
+    margin: 10px 20px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    $padding-server-config: 15px;
+
+    .ot-sc-adv-lbl {
+        background: transparent url(#{$vi-img-path}/tree_collapsed.png) 0 center no-repeat;
+        padding-left: $padding-server-config;
+        text-transform: uppercase;
+
+        &.open {
+            background-image: url(#{$vi-img-path}/tree-expanded.png);
+        }
+    }
+
+    .cfg-advanced {
+        padding: 5px $padding-server-config;
+
+        .mstrmojo-vi-TwoColumnProp {
+            margin: $padding-server-config 0;
+
+            .mstrmojo-TextBox {
+                max-width: 150px;
+            }
+
+            .mstrmojo-ui-Pulldown {
+                max-width: 100px;
+            }
+        }
+    }
+
+    .mstrmojo-Button.mstrmojo-WebButton {
+        margin: $padding-server-config $padding-server-config 0 0;
+        float: left;
+        max-width: 120px;
+    }
+
+    // Cancel label for unsaved server connections.
+    .ot-sc-cancel-unsaved {
+        float: left;
+        margin: 21px $padding-server-config 0 0;
+        color: $vi-color-font-link;
+        cursor: pointer;
+    }
+
+    // Success label for saved server connections.
+    .ot-ta-success-label {
+        float: left;
+        padding-top: 16px;
+    }
+}

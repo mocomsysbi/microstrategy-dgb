@@ -1,0 +1,107 @@
+// --------------------  Progress dialog style --------------------------
+
+.mstrmojo-Architect-WaitBox {
+    border: 1px solid transparent;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.mstrmojo-Architect-WaitBox .mstrmojo-Editor-content{
+    background: #fafafa;
+    height: 70px;
+    padding: 0;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.mstrmojo-Architect-Wait {
+    background: transparent url(images/architect/loader.gif) no-repeat scroll center center;
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=65);
+}
+
+.mstrmojo-di-progressBar{
+  width: 480px;
+  height: 98px;
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(bottom, #D8EDFB 0%, #FFFFFF 100%);
+
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(bottom, #D8EDFB 0%, #FFFFFF 100%);
+
+  /* Opera */
+  background-image: -o-linear-gradient(bottom, #D8EDFB 0%, #FFFFFF 100%);
+
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #D8EDFB), color-stop(1, #FFFFFF));
+
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(bottom, #D8EDFB 0%, #FFFFFF 100%);
+
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to top, #D8EDFB 0%, #FFFFFF 100%);
+
+  border: 10px solid rgba(0, 0, 0, 0.3);
+}
+
+.mstrmojo-di-progress{
+  height: 7px;
+  width: 85%;
+  margin-top: 23px;
+  margin-left: 35px;
+}
+
+.mstrmojo-di-progress.stripes{
+  @extend .mstrmojo-di-progress;
+  background-image: url('images/DI/bar.gif');
+}
+
+/* Turn off the default progress bar styling. For all HTML5 progress enabled browsers */
+progress,
+
+/* Chrome */
+progress::-webkit-progress-value {
+  background: #FFFFFF;
+}
+/* Firefox */
+progress::-moz-progress-bar {
+  background: #FFFFFF;
+}
+
+/* Chrome */
+progress::-webkit-progress-bar{
+  background: #E6E6E6;
+}
+/* Chrome */
+progress:not([value])::-webkit-progress-bar {
+  background:{
+    image: url('images/DI/bar.gif');
+    repeat:no-repeat;
+
+  }
+}
+
+
+/* Firefox */
+progress:not([value])::-moz-progress-bar {
+  background:{
+    image: url('images/DI/bar.gif');
+    repeat:no-repeat;
+  }
+}
+
+// --------------------  Progress For IE8 --------------------------
+.mstrmojo-ProgressBar.mstrmojo-di-user-quota{
+  border: 1px solid #000000;
+  .bar{
+    height: 100%;
+  }
+  .indicator{
+    background-color: #4c4c4c;
+    height: 100%
+  }
+}

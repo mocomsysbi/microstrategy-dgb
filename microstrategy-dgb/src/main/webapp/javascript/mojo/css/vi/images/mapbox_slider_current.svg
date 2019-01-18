@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="14px" viewBox="0 0 11 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>slider copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 9 0 9 7.74761733 4.5 12 0 7.74761733"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="slider-copy">
+            <g id="Group-76" transform="translate(1.000000, 1.000000)">
+                <g id="Rectangle-19">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#7D7D7D" stroke-width="1" d="M0.5,0.5 L0.5,7.53217702 L4.5,11.3120727 L8.5,7.53217702 L8.5,0.5 L0.5,0.5 Z"></path>
+                </g>
+                <rect id="Rectangle-13" fill="#7D7D7D" x="3" y="3" width="1" height="4"></rect>
+                <rect id="Rectangle-13" fill="#7D7D7D" x="5" y="3" width="1" height="4"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

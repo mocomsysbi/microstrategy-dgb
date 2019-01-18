@@ -1,0 +1,23 @@
+@import '../../ar-global';
+
+/** BEGIN:  elementSelector **/
+.mstrmojo-architect-selector-Editor-buttonBox {
+  float: right;
+  margin: 10px 3px;
+}
+
+.mstrmojo-Editor-title.mstrmojo-architect-elementSelector-title {
+  padding: 1px 3px;
+}
+
+.mstrmojo-architect-elementSelector-title .attribute {
+  background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/object_icons.png) no-repeat 2px -329px;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-right: 2px;
+}
+.mstrmojo-Editor-close.mstrmojo-architect-elementSelector-close {
+  float: right;
+}
+/** END: elementSelector **/

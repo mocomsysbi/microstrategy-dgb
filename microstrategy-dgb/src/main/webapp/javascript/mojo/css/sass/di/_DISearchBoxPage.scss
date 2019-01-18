@@ -1,0 +1,614 @@
+.mstrmojo-di-twitter {
+  .mstrmojo-SplitterHandle {
+    display: none;
+  }
+  .mstrmojo-di-mappingpreview {
+    overflow: inherit;
+  }
+
+  .mstrmojo-DI-SearchBox {
+    .mstrmojo-Button.mstrmojo-di-button.mstrmojo-WebButton {
+      margin-left: 5px;
+    }
+
+    .helpOperatorsLabel {
+      font-family: Arial;
+      font-size: 11px;
+      display: inline-block;
+      color: #007ebe;
+    }
+
+    .helpOperatorsLabelLink {
+      color: #007ebe;
+    }
+
+    .inputSearch {
+      padding-left: 6px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+//- Styles for the search box
+.mstrmojo-DI-SearchBox{
+  .mstrmojo-di-source-fetch {
+    margin-top: 8px;
+    input {
+      width: 35px;
+      padding-left: 5px;
+      height: 20px;
+      border: 1px solid $wsvi-ui-border-gray;
+    }
+    input.warning {
+      border: 1px solid #E88F6E;
+    }
+    .comment {
+      color: #999999;
+    }
+  }
+
+
+  .button {
+    display: inline-block;
+    background: #B7BABD;
+    font-size: 10pt;
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 5px;
+    font-weight: bold;
+    font-family: arial;
+    border: 1px solid #96969C;
+    vertical-align: middle;
+  }
+
+  .block.center {
+    vertical-align: top;
+    border-radius: 5px;
+    margin: auto;
+    display: table;
+    padding-bottom: 20px;
+    //position: relative;
+    //top:175px;
+    margin-top: 159px;
+  }
+
+  .block.top {
+    vertical-align: top;
+    border-radius: 5px;
+    //display: table;
+    padding-bottom: 20px;
+    position: relative;
+    left: 0px;
+    margin-left: 16px;
+    top:16px;
+    width: 55%; //TQMS
+  }
+
+  .button:hover {
+    cursor: pointer;
+  }
+
+  .footerDiv {
+    display:block;
+    margin-top: 10px;
+  }
+
+  .headerLabel {
+    font-size: 20pt;
+    padding: 40px 0px 20px 0px;
+    display: block;
+    text-align: center;
+  }
+
+  .helpOperators {
+    height: 510px;
+    width: 600px;
+    border: solid 1px #808080;
+    background: #E6E6E6;
+    border-radius: 2px;
+    visibility: hidden;
+    position: absolute;
+    font-size: 10pt;
+    z-index: 100;
+    overflow: visible;
+  }
+  .helpOperatorsCurtain{
+    height: 570px;
+    width: 850px;
+    position: absolute;
+    background: transparent;
+    top: 5px;
+    left: -140px;
+    z-index: -1;
+  }
+  .noDataReturned {
+    height: 50px;
+    width: 575px;
+    visibility: hidden;
+    position: relative;
+    font-size: 10pt;
+    z-index: 100;
+    overflow: visible;
+    text-align: center;
+    top: 50px;
+  }
+
+  .helpOperatorsLabel{
+    font-size: 12px;
+    display: inline-block
+  }
+
+  .helpOperatorsLabelLink{
+    color: #4099ff;
+  }
+
+  .input {
+    display: block;
+  }
+
+  .inputSearch {
+    outline-color: #4099ff;
+    display: inline-block;
+    width: 75%; //TQMS
+    font-size: 12px;
+    border: 1px solid #B5B5B5;
+    font-family: Arial;
+    padding-left: 2px;
+    color: #444649;
+    height: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .inputSearch-placeholder {
+    font-size: 11pt;
+    font-family: Arial;
+    padding-left: 2px;
+    vertical-align: middle;
+  }
+
+  .signOut {
+    padding-right: 15px;
+    font-size: 12pt;
+    height:20px;
+    //top: 16px;
+    //position: relative;
+    margin-top: 16px;
+    //max-width: 45%;
+    .source-objects-username {
+      max-width: 200px;
+    }
+  }
+
+  .signOut.top {
+    padding-right: 15px;
+    font-size: 12pt;
+    height:20px;
+    display: inline-block;
+    float: right;
+    position: relative;
+  }
+
+  .profileIcon {
+    display: block;
+    float: right;
+    padding-right: 10px;
+    top: -5px;
+    position: relative;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .sourceIcon{
+    display: block;
+    width: 24px;
+    float: right;
+    padding-right: 10px;
+    top: -5px;
+    position: relative;
+  }
+}
+
+.mstrmojo-DI-previewSlot{
+  height: 95%;
+
+  &.list{
+    padding: 0px;
+    width: 600px;
+    margin: auto;
+  }
+
+  &.grid{
+    padding: 16px 18px;
+  }
+
+  &.table{
+    margin: 0px 18px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    //box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75); // TQMS 974346: no border
+    //border: 1px solid lightgray
+  }
+
+  .mstrmojo-di-previewGrid {
+    .mstrmojo-DataGrid-headerContainer {
+      overflow-x: hidden;
+    }
+  }
+}
+
+.mstrmojo-DI-previewSlot .mstrmojo-DataGrid td {
+  border: 1px solid $wsvi-ui-border-gray;
+  border-left: 0px;
+  font-weight: normal;
+  border-top: 0px;
+}
+
+.mstrmojo-DI-previewSlot .mstrmojo-di-mappingpreview {
+  background: white;
+}
+
+.mstrmojo-DI-FBList-row{
+  font-size: 15pt;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid lightgray;
+}
+.mstrmojo-DI-FBList-row:hover{
+  background: #8dc2ff;
+}
+
+.mstrmojo-DI-FBList-row.selected{
+  background: #4099ff;
+}
+
+.mstrmojo-di-fbpage-item{
+  height: 50px;
+  max-width: 316px;
+  cursor: pointer;
+  padding-top: 17px;
+  padding-bottom: 17px;
+
+  .name{
+    font-size: 12pt;
+    color: #515151;
+    max-height: 35px;
+    overflow: hidden;
+    padding-left: 5px;
+    line-height: 17px;
+  }
+
+  .desc{
+    font-size: 11pt;
+    margin: 10px auto 5px;
+    max-height: 52px;
+    opacity: 0.5;
+  }
+
+  .info{
+    font-size: 8pt;
+    color: #777777;
+    max-height: 52px;
+    position: relative;
+    left: 5px;
+    &.filter{
+      display:none;
+    }
+  }
+
+  .image{
+    cursor:pointer;
+    vertical-align: middle;
+    background-repeat:no-repeat;
+    background-color: #f0f0f0;
+    height:50px;
+    width:50px;
+    border-right: solid 2px #ffffff;
+    position:relative;
+    float:left;
+    clear:both;
+    margin-left: 5px;
+  }
+
+  &:hover{
+    .filter {
+      display: block;
+    }
+    background: #c6c6c6;
+    //box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  &.selected{
+    background: $wsvi-selected-gray;
+
+    .filter {
+      display: block;
+    }
+  }
+}
+
+.mstrmojo-DI-facebook-advancedOptionsContent{
+  height: 270px;
+}
+
+.mstrmojo-DI-facebook-advancedOptions{
+  td{
+    width: 150px;
+    vertical-align: middle;
+  }
+}
+
+.mstrmojo-DI-facebook-advancedOptionsInner{
+  td{
+    width: 75px;
+    vertical-align: middle;
+  }
+  &.disabled{
+    opacity: 0.3;
+  }
+}
+
+.mstrmojo-di-dataPreviewSimple{
+  padding: 0px;
+  background: white;
+
+  &.list{
+    overflow: auto;
+  }
+  &.grid{
+    overflow: hidden;
+  }
+  &.table{
+    overflow: auto;
+  }
+}
+
+.DIDateTextBox2{
+  padding-top: 5px;
+  &.disabled{
+    opacity: 0.3;
+  }
+  .input{
+    padding: 0;
+    padding-left: 2px;
+    padding-top: 4px;
+    width: 105px;
+    height: 20px;
+    border: 1px solid #B5B8C8;
+    vertical-align: middle;
+  }
+  .icon{
+    background: url(images/DI/calendar_enabled.png);
+    height: 24px;
+    width: 25px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  .icon:hover{
+    background-position:0 0;
+  }
+}
+
+.mstrmojo-di-facebook-previewTable{
+  overflow-y: auto;
+  position: relative;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.mstrmojo-di-facebookAdvancedEditor .mstrmojo-Editor-button {
+  padding: 0 !important;
+}
+
+/* START: Data row of data preview */
+.mstrmojo-di-datapreview-DataRow-text {
+  height:26px;
+  line-height:26px;
+  padding-left :10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Attribute {
+  height:20px;
+  line-height:20px;
+  padding-left :10px;
+  background-color:#d4e7f9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Attribute.even{
+  padding-left :10px;
+  background-color:#E2F1FF;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Attribute.even.selected{
+  background-color:#A9A9A9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Attribute.odd.selected{
+  background-color:#A9A9A9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Metric {
+  height:20px;
+  line-height:20px;
+  padding-left :10px;
+  background-color:#FBEBC0;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Metric.even {
+  padding-left :10px;
+  background-color:#FCF1D2;
+}
+.mstrmojo-di-datapreview-DataRow-text.Metric.even.selected{
+  background-color:#A9A9A9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Metric.odd.selected{
+  background-color:#A9A9A9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Form {
+  height:20px;
+  line-height:20px;
+  padding-left :10px;
+  background-color:white;
+}
+.mstrmojo-di-datapreview-DataRow-text.Form.selected{
+  background-color:#A9A9A9;
+}
+/* END: Data row of data preview */
+
+/* START: Styles for the twitter advanced help operator*/
+.mstrmojo-DI-DITwitterAdvancedOptions{
+  width: 500px;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:10px;
+  overflow: hidden;
+
+  .mstrmojo-Editor-content {
+    padding: 16px 18px
+  }
+
+  .mstrmojo-Editor-buttons {
+    .mstrmojo-Button.mstrmojo-di-button.mstrmojo-WebButton.hot.mstrmojo-Editor-button {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+
+  // Data Grid
+  .advOptsGrid {
+    overflow: hidden;
+    margin: 0px;
+    width: 100%;
+    //width: calc(100% - 30px);
+    //width: -moz-calc(100% - 30px);
+    //width: -webkit-calc(100% - 30px);
+    //width: -o-calc(100% - 30px);
+
+    .mstrmojo-itemwrap-table {
+      border-spacing: 0px;
+    }
+
+    .advOptsGrid-Col.key {
+      width: 25%;
+      &.mstrmojo-DataGrid-headerText {
+        width: 100%;
+        line-height: 20px;
+      }
+    }
+    .advOptsGrid-Col.value {
+      width: 75%;
+      &.mstrmojo-DataGrid-headerText {
+        width: 100%;
+        line-height: 20px;
+      }
+    }
+    .mstrmojo-DataGrid-headerContainer {
+      border-bottom: 1px solid $divider-line-dark;
+      background-color: #EFEFF0;
+
+      col.advOptsGrid-Col.key {
+        width: 24.5%;
+      }
+      td:last-child {
+        border-right: 0px;
+      }
+    }
+
+    .mstrmojo-DataGrid-itemsScrollBox {
+      max-height: 294px;
+    }
+
+    & .mstrmojo-DataGrid-headerText {
+      font: Bold 12px Arial;
+      color: #333333;
+      border-style: none;
+      line-height: 20px;
+    }
+
+    & .mstrmojo-DataGrid-headerContainer td,
+    & .mstrmojo-DataRow {
+      background-color: transparent;
+      .mstrmojo-DataRow-text {
+        padding: 1px 4px;
+        line-height: 20px;
+      }
+      & > td:first-child {
+        .mstrmojo-DataRow-text {
+          word-break: break-all;
+        }
+      }
+      & > td {
+        border-right: 1px solid #cbcbcb;
+      }
+      & > td:last-child {
+        border-right: 0px;
+      }
+    }
+
+    & .mstrmojo-DataRow:hover {
+      background-color: #DBDBDB;
+    }
+  }
+}
+
+.mstrmojo-DI-Twitter-hpItem {
+  display: block;
+  line-height: 20px;
+  padding-left: 5px;
+  height: 100%;
+  border: 1px solid #DBDBDB;
+  border-top: 0px;
+
+  &.headerRow{
+    background: #F0EFEF;
+    font-weight: bold;
+    border-top: 1px solid #DBDBDB;
+  }
+  &:hover{
+    background: #DBDBDB;
+  }
+  .header{
+    text-align: center;
+    display: inline-block;
+    width: 25%;
+    font-family: arial;
+    vertical-align: top;
+    border-top: 1px solid #DBDBDB;
+    border-right: 1px solid #DBDBDB;
+  }
+  .headerValue{
+    text-align: center;
+    width: 73%;
+    border-top: 1px solid #DBDBDB;
+    border-left: 1px solid #DBDBDB;
+  }
+  .key{
+    display: inline-block;
+    width: 25%;
+    font-family: arial;
+    vertical-align: top;
+    word-wrap: break-word;
+    border: 0px;
+    border-right: 1px solid #DBDBDB;
+  }
+
+  .value{
+    display: inline-block;
+    font-family: arial;
+    border: 0px;
+    border-left: 1px solid #DBDBDB;
+    padding-left: 5px;
+    width: 72%;
+  }
+}
+/* END: Styles for the twitter advanced help operator*/
+
+

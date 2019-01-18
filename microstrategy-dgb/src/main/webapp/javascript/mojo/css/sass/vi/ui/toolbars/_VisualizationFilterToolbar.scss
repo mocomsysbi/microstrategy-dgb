@@ -1,0 +1,198 @@
+@import "../../vi-global";
+@import "../../workstation-global";
+@import "../../../global-mixins";
+
+/**** START: Visualization Filter Toolbar ***/
+
+$vi-visualizationFilter-icon: '#{$vi-img-path}/visualizationFilterToolbarI.svg';
+
+//Comment animation out for now
+//TODO remove this commented animation part, if sure not to use again
+/*@include keyframes(toolbarIn) {
+  from {
+    top: -36px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@include keyframes(toolbarOut) {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -36px;
+  }
+}
+
+.mstrmojo-VisFilterToolbar.closed {
+  /!* This timing applies on the way OUT *!/
+
+  @include animation-timing-function(cubic-bezier(0.4, 0.0, 1, 1));
+  @include animation(toolbarOut 0.195s 1);
+  top: -36px;
+}*/
+
+.mstrmojo-VisFilterToolbar {
+  background: $wsvi-configure_blue;
+
+  /* This timing applies on the way OUT */
+  //comment animation out for now
+  //TODO remove this commented animation part, if sure not to use again
+  /*@include animation-timing-function(cubic-bezier(0.0, 0.0, 0.2, 1.0));
+  @include animation(toolbarIn 0.225s 1);*/
+
+  .mstrmojo-VisFilterToolbar-contents {
+    color: $wsvi-primary-white;
+
+    //i icon
+    DIV.icn {
+      background: transparent url($vi-visualizationFilter-icon) 0 0 no-repeat;
+      margin: 11px 5px 11px 5px;
+      width: 16px;
+      height: 16px;
+      opacity: 0.4; //Change normal and hover to 0.4, clicked to 1
+    }
+    DIV.icn:hover {
+      opacity: 0.4;
+    }
+    DIV.icn:active {
+      opacity: 1;
+    }
+
+    //visualization filter title Label
+    DIV.title {
+      font-size: $wsvi-normal-font-size; //12px
+      font-family: $wsvi-font-family; //Helvetica
+      padding: 13px 5px 11px 5px;
+    }
+
+    //visualization filter title Name
+    DIV.filtername {
+      font-size: $wsvi-normal-font-size;
+      font-family: $wsvi-font-family, $wsvi-bold-font-weight;
+      padding: 13px 10px 11px 0px;
+    }
+
+  }
+
+  .mstrmojo-VisFilterToolbar-btns {
+    .mstrmojo-Button.mstrmojo-WebButton.primary {
+
+      background-color: $wsvi-primary-white;
+      border: 1px solid $wsvi-ui-border-gray;
+
+      @include box-sizing(border-box);
+
+      .mstrmojo-Button-text {
+        color: $wsvi-primary-black;
+      }
+
+      &:active {
+        background-color: $wsvi-background-pressed-button;
+      }
+
+      &.disabled, &.disabled:active {
+        background-color: $wsvi-primary-white;
+        .mstrmojo-Button-text {
+          color: $wsvi-font-button-disable;
+        }
+      }
+
+      &.hot {
+        background-color: $wsvi-primary-blue;
+        .mstrmojo-Button-text {
+          color: $wsvi-primary-black;
+        }
+
+        &:active {
+          background-color: $wsvi-background-pressed-button-blue;
+        }
+
+        &.disabled, &.disabled:active {
+          background-color: $wsvi-background-disable;
+        }
+      }
+    }
+
+    .mstrmojo-Button.mstrmojo-WebButton.emphasized {
+      background-color: $wsvi-primary-blue;
+      border: none;
+
+      .mstrmojo-Button-text {
+        color: $wsvi-primary-white;
+      }
+
+      &:active {
+        background-color: $wsvi-background-pressed-button-blue;
+      }
+
+      &.disabled, &.disabled:active {
+        background-color: $wsvi-background-disable;
+        .mstrmojo-Button-text {
+          color: $wsvi-font-button-disable;
+        }
+      }
+
+      &.hot {
+        background-color: $wsvi-primary-blue;
+        .mstrmojo-Button-text {
+          color: $wsvi-primary-white;
+        }
+
+        &:active {
+          background-color: $wsvi-background-pressed-button-blue;
+        }
+
+        &.disabled, &.disabled:active {
+          background-color: $wsvi-background-disable;
+        }
+      }
+
+    }
+
+  }
+
+  .mstrmojo-VisFilterToolbar-btns {
+    .mstrmojo-Button.mstrmojo-WebButton {
+      background-image: none;
+      height: $wsvi-input-control-height; //26px
+      box-shadow: 0px 1px 1px 0px rgba(27, 27, 29, 1);
+      opacity: 1;
+      min-width: 72px;
+
+      .mstrmojo-Button-text {
+        line-height: $wsvi-input-control-height; //26px
+        font-size: 11px;
+        background-color: transparent;
+      }
+
+      &.disabled, &.disabled:active {
+        .mstrmojo-Button-text {
+          background-color: transparent;
+        }
+      }
+
+      &.hot {
+        height: 26px;
+        .mstrmojo-Button-text {
+          line-height: 26px;
+        }
+
+      }
+
+      &:last-child {
+        margin: 5px 16px 5px 5px;
+      }
+
+      &:nth-last-child(n+2) {
+        margin: 5px 5px 5px 5px;
+      }
+    }
+  }
+
+}
+
+/**** end: Visualization Filter Toolbar ***/
+

@@ -1,0 +1,251 @@
+@import 'global';
+@import 'global-mixins';
+
+/** beginning of Advanced Sort Editor */
+.mstrmojo-AdvancedSortEditor {
+    width: 455px;
+
+    .mstrmojo-Editor-content {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        height: 358px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .mstrmojo-ButtonSwitch {
+        position: absolute;
+        bottom: 50px;
+        left: 18px;
+        border: 1px solid #b5b5b5;
+        border-radius: 3px;
+
+        .left,
+        .right {
+            float: left;
+            display: block;
+            background-color: #F3F3F4;
+            padding: 6px;
+            width: 70px;
+            text-align: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .left {
+            border-right: 1px solid #b5b5b5;
+        }
+
+        .selected {
+            background-color: #cfd1d3;
+        }
+    }
+
+    .mstrmojo-CheckBox {
+        position: absolute;
+        
+        .disabled {
+        	opacity: 0.25;
+    	}
+        
+        &.hrlSortBox {
+        	bottom: 24px;
+        	right: 18px;
+        }
+        
+        &.resHrlBox {
+        	bottom: 16px;
+        	line-height: 18px;
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        .mstrmojo-WebButton {
+            float: right;
+            padding: 0px;
+            &.hot {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .rulesTitles {
+        background-color: #F3F3F4;
+        font-weight: bold;
+        position: relative;
+        line-height: 26px;
+        height: 26px;
+        border: solid 1px #C5C5C5;
+        div {
+            &:first-child {
+                padding-left: 11px;
+                width: 79px;
+            }
+
+            display: inline-block;
+
+        }
+    }
+
+    .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode {
+        padding-right: 13px;
+    }
+    .top {
+        border-top-color: #32B4F4;
+    }
+
+    .bottom {
+        border-bottom-color: #32B4F4;
+    }
+
+    .hasVertical .disableScroller {
+        overflow: hidden !important;
+        padding-right: 30px;
+    }
+
+    &.ie8 {
+        .mstrmojo-CheckBox > label {
+            &.checked:before {
+                background-position: -6px -2px;
+                content:" ";
+            }
+            &:before {
+                top: -3px;
+            }
+        }
+        .mstrmojo-SortRow {
+            .mstrmojo-sort-rule-pulldown,
+            .mstrmojo-sort-rule-order {
+                .mstrmojo-ui-Pulldown-text {
+                    background-image: url($vi-img-path + '/pulldown-sprite.png');
+                }
+            }
+        }
+    }
+}
+
+.mstrmojo-AdvancedSortEditor-RulesPanelContainer,
+.mstrmojo-AdvancedSortEditor-RulesPanel {
+    background-color: #FFFFFF;
+    height: 256px;
+    border: solid 1px #C5C5C5;
+    border-top: 0;
+    @include box-shadow(#CCC, 0, 0, 6px, true);
+}
+
+.mstrmojo-AdvancedSortEditor-RulesPanelContainer {
+	overflow: hidden;
+}
+
+.mstrmojo-SortRow {
+    border-top: solid 1px #FFFFFF;
+    border-bottom: solid 1px #E5E5E5;
+    box-sizing: border-box;
+    > div > div {
+        float: left;
+    }
+    .mstrmojo-sort-rule-pulldown .mstrmojo-ui-Pulldown-text,
+    .mstrmojo-sort-rule-order .mstrmojo-ui-Pulldown-text {
+        height: 15px !important;
+        margin-top: 6px;
+        border-radius: 4px;
+        padding: 2px 7px;
+        border: solid 1px #E5E5E5;
+        background: #F3F3F4 url(#{$mojo-img-path}/arrow_blk_down_5x7.gif) 95% center no-repeat;
+        cursor: default;
+        line-height: 15px;
+    }
+
+    .mstrmojo-sort-rule-pulldown {
+        width: 150px;
+        margin-right: 10px;
+    }
+    /* disable the delete button for the last row */
+    &:last-child .mstrmojo-sort-rule-delete {
+        display: none;
+    }
+    .order-column {
+        width: 90px;
+        .order {
+            float: left;
+            padding: 1px;
+            line-height: 31px;
+        }
+        .draggable-icon {
+            background: url(#{$mojo-img-path}/drag_icon.png) no-repeat 0 0;
+            width: 9px;
+            height: 9px;
+            float: left;
+            margin: 1em 12px 1em 16px;
+        }
+
+    }
+}
+
+.mstrmojo-sort-rule-order {
+    width: 100px;
+}
+
+.mstrmojo-sort-rule-delete {
+    width: 9px;
+    height: 9px;
+    background: url(#{$mojo-img-path}/d1.png) no-repeat 0 0;
+    float: right;
+    margin: 1em;
+    &:hover {
+        background: url(#{$mojo-img-path}/d2.png) no-repeat 0 0;
+    }
+}
+
+.sort-rule-drag-avatar {
+    border: 1px solid #E5E5E5;
+    background-color: #FFFFFF;
+    z-index: 10000 !important;
+    overflow: hidden;
+    width: 429px;
+    opacity: 1;
+}
+
+.AdvancedSort-PopupList {
+    border: 1px solid #DDDDDD;
+    background: #FFFFFF;
+    overflow: hidden;
+    -webkit-box-shadow: #E2E2E2 0 3px 5px 0;
+    -moz-box-shadow: #E2E2E2 0 3px 5px 0;
+    box-shadow: #E2E2E2 0 3px 5px 0;
+    z-index: 300;
+
+    .item {
+        padding: 5px;
+        cursor: pointer;
+        max-width: 350px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover {
+            background-color: #F0F0F0;
+        }
+        .selected {
+            font-weight: bold;
+        }
+    }
+
+    .mstrmojo-popupList-scrollBar.mstrmojo-scrollNode {
+        max-height: 145px;
+    }
+    .firstItem {
+        display: none;
+    }
+}
+
+.mstrmojo-Tooltip.vi-regular.A-center.vi-tooltip-A.mojo-theme-light.ie8 .mstrmojo-Tooltip-arrow {
+    left: 20px;
+}
+.mstrmojo-Tooltip.vi-regular.A-center.vi-tooltip-A.mojo-theme-light.ie8.repaint .mstrmojo-Tooltip-arrow:before {
+    content: "  ";
+}
+.mstrmojo-Tooltip.vi-regular.A-center.vi-tooltip-A.mojo-theme-light.ie8.repaint .mstrmojo-Tooltip-arrow:after {
+    content: "  ";
+}
+/** end of advanced sort editor */

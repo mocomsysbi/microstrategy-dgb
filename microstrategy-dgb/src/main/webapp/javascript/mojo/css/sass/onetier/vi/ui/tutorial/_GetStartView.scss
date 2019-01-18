@@ -1,0 +1,79 @@
+$welcome-image-path: 'vi/images/welcome';
+
+.vi-desktop-tutorial-header .mstrmojo-Box {
+  background: url(#{$welcome-image-path}/microstrategy_icon.png) no-repeat 38px;
+}
+
+.mstrmojo-vi-desktop-welcome .mstrmojo-Label {
+  color: #444649;
+}
+
+.vi-desktop-tutorial-header {
+  background-color: #656b6f;
+
+  .mstrmojo-Label {
+    color: white;
+    font-size: 26px;
+    margin-top: 50px;
+    line-height: 30px;
+    float: left;
+  }
+}
+
+
+.vi-desktop-tutorial-mstr {
+  margin-left: 150px;
+}
+
+.vi-desktop-tutorial-version {
+  padding-left: 185px;
+  background: transparent no-repeat url(#{$welcome-image-path}/asset_get_started.svg);
+  margin-left: 10px;
+}
+
+.vi-desktop-tutorial-new {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 0px 24px;
+  line-height: 42px;
+  background-color: #3b92ed;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
+}
+
+.mstrmojo-vi-desktop-welcome .vi-col2 {
+  border-left: 1px solid #444649;
+  margin-left: 20px;
+}
+
+.vi-desktop-tutorial-footer {
+  padding-left: 32px;
+  padding-top: 10px;
+
+  label {
+    cursor: default;
+    line-height: 1.25em;
+    padding-left: 21px;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  label:before {
+    background: transparent no-repeat url(#{$welcome-image-path}/welcome_screen.png) -96px -22px;
+    content: '';
+    height: 1.25em;
+    left: 0;
+    position: absolute;
+    width: 21px;
+  }
+
+  &.selected label:before {
+    background-position: -96px -61px;
+  }
+}
+
+

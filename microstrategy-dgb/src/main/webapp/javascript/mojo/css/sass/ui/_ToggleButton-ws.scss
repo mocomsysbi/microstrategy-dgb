@@ -1,0 +1,65 @@
+/** BEGIN: ui-ToggleButton **/
+.mstrmojo-ui-ToggleButton {
+  $button-height: 20px;
+  $button-width: 40px;
+  $slider-padding: 2px;
+  $trans-x: $button-width - $button-height;
+  height: $button-height;
+  width: $button-width;
+  .container {
+    height: $button-height;
+    width: $button-width;
+    position: relative;
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $wsvi-selected-button;
+      -webkit-transition: .3s;
+      transition: .3s;
+      &:before {
+        position: absolute;
+        content: "";
+        height: $button-height - 2*$slider-padding;
+        width: $button-height - 2*$slider-padding;
+        left: $slider-padding;
+        bottom: $slider-padding;
+        background-color: $wsvi-primary-white;
+        -webkit-transition: .3s;
+        transition: .3s;
+      }
+      &.round {
+        border-radius: $button-height;
+        &:before {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  &.checked {
+    .container {
+      .slider {
+        background-color: $wsvi-primary-blue;
+      }
+      .slider:before {
+        -webkit-transform: translateX($trans-x);
+        -ms-transform: translateX($trans-x);
+        transform: translateX($trans-x);
+      }
+    }
+  }
+
+  &:focus {
+    .container {
+      .slider {
+        box-shadow: 0 0 1px $wsvi-primary-blue;
+      }
+    }
+  }
+}
+
+/** END: ui-ToggleButton **/

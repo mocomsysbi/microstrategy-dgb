@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.ME.FunctionSelector","mstrmojo.ME._DerivedMetricEditorHelper");mstrmojo.ME.DerivedFunctionSelector=mstrmojo.declare(mstrmojo.ME.FunctionSelector,[],{scriptClass:"mstrmojo.ME.DerivedFunctionSelector",init:function init(props){this._super(props);mstrmojo.css.addWidgetCssClass(this,"dme");}});}());

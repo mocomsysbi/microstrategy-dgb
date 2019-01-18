@@ -1,0 +1,43 @@
+.video-info-title {
+  color: #444649;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.video-info-desc {
+  margin-top: 12px;
+  color: #444649;
+  font-size: 12px;
+}
+
+
+.mstrmojo-desktop-tutorial-videocontent {
+  padding-left: 40px;
+}
+
+.vi-desktop-tutorial-videolist {
+  padding-top: 16px;
+
+  .item {
+    cursor: pointer;
+    height: 46px;
+    background: transparent no-repeat url(vi/images/welcome/asset_get_started.svg) 1px -39px;
+    display: inline-block;
+    padding-left: 35px;
+    width: 240px;
+
+    .txt {
+      height: 46px;
+      font-size: 12px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.video-info-footer .mstrmojo-Label {
+  color: #3b92ed !important;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}

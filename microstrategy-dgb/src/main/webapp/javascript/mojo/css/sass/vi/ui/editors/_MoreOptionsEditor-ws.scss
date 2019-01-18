@@ -1,0 +1,149 @@
+.workstation {
+    /** Start MoreOptionsEditor **/
+    .mstrmojo-Editor.mstrmojo-MoreOptions-Editor {
+        %section-title {
+            position: relative;
+            padding-bottom: $wsvi-element-padding;
+
+            .title {
+                font-weight: bold;
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        .headers {
+            @extend %section-title;
+
+            .subTitle {
+                margin-bottom: 0;
+            }
+
+            .mstrmojo-ui-CheckList {
+                .scroll-container {
+                    min-height: 0px;
+                }
+
+                .item {
+                    min-width: 0px;
+                }
+            }
+        }
+
+        .view {
+            @extend %section-title;
+
+            .vi-col2 .mstrmojo-Box {
+                &:not(:first-child) .mstrmojo-Label {
+                    padding-top: $wsvi-element-padding;
+                }
+
+                & > DIV {
+                    position: relative;
+                    float: left;
+                    clear: left;
+
+                    &.mstrmojo-Label {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+
+        .filtering {
+            @extend %section-title;
+        }
+
+        .joinbehavior {
+            padding-top: $wsvi-element-padding;
+
+            .vi-col1 {
+                vertical-align: top !important;
+                font-weight: bold;
+            }
+
+            .mstrmojo-DataGrid {
+                border-color: $wsvi-ui-border-gray;
+                border-bottom: 0;
+
+                .mstrmojo-DataGrid-headerTable td {
+                    background-color: $wsvi-background-gray;
+                    padding: 0;
+                    border-width: 0;
+                    border-bottom: solid 1px $wsvi-ui-border-gray;
+                    overflow: hidden;
+                }
+
+                .mstrmojo-DataGrid-headerText {
+                    height: 21px;
+                    border-width: 0;
+
+                    &.objects-hd {
+                        text-align: left;
+                        padding-left: 28px;
+                    }
+
+                    &.jointype-hd {
+                        text-align: right;
+                        padding-right: 25px;
+                    }
+                }
+
+                .mstrmojo-DataGrid-itemsContainer td {
+                    background-color: $wsvi-primary-white;
+                    border-color: $wsvi-ui-border-gray;
+                }
+
+                .mstrmojo-DataRow-text {
+                    border-style: none;
+                    padding-left: 26px;
+                    margin-left: 0;
+                }
+
+                .jt-metric .mstrmojo-DataRow-text {
+                    background: none;
+                    @include wsvi-icon-before('metric', 6px);
+                }
+
+                .jt-allattr .mstrmojo-DataRow-text {
+                    @include wsvi-icon-before('attribute', 6px);
+                }
+
+            }
+
+            .jt-col {
+                float: right;
+            }
+
+            .jt-value {
+                float: left;
+                line-height: 21px;
+                height: 21px;
+                padding-right: 4px;
+                margin-top: 2px;
+            }
+
+            .jt-menu {
+                @include wsvi-icon-context-menu;
+                @include wsvi-icon-size;
+
+                display: inline-block;
+                cursor: pointer;
+                float: left;
+                margin: 2px 7px 0 0;
+
+                &:active {
+                    @include wsvi-icon-position-context-menu-active;
+                }
+            }
+        }
+
+        .mstrmojo-Editor-buttons {
+            .mstrmojo-Button {
+                float: right;
+                margin: $wsvi-element-padding $wsvi-element-padding $wsvi-element-padding 0;
+            }
+        }
+    }
+    /** End MoreOptionsEditor **/
+}

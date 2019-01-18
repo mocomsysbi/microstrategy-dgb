@@ -1,0 +1,29 @@
+.kpiwidget div {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+#RwMenuModel_WEB-INFxmllayoutsblocksInsertDHTMLWidgetMenuLayoutxml #mnuInsertWgKPIWidget {
+    background: url(images/kpi.svg) no-repeat scroll 4px;
+    background-size: 16px;
+}
+
+#RwMenuModelEditor_WEB-INFxmllayoutsblocksInsertDHTMLWidgetMenuEditorLayoutxml #mnuInsertWgKPIWidget {
+    background: url(images/kpi.svg) no-repeat scroll 4px;
+    background-size: 16px;
+}
+
+
+#RwMenuModel_WEB-INFxmllayoutsblocksInsertIPhoneWidgetMenuLayoutxml #mnuInsertWgKPIWidget {
+    background:url(images/kpi.svg)  no-repeat scroll 4px;
+    background-size: 16px;
+}
+
+#RwMenuModelEditor_WEB-INFxmllayoutsblocksInsertIPhoneWidgetMenuEditorLayoutxml  #mnuInsertWgKPIWidget {
+    background:url(images/kpi.svg)  no-repeat scroll 4px;
+    background-size: 16px;
+}

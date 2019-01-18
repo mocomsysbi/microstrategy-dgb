@@ -1,0 +1,230 @@
+.mstrmojo-di-multiformeditor {
+  z-index: 1000;
+}
+
+.mstrmojo-di-multiformeditor-attributeName {
+  width: 250px;
+}
+
+.mstrmojo-di-multiformeditor-attributeNameContainer {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 408px;
+
+  .new-attribute-Label {
+    background-image: url(images/DI/icon_att.png);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    font-family: Arial;
+    //width: 100px;
+  }
+}
+
+.mstrmojo-di-multiformeditor-descriptionLabel {
+  margin-bottom: 10px;
+}
+
+.mstrmojo-di-multiformeditor-boxContainer {
+  .mstrmojo-di-multiformeditor-tablePulldown {
+    width: 150px;
+    margin-bottom: 30px;
+  }
+}
+
+
+.mstrmojo-di-multiformeditor-formMapsList {
+  @include scrollBar();
+  margin-bottom: 10px;
+  height: 155px;
+  width: 460px;
+  overflow: auto;
+  overflow-x: hidden;
+  border-top: 1px solid $divider-line-light;
+  padding-top: 9px;
+
+  .mstrmojo-Editor-close {
+    padding-right: 40px;
+    background: url(vi/images/menu_icons.png) no-repeat -9px 4px !important;
+  }
+
+  .mstrmojo-Label{
+    font-family: arial;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .mstrmojo-DropDownButton {
+    width: 130px;
+    margin-bottom: 5px;
+  }
+  .mstrmojo-ui-Checkbox {
+    margin-left: 20px;
+  }
+}
+
+.mstrmojo-di-multiformeditor-formMapsListHeader {
+  border-bottom: 1px solid $divider-line-dark;
+}
+
+.mstrmojo-di-multiformeditor-formMapsListHeader-formName {
+  width: 205px;
+}
+
+.mstrmojo-di-multiformeditor-formMapsListHeader-formCategory {
+  font-weight: bold;
+  width: 152px;
+  margin-bottom: 9px;
+  font-family: arial;
+}
+
+.mstrmojo-di-multiformeditor-formMapsListHeader-displayForm {
+  font-weight: bold;
+  width: 84px;
+  margin-bottom: 9px;
+  font-family: arial;
+}
+
+.mstrmojo-di-tree-node-dnd {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.workstation{
+
+  //global value pollution
+  //.mstrmojo-Editor-content {
+  //  padding-top: 1px;
+  //  padding-bottom: 4px;
+  //  box-sizing: border-box;
+  //}
+
+  .mstrmojo-di-multiformeditor {
+    width: 520px;
+  }
+
+  .mstrmojo-di-multiformeditor-boxContainer {
+    width: 488px;
+    height: 254px;
+  }
+
+  .mstrmojo-di-multiformeditor-attributeName {
+    width: 280px;
+    box-sizing: border-box;
+  }
+
+  .mstrmojo-di-multiformeditor-formMapsList {
+    width: 488px;
+    height: 164px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+
+    .mstrmojo-DropDownButton {
+      border: none;
+      width: 140px;
+      height: 26px;
+      margin-top: 0px;
+      margin-bottom: 15px;
+      margin-left: 0px;
+      margin-right: 0px;
+
+      .mstrmojo-DropDownButton-boxNode.mstrmojo-Pulldown-boxNode {
+        padding: 0 0 0 0;
+        box-sizing: border-box;
+      }
+
+      .mstrmojo-DropDownButton-iconNode.mstrmojo-Pulldown-iconNode {
+        padding-top: 3px;
+        padding-left: 6px;
+      }
+    }
+    .mstrmojo-Editor-close {
+      background: url(vi/images/menu_icons.png) no-repeat -9px 12px !important;
+      margin-top: 0px;
+      margin-bottom: 22px;
+    }
+    .mstrmojo-ui-Checkbox{
+      margin-top: 0px;
+      margin-left: 50px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .mstrmojo-Label {
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      width: 176px;
+    }
+  }
+
+  .mstrmojo-di-multiformeditor-attributeNameContainer {
+    margin-top: 16px;
+    margin-bottom: 20px;
+    .new-attribute-Label {
+      //width: 110px;
+      background-position-y: 7px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 0px;
+      background-position: left center;
+      margin-right: 12px;
+      padding-left: 24px;
+    }
+  }
+
+  .mstrmojo-di-multiformeditor-formMapsListHeader {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    width: 480px;
+
+    .mstrmojo-di-multiformeditor-formMapsListHeader-formName {
+      width: 200px;
+    }
+
+    .mstrmojo-di-multiformeditor-formMapsListHeader-formCategory {
+      width: 157px;
+    }
+
+    .mstrmojo-di-multiformeditor-formMapsListHeader-displayForm {
+      width: 123px;
+    }
+  }
+
+  //.mstrmojo-Editor.mstrmojo-di-multiformeditor.modal {
+  //  .mstrmojo-Editor-buttons {
+  //    padding-bottom: 16px;
+  //    padding-top: 0px;
+  //  }
+  //}
+
+  .mstrmojo-ui-Pulldown.mstrmojo-di-multiformeditor-tablePulldown {
+    margin-bottom: 10px;
+    margin-left: 24px;
+    width: 156px;
+
+    .mstrmojo-ui-Pulldown-text {
+      margin-top: -9px;
+    }
+
+  }
+}
+
+.mfa-item-list {
+  .mstrmojo-popup-content {
+    .mstrmojo-ListBase2 {
+      max-height: 220px;
+    }
+  }
+}

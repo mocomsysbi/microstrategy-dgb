@@ -1,0 +1,147 @@
+@import '../../global';
+
+.mstrmojo-ui-CheckList {
+    .item {
+        .content {
+            @include ellipsis-text();
+
+            .status {
+                background: transparent url(#{$vi-img-path}/financial_report.svg) 5000px 5000px no-repeat;
+                display: none;
+                padding-left: 18px;
+            }
+        }
+
+        .right {
+            float: right;
+            margin: 0.1px;
+
+            span {
+                float: right;
+                padding: 12px 9px;
+                position: relative;
+            }
+
+            .refresh {
+                background: transparent url(#{$vi-img-path}/financial_report.svg) -30px -25px no-repeat;
+                display: none;
+            }
+
+            .branch {
+                display: none;
+                cursor: pointer;
+                background: transparent url(#{$vi-img-path}/financial_report.svg) 0px -25px no-repeat;
+            }
+            
+            .level {
+                display: none;
+                cursor: pointer;
+                background: transparent url(#{$vi-img-path}/financial_report.svg) -60px -85px no-repeat;
+            }
+        }
+
+        &.selected .branch {
+            background-position: 0px -85px;
+        }
+
+        &:hover .branch {
+            display: inline;
+        }
+
+        &.hierarchy {
+            &.dynamic {
+                .refresh {
+                    display: inline;
+                }
+            }
+
+            &.hasChildren {
+                &:hover .level {
+                    display: inline;
+                }
+
+                &.level-popup-open {
+                    .level,
+                    .branch {
+                        display: inline;
+                    }
+                }
+
+                &.selected {
+                    .status {
+                        display: inline;
+                        background-position: -57px -150px;
+                    }
+
+                    &.hasSelectedDsct {
+                        .status {
+                            background-position: -27px -150px;
+                        }
+                    }
+                }
+
+                &.hasSelectedDsct {
+                    .status {
+                        display: inline;
+                        background-position: 3px -150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.level-popup-btn {
+    .mstrmojo-ui-PopupWidget {
+        @include border-radius(2px);
+
+        min-width: 140px;
+        max-width: 350px;
+        padding-left: 9px;
+
+        .mstrmojo-ui-CheckList {
+            .scroll-container {
+                max-height: 350px;
+            }
+
+            .item {
+                @include ellipsis-text();
+
+                &.all {
+                    display: none;
+                }
+
+                &.selected {
+                    .refresh {
+                        padding: 20px 0 0 18px;
+                        float: right;
+                        position: relative;
+                        background: transparent url(#{$vi-img-path}/financial_report.svg) -30px -25px no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-light {
+    &.level-popup-btn {
+        .mstrmojo-ui-PopupWidget {
+            @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 10px);
+
+            background-color: #F7F7F7;
+            border: 1px solid #B5B5B5;
+        }
+    }
+}
+
+.mojo-theme-dark {
+    &.level-popup-btn {
+        .mstrmojo-ui-PopupWidget {
+            @include box-shadow(rgba(255, 255, 255, 0.25), 0, 0, 10px);
+
+            background-color: #3D3D3D;
+            border: 1px solid #525252;
+        }
+    }
+}

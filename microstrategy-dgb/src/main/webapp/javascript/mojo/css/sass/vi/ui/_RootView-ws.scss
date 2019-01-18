@@ -1,0 +1,86 @@
+.workstation {
+    /** BEGIN: RootView **/
+    .mstrmojo-RootView {
+        overflow: hidden;
+        position: relative;
+    }
+    .mstrmojo-RootView-navbar{
+        z-index: 1;
+    }
+    .mstrmojo-RootView-toc{
+        z-index: 3;
+    }
+    .mstrmojo-RootView-datasets{
+        z-index: 2;
+    }
+    .mstrmojo-RootView-content{
+        z-index: 1;
+    }
+    .mstrmojo-RootView-gallery{
+        z-index: 2;
+    }
+
+    .mstrmojo-RootView-togglebar,
+    .mstrmojo-RootView-toc,
+    .mstrmojo-RootView-datasets,
+    .mstrmojo-RootView-content,
+    .mstrmojo-RootView-gallery{
+        float: left;
+        position: relative;
+        margin-top: 0px;
+    }
+
+    .mstrmojo-RootView-navbar,
+    .mstrmojo-RootView-navbox {
+        z-index: 2;
+        display: inline-block;
+    }
+
+    .mstrmojo-RootView-content .errMsg{
+        font-size: 16px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+    }
+
+    .mstrmojo-VIEditor-divider {
+        border-style: solid;
+        border-width: 1px 0 1px 0;
+        box-sizing: border-box;
+    }
+
+    .mstrmojo-RootView-pathbar {
+        @include single-transition(top, 500ms);
+        overflow: hidden;
+
+        &.absolute {
+            position: absolute;
+            z-index: 5;
+        }
+    }
+    /** END: RootView **/
+
+    /** BEGIN: RootView Themes **/
+    .mojo-theme-light {
+        .mstrmojo-RootView-content {
+            background: $wsvi-primary-white;
+        }
+        .mstrmojo-VIEditor-divider {
+            border-top-color: $theme-light-base-highlight-color;
+            border-bottom-color: $theme-light-offset-highlight-color;
+        }
+    }
+
+    .mojo-theme-dark {
+        .mstrmojo-RootView-content {
+            background: $theme-dark-background-color;
+        }
+        .mstrmojo-VIEditor-divider {
+            border-top-color: $theme-dark-base-highlight-color;
+            border-bottom-color: $theme-dark-offset-highlight-color;
+        }
+    }
+    /** END: RootView Themes **/
+}

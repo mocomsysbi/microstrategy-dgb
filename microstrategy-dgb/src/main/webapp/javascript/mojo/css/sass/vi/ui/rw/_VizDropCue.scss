@@ -1,0 +1,56 @@
+@import '../../vi-global';
+
+/** BEGIN: VizDropCue **/
+.mstrmojo-VizDropCue {
+    background: rgba(188, 232, 255, 0.4);
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    z-index: 11;
+
+    .mstrmojo-VizDropCue-line {
+        background: #34abeb;
+        height: 2px;
+        margin: 6px 0;
+        width: 100%;
+
+        div {
+            border: 1px dashed #e4f6ff;
+            border-width: 1px 0;
+            height: 0;
+            width: 100%;
+        }
+    }
+
+    .mstrmojo-VizDropCue-tooltip {
+        left: 50%;
+        position: absolute;
+        top: 0;
+
+        .mstrmojo-Tooltip {
+            left: -50%;
+            position: relative;
+            top: -36px;
+
+            .mstrmojo-Tooltip-content {
+                @include ellipsis-text();
+            }
+        }
+    }
+
+    &.v {
+        .mstrmojo-VizDropCue-line {
+            height: 100%;
+            margin: 0 6px;
+            width: 2px;
+
+            div {
+                border-width: 0 1px;
+                height: 100%;
+                width: 0;
+            }
+        }
+    }
+}
+/** BEGIN: VizDropCue **/

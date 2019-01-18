@@ -1,0 +1,20 @@
+@import '../global';
+
+/** START: PopupList **/
+.mstrmojo-PopupList {
+    &.ctrl-popup-list {
+        .item.selected {
+            font-weight: normal;
+        }
+
+        &.hasVertical {
+            .mstrmojo-popupList-scrollBar {
+                padding-right: 0;
+            }
+        }
+        &.mstrmojo-scrollbar-host{
+            overflow: hidden;
+        }
+    }
+}
+/** END: PopupList **/

@@ -1,0 +1,79 @@
+@import '../../vi-global';
+
+.workstation .mstrmojo-ui-vi-ElementsBrowser.mstrmojo-HierarchyElementsListPanel {
+    padding: 10px 16px 0 16px;
+
+    /* width and height are auto, but need to be 240px */
+    .title,
+    .eb-box-search {
+        width: 240px;
+        height: 26px;
+        line-height: 26px;
+        margin: 0;
+    }
+
+    .list-content {
+        width: 236px; /* + 2px border + 2px padding = 240px */
+
+        .items-container {
+            min-width: 236px; // for hover hightlight
+        }
+    }
+
+    .title {
+        padding: 0 0 10px 0;
+    }
+
+    .eb-box-search {
+        padding: 0 0 3px 0;
+        background-color: transparent;
+
+        .eb-searchBox-clear {
+            left: auto;
+            right: 4px;
+        }
+
+        .eb-searchBox {
+            background-color: white;
+            width: 100%;
+
+            &.mstrmojo-empty {
+                padding-left: 87px;
+                background-position-x: 60px;
+            }
+        }
+
+        .mstrmojo-Button {
+            margin: 0;
+        }
+    }
+
+    .mstrmojo-SearchWidget {
+        margin-bottom: 3px;
+
+        .mstrmojo-SearchBox {
+            .mstrmojo-SearchBox-input {
+                -webkit-transition: .05s width, .05s padding;
+                -moz-transition: .05s width, .05s padding;
+                -ms-transition: .05s width, .05s padding;
+                -o-transition: .05s width, .05s padding;
+                transition: .05s width, .05s padding;
+                padding: 0 0 0 94px;
+                width: 100px;
+            }
+        }
+
+        &.focus {
+            border-color: $wsvi-primary-blue;
+        }
+
+        &.focus, &.hasPattern {
+            .mstrmojo-SearchBox {
+                .mstrmojo-SearchBox-input {
+                    padding: 0;
+                    width: 194px;
+                }
+            }
+        }
+    }
+}

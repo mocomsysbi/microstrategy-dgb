@@ -1,0 +1,59 @@
+.workstation {
+  /** BEGIN: ui-editors-ToolbarPopup **/
+  .mstrmojo-ui-ToolbarPopup {
+    @include border-radius($wsvi-box-radius);
+    @include box-shadow($wsvi-panel-shadow, 0, 1px, 6px, false, 3px);
+
+    border: 1px solid $wsvi-ui-border-gray;
+    left: 0;
+    padding: 9px 17px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    z-index: 5;
+
+    & > * {
+      float: left;
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+
+    .mstrmojo-ui-ButtonBar {
+      .item {
+        div {
+          width: 28px;
+        }
+      }
+    }
+
+    .mstrmojo-ui-ButtonBar.spacing {
+      margin: 0 -1px 0 -6px;
+    }
+
+    .mstrmojo-ui-PreviewButton {
+      .preview,
+
+        //DE103631: Add the margin for ColorPickerBtn.Preview. Shrink 4px for the colorPicker.
+      &.mstrmojo-ColorPickerBtn {
+        .preview {
+          height: 19px;
+        }
+      }
+
+      .btn {
+        height: 23px;
+      }
+    }
+  }
+  /** END: ui-editors-ToolbarPopup **/
+
+}

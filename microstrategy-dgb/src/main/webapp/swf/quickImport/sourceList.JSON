@@ -1,0 +1,331 @@
+{
+	"sourceList": [
+        {
+            "n":"Access",
+            "initial": "A",
+            "pageType": 2,
+            "dbType": 100,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n": "Add Custom Data",
+            "initial": "A",
+            "pageType": 15,
+            "sourceInfo": 0
+
+        }, {
+			"n":"Amazon RedShift",
+			"initial": "A",
+			"pageType": 2,
+			"dbType": 4200,
+			"sourceInfo": {
+				"sourceType": 7
+			}
+		},
+        {
+            "n":"Aster",
+            "initial": "A",
+            "pageType": 2,
+            "dbType": 2300,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        },
+        {
+            "n":"Composite",
+            "initial": "C",
+            "pageType": 2,
+            "dbType": 2200,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        },
+        {
+            "n":"Connection Cloud",
+            "initial": "C",
+            "pageType": 2,
+            "dbType": 4800,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        },
+		{
+			"n":"Clipboard",
+			"initial": "C",
+			"sourceInfo": 0,
+			"pageType": 15
+
+		},
+		{
+			"n":"DB2",
+			"initial": "D",
+			"pageType": 2,
+            "dbType": 700,
+			"sourceInfo": {
+				"sourceType": 7
+			}
+		},{
+            "n":"Denodo",
+            "initial": "D",
+            "pageType": 2,
+            "dbType": 4300,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"Dropbox",
+            "initial": "D",
+            "pageType": 8,
+            "sourceInfo": {
+                "id": "0",
+                "name": "Dropbox",
+                "url": "Dropbox.com",
+                "type": 3
+            }
+        }, {
+            "n":"Excel",
+            "initial": "E",
+            "pageType": 2,
+            "dbType": 1400,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"EnterpriseDB",
+            "initial": "E",
+            "pageType": 2,
+            "dbType": 3600,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n": "Facebook",
+            "initial": "F",
+            "pageType": 8,
+            "sourceInfo": {
+                "name": "Facebook",
+                "url": "facebook.com",
+                "sourceType": 12
+            }
+        },
+        {
+			"n":"File From Disk",
+			"initial": "F",
+			"pageType": 1,
+			"sourceInfo": 0
+		}, {
+            "n":"Data From URL",
+            "initial": "F",
+            "pageType": 1,
+            "sourceInfo": 1
+        }, {
+            "n":"Google Analytics",
+            "initial": "G",
+            "pageType": 8,
+            "sourceInfo": {
+                "id": "3",
+                "name": "Google Analytics",
+                "type": 4
+
+            }
+        }, {
+            "n":"Google Big Query",
+            "initial": "G",
+            "pageType": 8,
+            "sourceInfo": {
+                "id": "2",
+                "name": "Google BigQuery",
+                "url": "Google.com/bigquery/",
+                "type": 6
+
+            }
+        }, {
+            "n":"Google Big Query (ODBC)",
+            "initial": "G",
+            "pageType": 2,
+            "dbType": 3600,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"Google Drive",
+            "initial": "G",
+            "pageType": 8,
+            "sourceInfo": {
+                "id": "3",
+                "name": "Google Drive",
+                "url": "Google.com/drive/",
+                "type": 4
+
+            }
+        }, {
+            "n":"Hadoop File Browser",
+            "initial": "H",
+            "pageType": 20,
+            "sourceInfo": 1
+        }, {
+            "n":"Hive",
+            "initial": "H",
+            "pageType": 2,
+            "dbType": 3100,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"Impala",
+            "initial": "I",
+            "pageType": 2,
+            "dbType": 4100,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"Informix",
+            "initial": "I",
+            "pageType": 2,
+            "dbType": 400,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        },{
+            "n":"MySQL",
+            "initial": "M",
+            "pageType": 2,
+            "dbType": 1700,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        },
+        {
+            "n":"PostgreSQL",
+            "initial": "P",
+            "pageType": 2,
+            "dbType": 1800,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"Netezza",
+            "initial": "N",
+            "pageType": 2,
+            "dbType": 1300,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        },
+        {
+            "n":"Oracle",
+            "initial": "O",
+            "pageType": 2,
+            "dbType": 200,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"ParAccel",
+            "initial": "P",
+            "pageType": 2,
+            "dbType": 2800,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"PostgreSQL",
+            "initial": "P",
+            "pageType": 2,
+            "dbType": 1800,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n": "RedBrick",
+            "initial": "R",
+            "pageType": 2,
+            "dbType": 600 ,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"Sample Files",
+            "initial": "S",
+            "pageType": 11,
+            "sourceInfo": 1
+        }, {
+            "n": "SalesForce Reports",
+            "initial": "S",
+            "pageType": 8,
+            "dbType": 300,
+            "sourceInfo": {
+                "id": "4",
+                "name": "Salesforce",
+                "url": "Salesforce.com",
+                "type": 2
+            }
+        }, {
+            "n": "SalesForce (ODBC)",
+            "initial": "S",
+            "pageType": 2,
+            "dbType": 300,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"SAPHana",
+            "initial": "S",
+            "pageType": 2,
+            "dbType": 4000,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"SQLServer",
+            "initial": "S",
+            "pageType": 2,
+            "dbType": 300,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n":"Sybase",
+            "initial": "S",
+            "pageType": 2,
+            "dbType": 500,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n": "Teradata",
+            "initial": "T",
+            "pageType": 2,
+            "dbType": 900,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n": "VectorWise",
+            "initial": "V",
+            "pageType": 2,
+            "dbType": 3500,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }, {
+            "n": "Vertica",
+            "initial": "V",
+            "pageType": 2,
+            "dbType": 2400,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        },{
+            "n": "XQuery",
+            "initial": "X",
+            "pageType": 2,
+            "dbType": 3000,
+            "sourceInfo": {
+                "sourceType": 7
+            }
+        }
+    ]
+}

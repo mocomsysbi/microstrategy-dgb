@@ -1,0 +1,33 @@
+@import '../../global-mixins';
+
+/** BEGIN: SubtotalsWidget **/
+.mstrmojo-SubmenuEditor {
+    .mstrmojo-vi-SubTotalMenuEditor {
+        width: auto;
+        white-space: nowrap;
+        // Style the content for the subtotals widget.
+        .mstrmojo-vi-subtotals.mstrmojo-ui-CheckList {
+            padding: 5px 10px 5px;
+            border-bottom: 1px solid #303030;
+            @include box-shadow(#595959, 0, 1px, 0);
+
+            .item:hover {
+                background-color: transparent;
+            }
+        }
+        // Style the buttons for the subtotals widget.
+        .mstrmojo-Box.mstrmojo-vi-subtotals-button {
+            padding: 9px 5px 9px 0;
+            margin: 0px;
+
+            .mstrmojo-Button:hover {
+                border: 1px solid #B0B0B0;
+            }
+            .mstrmojo-Button {
+                float: right;
+                margin: 0px 4px;
+            }
+        }
+    }
+}
+/** END: SubtotalsWidget **/

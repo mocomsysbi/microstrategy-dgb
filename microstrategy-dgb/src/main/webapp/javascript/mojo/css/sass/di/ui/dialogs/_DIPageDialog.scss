@@ -1,0 +1,175 @@
+//DE49990;  The edit table page for Data from URL is not well aligned
+
+.mstrmojo-Editor.mstrmojo-di-refresh-data-editor.modal .mstrmojo-Editor-content .mstrmojo-di-view.mstrmojo-di-view-popup, .workstation .mstrmojo-di-view {
+  .mstrmojo-di-layout{
+        .mstrmojo-di-fileUpload.mstrmojo-di-fu {
+          //network browser page
+          .mstrmojo-di-URLUpload-urlInput {
+            .mstrmojo-DI-DIAuthenticationButton.mstrmojo-ui-Pulldown.mstrmojo-di-add-authentication[style*="none"] + .mstrmojo-TextBox.mstrmojo-di-url-browse-input {
+              //max-width: 460px;
+              margin-left: 6px;
+            }
+          }
+          .mstrmojo-di-URLUpload-urlList {
+            .mstrmojo-VBox.di-connector-left-panel {
+              .di-object-browser {
+                .mstrmojo-Label.mstrmojo-di-browse-text {
+                  text-align: center;
+                  background: url(images/DI/workstation/workstation.svg) no-repeat -1000px -200px;
+                  top: 140px;
+                }
+              }
+            }
+          }
+
+          //File from url page
+          .mstrmojo-di-URLUpload-urlInput {
+            margin-left: 20px;
+            .mstrmojo-TextBox.upload-url {
+              max-width: 408px;
+            }
+            .mstrmojo-DI-DIAuthenticationButton.mstrmojo-ui-Pulldown.mstrmojo-di-browse-add-authentication {
+              margin-left: 11px;
+            }
+          }
+          .mstrmojo-di-URLUpload-info {
+
+            .mstrmojo-Label.mstrmojo-di-fu-url-supported[style*="block"] {
+              display: block !important;
+              position: relative;
+              left: 135px;
+              color: #444649;
+              font-size: 11px;
+              font-family: Helvetica;
+              line-height: 16px;
+            }
+            .mstrmojo-Label.mstrmojo-di-fu-url-previously[style*="block"] {
+              display: block !important;
+              position: relative;
+              left: 135px;
+              color: RGBA(68, 70, 73, 0.5);
+              font-size: 11px;
+              font-family: Helvetica;
+              line-height: 16px;
+            }
+            .mstrmojo-Label.mstrmojo-di-fu-url-info[style*="block"] {
+              display: block !important;
+              position: relative;
+              left: 135px;
+              color: RGBA(68, 70, 73, 0.5);
+              font-size: 11px;
+              font-family: Helvetica;
+              line-height: 16px;
+              max-width: 400px;
+              //word-wrap: break-word;
+              //white-space: pre-wrap;
+            }
+          }
+        }
+      }
+
+}
+
+.workstation {
+  .mstrmojo-Editor.mstrmojo-di-refresh-data-editor.modal {
+    .mstrmojo-Editor-content {
+      .mstrmojo-di-view {
+        .mstrmojo-di-layout {
+          .mstrmojo-di-fileUpload.mstrmojo-di-fu {
+
+            .mstrmojo-di-URLUpload-urlList {
+         
+              .di-object-browser {
+                //height: calc(100% - 50px) !important;
+                height: 100% !important;
+                max-width: 100% !important;
+                width: 100%;
+                border: unset;
+                background-color: unset;
+                padding-left: 14px;
+                box-sizing: border-box;
+                padding-top: 10px;
+                .mstrmojo-Label.mstrmojo-di-browse-text[style*="none"] + .mstrmojo-ListBase2.mstrmojo-di-ga-table {
+                  background-color: white;
+                  border: 1px dashed #d4d4d4;
+                }
+              }
+             
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// below for adding
+.mstrmojo-Editor-wrapper.mojo-theme-light.mstrmojo-di-popup-dialog {
+  .mstrmojo-Editor.mstrmojo-di-homepage-editor.modal {
+    .mstrmojo-Editor-content {
+      .mstrmojo-di-view.mstrmojo-di-view-popup {
+        .mstrmojo-di-layout {
+          .mstrmojo-di-fileUpload.mstrmojo-di-fu {
+            .mstrmojo-di-URLUpload-urlList {
+              .di-object-browser {
+                .mstrmojo-Label.mstrmojo-di-browse-text {
+                  text-align: center;
+                  background: url(images/DI/workstation/workstation.svg) no-repeat -1000px -200px;
+                  top: 140px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.mstrmojo-di-fileUpload.mstrmojo-di-fu .mstrmojo-di-URLUpload-urlList .di-connector-panel .di-connector-left-panel .di-object-browser .mstrmojo-di-browse-text {
+  text-align: center;
+  background: url(images/DI/workstation/workstation.svg) no-repeat -990px -200px;
+  top: 140px;
+}
+//.workstation .mstrmojo-di-fileUpload.mstrmojo-di-fu .mstrmojo-di-URLUpload-urlInput .mstrmojo-di-url-browse-input {
+//  width: 444px !important;
+//}
+// the browser input width is set in DIURLUpload.js, below "NETWORK_BROWSING mode"
+.workstation .mstrmojo-di-view .mstrmojo-di-layout .mstrmojo-di-fileUpload.mstrmojo-di-fu .mstrmojo-di-URLUpload-urlInput {
+  .mstrmojo-TextBox.upload-url {
+    margin-left: 150px !important;
+  }
+  .mstrmojo-TextBox.upload-url + .mstrmojo-Button.mstrmojo-di-add-url-button.mstrmojo-di-button.mstrmojo-WebButton {
+    left: -155px !important;
+  }
+  .mstrmojo-TextBox.upload-url + .mstrmojo-Button.mstrmojo-di-add-url-button.mstrmojo-di-button.mstrmojo-WebButton + div {
+    left: -155px !important;
+  }
+}
+.workstation #DIContainer .mstrmojo-di-view.mojo-theme-light.mstrmojo-di-view-popup {
+  .mstrmojo-di-layout {
+    .mstrmojo-di-fileUpload.mstrmojo-di-fu {
+      .mstrmojo-di-URLUpload-urlList {
+        .mstrmojo-Box.di-connector-panel {
+          .mstrmojo-VBox.di-connector-left-panel {
+            .di-object-browser {
+              background-color: unset;
+              border: unset;
+              .mstrmojo-Label.mstrmojo-di-browse-text {
+                top: 110px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 2nd add is different from 1st add..
+.workstation .mstrmojo-di-fileUpload.mstrmojo-di-fu .mstrmojo-di-URLUpload-urlList .di-connector-panel .di-connector-left-panel .di-object-browser {
+  background-color: unset;
+  border: unset;
+  .mstrmojo-Label.mstrmojo-di-browse-text {
+    top: 110px !important;
+  }
+}

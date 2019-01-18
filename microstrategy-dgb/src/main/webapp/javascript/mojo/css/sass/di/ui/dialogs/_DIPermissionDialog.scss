@@ -1,0 +1,297 @@
+.mstrmojo-Editor.mstrmojo-UserEditor.modal {
+  width: 440px;
+  height: 500px;
+  .mstrmojo-Editor-content {
+    height: 380px;
+    width: 396px;
+    margin: 16px;
+    padding: 0;
+    .mstrmojo-TreeBrowser {
+      width: 100%;
+      height: 375px;
+      padding: 5px;
+      .mstrmojo-TreeNode-div {
+        line-height: 26px;
+        height: 26px;
+        &:hover {
+          background-color: RGBA(44, 46, 49, 0.06);
+        }
+        .mstrmojo-TreeNode-state {
+          margin-top: 5px;
+        }
+        .mstrmojo-TreeNode-checkBox {
+          //background: transparent url(images/checkbox_sprite.png) -6px -26px no-repeat;
+          background: url("images/DI/workstation/workstation.svg") no-repeat -900px -40px;
+          margin-top: 3px;
+          margin-left: 5px;
+        }
+        .mstrmojo-TreeNode-text.mstrmojo-ACLInputBox-user {
+          padding-left: 29px;
+          &:hover {
+            background-color: unset;
+          }
+        }
+      }
+
+      .mstrmojo-TreeNode-div.selected {
+        .mstrmojo-TreeNode-checkBox {
+          //background-position: -6px -2px;
+          background-position: -940px -40px;
+        }
+      }
+    }
+  }
+  .mstrmojo-Editor-buttons {
+    .mstrmojo-Editor-buttonBox .mstrmojo-text.mstrmojo-Editor-button-Cancel {
+      margin-right: 0;
+    }
+  }
+}
+
+.di-sf-cxt-menu {
+  min-width: 145px;
+  max-width: 350px;
+  padding: 5px 0;
+  color: #F0F0F0;
+  font-family: Arial;
+  font-size: 11px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.88);
+  background-color: rgba(63, 63, 63, 0.96);
+  border: 1px solid rgba(155, 155, 155, 0.6);
+  border-radius: 4px;
+  .mstrmojo-itemwrap :hover {
+    background-color: rgba(27, 27, 27, 0.42);
+  }
+  .mstrmojo-CMI-left {
+    display: none;
+  }
+  .mstrmojo-CMI-right {
+    display: none;
+  }
+  .mstrmojo-itemwrap-table {
+    width: 100%
+  }
+  .mstrmojo-ContextMenuItem {
+    height: 22px;
+    line-height: 22px;
+  }
+  .mstrmojo-ContextMenuItem td {
+    padding: 0 22px;
+  }
+  .mstrmojo-CMI-content {
+    padding: 0;
+  }
+}
+
+@mixin Style_for_u_ug_background() {
+  font-size: 12px;
+  padding-left: 25px;
+  background-position-x: -1px;
+}
+
+.mstrmojo-di-permissions {
+  width: 460px;
+
+  .mstrmojo-Label {
+    font-size: 12px;
+  }
+  .access-label {
+    width: 93px;
+    background: url("vi/images/icons.png") no-repeat scroll right -23px transparent !important;
+  }
+  .mstrmojo-HBox td {
+    border-style: hidden;
+  }
+  .u {
+    @include Style_for_u_ug_background();
+    background-image: url(../../../javascript/mojo/css/images/sharingEditor/user.png);
+  }
+
+  .ug {
+    @include Style_for_u_ug_background();
+    background-image: url(../../../javascript/mojo/css/images/sharingEditor/checked-group.png);
+  }
+
+  .mstrmojo-Editor-button-OK {
+    float: right;
+  }
+
+  .security-filter-col {
+    cursor: pointer;
+
+    .di-sf-n {
+      opacity: 0;
+    }
+
+    text-decoration: underline;
+
+    &.update {
+      background-position: 3px center;
+      background-repeat: no-repeat;
+      cursor: default;
+
+      text-decoration: none;
+
+      .di-sf-icon {
+        padding-left: 25px;
+        background: url(images/main_icons_sprite_02.png) -115px -149px;
+      }
+
+      &:hover .di-sf-mn {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #000000;
+        position: absolute;
+        margin: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .mstrmojo-DataGrid {
+    background-color: white;
+    .mstrmojo-DataRow {
+      background-color: white;
+    }
+    .mstrmojo-DataRow.selected .di-sf-n,
+    .mstrmojo-DataRow:hover .di-sf-n {
+      opacity: 100;
+    }
+    .mstrmojo-ME-Pulldown {
+      width: 100px;
+    }
+    //mizhang TQMS 948957
+    .mstrmojo-DataGrid-headerTable {
+      td {
+        padding-right: 0;
+        border-right: none;
+        background-color: #efeff0;
+      }
+      td:last-child > .mstrmojo-DataGrid-headerText {
+        border-right-width: 0;
+      }
+      .mstrmojo-DataGrid-headerText {
+        padding-left: 9px;
+        padding-right: 9px;
+        border-color: #FFFFFF #CBCBCB #CBCBCB #FFFFFF;
+        border-width: 0 1px 1px 0;
+        height: 26px;
+        line-height: 26px;
+      }
+    }
+    .mstrmojo-DataGrid-itemsContainer {
+      td {
+        border-color: transparent transparent #CCCCCC;
+        border-width: 0 1px 1px;
+      }
+      .mstrmojo-DataRow > td {
+        padding-left: 9px
+      }
+    }
+    .mstrmojo-itemwrap-table {
+      border-collapse: collapse;
+    }
+  }
+  .di-permission-MorePanel {
+    margin: 16px 0 0 0;
+
+    .di-permission-addLabel {
+      font-weight: bold;
+    }
+    .mstrmojo-ACLEditor-inputBox {
+      margin: 0 0 0 5px;
+      width: 190px;
+      overflow-x: auto;
+      &.small {
+        height: 22px;
+      }
+    }
+    tr {
+      vertical-align: middle;
+    }
+
+    .mstrmojo-Editor-button {
+      min-width: 50px;
+      float: right;
+    }
+    .mstrmojo-ME-Pulldown {
+      margin-left: 5px;
+    }
+  }
+
+  &.mstrmojo-Editor > .mstrmojo-Editor-content {
+    padding: 16px 18px;
+    .mstrmojo-Editor-button {
+      margin: 0 0 0 5px;
+      height: 22px;
+      line-height: 0;
+    }
+    .mstrmojo-ObjectItem-emptyText {
+      padding: 4px;
+    }
+  }
+
+  .mstrmojo-ACLEditor-ACLList {
+    .mstrmojo-DataGrid-itemsScrollBox {
+      height: 179px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .userCol {
+      width: 150px;
+    }
+    .rgtCol {
+      width: 130px;
+    }
+  }
+}
+
+.mstrmojo-rw-ConditionWalk .walk .mstrmojo-ui-ColumnWalk .mstrmojo-Dial .dial-item.t10 {
+  padding-left: 17px;
+  background-image: url(../../../style/mstr/images/listView.png);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  background-position: -80px -40px;
+}
+
+.mstrmojo-SecurityFilter-editor {
+  .mstrmojo-onhoverparent:hover .mstrmojo-create-set-text {
+    display: none;
+  }
+
+  .mstrmojo-FE-addCondition .menuButton {
+    display: none;
+  }
+}
+
+.workstation {
+  .mstrmojo-CustomACLEditor .mstrmojo-DropDownButton-boxNode, 
+  .mstrmojo-ACLEditor-ACLList .mstrmojo-DropDownButton-boxNode,
+  .di-permission-MorePanel .mstrmojo-DropDownButton-boxNode{
+    border: unset;
+    padding: 0px;
+    height: 18px;
+  }
+
+  .mstrmojo-ACLEditor-ACLList .mstrmojo-Label.access-label {
+    margin: 2px 0px 3px 0px;
+  }
+
+  .di-permission-MorePanel .mstrmojo-DropDownButton-iconNode {
+    background-position-x: 65px !important;
+  }
+
+  .mstrmojo-CustomACLEditor > .mstrmojo-Editor-title-container {
+    .edt-title-btn {
+      &.mstrmojo-Editor-close {
+        right: 6px;
+        top: 14px;
+      }
+      &.mstrmojo-Editor-help {
+        right: 20px;
+        top: 14px;
+      }
+    }
+  } 
+}

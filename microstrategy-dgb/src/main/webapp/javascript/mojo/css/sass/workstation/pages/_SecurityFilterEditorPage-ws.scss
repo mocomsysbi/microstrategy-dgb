@@ -1,0 +1,24 @@
+.workstation {
+    .mstrmojo-FE.mstrmojo-vi-ui-FE.acl-security-filter{		
+		.mstrmojo-Editor-title-container{
+			display: none;
+		}
+
+		.mstrmojo-FE-content {
+            .mstrmojo-FE-expr-list {
+                height: 474px;
+            }
+
+            .mstrmojo-scrollbar.vertical{
+                opacity: 1;
+            }
+        }
+
+        /*hide create set and group condition in security filter editor page*/
+       .mstrmojo-onhoverparent:hover > .mstrmojo-onhover-in,
+       .mstrmojo-onhoverparent:hover .mstrmojo-create-set-text{
+           display: none;
+       }
+
+    }
+}

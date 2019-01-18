@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumFillType={FT_SIMPLE:0,FT_TEXTURE:4,FT_PICTURE:6,FT_GRADIENT:14,FT_PATTERN:101};

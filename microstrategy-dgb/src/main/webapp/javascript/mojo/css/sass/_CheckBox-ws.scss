@@ -1,0 +1,36 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+	/** BEGIN: CheckBox **/
+	.mstrmojo-CheckBox {
+	    > input[type="checkbox"]:not(:checked),
+	    > input[type="checkbox"]:checked {
+	        /* IE8 cannot supprt :checked, so to make it consistent,
+	          I add both of checked and not-checked rule here to exclude IE8*/
+	        display: none;
+
+	        + label {
+	            padding-left: 17px;
+	            position: relative;
+
+	            &:before {
+	                @include vertical-align();
+                    @include wsvi-icon-size;
+
+	                background: transparent url(#{$mojo-img-path}/checkbox.svg) -3px 4px no-repeat; // or 1px
+	                content: "";
+	                left: 0;
+					position: absolute;
+					top: 5px;
+	            }
+	        }
+	    }
+
+	    > input[type="checkbox"]:not(:checked) + label:before {
+	        background-position: -3px -21px; // or -24
+	    }
+	}
+	/** END: CheckBox **/
+
+}
+/** END: Workstation Styles **/

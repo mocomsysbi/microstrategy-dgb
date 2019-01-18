@@ -1,0 +1,852 @@
+@import 'vi/vi-global';
+
+/* **********************************************************************************************************************************************************
+ * PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ
+ *
+ * NOTE: This file contains CSS and global variables for styling controls for the current theme (limited to two basic themes).  This file should ONLY
+ * contain global variables for colors used by the theme mixins as well as unique CSS styles that differ between the two basic themes.
+ *
+ * If you find yourself adding CSS that is the same for the two basic themes YOU ARE MAKING A MISTAKE AND SHOULD STOP.  Also, this file should only contain
+ * CSS for the two basic global themes.  If you want to add a new theme, DO NOT ADD IT HERE (unless it's a new global theme, but you better be sure).
+ *
+ * All other CSS rules should be in the component partials.
+ *
+ * PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ  PLEASE READ
+ ********************************************************************************************************************************************************** */
+// the variables control whether import the related theme css
+$allow-import-theme-light: true !default;
+$allow-import-theme-dark: true !default;
+
+// BEGIN: Global Control Styles
+%viCtrlShadow {
+    @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+}
+
+$ctrl-border-radius: 3px;
+
+%pulldown-popup-size {
+    max-height: none;
+    max-width: 350px;
+    min-width: 100%;
+    width: auto;
+
+    .mstrmojo-popupList-scrollBar {
+        max-height: 338px; // To make max-height of whole popup to 350px (including border and padding)
+    }
+}
+
+.mstrmojo-ui-Pulldown {
+    @extend %viCtrlShadow;
+    @include border-radius($ctrl-border-radius);
+
+    .mstrmojo-ui-Pulldown-text {
+        @include border-radius($ctrl-border-radius);
+    }
+
+    .mstrmojo-PopupList {
+        @include border-radius($ctrl-border-radius);
+
+        @extend %pulldown-popup-size;
+    }
+
+    &.ctrl-contrast {
+        @include border-radius($ctrl-border-radius);
+    }
+}
+
+.mstrmojo-ui-ButtonBar {
+    @extend %viCtrlShadow;
+    @include border-radius($ctrl-border-radius);
+
+    .item {
+        &:first-child {
+            border-top-left-radius: $ctrl-border-radius;
+            border-bottom-left-radius: $ctrl-border-radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $ctrl-border-radius;
+            border-bottom-right-radius: $ctrl-border-radius;
+        }
+    }
+}
+
+.mstrmojo-Button.simpleButton {
+    @include border-radius($ctrl-border-radius);
+}
+
+.mstrmojo-ui-PreviewButton {
+    @extend %viCtrlShadow;
+    @include border-radius($ctrl-border-radius);
+
+    //DE103631: Add the margin for ColorPickerBtn.Preview. Don't need radius here.
+    &.mstrmojo-ColorPickerBtn {
+        .preview {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+    }
+
+    .preview {
+        border-top-left-radius: $ctrl-border-radius;
+        border-bottom-left-radius: $ctrl-border-radius;
+    }
+
+    .btn {
+        border-top-right-radius: $ctrl-border-radius;
+        border-bottom-right-radius: $ctrl-border-radius;
+    }
+
+    &.mstrmojo-ui-ComboBox {
+        .mstrmojo-PopupList {
+            @extend %pulldown-popup-size;
+        }
+    }
+
+    &.mstrmojo-ui-LineStyle {
+        .mstrmojo-PopupList {
+            @extend %pulldown-popup-size;
+        }
+    }
+
+    &.mstrmojo-ColorPickerBtn {
+        .mstrmojo-ui-AdvColorPicker {
+            @include border-radius($ctrl-border-radius);
+        }
+    }
+}
+
+.mstrmojo-TextBox {
+    @extend %viCtrlShadow;
+    @include border-radius($ctrl-border-radius);
+}
+
+.mstrmojo-TextArea {
+    @extend %viCtrlShadow;
+    @include border-radius($ctrl-border-radius);
+}
+
+.mstrmojo-ui-ctrl-Stepper {
+    @extend %viCtrlShadow;
+}
+// END: Global Control Styles
+
+
+.mstrmojo-ui-EditCharacter,
+.mstrmojo-vi-EditorGroup {
+    .mstrmojo-ui-ButtonBar {
+        .item {
+            > div {
+                background: transparent url(#{$vi-img-path}/editor-sprite.png) center 0 no-repeat;
+            }
+        }
+    }
+}
+
+$ctrl-popup-opacity: 0.96;
+
+$ctrl-light-font-color: #4A4A4A;
+$ctrl-light-font-color-disabled: #A0A7AC;
+$ctrl-light-border: #B5B5B5;
+$ctrl-light-border-disabled: #CBCBCB;
+$ctrl-light-background: rgba(243, 243, 244, $ctrl-popup-opacity);
+
+// Pulldown arrow.
+%ctrl-light-pulldown-arrow {
+    @include linear-gradient(#EAEBEB, #E4E4E4, false, $vi-img-path + '/pulldown-sprite.png');
+}
+
+// Colors for divider items.
+$ctrl-dark-base-highlight-color: #595959;
+$ctrl-dark-offset-highlight-color: #303030;
+
+$ctrl-light-base-highlight-color: #D1D1D1;
+$ctrl-light-offset-highlight-color: #F7F7F7;
+
+$light-char-bold-bg-y: -4px;
+$light-char-italic-bg-y: -34px;
+$light-char-underline-bg-y: -62px;
+$light-char-strikeout-bg-y: -94px;
+$dark-char-bg-y-offset:-420px;
+
+// For when the divider is shown below the item.
+%ctrl-dark-bottom-highlight {
+    @include box-shadow($ctrl-dark-base-highlight-color, 0, 1px, 0);
+
+    border-bottom: 1px solid $ctrl-dark-offset-highlight-color;
+}
+
+%ctrl-light-bottom-highlight {
+    @include box-shadow($ctrl-light-base-highlight-color, 0, 1px, 0);
+
+    border-bottom: 1px solid $ctrl-light-offset-highlight-color;
+}
+
+$ctrl-dark-font-color: #cdcdcd;
+$ctrl-dark-font-color-disabled: #858585;
+$ctrl-dark-border: rgba(155, 155, 155, 0.6);
+$ctrl-dark-border-disabled: rgba(155, 155, 155, 0.5);
+$ctrl-darker-border: #0F0F10;
+$ctrl-darker-border-disabled: rgba(15, 15, 16, 0.5);
+$ctrl-dark-background: rgba(40, 40, 42, 1);
+$ctrl-dark-background-disabled: rgba(40, 40, 42, 0.5);
+$ctrl-dark-popup-background: rgba(63, 63, 63, $ctrl-popup-opacity);
+
+// Inner glow.
+// Popup styling.
+%ctrl-dark-popup {
+    @include box-shadow(rgba(0, 0, 0, 0.88), 0, 0, 6px);
+
+    color: $ctrl-dark-font-color;
+    background: $ctrl-dark-popup-background;
+    border-color: $ctrl-dark-border;
+}
+
+// BEGIN: Complex Themed Control Styles
+@if $allow-import-theme-light == true {
+    .mojo-theme-light {
+        .mstrmojo-popup-widget-hosted {
+            .separator {
+                @extend %ctrl-light-bottom-highlight;
+            }
+        }
+
+        .mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text {
+                @extend %ctrl-light-pulldown-arrow;
+
+                background-repeat: no-repeat;
+                background-position: 100% 0px;
+            }
+
+            &.ctrl-contrast {
+                .mstrmojo-ui-Pulldown-text {
+                    background: #4C4D50 url(#{$vi-img-path}/pulldown-sprite.png) 100% -20px no-repeat;
+                }
+            }
+        }
+
+        .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text {
+                @include box-shadow(rgba(0, 0, 0, 0.2), 0, 0, 1px, true);
+
+                &:after {
+                    @extend %ctrl-light-pulldown-arrow;
+
+                    background-position: -1px 0;
+                    border-left: #B5B5B5 1px solid;
+                    height: 19px;
+                    width: 18px;
+                }
+            }
+        }
+
+        // Light theme searchable pull down specific css rule
+        .mstrmojo-SearchablePulldown {
+            .mstrmojo-SearchablePulldown-boxNode {
+                @extend %viCtrlShadow;
+
+                .mstrmojo-SearchablePulldown-inputNode {
+                    @include box-shadow(rgba(0, 0, 0, 0.2), 0, 0, 1px, true);
+                }
+
+                .mstrmojo-SearchablePulldown-iconNode {
+                    @include linear-gradient(#EAEBEB, #E4E4E4);
+
+                    border: none;
+                    border-left: #B5B5B5 1px solid;
+                    height: 19px;
+                    width: 18px;
+                }
+            }
+
+            .mstrmojo-Pulldown-popupNode {
+                .mstrmojo-SearchablePulldown-Popup {
+                    .mstrmojo-Pulldown-listItem {
+                        color: #5F5F60;
+                    }
+                }
+            }
+        }
+        // End Light theme searchable pull down specific css rule
+
+        .mstrmojo-ui-PreviewButton {
+            .btn {
+                @extend %ctrl-light-pulldown-arrow;
+
+                background-position: 0 0;
+                border-left-color: $ctrl-light-border;
+            }
+
+            &.disabled {
+                border-color: #cbcbcb;
+                color: #a0a7ac;
+
+                .preview {
+                    background-color: #dddddd !important;
+                }
+            }
+        }
+
+        .mstrmojo-ui-ButtonBar {
+            &.disabled {
+                background-color: #DDDDDD;
+                background-image: none;
+                border-color: #CBCBCB;
+                color: #A0A7AC;
+            }
+        }
+
+        .mstrmojo-ui-ctrl-Stepper {
+            &.disabled {
+                @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+
+                border-color: #CBCBCB;
+
+                .text {
+                    background-color: #DDDDDD;
+                }
+            }
+        }
+
+        .mstrmojo-ui-CustomRange {
+            color: #4a4a4a;
+        }
+    }
+}
+
+@if $allow-import-theme-dark == true {
+    .mojo-theme-dark {
+
+        .mstrmojo-popup-widget-hosted {
+            .separator {
+                @extend %ctrl-dark-bottom-highlight;
+            }
+        }
+        // Dark specific menu CSS
+        &.mstrmojo-ui-Menu {
+            .item {
+                &.separator {
+                    @extend %ctrl-dark-bottom-highlight;
+                }
+            }
+        }
+
+        .mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text {
+                background: #4C4D50 url(#{$vi-img-path}/pulldown-sprite.png) 100% -21px no-repeat;
+                filter: none;
+            }
+
+            &.ctrl-contrast {
+                .mstrmojo-ui-Pulldown-text {
+                    @include linear-gradient(#EAEBEB, #E4E4E4, false, $vi-img-path + '/pulldown-sprite.png');
+                }
+            }
+
+            .mstrmojo-PopupList {
+                .item.separator {
+                    @include box-shadow(#4C4C4C, 0, 1px, 0);
+
+                    border-bottom-color: $ctrl-dark-offset-highlight-color;
+                }
+            }
+        }
+
+        .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text {
+                @include box-shadow(rgba(29, 29, 30, 0.75), 0, 1px, 1px, true);
+
+                &:after {
+                    background: #4C4D50 url(#{$vi-img-path}/pulldown-sprite.png) -1px -22px no-repeat;
+                    border: #000 1px solid;
+                    height: 17px;
+                    width: 17px;
+                }
+            }
+
+            &.disabled {
+                .mstrmojo-ui-Pulldown-text {
+                    background-color: $ctrl-dark-background-disabled;
+                }
+            }
+        }
+
+        // Dark theme searchable pull down specific css rule
+        .mstrmojo-SearchablePulldown {
+            background-color: rgba(#4c4d50, 0.5);
+            background-image: none;
+
+            .mstrmojo-SearchablePulldown-boxNode {
+                @include box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 1px);
+
+                .mstrmojo-SearchablePulldown-inputNode {
+                    @include box-shadow(rgba(29, 29, 30, 0.75), 0, 1px, 1px, true);
+                }
+
+                .mstrmojo-SearchablePulldown-iconNode {
+                    background: #4C4D50 none;
+                    border: #000 1px solid;
+                    filter: none; // To remove ie linear gradient.
+                    height: 17px;
+                    width: 17px;
+                }
+            }
+
+            .mstrmojo-Pulldown-popupNode {
+                .mstrmojo-SearchablePulldown-Popup {
+                    .mstrmojo-Pulldown-listItem {
+                        color: #CDCDCD;
+
+                        &:hover {
+                            background: #323232;
+                        }
+
+                        &.selected {
+                            background: #252525;
+                        }
+                    }
+                }
+            }
+
+            &.disabled {
+                .mstrmojo-SearchablePulldown-inputNode {
+                    background-color: $ctrl-dark-background-disabled;
+                }
+            }
+        }
+        // End Dark theme searchable pull down specific css rule
+
+        .mstrmojo-ui-PreviewButton {
+            .btn {
+                background: #4C4D50 url(#{$vi-img-path}/pulldown-sprite.png) 0 -21px no-repeat;
+                border: 1px solid #000000;
+            }
+
+            &.disabled {
+                border-color: rgba(#4c4e50, 0.5);
+                color: #858585;
+
+                .preview {
+                    background-color: rgba(#28282a, 0.5) !important;
+                }
+            }
+
+            &.mstrmojo-ui-ComboBox {
+                .mstrmojo-PopupList {
+                    .item.selected {
+                        background: transparent;
+                    }
+                }
+
+                .hasEditableText.editable {
+                    color: $ctrl-dark-font-color;
+                }
+            }
+
+            &.mstrmojo-ColorPickerBtn {
+                .btn {
+                    // Hide left border since the dark color picker button already has a dark 2px border around the preview node.
+                    border-left-color: transparent;
+                }
+            }
+
+            // Dark specific line style CSS
+            &.mstrmojo-ui-LineStyle {
+                .preview {
+                    @include box-shadow(rgba(29, 29, 30, 0.75), 0, 0, 1px, true);
+
+                    background: $ctrl-dark-background;
+
+                    div {
+                        border-top-color: $ctrl-dark-font-color;
+                    }
+                }
+
+                .mstrmojo-PopupList {
+                    .item {
+                        div {
+                            border-top-color: $ctrl-dark-font-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-ui-ButtonBar {
+            &.disabled {
+                background-color: rgba(#4c4d50, 0.5);
+                background-image: none;
+                border-color: rgba(#0f0f10, 0.5);
+            }
+            .item {
+                @include box-shadow(rgba(154,157,163, 0.2), 0, 0, 5px, true);
+            }
+        }
+
+        .mstrmojo-ui-ctrl-Stepper {
+            &.disabled {
+                border-color: rgba(#0f0f10, 0.5);
+            }
+        }
+
+        // Dark specific TextBox CSS
+        .mstrmojo-TextBox {
+            @include box-shadow(rgba(29, 29, 30, 0.75), 0, 0, 1px, true);
+
+            &.disabled {
+                background: $ctrl-dark-background-disabled;
+            }
+        }
+
+        .mstrmojo-VIBoxPanelContainer-header {
+            .mstrmojo-VIBoxPanelContainer-closeBtn {
+                background-position: -23px -195px;
+            }
+        }
+    }
+}
+
+body[appThemeClass="mojo-theme-dark"] {
+    .mstrmojo-Editor-curtain {
+        background-color: #000000;
+    }
+}
+// END: Complex Themed Control Styles
+
+
+// START: Variable Based Theme Styles
+
+.mojo-theme-light {
+    // Menu Background colors
+    $menu-background: rgba(63, 63, 63, 0.96);
+
+    // Generic Control Specific variables.
+    $ctrl-background: #FFFFFF;
+    $ctrl-font-color: $ctrl-light-font-color;
+    $ctrl-font-color-disabled: $ctrl-light-font-color-disabled;
+
+    $ctrl-border: $ctrl-light-border;
+    $ctrl-border-disabled: $ctrl-light-border-disabled;
+    $ctrl-border-strong: $ctrl-light-border;
+    $ctrl-border-strong-disabled: $ctrl-light-border-disabled;
+
+    // Note: for light - the colors are switched around.
+    $ctrl-offset-highlight-color: $ctrl-light-base-highlight-color;
+    $ctrl-base-highlight-color: $ctrl-light-offset-highlight-color;
+
+    $ctrl-inner-glow-color: #FFFFFF;
+
+    // Contrast colors.
+    $ctrl-border-contrast: $ctrl-dark-border;
+    $ctrl-font-color-contrast: $ctrl-dark-font-color;
+    $ctrl-inner-glow-color-contrast: rgba(154, 157, 163, 0.2);
+
+    // Control specific colors
+
+    // Button
+    $button-gradient-top-color: #EAEBEB;
+    $button-gradient-bottom-color: #EAE4E4;
+
+    // ButtonBar
+    $buttonbar-selected-gradient-top-color: #CFD1D3;
+    $buttonbar-selected-gradient-bottom-color: #C6C8C9;
+
+    // Pulldown
+    $pulldown-border-contrast: #4C4D50;
+    $pulldown-disabled-text-bg-color: #dddddd;
+
+    // Searchable pulldown
+    $searchable-pulldown-text-bg: #FFFFFF;
+    $searchable-pulldown-disabled-text-border-color: #CBCBCB;
+    $searchable-pulldown-icon-position: -1px 0px;
+    $searchable-pulldown-box-border-color: #B5B5B5;
+    $searchable-pulldown-input-bg-color: #FFFFFF;
+    $searchable-pulldown-input-color: #5F5F60;
+    $searchable-pulldown-disabled-border-color: #CBCBCB;
+
+    // Popup
+    $popup-box-shadow: rgba(0, 0, 0, 0.25);
+    $popup-background: $ctrl-background;
+    $popup-font-color: inherit;
+    $popuplist-background-hover: rgba(218, 218, 218, $ctrl-popup-opacity);
+    $popuplist-background-selected: rgba(206, 206, 206, $ctrl-popup-opacity);
+
+    // Toolbar Popup
+    $tb-popup-border: #f4f4f4;
+
+    // Pulldown Popup
+    $puldown-popup-border: #9B9B9B;
+    $pulldown-popup-bgcolor: rgba(237, 237, 237, 0.96);
+
+    // Popup Contrast Colors
+    $popup-box-shadow-contrast: rgba(0, 0, 0, 0.25);
+    $popup-background-contrast: $ctrl-dark-popup-background;
+    $popup-font-color-contrast: $ctrl-dark-font-color;
+    $popuplist-background-hover-contrast: rgba(50, 50, 50, $ctrl-popup-opacity);
+    $popuplist-background-selected-contrast: rgba(37, 37, 37, $ctrl-popup-opacity);
+
+    // PreviewButton
+    $prvbtn-box-shadow: #FFFFFF;
+    $combobox-background: #FFFFFF;
+    $combobox-box-shadow: rgba(0, 0, 0, 0.2);
+    $colorpicker-border: rgba(68,70,73,0.07);
+    $colorpicker-buttonbar-icon-position-h: center -336px;
+    $colorpicker-buttonbar-icon-position-v: center -366px;
+    $colorpicker-nofill-border: #B0B1B2;
+    $colorpicker-nofill-color: #000000;
+    $colorpicker-nofill-gradient-top: #e2e2e2;
+    $colorpicker-nofill-gradient-bottom: #d6d6d6;
+    $colorpicker-nofill-hover-gradient-top: #ececee;
+    $colorpicker-nofill-hover-gradient-bottom: #dadadc;
+    $colorpicker-nofill-textshadow: rgba(255, 255, 255, 0.3);
+    $colorpicker-nofill-shadow-outer: #ffffff;
+    $colorpicker-nofill-shadow-inner: $colorpicker-nofill-shadow-outer;
+    $colorpicker-nofill-shadow-inner-spread: 4px;
+
+    // Textbox
+    $text-background-color: #FFFFFF;
+    $text-hint-color: #878788;
+    $text-background-color-disabled: #dddddd;
+
+    // Checkbox
+    $check-box-bg-position: -6px -26px;
+    $check-box-checked-bg-position: -6px -2px;
+    $check-box-disabled-bg-position: -6px -98px;
+    $check-box-checked-disabled-bg-position: -6px -74px;
+
+    // CheckList
+    $check-list-bg-position: -6px -25px;
+    $check-list-checked-bg-position: -6px -1px;
+    $check-list-disabled-bg-position: -6px -97px;
+    $check-list-checked-disabled-bg-position: -6px -73px;
+    $check-list-radio-bg-position: -6px -145px;
+    $check-list-radio-selected-bg-position: -6px -121px;
+    $check-list-disabled-item-font-color: $ctrl-light-font-color-disabled;
+
+    // Wait Box
+    $wait-box-bgcolor: rgba(238, 238, 238, 0.96);
+    $wait-box-fontcolor: #444649;
+    $wait-box-bgimg: url(#{$vi-img-path}/spinner_light.gif);
+
+    // Stepper
+    $stepper-arrow-color: #676769;
+
+    // Character Group
+    $char-bold-bg-y: $light-char-bold-bg-y;
+    $char-italic-bg-y: $light-char-italic-bg-y;
+    $char-underline-bg-y: $light-char-underline-bg-y;
+    $char-strikeout-bg-y: $light-char-strikeout-bg-y;
+
+    // Calendar
+    $calendar-bgcolor: rgba(#f3f3f3, 0.8); // #f3f3f3, opacity: 0.8
+    $calendar-border: 1px solid #9b9b9b;
+    $calendar-boxshadow-opacity: 0.55;
+    $calendar-fontcolor: $ctrl-light-font-color;
+    $calendar-increase-border-color: transparent transparent transparent black;
+    $calendar-decrease-border-color: transparent black transparent transparent;
+    $calendar-hover-color: rgba(#cfcfcf, 0.5); // #cfcfcf
+    $calendar-hover-border: 1px solid #cfcfcf;
+    $calendar-arrow-bg-position: -56px 2px;
+    $calendar-arrow-hovor-bg-position: -56px -28px;
+    $calendar-split-darkline-color: rgba(#b1b1b1, 0.2);
+    $calendar-split-highlightline-color: white;
+
+
+    @import 'theme-mixins';
+    @if $allow-import-theme-light == true {
+        @include control-base;
+    }
+}
+
+.mojo-theme-dark {
+    // Menu Background colors
+    $menu-background: rgba(63, 63, 63, 0.96);
+
+    // Generic Control Specific variables.
+    $ctrl-background: #38393B;
+    $ctrl-font-color: $ctrl-dark-font-color;
+    $ctrl-font-color-disabled: $ctrl-dark-font-color-disabled;
+
+    $ctrl-border: $ctrl-dark-border;
+    $ctrl-border-disabled: $ctrl-dark-border-disabled;
+    $ctrl-border-strong: $ctrl-darker-border;
+    $ctrl-border-strong-disabled: $ctrl-darker-border-disabled;
+
+    $ctrl-offset-highlight-color: $ctrl-dark-offset-highlight-color;
+    $ctrl-base-highlight-color: $ctrl-dark-base-highlight-color;
+
+    $ctrl-inner-glow-color: rgba(154, 157, 163, 0.2);
+
+    // Contrast colors.
+    $ctrl-border-contrast: $ctrl-light-border;
+    $ctrl-font-color-contrast: $ctrl-light-font-color;
+    $ctrl-inner-glow-color-contrast: #FFFFFF;
+
+    // Control specific colors
+
+    // Button
+    $button-gradient-top-color: #3D3E3F;
+    $button-gradient-bottom-color: #373839;
+
+    // ButtonBar
+    $buttonbar-selected-gradient-top-color: #2e2e2f;
+    $buttonbar-selected-gradient-bottom-color: $buttonbar-selected-gradient-top-color;
+
+    // Pulldown
+    $pulldown-border-contrast: #EAEBEB;
+    $pulldown-disabled-text-bg-color: rgba(76, 77, 80, 0.5);
+
+    // Searchable pulldown
+    $searchable-pulldown-text-bg: #28282A;
+    $searchable-pulldown-disabled-text-border-color: rgba(76, 78, 80, 0.5);
+    $searchable-pulldown-icon-position: -1px -22px;
+    $searchable-pulldown-box-border-color: rgba(76, 78, 80, 0.83);
+    $searchable-pulldown-input-bg-color: #28282A;
+    $searchable-pulldown-input-color: #CDCDCD;
+    $searchable-pulldown-disabled-border-color: rgba(76, 78, 80, 0.5);
+
+    // Popup
+    $popup-box-shadow: rgba(0, 0, 0, 0.25);
+    $popup-background: $ctrl-dark-popup-background;
+    $popup-font-color: $ctrl-dark-font-color;
+    $popuplist-background-hover: rgba(50, 50, 50, $ctrl-popup-opacity);
+    $popuplist-background-selected: rgba(37, 37, 37, $ctrl-popup-opacity);
+
+    // Toolbar Popup
+    $tb-popup-border: #525252;
+
+    // Pulldown Popup
+    $puldown-popup-border: #525252;
+    $pulldown-popup-bgcolor: $popup-background;
+
+    // Popup Contrast Colors
+    $popup-box-shadow-contrast: rgba(0, 0, 0, 0.25);;
+    $popup-background-contrast: $ctrl-background;
+    $popup-font-color-contrast: inherit;
+    $popuplist-background-hover-contrast: rgba(218, 218, 218, $ctrl-popup-opacity);
+    $popuplist-background-selected-contrast: rgba(206, 206, 206, $ctrl-popup-opacity);
+
+    // PreviewButton
+    $prvbtn-box-shadow: rgba(154, 157, 163, 0.2);
+    $combobox-background: $ctrl-dark-background;
+    $combobox-box-shadow: rgba(29, 29, 30, 0.75);
+    $colorpicker-border: #000000;
+    $colorpicker-buttonbar-icon-position-h: center -756px;
+    $colorpicker-buttonbar-icon-position-v: center -786px;
+    $colorpicker-nofill-border: #0F0F10;
+    $colorpicker-nofill-color: #EAEAEA;
+    $colorpicker-nofill-gradient-top: $button-gradient-top-color;
+    $colorpicker-nofill-gradient-bottom: $button-gradient-bottom-color;
+    $colorpicker-nofill-hover-gradient-top: #313233;
+    $colorpicker-nofill-hover-gradient-bottom: #2d2e2f;
+    $colorpicker-nofill-textshadow: rgba(0, 0, 0, 0.3);
+    $colorpicker-nofill-shadow-outer: #47484b;
+    $colorpicker-nofill-shadow-inner: #4b4c4d;
+    $colorpicker-nofill-shadow-inner-spread: 2px;
+
+    // Textbox
+    $text-background-color: $ctrl-dark-background;
+    $text-hint-color: #878788;
+    $text-background-color-disabled: $ctrl-dark-background-disabled;
+
+    // Checkbox
+    $check-box-bg-position: -6px -242px;
+    $check-box-checked-bg-position: -6px -218px;
+    $check-box-disabled-bg-position: -6px -314px;
+    $check-box-checked-disabled-bg-position: -6px -290px;
+
+    // CheckList
+    $check-list-bg-position: -6px -241px;
+    $check-list-checked-bg-position: -6px -217px;
+    $check-list-disabled-bg-position: -6px -313px;
+    $check-list-checked-disabled-bg-position: -6px -289px;
+    $check-list-radio-bg-position: -6px -361px;
+    $check-list-radio-selected-bg-position: -6px -337px;
+    $check-list-disabled-item-font-color: $ctrl-dark-font-color-disabled;
+
+    // WaitBox
+    $wait-box-bgcolor: rgba(63, 63, 63, 0.96);
+    $wait-box-fontcolor: #E4E4E4;
+    $wait-box-bgimg: url(#{$vi-img-path}/spinner_dark.gif);
+
+    // Stepper
+    $stepper-arrow-color: #D7D7D7;
+
+    // Character Group
+    $char-bold-bg-y: $dark-char-bg-y-offset + $light-char-bold-bg-y;
+    $char-italic-bg-y: $dark-char-bg-y-offset + $light-char-italic-bg-y;
+    $char-underline-bg-y: $dark-char-bg-y-offset + $light-char-underline-bg-y;
+    $char-strikeout-bg-y: $dark-char-bg-y-offset + $light-char-strikeout-bg-y;
+
+    // Calendar
+    $calendar-bgcolor: rgba(#3f3f3f, 0.96);
+    $calendar-border: 1px solid rgba(#9b9b9b, 0.6);
+    $calendar-boxshadow-opacity: 0.88;
+    $calendar-fontcolor: $ctrl-dark-font-color;
+    $calendar-increase-border-color: transparent transparent transparent white;
+    $calendar-decrease-border-color: transparent white transparent transparent;
+    $calendar-hover-color: #353639;
+    $calendar-hover-border: 1px solid #1d1d1d;
+    $calendar-arrow-bg-position: -56px -198px;
+    $calendar-arrow-hovor-bg-position: -56px -228px;
+    $calendar-split-darkline-color: #303030;
+    $calendar-split-highlightline-color: #595959;
+
+
+    @import 'theme-mixins';
+    @if $allow-import-theme-dark == true {
+        @include control-base;
+    }
+}
+
+.mojo-theme-dark .contrast,
+.mojo-theme-light *,
+.mojo-theme-light {
+    $ctrl-tooltip-border-color: #747474;
+    $ctrl-tooltip-color: #000000;
+    $ctrl-tooltip-bg-color: #EDEDED;
+    $ctrl-tooltip-arrow-opacity: 1;
+
+    @import 'theme-mixins';
+    @if $allow-import-theme-light == true {
+        @include ctrl-tooltip;
+    }
+}
+
+.mojo-theme-light .contrast,
+.mojo-theme-dark *,
+.mojo-theme-dark {
+    $ctrl-tooltip-border-color: #787878;
+    $ctrl-tooltip-color: $ctrl-dark-font-color;
+    $ctrl-tooltip-bg-color: #56585B;
+    $ctrl-tooltip-arrow-opacity: 0.85;
+
+    @import 'theme-mixins';
+    @if $allow-import-theme-dark == true {
+        @include ctrl-tooltip;
+    }
+}
+
+.mojo-theme-light {
+    $ctrl-gallery-tooltip-icn-border-color: #CCC;
+    $ctrl-gallery-tooltip-icn-bgimg: url(#{$vi-img-path}/light-viz-tooltip-sprite.png);
+    $ctrl-gallery-tooltip-icn-bg: #FFF;
+
+    @import 'theme-mixins';
+    @if $allow-import-theme-light == true {
+        @include ctrl-gallery-tooltip;
+    }
+}
+
+.mojo-theme-dark {
+    $ctrl-gallery-tooltip-icn-border-color: #000;
+    $ctrl-gallery-tooltip-icn-bgimg: url(#{$vi-img-path}/dark-viz-tooltip-sprite.png);
+    $ctrl-gallery-tooltip-icn-bg: #1F1F1F;
+
+    @import 'theme-mixins';
+    @if $allow-import-theme-dark == true {
+        @include ctrl-gallery-tooltip;
+    }
+}
+// END: Variable Based Theme Styles

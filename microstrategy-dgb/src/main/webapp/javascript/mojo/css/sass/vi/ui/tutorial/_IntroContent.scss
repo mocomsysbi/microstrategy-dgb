@@ -1,0 +1,70 @@
+@import "../../vi-global";
+
+.mstrmojo-tutorial-introcontent {
+    height: 308px;
+    padding: 34px 18px;
+    .intro-info {
+        height: 268px;
+        width: 307px;
+        float: left;
+        padding: 10px 30px 16px 30px;
+        .intro-title {
+            height: 70px;
+            background: url(#{$vi-img-path}/welcome/web_logo.png) no-repeat 0px 0px;
+        }
+        .intro-desc {
+            padding-top: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            line-height: 16px;
+            overflow: hidden;
+            max-height: 160px;
+        }
+    }
+    .intro-video,
+    .mstrmojo-Label.video-mask {
+        height: 310px;
+        width: 569px;
+        float: left;
+    }
+
+    .video-mask {
+        display: none;
+        padding: 10px;
+        background: no-repeat url(#{$vi-img-path}/welcome/video_mask.png);
+    }
+
+    &.no-internet {
+        .intro-video{
+            .video-mask {
+                display: block;
+            }
+            .mstrmojo-tutorial-video {
+                display: none;
+            }
+        }
+    }
+    .mstrmojo-Label {
+        font-size: 12px;
+        span.dyn-link {
+            @include dyn-link();
+        }
+    }
+    .mstrmojo-WebButton.hot {
+        height: 44px;
+        width: 259px;
+        background: #D9232E;
+        border-color: #D9232E;
+        margin: 7px auto 0px;
+        &:hover {
+            background: #FF2431;
+        }
+        .mstrmojo-Button-text {
+            font-size: 16px;
+            line-height: 44px;
+            font-weight: bold;
+            color: white;
+            box-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@import 'global';
+
+.mstrmojo-Label {
+  &.disabled {
+    opacity: 0.5;
+  }
+}

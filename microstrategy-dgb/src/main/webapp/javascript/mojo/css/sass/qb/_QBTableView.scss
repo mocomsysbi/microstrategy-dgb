@@ -1,0 +1,453 @@
+/* QueryBuilder Table View */
+.mstrmojo-qb-tableview {
+  background-color: #FFFFFF;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  display: none;
+
+  &.on {
+    display: block;
+  }
+}
+
+.mstrmojo-qb-tableview-box {
+  position:relative;
+  //overflow:auto;
+  width: 100%;
+  height:100%;
+  border: 1px dashed #b5b5b5;
+  margin-bottom: 16px;
+  &.dragging {
+    border: 1px solid #34abeb;
+  }
+  &.active{
+    &.dragging {
+      border: 1px solid #34abeb;
+    }
+    border: 1px solid rgba(68,70,73, 0.2);
+  }
+}
+
+.mstrmojo-qb-tableview-linker,
+.mstrmojo-qb-tableview-canvas {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+/* QueryBuilder Table View Toolbar */
+.mstrmojo-qb-tableview-toolbar {
+  // background-color: #E5E5E5;
+  background-color: #FAFAFA;
+  height: 38px;
+  width: 100% !important;
+  white-space: nowrap;
+  color: black;
+  line-height: 18px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+
+  .mstrmojo-Button-text.mstrmojo-qb-Button-text {
+    font-size: 8pt;
+  }
+
+  & .mstrmojo-Button {
+    float: left;
+    height: 24px;
+    width: 27px;
+    margin: 7px 5px;
+  }
+
+  .mstrmojo-qb-Button.mstrmojo-Button {
+    height: 22px;
+  }
+
+  //mizhang TQMS 942676, style of the button
+  & .mstrmojo-Button.FFSQL_QB_converter {
+    border: 1px solid transparent;
+    color: #444649;
+    border-radius: 2px;
+    padding: 0px 8px;
+    text-align: center;
+    width: auto;
+    height: 22px;
+    min-width: 50px;
+    line-height: 22px;
+
+    &:hover {
+      border: 1px solid #b0b1b2;
+      box-shadow: 0px 1px 5px #ffffff;
+      background-color: #E4E4E5;
+      filter: glow(color=#eeeef0, strength=4);
+    }
+
+    &:active {
+      color: #007ebe;
+      border: 1px solid #b0b1b2;
+      box-shadow: 0px 1px 5px #ffffff;
+      background-color: #dbdbdc;
+    }
+  }
+
+  .mstrmojo-Label.condition {
+    font-family: Arial;
+    color: #007EBE;
+    font-size: 9pt;
+    float: left;
+    margin: 10px 5px;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.mstrmojo-qb-tableview-toolbarIcon {
+  background-image: url(../../../style/mstr/images/archlistView.png);
+  background-repeat: no-repeat;
+  height: 18px;
+  width: 20px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+
+  //mizhang TQMS 942676
+  &.play {
+    width: 88px;
+    border: 1px solid transparent;
+    color: #444649;
+    border-radius: 2px;
+    .mstrmojo-qb-Button-icon {
+      height: 18px;
+      width: 20px;
+      background-image: url(vi/images/menu_icons.png);
+      background-position: -391px -1px;
+    }
+
+    .mstrmojo-qb-Button-text {
+      width: 68px;
+    }
+
+    &:hover {
+      border: 1px solid #b0b1b2;
+      box-shadow: 0px 1px 5px #ffffff;
+      background-color: #E4E4E5;
+
+      .mstrmojo-qb-Button-icon {
+        background-position: -391px -31px;
+      }
+    }
+
+    &:active {
+      color: #007ebe;
+      border: 1px solid #b0b1b2;
+      box-shadow: 0px 1px 5px #ffffff;
+      background-color: #dbdbdc;
+
+      .mstrmojo-qb-Button-icon {
+        background-position: -391px -61px;
+      }
+    }
+  }
+
+  &.erase {
+    width: 52px;
+    border: 1px solid transparent;
+    color: #444649;
+    border-radius: 2px;
+    .mstrmojo-qb-Button-icon {
+      height: 18px;
+      width: 20px;
+      background-image: url(vi/images/menu_icons.png);
+      background-position: -451px -1px;
+    }
+
+    .mstrmojo-qb-Button-text {
+      width: 32px;
+    }
+
+    &:hover {
+      border: 1px solid #b0b1b2;
+      box-shadow: 0px 1px 5px #ffffff;
+      background-color: #E4E4E5;
+      .mstrmojo-qb-Button-icon {
+        background-position: -451px -31px;
+      }
+    }
+
+    &:active {
+      color: #007ebe;
+      border: 1px solid #b0b1b2;
+      box-shadow: 0px 1px 5px #ffffff;
+      background-color: #dbdbdc;
+      .mstrmojo-qb-Button-icon {
+        background-position: -451px -61px;
+      }
+    }
+  }
+
+  &.refresh {
+    width: 98px;
+    border: 1px solid transparent;
+    color: #444649;
+    border-radius: 2px;
+    margin-left: 2px;
+    .mstrmojo-qb-Button-icon {
+      margin-left: 2px;
+      height: 18px;
+      width: 20px;
+      background-image: url(vi/images/menu_icons.png);
+      background-position: -422px -1px;
+    }
+
+    .mstrmojo-qb-Button-text {
+      width: 76px; // 2px left margin of buton icon
+    }
+
+    &:hover {
+      border: 1px solid #b0b1b2;
+      box-shadow: 0px 1px 5px #ffffff;
+      background-color: #E4E4E5;
+      .mstrmojo-qb-Button-icon {
+        background-position: -422px -31px;
+      }
+    }
+    &:active {
+      color: #007ebe;
+      border: 1px solid #b0b1b2;
+      box-shadow: 0px 1px 5px #ffffff;
+      background-color: #dbdbdc;
+
+      .mstrmojo-qb-Button-icon {
+        background-position: -422px -61px;
+      }
+    }
+  }
+
+  &.condition {
+    background-image: url(../../../style/mstr/images/qbtoolbar.png);
+    background-position: 0 -791px;
+    width: 24px;
+  }
+
+  .mstrmojo-Button-text {
+    display: none;
+  }
+}
+
+.mstrmojo-qb-Button {
+  .mstrmojo-qb-Button-icon {
+    float: left;
+  }
+  .mstrmojo-qb-Button-text.mstrmojo-Button-text {
+    display: block;
+    padding-top: 2px;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+// DE40989; add a scroll bar in editing table, import from tables
+.mstrmojo-Editor.mstrmojo-di-refresh-data-editor.modal .mstrmojo-Editor-content #QBuilderPage
+{
+  .mstrmojo-Splitter.vertical.mstrmojo-qb-main-panel {
+    .mstrmojo-Box.mstrmojo-qb-tableview.on {
+      .mstrmojo-Box.mstrmojo-qb-tableview-canvas {
+        .mstrmojo-Editor.mstrmojo-qb-DBTable {
+          // DE52647; add max-
+          max-height: 263px !important;
+          .mstrmojo-Editor-content {
+            max-height: 240px;
+            overflow-x: hidden;
+            overflow-y: scroll !important;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.workstation{
+  @import "../vi/_workstation-global";
+  /* QueryBuilder Table View Toolbar */
+  .mstrmojo-qb-tableview-toolbarIcon{
+    &.play {
+      .mstrmojo-qb-Button-icon {
+        background-image: url("images/DI/workstation/workstation.svg");
+        background-position: -1500px -8px;
+      }
+
+      &:hover, &:active{
+        border: 1px solid transparent;
+        box-shadow: none;
+        background-color: inherit;
+        .mstrmojo-qb-Button-text {
+          color: $wsvi-primary-blue;
+        }
+
+        .mstrmojo-qb-Button-icon {
+          background-position: -1540px -8px;
+        }
+      }
+    }
+
+    &.refresh {
+      .mstrmojo-qb-Button-icon {
+        background-image: url("images/DI/workstation/workstation.svg");
+        background-position: -2000px -48px;
+      }
+
+      &:hover, &:active{
+        border: 1px solid transparent;
+        box-shadow: none;
+        background-color: inherit;
+        .mstrmojo-qb-Button-text {
+          color: $wsvi-primary-blue;
+        }
+
+        .mstrmojo-qb-Button-icon {
+          background-position: -2050px -48px;
+        }
+      }
+    }
+
+    &.sql {
+        width: auto;
+        border: 1px solid transparent;
+        color: #444649;
+        border-radius: 2px;
+        .mstrmojo-qb-Button-icon {
+          height: 20px;
+          width: 22px;
+          background-image: url(images/DI/workstation/workstation.svg);
+          background-position: -10px -101px;
+          transform: scale(0.8);
+          margin-top: 1px;
+        }
+
+        .mstrmojo-qb-Button-text {
+          width: auto;
+          display: inline;
+        }
+
+        &:hover, &:active{
+          border: 1px solid transparent;
+          box-shadow: none;
+          background-color: inherit;
+          .mstrmojo-qb-Button-text {
+            color: $wsvi-primary-blue;
+          }
+          .mstrmojo-qb-Button-icon {
+            background-position: -50px -101px;
+          }
+        }
+
+        &.switch_to_build{
+          .mstrmojo-qb-Button-icon {
+            background: url(images/DI/workstation/workstation.svg) no-repeat -2600px -36px;
+            transform: scale(1);
+            margin-top: 0px;
+          }
+          &:hover, &:active{
+            .mstrmojo-qb-Button-icon {
+              background-position-x: -2650px;
+            }
+          }
+        }
+      }
+
+    &.erase {
+      .mstrmojo-qb-Button-icon {
+        background-image: url("images/DI/workstation/workstation.svg");
+        background-position: -2600px -8px;
+        margin-top: 2px;
+      }
+
+      &:hover, &:active{
+        border: 1px solid transparent;
+        box-shadow: none;
+        background-color: inherit;
+        .mstrmojo-qb-Button-text {
+          color: $wsvi-primary-blue;
+        }
+
+        .mstrmojo-qb-Button-icon {
+          background-position: -2650px -8px;
+        }
+      }
+    }
+
+    &.filter {
+      width: 48px;
+      border: 1px solid transparent;
+      color: #444649;
+      border-radius: 2px;
+      .mstrmojo-qb-Button-icon {
+        height: 18px;
+        width: 20px;
+        background-image: url(images/DI/workstation/workstation.svg);
+        background-position: -1500px -38px;
+        margin-top: 1px;
+      }
+
+      .mstrmojo-qb-Button-text {
+        width: 28px;
+      }
+
+      &:hover, &:active {
+        border: 1px solid transparent;
+        box-shadow: none;
+        background-color: inherit;
+        .mstrmojo-qb-Button-text {
+          color: $wsvi-primary-blue;
+        }
+        .mstrmojo-qb-Button-icon {
+          background-position: -1540px -38px;
+        }
+      }
+    }
+  }
+
+  .mstrmojo-Box.mstrmojo-qb-tableview-box{
+    .mstrmojo-Chart.mstrmojo-qb-tableview-linker + .mstrmojo-Box {
+      .mstrmojo-Editor.mstrmojo-qb-DBTable {
+        background-color: transparent;
+      }
+    }
+  }
+  .mstrmojo-qb-main-panel.has-preview {
+    .mstrmojo-Box.mstrmojo-qb-tableview-box{
+      .mstrmojo-Chart.mstrmojo-qb-tableview-linker + .mstrmojo-Box {
+        .mstrmojo-Editor.mstrmojo-qb-DBTable {
+          height: calc(100% - 20px) !important;
+          .mstrmojo-Editor-content {
+            max-height: calc(100% - 70px) !important;
+            overflow-y: auto !important;
+          }
+        }
+      }
+    }
+    @if ($env == workstation) {
+      .mstrmojo-SplitterPanel:first-child > .mstrmojo-Box {
+        height: 100%;
+        .mstrmojo-Box.mstrmojo-qb-tableview {
+          height: calc(100% - 47px);
+          .mstrmojo-Box.mstrmojo-qb-tableview-box {
+            min-height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

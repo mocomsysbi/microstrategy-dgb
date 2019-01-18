@@ -1,0 +1,45 @@
+/**
+ *  Base stylesheet.
+ *  This stylesheet includes other widgets stylesheets, and this is the one to be included in JSP
+ **/
+
+// Import the global variables
+@import 'sass/global';
+@import 'sass/normalize';
+
+/** BEGIN: Generic Rules **/
+body {
+    font-family: Arial;
+    font-size: 8pt;
+    background: #f5f5f5;
+    overflow: hidden;
+    margin: 0;
+    @include user-select(none);
+}
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: #666;
+}
+
+/* Prevent the text contents of draggable elements from being selectable. */
+[draggable] {
+    @include user-select(none);
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}
+
+::selection {background: transparent;}
+
+input::selection,
+.mstrmojo-TokenInputBox-edit::selection,
+.mstrmojo-TokenInputBox-edit *::selection {background: #538DA9;}
+
+// Import any component specific CSS from the bundles.
+@import 'sass/bundles/mojo-home';
+
+// Only include the light theme for now
+$allow-import-theme-dark: false;
+@import 'sass/base-themes';

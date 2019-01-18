@@ -1,0 +1,295 @@
+@import '../theme-mixins-ws';
+
+
+%oib-indent {
+    text-indent: 18px;
+}
+
+/**Begin: Metric Editor Sort By component**/
+.mstrmojo-ME-SortBy-label {
+    vertical-align: top;
+    width: 120px;
+}
+.mstrmojo-ME-sortby-item {
+    clear: both;
+    height: 30px;
+}
+.mstrmojo-ME-sortby-item > * {
+    float: left;
+    margin-right: 3px;
+}
+
+.mstrmojo-ME-ObjectInputBox-sortby .mstrmojo-ObjectItem-input {
+    width: 120px;
+}
+
+
+.mstrmojo-ME-sortby {
+    .mstrmojo-ACLEditor-delete {
+        width: 15px;
+        height: 20px;
+        position: relative;
+        margin-top: 5px;
+        background: url(vi/images/menu_icons.png) no-repeat -25px 5px;
+
+        &:hover {
+            background-position: -25px -55px;
+        }
+    }
+}
+
+.sortBy {
+    margin: 0;
+}
+
+.dme,
+.olap{
+    .mstrmojo-ME-sortby-asc.mstrmojo-ME-Pulldown {
+        width: 85px;
+    }
+
+    .mstrmojo-ME-sortby-forms.mstrmojo-ME-Pulldown {
+        width: 60px;
+    }
+
+    .mstrmojo-ME-sortby-forms.mstrmojo-ME-Pulldown-iconNode {
+        height: 20px; //this is important because .mstrmojo-DropDownButton-iconNode does not set height
+        line-height: 20px;
+    }
+
+    .mstrmojo-ME-sortby-asc.mstrmojo-ME-Pulldown-boxNode {
+        line-height: 20px;
+    }
+}
+/**End: Metric Editor Sort By component**/
+
+
+/*Begin: Metric Editor ObjectInputBox in List style*/
+.mstrmojo-ME-ObjectInputBox {
+    width: 272px;   //cannot exceeding 272px otherwise AvgDev function would overflow unless we increase the whole editor size
+
+    &.mstrmojo-ME-ObjectInputBox-sortby {
+        width: 120px;
+        margin-right: 3px;
+
+        .mstrmojo-ObjectItem-input {
+            width: 120px;
+        }
+
+        .mstrmojo-ME-sortby-asc.mstrmojo-ME-Pulldown {
+            width: 65px;
+            margin-left: 5px;
+            margin-top: 1px;
+        }
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 8pt;
+    }
+
+    :-moz-placeholder {;}
+    ::-moz-placeholder {}
+    :-ms-input-placeholder {}
+    :input-placeholder {}
+
+    .mstrmojo-ObjectItem {
+        margin-bottom: 8px;
+
+        &.ADDING .mstrmojo-ObjectItem-editNode {
+            background: transparent;
+        }
+
+        &.EMPTY {
+            display: none;
+        }
+
+        &.INVALID .mstrmojo-ObjectItem-displayNode {
+            border: 0 none;
+
+            .mstrmojo-ObjectItem-text {
+                border-color: #f00;
+            }
+        }
+    }
+
+    .mstrmojo-ObjectItem-browse {
+        margin-left: 8px;
+        margin-right: -5px !important;
+        background: url(images/metric-editor.png) no-repeat -125px -90px transparent;
+
+        &:hover {
+            background-position: -125px -150px;
+        }
+    }
+
+    .mstrmojo-ObjectItem-del {
+        margin-left: 8px;
+        margin-top: 5px;
+        background: url(vi/images/menu_icons.png) no-repeat -25px 5px;
+
+        &:hover {
+            background-position: -25px -55px;
+        }
+    }
+
+    .mstrmojo-ObjectItem-displayNode {
+        @include wsvi-dropdown-text(inherit);
+
+        .mstrmojo-ObjectItem-text {
+            display: block;
+
+            &.icn {
+                @extend %oib-indent;
+            }
+        }
+    }
+
+    .mstrmojo-ObjectItem-editNode {
+        @include wsvi-dropdown-text(inherit);
+        padding-left: 5px;
+    }
+
+    .mstrmojo-ObjectItem-icons {
+        position: absolute;
+        right: -75px;
+        width: 80px;
+        top: 0px;
+        height: 22px;
+        display: inline-block;
+
+        IMG {
+            margin-right: 0px;
+            position: static;
+            width: 18px;
+            height: 18px;
+        }
+
+        .mstrmojo-ObjectItem-down {
+            @include wsvi-dropdown-icon();
+
+            // this element is outside the container so we have to push the icons inside it
+            left: -13px;
+            top: 4px;
+        }
+    }
+
+    .mstrmojo-ObjectItem-input {
+        width: 276px !important;
+    }
+
+    .mstrmojo-ObjectItem-opts {
+        background: url(images/metric-editor.png) no-repeat -198px -90px transparent;
+        margin-top: 3px;
+        margin-left: 8px;
+        margin-right: -6px;
+        display: inline-block;
+
+        &:hover {
+            background-position: -198px -150px;
+        }
+    }
+
+    .INVALID .mstrmojo-ObjectItem-displayNode .mstrmojo-ObjectItem-text {
+        @extend %oib-indent;
+    }
+}
+
+.mstrmojo-ME-ObjectInputBox-suggest {
+    &.mstrmojo-Editor {
+        width: 272px;
+        margin-top: 2px;
+        margin-left: 1px;
+        -webkit-animation: resetFade 50ms ease-in 0ms 1, fade-in 50ms ease-in 50ms 1;
+        -moz-animation: resetFade 50ms ease-in 0ms 1, fade-in 50ms ease-in 50ms 1;
+        animation: resetFade 50ms ease-in 0ms 1, fade-in 50ms ease-in 50ms 1;
+    }
+
+    .mstrmojo-Editor-content {
+        /* padding: 0; */
+    }
+}
+
+/**End: Metric Editor ObjectInputBox in List style**/
+
+/*Begin: Metric Editor Pulldown objects icons*/
+.mstrmojo-ME-icon {
+    @mixin ME-icon-bg-img($img) {
+        &:before {
+            background-image: url($img);
+        }
+    }
+
+    $icon-left: 5px;
+    $icon-before-left-padding: 3px;
+
+    @include ellipsis-text;
+    position: relative;
+    line-height: 20px;
+    padding-left: ($icon-left + $wsvi-default-icon-width + 3px) !important;
+    padding-right: $wsvi-default-icon-width;
+
+    &:before {
+        background: none no-repeat 0 3px transparent;
+    }
+
+    &.mstrmojo-suggest-text:before,
+    &.mstrmojo-ObjectItem-text:before {
+        left: $icon-before-left-padding;
+    }
+
+    &.t-1, /*dimty*/
+    &.t-2, /*subexpression*/
+    &.tundefined {
+        padding-left: 5px !important;
+    }
+
+    &.t1 {
+        /*Filter*/
+        @include ME-icon-bg-img('../../../style/mstr/images/liFilter.gif');
+    }
+
+    &.t4 {
+        /*Metric*/
+        @include wsvi-icon-before('metric', $icon-before-left-padding);
+    }
+
+    &.t4d {
+        /*Derived Metric*/
+        @include wsvi-icon-before('derived-metric', $icon-before-left-padding);
+    }
+
+    &.t12 {
+        /*Attribute*/
+        @include wsvi-icon-before('attribute', $icon-before-left-padding);
+
+        &.st3076 {
+            /*Recursive Attribute*/
+            @include wsvi-icon-before('recursive-attribute', $icon-before-left-padding);
+        }
+    }
+
+    &.t12d,
+    &.t47 {
+        /*Derived Element or Consolidation Element*/
+        @include wsvi-icon-before('derived-attribute', $icon-before-left-padding);
+    }
+
+    &.t21 {
+        @include wsvi-icon-before('attribute-form', $icon-before-left-padding);
+    }
+
+    &.t43 {
+        /*Transformation or Role*/
+        @include ME-icon-bg-img('images/transformation.png');
+    }
+}
+
+
+
+/*End: Metric Editor Pulldown objects icons*/

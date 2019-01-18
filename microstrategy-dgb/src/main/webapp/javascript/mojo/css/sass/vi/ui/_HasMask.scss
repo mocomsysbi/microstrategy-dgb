@@ -1,0 +1,28 @@
+@import '../../vi/vi-global';
+
+/** BEGIN: DNDMask **/
+.mstrmojo-VIDND-mask {
+    background: transparent url(#{$mojo-img-path}/1ptrans.gif) top left repeat;
+    bottom: 0;
+    cursor: default;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+
+    &.masked {
+        background: rgba(245, 245, 245, 0.75);
+    }
+}
+
+// Dark theme mask color.
+.mojo-theme-dark {
+    .mstrmojo-VIDND-mask {
+        &.masked {
+            background: rgba(57, 58, 61, 0.5);
+        }
+    }
+}
+/** END: DNDMask **/

@@ -1,0 +1,40 @@
+@import '../../vi-global';
+@import '../../themes';
+
+.mstrmojo-ImageBoxOverlayEmbeded {
+  .container-scroll-host {
+    .container {
+      .txt {
+        flex-basis: calc(100% - 200px); // Subtract Image width + TextBox margin width + Buttons width + Buttons margins width
+      }
+
+      .buttons {
+        position: relative;
+        height: 22px;
+        margin-left: 8px;
+        margin-top: 10px;
+        white-space: nowrap;
+        align-self: baseline;
+        .mstrmojo-imageBoxOverlayEmbeded-file {
+          position: absolute;
+          top: -10000px;
+        }
+
+        .browseBtnLabel {
+          position: relative;
+          display: inline-block;
+          min-width: 68px;
+          text-align: center;
+        }
+
+        .okBtn {
+          position: relative;
+          display: inline-block;
+          width: 68px;
+          margin-left: 8px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

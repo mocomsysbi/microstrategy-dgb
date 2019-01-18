@@ -1,0 +1,42 @@
+@import '../../../vi-global';
+
+/** BEGIN: SearchableCheckList **/
+.mstrmojo-vi-sel-CheckList.searchable {
+    .mstrmojo-ui-SearchBox {
+        @include box-sizing();
+
+        border: 1px solid #E5E5E5;
+        margin: 0;
+        padding: 0;
+        font-size: 8pt;
+    }
+
+    .item {
+        // Hide items that are excluded by the filter.
+        &.excluded {
+            display: none;
+        }
+
+        // Emphasize the matched portion of the item.
+        em {
+            background-color: #7CD3F3;
+            font-style: normal;
+        }
+    }
+
+    &.horizontal {
+        white-space: nowrap;
+
+        .search,
+        .icn {
+            display: inline-block;
+        }
+
+        .search {
+            float: left;
+            padding-right: 17px;
+        }
+    }
+}
+/** END: SearchableCheckList **/
+

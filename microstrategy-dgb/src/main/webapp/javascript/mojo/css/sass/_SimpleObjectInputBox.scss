@@ -1,0 +1,97 @@
+@import '_global.scss';
+
+/** Begin SimpleObjectInputBox Style */
+.mstrmojo-SimpleObjectInputBox {
+    &.mstrmojo-scrollbar-host{
+        overflow: hidden; /* TQMS 916395 to prevent double scroll bar*/
+    }
+
+    input {
+        /*Remove the default clear button for all input in IE10+*/
+        &::-ms-clear {
+            display: none;
+        }
+    }
+
+    .mstrmojo-SimpleObjectInputBox-empty {
+        display: block;
+        opacity: .65;
+
+        DIV {
+            margin: 4px 0 0 4px;
+            padding-left: 20px;
+            @include wsvi-icon-before('magnifier');
+
+            &:before {
+                top: 0;
+            }
+        }
+    }
+}
+
+/** End SimpleObjectInputBox Style */
+
+.mstrmojo-Tooltip.vi-regular.pulldown {
+    width: 200px;
+
+    .mstrmojo-Tooltip-contentWrapper {
+        // normally we wouldn't use !important, but the
+        // full path would have to include 7 or more
+        // selectors to get an override, and we're
+        // using our own classnames for this value
+        border-color: $wsvi-ui-border-gray !important;
+        box-shadow: 0 2px 8px $wsvi-panel-shadow;
+    }
+}
+
+.srch {
+    // normally we wouldn't use !important, but the
+    // full path would have to include 7 or more
+    // selectors to get an override, and we're
+    // using our own classnames for this value
+    color: $wsvi-tooltip-color !important;
+
+    &.htEnter {
+        padding-left: 20px;
+        @include wsvi-icon-before('enter');
+    }
+
+    .auto {
+        padding-left: 20px;
+        position: relative;
+
+        &:before {
+            @include wsvi-icon-size;
+            background: url(#{$vi-img-path}/saving_spinner.gif);
+            background-size: $wsvi-default-icon-width $wsvi-default-icon-height;
+            position: absolute;
+            left: 0;
+            content: ' ';
+        }
+    }
+
+    &.info {
+        padding-left: 26px;
+        @include wsvi-icon-before('info');
+        width:200px;
+    }
+
+    .separator {
+        display: none;
+        border-top: solid 1px $wsvi-splitline-gray;
+        margin-top: $wsvi-element-padding;
+    }
+
+    .wait {
+        padding: $wsvi-element-padding 0 $wsvi-element-text-padding;
+    }
+
+    .actn {
+        color: $wsvi-link-blue;
+        cursor: pointer;
+    }
+
+    &.lng .separator {
+        display: block;
+    }
+}

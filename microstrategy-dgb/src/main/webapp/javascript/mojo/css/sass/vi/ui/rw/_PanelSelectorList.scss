@@ -1,0 +1,60 @@
+@import "../../../global-mixins";
+
+/** BEGIN: PanelSelectorList **/
+.mstrmojo-ui-PanelSelectorList {
+    height: 27px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+
+    $list-item-dim: 15px;
+
+    // Panel selector never shows the vertical scrollbars
+    &.mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrolltrack.vertical {
+        display: none;
+    }
+
+    .mstrmojo-sb-show-default {
+        height: 100%;
+    }
+
+    .item {
+        cursor: pointer;
+        display: inline-block;
+        height: $list-item-dim;
+        width: $list-item-dim;
+
+        div {
+            $list-btn-dim: 10px;
+
+            background-color: #666666;
+            border: 1px solid #FFFFFF;
+            border-radius: 6px;
+            height: $list-btn-dim;
+            margin: 5px 3px;
+            width: $list-btn-dim;
+        }
+
+        &.selected div {
+            background-color: #23A3D3;
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-ui-PanelSelectorList {
+        .item {
+            div {
+                background-color: #202021;
+                border-color: rgba(59, 61, 62, 0.88);
+                @include box-shadow(rgba(0, 0, 0, 0.3), 0, 0, 7px, true);
+            }
+            &.selected div {
+                background-color: #34abeb;
+                @include box-shadow(rgba(0, 0, 0, 0.69), 0, 0, 2px, true);
+            }
+        }
+    }
+}
+
+/** END: PanelSelectorList **/

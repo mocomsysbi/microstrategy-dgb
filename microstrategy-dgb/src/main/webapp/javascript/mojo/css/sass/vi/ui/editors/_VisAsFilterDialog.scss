@@ -1,0 +1,77 @@
+/*Filtering options dialog (Visualization as filter)*/
+.mstrmojo-vis-as-filter {
+    &.mstrmojo-Editor {
+        min-width: 475px;
+        max-width: 600px;
+    }
+
+    .mstrmojo-Editor-content {
+        padding: 0;
+    }
+
+    .mstrmojo-Editor-title {
+        color: #444649;
+        padding-left: 11px;
+        line-height: 25px;
+    }
+
+    .mstrmojo-Editor-button {
+        padding: 0 !important;
+    }
+
+    /*title label "Use <span>visualizationName</span> to filter the followig targets"*/
+    .mstrmojo-title-label {
+        margin: 15px 11px;
+    }
+
+    .mstrmojo-title-label span {
+        font-weight: bold;
+    }
+
+    /*visualization name list*/
+    .mstrmojo-scrollable-container {
+      .ScrollableContainer-content {
+        max-height: 350px;
+      }
+    }
+    /*Filter type pulldown*/
+    .mstrmojo-filter-type {
+        float: left;
+        margin-left: 11px;
+        width: 100px;
+    }
+
+    /*Filter "for" pulldown*/
+    .mstrmojo-for-type {
+        width: 150px;
+    }
+
+    .mstrmojo-ui-Pulldown.disabled {
+        opacity: 0.6;
+    }
+
+    /*Label for filter type*/
+    .mstrmojo-type-label {
+        padding: 0 10px;
+        line-height: 20px;
+    }
+
+    /*Editor separator line*/
+    .mstrmojo-ToolSeparator {
+        display: block;
+        margin: 10px 0px;
+        border-bottom: 1px solid #D1D1D1;
+        box-shadow: 0 1px 1px #F0F0F0;
+    }
+
+    /*Visualization and clear all Checkboxes*/
+    .mstrmojo-CheckBox {
+        margin: 11px;
+    }
+
+    /*Clear all checkbox*/
+    .mstrmojo-clear-check {
+        clear: both;
+    }
+
+}

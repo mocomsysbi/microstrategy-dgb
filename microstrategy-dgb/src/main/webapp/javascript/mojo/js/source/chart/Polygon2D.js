@@ -1,0 +1,1 @@
+(function(){var p;mstrmojo.chart.Polygon2D=p=mstrmojo.provide("mstrmojo.chart.Polygon2D",{});p.clone=function(src){var len=src.length,i,dst=[];for(i=0;i<len;++i){dst.push(src[i].clone());}return dst;};}());

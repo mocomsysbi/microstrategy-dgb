@@ -1,0 +1,27 @@
+/*	ProjectNameInput Editor		*/
+.mstrmojo-ProjectNameInput {
+  .mstrmojo-Editor-close, .mstrmojo-Editor-help {
+    display: none;
+  }
+  width: 270px;
+}
+
+.mstrmojo-ProjectNameInput-PNameLBL {
+  font-weight: bold;
+  width: 100%;
+  padding: 5px;
+}
+
+.mstrmojo-ProjectNameInput-PDescTXT, .mstrmojo-ProjectNameInput-PNameTXT {
+  width: 210px;
+  margin-left: 10px;
+}
+
+.mstrmojo-ProjectNameInput-PDescTXT {
+  height: 75px;
+}
+
+.mstrmojo-ProjectNameInput-OKBtn {
+  float: right;
+}
+/*	End ProjectNameInput Editor		*/

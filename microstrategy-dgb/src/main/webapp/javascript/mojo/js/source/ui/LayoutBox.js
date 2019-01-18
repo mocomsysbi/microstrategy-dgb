@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Box","mstrmojo._HasLayout");mstrmojo.ui.LayoutBox=mstrmojo.declare(mstrmojo.Box,[mstrmojo._HasLayout],{scriptClass:"mstrmojo.ui.LayoutBox",layoutConfig:{h:{containerNode:"100%"},w:{containerNode:"100%"},xt:true}});}());

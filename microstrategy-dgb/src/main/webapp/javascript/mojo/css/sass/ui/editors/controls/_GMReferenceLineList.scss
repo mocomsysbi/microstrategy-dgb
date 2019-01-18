@@ -1,0 +1,140 @@
+@import '../../../global';
+
+/** BEGIN: GMReferenceLineList **/
+.GMReferenceLineItemContainer {
+
+    .item {
+        @include box-sizing();
+        height: 22px;
+        @include border-radius(2px);
+        margin: 3px 3px 0 3px;
+        padding: 3px 0 3px 5px;
+        cursor: pointer;
+        position: relative;
+
+        %ui-rfline-item-component {
+            display: inline-block;
+            height: 100%;
+        }
+
+        .txt {
+            @extend %ui-rfline-item-component;
+            height: 12px;
+            margin-top: 2px;
+            @include ellipsis-text();
+            position: absolute;
+            right: 18px;
+            left: 9px;
+            -webkit-user-select: text;
+        }
+
+        .rmv {
+            @extend %ui-rfline-item-component;
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            float: right;
+            margin-top: 4px;
+            right: 5px;
+            &.hidden {
+                visibility: hidden;
+            }
+        }
+    }
+
+    .GMReferenceLineItemContainer-container {
+        min-height: 25px;
+        max-height: 125px;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+}
+
+.mstrmojo-ui-GMReferenceLineList {
+    min-height: 50px;
+    max-height: 153px;
+    @include border-radius(2px);
+    overflow: hidden;
+
+    .link-btn {
+        clear: both;
+        float: left;
+        @include box-sizing();
+        cursor: pointer;
+        height: 22px;
+        margin: 3px 3px 0 3px;
+        padding: 5px 5px 3px 5px;
+        font-weight: bold;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &.disabled {
+        opacity: 0.5;
+    }
+}
+
+.mojo-theme-light {
+    .mstrmojo-ui-GMReferenceLineList {
+        border: 1px solid #B5B5B5;
+        background-color: #FFFFFF;
+        @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+
+        .link-btn {
+            color: #007EBE;
+        }
+    }
+    .GMReferenceLineItemContainer {
+        .item {
+            border: 1px solid #AEDDF7;
+            background-color: #DFF1FC;
+
+            &.selected {
+              background-color: #BCE8FF;
+            }
+
+            .rmv {
+                background: url(#{$vi-img-path}/menu_icons.png) no-repeat -30px 0px transparent;
+                &:hover {
+                    background: url(#{$vi-img-path}/menu_icons.png) no-repeat -30px -30px transparent;
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-ui-GMReferenceLineList {
+        border: 1px solid rgba(#4c4e50, 0.83);
+        background-color: #28282A;
+        @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 4px);
+
+        .link-btn {
+            color: #34ABEB;
+        }
+    }
+    .GMReferenceLineItemContainer {
+        .item {
+            border: 1px solid #0C75AD;
+            background-color: #2A4251;
+            color: #24A2E7;
+
+            &.selected {
+              background-color: #BCE8FF;
+            }
+
+            .rmv {
+                background: url(#{$vi-img-path}/menu_icons.png) no-repeat -30px -200px transparent;
+                &:hover {
+                    background: url(#{$vi-img-path}/menu_icons.png) no-repeat -30px -260px transparent;
+                }
+            }
+        }
+    }
+}
+
+.mstrmojo-TextBox.reference-line-constant {
+    width: 100%;
+}
+/** END: GMReferenceLineList **/

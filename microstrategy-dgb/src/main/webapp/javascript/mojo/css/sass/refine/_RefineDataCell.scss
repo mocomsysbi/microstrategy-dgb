@@ -1,0 +1,77 @@
+.refine-cell-node {
+  padding-left: 9px;
+  padding-right: 9px;
+  overflow-y: hidden;
+}
+
+.refine-cell-node.number, .refine-cell-node.date, .refine-cell-node.time, .refine-cell-node.datetime {
+  color: #282;
+}
+
+.refine-cell-text-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 19px;
+}
+
+.refine-cell-text {
+  font-family: monospace;
+  line-height: 19px;
+  max-width: 450px;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include user-select(text);
+  position: absolute;
+  top: 0;
+  padding-right: 2px;
+}
+
+.refine-cell-pseudo-text {
+  font-family: monospace;
+  line-height: 19px;
+  max-width: 450px;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.columnNumber2 {
+  .refine-cell-pseudo-text {
+    max-width: 225px;
+  }
+  .refine-cell-text {
+    max-width: 225px;
+  }
+}
+
+.columnNumber3 {
+  .refine-cell-pseudo-text {
+    max-width: 150px;
+  }
+  .refine-cell-text {
+    max-width: 150px;
+  }
+}
+
+.columnNumber4 {
+  .refine-cell-pseudo-text {
+    max-width: 115px;
+  }
+  .refine-cell-text {
+    max-width: 115px;
+  }
+}
+
+
+.refine-selected-text {
+  background: yellow;
+}
+
+.workstation{
+  .refine-cell-node.number, .refine-cell-node.date, .refine-cell-node.time, .refine-cell-node.datetime {
+    color: #4a4a4a; //WS
+  }
+}

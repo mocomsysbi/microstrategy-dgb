@@ -1,0 +1,235 @@
+@import '../../../vi/vi-global';
+
+
+.mstrmojo-loginBox {
+    .singleLoginLabel{
+        display: none !important;
+        margin:25px 50px;
+    }
+    &.showSingleLoginLabel{
+        .singleLoginLabel{
+            display: block !important;
+        }
+        .user,
+        .pwd{
+            display: none !important;
+        }
+    }
+    .mstrmojo-TextBox {
+        width: 264px;
+        margin-left:50px;
+        margin-top: 12px;
+    }
+
+    .mstrmojo-Label.seperator {
+      height: 20px;
+    }
+
+  .mstrmojo-TextBox:disabled {
+        background-color : #eee;
+    }
+
+    .singleLoginLabel,
+    .authLabel{
+        color: #007ebe;
+        display: none !important;
+        cursor: pointer;
+        margin-left: 50px;
+        width: 210px;
+        &.showAdvAuth{
+            line-height: 24px;
+            margin-bottom: 16px;
+        }
+    }
+    .singleLoginLabel:hover,
+    .authLabel:hover{
+        text-decoration: underline;
+    }
+    .authBox{
+        .authModes{
+            display: none !important;
+            padding-left: 50px;
+            .radioAuth{
+                line-height: 22px;
+                .mstrmojo-RadioList-item {
+                    input[type="radio"]{
+                        height: 22px;
+                        float: left;
+                    }
+                    label{
+                        margin-left: 9px;
+                    }
+                    &.hide {
+                      display: none;
+                    }
+                }
+            }
+        }
+        .authLabel{
+            &.showSimpleAuth{
+                line-height: 18px;
+                margin-top: 32px;
+                display: none !important;
+            }
+        }
+    }
+
+    .authLabel.showAdvAuth{
+        display: inline-block !important;
+    }
+
+    &.singleAuthMode{
+        .authLabel.showAdvAuth{
+            display: none !important;
+        }
+    }
+    &.advancedAuth {
+        .authLabel {
+            &.showSimpleAuth {
+                display: inline-block !important;
+            }
+            &.showAdvAuth {
+                display: none !important;
+            }
+        }
+        .authModes{
+            display: block !important;
+        }
+
+        &.usherLogin {
+          .authLabel {
+            &.showSimpleAuth {
+              display: none !important;
+            }
+          }
+        }
+    }
+
+    &.noLoginAndPassword{
+        .authBox .authModes{
+            display: block !important;
+        }
+        .mstrmojo-TextBox,
+        .authLabel.showSimpleAuth,
+        .authLabel.showAdvAuth{
+            display: none !important;
+        }
+    }
+
+  //usher login scss
+  .mstrmojo-UsherLogin-Container {
+    background: #fff;
+    height: inherit;
+    width: 266px;
+    margin: auto;
+    margin-top: 38px;
+
+    .mstrmojo-UsherLogin {
+      width: 264px;
+      height: 264px;
+      left: inherit;
+      top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      margin-bottom: 5px;
+
+      .mstrmojo-UsherLogin-QR {
+        border-top: 1px solid #eee;
+      }
+    }
+
+    .mstrmojo-UsherLogin-badge {
+      height: 45px;
+      margin: 12px 10px 20px 10px;
+      text-align: left;
+      padding-left: 33px;
+      width: 244px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      div {
+        width: 35px;
+        height: 35px;
+        border-radius: 5px;
+        top: 0;
+      }
+
+      img {
+        max-width: 35px;
+        max-height: 35px;
+      }
+
+      .icn {
+        float: none;
+      }
+
+      .icn.default img {margin: 0px;}
+      
+      .app,
+      .dots {
+        display: none;
+      }
+
+    }
+
+    .mstrmojo-UsherLogin-badgeLabel {
+      position: absolute;
+      top: 0px;
+
+      .app-name {
+        display: none;
+      }
+
+      .badge-name {
+        margin-left: 84px;
+        color: #333;
+        margin-top: 23px;
+        width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: left;
+        padding-left: 2px;
+        font-size: 16px;
+      }
+    }
+
+    .mstrmojo-UsherLogin-link,
+    .mstrmojo-UsherLogin-register {
+      display: none;
+    }
+  }
+
+  .mstrmojo-Label.toggleLogin {
+    margin-top: 32px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: #007ebe;
+    }
+  }
+
+}
+
+.mstrmojo-onetier-loginDialog{
+    .label{
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    .mstrmojo-Editor-close {
+        display: none;
+    }
+
+    .mstrmojo-loginBox {
+        .mstrmojo-TextBox {
+            margin-left: 0;
+        }
+        .authLabel{
+            margin-left: 0;
+        }
+    }
+}

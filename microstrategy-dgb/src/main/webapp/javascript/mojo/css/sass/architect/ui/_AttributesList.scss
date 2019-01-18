@@ -1,0 +1,30 @@
+/** Attributes List **/
+
+.mstrmojo-ar-rpc-attrlist {
+  overflow: auto;
+  .item {
+    padding: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .item-icn {
+    background: rgba(0, 0, 0, 0) url('images/wh/object_icons.png') no-repeat 2px -328px;
+    padding: 1px 9px;
+    margin-right: 4px;
+    overflow: hidden;
+  }
+  .item:hover {
+    background-color: #fafafa;
+  }
+  &.hasOwnAvatar {
+    position: absolute;
+    border: 1px solid #AAA;
+    background: #EEE;
+    width: auto;
+    margin: 2px;
+  }
+}
+
+/** Attributes List **/

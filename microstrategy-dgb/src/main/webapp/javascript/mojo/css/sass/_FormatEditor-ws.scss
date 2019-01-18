@@ -1,0 +1,12 @@
+.mstrmojo-FormatEditor-DropDownButton-list {
+    overflow: hidden !important;
+    @include box-shadow(#AAAAAA, 2px, 2px, 0px);
+    opacity: 0.9;
+    min-width: 68px;
+
+    .mstrmojo-ListBase2-itemsContainer {
+        /*opacity: 0.9; //FF3.0 will mess up*/
+        height: 100%;
+        min-width: 68px;
+    }
+}

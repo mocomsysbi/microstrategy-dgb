@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.ListBase2","mstrmojo.ListMapperHoriz","mstrmojo.MultiColListBuilder");mstrmojo.MultiColListHoriz=mstrmojo.declare(mstrmojo.ListBase2,null,{scriptClass:"mstrmojo.MultiColListHoriz",listMapper:mstrmojo.ListMapperHoriz,listBuilder:mstrmojo.MultiColListBuilder,cols:null});})();

@@ -1,0 +1,18 @@
+@import "RefineVariables";
+
+.refine-suggestions {
+  overflow: hidden;
+}
+
+.refine-suggestions-list {
+  overflow: hidden;
+}
+
+.refine-suggestions-list:hover {
+  overflow-y: auto;
+}
+
+.refine-suggestions-label {
+  padding: 3px 0px 0px 5px;
+  color: $fontColorDisable;
+}

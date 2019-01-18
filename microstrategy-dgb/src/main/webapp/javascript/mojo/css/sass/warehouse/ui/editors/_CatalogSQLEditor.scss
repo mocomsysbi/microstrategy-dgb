@@ -1,0 +1,314 @@
+@import '../../wh-global';
+
+/** Catalog SQL Editor Start**/
+
+.mstrmojo-ar-catSQL {
+  width: 1110px;
+  &.mstrmojo-Editor > .mstrmojo-Editor-content {
+    padding: 0 18px;
+    border-bottom: 1px solid #DEDEDE;
+    .mstrmojo-ar-catSQL-leftPanel {
+      .mstrmojo-Label, .mstrmojo-ar-catSQL-sectionBox {
+        padding-left: 0px;
+      }
+    }
+  }
+  &.mstrmojo-Editor > .mstrmojo-Editor-buttons {
+    padding-top: 20px;
+    .mstrmojo-ar-catSQL-button {
+      border: 1px solid $wsvi-border-gray;
+      max-width: 68px;
+      .mstrmojo-Button-text  {
+        background-color: $wsvi-primary-white;
+        border: none !important;
+      }
+    }
+  }
+}
+
+table.catsql-hbox {
+  width: 100%;
+  tbody tr td:first-child {
+    width: 182px;
+  }
+  .mstrmojo-wh-NameSpacePullDown {
+    // float:right;
+  }
+
+  table.sqlSection-box, .mstrmojo-ar-catSQL-preview table{
+    width: 98%;
+    tbody tr td:first-child {
+      width: 100%;
+    }
+  }
+}
+
+.mstrmojo-ar-catSQL-revertBtn{
+  margin-right: 788px;
+  max-width: 68px;
+}
+
+.mstrmojo-ar-catSQL-leftPanel {
+  height: 448px;
+  width: 200px;
+  border-right: 1px solid #DEDEDE;
+}
+
+.mstrmojo-ar-catSQL-middlePanel {
+  height: 448px;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #DEDEDE;
+}
+
+.mstrmojo-ar-catSQL-rightPanel {
+  height: 448px;
+  width: 281px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  border-left: 1px solid #fff;
+  .mstrmojo-ar-catSQL-sqlBox {
+    padding-left: 0px;
+    .mstrmojo-wh-NameSpacePullDown {
+      .mstrmojo-wh-labelNS {
+        font-size: 12px !important;
+      }
+      .mstrmojo-ui-SearchablePulldown {
+        max-width: 133px;
+        margin: 0 0 0 5px !important;
+      }
+    }
+  }
+}
+
+.mstrmojo-ar-catSQL-sectionTitle {
+  padding: 16px 0 0 12px;
+  font-weight: bold;
+}
+
+.mstrmojo-ar-catSQL-sectionSubTitle {
+  padding: 16px 0 0 12px;
+}
+
+.mstrmojo-ar-catSQL-sectionBox {
+  padding-left: 9px;
+}
+
+.mstrmojo-ar-catSQL-option {
+  display: block !important;
+  padding-top: 10px;
+  label {
+    margin-left: 5px;
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: none;
+    background: transparent url(images/checkbox.svg) -3px -152px no-repeat;
+  }
+
+  input[type="radio"]:checked {
+    background-position: -3px -127px;
+  }
+}
+
+
+
+
+.mstrmojo-ar-catSQL-check {
+  display: block !important;
+  margin-top: 10px;
+  float: right;
+  white-space: nowrap;
+  label {
+    margin-left: 6px;
+  }
+}
+
+.mstrmojo-ar-catSQL-sqlBox {
+   padding-left: 12px;
+
+  .mstrmojo-ui-SearchablePulldown .mstrmojo-ui-Pulldown-text:after{
+    border-top: #B5B5B5 1px solid;
+    height: 21px;
+  }
+
+  .mstrmojo-wh-TablesTree {
+    //width: 768px; //need change for responsive, width(1010) - 201 (left panel) - 12(margin-left-panel) - 16(margin-right) - 2(border)
+    border: solid 0px #b5b5b5;
+    height: 340px;
+    padding: 9px 0 0 9px;
+    background-color: transparent;
+    .item:hover .item-mn {
+      opacity: 0;
+    }
+
+
+    li.userSel { //select css style
+      background-color: #e5e5e5;
+      >ul {
+        background-color: #ffffff;
+      }
+    }
+    ul>li:hover { //hover css style
+      background-color: #f6f6f6;
+      >ul {
+       background-color: #ffffff;
+      }
+    }
+  }
+
+  .mstrmojo-ar-catSQL-dbTablesTree-none.mstrmojo-wh-TablesTree {
+    height: 340px;
+  }
+
+  .mstrmojo-ar-catSQL-button {
+    float: right;
+    margin-left: 12px;
+  }
+}
+
+.mstrmojo-ar-catSQL-sqlLabel {
+  padding: 10px 0 3px 0;
+  // force sqlLabel to be margin-bottom free, otherwise, margin-bottom will be influenced by _Editor-ws.scss in workstation.
+  margin-bottom: 0px !important;
+  line-height: 22px;
+}
+
+.mstrmojo-MEBox.mstrmojo-ar-sqlInput-inputbox.visible.mstrmojo-ar-catSQL {
+  height: 94px;
+  width: 98%;
+  margin-top: 0;
+  border-radius: 2px;
+  border: 1px solid $wsvi-ui-border-gray !important;
+
+  &.full-column {
+    height: 356px;
+    .mstrmojo-ar-sqlInput-tokenbox {
+        height: 350px;
+    }
+  }
+}
+
+.mstrmojo-ar-catSQL-middlePanel .mstrmojo-ar-catSQL-sqlBox:nth-child(2) .full {
+  height: 94px;
+
+  .mstrmojo-ar-sqlInput-tokenbox {
+      height: 88px;
+  }
+}
+.mstrmojo-ar-catSQL-middlePanel .mstrmojo-ar-catSQL-sqlBox:nth-child(3) .full {
+  height: 225px;
+
+  .mstrmojo-ar-sqlInput-tokenbox {
+    height: 219px;
+  }
+}
+
+.mstrmojo-ar-catSQL .mstrmojo-MEBox-status{
+  display: none;
+}
+
+.mstrmojo-ar-catSQL-middlePanel .mstrmojo-ar-catSQL-sqlBox:nth-child(2) .mstrmojo-MEBox.mstrmojo-ar-sqlInput-inputbox.visible.mstrmojo-ar-catSQL.full {
+  div.mstrmojo-TokenInputBox-edit {
+    height: 93px;
+  }
+}
+
+.mstrmojo-ar-catSQL-middlePanel .mstrmojo-ar-catSQL-sqlBox:nth-child(3) .mstrmojo-MEBox.mstrmojo-ar-sqlInput-inputbox.visible.mstrmojo-ar-catSQL.full {
+  div.mstrmojo-TokenInputBox-edit {
+    height: 224px;
+  }
+}
+
+.mstrmojo-MEBox.mstrmojo-ar-sqlInput-inputbox.visible.mstrmojo-ar-catSQL.full-column div.mstrmojo-TokenInputBox-edit {
+  height: 355px;
+}
+
+.mstrmojo-ar-catSQL .mstrmojo-ar-sqlInput-tokenbox {
+ /* border: solid 1px #aaa !important;*/
+  border: none;
+  padding: 6px 0 0 6px;
+  height: 88px;
+  border-radius: 2px;
+}
+
+.mstrmojo-ar-catSQL-curtain {
+  border: 0;
+  position: absolute;
+  background-color: $wsvi-primary-white;
+  opacity: 0.3;
+  -moz-opacity: 0.3;
+  filter: alpha(opacity=30); // IE8
+}
+
+
+
+
+
+.mstrmojo-ar-catSQL {
+  .mstrmojo-sqlInput-gridCell {
+    height: 20px;
+    line-height: 20px;
+    color: darkblue;
+  }
+  .mstrmojo-Architect-TablePreviewGrid {
+    height: 150px;
+  }
+}
+
+.mstrmojo-WebButton.mstrmojo-ar-catSQL-closeBtn {
+ /* float: right;
+  margin-top: 20px;*/
+  margin-right: 0px;
+  max-width: 68px;
+}
+
+.mstrmojo-ar-catSQL-sqlPreviewLabel {
+  // margin-right: 10px;
+  padding: 16px 0 0 0;
+  font-weight: bold;
+}
+
+.mstrmojo-ar-catSQL-preview {
+  padding-top: 16px;
+  //height: 30px;
+  table {
+    width: 100%;
+  }
+
+  .mstrmojo-ui-Pulldown {
+    display: block !important;
+    margin-right: 3px;
+
+    .mstrmojo-PopupList .item {
+      max-width: 100%;
+    }
+  }
+
+  .mstrmojo-ui-Pulldown-text {
+    height: 20px;
+    line-height: 10px;
+    max-width: 100%;
+    margin-top: 2px;
+    border: 1px solid #AAA;
+    outline: none;
+    background: white url(#{$image-path}/arrow-down.png) no-repeat 98% center;
+  }
+  .mstrmojo-ui-Pulldown.locked div.mstrmojo-ui-Pulldown-text {
+    background: none;
+  }
+  .mstrmojo-InlineEditBox {
+    font-style: italic;
+  }
+  & > table{
+    margin-bottom: 5px;
+  }
+
+  .mstrmojo-wh-NameSpacePullDown {
+    .mstrmojo-wh-btnRefreshNS {
+      margin: 1px -3px 1px 10px;
+      border: 0px solid #ddd;
+      border-radius: 3px;
+      // background-position:4px 4px;
+    }
+  }
+}

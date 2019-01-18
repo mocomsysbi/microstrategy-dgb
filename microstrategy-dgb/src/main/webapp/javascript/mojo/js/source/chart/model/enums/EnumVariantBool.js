@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumVariantBool={VARIANT_TRUE:65535,VARIANT_FALSE:0};

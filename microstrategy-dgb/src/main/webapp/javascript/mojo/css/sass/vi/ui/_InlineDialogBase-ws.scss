@@ -1,0 +1,212 @@
+.mstrmojo-inline-dialog {
+    $configure_bg: #224D6D;
+    $fnt-size: 11px;
+    $viz-icon-padding: 4px;
+
+    line-height: 24px;
+    font-size: $fnt-size;
+
+    > DIV {
+        display: inline-block;
+    }
+
+    .mstrmojo-Label > SPAN {
+        display: inline-block;
+        vertical-align: middle;
+        
+        font-weight: bold;
+        padding-left: $wsvi-default-icon-width + $viz-icon-padding;
+        max-width: $wsvi-capsule-max-width;
+
+        @include wsvi-icon-before('toolbar-viz');
+        @include ellipsis-text();
+    }
+
+    .mstrmojo-bar {
+        background-color: $configure_bg;
+        color: $wsvi-primary-white;
+        padding: 5px (12px - $wsvi-element-padding) 5px 0;
+        @include box-shadow($wsvi-panel-shadow, 0, 6px, 12px, true);
+
+        .mstrmojo-bar-content .mstrmojo-ui-Pulldown {
+            margin-left: 10px;
+            padding: 0;
+            line-height: 0;
+            width: 100px;
+
+            // overwrite standard pulldown styles
+            color: $wsvi-primary-white;
+
+            .mstrmojo-ui-Pulldown-text {
+                background-color: transparent;
+                background-position-y: -87px;
+                border: solid 1px $wsvi-primary-white;
+            }
+
+            &.disabled {
+                background-color: transparent;
+
+                .mstrmojo-ui-Pulldown-text {
+                    color: $wsvi-primary-white;
+                    border-color: $wsvi-primary-white;
+                }
+            }
+        }
+    }
+
+
+    .mstrmojo-bar-content {
+        display: inline; // MacOS safari foreshortens the width without this
+
+        &> DIV,
+        .mstrmojo-CheckBox {
+            padding-left: $wsvi-element-padding;
+            vertical-align: top;
+            font-size: $fnt-size; // overwrites mstrmojo-Label
+        }
+
+        .mstrmojo-scrollable-container {
+            overflow: hidden;
+            max-width: 600px;
+            .ScrollableContainer-content {
+                max-width: 600px;
+            }
+        }
+
+        @mixin truncItem {
+            padding: 6px 6px;
+            border: solid 1px $wsvi-primary-white;
+            border-radius: $wsvi-box-radius;
+            max-width: $wsvi-capsule-max-width;
+            cursor: default;
+            vertical-align: top;
+            line-height: 27px;
+
+            @include ellipsis-text();
+        }
+
+        .truncMore {
+            $left-margin: 2px;
+            position: relative;
+
+            @include truncItem;
+
+            padding-left: $left-margin + $wsvi-default-icon-width + $viz-icon-padding;
+            margin-left: $wsvi-element-padding;
+
+            &:before {
+                position: absolute;
+                left: 7px;
+                content: '+';
+                font-size: 18px;
+                line-height: 25px;
+            }
+        }
+
+        .tgtItem {
+            $left-margin: 2px;
+
+            @include truncItem;
+            @include wsvi-icon-before('toolbar-viz', $left-margin);
+
+            padding-left: $left-margin + $wsvi-default-icon-width + $viz-icon-padding;
+
+            &:not(:nth-child(2)) { // first child is already hidden
+                margin-left: $wsvi-element-padding;
+            }
+
+            &:before {
+                top: 1px;
+            }
+        }
+
+        .tgtDefault {
+            @include truncItem;
+
+            opacity: .9;
+            border: rgba($wsvi-primary-white, .5) dashed 1px;
+            font-size: 12px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    .mstrmojo-bar-buttons {
+        float: right;
+
+        .mstrmojo-TargetSelector>div {
+            padding: 0;
+
+            .mstrmojo-Button.mstrmojo-WebButton {
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+}
+
+.mstrmojo-bar-overflow .tgtItem {
+    cursor: default;
+
+    td {
+        padding: 2px;
+    }
+
+    .mstrmojo-CMI-text {
+        @include ellipsis-text();
+        max-width: $wsvi-capsule-max-width;
+    }
+
+    .mstrmojo-CMI-left {
+        @include wsvi-icon-size;
+        @include wsvi-icon-toolbar-viz-dark;
+    }
+}
+
+
+.mstrmojo-ui-OptionsButton {
+    &.disabled {
+        opacity: .5;
+    }
+
+    .opts {
+        @include wsvi-icon-selector-options;
+        @include wsvi-icon-size;
+        margin-top: 3px;
+        margin-left: 2px;
+    }
+
+    .mstrmojo-ui-PopupWidget {
+        max-width: 350px;
+        padding: $wsvi-element-padding;
+        background-color: $wsvi-background-gray;
+    }
+
+
+    .mstrmojo-clear-check {
+        padding-right: 20px;
+        font-size: 11px;
+        line-height: 14px;
+
+        &.disabled {
+            color: $wsvi-buttonfont-disable;
+        }
+
+        &>input[type="checkbox"]:not(:checked)+label,
+        &>input[type="checkbox"]:checked+label {
+            padding-left: 20px;
+
+            &:before {
+                top: 5px;
+            }
+        }
+    }
+
+    .buttonBox {
+        padding: 16px (16px - $wsvi-element-padding) 0;
+        min-width: 165px;
+    }
+
+    .mstrmojo-WebButton {
+        margin-left: $wsvi-element-padding;
+    }
+}

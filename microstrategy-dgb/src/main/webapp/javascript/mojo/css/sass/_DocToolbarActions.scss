@@ -1,0 +1,32 @@
+/** Begin Doc Toolbar Action (mstrmojo-dta) Export / Print Styles */
+
+.mstrmojo-dta.export{
+  width: 325px;
+
+  .ucalert {
+    margin: 10px 0 15px;
+  }
+  .exp_opts {
+    margin: 10px 0 20px;
+  }
+}
+
+/** End Doc Toolbar Export / Print Styles */
+
+/** Begin Doc Toolbar Action (mstrmojo-dta) Save Styles */
+
+.mstrmojo-dta.save{
+    min-width: 475px;
+    max-width: 600px;
+
+    .ucalert {
+        height: 60px;
+    }
+}
+
+/** End Doc Toolbar Save Styles */
+
+/** Saved successfully dialog **/
+.mstrmojo-saved.mstrmojo-Editor.mstrmojo-alert .mstrmojo-Editor-content .alert-content:before {
+  background: url(vi/images/notification.svg) no-repeat scroll -311px -65px;
+}

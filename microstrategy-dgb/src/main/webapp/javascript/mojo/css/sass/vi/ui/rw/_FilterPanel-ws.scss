@@ -1,0 +1,208 @@
+@import 'UnitContainer-ws';
+
+.workstation {
+  .mstrmojo-VIFilterPanel {
+    height: 100%;
+    min-height: 96px;
+    position: relative;
+
+    .mstrmojo-ui-CheckList {
+      .item {
+        line-height: $wsvi-panel-row-height;
+      }
+
+      &.mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical{
+        padding-right: 4px;
+      }
+    }
+
+    .mstrmojo-DocSubPanel-content {
+      overflow: visible;
+      padding-bottom: 4px; // DE57885: ensure highlight border can be fully shown
+
+      .fp-divider {
+        display: none; //Do not show divider. Use splitter as the divider line
+        height: 0;
+
+        @include single-transition($property: height, $duration: 150ms, $function: ease-out);
+
+        box-shadow: none;
+        border-bottom: 1px solid $wsvi-splitline-gray;
+        margin: 0px 8px 0px 8px;
+
+        &:first-child {
+          border-bottom: 0;
+          @include box-shadow(#fff, 0, 0, 0);
+        }
+      }
+
+      .fp-empty-msgbox {
+        color: #878788;
+        padding: 9px;
+        line-height: 18px;
+      }
+
+      .fp-empty-msgbox.hide {
+        display: none;
+      }
+
+      .mstrmojo-VIPanelPortlet {
+        padding: 10px 8px 12px 3px; //#VIRevamp DE50678
+        position: relative;
+
+        .mstrmojo-VITitleBar.small {
+
+          .left-toolbar .mstrmojo-Image {
+            margin: -1px 0px 0px 0px;  //#VIRevamp
+          }
+
+          .title-text .mstrmojo-EditableLabel {
+            padding-left: 3px; //#VIRevamp, decrease left padding
+            padding-right: 0; //no right padding
+          }
+
+          .mstrmojo-VITitleToolbar {
+            margin: 2px 1px 2px 3px;
+          }
+
+        }
+
+        &.invalid {
+          .mstrmojo-VIPanel-content {
+            display: none !important;
+          }
+          .mstrmojo-VITitleBar.small {
+            .left-toolbar {
+              display: none;//Hide left toolbar collapse icon
+            }
+
+            .title-text .mstrmojo-EditableLabel {
+              color: rgba($wsvi-primary-black, 0.45);
+              &:after {
+                content: '';
+                position: absolute;
+                top: 11px;
+                right: 20px;
+                width: 25px;
+                height: 18px;
+                @include wsvi-icon-warning-triangle-small;
+              }
+            }
+          }
+        }
+
+        .VisFilter .left-toolbar .mstrmojo-Image img {
+          width: 13px;
+          display: block;
+          margin: 3px -1px 0 auto;
+        }
+
+        .mstrmojo-VIPanel-titlebar {
+          .title-text {
+            cursor: pointer;
+          }
+
+          .right-toolbar {
+            float: right;
+
+            .item.mnu {
+              .icn {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        .mstrmojo-VIPanel-content {
+          .mstrmojo-DocSelector{
+
+            padding-left: 5px; //#VIRevamp
+
+            .content {
+              overflow: hidden;
+            }
+
+            .item.selected {
+              text-decoration: none;
+            }
+          }
+          @include line-through;
+        }
+
+        // #947007
+        .mstrmojo-scrollbar-host .mstrmojo-scrolltrack.vertical {
+          right: 0;
+        }
+      }
+    }
+
+    .mstrmojo-DocSubPanel-content.fp-empty-center {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+  }
+
+  .mstrmojo-ui-MenuEditor {
+    .mstrmojo-VIPanelPortlet {
+      margin: 0;
+    }
+
+    .mstrmojo-VIPanelPortlet {
+      .left-toolbar .mstrmojo-Image {
+        background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+        background-position: -514px -30px;
+      }
+
+      .mstrmojo-VITitleBar.collapsed .left-toolbar .mstrmojo-Image {
+        background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+        background-position: -514px -60px;
+      }
+
+      .mstrmojo-VITitleBar.small .title-text .mstrmojo-EditableLabel {
+        font-size: 8pt;
+        padding: 0 3px;
+      }
+    }
+  }
+
+  .mstrmojo-VIPanel-titlebar.VisFilter .left-toolbar .mstrmojo-Image {
+    background: none;
+  }
+
+  .filterPanel-confirm{
+    .mstrmojo-Editor-content{
+      .mstrmojo-Label{
+        line-height: 18px;
+        margin: 8px 0px;
+        &:before {
+          position: relative;
+          top: 4px;
+          content: url(#{$vi-img-path}/prompt.png);
+        }
+      }
+    }
+  }
+
+  //Override the default Checklist background position for Filter Panel alone as its line height differs from other places
+  .mojo-theme-light {
+    .mstrmojo-VIFilterPanel .mstrmojo-ui-CheckList .item {
+      background-position: -3px -21px;
+
+      &.selected {
+        background-position: -3px 4px;
+      }
+    }
+  }
+
+  .mojo-theme-dark {
+    .mstrmojo-VIFilterPanel {
+      .mstrmojo-DocSubPanel-content {
+        .fp-divider {
+          @include box-shadow($theme-dark-offset-highlight-color, 0, 1px, 0);
+          border-bottom-color: $theme-dark-base-highlight-color;
+        }
+      }
+    }
+  }
+}

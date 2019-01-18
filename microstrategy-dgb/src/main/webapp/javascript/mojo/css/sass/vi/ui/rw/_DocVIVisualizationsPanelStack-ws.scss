@@ -1,0 +1,63 @@
+//DE63158;Disable vertical scroll bar in the canvas area
+//enable scroll bar in preview mode, but not in regular mode or preview mode;
+//Since in edit model, scroll bar is not supported well, with several resize issues
+.workstation {
+    .previewMode {
+        .mstrmojo-VIVizPanel {
+            .mstrmojo-DocPanel {
+                &.mstrmojo-scrollbar-host, &.mstrmojo-sb-host-show-default {
+                    // Show the y-axis scrollbar (on mac) only for preview mode.
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                }
+            }
+        }
+    }
+}
+
+
+.workstation {
+    /** BEGIN: DocVIVisualizationsPanelStack **/
+    .mstrmojo-VIVizPanel {
+        overflow: hidden;
+        @include border-radius(3px);
+
+        border: 1px solid transparent;
+        position: relative;
+
+        .mstrmojo-DocPanel {
+            // DE47870 Highlight doesn't display correctly on the edges.
+            // !!!!Please do search using keyword "DE47870" in the code base to see the whole changes
+            left: 2px;
+            // Position cannot be absolute, as top panel selector bar would end up hidden behind DocPanel
+            position: relative;
+            // DE47870 Highlight doesn't display correctly on the edges.
+            // !!!!Please do search using keyword "DE47870" in the code base to see the whole changes
+            top: 2px;
+            transition: box-shadow .5s;
+
+            &.mstrmojo-scrollbar-host {
+                overflow: hidden;
+            }
+
+            // Selected unit container.
+            &.pulse {
+                box-shadow: #23A3D3 0 0 0 5px;
+            }
+        }
+    }
+
+    .mojo-theme-light {
+        .mstrmojo-VIVizPanel {
+            background-color: #fff;
+        }
+    }
+
+    .mojo-theme-dark {
+        .mstrmojo-VIVizPanel {
+            background-color: $theme-dark-viz-panel-background-color;
+            @include box-shadow($theme-dark-panel-shadow-color, 0, 0, $theme-dark-panel-shadow-blur);
+        }
+    }
+    /** END: DocVIVisualizationsPanelStack **/
+}

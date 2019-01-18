@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumFontRotation={FR_NORMAL:0,FR_45:5,FR_90:2,FR_180:3,FR_270:4,FR_315:6,FR_CUSTOME:7,FR_HOTEL:1,FR_AUTOMATIC:-1};

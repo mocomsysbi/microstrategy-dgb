@@ -1,0 +1,151 @@
+.mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown.mstrmojo-di-projectAttributeSearchbox .mstrmojo-ui-Pulldown-text:after {
+  background: transparent url(images/wh/search_sprite.png) no-repeat 5px 5px;
+  border-left: none;
+}
+
+.mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown.mstrmojo-di-projectAttributeSearchbox.wait .mstrmojo-ui-Pulldown-text:after {
+  //background: url("images/circle-loader.gif") no-repeat scroll center center;
+  background: url(vi/images/spinner_light.gif) no-repeat scroll center center;
+  -webkit-background-size: 15px 15px;
+  -webkit-background-size: 15px 15px;
+  -o-background-size: 15px 15px;
+  background-size: 15px 15px;
+  width: 15px;
+  height: 15px;
+  padding-top: 4px;
+  padding-right: 8px;
+  // TQMS 955450: IE8 doesn't support background-size, use -ms-filter, path is relative to html.
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../javascript/mojo/css/vi/images/spinner_light.gif',sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../javascript/mojo/css/vi/images/spinner_light.gif',sizingMethod='scale')";
+}
+
+.mstrmojo-Editor.di-projects-attribute-panel > .mstrmojo-Editor-content{
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.di-projects-attribute-panel {
+  width: 460px;
+
+  .mstrmojo-ui-Pulldown {
+    .mstrmojo-PopupList {
+      border-width: 0;
+      padding: 0;
+    }
+  }
+
+  .mstrmojo-di-projectAttributeSearchbox {
+    width: 336px;
+    margin-left: 18px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .browseButton {
+    margin-right: 18px;
+    margin-left: 5px;
+    width: 60px;
+  }
+
+  .mstrmojo-di-title-box {
+    width: 460px;
+    border-bottom: 1px solid #DEDEDE;
+  }
+
+  .mstrmojo-di-content-box {
+    width: 460px;
+    height: 200px;
+    border-top: 1px solid #FFFFFF;
+    padding-left: 18px;
+  }
+
+  .mstrmojo-ui-Pulldown {
+    width: 356px;
+
+    .mstrmojo-ui-Pulldown-text {
+      max-width: 356px;
+      background: white url(images/wh/search_sprite.png) no-repeat 335px 5px;
+    }
+  }
+
+  .mstrmojo-di-projects-attribute-left-box {
+    width: 230px;
+    border-right: 1px solid #DEDEDE;
+    height: 200px;
+    tr td {
+      padding-left: 18px;
+    }
+  }
+
+  .mstrmojo-di-projects-attribute-right-box {
+    width: 230px;
+    border-left: 1px solid #FFFFFF;
+    height: 200px;
+    tr td {
+      padding-left: 11px;
+    }
+  }
+
+  .mstrmojo-di-projects-attribute-title-label {
+    font-family: Arial;
+    width: 100px;
+    font-size: 11px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    height: 16px;
+  }
+
+  .mstrmojo-di-projects-attribute-label {
+    background-image: url(images/DI/icon_att.png);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    font-family: Arial;
+    margin-bottom: 11px;
+    width: 100px;
+    height: 22px;
+  }
+
+  .ipa {
+    font-style: italic;
+  }
+
+  .mstrmojo-di-projects-attribute-placeholder {
+    margin-bottom: 11px;
+    width: 100px;
+    height: 110px;
+    padding-top: 50px;
+    padding-left: 58px;
+    color: #a0a7ac;
+  }
+
+  .mstrmojo-di-projects-form-label {
+    background-image: url(images/DI/icon_att_form.png);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    margin-bottom: 11px;
+    font-family: Arial;
+    width: 100px;
+    height: 22px;
+  }
+
+  .mstrmojo-di-projects-form-select {
+    background-image: url(images/DI/icon_att_form.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 15px;
+  }
+
+  .mstrmojo-di-projects-attribute-formMapsList {
+    @include scrollBar();
+    margin-bottom: 10px;
+    height: 130px;
+    overflow: auto;
+    overflow-x: hidden;
+
+    .mstrmojo-DropDownButton {
+      width: 130px;
+      margin-bottom: 5px;
+    }
+  }
+}

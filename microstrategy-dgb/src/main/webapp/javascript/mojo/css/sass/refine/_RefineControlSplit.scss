@@ -1,0 +1,238 @@
+@import "RefineVariables";
+
+.refine-transformations.short .refine-controls .mstrmojo-Button.mstrmojo-WebButton {
+  min-width: 46px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-Button.mstrmojo-WebButton {
+  margin: 15px 12px 5px 0px;
+  min-width: 66px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-DropDownButton {
+  margin: 7px 5px;
+  max-width: 175px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-DropDownButton-iconNode {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+//Find and Replace
+.refine-transformations-control div:nth-child(7) {
+    .mstrmojo-HBox .mstrmojo-HBox .mstrmojo-TextBox {
+      margin-top: 12px !important;
+    }
+    tr td:nth-child(2) {
+      .mstrmojo-ui-Pulldown.refine-pulldown {
+        margin-bottom: 0px;
+      }
+    }
+
+    .mstrmojo-HBox tr td:nth-child(1) {
+      .mstrmojo-Label {
+        padding-top: 3px;
+      }
+    }
+}
+
+//Remove
+.refine-transformations-control div:nth-child(8) {
+    tr td:nth-child(1) .mstrmojo-TextBox {
+      margin-top: 6px !important;
+    }
+    tr td:nth-child(2) .refine-tag-box-new-input.mstrmojo-TextBox {
+      margin-top: 0px !important;
+      height: 23px;
+    }
+}
+
+//Transform Cell
+.refine-transformations-control div:nth-child(3) {
+    tr td:nth-child(2) .mstrmojo-TextBox.Date {
+      margin-top: 8px !important;
+    }
+    tr td:nth-child(2) .mstrmojo-TextBox {
+      margin-top: 12px !important;
+    }
+}
+
+//Split
+.refine-transformations-control div:nth-child(1) {
+    tr td:nth-child(2) {
+    .mstrmojo-TextBox {
+      margin-top: 8px;
+    }
+  }
+    tr td:nth-child(1) {
+      .mstrmojo-TextBox {
+        margin-top: 12px;
+      }
+  }
+}
+
+//Rename
+.refine-transformations-control div:nth-child(9) {
+    .mstrmojo-TextBox {
+      margin-top: 12px;
+    }
+}
+
+//Extract
+.refine-transformations-control div:nth-child(5) {
+  .mstrmojo-HBox tr td:nth-child(2) {
+    .mstrmojo-TextBox {
+      margin-top: 7px;
+    }
+  }
+}
+
+//Others
+.refine-transformations-control div:nth-child(9) {
+  tr td:nth-child(2) {
+    .mstrmojo-TextBox {
+      margin-top: 12px !important;
+      width: 80px;
+    }
+  }
+  tr td:nth-child(3),  tr td:nth-child(4){
+    .mstrmojo-TextBox {
+      margin-top: 8px !important;
+      width: 80px;
+    }
+  }
+}
+
+.refine-transformations.short .refine-controls .mstrmojo-TextBox {
+  width: 60px;
+  &.refine-extract-fromto {
+    width: 120px;
+    margin-top: 12px !important;
+  }
+  &.refine-split-fromto {
+    width: 200px;
+    margin-top: 12px;
+  }
+}
+
+.refine-transformations .refine-controls .mstrmojo-TextBox {
+  width: 80px;
+  padding: 3px 3px 3px 3px;
+  border-radius: 3px;
+  border: 1px solid #b5b5b5;
+  margin: 16px 5px 6px 0px;
+  font-size: 9pt;
+  font-family: Arial;
+  color: $fontColor;
+  height: 22px;
+  &.refine-extract-fromto {
+    width: 120px;
+    margin-top: 12px !important;
+  }
+  &.refine-split-fromto {
+    width: 200px;
+  }
+}
+
+.refine-transformations .refine-controls .mstrmojo-TextBox.Date {
+  width: 100px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-TextBox.mstrmojo-empty {
+  color: $fontColorDisable;
+}
+
+.refine-transformations .refine-controls .mstrmojo-Label {
+  margin: 16px 5px 6px 0px;
+}
+
+.refine-transformations.short .refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 80px;
+}
+
+.refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 90px;
+  .mstrmojo-ui-Pulldown-text {
+    max-width: 90px;
+    color: $fontColor;
+  }
+  .mstrmojo-PopupList {
+    width: auto;
+    max-width: initial;
+    background: $popupContainerFillColor;
+  }
+}
+
+.refine-transformations.short .refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown.refine-other-columns {
+  width: 150px;
+}
+
+.refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown.refine-other-columns {
+  width: 150px;
+  .mstrmojo-ui-Pulldown-text {
+    color: $fontColorDisable;
+    max-width: 150px;
+  }
+  .mstrmojo-PopupList {
+    background: $popupContainerFillColor;
+    .item {
+      max-width: 250px;
+    }
+  }
+}
+
+.refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown.refine-other-columns.selected {
+  .mstrmojo-ui-Pulldown-text {
+    color: $fontColor;
+  }
+}
+
+.refine-transformations .mstrmojo-refine-help {
+  margin: 16px 5px 6px 0px;
+}
+
+.refine-transformations-top .refine-controls.delete .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 110px;
+  .mstrmojo-ui-Pulldown-text {
+    max-width: 126px;
+  }
+  .mstrmojo-PopupList {
+    .item {
+      max-width: 110px;
+    }
+  }
+}
+
+.refine-transformations-top .refine-controls.delete .mstrmojo-HBox .mstrmojo-HBox tr td:nth-child(3) .mstrmojo-TextBox {
+  margin-top: 7px ;
+}
+
+.refine-transformations-top .refine-controls.delete .mstrmojo-HBox .mstrmojo-HBox tr td:nth-child(4) .mstrmojo-TextBox.refine-tag-box-new-input {
+  margin-top: 0px !important ;
+  padding-top: 0px;
+  height: 23px;
+}
+
+
+.refine-controls-remove-text-box {
+  height: 44px;
+}
+
+.workstation{
+  .refine-transformations .refine-controls .mstrmojo-Button.mstrmojo-WebButton {
+    margin: 12px 12px 5px 0px;
+    min-width: 66px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .refine-transformations .refine-controls .mstrmojo-TextBox {
+    height: 26px;
+    margin: 0px 5px 0px 0;
+  }
+}

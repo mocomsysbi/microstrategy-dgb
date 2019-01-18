@@ -1,0 +1,42 @@
+@import '../../../vi/workstation-global';
+
+.workstation .mstrmojo-PassThroughExpressionInputBox {
+	margin: 0;
+	border-radius: 3px;
+
+	span {
+		&.mstrmojo-itemwrap:first-child {
+			margin-left: 2px;
+		}
+
+		&.mstrmojo-token {
+			font-family: $wsvi-normal-font-family;
+		    font-size: $wsvi-normal-font-size;
+		    color: $wsvi-primary-black;
+
+			&.mstr {
+				color: $wsvi-primary-blue;
+			}
+		}
+	}
+
+	&.empty {
+		span.mstrmojo-token.mstr {
+			color: $wsvi-font-gray;
+		}
+	}
+
+	&.empty.active {
+		span.mstrmojo-token.mstr {
+			color: $wsvi-primary-blue;
+		}
+	}
+
+	&.active {
+		border-color: $wsvi-primary-blue;
+	}
+
+	&.err {
+		border-color: rgb(255, 165, 0);
+	}
+}

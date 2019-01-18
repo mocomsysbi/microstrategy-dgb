@@ -1,0 +1,133 @@
+@import '../../global-mixins';
+
+@mixin ctrlButton() {
+  display: inline-block;
+  width: 18px;
+  height: 16px;
+  vertical-align: middle;
+  background-image: url("../css/vi/images/dataset.svg");
+}
+
+.stacked-kpi-container {
+  .slick-dots {
+    bottom: 0;
+    li button {
+      &:before {
+        font-family: '';
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+.stacked-ctrl-bar {
+  position: absolute;
+  bottom: 4px;
+  z-index: 10;
+
+  .text {
+    display: inline-block;
+    font-family: Arial;
+    color: rgba($wsvi-primary-white, 0.9);
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+
+  .currIndex {
+    cursor: text;
+    @include user-select(text);
+    max-width: 40px;
+    overflow: hidden;
+    text-overflow: clip;
+    border-bottom: rgba($wsvi-primary-white, 0.9) solid 1px;
+  }
+
+  .divider, .totalPages {
+    margin-left: 4px;
+  }
+
+  .prev-button {
+    @include ctrlButton();
+    background-position: -690px -241px;
+  }
+
+  .next-button {
+    @include ctrlButton();
+    background-position: -660px -241px;
+  }
+
+  &.small {
+    .text {
+      display: none;
+    }
+  }
+
+  &.middle {
+    .text {
+      font-size: 11px;
+      height: 16px;
+      line-height: 16px;
+    }
+
+    .currIndex {
+      margin-left: 11px;
+    }
+
+    .next-button {
+      margin-left: 12px;
+    }
+  }
+
+  &.large {
+    .text {
+      font-size: 16px;
+      height: 19px;
+      line-height: 19px;
+    }
+
+    .currIndex {
+      margin-left: 15px;
+    }
+
+    .prev-button {
+      height: 18px;
+      background-position: -630px -240px;
+    }
+
+    .next-button {
+      height: 18px;
+      background-position: -600px -240px;
+      margin-left: 16px;
+    }
+  }
+}
+
+.light-style.kpicard-widget .stacked-ctrl-bar {
+  .text {
+    color: $wsvi-primary-black;
+  }
+
+  .currIndex {
+    border-bottom: $wsvi-primary-black solid 1px;
+  }
+
+  &.small, &.middle {
+    .prev-button {
+      background-position: -690px -211px;
+    }
+
+    .next-button {
+      background-position: -660px -211px;
+    }
+  }
+
+  &.large {
+    .prev-button {
+      background-position: -630px -210px;
+    }
+
+    .next-button {
+      background-position: -600px -210px;
+    }
+  }
+}

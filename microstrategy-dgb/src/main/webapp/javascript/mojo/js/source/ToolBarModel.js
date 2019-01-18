@@ -1,0 +1,1 @@
+(function(){mstrmojo.ToolBarModel=mstrmojo.declare(mstrmojo.Model,null,{scriptClass:"mstrmojo.ToolBarModel",getChildren:function getCh(node,config){return(node||this.n||this).items;}});})();

@@ -1,0 +1,6 @@
+// Include the page-common CSS bundle
+@import 'sass/bundles/page-common-css';
+
+// Include other css components required/shared by mojo features/apps available in the page.
+//@import 'sass/vi/button';
+@import 'sass/base-themes';

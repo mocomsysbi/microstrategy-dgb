@@ -1,0 +1,83 @@
+/** Start: mstrmojo.rw.xtab._XtabColResize **/
+.xrsz.hasOwnAvatar,
+.mstrmojo-Xtab .xrsz {
+    position: absolute;
+    top: 0;
+    width: 6px;
+    background: none;
+    height: 100%;
+    z-index: 1000;
+    cursor: col-resize;
+
+    &.zero {
+        cursor: e-resize;
+    }
+}
+
+.mstrmojo-Xtab .xrsz:active {
+    margin-left: 3px;
+}
+
+.mstrmojo-Xtab .xrsz:active:before {
+    content : "";
+    width: 11px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -4px;
+}
+
+.mstrmojo-Xtab .xrsz:active:hover,
+.xrsz.hasOwnAvatar:before {
+    width: 2px;
+    background: linear-gradient( to bottom, #e4f6ff, #e4f6ff 50%, #34abeb 50%, #34abeb);
+    background-size: 2px 4px;
+}
+
+.xrsz.hasOwnAvatar:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.xrsz.hasOwnAvatar {
+    width: auto;
+}
+
+.xrsz.hasOwnAvatar .xrsz-ttp {
+    position: relative;
+    background-color: #ededed;
+    color: #000;
+    text-align: center;
+    border: 1px solid #747474;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 10px;
+
+    left: -50%;
+    line-height: 15px;
+    margin-top: -23px;
+    padding: 1px 4px;
+}
+
+.xrsz.hasOwnAvatar .xrsz-anchr,
+.xrsz.hasOwnAvatar .xrsz-anchr:before {
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top-color: #747474;
+    top: -5px;
+    position: absolute;
+    left: -5px;
+}
+.xrsz.hasOwnAvatar .xrsz-anchr:before {
+    content: "";
+    position: absolute;
+    border-top-color: #ededed;
+    top: -6px;
+}
+/** End: mstrmojo.rw.xtab._XtabColResize **/

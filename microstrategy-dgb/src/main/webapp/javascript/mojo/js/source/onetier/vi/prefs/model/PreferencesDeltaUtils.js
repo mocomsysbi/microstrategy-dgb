@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Obj");mstrmojo.onetier.vi.prefs.model.PreferencesDeltaUtils=mstrmojo.declare(null,null,{scriptClass:"mstrmojo.onetier.vi.prefs.model.PreferencesDeltaUtils",getNewDeltaObject:function getNewDeltaObject(){this.throwAbstractMethodError("getNewDeltaObject");}});}());

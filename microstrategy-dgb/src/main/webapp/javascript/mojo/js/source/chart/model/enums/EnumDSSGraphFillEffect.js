@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSGraphFillEffect={DssGraphFillSimple:0,DssGraphFillGenericGradient:1,DssGraphFillWash:3,DssGraphFillPicture:4,DssGraphFillUserPicture:6,DssGraphFillBrush:13,DssGraphFillAdvancedWash:14,DssGraphFillPattern:101};

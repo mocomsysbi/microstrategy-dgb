@@ -1,0 +1,40 @@
+/** BEGIN: DocRelativePanel **/
+.mstrmojo-VIDocRelativePanel {
+
+    .mstrmojo-DocSubPanel-content {
+        position: relative;
+
+        &.mstrmojo-sb-show-default {
+            overflow: hidden;
+        }
+
+        &:after {
+            background: #34ABEB;
+            bottom: auto;
+            content: '';
+            left: auto;
+            position: absolute;
+            right: auto;
+            top: auto;
+        }
+    }
+
+    // This class on the doc relative panel denotes that it's unit containers cannot be dragged.
+    &.undraggable-uc {
+        .mstrmojo-UnitContainer {
+            .mstrmojo-VITitleBar {
+                .title-text {
+                    .mstrmojo-EditableLabel {
+                        cursor: default;
+
+                        &.editable {
+                            cursor: text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** END: DocRelativePanel **/

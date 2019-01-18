@@ -1,0 +1,43 @@
+/*
+  CSS Styles for Data Import web application for Platform.
+
+  This scss file is used to define all the data import styles. It is then compiled into the
+  corresponding minified css file that goes into production and downloaded at runtime.
+
+  Note: Please do not change the corresponding css file as they will be overwritten by the compiled
+  version of this file. Instead all data import style changes should be made in this scss file or the imported partials.
+
+  Author: Nikhil Baradwaj
+
+*/
+
+@import 'sass/vi/vi-global-ws';
+@import 'sass/normalize';
+@import "data-import-global-override";
+@import 'sass/vi/workstation-global';
+@import 'sass/global-mixins';
+
+@import "sass/base-themes-ws";
+@import "sass/di/DIFiletypeExtension";
+
+//For SE who are using sass >= v3.3.0, please add !global at the end of $env in order to make it work
+$env: web;
+@import "sass/di/data-import-core-ws";
+@import "sass/refine/refine-core";
+@import "sass/bundles/workstation-di";
+@import "sass/di/di-editor";
+@import "sass/vi/waitBox";
+
+// Add the one-tier specific overrides.
+@import 'sass/onetier/one-tier-overrides';
+
+//The change is made for US89846
+
+//@import 'sass/global-mixins';
+//
+//@import "sass/base-themes";
+//@import "sass/di/data-import-core";
+//@import "sass/refine/refine-core";
+//@import "sass/bundles/mojo-di";
+//@import "sass/di/di-editor";
+//@import "sass/vi/waitBox";

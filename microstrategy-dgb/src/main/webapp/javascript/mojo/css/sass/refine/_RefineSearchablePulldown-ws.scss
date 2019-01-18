@@ -1,0 +1,24 @@
+.workstation {
+
+  @import "RefineVariables-ws";
+
+  .mstrmojo-ui-Pulldown-label {
+    position: absolute;
+    display: none;
+    cursor: default;
+    background: url(images/DI/Workstation/workstation.svg) no-repeat 4px 1px;
+    color: $fontColorDisable;
+    background-position: -193px -5px;
+    width: 60px !important;
+  }
+
+  .mstrmojo-Refine-SearchablePulldown.mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+    .mstrmojo-ui-Pulldown-text {
+      &:after {
+        margin-top: 2px;
+        border-left: none !important;
+      }
+    }
+  }
+
+}

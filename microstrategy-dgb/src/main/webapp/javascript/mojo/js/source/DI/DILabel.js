@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Label");mstrmojo.DI.DILabel=mstrmojo.declare(mstrmojo.Label,null,{scriptClass:"mstrmojo.DI.DILabel",markupString:'<div id="{@id}" class="mstrmojo-Label {@cssClass}" style="{@cssText}" title="{@title} "mstrAttach:click,mouseover,mouseout></div>'});}());

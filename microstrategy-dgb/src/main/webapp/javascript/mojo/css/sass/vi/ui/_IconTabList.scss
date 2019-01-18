@@ -1,0 +1,158 @@
+@import '../vi-global';
+@import '../themes';
+
+/** BEGIN: IconTabList **/
+.mstrmojo-VIIconTabList {
+  position: relative;
+
+    & > div {
+        height: 19px;
+        overflow: hidden;
+    }
+
+    .item {
+        @include border-radius(1px 1px 0 0);
+
+        background-color: #cdcdcd;
+        border-width: 1px 1px 0;
+        border-style: solid;
+        border-color: #dcddde;
+        cursor: pointer;
+        float: left;
+        height: 17px;
+        min-width: 29px;
+        max-width: 111px;
+        margin: 0 1px;
+
+        &:first-child {
+            @include border-radius(0 1px 0 0);
+
+            border-left-width: 0;
+            margin-left: 0;
+        }
+
+        div {
+            @include box-sizing();
+            @include ellipsis-text();
+
+            font-size: 9px;
+            font-family: Arial, sans-serif;
+            line-height: 20px;
+            position: relative;
+            text-align: center;
+            text-indent: -10000px;
+            text-transform: uppercase;
+            width: 100%;
+
+            &:after {
+                background: transparent url(#{$vi-img-path}/menu_icons.png) 0 0 no-repeat;
+                content: "";
+                height: 17px;
+                left: 9px;
+                opacity: 0.6;
+                position: absolute;
+                top: 0;
+                width: 11px;
+            }
+        }
+
+        &.edt {
+            div:after {
+                background-position: 0 -86px;
+            }
+        }
+
+        &.prp {
+            div:after {
+                background-position: 0 -146px;
+            }
+        }
+
+        &.flt {
+            div:after {
+                background-position: 0 -116px;
+            }
+        }
+
+        &.selected {
+            background-color: #e4e4e5;
+            border-color: #fefefe;
+            cursor: default;
+            height: 18px;
+
+            div {
+                padding: 0 9px 0 26px;
+                text-indent: 0;
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.dnd {
+        .selected {
+            border-width: 1px 1px 0;
+            position: absolute;
+            top: 0;
+        }
+
+        .item {
+            @include single-transition(margin, 100ms);
+        }
+    }
+}
+/** END: IconTabList **/
+
+
+/** BEGIN: IconTabList Themes **/
+.mojo-theme-light {
+    .mstrmojo-VIIconTabList {
+        .item {
+            background-color: #dddddd;
+            border-color: #dcddde;
+            color: $theme-light-color;
+            max-width: calc(100% - 68px);
+
+            &.selected {
+                background-color: $theme-light-panel-background-color;
+                border-color: $theme-light-panel-border-color;
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VIIconTabList {
+        .item {
+            background-color: #2b2c2d;
+            border-color: #4b5057;
+            color: $theme-dark-color;
+
+            &.selected {
+                background-color: $theme-dark-panel-background-color;
+                border-color: $theme-dark-panel-border-color;
+            }
+
+            &.edt {
+                div:after {
+                    background-position: 0 -286px;
+                }
+            }
+
+            &.prp {
+                div:after {
+                    background-position: 0 -346px;
+                }
+            }
+
+            &.flt {
+                div:after {
+                    background-position: 0 -316px;
+                }
+            }
+        }
+    }
+}
+/** END: IconTabList Themes **/

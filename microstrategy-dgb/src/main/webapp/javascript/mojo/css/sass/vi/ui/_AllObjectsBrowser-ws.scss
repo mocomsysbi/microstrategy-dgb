@@ -1,0 +1,259 @@
+@import '../workstation-global';
+
+$text-color:    #d9d9d9;
+$content-horizontal-padding: 10px;
+
+.workstation {
+  .mstrmojo-VIAllObjectsBrowser {
+    background:#37383a;
+    padding: 0 9px;
+
+    .mstrmojo-VIPanel-header {
+      @include box-sizing;
+      //    padding: 2px $content-horizontal-padding;
+    }
+
+    .title-text {//This layer is just for selector specificity to overwrite the base class
+      .mstrmojo-EditableLabel {
+        color: $text-color;
+        padding-left: 16px;
+        text-transform: uppercase;
+        font-size: 10px;
+        padding-top: 3px;
+        &:before {
+          content: '';
+          height: 13px;
+          width: 13px;
+          display: inline-block;
+          margin-left: -15px;
+          margin-right: 6px;
+          position: relative;
+          top: 3px;
+          background: transparent url(#{$vi-img-path}/menu_icons.png) -25px -290px no-repeat;
+          float: none;
+        }
+      }
+    }
+
+    .mstrmojo-VIPanel-titlebar .mstrmojo-VITitleBar.vi-allObjects-tb .right-toolbar .mstrmojo-VITitleToolbar {
+      margin-top: 8px;
+    }
+
+    .mstrmojo-VIAllObjectsBrowser .mstrmojo-VITitleToolbar .item.cls>.icn {
+      background: transparent url(#{$vi-img-path}/Expand_Collapse_dark.png) -2px 0px no-repeat;
+    }
+
+
+    .mstrmojo-ui-SearchBox {
+      box-sizing: border-box;
+      .mstrmojo-ui-sb-input {
+        padding: 0;
+      }
+    }
+
+    .mstrmojo-Pulldown {
+      box-sizing: border-box;
+      margin: 0px;
+    }
+
+    .mstrmojo-PopupList {
+      background-color: #222;
+      color: #ccc;
+      border: 1px solid #333;
+      box-shadow: none;
+      margin-top: 3px;
+      border-radius: 3px;
+      .item:hover {
+        background-color: #444;
+        color: #ccc;
+      }
+    }
+    .horizontal-line {
+      height: 2px;
+      box-sizing:border-box;
+      border-top: 1px #000 solid;
+      border-bottom: 1px #404040 solid;
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+    .mstrmojo-TreeBrowser {
+      overflow: visible;
+      height: auto;
+      width: auto;
+      background-color: transparent;
+      border:none;
+      //    box-sizing: border-box;
+      color: $text-color;
+      min-height:200px;
+      //    padding-left: $content-horizontal-padding;
+      padding-top:2px;
+
+      &.loading {
+        background: none;
+
+        &:after {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 95px;
+          top: 170px;
+          width: 36px;
+          height: 36px;
+          background-color: white;
+          background-image: url(#{$vi-img-path}/small_loading.gif);
+          border: 1px solid white;
+          border-radius: 10px;
+        }
+      }
+
+      ul {
+        display: block;
+        white-space: nowrap;
+      }
+      li {
+        display: inline-block;
+      }
+      .mstrmojo-TreeNode-div {
+
+        padding: 4px 0;
+        cursor: default;
+
+        &:hover,&.selected{
+          background-color: #777;
+        }
+      }
+      .mstrmojo-TreeNode-state {
+        width: 13px;
+        height: 15px;
+        background: transparent url(#{$vi-img-path}/menu_icons.png) 1px 1px no-repeat;
+        margin-left: 6px;
+        margin-top: 6px;
+      }
+      .mstrmojo-TreeNode-state.leaf {
+        display:none;
+      }
+      .mstrmojo-TreeNode-state.closed {
+        background-position: 1px -229px;
+        margin-top: 3px;
+      }
+
+      .mstrmojo-TreeNode-state.opened {
+        background-position: 1px -200px;
+        margin-top: 3px;
+      }
+
+      .mstrmojo-TreeNode-text {
+        //      font-weight:bold;
+        padding: 0;
+        background: transparent; // this line is going to clear the hover status defined in vi.css
+        background-repeat: no-repeat;
+
+        &.highlight {
+          font-weight: bold;
+        }
+
+        &:before {
+          width: 21px;
+          height: 18px;
+          content: " ";
+          display: inline-block;
+          float: left;
+          margin-left: 3px;
+
+          &.folder {
+            background: yellow;
+          }
+        }
+
+        &.loading {
+          background: none !important;
+          &:before {
+            background: url("../../../images/treeLoading.gif") no-repeat scroll left top transparent;
+          }
+        }
+        &.folder {
+          padding:0px 0px 0px 5px;
+          background-image:none;
+
+          &:before {
+            display: none;
+          }
+        }
+        &.report:before {
+          background-image:url(../../../../style/mstr/images/listView.png);
+          background-position: 0 -40px;
+        }
+        &.attribute:before {
+          @include wsvi-icon-attribute;
+        }
+        &.metric:before {
+          @include wsvi-icon-metric;
+        }
+        &.consolidation:before {
+          @include wsvi-icon-consolidation;
+        }
+        &.custom-group:before {
+          @include wsvi-icon-custom-group;
+        }
+        &.no-obj:before {
+          @include wsvi-icon-warning-tooltip;
+        }
+      }
+    }
+  }
+
+
+  .mojo-theme-light {
+    .mstrmojo-VIAllObjectsBrowser{
+      background-color: $wsvi-primary-gray-light-theme;
+
+      .title-text .mstrmojo-EditableLabel,
+      .mstrmojo-TreeBrowser{
+        color: #444649;
+      }
+
+      .mstrmojo-VITitleToolbar .item.cls>.icn {
+        background: transparent url(#{$vi-img-path}/Expand_Collapse_new.png) -3px -3px no-repeat;
+      }
+      .opened.mstrmojo-VITitleToolbar .item.cls>.icn {
+        background-position: -43px -0px;
+      }
+
+      .horizontal-line{
+        border-top-color: #d1d1d1;
+        border-bottom-color: #f0f0f0;
+      }
+
+      .title-text .mstrmojo-EditableLabel{
+        &:before {
+          content: '';
+          height: 13px;
+          width: 13px;
+          display: inline-block;
+          margin-left: -15px;
+          margin-right: 6px;
+          background: transparent url(#{$vi-img-path}/menu_icons.png) -25px -318px no-repeat;
+        }
+      }
+
+      .mstrmojo-TreeBrowser{
+        .mstrmojo-TreeNode-state {
+          &.closed{
+            background: transparent url(vi/images/dataset.svg) -514px -64px no-repeat;
+          }
+          &.opened{
+            background: transparent url(vi/images/dataset.svg) -514px -33px no-repeat;
+          }
+        }
+        .mstrmojo-TreeNode-div:hover {
+          background-color: $wsvi-hover-gray;
+        }
+        .mstrmojo-TreeNode-div.selected {
+          background-color: $wsvi-selected-blue;
+        }
+      }
+    }
+  }
+
+}

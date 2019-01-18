@@ -1,0 +1,14 @@
+@import "../../../global-mixins";
+
+.mstrmojo-tutorial-helpbar {
+    .item {
+        cursor: pointer;
+        display: inline;
+        padding-left: 34px;
+        line-height: 24px;
+        color: #007EBE;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

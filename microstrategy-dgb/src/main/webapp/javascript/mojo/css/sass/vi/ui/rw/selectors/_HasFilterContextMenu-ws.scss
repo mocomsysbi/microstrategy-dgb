@@ -1,0 +1,120 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+    .mstrmojo-ui-MenuEditor {
+        &.showFilters {
+            .units {
+                overflow: hidden;
+
+                .scroll-container {
+                    max-height: 260px;
+                }
+
+                &.hasVertical {
+                    .item {
+                        padding-right: 24px;
+                        margin-right: -10px;
+                    }
+                }
+            }
+
+            .mstrmojo-VIPanelPortlet {
+                .mstrmojo-VIPanel-titlebar {
+                    display: table;
+
+                    .mstrmojo-VITitleBar.small {
+                        display: table-row;
+
+                        & > DIV {
+                            float: none;
+                        }
+                        .left-toolbar {
+                            display: table-cell;
+                            width: auto;
+                        }
+
+                        .title-text {
+                            display: table-cell;
+                            width: 100%;
+                            cursor: pointer;
+                            vertical-align: middle;
+
+                            .mstrmojo-EditableLabel {
+                                padding: 0;
+                                line-height: 22px;
+                                font-size: $wsvi-menu-font-size;
+                            }
+                        }
+                        .right-toolbar {
+                            display: table-cell;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+
+            .me-content {
+                padding: 0 8px 5px 7px;
+            }
+        }
+
+        &.topRank {
+            max-width: 348px; // To limit whole editor to 350px height
+            .me-content {
+                border-bottom: none;
+
+                > .mstrmojo-Label {
+                    font-size: $wsvi-menu-font-size;
+                    line-height: 20px;
+                    height: 20px;
+                }
+
+                .mstrmojo-ui-ScrollableContainer {
+                    overflow: hidden;
+                    .ScrollableContainer-content {
+                        max-height: 310px; // To limit whole editor to 350px height
+                        .mstrmojo-VIUnitList {
+                            .unit {
+                                color: $wsvi-menu-font-color;
+                                margin-left: 0;
+                                border-left: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .me-buttons {
+                display: none;
+            }
+        }
+
+        &.set-target {
+            width: 160px;
+
+            .me-content {
+                padding: 10px 0 0 0;
+            }
+
+            .mstrmojo-Label {
+                color: $wsvi-menu-font-color;
+                font-size: $wsvi-menu-font-size;
+                margin: 5px;
+                padding: 0 9px;
+                line-height: 12px;
+                white-space: normal;
+            }
+        }
+
+        &.filterDataset {
+            .selectors {
+                overflow: hidden;
+            }
+
+            .mstrmojo-ui-CheckList .item {
+                @include ellipsis-text();
+            }
+        }
+    }
+}
+/** END: Workstation Styles **/

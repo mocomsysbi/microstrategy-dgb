@@ -1,0 +1,104 @@
+@import '../global';
+@import '../vi/vi-global';
+
+/** Start Property Panel **/
+.mstrmojo-threshold-PropertyPanel {
+    $color-border-property-panel: #CFCFCF;
+
+    .condition {
+        border-bottom: 1px #{$color-border-property-panel} solid;
+        height: 35px;
+        overflow: auto;
+
+        .mstrmojo-thresholdRow {
+            border-bottom: 0px;
+            .delete,
+            .menu,
+            .mstrmojo-onhoverparent:hover .mstrmojo-del{
+                display:none;
+            }
+        }
+    }
+
+    .format {
+        height: 237px;
+        background-color: #e4e4e4;
+        border-bottom: 1px #{$color-border-property-panel} solid;
+
+        > div {
+            position: relative;
+            float: left;
+            padding:  25px 34px;
+            height: 188px;
+            overflow: hidden;
+
+            .title {
+                line-height: 30px;
+                font-weight: bold;
+            }
+
+            &.text {
+                border-right: 1px #{$color-border-property-panel} solid;
+
+                .mstrmojo-ui-Checkbox {
+                    background-position: -2px -25px;
+
+                    &.checked {
+                        background-position: -2px -1px;
+                    }
+                }
+            }
+
+            &.font {
+                border-right: 1px #{$color-border-property-panel} solid;
+                border-left: 1px solid #FFF;
+                padding: 25px 34px;
+            }
+
+            &.border {
+                border-left: 1px solid #FFF;
+            }
+        }
+
+        &.mstrmojo-vi-PropEditor .ctrl-group > * {
+            margin-top: 15px;
+
+            &:first-child {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .apply {
+        height: 32px;
+        background-color: #e4e4e4;
+        border-top: 1px solid #FFF;
+        box-sizing: border-box;
+
+        .mstrmojo-Button {
+            position: relative;
+            float: right;
+            width: 40px;
+            height: 22px;
+            margin-top: 5px;
+            margin-right:6px;
+            background: transparent url(#{$mojo-img-path}/filter-editor-icons.png) no-repeat 0 0;
+
+            &.okBtn {
+                background-position: -1px -3px;
+            }
+
+            &.cancelBtn {
+                background-position: -47px -3px;
+            }
+        }
+
+        .tip {
+            float: left;
+            line-height: 28px;
+            margin-left: 10px;
+        }
+    }
+}
+
+/** End Property Panel **/

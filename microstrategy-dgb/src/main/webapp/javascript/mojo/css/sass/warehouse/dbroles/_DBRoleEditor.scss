@@ -1,0 +1,145 @@
+@import '../wh-global';
+
+.mstrmojo-wh-DBRoleEditor {
+  background: #f9f9f9;
+  width: 526px;
+  .mstrmojo-Editor-content{
+    max-height: 450px;
+    overflow: auto;
+    padding: 16px 16px;
+    // remove dbrole editor split line
+    border-bottom: 0px solid #DEDEDE;
+    @include box-shadow(#FFF, 0, 0px, 0, false);
+    // end of removing
+    background-color: #FFF;
+    overflow: auto;
+    max-height: 400px;
+    .mstrmojo-ui-Pulldown > .mstrmojo-ui-Pulldown-text {
+      background-color: #FFF;
+      background-image: url("vi/images/pulldown-sprite.png")
+    }
+  }
+  .mstrmojo-Editor-help,.mstrmojo-Editor-close {
+    display: block;
+  }
+}
+
+.mstrmojo-wh-DBRoleEditor-container{
+  margin: 0 10px 0 10px;
+  .mstrmojo-wh-DBRoleDSNConnection {
+    /**
+      * overflow-y: (DE101389) Dropdown popup is initially attached to the host, cause scrollbar intermittently and results in the misalignment.
+      * overflow-x: (DE105807) For one-tier windows env, an extra button will be render outside and results in a unwanted scroll bar.
+      */
+    overflow: hidden;
+  }
+}
+
+.mstrmojo-wh-DBRoleEditor-info{
+  font-weight:bold;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+
+.mstrmojo-wh-DBRoleEditor-infoCheckbox{
+  //font-weight: bold;
+  //margin-left: -5px; /*adjust for the radio button itself in the widget*/
+}
+
+.mstrmojo-wh-DSNSelector{
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.mstrmojo-wh-DSNSelector-radio{
+  //font-weight: bold;
+  margin-left: 0px; /*adjust for the radio button itself in the widget*/
+  margin-right: 45px;
+}
+
+.mstrmojo-wh-DBRoleEditor-catSQL {
+  color: #007EBE;
+  padding-left: 25px;
+  background: url(#{$wh-image-path}/panel_icons.png) no-repeat center center;
+  background-position: 8px -569px;
+
+  &.hidden {
+    display: none !important;
+  }
+
+  &:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.mstrmojo-wh-DBRoleEditor-shareLabel {
+  color: #007EBE;
+  margin-top: 6px;
+  text-align: right;
+
+  &:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.workstation{
+  .mstrmojo-wh-DBRoleEditor.modal{
+    .mstrmojo-Editor-title-container{
+      .mstrmojo-Editor-close{
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .mstrmojo-Editor{
+    .mstrmojo-Editor-content.scrollable{
+      max-height: 300px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar-thumb{
+        opacity: .4;
+      }
+    }
+  }
+
+  .mstrmojo-wh-DBRoleEditor{
+    overflow: hidden;
+
+    .mstrmojo-Editor-content {
+      overflow-y: auto;
+      max-height: 489px;
+    }
+
+    .mstrmojo-Editor-content.scrollable{
+      .mstrmojo-PopupList.ctrl-popup-list.mstrmojo-scrollbar-host{
+        max-height: 180px;
+        max-width: 280px;
+        .mstrmojo-popupList-scrollBar.mstrmojo-scrollNode{
+          max-height: 160px !important;
+          overflow: auto !important;
+        }
+      }
+    }
+    .mstrmojo-ui-CheckList.mstrmojo-wh-DSNSelector-radio.radio{
+      .item{
+        background-position: -3px -148px;
+        &.selected{
+          background-position: -3px -123px;
+        }
+      }
+    }
+    .mstrmojo-wh-DBRoleEditor-container {
+      .mstrmojo-ui-Pulldown, input.mstrmojo-wh-DBRoleSetting-Info {
+        @include box-shadow($wsvi-input-shadow, 0, 1px, 2px, false, 0);
+      }
+      .mstrmojo-ui-Pulldown {
+        &.disabled {
+          .mstrmojo-ui-Pulldown-text{
+            border: 1px solid $wsvi-ui-border-gray;
+          }
+        }
+      }
+    }
+  }
+}

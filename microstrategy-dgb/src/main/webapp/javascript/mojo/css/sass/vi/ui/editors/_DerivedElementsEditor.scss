@@ -1,0 +1,170 @@
+@import '../../../_global.scss';
+/** beginning of Derived Elements Editor */
+.mstrmojo-DerivedElementsEditor {
+  width: 562px;
+
+  .attrNameEdit {
+    margin-bottom: 16px;
+    margin-top: 7px;
+    .mstrmojo-TextBoxWithLabel {
+      .mstrmojo-TextBox.disabled {
+        background-color: #DDDDDD;
+        box-shadow: rgba(0, 0, 0, 0.10) 0 0 1px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.10) 0 0 1px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.10) 0 0 1px;
+     }
+    }
+  }
+
+  .mstrmojo-TextBox {
+    padding-left: 6px;
+  }
+
+  .mstrmojo-TextBox-label {
+    margin-right: 5px;
+  }
+
+  .mstrmojo-new-DEName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mstrmojo-new-DEName.editable {
+    text-overflow: clip;
+  }
+
+  .mstrmojo-WebButton {
+    float: right;
+    min-width: 66px;
+  }
+
+  .othersProp {
+    margin-top: 11px;
+    margin-bottom: 6px;
+  }
+
+  .othersProp .mstrmojo-Label {
+    margin-right: 8px;
+  }
+
+  .elementsTitles {
+    background-color: #EFEFF0;
+    position: relative;
+    font-weight: bold;
+    line-height: 22px;
+    height: 22px;
+    border: solid 1px #C5C5C5;
+    -webkit-box-shadow: inset 0 0 1px #f7f7f8;
+    -moz-box-shadow: inset 0 0 1px #f7f7f8;
+    box-shadow: 0 0 1px #f7f7f8 inset;
+    padding: 1px;
+    color: #444649;
+    div {
+      &:first-child {
+        left: 36px;
+        position: absolute;
+      }
+      &:last-child {
+        left: 240px;
+        position: absolute;
+      }
+    }
+  }
+
+  .mstrmojo-edit-DEName {
+    position: absolute;
+    width: 100px;
+    line-height: 22px;
+    background-color: #92d2f4;
+  }
+
+  .mstrmojo-VIGroupDERow.new {
+    background-color: #FFFFFF;
+    border-left: 1px solid #C5C5C5;
+    border-right: 1px solid #C5C5C5;
+    border-top: none;
+    .group-column {
+      .name {
+        color: #007ebe;
+        text-decoration: underline;
+        cursor: pointer;
+        display: inline;
+      }
+    }
+    .draggable-icon {
+      background-size: 0 0;
+    }
+  }
+
+  .mstrmojo-VIGroupDERow.new.isEdit {
+    .name {
+      display:none;
+    }
+    .draggable-icon {
+      background-size: auto auto;
+    }
+    .mstrmojo-new-DEName {
+      line-height: 14px;
+      padding: 9px 0 8px 0;
+    }
+  }
+
+  .saveBtn {
+    margin-right: 10px;
+  }
+}
+
+.mstrmojo-others-rule {
+  background: #FFFFFF;
+  max-height: 145px;
+  width: 218px;
+  border-radius: 3px;
+  height: auto;
+  .mstrmojo-ui-Pulldown-text {
+    color: #444649 !important;
+  }
+  .item {
+    padding: 5px;
+    cursor: pointer;
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &.mstrmojo-PopupList {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0, 0, 0.25);
+    -moz-box-shadow: 0 0 10px rgba(0,0, 0, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px; ;
+    z-index: 300;
+    display: block;
+    width: 219px;
+    margin-top: 2px;
+    border: 1px solid #9b9b9b;
+    background: #ededed;
+    opacity: .96;
+    border-radius: 3px;
+    .mstrmojo-scrollNode {
+      background-color: rgb(243, 243, 244);
+      opacity: 0.8;
+      border-radius: 3px;
+      width: 215px;
+      :first-child {
+        padding: 5px 0px;
+      }
+      .item {
+        padding-left: 6px;
+        padding-right: 5px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        line-height: 22px;
+        color: #444649 !important;
+      }
+    }
+  }
+}
+
+
+/** end of Derived Elements Editor */

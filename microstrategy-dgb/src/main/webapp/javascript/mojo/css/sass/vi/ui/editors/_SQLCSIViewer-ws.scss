@@ -1,0 +1,85 @@
+$sqlcsiViewerWidth: 720px;
+$sqlcsiViewerHeight: 590px;
+.mstrmojo-SQLV.mstrmojo-vi-ui-SQLV {
+    width: $sqlcsiViewerWidth;
+    max-width: $sqlcsiViewerWidth;
+    height: $sqlcsiViewerHeight;
+
+    .sql-term {
+        font-weight: bold;
+        color: #0079FF;
+    }
+
+    .action-term {
+        font-weight: bold;
+        color: #FF4378;
+    }
+
+    .mstrmojo-Label {
+        font-size: $wsvi-normal-font-size;
+        color: $wsvi-primary-black;
+    }
+
+    .mstrmojo-Editor-content {
+        padding: 0;
+        background-color: $wsvi-primary-white;
+        overflow: hidden;
+        position: absolute;
+        margin: 16px;
+        top: 26px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        .mstrmojo-SQLV-content-container {
+            @include box-shadow($wsvi-input-shadow, 0, 1px, 2px);
+            box-sizing: border-box;
+            border: 1px solid $wsvi-ui-border-gray;
+            border-radius: $wsvi-box-radius;            
+            overflow: hidden;
+            height: 485px;
+
+            > .scroll-container {
+                height: 495px;
+            }
+
+            .mstrmojo-Label {
+                line-height: 16px;
+                letter-spacing: 0.1px;
+                font-size: 12px;
+                font-family: Menlo,Andale Mono,Monaco,Profont,Monofur,Proggy,Droid Sans Mono,Verdana;
+                overflow-wrap: break-word;
+                padding: 8px 12px 16px 12px;
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        .mstrmojo-Editor-buttonBar {
+            width: 95%;
+            .success-icon {
+                float: right;
+                margin: 0 10px 0 0;
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+                @include wsvi-icon-green-checkmark;
+            }
+            .notice-toaster-label {
+                float: right;
+                width: 161px;
+                line-height: 18px;
+                white-space: nowrap;
+            }
+            .mstrmojo-WebButton {
+                position: relative;
+                float: right;
+                min-width: 60px;
+                margin: 0 0 0 16px;
+            }
+        }
+    }
+}

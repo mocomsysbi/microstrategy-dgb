@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumGraphMatrixColorMode={GMCM_BYX:0,GMCM_BYY:1,GMCM_BYBOTH:2,GMCM_SPECIFIC:3,GMCM_COLORBY:4,_Automatic:6,_ByIndex:4,_ByMetric:5};

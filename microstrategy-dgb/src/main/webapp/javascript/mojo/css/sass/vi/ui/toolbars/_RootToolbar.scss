@@ -1,0 +1,789 @@
+@import '../../vi-global';
+
+/** BEGIN: Root Toolbar **/
+// BEGIN: Container of Menubar and Toolbar
+.mstrmojo-RootView-menutoolbar {
+    @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 1px);
+
+    border-bottom: 1px solid #212121;
+    height: 39px;
+
+    > div {
+        height: 100%;
+    }
+
+    &.hidden {
+        height: 0px;
+    }
+
+    .mstrmojo-VIToolbar {
+        > DIV > DIV.item {
+            height: 40px;
+        }
+
+        .btn {
+            position: relative;
+            height: 32px;
+        }
+
+        .item.mb.selected.open {
+            @include box-shadow(rgba(0, 0, 0, 0.88), 0, 2px, 4px);
+
+            color: #3FBBFF;
+
+            .btn {
+                background: #424242;
+                z-index: 1001;
+
+                &:before {
+                    //display border matching menu popup
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    border: 1px solid #525252;
+                    border-width: 0 1px;
+                    height: 100%;
+                    width: 98%; //unclear - looks 98% can match width perfectly
+                }
+            }
+
+            &.help {
+                .btn:before {
+                    left: -1px;
+                }
+            }
+
+            .mstrmojo-ui-Menu {
+                @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 10px); /* #905852 */
+                @include border-radius(0 0 4px 4px);
+
+                background: #424242;
+                border: 1px solid #525252;
+                margin-top: -9px;
+                margin-left: 0;
+
+                //DE62722;enable scrollbar for Format Menu items;
+                //when vertical scrollbar is visible, margin-top to 0px to make it display from top 5px, using rule in _isPopup.js
+                //z-Index to 1002, to display on the top of Format button ( zIndex:1001)
+                &.menutoolbar-vitoolbar-style.hasVertical {
+                    z-index: 1002;
+                    margin-top: 0; //When Format menu displaying scrollbar, not using margin
+                }
+
+                .mstrmojo-ui-Menu-item {
+                    line-height: 28px;
+                    padding-left: 12px;
+
+                    &.tg {
+                        //for display of toggle checkmark/radiomark
+                        padding-left: 30px;
+
+                        &:before {
+                            left: 7px;
+                        }
+                    }
+
+                    &.hasPaletteColors {
+                        //US79183;add margin right for color palattte
+                        margin-right: 12px;
+                    }
+
+                    .arw {
+                        top: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+// END: Container of Menubar and Toolbar
+
+.printPreview {
+    border-bottom: none;
+}
+
+// BEGIN: Menubar
+.mstrmojo-RootView-menubar {
+    @include box-sizing();
+
+    background: #3B3B3B;
+    float: left;
+    line-height: 38px;
+    padding: 0;
+    position: relative;
+    z-index: 4;
+
+    .mstrmojo-VIToolbar {
+        .item.mb {
+            color: #D2D2D2;
+            font-size: 10px;
+            cursor: default;
+            font-family: Arial, sans-serif;
+            position: relative;
+
+            &:hover {
+                color: #FFFFFF;
+            }
+
+            .btn {
+                padding: 0 12px;
+            }
+            .text {
+                text-transform: uppercase;
+                text-shadow: 0 1px 1px #000000;
+                font-weight: bold;
+            }
+
+            &.view .mstrmojo-ui-Menu-item {
+                &:before {
+                    @extend %menu-check-mark;
+
+                    background-position: 50% -430px !important;
+                }
+                &.on:before {
+                    background-position: 50% -455px !important;
+                }
+            }
+        }
+
+        .item.dlmt,
+        .item.dlmt:hover {
+            @include border-radius(0);
+
+            border-top: 1px solid #303030;
+            border-bottom: 1px solid #595959;
+            margin: 3px 0;
+        }
+
+        .mstrmojo-ui-Menu-item.lbl {
+            &:hover {
+                background: transparent;
+            }
+            &:before {
+                display: none; // avoid showing checkmark of selected item
+            }
+        }
+
+        .SwitchPalette.hasPaletteColors {
+            text-indent: -999px;
+
+            .paletteColors {
+                position: absolute;
+                width: 117px;
+                left: 30px;
+                border: 1px solid #525252;
+                top: 5px;
+
+                .colorIcon {
+                    float: left;
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+        }
+    }
+
+}
+// END: Menubar
+
+
+// BEGIN: Toolbar
+.mstrmojo-RootView-toolbar {
+    background: #3B3B3B;
+    position: relative;
+    z-index: 3;
+    color: white;
+    box-sizing: border-box;
+    //white-space: nowrap; //commented out since it makes toolbar float:right wrapped
+
+
+    .mstrmojo-VIToolbar {
+        & > DIV > DIV.item {
+            //margin-left: 8px;
+        }
+        .item {
+            position: relative;
+
+            .btn {
+                cursor: default;
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+                height: 32px;
+                position: relative;
+            }
+
+            .text {
+                position: relative;
+                display: none;
+                float: left;
+            }
+
+            .icn {
+                background: transparent url(#{$vi-img-path}/toolbar_icons.png) 0 0 no-repeat;
+                background-origin: content-box;
+                height: 32px;
+                width: 16px;
+                display: inline-block;
+                float: left;
+                padding: 8px 12px 0;
+            }
+
+            .label {
+                margin: 8px 12px 0;
+            }
+
+            &.rgt {
+                /* for icons positioned at right end*/
+                float: right;
+            }
+        }
+
+        /* BEGIN: Picker Button */
+        .item.pb {
+            .pdl {
+                background: transparent url(#{$vi-img-path}/toolbar.png) -264px -20px no-repeat;
+                border-left: 1px solid transparent;
+                height: 100%;
+                width: 14px;
+                display: inline-block;
+                float: left;
+            }
+
+            .btn:hover .pdl {
+                border-left: 1px solid #ABACAC;
+                color: #000000;
+            }
+        }
+        /* END: Picker Button */
+
+        /* BEGIN: Menu Button */
+        .item.mb .icn {
+            width: 24px /*30px*/;
+        }
+        /* END: Menu Button */
+
+        /* BEGIN: Toggle Button */
+        .item.tg .icn {
+            width: 30px;
+        }
+        /* END: Toggle Button */
+
+        /* BEGIN: Delimiter */
+        .item.dlmt {
+            .btn {
+                margin: 0 4px;
+                height: 30px;
+            }
+
+            .btn:hover {
+                background: none;
+                border-color: transparent;
+                box-shadow: none;
+                cursor: default;
+            }
+
+            .icn {
+                @include box-shadow(rgba(89, 89, 89, 1), 1px, 0, 0); /* #905852 */
+
+                background: none;
+                border-left: 1px solid #303030;
+                padding: 0;
+                width: 0;
+            }
+        }
+        /* END: Delimiter */
+
+        .item.selected.open .btn {
+            background: #3E3E3E
+        }
+
+        .filterPanel {
+            .icn {
+                background-position: -559px -83px;
+            }
+            &:hover .icn {
+                background-position: -559px -113px;
+            }
+            &:active .icn {
+                background-position: -559px -143px;
+            }
+            &.on {
+                .icn {
+                    background-position: -559px 7px;
+                }
+                &:hover .icn {
+                    background-position: -559px -23px;
+                }
+                &:active .icn {
+                    background-position: -559px -53px;
+                }
+            }
+        }
+
+        .undo {
+            .icn {
+                background-position: -80px 5px;
+            }
+            &:hover .icn {
+                background-position: -80px -25px;
+            }
+            &:active .icn {
+                background-position: -80px -55px;
+            }
+
+            // Set up icons for the disabled state
+            &.disabled {
+                &,
+                &:active,
+                &:hover {
+                    .icn {
+                        background-position: -80px -85px;
+                    }
+                }
+            }
+
+        }
+
+        .redo {
+            .icn {
+                background-position: -120px 5px;
+            }
+            &:hover .icn {
+                background-position: -120px -25px;
+            }
+            &:active .icn {
+                background-position: -120px -55px;
+            }
+
+            // Set up icons for the disabled state
+            &.disabled {
+                &,
+                &:active,
+                &:hover {
+                    .icn {
+                        background-position: -120px -85px;
+                    }
+                }
+            }
+        }
+
+        .save {
+            .icn {
+                background-position: 2px 5px;
+            }
+            &:hover .icn {
+                background-position: 2px -25px;
+            }
+            &:active .icn {
+                background-position: 2px -55px;
+            }
+        }
+
+        .close {
+            float: right;
+
+            .icn {
+                background-position: -840px 5px;
+            }
+            &:hover .icn {
+                background-position: -840px -25px;
+            }
+            &:active .icn {
+                background-position: -840px -55px;
+            }
+        }
+
+        .addDS {
+            .icn {
+                background-position: -160px 5px;
+            }
+            &:hover .icn {
+                background-position: -160px -25px;
+            }
+            &:active .icn {
+                background-position: -160px -55px;
+            }
+        }
+        .addDS.selected.open .icn {
+            background-position: -160px -55px;
+        }
+
+        .insertVI {
+            .icn {
+                background-position: -200px 5px;
+            }
+            &:hover .icn {
+                background-position: -200px -25px;
+            }
+            &:active .icn {
+                background-position: -200px -55px;
+            }
+        }
+
+        .insert {
+            .icn {
+                background-position: -439px 5px;
+            }
+            &:hover .icn {
+                background-position: -439px -25px;
+            }
+            &:active .icn {
+                background-position: -439px -55px;
+            }
+        }
+        .insert.selected.open .icn {
+            background-position: -439px -55px;
+        }
+
+        .insert.open {
+            .mstrmojo-ui-Menu-item {
+                padding-left: 32px !important;
+
+                &.selected:before {
+                    background-image: none;
+                }
+
+                .micn {
+                    background-image: url(#{$vi-img-path}/toolbar_icons.png);
+                    left: 12px;
+                }
+            }
+            .insertVI {
+                .micn {
+                    background-position: -200px 5px;
+                }
+            }
+            .insertFlt {
+                .micn {
+                    background-position: -320px 5px;
+                }
+            }
+            .insertText {
+                .micn {
+                    background-position: -280px 5px;
+                }
+            }
+            .insertImage {
+                .micn {
+                    background-position: -240px 5px;
+                }
+            }
+            .insertHtml {
+                .micn {
+                    background-position: -360px 5px;
+                }
+            }
+        }
+
+        .share {
+            float: right;
+            .icn {
+                background-position: -40px 5px;
+                background-clip: content-box;
+            }
+            &:hover .icn {
+                background-position: -40px -25px;
+                background-clip: content-box;
+            }
+            &:active .icn {
+                background-position: -40px -55px;
+                background-clip: content-box;
+            }
+        }
+
+        .presentationMode {
+            float: right;
+            .icn {
+                background-position: -399px 5px;
+            }
+            &:hover .icn {
+                background-position: -399px -25px;
+            }
+            &:active .icn {
+                background-position: -399px -55px;
+            }
+        }
+
+        .annotationMode {
+            float: right;
+            .icn {
+                background-position: -648px 5px;
+            }
+            &:hover .icn {
+                background-position: -648px -26px;
+            }
+            &:active .icn {
+                background-position: -648px -57px;
+            }
+            &.disabled {
+                &,
+                &:active,
+                &:hover {
+                    .icn {
+                        background-position: -648px -87px;
+                    }
+                }
+            }
+        }
+
+      .refresh {
+        .icn {
+          background-position: -760px 5px;
+        }
+        &:hover .icn {
+          background-position: -760px -25px;
+        }
+        &:active .icn {
+          background-position: -760px -55px;
+        }
+      }
+      .refreshPulldown {
+        .icn {
+          background-position: -720px 5px;
+        }
+        &:hover .icn {
+          background-position: -720px -25px;
+        }
+        &:active .icn {
+          background-position: -720px -55px;
+        }
+        &.item.mb.selected.open {
+          .mstrmojo-ui-Menu {
+            .autoRefresh.mstrmojo-ui-Menu-item.tg {
+              padding-left: 12px;
+              &:before {
+                content: none;
+              }
+            }
+          }
+        }
+      }
+        .help {
+            float: right;
+
+            .icn {
+                background-position: -797px 5px;
+                width: 9px;
+            }
+            &:hover .icn {
+                background-position: -797px -25px;
+            }
+            &:active .icn {
+                background-position: -797px -55px;
+            }
+        }
+        .help.selected.open .icn {
+            background-position: -797px -55px;
+        }
+
+        .togglePathbar {
+            float: right;
+
+            .icn {
+                background-position: -42px -176px;
+                width: 12px;
+            }
+            &:hover .icn {
+                background-position: -42px -206px;
+            }
+            &:active .icn {
+                background-position: -42px -236px;
+            }
+            &.on {
+                .icn {
+                    background-position: -3px -176px;
+                }
+                &:hover .icn {
+                    background-position: -3px -206px;
+                }
+                &:active .icn {
+                    background-position: -3px -236px;
+                }
+            }
+        }
+
+        .exitFormattingMode {
+            float: right;
+
+            .icn {
+                @include linear-gradient(#3D3E3F, #373839);
+                @include box-shadow(#47484B, 0, 1px, 1px, false);
+                @include border-radius(2px);
+                @include ellipsis-text();
+
+                background: transparent;
+                border: 1px solid #0F0F10;
+                min-width: 66px;
+                height: 22px;
+                width: auto;
+                margin: 8px 12px 0;
+
+                line-height: 22px;
+                text-align: center;
+                padding: 0 8px;
+                color: #EAEAEA;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+
+                &:hover {
+                    @include linear-gradient(#313233, #2D2E2F);
+                }
+
+                &:active {
+                    @include linear-gradient(#3D3E3F, #373839);
+                    @include box-shadow(#1B1B1B, 0, 0, 17px, true);
+                }
+            }
+        }
+
+        /*.close {
+            float: right;
+
+            .icn {
+                background-position: -834px 5px;
+            }
+            &:hover .icn {
+                background-position: -834px -25px;
+            }
+            &:active .icn {
+                background-position: -834px -55px;
+            }
+        }*/
+
+    }
+}
+
+// END: Toolbar
+
+
+// BEGIN: Presentation Mode
+.mstrmojo-RootView.presentation {
+    .mstrmojo-VITabStrip-addBtn,
+    .mstrmojo-VITabStrip-menu,
+    .mstrmojo-VITabStrip-tabs .mstrmojo-VITab .mstrmojo-VITab-menu,
+    .mstrmojo-VITabStrip-tabs .mstrmojo-VITab > DIV:hover .mstrmojo-VITab-menu,
+    .mstrmojo-TextBox .hover-menu-btn,
+    .mstrmojo-ImageBox .hover-menu-btn {
+        display: none !important;
+    }
+
+    .mstrmojo-VIPanel.mstrmojo-VIBox .title-text .mstrmojo-EditableLabel,
+    .mstrmojo-VIBoxPanelContainer-header,
+    .mstrmojo-ImageBox .mstrmojo-VIPanel-content,
+    .mstrmojo-TextBox .mstrmojo-VIPanel-content,
+    .mstrmojo-UnitContainer .title-text .mstrmojo-EditableLabel {
+        cursor: default;
+    }
+
+    .mstrmojo-RootView-menubar {
+        display: none;
+    }
+
+    .presentationMode {
+        .icn {
+            background-position: -399px -85px;
+        }
+        &:hover .icn {
+            background-position: -399px -115px;
+        }
+        &:active .icn {
+            background-position: -399px -145px;
+        }
+    }
+
+    &.enhanced { //Enhanced presentation mode
+        .mstrmojo-RootView-menubar {
+            display: block;
+        }
+
+        .presentationMode {
+            .icn {
+                background-position: -399px 5px;
+            }
+            &:hover .icn {
+                background-position: -399px -25px;
+            }
+            &:active .icn {
+                background-position: -399px -55px;
+            }
+        }
+    }
+}
+
+// END: Presentation Mode
+
+
+
+// BEGIN: No web dashboard design
+.mstrmojo-RootView.nowebdashdesign {
+    .mstrmojo-VITabStrip-addBtn,
+    .mstrmojo-VITabStrip-tabs .mstrmojo-VITab .mstrmojo-VITab-menu,
+    .mstrmojo-VITabStrip-tabs .mstrmojo-VITab > DIV:hover .mstrmojo-VITab-menu,
+    .mstrmojo-TextBox .hover-menu-btn,
+    .mstrmojo-ImageBox .hover-menu-btn,
+    .mstrmojo-VIPanel .hover-menu-btn {
+        display: none !important;
+    }
+
+    .mstrmojo-VIPanel.mstrmojo-VIBox .title-text .mstrmojo-EditableLabel,
+    .mstrmojo-VIBoxPanelContainer-header,
+    .mstrmojo-ImageBox .mstrmojo-VIPanel-content,
+    .mstrmojo-TextBox .mstrmojo-VIPanel-content,
+    .mstrmojo-UnitContainer .title-text .mstrmojo-EditableLabel {
+        cursor: default;
+    }
+}
+
+// END: No web dashboard design
+
+
+
+// BEGIN: Root Toolbar Tooltip
+.mstrmojo-Tooltip.vi-regular.vi-tooltip-A.A-center.root-toolbar-tooltip {
+    .mstrmojo-Tooltip-arrow {
+        &:before {
+            border-bottom-color: #C8C8C9;
+            top: -7px;
+        }
+
+        &:after {
+            border-bottom-color: #282828;
+            top: -5px;
+        }
+    }
+
+    &.togglePathbar {
+        .mstrmojo-Tooltip-content {
+            white-space: nowrap;
+        }
+    }
+
+  /* DE4504 : Tooltip of refresh pull down is too long.
+   So to avoid mis-alignment of tool-tip arrow this is added*/
+  &.refreshPulldown {
+
+    //Over-ride the wrapping divs to fit the tool tip in one line
+    .mstrmojo-Tooltip-content,
+    .mstrmojo-Tooltip-contentWrapper{
+      max-width: none;
+    }
+  }
+
+  .mstrmojo-Tooltip-contentWrapper {
+    @include border-radius(3px);
+    @include box-shadow(0, 0, 5px, rgba(0, 0, 0, 0.40));
+
+    background-color: #282828;
+    border: 1px solid #C8C8C9;
+    cursor: default;
+    display: block;
+    padding: 6px 8px;
+
+    .mstrmojo-Tooltip-content {
+      color: #E4E4E5;
+      font-size: 11px;
+    }
+  }
+}
+// END: Root Toolbar Tooltip
+/** END: Root Toolbar **/

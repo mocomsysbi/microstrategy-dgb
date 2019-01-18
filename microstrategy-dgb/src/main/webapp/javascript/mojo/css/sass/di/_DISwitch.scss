@@ -1,0 +1,62 @@
+.mstrmojo-di-switchStyle-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+.mstrmojo-di-switch-disp {
+  padding-left: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 3em;
+  height: 1em;
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius:inherit;
+  margin: 0 2px;
+  background: white;
+  background-image: linear-gradient(rgba(0,0,0,.1), transparent),
+  linear-gradient(90deg, hsl(210, 90%, 60%) 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  background-origin: border-box;
+  background-clip: border-box;
+  overflow: hidden;
+  transition-duration: .4s;
+  transition-property: padding, width, background-position, text-indent;
+  box-shadow: 0 .1em .1em rgba(0,0,0,.2) inset,
+  0 .45em 0 .1em rgba(0,0,0,.05) inset;
+}
+.mstrmojo-di-switchStyle-checkbox:checked + .mstrmojo-di-switch-disp {
+  padding-left: 2em;
+  width: 1em;
+  background-position: 0 0;
+}
+.mstrmojo-di-switchStyle-checkbox:active + .mstrmojo-di-switch-disp:before {
+  background-color: #eee;
+}
+.mstrmojo-di-switch-disp:before,
+.mstrmojo-di-switch-disp:after {
+  font: bold 100% sans-serif;
+  text-transform: uppercase;
+}
+.mstrmojo-di-switch-disp:before {
+  content: 'On';
+  float: left;
+  width: 1em;
+  height: 1em;
+  margin: -.1em;
+  border: 1px solid rgba(0,0,0,.35);
+  border-radius: inherit;
+  background: white;
+  background-image: linear-gradient(rgba(0,0,0,.2), transparent);
+  box-shadow: 0 .1em .1em .1em hsla(0,0%,100%,.8) inset,
+  0 0 .5em rgba(0,0,0,.3);
+  color: white;
+  text-shadow: 0 -1px 1px rgba(0,0,0,.3);
+  text-indent: -1.5em;
+}
+.mstrmojo-di-switch-disp:after {
+  content: 'Off';
+  float: left;
+  text-indent: .2em;
+  color: rgba(0,0,0,.45);
+  text-shadow: none;
+}

@@ -1,0 +1,1 @@
+(function(){mstrmojo.vi.ui._IsValidURL=mstrmojo.provide("mstrmojo.vi.ui._IsValidURL",{_mixinName:"mstrmojo.vi.ui._IsValidURL",isValidURL:function isValidURL(url){var lcUrl=!!url&&url.toLowerCase();return !!lcUrl&&(lcUrl.indexOf("javascript:")===-1)&&(!mstrApp.isSingleTier||lcUrl.startsWith("http://")||lcUrl.startsWith("https://"));}});}());

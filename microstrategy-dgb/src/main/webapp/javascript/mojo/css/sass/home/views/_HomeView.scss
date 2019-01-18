@@ -1,0 +1,39 @@
+@import '../../_global';
+
+.mstrmojo-HomeView.dragging {
+    .mstrmojo-Card {
+        transition: all 0s;
+        .mstrmojo-DND-mask {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            bottom: -5px;
+            cursor: pointer;
+        }
+    }
+}
+
+.mstrmojo-HomeView-content {
+    @include user-select(none);
+
+    background-color: #ececec;
+
+    .cards-container-outer {
+        max-width: 1600px;
+        padding: 0 25px;
+        margin: auto;
+    }
+
+    .mstrmojo-scrolltrack {
+        z-index: 2;
+    }
+
+    .mstrmojo-Label.no-support {
+        text-align: center;
+        width: 400px;
+        margin: 20px auto;
+        border: 1px solid #EEE;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,169 @@
+.workstation {
+    .pause {
+        .mstrmojo-UnitContainer {
+            .ctrlOverlay {
+                opacity: 0.95;
+            }
+            .mstrmojo-Xtab {
+                .mstrmojo-message {
+                    display: none !important; //HIDE GRID EMPTY ERROR MESSAGE
+                }
+
+            }
+        }
+    }
+}
+
+.mstrmojo-vi-ui-rw-freezingImageContainer {
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: white;
+    .mstmojo-freezingImgTableCell {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        .freezing-vis-img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .freezing-vis-desc {
+        color: $wsvi-primary-black;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: .2px;
+        line-height: 18px;
+        padding: 16px 10px 0 10px;
+    }
+    .vis-dropzone {
+        color: rgba($wsvi-primary-black, 0.75);
+        font-size: $wsvi-normal-font-size;
+        line-height: 18px;
+        letter-spacing: .2px;
+        padding: 10px 10px 0 10px;
+    }
+    .freezing-details{
+        display: inline-block;
+        position: relative;
+        font-weight: normal;
+        padding-left: 5px;
+    }
+    .freezing-vis-img {
+        margin-left: auto;
+        margin-right: auto;
+        @include background-image($wsvi-ghost-img);
+    }
+
+    .freezing-vis-txt-metric,
+    .freezing-vis-txt-attr,
+    .visName {
+        display: inline-block;
+        position: relative;
+        padding-left: 20px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            @include transform(translate(0, -50%));
+            left: 0;
+            width: 18px;
+            height: 18px;
+        }
+    }
+    .visName {
+        &:before {
+            @include wsvi-icon-pause;
+        }
+    }
+    .freezing-vis-txt-metric {
+        &:before {
+            @include wsvi-icon-metric;
+        }
+    }
+    .freezing-vis-txt-attr {
+        &:before {
+            @include wsvi-icon-attribute;
+        }
+    }
+}
+
+.ghost-black, .ghost-white {
+    .mstrmojo-vi-ui-rw-freezingImageContainer {
+        .freezing-vis-desc {
+            color: $wsvi-primary-black;
+        }
+        .vis-dropzone {
+            color: $wsvi-primary-black;
+        }
+    }
+}
+
+.ghost-hide-title {
+    .freezing-vis-desc {
+        display: none;
+    }
+}
+
+.ghost-hide-desc {
+    .vis-dropzone {
+        display: none;
+    }
+}
+@mixin ghost-img ($size, $padding) {
+    .mstrmojo-vi-ui-rw-GhostImageContainer.mstrmojo-vi-ui-rw-freezingImageContainer {
+        &.VIHeatMapVisualizationStyle {
+            .ghost-vis-img {
+                background-position-y: 0px - ($size + $padding);
+            }
+        }
+
+        &.NetworkVisualizationStyle {
+            .ghost-vis-img {
+                background-position-y: 0px - ($size + $padding)*8;
+            }
+        }
+
+        &.ImageLayoutVisualizationStyle{
+            .ghost-vis-img {
+                background-position-y: 0px - ($size + $padding)*19;
+            }
+        }
+
+        &.GoogleMapVisualizationStyle{
+            .ghost-vis-img {
+                background-position-y: 0px - ($size + $padding)*17;
+            }
+        }
+
+        &.MapboxVisualizationStyle{
+            .ghost-vis-img {
+                background-position-y: 0px - ($size + $padding)*18;
+            }
+        }
+
+        &.KPICardVisualizationStyle{
+            .ghost-vis-img {
+                background-position-y: 0px - ($size + $padding)*20;
+            }
+        }
+    }
+}
+
+.ghost-short {
+    @include ghost-img(40px, 30px * 40 / 60);
+}
+.ghost-tall {
+    @include ghost-img(60px, 30px);
+}
+
+.ghost-grande {
+    @include ghost-img(80px, 10px);
+}
+
+.ghost-venti {
+    @include ghost-img(100px, 10px * 100 / 80);
+}
+

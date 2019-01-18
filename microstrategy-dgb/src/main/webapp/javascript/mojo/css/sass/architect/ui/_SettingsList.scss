@@ -1,0 +1,19 @@
+/** BEGIN:  SettingsList **/
+.mstrmojo-ar-SettingsList {
+  position: absolute;
+  min-width: 125px;
+  background: #FFF;
+  border: 1px solid #AAA;
+  right: -1px;
+  -webkit-box-shadow: #B4B4B4 0 3px 5px 0;
+  -moz-box-shadow: #B4B4B4 0 3px 5px 0;
+  box-shadow: #B4B4B4 0 3px 5px 0;
+  .item {
+    padding: 8px 10px 8px 30px;
+    border-bottom: 1px solid #EEE;
+    &.selected {
+      background: url(#{$wh-image-path}/ok.png) no-repeat 10px center;
+    }
+  }
+}
+/** END: SettingsList **/

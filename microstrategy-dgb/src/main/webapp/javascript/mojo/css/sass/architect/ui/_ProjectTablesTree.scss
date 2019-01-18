@@ -1,0 +1,75 @@
+@import '../ar-global';
+/** BEGIN:  ProjectsTablesTree **/
+.mstrmojo-ar-ProjectsTablesTree {
+  margin-top: -3px;
+  margin-bottom: 3px;
+  border-top: 1px solid #CCC;
+  li {
+    &[level="0"] > {
+      ul {
+        background-color: #f6f6f6;
+      }
+      div {
+        font-weight: bold;
+        background-position: left 5px;
+      }
+    }
+    &.open[level="0"] {
+      border-bottom: 0;
+    }
+    &[level="0"] > div > .item-mn {
+      display: none;
+    }
+    &[level="1"] > div.mso {
+      background-position: left -248px;
+    }
+    &.hlt {
+      background-color: #EFEFEF;
+    }
+  }
+  .item {
+    &.tp15 {
+      &.err {
+        background-position: left -222px;
+      }
+      &.mso.err {
+        background-position: left -274px;
+      }
+    }
+    &.tp151 {
+      /*logical view*/
+      background-position: -1px -583px;
+    }
+    &.tp152 {
+      /*partition*/
+      background-position: -1px -740px;
+    }
+    &.tp12 {
+      background-position: left -324px;
+    }
+    &.tp13 {
+      background-position: left -298px;
+    }
+    &.tp21 {
+      background-position: left -351px;
+    }
+    &.tp1001 {
+      background-position: left -350px;
+    }
+    &.tpsearch {
+      background: transparent url(#{$wh-image-path}/panel_icons.png) no-repeat 4px -208px;
+    }
+  }
+}
+
+.mstrmojo-wh-Panel.searchMode li[level="1"] > .item {
+  &.tp12 .item-mn, &.tp13 .item-mn, &.tp21 .item-mn, &.tp26 .item-mn {
+    display: none;
+  }
+}
+
+.mstrmojo-ar-ProjectsTablesTree .item.tpsearch .item-mn {
+  display: none;
+}
+
+/** END: ProjectsTablesTree **/

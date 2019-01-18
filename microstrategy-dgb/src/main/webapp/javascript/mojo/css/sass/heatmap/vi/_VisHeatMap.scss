@@ -1,0 +1,159 @@
+/* BEGIN: Heatmap Visualizations */
+//convert PhotoShop pt to CSS pt
+@function cssPt ($psPt) {
+  @return 0.75 * $psPt;
+}
+
+.heatmap-font-family {
+  font-family: Arial, sans-serif;
+}
+
+.heatmap-one-level-1 {
+  @extend .heatmap-font-family;
+  font-size: cssPt(14pt);
+  font-weight: 500;
+}
+
+.heatmap-multi-level-1 {
+  @extend .heatmap-font-family;
+  font-size: cssPt(24pt);
+  font-weight: 500;
+  //DE110865 make the text more distinguishing
+  text-shadow: 2px 4px 6px #000000;
+}
+
+.heatmap-two-level-2 {
+  @extend .heatmap-font-family;
+  font-size: cssPt(14pt);
+  font-weight: normal;
+}
+
+.heatmap-multi-level-2 {
+  @extend .heatmap-font-family;
+  font-size: cssPt(20pt);
+  font-weight: normal;
+}
+
+.heatmap-multi-level-3 {
+  @extend .heatmap-font-family;
+  font-size: cssPt(10pt);
+  font-weight: 500;
+}
+
+.heatmap-trun-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.heatmap-canvas-outer-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.heatmap-canvas-container {
+  overflow: hidden;
+  position: absolute;
+  z-index: 0;
+}
+
+.heatmap-canvas-parent {
+  position:relative;
+}
+
+.heatmap-canvas-text-parent {
+  position: absolute;
+  top: 0;
+  z-index: 10001;
+}
+
+.heatmap-measure-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  visibility: hidden;
+}
+
+.heatmap-font-family-header-on-top {
+  font-family: Arial, sans-serif;
+}
+
+.heatmap-level-1-header-on-top {
+  @extend .heatmap-font-family;
+  font-size: cssPt(12pt);
+  font-weight: normal;
+  color: #a8a8a8;
+}
+
+.heatmap-level-2-header-on-top {
+  @extend .heatmap-font-family;
+  font-size: cssPt(11pt);
+  font-weight: normal;
+  color: #a8a8a8;
+}
+
+.heatmap-level-3-header-on-top {
+  @extend .heatmap-font-family;
+  font-size: cssPt(11pt);
+  font-weight: normal;
+  color: rgba(168, 168, 168, 0.7); /*#a8a8a8, 70% opacity*/
+}
+
+.heatmap-light-theme .heatmap-level-1-header-on-top{
+  color: black;
+}
+
+.heatmap-light-theme .heatmap-level-2-header-on-top{
+  color: black;
+}
+
+.heatmap-light-theme .heatmap-level-3-header-on-top{
+  color: rgba(0, 0, 0, 0.7);
+}
+
+//TODO: we don't need the styles for info box, please remove them after we remove the related JS codes
+.heatmap-round-corner {
+  -webkit-border-radius: 2px;
+}
+
+.heatmap-selection-highlight-box {
+  -webkit-transform:translate3d(0,0,0);
+  position:absolute;
+  width: 40px;
+  height:40px;
+  display: none;
+  z-index: 20;
+}
+
+@mixin underline-and-square {
+  text-decoration: underline;
+  &::after {
+    content: '';
+    border: solid 1px white;
+  }
+}
+
+.heatmap-cell-label-formatting .heatmap-cell-label {
+  @include underline-and-square;
+}
+
+.heatmap-header-label-formatting .heatmap-header-label {
+  @include underline-and-square;
+}
+
+.heatmap-label-square {
+  position: absolute;
+  transform: translate3d(-90%, 0, 0);
+  width: 4px;
+  height: 4px;
+  display: none;
+}
+
+/* END: Heatmap Visualizations */

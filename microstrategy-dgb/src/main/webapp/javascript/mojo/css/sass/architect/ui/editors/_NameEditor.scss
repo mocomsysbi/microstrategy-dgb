@@ -1,0 +1,33 @@
+/** BEGIN:  NameEditor **/
+.mstrmojo-ar-ne {
+  width: 250px;
+  .mstrmojo-Label {
+    font-weight: bold;
+    width: 250px;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  .mstrmojo-Editor-title {
+    width: 176px;
+  }
+  .mstrmojo-TextBox {
+    margin-top: 10px;
+    width: 200px;
+  }
+  .mstrmojo-Warning-Box {
+    .icon {
+      padding: 0;
+      display: inline-block;
+      border-left: 0;
+      margin: 0;
+      height: 18px;
+      width: 18px;
+      background: url(images/wh/panel_icons.png) no-repeat 2px -700px;;
+    }
+    .message {
+      width: auto;
+      font-weight: normal;
+    }
+  }
+}
+/** END: NameEditor **/

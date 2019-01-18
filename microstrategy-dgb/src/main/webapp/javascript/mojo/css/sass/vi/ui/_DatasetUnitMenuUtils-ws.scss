@@ -1,0 +1,674 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+    .NewRankMetric-MenuEditor,
+    .MovingTotal-MenuEditor,
+    .RelativeReference-MenuEditor,
+    .RunningTotal-MenuEditor,
+    .Calculation-MenuEditor {
+        padding: 9px;
+
+        .me-content {
+            padding: 0;
+        }
+
+        .me-buttons {
+            padding: 0;
+            padding-top: 15px;
+            overflow: hidden;
+        }
+    }
+
+    /** Calculation Editor**/
+    //DE53943;substract style for calculation pulldown list, since it is changed to non-hostedWith
+    .Calculation-PullDown.mstrmojo-ui-Pulldown.mstrmojo-ui-SearchablePulldown {
+        width: 175px;
+        &.invalid {
+            .mstrmojo-ui-Pulldown-text {
+                border-color: #EB815C;
+            }
+        }
+    }
+    .Calculation-MenuEditor {
+        .mstrmojo-ButtonListHoriz .mstrmojo-ButtonItem {
+            border: none;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-image: url(#{$wsvi-number-formatting-icons-sprite});
+            background-clip: padding-box;
+            margin-top: 0;
+            font: 20pt "times new roman";
+            color: #F5F5F5;
+            border: 2px inset transparent;
+            padding: 0;
+
+            &.operator-plus {
+                background-position: -145px -25px;
+            }
+
+            &.operator-plus:hover {
+                background-position: -145px -55px;
+            }
+
+            &.operator-plus.selected {
+                background-position: -145px -55px;
+            }
+
+            &.operator-minus {
+                background-position: -175px -25px;
+            }
+
+            &.operator-minus:hover {
+                background-position: -175px -55px;
+            }
+
+            &.operator-minus.selected {
+                background-position: -175px -55px;
+            }
+
+            &.operator-multiply {
+                background-position: -205px -25px;
+            }
+
+            &.operator-multiply:hover {
+                background-position: -205px -55px;
+            }
+
+            &.operator-multiply.selected {
+                background-position: -205px -55px;
+            }
+
+            &.operator-divide {
+                background-position: -235px -25px;
+            }
+
+            &.operator-divide:hover {
+                background-position: -235px -55px;
+            }
+
+            &.operator-divide.selected {
+                background-position: -235px -55px;
+            }
+
+            &.operator-percent-diff {
+                background-position: -265px -25px;
+            }
+
+            &.operator-percent-diff:hover {
+                background-position: -265px -55px;
+            }
+
+            &.operator-percent-diff.selected {
+                background-position: -265px -55px;
+            }
+        }
+    }
+    /**End Calculation Editor**/
+
+    /**Rank/Moving/Running/PercentOf Editor**/
+    //DE53943;substract style for NewRankMetric-MenuEditor, RelativeReference-MenuEditor, breakby pulldown for MovingTotal-MenuEditor, RunningTotal-MenuEditor
+    .MovingTotalPullDown.BreakByBox,
+    .RunningTotalPullDown.BreakByBox,
+    .NewRankMetricPullDown,
+    .RelativeReferencePullDown {
+        &.mstrmojo-ui-Pulldown {
+            position: absolute;
+            right: 0;
+            width: 100px;
+            margin: 0;
+        }
+    }
+    //DE53943;substract style for MovingTotal-MenuEditor, RunningTotal-MenuEditor
+    .MovingTotalPullDown,
+    .RunningTotalPullDown {
+        &.mstrmojo-ui-Pulldown {
+            margin-top: 4px;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+    }
+
+    .mstrmojo-ui-MenuEditor {
+        &.MovingTotal-MenuEditor,
+        &.RunningTotal-MenuEditor,
+        &.NewRankMetric-MenuEditor,
+        &.RelativeReference-MenuEditor {
+            .me-content {
+                .mstrmojo-Box {
+                    height: 22px;
+                    padding: 4px 0 10px 0;
+                    position: relative;
+
+                    .mstrmojo-Label {
+                        float: left;
+                        margin-right: 105px;
+                    }
+
+                }
+                .breakByBox {
+                    padding: 10px 0 15px 0;
+                }
+            }
+        }
+    }
+
+    .MovingTotal-MenuEditor {
+
+        .mstrmojo-HBox {
+            height: 30px;
+            .mstrmojo-Label {
+                &.WinSzPrefix {
+                    padding-right: 5px;
+                }
+
+                &.WinSzSuffix {
+                    padding-left: 5px;
+                }
+            }
+            INPUT {
+                width: 30px;
+                margin: 0;
+            }
+        }
+    }
+    /**End Rank/Moving/Running/PercentOf Editor**/
+
+    /** BEGIN: Object Picker **/
+    .mstrmojo-ui-Menu.VIRadioGroupMenu, .ConfDataType-VIRadioGroupMenu {
+        & > DIV {
+            // Set Padding for the items within a menu that contains radio group
+            & > .mstrmojo-ui-Menu-item {
+                padding-left: 27px;
+            }
+        }
+
+        .item {
+            &.radio {
+                &.checkMark {
+                    &::before {
+                        background: rgba(0, 0, 0, 0) none;
+                        background-position: 0px 0px;
+                    }
+
+                    &.on::before {
+                        @include wsvi-icon-checkmark;
+                    }
+                }
+
+                &.on {
+                    .micn {
+                        // Clear micn icon
+                        background: transparent none 2px 2px no-repeat;
+                    }
+                }
+            }
+        }
+    }
+    /** END: Object Picker **/
+
+    /** BEGIN: Mark As GEO Role **/
+
+    .MarkGeoRole-MenuEditor.mstrmojo-ui-MenuEditor {
+        .me-content {
+            padding: 0;
+            & > div {
+                width: 145px;
+                white-space: normal;
+                margin: 9px;
+            }
+            .mstrmojo-ToolSeparator {
+                width: 163px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    /** END: Mark As GEO Role **/
+
+    /** BEGIN: Create Time Attribute **/
+
+    .mstrmojo-ui-MenuEditor.CreateTimeAttribute-MenuEditor {
+        .me-content {
+            padding: 0 8px 5px 7px;
+        }
+    }
+
+    /** END: Create Time Attribute **/
+
+    /** BEGIN: Base On Calculation for NDE **/
+    .mstrmojo-ui-MenuEditor.base-on-calculation-editor {
+        .me-content {
+            padding: 0;
+            > .mstrmojo-Label {
+                padding: 5px 8px 0 7px;
+            }
+            .mstrmojo-ui-Pulldown {
+                margin: 0 8px 0 7px;
+            }
+            .mstrmojo-ListBase {
+                @include box-shadow(transparent);
+                border-top: 1px solid $wsvi-splitline-gray;
+                margin-top: 10px;
+                padding-top: 5px;
+            }
+        }
+
+        .mstrmojo-ui-Menu-item {
+            &.checkMarkPadding {
+                padding-left: 30px;
+            }
+            &.on {
+                @extend %menu-item-default;
+
+                &:before {
+                    @extend %wsvi-menu-check-mark;
+                }
+
+                &:hover {
+                    @extend %menu-item-default;
+                    background-color: $wsvi-menu-item-hover-color;
+                }
+            }
+
+            &.selected {
+                position: relative; // Remove this hack after changing the style for xtab menus.
+            }
+
+            &.xt.checked:before {
+                @extend %wsvi-menu-check-mark;
+                left: 0;
+            }
+
+            &.open {
+                @extend %menu-item-open;
+            }
+
+            &.txt {
+                padding: 0 10px;
+            }
+
+            &.separator {
+                background-color: transparent !important;
+                border-bottom: 1px solid $wsvi-splitline-gray !important;
+                height: 1px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                &:before {
+                    @extend %menu-clear-check-mark;
+                }
+            }
+
+            // Clear check mark for sub menu items.
+            &.pop:before {
+                @extend %menu-clear-check-mark;
+            }
+
+            & > DIV {
+                &.check {
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 17px;
+                }
+
+                &.micn,
+                &.arw,
+                &.mtxt {
+                    cursor: default;
+                    position: relative;
+                }
+
+                &.arw {
+                    border: 0 solid transparent;
+                    background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+                    background-position: -540px -26px;
+                    display: inline-block;
+                    float: right;
+                    height: 26px;
+                    right: -4px;
+                    top: 0;
+                    width: 20px;
+                    left: auto;
+
+                    // Submenus.
+                    .mstrmojo-ui-Menu {
+                        margin-top: -16px;
+                        margin-left: 10px;
+                    }
+                }
+
+                &.micn {
+                    border: none;
+                    height: 19px;
+                    top: 3px;
+                    left: 2px;
+                    right: auto;
+                    width: 15px;
+                }
+            }
+
+            @extend %menu-item-base;
+            @include flex(!important);
+            //display: flex !important; // Detach display from menu-item-base as it should be overridden by display = none wherever applicable.
+
+            &.pop {
+                overflow: visible;
+            }
+
+            // CSS for an action popup menu item.
+            &.ax.pop {
+                // To highlight that it's a popup - show the pointer.
+                cursor: pointer;
+
+                // CSS for the mode that we need to highlight the arrow for the action item.
+                &.hlt-ax {
+                    &:hover {
+                        .arw {
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+                .arw{
+                    &:hover {
+                        background-color: transparent;
+                        cursor: default;
+                    }
+
+                    // The bar between text and arrow
+                    &:after {
+                        content: " ";
+                        position: absolute;
+                        height: 11px;
+                        width: 1px;
+                        border-left: 1px $wsvi-primary-white solid;
+                        top: 6px;
+                    }
+                }
+
+                // When open or hover, show another bar
+                &:hover,
+                &.open {
+                    .arw {
+                        &:after {
+                            border-left: 1px $wsvi-primary-white solid;
+                            height: 26px;
+                            top: 0px;
+                        }
+                    }
+                }
+            }
+
+            &.radio {
+                padding-left: 30px;
+
+                &:before {
+                    @extend %menu-clear-check-mark;
+                }
+
+                &.on:before {
+                    @extend %wsvi-menu-check-mark;
+                }
+            }
+
+            // CSS for non-interactive menu items.
+            &.non-int {
+                &:before {
+                    @extend %menu-clear-check-mark;
+                }
+
+                // Non-interactive menu items don't highlight on hover.
+                &:hover {
+                    background: none;
+                }
+
+                // Disabled menu items are a specialized non-interactive menu item with a different text color.
+                &.disabled {
+                    color: $wsvi-menu-font-disabled-color;
+                }
+            }
+
+            &:hover {
+                @extend %menu-item-default;
+                background-color: $wsvi-menu-item-hover-color;
+                color: $wsvi-menu-font-hover-color;
+            }
+
+            &.selected:not(.hierarachy) {
+                &:before {
+                    @extend %wsvi-menu-check-mark;
+                }
+            }
+          
+            //US124229: Drilling options for MDX hierarchical attributes on Netviz.
+            // for hierarchical VisMenuHierarchicalList
+            &.selected.hierarachy {
+                .mark {
+                    @extend %wsvi-menu-check-mark;
+                }
+            }
+         
+            //DE106312 [MDX drill][Netviz][Library]The drill menu is displayed tricky.
+            &.hierarachy:not(.selected):not(.collapsed):not(.expanded) {
+                .mark {
+                    @extend %wsvi-menu-placeholder-mark;
+                }
+            }
+
+            &.collapsed.hierarachy {
+                .mark {
+                    @extend %wsvi-menu-collapsed-mark;
+                }
+            }
+
+            &.expanded.hierarachy {
+                .mark {
+                    @extend %wsvi-menu-expanded-mark;
+                }
+            }
+
+            &.hidden.hierarachy {
+                display: none !important;
+            }
+
+            > DIV.micn {
+                background: transparent none 2px 2px no-repeat;
+                display: inline-block;
+                float: left;
+                height: 26px;
+                left: 0px;
+                position: absolute;
+                top: 0px;
+            }
+
+            >DIV.mtxt {
+                display: inline-block;
+                float: left;
+                height: 26px;
+                overflow: hidden;
+                position: inherit;
+                width: 100%;
+                text-overflow: ellipsis;
+                top: 0px;
+            }
+        }
+    }
+    /** END: Base On Calculation for NDE **/
+
+    /** BEGIN: Configure Data Type **/
+    $editorMargin: 9px;
+    $innerMargin: 10px;
+    .ConfDataTypePullDown.MeContentPullDown {
+        margin-right: $editorMargin;
+
+        &.mstrmojo-ui-Pulldown {
+            margin-top: $innerMargin;
+        }
+        &.mstrmojo-ui-SearchablePulldown {
+            margin-top: $innerMargin;
+        }
+        .ScrollableContainer-content {
+            height: 250px;
+        }
+    }
+
+    .mstrmojo-popup-widget-hosted.ConfDataTypePullDown.MeContentPullDown {
+        &.mstrmojo-ui-Pulldown {
+            margin-top: 0;
+        }
+        &.mstrmojo-ui-SearchablePulldown {
+            margin-top: 0;
+        }
+    }
+
+    .ConfDataTypePullDown.MeContentPullDown.HBOXPullDown {
+        &.mstrmojo-ui-Pulldown,
+        &.mstrmojo-ui-SearchablePulldown {
+            width: 100px;
+        }
+    }
+
+    .mstrmojo-ui-MenuEditor.ConfDataType-MenuEditor .me-content {
+        padding: 0 0 0 $editorMargin;
+
+        .menu-header-text {
+            margin-right: $editorMargin;
+        }
+
+        .ScrollableContainer-content {
+            height: 250px;
+            $dimension: 0;
+
+            // These styles should ideally be overridden within this menu content's 
+            // .mstrmojo-scrollNode.hasVertical class(es), but the new workflow for 
+            // toggleScrollStyle removes and later re-adds the hasVertical class. 
+            // That causes these styles to be erased temporarily, leading to UI issues 
+            // whenever toggleScrollStyle is invoked from the menu's "advanced" option.
+            &::-webkit-scrollbar {
+                width: $dimension;
+                height: $dimension;
+            }
+            &.mstrmojo-scrollNode.hasVertical {
+                margin-right: $dimension;
+                padding-right: $dimension;
+            }
+            // Firefox on Windows is not webkit-based, so hide the browser's scrollbar. 
+            // This does not hide the valid scrollbar, only the unexpected second one.
+            &.firefox-on-windows, &.ms-edge {
+                &.mstrmojo-scrollNode.hasVertical {
+                    overflow-y: hidden !important;
+                }
+            }
+        }
+
+        .mstrmojo-HBox {
+            .mstrmojo-Label {
+                width: 70px;
+                margin-top: $innerMargin;
+                margin-right: $innerMargin;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .mstrmojo-HBox.func-input {
+            margin-top: $innerMargin;
+            margin-bottom: 5px;
+        }
+
+        .mstrmojo-HBox.pattern-input {
+            margin-top: 0px;
+            margin-bottom: $innerMargin;
+            .mstrmojo-Label {
+                color: #858585;
+            }
+        }
+        .mstrmojo-ui-SearchablePulldown .mstrmojo-ui-Pulldown-text:after {
+            display: none;
+        }
+        .advancedLabel {
+            span {
+                color: #cdcdcd;
+                float: right;
+                line-height: 8pt;
+                &:before {
+                    content: "";
+                    display: block;
+                    font-size: $wsvi-menu-font-size;
+                    height: 8pt;
+                    width: 8pt;
+                    float: left;
+                    margin-right: 5px;
+                    background: url(#{$vi-img-path}/arrow-right.png) no-repeat center center;
+                }
+            }
+            margin-top: 14px;
+            margin-right: $editorMargin;
+            height: 8pt;
+        }
+        .advancedLabel.expanded span:before {
+            background: url(#{$vi-img-path}/arrow-up.png) no-repeat center center;
+        }
+    }
+    /** END: Configure Data Type **/
+
+    .mstrmojo-ui-MenuEditor {
+        &.replaceReference,
+        &.mapAttribute, {
+            .me-content {
+                padding: 0 !important;
+                border: 0 !important;
+
+                .mstrmojo-ui-ScrollableContainer {
+                    overflow: hidden;
+                    .ScrollableContainer-content {
+                        max-height: 350px;
+                        .mstrmojo-VIUnitList {
+                            .unit {
+                                margin-left: 0;
+                                border-left: none;
+                                padding-left: 24px;
+                                padding-right: 8px;
+
+                                .txt {
+                                    display: block;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+
+                                &:before {
+                                    left: 3px;
+                                    padding-right: 3px;
+                                }
+
+                                &:hover {
+                                    background-color: $wsvi-hover-gray;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .me-buttons {
+                display: none;
+            }
+        }
+
+        &.displayForms {
+            .mstrmojo-ui-CheckList {
+                .mstrmojo-scrollNode {
+                    max-height: 350px;
+                }
+            }
+        }
+    }
+}
+
+/** END: Workstation Styles **/

@@ -1,0 +1,122 @@
+.workstation {
+    /** BEGIN: LineStyleButton **/
+    .mstrmojo-ui-LineStyle {
+        %line-style-preview {
+            border-top: 1pt solid #000;
+            height: 0;
+            left: 0;
+            position: relative;
+            top: 12px;
+        }
+
+        .preview {
+            background-color: #fff;
+
+            .ellipsis {
+                height: 100%;
+                margin-right: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &.conflict {
+                background: #fff url(#{$vi-img-path}/question_mark.png) 50% 50% no-repeat;
+                div {
+                    border-color: transparent;
+                }
+            }
+
+            div {
+                @extend %line-style-preview;
+
+                margin: 0 6px; //DE103631. #4. The pulldown box (.div) should be 6px based on UX.
+            }
+        }
+
+        .mstrmojo-PopupList {
+            min-width: 75px;
+
+            .item {
+                height: 26px;
+                line-height: 26px;
+                padding: 1px 9px 0 9px; // DE103631: #4. The string in the popupList should be 9px.
+                position: relative;
+
+                div {
+                    @extend %line-style-preview;
+                }
+
+                &:first-child {
+                    div {
+                        border: none;
+                        position: static;
+                    }
+                }
+
+                &.selected {
+                    div {
+                        border-top-color: #fff;
+                    }
+                }
+
+                &.bst1 {
+                    div {
+                        border-top-style: dashed;
+                    }
+                }
+
+                &.bst2 {
+                    div {
+                        border-top-style: dotted;
+                    }
+                }
+
+                &.bst4 {
+                    div {
+                        border-top-width: 1.5pt;
+                    }
+                }
+            }
+        }
+    }
+
+    .mstrmojo-ui-LineStyle {
+        &.no-thick {
+            .mstrmojo-PopupList {
+                .item.bst4 {
+                    display: none;
+                }
+            }
+        }
+
+        &.no-dash {
+            .mstrmojo-PopupList {
+                .item.bst1,
+                .item.bst2 {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-ui-PreviewButton.mstrmojo-ui-LineStyle.no-none {
+        .mstrmojo-PopupList {
+            // Hiding the none also hides the only text item causing the auto-width to be 0px.
+            min-width: 35px;
+
+            .item.bst0 {
+                display: none;
+            }
+        }
+    }
+
+    .mstrmojo-ui-PreviewButton {
+        &.mstrmojo-ui-LineStyle {
+            .mstrmojo-PopupList {
+                margin-top: 3px;
+                right: -1px;
+            }
+        }
+    }
+    /** END: LineStyleButton **/
+}

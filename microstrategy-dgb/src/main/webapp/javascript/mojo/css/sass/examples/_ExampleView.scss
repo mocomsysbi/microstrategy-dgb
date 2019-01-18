@@ -1,0 +1,111 @@
+@import '../global';
+
+/** BEGIN: example-View **/
+.mstrmojo-ex-View {
+    > div {
+        &:first-child {
+            .mstrmojo-Label {
+                font-size: 18pt;
+                line-height: 50px;
+                margin: 0 12px;
+            }
+
+            .mstrmojo-ui-ButtonBar {
+                position: absolute;
+                right: 8px;
+                top: 8px;
+
+                .item {
+                    padding: 6px;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            float: left;
+
+            .mstrmojo-ListBase {
+                @include box-sizing();
+
+                padding: 0 12px;
+
+                .item {
+                    border-left: 2px solid transparent;
+                    color: $violet;
+                    cursor: pointer;
+                    font-size: 10pt;
+                    line-height: 1.45em;
+                    margin: 0 2px;
+                    padding: 0.4em;
+
+                    &:hover {
+                        background: rgba(210, 210, 210, 0.5);
+                    }
+
+                    &.selected {
+                        background-image: -webkit-gradient(linear, left top, right top, from(rgba(232, 232, 232, 0.5)), to(rgba(232, 232, 232, 0)));
+                        border-left-color: $violet;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            float: left;
+            overflow-y: auto;
+
+            & > .mstrmojo-Box {
+                @include box-sizing;
+
+                padding: 0 12px;
+
+                .title {
+                    background: $indigo;
+                    color: #fff;
+                    font-size: 14pt;
+                    font-weight: bold;
+                    line-height: 1.65em;
+                    padding: 0 8px;
+                }
+
+                .description {
+                    font-size: 12pt;
+                    margin: 1em 0;
+                }
+
+                .lblCreateCode {
+                    clear: both;
+                    font-size: 11pt;
+                    font-style: italic;
+                    margin: 1.5em 0 1em;
+                }
+
+                pre {
+                    margin-left: -100px;
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-ex-View {
+        > div {
+            &:nth-child(2) {
+
+                .mstrmojo-ListBase {
+
+                    .item {
+                        color: $green;
+
+                        &.selected {
+                            background-image: -webkit-gradient(linear, left top, right top, from(rgba(232, 232, 232, 0.5)), to(rgba(232, 232, 232, 0)));
+                            border-left-color: $green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/** END: example-View **/

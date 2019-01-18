@@ -1,0 +1,23 @@
+@import '../../vi-global';
+@import '../../themes';
+
+.mstrmojo-ImageBoxOverlayURL {
+    .container-scroll-host {
+        .container {
+            .txt {
+                width: calc(100% - 125px); // Subtract Image width + TextBox margin width + Button width + Button margins width
+            }
+
+            .btn {
+                position: relative;
+                display: inline-block;
+                width: 68px;
+                height: 22px;
+                float: right;
+                margin-left: 8px;
+                margin-top: 10px;
+                margin-right: 8px;
+            }
+        }
+    }
+}

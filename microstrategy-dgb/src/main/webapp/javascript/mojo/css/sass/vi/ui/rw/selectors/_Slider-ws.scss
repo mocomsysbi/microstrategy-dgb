@@ -1,0 +1,463 @@
+.workstation {
+  /** VI start of Slider**/
+  .mstrmojo-VISlider.sc {
+    height: auto;
+    .cont {
+      font-size: inherit;
+    }
+  }
+  .mstrmojo-VISlider .subscript {
+    margin-top: 14px;
+    font-size: inherit;
+   }
+  .mstrmojo-VISlider.rank .subscript {
+    margin-top: 6px;
+  }
+  .subscript.left {
+    float: left;
+  }
+  .subscript.right {
+    float: right;
+  }
+
+  .knob {
+    height: 18px;
+    width: 18px;
+    top: -5px;
+    background: url(#{$vi-img-path}/dataset.svg) -479px -210px no-repeat;
+    z-index: 10;
+  }
+
+  .mstrmojo-VISlider {
+    &.sc-h {
+      .bk{
+        height: 5px;
+        border: 1px solid #cecece;
+        border-radius:5px;
+        background: #fff;
+        margin-top:7px;
+        &.left{
+          border-right: 0px;
+          border-radius: 5px 0px 0px 5px;
+          margin-top: 0px;
+        }
+        &.middle{
+          border-width: 1px 0px;
+          border-radius: 0px;
+          margin-top: 0px;
+          background: $wsvi-primary-blue;
+        }
+        &.right {
+          border-left: 0px;
+          border-right: 0px;
+          border-radius: 0px 5px 5px 0px;
+          margin-top: 0px;
+        }
+      }
+      &.sc1 {
+        .bk.middle {
+          border-width: 1px 0px 1px 1px;
+          border-radius: 5px 0px 0px 5px;
+          background: transparent url(images/scroller/bg-h.gif) 0 0 repeat-x;  //support IE9
+          background: #fff;
+        }
+        &.rank .bk.middle {
+          background: $wsvi-primary-blue;
+        }
+        &.jitter .sdc {
+          top: -1px;
+        }
+        &.jitter .cont {
+          height: 20px;
+        }
+        .sd {
+          .bk.left,
+          .t1 {
+            display: none;
+          }
+          .t3 {
+            display: block;
+            @extend .knob;
+          }
+        }
+      }
+      &.scm {
+        .bk.middle {
+          margin-left: -1px;
+          padding: 0px 1px;
+        }
+        .sd {
+          .t1,
+          .t3{
+            display: block;
+            @extend .knob;
+          }
+        }
+      }
+    }
+  }
+
+  .strikeout {
+    .mstrmojo-VISlider {
+      &.sc-h {
+        &.scm,
+        &.sc1 {
+          .bk {
+            background: #fff;
+            &.left,
+            &.right {
+              background: $wsvi-primary-blue;
+            }
+          }
+          &.invalid {
+            .t1,
+            .t3 {
+              @extend .knob;
+            }
+            .sd {
+              .t1,
+              .t3 {
+                @extend .knob;
+              }
+            }
+          }
+          .t1,
+          .t3 {
+            &:hover {
+              @extend .knob;
+            }
+          }
+        }
+        &.scm,
+        &.sc1.rank {
+          .bk.middle {
+            background: transparent url(images/scroller/bg-h.gif) 0 0 repeat-x;  //support IE9
+            background: #fff;
+          }
+        }
+        &.sc1 {
+          .bk.middle {
+            background: $wsvi-primary-blue;
+          }
+        }
+      }
+    }
+  }
+
+  .mstrmojo-VISlider {
+    .sl-control {
+      position: relative;
+      .mstrmojo-ui-Pulldown {
+        display: inline-block !important;
+        width: 50%;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        margin: 2.5px 0;
+        left: 5%;
+      }
+      .mstrmojo-Label {
+        font-size: inherit;//overwrite font-size:8pt on mstrmojo-Label
+        position: relative;
+        margin: 0 5%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        line-height: 30px;//DE50677;DE67473; since the height of pulldown-text on workstation is 26px, and for metric slider label line-height as 30px, change control height to 30px too to avoid DE50677 and looks good for DE67473
+        vertical-align: middle;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    &.rank {
+      .sl-control .mstrmojo-Label {
+        display: inline-block !important;
+        vertical-align: top;//Make  label align with pulldown text
+        left: auto;
+        width: 40%;
+      }
+    }
+    &.jitter {
+      .sl-control {
+        display: none;
+        height: 0px;
+      }
+      .t3 {
+        z-index: 1 !important; /* need important to overwrite knob for property panel because it should not be on the top*/
+      }
+    }
+  }
+  .mstrmojo-VISlider {
+    &.mstrmojo-Tooltip,
+    &.mstrmojo-Popup {
+      margin: -8px 0 0 -8px;
+    }
+  }
+
+  .mojo-theme-dark {
+    .mstrmojo-VISlider {
+      &.sc-h {
+        .bk {
+          border-color: #000000;
+          @include box-shadow(rgba(72,74,75,0.83), 0, 0, 0, false, 1px);
+
+          &.left,
+          &.right {
+            background-color: #28282a;
+          }
+        }
+
+        &.sc1 {
+          .sd {
+            .bk {
+              &.middle,
+              &.right {
+                background-color: #28282a;
+              }
+            }
+          }
+          &.rank .bk.middle {
+            background: $wsvi-primary-blue;
+          }
+        }
+      }
+    }
+
+    .strikeout {
+      .mstrmojo-VISlider {
+        &.sc-h {
+          .bk{
+            &.middle{
+              background-color: #28282a;
+            }
+          }
+        }
+      }
+    }
+
+    &.mstrmojo-VISlider.vi-regular {
+      &.edvl .mstrmojo-Popup-content,
+      .mstrmojo-Tooltip-contentWrapper .scm-tooltip {
+        background-color: #56585b !important;
+        color: #e4e4e5;
+      }
+    }
+
+  }
+  .mstrmojo-VISlider.mstrmojo-Slider.sc.rank.jitter.disabled.sc-h.sc1 {
+      opacity: 0.5;
+  }
+
+  .mstrmojo-VISlider.mapbox-cluster-maxzoom.sc-h.sc1 {
+    margin-top: 0px;
+    margin-bottom: 8px;
+
+    &.disabled {
+      opacity: 0.5;
+    }
+
+    .bk.middle {
+      background: $wsvi-primary-blue;
+    }
+
+    &.scm, &.sc1 {
+      .sd {
+        .t1,
+        .t3 {
+          height:14px;
+          width: 14px;
+          top: -4px;
+          background: url(#{$vi-img-path}/slider_knob_white.svg) no-repeat;
+          z-index: 3; //make sure it is not above the popup list
+        }
+      }
+    }
+
+    .sl-control, .subscript {
+      display: none;
+    }
+
+    .sd.gh {
+      opacity: 0;
+    }
+  }
+
+  .mapbox-control-container {
+    background-color: $wsvi-primary-white;
+    border: 1px solid $wsvi-primary-gray;
+    border-radius: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+    @include box-shadow($wsvi-input-shadow, 1px, 0px, 2px, false, 1px);
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .mstrmojo-VISlider.mapbox-overal-zoom-slider.sc-h.scm, .mstrmojo-VISlider.mapbox-overal-zoom-slider.sc-h.sc1 {
+    .bk {
+
+      border: none;
+
+      &.left, &.middle, &.right {
+        display: none;
+      }
+
+      .ruler {
+        position: absolute;
+        width: 140px;
+        height: 4px;
+        background-color: rgba($wsvi-wsnavigation-gray, 0.2);
+        top: 0px;
+      }
+
+      .ruler-gap {
+        position: absolute;
+        width: 1px;
+        height: 4px;
+        background-color: $wsvi-primary-white;
+        top: 0px;
+        z-index: 2;
+      }
+
+      .ruler-label {
+        position: absolute;
+        font-size: 9px;
+        color: rgba($wsvi-primary-black, 0.65);
+        margin-top: -13px;
+        padding: 0px 1px;
+        text-align: center;
+        @include ellipsis-text();
+
+        &.left {
+        text-align: left;
+        }
+        &.right {
+          text-align: right;
+        }
+        &.hide {
+          display: none;
+        }
+      }
+    }
+    .sl-control, .subscript {
+      display: none;
+    }
+    .sd {
+      .t1 {
+        display: none;
+      }
+      .t1, .t3 {
+        background: transparent url(#{$vi-img-path}/mapbox_slider_current.svg) no-repeat;
+        background-size: 9px 14px;
+        width: 9px;
+        left: -3px;
+        z-index: 3;
+      }
+
+      .vertical-line {
+        width: 1px;
+        background-color: rgba($wsvi-desc-gray, 0.85);
+        top: 8px;
+        z-index: 5;
+        border: 1px solid $wsvi-primary-white;
+        border-top: none;
+        border-bottom: none;
+      }
+    }
+
+  }
+
+  /*change for cluster max zoom overal slider*/
+  .mapbox-cluster-maxzoom-container{
+    .mstrmojo-VISlider.mapbox-overal-zoom-slider.sc-h.sc1{
+      margin-bottom: 17px;
+      .sd{
+        .t1, .t3{
+          background: transparent url(#{$vi-img-path}/mapbox_arrow_of_current.svg) no-repeat;
+          background-size: 7px 6px;
+          width: 7px;
+          height: 6px;
+          left: 3.5px;
+          margin-top: 11px;
+        }
+      }
+    }
+  }
+
+  .mstrmojo-VISlider.mapbox_layer_zoom_slider.sc-h.scm {
+    margin-top: 0px;
+    margin-bottom: 8px;
+
+    .sl-control, .subscript {
+      display: none;
+    }
+
+    .bk {
+      height: 14px;
+      border: none;
+      padding: 2px 3px;
+      color: rgba($wsvi-primary-black, 0.75);
+      font-size: 9px;
+      @include box-sizing(border-box);
+      @include ellipsis-text();
+
+      &.left {
+        text-align: right;
+      }
+      &.middle {
+        text-align: center;
+      }
+      &.right {
+        text-align: left;
+      }
+    }
+
+    .sd {
+      .bk.middle {
+        background: rgba($wsvi-primary-blue, 0.1);
+        margin-left: 0px;
+      }
+      div {
+        position: absolute;
+      }
+      .t1, .t3 {
+        width: 1px;
+        height: 12px;
+        background-color: rgba($wsvi-primary-blue, 0.8);
+        background-image: none;
+        border: 1px solid rgba($wsvi-primary-blue, 0.8);
+        @include box-shadow($wsvi-input-shadow, 1px, 0px, 2px, false, 1px);
+        border-radius: 1px;
+        top: 0px;
+
+        &.enable:hover {
+          width: 4px;
+          border: 1px solid $wsvi-primary-white;
+          @include box-shadow(rgba($wsvi-primary-blue, 0.25), 0px, 0px, 0px, false, 1.5px);
+          margin-left: -1.5px;
+        }
+
+        &.exclude {
+          background-color: $wsvi-primary-white;
+
+          &.enable:hover {
+            width: 4px;
+            border: 1px solid rgba($wsvi-primary-blue, 0.8);
+            @include box-shadow(rgba($wsvi-primary-blue, 0.25), 0px, 0px, 0px, false, 1.5px);
+            margin-left: -1.5px;
+          }
+        }
+      }
+
+      &.gh {
+        opacity: 0;
+      }
+    }
+
+  }
+  /** VI end of Slider**/
+}

@@ -1,0 +1,92 @@
+/** DA Object Browsers **/
+
+.mstrmojo-MetricIDE .mstrmojo-DA-obContainer {
+
+    border-left: 1px solid #dedede;
+
+    .mstrmojo-VIPanel.mstrmojo-VIDatasetObjects {
+        height: 380px;
+        margin-top: 0px;
+        float: left;
+        box-shadow: none;
+    }
+
+    /*DE14586*/
+    &.show-all {
+        .mstrmojo-VIDatasetObjects {
+            height: 338px;
+            display: block !important;
+            margin-top: -30px;
+
+            > .mstrmojo-VIPanel-titlebar .mstrmojo-VITitleBar {
+                display: none !important;
+            }
+
+            .mstrmojo-sb-show-default.mstrmojo-VIPanel-content,
+            .mstrmojo-scrollNode.mstrmojo-VIPanel-content {
+                height: 248px;
+            }
+        }
+
+        > .DAE-RWD-ObjectBrowser-container {
+            display: block !important;
+
+            > .mstrmojo-Label {
+                display: none !important;
+            }
+        }
+
+        .DAE-RWD-ObjectBrowser {
+            height: 320px;
+        }
+    }
+    /*end DE14586*/
+}
+
+.mstrmojo-DA-obContainer {
+    .mstrmojo-DA-obDESC {
+        width: 190px;
+        margin-left: 5px;
+        margin-top: $wsvi-element-padding;
+        line-height: $wsvi-panel-row-height;
+    }
+
+    .mstrmojo-Label {
+        padding: 0 0 0 10px;
+
+        &.dataset-type {
+            padding: 0 0 0 0;
+        }
+    }
+}
+
+.mstrmojo-DA-obDESC .mstrmojo-VIUnitList {
+
+    .unit {
+        line-height: $wsvi-panel-row-height;
+
+        > DIV.tidinfo {
+            @include wsvi-icon-size;
+            background: url(images/DA-sprite.png) no-repeat -170px -8px transparent;
+            display: block;
+            position: absolute;
+            right: 5px;
+            top: 6px;
+        }
+    }
+}
+
+.mstrmojo-DerivedAttrIDE-rwd .mstrmojo-DA-obDESC .unit {
+    margin-left: 20px;
+    background-image: url("vi/images/unitList/icon_att_form.png");
+    background-position: 3px center;
+    background-repeat: no-repeat;
+    padding: 3px 0 3px 22px;
+    cursor: pointer;
+    position: relative;
+}
+
+.mstrmojo-DA-IDE.simple .mstrmojo-FunctionWidzard .mstrmojo-ME-formatbar {
+    display: none !important;
+}
+

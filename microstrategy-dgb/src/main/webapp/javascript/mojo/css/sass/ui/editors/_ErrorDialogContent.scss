@@ -1,0 +1,36 @@
+@import '../../vi/vi-global';
+
+.mstrmojo-error-content {
+    word-break: break-word;
+    overflow: hidden;
+
+    .scroll-container {
+        max-height: 265px;
+    }
+
+    .toggle-details-link {
+        &:before {
+            width: 20px;
+            height: 20px;
+            background: url(#{$vi-img-path}/menu_icons.png) no-repeat 0px -25px;
+            position: absolute;
+            content: '';
+            margin-left: -12px;
+        }
+        padding: 12px 0 0 10px;
+        width: 70px;
+        cursor: default;
+        position: relative;
+    }
+    .error-details {
+        display: none;
+    }
+    &.show-details {
+        .toggle-details-link:before {
+            background-position: 1px 4px;
+        }
+        .error-details {
+            display: block;
+        }
+    }
+}

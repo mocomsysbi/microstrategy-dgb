@@ -1,0 +1,36 @@
+.mstrmojo-di-mappingpage {
+
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  &.mstrmojo-Splitter.vertical .mstrmojo-SplitterHandle {
+    background: url("images/DI/drag_lines.png") no-repeat center 1px;
+    background-image: url("images/DI/drag_lines.png") !important;
+    cursor: n-resize;
+  }
+  &.toggling {
+    .mstrmojo-SplitterPanel,
+    .mappingpage-bottom,
+    .mstrmojo-di-datapreview,
+    .di-preview-container,
+    .mstrmojo-DataGrid-itemsScrollBox {
+      @include single-transition(height, 500ms, ease, 0ms);
+    }
+  }
+  .mstrmojo-SplitterPanel:first-child{
+    border-bottom: 1px solid #c4c6c9;
+  }
+  .mstrmojo-SplitterHandle{
+    border-top: 1px solid #e6e7e8;
+  }
+  &.mstrmojo-Splitter.vertical.preview-collapse{
+    .mstrmojo-SplitterPanel:first-child{
+      border-bottom: 1px solid #abaeb2;
+    }
+    .mstrmojo-SplitterHandle{
+      border-top: 1px solid #ffffff;
+      cursor: default;
+    }
+  }
+
+}

@@ -1,0 +1,61 @@
+[
+    {   "id": 0,
+        "name": "Eloqua",
+        "desc": "Import your data from Eloqua.",
+        "icon": "eloqua",
+        "loginCaption": "Enter the user credentials for Eloqua",
+        "auth": [
+            {
+                "propertyName": "User",
+                "uiControl": "textbox",
+                "connectionStringProperty": "user"
+            },
+            {
+                "propertyName": "Password",
+                "uiControl": "textbox",
+                "connectionStringProperty": "password"
+            }
+        ],
+        "connectionString": "CloudConnector;USE_ZORBA2;SourceName=eloqua;tokenType=userPassword;user=@user;password=@password"
+    },
+    {
+        "id": 1,
+        "name": "Oracle CRM",
+        "desc": "Import your data from Oracle CRM.",
+        "icon": "oracle",
+        "loginCaption": "Enter the user credentials for Oracle CRM",
+        "auth": [
+            {
+                "propertyName": "User",
+                "uiControl": "textbox",
+                "connectionStringProperty": "user"
+            },
+            {
+                "propertyName": "Password",
+                "uiControl": "textbox",
+                "connectionStringProperty": "password"
+            }
+        ],
+        "connectionString": " CloudConnector;SourceName=oraclecrm;tokenType=userPassword;user=@user;password=@password "
+    },
+    {
+        "id":2,
+        "name": "Sugar CRM ",
+        "desc": "Import your data from Sugar CRM.",
+        "icon": "sugar-crm",
+        "loginCaption": "Enter the user credentials for Sugar CRM ",
+        "auth": [{"propertyName": "User", "uiControl": "textbox", "connectionStringProperty": "user"},
+                 {"propertyName": "Password", "uiControl": "textbox", "connectionStringProperty": "password"},
+                 {"propertyName": "REST URL", "uiControl": "textbox"}],
+        "connectionString": "CloudConnector;SourceName = sugarcrm;tokenType = userPassword;user = @user;password = @password;resturl = @resturl"
+    },
+    {
+        "id":3,
+        "name": "Zendesk ",
+        "desc": "Import your data from Zendesk.",
+        "icon": "zendesk",
+        "loginCaption": "Enter the user credentials for Zendesk",
+        "auth": [{"propertyName": "Session", "uiControl": "textbox", "connectionStringProperty": "session", "encoding": "base64"}],
+        "connectionString": "CloudConnector;SourceName = zendesk;tokenType = session;session = @session"
+    }
+]

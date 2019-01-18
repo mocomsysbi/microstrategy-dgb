@@ -1,0 +1,471 @@
+@import '../../_global';
+
+$card-maxwidth: 396px; //Single col card max-width
+
+.mstrmojo-Card {
+    min-height: 200px;
+    max-height: 380px;
+    margin-top: 30px;
+    float: left;
+    transition: all 1000ms;
+    position: relative;
+    
+    &.avatar {
+        &:before {display: none;}
+        .mstrmojo-Card-container {border-left: 0 none;}
+    }
+    &.drag,
+    &.dragover {
+        transition: all .2s;
+    }
+    &.drag {
+        opacity: 0.3;
+    }
+    &.dragover:after {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 96%;
+        background: #FFF906;
+    }
+    &.dragover.right:after {
+        left: calc(100% - 2px);
+    }
+}
+
+.mstrmojo-Card-titlebar {
+    overflow: hidden;
+    background: #f6f6f6;
+    cursor: move;
+}
+.mstrmojo-Card-titlebar .right-toolbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    cursor: default;
+    .mstrmojo-VITitleToolbar {
+        opacity: 1;
+    }
+}
+.mstrmojo-Card-titlebar .title-text {
+    padding-left: 40px;
+    margin-left: 3px;
+    position: relative;
+    height: 35px;
+    padding-top: 2px;
+}
+
+.mstrmojo-Card.emptyTitle .mstrmojo-Card-titlebar .title-text{
+        height: 0px;
+        padding-top: 0px;
+}
+
+.mstrmojo-Card-titlebar .title-text > DIV {line-height: 35px;}
+.mstrmojo-Card-titlebar .title-text:before {
+    content: ' ';
+    position: absolute;
+    background: url(#{$mojo-img-path}/cards_icons.png) no-repeat 1000px 1000px transparent;
+    width: 40px;
+    height: 35px;
+    top: 0px;
+    left: 5px;
+}
+.mstrmojo-Card.dashboard .mstrmojo-Card-titlebar .title-text:before {background-position: 0px -208px;}
+.mstrmojo-Card.my .mstrmojo-Card-titlebar .title-text:before {background-position: 0px -125px;}
+.mstrmojo-Card.shared .mstrmojo-Card-titlebar .title-text:before {background-position: 0px -166px;}
+.mstrmojo-Card.recent .mstrmojo-Card-titlebar .title-text:before {background-position: 0px -44px;}
+.mstrmojo-Card.add .mstrmojo-Card-titlebar .title-text:before {background-position: 0px 0px;}
+.mstrmojo-Card.whatsNew .mstrmojo-Card-titlebar .title-text:before {background-position: 0px -248px;}
+
+.mstrmojo-Card-container {
+    box-sizing: border-box;
+    min-height: inherit;
+    max-height: inherit;
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    margin: 0px 10px 0px 10px ;
+}
+.mstrmojo-Card-content {
+    height: 300px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.mstrmojo-Card.emptyTitle .mstrmojo-Card-content{
+    height: 337px;
+}
+
+/* ObjectBrowser - customize look & feel*/
+.mstrmojo-Card .mstrmojo-ObjectBrowser {overflow: hidden;height: 100%;padding: 10px;}
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-OB-titleTable {
+    //display: none !important;
+    width: 100%;
+
+    .mstrmojo-FormatEditor-DropDownButton {
+        max-width: 260px;
+    }
+}
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-fisheye-item { /*todo: fix this fisheye ui at ObjectBrowser*/
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+    background: #ccc;
+    border: 1px solid #eee;
+    border-radius: 50%;
+}
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-fisheye-item.selected {  /*todo: fix this fisheye ui at ObjectBrowser*/
+    background: #2AA3E2;
+}
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-Booklet {
+    width: 100%;
+    border: 0 none;
+    box-shadow: 0 0 0 0;
+    height: calc(100% - 25px - 10px - 11px );  //adjust by titlebar height/padding/content node padding
+    background: transparent;
+    
+    .mstrmojo-OBListItemText {
+    	padding-right: 18px;
+    }
+
+    .mstrmojo-scrolltrack.vertical {
+        right: 4px;
+    }
+}
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-OBList .mstrmojo-ListBase2-itemsContainer {
+    width: 98%;
+}
+.mstrmojo-Card .mstrmojo-ObjectBrowser div.mstrmojo-OBListItem {line-height: 20px;border-bottom: 1px solid #eee;}
+.mstrmojo-Card .mstrmojo-ObjectBrowser div.mstrmojo-OBListItem.selected {background: transparent;}
+.mstrmojo-Card .mstrmojo-ObjectBrowser div.mstrmojo-OBListItem.selected:hover {background: transparent;}
+
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-Pulldown, .mstrmojo-ObjectBrowser .mstrmojo-FormatEditor-DropDownButton {
+	background:#fff;
+}
+
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-Pulldown .mstrmojo-OBNavigatorPopup, .mstrmojo-ObjectBrowser .mstrmojo-FormatEditor-DropDownButton .mstrmojo-OBNavigatorPopup {
+	background:#fff;
+}
+
+.mstrmojo-Card .mstrmojo-OBNavigatorPopup {
+  	background: #fff;
+}
+
+.mstrmojo-Card .mstrmojo-ObjectBrowser div.mstrmojo-OBListItem {
+  border-bottom: 0;
+}
+
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-OBListItemIcon.up {
+	background: transparent url(#{$mstr-img-path}/toolbar.png) no-repeat -380px -241px;
+	height: 20px;
+  	width: 20px;
+  	margin-left: 8px;
+	&.disabled {
+		background: none;
+		cursor: default;
+	}
+}
+
+.mstrmojo-Card .mstrmojo-VITitleBar .mstrmojo-EditableLabel {
+  font-size: 13px;
+}
+
+.mstrmojo-Card .mstrmojo-OBList {
+  font-size: 12px;
+}
+
+.mstrmojo-Card .mstrmojo-OB-titleTable tr td:nth-child(2) {
+    width: 70%;
+}
+
+.mstrmojo-Card .mstrmojo-ObjectBrowser .mstrmojo-FormatEditor-DropDownButton {
+    border: 1px solid #eee;
+    box-shadow: none;
+    .mstrmojo-OBNavigatorPopup {
+        border-color: #eee;
+        box-shadow: #eee 0 0 10px;
+    }
+}
+
+/*Shared / My Reports card*/
+.mstrmojo-Card {
+    &.my,
+    &.shared {
+        .title-text,
+        .title-text > DIV {
+            cursor: pointer;
+        }
+    }
+}
+/* Recent Files*/
+.mstrmojo-RecentsCard {
+    width: 100%;
+    height: 280px;
+    //max-width: 1320px; //Match the max-width of larget screen
+}
+.mstrmojo-RecentsList {
+    $item-height: 180px;
+    $item-width: 260px;
+
+    margin: 0 30px;
+
+    /*Overwrite slick setting*/
+    .slick-arrow {
+        z-index: 1;
+        width: 30px !important;
+        height: 55px !important;
+        margin-top: -25px;
+
+        &:before {
+            content: ' ' !important;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url(#{$mojo-img-path}/carousel.png) no-repeat -60px 0 #fff;
+            opacity: 1 !important;
+            filter: alpha(opacity=100) !important;
+        }
+        &.slick-prev {
+            &.slick-disabled:before,
+            &.slick-disabled:hover:before {background-position: -60px 0;}
+            &:before {background-position: 0 0;}
+            &:hover:before {background-position: -120px 0;}
+        }
+        &.slick-next {
+            &.slick-disabled:before,
+            &.slick-disabled:hover:before {background-position: -90px 0;}
+            &:before {background-position: -30px 0;}
+            &:hover:before {background-position: -150px 0;}
+        }
+    }
+    .item {
+        position: relative;
+        box-sizing: border-box;
+        margin: 5px 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        .no-recent {
+            height: $item-height;
+            max-width: $item-width;
+            width: 100%;
+            line-height: 20px;
+            border: 1px solid #ddd;
+            padding: 30px 30px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            margin: 5px auto 0;
+            white-space: normal;
+
+            a:link,
+            a:visited {
+               color: #23A3D3;
+            }
+        }
+
+        .no-recent-img {
+            height: $item-height;
+            max-width: $item-width;
+            width: 100%;
+            line-height: 120px;
+            border: 1px solid #ddd;
+            padding: 30px 30px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            margin: 5px auto 10px;
+            white-space: normal;
+
+            a:link,
+            a:visited {
+               color: #23A3D3;
+            }
+        }
+
+        .time {font-style: italic;}
+    }
+    .preview {
+        height: $item-height;
+        max-width: $item-width;
+        width: 100%;
+        margin: 5px auto 10px;
+        border: 1px solid #ddd;
+
+        &.sample {
+            background: url(#{$mojo-img-path}/carousel-samples.png) no-repeat -1000px -1000px #fff;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+        }
+        &.p0 {background-position: 0 0;}
+        &.p1 {background-position: 0 -180px;}
+        &.p2 {background-position: 0 -360px;}
+        &.p3 {background-position: 0 -540px;}
+
+        & + .overlayText {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            font-size: 36px;
+            text-align: center;
+            width: 100%;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+        }
+    }
+    .name-time {
+        max-width: $item-width;
+        margin: 0 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+.mstrmojo-Card .mstrmojo-recent-list {
+    height: 100%;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+.mstrmojo-Card .mstrmojo-recent-list .item {
+    height: 30px;
+    border-bottom: 1px solid #eee;
+    line-height: 30px;
+}
+
+
+/****Begin Media ******/
+$breakpoint-phone: 480px;
+$breakpoint-tiny: 768px;
+$breakpoint-small: 1224px;
+$breakpoint-medium: 1640px;
+$breakpoint-large: 2048px;
+
+.mstrmojo-Card.col-1 {max-width: $card-maxwidth;}
+.mstrmojo-Card.col-2 {max-width: 2 * $card-maxwidth;}
+.mstrmojo-Card.col-3 { max-width: 3 * $card-maxwidth;}
+.mstrmojo-Card.col-4 {  max-width: 4 * $card-maxwidth;}
+
+/* Phone screens */
+@media only screen and (max-width : 480px) {
+    .mstrmojo-Card {
+        width: 100%;
+        float: none;
+    }
+}
+/* Tiny screens */
+@media only screen and (min-width : 480px) and (max-width: 768px) {
+    .mstrmojo-Card-container { }
+    .mstrmojo-Card.col-1 {
+        width: 50%;
+    }
+    .mstrmojo-Card.col-2 {
+        width: 100%;
+    }
+  .mstrmojo-Card.col-3 {
+    width: 100%;
+  }
+  .mstrmojo-Card.col-4 {
+    width: 100%;
+  }
+}
+
+/* Small screens */
+@media only screen and (min-width : 768px) and (max-width: 1224px) {
+    .mstrmojo-Card-container { }
+    .mstrmojo-Card.col-1 {
+        width: 33.33%;
+    }
+    .mstrmojo-Card.col-2 {
+        width: 66.66%;
+    }
+    .mstrmojo-Card.col-3 {
+        width: 100%;
+     }
+     .mstrmojo-Card.col-4 {
+        width: 100%;
+     }
+}
+
+/* Medium screens */
+@media only screen and (min-width : 1224px) {
+    .mstrmojo-Card-container { }
+    .mstrmojo-Card.col-1 {
+        width: 25%;
+    }
+    .mstrmojo-Card.col-2 {
+        width: 50%;
+    }
+    .mstrmojo-Card.col-3 {
+      width: 75%;
+    }
+    .mstrmojo-Card.col-4 {
+      width: 100%;
+    }
+}
+
+/* Large screens */
+@media only screen and (min-width : 1640px) {
+    .mstrmojo-Card-container { }
+    .mstrmojo-Card.col-1 {
+        //max-width: 330px;
+    }
+    .mstrmojo-Card.col-2 {
+        //max-width: 660px;
+    }
+}
+/****End Media ******/
+
+/* Add button */
+.mstrmojo-Card-add.mstrmojo-WebButton {
+    width: 120px;
+    height: 160px;
+    line-height: 160px;
+    font-size: 6em;
+    min-height: 200px;
+    float: left;
+    border: 0 none;
+    background: transparent;
+    overflow: visible;
+    position: relative;
+    padding: 0 11px 20px;
+    margin-top: 5px;
+
+    > .mstrmojo-Button-text  {
+        height: 100%;
+        line-height: inherit;
+        margin: 10px;
+        box-sizing: border-box;
+        background: #ccc;
+        opacity: 0.5;
+    }
+
+    .mstrmojo-ui-Menu {
+        left: 100% !important;
+        top: 20px !important;
+    }
+}
+
+.mstrmojo-CardMenuEditor-dashboard {
+    .mstrmojo-TextBoxWithLabel {
+        margin: 10px 0;
+    }
+    .mstrmojo-TextBox-label {
+        width: 120px;
+        display: inline-block;
+    }
+    .me-buttons {
+        text-align: right;
+    }
+}
+
+.mstrmojo-Card.imgCard {
+	.mstrmojo-Image {
+		height:inherit;
+	}
+	img {
+	    max-width: 100%;
+	    max-height: 100%;
+    }
+}

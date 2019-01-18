@@ -1,0 +1,24 @@
+/** Start Tree DropZones code. **/
+
+.mstrmojo-SimpleTree {
+  &.mask {
+    overflow: hidden !important;
+    &:hover {
+      overflow: hidden !important;
+    }
+    .item-n {
+      -webkit-transition: all 100ms;
+      transition: all 100ms;
+      -moz-transition: all 100ms;
+    }
+  }
+  li.dzMask > .item {
+    background-color: #eaeaea !important;
+    font-weight: bold;
+    .item-n {
+      margin-left: 2px;
+    }
+  }
+}
+
+/** End Tree DropZones code. **/

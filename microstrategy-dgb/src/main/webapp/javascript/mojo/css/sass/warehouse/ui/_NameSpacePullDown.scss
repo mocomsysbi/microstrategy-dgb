@@ -1,0 +1,92 @@
+@import '../wh-global';
+
+/* Namespace Pulldown */
+
+.mstrmojo-wh-NameSpacePullDown {
+  @include flex(!important);
+
+  .mstrmojo-ui-SearchablePulldown {
+      width: 100%
+  }
+
+  .mstrmojo-wh-btnRefreshNS {
+    width: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+    background-image: url("images/DI/workstation/workstation.svg");
+    background-position: -2000px -45px;
+    &:hover {
+      // background: url(#{$wh-image-path}/refresh_hover.png) no-repeat 2px 3px;
+    }
+    &:active {
+      // background: url(#{$wh-image-path}/refresh_click.png) no-repeat 2px 3px;
+    }
+  }
+
+  .mstrmojo-wh-labelNS {
+    margin: 0 4px 0 0;
+    line-height: 23px;
+    font-size: 8pt !important;
+    white-space: nowrap;
+  }
+
+  // DE16847: Fix for IE8/IE9.
+  &.ie9 {
+    &:after {
+      content: "";
+      display: block;
+      visibility: hidden;
+      clear: both;
+    }
+    .mstrmojo-ui-SearchablePulldown {
+      float: left;
+    }
+
+    .mstrmojo-wh-btnRefreshNS {
+      float: left;
+      height: 21px;
+    }
+  }
+
+  .mojo-theme-light {
+    .mstrmojo-wh-btnRefreshNS {
+      border-color: #B5B5B5 !important;
+    }
+  }
+
+  .mojo-theme-dark{
+    .mstrmojo-wh-btnRefreshNS {
+      border-color: #0f0f10 !important;
+    }
+  }
+
+}
+
+.workstation {
+  .AvailableTables {
+    .mstrmojo-wh-NameSpacePullDown {
+      .mstrmojo-ui-Pulldown.mstrmojo-ui-SearchablePulldown {
+        margin: 0 0 0 10px;
+      }
+      .mstrmojo-wh-labelNS {
+        margin: 0 4px 0 0;
+        line-height: 23px;
+        width: 84px;
+        max-width: 64px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .qb-select-table {
+    .AvailableTables {
+      .mstrmojo-wh-NameSpacePullDown {
+        .mstrmojo-wh-labelNS {
+          width: 108px;
+        }
+      }
+    }
+  }
+}

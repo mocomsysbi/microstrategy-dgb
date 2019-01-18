@@ -1,0 +1,167 @@
+@import "RefineVariables";
+
+li.facet-container {
+  display: block;
+  float: left;
+  width: 320px;
+  background: $containerFillColor;
+  border: $widgetBorder;
+  height: 123px;
+}
+
+.facet-title {
+  margin: 0px 9px 0px 9px;
+  position: relative;
+  height: 20px;
+}
+
+.facet-text {
+  height: 20px;
+  line-height: 20px;
+  margin-right: 20px;
+}
+
+.facet-menu {
+  position: absolute;
+  top: 1px;
+  right: 0px;
+}
+
+a.facet-title-remove {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 2px 0 0 0;
+  text-decoration: none;
+  background-image: url(images/Refine/close-map.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+.facet-controls {
+  position: relative;
+  font-size: 0.9em;
+  margin: 0px 9px 0px 9px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.facets-container a {
+  color: #79c4ec;
+  margin: 0 3px;
+  word-wrap: break-word;
+}
+
+.facets-container .facet-choice-label {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 160px;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  color: $fontColor;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.facets-container a.selected {
+  color: $fontColor;
+  cursor: default;
+}
+
+.facet-body-message {
+  margin: 1em;
+  color: #777;
+  text-align: center;
+}
+
+a.facet-choice-link {
+  float: right;
+  padding-left: 3px;
+  color: $fontColor;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a.facet-choice-link:hover {
+  cursor: pointer;
+}
+
+.facet-choice-count, .facet-range-choice-count {
+  padding-left: 3px;
+}
+
+.facet-choice-count {
+  position: relative;
+  z-index: 1;
+}
+
+.facet-body {
+  height: 85px;
+  overflow: hidden; //ljing 940034
+  background: white;
+  margin: 0px 9px 7px 9px;
+  border: $widgetBorder;
+  &:hover{
+    overflow: auto;
+  }
+}
+
+.facet-body-inner {
+  background: #fff;
+  height: 100%;
+  overflow: auto;
+}
+
+.browsing-panel-header {
+  position: relative;
+  display: none;
+}
+
+.choiceCountContainer {
+  color: $fontColorDisable;
+  margin-left: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.facet-choice {
+  position: relative;
+}
+
+.facet-choice-count-bar {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 30%;
+  background: #aeddf7;
+  border-left: none;
+}
+
+.facet-choice-selected .facet-choice-label {
+  color: #ff6a00;
+}
+
+.facet-choice-link.facet-mode-inverted {
+  text-decoration: line-through;
+  color: black;
+}
+
+.facet-mode-inverted .facet-choice-selected .facet-choice-label {
+  text-decoration: line-through;
+  color: black;
+}
+
+.facet-column-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 140px;
+}

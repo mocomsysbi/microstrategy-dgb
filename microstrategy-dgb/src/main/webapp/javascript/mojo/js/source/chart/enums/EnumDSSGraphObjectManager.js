@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumDSSGraphObjectManager={DssChartManager:20000,DssPlotManager:20001,DssPlot:20002,DssLegend:20003,DssAreaSeriesRenderer:20004,DssBarSeriesRenderer:20005,DssLineSeriesRenderer:20006,DssStepLineSeriesRenderer:20007};

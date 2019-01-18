@@ -1,0 +1,120 @@
+@import '../../vi-global';
+
+/** BEGIN: TutorialView **/
+.mstrmojo-vi-TutorialView {
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+
+    .dismissLbl{
+        position: absolute;
+        color:  #FFFFFF;
+        font-family: 'Arial';
+        font-size: 15pt;
+        font-weight: bold;
+        bottom: 50%;
+        left: 50%;
+        margin-right: -50%;
+        -webkit-transform: translate(-50%, -100%);
+        -ms-transform: translate(-50%, -100%);
+        transform: translate(-50%, -100%);
+    }
+
+    .accessLaterLbl{
+        position: absolute;
+        color: #E5E5E5;
+        font-family: 'Arial';
+        font-size: 10pt;
+        bottom: 50%;
+        left: 50%;
+        margin-right: -50%;
+        -webkit-transform: translate(-50%, 100%);
+        -ms-transform: translate(-50%, 100%);
+        transform: translate(-50%, 100%);
+    }
+
+    $tv-bg-color: #ededed;
+    $tv-border-color: #747474;
+    $tv-h-arrow-width: 8px;
+    $tv-v-arrow-width: 11px;
+
+    .mstrmojo-vi-tv-tip {
+        &.data-source {
+            .text {
+                left: -100px;
+                top: 32px;
+
+                &:before {
+                    @include css-arrow($tv-v-arrow-width, bottom, $tv-border-color, -22px, auto, auto, 86px);
+                }
+
+                &:after {
+                    @include css-arrow($tv-v-arrow-width - 1px, bottom, $tv-bg-color, -20px, auto, auto, 87px);
+                }
+            }
+        }
+
+        &.insert-viz {
+            .text {
+                left: 29px;
+                top: -13px;
+
+                &:before {
+                    @include css-arrow($tv-h-arrow-width, right, $tv-border-color, 4px, auto, auto, -17px);
+                }
+
+                &:after {
+                    @include css-arrow($tv-h-arrow-width - 1px, right, $tv-bg-color, 5px, auto, auto, -14px);
+                }
+            }
+        }
+
+        &.close-btn {
+            .text {
+                right: -17px;
+                top: 32px;
+
+                &:before {
+                    @include css-arrow($tv-v-arrow-width, bottom, $tv-border-color, -22px, 6px, auto, auto);
+                }
+
+                &:after {
+                    @include css-arrow($tv-v-arrow-width - 1px, bottom, $tv-bg-color, -20px, 7px, auto, auto);
+                }
+            }
+        }
+
+        &.all-obj-btn {
+            .text {
+                left: -57px;
+                top: -75px;
+
+                &:before {
+                    @include css-arrow($tv-v-arrow-width, top, $tv-border-color, auto, auto, -23px, 45px);
+                }
+
+                &:after {
+                    @include css-arrow($tv-v-arrow-width - 1px, top, $tv-bg-color, auto, auto, -20px, 46px);
+                }
+            }
+        }
+
+        &.vi-gallery {
+            .text {
+                right: 32px;
+                top: -21px;
+
+                &:before {
+                    @include css-arrow($tv-h-arrow-width, left, $tv-border-color, 11px, -17px, auto, auto);
+                }
+
+                &:after {
+                    @include css-arrow($tv-h-arrow-width - 1px, left, $tv-bg-color, 12px, -14px, auto, auto);
+                }
+            }
+        }
+    }
+}
+/** END: TutorialView **/

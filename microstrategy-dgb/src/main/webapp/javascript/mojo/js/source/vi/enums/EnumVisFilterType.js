@@ -1,0 +1,1 @@
+mstrmojo.vi.enums.EnumVisFilterType={KEEP_ONLY:0,ADV_QUALIFICATION:1,LINKING:2,DRILLING:3};

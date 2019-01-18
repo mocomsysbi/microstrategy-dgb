@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSXMLAxesBitMap={DssXmlAxisNone:0,DssXmlAxisRowsBit:1,DssXmlAxisColumnsBit:2,DssXmlAxisPagesBit:4,DssXmlAxisChaptersBit:8};

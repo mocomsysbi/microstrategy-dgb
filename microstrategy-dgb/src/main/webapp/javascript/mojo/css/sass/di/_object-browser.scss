@@ -1,0 +1,34 @@
+
+.mstrmojo-di-so-list-header {
+  border-bottom: 1px solid #bbbbbb;
+  border-left: 1px solid #bbbbbb;
+  border-top: 1px solid #bbbbbb;
+  color: #ffffff;
+  font-family: Tahoma, Arial;
+  font-size: 10pt;
+  font-weight: bold;
+  padding: 5px 0px 5px 10px;
+  @include linear-gradient(#3a76c4, #56a8ea);
+}
+
+.mstrmojo-di-so-list-header-last {
+  background-color: #56a8ea;
+  border-bottom: 1px solid #bbbbbb;
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  border-top: 1px solid #bbbbbb;
+  color: #ffffff;
+  font-family: Tahoma, Arial;
+  font-size: 10pt;
+  font-weight: bold;
+  padding: 5px 0px 5px 10px;
+}
+
+.di-object-browser-header-left {
+  float: left;
+}
+
+.di-object-browser-header-right {
+  float: right;
+  padding-right: 5px;
+}

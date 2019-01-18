@@ -1,0 +1,31 @@
+@mixin viz-icon-border-style() {
+    border-width: $wsvi-vis-gallery-icon-border;
+    border-style: solid;
+}
+
+@mixin viz-icon-outer-style() {
+    height: $wsvi-vis-gallery-icon-outer-height;
+    width: $wsvi-vis-gallery-icon-outer-width;
+}
+
+@mixin viz-icon-middle-common() {
+    border: $wsvi-vis-gallery-icon-border solid;
+    height: $wsvi-vis-gallery-icon-middle-height;
+    width: $wsvi-vis-gallery-icon-middle-width;
+}
+
+@mixin viz-icon-middle-theme($border-color, $background-color) {
+    background-color: $background-color;
+    border-color: $border-color;
+}
+
+@mixin viz-icon-inner-style() {
+    background-repeat: no-repeat !important;
+    margin: -1px;
+    height: $wsvi-vis-gallery-icon-inner-height;
+    width: $wsvi-vis-gallery-icon-inner-width;
+}
+
+@mixin viz-icon-margin() {
+    margin: $wsvi-vis-gallery-icon-margin;
+}

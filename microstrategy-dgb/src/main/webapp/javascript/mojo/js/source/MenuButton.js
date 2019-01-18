@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.HTMLButton","mstrmojo._HasContextMenu","mstrmojo.ContextMenu");mstrmojo.MenuButton=mstrmojo.declare(mstrmojo.Button,[mstrmojo._HasContextMenu],{preclick:function preclick(evt){this.showContextMenu();},openPopupMenu:function(){this.showContextMenu();}});})();

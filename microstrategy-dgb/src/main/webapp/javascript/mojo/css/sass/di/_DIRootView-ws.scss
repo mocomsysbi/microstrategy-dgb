@@ -1,0 +1,589 @@
+@import '_color-variables';
+@import '_DIRootView';
+
+.workstation {
+
+  .mstrmojo-di-view.mojo-theme-light{
+    background-color: #FAFAFA;
+  }
+  .mstrmojo-di-view, .refine-popup-page {
+    background-color: $primary-gray;
+    .mstrmojo-di-header {
+      @if($env == workstation){
+        padding: 0;
+        background-color: $primary-gray;
+      }
+      @else if($env == web){
+        background-color: #EDEDED;
+        // Make the rounded corner shadow
+        border-top-left-radius: 4*2px;
+        border-top-right-radius: 4*2px;
+        height: 30px;
+        border-bottom: 1px solid $wsvi-splitline-gray;
+      }
+    }
+  }
+
+  /* data import main content area style */
+  .mstrmojo-di-layout {
+    border-bottom: none;
+    .mstrmojo-di-button {
+      box-sizing: content-box !important; // IMPORTANT fix di button looks lower that it actually is
+    }
+  }
+
+  .mstrmojo-di-footer {
+    border-top: none;
+    background-color: $primary-gray;
+  }
+
+  .mstrmojo-di-title {
+    font-size: 12px;
+  }
+
+  // WebButton style for workstation
+  .mstrmojo-di-view, .refine-popup-page, .mstrmojo-di-popup-dialog, .mstrmojo-di-dda-confirm {
+    .mstrmojo-Button.mstrmojo-WebButton {
+      background-color: $primary-white;
+      background-image: none;
+      height: 26px;
+
+      .mstrmojo-Button-text {
+        line-height: 26px;
+        color: $primary-black;
+      }
+
+      &:active {
+        background-color: $pressed-button;
+      }
+
+      &.disabled, &.disabled:active {
+        background-color: $primary-white;
+        color: rgba(0, 0, 0, 0.1);
+        .mstrmojo-Button-text {
+          background: $primary-white;
+        }
+      }
+
+      &.hot {
+        background-color: $primary-blue;
+        border: none;
+        height: 26px;
+        .mstrmojo-Button-text {
+          color: $primary-white !important;
+          line-height: 26px;
+        }
+
+        &:active {
+          background-color: $pressed-button-blue;
+        }
+
+        &.disabled, &.disabled:active {
+          background-color: #EFE8E8;
+        }
+      }
+    }
+  }
+
+
+  .mstrmojo-di-virtul-header {
+    padding-top: 4px;
+    height: 26px;
+    background-color: #ededed;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid $wsvi-splitline-gray;
+  }
+
+
+
+}
+
+.workstation {
+  //below for Database-Select Tables
+  .mstrmojo-qb-layout .qb-select-table {
+    .mstrmojo-Splitter.mstrmojo-qb-es-whole-panel > .mstrmojo-SplitterPanel:first-child { //data sources & available tables
+      .mstrmojo-SplitterPanel:first-child { //data sources
+        .mstrmojo-wh-Panel.DBConnections {
+          background: #fafafa;
+          .mstrmojo-wh-pn-title.tp {
+            width: 16px;
+            background: url(images/DI/workstation/workstation.svg) no-repeat -2203px -12px;
+          }
+          .mstrmojo-ListBase.mstrmojo-wh-dbConnectionslist {
+            div.item {
+              height: 26px;
+              line-height: 26px;
+              padding-top: 0;
+              padding-bottom: 0;
+            }
+            div.item.selected {
+              background: RGBA(68,70,73,0.1);
+            }
+            div.item:hover {
+              background: RGBA(68,70,73,0.06);
+            }
+          }
+        }
+      }
+      .mstrmojo-SplitterPanel:nth-child(3) { //available tables
+        width: 265px;
+        .mstrmojo-wh-Panel.AvailableTables {
+          background-color: #fafafa;
+        }
+        .mstrmojo-wh-pn-header {
+          margin-bottom: 10px !important;
+          .mstrmojo-wh-pn-title.tp {
+          }
+        }
+        .mstrmojo-Box.mstrmojo-wh-NameSpacePullDown {
+          margin-bottom: 7px;
+          @if ($env == workstation) {
+            width: 288px !important;
+          }
+          .mstrmojo-Label.mstrmojo-wh-labelNS {
+            width: 84px;
+            max-width: 84px;
+          }
+          .mstrmojo-ui-Pulldown.mstrmojo-ui-SearchablePulldown {
+            width: calc(100% - 113px) !important;
+            margin-left: 0;
+          }
+          .mstrmojo-Label.mstrmojo-wh-btnRefreshNS {
+            width: 20px;
+          }
+        }
+        .mstrmojo-Box.mstrmojo-wh-SearchBox {
+          padding-bottom: 7px;
+          .mstrmojo-wh-SearchBox-contents {
+            .mstrmojo-Label.mstrmojo-wh-sb-labelTable {
+              width: 84px;
+              margin-right: 5px;
+            }
+            .mstrmojo-TextBox.mstrmojo-wh-sb-input {
+              width: 150px;
+            }
+            .mstrmojo-Label.mstrmojo-wh-sb-btn {
+              //background: white url('images/wh/panel_icons.png') no-repeat 5px -208px;
+              background: transparent url("images/DI/vertical icons.svg") no-repeat 0px -169px;
+            }
+            .mstrmojo-Label.mstrmojo-wh-sb-btn.clear {
+              background: transparent url('images/wh/panel_icons.png') no-repeat 5px -28px;
+            }
+            td:last-child { // whether there is a fresh btn or not, the td should keep its width
+              width: 27px;
+            }
+          }
+        }
+        .mstrmojo-SimpleTree.mstrmojo-wh-AvailableTablesTree.mstrmojo-wh-TablesTree {
+          background-color: #fafafa;
+          li {
+            line-height: 26px;
+            font-size: 12px;
+            color: #444649;
+          }
+          li.open.userSel > div {
+            background: RGBA(68,70,73,0.1);
+          }
+        }
+
+      }
+    }
+  }
+  #QBContainer.qb-select-table{
+    .mstrmojo-Splitter.mstrmojo-qb-es-whole-panel > .mstrmojo-SplitterPanel:nth-child(3) { //drag and drop
+      .mstrmojo-qb-EmmaTableDropbox {
+        width: 100% !important;
+      }
+      .mstrmojo-qb-emma-EmptyHint-text {
+        line-height: 26px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        margin-top: 15px;
+        margin-left: -100px;
+      }
+    }
+  }
+  //below for available tables droplist
+  .mstrmojo-popup-widget-hosted.mstrmojo-wh-Panel.AvailableTables.mstrmojo-ui-Pulldown.mstrmojo-ui-SearchablePulldown {
+    div {
+      padding: 7px 5px 7px 6px;
+    }
+    div:hover{
+      background: RGBA(68,70,73,0.06);
+    }
+    .item {
+      line-height: 26px;
+    }
+  }
+  //below for drag and drop area (actived)
+  .mstrmojo-qb-EmmaTableDropbox {
+    .mstrmojo-qb-emma-container {
+      padding: 10px;
+      .mstrmojo-qb-emma-TableCount {
+        position: absolute;
+        right: 10px;
+      }
+      .mstrmojo-qb-emma-content {
+        .item.cf.tpundefined {
+          margin-bottom: 7px;
+          .item-del {
+            right: 7px;
+          }
+        }
+      }
+    }
+  }
+  // below for dropdown menu in data sources
+  .item-mn-proxy {
+    .mstrmojo-ui-Menu-item-container {
+      .mstrmojo-ui-Menu-item {
+        //padding-left: 10px;
+        font-size: 11px;
+      }
+      .mstrmojo-ui-Menu-item:hover {
+        background: RGBA(68,70,73,0.06);
+        color: #444649;
+        &.disabled{
+          color: rgba(68,70,73,0.45);
+        }
+      }
+      .mstrmojo-ui-Menu-item:active {
+        background: #3B92ED;
+        color: #fff;
+      }
+    }
+  }
+
+  // below for Database-Build a Query
+  #QBuilderPage {
+    .mstrmojo-Splitter.horizontal.mstrmojo-qb-whole-panel > .mstrmojo-SplitterPanel:first-child { //data sources & available tables
+      .mstrmojo-SplitterPanel:first-child { //data sources
+        .mstrmojo-wh-Panel.DBConnections {
+          .mstrmojo-wh-pn-header {
+            margin-top: 16px;
+            margin-bottom: 10px;
+            height: 26px;
+            .mstrmojo-wh-pn-title.tp {
+              line-height: 26px;
+              height: 26px;
+              background-position: -4px -7px;
+            }
+            .mstrmojo-wh-pn-ttl-icons {
+              margin-top: -2px;
+              span {
+                top: -2px;
+              }
+            }
+          }
+          .mstrmojo-ListBase.mstrmojo-wh-dbConnectionslist {
+            margin-right: 0;
+            .item {
+              line-height: 26px;
+              padding: 0 20px 0 10px;
+            }
+          }
+        }
+      }
+      .mstrmojo-SplitterPanel:nth-child(3) { //available tables
+        .mstrmojo-wh-Panel.AvailableTables {
+          .mstrmojo-Box.mstrmojo-wh-NameSpacePullDown {
+            margin-right: 10px;
+            margin-bottom: 7px;
+          }
+          .mstrmojo-Box.mstrmojo-wh-SearchBox {
+            margin-right: 10px;
+            margin-bottom: 7px;
+            .mstrmojo-wh-SearchBox-contents {
+              .mstrmojo-TextBox.mstrmojo-wh-sb-input {
+                background: white !important;
+                padding-left: 6px !important;
+              }
+              .mstrmojo-Label.mstrmojo-wh-sb-btn {
+                //background: white url('images/wh/panel_icons.png') no-repeat 5px -208px;
+                background: transparent url("images/DI/vertical icons.svg") no-repeat 0px -169px;
+              }
+              .mstrmojo-Label.mstrmojo-wh-sb-btn.clear {
+                background: transparent url('images/wh/panel_icons.png') no-repeat 5px -28px;
+              }
+            }
+          }
+          .mstrmojo-SimpleTree.mstrmojo-wh-AvailableTablesTree.mstrmojo-wh-TablesTree {
+            ul > li {
+              line-height: 26px;
+              transition: none; // to fix "hover->un-hover" flash
+            }
+          }
+        }
+      }
+    }
+    .mstrmojo-Splitter.horizontal.mstrmojo-qb-whole-panel > .mstrmojo-SplitterPanel:nth-child(3) { // drag and drop area
+      .mstrmojo-Splitter.vertical.mstrmojo-qb-main-panel > .mstrmojo-SplitterPanel:first-child { //upper, sql
+        .mstrmojo-Box.mstrmojo-qb-tableview-toolbar {
+          padding-top: 9px;
+          padding-left: 5px;
+        }
+        .mstrmojo-Box.mstrmojo-qb-tableview-canvas { //tables
+          .mstrmojo-Editor.mstrmojo-qb-DBTable {
+            .mstrmojo-qb-DBTable-header {
+              .mstrmojo-qb-DBTable-titlebar {
+                width: 180px;// !important;
+              }
+            }
+            .mstrmojo-Editor-content {
+              .mstrmojo-Box {
+                padding-top: 5px;
+                padding-bottom: 5px;
+                .mstrmojo-qb-DBTableRow {
+                  line-height: 26px;
+                  .mstrmojo-qb-DBTableRow-bullet {
+                    line-height: 26px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .mstrmojo-Splitter.vertical.mstrmojo-qb-main-panel > .mstrmojo-SplitterHandle { //split line
+        height: 1px;
+      }
+      .mstrmojo-Splitter.vertical.mstrmojo-qb-main-panel > .mstrmojo-SplitterPanel:nth-child(3) { //lower, preview
+        .mstrmojo-Box.mstrmojo-di-datapreview {
+          .mstrmojo-Box.mstrmojo-qb-preview-info {
+            padding: 5px 0 5px 0;
+            height: auto;
+            line-height: 26px;
+            background-color: #FAFAFA;
+            .mstrmojo-qb-preview-text {
+              font-weight: normal;
+            }
+          }
+          .mstrmojo-DataGrid.lockHeader.mstrmojo-qb-simplepreview {
+            width: calc(100% - 2px) !important;
+            // height: calc(100% - 39px) !important;
+            background-color: white;
+            overflow: hidden;
+            .mstrmojo-DataGrid-headerContainer{ //header
+              width: 100% !important;
+              .mstrmojo-DataGrid-headerText{
+                height: 21px;
+                .mstrmojo-Box.mstrmojo-qb-simplegrid-header {
+                  padding-right: 8px;
+                  .mstrmojo-qb-simplegrid-itemmenu {
+                    margin-right: -7px;
+                  }
+                }
+                .mstrmojo-qb-simplegrid-headertext {
+                  padding-right: 5px;
+                  font-weight: normal;
+                  line-height: 21px;
+                }
+              }
+            }
+            .mstrmojo-DataGrid-itemsScrollBox.mstrmojo-sb-show-default { //content
+              height: calc(100% - 35px) !important;
+              font-size: 11px;
+              color: #444649;
+              .mstrmojo-di-datapreview-DataRow-text {
+                line-height: 21px;
+              }
+              tr.mstrmojo-DataRow:hover {
+                background-color: RGBA(68,70,73,0.06);
+              }
+            }
+          }
+        }
+      }
+      .mstrmojo-Box.mstrmojo-qb-ffsqlview.on { //SQL area
+        .mstrmojo-TokenInputBox.mstrmojo-qb-ffsqlview-editnode {
+          height: calc(100% - 1px);
+          .mstrmojo-TokenInputBox-edit {
+            padding: 10px;
+            .mstrmojo-token {
+              font-family: Courier;
+              font-size: 12px;
+              color: #444649;
+              line-height: 26px;
+            }
+            .mstrmojo-token.mstr.sql {
+              color: #3B92ED;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // below to fix "The cursors in drop-down boxes are not in the middle"
+  .mstrmojo-qb-whole-panel .mstrmojo-wh-Panel.AvailableTables .mstrmojo-ui-SearchablePulldown .mstrmojo-ui-Pulldown-text {
+    padding-top: 2px;
+  }
+  .mojo-theme-light .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown .mstrmojo-ui-Pulldown-text
+  {
+    padding-top: 2px;
+  }
+
+  // below to fit the sql area in Import from Table, dossier
+  // dossier has a title, so some position need to be asjusted
+  .mstrmojo-di-header-vi[style*="block"] + .mstrmojo-di-header + .mstrmojo-di-layout {
+    height: 100%;
+    #QBContainer {
+      height: 100%;
+      #QBuilderPage {
+        height: 100% !important;
+        .mstrmojo-qb-layout {
+          height: 100% !important;
+          .mstrmojo-Splitter.horizontal.mstrmojo-qb-whole-panel {
+            height: 100% !important;
+            .mstrmojo-SplitterPanel:nth-child(3) > div {
+              height: 100% !important;
+            }
+            .mstrmojo-SplitterPanel:nth-child(3) {
+              height: 100% !important;
+              .mstrmojo-Splitter.vertical.mstrmojo-qb-main-panel {
+                .mstrmojo-SplitterPanel:first-child {
+                  height: 100% !important;
+                }
+                .mstrmojo-SplitterPanel:first-child > .mstrmojo-Box {
+                  height: 100% !important;
+                  .mstrmojo-Box.mstrmojo-qb-tableview.on {
+                    height: calc(100% - 50px);
+                    .mstrmojo-Box.mstrmojo-qb-tableview-box {
+                      height: 100% !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// refine BI sources UI
+.workstation{
+  .mstrmojo-qb .mstrmojo-Splitter.horizontal.mstrmojo-qb-es-whole-panel.mstrmojo-bi-tools-main{
+      padding-top: 16px;
+      padding-right: 16px;
+
+      .mstrmojo-SplitterPanel{
+        padding-top: 0px;
+        .mstrmojo-di-fileUpload {
+          margin-top: 0px;
+
+          .url-placeholder{
+              position: absolute;
+              top:50%;
+              left: 34%;
+              display: block;
+              position: absolute;
+          }
+        }
+      }
+
+      .mstrmojo-SplitterHandle{
+        visibility: hidden;
+      }
+
+      .mstrmojo-SplitterHandle+.mstrmojo-SplitterPanel{
+        position: absolute;
+        right: 16px;
+      }
+
+      .mstrmojo-Box.selector-panel-header.cf, .url-input{
+        height: 26px;
+        margin-top: 0px;
+      }
+
+      .mstrmojo-Box.mstrmojo-qb-thirdParty-url-holder{
+        display: block;
+        border-style: dashed;
+        padding:10px 5px;
+      }
+  }
+}
+// refine Data From URL
+.workstation{
+
+
+  .mstrmojo-di-view.mojo-theme-light.mstrmojo-di-view-popup{
+    .mstrmojo-DI-DIAuthenticationButton.mstrmojo-ui-Pulldown.mstrmojo-di-add-authentication>.mstrmojo-DI-DIAuthenticationButton-text.mstrmojo-ui-Pulldown-text,
+    .mstrmojo-di-fileUpload.mstrmojo-di-fu .mstrmojo-DI-DIAuthenticationButton.mstrmojo-ui-Pulldown.mstrmojo-di-browse-add-authentication{
+      background-color: #FFF;
+      background-image: none;
+    }
+
+    /*
+    .mstrmojo-di-footer .footer-buttons{
+      margin-top:0px;
+    }
+    */
+  }
+
+  div.mstrmojo-popup-widget-hosted.mstrmojo-DI-DIAuthenticationButton.mstrmojo-ui-Pulldown.mstrmojo-di-add-authentication > div,  div.mstrmojo-popup-widget-hosted.mstrmojo-DI-DIAuthenticationButton.mstrmojo-ui-Pulldown.mstrmojo-di-browse-add-authentication > div{
+      background-color: #FFF;
+  }
+
+  div.mstrmojo-Editor.mstrmojo-DI-ui-dialogs-DIAuthenticationDialog.modal > div.mstrmojo-Editor-title-container > div.mstrmojo-Editor-title{
+      line-height: normal;
+  }
+  .mstrmojo-Editor.mstrmojo-DI-ui-dialogs-DIAuthenticationDialog.modal div.mstrmojo-Label.ctrl-label{
+      text-align: left;
+  }
+
+  .mstrmojo-Button.mstrmojo-di-button.mstrmojo-WebButton.hot.disabled>.mstrmojo-Button-text{
+    background-color: $wsvi-disable_fill !important;
+    color: $wsvi-buttonfont-disable !important;
+  }
+}
+
+.workstation{
+  .mstrmojo-di-source-link>.mstrmojo-Button>.mstrmojo-Button-text {
+    height: 13px;
+    line-height: 13px;
+  }
+}
+
+.workstation{
+  .mstrmojo-Box.mstrmojo-di-sourceGrid{
+      height: calc(100% - 5px);
+      overflow-x: hidden;
+  }
+  .mstrmojo-di-sources.with-mstrmojo-di-source-datasets-box {
+    .mstrmojo-Box.mstrmojo-di-sourceGrid{
+      height: calc(100% - 40px);
+    }
+  }
+
+    .mstrmojo-di-source-content .mstrmojo-scrollbar-host.hasVertical{
+      margin-right: -18px !important;
+      padding-right: 18px !important;
+    }
+
+  .mstrmojo-Box.mstrmojo-di-sourceGrid.mstrmojo-scrollNode.hasVertical{
+      margin-right: -18px !important;
+      padding-right: 18px !important;
+  }
+  .mstrmojo-Editor.mstrmojo-di-homepage-editor.modal .mstrmojo-di-footer .footer-buttons:nth-child(4)>.mstrmojo-Button.mstrmojo-di-button.mstrmojo-WebButton:not(.disabled)>.mstrmojo-Button-text{
+    background-color: #3B92ED;
+    border: none;
+    height: 26px;
+    color: #FFF !important;
+  }
+}
+
+.mstrmojo-Editor.mstrWaitBox.mstr-appschema-wait.modal{
+  background-color: #fff;
+  border: 1px inset rgba(68,70,73,0.2);
+  padding: 12px;
+  box-shadow: rgba(68,70,73,0.3) 0 0 8px 4px !important;
+  .mstrIcon-wait {
+    background: url(vi/images/spinner_ws.gif) no-repeat center;
+    background-size: 18px 18px;
+  }
+}

@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSGraphDataTextPosition={DssGraphDTPositionCenter:0,DssGraphDTPositionOutMin:1,DssGraphDTPositionInMin:2,DssGraphDTPositionInMax:3,DssGraphDTPositionOutMax:4,DssGraphDTPositionOnSide:5,DssGraphDTPositionPieSmart:6,DssGraphDTPositionPieSmartRadial:7,DssGraphDTPositionPieSmartStacked:8};

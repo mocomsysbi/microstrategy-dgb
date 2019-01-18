@@ -1,0 +1,91 @@
+/* START: TablesTree */
+
+@import '../wh-global';
+
+@mixin background-position-left($vertical-position)  {
+  background-position: left $vertical-position;
+}
+
+@mixin background-color($color) {
+  background-color: $color;
+}
+
+.mstrmojo-wh-TablesTree {
+  overflow: hidden; //ljing 940034
+  &:hover{
+    overflow-y: auto;
+  }
+  @include background-color(#f6f6f6);
+  li {
+    transition: background-color 300ms;
+    .item {
+      background: transparent url(#{$wh-image-path}/object_icons.png) no-repeat left center;
+      padding-left: 18px;
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      //TQMS 951232: hack for FF
+      -moz-user-select: none;
+      user-select: none;
+    }
+  }
+  .item-mn {
+    top: 1px;
+  }
+  li {
+    &.selected > .item, .item.bld {
+      font-weight: bold;
+      color: #252525;
+    }
+  }
+  .item {
+    &.tp0 { //loading tables
+      @include background-position-left(-72px);;
+    }
+    &.tp15 {
+      @include background-position-left(-97px);;
+    }
+    &.tp26 {
+      @include background-position-left(-122px);
+      &.uc {
+        @include background-position-left(-147px);
+      }
+    }
+  }
+  li.userSel {
+    @include background-color(#e1e1e1);
+    > ul {
+      @include background-color(#f6f6f6);
+    }
+  }
+  &.mltSel li.userSel .item-mn {
+    @include background-color(#FFF8EC);
+    border-color: #FFA500;
+  }
+  &.hasOwnAvatar {
+    position: absolute;
+    border: 1px solid #B6B6B6;
+    background: #f3f3f3;
+    margin: 2px;
+    > div:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 22px;
+      background: url(#{$wh-image-path}/ban.png) #f3f3f3 no-repeat center center;
+    }
+    &.enabled > div:last-child {
+      display: none;
+    }
+    li {
+      background: none;
+      padding: 0 5px;
+      .item-mn, ul {
+        display: none;
+      }
+    }
+  }
+}

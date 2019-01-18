@@ -1,0 +1,7 @@
+<!-- The FileUploadTime, FileSavePublishTime are in milliseconds per MB. InitialUploadThreshold, InitialSaveThreshold values are in milliseconds -->
+<ExternalProperties>
+	<ProgressBar>
+	  <InitialUpload FileUploadTime="1655" FileSavePublishTime="986" SheetChangeTime="500" InitialUploadThreshold="0" InitialSaveThreshold="0" />
+	  <Refresh FileUploadTime="1655" FileSavePublishTime="986" SheetChangeTime="500" InitialUploadThreshold="0" InitialSaveThreshold="0" />
+ 	</ProgressBar>
+</ExternalProperties>

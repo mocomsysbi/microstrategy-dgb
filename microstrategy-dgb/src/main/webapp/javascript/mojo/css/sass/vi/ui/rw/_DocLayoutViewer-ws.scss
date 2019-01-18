@@ -1,0 +1,20 @@
+/** BEGIN: DocLayoutViewer **/
+.mstrmojo-VIDocLayoutViewer {
+    left: 4px;
+    position: relative;
+    top: 4px;
+}
+/** END: DocLayoutViewer **/
+
+/** BEGIN: Workstation Style **/
+.workstation {
+
+    /** BEGIN: DocLayoutViewer **/
+    .mstrmojo-VIDocLayoutViewer {
+        left: 0;
+        position: relative;
+        top: 0;
+    }
+    /** END: DocLayoutViewer **/
+}
+/** END: Workstation Style **/

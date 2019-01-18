@@ -1,0 +1,98 @@
+@import '../../vi-global';
+
+/** BEGIN: DockedPanelSelector **/
+.mstrmojo-DockedPanelSelector {
+    height: 25px;
+    line-height: 20px;
+    position: relative;
+
+    .panel-title {
+        left: 4px;
+        position: absolute;
+        top: 0;
+
+        & > div {
+            display: inline-block;
+        }
+
+        .mstrmojo-EditableLabel {
+            padding: 0 4px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 400px;
+            white-space: nowrap;
+            line-height: 20px; //this is use for firefox to make the cursor in one line when the content is blank, please make sure it the same as mstrmojo-DockedPanelSelector line-height
+            &.editable {
+                text-overflow: clip;
+            }
+        }
+
+        .panel-menu {
+            background: transparent url(#{$vi-menu-icons}) -60px 2px no-repeat;
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 2px;
+            right: -15px;
+        }
+        .panel-menu:hover {
+            background-position: -60px -28px;
+        }
+    }
+
+    .panel-addBtn {
+        background: transparent url(#{$vi-menu-icons}) -88px 2px no-repeat;
+        cursor: pointer;
+        position: absolute;
+        right: 8px;
+        top: 3px;
+        width: 15px;
+        height: 15px;
+    }
+    .panel-addBtn:hover {
+        background-position: -88px -28px;
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-DockedPanelSelector {
+        .panel-title {
+            .panel-menu {
+                background-position: -60px -198px;
+                &:hover {
+                    background-position:-60px -228px;
+                }
+            }
+        }
+
+        .panel-addBtn {
+            background-position: -88px -198px;
+            &:hover {
+                background-position: -88px -228px;
+            }
+        }
+    }
+}
+
+/** END: DockedPanelSelector **/
+
+// hide add button and menu in presentation mode
+.mstrmojo-RootView.presentation {
+    .mstrmojo-DockedPanelSelector {
+        .panel-title .panel-menu,
+        .panel-addBtn {
+            display: none;
+        }
+    }
+}
+
+// hide add button and menu when No web dashboard design privilege
+.mstrmojo-RootView.nowebdashdesign {
+    .mstrmojo-DockedPanelSelector {
+        .panel-title .panel-menu,
+        .panel-addBtn {
+            display: none;
+        }
+    }
+}

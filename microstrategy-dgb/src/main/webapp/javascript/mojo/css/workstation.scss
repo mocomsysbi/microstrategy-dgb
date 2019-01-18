@@ -1,0 +1,78 @@
+@import 'sass/vi/vi-global-ws';
+@import 'sass/normalize';
+
+/** BEGIN: Generic Rules **/
+html,
+body {
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    font-family: $wsvi-normal-font-family;
+}
+
+body {
+    @include user-select(none);
+
+    font-size: 8pt;
+
+    // When the app is not selectable - disable the scrollbars.
+    &.unselectable {
+        overflow: hidden;
+    }
+}
+
+body.mstrWeb {
+    &,
+    &.mojo-theme-light {
+        color: #333 !important;
+    }
+    &.mojo-theme-dark {
+        color: #cdcdcd !important;
+    }
+}
+
+.unselectable {
+    @include user-select(none);
+
+    * {
+        // Use important here so as to not increase the number of selectors for each of the resize handlers.
+        cursor: default !important;
+    }
+}
+/** END: Generic Rules **/
+
+/** Stiching Rules for the grid **/
+/* .fsbp_0 {} not used */
+
+.fsbp_1 {
+    vertical-align:top      !important;
+    border-bottom-color: transparent !important;
+}
+
+.fsbp_2 {
+    border-bottom-color: transparent !important;
+    border-top-color: transparent !important;
+    text-decoration: none !important;
+}
+
+.fsbp_3 {
+    border-top-color: transparent !important;
+    text-decoration: none !important;
+}
+/** End: Stiching Rules for the grid **/
+
+// Include the CSS bundle specific for visualizations since it doesn't include them.
+@import 'sass/bundles/vi-gm';
+@import 'sass/bundles/vi-heatmap';
+@import 'sass/bundles/vi-network';
+
+// Include the CSS bundle for Data Import and OneTier.
+$env:workstation;
+@import 'sass/di/data-import-core-ws';
+@import 'sass/bundles/workstation';
+@import 'sass/base-themes-ws';
+
+// Add the one-tier specific overrides.
+@import 'sass/onetier/one-tier-overrides';
+

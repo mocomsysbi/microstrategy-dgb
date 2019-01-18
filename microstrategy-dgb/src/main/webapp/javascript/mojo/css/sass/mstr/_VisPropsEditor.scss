@@ -1,0 +1,30 @@
+/**
+ * CSS for RWD VisPropsEditor which works as wrapper to use VI Vis Props Editors.
+ * The below rules are created to ensure those VI Vis Props Editors display properly in RWD context.
+ *
+ * This stylesheet is expected to be loaded in RWD Design/Editable pages
+ */
+
+@import '../heatmap/vi/HasHeatmapContextMenu';
+
+.mstrmojo-VisPropsEditor {
+    .mstrmojo-VisPropertyEditorPanel {
+        overflow: hidden;
+    }
+    .mstrmojo-VPE-buttonBox {
+        float: right;
+    }
+}
+
+#mstrVisPropsEditor {
+    //Show below popup above this editor which is set to 106 in JS code
+    & ~ .mstrmojo-popup-widget-hosted,
+    & ~ #mstrmojo-more-options-editor .mstrmojo-MoreOptions-Editor,
+    & ~ #mstrmojo-simple-threshold-editor .mstrmojo-SimpleThresholdEditor {
+        z-index: 999 !important;    //DE79421 Set zIndex of popups to highest
+    }
+    & ~ #mstrmojo-more-options-editor .mstrmojo-MoreOptions-Editor + .mstrmojo-Editor-curtain,
+    & ~ #mstrmojo-simple-threshold-editor .mstrmojo-SimpleThresholdEditor + .mstrmojo-Editor-curtain {
+        z-index: 106 !important;
+    }
+}

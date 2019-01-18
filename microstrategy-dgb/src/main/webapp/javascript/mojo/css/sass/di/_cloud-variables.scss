@@ -1,0 +1,40 @@
+
+$primaryButtonStart: #3e779d !default;
+$primaryButtonEnd: #65A9D7 !default;
+$secondaryButtonStart: #333333 !default;
+$secondaryButtonEnd: #666666 !default;
+$footerButtonWidth: 90px !default;
+$footerButtonHeight: 20px !default;
+$footerButtonLineHeight: 19px !default;
+$footerButtonBorderRadius: 10px !default;
+$footerButtonBorderColor: #333333 !default;
+$footerButtonFontColor: #ffffff !default;
+$footerHeight: 44px !default;
+$preiviewHeaderStart: #333333 !default;
+$preiviewHeaderEnd: #666666 !default;
+$preiviewBgStart: #000000 !default;
+$preiviewBgEnd: #aaaaaa !default;
+$preiviewFontColor: #515151 !default;
+$applicationBackground: #ffffff !default;
+$applicationBackgroundStart: #d8edfb !default;
+$applicationBackgroundEnd: #ffffff !default;
+$appTitleStart: #d4d4d4 !default;
+$appTitleEnd: #fcfcfc !default;
+$footerBackground: #565756 !default;
+$sampleFilesHeaderStart: #56a8ea !default;
+$sampleFilesHeaderEnd: #3a76c4 !default;
+
+// used in _srEditor
+$color-border: rgba(0, 0, 0, 0.3);
+$font-size-small: 11pt;
+$red: red;
+$color-border: #d7d7d7;
+%background-starIcon {
+  &:before {
+    content: '\ff0a';
+    /*＊*/
+    font-weight: bold;
+    color: $red;
+    font-size: 12px;
+  }
+}

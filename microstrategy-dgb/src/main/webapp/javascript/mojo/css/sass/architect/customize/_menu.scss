@@ -1,0 +1,25 @@
+/** BEGIN:  MENU **/
+.mstrmojo-ui-Menu .item {
+  &.atl > DIV.micn {
+    background: url(#{$ar-image-path}/menu/add_to_layer.png) no-repeat center center;
+  }
+  &.rnm > DIV.micn {
+    background: url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -621px;
+  }
+  &.edt > DIV.micn {
+    background: url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -538px;
+  }
+  &.del > DIV.micn {
+    background: url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -119px;
+  }
+  &.smpl > DIV.micn {
+    background: url(#{$ar-image-path}/menu/sample.png) no-repeat center center;
+  }
+  &.amp > DIV.micn {
+    background: url(#{$ar-image-path}/menu/automap.png) no-repeat center center;
+  }
+  &.catsql > DIV.micn {
+    background: url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -568px;
+  }
+}
+/** END: MENU **/

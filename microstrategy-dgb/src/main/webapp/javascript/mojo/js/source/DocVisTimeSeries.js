@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.VisTimeSeries");mstrmojo.DocVisTimeSeries=mstrmojo.declare(mstrmojo.VisTimeSeries,null,{scriptClass:"mstrmojo.DocVisTimeSeries"});}());

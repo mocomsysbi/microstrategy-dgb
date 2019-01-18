@@ -1,0 +1,73 @@
+.mstrmojo-DocProps-Editor {
+    width: 550px;
+    .mstrmojo-Editor-content {
+        table {
+            width: 500px;
+            margin: 16px 0px;
+            tr {
+                height: 30px;
+                td:first-child {
+                    white-space: nowrap;
+                    font-weight: bold;
+                }
+                &.multiLine {
+                    td {
+                        height: 35px;
+                    }
+                }
+                &.radioGroup {
+                    td {
+                        top: -9px;
+                    }
+                }
+                &.topSpace {
+                    td {
+                        padding-top : 8px;
+                    }
+                }
+            }
+            td {
+                min-height: 30px;
+                line-height: 18px;
+                padding-left: 5px;
+                position: relative;
+                .mstrmojo-ui-Checkbox {
+                    margin: 0px 0 0 8px;
+                    width: 18px;
+                }
+                .mstrmojo-RadioButton {
+                    margin: 0px 0 0 8px;
+                    width: 18px;
+                }
+                .mstrmojo-TextBox {
+                    width: 50px;
+                    margin: 0px 5px;
+                }
+                .mstrmojo-Label {
+                    padding-left: 0px;
+                }
+                .wrap {
+                    position: absolute;
+                    top: 14px;
+                    overflow: visible;
+                }
+                .radioText {
+                    padding-left: 40px;
+                    left: 0;
+                }
+                .docPropsDisabled {
+                    color: #a0a7ac;
+                }
+            }
+            //For dataCombination hidden items
+            .dataComHidden {
+                visibility: hidden;//in case display none was overwritten for checkbox or label
+                display: none;
+            }
+        }
+        .greyline {
+            color: #a0a7ac;
+            margin-left: 12px;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+// Style for DISourceObjectsDnD
+
+// title widget
+.DISourceObjectsDnd-titleWidget {
+  height: 20px;
+  color: #000000;
+  //width: 450px;  // TQMS 947306: set width for the title widget so in IE8, we don't increase the width of whole left panel
+ /* margin-bottom: 5px;
+  margin-top: 16px;*/
+  padding: 16px 0 5px;
+  border-bottom: 1px solid #dedede;
+
+  .userInfo {
+    margin-top: 4px;
+    float: left;
+    max-width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: normal;
+  }
+
+  .signOut {
+    margin-top: 4px;
+    float: right;
+    color: #007ebe;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .refresh {
+    float: right;
+    background: url("images/DI/workstation/workstation.svg");
+    background-position: -2000px -48px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+}
+
+.workstation .mstrmojo-DISourceObjectsDnD > .mstrmojo-VBox {
+  margin: -4px 0 0 12px;
+  .mstrmojo-VBox.di-connector-left-panel {
+    //border-right: unset;
+    margin-top: 20px;
+    & > tbody > tr > td {
+      position: relative;
+      top: -10px;
+      left: 6px;
+    }
+    .mstrmojo-Box.DISourceObjectsDnd-titleWidget {
+      border-bottom: unset;
+      padding-top: 0;
+    }
+  }
+  .mstrmojo-FileDragDropBox-count {
+    right: 20px !important;
+  }
+}
+
+// DE52657; fix - Scroll bar for google drive is missing
+.mstrmojo-DISourceObjectsDnD {
+  .mstrmojo-VBox.di-connector-left-panel {
+    .di-object-browser {
+      @include scrollBar();
+      overflow-y: scroll;
+      overflow-x: hidden;
+      clear: both;
+    }
+  }
+}

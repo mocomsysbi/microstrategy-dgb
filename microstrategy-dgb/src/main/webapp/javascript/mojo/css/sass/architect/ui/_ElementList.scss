@@ -1,0 +1,53 @@
+/** Elements List **/
+
+.mstrmojo-ar-rpc-elementlist {
+  overflow: visible;
+  .item {
+    padding: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    &.selected {
+      background-color: #FFFFFF;
+      font-weight: bold;
+    }
+  }
+  .item-icn {
+    background: rgba(0, 0, 0, 0) url('images/wh/object_icons.png') no-repeat 2px -793px;
+    padding: 1px 9px;
+    margin-right: 4px;
+    overflow: hidden;
+    /*filter icon*/
+    &.t1 {
+      background-position: 2px -793px;
+    }
+    /*attribute icon*/
+    &.t12 {
+      background-position: 0px -330px;
+    }
+    /*fact icon*/
+    &.t13 {
+      background-position: 0px -303px;
+    }
+    /*table icon*/
+    &.t15 {
+      background-position: 0px -101px;
+    }
+    /*column icon*/
+    &.t26 {
+      background-position: 0px -126px;
+    }
+  }
+  .item:hover {
+    background-color: #fafafa;
+  }
+  &.hasOwnAvatar {
+    position: absolute;
+    border: 1px solid #AAA;
+    background: #EEE;
+    width: auto;
+    margin: 2px;
+  }
+}
+/** Elements List **/

@@ -1,0 +1,13 @@
+// Import the base global partial from the SASS root folder.
+@import '../global';
+
+// workstation-specific imports:
+@import 'workstation-global';
+@import 'vi-icons';
+
+// Image Path Locations relative to sass/bundles folder
+$vi-img-path: 'vi/images';
+$vi-menu-icons: '#{$vi-img-path}/menu_icons.png';
+
+// VI - Global Colors variables
+$vi-color-font-link: #23A3D3;

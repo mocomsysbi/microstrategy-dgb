@@ -1,0 +1,146 @@
+@import '../vi-global';
+@import '../themes';
+
+
+/** BEGIN: BoxPanelContainer **/
+.mstrmojo-VIBoxPanelContainer {
+    @include border-radius(3px);
+
+    border: 1px solid transparent;
+    position: absolute;
+
+    .mstrmojo-VIBoxPanelContainer-header {
+        @include border-radius(3px 3px 0 0);
+
+        border-bottom: 1px solid transparent;
+        cursor: move;
+        position: relative;
+
+        .mstrmojo-VIBoxPanelContainer-closeBtn {
+            display: none;
+            position: absolute;
+            top:0;
+            right:0;
+            width: 19px;
+            height: 19px;
+            background: url(vi/images/menu_icons.png) no-repeat -23px -225px;
+            cursor: pointer;
+        }
+
+        &:hover {
+            .mstrmojo-VIBoxPanelContainer-closeBtn {
+                display: block;
+            }
+        }
+    }
+
+    .mstrmojo-VIPanelPortlet {
+        padding: 9px;
+    }
+
+    .mstrmojo-VIBoxPanelContainer-content {
+        & > .mstrmojo-VIBoxPanel {
+            overflow: hidden;
+        }
+    }
+
+    &.hasOwnAvatar {
+        overflow: hidden;
+    }
+
+    &.panelAvatar {
+        @include single-transition(opacity, 100ms);
+
+        height: 45px;
+        opacity: 1;
+
+        &.hidden {
+            opacity: 0;
+        }
+
+        .mstrmojo-VIIconTabList.dnd .selected {
+            border-width: 1px 1px 0 0;
+        }
+    }
+}
+
+.mstrmojo-ImageBox,
+.mstrmojo-VITextBox {
+    .mstrmojo-VIPanel-content {
+        cursor: move;
+    }
+}
+
+.formatting {
+    .mstrmojo-VIBoxPanelContainer.drop-shadow {
+        @include box-shadow(#454545, 0, 0, 8px);
+    }
+}
+/** END: BoxPanelContainer **/
+
+
+/** BEGIN: BoxPanelContainer Themes **/
+.mojo-theme-light {
+    &.mstrmojo-VIBoxPanelContainer,
+    .mstrmojo-VIBoxPanelContainer {
+        background-color: $theme-light-panel-background-color;
+        border-color: $theme-light-panel-border-color;
+        @include box-shadow($theme-dark-panel-shadow-color, 0, 0, $theme-dark-panel-shadow-blur);
+
+        .mstrmojo-VIBoxPanelContainer-header {
+            background-color: #b6b6b6;
+
+            border-bottom-color: $theme-light-panel-border-color;
+        }
+    }
+}
+
+.mojo-theme-dark {
+    &.mstrmojo-VIBoxPanelContainer,
+    .mstrmojo-VIBoxPanelContainer {
+        background-color: $theme-dark-panel-background-color;
+        border-color: $theme-dark-panel-border-color;
+
+        .mstrmojo-VIBoxPanelContainer-header {
+            background-color: $theme-dark-panel-header-background-color;
+
+            border-bottom-color: $theme-dark-panel-border-color;
+        }
+    }
+}
+/** END: BoxPanelContainer Themes **/
+
+/** BEGIN: Highlight selected panel effect **/
+.mstrmojo-VIBoxPanelContainer.highlightSelected {
+  .mstrmojo-VIBoxPanelContainer-header {
+
+    border-bottom-color: #34abeb;
+
+    .mstrmojo-VIIconTabList{
+      .item.selected {
+        border-color: #34abeb;
+      }
+    }
+  }
+
+  .mstrmojo-VIBoxPanelContainer-content {
+    @include box-shadow(#34abeb, 0, 0, 0, false, 1px);
+  }
+}
+
+.mstrmojo-VIBoxPanelContainer.fadeout {
+  .mstrmojo-VIBoxPanelContainer-header {
+    @include single-transition(border-bottom-color, 0.5s, linear, 0s);
+
+    .mstrmojo-VIIconTabList{
+      .item.selected {
+        @include single-transition(border-color, 0.5s, linear, 0s);
+      }
+    }
+  }
+
+  .mstrmojo-VIBoxPanelContainer-content {
+    @include single-transition(box-shadow, 0.5s, linear, 0s);
+  }
+}
+/** END: Highlight selected panel effect**/

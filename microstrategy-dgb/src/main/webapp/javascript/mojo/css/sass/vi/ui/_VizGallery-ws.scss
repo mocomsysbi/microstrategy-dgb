@@ -1,0 +1,453 @@
+@import 'viz-icon-mixins-ws';
+@import '../vi-icons';
+
+
+@mixin viz-gallery-sprite-items($topPosition) {
+
+    $viz-list: "MapboxVisualizationStyle", "VisGrid", "VIHeatMapVisualizationStyle", "BarChart", "skip", "LineChart", "AreaChart", "BubbleChart", "PieChart", "skip", "ComboChart", "GoogleMapVisualizationStyle", "NetworkVisualizationStyle", "ImageLayoutVisualizationStyle", "skip", "Histogram", "Waterfall", "BoxPlot", "KPICardVisualizationStyle";
+    $viz-offset: 40;
+
+    @each $viz-type in $viz-list {
+        $viz-offset: $viz-offset - 60;
+
+        @if $viz-type != "skip" {
+            &.ic-#{$viz-type} > div > div {
+                background-position: -#{$topPosition}px #{$viz-offset}px;
+            }
+        }
+    }
+
+    $viz-ngm-list: "ClusteredBarChart", "BarChart", "AreaChart", "LineChart", "BubbleChart", "skip", "skip", "skip", "skip", "skip", "skip", "skip";
+    $ngm-offset: 49;
+    $ngm-topPosition: $topPosition + 6;
+
+    @each $viz-type in $viz-ngm-list {
+        $ngm-offset: $ngm-offset - 40;
+
+        @if $viz-type != "skip" {
+            &.ngm.ic-#{$viz-type} > div > div {
+                background-position: #{$ngm-topPosition}px #{$ngm-offset}px;
+                background-image: url(#{$vi-img-path}/ngm_gallery_sprite.png);
+                margin: 2px;
+            }
+        }
+    }
+
+}
+
+/** BEGIN: Workstation Style **/
+.workstation {
+
+    /** BEGIN: VI Gallery **/
+    .mstrmojo-VIGallery {
+        border-width: 0;
+        border-style: outset;
+        width: 100%;
+        z-index: 2;
+        @include box-sizing();
+        box-shadow: -1px 0 1px 0 rgba(68,70,73,0.1);
+        //DE71892 reduce the padding to 12px to accommodate three columns for IE/Firefox
+        &.mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+            padding-right: 12px;
+            //DE89176;extend gallery, for firefox and IE
+            margin-right: -30px;
+        }
+
+        // Close button on gallery header.
+        .mstrmojo-VIGallery-header .mstrmojo-VIGallery-cls {
+            background: transparent url(#{$vi-img-path}/toolbar.png) -312px 0 no-repeat;
+            cursor: pointer;
+            height: 15px;
+            position: absolute;
+            right: 1px;
+            top: 0;
+            width: 15px;
+        }
+
+        //Splitter Handle of the viz gallery
+        .mstrmojo-VIGallery-handle {
+            display: none;
+        }
+
+        .mstrmojo-VIPanel-titlebar {
+
+            .mstrmojo-EditableLabel {
+                padding-left: 28px; //8px;
+                font-size: $wsvi-panel-header-font-size;
+                font-weight: $wsvi-panel-header-font-weight;
+                line-height: $wsvi-titlebar-editable-label-row-height; //$wsvi-panel-row-height;
+                text-transform: uppercase;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 5px;
+                    width: 18px;
+                    height: 18px;
+                    margin: 4px 0;
+                }
+            }
+
+            .right-toolbar{
+                width: 26px;
+                position: absolute;
+                right: 0;
+            }
+
+        }
+
+        .mstrmojo-VIGallery-contents {
+            padding-top: 4px;
+            box-sizing: border-box;
+        }
+
+        // List of visualizations.
+        .mstrmojo-VIGalleryList {
+            .item {
+                @include viz-icon-outer-style();
+                @include viz-icon-margin();
+                cursor: pointer;
+                float: left;
+
+                // Change border colors when hovering.
+                &:hover {
+                    border-color: #41B0EC;
+
+                    & > div {
+                        border-color: #87CCF1;
+
+                        & > div {
+                            border-color: #D4EFFE;
+                        }
+                    }
+                }
+
+                // Middle DIV element.
+                & > div {
+
+                    @include viz-icon-border-style();
+                    @include viz-icon-middle-common();
+
+                    // Inner DIV (icon) element.
+                    & > div {
+
+                        @include viz-icon-inner-style();
+
+                        background-image: url(#{$vi-img-path}/viz_gallery_sprite.svg);
+                        background-position: -7px -567px;//default
+                    }
+                }
+                @include viz-gallery-sprite-items(0);
+            }
+
+            .custom {
+                & > div {
+                    & > div {
+                        margin: 8px 0 0 8px;
+                    }
+                }
+
+                &.nonsafe {
+                    .unsafe-icn {
+                        width: 18px;
+                        height: 18px;
+                        top: 26px;
+                        left: 24px;
+                        position: relative;
+                        @include wsvi-icon-warning-tooltip;
+                    }
+                }
+            }
+
+        }
+
+
+        /*Divider line between Built-in and custom visualization lists*/
+        .mstrmojo-VIGallery-divider {
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            box-sizing: border-box;
+            clear: left;
+            padding-top: 14px;
+        }
+
+        //Styling of the 'CUSTOM' label text which separates the Built-in and Custom Visualizations
+        .galleryLabel {
+            font-size: 8pt; //6pt;
+            margin-top: 14px;
+            padding-left: 8px;
+            text-align: left;
+            line-height: 26px;
+            &.builtInLabel {
+                margin: 0;
+            }
+        }
+
+        //Image Icon Button for Import Custom Visualization
+        .mstrmojo-VIGallery-importCustomVizButton {
+            border: 1px dashed;
+            height: $wsvi-vis-gallery-icon-middle-height;
+            width: $wsvi-vis-gallery-icon-middle-width;
+            float: left;
+            @include viz-icon-margin();
+            @include viz-icon-middle-theme($theme-light-drop-box-border-color, $theme-light-drop-box-background-color);
+
+            // Change border colors when hovering and when clicked. And we apply the same rule for both states
+            &:hover, &.clicked {
+                border: 1px solid #969696;
+            }
+
+            .importVizButton {
+                cursor: pointer;
+                @include viz-icon-inner-style();
+                background-image: url(#{$vi-img-path}/viz_gallery_sprite.svg);
+                background-position: 0 -860px;
+            }
+        }
+    }
+
+    //Style For the Context menu on '+' icon
+    .importVizMenu {
+        border-radius: 2px 0px 2px 2px;
+    }
+
+    /** END: VI Gallery **/
+
+    /** BEGIN: VI Gallery Themes **/
+
+    .mojo-theme-light {
+        .mstrmojo-VIGallery {
+            background-color: $wsvi-primary-gray-light-theme;
+            border-color: $theme-light-panel-border-color;
+
+            .mstrmojo-VIGallery-divider {
+                border-top-color: transparent;
+                border-bottom-color: $wsvi-splitline-gray;
+            }
+
+            .mstrmojo-VIGalleryList .item {
+                @include box-shadow(#fff);
+                & > div {
+                    @include viz-icon-middle-theme($theme-light-drop-box-border-color, $theme-light-drop-box-background-color);
+                }
+            }
+
+            .mstrmojo-VIPanel-titlebar {
+                .mstrmojo-EditableLabel {
+                    &:before {
+                        @include wsvi-icon-vizgallery-editLabel-icon;
+                    }
+                }
+            }
+        }
+    }
+
+    .mojo-theme-dark {
+        .mstrmojo-VIGallery {
+            background-color: $theme-dark-panel-background-color;
+            border-color: $theme-dark-panel-border-color;
+
+            .mstrmojo-VIGallery-divider {
+                border-top-color: $theme-dark-base-highlight-color;
+                border-bottom-color: $theme-dark-offset-highlight-color;
+            }
+
+            @include box-shadow($theme-dark-panel-shadow-color, 0, 0, $theme-dark-panel-shadow-blur);
+
+            .mstrmojo-VIGalleryList .item {
+                & > div {
+                    @include viz-icon-middle-theme(#4C4E50, #202021);
+                    @include box-shadow(#000, 0px, 0px, 4px, true);
+
+                    & > div {
+                        background-position: -30px 0px;
+                    }
+                }
+
+                @include viz-gallery-sprite-items(30);
+
+            }
+
+            .mstrmojo-VIGallery-importCustomVizButton {
+                @include viz-icon-middle-theme(#4C4E50, #202021);
+
+                &:hover, &.clicked {
+                    border-color: #969696;
+                }
+            }
+        }
+    }
+
+    /** END: VI Gallery Themes **/
+
+    // Adding selected & hover css after themes since this overwrites some of theme css
+    .mstrmojo-VIGallery {
+        .mstrmojo-VIGalleryList {
+            .item {
+                // Middle DIV when item is hovered
+                &:hover > div {
+                    border-color: #969696;
+                }
+                &.selected > div {
+                    border-color: $wsvi-primary-blue;
+                }
+                // Middle DIV when item is selected
+                &:active {
+                    box-shadow: none;
+                    & > div {
+                        border: 2px solid #34ABEB;
+                        position: relative;
+                        top: -1px;
+                        left: -1px;
+                    }
+                }
+            }
+        }
+    }
+
+    /** BEGIN: VI Gallery Tooltip **/
+    .mstrmojo-Tooltip.viGallery-tooltip {
+        background-color: transparent;
+
+        right: auto !important;
+
+        &.vi-regular.vi-tooltip-D {
+
+            // arrow elements.
+            .mstrmojo-Tooltip-arrow {
+                top: 20px;
+            }
+        }
+
+        &.offset {
+            &:after,
+            &:before {
+                display: none;
+            }
+        }
+
+        .mstrmojo-Tooltip-contentWrapper {
+            @include border-radius(6px);
+            @include box-shadow(rgba(0, 0, 0, 0.4), 0, 1px, 5px);
+            padding: 13px;
+            cursor: default;
+            font-size: 11px;
+        }
+
+        .mstrmojo-Tooltip-content {
+
+            // Visualization name.
+            .vi-name {
+                display: block;
+                margin-right: 5px;
+                padding: 0 0 6px 0;
+            }
+
+            // Used for denoting missing template units for specific visualization types.
+            .highlight {
+                color: #F26D7D;
+            }
+
+            .vi-reqs {
+                display: block;
+                line-height: 15px;
+
+                .type4 {
+                    color: #f57a02;
+                }
+                .typehistMetric {
+                    color: #f57a02;
+                }
+
+                .type12 {
+                    color: #00ae94;
+                }
+            }
+
+            .vi-rich-gallery-tooltip {
+
+                .vi-tooltip-requirement {
+                    padding-top: 4px;
+                }
+
+                .icon {
+                    position: relative;
+                    padding-left: 20px;
+                    &:before {
+                        content: '';
+                        left: 0;
+                        top: 50%;
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        @include transform(translate(0, -50%));
+                    }
+                }
+
+                .vi-tooltip-metricIcon {
+                    &:before {
+                        @include wsvi-icon-metric;
+                    }
+                }
+
+                .vi-tooltip-attrIcon {
+                    &:before {
+                        @include wsvi-icon-attribute;
+                    }
+                }
+
+            }
+        }
+    }
+
+    // Display preview image in tooltip
+    .mstrmojo-Tooltip.viGallery-tooltip.preview {
+        width: 198px;
+        height: 182px;
+
+        &.vi-regular.vi-tooltip-D {
+
+            // arrow elements.
+            .mstrmojo-Tooltip-arrow {
+                top: 79px;
+            }
+        }
+
+        .mstrmojo-Tooltip-contentWrapper {
+            min-height: 154px;
+            min-width: 170px;
+        }
+
+        .mstrmojo-Tooltip-content {
+
+            .vi-tooltip-icn {
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                width: 168px;
+                height: 103px;
+                border-width: 1px;
+                border-style: solid;
+                margin: 2px 0 7px;
+
+                // Reset counter
+                $icon-cnt: 0;
+
+                // Iterate to get icon positions
+                @for $y from 0 through 1 {
+                    @for $x from 0 through 6 {
+                        &.icn-tooltip-#{$icon-cnt} {
+                            background-position: #{$x * -168}px #{$y * -103}px;
+                        }
+                        $icon-cnt: $icon-cnt + 1;
+                    }
+                }
+            }
+        }
+    }
+    /** END: VI Gallery Tooltip **/
+
+}
+
+/** END: Workstation Style **/

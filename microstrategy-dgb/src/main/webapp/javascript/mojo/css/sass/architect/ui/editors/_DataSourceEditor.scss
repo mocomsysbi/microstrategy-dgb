@@ -1,0 +1,47 @@
+@import '../../ar-global';
+/** BEGIN:  DataSourceEditor **/
+.mstrmojo-ar-DataSourceEditor {
+  min-width: 200px;
+  .mstrmojo-Editor-content {
+    padding: 0 10px 15px;
+  }
+  .mstrmojo-Pulldown {
+    margin: 0;
+    padding: 2px;
+  }
+  .mstrmojo-Label {
+    margin: 15px 0 5px;
+  }
+  .mstrmojo-ar-SecondaryDBRoles {
+    border: 1px solid #DDD;
+    background: #FFF;
+    margin: 5px 0;
+    max-height: 92px;
+    overflow: auto;
+    .item {
+      padding: 5px 5px 5px 25px;
+      cursor: pointer;
+      max-width: 195px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:hover {
+        background-color: #f0f0f0;
+      }
+      &.selected {
+        font-weight: bold;
+        background: url('#{$wh-image-path}/ok.png') no-repeat 5px center;
+      }
+    }
+  }
+  .mstrmojo-Button {
+    clear: both;
+    float: right;
+    background: #DDD;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border: 1px solid #CCC;
+  }
+}
+/** END: DataSourceEditor **/

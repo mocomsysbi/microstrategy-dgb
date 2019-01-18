@@ -1,0 +1,24 @@
+/** BEGIN: XTab Menu **/
+.mstrmojo-ui-Menu.drill {
+    & > DIV {
+        // Set Padding for the items within a menu that contains radio group
+        & > .mstrmojo-ui-Menu-item {
+            padding-left: 27px;
+        }
+    }
+
+    .item {
+        .micn {
+            background: rgba(0, 0, 0, 0) none center center no-repeat;
+        }
+
+        &.drillDown .micn {
+            background-image: url(#{$mstr-img-path}/arrow_DrillDown.gif)
+        }
+
+        &.drillUp .micn {
+            background-image: url(#{$mstr-img-path}/arrow_DrillUp.gif)
+        }
+    }
+}
+/**End XTab Menu**/

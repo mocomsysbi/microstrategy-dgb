@@ -1,0 +1,141 @@
+.mstrmojo-MetricEditor {
+    .mstrmojo-Editor-toolBox {
+        .mstrmojo-Label {
+            margin-bottom: 0px;
+            width: 110px;
+        }
+        .mstrmojo-ToolBar {
+            .tbInsert {
+                background: url("images/DI/workstation/workstation.svg") no-repeat scroll -1500px -210px;
+            }
+            .tbValidate, .tbClear {
+                background-image: none;
+                width: 52px;
+                color: $wsvi-link-blue;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .tbValidate {
+                margin-right: 20px;
+                margin-left: 238px;
+            }
+            .tbClear {
+                text-align: center;
+            }
+        }
+    }
+
+    .mstrmojo-MEBox-status {
+
+        .mstrmojo-MEBox-vStatus {
+            &.valid, &.error {
+                color: $wsvi-primary-black;
+            }
+            &.error:before {
+                background: url("images/DI/workstation/workstation.svg") no-repeat scroll -1260px -10px;
+            }
+            &.valid:before {
+                background: url("images/DI/workstation/workstation.svg") no-repeat scroll -1300px -10px;
+            }
+        }
+    }
+}
+
+.mstrmojo-ContextMenu {
+    background-color: #F4F4F4;
+    border: 1px solid $wsvi-ui-border-gray;
+    padding: 0px;
+    .mstrmojo-ContextMenuItem{
+        td {
+            padding: 5px 3px;
+        }
+        &.checked {
+            td.mstrmojo-CMI-left {
+                padding: 5px 3px;
+                // border-left: 4px solid #F4F4F4;
+                img {
+                    background: transparent url("vi/images/dataset.svg") -572px -30px no-repeat;
+                }
+            }
+        }
+        &:hover {
+            background-color: $wsvi-hover-gray;
+            .mstrmojo-CMI-left {
+                background-color: transparent;
+            }
+        }
+        &.separator {
+            td {
+                padding: 0;
+            }
+            .mstrmojo-CMI-left {
+                border-bottom: 1px solid #CCC;
+            }
+        }
+        .mstrmojo-CMI-left {
+            background: #F4F4F4;
+            border-color: #F4F4F4;
+            border: none;
+            padding: 5px 0px;
+        }
+        .mstrmojo-CMI-right.sm {
+            img {
+                background: url("images/DI/workstation/workstation.svg") no-repeat scroll -2000px -196px;
+            }
+        }
+    }
+}
+
+.mstrmojo-MEBox {
+    margin: 5px 0px 0;
+    border: 1px solid $wsvi-ui-border-gray;
+    border-radius: 2px;
+    position: relative;
+
+    .mstrmojo-TokenInputBox {
+        padding: 5px 2px 0 5px;
+        position: relative;
+    }
+}
+
+.workstation .mstrmojo-Popup.mstrmojo-ObjectInputBox-suggest.mstrmojo-ME-TokenInputBox-suggest .mstrmojo-suggest-text {
+    padding-left: 20px;
+}
+
+.mstrmojo-MEBox-status {
+    background-color: #F2F2F2;
+    border-top: 1px solid $wsvi-splitline-gray;
+    position: absolute;
+    bottom: 0;  
+    overflow: hidden;
+    width: 100%;
+
+    &.hidden {
+        display: none;
+    }
+
+    DIV {
+        max-height: 20px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: default;
+        display: inline-block;
+        padding: 2px 2px 2px 5px;
+        float: left;
+
+        &.right {
+            float: right;
+        }
+
+        &.mstrmojo-ME-link {
+            padding-top: 0;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import '../../../global';
+
+.mstrmojo-ot-PreferencesEditorPanel {
+    @include box-sizing();
+    padding: 0 18px 18px;
+
+    // Common CSS for displaying tips on the One Tier Preferences Editor panels
+    .ot-prefs-tip {
+        margin-top: 5px;
+        color: #AAAAAA;
+    }
+
+    // Generic divider class for the preferences editor.
+    .ot-prefs-divider {
+        border-top: 1px solid #D2D2D2;
+        border-bottom: 1px solid #FFFFFF;
+        margin: 15px 0;
+    }
+
+    .mstrmojo-TextBox.err {
+        border-color: #EB815C;
+    }
+}

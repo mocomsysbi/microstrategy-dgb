@@ -1,0 +1,70 @@
+.workstation {
+  /** BEGIN: ui-SearchBox **/
+  .mstrmojo-ui-SearchBox {
+    background-color: $wsvi-primary-white;
+    position: relative;
+    border: 1px solid $wsvi-ui-border-gray;
+    height: $wsvi-input-control-height;
+    @include box-sizing();
+    @include border-radius($wsvi-box-radius);
+
+    &.onInputFocus{
+      border-color: $wsvi-primary-blue;
+    }
+
+    .mstrmojo-ui-sb-input {
+      border: none;
+      float: left;
+      line-height: $wsvi-input-control-line-height;
+      outline: none;
+      background-color: transparent;
+      margin: 0 -6px 0 6px;
+      font-size: 11px;
+      font-color: $wsvi-primary-black;
+
+      &::-ms-clear {
+        display: none;
+      }
+    }
+
+    .mstrmojo-ui-sb-btn {
+      @include wsvi-icon-magnifier;
+      @include wsvi-icon-size;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      right: 4px;
+      overflow: hidden;
+      margin-top: 3px;
+
+      &.clear {
+        @include wsvi-icon-clear-cross;
+      }
+    }
+  }
+  
+  .mojo-theme-light {
+    .mstrmojo-ui-SearchBox {
+      background-color: $wsvi-primary-white;
+      border: 1px solid $wsvi-ui-border-gray;
+      @include box-shadow($wsvi-input-shadow, 0, 1, 2px);
+
+      &.onInputFocus{
+        border-color: $wsvi-primary-blue;
+      }
+    }
+  }
+
+  .mojo-theme-dark{
+    .mstrmojo-ui-SearchBox{
+      background-color: #4c4d50;
+      @include box-shadow(rgba(154, 157, 163, 0.2), 0, 0, 5px, true);
+      border: 1px solid #0f0f10;
+      .mstrmojo-ui-sb-btn.clear{
+        background: url(#{$vi-img-path}/menu_icons.png) no-repeat -24px -193px;
+      }
+    }
+  }
+
+  /** END: ui-SearchBox **/
+}

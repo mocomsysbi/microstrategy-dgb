@@ -1,0 +1,118 @@
+@import '_workstation-global';
+
+/** BEGIN: Light Theme **/
+$theme-light-color: #444649;
+$theme-light-background-color: #ccc;
+$theme-light-border-color: #9b9b9b;
+
+$theme-light-panel-header: $theme-light-color;
+$theme-light-panel-background-color: #f2f2f2;
+$theme-light-panel-border-color: #fff;
+$theme-light-panel-divider-border-color: #fff;
+$theme-light-panel-hover-background-color: #dadada;
+
+$theme-light-action-box-background-color: #eaebeb;
+$theme-light-action-box-border-color: #b5b5b5;
+
+$theme-light-drop-box-background-color: #fff;
+$theme-light-drop-box-border-color: #c5c5c5;
+$theme-light-drop-box-shadow-color: #F6F6F7;
+
+$theme-light-menu-item-hover-color: #dadada;
+$theme-light-menu-background-color : rgba(237, 237, 237, 0.96);
+
+// Colors for divider items.
+$theme-light-base-highlight-color: #ededed;
+$theme-light-offset-highlight-color: #fff;
+
+/** END: Light Theme **/
+
+
+/** BEGIN: Dark Theme **/
+$theme-dark-color: #cdcdcd;
+$theme-dark-background-color: #191919;
+
+$theme-dark-panel-header: #cdcdcd;
+$theme-dark-panel-header-background-color: #252526;
+$theme-dark-panel-background-color: #37383a;
+
+$theme-dark-viz-panel-background-color: #1f1f1f;
+$theme-dark-panel-border-color: #4b5057;
+
+$theme-dark-panel-divider-border-color: #595959;
+$theme-dark-panel-hover-background-color: $theme-dark-panel-divider-border-color;
+
+$theme-dark-field-container-bg-color: #353739;
+
+$theme-dark-action-box-background-color: #28282a;
+$theme-dark-action-box-border-color: #4a484c;
+
+$theme-dark-drop-box-background-color: $theme-dark-action-box-background-color;
+$theme-dark-drop-box-border-color: $theme-dark-action-box-border-color;
+$theme-dark-drop-box-shadow-color: #4c4d50;
+
+// Colors for divider items.
+$theme-dark-base-highlight-color: #2b2b2e;
+$theme-dark-offset-highlight-color: #3d3e42;
+
+$theme-dark-panel-shadow-color: rgba(0,0,0,0.3);
+$theme-dark-panel-shadow-blur: 4px;
+/** END: Dark Theme **/
+
+
+// #VIRevamp
+$wsvi-general-dockable-panel-background-color-light-theme : rgba($wsvi-primary-gray, 1.0);
+$wsvi-general-dockable-panel-shadow-blur-light-theme: 1px;
+
+$wsvi-general-panel-shadow-color: rgba($wsvi-primary-black, 0.2);
+$wsvi-general-panel-shadow-x: 1px;
+$wsvi-general-panel-shadow-y: 1px;
+$wsvi-general-panel-shadow-blur: 1px;
+
+$wsvi-accordion-panel-border-color: #e5e5e5;
+
+$wsvi-menu-background-color: #F4F4F4;
+$wsvi-menu-border-color: $wsvi-ui-border-gray;
+$wsvi-menu-shadow-color: rgba($wsvi-primary-black, 0.1);
+$wsvi-menu-shadow-blur: 6px;
+$wsvi-menu-shadow-spread: 3px;
+$wsvi-menu-shadow-x: 0px;
+$wsvi-menu-shadow-y: 1px;
+$wsvi-menu-item-hover-color: $wsvi-hover-gray;
+$wsvi-menu-item-hover-color2: $wsvi-hover-blue;
+$wsvi-menu-item-selected-color: $wsvi-primary-blue;
+$wsvi-menu-font-color: $wsvi-primary-black;
+$wsvi-menu-font-hover-color: $wsvi-primary-black;
+$wsvi-menu-font-selected-color: $wsvi-primary-white;
+$wsvi-menu-font-disabled-color: rgba($wsvi-primary-black, 0.45);
+$wsvi-menu-font-size: $wsvi-normal-font-size;
+$wsvi-menu-font-style: $wsvi-normal-font-style;
+$wsvi-menu-font-family: $wsvi-normal-font-family;
+$wsvi-menu-item-row-height: 26px;
+
+$wsvi-navigation-bar-color: #7B8287;
+$wsvi-navigation-bar-width: 38px;
+$wsvi-navigation-bar-item-width: 38px;
+$wsvi-navigation-bar-item-height: 30px;
+$wsvi-navigation-bar-highlight-color: $wsvi-primary-gray;
+$wsvi-navigation-bar-highlight-bar-color: #1C91DC;
+$wsvi-navigation-bar-highlight-bar-width: 4px;
+$wsvi-navigation-bar-regular-color: none;
+$wsvi-navigation-box-width: 168px;
+$wsvi-toggle-view-bar-exclude-border-btn-width: 26px;
+$wsvi-toggle-view-bar-exclude-border-btn-height:26px;
+$wsvi-toggle-view-bar-btn-width: 28px;
+$wsvi-toggle-view-bar-btn-height:28px;
+$wsvi-toggle-view-bar-btn-wrap-height:30px;
+$wsvi-toggle-view-bar-btn-wrap-width:30px;
+$wsvi-toggle-view-bar-item-width: 30px;
+$wsvi-toggle-view-bar-item-height: 30px;
+
+$wsvi-vis-gallery-icon-outer-width: 46px;
+$wsvi-vis-gallery-icon-outer-height: 46px;
+$wsvi-vis-gallery-icon-border: 1px;
+$wsvi-vis-gallery-icon-margin: 8px 0 0 8px;
+$wsvi-vis-gallery-icon-middle-width: 44px;
+$wsvi-vis-gallery-icon-middle-height: 44px;
+$wsvi-vis-gallery-icon-inner-width: 40px;
+$wsvi-vis-gallery-icon-inner-height: 40px;

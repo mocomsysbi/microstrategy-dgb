@@ -1,0 +1,576 @@
+.mstrmojo-vi-ui-rw-GhostImageContainer {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  .mstmojo-ghostImgTableCell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    .mstrmojo-ghostImgDiv {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .ghost-vis-name {
+    color: $wsvi-primary-black;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: .2px;
+    line-height: 18px;
+    padding: 16px 10px 0 10px;
+  }
+  .ghost-vis-desc {
+    color: rgba($wsvi-primary-black, 0.75);
+    font-size: $wsvi-normal-font-size;
+    line-height: 18px;
+    letter-spacing: .2px;
+    padding: 10px 10px 0 10px;
+    .ghost-vis-txt-metric,
+    .ghost-vis-txt-attr,
+    .ghost-vis-txt-attr-time {
+      display: inline-block;
+      position: relative;
+      padding-left: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        @include transform(translate(0, -50%));
+        left: 0;
+        width: 18px;
+        height: 18px;
+      }
+    }
+    .ghost-vis-txt-metric {
+      &:before {
+        @include wsvi-icon-metric;
+      }
+    }
+    .ghost-vis-txt-attr {
+      &:before {
+        @include wsvi-icon-attribute;
+      }
+    }
+    .ghost-vis-txt-attr-time {
+      &:before {
+        @include wsvi-icon-time-attribute;
+      }
+    }
+  }
+  .ghost-vis-img {
+    margin-left: auto;
+    margin-right: auto;
+    @include background-image($wsvi-ghost-img);
+  }
+}
+
+.ghost-black {
+  .mstrmojo-vi-ui-rw-GhostImageContainer {
+    .ghost-vis-name {
+      color: $wsvi-primary-black;
+    }
+    .ghost-vis-desc {
+      color: $wsvi-primary-black;
+    }
+  }
+}
+
+.ghost-white {
+  .mstrmojo-vi-ui-rw-GhostImageContainer {
+    .ghost-vis-name {
+      color: $wsvi-primary-white;
+    }
+    .ghost-vis-desc {
+      color: $wsvi-primary-white;
+    }
+  }
+}
+
+$ghost-img-sprite-w: 180px;
+$ghost-img-sprite-h: 2620px;
+.ghost-short {
+  .mstrmojo-vi-ui-rw-GhostImageContainer {
+    .ghost-vis-img {
+      width: 40px;
+      height: 40px;
+      background-size: $ghost-img-sprite-w*40/60 $ghost-img-sprite-h*40/60;
+    }
+    $ghost-grande-size: 40px;
+    $ghost-grande-padding: 30px * 40 / 60;
+
+    &.xtab {
+      .ghost-vis-img {
+        background-position-y: 0;
+      }
+    }
+
+    &.heatmap {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding);
+      }
+    }
+
+    &.barchart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*2;
+      }
+    }
+
+    &.linechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*3;
+      }
+    }
+
+    &.areachart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*4;
+      }
+    }
+
+    &.bubblechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*5;
+      }
+    }
+
+    &.piechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*6;
+      }
+    }
+
+    &.combochart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*7;
+      }
+    }
+
+    &.network {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*8;
+      }
+    }
+
+    &.D3WordCloud {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*9;
+      }
+    }
+
+    &.GoogleTimeline {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*10;
+      }
+    }
+
+    &.KPIWidget {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*11;
+      }
+    }
+
+    &.SequencesSunburst {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*12;
+      }
+    }
+
+    &.boxplot {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*14;
+      }
+    }
+
+    &.histogram {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*15;
+
+      }
+    }
+
+    &.waterfall {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*16;
+      }
+    }
+
+    &.kpicard {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*20;
+      }
+    }
+
+    .ghost-vis-img {
+      background-position: -60px 0px - ($ghost-grande-size + $ghost-grande-padding)*13;
+    }
+  }
+}
+
+.ghost-tall {
+  .mstrmojo-vi-ui-rw-GhostImageContainer {
+    .ghost-vis-img {
+      width: 60px;
+      height: 60px;
+    }
+    $ghost-grande-size: 60px;
+    $ghost-grande-padding: 30px;
+
+    &.xtab {
+      .ghost-vis-img {
+        background-position-y: 0;
+      }
+    }
+
+    &.heatmap {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding);
+      }
+    }
+
+    &.barchart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*2;
+      }
+    }
+
+    &.linechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*3;
+      }
+    }
+
+    &.areachart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*4;
+      }
+    }
+
+    &.bubblechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*5;
+      }
+    }
+
+    &.piechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*6;
+      }
+    }
+
+    &.combochart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*7;
+      }
+    }
+
+    &.network {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*8;
+      }
+    }
+
+    &.D3WordCloud {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*9;
+      }
+    }
+
+    &.GoogleTimeline {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*10;
+      }
+    }
+
+    &.KPIWidget {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*11;
+      }
+    }
+
+    &.SequencesSunburst {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*12;
+      }
+    }
+
+    &.boxplot {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*14;
+      }
+    }
+
+    &.histogram {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*15;
+
+      }
+    }
+
+    &.waterfall {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*16;
+      }
+    }
+
+    &.kpicard {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*20;
+      }
+    }
+
+    .ghost-vis-img {
+      background-position: -90px 0px - ($ghost-grande-size + $ghost-grande-padding)*13;
+    }
+  }
+}
+
+.ghost-grande {
+  .mstrmojo-vi-ui-rw-GhostImageContainer {
+    .ghost-vis-img {
+      width: 80px;
+      height: 80px;
+    }
+    $ghost-grande-size: 80px;
+    $ghost-grande-padding: 10px;
+    &.xtab {
+      .ghost-vis-img {
+        background-position-y: 0;
+      }
+    }
+
+    &.heatmap {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding);
+      }
+    }
+
+    &.barchart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*2;
+      }
+    }
+
+    &.linechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*3;
+      }
+    }
+
+    &.areachart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*4;
+      }
+    }
+
+    &.bubblechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*5;
+      }
+    }
+
+    &.piechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*6;
+      }
+    }
+
+    &.combochart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*7;
+      }
+    }
+
+    &.network {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*8;
+      }
+    }
+
+    &.D3WordCloud {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*9;
+      }
+    }
+
+    &.GoogleTimeline {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*10;
+      }
+    }
+
+    &.KPIWidget {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*11;
+      }
+    }
+
+    &.SequencesSunburst {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*12;
+      }
+    }
+
+    &.boxplot {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*14;
+      }
+    }
+
+    &.histogram {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*15;
+
+      }
+    }
+
+    &.waterfall {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*16;
+      }
+    }
+
+    &.kpicard {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*20;
+      }
+    }
+
+    .ghost-vis-img {
+      background-position: 0 0px - ($ghost-grande-size + $ghost-grande-padding)*13;
+    }
+  }
+}
+
+.ghost-venti {
+  .mstrmojo-vi-ui-rw-GhostImageContainer {
+    .ghost-vis-img {
+      width: 100px;
+      height: 100px;
+      background-size: $ghost-img-sprite-w*100/80 $ghost-img-sprite-h*100/80;
+    }
+    $ghost-grande-size: 100px;
+    $ghost-grande-padding: 10px * 100 / 80;
+
+    &.xtab {
+      .ghost-vis-img {
+        background-position-y: 0;
+      }
+    }
+
+    &.heatmap {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding);
+      }
+    }
+
+    &.barchart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*2;
+      }
+    }
+
+    &.linechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*3;
+      }
+    }
+
+    &.areachart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*4;
+      }
+    }
+
+    &.bubblechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*5;
+      }
+    }
+
+    &.piechart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*6;
+      }
+    }
+
+    &.combochart {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*7;
+      }
+    }
+
+    &.network {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*8;
+      }
+    }
+
+    &.D3WordCloud {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*9;
+      }
+    }
+
+    &.GoogleTimeline {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*10;
+      }
+    }
+
+    &.KPIWidget {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*11;
+      }
+    }
+
+    &.SequencesSunburst {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*12;
+      }
+    }
+
+    &.boxplot {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*14;
+      }
+    }
+
+    &.histogram {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*15;
+
+      }
+    }
+
+    &.waterfall {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*16;
+      }
+    }
+
+    &.kpicard {
+      .ghost-vis-img {
+        background-position-y: 0px - ($ghost-grande-size + $ghost-grande-padding)*20;
+      }
+    }
+
+    .ghost-vis-img {
+      background-position: 0px 0px - ($ghost-grande-size + $ghost-grande-padding)*13;
+    }
+  }
+}
+
+.ghost-hide-title {
+  .ghost-vis-name {
+    display: none;
+  }
+}
+
+.ghost-hide-desc {
+  .ghost-vis-desc {
+    display: none;
+  }
+}

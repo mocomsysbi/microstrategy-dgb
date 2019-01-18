@@ -1,0 +1,1 @@
+mstrUpdateManager.addEvent({SET_TOPLEFT_POSITION:{p:["73001","73002"],i:73001,n:["top","left"]},CHANGE_DISPLAY_FORMAT:{p:["98001","98002","98006"],i:98004,n:["oeFolderID","oeFolderBlockBegin","oeDisplayFormat"]}});updateManagerEventsCreateReportObj.prototype=new Object();function updateManagerEventsCreateReportObj(){}

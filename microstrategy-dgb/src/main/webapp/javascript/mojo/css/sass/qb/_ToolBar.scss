@@ -1,0 +1,105 @@
+/* QueryBuilder ToolBar */
+@import 'qb-global';
+
+.mstrmojo-qb-title {
+  float:left;
+  font: 12px Tahoma;
+  font-weight: bold;
+  color: #5b5b5b;
+  padding: 6px 0 0 10px;
+}
+
+.mstrmojo-qb-toolbar {
+  width: 100% !important;
+  height: 25px;
+  margin: 0 0 10px 5px;
+  padding-left: 3px;
+
+  .mstrmojo-qb-toolbarIcon {
+    float: left;
+  }
+}
+
+.mstrmojo-qb-toolbarIcon {
+  background-image:url(#{$mstr-img-path}/qbtoolbar.png);
+  background-repeat:no-repeat;
+  height:24px;
+  width:24px;
+  cursor:pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px 0 2px;
+
+  &.connectionview {
+    background-position: 0 0px;
+
+    &:hover {
+      background-position: 0 -26px;
+    }
+
+    &.on {
+      background-position: 0 -52px;
+
+      &:hover {
+        background-position: 0 -79px;
+      }
+    }
+  }
+
+  &.viewtable {
+    background-position: 0 -634px;
+
+    &:hover {
+      background-position: 0 -661px;
+    }
+
+    &.on {
+      background-position: 0 -687px;
+
+      &:hover {
+        background-position: 0 -713px;
+      }
+    }
+  }
+
+  &.help {
+    background-image:url(#{$di-img-path}/helpIcon.png);
+    height:21px;
+    width:21px;
+    margin: 3px 5px 0 0;
+    float:right;
+  }
+}
+
+/* START: part of toolbar for big query */
+.mstrmojo-qb-toolbar-bigquery {
+  float: right;
+  margin: 5px 10px 0 0;
+  .mstrmojo-qb-toolbar-bigquery-username, .splitText {
+    text-align: right;
+    color: #333333;
+    font-family: Arial;
+  }
+  
+  .mstrmojo-qb-toolbar-bigquery-username {
+    max-width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .splitText {
+    padding-left: 5px;
+  }
+
+  .mstrmojo-qb-toolbar-bigquery-signout {
+    text-align: right;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #0000FF;
+    font-family: Arial;
+    padding-left: 5px;
+  }
+}
+/* END: part of toolbar for big query */
+

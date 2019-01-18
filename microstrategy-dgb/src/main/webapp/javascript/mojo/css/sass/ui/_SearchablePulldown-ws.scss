@@ -1,0 +1,88 @@
+/** BEGIN: ui-SearchablePulldown **/
+.mstrmojo-popup-widget-hosted {
+  z-index: 100;
+}
+
+.mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+    .mstrmojo-ui-Pulldown-text {
+        &:after {
+            content: '';
+            position: absolute;
+            right: 1px;
+            top: 1px;
+            @include wsvi-dropdown-icon;
+        }
+
+        &.editable:after {
+            // have to use important or add .workstation .mojo-theme-light to the selector
+            background-position: -1px -27px !important;
+        }
+        // DE121315; Disables safari native tooltip by appending empty element before the pulldown's text. Normally would
+        // be after but ":after" is used by the dropdown icon.
+        &.mojo-safari-hide-nativeTooltip:before {
+            content: '';
+            display: block;
+        }
+    }
+
+    .item {
+        .sp-highlight {
+            background-color: $wsvi-text-selection-background-color;
+        }
+    }
+
+    &.disabled {
+        .mstrmojo-ui-Pulldown-text {
+            @include wsvi-dropdown-text-disabled;
+
+            &:after {
+                background-position: 100% -60px;
+            }
+        }
+    }
+
+    &.clip-safari .editable {
+        // have to use important or add .workstation .mojo-theme-light to the selector
+        text-overflow: clip !important;
+
+        &:after {
+            background-color: $wsvi-primary-white !important;
+        }
+    }
+}
+
+.workstation {
+    .mojo-theme-dark {
+        .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 1px;
+                    top: 1px;
+                    background: transparent url($vi-img-path + '/dark_theme_icons.svg') 0 -30px no-repeat;
+                }
+
+                &.editable:after {
+                    background-position: -30px -30px !important;
+                }
+            }
+
+            &.clip-safari .editable:after {
+                background-color: $wsvi-primary-black !important;
+            }
+        }
+    }
+}
+
+// TQMS 947881: In Firefox, when contentEditable element has ":after", its caret position will be incorrect if it's empty
+@-moz-document url-prefix() {
+    .workstation {
+        .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text:focus:empty {
+                padding-top: 14px;
+            }
+        }
+    }
+}
+/** END: ui-SearchablePulldown **/

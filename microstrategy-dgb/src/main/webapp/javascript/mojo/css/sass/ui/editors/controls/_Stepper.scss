@@ -1,0 +1,90 @@
+@import '../../../global';
+
+/** BEGIN: ui-ctrl-Stepper **/
+.mstrmojo-ui-ctrl-Stepper {
+    @include border-radius(2px);
+
+    border: 1px solid #b5b5b5;
+    overflow: hidden;
+    position: relative;
+
+    $ui-ctrl-stepper-height: 21;
+    $ui-ctrl-stepper-height-unit: $ui-ctrl-stepper-height + px;
+    $ui-ctrl-stepper-button-width: 18px;
+    $ui-ctrl-stepper-arrow-size: 4px;
+    $ui-ctrl-stepper-arrow-color: #444343;
+
+    &.selection {
+        margin-bottom: 5px;
+    }
+
+    .text {
+        @include box-sizing();
+
+        background: #fff;
+        height: $ui-ctrl-stepper-height-unit;
+        line-height: $ui-ctrl-stepper-height-unit;
+        padding: 0 $ui-ctrl-stepper-button-width 0 0;
+
+        .mstrmojo-TextBox {
+            border: none;
+            padding: 0 $ui-ctrl-stepper-button-width 0 5px;
+        }
+    }
+
+    .title {
+        background-color: #b5b5b5;
+        height: $ui-ctrl-stepper-height-unit;
+        position: absolute;
+        right: $ui-ctrl-stepper-button-width;
+        top: 0;
+        width: 1px;
+    }
+
+    %ui-ctrl-stepper-button {
+        @include linear-gradient(#eaebeb, #e4e4e4, true);
+
+        cursor: pointer;
+        height: #{($ui-ctrl-stepper-height - 1) / 2}px;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        text-indent: -100px;        // Hide text plus and minus.
+        width: $ui-ctrl-stepper-button-width;
+    }
+
+    .next {
+        @extend %ui-ctrl-stepper-button;
+
+        border-bottom: 1px solid #b5b5b5;
+        top: 0;
+
+        &:before {
+            @include css-arrow($ui-ctrl-stepper-arrow-size, bottom, $ui-ctrl-stepper-arrow-color, auto, 5px, 3px, auto);
+        }
+    }
+
+    .prev {
+        @extend %ui-ctrl-stepper-button;
+
+        bottom: 0;
+
+        &:before {
+            @include css-arrow($ui-ctrl-stepper-arrow-size, top, $ui-ctrl-stepper-arrow-color, 3px, 5px, auto, auto);
+        }
+    }
+
+    &.disabled {
+        opacity: 0.5;
+
+        .prev,
+        .next {
+            cursor: default;
+        }
+    }
+
+    &.mstrmojo-Stepper-ErrValidation {
+        border-color: #fabd29 !important;
+    }
+}
+/** END: ui-ctrl-Stepper **/

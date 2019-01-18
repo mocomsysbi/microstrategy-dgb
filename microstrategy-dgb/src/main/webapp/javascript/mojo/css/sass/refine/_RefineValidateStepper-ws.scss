@@ -1,0 +1,96 @@
+.workstation {
+  /** BEGIN: Refine-RefineValidateStepper **/
+  .mstrmojo-Refine-RefineValidateStepper {
+    @include border-radius(2px);
+
+    border: none;
+    overflow: hidden;
+    position: relative;
+
+    $ui-ctrl-stepper-height: $wsvi-input-control-height-refine;
+    $ui-ctrl-stepper-height-unit: $ui-ctrl-stepper-height;
+    $ui-ctrl-stepper-button-width: 12px;
+    $ui-ctrl-stepper-arrow-size: 4px;
+    $ui-ctrl-stepper-arrow-color: #444343;
+    $ui-ctrl-stepper-arrow-color-hover:#3ba3da;
+
+    .text {
+      @include box-sizing();
+
+      background: #fff;
+      height: $ui-ctrl-stepper-height-unit;
+      line-height: $ui-ctrl-stepper-height-unit;
+      padding: 0;
+      width: calc(100% - 20px);
+      margin-left: 0;
+
+      .mstrmojo-TextBox {
+        padding: 0 5px 0 5px;
+        width: 100%;
+      }
+    }
+
+    .title {
+      background-color: #b5b5b5;
+      height: $ui-ctrl-stepper-height-unit;
+      position: absolute;
+      right: $ui-ctrl-stepper-button-width;
+      top: 0;
+      width: 0px;
+    }
+
+    %ui-ctrl-stepper-button {
+      @include linear-gradient(transparent, transparent, true);
+
+      cursor: pointer;
+      height: $ui-ctrl-stepper-height-unit / 2 - 1px;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      text-indent: -100px;        // Hide text plus and minus.
+      width: $ui-ctrl-stepper-button-width;
+    }
+
+    .next {
+      @extend %ui-ctrl-stepper-button;
+
+      border-bottom: none;
+      top: 0;
+
+      &:before {
+        @include css-arrow($ui-ctrl-stepper-arrow-size, bottom, $ui-ctrl-stepper-arrow-color, 1px, 5px, 3px, auto);
+      }
+      &:hover:before,&:active:before{
+        @include css-arrow($ui-ctrl-stepper-arrow-size, bottom, $ui-ctrl-stepper-arrow-color-hover, 1px, 5px, 3px, auto);
+      }
+    }
+
+    .prev {
+      @extend %ui-ctrl-stepper-button;
+
+      bottom: 0;
+
+      &:before {
+        @include css-arrow($ui-ctrl-stepper-arrow-size, top, $ui-ctrl-stepper-arrow-color, 1px, 5px, auto, auto);
+      }
+      &:hover:before,&:active:before{
+        @include css-arrow($ui-ctrl-stepper-arrow-size, top, $ui-ctrl-stepper-arrow-color-hover, 1px, 5px, auto, auto);
+      }
+    }
+
+    &.disabled {
+      opacity: 0.5;
+
+      .prev,
+      .next {
+        cursor: default;
+      }
+    }
+
+    &.mstrmojo-Stepper-ErrValidation {
+      border-color: #fabd29 !important;
+    }
+  }
+  /** END: Refine-RefineValidateStepper **/
+
+}

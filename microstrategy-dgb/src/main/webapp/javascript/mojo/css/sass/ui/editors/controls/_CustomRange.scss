@@ -1,0 +1,265 @@
+@import '../../../global';
+
+/** BEGIN: CustomRange **/
+.mstrmojo-ui-CustomRange {
+    color: #cdcdcd;
+
+    %cr-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .autoNode {
+        height: 30px;
+        .autoNodeLeft {
+            float: left;
+        }
+
+        .autoNodeRight {
+            float: right;
+        }
+
+        .mstrmojo-Label {
+            @extend %cr-label;
+            line-height: 30px;
+            vertical-align: middle;
+            &.disabled {
+                color: inherit;
+            }
+        }
+        .mstrmojo-ui-Checkbox {
+            margin-left: 5px;
+            vertical-align: middle;
+            &.disabled {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .ctrlNode {
+        height: 30px;
+        .ctrlNodeLeft {
+            float: left;
+        }
+
+        .ctrlNodeRight {
+            float: right;
+        }
+
+        .mstrmojo-Label {
+            @extend %cr-label;
+//            max-width: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+            &.disabled {
+                color: inherit;
+            }
+        }
+        .mstrmojo-TextBox {
+            width: 80px;
+//            margin-left: 5px;
+            vertical-align: middle;
+            color: inherit;
+            &.disabled {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    $range-data-origin-offset: 65px;
+
+    .displayNode {
+        width: 280px;
+        height: 45px;
+        position: relative;
+        margin-top: 9px;
+
+        div {
+            bottom: auto;
+            cursor: default;
+            left: auto;
+            position: absolute;
+            right: auto;
+            top: auto;
+        }
+
+        $range-background-bar-top: 22px;
+        $tick-mark-height: 5px;
+        $tick-vertical-offset: $range-background-bar-top - $tick-mark-height;
+        $label-axis-min-padding: 10px;
+        $tick-label-vertical-offset: $range-background-bar-top + $label-axis-min-padding + 1px;
+
+        .lbl-cust-range {
+            @extend %cr-label;
+            width: $range-data-origin-offset;
+            bottom: $tick-label-vertical-offset; // align with custom tick label: 22 (second half) + 1 (bg line) + 10 (padding)
+        }
+
+        .lbl-data-range {
+            @extend %cr-label;
+            width: $range-data-origin-offset;
+            top: $tick-label-vertical-offset;
+        }
+
+        // Background bar.
+        .bg {
+            height: 1px;
+            left: 0;
+            top: $range-background-bar-top;
+            right: 0;
+            div {
+                position: static;
+                border-top: 1px solid #595959;
+            }
+
+            $min-width-between-ticks: 30px;
+            $dot-line-width: 18px;
+            $tip-line-width: ($min-width-between-ticks - $dot-line-width) / 2;
+
+            .tip {
+                width: $tip-line-width;
+                display: none;
+            }
+
+            .tip.left {
+                width: $tip-line-width + $range-data-origin-offset + $label-axis-min-padding;
+            }
+
+            .dot {
+                border-top-style: dotted;
+                width: 12px;
+                display: none;
+                &.left {
+                    @include transform(translateX(2px) scaleX(2));
+                }
+                &.right {
+                    @include transform(scaleX(2));
+                }
+            }
+
+            .left {
+                float: left;
+            }
+
+            .right {
+                float: right;
+            }
+
+            &.unscaleleft {
+                .left {
+                    display: block;
+                }
+                .girder {
+                    margin-left: $range-data-origin-offset + $label-axis-min-padding + $min-width-between-ticks - $tip-line-width;
+                }
+            }
+            &.unscaleright {
+                .right {
+                    display: block;
+                }
+                .girder {
+                    margin-right: $min-width-between-ticks - $tip-line-width;
+                }
+            }
+
+        }
+
+        $custom-range-delay: 100ms;
+
+        // Custom and actual minimum ticks.
+        .min {
+            @include single-transition(left, $custom-range-delay);
+            left: $range-data-origin-offset;
+            .tick-label {
+                left: 0;
+            }
+        }
+
+        // Custom and actual maximum ticks.
+        .max {
+            @include single-transition(right, $custom-range-delay);
+            right: 0;
+            .tick-label {
+                right: 0;
+            }
+        }
+
+        // All tick marks.
+        %cr-tick-mark {
+            background: #595959;
+            height: $tick-mark-height;
+            width: 1px;
+            white-space: nowrap;
+        }
+
+        .tick-label {
+            position: absolute;
+            max-width: 97px;  //(205px-10px)/2
+            @extend %cr-label;
+        }
+
+        // Custom tick markers.
+        .custom {
+            @extend %cr-tick-mark;
+            top: $tick-vertical-offset;
+            .tick-label {
+                bottom: $label-axis-min-padding;
+            }
+        }
+
+        // Actual tick markers
+        .actual {
+            @extend %cr-tick-mark;
+            bottom: $tick-vertical-offset;
+            .tick-label {
+                top: $label-axis-min-padding;
+            }
+        }
+
+        &.disabled {
+            opacity: 0.5;
+            .custom {
+                display: none;
+            }
+        }
+    }
+}
+/** END: CustomRange **/
+
+// for property panel
+.workstation .mstrmojo-vi-PropEditor .mstrmojo-vi-EditorGroup .mstrmojo-ui-CustomRange {
+    .ctrlNode {
+        height: 30px;
+        display: block;
+        .ctrlNodeLeft {
+            float: left;
+            width: 50%;
+            display: inline-block;
+        }
+
+        .ctrlNodeRight {
+            float: right;
+            width: 50%;
+            display: inline-block;
+        }
+
+        .mstrmojo-Label {
+            display: none !important;
+        }
+        .mstrmojo-TextBox {
+            width: 100%;
+            float: right;
+            //            margin-left: 5px;
+            color: inherit;
+            &.disabled {
+                opacity: 0.5;
+            }
+        }
+
+
+    }
+    .displayNode {
+        display: none
+    }
+}

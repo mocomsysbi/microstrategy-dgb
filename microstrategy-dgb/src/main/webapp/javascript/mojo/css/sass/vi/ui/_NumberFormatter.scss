@@ -1,0 +1,173 @@
+@import '../vi-global';
+
+/** BEGIN: Number Format Editor **/
+.mstrmojo-ui-MenuEditor.NumberFormat-MenuEditor {
+    padding: 9px 0 0;
+    min-width: 160px;
+
+    .me-content {
+        padding: 0 9px;
+    }
+
+    .me-buttons {
+        padding-bottom: 4px;
+    }
+}
+
+//DE53943;Substract CSS from parent node to remove dependency, since pull down is changed to non-hostedwith
+// Change the styling for the pulldown items to show the red color.
+.nf-NegativePullDown.mstrmojo-ui-Pulldown {
+    width: 86px;
+    max-width: 86px;
+
+    .mstrmojo-ui-Pulldown-text.red {
+        color: red !important;
+    }
+
+    .mstrmojo-PopupList {
+        .item.red {
+            color: red !important;
+        }
+    }
+}
+
+.nf-category.mstrmojo-ui-Pulldown {
+    margin: 0 0 $wsvi-element-text-padding 0;
+
+    .mstrmojo-PopupList {
+        width: 100%;
+        max-height: none;
+
+        .mstrmojo-popupList-scrollBar {
+            max-height: none;
+        }
+    }
+}
+
+.NumberFormatter-content {
+    width: 100%;
+    .nf-MiddleRow {
+        height: 30px;
+        width: 100%;
+        .align-right {
+            float: right;
+        }
+
+    }
+
+    .nf-shortcut {
+        > div {
+            float: left;
+        }
+        .mstrmojo-Button {
+            margin-left: 3px;
+            width: 25px;
+            height: 22px;
+            background: transparent url(#{$vi-img-path}/number_formatting_assets.png) 0 0 no-repeat;
+
+            &.nf-shortcut-currency {
+                background-position: -9px -6px;
+                &:hover {
+                    background-position: -9px -36px;
+                }
+                &:active {
+                    background-position: -9px -66px;
+                }
+            }
+
+            &.nf-shortcut-percentage {
+                background-position: -49px -6px;
+                &:hover {
+                    background-position: -49px -36px;
+                }
+                &:active {
+                    background-position: -49px -66px;
+                }
+            }
+
+            &.nf-shortcut-fixed {
+                background-position: -89px -6px;
+                &:hover {
+                    background-position: -89px -36px;
+                }
+                &:active {
+                    background-position: -89px -66px;
+                }
+            }
+
+            // BEGIN: Move Decimal Point
+            &.nf-MoveDecimalPoint {
+                // Icons for hte right and left decimal point change.
+                &.left {
+                    background-position: -129px -6px;
+                    &:hover {
+                        background-position: -129px -36px;
+                    }
+                    &:active {
+                        background-position: -129px -66px;
+                    }
+                }
+                &.right {
+                    background-position: -169px -6px;
+                    &:hover {
+                        background-position: -169px -36px;
+                    }
+                    &:active {
+                        background-position: -169px -66px;
+                    }
+                }
+            }
+            //END: Move Decimal Point
+        }
+
+        .shortcut-border {
+            height: 21px;
+            border-left: 1px solid #595959;
+            border-right: 1px solid #303030;
+        }
+    }
+
+    .negative-label,
+    .preview_lable {
+        margin-right: 12px;
+    }
+
+    .nf-CurrencySymbol {
+        width: 60px;
+        margin-right: 6px;
+
+        .preview,
+        .preview input {
+            width: 40px;
+        }
+
+        .btn {
+            width: 20px;
+        }
+    }
+
+    .nf-CurrencyPosition {
+        width: 75px;
+    }
+
+    .nf-condense {
+        margin: 3px 0;
+    }
+
+    .nf-custom {
+        margin: 4px 0;
+        width: 100%;
+    }
+
+    .nf-border {
+        margin: 5px -9px;
+        border-bottom: 1px solid #595959;
+        border-top: 1px solid #303030;
+    }
+}
+
+.mstrmojo-popup-widget-hosted.mstrmojo-ui-PreviewButton.nf-CurrencySymbol {
+    z-index: 1001;
+}
+
+/** END: Number Format Editor **/

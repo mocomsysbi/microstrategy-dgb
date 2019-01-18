@@ -1,0 +1,52 @@
+@import '../global';
+
+/** BEGIN: ui-SearchablePulldown **/
+.mstrmojo-popup-widget-hosted {
+  z-index: 100;
+}
+
+.mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+    .mstrmojo-ui-Pulldown-text {
+        @include box-sizing();
+
+        height: 21px;
+
+        &.editable {
+            text-overflow: clip;
+        }
+
+        &:after {
+            border-radius: 0 2px 2px 0;
+            content: '';
+            position: absolute;
+            right: 1px;
+            top: 1px;
+        }
+    }
+
+    .item {
+        .sp-highlight {
+            background-color: rgb(122, 203, 246);
+        }
+    }
+
+    &.disabled {
+        .mstrmojo-ui-Pulldown-text {
+            &:after {
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+// TQMS 947881: In Firefox, when contentEditable element has ":after", its caret position will be incorrect if it's empty
+@-moz-document url-prefix() {
+    .workstation {
+        .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text:focus:empty {
+                padding-top: 14px;
+            }
+        }
+    }
+}
+/** END: ui-SearchablePulldown **/

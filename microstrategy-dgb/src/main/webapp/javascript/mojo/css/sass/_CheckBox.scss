@@ -1,0 +1,32 @@
+@import 'global';
+
+/** BEGIN: CheckBox **/
+.mstrmojo-CheckBox {
+    > input[type="checkbox"]:not(:checked),
+    > input[type="checkbox"]:checked {
+        /* IE8 cannot supprt :checked, so to make it consistent,
+          I add both of checked and not-checked rule here to exclude IE8*/
+        display: none;
+
+        + label {
+            padding-left: 17px;
+            position: relative;
+
+            &:before {
+                @include vertical-align();
+
+                background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) -6px -2px no-repeat;
+                content: "";
+                left: 0;
+                height: 20px;
+                position: absolute;
+                width: 20px;
+            }
+        }
+    }
+
+    > input[type="checkbox"]:not(:checked) + label:before {
+        background-position: -6px -26px;
+    }
+}
+/** END: CheckBox **/

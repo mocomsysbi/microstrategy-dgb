@@ -1,0 +1,82 @@
+@import '../../../_global.scss';
+@import "../../workstation-global";
+
+/*** start: VisFilterDisplayPanel**/
+
+.mstrmojo-Dialog.mstrmojo-VisFilterDisplayPanel {
+	$background-color: white;
+
+	.mstrmojo-Editor {
+	  	border: $wsvi-contextmenu-gray 1px solid;
+	    border-radius: 2px;
+	  	box-shadow: 0 1px 6px 3px rgba($wsvi-primary-black, 0.1);
+		background-color: $background-color;
+	  	/*DE109322 Disable the animation when opening viz as filter. */
+	  	-webkit-animation:  duration 0;
+	  	-moz-animation: duration 0;
+	  	animation:  duration 0;
+	}
+
+	.mstrmojo-Editor-content {
+		padding: 0;
+		border-top: 1px solid $wsvi-splitline-gray;
+	  	border-bottom: none;
+
+		.mstrmojo-VIBox {
+			position: relative;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	#VisFilterCurtain-main {
+		position: absolute;
+		background: #FCFCFC url(../../../../images/1ptrans.gif) left top repeat;
+		opacity: 0.5;
+	}
+
+	#VisFilterCurtain-border {
+		position: absolute;
+		border: none;
+		background-color: $background-color;
+		z-index: 10;
+	}
+
+	.mstrmojo-Editor-titlebar {
+	  height: auto !important; /*DE84175; height for mstrmojo-Editor-titlebar is forced to 25px on workstation*/
+
+
+	  	.titlebar-container {
+			@include flex(!important);
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin: 0 22px;
+		}
+
+	  	.mstrmojo-Label {
+		  	float: left;
+		  	margin-top: 19px;
+		}
+
+		.mstrmojo-Button {
+			position: relative;
+		  	float: right;
+			margin: 15px 0 15px 10px;
+		}
+	}
+
+	.edt-link {
+		color: $wsvi-link-blue;
+		cursor: pointer;
+
+		&:hover {
+		  text-decoration: underline;
+		}
+	}
+
+  	.edt-link.disabled:hover {
+	  	text-decoration: none;
+	}
+}
+
+/*** end: VisFilterDisplayPanel**/

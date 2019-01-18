@@ -1,0 +1,41 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+    /** BEGIN: Menu Editors **/
+    .mstrmojo-ui-MenuEditor {
+        //DE54389 enable scroll bar for menu editors
+        white-space: nowrap;
+        line-height: $wsvi-menu-item-row-height;
+        &.mstrmojo-scrollbar-host {
+            overflow: hidden;
+        }
+        .me-content {
+            border-bottom: none !important;
+            padding: 0 8px 0 7px;
+        }
+
+        .me-buttons {
+            border-top: none;
+            padding: 9px;
+            overflow: auto;
+            min-width: 135px;
+            text-align: center;
+            line-height: 0px;
+
+            .mstrmojo-WebButton {
+                float: none;
+                margin-top: 0px;
+                margin-left: 9px;
+                box-shadow: unset;
+                border-color: lightgray;
+
+                &:first-child {
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
+    /** END: Menu Editors **/
+
+}
+/** END: Workstation Styles **/

@@ -1,0 +1,1 @@
+mstrmojo.vi.controllers.EnumLayoutManipulationType={RENAME:1,MOVE:2,DUPLICATE:3,DELETE:4,NEW:5};

@@ -1,0 +1,42 @@
+@import '../global';
+
+.mstrmojo-ui-CheckList {
+    .item.hierarchy {
+        @include ellipsis-text();
+
+        background: transparent;
+        padding: 0;
+
+        .checkbox {
+            padding-left: 15px;
+            background: transparent url(#{$mojo-img-path}/checkbox.svg) -3px -28px no-repeat;
+        }
+
+        &.selected {
+            .checkbox {
+                background-position: -3px -3px;
+            }
+        }
+
+        .triangle {
+            padding-left: 10px;
+            background: transparent url(#{$vi-img-path}/dataset.svg) 5000px 5000px no-repeat;
+        }
+
+        &.expanded {
+            .triangle {
+                background-position: -516px -32px;
+            }
+        }
+
+        &.collapsed {
+            .triangle {
+                background-position: -516px -62px;
+            }
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+}

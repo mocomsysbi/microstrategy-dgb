@@ -1,0 +1,89 @@
+@import 'global';
+
+/** BEGIN: SearchablePulldown **/
+.mstrmojo-SearchablePulldown {
+    border: 0;
+
+    &.disabled {
+        .mstrmojo-SearchablePulldown-iconNode {
+            opacity: 0.5;
+        }
+    }
+
+    .mstrmojo-SearchablePulldown-boxNode {
+        @include border-radius(3px);
+
+        border: 1px solid transparent;
+        position: relative;
+
+        .mstrmojo-SearchablePulldown-inputNode {
+            @include border-radius(2px);
+            @include box-sizing();
+
+            border: none;
+            font-size: 11px;
+            height: 100%;
+            outline: none;
+            padding-left: 6px;
+            padding-right: 15px;
+            width: 100%;
+        }
+
+        .mstrmojo-SearchablePulldown-iconNode {
+            @include border-radius(0 2px 2px 0);
+
+            background: none;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 15px;
+
+            &:after {
+                background: transparent url(#{$vi-img-path}/pulldown-sprite.png) -1px -22px no-repeat;
+                border-style: solid;
+                border-width: 5px 4px 0;
+                border-color: #545454 transparent transparent;
+                content: "";
+                height: 0;
+                position: absolute;
+                top: 6px;
+                width: 0;
+            }
+        }
+    }
+
+    .mstrmojo-Pulldown-popupNode {
+        .mstrmojo-SearchablePulldown-Popup {
+            @include box-sizing();
+
+            position: relative;
+        }
+    }
+}
+
+.mstrmojo-SearchablePulldown-prefixNode {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+/* For the popup node is inside the Pulldown widget, and the border of the widget take 1px offset. */
+.mstrmojo-SearchablePulldown-Popup {
+    margin-left: -1px;
+
+    // make sure there no padding on listItem container, otherwise a alignment issue occurs
+    .mstrmojo-Pulldown-listItem {
+        padding: 0;
+    }
+
+    // default item padding, and user can always override it by assign itemCssClass
+    .mstrmojo-text {
+        padding: 3px;
+    }
+}
+/** END: SearchablePulldown **/
+

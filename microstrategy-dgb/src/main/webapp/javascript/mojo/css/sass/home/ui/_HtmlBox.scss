@@ -1,0 +1,227 @@
+/*  Custom card   */
+.mstrmojo-HtmlBox {
+
+  .mstrmojo-DocHTMLContainer {
+    width: 100%;
+    border: none;
+  }
+
+  .mstrmojo-DocTextfield {
+    .mstrmojo-DocTextfield-valueNode {
+      height: 100%;
+    }
+
+    .mstrmojo-DocTextfield-valueNode {
+      overflow: auto;
+    }
+  }
+
+  overflow: hidden;
+
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -khtml-user-select: text !important;
+  -webkit-user-select: text !important;
+  -o-user-select: text !important;
+
+}
+
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay
+{
+  color: #4a4a4a;
+  padding : 30px 1px  ;
+  margin : 9px;
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .icn {
+  background: transparent url(vi/images/html.png) 6px 6px no-repeat;
+  float: left;
+  height: 25px;
+  width: 25px
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay  .title {
+  float: left;
+  line-height: 25px
+}
+
+/* buttons bar  */
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay  .htmlTypeBtn {
+  float: right;
+  width: 180px
+}
+
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar {
+  -webkit-box-shadow: #fff 0 0 5px 0px inset;
+  -moz-box-shadow: #fff 0 0 5px 0px inset;
+  box-shadow: #fff 0 0 5px 0px inset;
+  background-color: #eaebeb;
+  background-image: none;
+  background-image: none,-webkit-linear-gradient(top, #eaebeb, #eae4e4);
+  background-image: none,-moz-linear-gradient(top, #eaebeb, #eae4e4);
+  background-image: none,-ms-linear-gradient(top, #eaebeb, #eae4e4);
+  background-image: none,-o-linear-gradient(top, #eaebeb, #eae4e4);
+  background-image: none,linear-gradient(top, #eaebeb, #eae4e4);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#eaebeb', EndColorStr='#eae4e4');
+  border-color: #b5b5b5
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar .item {
+  border-left-color: #b5b5b5;
+  cursor: default;
+  display: table-cell;
+  border-left: 1px solid #b5b5b5;
+  height: 20px;
+  text-decoration: none
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay  .htmlTypeBtn .item {
+  font: normal 8pt/11px Arial;
+  line-height: 20px
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay  .htmlTypeBtn .item:first-child {
+  padding: 0px 8px;
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar .item:first-child {
+  border-left-color: transparent;
+
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar .item.selected {
+  background-color: #cfd1d3;
+  background-image: none;
+  background-image: none,-webkit-linear-gradient(top, #cfd1d3, #c6c8c9);
+  background-image: none,-moz-linear-gradient(top, #cfd1d3, #c6c8c9);
+  background-image: none,-ms-linear-gradient(top, #cfd1d3, #c6c8c9);
+  background-image: none,-o-linear-gradient(top, #cfd1d3, #c6c8c9);
+  background-image: none,linear-gradient(top, #cfd1d3, #c6c8c9);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#cfd1d3', EndColorStr='#c6c8c9')
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar {
+  -webkit-box-shadow: rgba(0,0,0,0.1) 0 1px 1px 0px ;
+  -moz-box-shadow: rgba(0,0,0,0.1) 0 1px 1px 0px ;
+  box-shadow: rgba(0,0,0,0.1) 0 1px 1px 0px ;
+  border: 1px solid #b5b5b5;
+  height: 23px
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar .item:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar .item:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar .item>div {
+  height: 100%
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-ButtonBar.btn-text .item {
+  line-height: 20px;
+  text-align: center;
+}
+
+/* text area */
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay  .mstrmojo-ui-TextArea.htmlText {
+  height: 155px;
+  margin: 33px 0 8px;
+
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay  .mstrmojo-ui-TextArea.htmlText textarea {
+  line-height: 18px;
+  resize: none;
+  color : #4A4A4A;
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-TextArea {
+  border: 1px solid #A9A9A9;
+  overflow: hidden;
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-TextArea .ta-sc textarea {
+  -webkit-box-shadow: transparent 1px 1px 1px 0px ;
+  -moz-box-shadow: transparent 1px 1px 1px 0px ;
+  box-shadow: transparent 1px 1px 1px 0px ;
+  background: rgba(0,0,0,0);
+  border: 0;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+
+}
+
+/* Since the selection background color is set to transparent in home.css, explicity set it to blueish shade */
+.mstrmojo-ui-TextArea .ta-sc textarea::selection {
+ background: #538DA9;
+}
+
+.mstrmojo-ui-TextArea .ta-sc textarea::-moz-selection {
+  background: #538DA9;
+}
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-ui-TextArea .ta-sc.mstrmojo-sb-show-default {
+  overflow: auto
+}
+
+/* ok button  */
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay  .mstrmojo-Button {
+  float: right
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-Button.mstrmojo-WebButton.hot.disabled, .mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-Button.mstrmojo-WebButton.hot.disabled:hover, .mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-Button.mstrmojo-WebButton.hot.disabled:active {
+  border-color: #b0b1b2;
+  background: #d7d7d7 none
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-Button.mstrmojo-WebButton.hot {
+  border-color: #0C84C4;
+  background: #7CC5EC none
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-Button.mstrmojo-WebButton.hot:hover {
+  background: #92D2F4
+}
+
+.mstrmojo-HtmlBox .mstrmojo-Card-Custom-content .ctrlOverlay .mstrmojo-Button.mstrmojo-WebButton {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: #fff 0 1px 1px 0px ;
+  -moz-box-shadow: #fff 0 1px 1px 0px ;
+  box-shadow: #fff 0 1px 1px 0px ;
+  background-color: #e2e2e2;
+  background-image: none;
+  background-image: none,-webkit-linear-gradient(top, #e2e2e2, #d6d6d6);
+  background-image: none,-moz-linear-gradient(top, #e2e2e2, #d6d6d6);
+  background-image: none,-ms-linear-gradient(top, #e2e2e2, #d6d6d6);
+  background-image: none,-o-linear-gradient(top, #e2e2e2, #d6d6d6);
+  background-image: none,linear-gradient(top, #e2e2e2, #d6d6d6);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#e2e2e2', EndColorStr='#d6d6d6');
+  border: 1px solid #b0b1b2;
+  cursor: default;
+  filter: none !important;
+  height: 22px;
+  min-width: 66px
+}

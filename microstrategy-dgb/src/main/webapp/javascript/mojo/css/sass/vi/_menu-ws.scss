@@ -1,0 +1,105 @@
+@import 'vi-icons';
+
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+    /** BEGIN: VI Menu **/
+    // TODO: Shouldn't this be in the more specific widgets instead of the generic menu partial ?
+    .mstrmojo-ui-Menu {
+        .mstrmojo-ui-Menu-item {
+            &.all, &.ds, &.attr, &.mx {
+                padding-left: 30px;
+                padding-right: 8px;
+                > .micn {
+                    left: 0px;
+                }
+            }
+
+            &.ds > .micn {
+                background: url(#{$vi-img-path}/unitList/icon_dataset_sprite.png) 0 -240px;
+                top: 4px;
+                left: 7px;
+            }
+            &.ds.grid-source:after {
+                content: " ";
+                display: block;
+                position: absolute;
+                border: 0 solid transparent;
+                background: $wsvi-menu-background-color url(#{$mojo-img-path}/checkbox_sprite.png) 50% -191px no-repeat;
+                height: $wsvi-menu-item-row-height;
+                width: 19px;
+                right: 0;
+                top: 0;
+            }
+            &.ds.grid-source:hover:after{
+                @include single-transition($property: background-color, $duration: 400ms);
+                background-color: $wsvi-menu-item-hover-color;
+            }
+
+            &.attr > .micn {
+                @include wsvi-icon-attribute;
+                top: 2px;
+                left: 7px;
+            }
+
+            &.mx > .micn {
+                @include wsvi-icon-metric;
+                top: 2px;
+                left: 7px;
+            }
+        }
+    }
+
+    .mstrmojo-ui-ToolbarEditor {
+        @include border-radius($wsvi-box-radius);
+        @include box-shadow($wsvi-panel-shadow, 0, 1px, 6px, false, 3px);
+        border: 1px solid $wsvi-ui-border-gray;
+        min-width: 145px;
+        max-width: 500px;
+        padding: 0;
+        z-index: 1000;
+
+        //to convert the pt from photoshop to pt in the css. Formula: 1 pt_in_PS = 72 * PPI / 9216 pt_in_CSS, takes PPI=96 here.
+        $factor:72/96;
+        .te-content {
+            padding: 9px 17px 9px 17px;
+            min-width: 120px;
+            max-width: 450px;
+            .mstrmojo-Label
+            {
+                font-size: 11pt * $factor;
+                font-family: Arial;
+            }
+            .mstrmojo-ui-ButtonBar.spacing {
+                margin: 0 -6px 0 -1px;
+            }
+        }
+    }
+
+    .mstrmojo-Tooltip.vi-regular.menuTooltip {
+        &.vi-tooltip-C,
+        &.vi-tooltip-D {
+            .mstrmojo-Tooltip-arrow {
+                top: 6px;
+            }
+        }
+        .mstrmojo-Tooltip-content {
+            max-width: none;
+        }
+    }
+
+    .mojo-theme-dark .mstrmojo-ui-ToolbarEditor {
+        color: #CDCDCD;
+        background-color: #3F3F3F;
+        border-color: #525252;
+    }
+
+    .mojo-theme-light .mstrmojo-ui-ToolbarEditor {
+        background-color:$wsvi-primary-white;
+        color:$wsvi-primary-black;
+        border-color: $wsvi-ui-border-gray;
+    }
+    /** END: VI Menu **/
+
+}
+/** END: Workstation Styles **/

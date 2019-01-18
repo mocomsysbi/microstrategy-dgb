@@ -1,0 +1,106 @@
+.mstrmojo-di-ui-dialogs-DIHadoopGatewayDialog, .mstrmojo-di-ui-dialogs-DIHadoopGatewayDialog-AuthenticationEditor {
+  width: 500px;
+
+  .mstrmojo-Editor-content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    .mstrmojo-Box.ctrl-box {
+      &:first-child {
+        margin-top: 10px;
+      }
+      margin-bottom: 15px;
+      .mstrmojo-Label.ctrl-label {
+        width: 35%;
+        float: left;
+        line-height: 22px;
+        font-size: 11px;
+        box-sizing: border-box;
+        padding-right: 25px;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      div:last-child, input:last-child, textarea:last-child {
+        float: right;
+        box-sizing: border-box;
+        width: 65%;
+      }
+      textarea:last-child {
+        border: 1px solid #b5b5b5;
+      }
+    }
+    .mstrmojo-Label.section-header {
+      color: #7B7E81;
+      font: bold 10px Arial;
+      //&:after {
+      //
+      //}
+    }
+    .mstrmojo-Label.section-header-advanced {
+      display: inline-block;
+      text-align: right;
+      color: #007EBE;
+      cursor: pointer;
+      margin-top: -5px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .mstrmojo-ui-Checkbox.advanced-toggle{
+      float: right;
+      background: transparent url("images/DI/logs_icon.png") -100px -10px no-repeat;
+      cursor: pointer;
+      margin-left: 3px;
+      margin-top: -5px;
+      width: 12px;
+      height: 12px;
+      &.checked{
+          background-position: -100px -40px;
+        }
+      }
+  }
+
+  .mstrmojo-Editor-button {
+    margin-left: 10px;
+    float: right;
+    &.delete {
+      float: left;
+    }
+  }
+}
+
+.mstrmojo-di-ui-dialogs-DIHadoopGatewayDialog-AuthenticationEditor {
+  width: 300px;
+}
+
+.workstation {
+  .mstrmojo-di-view {
+    .mstrmojo-di-layout {
+      /*
+      .mstrmojo-di-sources.mstrmojo-di-sources + .mstrmojo-Box.di-connector-panel > table, .mstrmojo-Box.di-connector-panel>table {
+        float: right;
+      }
+      */
+      .mstrmojo-di-URLUpload-urlList {
+        .mstrmojo-di-sources.mstrmojo-di-sources + .mstrmojo-Box.di-connector-panel > table, .mstrmojo-Box.di-connector-panel>table {
+          float: unset; //for Network Browser page
+        }
+      }
+    }
+  }
+
+  .mstrmojo-Editor{
+    .mstrmojo-Editor-content.scrollable{
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+  }
+}
+
+
+.workstation{
+  .mstrmojo-Editor.mstrmojo-wh-DBRoleEditor.modal.mstrmojo-rootview-hadoop .mstrmojo-Editor-content.scrollable{
+      max-height: 67vh !important;
+  }
+}

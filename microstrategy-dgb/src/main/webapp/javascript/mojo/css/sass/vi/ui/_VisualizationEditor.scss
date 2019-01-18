@@ -1,0 +1,810 @@
+@import '../vi-global';
+@import '../themes';
+@import '_unit-list-props';
+
+/** BEGIN: Visualization Editor **/
+.mstrmojo-VIVizEditor {
+    .mstrmojo-VIBoxPanel-content.mstrmojo-sb-show-default {
+        overflow-x: hidden; // Prevent horizontal native scrollbar
+    }
+
+    .VizEditorToolbar {
+        border-bottom: 1px solid $theme-light-base-highlight-color;
+        @include box-shadow($theme-light-offset-highlight-color, 0, 1px, 0);
+        padding: 5px 1px 0 5px;
+        .swap > DIV.icn, .clearall > DIV.icn, .totals > DIV.icn {
+            background: transparent url(#{$vi-menu-icons}) no-repeat;
+            width: 27px;
+            height: 27px;
+        }
+
+        .swap {
+            > DIV.icn {
+                background-position: -150px 0;
+                &:hover {
+                    background-position: -150px -30px;
+                }
+                &:active {
+                    background-position: -150px -60px;
+                }
+            }
+            &.disabled > DIV.icn {
+                background-position: -150px -90px;
+            }
+        }
+
+        .totals{
+            > DIV.icn {
+                background-position: -480px 0;
+                &:hover {
+                    background-position: -480px -30px;
+                }
+                &:active {
+                    background-position: -480px -60px;
+                }
+            }
+
+            &.on > DIV.icn {
+                background-position: -480px -60px;
+                &:hover {
+                    background-position: -480px -90px;
+                }
+                &:active {
+                    background-position: -480px -60px;
+                }
+            }
+
+            &.disabled > DIV.icn {
+                background-position: -480px -120px;
+            }
+        }
+
+        .clearall{
+            > DIV.icn {
+                background-position: -180px 0;
+                &:hover{
+                    background-position: -180px -30px;
+                }
+                &:active{
+                    background-position: -180px -60px;
+                }
+            }
+            &.disabled > DIV.icn {
+                background-position: -180px -90px;
+            }
+        }
+    }
+
+
+    .mstrmojo-VIUnitList {
+        @include border-radius(2px);
+        border: 1px solid transparent;
+        position: relative;
+
+        $border-offset: 2;
+        $extra-capsule-space: 25;
+        $dnd-cue-color: #34abeb;
+
+        & > div {
+            position: relative;
+            min-height: #{55 - $border-offset - $extra-capsule-space}px;
+            padding-bottom: #{$extra-capsule-space}px;
+
+            &.dragIn {
+                @include box-shadow($dnd-cue-color, 0, 0, 0, true, 1px);
+            }
+        }
+
+        &.singleUnitZone > div {
+            height: #{30 - $border-offset}px;
+            min-height: 0;
+            padding-bottom: 0;
+        }
+
+        &.mergedZone > div {
+            min-height: #{105 - $border-offset - $extra-capsule-space}px;
+        }
+
+        &.hideIcz {
+            .unit {
+                &.icz1,
+                &.icz2,
+                &.icz3,
+                &.icz3s,
+                &.icz4,
+                &.icz4s,
+                &.icz12{
+                    .inner-wrap .zone {
+                        background-image: none;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-VITitleBar {
+            background: transparent;
+
+            .title-text,
+            .right-toolbar {
+                border-bottom: 1px solid #d1d1d1;
+                box-shadow: 0 1px 1px #f0f0f0;
+            }
+
+            .mstrmojo-EditableLabel {
+                padding: 0 9px;
+            }
+        }
+
+        .mstrmojo-ui-MenuEditor {
+            z-index: 1000;
+
+            .title-text,
+            .right-toolbar {
+                border: none;
+                box-shadow: none;
+            }
+        }
+
+        $unit-height: 22;
+        $icon-width: 24px;
+
+        .unit {
+            height: #{$unit-height}px;
+            margin: -1px 0 0;
+            border: none;
+            overflow: visible;
+            padding: 2px 3px;
+
+            &:before {
+                background-image: none;
+            }
+
+            &:first-child {
+                margin-top: 0;
+                padding-top: 3px;
+            }
+            &:last-child {
+                padding-bottom: 3px;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .outer-wrap {
+                display: block;
+                height: 100%;
+                left: 0;
+                position: relative;
+                top: 0;
+                width: 100%;
+
+                .inner-wrap {
+                    border-radius: 3px;
+                    display: block;
+                    font-size: 11px;
+                    line-height: #{$unit-height - 2}px;
+                    padding-left: $icon-width;
+                    padding-right: $icon-width;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    vertical-align: middle;
+
+                    .txt {
+                        display: block;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                        .form:hover {
+                            text-decoration: underline;
+                        }
+
+                        &.editable {
+                            text-overflow: clip;
+                        }
+                    }
+
+                    .icon {
+                        height: #{$unit-height - 2}px;
+                        left: 0;
+                        position: absolute;
+                        top: 0;
+                        width: $icon-width;
+                        z-index: 1;
+                    }
+
+                    .icon {
+                        background: transparent url(#{$vi-img-path}/unitList/icon_dataset_sprite.png) 1000px 1000px no-repeat;
+                    }
+
+                    .zone {
+                        background-position: 2px 4px;
+                        background-repeat: no-repeat;
+                        height: 100%;
+                        position: absolute;
+                        right: 0px;
+                        top: 0;
+                        width: 20px;
+                        display : none;
+                    }
+                }
+            }
+
+            &.ic4 .inner-wrap {
+                .icon {
+                    background-position: 6px -120px;
+                    &:hover{
+                        background-position: -24px -120px;
+                    }
+                    &:active{
+                        background-position: -54px -120px;
+                    }
+                }
+            }
+
+            &.ic4d .inner-wrap {
+                .icon {
+                    background-position: 6px -150px;
+                    &:hover{
+                        background-position: -24px -150px;
+                    }
+                    &:active{
+                        background-position: -54px -150px;
+                    }
+                }
+            }
+
+            &.is-mh .inner-wrap {
+                .icon {
+                    &, &:hover, &:active {
+                        background-position: 50% 50%;
+                    }
+                    background-image: url(#{$vi-img-path}/unitList/metric_header.png);
+                    &:hover{
+                        background-image: url(#{$vi-img-path}/unitList/metric_header.png);
+                    }
+                    &:active{
+                        background-image: url(#{$vi-img-path}/unitList/metric_header.png);
+                    }
+                }
+            }
+
+            &.ic1 .inner-wrap {
+                .icon {
+                    background-position: 6px -330px;
+                    &:hover {
+                        background-position: -24px -330px;
+                    }
+                    &:active{
+                        background-position: -54px -330px;
+                    }
+                }
+            }
+            &.ic47 .inner-wrap {
+                .icon {
+                    background-position: 6px -390px;
+                    &:hover {
+                        background-position: -24px -390px;
+                    }
+                    &:active{
+                        background-position: -54px -390px;
+                    }
+                }
+            }
+            &.ic12de .inner-wrap {
+                .icon {
+                    background-position: 6px 0px;
+                    &:hover{
+                        background-position: -24px 0px;
+                    }
+                    &:active{
+                        background-position: -54px 0px;
+                    }
+                }
+            }
+
+            &.ic47.st12033:after {
+                background-image: none;
+            }
+            &.ic12d .inner-wrap,
+            &.ic47.st12033 .inner-wrap {
+                .icon {
+                    background-position: 6px -90px;
+                    &:hover{
+                        background-position: -24px -90px;
+                    }
+                    &:active{
+                        background-position: -54px -90px;
+                    }
+                }
+            }
+
+            &.ic47.st12033.nde4ra .inner-wrap {
+                .icon {
+                    background-position: 6px -480px;
+                    &:hover{
+                        background-position: -24px -480px;
+                    }
+                    &:active{
+                        background-position: -54px -480px;
+                    }
+                }
+            }
+
+            &.ic14 .inner-wrap{
+                .icon {
+                    background-position: 6px -299px;
+                    &:hover{
+                        background-position: -24px -299px;
+                    }
+                    &:active{
+                        background-position: -54px -299px;
+                    }
+                }
+            }
+
+            &.ic12 .inner-wrap,
+            &.ic12t .inner-wrap,
+            &.ic21 .inner-wrap{
+                .icon {
+                    background-position: 6px 0;
+                    &:hover{
+                        background-position: -24px 0;
+                    }
+                    &:active{
+                        background-position: -54px 0;
+                    }
+                }
+            }
+
+            &.ic12.st3076 .inner-wrap,
+            &.ic21.st3076 .inner-wrap{
+                .icon {
+                    background-position: 6px -450px;
+                    &:hover{
+                        background-position: -24px -450px;
+                    }
+                    &:active{
+                        background-position: -54px -450px;
+                    }
+                }
+            }
+
+            &.ic12g .inner-wrap {
+                .icon {
+                    background-position: 6px -60px;
+                    &:hover{
+                        background-position: -24px -60px;
+                    }
+                    &:active{
+                        background-position: -54px -60px;
+                    }
+                }
+            }
+
+            &.icz1,
+            &.icz2,
+            &.icz3,
+            &.icz3s,
+            &.icz4,
+            &.icz4s{
+                .inner-wrap .zone {
+                    display: block;
+                }
+            }
+
+            $highlight-size: 3px;
+
+            @mixin dnd-cue-line-base {
+                background-color: $dnd-cue-color;
+                content: "";
+                position: absolute;
+                left: 1px;
+                right: 1px;
+                height: 1px;
+            }
+
+            // Drag is targeting top of unit.
+            &.dragInTop {
+                &:after {
+                    @include dnd-cue-line-base;
+                    top: 0;
+                }
+            }
+
+            // Drag is targeting unit.
+            &.dragIn {
+                .inner-wrap {
+                    @include box-shadow($dnd-cue-color, 0, 0, 0, false, 1px);
+                }
+            }
+
+            // Drag is targeting bottom of unit.
+            &.dragInBottom {
+                &:after {
+                    @include dnd-cue-line-base();
+                    bottom: 0;
+                }
+            }
+        }
+
+        .unit.geo-warning {
+            .outer-wrap .inner-wrap .zone {
+                display: block;
+                height: 20px;
+                width: 24px;
+                background: url(#{$vi-img-path}/unitList/icons_warning.png) 3px -5px;
+
+                &:hover {
+                    background-position: -27px -5px;
+                }
+
+                &:active {
+                    background-position: -57px -5px;
+                }
+            }
+        }
+    }
+
+    /* Disabled Zone*/
+    .mstrmojo-VIPanelPortlet.disabled {
+        position: relative;
+        .mstrmojo-VITitleBar .mstrmojo-EditableLabel {
+            color: #858585;
+        }
+        /* form a mask on the disabled zone */
+        &:after {
+            content:' ';
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            position: absolute;
+            z-index: 100;
+        }
+        .mstrmojo-VIUnitList {
+            @include filter(grayscale(100%));
+
+            background: #e5e5e5;
+            .unit {
+                .outer-wrap .inner-wrap {
+                    background: none;
+                    color: #858585;
+                }
+            }
+        }
+    }
+
+    &.empty {
+        .mstrmojo-VITitleBar{
+            display: none !important;
+        }
+    }
+}
+
+.replaceReference .mstrmojo-menu-replaceLabel {
+    color: #cccccc;
+    padding: 0 9px 9px 9px;
+    border-bottom: solid 1px #303030;
+    box-shadow: 0 1px 0 #595959;
+    margin-bottom: 9px;
+    &:hover {
+        background: none;
+    }
+}
+
+// style the radio buttons in viz editor context menus as check marks
+.mstrmojo-VIVizEditor-Menu.mstrmojo-ui-Menu .item.checkMark.radio:before {
+    background: rgba(0, 0, 0, 0);
+}
+.mstrmojo-VIVizEditor-Menu.mstrmojo-ui-Menu .item.checkMark.radio.on:before {
+    background: rgba(0, 0, 0, 0) url(images/checkbox_sprite.png) -7px -414px no-repeat;
+}
+/** END: Visualization Editor **/
+
+/** BEGIN: Visualization Editor Themes **/
+@mixin color-viz-unit($bg, $border, $font-color, $hover-bg) {
+    .inner-wrap {
+        border: 1px solid $border;
+        color: $font-color;
+
+        background-color: $bg;
+        .zone {
+            background-color: $bg;
+        }
+
+        &:hover,
+        &:hover .zone {
+            background-color: $hover-bg;
+        }
+    }
+
+    &.selected {
+        .inner-wrap {
+            // 2px border for selected state
+            border-color: $color-unit-selected-border;
+            @include box-shadow($color-unit-selected-border, 0, 0, 0, false, 1px);
+
+            background-color: $bg;
+            .zone {
+                background-color: $bg;
+            }
+        }
+    }
+}
+
+.mojo-theme-light {
+    .mstrmojo-VIVizEditor {
+        .mstrmojo-VIUnitList {
+            border-color: $theme-light-drop-box-border-color;
+            background-color: $theme-light-drop-box-background-color;
+            box-shadow: 0 0 1px 1px $theme-light-drop-box-shadow-color;
+
+            &.hideIcz {
+                .unit {
+                    &.icz1,
+                    &.icz2,
+                    &.icz3,
+                    &.icz3s,
+                    &.icz4,
+                    &.icz4s,
+                    &.icz12{
+                        .inner-wrap .zone {
+                            background-image: none;
+                        }
+                    }
+                }
+            }
+
+            .unit {
+                &:hover {
+                    background-color: transparent;
+                }
+                &.ic1,
+                &.ic47,
+                &.ic14,
+                &.ic12,
+                &.ic21,
+                &.ic12d,
+                &.ic12t,
+                &.ic12g,
+                &.ic12de {
+                    @include color-viz-unit(
+                            $light-color-bg-attribute,
+                            $light-color-border-attribute,
+                            $light-color-color-attribute,
+                            $light-color-bg-attribute-hover
+                    );
+                }
+
+                &.ic4,
+                &.ic4d {
+                    @include color-viz-unit(
+                            $light-color-bg-metric,
+                            $light-color-border-metric,
+                            $light-color-color-metric,
+                            $light-color-bg-metric-hover
+                    );
+                }
+
+                &.is-mh {
+                    @include color-viz-unit(
+                            $light-color-bg-template-metric,
+                            $light-color-border-template-metric,
+                            $light-color-color-template-metric,
+                            $light-color-bg-template-metric-hover
+                    );
+                }
+
+                &.icz1 .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/left_row.png);
+                }
+
+                &.icz2 .inner-wrap .zone {
+                    background-image: url(#{$vi-img-path}/unitList/top_column.png);
+                }
+
+                &.icz3 .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/bottom_axis.png);
+                }
+
+                &.icz3s .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/top_axis.png);
+                }
+
+                &.icz4 .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/left_axis.png);
+                }
+
+                &.icz4s .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/right_axis.png);
+                }
+
+                &.icz12 .inner-wrap .zone.warn{
+                    background: transparent url(#{$vi-img-path}/dataset.svg) -1111px -57px no-repeat;
+                    display: block;
+                }
+
+                &.icz12 .inner-wrap .zone.secd{
+                    background: transparent url(#{$vi-img-path}/dataset.svg) -1471px -27px no-repeat;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VIVizEditor {
+        .VizEditorToolbar {
+            border-color: $theme-dark-base-highlight-color;
+            @include box-shadow($theme-dark-offset-highlight-color, 0, 1px, 0);
+            .swap {
+                > DIV.icn {
+                    background-position: -150px -200px;
+                    &:hover {
+                        background-position: -150px -230px;
+                    }
+                    &:active {
+                        background-position: -150px -260px;
+                    }
+                }
+                &.disabled > DIV.icn {
+                    background-position: -150px -290px;
+                }
+            }
+
+            .totals{
+                > DIV.icn {
+                    background-position: -480px -200px;
+                    &:hover {
+                        background-position: -480px -230px;
+                    }
+                    &:active {
+                        background-position: -480px -260px;
+                    }
+                }
+
+                &.on > DIV.icn {
+                    background-position: -480px -260px;
+                    &:hover {
+                        background-position: -480px -290px;
+                    }
+                    &:active {
+                        background-position: -480px -260px;
+                    }
+                }
+
+                &.disabled > DIV.icn {
+                    background-position: -480px -320px;
+                }
+            }
+
+            .clearall {
+                > DIV.icn {
+                    background-position: -180px -200px;
+                    &:hover{
+                        background-position: -180px -230px;
+                    }
+                    &:active{
+                        background-position: -180px -260px;
+                    }
+                }
+                &.disabled > DIV.icn {
+                    background-position: -180px -290px;
+                }
+            }
+        }
+        .mstrmojo-VIUnitList {
+            border-color: $theme-dark-drop-box-border-color;
+            background-color: $theme-dark-drop-box-background-color;
+            @include box-shadow(rgba(0,0,0,0.75), 0, 0, 4px, true);
+
+            &.hideIcz {
+                .unit {
+                    &.icz1,
+                    &.icz2,
+                    &.icz3,
+                    &.icz3s,
+                    &.icz4,
+                    &.icz4s,
+                    &.icz12{
+                        .inner-wrap .zone {
+                            background-image: none;
+                        }
+                    }
+                }
+            }
+
+            .unit {
+                &:hover {
+                    background-color: transparent;
+                }
+                &.ic1,
+                &.ic47,
+                &.ic14,
+                &.ic12,
+                &.ic21,
+                &.ic12d,
+                &.ic12t,
+                &.ic12g,
+                &.ic12de {
+                    @include color-viz-unit(
+                            $dark-color-bg-attribute,
+                            $dark-color-border-attribute,
+                            $dark-color-color-attribute,
+                            $dark-color-bg-attribute-hover
+                    );
+                }
+
+                &.ic4,
+                &.ic4d {
+                    @include color-viz-unit(
+                            $dark-color-bg-metric,
+                            $dark-color-border-metric,
+                            $dark-color-color-metric,
+                            $dark-color-bg-metric-hover
+                    );
+                }
+
+                &.is-mh {
+                    @include color-viz-unit(
+                            $dark-color-bg-template-metric,
+                            $dark-color-border-template-metric,
+                            $dark-color-color-template-metric,
+                            $dark-color-bg-template-metric-hover
+                    );
+                }
+
+                &.icz1 .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/left_row_dark.png);
+                }
+
+                &.icz2 .inner-wrap .zone {
+                    background-image: url(#{$vi-img-path}/unitList/top_column_dark.png);
+                }
+
+                &.icz3 .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/bottom_axis_dark.png);
+                }
+
+                &.icz3s .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/top_axis_dark.png);
+                }
+
+                &.icz4 .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/left_axis_dark.png);
+                }
+
+                &.icz4s .inner-wrap .zone{
+                    background-image: url(#{$vi-img-path}/unitList/right_axis_dark.png);
+                }
+
+                &.icz12 .inner-wrap .zone.warn{
+                    background: transparent url(#{$vi-img-path}/dataset.svg) -1111px -57px no-repeat;
+                    display: block;
+                }
+
+                &.icz12 .inner-wrap .zone.secd{
+                    background: transparent url(#{$vi-img-path}/dataset.svg) -1471px -27px no-repeat;
+                    display: block;
+                }
+            }
+        }
+
+        .mstrmojo-VIPanelPortlet.disabled {
+            .mstrmojo-VIUnitList {
+                background-color: rgba(40, 40, 42, 0.5);
+                border-color: rgba(76, 78, 80, 0.5);
+                @include box-shadow(rgba(0,0,0,0));
+            }
+        }
+    }
+}
+/** END: Visualization Editor Themes **/

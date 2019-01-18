@@ -1,0 +1,26 @@
+@import 'sass/vi/vi-global-ws';
+@import 'sass/normalize';
+$env:workstation;
+@import 'sass/base-themes-ws';
+@import 'sass/bundles/workstation-mojo-components';
+
+body {
+  @include user-select(none);
+
+  font-size: 8pt;
+
+  // When the app is not selectable - disable the scrollbars.
+  &.unselectable {
+    overflow: hidden;
+  }
+}
+
+.unselectable {
+  @include user-select(none);
+
+  * {
+    // Use important here so as to not increase the number of selectors for each of the resize handlers.
+    cursor: default !important;
+  }
+}
+

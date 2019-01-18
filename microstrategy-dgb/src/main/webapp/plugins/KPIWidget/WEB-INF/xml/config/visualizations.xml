@@ -1,0 +1,8 @@
+<visualizations>
+    <visualization-list name="ajax">
+        <visualization id="KPIWidget" desc="KPI widget" scope="19" projects="" style-name="KPIWidget" is-mojo="true" metric-minimum="1" widget-type="7" editor-model="plugins.KPIWidget.KPIWidgetEditorModel" drop-zones="plugins.KPIWidget.KPIWidgetDropZones"/>
+    </visualization-list>
+    <visualization-list name="ipad" view-mode="71" show-in-web="false">
+        <visualization id="KPIWidget" desc="KPI widget" scope="19" projects="" style-name="KPIWidget" is-mojo="true" metric-minimum="1" widget-type="7" editor-model="plugins.KPIWidget.KPIWidgetEditorModel" drop-zones="plugins.KPIWidget.KPIWidgetDropZones"/>
+    </visualization-list>
+</visualizations>

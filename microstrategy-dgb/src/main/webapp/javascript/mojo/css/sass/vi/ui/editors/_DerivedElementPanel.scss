@@ -1,0 +1,309 @@
+@import '../../../_global.scss';
+/** beginning of Derived Elements Panel */
+.mstrmojo-DerivedElementPanel {
+  position: absolute;
+  top: 106px;
+  left: 18px;
+  right: 18px;
+  bottom: 5px;
+  border: 1px solid #c5c5c5;
+  background-color: #e5e5e5;
+  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0, .2);
+  -moz-box-shadow: inset 0 0 3px rgba(0,0,0, .2);
+  box-shadow: inset 0 0 3px rgba(0,0,0, .2);
+
+  .mstrmojo-AvailableElements {
+    width: 231px;
+    overflow: hidden;
+    margin: 0px 11px 0px 16px;
+    border: 1px solid #b5b5b5;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 1px;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,.2) inset, 0px 1px 1px 0px rgba(0,0,0,.1);
+    -moz-box-shadow:0px 1px 1px 0px rgba(0,0,0,.2) inset, 0px 1px 1px 0px rgba(0,0,0,.1);
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,.2) inset, 0px 1px 1px 0px rgba(0,0,0,.1);
+
+    .list-content {
+      display: block;
+      background-color: #FFFFFF;
+      height: 223px;
+
+    }
+
+    .mstrmojo-scrollNode {
+      padding-top:2px;
+    }
+    em {
+      font-style: normal;
+      background-color: #7CD3F3;
+    }
+   }
+
+
+  .mstrmojo-SelectedElements {
+    width: 231px;
+    overflow: hidden;
+    margin: 0px 16px 0px 11px;
+    border: 1px solid #b5b5b5;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 1px;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,.2) inset, 0px 1px 1px 0px rgba(0,0,0,.1);
+    -moz-box-shadow:0px 1px 1px 0px rgba(0,0,0,.2) inset, 0px 1px 1px 0px rgba(0,0,0,.1);
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,.2) inset, 0px 1px 1px 0px rgba(0,0,0,.1);
+
+    .list-content {
+      display: block;
+      background-color: #FFFFFF;
+      height: 223px;
+    }
+
+    .mstrmojo-scrollNode {
+      padding-top:2px;
+    }
+  }
+
+  .cart-table {
+    @include user-select(none);
+     border-collapse: separate;
+     tr td:first-child {
+       border-right: 1px solid #C5C5C5;
+     }
+     tr td:last-child {
+       border-left: 1px solid #F0F0F0;
+     }
+  }
+
+  .separator {
+    margin-top: 11px;
+    border-top: 1px solid #CECECE;
+    border-bottom: 1px solid #F0F0F0;
+    margin-right: 5px;
+  }
+
+  .dragIn {
+    -webkit-box-shadow: 0 0 0 2px #34abeb;
+    -moz-box-shadow: 0 0 0 2px #34abeb;
+    box-shadow: 0 0 0 2px #34abeb;
+  }
+
+  .setParent {
+    .mstrmojo-Label {
+      padding: 0 17px 0 17px;
+    }
+
+    .mstrmojo-ui-Pulldown {
+      width: 100px;
+    }
+  }
+
+  .apply {
+    width: 100%;
+    td {
+      padding-top: 5px;
+    }
+    .apply-text {
+      // 17px aligns it with the available box and the "available" text
+      padding-left: 17px;
+      padding-top: 6px;
+      padding-bottom: 5px;
+      line-height: 23px;
+    }
+    .mstrmojo-Button {
+      position: relative;
+      float: right;
+      width: 40px;
+      height: 22px;
+      margin-top: 2px;
+      margin-right: 10px;
+    }
+    .mstrmojo-Button-text {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100% !important;
+      border: none;
+    }
+    .mstrmojo-Button.okBtn {
+      background: transparent url(#{$mojo-img-path}/filter-editor-icons.png) no-repeat -1px -3px;
+    }
+
+    .mstrmojo-Button.cancelBtn {
+      background: transparent url(#{$mojo-img-path}/filter-editor-icons.png) no-repeat -47px -3px;
+    }
+
+    tr td:last-child {
+      width: 40px;
+      // when 6px is added to the 10px margin, it gets the same 16px margin-right from selected elements box
+      padding-right: 6px;
+    }
+  }
+
+
+  .mstrmojo-VIGroupDEElement {
+    padding: 5px 3px 5px 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 8pt;
+    line-height: 12px;
+    color: black;
+    cursor: pointer;
+    &:hover {
+      background-color: #dadada;
+    }
+  }
+
+  // Needs to match the same styles as .mstrmojo-VIGroupDEElement except for the hover and cursor behavior
+  .mstrmojo-VIGroupDENoResults {
+    padding: 5px 3px 5px 9px;
+    overflow: hidden;
+    font-size: 8pt;
+    line-height: 12px;
+    color: #a0a7ac;
+  }
+  .mstrmojo-VIGroupDEElement.selected {
+    background-color: #cdcdcd;
+    border-radius: 2px;
+  }
+
+  .title-area {
+    margin: 11px 0px 8px 0px;
+
+    > tbody > tr > td:last-child {
+      width:147px;
+    }
+  }
+
+  .available-label {
+    margin-left: 17px;
+    width: 83px;
+  }
+
+  .selected-label {
+    margin-left: 25px;
+    width: 100px;
+  }
+
+  .clear-btn {
+    float: right;
+  }
+
+  %search-box-base {
+    height: 19px;
+    border-width: 0;
+    background-color: transparent;
+  }
+
+
+  .search-box {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #b5b5b5;
+    border-radius: 2px;
+    height: 19px;
+    position: relative;
+    -webkit-box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .mstrmojo-SearchBox-Wrapper {
+    height: 19px;
+    border-width: 0;
+    background-color: transparent;
+    margin-bottom: 0px;
+  }
+
+  .mstrmojo-SearchBox-clear {
+    height: 17px;
+    border-width: 0px;
+    margin-bottom: 2px;
+  }
+
+  .mstrmojo-SearchBox-bg {
+    @extend %search-box-base;
+
+    border-width: 0;
+    background: transparent;
+
+    .mstrmojo-SearchBox-search {
+      @extend %search-box-base;
+
+      height: 19px;
+    }
+  }
+}
+
+.element-drag-avatar {
+    .isAvatar {
+        padding: 4px 3px;
+        width: 185px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 8pt;
+        line-height: 16px;
+        color: black;
+        border: 1px solid #aeddf7;
+        background-color: #dff1fc;
+        border-radius: 2px;
+    }
+/** BEGIN: Icon for avatar's drop state **/
+    &.hasOwnAvatar {
+        &:after {
+            content: ' ';
+            height: 15px;
+            position: absolute;
+            left: -7px;
+            top: -7px;
+            width: 15px;
+            background: transparent url(#{$vi-img-path}/unitList/drag_cursor_assets.png) 0 -50px no-repeat;
+            opacity: 1;
+            transition: none;
+            -moz-transition: none;
+            -webkit-transition: none;
+        }
+        &.add:after {
+            background-position: 0 0;
+        }
+    }
+/** END: Icon for avatar's drop state **/
+
+}
+
+.mstrmojo-DerivedElementPanel:after {
+  border-bottom: 8px solid #e5e5e5;
+  border-top: none;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: -6px;
+  z-index: 2;
+  content: '';
+  height: 0;
+  left: 40px;
+  position: absolute;
+  width: 0;
+}
+
+.mstrmojo-DerivedElementPanel:before {
+  border-bottom: 9px solid #c5c5c5;
+  border-top: none;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+  top: -8px;
+  z-index: 2;
+  content: '';
+  height: 0;
+  left: 39px;
+  position: absolute;
+  width: 0;
+}
+
+.mstrmojo-DerivedElementsEditor .mstrmojo-Editor-content .mstrmojo-DerivedElementPanel .mstrmojo-SearchBox-input {
+  height: 19px;
+  border-width: 0px;
+  background-color: transparent;
+  padding: 0px;
+  width: 105px !important;
+}
+/** end of Derived Element Panel */

@@ -1,0 +1,77 @@
+@import '../_global.scss';
+
+/** BEGIN: CheckList **/
+.mstrmojo-ui-CheckList {
+    overflow: hidden;
+
+    .scroll-container {
+        height: 100%;
+        overflow: auto;
+    }
+
+    .item {
+        background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) -6px -26px no-repeat;
+        cursor: default;
+        display: block;
+        line-height: 22px;
+        padding: 0 4px 0 17px;
+        min-width: 65px;
+
+        &.selected {
+          background-position: -6px -1px;
+        }
+
+      &:last-child{
+          margin-bottom: 0 !important;
+        }
+
+        &:first-child{
+          margin-top: 0 !important;
+        }
+
+        //DE56481;when spans are empty, inject non-breaking space character, to keep span height consistent.
+        //So no matter what font size and line-height you have set, everything around that <span> will fall into line, just as if you had text present in that <span>.
+        //Also rather than using \00a0 non-breaking space, use \200b, which is also a non-breaking space, but with zero width.
+        //And not using min-height, because it is vulnerable where font sizes change and the text baseline is not in the correct place.
+        span.text:empty:before {
+            content: '\200b';
+        }
+    }
+
+    .disableSelected .item.selected{
+        background-position: -6px -74px;
+    }
+
+    &.radio .item {
+        background-position: -6px -145px;
+
+        &:hover .only {
+            display: none;
+        }
+
+        &.selected {
+            background-position: -6px -121px;
+        }
+    }
+
+    &.horizontal {
+        .icn {
+            white-space: nowrap;
+
+            .item {
+                display: inline-block;
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+      .scroll-container.hasHorizontal {
+          min-height: 35px;
+      }
+    }
+}
+
+/** END: CheckList **/

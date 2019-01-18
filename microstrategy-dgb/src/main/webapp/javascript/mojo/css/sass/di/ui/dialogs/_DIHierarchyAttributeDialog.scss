@@ -1,0 +1,309 @@
+.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog {
+  z-index: 1000;
+  width: 339px;
+  height: 315px;
+  .mstrmojo-Editor-title-container {
+    background-color: #f3f3f4;
+  }
+
+  .mstrmojo-Editor-content {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  & > .mstrmojo-Editor-buttons {
+    position: absolute;
+    padding: 0;
+    bottom: 14px;
+    right: 13px;
+  }
+}
+
+.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-boxContainer {
+  width: 388px;
+  height: 236px;
+}
+
+.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-hierarchyTableContainer {
+  margin-top: 16px;
+  margin-bottom: 15px;
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-hierarchy-tableName {
+    width: 92px;
+    color: #444649;
+    font-size: 12px;
+    font-family: Arial;
+    line-height: 16px;
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-tablePulldown{
+    width: 200px;
+    height: 22px;
+    margin-left: 10px;
+    .mstrmojo-ui-Pulldown-text {
+      color: #444649;
+      font-size: 12px;
+      font-family: Arial;
+      line-height: 12px;
+      height: 14px;
+      padding-top: 4px;
+      padding-bottom: 2px;
+    }
+  }
+}
+
+.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeaderContainer {
+  margin-top: 15px;
+  //margin-bottom: 10px;
+  border: none;
+  .mstrmojo-Label {
+    color: #444649;
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: bold;
+    line-height: 16px;
+  }
+}
+
+//.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-role {
+//  width: 36px;
+//}
+
+.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-infoIcon {
+  width: 16px;
+  height: 16px;
+  background: transparent url("images/DI/hierarchy_icons.svg") -50px -10px no-repeat;
+}
+
+.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-attribute {
+  width: 200px;
+  margin-left: 50px;
+}
+
+.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-roleAttributeContainer {
+  width: 307px;
+  table:last-child {
+    margin-bottom: 16px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-roleAttributeLine {
+    //margin-bottom: 10px;
+    .mstrmojo-popupList-scrollBar.mstrmojo-scrollNode {
+      max-height: 200px !important;
+    }
+    .mstrmojo-Label {
+      width: 92px;
+      color: #444649;
+      font-size: 12px;
+      font-family: Arial;
+      line-height: 16px;
+    }
+
+    .mstrmojo-ui-Pulldown {
+      margin-left: 10px;
+      width: 200px;
+      height: 22px;
+      .mstrmojo-ui-Pulldown-text {
+        color: #444649;
+        font-size: 11px;
+        font-family: Arial;
+        line-height: 12px;
+        height: 14px;
+        padding-top: 4px;
+        padding-bottom: 2px;
+      }
+    }
+    .pulldownWarning {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 300px;
+      padding: 9px 8px 8px 32px;
+      background-color: white;
+      z-index: 1;
+      border: 1px solid orange;
+      border-radius: 3px;
+      &:before {
+        position: absolute;
+        left: 8px;
+        top: 7px;
+        width: 18px;
+        content: '_';
+        color: transparent;
+        background: white url("images/DI/hierarchy_icons.svg") -100px -10px no-repeat;
+      }
+    }
+  }
+}
+
+.mstrmojo-di-ui-dialogs-DIHierarchyAttributeResetDialog {
+  //.mstrmojo-di-ui-dialogs-DIHierarchyAttributeResetDialog-icon { // web needs no icon for now
+  //  width: 75px;
+  //  height: 75px;
+  //  background: transparent url("images/DI/hierarchy_icons.svg") -50px -10px no-repeat;
+  //}
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeResetDialog-Container {
+    padding: 16px 0 16px 0;
+    line-height: 18px;
+    .mstrmojo-di-ui-dialogs-DIHierarchyAttributeResetDialog-warning {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.workstation {
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog {
+    z-index: 1000;
+    //width: 339px;
+    //background-color: white;
+    //height: 308px;
+    width: 420px;
+    height: 360px;
+    .mstrmojo-Editor-title-container {
+      background-color: #f3f3f4;
+    }
+
+    .mstrmojo-Editor-content {
+      border: none;
+      margin: -2px 16px 0 16px;
+      padding: 0;
+      //overflow-x: hidden;
+      height: 280px;
+    }
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-hierarchyTableContainer {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-hierarchy-tableName {
+      width: 95px;
+      color: #444649;
+      font-size: 12px;
+      font-family: Arial;
+      line-height: 16px;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-tablePulldown{
+      width: 281px;
+      height: 26px;
+      margin-left: 12px;
+      .mstrmojo-ui-Pulldown-text {
+        color: #444649;
+        font-size: 12px;
+        font-family: Arial;
+        line-height: 12px;
+        background-color: white;
+        background-image: url('vi/images/pulldown-sprite.png');
+        height: 26px;
+        padding-top: 5px;
+        padding-bottom: 3px;
+      }
+    }
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeaderContainer {
+    margin-top: 15px;
+    //margin-bottom: 10px;
+    border: none;
+    background-color: #E7E7E7;
+    width: 388px;
+    .mstrmojo-Label {
+      color: #444649;
+      font-size: 12px;
+      font-family: Arial;
+      font-weight: bold;
+      line-height: 16px;
+    }
+    .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-role {
+      margin: auto 0 auto 10px;
+      line-height: 26px;
+      height: 26px;
+    }
+    .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-infoIcon {
+      margin: auto 0 auto 7px;
+    }
+    .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-attribute {
+      margin: auto 0 auto 22px;
+    }
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-role {
+    width: 36px;
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-infoIcon {
+    width: 16px;
+    height: 16px;
+    background: transparent url("images/DI/hierarchy_icons.svg") -50px -10px no-repeat;
+    visibility: hidden; // hide for now, will add later
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-mapsListHeader-attribute {
+    width: 200px;
+    margin-left: 50px;
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-roleAttributeContainer {
+    width: 386px;
+    border: 1px solid #E7E7E7;
+    table:last-child {
+      margin-bottom: 0px;
+    }
+    .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-roleAttributeLine {
+      //margin-bottom: 10px;
+      height: 46px;
+      width: 386px;
+      border-top: 1px solid #e7e7e7;
+      .mstrmojo-Label {
+        width: 85px;
+        color: #444649;
+        font-size: 12px;
+        font-family: Arial;
+        line-height: 16px;
+        margin-left: 10px;
+      }
+
+      .mstrmojo-ui-Pulldown {
+        margin-left: 10px;
+        width: 271px;
+        height: 24px;
+        -webkit-box-shadow: unset;
+        -moz-box-shadow: unset;
+        box-shadow: unset;
+        .mstrmojo-ui-Pulldown-text {
+          color: #444649;
+          font-size: 11px;
+          font-family: Arial;
+          line-height: 12px;
+          background-color: white;
+          background-image: url('vi/images/pulldown-sprite.png');
+          height: 24px;
+          padding-top: 4px;
+          padding-bottom: 4px;
+        }
+      }
+      .mstrmojo-ui-Pulldown.disabled {
+        .mstrmojo-ui-Pulldown-text {
+          border: 1px solid rgba(44, 46, 49, 0.2);
+        }
+      }
+    }
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-Cancel {
+    .mstrmojo-Button-text {
+      background-color: white;
+    }
+  }
+
+}
+
+.mstrWeb.workstation .mstrmojo-di-popup-dialog .mstrmojo-Editor.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog.modal {
+  .mstrmojo-Editor-content .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-boxContainer {
+    .mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-hierarchyTableContainer {
+      .mstrmojo-ui-Pulldown.mstrmojo-di-ui-dialogs-DIHierarchyAttributeDialog-tablePulldown {
+        .mstrmojo-ui-Pulldown-text {
+          background-color: white;
+          background-image: url("vi/images/pulldown-sprite.png");
+        }
+      }
+    }
+  }
+}

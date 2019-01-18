@@ -1,0 +1,33 @@
+@import '../../vi/vi-global';
+
+%operator-icon {
+	background: transparent url(vi/images/dataset.svg) 0 0 no-repeat;
+	width: 14px;
+	height: 26px;
+	padding: 0;
+	margin:0 auto;
+}
+
+.single-operator{
+    border-radius: 2px;
+    height: 26px;
+    font-size: 11px;
+    border: 1px solid rgba(68, 70, 73, 0.2);
+    box-sizing: border-box;
+    background-color: #fff;
+    min-width: 0;
+
+	&.plus {
+		.mstrmojo-Button-text {
+			@extend %operator-icon;
+			background-position: -542px -207px;
+		}
+	}
+
+	&.minus {
+		.mstrmojo-Button-text {
+			@extend %operator-icon;
+			background-position: -542px -237px;
+		}
+	}
+}

@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumFormatType={FMT_UNDEFINED:0,FMT_LINE:1,FMT_FILL:2,FMT_FONT:3};

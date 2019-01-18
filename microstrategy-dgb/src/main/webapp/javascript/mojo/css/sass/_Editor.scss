@@ -1,0 +1,333 @@
+@import 'vi/vi-global';
+$panel-lineheight : 18px;
+
+/** Begin Generic Editor Style */
+.mstrmojo-Editor {
+    @include border-radius(4px);
+    @include box-shadow(#454545, 0, 0, 8px, false);
+
+    background-color: rgba(243, 243, 244, 1);
+    border: solid 1px #9B9B9B;
+    color: #444649;
+    font-size: 11px;
+    position: absolute;
+    z-index: 1000;
+    -moz-user-select: none;
+
+    // Direct child so not apply to nested inline editor
+    > {
+        $height-editor-title: 40px;
+
+        .mstrmojo-Editor-title-container {
+            height: $height-editor-title;
+        }
+
+        // Divider lines
+        .mstrmojo-Editor-title-container,
+        .mstrmojo-Editor-content {
+            // border-bottom: 1px solid #DEDEDE;
+            @include box-shadow(#FFF, 0, 1px, 0, false);
+
+        }
+
+        .mstrmojo-Editor-title-container {
+            position: relative;
+            z-index: 1;
+
+            .mstrmojo-Editor-title {
+                color: #444649;
+                padding: 1px 40px 1px 18px;
+                height: $height-editor-title;
+                line-height: $height-editor-title;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-weight: bold;
+            }
+
+            .edt-title-btn {
+                position: absolute;
+                top: 10px;
+                right: 17px;
+                width: 10px;
+                height: 20px;
+                cursor: default;
+
+                &.mstrmojo-Editor-help {
+                    outline: none;
+                    outline-width: 0;
+                    right: 36px;
+                    background: url(#{$vi-img-path}/menu_icons.png) no-repeat -29px -84px;
+
+                    &:hover {
+                        background-position: -29px -114px
+                    }
+                    &.active {
+                        background-position: -29px -144px
+                    }
+                }
+
+                &.mstrmojo-Editor-close {
+                    background: url(#{$vi-img-path}/menu_icons.png) no-repeat -29px 7px;
+
+                    &:hover {
+                        background-position: -29px -23px
+                    }
+                    &:active {
+                        background-position: -29px -53px
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-Editor-content {
+            @include border-radius(0);
+            padding: 5px 18px;
+            margin: 0;
+            position: relative;
+        }
+
+        .mstrmojo-Editor-buttons {
+            padding: 16px 18px;
+            .mstrmojo-Editor-buttonBar {
+                margin: 0;
+                .mstrmojo-WebButton {
+                    margin: 0 0 0 11px;
+                    padding: 0 !important;
+                }
+                .mstrmojo-Button-text {
+                    @include box-sizing;
+                }
+            }
+
+            .mstrmojo-checkbox-inline {
+                margin-left: 16px;
+                font-size: 12px;
+                display: inline;
+                line-height: 30px;
+                input {
+                    left: 1px;
+                    margin-right: 8px;
+                }
+            }
+
+            .mstrmojo-btnNotifier {
+
+                background: transparent;
+                line-height: $panel-lineheight;
+                height: $panel-lineheight;
+                border: none;
+                margin-bottom: 16px;
+                color: #444649;
+
+                .vfNotifier {
+                    display: block;
+                    font-size: 11px;
+                    position: relative;
+                    div {
+                        display: inline-block;
+                        &:first-child {
+                            position: absolute;
+                            height: 20px;
+                            width: 20px;
+                            background: url(#{$vi-img-path}/unitList/icons_warning.png) 3px -5px no-repeat transparent;
+                        }
+
+                        &:last-child {
+                            position: relative;
+                            left: 24px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+
+
+            // clearfix in case the actual buttons (rendered as child elements) are float.
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+    }
+}
+
+.mstrmojo-Editor-curtain {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #FCFCFC url(#{$mojo-img-path}/1ptrans.gif) left top repeat;
+    opacity: 0.5;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    display: none;
+}
+
+/** End Generic Editor Style */
+
+/** BEGIN Alert Dialog Style - Used for confirm, warn, alert, error and notify */
+.mstrmojo-Editor.mstrmojo-alert {
+    width: 434px;
+    .mstrmojo-Editor-content {
+        @include user-select(text);
+        line-height: 18px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        //width: 398px;
+        display: table;
+        table-layout: fixed;
+        height: 54px; // for table, height = min-height, if we use min-height, it will not work in firefox
+
+        .alert-content {
+            @include user-select(text);
+            display: table-cell !important;
+            vertical-align: middle;
+            word-wrap: break-word; // First try to break on word boundaries. If not possible, break inside words to avoid overflow.
+            width: 398px;
+            padding-right: 0;
+
+            .mstrmojo-Label {
+                max-height: 250px;
+                overflow-y: scroll; //Rollback from DE98391 to DE93398 
+                -ms-overflow-y: auto; //DE98391 IE always shows scrollbar if overflow-y value is set to scroll. This is IE specific change.
+            }
+        }
+
+        // Dynamic links in the notify, toast and error content text.
+        span.dyn-link {
+            @include dyn-link();
+        }
+
+    }
+    .mstrmojo-Editor-title-container {
+        //height: 39px;
+
+        .mstrmojo-Editor-title {
+            line-height: 11px;
+            height: 11px;
+            padding-bottom: 14px;
+            padding-top: 14px;
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        .mstrmojo-WebButton.hot {
+            margin-right: 7px;
+        }
+    }
+
+    &.ed-toast,
+    &.ed-notify {
+        @include box-shadow(rgba(0, 0, 0, 0.55), 1px, 1px, 4px);
+        @include border-radius(3px);
+
+        border: none;
+        background-color: #EEEEEE;
+        color: #444649;
+        max-width: 680px;
+        opacity: 0.96;
+        padding: 0 11px;
+        width: auto;
+
+        .mstrmojo-Editor-content {
+            width: auto;
+            min-height: initial;
+            max-height: 18px;
+            line-height: 18px;
+            padding: initial;
+            box-shadow: none;
+
+            &:after {
+                display: none;
+            }
+        }
+
+
+    }
+    &.ed-toast {
+        .mstrmojo-Editor-buttons {
+            display: none;
+        }
+    }
+    &.ed-notify {
+        display: table;
+        @include single-transition(opacity, 300ms);
+
+        .mstrmojo-Editor-content {
+            float: left;
+            padding-right: 11px;
+            max-width: 606px;
+        }
+
+        .mstrmojo-Editor-buttons {
+            padding: initial;
+            vertical-align: middle;
+            display: table-cell;
+        }
+
+        &:hover {
+            opacity: 0.96 !important;
+        }
+    }
+
+}
+
+/** End Alert Dialog Style */
+
+/**Begin Warning Dialog Style */
+.mstrmojo-Editor.mstrmojo-alert.mstrmojo-warning {
+    .mstrmojo-Editor-content {
+        &:before {
+            width: 40px;
+            height: 36px;
+            background: url("#{$vi-img-path}/menu_icons.png") no-repeat scroll -150px -150px rgba(0, 0, 0, 0);
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+            left: 34px;
+            content: '';
+        }
+        .alert-content {
+            padding-left: 88px;
+            width: 310px;
+        }
+    }
+
+    //Save over Flash VI dialog
+    &.save-over {
+        .mstrmojo-Editor-buttons table td:first-child {
+            width: 90%; //Align Save Over button left
+        }
+    }
+}
+
+/**End Warning Dialog Style */
+
+// Add dark theme style for notify
+.mojo-theme-dark {
+    .mstrmojo-Editor.mstrmojo-alert {
+        &.ed-notify,
+        &.ed-toast {
+            background-color: #3F3F3F;
+            color: #E4E4E4;
+        }
+    }
+}
+
+.mstrmojo-di-popup-dialog .mstrmojo-Editor-title-container {
+    @supports (display: flex)
+    {
+        display: flex;
+        align-items: flex-end;
+        .mstrmojo-Editor-title {
+            flex-grow: 1;
+        }
+        .edt-title-btn.mstrmojo-Editor-help, .edt-title-btn.mstrmojo-Editor-close {
+            position: static;
+        }
+    }
+}

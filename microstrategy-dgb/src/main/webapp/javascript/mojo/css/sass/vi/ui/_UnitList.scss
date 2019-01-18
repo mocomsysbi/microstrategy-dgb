@@ -1,0 +1,311 @@
+@import '../vi-global';
+@import '../themes';
+@import 'unit-list-props';
+@import '_avatar_icon_common_style';
+    /** BEGIN: Unit List **/
+    %unit-list-base {
+        @include disable-text-selection();
+
+        background: transparent none 0 50% no-repeat;
+        border: 1px solid transparent;
+        color: $wsvi-menu-font-color;
+        cursor: pointer;
+        display: block;
+        font-size: 11px;
+        height: 20px;
+        line-height: 20px;
+        margin: 0 0 0 13px;
+        padding-left: 16px;
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .mstrmojo-VIUnitList {
+        .unit {
+            @extend %unit-list-base;
+            cursor: default;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                @include transform(translate(0, -50%));
+                left: 0;
+                width: 20px;
+                height: 20px;
+                background: transparent url(#{$vi-img-path}/unitList/icon_dataset_sprite.png) 1000px 1000px no-repeat;
+            }
+
+            &.ic4 {
+                &:before {
+                    background-position: 0 -120px;
+                }
+                &.is-mh:before {
+                    background-position: -25px -177px;
+                }
+            }
+
+            &.ic4d:before {
+                background-position: 0 -150px;
+            }
+
+            &.ic12:before,
+            &.ic12t:before {
+                background-position: 0 0;
+            }
+
+            &.ic12.st3076:before {
+                background-position: 0 -450px;
+            }
+
+            &.ic12d,
+            &.ic47.st12033 {
+                &:before {
+                    background-position: 0 -90px;
+                }
+            }
+
+            &.ic12g:before {
+                background-position: 0 -60px;
+            }
+
+            &.ic14:before {
+                background-position: 0 -300px;
+            }
+
+            &.ic1:before {
+                background-position: 0 -330px;
+            }
+            &.ic47:before {
+                background-position: 0 -390px;
+            }
+            &.ic12de:before {
+                background-position: 0 0px;
+            }
+            &.ic21:before {
+                background-position: 0 -176px;
+            }
+
+            &.hidden {
+                display: none;
+            }
+
+            &.isAttrLink {
+                &.ic12,
+                &.ic12g,
+                &.ic12d,
+                &.ic12t,
+                &.ic12de {
+                    div.mark {
+                        width: 15px;
+                        height: 15px;
+                        position: absolute;
+                        right: 16px;
+                        top: 2px;
+                        background: transparent url($vi-menu-icons) 0 0 no-repeat;
+                        border: 1px solid transparent;
+                        border-radius: 2px;
+                    }
+                }
+            }
+
+            //        .mstrmojo-EditableLabel {
+            //            height: 100%;
+            //            position: static;
+            //            width: 99%;
+            //        }
+
+            &.isAvatar {
+                overflow: visible;
+                padding: 2px 4px;
+                padding-left: 24px;
+                margin: 0;
+                width: 119px;
+                height: 16px;
+                line-height: 16px;
+                opacity: 0.75;
+                background-position-x: 5px;
+                border-radius: 3px;
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                display: block;
+
+                .txt {
+                    width: 100%;
+                }
+            }
+        }
+
+        /** BEGIN: Icon for avatar's drop state **/
+        &.hasOwnAvatar {
+            &:after {
+                @include avatar-icon-common-style;
+            }
+
+            &.add:after {
+                @include icon-style('add');
+            }
+
+            &.replace:after {
+                @include icon-style('replace');
+            }
+
+            &.move:after {
+                @include icon-style('move');
+            }
+
+            &.remove:after {
+                @include icon-style('remove');
+            }
+
+            &.no-op:after {
+                display: none;
+            }
+        }
+        /** END: Icon for avatar's drop state **/
+    }
+
+    .mstrmojo-VIDatasetObjects .mstrmojo-VIPanelPortlet .mstrmojo-VIPanel-content .mstrmojo-Label {
+        @extend %unit-list-base;
+
+        cursor: default;
+        padding-left: 1px;
+    }
+
+    .mstrmojo-ui-MenuEditor .mstrmojo-VIUnitList {
+        .unit {
+            &.ic47.st12033.nde4ra:before {
+                background-position: 0 -506px;
+            }
+        }
+    }
+
+    .unselectable .mstrmojo-VIUnitList .unit {
+        &.open,
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    /** END: Unit List **/
+
+    /** BEGIN: Unit List Themes **/
+    .mojo-theme-light {
+        .mstrmojo-VIUnitList {
+            .unit {
+                color: $theme-light-color;
+
+                &.open,
+                &:hover {
+                    background-color: $theme-light-panel-hover-background-color;
+                }
+
+                &.ic47.st12033.nde4ra:before {
+                    background-position: 0 -478px;
+                }
+
+                &.isAttrLink {
+                    div.mark {
+                        background-position: -118px -29px;
+                    }
+                    &.noId {
+                        div.mark {
+                            background-position: -118px -89px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mojo-theme-dark {
+        .mstrmojo-VIUnitList {
+            .unit {
+                color: $theme-dark-color;
+
+                &.open,
+                &:hover {
+                    background-color: $theme-dark-panel-hover-background-color;
+                }
+
+                &.ic47.st12033.nde4ra:before {
+                    background-position: 0 -506px;
+                }
+
+                &.isAttrLink {
+                    div.mark {
+                        background-position: -118px -229px;
+                    }
+                    &.noId {
+                        div.mark {
+                            background-position: -118px -289px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // For unit list avatar
+    .mstrmojo-VIUnitList {
+        &.hasOwnAvatar {
+            &.noIcon:after {
+                display: none;
+            }
+            &.hasIcon:after {
+                display: block;
+            }
+        }
+
+        &.mojo-theme-light {
+            .unit.isAvatar {
+                &.ic4,
+                &.ic4d {
+                    @extend %light-color-unit-metric;
+                }
+
+                &.is-mh {
+                    @extend %light-color-unit-template-metric;
+                }
+
+                &.ic1,
+                &.ic12,
+                &.ic12d,
+                &.ic12t,
+                &.ic12de,
+                &.ic12g,
+                &.ic14,
+                &.ic47 {
+                    @extend %light-color-unit-attribute;
+                }
+            }
+        }
+
+        &.mojo-theme-dark {
+            .unit.isAvatar {
+                &.ic4,
+                &.ic4d {
+                    @extend %dark-color-unit-metric;
+                }
+
+                &.is-mh {
+                    @extend %dark-color-unit-template-metric;
+                }
+
+                &.ic1,
+                &.ic12,
+                &.ic12d,
+                &.ic12t,
+                &.ic12de,
+                &.ic12g,
+                &.ic14,
+                &.ic47 {
+                    @extend %dark-color-unit-attribute;
+                }
+            }
+        }
+    }
+    /** END: Unit List Themes **/

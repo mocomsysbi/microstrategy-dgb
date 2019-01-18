@@ -1,0 +1,218 @@
+
+
+/** BEGIN: vi-ui-rw-DocQuillTextField **/
+
+/**
+Ensure the textbox has quill text selection focus
+*/
+
+.ql-editor {
+  user-select: text;
+  -moz-user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+
+/**
+Hide the quill default URL Tooltip
+ */
+.ql-tooltip {
+  visibility: hidden;
+}
+.ql-container.ql-bubble:not(.ql-disabled) a::before {
+  visibility: hidden;
+}
+.ql-container.ql-bubble:not(.ql-disabled) a:hover::before,
+.ql-container.ql-bubble:not(.ql-disabled) a:hover::after {
+  visibility: hidden;
+}
+/**
+Font families and sizes for quill
+ */
+
+.ql-font-arialblack {
+  font-family: "Arial Black";
+}
+.ql-font-arialnarrow {
+  font-family: "Arial Narrow";
+}
+.ql-font-arialunicodems {
+  font-family: "Arial Unicode MS";
+}
+.ql-font-batang {
+  font-family: "Batang";
+}
+.ql-font-bookantiqua {
+  font-family: "Book Antiqua";
+}
+.ql-font-bookmanoldstyle {
+  font-family: "Bookman Old Style";
+}
+.ql-font-bookshelfsymbolone {
+  font-family: "Bookshelf Symbol 1";
+}
+.ql-font-bookshelfsymboltwo {
+  font-family: "Bookshelf Symbol 2";
+}
+.ql-font-booklshelfsymbolthree {
+  font-family: "Bookshelf Symbol 3";
+}
+.ql-font-comicsansms {
+  font-family: "Comic Sans MS";
+}
+.ql-font-couriernew {
+  font-family: "Courier New";
+}
+.ql-font-garamond {
+  font-family: "Garamond";
+}
+.ql-font-haettenschweiler {
+  font-family: "Haettenschweiler";
+}
+.ql-font-helvetica {
+  font-family: "Helvetica";
+}
+.ql-font-impact {
+  font-family: "Impact";
+}
+.ql-font-lucidaconsole {
+  font-family: "Lucida Console";
+}
+.ql-font-mapsymbols {
+  font-family: "Map Symbols";
+}
+.ql-font-lucidasansunicode {
+  font-family: "Lucida Sans Unicode";
+}
+.ql-font-marlett {
+  font-family: "Marlett";
+}
+.ql-font-monotypecorsiva {
+  font-family: "Monotype Corsiva";
+}
+.ql-font-monotypesorts {
+  font-family: "Monotype Sorts";
+}
+.ql-font-msgothic {
+  font-family: "MS Gothic";
+}
+.ql-font-msoutlook {
+  font-family: "MS Outlook";
+}
+.ql-font-mssansserif {
+  font-family: "Microsoft Sans Serif";
+}
+.ql-font-symbol {
+  font-family: "Symbol";
+}
+.ql-font-tahoma {
+  font-family: "Tahoma";
+}
+.ql-font-timesnewroman {
+  font-family: "Times New Roman";
+}
+.ql-font-trebuchetms {
+  font-family: "Trebuchet MS";
+}
+.ql-font-verdana {
+  font-family: "Verdana";
+}
+.ql-font-webdings {
+  font-family: "Webdings";
+}
+.ql-font-windings {
+  font-family: "Windings";
+}
+.ql-font-windings2 {
+  font-family: "Windings2";
+}
+.ql-font-windings3 {
+  font-family: "Windings3";
+}
+
+.ql-size-size8 {
+  font-size: 8pt;
+}
+.ql-size-size9 {
+  font-size: 9pt;
+}
+.ql-size-size10 {
+  font-size: 10pt;
+}
+
+.ql-size-size11 {
+  font-size: 11pt;
+}
+
+.ql-size-size12 {
+  font-size: 12pt;
+}
+
+.ql-size-size14 {
+  font-size: 14pt;
+}
+
+.ql-size-size16 {
+  font-size: 16pt;
+}
+
+.ql-size-size18 {
+  font-size: 18pt;
+}
+
+.ql-size-size20 {
+  font-size: 20pt;
+}
+
+.ql-size-size22 {
+  font-size: 22pt;
+}
+
+.ql-size-size24 {
+  font-size: 24pt;
+}
+
+.ql-size-size36 {
+  font-size: 36pt;
+}
+
+// highlight
+.ql-size-highlight {
+  background-color: #0c75ad;
+  color: white;
+}
+
+.ql-size-nohighlight {
+  background-color: transparent;
+}
+
+.ql-tooltip {
+  visibility: hidden;
+}
+
+.mstrmojo-Editor.textBoxURLEditor.modal {
+  display: inline-flex !important; // to overrite the markup level general css styling
+}
+
+.mstrmojo-Editor.textBoxURLEditor .mstrmojo-Editor-content {
+  padding: 0;
+  margin: -5px;
+}
+
+.mstrmojo-Editor.textBoxURLEditor .mstrmojo-Editor-buttons {
+  visibility: hidden;
+  padding: 0;
+}
+
+.mstrmojo-Editor.textBoxURLEditor .mstrmojo-Editor-content .mstrmojo-ui-sb-input {
+  font-size: 12pt;
+}
+
+
+
+
+
+
+
+
+/** END: vi-ui-rw-DocQuillTextField **/

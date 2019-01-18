@@ -1,0 +1,136 @@
+@import '../viz-icon-mixins-ws';
+@import '../viz-toolbar-ws';
+/** BEGIN: VizBox **/
+.mstrmojo-VIBox {
+
+  // The please drop unit label.
+  .ctrlOverlay .mstrmojo-Label.dropMsg {
+    background-image: url(#{$vi-img-path}/CanvasElements/icnVisualization.png);
+    background-position: 3px 50%;
+  }
+
+  // Add the CSS for the drag handles.
+  .hover-selector-btn,
+  .hover-filter-btn,
+  .hover-max-restore-btn {
+    display: none;
+    @include box-sizing();
+    border: solid 1px $wsvi-ui-border-gray;
+    z-index: 5; // Must be > 2 for network and maps. Keep this in sync with &:hover .hover-filter-btn, .hover-filter-btn.open
+    @include border-radius(2px);
+    @include box-shadow($wsvi-panel-shadow-color, 0px, 1px, 2px);
+    &.invalid {
+      display: none;
+      &.visible,
+      &.mouse-left {
+        display: none;
+      }
+    }
+    &.open {
+      display: block;
+    }
+    &.visible {
+      display: block;
+    }
+    &.mouse-left,
+    &.editing-title {
+      display: none;
+    }
+  }
+
+  .hover-filter-btn {
+    @include wsvi-icon-view-filter($wsvi-primary-white);
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    top: 2px;
+    left: $wsvi-titlecontent_paddingB;
+    z-index: 5;
+  }
+
+  &.hasSelector {
+    .hover-filter-btn {
+      left: $wsvi-titlecontent_paddingB + 20px + $wsvi-titlecontent_paddingA;
+    }
+  }
+
+  .hover-selector-btn {
+    @include wsvi-icon-source-selector($wsvi-primary-white);
+    width: 20px;
+    height: 16px;
+    left: $wsvi-titlecontent_paddingB;
+    position: absolute;
+    top: 2px;
+  }
+
+  &.no-menu {
+    .hover-max-restore-btn {
+      right: $wsvi-titlecontent_paddingB;
+    }
+  }
+
+  .hover-max-restore-btn {
+    @include wsvi-icon-maximize($wsvi-primary-white);
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    right: $wsvi-titlecontent_paddingA + $wsvi-titlecontent_paddingB + 16px;
+    &.restore {
+      @include wsvi-icon-maximize-toggleback($wsvi-primary-white);
+    }
+  }
+}
+
+.formatting {
+  .mstrmojo-VIBox.selected {
+    @include box-shadow(#454545, 0, 0, 8px);
+  }
+}
+
+// Avatar that is dragged around when the visualization box is moved.
+.mstrmojo-VIUnit-avatar {
+  &.viz-avi {
+    background-image: url(#{$vi-img-path}/id_viz.png);
+  }
+}
+
+// The popup menu list for showing the view filter expression on the VizBox
+.mstrmojo-viz-fe-menu {
+  .item.mstrmojo-ui-Menu-item {
+    cursor: pointer;
+    padding-left: 10px;
+  }
+}
+
+.mojo-theme-light {
+  .mstrmojo-VIUnit-avatar {
+    &.viz-avi {
+      & > div {
+        & > div {
+          @include viz-icon-middle-theme($theme-light-drop-box-border-color, $theme-light-drop-box-background-color);
+        }
+      }
+    }
+  }
+}
+
+.mojo-theme-dark {
+  .mstrmojo-VIUnit-avatar {
+    &.viz-avi {
+      & > div {
+        & > div {
+          @include viz-icon-middle-theme($theme-dark-drop-box-border-color, $theme-dark-drop-box-background-color);
+        }
+      }
+    }
+  }
+}
+/** END: VizBox **/
+
+.mstrmojo-VIBox.mstrmojo-Tooltip.vi-regular .mstrmojo-Tooltip-contentWrapper {
+  max-height: calc(100vh - 20px);
+  .mstrmojo-Tooltip-content {
+    max-height: calc(100vh - 34px);
+  }
+}

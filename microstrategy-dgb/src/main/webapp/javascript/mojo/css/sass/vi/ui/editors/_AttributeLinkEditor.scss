@@ -1,0 +1,277 @@
+%noValidObject {
+    padding-left: 5px !important;
+    background-image: none !important;
+    color: #858585 !important;
+}
+
+.mstrmojo-att-link {
+    &.mstrmojo-Editor {
+        min-width: 618px;
+    }
+
+    .edt-title-btn.mstrmojo-Editor-close {
+        right: 21px;
+    }
+
+    .mstrmojo-Editor-content {
+        padding-bottom: 16px;
+        padding-top: 0;
+    }
+
+    .mstrmojo-Editor-title {
+        color: #444649;
+        padding-left: 11px;
+        line-height: 25px;
+    }
+
+    .mstrmojo-Editor-button {
+        padding: 0 !important;
+    }
+
+    .mstrmojo-ToolSeparator {
+        display: block;
+        margin: 10px 0px;
+        border-bottom: 1px solid #D1D1D1;
+        box-shadow: 0 1px 1px #F0F0F0;
+    }
+
+    .mstrmojo-toolBox {
+        position: relative;
+        height: 22px;
+        margin: 16px 0 9px 0;
+
+        .mstrmojo-WebHoverButton{
+            position: absolute;
+            width: 80px;
+            overflow: hidden;
+            .mstrmojo-Button-text{
+                line-height: 20px;
+            }
+        }
+
+        .mstrmojo-WebHoverButton:active{
+            color: #007ebe;
+        }
+
+        .mstrmojo-hideForms,
+        .mstrmojo-showForms {
+            left: 85px;
+            width: 135px;
+            overflow: hidden;
+        }
+
+        .mstrmojo-hideForms {
+            display: none !important;
+        }
+    }
+
+    .mstrmojo-linksBox {
+        margin: 0 3px 0 0;
+        border: 1px solid #CCCCCC;
+        background-color: white;
+        height: 150px;
+        overflow: auto;
+        .mstrmojo-linkRow {
+            height: 30px;
+            position: relative;
+            border-bottom: 1px solid #EEEEEE;
+
+            > div {
+                position: absolute;
+            }
+
+            .mstrmojo-ui-Pulldown {
+                top: 4px;
+            }
+
+            .mstrmojo-Label {
+                line-height: 30px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .mstrmojo-attName {
+                width: 120px;
+                left: 5px;
+                padding-left: 20px;
+                background-image: url(vi/images/unitList/attribute.png);
+                background-repeat: no-repeat;
+                background-position: 1px 10px;
+                white-space: nowrap;
+            }
+
+            .mstrmojo-linksToLabel {
+                left: 150px;
+                width: 35px;
+                white-space: nowrap;
+            }
+
+            .mstrmojo-linkToAtt {
+                left: 190px;
+                width: 170px;
+            }
+
+            .mstrmojo-linkFormFromPD {
+                display: none !important;
+            }
+
+            .mstrmojo-linkFormToPD {
+                display: none !important;
+            }
+
+            .mstrmojo-removeLink {
+                background: url(images/d2.png) no-repeat center center !important;
+                min-width: 9px;
+                height: 30px;
+                right: 6px;
+                border: none;
+                display: none !important;
+            }
+
+            &:hover {
+                .mstrmojo-removeLink {
+                    display: block !important;
+                }
+            }
+
+        }
+
+        .mstrmojo-linkToAtt {
+            .mstrmojo-ui-Pulldown-text {
+                padding-left: 25px;
+                background-image: url(vi/images/unitList/attribute.png), url("vi/images/pulldown-sprite.png") !important;
+                background-repeat: no-repeat !important;
+                background-position: 5px 5px, 100% 1px !important;
+                width: auto;
+
+                &.mstrmojo-Warning {
+                    border-color: orange;
+                }
+
+                &.nvo {
+                    @extend %noValidObject;
+                }
+            }
+        }
+    }
+
+    &.mstrmojo-advanced {
+        .mstrmojo-hideForms {
+            display: block !important;
+        }
+
+        .mstrmojo-showForms {
+            display: none !important;
+        }
+
+        .mstrmojo-linksBox {
+            .mstrmojo-linkRow {
+                .mstrmojo-linkFormFromPD {
+                    width: 93px;
+                    left: 150px;
+                    display: block !important;
+                }
+
+                .mstrmojo-linksToLabel {
+                    left: 248px;
+                }
+
+                .mstrmojo-linkToAtt {
+                    left: 288px;
+                }
+
+                .mstrmojo-linkFormToPD {
+                    width: 93px;
+                    left: 463px;
+                    display: block !important;
+                }
+            }
+        }
+    }
+}
+
+.mstrmojo-linkToAtt {
+    .mstrmojo-PopupList {
+        background-color: #E5E5E5 !important;
+    
+        .item {
+            min-width: 143px;
+            max-width: 398px;
+            padding-left: 20px !important;
+            background: #E5E5E5 url(vi/images/unitList/attribute.png) no-repeat 5px 5px !important;
+
+            &.nvo {
+                pointer-events: none;
+                @extend %noValidObject;
+            }
+        }
+
+        .item.selected {
+            background-color: #CECECE !important;
+        }
+
+        .item:hover {
+            background-color: #DADADA !important;
+        }
+        
+        .dim {
+            line-height: 12px;
+            padding: 5px 5px 5px 6px !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            
+            .arrow-b {
+                background: transparent url(vi/images/menu_icons.png) no-repeat 1px 1px;
+                height: 12px;
+                width: 13px;
+                float: left;
+            }
+            
+            .arrow-r {
+                background: transparent url(vi/images/menu_icons.png) no-repeat 1px -28px;
+                height: 12px;
+                width: 13px;
+                float: left;
+            }
+            
+            .attr {
+                background: transparent url(vi/images/unitList/attribute.png) no-repeat;
+                height: 12px;
+                width: 20px;
+                float: left;
+            }
+            
+            .derived-attr {
+                background: transparent url(vi/images/unitList/derived-attribute.png) no-repeat;
+                height: 12px;
+                width: 20px;
+                float: left;
+            }
+            
+            &.item {
+                background-image: none !important;
+            }
+            
+            &.lv1 > div {
+                padding-left: 11px;
+            }
+            &.lv2 > div {
+                padding-left: 26px;
+            }
+            &.lv3 > div{
+                padding-left: 39px;
+            }
+            
+            &.collapse + div,
+            &.collapse + div + div,
+            &.collapse + div + div + div {
+                display: none;
+            }
+        }
+    }
+}
+
+#mstrmojo-link-validation .mstrmojo-Editor-content {
+    word-break: break-all;
+}

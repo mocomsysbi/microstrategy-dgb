@@ -1,0 +1,84 @@
+@import "../../vi-global";
+
+/** BEGIN: Title Toolbar **/
+.mstrmojo-VITitleToolbar {
+  margin: 5px 1px 5px 5px;
+  opacity: 0;
+  transition: opacity 200ms;
+  -moz-transition: opacity 200ms;
+  -webkit-transition: opacity 200ms;
+}
+
+.mstrmojo-VITitleToolbar.hidden{
+  visibility: hidden;
+}
+
+.mstrmojo-VITitleToolbar.visible {
+  opacity: 1;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.mstrmojo-VITitleBar.small .mstrmojo-VITitleToolbar {
+  margin: 2px 1px 2px 3px;
+}
+
+.mstrmojo-VITitleToolbar .item > DIV.icn {
+  background: transparent url(#{$vi-img-path}/icons.png) -2px -1px no-repeat;
+  height: 15px;
+  margin: 0 1px;
+  width: 15px;
+}
+
+.mstrmojo-VITitleBar.small .mstrmojo-VITitleToolbar .item > DIV.icn {
+  background-color: transparent;
+  border: none;
+}
+
+
+.mstrmojo-VITitleToolbar .item.mnu > DIV,
+.mstrmojo-VITitleToolbar .item.add > DIV,
+.mstrmojo-VITitleToolbar .item.max > DIV,
+.mstrmojo-VITitleToolbar .item.rt > DIV,
+.mstrmojo-VITitleToolbar .item.mnu > DIV:hover,
+.mstrmojo-VITitleToolbar .item.add > DIV:hover{
+  background: transparent url(#{$vi-menu-icons}) -60px 2px no-repeat;
+  z-index: 2;
+}
+.mstrmojo-VITitleToolbar .item {
+
+    &.mnu > DIV:hover {
+        background-position:-60px -28px;
+    }
+    &.add > DIV {
+        background-position: -87px 2px;
+    }
+    &.add > DIV:hover {
+        background-position:-87px -28px;
+    }
+    &.cls > DIV {
+        background-position: -2px -62px;
+    }
+    &.help > DIV.icn {
+        background-position: -3px -402px;
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VITitleToolbar .item {
+        &.mnu > DIV {
+            background-position: -60px -198px;
+        }
+        &.mnu > DIV:hover {
+            background-position:-60px -228px;
+        }
+    }
+
+}
+
+.mstrmojo-VITitleToolbar .mstrmojo-ui-Menu .item > DIV.micn {
+  background: transparent;
+}
+
+/** END: Title Toolbar **/

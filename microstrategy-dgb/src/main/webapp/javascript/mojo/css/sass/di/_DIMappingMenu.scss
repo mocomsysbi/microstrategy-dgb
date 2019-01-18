@@ -1,0 +1,333 @@
+
+/**
+ * Created with JetBrains WebStorm.
+ * User: yguo
+ * Date: 3/18/14
+ * Time: 5:25 PM
+ * To change this template use File | Settings | File Templates.
+ */
+
+/* Table Menu SCSS*/
+
+
+.mstrmojo-di-mapping-menu{
+  min-width: 145px;
+  max-width: 350px;
+  padding: 5px 0;
+  color: #f0f0f0;
+  font-family: Arial;
+  font-size: 11px;
+  box-shadow: 0px 0px 6px 0px rgb(0, 0, 0);// for old browsers
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgb(155, 155, 155); // for old browsers TQMS 932207
+  border: 1px solid rgba(155, 155, 155, 0.6);
+  border-radius: 2px;
+  z-index: 1000;
+
+  .mstrmojo-ui-Menu-item {
+    line-height: 22px;
+    padding: 0 17px;
+    overflow: hidden;
+  }
+
+  .mstrmojo-ui-Menu-item.separator.item {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .mstrmojo-ui-Menu-item:hover {
+    background-color: rgb(27, 27, 27);// for old browsers
+    background-color: rgba(27, 27, 27, 0.42);
+  }
+
+  .mstrmojo-ui-Menu-item.sep {
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #595959;
+    margin: 3px 0;
+  }
+  .mstrmojo-ui-Menu-item.disabled {
+    color: #858585;
+  }
+
+  .geoRoleMenu.mstrmojo-ui-MenuEditor,
+  .timeRoleMenu.mstrmojo-ui-MenuEditor{
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.88);
+    background-color: rgba(63, 63, 63, 0.96);
+    border: 1px solid rgba(155, 155, 155, 0.6);
+    border-radius: 2px;
+    height: auto;
+
+    .me-content {
+
+      padding:0;
+    }
+
+    .me-buttons {
+      text-align: center;
+      padding: 9px;
+
+      .mstrmojo-WebButton {
+        float: none;
+      }
+    }
+  }
+
+  .mstrmojo-ui-CheckList .item{
+    font-size: 12px;
+    background-position:-6px -241px;
+    span{
+      margin-left: 5px;
+    }
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mstrmojo-ui-CheckList .item.selected{
+    background-position:-6px -217px;
+  }
+
+  .mstrmojo-di-mapping-columns{
+    max-height: 350px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding: 0 5px;
+  }
+
+  .partitionMenu.mstrmojo-ui-MenuEditor {
+    min-width: 170px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.88);
+    background-color: rgba(63, 63, 63, 0.96);
+    border: 1px solid rgba(155, 155, 155, 0.6);
+    border-radius: 2px;
+
+    .me-buttons {
+      text-align: center;
+      padding: 9px;
+
+      .mstrmojo-WebButton {
+        float: none;
+      }
+    }
+  }
+
+  // Style for category menu
+  .category-menu {
+
+    .mstrmojo-ui-Menu-item {
+      padding-left: 13px;
+      padding-right: 0px;
+    }
+    .mstrmojo-ui-Menu-item:hover {
+      // disable hover on category
+      background-color: inherit;
+      .menu-item {
+        background-color: rgba(27, 27, 27, 0.42)
+      }
+    }
+
+    // overwrite on
+    .mstrmojo-ui-Menu-item.on {
+      background-color: inherit;
+      color: inherit;
+      border-color: transparent;
+
+      .menu-item {
+        background-color: #8B8B8B;
+        border-color: #E5E5E5;
+        color: #ffffff;
+      }
+    }
+
+    .category-menu-item {
+      min-width: 188px;
+      max-width: 278px;
+      @include flex();
+      //display: flex; //mizhang TQMS 927430, make its width self-adaptive.
+      //YGUO TQMS-953617 Use flex instead of inline-flex
+      .menu-category {
+        float: left;
+        width: 80px;
+      }
+
+      .menu-item {
+        padding-left: 13px;
+        padding-right: 13px;
+        min-width: 80px;
+        max-width: 170px;
+        float: left;
+      }
+
+    }
+  }
+}
+/*End of Table Menu SCSS*/
+
+/*Css for mapping project attribute*/
+.mstrmojo-qb-mapping-editor {
+  width: 250px;
+  border-width: 1px 2px 1px 2px;
+  cursor: default;
+}
+
+.mstrmojo-qb-mapping-searchbox{
+  border-width: 0px;
+  border-color: gray;
+  border-style: solid;
+  border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;
+}
+
+.mstrmojo-qb-mapping-searchinput{
+  width: 227px;
+  padding-left: 20px;
+  border-width: 0px;
+  border-style: solid;
+  background:url("images/search.png") no-repeat 2px 2px;
+  background-color: white;
+  border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;
+}
+
+.mstrmojo-qb-mapping-spinnerbox {
+  position: absolute;
+  left: 220px;
+}
+
+.mstrmojo-qb-mapping-buttonbox {
+  float: right;
+  margin: 5px 0px;
+}
+
+.mstrmojo-qb-mapping-search-status {
+  height: 15px;
+}
+
+.mstrmojo-qb-mapping-buttons {
+  height: 25px;
+}
+
+.mstrmojo-qb-attributelink-button{
+  width: 46px;
+  float: right;
+  margin:5px 15px 5px 5px;
+  height: 15px;
+  padding-top: 2px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.mstrmojo-qb-attributelink-button .mstrmojo-Button-text{
+  text-align: center;
+}
+
+.mstrmojo-qb-mapping-title {
+  white-space: normal;
+}
+
+.mstrmojo-qb-mapping-status {
+  float: right;
+  margin: 0px 10px;
+}
+
+.mstrmojo-qb-mapping-status {
+  float: right;
+  margin: 0px 10px;
+}
+
+.mstrmojo-qb-mapping-status.error {
+  color: red;
+}
+
+.mstrmojo-qb-mapping-buttonbox td {
+  background-color: transparent;
+}
+
+.mstrmojo-qb-mapping-search-content {
+  width:100%;
+  height:95px;
+  overflow-y: auto;
+}
+
+.mstrmojo-qb-mapping-buttonbox td:first-child{
+  width: 90%;
+}
+
+.workstation{
+  @import "../refine/RefineVariables-ws.scss";
+  .mstrmojo-ui-Menu.mstrmojo-di-mapping-menu{
+    .mstrmojo-ui-Menu-item{
+      &:not(.disabled){
+        &:hover {
+          background-color: $wsvi-menu-item-hover-color2;
+          color: $wsvi-primary-white;
+        }
+      }
+    }
+  }
+}
+
+.workstation .mstrmojo-di-mapping-menu .mstrmojo-di-mapping-columns{
+  max-height: 200px;
+}
+
+.workstation .mstrmojo-popup-widget-hosted .mstrmojo-ui-MenuEditor.mstrmojo-ui-MenuPopup.timeRoleMenu.mstrmojo-sb-host-show-default{
+  .scroll-container.mstrmojo-sb-show-default{
+      .mstrmojo-di-mapping-columns .mstrmojo-ui-CheckList.mstrmojo-di-all-columns .scroll-container{
+          max-height: 280px;
+          &::-webkit-scrollbar-corner {
+            background-color: transparent;
+          }
+      }
+  }
+}
+
+.mstrWeb.workstation {
+  .mstrmojo-ui-MenuPopup.timeRoleMenu {
+    max-width: 210px;
+    padding: 0;
+    .scroll-container.mstrmojo-scrollNode {
+      .me-content {
+        padding: 0 0 0 7px;
+        & > div {
+          & > div {
+            .mstrmojo-di-mapping-title {
+              height: 30px;
+              line-height: 30px;
+              padding-left: 3px;
+            }
+            .mstrmojo-di-mapping-columns {
+              .mstrmojo-ui-CheckList.mstrmojo-di-all-columns {
+                  .scroll-container {
+                    max-height: 280px;
+                    padding-left: 5px;
+                    .icn {
+                      overflow-x: hidden;
+                    }
+                    @if($env == 'web'){}
+                    @else {
+                      &::-webkit-scrollbar {
+                        width: 5px;
+                        height: 5px;
+                      }
+                      &::-webkit-scrollbar-thumb {
+                        background-color: rgba(0, 0, 0, 0.25);
+                      }
+                      &::-webkit-scrollbar-corner {
+                        background-color: transparent;
+                      }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .mstrmojo-scrolltrack.vertical {
+      display: none;
+    }
+  }
+}
+
+/*End of Css for mapping project attribute*/

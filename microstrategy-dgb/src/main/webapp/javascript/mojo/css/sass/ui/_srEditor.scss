@@ -1,0 +1,103 @@
+.mstrmojo-SREditor {
+    $color-notice-background: #f5d1d4;
+    $color-link-font: #333333;
+    $color-content-font: #555555;
+
+    width:460px;
+
+    .rrEditor-cubeType {
+		margin: -30px -30px 30px -30px;
+        height: 30px;
+        padding: 10px 0 0 30px;
+		background-color: $color-notice-background;
+
+        a {
+            text-decoration: underline;
+            color: $color-link-font;
+        }
+    }
+
+    .mstrmojo-SREditor-header {
+        margin-bottom: 10px;
+    }
+
+    .mstrmojo-Editor-content {
+        color: $color-content-font;
+    }
+
+    .schedule-type {
+    	width: 92px;
+    }
+
+    .mstrmojo-SREditor-timeHilight {
+        font-weight: bold;
+    }
+
+    .mstrmojo-SREditor-rowSpace {
+        height: 30px;
+    }
+
+    .mstrmojo-SREditor-scheduleTable {
+        width: 420px;
+        padding-top: 10px;
+        margin-bottom: 15px;
+        border-spacing: 0 10px;
+    }
+
+    .mstrmojo-SREditor-radio {
+        label {
+            margin-left: 10px;
+        }
+    }
+
+    .mstrmojo-SREditor-tzPrev {
+        border-color: $color-border;
+        border-style: solid;
+        border-width: 1px;
+        padding: 9px 14px;
+        width: 420px;
+    }
+
+    .mstrmojo-DayLightLabel {
+        font-size: $font-size-small;
+        color: $red;
+        height: 28px;
+        padding-top: 8px;
+        @extend %background-starIcon;
+
+        &:before {
+            font-size: 20px;
+            padding-right: 15px;
+        }
+    }
+
+    .mstrmojo-Pulldown-Popup {
+    	overflow-y: auto;
+    	&.timezone-pulldown {
+    		height: 200px;
+    		width:  388px;
+    	}
+
+    	&.hour-pulldown {
+    		height: 240px;
+    	}
+    }
+}
+
+.workstation {
+    .mstrmojo-SREditor {
+        width: 440px;
+        .schedule-type {
+            width: 77px;
+        }
+        .mstrmojo-SREditor-scheduleTable {
+            padding-top: 0px;
+            margin-bottom: 0px;
+        }
+        .mstrmojo-SREditor-radio {
+            label {
+                margin-left: 5px;
+            }
+        }
+    }
+}

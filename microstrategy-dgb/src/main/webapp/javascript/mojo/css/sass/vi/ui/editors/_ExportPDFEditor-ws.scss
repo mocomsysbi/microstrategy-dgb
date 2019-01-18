@@ -1,0 +1,226 @@
+@import '../../../_global.scss';
+@import '../../_vi-icons.scss';
+@import '../../_workstation-global.scss';
+
+$general-label-width: 75px;
+$label-width: 115px;
+
+/** Start ExportPDFEditor **/
+.mstrmojo-Editor.mstrmojo-ExportPDFEditor {
+    width: 360px;
+    height: 180px;
+
+    .mstrmojo-Label {
+        display: inline-block;
+        margin-bottom: 0;
+        font-size: $wsvi-normal-font-size;
+        height: $wsvi-panel-row-height;
+        line-height: $wsvi-panel-row-height;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        float: left;
+        padding-right: $wsvi-editor-content-padding;
+        width: $general-label-width;
+    }
+
+    .mstrmojo-CheckBox {
+        float: left;
+        padding-top: 5px;
+        padding-left: 0;
+    }
+
+    .mstrmojo-ui-Pulldown {
+        float: left;
+        width: 155px;
+        height: $wsvi-panel-row-height;
+    }
+
+    .mstrmojo-Editor-content {
+        height: calc(100% - 108px); // Subtract height of button-box(58px), title-bar(34px) and padding-top(16px). Keep this synced with js.
+        padding: $wsvi-editor-content-padding;
+        padding-bottom: 0;
+        border-bottom: 1px solid #DEDEDE;
+
+        .tabBar {
+            .mstrmojo-ui-ButtonBar {
+                height: $wsvi-panel-row-height;
+                margin: 0 auto $wsvi-editor-content-padding auto;
+
+                .item {
+                    width: 78px;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-Label.ExportEditor-title {
+            font-weight: $wsvi-bold-font-weight;
+            height: $wsvi-panel-row-height;
+            line-height: $wsvi-panel-row-height;
+
+            &.large-title {
+                padding: 0 0 $wsvi-element-text-padding 0;
+            }
+        }
+
+        .mstrmojo-IconLabel {
+            margin-bottom: 0;
+            font-size: $wsvi-normal-font-size;
+            line-height: $wsvi-panel-row-height;
+
+            .info-icon {
+                height: $wsvi-default-icon-height;
+                width: $wsvi-default-icon-width;
+                display: inline-block;
+                margin-bottom: -5px;
+                margin-left: $wsvi-verticalinput_padding_small;
+                @include wsvi-icon-info;
+            }
+        }
+
+        .mstrmojo-Box.general, .mstrmojo-Box.layout {
+            > .mstrmojo-Box {
+                padding: 0 0 $wsvi-element-padding 0;
+            }
+
+            > .mstrmojo-CheckBoxes-Box {
+                overflow: auto;
+                padding: 0 0 0 #{$general-label-width + $wsvi-editor-content-padding};
+                .mstrmojo-Label {
+                    width: auto;
+                    max-width: 225px;
+                    padding-right: 5px;
+                }
+            }
+
+            > .mstrmojo-Pulldown-Box {
+                // Setting overflow to auto/hidden makes the pulldowns hidden, but 
+                // setting it to visible excludes contents size for parent box size.
+                display: inline-block !important;
+            }
+        }
+
+        .mstrmojo-Box.layout {
+            .mstrmojo-Label {
+                width: $label-width;
+
+                &.wrap {
+                    overflow: visible;
+                    white-space: pre-wrap;
+                    line-height: 18px;
+                    margin-top: 4px;
+                    margin-bottom: -4px;
+                }
+            }
+
+            > .mstrmojo-CheckBoxes-Box {
+                overflow: auto;
+                padding: 0px;
+                .mstrmojo-Label {
+                    max-width: 180px;
+                }
+            }
+        }
+
+        .mstrmojo-Box.paper-size,
+        .mstrmojo-Box.page-orientation,
+        .mstrmojo-Box.page-information {
+            > div {
+                float: left;
+            }
+        }
+
+        .mstrmojo-Box.page-orientation {
+            overflow: auto;
+            margin-top: -4px;
+
+            > .mstrmojo-ui-ButtonBar {
+                .item {
+                    width: 76px;
+                    height: 22px;
+                    line-height: 18px;
+                    padding-top: 2px;
+                    text-align: center;
+
+                    &.pdfLandscape > div {
+                        background-position: -30px -20px;
+                    }
+
+                    &.pdfPortrait > div {
+                        background-position: 0px -20px;
+                    }
+
+                    > div {
+                        background-image: url(#{$vi-img-path}/pdf-orientation-sprite.svg);
+                        width: 20px;
+                        height: 20px;
+                        margin-left: 28px;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-Box.security {
+            border: 0 solid;
+
+            .tips {
+                float: left;
+                margin-left: 18px;
+                width: auto;
+            }
+
+            .mstrmojo-CheckBox {
+                float: left;
+                padding-top: 0; // overridden
+                padding-left: 0; // overridden
+            }
+
+            table.mainContent {
+                td {
+                    padding: 4px 0;
+                }
+
+                .mstrmojo-Label {
+                    font-weight: $wsvi-bold-font-weight;
+                    text-align: right;
+                    min-width: $label-width;
+                    margin: 0 4px;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        padding: $wsvi-editor-content-padding;
+        margin-top: 1px;
+
+        .mstrmojo-Button {
+            float: right;
+            width: auto;
+            max-width: 90px;
+            height: $wsvi-panel-row-height;
+            margin: 0 0 0 10px;
+        }
+
+        .togglerBtn {
+            float: left;
+            margin: 0;
+            width: auto;
+            max-width: 180px;
+
+            &.hidden {
+                visibility: hidden;
+            }
+        }
+    }
+
+    &.advanced {
+        width: 400px;
+        height: 388px;
+    }
+}
+/** End ExportPDFEditor **/

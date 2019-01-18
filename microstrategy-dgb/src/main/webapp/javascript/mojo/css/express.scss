@@ -1,0 +1,15 @@
+// Import the global variables
+@import 'sass/global';
+@import 'sass/clearfix';
+
+// import CSS for visualizations
+@import 'sass/bundles/vi-gm';
+@import 'sass/bundles/vi-heatmap';
+@import 'sass/bundles/vi-network';
+
+// Import any component specific CSS from the bundles.
+@import 'sass/bundles/mojo-oivm';
+
+// Only include the light theme for now
+$allow-import-theme-dark: true;
+@import 'sass/base-themes';

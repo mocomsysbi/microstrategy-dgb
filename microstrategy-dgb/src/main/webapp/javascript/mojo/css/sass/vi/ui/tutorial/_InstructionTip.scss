@@ -1,0 +1,41 @@
+@import '../../vi-global';
+
+/** BEGIN: TutorialInstructionTip **/
+.mstrmojo-vi-tv-tip {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 6;
+
+    .circle {
+        @include border-radius(50%);
+
+        border: 2px solid #fff;
+        height: 30px;
+        left: -18px;
+        position: absolute;
+        top: -17px;
+        width: 30px;
+    }
+
+    .text {
+        @include border-radius(2px);
+        @include box-shadow(rgba(0, 0, 0, 0.4), 0, 0, 5px);
+
+        background: #ededed;
+        border: 1px solid #747474;
+        color: #444649;
+        cursor: default;
+        font-family: 'Arial';
+        font-size: 10pt;
+        line-height: 3em;
+        padding: 0 1em;
+        position: absolute;
+        white-space: nowrap;
+
+        strong {
+            color: #333333;
+        }
+    }
+}
+/** END: TutorialInstructionTip **/

@@ -1,0 +1,18 @@
+/*
+  CSS Styles for Data Import web platform application.
+
+  This scss file is used to define all the data import styles. It is then compiled into the
+  corresponding minified css file that goes into production and downloaded at runtime.
+
+  Note: Please do not change the corresponding css file as they will be overwritten by the compiled
+  version of this file. Instead all data import style changes should be made in this scss file or the imported partials.
+
+  Author: Nikhil Baradwaj
+
+*/
+
+@import "sass/di/cloud-variables";
+@import "sass/clearfix";
+@import "sass/linear-gradient";
+@import "sass/di/data-import-core";
+

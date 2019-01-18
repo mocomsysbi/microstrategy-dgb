@@ -1,0 +1,153 @@
+/* data import main footer style */
+
+.mstrmojo-di-previewinfo {
+  font-size: 10px;
+  color: $preiviewFontColor;
+  font-family: Tahoma;
+  position:relative;
+  float:left;
+  padding-left: 10px;
+}
+
+.mstrmojo-di-footer {
+  height:$footerHeight;
+  padding: 0 18px;
+  > div {
+    height: 100%;
+    width: 100%;
+  }
+
+  right: 16px;
+  position: relative;
+  margin-left:16px;
+}
+
+.mstrmojo-di-footer-noborder {
+  height:$footerHeight;
+  padding: 0 18px;
+}
+
+.footer-buttons{
+  float:right;
+  margin-top: 16px;
+}
+.footer-buttons.back{
+  float: left;
+  margin-left: -10px;
+}
+.footer-cancel-button {
+  margin-right:0px;
+}
+
+.footer-preview-info {
+  float:left;
+  margin-left:20px;
+  margin-top:10px;
+}
+
+.footer-dda-checkbox {
+  float: left;
+  margin-top: 20px;
+}
+
+.footer-dda-label {
+  float: left;
+  margin-top: 16px;
+  line-height: 20px;
+  //margin: 8px 0px 10px 10px;
+  .mstrmojo-Label.disabled {
+    color: #A9A9A9
+  }
+}
+
+.footer-managed-checkbox {
+  float: left;
+  margin-top: 21px;
+  margin-left: 10px;
+}
+
+.footer-managed-label {
+  float: left;
+  line-height: 20px;
+  margin-right: 22px;
+  margin-top: 16px;
+  margin-left: -2px;
+  //margin: 8px 0px 10px 10px;
+  .mstrmojo-Label.disabled {
+    color: #A9A9A9
+  }
+}
+
+/* Generic style properties of all data import icons and images*/
+.di-icon, .di-image {
+  background-image:url(images/DI/diicons.png);
+  background-repeat:no-repeat;
+  display: inline-block;
+}
+
+/* Style of the blue star icon.*/
+.icon-blue-star {background-position: 0 0; width: 11px; height: 11px;}
+
+.mstrmojo-di-source-admin {
+  float: right;
+  margin-top: 25px;
+  margin-right: 20px;
+  cursor: pointer;
+  font-family: Arial;
+  font-size: 11px;
+  color: #007ebe;
+
+  .icon {
+    display: block;
+    float: left;
+    width: 12px;
+    height: 17px;
+    margin-left: 2px;
+    margin-right: 5px;
+    background: transparent url("vi/images/menu_icons.png") 0 -146px no-repeat;
+  }
+  .text {
+    float: left;
+    line-height: 17px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    background-color: lightcoral;
+  }
+}
+
+.mstrmojo-di-mdx-ra-checkbox {
+  float: right;
+  overflow: hidden;
+  padding: 18px 8px;
+
+  .mstrmojo-ui-Checkbox {
+    float: left;
+    cursor: pointer;
+  }
+
+  .mstrmojo-Label {
+    float: left;
+    line-height: 20px;
+    font-family: arial;
+    color: #1a1a1a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 450px;
+  }
+}
+
+.mstrmojo-di-mdx-ra-checkbox-tooltip {
+  max-width: 300px;
+}
+
+/**
+** temporally hide aggregation button
+*/
+.workstation{
+  .mstrmojo-di-view .mstrmojo-di-datapreview .di-preview-options .di-preview-options-title .refresh-options.mstrmojo-Button:first-child{
+    display:none !important;
+  }
+}

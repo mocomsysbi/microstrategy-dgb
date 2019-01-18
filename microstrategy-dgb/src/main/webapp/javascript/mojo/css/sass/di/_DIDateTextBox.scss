@@ -1,0 +1,78 @@
+/*DI DateTextBox Css*/
+.mstrmjo-di-DateTextBox{
+  float: right;
+  width: 135px;
+
+  .mstrmojo-DateTextBox-input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80px;
+    height:23px;
+    padding-top: 0px;
+    padding-left: 5px;
+  }
+  .mstrmojo-DateTextBox-input:focus{
+    border: 1px solid #88c0f2;
+  }
+  .mstrmojo-DateTextBox-input.selected{
+    border: 1px solid #88c0f2;
+  }
+  .mstrmojo-DateTextBox-input.disabled{
+    opacity: 0.5;
+  }
+  /*DateTextBox Icon Css*/
+  .mstrmojo-DateTextBox-icon{
+    background: url(images/DI/calendar_enabled.png);
+    height:24px;
+    width:25px;
+    top:4px;
+    left:100px;
+  }
+  .mstrmojo-DateTextBox-icon.selected{
+    background: url(images/DI/calendar_selected.png);
+  }
+  .mstrmojo-DateTextBox-icon:hover{
+    background-position:0 0;
+  }
+  .mstrmojo-DateTextBox-calendar{
+    width: 460px;
+    height: 238px;
+    background: #ffffff;
+    box-shadow: 0px 2px 8px #444649;
+  }
+
+  .mstrmojo-Calendar{
+    width: 200px;
+    float: left;
+    margin: 15px;
+    border: none;
+    font-size: 9px;
+    font-weight: bold;
+  }
+
+  .mstrmojo-Calendar-left .mstrmojo-Calendar-increase{
+    display: none;
+  }
+
+  .mstrmojo-Calendar-right .mstrmojo-Calendar-decrease{
+    display: none;
+  }
+}
+
+.workstation{
+  .mstrmojo-DateTextBox-icon{
+    background: url(images/DI/workstation/workstation.svg);
+    background-position: -2000px -86px;
+    border-bottom: none;
+  }
+  .mstrmojo-DateTextBox-icon.selected{
+    background: url(images/DI/workstation/workstation.svg);
+    background-position: -2050px -86px;
+  }
+  .mstrmojo-DateTextBox-icon:hover{
+    background-position:-2000px -86px;
+  }
+  .mstrmojo-DateTextBox-icon.disabled{
+    opacity: 0.5;
+  }
+}

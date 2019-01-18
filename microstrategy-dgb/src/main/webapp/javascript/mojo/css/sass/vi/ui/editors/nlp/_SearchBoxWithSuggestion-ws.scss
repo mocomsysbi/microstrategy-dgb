@@ -1,0 +1,112 @@
+.workstation {
+
+  $padding: 6px;
+
+  .mstrmojo-Popup.mstrmojo-ObjectInputBox-suggest.nlpSuggestionPopUp {
+    @include box-sizing();
+    @include border-radius(1);
+    @include box-shadow(rgba(68, 70, 73, 0.2), 0, 2px, 8px, false, 0);
+    border: 1px solid #CCCCCC;
+    padding: 10px $padding 10px $padding;
+    margin-left: - $padding; // to adjust to inputbox margin and padding
+    width: 50%;
+    max-width: 1280px;
+  }
+
+  .mstrmojo-suggest-list.in-searchbox {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .item {
+      height: 30px;
+      font-size: 12px;
+      line-height: 30px;
+      padding-left: 12px;
+      border-radius: 2px;
+
+      &.selected {
+        background-color: $wsvi-selected-blue-light-theme;
+        color: $wsvi-primary-black;
+      }
+
+      &.label {
+        background-color: $wsvi-primary-white;
+      }
+
+      .icn {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        padding-right: 5px;
+        @include wsvi-icon-attribute;
+
+        &.ic1,
+        &.ic47 {
+          @include wsvi-icon-custom-group;
+        }
+
+        &.ic47.st12033 {
+          @include wsvi-icon-derived-attribute;
+        }
+
+        &.ic47.st12033.nde4ra {
+          @include wsvi-icon-recursive-derived-attribute;
+        }        
+
+        &.ic4 {
+          @include wsvi-icon-metric;
+        }
+
+        &.ic4d {
+          @include wsvi-icon-derived-metric;
+        }
+
+        &.ic12d {
+          @include wsvi-icon-derived-attribute;
+        }
+
+        &.ic12g {
+          @include wsvi-icon-geographic-attribute;
+        }
+
+        &.ic12t {
+          @include wsvi-icon-time-attribute;
+        }
+
+        &.ic12.st3076 {
+          @include wsvi-icon-recursive-attribute;
+        }
+
+        &.ic14 {
+          @include wsvi-icon-hierarchy;
+        }
+
+        &.question {
+          @include wsvi-icon-sample-question;
+        }
+      }
+    }
+  }
+
+  .mstrmojo-ui-SearchBox.searchBoxWithSuggest {
+    .pre-icon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 12px;
+      top: 10px;
+      background: transparent url(#{$vi-img-path}/toolbar_icons_new.svg) 0 0 no-repeat;
+      background-position: -298px -298px;
+    }
+
+    .mstrmojo-ui-sb-input {
+      line-height: normal;
+      font-size: 12px;
+      padding: 0;
+      margin: 0 -40px 0 (40px + $padding);
+      width: calc(100% - 58px); // spec for padding
+    }
+  }
+
+}

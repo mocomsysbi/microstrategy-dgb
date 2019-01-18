@@ -1,0 +1,259 @@
+.workstation {
+  .mstrmojo-DI-SearchBox {
+    .signOut {
+      margin-right: 16px;
+      line-height: 26px;
+      font-size: 12px;
+      .source-objects-username {
+        color: #444649;
+        width: unset !important;
+      }
+      .source-objects-signout {
+        color: #1471d5;
+        margin-left: 10px;
+        padding-left: 0;
+      }
+      .source-objects-signout:hover {
+        text-decoration: underline;
+      }
+      img, .source-objects-username:nth-child(2), .source-objects-username:nth-child(3){
+        display: none !important;
+      }
+    }
+    div.block.center {
+      margin: 146px 248px 0 248px !important;
+      label+div { //.input
+        width: 494px;
+        .inputSearch {
+          width: 400px !important;
+          height: 26px;
+          padding: 0 0 0 7px;
+        }
+        .mstrmojo-Button {
+          width: 72px;
+          height: 26px;
+          margin-left: 10px;
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
+
+  //below is search result page config
+  .mstrmojo-di-layout {
+    .mstrmojo-Splitter {
+      .mstrmojo-SplitterPanel:first-child {
+        height: 58px;
+      }
+      .mstrmojo-DI-SearchBox{
+        .signOut {
+          .source-objects-username {
+            width: 200px;
+            height: 26px;
+          }
+          .source-objects-signout {
+            height: 26px;
+            margin-left: 10px;
+          }
+        }
+        .block {
+          label+div {
+            width: 504px;
+            .inputSearch {
+              width: 400px !important;
+              height: 26px;
+              padding-left: 7px;
+            }
+            .mstrmojo-Button {
+              width: 72px;
+              height: 26px;
+              margin-left: 10px;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .mstrmojo-DI-previewSlot {
+        margin-left: 16px;
+        margin-right: 16px;
+        height: 100%;
+        .mstrmojo-di-fbpage-item {
+          max-width: unset !important;
+          margin: 0 0 10px 10px !important;
+          padding: 10px 0 10px 10px;
+          &:hover {
+            background-color: RGBA(68,70,73,0.06);
+          }
+          &::selection {
+            background-color: RGBA(68,70,73,0.1);
+          }
+          .image {
+            margin-left: 0;
+            margin-right: 2px;
+            border: 1px;
+            border-color: RGBA(68,70,73,0.2);
+            border-style: outset;
+          }
+          .name {
+            line-height: 16px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            a {
+              font-size: 12px;
+              color: #1471d5;
+              &:hover{
+                text-decoration: underline !important;
+              }
+            }
+            span {
+              font-size: 12px;
+              color: #7B7E81;
+            }
+          }
+          .info {
+            font-size: 11px;
+            color: #7B7E81;
+            line-height: 16px;
+          }
+          .info.filter {
+            font-size: 12px;
+            color: #1471d5 !important;
+            line-height: 16px;
+            //display: inline;
+            &:hover {
+              text-decoration: underline !important;
+            }
+          }
+        }
+        td:first-child {
+          .mstrmojo-di-fbpage-item {
+            margin-left: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  //below for Date opt alignment etc.
+  .mstrmojo-di-facebookAdvancedEditor{
+    .mstrmojo-Editor-content {
+      padding: 16px 16px 20px 16px;
+      .mstrmojo-DI-facebook-advancedOptionsContent > .mstrmojo-di-ga-dateLabel {
+        margin-left: 0;
+        margin-top: 5px;
+      }
+      .mstrmojo-DI-facebook-advancedOptionsContent {
+        .mstrmojo-DI-facebook-advancedOptions {
+          .mstrmojo-DropDownList {
+            margin-left: 10px;
+          }
+          .mstrmojo-DI-facebook-advancedOptionsInner {
+            margin-left: 20px;
+            .mstrmojo-Label {
+              margin-top: 5px;
+              margin-bottom: 0;
+            }
+            .mstrmojo-TextBox {
+              width: 40px !important;
+              margin-left: 10px;
+            }
+          }
+        }
+        .mstrmojo-DI-facebook-advancedOptions {
+          font-size: 12px;
+          line-height: 16px;
+          .mstrmojo-DateTextBox {
+            .icon{
+              background: url("images/DI/workstation/workstation.svg") no-repeat -2000px -90px;
+            }
+            .icon.selected{
+              background: url("images/DI/workstation/workstation.svg") no-repeat -2050px -90px;
+            }
+            input {
+              padding-top: 2px;
+              padding-bottom: 2px;
+            }
+          }
+          td {
+            width: unset;
+          }
+          .mstrmojo-Calendar {
+            margin-top: 0;
+            padding: 10px 3px 3px 3px;
+            border-color: RGBA(68,70,73,0.35);
+            box-shadow: 0px 2px 8px #444649;
+            .mstrmojo-Calendar-header {
+              border: 1px solid RGBA(68, 70, 73, 0.2);
+              width: unset;
+              background: #fafafa;
+              color: RGBA(68,70,73,1);
+              border-bottom: solid 1px RGBA(68,70,73,0.35);
+              margin: 0 10px 0 10px;
+            }
+            .mstrmojo-Calendar-body {
+              height: 186px;
+              .mstrmojo-Calendar-dayView {
+                top: unset;
+                .mstrmojo-Calendar-thead {
+                  color: RGBA(68,70,73,0.35);
+                  font-weight: normal;
+                }
+                td {
+                  border: 1px;
+                  border-style: solid;
+                  border-color: RGBA(68,70,73,0.2);
+                  font-size: 11px;
+                }
+                .mstrmojo-Calendar-day-pre, .mstrmojo-Calendar-day-next {
+                    color: RGBA(68,70,73,0.2);
+                }
+                .mstrmojo-Calendar-day-cur {
+                    color: #444649;
+                }
+                .today {
+                  div{
+                    color: #FFF;
+                    background: #3B92ED;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .mstrmojo-DI-facebook-advancedOptions.DIDateTextBox2 {
+          color: RGBA(68,70,73,0.35);
+        }
+        .mstrmojo-DI-facebook-advancedOptions:nth-child(3) {
+          position: absolute;
+          left: 16px;
+          top: 56px;
+          .mstrmojo-di-ga-dateLabel {
+            display: none !important;
+          }
+          .mstrmojo-DateTextBox:before {
+            content: "From";
+            margin-right: 10px;
+          }
+        }
+        .mstrmojo-DI-facebook-advancedOptions:nth-child(4) {
+          position: absolute;
+          left: 218px;
+          top: 56px;
+          .mstrmojo-di-ga-dateLabel {
+            display: none !important;
+          }
+          .mstrmojo-DateTextBox:before {
+            content: "To";
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  // below to make the Advanced Options window the right size
+  .mstrmojo-Editor.mstrmojo-di-facebookAdvancedEditor {
+    width: 435px !important;
+  }
+
+}

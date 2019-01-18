@@ -1,0 +1,139 @@
+@import '../../vi-global';
+
+.mojo-theme-light, .mojo-theme-dark {
+	.mstrmojo-Xtab.mstrmojo-CustomSortXtab.sorting {
+		.mstrmojo-XtabZone {
+			.xrsz {
+		        cursor: default;
+		    }
+
+		    td {
+				// disable td hover react on sorting status
+				&.xtab-td:hover {
+					background-image: none;
+				}
+
+				// disable raBtn hover react on sorting status
+				.raBtn {
+		            opacity: 0.45;
+
+		            &:hover {
+		                color: #444649;
+		            }
+		        }
+			}
+		}
+	}
+}
+
+.mojo-theme-light {
+	// hover on selected cell on sorting status, do not change BG, still using selected&unhover BG
+	.mstrmojo-Xtab.mstrmojo-CustomSortXtab.sorting .mstrmojo-XtabZone td.xtab-td.xtabSel:hover {
+		background-image: url(#{$vi-img-path}/grid_highlight_40_light.png);
+	}
+
+	.mstrmojo-Xtab.mstrmojo-CustomSortXtab .mstrmojo-XtabZone td.xtab-td.moving {
+		background-image: url(#{$vi-img-path}/grid_highlight_40_light.png);
+		color: #003B77;
+	}
+
+	.mstrmojo-Xtab.mstrmojo-CustomSortXtab {
+		&.sorting {
+			// change the cell's onhover highlight to be row's onhover highlight so that for multi-form cases, the whole will be highlighted
+			.mstrmojo-XtabZone tr:hover td.xtab-td {
+				background-image: none;
+				&.xtabSel {
+					background-image: url(#{$vi-img-path}/grid_highlight_40_light.png);
+				}
+			}
+		}
+		// change the cell's onhover highlight to be row's onhover highlight so that for multi-form cases, the whole will be highlighted
+		.mstrmojo-XtabZone tr:hover td.xtab-td {
+			background-image: url(#{$vi-img-path}/grid_highlight_65_light.png);
+		}
+	}
+}
+
+.mojo-theme-dark {
+	// hover on selected cell on sorting status, do not change BG, still using selected&unhover BG
+	.mstrmojo-Xtab.mstrmojo-CustomSortXtab.sorting .mstrmojo-XtabZone td.xtab-td.xtabSel:hover {
+		background-image: url(#{$vi-img-path}/grid_highlight_40_dark.png);
+	}
+
+	.mstrmojo-Xtab.mstrmojo-CustomSortXtab .mstrmojo-XtabZone td.xtab-td.moving {
+		background-image: url(#{$vi-img-path}/grid_highlight_40_dark.png);
+		color: #003B77;
+	}
+
+	.mstrmojo-Xtab.mstrmojo-CustomSortXtab {
+		&.sorting {
+			// change the cell's onhover highlight to be row's onhover highlight so that for multi-form cases, the whole will be highlighted
+			.mstrmojo-XtabZone tr:hover td.xtab-td {
+				background-image: none;
+				&.xtabSel {
+					background-image: url(#{$vi-img-path}/grid_highlight_40_dark.png);
+				}
+			}
+		}
+		// change the cell's onhover highlight to be row's onhover highlight so that for multi-form cases, the whole will be highlighted
+		.mstrmojo-XtabZone tr:hover td.xtab-td {
+			background-image: url(#{$vi-img-path}/grid_highlight_65_dark.png);;
+		}
+	}
+}
+
+// start: style for CustomSortAvatar
+.mstrmojo-CustomSortAvatar {
+	position: absolute;
+	padding: 2px 9px 7px 9px;
+	background-color: $wsvi-primary-white;
+    border: $wsvi-ui-border-gray 1px solid;
+    border-radius: 2px;
+    box-shadow: $wsvi-panel-shadow-color 0px 1px 6px 3px;
+
+	.mstrmojo-CustomSortAvatar-titlebar {
+		height: 16px;
+		line-height: 16px;
+		padding-bottom: 3px;
+
+    	color: $wsvi-desc-gray;
+    	font-family: $wsvi-normal-font-family;
+		font-size: $wsvi-tips-font-size;
+		font-style: $wsvi-normal-font-style;
+	}
+
+	.mstrmojo-CustomSortAvatar-content {
+		background-color: rgba($wsvi-font-green, 0.1); //rgba(34,156,104,0.1);
+	 	border: 1px solid rgba($wsvi-font-green, 0.5); //rgba(34,156,104,0.5);
+	    border-radius: 2px;
+
+	 	td {
+	 		height: 24px;
+	 		line-height: 24px;
+    		padding: 0;
+
+    		.mstrmojo-Label {
+    			width: 113px;
+    			padding-left: 10px;
+    			color: $wsvi-font-green; //rgba(34,156,104,1);
+    			font-family: $wsvi-normal-font-family;
+    			font-size: $wsvi-normal-font-size;
+    			font-style: $wsvi-normal-font-style;
+    			// start: handle for too long text
+    			height: 24px;
+    			overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			    // end: style for CustomSortAvatar
+    		}
+
+    		.icon.close {
+    			width: 8px;
+			    height: 8px;
+			    padding: 8px 9px 8px 6px;
+    			background: transparent url(vi/images/dataset.svg)  -1319px -56px no-repeat;
+    		}
+    	}
+	}
+}
+// end: style for CustomSortAvatar

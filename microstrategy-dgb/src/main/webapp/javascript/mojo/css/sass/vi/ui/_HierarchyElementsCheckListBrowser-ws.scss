@@ -1,0 +1,79 @@
+.workstation {
+  .mstrmojo-ui-vi-ElementsBrowser.hierarchy {
+      .elemsBrowser-utils-bar {
+          width: auto;
+
+          .eb-searchBox {
+              padding-left: 8px;
+              padding-right: 40px;
+              width: 168px;
+              background: none;
+              &.disabled {
+                  background-color: #E7E8E8;
+              }
+              &.mstrmojo-empty {
+                  padding-left: 8px;
+              }
+          }
+
+          .eb-searchBox-clear {
+              left: 128px;
+              right: auto;
+          }
+
+          .eb-searchBox-search {
+              position: absolute;
+              top: 4px;
+              left: 146px;
+              width: 18px;
+              height: 18px;
+              @include wsvi-icon-magnifier;
+          }
+
+          .level-popup-btn {
+              padding: 26px 0 0 18px;
+              margin-left: 10px;
+              cursor: pointer;
+              background: transparent url(#{$vi-img-path}/financial_report.svg) -60px -85px no-repeat;
+          }
+      }
+
+      .elemsBrowser-button-panel {
+          width: auto;
+          
+          .selectAll, .clearAll {
+              line-height: 26px;
+              color: #3B92ED;
+              height: 26px;
+              padding-top: 10px;
+          }
+
+          .clearAll {
+              padding-left: 16px;
+          }
+      }
+
+      .elementsList {
+          padding: 0;
+
+          .fetcher {
+              background: transparent;
+
+              &.hierarchy .indent {
+                  padding-right: 25px;
+              }
+
+              .text {
+                  color: #007ebe;
+                  cursor: pointer;
+              }
+          }
+      }
+
+      &.disable-level {
+          .level, .level-popup-btn {
+              display: none !important;
+          }
+      }
+  }
+}

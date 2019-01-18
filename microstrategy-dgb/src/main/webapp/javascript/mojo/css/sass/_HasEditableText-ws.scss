@@ -1,0 +1,39 @@
+.workstation {
+  .hasEditableText::-moz-selection {
+    background-color: transparent;
+  }
+
+  .hasEditableText {
+    &.editable {
+      text-overflow: clip;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .hasEditableText.editable {
+    color: #000000;
+    cursor: text;
+    @include user-select(text);
+    overflow: hidden;
+
+    &::selection,
+    &::-moz-selection {
+      background-color: $wsvi-text-selection-background-color;
+      color: $wsvi-primary-black;
+    }
+  }
+
+  .mojo-theme-dark {
+    .hasEditableText.editable {
+      color: #FFFFFF;
+
+      &::selection,
+      &::-moz-selection {
+        background-color: #538DA9;
+        color: $wsvi-darktheme-white;
+      }
+    }
+  }
+}

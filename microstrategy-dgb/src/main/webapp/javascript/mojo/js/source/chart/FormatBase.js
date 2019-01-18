@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Base");var sUniqueID=0;mstrmojo.chart.FormatBase=mstrmojo.declare(mstrmojo.Base,null,{scriptClass:"mstrmojo.chart.FormatBase",init:function init(props){}});}());

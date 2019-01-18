@@ -1,0 +1,167 @@
+@import '../global';
+
+.mstrmojo-Refine-RefineSampleButton {
+  position: relative;
+  overflow: visible; // reset overflow hidden in button
+
+  .mstrmojo-Refine-RefineSampleButton-Popup {
+    @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 10px); /* #905852 */
+    @include box-sizing();
+    @include border-radius(3px);
+
+    //background: rgba(237, 237, 237, 0.96);
+    background-color: #f5f5f5;
+    //border: 1px solid #9B9B9B;
+    border: 1px solid #f5f5f5;
+    margin-top: 2px;
+    overflow: hidden;
+    z-index: 1003;
+    min-width: 200px;
+    width: auto;
+    text-align: center;
+
+    left: -125px; // sample button panel
+    height: 106px;
+
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+    opacity: .95;
+
+    font-family: arial;
+    font-size: 11px;
+    color: #515151;
+
+    .box {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-left: 12px;
+      padding-right: 12px;
+      box-shadow: none;
+
+      .mstrmojo-TextBox {
+        width: 46px;
+        @include border-radius(2px);
+        border: 1px solid #B5B5B5;
+        font-size: 10px;
+        margin: 0 2px;
+      }
+
+      .mstrmojo-WebButton {
+        margin: 0 5px;
+        .mstrmojo-Button-text {
+          line-height: 22px;
+          color: #1A1A1A;
+        }
+      }
+
+      &.border {
+        border-bottom: 1px solid #DEDEDE;
+        @include box-shadow(#FFF, 0, 1px, 0, false);
+      }
+
+      &:first-child {
+        margin: 20px 20px 0 20px;
+      }
+
+      &:last-child{
+        border-top: none;
+        margin: 16px auto;
+      }
+      .invalid {
+        border-color: red !important;
+      }
+    }
+
+  }
+  .pw-content {
+    select {
+      box-sizing: border-box;
+      width: 71px !important;
+      margin-right: 5px;
+      border-radius: 3px;
+      border: 1px solid #d4d4d4;
+      -webkit-appearance: none;
+      padding: 0 10px;
+      line-height: 20px;
+      height: 22px !important;
+      background: #ffffff url("vi/images/pulldown-sprite.png") no-repeat scroll right top;
+    }
+
+    .mstrmojo-Stepper {
+      margin-right: 5px;
+      border-radius: 3px;
+      width: 75px;
+      border: 1px solid #d4d4d4;
+      .next {
+        top: 1px; //rotation
+        right: 2px;
+        border: none;
+        &::before {
+          display: none;
+        }
+        background: transparent url("images/DI/workstation/workstation.svg") no-repeat -1995px -7px;
+        transform: scale(1.1) rotate(180deg);
+        &:active {
+          background: transparent url("images/DI/workstation/workstation.svg") no-repeat -2045px -7px;
+        }
+      }
+      .prev {
+        bottom: 2px; //rotation
+        right: 2px;
+        border: none;
+        &::before {
+          display: none;
+        }
+        background: transparent url("images/DI/workstation/workstation.svg") no-repeat -1993px -7px;
+        transform: scale(1.1);
+        &:active {
+          background: transparent url("images/DI/workstation/workstation.svg") no-repeat -2043px -7px;
+        }
+      }
+
+      .text {
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .title {
+        display: none;
+      }
+      .mstrmojo-TextBox {
+        margin: 0;
+        border: none;
+        border: 1px solid transparent;
+        width: calc(100% - -18px) !important;//workaround YUI problem
+      }
+    }
+  }
+}
+
+//.mstrmojo-Refine-RefineSampleButton { // this part for pulldown list, else the pulldown cannot be shown fully
+//  .mstrmojo-Refine-RefineSampleButton-Popup {
+//    .pw-content {
+//    }
+//    .pw-content > table {
+//      margin-top: -20px;
+//      tr:first-child {
+//        height: 90px;
+//        .mstrmojo-ui-Pulldown {
+//          .mstrmojo-ui-Pulldown-text {
+//            height: 22px;
+//            line-height: 22px;
+//          }
+//          .container {
+//            & > div {
+//              padding: 0;
+//              .item {
+//                height: 10px;
+//                line-height: 10px;
+//                font-size: 12px;
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}

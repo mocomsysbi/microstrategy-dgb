@@ -1,0 +1,36 @@
+@import 'theme-mixins-ws';
+
+.workstation {
+    .mstrmojo-DropDownButton {
+        overflow: visible;
+    }
+
+    .mstrmojo-DropDownButton-boxNode {
+        @include wsvi-dropdown-text(inherit);
+
+        padding: 3px 0 3px 6px;
+    }
+
+    .mstrmojo-DropDownButton-iconNode {
+        position: relative;
+        @include wsvi-dropdown-icon();
+        @include ellipsis-text;
+
+        padding-right: $wsvi-default-icon-width;
+    }
+
+    .mstrmojo-DropDownButton.up .mstrmojo-DropDownButton-iconNode {
+        background-image: url(images/arrow_blk_up_5x7.gif);
+    }
+
+    .mstrmojo-DropDownButton.disabled {
+        -moz-opacity: .5;
+        opacity: .5;
+        filter:alpha(opacity=50);
+    }
+    .mstrmojo-DropDownButton-popupNode {
+        overflow: visible;
+        height:1px;
+        display: inline;    /* for IE (+others?): enforces height 1px without overflow: hidden */
+    }
+}

@@ -1,0 +1,267 @@
+.workstation {
+    .mstrmojo-AEB-edit {
+
+        .mstrmojo-TokenInputBox {
+            height: 228px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+
+    /** DA form tabs **/
+    .mstrmojo-AEB-TabStrip {
+        $strip-height: 32px;
+        $strip-width: 284px;
+
+        @mixin nav-icon($icon, $left) {
+            @include wsvi-icon-size;
+            padding-top: 2px;
+            left: $left;
+
+            > DIV {
+                @include wsvi-icon('editor-nav-' + $icon);
+                @include wsvi-icon-size;
+
+                &:active {
+                    @include wsvi-icon-editor-position-nav-active;
+                }
+            }
+
+            &.disable > DIV {
+                @include wsvi-icon-editor-position-nav-disabled;
+
+                &:hover,
+                &:active {
+                    @include wsvi-icon-editor-position-nav-disabled;
+                }
+            }
+        }
+
+        position: relative;
+        border-bottom: solid 1px $wsvi-ui-border-gray;
+        height: $strip-height;
+        box-sizing: border-box;
+
+        .mstrmojo-VITabStrip {
+            background: none;
+            border: 0px;
+        }
+
+        .mstrmojo-VITabStrip-tabs {
+            max-width: $strip-width;
+            height: $strip-height;
+
+            > DIV {
+                position: relative;
+                height: $strip-height;
+            }
+        }
+
+        .mstrmojo-VITabStrip-addBtn {
+            float: left;
+            position: relative;
+            margin-left: $wsvi-default-icon-width + 10px; // space for the previous 'x' + 10px margin
+
+            &.nav {
+                margin-left: (3 * $wsvi-default-icon-width) + 16px; // space for the previous 'x' + 6px margin + left nav + 6px margin + right nav + 4px margin
+            }
+
+            > DIV {
+                @include wsvi-icon-editor-add-more;
+                @include wsvi-icon-size;
+                top: 7px;
+
+                &:active {
+                    @include wsvi-icon-editor-position-add-more-active;
+                }
+            }
+        }
+
+        .mstrmojo-VITabStrip-rightBtn {
+            $navLeft: $strip-width + $wsvi-default-icon-width + 36px; // strip + 6px margin + left nav + 6px padding
+            @include nav-icon('right', $navLeft);
+        }
+
+        .mstrmojo-VITabStrip-leftBtn {
+            @include nav-icon('left', $strip-width + 30px);
+        }
+
+        .mstrmojo-VITab-menu {
+            @include wsvi-icon-clear-cross;
+            @include wsvi-icon-size;
+            top: 7px;
+            right: 4px;
+            display: block;
+
+            &:active {
+                @include wsvi-icon-position-clear-cross-active;
+            }
+        }
+    }
+
+    .mstrmojo-AEB-Tab {
+        &:hover .mstrmojo-EditableLabel {
+            text-decoration: none !important;
+        }
+
+        .mstrmojo-EditableLabel {
+            font-weight: normal !important;
+            line-height: 32px;
+        }
+    }
+
+    .mstrmojo-AEB-IDTab {
+        .mstrmojo-VITab-tab .mstrmojo-EditableLabel {
+            padding: 0 10px !important;
+            line-height: 32px;
+        }
+
+        .mstrmojo-VITab-menu {
+            left: -1000px;
+        }
+    }
+
+    .mstrmojo-VITabStrip-tabs .mstrmojo-VITab.mstrmojo-AEB-Tab {
+        > DIV {
+            margin: 0;
+            max-width: 197px;
+            color: $wsvi-font-gray;
+            border-right: solid 1px $wsvi-ui-border-gray;
+        }
+
+        &.mstrmojo-AEB-IDTab > DIV {
+            margin: 0;
+        }
+
+        &.selected {
+            color: $wsvi-primary-black;
+            background-color: $wsvi-selected-gray;
+
+            > DIV {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .mstrmojo-WebHoverButton {
+        display: inline-block;
+        &.mstrmojo-AEB-clearAll {
+            float: right;
+            margin: 8px $wsvi-element-horizontal-padding;
+        }
+
+        &.mstrmojo-AEB-validate {
+            padding-top: 0;
+            padding-right: $wsvi-element-horizontal-padding;
+        }
+    }
+
+    $line-height: 26px;
+    $outer-padding: 10px;
+    $inner-padding: 5px;
+
+    .mstrmojo-AEBox-status {
+        background-color: #F2F2F2;
+        border-top: 1px solid $wsvi-splitline-gray;
+        position: absolute;
+        bottom: 0;  
+        overflow: hidden;
+        width: 100%;
+        padding: $inner-padding 0;
+
+        .pulldownBox,
+        .infoBox {
+            max-height: $line-height;
+            line-height: $line-height;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: default;
+            display: inline-block;
+            float: left;
+        }
+        .pulldownBox {
+            padding-left: $outer-padding;
+        }
+        .infoBox {
+            float: right;
+            padding-right: $outer-padding;
+            line-height: $line-height;
+        }
+        .helpIcon {
+            height: $wsvi-default-icon-height;
+            width: $wsvi-default-icon-width;
+            display: inline-block;
+            margin-top: 3px;
+            margin-bottom: 0;
+            margin-left: 135px;
+            @include wsvi-icon-info;
+        }
+        .mstrmojo-WebHoverButton {
+            padding-right: $outer-padding;
+            line-height: $line-height;
+        }
+        .hidden {
+            display: none;
+        }
+        .right {
+            float: right;
+        }
+
+        > .pulldownBox {
+            display: inline-block !important;
+        }
+
+        .AEBox-item {
+            display: inline-block !important;
+            margin: 0 $inner-padding;
+            float: left;
+            &.right {
+                float: right;
+            }
+        }
+
+        .mstrmojo-AEBox-pulldown {
+            width: 124px;
+
+            // The below two styles ensure that pulldown menu is displayed outside AttributeEditBox.
+            // This workaround is necessary due to overflow property set to hidden at several levels 
+            // in the common MetricIDE editor beyond AttributeEditBox container.
+            position: fixed;
+            z-index: 10;
+        }
+
+        &.mstrmojo-ME-link {
+            padding-top: 0;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .mstrmojo-AEBox-infoIcon.AEBox-item {
+        background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+        display: block;
+        width: $wsvi-default-icon-width;
+        height: $wsvi-default-icon-height;
+        margin-top: $inner-padding;
+
+        &.valid {
+            background-position: -1440px -30px;
+        }
+        &.error, &.ambiguity {
+            background-position: -1081px -31px;
+        }
+        &.unknown, &.validating {
+            display: none;
+        }
+    }
+
+    .AE-tooltip .mstrmojo-Tooltip-contentWrapper .mstrmojo-Tooltip-content.mstrmojo-scrollNode {
+        .help-link-label {
+            color: $wsvi-link-blue;
+            cursor: pointer;
+            padding-top: 10px;
+        }
+    }
+}

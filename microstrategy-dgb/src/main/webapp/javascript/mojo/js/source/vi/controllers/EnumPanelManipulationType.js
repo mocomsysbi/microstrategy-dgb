@@ -1,0 +1,1 @@
+mstrmojo.vi.controllers.EnumPanelManipulationType={RENAME:1,MOVE:2,DUPLICATE:3,DELETE:4,NEW:5,CROSS_CHAPTER_MOVE:6,MOVE_TO_NEW_CHAPTER:7};

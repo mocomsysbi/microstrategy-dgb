@@ -1,0 +1,47 @@
+@import '../../../vi/vi-global';
+
+/** BEGIN: ColorPickerButton **/
+.mstrmojo-ColorPickerBtn {
+  z-index: 1000;
+}
+
+.mstrmojo-ui-PreviewButton {
+    &.mstrmojo-ColorPickerBtn {
+        .preview {
+            //DE103631 #1:  All Color block border should be 1px solid
+            border: 1px solid transparent;
+            margin: 2px;
+
+            &.conflict {
+                background: #FFFFFF url(#{$vi-img-path}/question_mark.png) 50% 50% no-repeat;
+            }
+        }
+
+        .cf {
+            position: relative;
+        }
+
+        .slash {
+            background-color: RED;
+            height: 1px;
+            position: absolute;
+        }
+
+        .mstrmojo-ui-AdvColorPicker {
+            margin-top: 3px;
+        }
+    }
+}
+
+.mstrmojo-ui-PreviewButton {
+    &.mstrmojo-ColorPickerBtn {
+        &.disabled {
+            .slash {
+                // TQMS #984013: Don't show slash if control is disabled.
+                display: none;
+            }
+        }
+    }
+}
+
+/** END: ColorPickerButton **/

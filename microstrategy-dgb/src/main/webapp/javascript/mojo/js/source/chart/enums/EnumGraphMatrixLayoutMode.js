@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumGraphMatrixLayoutMode={GM_FIT2CONTENT:1,GM_FIT2WINDOW:2};

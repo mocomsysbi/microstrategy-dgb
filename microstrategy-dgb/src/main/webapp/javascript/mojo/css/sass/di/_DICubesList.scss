@@ -1,0 +1,478 @@
+//------------------------Data Import cubes list styles ------------------------
+
+.cubesDesc {
+  font: 14px arial;
+  font-weight: bold;
+  color: #666666;
+  padding: 10px 10px 25px;
+}
+
+.mstrmojo-di-cubes {
+  width: 974px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+
+  .mstrmojo-di-cubelist-search-highlight {
+    color: $wsvi-primary-blue;
+  }
+
+  .mstrmojo-di-cubes-subTitle {
+    font-size: 9pt;
+    color: #444649; //mizhang TQMS 947539
+    padding: 7px 5px 12px;
+    float: left;
+  }
+
+  .mstrmojo-di-cubes-subTitle-refresh {
+    float: right;
+    width: 16px;
+    margin: 11px 5px 13px 5px;
+    height: 16px;
+    cursor: pointer;
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2000px -50px;
+    &:hover{
+        background: url(images/DI/workstation/workstation.svg) no-repeat -2050px -50px;
+    }
+  }
+
+  .mstrmojo-di-cubes-subTitle-search {
+    float: right;
+    margin: 5px 5px 12px;
+    margin-right: -2px;
+  }
+
+  .mstrmojo-di-QuotaGrid {
+    overflow: hidden;
+    // set height both rendered and unrendered items
+    tbody.mstrmojo-itemwrap > tr {
+      height: 41px;
+    }
+  }
+}
+
+.mstrmojo-di-cubeListCubeMenu {
+  //mizhang TQMS 947533
+  color: #CDCDCD;
+}
+
+// Schedule Menu style
+.mstrmojo-di-cubes-scheduleMenu {
+  z-index: 510;
+  position: absolute;
+  border: 1px solid;
+  width: 150px;
+  background-color: white;
+
+  .mstrmojo-di-cubes-scheduleMenu-add-button {
+    margin: 5px;
+    color: #0066CC;
+    cursor: pointer;
+    font: 11px Arial;
+    text-decoration: underline;
+  }
+
+  .mstrmojo-di-cubes-scheduleMenu-list {
+    margin: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+
+    .mstrmojo-di-cubes-scheduleMenu-list-item {
+      //border-bottom: 1px solid;
+      margin: auto;
+      height: 20px;
+      margin-top: 5px;
+
+      .mstrmojo-di-cubes-scheduleMenu-list-item-icon {
+        float: left;
+        height: 20px;
+        width: 25px;
+        //default icon: this subscription was not triggered yet
+        background: url("images/DI/refresh_history_success.png") no-repeat scroll center center
+      }
+
+      // success icon: last time this subscription was triggered successfully
+      .mstrmojo-di-cubes-scheduleMenu-list-item-icon.success {
+        background: url("images/DI/refresh_history_success.png") no-repeat scroll center center
+      }
+
+      // failure icon: last time there was an error when trigger this subscription
+      .mstrmojo-di-cubes-scheduleMenu-list-item-icon.error {
+        background: url("images/DI/refresh_history_failed.png") no-repeat scroll center center
+      }
+
+      .mstrmojo-di-cubes-scheduleMenu-list-item-text {
+        float: left;
+        height: 20px;
+        line-height: 20px;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .mstrmojo-di-cubes-scheduleMenu-list-item-button {
+        float: left;
+        margin-left: 5px;
+        margin-top: 3px;
+        width: 16px;
+        height: 16px;
+        color: #0066CC;
+        cursor: pointer;
+        font: 11px Arial;
+        text-decoration: underline;
+      }
+
+      .mstrmojo-di-cubes-scheduleMenu-list-item-button.edit {
+        background: url("images/Refine/edit_icon.png") no-repeat scroll center center;
+      }
+
+      .mstrmojo-di-cubes-scheduleMenu-list-item-button.delete {
+        background: url("images/Refine/delete_icon.png") no-repeat scroll center center;
+      }
+    }
+  }
+}
+
+// Style for new schedule menu
+.mstrmojo-di-scheduleMenu {
+
+  .subscription {
+    padding: 0px 20px; //mizhang TQMS 910353, the clock icon and subscription name have some overlap.
+  }
+
+  // subscription has no history menu item
+  .subscription.empty > .micn {
+    width: 20px;
+    height: 20px;
+    //background: url(images/metric-editor.png) -123px -180px no-repeat transparent;
+    background: url("images/DI/refresh_history_success.png") no-repeat scroll;
+  }
+
+  // successful subscription menu item
+  .subscription.success > .micn {
+    width: 20px;
+    margin-top: 4px;
+    background: url(images/metric-editor.png) -123px -180px no-repeat transparent;
+  }
+
+  // failed subscription menu item
+  .subscription.fail > .micn {
+    width: 20px;
+    margin-top: 4px;
+    background: url(images/metric-editor.png) -100px -180px no-repeat transparent;
+  }
+}
+
+// ------------------------- Styles for the cube quota control  -------------------------
+.mstrmojo-di-QuotaGrid .mstrmojo-DataGrid-headerText {
+  font: Bold 12px Arial;
+  color: #333333;
+  border-style: none;
+  padding: 0;
+  height: 28px;
+  .mstrmojo-Label{
+    line-height: 28px;
+    padding-left: 9px;
+    &:hover{
+      cursor:pointer;
+      //background-color: #dededf
+    }
+    &.highlight{
+      color:#007ebe;
+    }
+  }
+}
+.mstrmojo-di-QuotaGrid .mstrmojo-DataGrid-headerContainer td{
+  padding-right: 0;
+}
+.mstrmojo-di-QuotaGrid .mstrmojo-DataGrid-headerContainer td,
+.mstrmojo-di-QuotaGrid .mstrmojo-DataRow {
+  background-color: transparent;
+}
+
+.mstrmojo-di-QuotaGrid .mstrmojo-DataRow:hover {
+  background-color: #F6F6F6;
+}
+
+.mstrmojo-di-QuotaGrid {
+  width: 100%;
+  min-width: 640px;
+  border: 1px solid #CBCBCB;
+  margin-bottom: 11px; //mizhang TQMS 947539
+  .mstrmojo-DataGrid-itemsScrollBox {
+    border-right: 1px solid #CBCBCB;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    height: 354px; //mizhang TQMS 948954
+  }
+  .mstrmojo-DataGrid-headerContainer {
+    border-bottom: 1px solid $divider-line-dark;
+    background-color: #EFEFF0;
+  }
+  .cubeList-menu-button {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: absolute;
+    left: 490px; //mizhang TQMS 948954
+
+  }
+  .mstrmojo-DataRow:hover .cubeList-menu-button {
+    border-top: 5px solid #000000;
+    margin-top: 2px;
+  }
+
+  .mstrmojo-DataRow{
+    height: 41px;
+  }
+}
+
+.cubeList-menu {
+
+  min-width: 145px;
+  max-width: 350px;
+  padding: 5px 0;
+  color: #F0F0F0;
+  font-family: Arial;
+  font-size: 11px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.88);
+  background-color: rgba(63, 63, 63, 0.96);
+  border: 1px solid rgba(155, 155, 155, 0.6);
+  border-radius: 4px;
+  .mstrmojo-itemwrap :hover {
+    background-color: rgba(27, 27, 27, 0.42);
+  }
+  .mstrmojo-CMI-left {
+    display: none;
+  }
+  .mstrmojo-CMI-right {
+    display: none;
+  }
+  .mstrmojo-itemwrap-table {
+    width: 100%;
+  }
+  .mstrmojo-ContextMenuItem {
+    height: 22px;
+    line-height: 22px;
+  }
+  .mstrmojo-ContextMenuItem td {
+    padding: 0 22px;
+  }
+  .mstrmojo-CMI-content {
+    padding: 0;
+  }
+
+}
+
+.mstrmojo-di-QuotaGrid .nameCol {
+  width: 38%;
+}
+
+.mstrmojo-di-QuotaGrid .typeCol {
+  width: 10%;
+}
+
+.mstrmojo-di-QuotaGrid .sizeCol {
+  width: 10%;
+}
+
+.mstrmojo-di-QuotaGrid .ownerCol {
+  width: 10%;
+}
+
+.mstrmojo-di-QuotaGrid .modifiedCol {
+  width: 20%;
+}
+
+.mstrmojo-di-QuotaGrid .scheStatusCol {
+  width: 12%;
+}
+
+.mstrmojo-di-QuotaGrid .nameLabel {
+  //TQMS 973555 - remove the line height and padding left and width
+  //properties so that the label is not occupying the entire area that is clickable.
+  font: 12px Arial;
+  margin-left: 12px;
+  cursor: pointer;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 350px;
+  height: 100%;
+  &:hover {
+    border: 1px solid transparent;
+  }
+}
+
+.mstrmojo-di-QuotaGrid .actions {
+  visibility: hidden;
+}
+
+.mstrmojo-di-QuotaGrid .mstrmojo-DataRow:hover .actions {
+  visibility: visible;
+}
+
+.mstrmojo-di-QuotaGrid .nameTable td {
+  border-style: none;
+}
+
+.mstrmojo-di-QuotaGrid .cubeIcon.empty {
+  visibility: hidden;
+}
+
+.mstrmojo-di-QuotaGrid .cubeIcon {
+  background-image: url("images/mdd-icon.png");
+  background-repeat: no-repeat;
+  height: 11px;
+  width: 10px;
+  margin-top: 10px;
+}
+
+.mstrmojo-di-QuotaGrid .morelink,
+.mstrmojo-di-QuotaGrid .sharelink,
+.mstrmojo-di-QuotaGrid .schedulelink,
+.mstrmojo-di-QuotaGrid .editlink,
+.mstrmojo-di-QuotaGrid .createlink {
+  color: #0066CC;
+  cursor: pointer;
+  font: 11px Arial;
+  padding-right: 5px;
+  text-decoration: underline;
+}
+
+.mstrmojo-di-QuotaGrid .menu-arrow {
+  background-image: url("../../../style/mstr/images/icon_menu_button.png");
+  height: 13px;
+  margin: 6px 10px 6px 0;
+  width: 13px;
+  cursor: pointer;
+}
+
+
+.mstrmojo-di-QuotaGrid .typeLabel,
+.mstrmojo-di-QuotaGrid .sizeLabel,
+.mstrmojo-di-QuotaGrid .mtLabel,
+.mstrmojo-di-QuotaGrid .ownLabel {
+  font: 12px Arial;
+  color: #333333;
+  padding-left: 9px;
+}
+
+.mstrmojo-di-QuotaGrid {
+  .scheStatus {
+    height: 14px;
+    width: 14px;
+    margin-left: 30px;
+  }
+
+  .mstrmojo-itemwrap-table {
+    border-collapse: collapse;
+
+    &>tbody.mstrmojo-itemwrap>tr.mstrmojo-DataRow>td:not(:last-child){
+      border-right: 1px solid rgb(204, 204, 204);
+    }
+  }
+
+  .scheStatus.empty {
+    background: url("images/DI/refresh_history_success.png") no-repeat scroll;
+    height: 20px;
+    width: 22px;
+  }
+
+  .scheStatus.success {
+    background: url(images/metric-editor.png) -220px -180px no-repeat transparent;
+  }
+
+  .scheStatus.fail {
+    background: url(images/metric-editor.png) -190px -180px no-repeat transparent;
+  }
+}
+
+.mstrmojo-di-popup-dialog{
+  .mstrmojo-Editor-content{
+    border-bottom: 0px;
+  }
+}
+
+.mstrmojo-DataGrid.mstrmojo-di-QuotaGrid.hasVertical.mstrmojo-scrollbar-host{
+  .mstrmojo-DataGrid-headerContainer{
+    .mstrmojo-DataGrid-headerTable>tbody>tr>td{
+      box-sizing: border-box;
+    }
+  }
+}
+
+.mstrmojo-DataGrid.mstrmojo-di-QuotaGrid.hasVertical.mstrmojo-scrollbar-host{
+  border-right: 0;
+}
+
+.workstation .mstrmojo-Editor-wrapper.mstrmojo-di-popup-dialog .mstrmojo-di-cubes .mstrmojo-di-QuotaGrid{
+  .mstrmojo-DataGrid-headerText{
+    height: 44px;
+    .mstrmojo-Label{
+      line-height: 44px;
+      height: 44px;
+    }
+  }
+
+  .mstrmojo-DataGrid-itemsContainer>table.mstrmojo-itemwrap-table>tbody.mstrmojo-itemwrap>tr.mstrmojo-DataRow>td{
+    height: 48px;
+  }
+
+  .mstrmojo-DataGrid-headerTable, table.mstrmojo-itemwrap-table{
+    border-collapse: collapse;
+  }
+
+  .mstrmojo-DataGrid-itemsContainer>table.mstrmojo-itemwrap-table>tbody.mstrmojo-itemwrap>tr.mstrmojo-DataRow>td:not(:last-child),.mstrmojo-DataGrid-headerTable>tbody>tr>td:not(:last-child) {
+      border-right: 1px solid rgb(204, 204, 204);
+      box-sizing: border-box;
+  }
+
+  .mstrmojo-di-QuotaGrid.nameLabel{
+    line-height: 22px;
+  }
+
+
+   .mstrmojo-itemwrap .mstrmojo-Table.nameTable .mstrmojo-Button.cubeList-menu-button{
+      position: initial;
+      margin-left: 10px;
+    }
+
+  .mstrmojo-DataRow.disabled{
+    &:hover{
+      background-color: transparent;
+    }
+    .mstrmojo-Label,.nameLabel{
+      color: rgba(68, 70, 73, .5);
+    }
+  }
+
+}
+
+.mstrmojo-di-diCubesListDialog {
+  left: 50% !important;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  .mstrmojo-Editor-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .mstrmojo-di-button.mstrmojo-WebButton.hot.mstrmojo-Editor-button {
+    margin-right: 0px;
+  }
+  .mstrmojo-ui-SearchBox .mstrmojo-ui-sb-input {
+    height: 22px;
+  }
+}
+
+.mstrmojo-di-QuotaGrid .mstrmojo-scrolltrack.vertical {
+  top: 45px !important;
+}
+
+.mstrmojo-di-QuotaGrid .mstrmojo-Label {
+  margin-bottom: 0px !important;
+}

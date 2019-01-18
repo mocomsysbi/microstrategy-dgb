@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.qb.bigquery._hasBigQueryModel","mstrmojo.qb.es.Model");mstrmojo.qb.bigquery.ESModel=mstrmojo.declare(mstrmojo.qb.es.Model,[mstrmojo.qb.bigquery._hasBigQueryModel],{scriptClass:"mstrmojo.qb.bigquery.ESModel",getDBRole:function getDBRole(){return{n:this.selectedProject};}});}());

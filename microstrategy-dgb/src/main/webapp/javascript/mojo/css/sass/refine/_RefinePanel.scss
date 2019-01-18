@@ -1,0 +1,89 @@
+@import "RefineVariables";
+
+.refine-panal {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.mstrmojo-SplitterPanel.refine-transformation-panal {
+  overflow: visible;
+}
+
+.refine-wrangling-box {
+  border: 1px solid #aaaaaa;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 5px 5px 0px 0px;
+  width: 450px;
+}
+
+.refine-box-title {
+  font-size: 11pt;
+  height: 20px;
+  background: linear-gradient(to bottom, #65acec 0%, #3c74c7 100%);
+  color: white;
+}
+
+.refine-transformation-box td {
+  vertical-align: middle;
+}
+
+.transformation-list {
+  width: 110px;
+}
+
+
+.transformation-list-item {
+  white-space: nowrap;
+  display: block;
+  padding: 9px;
+  text-align: center;
+  cursor: default;
+  border-bottom: 1px solid #FFFFFF;
+  color: #000000;
+  font-family: Arial;
+  font-size: 11pt;
+  background: #d6e4f0;
+  border-radius: 5px;
+}
+
+.transformation-list-item.selected {
+  background: #bad4eb;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  color: #0077d4;
+}
+
+.transformation-list-item:hover {
+  background: #bad4eb;
+}
+
+.refine-panal-refine-left {
+  float: left;
+  border-right: 1px solid #cbcbcb;
+}
+
+.refine-panal-refine-right {
+  float: left;
+  border-left: 1px solid white;
+}
+
+.refine-panal-bottom {
+  padding: 12px 0px 16px 0px;
+}
+
+.refine-panal-bottom .mstrmojo-Splitter.vertical .mstrmojo-SplitterHandle {
+  background: transparent;
+  cursor: auto;
+}
+
+.refine-panal-bottom .mstrmojo-SplitterPanel {
+  box-shadow: $containerShadow;
+  -moz-box-shadow: $containerShadow;
+  -webkit-box-shadow: $containerShadow;
+}
+
+.refine-panal-middle {
+  border-top: 1px solid #cbcbcb;
+  border-bottom: 1px solid white;
+}

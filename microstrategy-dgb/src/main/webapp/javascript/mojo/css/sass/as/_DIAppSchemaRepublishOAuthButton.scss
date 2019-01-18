@@ -1,0 +1,16 @@
+.mstrmojo-di-appschema-republish-oauth-button {
+    .mstrmojo-accountIcon {
+        background-image: url("../../../app-schema-assets/dist/src/assets/icons/mbde-icons.svg");
+        background-position: -413px -496px;
+        height: 12px;
+        width: 12px;
+    }
+    .mstrmojo-accountId{
+    	margin-left:2px; 
+    	max-with:50px; 
+    	overflow-x:hidden; 
+    	text-overflow: ellipsis; 
+    	width: 56px; 
+    	white-space: nowrap;
+    }
+}

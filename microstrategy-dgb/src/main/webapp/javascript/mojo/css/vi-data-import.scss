@@ -1,0 +1,5 @@
+// Include the data import core and the Data Import CSS bundles.
+$env:web;
+@import 'sass/di/data-import-core-ws';
+@import 'sass/bundles/mojo-di-css';
+

@@ -1,0 +1,1 @@
+mstrmojo.warehouse.EnumNamespaceMode={ALL:"0",CURRENT:"1"};

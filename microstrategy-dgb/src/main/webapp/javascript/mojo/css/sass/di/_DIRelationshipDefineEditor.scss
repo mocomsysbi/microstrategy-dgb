@@ -1,0 +1,437 @@
+@import '../warehouse/wh-global';
+// Style for Relationship Define Editor
+
+
+@mixin clear-web-btn {
+  text-decoration: none !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: #4a4a4a !important;
+}
+
+// editor
+.mstrmojo-di-relationship-define {
+  width: 575px;
+
+  .rseditor-header {
+    padding-top: 5px;
+    padding-bottom: 2px;
+    border: 1px solid $wsvi-border-gray;
+    background-color: #F1F1F1;
+
+    .rseditor-header-label {
+      float: left;
+      width: 162px;
+      &.parent {
+        margin-left: 46px;
+      }
+    }
+    .rseditor-header-label.relation {
+      width: 85px;
+    }
+    .rseditor-header-delete {
+      float: right;
+      cursor: pointer;
+      height: 20px;
+      position: absolute;
+      right: 10px;
+      top: 24px;
+      color: #007ebe;
+      opacity: 0;
+    }
+
+  }
+
+  .rseditor-header:hover .rseditor-header-delete {
+    opacity: 1;
+
+  }
+
+  .rseditor-list {
+    @include scrollBar;
+    height: 234px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid $wsvi-border-gray;
+    .mstrmojo-itemwrap:hover {
+      background-color: RGBA(68, 70, 73, 0.06);
+    }
+  }
+
+  // editor buttons
+  .rseditor-button {
+    margin: 15px;
+  }
+
+  .rseditor-box {
+    //margin-top: 26px;
+    //margin-bottom: 2px;
+    margin: 6px 0;
+
+    .addBtn {
+      @include clear-web-btn;
+      float: left;
+      cursor: pointer;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: ' ';
+        height: 22px;
+        width: 12px;
+        margin: 0 6px;
+        background: url(images/DI/edit_relationship_icon2.png) no-repeat -10px -8px;
+      }
+      .mstrmojo-Button-text {
+        @include clear-web-btn;
+        padding-left: 24px;
+      }
+
+      &:active {
+        &:before {
+          background-position: -40px -6px;
+        }
+        .mstrmojo-Button-text{
+          color: #1471d5 !important;
+        }
+      }
+    }
+
+    .delBtn {
+      @include clear-web-btn;
+      float: right;
+      cursor: pointer;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: ' ';
+        height: 22px;
+        width: 12px;
+        margin: 0 6px;
+        //background: url(images/DI/edit_relationship_icon2.png) no-repeat -10px -46px; //delete all btn icon, remove for now
+      }
+      .mstrmojo-Button-text {
+        @include clear-web-btn;
+        padding-left: 8px;
+      }
+
+      &:active {
+        &:before {
+          background-position: -40px -46px;
+        }
+        .mstrmojo-Button-text{
+          color: #1471d5 !important;
+        }
+      }
+    }
+
+    .sep {
+      border-left: 1px solid #DEDEDE;
+      @include box-shadow(#FFF, 0, 1px, 0, false);
+      height: 20px;
+      float: right;
+    }
+
+    .mstrmojo-ui-Pulldown.toggleAllPulldown {
+      @include clear-web-btn;
+      float: right;
+      @include box-shadow(transparent);
+      border: 1px solid transparent;
+      background: none;
+      height: 20px;
+
+      &:before {
+        position: absolute;
+        content: ' ';
+        height: 22px;
+        width: 12px;
+        margin: 0 6px;
+        //background: url(images/DI/workstation/workstation.svg) no-repeat -2603px -36px; //convert all btn icon, remove for now
+      }
+      .mstrmojo-ui-Pulldown-text {
+        @include clear-web-btn;
+        background-position: 100% 0px;
+        @include box-shadow(transparent);
+        border: 1px solid transparent;
+        filter: none !important;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        cursor: pointer;
+        line-height: 16px;
+        height: 19px;
+        background-position-y: 0px !important;
+      }
+
+      &:hover {
+        @include box-shadow(#ffffff, 0, 1px, 1px, false);
+        background-color: #e4e4e5;
+        border-color: #b0b1b2;
+        .mstrmojo-ui-Pulldown-text {
+          @include box-shadow(#eeeeef, 0, 0, 4px, true); //inner glow
+        }
+      }
+
+      &:active {
+        &:before {
+          background-position-x: -2653px;
+        }
+        background-color: #dbdbdc;
+        .mstrmojo-ui-Pulldown-text {
+          background-color: #dbdbdc;
+          @include box-shadow(#e4e4e5, 0, 0, 4px, true); //reset :hover inner glow
+          color: #007ebe !important;
+        }
+      }
+
+      .mstrmojo-PopupList {
+        min-width: 120px;
+        max-width: 240px;
+        width: auto;
+
+        .item {
+          padding-right: 8px;
+          &.auto {
+            background: url(images/DI/workstation/workstation.svg) -2140px -181px no-repeat;
+            padding-left: 28px;
+          }
+          &.defined {
+            background: url(images/DI/workstation/workstation.svg) -2140px -211px no-repeat;
+            padding-left: 28px;
+          }
+          &:hover {
+            background-color: rgba(218, 218, 218, 0.96);
+          }
+        }
+      }
+    }
+  }
+
+  // DE41838; for firefox only
+  .rseditor-list {
+    .mstrmojo-itemwrap:hover {
+      .mstrmojo-di-relationship-item.isFF {
+        .rsitem-toggle {
+          background-color: #f4f4f4;
+          //background-color: transparent;
+          .mstrmojo-Box {
+            background-color: #f4f4f4;
+            //background-color: transparent;
+          }
+        }
+      }
+    }
+    .mstrmojo-di-relationship-item.isFF {
+      .rsitem-toggle {
+        background-color: white;
+        .mstrmojo-Box {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+
+// Style for relationship item
+.mstrmojo-di-relationship-item {
+  position: relative;
+  padding: 5px 0 5px 10px;
+  border-bottom: 1px solid $wsvi-border-gray;
+  height: 28px;
+
+  .rsitem-icon {
+    float: left;
+    height: 22px;
+    width: 22px;
+    margin: 1px 6px 1px 0;
+
+    &.status0 {
+      // uncertain status
+    }
+
+    &.status1 {
+      // valid relationship
+    }
+
+    &.status2 {
+      // invalid relationship
+      background: url(images/DI/define_relationship_icon.png) no-repeat -13px -130px;
+    }
+
+    &.status8002 {
+      // GUI defined invalid relationship
+      background: url(images/DI/workstation/workstation.svg) no-repeat -1260px -5px;
+    }
+  }
+
+  .rsitem-toggle {
+    float: left;
+    margin: 1px 12px 1px 0;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    .mstrmojo-Box {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      -ms-transition: 1s;
+      -o-transition: 1s;
+      transition: 1s;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      position: relative;
+
+      .front, .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        -webkit-transition: transform 1s;
+        -ms-transition: transform 1s;
+        -o-transition: transform 1s;
+        transition: transform 1s;
+        -moz-transition: transform 0s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+
+      .front {
+        z-index: 2;
+        @include transform(rotateY(0deg));
+        background: url(images/DI/workstation/workstation.svg) -2146px -185px no-repeat;
+        //&:hover {
+        //  background: url(images/DI/define_relationship_icon.png) no-repeat -10px -40px;
+        //}
+      }
+      .back {
+        @include transform(rotateY(-180deg));
+        background: url(images/DI/workstation/workstation.svg) -2146px -215px no-repeat;
+        //&:hover {
+        //  background: url(images/DI/define_relationship_icon.png) no-repeat -10px -100px;
+        //}
+      }
+    }
+
+    &.toggle {
+      .mstrmojo-Box {
+        .front {
+          @include transform(rotateY(180deg));
+        }
+        .back {
+          @include transform(rotateY(0deg));
+        }
+      }
+    }
+
+  }
+
+  .rsitem-pulldown {
+    float: left;
+    height: 100%;
+    width: 150px;
+    margin-right: 12px;
+  }
+
+  .rsitem-pulldown.type {
+    width: 100px;
+  }
+
+  .rsitem-pulldown {
+    .mstrmojo-Pulldown{
+      margin: 9px 5px 0px 0;
+    }
+    .mstrmojo-Pulldown-iconNode {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .rsitem-button {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin-left: 2px;
+    margin-top: 8px;
+    display: none;
+    background: url(vi/images/menu_icons.png) no-repeat -29px 1px;
+
+    .mstrmojo-Button {
+      cursor: pointer;
+    }
+  }
+
+}
+
+.mstrmojo-di-relationship-item:hover .rsitem-button {
+  display: block;
+}
+
+.mstrmojo-di-relationship-item-hosted.mstrmojo-ui-Pulldown {
+  z-index: 9999;
+  height: 0;
+}
+
+// TQMS 1000336: now the popup pulldown is set widht to 1px in JS, so set width here
+.mstrmojo-di-relationship-item-hosted {
+  .mstrmojo-PopupList {
+    width: 150px;
+
+    // style for project attribute
+    .item {
+      &.ipa {
+        font-style: italic;
+      }
+    }
+  }
+
+  &.ertype  {
+    .mstrmojo-PopupList {
+      width: 85px;
+    }
+  }
+  .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical{
+    -ms-overflow-style: none;
+  }
+}
+
+
+.workstation .mstrmojo-di-relationship-item-hosted.mstrmojo-ui-Pulldown:not(.ertype) {
+  .mstrmojo-PopupList {
+    .item {
+      background: transparent url("images/DI/vertical icons.svg") no-repeat -1px -236px;
+      padding-left: 20px;
+      &.geo{
+        background: transparent url("images/DI/vertical icons.svg") no-repeat -1px -326px;
+      }
+      &.time{
+        background: transparent url("images/DI/vertical icons.svg") no-repeat -1px -356px;
+      }
+    }
+    .item.selected {
+      background: #3b92ed url("images/DI/vertical icons.svg") no-repeat -1px -236px;
+      &.geo{
+        background: #3b92ed url("images/DI/vertical icons.svg") no-repeat -1px -326px;
+      }
+      &.time{
+        background: #3b92ed url("images/DI/vertical icons.svg") no-repeat -1px -356px;
+      }
+    }
+  }
+}

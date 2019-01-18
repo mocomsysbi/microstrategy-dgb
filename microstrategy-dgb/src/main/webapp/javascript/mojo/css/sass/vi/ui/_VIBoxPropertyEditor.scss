@@ -1,0 +1,342 @@
+@import '../vi-global';
+@import '../themes';
+
+$edt-ctrl-margin: 8px;
+$edt-grp-margin: 9px;
+
+// Containers the hold controls.
+%edt-grp-base {
+    & > * {
+        margin-top: $edt-ctrl-margin;
+    }
+
+    & > *:first-child {
+        margin-top: $edt-grp-margin;
+    }
+
+    & > *:last-child {
+        margin-bottom: $edt-grp-margin;
+    }
+
+    // Nested control containers have no first or last margin...
+    .ctrl-group {
+
+        & > *:first-child {
+            margin-top: 0;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        // unless they DO show a divider.animation:;
+        &.divide {
+            & > *:first-child {
+                margin-top: $edt-grp-margin;
+            }
+        }
+
+        .edt-link {
+            margin: $edt-grp-margin 0;
+        }
+    }
+}
+
+/** BEGIN: Properties Editor **/
+.mstrmojo-vi-PropEditor {
+    .mstrmojo-VIBoxPanel-content.mstrmojo-sb-show-default {
+        overflow-x: hidden; // Prevent horizontal native scrollbar
+    }
+
+    .ctrl-group {
+        @extend %edt-grp-base;
+    }
+    .mstrmojo-vi-EditorGroup {
+        padding: 0 9px;
+
+        &.container {
+            // No horizontal padding.
+            padding: 0;
+        }
+
+        .edt-title {
+            font-weight: bold;
+        }
+
+        .mstrmojo-Label {
+            line-height: 8px;
+            &.hilight {
+                color: #007EBE;
+            }
+        }
+
+        .mstrmojo-ui-Pulldown {
+            @include box-sizing();
+
+            .mstrmojo-ui-Pulldown-text.conflict {
+                text-align: center;
+                font-weight: 800;
+            }
+        }
+
+        %edt-btn-bar-base {
+            background: transparent url(#{$vi-img-path}/editor-sprite.png) center 0 no-repeat;
+        }
+
+        .mstrmojo-ui-ButtonBar {
+            @include box-sizing();
+
+            &.verticalAlign {
+                .item {
+                    & > div {
+                        @extend %edt-btn-bar-base;
+                    }
+                }
+            }
+
+          &.dataLabel {
+            &.itemsCnt2 .item {
+              width: 50%;
+            }
+
+            &.itemsCnt3 .item {
+              width: #{(100/3) + '%'};
+            }
+          }
+        }
+
+        .mstrmojo-vi-TwoColumnProp {
+            &.checkLabel {
+                &.multiLine {
+                    &.title {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            &.characterGroup > .vi-col1 {
+                vertical-align: top !important;
+                .mstrmojo-Label {
+                    line-height: 21px;
+                }
+            }
+        }
+
+        // Checkbox and Label.
+        .checkLabel {
+            .mstrmojo-ui-Checkbox {
+                height: 20px;
+            }
+
+            .mstrmojo-Label {
+                cursor: pointer;
+                line-height: 15px;
+            }
+
+            &.multiLine {
+                .mstrmojo-Label {
+                    white-space: normal;
+                }
+            }
+        }
+
+        .edt-link {
+            color: $vi-color-font-link;
+            cursor: pointer;
+            float: right;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Icons.
+$edt-icon-ver-top: -125;
+$edt-icon-ver-middle: -155;
+$edt-icon-ver-bottom: -185;
+
+// Offset for dark theme.
+$edt-icon-dark-offset: -420;
+
+@mixin property-editor-divider($use-dark-theme: false) {
+
+    $theme-base-highlight-color: $theme-light-base-highlight-color;
+    $theme-offset-highlight-color: $theme-light-offset-highlight-color;
+
+    @if $use-dark-theme == true {
+        $theme-base-highlight-color: $theme-dark-base-highlight-color;
+        $theme-offset-highlight-color: $theme-dark-offset-highlight-color;
+    }
+
+    &.divide:nth-child(n+2) {
+        @include box-shadow($theme-base-highlight-color, 0, -1px, 0);
+        border-top: 1px solid $theme-offset-highlight-color;
+    }
+}
+
+.mojo-theme-light {
+    .mstrmojo-vi-PropEditor {
+        .mstrmojo-vi-EditorGroup {
+            color: #4A4A4A;
+
+            .mstrmojo-ui-ButtonBar {
+                &.verticalAlign {
+                    .item {
+                        &.top > div {
+                            background-position: center #{$edt-icon-ver-top}px;
+                        }
+
+                        &.middle > div {
+                            background-position: center #{$edt-icon-ver-middle}px;
+                        }
+
+                        &.bottom > div {
+                            background-position: center #{$edt-icon-ver-bottom}px;
+                        }
+                    }
+                }
+            }
+
+            @include property-editor-divider(false);
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-vi-PropEditor {
+        .mstrmojo-vi-EditorGroup {
+            color: #CDCDCD;
+
+            .mstrmojo-ui-ButtonBar {
+                &.verticalAlign {
+                    .item {
+                        &.top > div {
+                            background-position: center #{$edt-icon-dark-offset + $edt-icon-ver-top}px;
+                        }
+
+                        &.middle > div {
+                            background-position: center #{$edt-icon-dark-offset + $edt-icon-ver-middle}px;
+                        }
+
+                        &.bottom > div {
+                            background-position: center #{$edt-icon-dark-offset + $edt-icon-ver-bottom}px;
+                        }
+                    }
+                }
+            }
+
+            @include property-editor-divider(true);
+        }
+    }
+}
+
+.unselectable {
+    .mstrmojo-vi-PropEditor {
+        .mstrmojo-vi-EditorGroup {
+            .checkLabel {
+                .mstrmojo-ui-CheckBox {
+                    cursor: default;
+                }
+
+                .mstrmojo-Label {
+                    cursor: default;
+                }
+            }
+        }
+    }
+}
+
+%ui-propEditor-menu-base {
+    &.mojo-theme-light {
+        background-color: rgba(237, 237, 237, 0.96);
+    }
+    &.mojo-theme-dark {
+        background-color: rgba(63, 63, 63, 0.96);
+    }
+}
+
+.propEditor-Menu.mstrmojo-ui-Menu {
+    @extend %ui-propEditor-menu-base;
+
+    &.mojo-theme-light {
+        .mstrmojo-ui-Menu-item {
+            color: #4A4A4A;
+            &:hover {
+                background-color: #DADADA;
+            }
+            .arw {
+                background: url(#{$vi-img-path}/menu_icons.png) no-repeat 10px -22px transparent;
+            }
+
+            &.separator {
+                border-bottom: 1px solid #F7F7F7;
+                @include box-shadow(#D1D1D1, 0, -1px, 0);
+            }
+        }
+    }
+
+    &.mojo-theme-dark {
+        .mstrmojo-ui-Menu-item {
+            color: #CDCDCD;
+            &:hover {
+                background-color: rgba(27, 27, 27, 0.42);
+            }
+        }
+    }
+}
+
+.propEditor-Menu.mstrmojo-ui-MenuEditor {
+    @extend %ui-propEditor-menu-base;
+
+    line-height: 1;
+
+    .mstrmojo-vi-EditorGroup {
+        @extend %edt-grp-base;
+
+        // since MenuEditor has padding, remove margin top of first EditorGroup
+        &:first-child > *:first-child {
+            margin-top: 0;
+        }
+
+        // since MenuEditor has padding, remove margin bottom of last EditorGroup
+        &:last-child > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.mojo-theme-light {
+        .me-buttons {
+            @include box-shadow(#D1D1D1, 0, -1px, 0); // $ctrl-light-base-highlight-color
+            border-top: 1px solid #F7F7F7; // $ctrl-light-offset-highlight-color
+        }
+    }
+
+    &.mojo-theme-dark {
+        .me-buttons {
+            @include box-shadow(#303030 0 -1px 0); // $ctrl-dark-offset-highlight-color
+            border-top: 1px solid #595959; // $ctrl-dark-base-highlight-color
+        }
+    }
+
+    .checkLabel {
+        font-weight: bold;
+//        color: #CDCDCD;
+    }
+
+    .textLabel {
+        margin-top: $edt-ctrl-margin;
+        margin-bottom: $edt-grp-margin;
+//        color: #CDCDCD;
+    }
+
+    .mstrmojo-Label {
+        white-space: normal;
+    }
+
+    .me-buttons {
+        text-align: right;
+    }
+}
+
+/** END: Properties Editor **/

@@ -1,0 +1,119 @@
+@import '../../vi-global';
+@import '../../themes';
+
+/** BEGIN: vi-ui-rw-TextBox **/
+.mstrmojo-VITextBox {
+
+
+    .mstrmojo-DocTextfield {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        &.hasLink {
+            cursor: pointer;
+        }
+
+        .mstrmojo-DocTextfield-valueNode {
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            top: 0;
+
+
+            &.editable {
+                @include user-select(text);
+            }
+
+            // Before of orientation changes, the native scrollbar gets seen. Reset it to defaults for chrome.
+            &.hasVertical.mstrmojo-scrollNode {
+                margin-right: -30px;
+                padding-right: 30px;
+            }
+
+            // Style the value text field
+            .vi-doc-tf-value-text {
+                $edge-offset: 7px;
+
+                bottom: 4px;
+                color: inherit;
+                overflow: hidden;
+                left: $edge-offset;
+                position: absolute;
+                right: $edge-offset;
+                text-decoration: inherit;
+                top: 4px;
+            }
+        }
+    }
+
+    .ctrlOverlay {
+        height: 100%;
+        width: 100%;
+
+        .init-img {
+            background: transparent url(#{$vi-img-path}/id_tx.png) 0 0 no-repeat;
+            float: left;
+            height: 16px;
+            margin: 4px 8px 4px 14px;
+            width: 16px;
+        }
+
+        .init-label {
+            color: #878788;
+            float: left;
+            line-height: 20px;
+        }
+
+        &.or-v {
+            .init-label {
+                line-height: 18px;
+                // Set this to percent so that the text div expands when width of container is larger.
+                max-width: 67.57%;
+                padding: 12px 9px 0px 0px;
+            }
+        }
+    }
+}
+
+.mstrmojo-VIUnit-avatar {
+    &.icn-avi {
+        &.textAvatar {
+            background-image: url(#{$vi-img-path}/id_tx.png);
+        }
+    }
+}
+
+@mixin text-selected-color($color) {
+    .mstrmojo-DocTextfield {
+        .mstrmojo-DocTextfield-valueNode {
+            .vi-doc-tf-value-text.editable {
+                &::selection {
+                    color: $color;
+                }
+                &::-moz-selection {
+                    color: $color;
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-light {
+    .mstrmojo-VITextBox {
+        @include text-selected-color(#444649);
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VITextBox {
+        @include text-selected-color(#ffffff);
+    }
+}
+/** END: vi-ui-rw-TextBox **/

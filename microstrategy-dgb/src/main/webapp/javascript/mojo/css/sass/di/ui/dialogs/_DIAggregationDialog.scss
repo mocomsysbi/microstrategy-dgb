@@ -1,0 +1,108 @@
+.mstrmojo-di-aggregationDialog {
+
+  width: 1030px;
+  // height: 757px;
+  box-sizing: border-box;
+  background-color:#FAFAFA;
+
+  .mstrmojo-qb-DBTable-header .mstrmojo-qb-DBTable-title{
+    text-indent: 8px;
+  }
+
+ .mstrmojo-Editor-close {
+    display: block;
+  }
+
+  .mstrmojo-qb-DBTable-close {
+    display: none;
+  }
+
+  .mstrmojo-qb-DBTable-searchIcon{
+    margin-left: 28px;
+  }
+
+  .mstrmojo-qb-tableview-toolbar{
+    background-color:#FAFAFA;
+  }
+
+  .mstrmojo-Box.mstrmojo-qb-tableview-box{
+    width:auto;
+    height: 300px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+  }
+
+  .mstrmojo-qb-main-panel{
+    margin-left: 0px;
+  }
+
+  .mstrmojo-Editor-buttons{
+    background-color: transparent;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  .mstrmojo-Editor-content{
+    box-shadow: none;
+  }
+
+  .mstrmojo-di-datapreview{
+    background-color: #FAFAFA;
+  }
+
+  .mstrmojo-DataGrid.lockHeader{
+    width: auto;
+  }
+
+  .mstrmojo-DataGrid.lockHeader.mstrmojo-qb-simplepreview{
+    height: auto;
+    border-color: rgba(68,70,73, 0.2);
+  }
+
+  .mstrmojo-DataGrid-headerTable{
+    tr td:last-child{
+      border-right: none;
+    }
+  }
+
+  .mstrmojo-qb-main-panel .mstrmojo-di-datapreview .mstrmojo-DataGrid-headerText{
+      background-color: #FAFAFA;
+  }
+
+  .mstrmojo-DataGrid-itemsContainer{
+    min-height: 100%;
+  }
+
+  .mstrmojo-DataGrid.mstrmojo-qb-simplepreview.hasVertical.hasHorizontal{
+    .mstrmojo-scrolltrack.horizontal{
+      bottom: 0px;
+    }
+  }
+}
+
+.workstation{
+  .mstrmojo-ListBase.mstrmojo-ui-Menu.mstrmojo-qb-DBTableRowMenu .mstrmojo-ui-Menu-item>DIV.arw, .mstrmojo-ui-Menu .mstrmojo-ui-Menu-item>DIV.arw{
+    position: absolute;
+    right: 0px;
+  }
+  #aggEditor{
+
+    .mstrmojo-Editor.mstrmojo-di-aggregationDialog.modal{
+      max-height: 900px;
+      min-height: 730px;
+      .mstrmojo-Editor-content {
+        .mstrmojo-qb-main-panel .mstrmojo-qb-tableview-box .mstrmojo-Editor.mstrmojo-qb-DBTable {
+          .mstrmojo-Editor-content>div {
+            box-sizing: border-box;
+          }
+        }
+      }
+      .mstrmojo-Editor-buttons{
+        position: relative;
+      }
+    }
+    
+  }
+  
+}

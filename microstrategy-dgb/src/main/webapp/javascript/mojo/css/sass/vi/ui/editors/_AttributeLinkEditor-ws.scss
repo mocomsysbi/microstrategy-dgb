@@ -1,0 +1,257 @@
+%noValidObject {
+    padding-left: 5px !important;
+    color: $wsvi-font-gray !important;
+
+    &:before {
+        background-image: none !important;
+    }
+}
+
+.mstrmojo-att-link {
+    &.mstrmojo-Editor {
+        min-width: 630px;
+    }
+
+    .mstrmojo-Editor-button {
+        padding: 0 !important;
+    }
+
+    .mstrmojo-ToolSeparator {
+        display: block;
+        margin: 10px 0px;
+        border-bottom: 1px solid $wsvi-ui-border-gray;
+    }
+
+    .mstrmojo-toolBox {
+        height: 22px;
+        margin-bottom: $wsvi-element-horizontal-padding;
+
+        .mstrmojo-WebHoverButton {
+            padding-right: $wsvi-element-horizontal-padding;
+            float: left;
+            overflow: hidden;
+
+            .mstrmojo-Button-text {
+                line-height: 20px;
+            }
+        }
+
+        .mstrmojo-hideForms,
+        .mstrmojo-showForms {
+            overflow: hidden;
+        }
+
+        .mstrmojo-hideForms {
+            display: none !important;
+        }
+    }
+
+    .mstrmojo-linksBox {
+        $height: 30px;
+        $icon-top: ($height - $wsvi-default-icon-height) / 2;
+
+        border: 1px solid $wsvi-ui-border-gray;
+        background-color: $wsvi-primary-white;
+        height: 150px;
+        overflow: auto;
+        .mstrmojo-linkRow {
+            height: $height;
+            position: relative;
+            border-bottom: 1px solid $wsvi-ui-border-gray;
+
+            > div {
+                position: absolute;
+                top: 0;
+            }
+
+            .mstrmojo-ui-Pulldown {
+                top: 2px;
+            }
+
+            .mstrmojo-Label {
+                line-height: $height;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-bottom: 0;
+            }
+
+            .mstrmojo-attName {
+                @include wsvi-icon-before('attribute', $wsvi-element-padding);
+                width: 120px;
+                padding-left: $wsvi-element-padding + $wsvi-default-icon-width + 5px;
+                white-space: nowrap;
+
+                &:before {
+                    top: $icon-top
+                }
+            }
+
+            .mstrmojo-linksToLabel {
+                left: 162px;
+                width: 35px;
+                white-space: nowrap;
+            }
+
+            .mstrmojo-linkToAtt {
+                left: 202px;
+                width: 170px;
+            }
+
+            .mstrmojo-linkFormToPD,
+            .mstrmojo-linkFormFromPD {
+                display: none !important;
+            }
+
+            .mstrmojo-removeLink {
+                right: $wsvi-element-padding;
+                border: none;
+                display: none !important;
+                height: $height;
+                // overwrite WebButton default otherwise one of the dropdowns won't be clickable because this will cover that.
+                min-width: $wsvi-default-icon-width;
+                @include wsvi-icon-before('clear-cross', inherit);
+                position: absolute;
+
+                &:before {
+                    top: $icon-top;
+                    right: 0;
+
+                    &:active {
+                        @include wsvi-icon-position-clear-cross-active;
+                    }
+                }
+
+                .mstrmojo-Button-text {
+                    width: 0;
+                }
+            }
+
+            &:hover {
+                .mstrmojo-removeLink {
+                    display: block !important;
+                }
+            }
+
+        }
+
+        .mstrmojo-linkToAtt {
+            .mstrmojo-ui-Pulldown-text {
+                @include wsvi-icon-before('attribute', 3px);
+                padding-left: 25px;
+                width: auto;
+
+                &:before {
+                    top: 3px;
+                }
+
+                &.mstrmojo-Warning {
+                    border-color: orange;
+                }
+
+                &.nvo {
+                    @extend %noValidObject;
+                }
+            }
+        }
+    }
+
+    &.mstrmojo-advanced {
+        .mstrmojo-hideForms {
+            display: block !important;
+        }
+
+        .mstrmojo-showForms {
+            display: none !important;
+        }
+
+        .mstrmojo-linksBox {
+            .mstrmojo-linkRow {
+                .mstrmojo-linkFormFromPD {
+                    width: 93px;
+                    left: 150px;
+                    display: block !important;
+                }
+
+                .mstrmojo-linksToLabel {
+                    left: 248px;
+                }
+
+                .mstrmojo-linkToAtt {
+                    left: 288px;
+                }
+
+                .mstrmojo-linkFormToPD {
+                    width: 93px;
+                    left: 463px;
+                    display: block !important;
+                }
+            }
+        }
+    }
+}
+
+.mstrmojo-linkToAtt {
+    .mstrmojo-PopupList {
+        font-size: $wsvi-normal-font-size;
+
+        .item {
+            min-width: 143px;
+            max-width: 398px;
+
+            &.nvo {
+                pointer-events: none;
+                @extend %noValidObject;
+            }
+        }
+
+        .dim {
+            @mixin bg-dim-icon($icon) {
+                @include wsvi-icon($icon);
+                @include wsvi-icon-size;
+                float: left;
+            }
+
+            line-height: 18px !important;
+            padding: 5px 5px 5px 6px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            .arrow-b {
+                @include bg-dim-icon('collapse');
+            }
+
+            .arrow-r {
+                @include bg-dim-icon('expand');
+            }
+
+            .attr {
+                @include bg-dim-icon('attribute');
+            }
+
+            .derived-attr {
+                @include bg-dim-icon('derived-attribute');
+            }
+
+            &.lv1 > div {
+                padding-left: 11px;
+            }
+            &.lv2 > div {
+                padding-left: 26px;
+            }
+            &.lv3 > div{
+                padding-left: 39px;
+            }
+
+            &.collapse + div,
+            &.collapse + div + div,
+            &.collapse + div + div + div {
+                display: none;
+            }
+        }
+    }
+}
+
+#mstrmojo-link-validation .mstrmojo-Editor-content {
+    word-break: break-all;
+}

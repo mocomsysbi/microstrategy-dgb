@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.hash");mstrmojo.Event=mstrmojo.declare(null,null,{scriptClass:"mstrmojo.Event",init:function init(props){if(props&&!props.name){props.name=props.type;}mstrmojo.hash.copy(props,this);},name:"",src:null});}());

@@ -1,0 +1,64 @@
+@import "RefineVariables";
+
+.slider-widget {
+  position: relative;
+  overflow: visible;
+  margin: 0px 9px 3px 9px;
+  border: $widgetBorder;
+}
+
+.slider-widget-tint {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  display: none;
+}
+
+.slider-widget-tint.left {
+  left: 0;
+}
+
+.slider-widget-tint.right {
+  right: 0;
+}
+
+.slider-widget-highlight {
+  position: absolute;
+  padding: 0;
+  top: 0px;
+  height: 100%;
+  cursor: move;
+  background: #67c0f0;
+  opacity: 0.4;
+  border-left: 1px solid #34abeb;
+  border-right: 1px solid #34abeb;
+}
+
+.slider-widget-bracket {
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 100%;
+}
+
+.slider-widget-bracket.left {
+  background: url(./images/Refine/slider-handle.png) no-repeat center right;
+  margin-left: -8px;
+  cursor: e-resize;
+}
+
+.slider-widget-bracket.right {
+  background: url(./images/Refine/slider-handle.png) no-repeat center left;
+  margin-left: -4px;
+  cursor: w-resize;
+}
+
+.slider-widget-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.01;
+}

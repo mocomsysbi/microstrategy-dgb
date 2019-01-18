@@ -1,0 +1,97 @@
+/* QueryBuilder Filter Value Editor */
+.mstrmojo-qb-filtervalue-editor {
+  width:280px;
+
+  .mstrmojo-qb-filtervalue-name1 {
+    width: 100%;
+    padding: 5px;
+    white-space: nowrap;
+  }
+
+  .mstrmojo-qb-filtervalue-textbox1 {
+    width: 100px;
+  }
+
+  &.multi {
+    width:260px;
+
+    .mstrmojo-qb-filtervalue-name1 {
+      width: auto;
+      padding: 0px;
+    }
+
+    .mstrmojo-qb-filtervalue-name2 {
+      width: 30px;
+    }
+
+    .mstrmojo-qb-filtervalue-textbox1,
+    .mstrmojo-qb-filtervalue-textbox2 {
+      width: 40px;
+    }
+    /* TQMS 961195 */
+    .mstrmojo-qb-example-label{
+      padding-left:0;
+    }
+  }
+}
+
+.mstrmojo-qb-filtervalue-name1,
+.mstrmojo-qb-filtervalue-name2 {
+  display: none;
+
+  &.on {
+    display: block;
+  }
+}
+
+.mstrmojo-qb-filtervalue-textbox1,
+.mstrmojo-qb-filtervalue-textbox2 {
+  display: none;
+
+  &.on {
+    display: inline;
+  }
+}
+
+.mstrmojo-qb-filtervalue-box {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* TQMS 961195 */
+.mstrmojo-qb-filterexample-box {
+  margin-top: 5px;
+
+  .mstrmojo-qb-example-label{
+    width: 40px;
+    padding: 5px;
+    white-space: nowrap;
+  }
+
+  .mstrmojo-qb-example-name0,
+  .mstrmojo-qb-example-name1 {
+    display: none;
+    // color: #007ebe;
+    // font-style: italic;
+    padding-left: 15px;
+
+    &.on {
+      display: block;
+    }
+  }
+
+  .mstrmojo-qb-example-and-label {
+    padding-left: 15px;
+    display: none;
+
+    &.on {
+      display: block;
+    }
+  }
+}
+
+.mstrmojo-qb-filtervalue-errmsg {
+  width: 100%;
+  padding: 5px;
+  color: red;
+}

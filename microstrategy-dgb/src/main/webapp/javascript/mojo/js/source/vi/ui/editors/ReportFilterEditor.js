@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.vi.ui.editors.FilterEditor","mstrmojo.fe.FilterEditor");mstrmojo.vi.ui.editors.ReportFilterEditor=mstrmojo.declare(mstrmojo.vi.ui.editors.FilterEditor,[mstrmojo.fe._isReportFilterEditor],{scriptClass:"mstrmojo.vi.ui.editors.ReportFilterEditor"});}());

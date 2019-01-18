@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumBorderSection={BS_MAIN_CURVE:0,BS_MIN_CORNER:1,BS_MAX_CORNER:2,BS_MIN_LINE:3,BS_MAX_LINE:4,BS_BASE_CURVE:5};

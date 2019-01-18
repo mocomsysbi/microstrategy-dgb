@@ -1,0 +1,1 @@
+(function(){mstrmojo.DI.OneTierServerTransport={serverRequest:function serverRequest(id,requestId,request){window.FormWrapper.serverDIRequest(requestId,JSON.stringify(request.params),id,"response");},cancelRequest:function cancelRequest(requestId){return false;}};}());

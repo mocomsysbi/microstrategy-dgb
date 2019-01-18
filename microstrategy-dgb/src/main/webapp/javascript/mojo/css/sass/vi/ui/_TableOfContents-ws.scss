@@ -1,0 +1,321 @@
+@import '../vi-icons';
+@import '../../global-mixins';
+
+.mstrmojo-TableOfContents {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: $wsvi-primary-white;
+    @include box-sizing();
+
+
+    background-color: $wsvi-primary-gray;
+    @include box-shadow($wsvi-general-panel-shadow-color, $wsvi-general-panel-shadow-x, 0, $wsvi-general-panel-shadow-blur);
+    .mstrmojo-VIPanel-titlebar {
+        .mstrmojo-EditableLabel {
+            padding-left: 8px;
+            font-size: $wsvi-panel-header-font-size;
+            font-weight: $wsvi-panel-header-font-weight;
+            line-height: $wsvi-panel-row-height;
+        }
+
+        //Format for Content titlebar
+        &.content{
+            .mstrmojo-EditableLabel {
+                line-height: $wsvi-titlebar-editable-label-row-height; //28px;
+                padding-left: 28px; //4+18+6=28px
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 4px;
+                    left: 6px;
+                    width: 18px;
+                    height: 18px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .mstrmojo-VIPanel-content {
+        position: relative;
+        .chapter-dnd-indicator {
+            display: none;
+            height: 30px;
+            width: calc(100% - 5px);
+            background: transparent url(#{$vi-img-path}/toc_dnd_indicator.svg) 0 -24px no-repeat;
+            position: absolute;
+            margin-left: 5px;
+            .line {
+                height: 2px;
+                margin-top: 14px;
+                margin-left: 17px;
+                margin-right: 8px;
+                background-color: $wsvi-avatar-placeholder;
+            }
+        }
+
+        .mstrmojo-VIPanelContents {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .mstrmojo-VIPanelPortlet {
+            .mstrmojo-VIPanel-titlebar {
+                height: 26px;
+                .mstrmojo-VITitleBar.small {
+                    &:hover {
+                        background-color: $wsvi-hover-gray;
+                    }
+
+                    &.selected {
+                        background-color: $wsvi-selected-blue;
+                        &:hover {
+                            background-color: $wsvi-selected-blue;
+                        }
+                    }
+
+                    .left-toolbar {
+                        padding-right: 2px;
+                        .mstrmojo-Image {
+                            margin-top: 4px;
+                        }
+                    }
+
+                    .title-text {
+                        .mstrmojo-EditableLabel {
+                            padding-left: 0;
+                            font-size: $wsvi-normal-font-size;
+                            font-family: $wsvi-normal-font-family;
+                            font-weight: bold;
+                            line-height: normal;
+                            padding-top: $wsvi-normal-font-padding-top;
+                        }
+                    }
+
+                    .right-toolbar {
+                        .mstrmojo-VITitleToolbar {
+                            margin: 4px 3px 4px 3px;
+                        }
+                    }
+                }
+            }
+
+            .reorder-dropzone {
+                height: 10px;
+            }
+
+            .mstrmojo-VIPanel-content {
+                position: relative;
+                .page-dnd-indicator {
+                    display: none;
+                    z-index: 1;
+                    height: 30px;
+                    width: calc(100% - 19px);
+                    background: transparent url(#{$vi-img-path}/toc_dnd_indicator.svg) 0 -24px no-repeat;
+                    position: absolute;
+                    margin-left: 19px;
+                    .line {
+                        height: 2px;
+                        margin-top: 14px;
+                        margin-left: 16px;
+                        margin-right: 8px;
+                        background-color: $wsvi-primary-blue;
+                    }
+                }
+                .mstrmojo-VIUnitList {
+                    .unit {
+                        margin: 0;
+                        padding-left: 23px;
+
+                        &.tgt {
+                            position: relative;
+                            &:before {
+                                // this is a non-standard width, so we won't use wsvi-icon-before
+                                top: 50%;
+                                width: 20px;
+                                height: 12px;
+                                @include wsvi-icon-target-selector-TOC;
+                                position: absolute;
+                                left: 2px;
+                            }
+                        }
+
+                        &.src {
+                            position: relative;
+                            &:before {
+                                // this is a non-standard width, so we won't use wsvi-icon-before
+                                top: 50%;
+                                width: 20px;
+                                height: 12px;
+                                @include wsvi-icon-source-selector-TOC;
+                                position: absolute;
+                                left: 2px;
+                            }
+                        }
+
+                        .txt {
+                            display: block;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+
+
+                            &.editable {
+                                text-overflow: clip;
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    .unit.selected {
+                        background-color: $wsvi-selected-blue;
+                        &:hover {
+                            background-color: $wsvi-selected-blue !important;
+                        }
+                    }
+                    .unit.current-display {
+                        background-color: $wsvi-selected-gray;
+                        &.selected {
+                            background-color: $wsvi-selected-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    $wsvi-coverpage-height: 45px;
+    $wsvi-coverpage-width: 80px;
+
+    .mstrmojo-TOC-coverpage {
+        .mstrmojo-coverpage {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: default;
+            padding-top: 2px;
+
+            .image-and-btn {
+                width: $wsvi-coverpage-width;
+                height: $wsvi-coverpage-height;
+                @include box-shadow($wsvi-input-shadow, 0px, 0px, 1px);
+                position: relative;
+                margin-left: 8px;
+                overflow: hidden;
+                border: 1px solid $wsvi-border-gray;
+                .mstrmojo-coverpage-image {
+                    display: block;
+                    background-color: $wsvi-primary-white;
+                }
+                .mstrmojo-coverpage-btn {
+                    position: absolute;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: visibility 0s, opacity 0.25s linear;
+                    background-color: rgba($wsvi-primary-blue, 0.75);
+                    font-size: $wsvi-panel-header-font-size;
+                    font-weight: $wsvi-panel-header-font-weight;
+                    color: $wsvi-primary-white;
+                    width: 100%;
+                    height: $wsvi-coverpage-height;
+                    top: 0;
+                    left: 0;
+                    text-align: center;
+                    line-height: $wsvi-coverpage-height;
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        line-height: normal;
+                    }
+                }
+                &:hover {
+                    .mstrmojo-coverpage-btn {
+                        visibility: visible;
+                        opacity: 1;
+
+                        &.disabled {
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                &.error, &.default {
+                    .mstrmojo-coverpage-image {
+                        visibility: hidden;
+                    }
+                    .mstrmojo-coverpage-default {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: $wsvi-coverpage-width;
+                        height: $wsvi-coverpage-height;
+                    }
+                }
+
+                &.error {
+                    .mstrmojo-coverpage-default {
+                        @include wsvi-icon-coverpage-error;
+                    }
+                }
+
+                &.default {
+                    .mstrmojo-coverpage-default {
+                        @include wsvi-icon-coverpage-default;
+                    }
+                }
+            }
+            .extraInfo {
+                position: absolute;
+                top: 4px;
+                right: 0;
+                width: calc(100% - #{$wsvi-coverpage-width + 13px});
+                height: $wsvi-coverpage-height;
+                line-height: $wsvi-coverpage-height;
+                color: $wsvi-desc-gray;
+                font-family: $wsvi-font-family;
+                font-size: 10px;
+                span {
+                    display: inline-block;
+                    vertical-align: bottom;
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-light {
+    .mstrmojo-TableOfContents{
+         .mstrmojo-VIPanel-titlebar.content{
+            .mstrmojo-EditableLabel:before {
+               @include wsvi-icon-toc-editLabel-icon;
+            }
+        }
+    }
+}
+
+.mstrmojo-VIUnitList.tableOfContentUnitList.hasOwnAvatar {
+    .unit.isAvatar {
+        background-color: $wsvi-avatar-background-color;
+        padding: 2px 8px;
+        width: auto;
+        height: 22px;
+        line-height: 22px;
+        .txt {
+            padding-top: 0;
+            color: $wsvi-avatar-text-color;
+        }
+    }
+}
+
+//Presentation Mode hide Right-toolbar contextmenu
+.mstrmojo-RootView.presentation{
+    .mstrmojo-RootView-toc{
+        .mstrmojo-TableOfContents{
+            .mstrmojo-VITitleBar >.right-toolbar{
+                display: none;
+            }
+        }
+    }
+}

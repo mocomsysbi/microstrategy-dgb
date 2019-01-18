@@ -1,0 +1,125 @@
+@import '../../../_global.scss';
+@import '../../workstation-global';
+
+.mstrmojo-Editor.mstrmojo-PassThroughCalculationEditor {
+	font-size: $wsvi-normal-font-size;
+	font-family: $wsvi-normal-font-family;
+
+	.mstrmojo-Editor-content {
+		padding: $wsvi-element-padding 16px 16px 16px;
+	}
+
+	.mstrmojo-TextBoxWithLabel {
+		padding: 0 0 12px 0;
+
+		&.last {
+			padding: 0 0 21px 0;
+		}
+
+		span.mstrmojo-TextBox-label {
+			display: inline-block;
+			width: 50px;
+		}
+
+		input.mstrmojo-TextBox {
+			font-size: $wsvi-normal-font-size;
+			font-family: $wsvi-normal-font-family;
+			display: inline-block;
+			width: 339px;
+
+			&.unselectable {
+				color: $wsvi-font-gray;
+				border: none;
+				border-radius: 0;
+
+				box-shadow: none;
+				-webkit-box-shadow: none;
+				-moz-box-shadow: none;
+			}
+		}
+
+		&.deNameTB input.mstrmojo-TextBox {
+			width: 197px;
+		}
+	}
+
+	.deNameBox {
+		td:last-child {
+			width: 142px;
+			padding: 0 0 $wsvi-verticalinput_padding_big 0;
+
+			.mstrmojo-Button.mstrmojo-WebHoverButton {
+				float: right;
+				height: $wsvi-panel-row-height;
+				line-height: $wsvi-panel-row-height;
+			}
+		}
+	}
+
+
+	.mstrmojo-pthr-calc-labels {
+		padding: 0 0 $wsvi-element-padding 0;
+		height: 18px;
+
+	    .mstrmojo-item {
+	        height: 18px;
+	        float: left;
+	    }
+
+	    .right {
+	        float: right;
+	    }
+
+	    .mstrmojo-Button.mstrmojo-WebHoverButton.clear  {
+	    	color: $wsvi-link-blue;
+	    	&:hover {
+	    		text-decoration: underline;
+	    		cursor: pointer;
+	    	}
+
+	    	.mstrmojo-Button-text {
+	    		color: $wsvi-link-blue;
+
+	    		&:hover {
+		    		text-decoration: underline;
+		    		cursor: pointer;
+		    	}
+	    	}
+
+	    	&.disabled {
+	    		color: $wsvi-font-gray;
+
+	    		&:hover {
+	    			text-decoration: none;
+	    			cursor: auto;
+	    		}
+
+	    		.mstrmojo-Button-text {
+		    		color: $wsvi-font-gray;
+		    		
+		    		&:hover {
+			    		text-decoration: none;
+			    		cursor: auto;
+			    	}
+		    	}
+	    	}
+	    }
+
+		.expression.label {
+			font-weight: $wsvi-bold-font-weight;
+		}
+	}
+
+	.mstrmojo-MEBox.mstrmojo-PassThroughExpressionInputBox {
+		width: 387px;
+		height: 273px;
+	}
+
+	.mstrmojo-Editor-buttons {
+		.mstrmojo-Button {
+			float: right;
+			width: 66px;
+			margin-left: 10px;
+		}
+	}
+}

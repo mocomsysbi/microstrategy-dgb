@@ -1,0 +1,35 @@
+#RwMenuModel_WEB-INFxmllayoutsblocksInsertDHTMLWidgetMenuLayoutxml #mnuInsertWgD3WordCloud {
+    background:url(images/icon.svg)  no-repeat scroll 4px;
+    background-size: 16px;
+}
+
+#RwMenuModelEditor_WEB-INFxmllayoutsblocksInsertDHTMLWidgetMenuEditorLayoutxml #mnuInsertWgD3WordCloud {
+    background:url(images/icon.svg) no-repeat scroll 4px;
+    background-size: 16px;
+}
+
+.custom-vis-layout.d3wordcloud .tip {
+    position: absolute;
+    text-align: left;
+    width: auto;
+    height: auto;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightgray;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.custom-vis-layout.d3wordcloud .legend {
+    border: 1px solid rgb(85, 85, 85);
+    border-radius: 5px;
+    font-size: 0.8em;
+    margin: 10px;
+    padding: 8px;
+}
+
+.custom-vis-layout.d3wordcloud .bld {
+    font-weight: bold;
+}
+

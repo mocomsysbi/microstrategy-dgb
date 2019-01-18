@@ -1,0 +1,50 @@
+@import '../../../global';
+
+/** BEGIN: ColorPicker **/
+.mstrmojo-ui-ColorPicker {
+    .preview {
+        border: 1px solid #e4e4e5;
+    }
+
+    .mstrmojo-PopupList {
+        height: 116px;
+        padding: 5px 0 0 5px;
+        width: 146px;
+
+        .item {
+            cursor: pointer;
+            float: left;
+            height: 13px;
+            margin: 0 5px 5px 0;
+            position: relative;
+            width: 13px;
+
+            // The No Fill button.
+            &:first-child {
+                height: 19px;
+                line-height: 19px;
+                margin: 0 0 5px 0;
+                text-align: center;
+                width: 139px;
+            }
+
+            div {
+                @include box-sizing();
+
+                border: 1px solid #b5b5b5;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+
+            &.selected {
+                div:last-child {
+                    border: 1px dotted #fff;
+                }
+            }
+        }
+    }
+}
+/** END: ColorPicker **/

@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSTemplateUnitType={DssTemplateReserved:0,DssTemplateAttribute:1,DssTemplateDimension:2,DssTemplateMetrics:3,DssTemplateCustomGroup:4,DssTemplateConsolidation:5,DssTemplatePrompt:6,DssTemplateRawUnit:7,DssTemplateMetric:8};

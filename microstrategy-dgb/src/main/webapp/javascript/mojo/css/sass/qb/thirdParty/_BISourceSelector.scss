@@ -1,0 +1,109 @@
+.mstrmojo-qb-thirdParty-BISourceSelector{
+  padding-right: 12px;
+  @include box-sizing(border-box);
+  font-family: Arial;
+  font-size: 9pt;
+
+  .selector-panel-header{
+    .title-label{
+      float: left;
+      width: 150px;
+    }
+    .add-connection-button{
+      float: right;
+      color: #007EBE;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .selector-panel-header,
+  .source-type-selector{
+    margin: 12px 0;
+  }
+  .mstrmojo-wh-dbConnectionslist {
+    @include scrollBar();
+    overflow: hidden; //ljing 940034
+    margin-right: 2px;
+    &:hover {
+      overflow-y: auto;
+    }
+    padding-right: 10px;
+    padding-left: 0;
+    .item.tp29 {
+      .item-ic {
+        background-position-x: 0;
+      }
+    }
+    .item {
+      padding: 4px 20px 4px 9px;
+      &.selected {
+        background-color: $wsvi-selected-gray;
+        border-radius: 2px;
+      }
+      &:hover {
+        background-color: RGBA(68, 70, 73, 0.06);
+        border-radius: 2px;
+        .item-mn {
+          right: 7px;
+          top: 6px;
+        }
+      }
+      .item-mn {
+        background: transparent url(images/main_icons_sprite_02.png) no-repeat 2px 2px;
+        right: 7px;
+        top: 6px;
+      }
+      &.primary {
+        .item-n {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+.workstation {
+  .mstrmojo-qb-thirdParty-BISourceSelector {
+    padding-right: 0px;
+    .selector-panel-header {
+      .title-label {
+        text-transform: uppercase;
+        background-position: 0 2px;
+        background: transparent url(images/wh/object_icons.png) no-repeat;
+        padding-left: 17px;
+        font-weight: bold;
+        width: auto;
+        line-height: 12px;
+      }
+      .add-connection-button {
+        padding-left: 20px;
+        background: url("images/DI/workstation/workstation.svg") no-repeat -2400px -4px;
+        font-size: 0;
+        width: 0;
+        margin-top: -7px;
+        margin-right: -8px;
+        float: left;
+        //position: absolute;
+        margin-left: 5px;
+        left: 145px;
+        line-height: 22px;
+        white-space: nowrap;
+        cursor: hand;
+        &:hover{
+          background: url("images/DI/workstation/workstation.svg") no-repeat -2400px -44px;
+        }
+      }
+    }
+    .mstrmojo-wh-dbConnectionslist {
+      margin-right: 0px;
+      padding-right: 0px;
+      .item {
+        padding: 6px 20px 6px 10px;
+        .item-ic {
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+}

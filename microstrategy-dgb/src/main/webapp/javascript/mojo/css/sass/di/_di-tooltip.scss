@@ -1,0 +1,14 @@
+/* mizhang TQMS 948924 */
+//Tooltip style from vi
+@import '../global-mixins';
+
+body * {
+  //Variables of light theme
+  $ctrl-tooltip-border-color: #747474;
+  $ctrl-tooltip-color: #000000;
+  $ctrl-tooltip-bg-color: #EDEDED;
+  $ctrl-tooltip-arrow-opacity: 1;
+
+  @import '../theme-mixins';
+  @include ctrl-tooltip;
+}

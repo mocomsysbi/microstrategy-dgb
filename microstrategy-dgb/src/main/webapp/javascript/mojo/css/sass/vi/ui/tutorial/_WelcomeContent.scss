@@ -1,0 +1,16 @@
+.mstrmojo-tutorial-WelcomeContent {
+    overflow: hidden;
+    .welcome-scrollNode {
+        height: 100%;
+        .intro-content,
+        .samples-content {
+            width: 1004px;
+        }
+        &.mstrmojo-sb-show-default {
+            // Only show the y-axis scrollbar.
+            &:hover {
+                overflow-x: hidden;
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+(function(){mstrmojo.qb.OneTierServerTransport={serverRequest:function serverRequest(id,requestId,request){window.FormWrapper.serverRequest(requestId,JSON.stringify(request.params),id,"response");},cancelRequest:function cancelRequest(requestId){return false;}};}());

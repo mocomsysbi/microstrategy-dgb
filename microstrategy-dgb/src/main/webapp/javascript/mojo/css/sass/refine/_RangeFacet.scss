@@ -1,0 +1,38 @@
+@import "RefineVariables";
+
+.facet-range-body {
+}
+
+.facet-range-message {
+  color: $fontColorDisable;
+  padding-left: 9px;
+}
+
+.facet-range-histogram {
+  overflow: hidden;
+}
+
+.facet-range-status {
+  margin: 0 0 3px 0;
+  text-align: center;
+  color: #67c0f0;
+}
+
+.facet-range-choices {
+  height: 19px;
+}
+
+.facet-range-item {
+  float: left;
+  text-align: left;
+  padding: 0 2px 0 3px;
+}
+
+.facet-range-choice-label {
+  font-size: 0.85em;
+}
+
+.facet-range-choice-count {
+  display: inline;
+  font-size: 0.85em;
+}

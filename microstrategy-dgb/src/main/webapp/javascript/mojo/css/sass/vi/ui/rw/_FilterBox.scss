@@ -1,0 +1,305 @@
+@import '../../vi-global';
+@import '../../themes';
+
+/** BEGIN: FilterBox **/
+.mstrmojo-FilterBox {
+    background: #EEEEEE;
+
+    // The please drop unit label.
+    .ctrlOverlay {
+        .mstrmojo-Label.dropMsg {
+            background-image: url(#{$vi-img-path}/CanvasElements/icnFilter.png);
+        }
+    }
+
+    &.overlay {
+        .vi-DocSelector {
+            opacity: 0.3;
+        }
+    }
+
+    .vi-DocSelector {
+        .mstrmojo-ui-Pulldown {
+            @include box-shadow(transparent, 0, 0, 0); // issue #944039
+
+            max-width: 200px;
+            min-width: 130px;
+
+            .mstrmojo-ui-Pulldown-text {
+                background-image: none;
+                height: auto;
+                line-height: 1.9em;
+                position: relative;
+                padding-top: 0;
+                padding-bottom: 0;
+                min-height: 20px;
+
+                &:after {
+                    width: 13px;
+                    height: 13px;
+                    content: " ";
+                    position: absolute;
+                    right: 0px;
+                    background: url(#{$vi-img-path}/pulldown-sprite.png) no-repeat 50% -3px;
+                    display: inline-block;
+                    margin: auto;
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    // Filter Box (selector) Metric Qualification
+    .mstrmojo-vi-metric-qual {
+        .mstrmojo-TextBox,
+        .pulldown {
+            min-width: 130px;
+            max-width: 200px;
+        }
+
+        .v1,
+        .v2 {
+            width: 130px;
+            margin-top: 5px;
+        }
+        .pulldown, .v1, .v2 {
+            height: auto;
+        }
+        input {
+            height: auto;
+            line-height: 1.9em;
+            min-height: 1.9em;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: inherit;
+            text-decoration: inherit;
+            color: inherit;
+        }
+    }
+
+    &.horizontal {
+        .mstrmojo-vi-metric-qual {
+            .pulldown,
+            .v1,
+            .v2 {
+                float: left;
+                margin: 4px 0 4px 5px;
+            }
+        }
+    }
+
+    .mstrmojo-vi-sel-LinkList {
+        .mstrmojo-scrollNode.hasHorizontal {
+            height: 100%;
+        }
+    }
+
+    .mstrmojo-vi-sel-CheckList {
+        .item {
+            background-image: none;
+            line-height: normal;
+            vertical-align: middle;
+            padding-left: 0;
+
+            span {
+                display: inline-table;
+            }
+
+            span.only {
+                display: none;
+            }
+
+            &:hover span.only {
+                display: inline-table;
+            }
+
+            .text {
+                line-height: 1.9em;
+                min-width: 65px;
+            }
+
+            // Style icon span for background image
+            .icon {
+                background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) 1000px 1000px no-repeat;
+                height: 22px;
+                width: 17px;
+                vertical-align: middle;
+            }
+        }
+
+        &.radio .item {
+            &:hover span.only {
+                display: none;
+            }
+        }
+    }
+
+    &.mstrmojo-UnitContainer {
+        .mstrmojo-DocSelector {
+            div,
+            .item.selected {
+                text-decoration: inherit;
+                color: inherit;
+            }
+
+            &.strikeout {
+                div {
+                    text-decoration: inherit;
+                }
+
+                .item.selected {
+                    text-decoration: line-through;
+                }
+            }
+
+            .mstrmojo-vi-sel-CheckList {
+                &.horizontal {
+                    .item {
+                        margin-right: 20px;
+                        max-width: 220px;
+
+                        &:hover span.only {
+                            display: none;
+                        }
+                    }
+                }
+
+                .item {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    .text {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+    .mstrmojo-SimpleObjectInputBox input {
+        width: 100%;
+    }
+
+    &.items-fit-content {
+      .mstrmojo-vi-sel-CheckList {
+         .item {
+           min-width: 0;
+         }
+      }
+    }
+}
+/** END: FilterBox **/
+
+.mstrmojo-VIUnit-avatar {
+    &.icn-avi {
+        &.filterAvatar {
+            background-image: url(#{$vi-img-path}/id_sel.png);
+        }
+    }
+}
+
+.mstrmojo-ui-MenuEditor.mstrmojo-vi-FilterBox-targets {
+
+    .me-content {
+        padding: 0;
+    }
+
+    .mstrmojo-Label {
+        @include box-shadow(#595959, 0, 1px, 0);
+
+        padding: 0 8px 4px 8px;
+        border-bottom: 1px solid #303030;
+        color: #fff;
+        line-height: 1.5em;
+        overflow: hidden;
+        white-space: normal;
+    }
+
+    .mstrmojo-ui-CheckList {
+        padding: 4px 8px;
+
+        .scroll-container {
+            max-height: 200px;
+        }
+    }
+}
+
+// FilterBox Themes
+.mojo-theme-light {
+    .mstrmojo-FilterBox {
+        background-color: $theme-light-panel-background-color;
+
+        .mstrmojo-vi-sel-CheckList {
+            .item {
+                .icon {
+                    background-position: -6px -26px;
+                }
+
+                &.selected {
+                    .icon {
+                        background-position: -6px -1px;
+                    }
+                }
+            }
+
+            &.radio .item {
+                .icon {
+                    background-position: -6px -145px;
+                }
+                &.selected {
+                    .icon {
+                        background-position: -6px -121px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-FilterBox {
+        background-color: $theme-dark-panel-background-color;
+
+        .mstrmojo-vi-sel-CheckList {
+            .item {
+                .icon {
+                    background-position: -6px -242px;
+                }
+
+                &.selected {
+                    .icon {
+                        background-position: -6px -218px;
+                    }
+                }
+            }
+
+            &.radio .item {
+                .icon {
+                    background-position: -6px -361px;
+                }
+                &.selected {
+                    .icon {
+                        background-position: -6px -337px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//for dark theme 992298
+.mojo-theme-dark .mstrmojo-FilterBox.mstrmojo-UnitContainer
+.mstrmojo-DocSelector .mstrmojo-SimpleObjectInputBox .item {
+    .elem {
+        border-color: #0c75ad;
+        background: #2a4251;
+        color: #24a2e7;
+        &:hover {
+            color: #34abeb;
+            text-decoration: underline;
+        }
+    }
+}
+
+/** END: FilterBox **/

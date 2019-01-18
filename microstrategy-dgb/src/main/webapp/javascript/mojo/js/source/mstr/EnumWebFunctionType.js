@@ -1,0 +1,1 @@
+mstrmojo.mstr.EnumWebFunctionType={WebFunctionTypeReserved:0,WebFunctionTypeGeneric:1,WebFunctionTypeRankQual:2,WebFunctionTypePercentQual:3};

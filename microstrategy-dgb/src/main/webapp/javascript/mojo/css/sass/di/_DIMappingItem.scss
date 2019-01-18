@@ -1,0 +1,119 @@
+@import 'platform-variables';
+
+.mstrmojo-di-datapreview-headerIcon{
+  background-position: 0 5px;
+  background-repeat:no-repeat;
+  height:20px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.mstrmojo-di-datapreview-headerIcon.t0 {
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-position: 0px 0px;
+  .mstrmojo-InlineEditBox:hover {
+    border-color:transparent;
+  }
+}
+.mstrmojo-di-datapreview-headerIcon.t12 {background-image: url(images/DI/icon_att.png); /*attribute*/}
+.mstrmojo-di-datapreview-headerIcon.t4 {background-image: url(images/DI/icon_metric.png);/*fact*/}
+.mstrmojo-di-datapreview-headerIcon.t12.time  {background-image: url(images/DI/icon_time.png);/*time attribute*/}
+.mstrmojo-di-datapreview-headerIcon.t12.geo  {background-image: url(images/DI/icon_geo.png);/*geo attribute*/}
+.mstrmojo-di-datapreview-headerIcon.t12.recursive  {background: transparent url("#{$di-img-path}/hierarchy_icons.svg") -10px -10px no-repeat; margin-top: 5px; /*recursive attribute*/}
+.mstrmojo-di-datapreview-headerIcon.trs { background-image: url(images/DI/listView.png);
+  background-position: -20px -40px;}
+
+// do not import items in All Objects View should be gray
+.mstrmojo-di-allObjects-dialog .mstrmojo-Editor-content .attribute-metric-box {
+  .donotimport {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: #c4c4c4;
+  }
+}
+
+// mapping item style
+.mstrmojo-di-mappingitem {
+  width: 100%;
+  height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .mappingitem-icon {
+    float: left;
+    width: 20px;
+    margin-left: 5px;
+
+  }
+  .mappingitem-text {
+    float: left;
+    //max-width: 70%; //YGUO TQMS-894299 set a max width for the item text width
+    width: 60%; // TQMS 955451: set width
+    width: calc(100% - 41px);
+    width: -moz-calc(100% - 41px);
+    width: -webkit-calc(100% - 41px);
+    width: -o-calc(100% - 41px);
+    .mstrmojo-InlineEditBox{
+      border: 0px solid transparent;
+    }
+  }
+
+  .ipa {
+    font-style: italic;
+  }
+
+  .mstrmojo-InlineEditBox.edit, .mstrmojo-InlineEditBox:hover {
+    border-color: transparent;
+  }
+  .mstrmojo-InlineEditBox-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  .mstrmojo-InlineEditBox-input {
+    background-color: transparent;
+  }
+
+  // Wang Yintian TQMS 947569 change the icon of mune
+  .mappingitem-menu {
+    width: 16px;
+    height: 16px;
+    float: right;
+    background: transparent url(images/DI/workstation/workstation.svg) no-repeat -2046px -195px;
+    vertical-align: middle;
+    display: none;
+    margin-top: 3px
+  }
+
+  .mappingitem-menu:hover{
+    background-position: -2046px -195px;
+  }
+
+}
+.mstrmojo-di-mappingitem:hover .mappingitem-menu{
+     display: block;
+}
+
+.mstrmojo-di-mappingitem.linked .t12 .mappingitem-text-div {
+  float:left;
+}
+.mstrmojo-di-mappingitem.linked .mappingitem-linkedIcon {
+  background: url(vi/images/menu_icons.png) no-repeat -119px -84px;
+  width: 22px;
+  height: 20px;
+  cursor: default; //YGUO TQMS-912980
+  float: right;
+}
+
+.workstation{
+  .mstrmojo-di-datapreview-headerIcon.t12 {background: transparent url("vi/images/dataset.svg") -123px -28px no-repeat; /*attribute*/}
+  .mstrmojo-di-datapreview-headerIcon.t4 {background: transparent url("vi/images/dataset.svg") -393px -28px no-repeat;/*fact*/}
+  .mstrmojo-di-datapreview-headerIcon.t12.time  {background: transparent url("vi/images/dataset.svg") -183px -28px no-repeat;/*time attribute*/}
+  .mstrmojo-di-datapreview-headerIcon.t12.geo  {background: transparent url("vi/images/dataset.svg") -153px -28px no-repeat;/*geo attribute*/}
+  .mstrmojo-di-datapreview-headerIcon.t12.recursive  {background: transparent url("#{$di-img-path}/hierarchy_icons.svg") -10px -10px no-repeat; /*recursive attribute*/}
+}

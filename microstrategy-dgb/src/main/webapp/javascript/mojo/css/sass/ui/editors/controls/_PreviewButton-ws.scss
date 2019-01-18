@@ -1,0 +1,67 @@
+.workstation {
+    /** BEGIN: PreviewButton **/
+    .mstrmojo-ui-PreviewButton {
+        @include border-radius(4px);
+        @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 10px);   /* #905852 */
+
+        border: 1px solid transparent;
+        line-height: $wsvi-input-control-height - 2px; //2px is for borders VI Remap
+
+        %btn-base {
+            @include box-sizing();
+
+            float: left;
+            height: $wsvi-input-control-height - 2px;
+        }
+
+        .preview {
+            @extend %btn-base;
+        }
+
+        .btn {
+            @extend %btn-base;
+
+            @include linear-gradient(#eaebeb, #eae4e4, false, $vi-img-path + '/tree-expanded.png');
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            border-left: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .mstrmojo-PopupList {
+            background: #fff;
+            border: 1px solid transparent;
+            position: absolute;
+            right: 2px;
+            z-index: 1000;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 2px;
+            border-radius: 3px;
+        }
+
+        &.disabled {
+            @include border-radius(2px);
+            @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+
+            background-image: none;
+            opacity: 0.5;
+
+            .btn {
+                cursor: default;
+                opacity: 0.35; //DE103631: #3: the . "v" icon opacity should be 35%.
+            }
+        }
+    }
+
+    .mstrmojo-popup-widget-hosted.mstrmojo-ui-PreviewButton {
+        border-width: 0;
+
+        &.disabled {
+            opacity: 1; // #978904 Popup Widget of Preview Button should not be semi-transparent
+        }
+    }
+    /** END: PreviewButton **/
+
+}

@@ -1,0 +1,64 @@
+// Set up the placeholder selector for the common active css.
+%column-container-active-common {
+    border: 0 solid transparent;
+    content: '';
+    height: 0;
+    left: 50%;
+    position: absolute;
+    width: 0;
+}
+
+/** Start ColumnContainer **/
+.mstrmojo-ui-ColumnContainer {
+    position: relative;
+    border: solid #CFCFCF;
+    border-width: 0 1px;
+    border-left-color: #fff;
+    float: left;
+    height: 100%;
+    width: 148px;
+    overflow: auto;
+
+    &.mstrmojo-scrollbar-host {
+        overflow: hidden;
+    }
+
+    // Hide the border of the last child so that it appears that it's occupying the entire container.
+    &:last-child {
+        border-right-color: transparent;
+    }
+
+    &.active:before {
+        @extend %column-container-active-common;
+
+        $border-width-cc-before: 6px;
+        border-width: $border-width-cc-before;
+        margin-left: -$border-width-cc-before;
+        border-bottom-color: #CFCFCF;
+        top: ($border-width-cc-before * -2);
+    }
+
+    &.active:after {
+        @extend %column-container-active-common;
+
+        $border-width-cc-after: 5px;
+        border-width: $border-width-cc-after;
+        margin-left: -$border-width-cc-after;
+        border-bottom-color: #FAFAFA;
+        top: ($border-width-cc-after * -2);
+        z-index: 2;
+    }
+
+    .mstrmojo-ui-CheckList {
+        .item {
+            white-space: nowrap;
+        }
+    }
+
+    .mstrmojo-scrollNode {
+        height: 100%;
+        width: 100%;
+    }
+
+}
+/** End ColumnContainer **/

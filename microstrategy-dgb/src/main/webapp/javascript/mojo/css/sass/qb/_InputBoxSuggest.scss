@@ -1,0 +1,15 @@
+.mstrmojo-Popup.mstrmojo-ObjectInputBox-suggest.mstrmojo-ME-TokenInputBox-suggest {
+    background-color: #F4F4F4;
+    border: 1px solid $wsvi-ui-border-gray;
+    .mstrmojo-suggest-text {
+        &.selected {
+            background-color: $wsvi-selected-gray;
+        }
+        &:hover {
+            background-color: $wsvi-hover-gray;
+        }
+        padding: 3px 10px 1px;
+        line-height: 19px;
+        color: $wsvi-primary-black;
+    }
+}

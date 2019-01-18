@@ -1,0 +1,573 @@
+.workstation {
+
+    $filterEditorWidth: 800px;
+    .mstrmojo-FE.mstrmojo-vi-ui-FE {
+        width: $filterEditorWidth;
+        .mstrmojo-text {
+            font-size: $wsvi-normal-font-size;
+        }
+        .mstrmojo-textset.editable:hover .mstrmojo-text {
+            /* to show a set of text nodes is editable, underline it over hover */
+            text-decoration: none;
+            cursor: default;
+        }
+        .mstrmojo-Editor-subtitle-container {
+            .mstrmojo-Box {
+                padding: $wsvi-element-padding 16px;
+                height: $wsvi-panel-row-height;
+                .mstrmojo-Label {
+                    font-size: $wsvi-normal-font-size;
+                    color: $wsvi-primary-black;
+                    line-height: $wsvi-panel-row-height;
+                }
+            }
+        }
+        .mstrmojo-Editor-content {
+            padding: 0 0;
+            .mstrmojo-FE-content {
+                border: none;
+                margin-top: 0;
+                padding-bottom: $wsvi-element-padding;
+                .mstrmojo-FE-expr-header {
+                    font-size: $wsvi-normal-font-size;
+                    padding: 0 0 $wsvi-element-text-padding 0;
+                    margin: 0 $wsvi-editor-content-padding;
+                    line-height: $wsvi-panel-row-height;
+                    color: $wsvi-font-gray;
+                    &.tl {
+                        padding-top: $wsvi-element-padding;
+                        margin-top: $wsvi-element-padding;
+                        border-top: 1px solid $wsvi-splitline-gray;
+                    }
+                }
+
+                .mstrmojo-expr {
+                    padding: 0 $wsvi-editor-content-padding;
+                    >.mstrmojo-ListBase2-itemsContainer {
+                        width: $filterEditorWidth - ($wsvi-editor-content-padding * 2);
+                    }
+                }
+
+                .mstrmojo-FE-expr-list.VFEmpty {
+                    .mstrmojo-FE-expr-header {
+                        padding: 0;
+                        &.tl {
+                            padding: $wsvi-element-padding 0 $wsvi-element-text-padding 0;
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+            .mstrmojo-rw-ConditionWalk {
+                border: none;
+                margin-top: 0;
+            }
+        }
+
+        .mstrmojo-cond-contents {
+            margin: 0 0 $wsvi-element-padding 0;
+            border: 1px solid $wsvi-ui-border-gray;
+            @include box-sizing();
+            @include border-radius($wsvi-box-radius);
+            @include box-shadow($wsvi-input-shadow, 0px, 1px, 2px);
+            background-color: #FBFBFB;
+            padding: 8px 5px 8px 5px;
+            height: 36px;
+            .mstrmojo-textset {
+                margin-left: 5px;
+                line-height: 18px;
+                font-size: $wsvi-normal-font-size;
+                &.mstrmojo-cond-text {
+                    color: $wsvi-primary-black;
+                    width: 700px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: inline-block;
+                    vertical-align: middle;
+                    .mstrmojo-text {
+                        position: relative;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 8px;
+                            @include transform(translate(0, -50%));
+                            left: 0px;
+                            width: 18px;
+                            height: 18px;
+                            background: transparent url(#{$vi-img-path}/unitList/icon_dataset_sprite.png) 1000px 1000px no-repeat;
+                        }
+                        &.mstrmojo-attr,
+                        &.mstrmojo-attr2,
+                        &.mstrmojo-attr3 {
+                            padding-left: 21px;
+                            font-weight: bold;
+                            &:before {
+                                @include wsvi-icon-attribute;
+                            }
+                            &.recursive:before {
+                                @include wsvi-icon-recursive-attribute;
+                            }
+                        }
+                        &.mstrmojo-metric,
+                        &.mstrmojo-m2,
+                        &.mstrmojo-m3 {
+                            padding-left: 21px;
+                            font-weight: bold;
+                            &:before {
+                                @include wsvi-icon-metric;
+                            }
+                        }
+                    }
+                    .mstrmojo-elem {
+                        &.single, &.level {
+                            padding-left: 18px;
+
+                            &:before {
+                                background: transparent url(#{$vi-img-path}/financial_report.svg) 5000px 5000px no-repeat;
+                                content: '';
+                            }
+                        }
+
+                        &.single:before {
+                            background-position: -240px -29px;
+                        }
+
+                        &.level:before {
+                            background-position: -120px -149px;
+                        }
+
+                        &.not {
+                            color: $wsvi-font-gray;
+                            text-decoration: line-through;
+
+                            &.single:before {
+                                background-position: -210px -29px;
+                            }
+                            &.level:before {
+                                background-position: -180px -149px;
+                            }
+                        }
+                    }
+                    .spliter:before {
+                        content: ',';
+                    }
+                }
+            }
+
+            .mstrmojo-create-set-text {
+                background-color: #FBFBFB;
+            }
+
+            &.selected,
+            &:hover {
+                background-color: #FBFBFB;
+                border: 1px solid rgba($wsvi-primary-blue, 0.75);
+            }
+
+            .mstrmojo-add-cond {
+                display: none;
+            }
+        }
+
+        .mstrmojo-FE-expr-list {
+            overflow: hidden;
+            @include flex();
+            flex-flow: column;
+        }
+        .mstrmojo-andor-contents {
+            .mstrmojo-andor-top,
+            .mstrmojo-andor-bottom {
+                display: none;
+            }
+
+            .mstrmojo-andor-contents {
+                padding: 0 0 0 $wsvi-verticalinput_padding_big;
+                border-left: 2px solid $wsvi-font-gray;
+            }
+
+        }
+
+        .mstrmojo-cond-prefix,
+        .mstrmojo-relation-prefix,
+        .mstrmojo-dynamic-prefix,
+        .mstrmojo-andor-prefix {
+            padding: 0;
+            height: 14px;
+            line-height: 14px;
+            font-size: $wsvi-normal-font-size;
+            margin-bottom: $wsvi-element-padding;
+            .mstrmojo-text.mstrmojo-andor {
+                line-height: 14px;
+                color: $wsvi-primary-blue;
+            }
+        }
+
+        .mstrmojo-relationNode-inf {
+            .mstrmojo-del {
+                margin: 5px 0 0 2px;
+            }
+        }
+        .mstrmojo-cond-tools {
+            .mstrmojo-del {
+                margin: 9px 0 0 2px;
+            }
+        }
+
+        .mstrmojo-relationNode-inf {
+            .mstrmojo-relation-prefix-text,
+            .mstrmojo-textset,
+            .mstrmojo-relation-postfix-text,
+            .mstrmojo-relation-relateby-text {
+                font-size: $wsvi-normal-font-size;
+            }
+
+            .mstrmojo-relation-prefix-text,
+            .mstrmojo-textset {
+                color: $wsvi-primary-black;
+            }
+
+            .mstrmojo-textset {
+                margin-left: 0;
+                max-width: 148px;
+                font-weight: bold;
+                &:hover{
+                    text-decoration: none;
+                    cursor: default;
+                }
+            }
+
+            .mstrmojo-relation-postfix-text,
+            .mstrmojo-relation-relateby-text {
+                color: rgba($wsvi-primary-black, 0.75);
+            }
+
+            .mstrmojo-relation-related-by-box {
+                display: inline-block;
+                white-space: nowrap;
+                float: right;
+                padding-right: 50px;
+                .RelatedBy-Box {
+                    width: 100%;
+                    .mstrmojo-Label {
+                        display: inline-block;
+                        margin: 0;
+                        padding: 0;
+                        line-height: 27px;
+                        text-align: right;
+                        float: left;
+                    }
+                    .mstrmojo-ui-Pulldown {
+                        width: 122px;
+                        height: 27px;
+                        float: right;
+                        box-shadow: none;
+                        .mstrmojo-ui-Pulldown-text {
+                            text-align: right;
+                            padding-left: 12px;
+                            padding-right: 22px;
+                            border: none;
+                            font-weight: bold;
+                            height: 100%;
+                            line-height: 27px;
+                            background-image: none;
+                            background-color: transparent;
+                            &:hover {
+                                @extend %ctrl-light-pulldown-arrow;
+                                background-position: 100% 3px;
+                            }
+                        }
+                        .ctrl-popup-list.mstrmojo-PopupList {
+                            max-width: 160px;
+                            .mstrmojo-popupList-scrollBar {
+                                max-height: 280px;
+                            }
+                        }
+                    }
+                }
+            }
+            .mstrmojo-relation-toolbar {
+                position: absolute;
+                right: 30px;
+                top: 3px;
+            }
+        }
+
+        .mstrmojo-Dial.mstrmojo-CGE-andOrDial,
+        .mstrmojo-Dial.mstrmojo-CGE-andOrDial.hasSelection {
+            font-size: $wsvi-normal-font-size;
+            color: $wsvi-primary-black;
+            cursor: default;
+            line-height: $wsvi-panel-row-height;
+            .dial-item.selected {
+                font-size: $wsvi-normal-font-size;
+                font-weight: normal;
+                color: $wsvi-primary-black;
+                line-height: $wsvi-panel-row-height;
+            }
+            .dial-item {
+                padding: 0 8px 0 8px;
+                background-color: $wsvi-background-gray;
+                &:hover {
+                    background-color: $wsvi-hover-gray;
+                }
+            }
+        }
+
+
+        .mstrmojo-FE-datasetExpr,
+        .mstrmojo-FE-limitExpr {
+            height: 100%;
+            //DE48569 make DnD hot-zone when condition list is empty.
+            min-height: 10px;
+            overflow-x: hidden;
+
+            .mstrmojo-ListBase2-dropCue {
+                display: none;
+                position: absolute;
+                height: 1px;
+                line-height: 1px;
+                border-top: 2px solid $wsvi-primary-blue;
+                left: 0;
+                top: 0; /* added, to keep it out of document flow in IE */
+                z-index: 2;
+                width: 100%;
+            }
+            .mstrmojo-ListBase2-dropCue-inner {
+                position: absolute;
+                top: -6px;
+                height: 13px;
+                left: 0px; /* was: -3px; */
+                width: 13px;
+                z-index: 2;
+                background: none;
+            }
+        }
+
+        .mstrmojo-FE-limitExpr {
+            .mstrmojo-AndOrNode.per-metric-limit > .mstrmojo-andor-prefix,
+            .mstrmojo-ConditionNode.per-metric-limit > .mstrmojo-cond-prefix {
+                &:hover {
+                    background-color: transparent;
+                }
+                .mstrmojo-textset .mstrmojo-text.mstrmojo-andor {
+                    color: $wsvi-font-gray;
+                    cursor: default;
+                }
+            }
+
+            .mstrmojo-ListBase2-dropCue.mstrmojo-FE-limitExpr {
+                padding: 0;
+            }
+        }
+
+        .mstrmojo-FE-content {
+            height: auto;
+            .mstrmojo-FE-expr-list {
+                // this height should be consistent with the height of Condition Walk
+                // which defined in mstrmojo.vi.ui.FilterEditor.js
+                // getConditionWalkConfig
+                height: 369px;
+            }
+            .mstrmojo-expr {
+                padding: 4px 6px 6px 4px;
+            }
+        }
+        //Hide the expression tool bar
+        .mstrmojo-FE-exprTool {
+            visibility: hidden;
+            padding: 0 0 0 0;
+            height: 0;
+            width: 0;
+            .mstrmojo-FE-addCondition {
+                margin: 0;
+            }
+        }
+
+        /*Start of Create set node and Rename node*/
+        .mstrmojo-create-set-text,
+        .mstrmojo-rename-text {
+            background-color: transparent;
+        }
+
+        /**Start of Relation node**/
+        .mstrmojo-relationNode {
+            border: 1px solid $wsvi-ui-border-gray;
+            @include box-sizing();
+            @include border-radius($wsvi-box-radius);
+            @include box-shadow($wsvi-input-shadow, 0px, 1px, 2px);
+            padding: 5px;
+            margin: 0 0 5px 0;
+            position: relative;
+            background-color: #FBFBFB;
+            &:hover {
+                .mstrmojo-relationNode-inf {
+                    .mstrmojo-del {
+                        display: inline;
+                    }
+                }
+
+                .mstrmojo-relation-convert-text {
+                    display: inline-block;
+                }
+            }
+
+            &.selected {
+                padding: 5px;
+                background-color: #D5F2FC;
+            }
+
+            &:hover,
+            &.selected {
+                border: 1px solid rgba($wsvi-primary-blue, 0.75);
+            }
+
+            .mstrmojo-cond-contents {
+                background-color: $wsvi-primary-white;
+                &.selected,
+                &:hover {
+                    background-color: $wsvi-primary-white;
+                }
+            }
+
+            .mstrmojo-relation-childTreeNode {
+                margin-top: 5px;
+                .mstrmojo-andor {
+                    color: #9C9C9C;
+                }
+                & > .mstrmojo-ListBase2 > .mstrmojo-ListBase2-itemsContainer > .mstrmojo-itemwrap {
+                    & > .mstrmojo-ConditionNode,
+                    & > .mstrmojo-dynamic {
+                        .mstrmojo-del {
+                            display: none;
+                        }
+                    }
+                }
+
+            }
+
+            .mstrmojo-at,
+            .mstrmojo-dmy {
+                display: none;
+            }
+        }
+
+        .VI-CreateSet-Editor {
+            height: auto;
+            width: 300px;
+
+            .mstrmojo-Editor-content {
+                padding: 9px 9px 5px 9px;
+
+                .Attributes-Box {
+                    border-bottom: 1px solid $wsvi-ui-border-gray;
+                }
+                .RelatedBy-Box .Label,
+                .Attributes-Box .Label {
+                    font-weight: bold;
+                    margin: 0;
+                    line-height: 26px;
+                    font-size: $wsvi-normal-font-size;
+                }
+
+                .Attributes-Box,
+                .RelatedBy-Box {
+                    padding-bottom: $wsvi-element-padding;
+                }
+
+                .RelatedBy-Box {
+                    padding-top: $wsvi-element-padding;
+                }
+                .RelatedBy-Box .Pulldown {
+                    padding-left: 10px;
+                    vertical-align: middle;
+                    max-width: 160px;
+                }
+                .Attributes-Box .CheckList {
+                    height: 150px;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                }
+                .mstrmojo-ui-Checkbox.AppQual-CheckBox {
+                    padding: 0 4px 0 17px;
+                    margin: -1px 0 2px 0;
+                    width: auto;
+                    height: 22px;
+                    float: left;
+                }
+                .mstrmojo-Label.AppQual-Label {
+                    margin-left: 20px;
+                }
+
+                .mstrmojo-ui-CheckList {
+                    .icn {
+                        overflow: hidden;
+                    }
+                    .item {
+                        margin: 2px 0 2px 0;
+                        padding-left: 38px;
+                        position: relative;
+                        white-space: nowrap;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            @include transform(translate(0, -50%));
+                            left: 16px;
+                            width: 18px;
+                            height: 18px;
+                            background: transparent url(#{$vi-img-path}/unitList/icon_dataset_sprite.png) 1000px 1000px no-repeat;
+                        }
+                        &.t12 {
+                            &:before {
+                                @include wsvi-icon-attribute;
+                            }
+                            &.st3077 {
+                                &:before {
+                                    @include wsvi-icon-derived-attribute;
+                                }
+                            }
+                        }
+
+                        &.t12g {
+                            &:before {
+                                @include wsvi-icon-geographic-attribute;
+                            }
+                        }
+
+                        &.t12d {
+                            &:before {
+                                @include wsvi-icon-derived-attribute;
+                            }
+                        }
+
+                        &.t12t {
+                            &:before {
+                                @include wsvi-icon-time-attribute;
+                            }
+                        }
+
+                        &.t1,
+                        &.t47 {
+                            &.st12033 {
+                                &:before {
+                                    @include wsvi-icon-derived-attribute;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .mstrmojo-Editor-buttons {
+                padding-bottom: 9px;
+                .mstrmojo-HBox {
+                    padding-right: calc(50% - 76px);
+                }
+                .mstrmojo-WebButton {
+                    margin: 0 0 0 10px;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

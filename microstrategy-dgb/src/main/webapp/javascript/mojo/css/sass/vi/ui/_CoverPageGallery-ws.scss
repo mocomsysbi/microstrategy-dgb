@@ -1,0 +1,19 @@
+.mstrmojo-vi-ui-CoverPageGallery {
+    .coverPageItem {
+        width: 86px;
+        height: 48px;
+        padding: 2px;
+        margin: 1px;
+        &.selected, &.selected:hover {
+            border: 2px solid $wsvi-primary-blue;
+            margin: 1px;
+            padding: 0;
+        }
+
+        &:hover {
+            border: 2px solid #CECECE;
+            margin: 0 2px 2px 0;
+            padding: 0;
+        }
+    }
+}

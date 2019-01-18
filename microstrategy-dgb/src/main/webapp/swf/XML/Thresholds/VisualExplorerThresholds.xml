@@ -1,0 +1,106 @@
+<Thresholds>
+    <ThresholdColorBands>
+        <ThresholdColorBand title="mstr.1553">
+            <Threshold startValue="0" endValue="20" backgroundColor="0xD7FFD7" />
+            <Threshold startValue="20" endValue="40" backgroundColor="0xADD7AD" />
+            <Threshold startValue="40" endValue="60" backgroundColor="0x81AE81" />
+            <Threshold startValue="60" endValue="80" backgroundColor="0x558655" />
+            <Threshold startValue="80" endValue="100" backgroundColor="0x043B04" />
+        </ThresholdColorBand>
+        <ThresholdColorBand title="mstr.1554">
+            <Threshold startValue="0" endValue="20" backgroundColor="0xF1F7B4" />
+            <Threshold startValue="20" endValue="40" backgroundColor="0xFFFF88" />
+            <Threshold startValue="40" endValue="60" backgroundColor="0xE2DF30" />
+            <Threshold startValue="60" endValue="80" backgroundColor="0xBFBC0D" />
+            <Threshold startValue="80" endValue="100" backgroundColor="0x908E03" />
+        </ThresholdColorBand>
+        <ThresholdColorBand title="mstr.1555">
+            <Threshold startValue="0" endValue="20" backgroundColor="0xF77B7B" />
+            <Threshold startValue="20" endValue="40" backgroundColor="0xCF3F3F" />
+            <Threshold startValue="40" endValue="60" backgroundColor="0xCC0000" />
+            <Threshold startValue="60" endValue="80" backgroundColor="0x990000" />
+            <Threshold startValue="80" endValue="100" backgroundColor="0x690D0D" />
+        </ThresholdColorBand>
+        <ThresholdColorBand title="mstr.1556">
+            <Threshold startValue="0" endValue="20" backgroundColor="0x97D2FC" />
+            <Threshold startValue="20" endValue="40" backgroundColor="0x62B4EE" />
+            <Threshold startValue="40" endValue="60" backgroundColor="0x2798E8" />
+            <Threshold startValue="60" endValue="80" backgroundColor="0x2387CF" />
+            <Threshold startValue="80" endValue="100" backgroundColor="0x1F77B4" />
+        </ThresholdColorBand>
+        <ThresholdColorBand title="mstr.1557">
+            <Threshold startValue="0" endValue="20" backgroundColor="0xE5E5E5" />
+            <Threshold startValue="20" endValue="40" backgroundColor="0xBFBFBF" />
+            <Threshold startValue="40" endValue="60" backgroundColor="0x949494" />
+            <Threshold startValue="60" endValue="80" backgroundColor="0x555555" />
+            <Threshold startValue="80" endValue="100" backgroundColor="0x404040" />
+        </ThresholdColorBand>
+        <ThresholdColorBand title="mstr.1558">
+            <Threshold startValue="0" endValue="20" backgroundColor="0xFF0000" />
+            <Threshold startValue="20" endValue="80" backgroundColor="0xFFFF00" />
+            <Threshold startValue="80" endValue="100" backgroundColor="0x00FF00" />
+        </ThresholdColorBand>
+        <ThresholdColorBand title="mstr.1559">
+            <Threshold startValue="0" endValue="10" backgroundColor="0xCC2525" />
+            <Threshold startValue="10" endValue="30" backgroundColor="0xE34B4B" />
+            <Threshold startValue="30" endValue="50" backgroundColor="0xE97D7D" />
+            <Threshold startValue="50" endValue="70" backgroundColor="0x79D479" />
+            <Threshold startValue="70" endValue="90" backgroundColor="0x57BA57" />
+            <Threshold startValue="90" endValue="100" backgroundColor="0x2CA02C" />
+        </ThresholdColorBand>
+        <ThresholdColorBand title="mstr.1560">
+            <Threshold startValue="0" endValue="20" backgroundColor="0xcc1d1d" />
+            <Threshold startValue="20" endValue="40" backgroundColor="0xff5824" />
+            <Threshold startValue="40" endValue="60" backgroundColor="0xff9547" />
+            <Threshold startValue="60" endValue="80" backgroundColor="0xffc561" />
+            <Threshold startValue="80" endValue="100" backgroundColor="0x65d22b" />
+        </ThresholdColorBand>
+    </ThresholdColorBands>
+    <ThresholdImageBands>
+        <ThresholdImageBand title="mstr.996" combinedImageURL="../images/quickThresholdImgs/arrows.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/red_arrow.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/yellow_arrow.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/green_arrow.png" />
+        </ThresholdImageBand>
+        <ThresholdImageBand title="mstr.1003" combinedImageURL="../images/quickThresholdImgs/tack_pins.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/regularpp_red.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/regularpp_yellow.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/regularpp_green.png" />
+        </ThresholdImageBand>
+        <ThresholdImageBand title="mstr.1004" combinedImageURL="../images/quickThresholdImgs/push_pins.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/roundedpp_red.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/roundedpp_yellow.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/roundedpp_green.png" />
+        </ThresholdImageBand>
+        <ThresholdImageBand title="mstr.997" combinedImageURL="../images/quickThresholdImgs/blank.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/blank_bubble_red.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/blank_bubble_blue.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/blank_bubble_green.png" />
+        </ThresholdImageBand>
+        <ThresholdImageBand title="mstr.998" combinedImageURL="../images/quickThresholdImgs/trucks.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/truck_red.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/truck_left.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/truck_green.png" />
+        </ThresholdImageBand>
+        <ThresholdImageBand title="mstr.999" combinedImageURL="../images/quickThresholdImgs/retail.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/retail_store_red.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/retail_store_left.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/retail_store_green.png" />
+        </ThresholdImageBand>
+        <ThresholdImageBand title="mstr.1000" combinedImageURL="../images/quickThresholdImgs/hospital.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/hospital_red.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/hospital_left.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/hospital_green.png" />
+        </ThresholdImageBand>
+        <ThresholdImageBand title="mstr.1001" combinedImageURL="../images/quickThresholdImgs/restaurant.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/restaurant_red.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/restaurant_left.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/restaurant_green.png" />
+        </ThresholdImageBand>
+        <ThresholdImageBand title="mstr.1002" combinedImageURL="../images/quickThresholdImgs/service.png">
+            <Threshold startValue="0" endValue="20" imageURL="../images/quickThresholdImgs/service_ctr_repair_red.png" />
+            <Threshold startValue="20" endValue="80" imageURL="../images/quickThresholdImgs/serv_ctr_repair_left.png" />
+            <Threshold startValue="80" endValue="100" imageURL="../images/quickThresholdImgs/service_ctr_repair_green.png" />
+        </ThresholdImageBand>
+    </ThresholdImageBands>
+</Thresholds>

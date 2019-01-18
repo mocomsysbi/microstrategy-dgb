@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumFontAlignment={FA_LEFT:0,FA_CENTER:1,FA_RIGHT:2};

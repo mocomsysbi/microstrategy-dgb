@@ -1,0 +1,374 @@
+@import '../vi-global';
+@import '../vi-icons';
+@import 'unit-list-props-ws';
+@import '../workstation-global';
+
+.mstrmojo-VIDatasetEditor {
+  width: 666px;
+
+  .mstrmojo-Editor-content {
+    padding-bottom: 0;
+  }
+
+  .mstrmojo-VIDatasetEditorContents {
+    width: 633px;
+    .objbrowserContainer {
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -10px;
+        bottom: 0;
+        right: 0;
+        border-right: 1px solid $wsvi-primary-white;
+        box-shadow: -1px 0 0 0 #dedede;
+      }
+      .datasetEditorobjbrowser {
+        border: none;
+        height: 472px;
+        width: 231px;
+        overflow: hidden;
+        background: none;
+        padding: 0 4px 0 0;
+        &:before {
+          display: none;
+        }
+        .mstrmojo-VIPanel-titlebar {
+          display: none;
+        }
+        .mstrmojo-VIPanel-content {
+          height: 393px;
+          .mstrmojo-TreeNode-state {
+            margin-left: 0;
+          }
+        }
+        .filter {
+          margin: 4px 11px 0 0;
+        }
+        .search-box {
+          margin: 8px 11px 9px 0;
+          .mstrmojo-ui-sb-input {
+            width: 128px;
+          }
+        }
+        .horizontal-line {
+          display: none;
+        }
+
+        > .mstrmojo-scrollbar-host {
+          .mstrmojo-scrolltrack {
+            background-color: rgba($wsvi-primary-white, 0.8);
+          }
+        }
+      }
+    }
+
+    .datasetEditorContainer {
+      height: 467px;
+      width: 384px;
+      padding-left: 9px;
+      overflow: hidden;
+      display: inline-block;
+
+      .datasetEditorTopContainer {
+        margin-bottom: $wsvi-element-padding;
+        overflow: hidden;
+        width: 100%;
+
+        .filterLink {
+          width: 100%;
+
+          .filterButton {
+            margin-top: $wsvi-element-padding;
+            padding-left: 22px;
+            float: right;
+            color: $wsvi-link-blue;
+            @include wsvi-icon-empty-filter;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            &.hasFilter {
+              @include wsvi-icon-has-filter;
+            }
+
+            .mstrmojo-Button-text {
+              background: $wsvi-primary-white;
+            }
+            &.disabled {
+              background-position-y: -60px;
+              &:hover {
+                cursor: default;
+                text-decoration: initial;
+              }
+              .mstrmojo-Button-text {
+                color: $wsvi-font-gray;
+              }
+            }
+          }
+        }
+      }
+      .datasetEditorContent {
+        border: 1px dashed $wsvi-splitline-gray;
+        width: 382px;
+        height: 422px;
+        overflow: hidden;
+        &.entered > .mstrmojo-scrolltrack .mstrmojo-scrollbar {//because a bug in chrome, we need to use js to do something like hover
+          opacity: 0.5;
+          -webkit-transition-delay: 0;
+        }
+        .mstrmojo-scrollNode,
+        .mstrmojo-sb-show-default {
+          overflow: auto;
+          height: 422px;
+        }
+        .datasetEditorUnitlistContainer {
+          background-color: #FFFFFF;
+          box-shadow: 0 0 1px 1px #f6f6f7;
+          min-height: 420px;
+          width: 382px;
+
+          &.noFilter {
+            height: 307px;
+          }
+
+          &.objectAllowDragIn {
+            border: 1px solid #23A3D3;
+          }
+
+          .clearButton {
+            background: #f6f6f6;
+            padding-left: 12px;
+            @include box-shadow($wsvi-border-gray, 0, 1px, 0, false);
+
+            .mstrmojo-Button-text {
+              line-height: 24px;
+              color: $wsvi-link-blue;
+
+              &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .dragObjectMsg {
+            width: 100%;
+            font: 11px Arial;
+            color: #b2b2b2;
+            text-align: center;
+            background: url(images/DI/drag_objects.svg) no-repeat center;
+            margin-top: 42px;
+            padding-top: 198px;
+          }
+
+          .attUnitlist, .mxUnitlist {
+            width: 186px;
+            vertical-align: top;
+            .item.unit {
+              padding-left: 24px;
+              margin: 6px 5px;
+              border-radius: 3px;
+
+              &:before {
+                left: 5px;
+              }
+
+              &.invalid{
+                .txt{
+                  padding-right: 23px;
+                }
+                &:after {
+                  content: '';
+                  position: absolute;
+                  top: 4px;
+                  right: 21px;
+                  width: 18px;
+                  height: 18px;
+                  @include wsvi-icon-warning-triangle-small;
+                }
+              }
+
+              .clsx {
+                position: absolute;
+                right: 0;
+                top: 4px;
+                height: 18px;
+                width: 18px;
+              }
+            }
+          }
+          .attUnitlist {
+            margin: 4px 0 4px 5px;
+
+            .item.unit {
+              @include light-color-unit-attribute;
+
+              &:hover {
+                background-color: $wsvi-attribute-capsule-normal-fill-color-light-theme;
+              }
+              &.selected {
+                border: none;
+              }
+              .clsx {
+                @include wsvi-icon-attribute-clear;
+
+                &:hover {
+                  @include wsvi-icon-attribute-clear-hover;
+                }
+              }
+            }
+          }
+          .mxUnitlist {
+            margin: 4px 5px 4px 0;
+
+            .item.unit {
+              @include light-color-unit-metric;
+
+              &:hover {
+                background-color: $wsvi-metric-capsule-normal-fill-color-light-theme;
+              }
+              &.selected {
+                border: none;
+              }
+              .clsx {
+                @include wsvi-icon-metric-clear;
+
+                &:hover {
+                  @include wsvi-icon-metric-clear-hover;
+                }
+              }
+            }
+          }
+
+          .attUnitlist,
+          .mxUnitlist {
+            .item.unit.selected {
+              &.selected {
+                border-color: $color-unit-selected-border;
+                @include box-shadow($color-unit-selected-border, 0, 0, 0, false, 1px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mstrmojo-Editor-buttons {
+    border-top: 1px solid $wsvi-splitline-gray;
+
+    .mstrmojo-Button.warningBtn {
+      @include wsvi-icon-warning-tooltip;
+      min-width: 20px;
+      height: 20px;
+      border: none;
+      box-shadow: none;
+      margin-right: 5px;
+
+      &:active {
+        @include wsvi-icon-warning-tooltip;
+      }
+    }
+    .dataModeContainer {
+      float: left;
+      height: 25px;
+      width: 320px;
+
+      .live-mode-pulldown {
+        float: left;
+        width: 140px;
+        .mstrmojo-PopupList {
+          z-index: 1000;
+        }
+      }
+      .live-mode-pulldown-label {
+        float: left;
+        padding-top: 4px;
+        padding-right: $wsvi-element-padding;
+        .disabled {
+          color: $wsvi-font-gray;
+          opacity: 1;
+        }
+      }
+      .live-mode-pulldown .disabled {
+        pointer-events: none;
+        color: $wsvi-font-gray;
+        &.mstrmojo-ui-Pulldown {
+          .mstrmojo-ui-Pulldown-text {
+            color: $wsvi-font-gray;
+            background-position: 100% -56px;
+            opacity: 1;
+          }
+        }
+      }
+      .info-icon {
+        @include wsvi-icon-info;
+        @include wsvi-icon-size;
+        display: inline-block;
+        margin-top: 4px;
+        margin-bottom: -4px;
+        margin-left: $wsvi-verticalinput_padding_small;
+        float: left;
+      }
+    }
+  }
+}
+
+.datasetEditorContainer .mstrmojo-ListBase .item {
+  padding-right: 20px;
+  .txt {
+    display: inherit;
+    padding-top: 0;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    // Disables default safari tooltip in place for our rich tooltip
+    &:after {
+      content: '';
+      display: block;
+    }
+  }
+}
+
+.mstrmojo-ui-CheckList {
+  .item.selected.disableOption {
+    background-position: -6px -74px;
+    color: grey;
+  }
+}
+.mojo-theme-dark {
+  .mstrmojo-ui-CheckList {
+    .item.selected.disableOption {
+      background-position: -6px -289px;
+      color: grey;
+    }
+  }
+}
+.disabled-filter-button .info-icon {
+  @include wsvi-icon-size;
+  @include wsvi-icon-info;
+  display: inline-block;
+  padding-bottom: $wsvi-element-padding;
+  padding-right: $wsvi-element-padding;
+  float: left;
+  &.long-text {
+    padding-bottom: 40px;
+  }
+}
+.pulldown-tooltip, .disabled-filter-button {
+  & .mstrmojo-Tooltip-contentWrapper .mstrmojo-Tooltip-content.mstrmojo-scrollNode {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    .help-link-label {
+      color: $wsvi-link-blue;
+      cursor: pointer;
+    }
+  }
+}

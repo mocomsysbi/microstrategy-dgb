@@ -1,0 +1,53 @@
+.mstrmojo-PromptOptionEditor-Editor {
+    width: 510px;
+
+    .mstrmojo-Editor-close {
+        display: none;
+    }
+
+    .mstrmojo-Editor-content {
+        margin: 16px;
+        display: -ms-flexbox;
+        display: inline-flex;
+
+    }
+
+    .icon-box {
+        width: 100px;
+        height: 75px;
+        background: url(#{$vi-img-path}/notification.svg) no-repeat scroll -31px -63px;
+        margin: 0 16px 0 0;
+    }
+
+    .mstrmojo-ui-CheckList {
+        padding-left: 20px;
+    }
+
+    .mstrmojo-Editor-content {
+        border-bottom: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+
+        .mstrmojo-Label.disabled {
+            padding-left: 20px;
+        }
+    }
+
+    .mstrmojo-vi-TwoColumnProp.chkBox {
+        margin-top: 16px;
+    }
+
+
+
+    .mstrmojo-Editor-buttons {
+        padding: 16px;
+        margin-top: 1px;
+
+        .mstrmojo-Button {
+            float: right;
+            margin: 0 0 0 9px;
+        }
+    }
+
+}

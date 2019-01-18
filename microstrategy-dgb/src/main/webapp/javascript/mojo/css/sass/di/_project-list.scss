@@ -1,0 +1,147 @@
+.mstrmojo-di-pl-label {
+  font: 14px arial;
+  font-weight: bold;
+  height: 23px;
+}
+
+.mstrmojo-di-pl-listNode{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.mstrmojo-di-pl-Pulldown {
+  width: 400px;
+  margin: 5px 5px 5px 10px;
+  cursor: pointer;
+  background:  #fff;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  line-height: 16px;
+  height: 18px;
+  border: 1px solid #AAAAAA;
+
+  .mstrmojo-di-pl-Pulldown-iconNode {
+    background: transparent url(images/arrow_blk_down_5x7.gif) center right no-repeat;
+    overflow: hidden;
+    margin-right: 5px;
+  }
+
+}
+
+.mstrmojo-project-login {
+  width: 350px;
+  font-family: Tahoma, Arial, Verdana, 'Microsoft Sans Serif';
+
+  .mstrmojo-Editor-title {
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+
+  .login_Vbox {
+     width: 340px;
+  }
+  .mstr_project {
+    font-size: 1.8em;
+    margin:20px 5px 7px 5px;
+    text-align: center;
+    color: #f10 !important;
+    font-weight: bold;
+    white-space: normal;
+    border-collapse: separate;
+  }
+
+  .mstr_server {
+    border-collapse: separate;
+    color: rgb(120, 120, 120);
+    display: block;
+    font-size: 1.6em;
+    height: 20px;
+    text-align: center;
+    white-space: normal;
+    margin-bottom: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .login_label {
+    display: block;
+    margin: 15px 0px 2px 25px;
+    font-size: 1.4em;
+    color: #787878;
+    font-weight: bold;
+    width: 150px !important;
+  }
+
+  .input_textbox {
+
+    width: 277px;
+    font-size: 1.4em;
+    color: #787878;
+    border: 1px solid #CDCDCD;
+    padding: 6px;
+    margin-left: 25px;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(238, 238, 238));
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: padding-box;
+    background-size: auto;
+    &:hover {
+      background: #fff;
+      filter: none;
+    }
+  }
+  .footer_button {
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-bottom: 30px;
+    width: 290px;
+
+    .mstrmojo-Editor-button {
+      font-size: 1.4em;
+      height: 32px;
+      width: 127px;
+      margin-left: 0px;
+    }
+
+    .mstr-cancel-button {
+      float:right;
+      margin-right:0;
+    }
+
+    .mstr-submit-button {
+      float:left;
+    }
+  }
+
+  .mstr_alert {
+    background: #fcece8;
+    border: 1px solid #f8b6b8;
+    color: #ee2c49;
+    margin: 5px 0px 25px 0px;
+    padding: 13px 28px 5px;
+    text-align: justify;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    width: 282px;
+
+    .mstr_alert_title {
+      text-align: center;
+      padding-bottom: 2px;
+      font-size: 12pt;
+      margin-bottom: 9px;
+    }
+
+    .mstr_alert_message {
+      font-size: 10pt;
+      margin-bottom: 9px;
+      padding-bottom: 2px;
+    }
+  }
+
+}
+

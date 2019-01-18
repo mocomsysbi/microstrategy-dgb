@@ -1,0 +1,109 @@
+@import '../vi/workstation-global';
+
+.mstrmojo-di-DISearchTableBox {
+  // float: right;
+  position: relative;
+  margin: 0px auto;
+  width: 200px;
+
+  .mstrmojo-HBox {
+    width: 100%;
+    .mstrmojo-di-tb-inputBox {
+      width: 177px;
+    }
+  }
+
+  .mstrmojo-SimpleTree.mstrmojo-di-searchTableTree {
+    display: none;
+
+    position: absolute;
+    width: 100%;
+    max-height: 350px;
+    overflow: auto;
+    border: 1px solid #9B9B9B;
+    background-color: rgba(237, 237, 237, 0.96);
+    margin-top: 2px;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+
+    -webkit-box-shadow: rgba(0,0,0,0.25) 0 0 10px 0px;
+    -moz-box-shadow: rgba(0,0,0,0.25) 0 0 10px 0px;
+    box-shadow: rgba(0,0,0,0.25) 0 0 10px 0px;
+
+    box-sizing: border-box;
+
+    li .item {
+      &.tp12 {
+        //background-image: url(images/DI/icon_att.png);
+        background: transparent url("images/DI/vertical icons.svg") no-repeat -3px -110px;
+      }
+
+      &.tp4 {
+        //background-image: url(images/DI/icon_metric.png);
+        background: transparent url("images/DI/vertical icons.svg") no-repeat 0px -240px;
+      }
+
+      &.time  {
+        background: url("images/DI/vertical icons.svg") no-repeat -2px -360px;/*time attribute*/
+      }
+      &.geo  {
+        background: url("images/DI/vertical icons.svg") no-repeat -3px -329px;/*geo attribute*/
+      }
+    }
+
+    li[level="1"] .item.tp15 {
+      margin-left: 12px;
+    }
+
+    li.selected > .item.tp15 {
+      font-weight: inherit;
+      color: inherit;
+      background-color: #CECECE;
+    }
+
+    //.item.tp15:hover {
+    //  background-color: #DADADA;
+    //}
+    li.leaf:hover {
+      background-color: #DADADA !important;
+    }
+
+  }
+}
+
+.workstation{
+  .mstrmojo-di-DISearchTableBox {
+    .mstrmojo-SimpleTree.mstrmojo-di-searchTableTree {
+      background-color: #fafafa;
+      li .item {
+        &.tp12 {
+          span.item-n:before{
+            background: transparent url("vi/images/dataset.svg") -123px -32px no-repeat;
+            height: 14px;
+            width: 12px;
+          }
+        }
+        &.tp4 {
+          background: none;
+          span.item-n:before{
+            background: transparent url("vi/images/dataset.svg") -390px -32px no-repeat;
+            //background: transparent url("images/DI/vertical icons.svg") no-repeat 0px -133px;
+            height: 14px;
+            width: 20px;
+            content: '1';
+            font-size: 0;
+            display: inline-block;
+            margin-left: -20px;
+            margin-right: 2px;
+          }
+        }
+      }
+      span.item-n > span.di-searchbox-highlight {
+        background-color: $wsvi-text-selection-background-color;
+      }
+    }
+  }
+}

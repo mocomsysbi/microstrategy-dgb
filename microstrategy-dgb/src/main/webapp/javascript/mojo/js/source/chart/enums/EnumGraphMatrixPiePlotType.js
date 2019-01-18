@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumGraphMatrixPiePlotType={GMPPT_CATEGORY:0,GMPPT_VALUE:1,GMPPT_GRID:2};

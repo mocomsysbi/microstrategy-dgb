@@ -1,0 +1,128 @@
+.mstrmojo-FunctionWidzard {
+    width: 500px;
+
+    .hidden {
+        display: none;
+    }
+}
+
+.mstrmojo-FunctionWidzard-labels {
+    padding-right: 3px;
+
+    .item {
+        line-height: $wsvi-panel-row-height; // matches the dropdown on the same row
+        cursor: default;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+        white-space: nowrap;
+        padding-bottom: $wsvi-element-padding;
+    }
+}
+
+.workstation {
+    .mstrmojo-Editor.mstrmojo-FunctionWidzard.modal {
+        .mstrmojo-Editor-content {
+            .mstrmojo-DataGrid.functionArgs {
+                .mstrmojo-DataGrid-itemsScrollBox {
+                    table.mstrmojo-itemwrap-table {
+                        width: 100%;
+                        .mstrmojo-DataRow-text {
+                            line-height: 32px;
+                        }
+                        .mstrmojo-ObjectInputBox.singleObject {
+                            @if $env == web {
+                                max-width: 355px;
+                                span.mstrmojo-ObjectItem-text.mstrmojo-qb-SuggestIcon.tundefined {
+                                    max-width: 300px;
+                                    display: inline-block;
+                                    overflow-x: hidden;
+                                }
+                            } @else {
+                                max-width: 330px;
+                                span.mstrmojo-ObjectItem-text.mstrmojo-qb-SuggestIcon.tundefined {
+                                    max-width: 275px;
+                                    width: -webkit-fill-available;
+                                    display: inline-block;
+                                    overflow-x: hidden;
+                                }
+                            }
+                        }
+                        table.funcParam {
+                            .mstrmojo-ObjectInputBox.singleObject {
+                                .mstrmojo-itemwrap {
+                                    margin: 0;
+                                    .mstrmojo-ObjectItem {
+                                        .mstrmojo-ObjectItem-displayNode {
+                                            padding: 1px;
+                                            height: 18px;
+                                            .mstrmojo-ObjectItem-text.mstrmojo-qb-SuggestIcon {
+                                                height: 10px;
+                                                line-height: 10px;
+                                                margin-top: 1px;
+                                                vertical-align: top;
+                                            }
+                                            .mstrmojo-ObjectItem-text.mstrmojo-qb-SuggestIcon.tundefined {
+                                                padding-left: 22px;
+                                            }
+                                            .mstrmojo-ObjectItem-edit, .mstrmojo-ObjectItem-del {
+                                                top: 4px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .mstrmojo-ObjectInputBox {
+                                .mstrmojo-itemwrap {
+                                    margin: 5px 5px 0;
+                                    .mstrmojo-ObjectItem {
+                                        .mstrmojo-ObjectItem-displayNode {
+                                            height: 26px;
+                                            line-height: 26px;
+                                            margin: 0;
+                                            padding: 0;
+                                            white-space: nowrap;
+                                            background-color: #F3F7FD;
+                                            border: 1px solid #BBD8FB;
+                                            .mstrmojo-ObjectItem-text.mstrmojo-qb-SuggestIcon {
+                                                margin-right: 50px;
+                                                height: 20px;
+                                                line-height: 13px;
+                                                margin-top: 3px;
+                                                display: inline-block;
+                                                background-image: url("images/DI/vertical icons.svg");
+                                                background-position-y: -302px;
+                                                &.tundefined {
+                                                    padding-left: 22px;
+                                                }
+                                            }
+                                            .mstrmojo-ObjectItem-edit {
+                                                top: 6px;
+                                                right: 26px;
+                                            }
+                                            .mstrmojo-ObjectItem-del {
+                                                top: 6px;
+                                            }
+                                        }
+                                        .mstrmojo-ObjectItem-editNode {
+                                            height: 22px;
+                                            line-height: 22px;
+                                            margin: 1px;
+                                            padding: 2px;
+                                        }
+                                    }
+                                }
+                                .mstrmojo-itemwrap .mstrmojo-ObjectItem.ADDING .mstrmojo-ObjectItem-editNode {
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .mstrmojo-scrolltrack.horizontal {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}

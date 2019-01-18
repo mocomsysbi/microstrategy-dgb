@@ -1,0 +1,172 @@
+@import '../../../_global.scss';
+@import '../../_vi-icons.scss';
+@import '../../_workstation-global.scss';
+
+/** Start ExportOptionsEditor **/
+.mstrmojo-Editor.mstrmojo-ExportOptionsEditor {
+    width: 380px;
+    .mstrmojo-Label {
+        font-size: 11px;
+        height: 22px;
+        line-height: 22px;
+    }
+
+    .mstrmojo-Editor-content {
+        height: 312px;
+        padding: 16px 18px 16px 18px;
+
+        .tabBar {
+            .mstrmojo-ui-ButtonBar {
+                width: 270px;
+                height: 22px;
+                margin: 0 auto 0 auto;
+
+                .item {
+                    width: 33%;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-Label.ExportEditor-title {
+            font-weight: bold;
+            height: 22px;
+            line-height: 22px;
+            padding: 0 0 5px 0;
+
+            &.large-title {
+                padding-bottom: 10px;
+            }
+        }
+
+        .mstrmojo-IconLabel {
+            margin-bottom: 0;
+            font-size: 12px;
+            line-height: 26px;
+
+            .info-icon {
+                height: 18px;
+                width: 18px;
+                display: inline-block;
+                margin-bottom: -4px;
+                margin-left: $wsvi-verticalinput_padding_small;
+                @include wsvi-icon-info;
+            }
+        }
+
+        .mstrmojo-Box.general, .mstrmojo-Box.layout {
+            > .mstrmojo-Box {
+                padding: 10px 0 10px 0;
+                border-bottom: 1px solid #DEDEDE;
+                -webkit-box-shadow: #fff 0 1px 0 0;
+                -moz-box-shadow: #fff 0 1px 0 0;
+                box-shadow: #fff 0 1px 0 0;
+
+                &:last-child {
+                    padding: 10px 0 0 0;
+                    border-bottom: 0;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .mstrmojo-Box.time-setting {
+            height: 22px;
+
+            > div {
+                float: left;
+            }
+
+            .mstrmojo-Stepper {
+                width: 58px;
+            }
+
+            .mstrmojo-Label.unit {
+                padding: 0 12px 0 6px;
+            }
+        }
+
+        .mstrmojo-Box.paper-size {
+            height: 22px;
+            padding: 0 0 5px 0;
+
+            > div {
+                float: left;
+            }
+
+            > .mstrmojo-Label {
+                width: 84px;
+            }
+
+            .mstrmojo-ui-Pulldown {
+                width: 185px;
+                height: 22px;
+
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+            }
+        }
+
+        .mstrmojo-Box.page-orientation {
+            height: 66px;
+
+            > div {
+                float: left;
+            }
+
+            > .mstrmojo-Label {
+                width: 84px;
+            }
+        }
+
+        .mstrmojo-Box.security {
+            .controlSwitch {
+                margin: 10px 0;
+                border: 0 solid;
+
+                .tips {
+                    margin-left: 18px;
+                }
+            }
+
+            table.mainContent {
+                td {
+                    padding: 4px 0;
+                }
+
+                .mstrmojo-Label {
+                    font-weight: bold;
+                    text-align: right;
+                    min-width: 85px;
+                    margin: 0 8px;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        .mstrmojo-Button {
+            float: right;
+            width: 68px;
+            height: 22px;
+            margin: 0 0 0 10px;
+        }
+    }
+
+    &.single-viz-export {
+        .mstrmojo-Editor-content {
+            height: 288px;
+        }
+
+        .general {
+            display: none !important;
+        }
+    }
+}
+/** End ExportOptionsEditor **/

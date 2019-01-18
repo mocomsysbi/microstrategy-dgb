@@ -1,0 +1,23 @@
+/** BEGIN:  splitter **/
+/*logical view*/
+/*user hierarchy*/
+/*transformations*/
+/*layer*/
+
+.horizontal.contentsPanelSplitter div.mstrmojo-SplitterHandle {
+  background-color: #f6f6f6;
+  border-color: #aaa;
+  border-style: solid;
+  border-width: 1px 0 1px 1px;
+  /*top right bottom left*/
+}
+
+.mstrmojo-Splitter.vertical.editorSplitter .mstrmojo-SplitterHandle {
+  background-color: #f6f6f6;
+  border-color: #aaa;
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  /*top right bottom left*/
+}
+
+/** END: splitter **/

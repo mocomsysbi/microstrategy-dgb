@@ -1,0 +1,142 @@
+$welcome-image-path: 'vi/images/welcome';
+
+.mstrmojo-tutorial-getStartContent {
+  padding: 32px 0 28px 38px;
+}
+
+.samples-content {
+  margin-top: 40px;
+}
+
+.vi-desktop-tutorial-samples {
+  margin-top: 12px;
+
+  .item {
+    float: left;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    margin-right: 25px;
+    padding-left: 3px;
+
+    .title {
+      padding-top: 10px;
+      text-align: center;
+    }
+
+    .ic {
+      width: 150px;
+      height: 100px;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+
+      &.sample-icp {
+        background: url(#{$welcome-image-path}/Insurance_Churn_Predictions.jpg) no-repeat center;
+      }
+      &.sample-afa {
+        background: url(#{$welcome-image-path}/Airline_Flight_Analysis.jpg) no-repeat center;
+      }
+      &.sample-smp {
+        background: url(#{$welcome-image-path}/slot_machine_performance.jpg) no-repeat center;
+      }
+      &.sample-sd {
+        background: url(#{$welcome-image-path}/sales_dashboard.jpg) no-repeat center;
+      }
+      &.sample-spa {
+        background: url(#{$welcome-image-path}/Salesforce_Pipeline_Analysis.jpg) no-repeat center;
+      }
+      &.sample-ts {
+        background: url(#{$welcome-image-path}/Travel_Sights.jpg) no-repeat center;
+      }
+      &.sample-dm {
+        background: url(#{$welcome-image-path}/DC_MetroRiderShip.jpg) no-repeat center;
+      }
+      &.sample-eso {
+        background: url(#{$welcome-image-path}/Executive_Sales_Overview.jpg) no-repeat center;
+      }
+    }
+
+  }
+
+}
+
+.community-label .mstrmojo-Box {
+  position: relative;
+}
+
+.vi-desktop-tutorial-community-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.vi-desktop-tutorial-community-join {
+  box-sizing: border-box;
+  border: solid 1px #555555;
+  font-size: 14px;
+  padding: 8px 24px;
+  line-height: 26px;
+  position: absolute;
+  right: 45px;
+  top: 0px;
+  cursor: pointer;
+}
+
+.vi-desktop-tutorial-community-join:after {
+  clear: both;
+}
+
+
+.vi-desktop-tutorial-community-desc {
+  padding-top: 10px;
+  font-size: 12px;
+  max-width: 400px;
+}
+
+.vi-desktop-tutorial-forum-title,
+.vi-desktop-tutorial-dashboard-title {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.samples-content .mstrmojo-Box {
+  position: relative;
+}
+
+.vi-desktop-tutorial-dashboard-explore {
+  position: absolute;
+  top: 0px;
+  right: 45px;
+  color: #3b92ed !important;
+  cursor: pointer;
+}
+
+.vi-desktop-tutorial-forum {
+  padding-top: 16px;
+
+  .item {
+    float: left;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 28px;
+    background: transparent no-repeat url(#{$welcome-image-path}/asset_get_started.svg);
+
+    &.forum-help {
+      background-position: 1px -98px;
+    }
+    &.forum-community {
+      background-position: 1px -148px;
+    }
+    &.forum-ug {
+      background-position: 1px -201px;
+    }
+    &.forum-contact {
+      background-position: 1px -248px;
+    }
+
+    div {
+      padding: 5px 0px 0px 30px;
+      color: #3b92ed;
+    }
+  }
+}

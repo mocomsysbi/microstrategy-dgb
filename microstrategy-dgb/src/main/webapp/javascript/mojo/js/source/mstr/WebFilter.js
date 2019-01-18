@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.mstr.WebOI");mstrmojo.mstr.WebFilter=mstrmojo.declare(mstrmojo.mstr.WebOI,null,{scriptClass:"mstrmojo.mstr.WebFilter",t:1,expression:null,buildTypeSpecificShortXML:function buildTypeSpecificShortXML(builder){if(this.expression){this.expression.buildShortXML(builder);}}});}());

@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumAxisDirection={AD_X:0,AD_Y:1,AD_Z:2};

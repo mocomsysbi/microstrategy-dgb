@@ -1,0 +1,437 @@
+$color-background-unitContainer: #FFFFFF;
+@mixin line-through {
+    .mstrmojo-DocSelector {
+      &.strikeout {
+        .mstrmojo-SimpleObjectInputBox {
+          .item {
+            .elem {
+              text-decoration: line-through;
+            }
+          }
+        }
+        .mstrmojo-ListBox-table {
+          .mstrmojo-LinkListHoriz-item {
+            &.selected {
+              text-decoration: line-through;
+            }
+          }
+          .mstrmojo-ButtonItem {
+            &.selected {
+              text-decoration: line-through;
+            }
+          }
+        }
+        .mstrmojo-vi-metric-qual {
+          .mstrmojo-ui-Pulldown-text {
+            text-decoration: none;
+          }
+        }
+        .mstrmojo-ui-Pulldown-text {
+          text-decoration: line-through;
+        }
+        .mstrmojo-Slider {
+          .mstrmojo-ui-Pulldown-text {
+            text-decoration: none;
+          }
+        }
+        .item.selected {
+          text-decoration: line-through;
+        }
+      }
+      .wait .item.selected {
+        text-decoration: line-through;
+      }
+
+      &.strikeout.wait .item.selected {
+        text-decoration: none;
+      }
+      &.strikeout.wait {
+        .mstrmojo-ui-Pulldown-text {
+          text-decoration: none;
+        }
+      }
+    }
+}
+
+%line-through-checklist {
+    .mstrmojo-DocSelector {
+      &.strikeout {
+        .mstrmojo-ui-CheckList {
+          &.radio {
+            .item {
+              &.selected {
+                background-position: -6px -121px;
+              }
+            }
+          }
+          .item {
+            &.selected {
+              background-position: -6px -1px;
+            }
+          }
+        }
+      }
+    }
+}
+
+.workstation {
+  // BEGIN: UnitContainer
+  %unit-selection-base {
+    background-color: #23A3D3;
+    bottom: 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+  }
+
+  %unit-selection-before {
+    @extend %unit-selection-base;
+
+    height: 2px;
+    right: auto;
+  }
+
+  %unit-selection-after {
+    @extend %unit-selection-base;
+
+    bottom: auto;
+    width: 2px;
+  }
+
+  .mstrmojo-UnitContainer {
+    border-radius: 2px;
+    font: inherit;
+    padding: 0;
+    position: absolute;
+    transition: box-shadow .5s;
+
+    .mstrmojo-DocSelector {
+      padding: 9px;
+
+      .content {
+        overflow: hidden;
+      }
+
+      .item.selected {
+        text-decoration: none;
+      }
+    }
+
+    @include line-through;
+
+    @extend %line-through-checklist;
+
+    .mstrmojo-VITitleBar {
+      //934182: the slit line should be #cecece
+      border-bottom: 1px solid;
+      text-decoration: inherit;
+
+      .title-text {
+        text-decoration: inherit;
+
+        .mstrmojo-EditableLabel {
+          color: inherit;
+          cursor: move;
+          font-size: inherit;
+          font-weight: inherit;
+          line-height: 1.8em;
+          padding: 0 6px;
+          text-decoration: inherit;
+          white-space: pre;
+
+          &.editable {
+            cursor: text;
+          }
+        }
+      }
+
+      .right-toolbar {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1000; // Make sure toolbar buttons appear on top of unit contents.
+
+        .mstrmojo-VITitleToolbar {
+          margin: 2px $wsvi-titlecontent_paddingB 0 2px;
+        }
+      }
+
+      &:after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    }
+
+    // Selected unit container.
+    &.selected {
+      box-shadow: $wsvi-primary-blue 0 0 0 2px;
+    }
+
+    .hover-menu-btn {
+      @include single-transition($property: opacity);
+      @include box-sizing();
+      border: solid 1px $wsvi-ui-border-gray;
+      @include border-radius(2px);
+      @include box-shadow($wsvi-panel-shadow-color, 0px, 1px, 2px);
+      height: 16px;
+      width: 16px;
+      @include wsvi-icon-context-menu-16($wsvi-primary-white);
+      opacity: 0;
+      position: absolute;
+      right: $wsvi-titlecontent_paddingB;
+      top: 2px;
+      z-index: 4;
+      pointer-events: none;
+
+      &.visible {
+        @include single-transition($property: none);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      &.mouse-left,
+      &.editing-title {
+        @include single-transition($property: none);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+    }
+
+    .hover-menu-btn:hover {
+      @include wsvi-icon-context-menu-hover-16($wsvi-primary-white);
+    }
+
+    // Set and reset for pulse effect
+    &.pulse {
+      box-shadow: $wsvi-primary-blue 0 0 0 5px;
+    }
+
+    // Inactive unit container.
+    &.inactive {
+      opacity: 0.6;
+    }
+
+    &.animate,
+    &.animate .mstrmojo-UnitContainer-titlebar * {
+      @include single-transition($property: all, $function: ease-out);
+    }
+
+    .mstrmojo-UnitContainer-content {
+      overflow: hidden;
+      position: absolute; // fixing the chrome bug about width change (DE15645)
+      z-index: 2;
+
+      .ctrlOverlay {
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 11;
+
+        .dropMsg {
+          background: transparent none 2px 50% no-repeat;
+          margin: 10px;
+          line-height: 18px;
+          padding-left: 24px;
+          color: #878788;
+        }
+      }
+
+      .mstrmojo-message {
+        background: transparent none 0 50% no-repeat;
+        position: relative;
+        font-size: 8pt;
+        color: #878787;
+        display: none;
+
+        // Align message node at center
+        .text {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          height: 1em;
+          padding: 25px; // TQMS #972889
+          text-align: center;
+          line-height: 18px;
+          color: #b6b6b6;
+
+          .warning-icon {
+            overflow: hidden;
+            width: 40px;
+            height: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            background: url(#{$vi-img-path}/menu_icons.png) 300px 250px;
+          }
+
+          > div {
+            padding-top: 3px;
+          }
+
+        }
+      }
+    }
+
+
+    .mstrmojo-Xtab-content {
+      background: transparent;
+      padding: 0;
+    }
+
+    .errorNode {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgb(234, 234, 234);
+    }
+
+    &.no-handler .uc-drag-handle {
+      display: none;
+    }
+
+    // Add the CSS for the drag handles.
+    .uc-drag-handle {
+      opacity: 0;
+      @include single-transition(opacity);
+    }
+
+    &:hover .uc-drag-handle {
+      @include border-radius(0 0 5px 0);
+      @include box-sizing(border-box);
+
+      background: #E5E5E5 url(#{$vi-img-path}/menu_icons.png) -53px -87px;
+      border: 1px solid #E5E5E5;
+      cursor: move;
+      height: 14px;
+      left: -1px;
+      opacity: 1;
+      position: absolute;
+      top: -1px;
+      width: 40px;
+      z-index: 5;
+    }
+  }
+
+  .mstrmojo-VIUnit-avatar {
+    &.icn-avi {
+      @include border-radius(2px);
+      @include box-sizing();
+      @include ellipsis-text();
+
+      background: rgba(205, 205, 205, 0.75) none 6px 50% no-repeat;
+      border: 1px solid #A6A6A6;
+      line-height: 20px;
+      padding: 0 5px 0 24px;
+      position: relative;
+      width: 149px;
+    }
+  }
+
+  .noDataSource {
+    .mstrmojo-UnitContainer {
+      .mstrmojo-UnitContainer-content {
+        .ctrlOverlay {
+          .mstrmojo-Label {
+            &.dropMsg {
+              background-image: none;
+              color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //BEGIN: Selection mode
+  .mstrmojo-RootView.selection {
+    .mstrmojo-UnitContainer {
+      &.selected {
+        .hover-menu-btn.visible {
+          visibility: hidden;
+        }
+      }
+      .hover-menu-btn.visible {
+        visibility: hidden;
+      }
+      .right-toolbar {
+        .mstrmojo-VITitleToolbar {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+  // BEGIN: Presentation Mode
+  .mstrmojo-RootView.presentation {
+    %unit-selection-presentation-mode {
+      display: none;
+    }
+
+    .mstrmojo-UnitContainer {
+      .mstrmojo-UnitContainer-content .ctrlOverlay {
+        visibility: hidden;
+      }
+
+      &.selected {
+        @extend %unit-selection-presentation-mode;
+
+        &:before,
+        &:after {
+          @extend %unit-selection-presentation-mode;
+        }
+
+        div.mstrmojo-UnitContainer-titlebar {
+          &:before,
+          &:after {
+            @extend %unit-selection-presentation-mode;
+          }
+        }
+      }
+
+      .uc-drag-handle {
+        display: none;
+      }
+    }
+  }
+  // END: Presentation Mode
+  // BEGIN: UnitContainer Themes
+  .mojo-theme-light {
+    .mstrmojo-UnitContainer {
+      .mstrmojo-VITitleBar {
+        border-color: #E0E0E0;
+      }
+    }
+  }
+
+  .mojo-theme-dark {
+    .mstrmojo-UnitContainer {
+      .mstrmojo-VITitleBar {
+        border-color: #4D4E4E;
+        @include box-shadow(transparent);
+      }
+      $color-dark-drag-handle: #353739;
+
+      &:hover .uc-drag-handle {
+        background-color: $color-dark-drag-handle;
+        background-position: -53px -287px;
+        border-color: $color-dark-drag-handle;
+      }
+    }
+
+    &.mstrmojo-VIUnit-avatar.icn-avi {
+      background-color: rgba(55, 56, 58, 0.75);
+      border-color: #4B5057;
+    }
+  }
+  // END: UnitContainer Themes
+  /** END: UnitContainer **/
+}

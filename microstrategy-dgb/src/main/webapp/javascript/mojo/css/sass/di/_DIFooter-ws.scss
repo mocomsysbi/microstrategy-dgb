@@ -1,0 +1,287 @@
+.workstation{
+	.mstrmojo-di-footer{
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0 16px;
+		height:$footerHeight;
+		> div {
+			height: 100%;
+			width: 100%;
+		}
+
+		right: 16px;
+		position: relative;
+		margin-left:16px;
+
+		.footer-buttons{
+			margin-top: 16px;
+			&.back .mstrmojo-di-button.back{
+				float:left;
+				margin-left: unset;
+			}
+		}
+
+		.mstrmojo-di-footer-noborder {
+			height:$footerHeight;
+			padding: 0 18px;
+		}
+
+		.footer-buttons{
+			float:right;
+			margin-top: 16px;
+		}
+		.footer-buttons.back{
+			float: left;
+		}
+		.footer-cancel-button {
+			margin-right:0px;
+		}
+
+		.footer-preview-info {
+			float:left;
+			margin-left:20px;
+			margin-top:10px;
+		}
+
+		.footer-dda-checkbox {
+			float: left;
+			margin-top: 20px;
+		}
+
+		.footer-dda-label {
+			float: left;
+			margin-top: 16px;
+			line-height: 20px;
+			//margin: 8px 0px 10px 10px;
+			.mstrmojo-Label.disabled {
+				color: #A9A9A9
+			}
+		}
+
+		.footer-managed-checkbox {
+			float: left;
+			margin-top: 21px;
+			margin-left: 10px;
+		}
+
+		.footer-managed-label {
+			float: left;
+			line-height: 20px;
+			margin-right: 22px;
+			margin-top: 16px;
+			margin-left: -2px;
+			//margin: 8px 0px 10px 10px;
+			.mstrmojo-Label.disabled {
+				color: #A9A9A9
+			}
+		}
+
+		/* Generic style properties of all data import icons and images*/
+		.di-icon, .di-image {
+			background-image:url(images/DI/diicons.png);
+			background-repeat:no-repeat;
+			display: inline-block;
+		}
+
+		/* Style of the blue star icon.*/
+		.icon-blue-star {background-position: 0 0; width: 11px; height: 11px;}
+
+		.mstrmojo-di-source-admin {
+			float: right;
+			margin-top: 25px;
+			margin-right: 20px;
+			cursor: pointer;
+			font-family: Arial;
+			font-size: 11px;
+			color: #007ebe;
+
+			.icon {
+				display: block;
+				float: left;
+				width: 12px;
+				height: 17px;
+				margin-left: 2px;
+				margin-right: 5px;
+				background: transparent url("vi/images/menu_icons.png") 0 -146px no-repeat;
+			}
+			.text {
+				float: left;
+				line-height: 17px;
+			}
+
+			&:hover {
+				text-decoration: underline;
+				background-color: lightcoral;
+			}
+		}
+
+		.mstrmojo-di-mdx-ra-checkbox {
+			float: right;
+			overflow: hidden;
+			padding: 18px 8px;
+
+			.mstrmojo-ui-Checkbox {
+				float: left;
+				cursor: pointer;
+			}
+
+			.mstrmojo-Label {
+				float: left;
+				line-height: 20px;
+				font-family: arial;
+				color: #1a1a1a;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				max-width: 450px;
+			}
+		}
+	}
+
+	.show-quota{
+		.mstrmojo-di-footer-noborder, .mstrmojo-di-footer{
+			// Make the rounded corner shadow
+			border-radius: 0 0 4*2px 4*2px;
+			height: 56px;
+			border-top: 1px solid #CECECE;
+			bottom: 0;
+			width: 100%;
+			background-color: $primary-gray;
+			z-index: 10;
+		}
+
+		.mstrmojo-di-footer-noborder{
+			.cube-quota .mstrmojo-ProgressBar.mstrmojo-di-user-quota{
+		    	margin-left: 30px;
+		    }
+		}
+
+		.mstrmojo-di-footer{
+		    padding: 0;
+		    right: 0;
+		    margin-left: 0;
+
+		    .cube-quota .mstrmojo-ProgressBar.mstrmojo-di-user-quota{
+		    	margin-left: 0;
+		    }
+		}
+
+		.cube-quota{
+			.bold-font{
+				font-weight: bold;
+			}
+
+			.cube-quota-icon{
+				width: 18px;
+				height: 18px;
+				float: left;
+				margin: 17px -16px 20px 30px;
+
+				&.loading-icon {
+					background: url(#{$mojo-img-path}/DI/small_loading.gif) no-repeat 0 0;
+					@include backgroundSize(18px 18px)
+				}
+
+				&.unlimited-icon{
+					background: url(#{$mojo-img-path}/bt_info_selected.svg) 0 0 no-repeat;
+				}
+
+				&.no-quota-icon{
+					background: url(#{$mojo-img-path}/DI/invalid.png) 0 0 no-repeat;
+				}
+
+				&.error-icon{
+					background: url(#{$mojo-img-path}/DI/exceed-error.svg) 0 0 no-repeat;
+				}
+			}
+
+			.mstrmojo-di-user-quota-text{
+				margin-top: 16px;
+				margin-left: 25px;
+				line-height: 18px;
+			}
+
+			.mstrmojo-ProgressBar.mstrmojo-di-user-quota{
+				border-color: #CCC;
+				margin-top: 22px;
+
+				.indicator{
+					background-color: #007EBE;
+				}
+			}
+
+			.mstrmojo-di-user-quota-text{
+				color: #4A4A4A;
+				cursor: default;
+
+				&:hover, &:focus{
+					text-decoration: none;
+				}
+			}
+
+			.quota-see-more-container{
+				float: left;
+				position: relative;
+
+				.quota-see-more{
+					float: left;
+					position: relative;
+					color: #007EBE;
+					margin-top: 20px;
+					cursor: pointer;
+				}
+			}
+
+			.quota-see-more-click-pop{
+				position: absolute;
+				top: -45px;
+				left: -115px;
+				border: 1px solid rgba(68, 70, 73, 0.35);
+				box-shadow: rgba(68, 70, 73, 0.2) 1px 2px 8px 0px;
+				border-radius: 2px;
+
+				.quota-see-more-pop-label{
+					width: 270px;
+					padding: 10px;
+					background: #fff;
+					line-height: 16px;
+				}
+
+				.cube-see-more-close-icon{
+					position: absolute;
+					width: 10px;
+					height: 10px;
+					top: 3px;
+					right: 3px;
+					background: url(#{$mojo-img-path}/DI/close.png) 0 0 no-repeat;
+					cursor: pointer;
+				}
+			}
+		}
+
+        .cube-quota-web{
+			.mstrmojo-di-user-quota-text{
+				&:hover, &:focus{
+                    color: #007ebe;
+					text-decoration: underline;
+				}
+			}
+        }
+
+	}
+
+	// open di from mtdi
+	.mstrmojo-di-popup-dialog .mstrmojo-Editor.mstrmojo-di-homepage-editor .show-quota {
+		.mstrmojo-di-footer-noborder, .mstrmojo-di-footer{
+			position: static;
+		}
+	}
+	.mstrmojo-di-mdx-ra-checkbox-tooltip {
+  		.mstrmojo-Tooltip-contentWrapper {
+  			max-width: 420px;
+  			.mstrmojo-Tooltip-content {
+  				max-width: 420px;
+  			}
+  		}
+	}
+}

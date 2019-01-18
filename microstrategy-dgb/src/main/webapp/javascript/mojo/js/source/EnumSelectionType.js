@@ -1,0 +1,1 @@
+mstrmojo.EnumSelectionType={ALL:0,ELEMENT:1,BRANCH:2,LEVEL:3,BRANCH_LEVEL:4};

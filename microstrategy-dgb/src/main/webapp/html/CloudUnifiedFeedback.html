@@ -1,0 +1,38 @@
+<style>
+	.cloudFeedback {
+		width: 137px;
+		height: 25px;
+		border: none;
+		cursor: pointer;
+		margin-top: -25px;
+		margin-left: 12px;
+		background-image: url("../style/images/Send Feedback button.png");
+		display: inline-block;
+	}
+	.cloudFeedback:hover {
+		background-image: url("../style/images/Send Feedback button_hover.png");
+	}
+	.mstrFeedback {
+		width: 166px;
+	}
+	.cloudFeedbackVertical {
+		width: 1px;
+		height: 32px;
+		margin-left: 12px;
+		background-image: url("../style/images/vertical line.png");
+		display: inline-block;
+	}
+	.mstrShortcut,
+	.mstrShortcutSelected {
+		margin-right: 0px;
+	}
+	.mstrHelpShortcut.welcome,
+	.mstrHelpShortcut {
+		margin-left: 12px;
+	}
+</style>
+
+<td>
+	<div class="cloudFeedbackVertical"></div>
+	<input type="button" class="cloudFeedback" onClick="window.location.href='mailto:mycloud@microstrategy.com?Subject=MicroStrategy 10 (beta) feedback';"/>
+</td>

@@ -1,0 +1,357 @@
+.di-connector-panel {
+  width: 1010px;
+  height: 452px;
+  .mstrmojo-di-ga-table {
+    height: 379px;
+    padding-top: 10px !important;
+    border-top: 1px solid #FFFFFF;
+    background-color: 0 xffffff; //ljing 940034 these styles are moved from js code
+    overflow: hidden;
+    width: 100%;
+    &:hover {
+      //ljing 940034
+      overflow-y: auto;
+    }
+    .mstrmojo-di-tree-node-file{
+      padding-left: 9px;
+      height: 20px;
+    }
+    .mstrmojo-di-tree-node-folder {
+      padding-left: 9px;
+      height: 20px;
+      .mstrmojo-di-tree-node-text:hover {
+        color: #007EBE;
+      }
+    }
+
+  }
+
+  .mstrmojo-di-ga-table .mstrmojo-itemwrap:nth-child(even) {
+    background-color: #F3F3F4;
+  }
+
+  .mstrmojo-di-ga-table .mstrmojo-itemwrap:nth-child(odd) {
+    background-color: #F3F3F4;
+  }
+
+  .mstrmojo-FileDragDropBox-text {
+    margin-top: 18px;
+  }
+}
+
+.di-connector-left-panel {
+  width: 487px;
+  height: 448px;
+  //padding: 16px 18px;
+  border-right: 1px solid #DEDEDE;
+  color: #BBBBBB;
+  overflow-y: auto;
+
+  .mstrmojo-Pulldown {
+    width: 240px;
+  }
+  table{
+    width: 100%;
+    tr {
+      border-bottom: 1px solid #dedede;
+    }
+  }
+}
+
+.di-connector-left-panel > tbody > tr > td { //DE7065
+  padding: 0 18px 16px;
+}
+
+//mizhang TQMS 950791
+.mstrmojo-url-list-dnd {
+  width: 350px;
+  height: 26px;
+  border: 1px solid #AEDDF7;
+  color: #515151;
+  background-color: #DFF1FC;
+  margin: 0 0 5px 0;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  opacity: 0.8;
+
+  .item-content {
+    float: left;
+  }
+
+  .urlItem-dbrole {
+    line-height: 24px;
+    margin-left: 8px;
+    font-size: 11px;
+    max-width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+}
+
+.di-connector-right-panel {
+  padding: 16px 18px;
+  border-left: 1px solid #FFFFFF;
+
+  .mstrmojo-di-fileHolder { //DE7065
+    width: 464px;
+    height: 412px;
+    border: 1px dashed #CCCCCC;
+    font-size: 20px;
+    color: #BBBBBB;
+    overflow: hidden; //ljing 940034
+    margin: 0px;
+    &:hover {
+      overflow: auto;
+    }
+    &.hover {
+      overflow: auto;
+    }
+  }
+
+  .mstrmojo-di-fileHolder.solid {
+    border: 1px solid #CCCCCC;
+  }
+
+  .mstrmojo-FileDragDropBox-content {
+    margin: 11px;
+  }
+  .mstrmojo-url-list-dnd {
+    opacity: 1;
+  }
+
+  .mstrmojo-text-node-image {
+    background-repeat: no-repeat;
+    border: none;
+    height: 26px;
+    width: 26px;
+    background-image: url(images/DI/icon_text_doc.png);
+  }
+  .urlItem-text-div {
+    width: 200px;
+    color: #515151;
+    font-size: 11px;
+    font-family: Arial;
+    align-content: center;
+    height: 26px;
+    line-height: 26px;
+    margin-left: 9px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .close-button {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 10px;
+  }
+
+  .mstrmojo-url-delete-button-dnd {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 0px;
+    padding-left: 25px;
+    float: right;
+  }
+
+  .mstrmojo-Button-text {
+    height: 26px;
+    width: 26px;
+    line-height: 26px;
+    background: url(images/DI/close.png) no-repeat center;
+  }
+}
+
+.mstrmojo-di-tree-node-list.hasOwnAvatar {
+  position: absolute;
+  border: 1px solid #B6B6B6;
+  background: #F3F3F3;
+  margin: 2px;
+}
+
+.mstrmojo-url-list-dnd.hasOwnAvatar {
+  position: absolute;
+  margin: 5px;
+  z-index: 99; //YGUO TQMS-955454
+}
+
+.di-object-browser {
+  /*width: 450px;*/
+  height: 390px;
+  font-size: 11px;
+  font-family: Arial;
+  color: #515151;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.di-hadoop-titleWidget {
+  padding: 16px 0 5px;
+  height: 22px;
+  border-bottom: 1px solid $divider-line-dark;
+}
+.di-connector-title {
+  font-size: 11px;
+  font-family: Arial;
+  color: #515151;
+  height: 22px;
+  float: left;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+ /* padding-top: 16px;
+  padding-bottom: 16px;*/
+}
+
+.di-connector-projects-title {
+  font-size: 10px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #515151;
+  padding-top: 10px;
+  padding-bottom: 9px;
+  margin-left: 11px;
+  width: 140px;
+}
+
+.di-connector-title-connection {
+  max-width: 150px;
+  height: 22px;
+  font-size: 11px;
+  font-family: Arial;
+  color: #007EBE;
+  float: left;
+  margin-left: 9px;
+ /* margin-right: 211px;
+  text-align: right;*/
+  cursor: pointer;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+/*  padding-top: 16px;
+  padding-bottom: 16px;*/
+}
+
+.di-connector-title-refresh {
+  height: 23px;
+  width: 26px;
+  margin-top: -5px;
+ /* margin-bottom: 7px;*/
+  cursor: pointer;
+  float:right;
+  background: url(images/main_icons_sprite_02.png) 90px 0px;
+  &:hover {
+    background: url(images/main_icons_sprite_02.png) 90px -30px;
+  }
+  &:active {
+    background: url(images/main_icons_sprite_02.png) 90px -60px;
+  }
+}
+
+.di-connector-title-add-connection {
+  width: 20px;
+  height: 20px;
+  font-size: 9px;
+  font-family: Arial;
+  color: #007EBE;
+  margin-right: 11px;
+  text-align: right;
+  cursor: pointer;
+  background: url(images/wh/panel_icons.png) no-repeat center 9px;
+}
+
+.di-connector-title-menu-connection {
+  width: 20px;
+  font-size: 9px;
+  font-family: Arial;
+  color: #007EBE;
+  padding-top: 10px;
+  padding-bottom: 9px;
+  margin-right: 11px;
+  text-align: right;
+  cursor: pointer;
+  background: url(images/wh/menu.png) no-repeat center center;
+}
+
+div.uppercase {
+  text-transform: uppercase;
+}
+
+.di-dropbox-image {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 130px;
+  background-image: url(images/DI/plus.png);
+}
+
+.item-image {
+  width: 9px;
+  height: 15px;
+  display: inline-block;
+  margin-left: 9px;
+  margin-right: 9px;
+  margin-top: 7px;
+  background: url(images/DI/main_icons_sprite.png) no-repeat -120px -120px;
+  float: left;
+}
+
+.drop-zone-file {
+  background: url(images/DI/main_icons_sprite.png) no-repeat -120px -120px;
+}
+
+.drop-zone-folder {
+  background: url(images/DI/main_icons_sprite.png) no-repeat -60px -120px;
+}
+
+.item-content {
+  width: 205px;
+  height: 26px;
+  line-height: 26px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-delete {
+  width: 10px;
+  height: 15px;
+  display: inline-block;
+  float: right;
+  margin-left: 9px;
+  margin-top: 9px;
+  margin-right: 9px;
+  background: url(images/DI/workstation/workstation.svg) no-repeat -2500px -40px;
+}
+
+.di-refresh-reports-dnd {
+  background: url(images/DI/main_icons_sprite.png) no-repeat -425px 0px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.mstrmojo-di-so-list-header-dnd {
+  border-bottom: 1px solid $divider-line-dark;
+  color: #515151;
+  font-family: Arial !important;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 5px 0px;
+
+  .di-object-browser-header-left {
+    width: 100px;
+    float: left;
+    margin-left: -6px;
+  }
+  .di-object-browser-header-right {
+    float: right;
+    margin-right: 5px;
+  }
+}

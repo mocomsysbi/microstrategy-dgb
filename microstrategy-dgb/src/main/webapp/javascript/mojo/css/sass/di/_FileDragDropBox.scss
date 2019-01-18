@@ -1,0 +1,257 @@
+.mstrmojo-FileDragDropBox-text {
+  font: 11px Arial;
+  color: #B2B2B2;
+  text-align: center;
+  background-image: url('images/DI/crosstab.svg');
+  background-repeat: no-repeat;
+  background-position-x: center; //mizhang TQMS 949323
+  width: 232px;
+  margin: auto;
+  padding-top: 100px;
+  margin-top: 53px;
+}
+.mstrmojo-FileDragDropBox-text.IE {
+  background:none;
+}
+
+.mstrmojo-di-fileUpload-fileinput .mstrmojo-FileDragDropBox-content {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.mstrmojo-di-fileUpload-fileinput {
+  // TQMS 1010819: Set height explicitly because sett font size does not affect height in Safari.
+  .mstrmojo-FileUploadBox-file {
+    height: 48px;
+  }
+
+  // TQMS 1010819: Move left margin from button to button div so that when user click on the left margin of the button, it will not trigger click event.
+  .mstrmojo-FileDragDropBox-buttonDiv {
+    margin-left: 10px;
+    .mstrmojo-di-button {
+      margin-left: 0px;
+    }
+  }
+
+}
+
+.mstrmojo-FileDragDropBox-content {
+  .mstrmojo-InlineEditBox {
+    overflow: inherit;
+  }
+}
+
+.mstrmojo-di-dragLabel {
+  float: left;
+  position: relative;
+  top: -168px; //TQMS-984486
+  width: 1010px;
+  text-align: center;
+  font-size:18px;
+  color: #a0a7ac;
+  font-family: arial;
+  .or {
+    font-size: 14px;
+    color: #a0a7ac;
+    padding-top: 7px;
+  }
+}
+.mstrmojo-di-dragLabel.dragging{
+  color: #007ebe;
+}
+.mstrmojo-file-delete-button {
+  width: 7px;
+  height: 15px;
+  display: inline-block;
+  float: right;
+  margin-left: 9px;
+  margin-top: 9px;
+  margin-right: 9px;
+  background: url(images/DI/main_icons_sprite.png) no-repeat -30px -30px;
+}
+.mstrmojo-url-delete-button {
+  margin-left: 9px;
+  margin-top: 9px;
+  margin-right: 9px;
+}
+
+//mizhang TQMS 927430
+.mstrmojo-FileDragDropBox-buttonDiv {
+  position: absolute;
+  left: 434px;
+  top: 320px;
+  overflow: hidden;
+  float: left;
+  .mstrmojo-Button.mstrmojo-di-button.file-button {
+    height: 46px;
+    min-width: 120px;
+    max-width: 480px;
+    font-size: 14px;
+    font-family: Arial;
+    .mstrmojo-Button-text {
+      height: 46px;
+      line-height: 46px;
+      color: #ffffff;
+      text-shadow: 0 1px 1px #007ebe;
+    }
+  }
+
+}
+.mstrmojo-FileDragDropBox-buttonDiv.refresh {
+  top: 288px;
+}
+.mstrmojo-FileDragDropBox-file {
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  height: 26px;
+  background: #DFF1FC;
+  border: 1px solid #AEDDF7;
+  border-radius: 2px;
+}
+.refresh.dragging .mstrmojo-FileDragDropBox-file {
+  border: 1px solid #34abeb;
+
+}
+.mstrmojo-FileDragDropBox-file-name {
+  font-family: arial;
+  font-size: 11px;
+  color: #444649;
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+//  text-overflow: ellipsis;
+//  overflow-x: hidden;
+//  float: left; //YGUO TQMS-949118 Roll back the change made in version 11
+  white-space: nowrap;
+  margin-right: 60px;
+}
+
+.mstrmojo-FileDragDropBox-file-img {
+  width: 9px;
+  height: 15px;
+  display: inline-block;
+  margin: 7px 9px 0;
+  background: url(images/DI/workstation/workstation.svg) no-repeat -2102px -10px;
+  float: left;
+}
+
+//YGUO TQMS-893757 Make the inline edit box's width fill the whole item
+.urlItem-text-div {
+  width: 200px;
+  float: left; //TQMS-955446
+  .mstrmojo-InlineEditBox-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 24px;
+  }
+}
+
+// mizhang TQMS 960622
+.mstrmojo-FileDragDropBox-count {
+  float: left;
+  position: absolute;
+  font-family: Arial;
+  font-size: 12px;
+  color: #515151;
+  margin-top: 10px;
+  margin-right: 5px;
+  right: 40px;
+}
+.mstrmojo-di-fileUpload.mstrmojo-di-fu .mstrmojo-di-URLUpload-urlList {
+  .mstrmojo-di-fileHolder.mstrmojo-di-url-box {
+    .mstrmojo-FileDragDropBox-count {
+      margin-top: 0;
+      right: 260px;
+    }
+  }
+}
+//.mstrmojo-di-fileUpload .drag-drop-box {
+//  .mstrmojo-FileDragDropBox-count {
+//    margin-top: 0;
+//    right: 260px;
+//  }
+//}
+
+.workstation{
+
+
+  .mstrmojo-di-URLUpload-urlList .mstrmojo-FileDragDropBox-file-img {
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2102px -10px;
+  }
+  .mstrmojo-FileDragDropBox-count {
+    &.countPosition{
+      right: 30px;
+      margin-top: -20px;
+    }
+    right: 10px;
+  }
+  .mstrmojo-di-fileUpload.mstrmojo-di-fu .mstrmojo-di-URLUpload-urlList {
+    .mstrmojo-di-fileHolder.mstrmojo-di-url-box {
+      position: relative;
+      .mstrmojo-FileDragDropBox-count {
+        margin: 26px 10px 0 0;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+  /*
+  .mstrmojo-FileDragDropBox-content {
+    &.maxHeightStandLone {
+      max-height: 230px !important;
+    }
+  }
+  
+  .mstrmojo-FileDragDropBox-content{
+    &.maxHeightEmbed {
+      max-height: 200px !important;
+    }
+  }
+  */
+  .mstrmojo-file-delete-button, .mstrmojo-url-delete-button {
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2503px -43px;
+  }
+
+  .mstrmojo-di-dragLabel {
+    @import 'color-variables';
+    margin-top: 58px;
+    font-size: 18px;
+    color: $wsvi-font-gray;
+    padding-top: 30px;
+    .or{
+        line-height: 14px;
+        margin-top: -52px;
+    }
+  }
+
+  .mstrmojo-FileDragDropBox-buttonDiv .mstrmojo-Button-text{
+    height: 100%;
+  }
+
+  .mstrmojo-di-fileHolder.solid {
+    border: 1px rgba(44, 46, 49, 0.2) dash;
+  }
+
+  .mstrmojo-FileDragDropBox-text {
+    color: rgba(44,46,49,0.4);
+  }
+
+  .mstrmojo-Button-text {
+    font-size: 12px;
+  }
+
+  .mstrmojo-FileDragDropBox-buttonDiv .mstrmojo-Button.mstrmojo-di-button.file-button.hot {
+    min-width: 100px;
+    height: 30px;
+  }
+
+  div.mstrmojo-FileDragDropBox-buttonDiv {
+    top: 285px !important;
+  }
+
+  .mstrmojo-FileDragDropBox-text {
+    margin-top: 120px;
+  }
+}

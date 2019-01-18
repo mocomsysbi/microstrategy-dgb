@@ -1,0 +1,69 @@
+@import '../vi-global';
+
+/** BEGIN: Target Selector **/
+.ctrlOverlay {
+    .mstrmojo-TargetSelector {
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+
+        & > div {
+            padding: 0 8px;
+
+            $button-max-width: 150px;
+
+            .mstrmojo-Button.mstrmojo-WebButton {
+                display: inline-block;
+                float: right;
+                margin: 8px 0 8px 8px;
+                max-width: $button-max-width;
+
+                .mstrmojo-Button-text {
+                    max-width: $button-max-width;
+                }
+
+                &.disabled {
+                    .mstrmojo-Button-text {
+                        max-width: $button-max-width;
+                    }
+
+                    &.hot {
+                        .mstrmojo-Button-text {
+                            max-width: $button-max-width;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Vertically aligned control overlay.
+    &.or-v {
+        .mstrmojo-TargetSelector {
+            & > div {
+                // vertically align the button container.
+                @include vertical-align();
+
+                .mstrmojo-Button.mstrmojo-WebButton {
+                    // Stack buttons one of on top of each other.
+                    float: none;
+                    margin: 0 auto 10px;
+
+                    // Amount to shift buttons for vertical (button height + total border + margin
+                    $ts-button-shift: 34px;
+
+                    // Shift cancel button to bottom
+                    &:nth-child(2) {
+                        @include transform(translateY($ts-button-shift));
+                    }
+
+                    // Shift apply button to top
+                    &:last-child {
+                        @include transform(translateY(-$ts-button-shift));
+                    }
+                }
+            }
+        }
+    }
+}
+/** END: Target Selector **/

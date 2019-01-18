@@ -1,0 +1,482 @@
+@import "_DIRepublishScheduleEditor.scss";
+@import '../vi/workstation-global';
+
+.mstrmojo-di-scheduleEMMA {
+
+  background-color: #FFF;
+
+  .mstrmojo-Editor-title {
+    margin-right: 50px; // DE53562; 50px = 4px(spacing between title and button) + 18px * 2(width of help and close button) + 10px(spacing of help and close button)
+  }
+
+  .mstrmojo-Editor-content .mstrmojo-Label.advanceOpsLink {
+    margin: 6px 0px 10px 0px;
+    text-decoration: none;
+    font-weight: bold;
+    &.disabled {
+      color: #469AD1;
+      opacity: 0.45;
+    }
+  }
+
+  .advanceOpsCheckbox {
+    margin: 0px;
+    line-height: 26px;
+    &.disabled {
+      opacity: 0.45;
+    }
+  }
+
+  .secondBox {
+    padding-bottom: 0px;
+    margin: 10px 0px 0px 0px;
+
+    .text {
+      height: 26px;
+      line-height: 26px;
+      margin-right: 10px;
+    }
+
+    .inputName {
+      margin: 0px;
+      width: 338px;
+      font-family: Helvetica;
+      font-size: 11px;
+    }
+
+    .mstrmojo-DI-DNTextBox {
+      .invalid {
+        border-color: #F8472F;
+        &:focus {
+          border-color: #F8472F;
+        }
+      }
+
+      .mstrmojo-DI-DNTextBox-popup {
+        height: 0px;
+
+        .mstrmojo-Popup {
+          margin-top: -22px;
+        }
+
+        .mstrmojo-DI-DNTextBox-defaultName {
+          margin-top: 26px;
+          width: 338px;
+          padding: 0px 5px;
+          border: 1px solid rgba(68, 70, 73, 0.2);
+          background: #FFFFFF;
+          box-sizing: border-box;
+          line-height: 30px;
+          font-size: 11px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .mstrmojo-DI-DNTextBox-wordCount {
+        margin-left: 348px;
+        opacity: 0.6;
+        font-size: 12px;
+        margin-top: 4px;
+
+        &.invalid {
+          color: #F8472F;
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+
+  .scheduleBox {
+    width: 437px;
+    margin-top: 16px;
+
+    .text {
+      margin-right: 9px;
+      margin-bottom: 0px;
+      float: left;
+      line-height: 26px;
+    }
+
+    .inputName {
+      width: 338px;
+      margin-top: 10px;
+    }
+
+    .chooseSchedPulldown {
+      width: 338px;
+      float: right;
+    }
+
+    .chooseSchedPulldownCheck {
+      margin-right: 378px;
+    }
+
+    .selectTimeBox {
+      width: 338px;
+      float: right;
+      margin-top: 10px;
+
+      .mstrmojo-Label {
+        float: left;
+        line-height: 26px;
+        margin-bottom: 0px;
+      }
+
+      .selectTimePulldown {
+        float: left;
+        width: 95px;
+        margin-right: 10px;
+      }
+
+      .mday {
+        float: left;
+        width: 95px;
+        margin: 0px 10px;
+      }
+
+      .time {
+        float: left;
+        margin-left: 10px;
+        width: 77px;
+      }
+
+      &.selectTimeBoxCheck {
+        margin-right: 30px;
+        margin-top: -26px;
+      }
+    }
+  }
+
+  .mstrmojo-Editor-buttons {
+    .mstrmojo-WebButton {
+      min-width: 72px;
+    }
+    .mstrmojo-Button.mstrmojo-WebButton.hot.emphasizeDisabled {
+      background-color: #E7E8E8;
+      .mstrmojo-Button-text {
+        background: #E7E8E8;
+        color: rgba(68, 70, 73, 0.2);
+      }
+    }
+  }
+
+  &.subscribeMode {
+    .schedule-status-busy {
+      float: right;
+      height: 18px;
+      width: 18px;
+      margin-top: 5px;
+      background: url(#{$mojo-img-path}/DI/small_loading.gif) no-repeat 0 0;
+      @include backgroundSize(18px 18px)
+    }
+  }
+
+  &.simpleProgressMode{
+    .mstrmojo-Editor-content{
+      padding: 15px 20px 14px;
+    }
+    .mstrmojo-Editor-buttons{
+      position: absolute;
+      padding: 0;
+      right: 20px;
+      top: 10px;
+    }
+  }
+}
+
+.mstrmojo-di-scheduleEMMA-SREditor {
+
+  .mstrmojo-DayLightLabel {
+    display: none !important;
+  }
+}
+
+.workstation{
+  &.invisible-wait{
+    div.mstrmojo-Editor-wrapper{
+      &#waitBox{
+        display: none;
+      }
+    }
+  }
+
+  .tooltip-container{
+    background-color: #fff;
+    width: 237px;
+    height: 355px;
+    border-radius: 2px;
+    padding: 9px;
+
+    .div-upper{
+      margin-bottom: 12px;
+    }
+
+    .upper-title .inner-title{
+      float: left;
+      width: 48%;
+      margin: 7px 0;
+    }
+
+    .inner-title.right{
+      margin-left: 3%;
+    }
+
+    .inner-title{
+      height: 14px;
+      font-size: 12px;
+      font-family: Helvetica;
+      color: #444649;
+      margin: 7px 0;
+    }
+
+    .top-title{
+      margin-bottom: 5px;
+      line-height: 14px;
+      height: 14px;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: Helvetica;
+      color: #444649;
+    }
+
+    .wide{
+      width: 207px;
+    }
+
+    .narrow{
+      width: 83px;
+    }
+
+    .short{
+      height: 26px;
+    }
+
+    .tall{
+      height: 38px;
+    }
+
+    .left-content{
+      padding: 12px 0;
+    }
+
+    .right-content{
+      background-color: #FAFAFA;
+      padding: 0 5px;
+      height: 245px;
+    }
+
+    .padding-top{
+      padding-top: 5px;
+    }
+
+    .existing-new{
+      background: url(#{$mojo-img-path}/SampleData_Existing_New.svg) 0 0 no-repeat;
+      clear: left;
+    }
+
+    .addnew{
+      background: url(#{$mojo-img-path}/Policy_AddNew.svg) 0 0 no-repeat;
+    }
+
+    .replace{
+      background: url(#{$mojo-img-path}/Policy_Replace.svg) 0 0 no-repeat;
+    }
+
+    .update-addnew{
+      background: url(#{$mojo-img-path}/Policy_Update_AddNew.svg) 0 0 no-repeat;
+    }
+
+    .update{
+      background: url(#{$mojo-img-path}/Policy_Update.svg) 0 0 no-repeat;
+    }
+  }
+
+  .mstrmojo-Tooltip.vi-regular.vi-taller .mstrmojo-Tooltip-contentWrapper{
+    padding: 0;
+    max-height: 400px;
+    border: none;
+
+    .mstrmojo-Tooltip-content{
+      max-height: 400px;
+    }
+  }
+
+  .mstrmojo-di-scheduleEMMA.refreshMode, .mstrmojo-di-scheduleEMMA.subscribeMode{
+
+    .mstrmojo-di-tablestatuslist{
+      .mstrmojo-di-tablestatuslist-list {
+        .tablestatus-col.stack.pulldown{
+          margin: 0 10px 0 5px;
+        }
+
+        .mstrmojo-ui-Pulldown.disabled .mstrmojo-ui-Pulldown-text{
+          opacity: 0.5;
+          border-color: rgba(68, 70, 73, 0.5);
+          color: rgba(68, 70, 73, 1)
+        }
+
+        .tablestatus-col.tableNameBox .tableNameBox-stack .mstrmojo-FileUploadBox .mstrmojo-FileUploadBox-buttonDiv{
+          background-image: none;
+          background-color: #fff;
+          border-color: rgba(68, 70, 73, 0.2);
+          .mstrmojo-FileUploadBox-button{
+            color: #444649;
+          }
+        }
+
+        .tableNameBox-stack .mstrmojo-WebButton{
+          height: 24px;
+          min-width: 70px;
+          .mstrmojo-Button-text{
+            line-height: 24px;
+            font-size: 8pt;
+          }
+        }
+      }
+    }
+  }
+
+  .mstrmojo-di-scheduleEMMA.refreshMode{
+
+    .republish-status-text{
+      float: right;
+      font-size: 12px;
+      padding: 4px;
+    }
+
+    .republish-status-text:before{
+      float: left;
+      margin: 1px 5px;
+      display: none;
+      content: url(#{$mojo-img-path}/bt_info_selected.svg)
+    }
+
+    .republish-status-text.finished:before{
+      content: url(#{$mojo-img-path}/bt_info.svg);
+    }
+
+    .mstrmojo-di-tablestatuslist{
+      height: 378px;
+
+      .mstrmojo-di-tablestatuslist-list {
+        max-height: 374px;
+
+        .tablestatus-col.stack.pulldown {
+          .mstrmojo-DropDownButton.mstrmojo-Pulldown {
+            width: 240px;
+            margin: 0px;
+            height: 26px;
+            & > .mstrmojo-DropDownButton-boxNode.mstrmojo-Pulldown-boxNode {
+              box-sizing: border-box;
+            }
+          }
+        }
+      }
+    }
+
+    .mstrmojo-Editor-content{
+      .non-operation-mask{
+        z-index: 2000;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        left: 0;
+        background: #fff;
+      }
+    }
+  }
+
+  div.mojo-theme-light.mstrmojo-Tooltip.vi-regular{
+    &.vi-tooltip-leftcenter{
+      div.mstrmojo-Tooltip-arrow {
+        left: 38%;
+      }
+    }
+
+    &.vi-tooltip-A{
+      div.mstrmojo-Tooltip-arrow:before {
+        border-bottom-color: $wsvi-tooltip-border-color; //TODO: DE60490;to be removed, since it is duplicated with normal tooltip format style in _theme-Mixins-ws.scss. For now temporarily change to unified style
+      }
+      div.mstrmojo-Tooltip-arrow:after{
+        border-bottom-color: #fff;
+      }
+    }
+
+    &.vi-tooltip-V{
+      div.mstrmojo-Tooltip-arrow:before{
+        border-top-color: $wsvi-tooltip-border-color;
+      }
+      div.mstrmojo-Tooltip-arrow:after{
+        border-top-color: #fff;
+      }
+    }
+  }
+
+  div.mojo-theme-light.mstrmojo-Tooltip.vi-regular div.mstrmojo-Tooltip-contentWrapper{
+    background-color: #fff;
+    border-color: $wsvi-tooltip-border-color;
+  }
+
+  .mstrmojo-Tooltip.vi-regular.vi-refresh-smallWindow .mstrmojo-Tooltip-contentWrapper .mstrmojo-Tooltip-content{
+    max-height: 375px;
+  }
+}
+
+.mstrmojo-Editor-buttons .mstrmojo-Box {
+
+    .republish-appschema-status-text {
+      float: left;
+      margin-top: 6px;
+    }
+    .appschema-refreshBox-status {
+      float: left;
+      display: inline-block !important;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+
+    .tablestatus-col.status.waiting {
+      //background: url("images/circle-loader.gif") no-repeat scroll center center;
+      background: url(vi/images/spinner_ws.gif) no-repeat scroll center center;
+      -webkit-background-size: 15px 15px;
+      -webkit-background-size: 15px 15px;
+      -o-background-size: 15px 15px;
+      background-size: 15px 15px;
+      width: 15px;
+      height: 15px;
+      // TQMS 955450: IE8 doesn't support background-size, use -ms-filter, path is relative to html.
+      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../javascript/mojo/css/vi/images/spinner_light.gif',sizingMethod='scale');
+      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../javascript/mojo/css/vi/images/spinner_light.gif',sizingMethod='scale')";
+      margin-left: 9px;
+      margin-top: 8px;
+      margin-right: 10px;
+    }
+
+    .tablestatus-col.status.finished {
+      //background: url("images/DI/checkmark.png") no-repeat scroll center center;
+      background: url("../../../app-schema-assets/dist/src/assets/icons/mbde-icons.svg") -980px -1070px no-repeat;
+      width: 15px;
+      height: 15px;
+      margin-top: 8px;
+      margin-right: 9px;
+      margin-left: 8px;
+    }
+
+    .tablestatus-col.status.warning {
+      //background: url("images/warning.gif") no-repeat scroll center center;
+      background: url(images/metric-editor.png) -100px -180px no-repeat;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+
+
+
+
+

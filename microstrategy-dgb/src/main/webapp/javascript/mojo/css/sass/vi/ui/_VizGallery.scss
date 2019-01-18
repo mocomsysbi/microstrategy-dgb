@@ -1,0 +1,334 @@
+@import '../vi-global';
+@import '../themes';
+@import 'viz-icon-mixins';
+
+@mixin viz-gallery-sprite-items($topPosition) {
+
+  $viz-list: "VisGrid", "PieChart", "BubbleChart", "AreaChart", "LineChart", "ComboChart", "BarChart", "skip", "NetworkVisualizationStyle", "skip", "ImageLayoutVisualizationStyle", "VIHeatMapVisualizationStyle", "ESRIMapVisualizationStyle", "skip", "GoogleMapVisualizationStyle";
+  $viz-ngm-list: "ClusteredBarChart", "BarChart", "AreaChart", "LineChart", "BubbleChart", "ScatterChart", "skip", "skip", "Histogram", "GridChart", "BoxPlot", "Waterfall";
+  $viz-offset: 0;
+  $ngm-offset: 40;
+
+  @each $viz-type in $viz-list {
+    $viz-offset: $viz-offset - 30;
+
+    @if $viz-type != "skip" {
+      &.ic-#{$viz-type} > div > div {
+        background-position: -#{$topPosition}px #{$viz-offset}px;
+      }
+    }
+  }
+
+  @each $viz-type in $viz-ngm-list {
+    $ngm-offset: $ngm-offset - 40;
+
+    @if $viz-type != "skip" {
+      &.ngm.ic-#{$viz-type} > div > div {
+        background-position: -#{$topPosition}px #{$ngm-offset}px;
+        background-image: url(#{$vi-img-path}/ngm_gallery_sprite.png);
+      }
+    }
+  }
+
+}
+
+/** BEGIN: VI Gallery **/
+.mstrmojo-VIGallery {
+    border-width: 0 0 0 1px;
+    border-style: outset;
+    width: 52px; // // Has to be in sync with DEFAULT_WIDTH in VizGallery.js
+
+    // Close button on gallery header.
+    .mstrmojo-VIGallery-header .mstrmojo-VIGallery-cls {
+        background: transparent url(#{$vi-img-path}/toolbar.png) -312px 0 no-repeat;
+        cursor: pointer;
+        height: 15px;
+        position: absolute;
+        right: 1px;
+        top: 0;
+        width: 15px;
+    }
+
+    //Splitter Handle of the viz gallery
+    .mstrmojo-VIGallery-handle {
+        display: none;
+    }
+
+    // List of visualizations.
+    .mstrmojo-VIGalleryList {
+        .item {
+            @include viz-icon-outer-style();
+            @include viz-icon-margin();
+            cursor: pointer;
+            float: left;
+
+            // Change border colors when hovering.
+            &:hover {
+                border-color: #41B0EC;
+
+                & > div {
+                    border-color: #87CCF1;
+
+                    & > div {
+                        border-color: #D4EFFE;
+                    }
+                }
+            }
+
+            // Middle DIV element.
+            & > div {
+
+                @include viz-icon-border-style();
+                @include viz-icon-middle-common();
+
+                // Inner DIV (icon) element.
+                & > div {
+                    @include viz-icon-inner-style();
+
+                    background-image: url(#{$vi-img-path}/viz_gallery_sprite.png);
+                    background-position: 0 0;
+                }
+            }
+            @include viz-gallery-sprite-items(0);
+
+        }
+    }
+
+    .mstrmojo-VIGallery-builtinVizList, .mstrmojo-VIGallery-customVizList {
+        margin-top: 8px;
+    }
+
+    /*Divider line between Built-in and custom visualization lists*/
+    .mstrmojo-VIGallery-divider {
+        border-style: solid;
+        border-width: 1px 0 1px 0;
+        box-sizing: border-box;
+        clear: left;
+    }
+
+    //Styling of the 'CUSTOM' label text which separates the Built-in and Custom Visualizations
+    .galleryLabel {
+        margin-top: 8px;
+        font-weight: bold;
+        font-size: 6pt;
+        text-align: center;
+    }
+
+    //Image Icon Button for Import Custom Visualization
+    .mstrmojo-VIGallery-importCustomVizButton {
+        border: 1px dashed;
+        height: 34px;
+        width: 34px;
+        float: left;
+        @include viz-icon-margin();
+        @include viz-icon-middle-theme($theme-light-drop-box-border-color, $theme-light-drop-box-background-color);
+
+        // Change border colors when hovering and when clicked. And we apply the same rule for both states
+        &:hover, &.clicked {
+            border: 1px solid #969696;
+        }
+
+        .importVizButton {
+            cursor: pointer;
+            @include viz-icon-inner-style();
+            background-image: url(#{$vi-img-path}/viz_gallery_sprite.png);
+            background-position: -0px -420px;
+        }
+    }
+}
+
+//Style For the Context menu on '+' icon
+.importVizMenu {
+    border-radius: 2px 0px 2px 2px;
+}
+
+/** END: VI Gallery **/
+
+/** BEGIN: VI Gallery Themes **/
+
+.mojo-theme-light {
+    .mstrmojo-VIGallery {
+        background-color: $theme-light-panel-background-color;
+        border-color: $theme-light-panel-border-color;
+
+        .mstrmojo-VIGallery-divider {
+            border-top-color: $theme-light-base-highlight-color;
+            border-bottom-color: $theme-light-offset-highlight-color;
+        }
+
+        .mstrmojo-VIGalleryList .item {
+            @include box-shadow(#fff);
+            & > div {
+                @include viz-icon-middle-theme($theme-light-drop-box-border-color, $theme-light-drop-box-background-color);
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VIGallery {
+        background-color: $theme-dark-panel-background-color;
+        border-color: $theme-dark-panel-border-color;
+
+        .mstrmojo-VIGallery-divider {
+            border-top-color: $theme-dark-base-highlight-color;
+            border-bottom-color: $theme-dark-offset-highlight-color;
+        }
+
+        @include box-shadow($theme-dark-panel-shadow-color, 0, 0, $theme-dark-panel-shadow-blur);
+
+        .mstrmojo-VIGalleryList .item {
+            & > div {
+                @include viz-icon-middle-theme(#4C4E50, #202021);
+                @include box-shadow(#000, 0px, 0px, 4px, true);
+
+                & > div {
+                    background-position: -30px 0px;
+                }
+            }
+
+            @include viz-gallery-sprite-items(30);
+
+        }
+
+        .mstrmojo-VIGallery-importCustomVizButton {
+            @include viz-icon-middle-theme(#4C4E50, #202021);
+
+            &:hover, &.clicked {
+                border-color: #969696;
+            }
+        }
+    }
+}
+
+/** END: VI Gallery Themes **/
+
+
+// Adding selected & hover css after themes since this overwrites some of theme css
+.mstrmojo-VIGallery {
+    .mstrmojo-VIGalleryList {
+        .item {
+            // Middle DIV when item is hovered
+            &:hover > div {
+                border-color: #969696;
+            }
+            // Middle DIV when item is selected
+            &:active {
+                box-shadow: none;
+                & > div {
+                    border: 2px solid #34ABEB;
+                    position: relative;
+                    top: -1px;
+                    left: -1px;
+                }
+            }
+        }
+    }
+}
+
+/** BEGIN: VI Gallery Tooltip **/
+.mstrmojo-Tooltip.viGallery-tooltip {
+    background-color: transparent;
+
+    right: auto !important;
+
+    &.vi-regular.vi-tooltip-D {
+
+        // arrow elements.
+        .mstrmojo-Tooltip-arrow {
+            top: 20px;
+        }
+    }
+
+    &.offset {
+         &:after,
+         &:before {
+             display:none;
+         }
+    }
+
+    .mstrmojo-Tooltip-contentWrapper {
+        @include border-radius(6px);
+        @include box-shadow(rgba(0, 0, 0, 0.4), 0, 1px, 5px);
+        padding: 13px;
+        cursor: default;
+        font-size: 11px;
+    }
+
+    .mstrmojo-Tooltip-content {
+
+        // Visualization name.
+        .vi-name {
+            display: block;
+            margin-right: 5px;
+            padding: 0 0 6px 0;
+        }
+
+        // Used for denoting missing template units for specific visualization types.
+        .highlight {
+            color: #F26D7D;
+        }
+
+        .vi-reqs {
+            display: block;
+            line-height: 15px;
+
+            .type4 {
+               color: #f57a02;
+            }
+            .typehistMetric {
+                color: #f57a02;
+            }
+
+            .type12 {
+               color: #00ae94;
+            }
+        }
+    }
+}
+
+// Display preview image in tooltip
+.mstrmojo-Tooltip.viGallery-tooltip.preview {
+    width:198px;
+    height: 182px;
+
+    &.vi-regular.vi-tooltip-D {
+
+        // arrow elements.
+        .mstrmojo-Tooltip-arrow {
+            top: 79px;
+        }
+    }
+
+    .mstrmojo-Tooltip-contentWrapper {
+        min-height: 154px;
+        min-width: 170px;
+    }
+
+    .mstrmojo-Tooltip-content {
+
+        .vi-tooltip-icn {
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            width: 168px;
+            height: 103px;
+            border-width: 1px;
+            border-style: solid;
+            margin: 2px 0 7px;
+
+            // Reset counter
+            $icon-cnt: 0;
+
+            // Iterate to get icon positions
+            @for $y from 0 through 1 {
+                @for $x from 0 through 6 {
+                    &.icn-tooltip-#{$icon-cnt} {
+                        background-position: #{$x * -168}px #{$y * -103}px;
+                    }
+                    $icon-cnt: $icon-cnt + 1;
+                }
+            }
+        }
+    }
+}
+/** END: VI Gallery Tooltip **/

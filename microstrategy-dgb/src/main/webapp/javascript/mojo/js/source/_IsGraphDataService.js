@@ -1,0 +1,1 @@
+(function(){mstrmojo._IsGraphDataService=mstrmojo.provide("mstrmojo._IsGraphDataService",{handleUserSingleTap:function handleUserSingleTap(sliceID,nodekey,x,y,selectable,callback){if(mstrApp.onMobileDevice()){mstrApp.serverRequest({taskId:"handleUserSingleTap",sliceID:sliceID,nodekey:nodekey,x:x,y:y,selectable:selectable},callback);}}});}());

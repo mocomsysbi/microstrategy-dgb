@@ -1,0 +1,247 @@
+.workstation {
+  @import "RefineVariables-ws";
+  .refine-data-preview {
+    background-color: $containerFillColor;
+    // border: 1px solid $containerBorderColor; // WS
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .refine-table {
+    // border-bottom: $dataPreviewDarkBorder; // WS
+    border-collapse: collapse;
+
+    tbody {
+      border-top: $dataPreviewDarkBorder;
+      &:first-child {
+        background-color: rgba(68, 70, 73, 0.06); // hover: primary-back 6%
+      }
+
+      & tr td {
+        border: #E3E4E4 1px solid;
+      }
+    }
+
+    tr {
+      &:hover {
+        background-color: rgba(68, 70, 73, 0.06); // hover: primary-back 6%
+
+        .refine-cell {
+          background-color: rgba(44,44,69,0.06); // hover: primary-back 6%
+        }
+      }
+    }
+  }
+  .refine-cell, .refine-header {
+    border-top: $dataPreviewDarkBorder;
+    border-right: $dataPreviewDarkBorder;
+    border-bottom: $dataPreviewDarkBorder;
+    border-collapse: collapse;
+  }
+
+  .refine-header:first-child {
+    border-left: $dataPreviewDarkBorder;
+  }
+
+  .refine-cell {
+    vertical-align: top;
+    font-size: 11px; // WS
+    white-space: nowrap;
+    background-color: #ffffff;
+    border-top: none; //WS
+    border-right: none; // WS
+    border-bottom: none; // WS
+  }
+
+  .refine-cell.selected {
+    border-left: $dataPreviewSelectionBorder;
+    border-right: $dataPreviewSelectionBorder;
+  }
+
+  .refine-cell.selected.last {
+    border-bottom: $dataPreviewSelectionBorder;
+  }
+
+  .refine-cell.last-selected {
+    border-left: $dataPreviewSelectionBorder;
+    border-right: $dataPreviewSelectionBorder;
+  }
+
+  .refine-cell.last-selected.last {
+    border-bottom: $dataPreviewSelectionBorder;
+  }
+
+  .refine-header {
+    font-size: 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .refine-header.selected {
+    border-left: $dataPreviewSelectionBorder;
+    border-right: $dataPreviewSelectionBorder;
+    border-top: $dataPreviewSelectionBorder;
+  }
+
+  .refine-header.last-selected {
+    border-left: $dataPreviewSelectionBorder;
+    border-right: $dataPreviewSelectionBorder;
+    border-top: $dataPreviewLastSelectionBorder;
+  }
+
+  .fixed-width-preview-column-separator-outer {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    z-index: 100;
+    background: rgba(255, 238, 93, 0.2);
+    padding: 0px 3px;
+    cursor: ew-resize;
+    overflow: visible;
+  }
+
+  .fixed-width-preview-column-separator-inner {
+    position: relative;
+    height: 100%;
+    width: 1px;
+    background: red;
+    overflow: visible;
+  }
+
+  .fixed-width-preview-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fixed-width-preview-container-inner {
+    overflow: hidden;
+    &:hover {
+      overflow: auto;
+    }
+  }
+
+  @-moz-document url-prefix() {
+    .fixed-width-preview-container-inner {
+      overflow: auto;
+    }
+  }
+
+  .refine-viewpanel-header {
+    position: relative;
+    padding: 5px 8px 0px 8px;
+    overflow: hidden;
+    text-align: right;
+    height: $dataPreviewHeaderHeight;
+    line-height: $dataPreviewHeaderHeight;
+    background-color: $popupContainerFillColor;
+  }
+
+  .refine-viewpanel-pagesize {
+    position: absolute;
+  }
+
+  .refine-viewpanel-paging {
+    margin-right: 0px;
+    margin-left: auto;
+  }
+
+  .refine-viewPanel-pagingControls-page {
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  .refine-viewPanel-pagingControls-page.selected {
+    color: #79c4ec;
+    font-weight: bold;
+    cursor: default;
+  }
+
+  .refine-a-inaction {
+    cursor: default;
+    color: $fontColorDisable;
+    margin: 0 20px;
+  }
+
+  .refine-a-action {
+    margin: 0 20px;
+    cursor: pointer;
+  }
+
+  .refine-datapreivew-title {
+    background-color: $popupContainerFillColor;
+    padding: 5px 0;
+
+    .refine-title-label {
+      float: left;
+      height: 20px;
+      line-height: 20px;
+      max-width: 800px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .mstrmojo.Refine.RefreshButton {
+      float: right;
+    }
+
+    .mstrmojo-refine-refresh-button {
+      float: right;
+      margin: 0 0 0 10px;
+      height: 22px;
+      width: 22px;
+      background: url("images/DI/workstation/workstation.svg") -1998px -47px no-repeat;
+      opacity: .7;
+
+      &:hover {
+        background-position: -2048px -47px
+      }
+
+      &:active {
+        background-position: -2048px -47px
+      }
+    }
+
+    .refine-title-sampleButton {
+      float: right;
+      border: none !important;
+      height: 22px !important;
+      line-height: 22px !important;
+      //clean the global style here
+      text-decoration: none !important;
+      cursor: default !important;
+      color: #383838 !important;
+
+      .mstrmojo-Refine-RefineSampleButton-text {
+        background-color: $popupContainerFillColor;
+        text-decoration: none !important;
+        color: #383838;
+        &:active {
+          background-color: $pressed_button;
+          color: #bdbdbd;
+          &:after {
+            background: url("vi/images/dropdown_arrow.svg") -1px -58px no-repeat; //WS
+          }
+        }
+        &:after {
+          content: '0';
+          color: transparent;
+          //background: transparent url(vi/images/menu_icons.png) -60px -198px no-repeat;
+          background: url("vi/images/dropdown_arrow.svg") -1px -28px no-repeat; //WS
+          margin-left: 5px;
+          width: 12px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .mstrmojo-Button.mstrmojo-WebHoverButton {
+    &:active {
+      .mstrmojo-Refine-RefineSampleButton-text.mstrmojo-Button-text {
+        background: none;
+        //color: #383838;
+      }
+    }
+  }
+
+}

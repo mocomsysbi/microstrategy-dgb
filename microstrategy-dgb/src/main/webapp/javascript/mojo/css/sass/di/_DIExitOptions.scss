@@ -1,0 +1,104 @@
+/*Data Import application exit options page style */
+
+// Exit options container box
+.mstrmojo-di-DIExitOptions {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 28px 38px 28px;
+  margin: auto;
+
+  .title-one {
+    font: 11px arial;
+    color: #00a554;
+    overflow: hidden;
+    white-space: nowrap; // show one line
+    line-height: 22px;
+  }
+
+  .title-two {
+    font: 11px arial;
+    color: #444649;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 15px;
+  }
+
+  .mstrmojo-Button.mstrmojo-di-button {
+    width: 100%;
+    height: 45px;
+    margin-left: 0px;
+
+    .mstrmojo-Button-text {
+      line-height: 45px;
+      //font-weight: bold;
+    }
+  }
+
+  .mstrmojo-Button.mstrmojo-di-button.cnt3 {
+    margin-top: 13px;
+  }
+
+  .mstrmojo-Button.mstrmojo-di-button.cnt2 {
+    margin-top: 39px;
+  }
+}
+
+
+#DIContainer {
+  .mstrmojo-di-view.mstrmojo-di-view-popup.start-your-analysis {
+    height: 322px !important;
+    width: 450px;
+    min-width: 440px !important;
+    .mstrmojo-Box.mstrmojo-di-DIExitOptions {
+      padding: 32px 32px 50px 32px;
+      .mstrmojo-Label.title-icon {
+        display: inline-block !important;
+        width: 16px;
+        height: 16px;
+        background: transparent url("images/DI/workstation/workstation.svg") -1260px -40px;
+        margin-top: 5px;
+        vertical-align: top;
+      }
+      .mstrmojo-Label.title-one {
+        display: inline-block !important;
+        position: relative;
+        overflow:hidden;
+        text-overflow: ellipsis;
+
+        width: 350px;
+        line-height:1.4em;
+        max-height:2.8em;
+        padding-left: 10px;
+        margin-top: 5px;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        color: black;
+        font-weight: bold;
+
+      }
+
+      .mstrmojo-Label.title-two {
+        width: 350px;
+        padding-left: 26px;
+      }
+      .mstrmojo-Button {
+        width: 260px;
+        margin: 10px auto 0 auto;
+        float: none;
+        height: 32px;
+        &.newvi {
+          margin: 25px auto 0 auto;
+        }
+        .mstrmojo-Button-text {
+          line-height: 32px;
+        }
+      }
+    }
+    .mstrmojo-Button.di-title-btn.mstrmojo-di-help {
+      visibility: hidden;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumGraphMatrixNumberCondenseMode={GMNCDM_ALL:0,GMNCDM_PART:1,GMNCDM_NONE:2};

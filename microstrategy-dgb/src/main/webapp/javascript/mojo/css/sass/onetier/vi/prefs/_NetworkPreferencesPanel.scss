@@ -1,0 +1,21 @@
+@import '../../../global';
+
+.mstrmojo-ot-PreferencesEditorPanel.ot-network-prefs {
+    margin-top: 16px;
+
+    // The horizontal check-list to display the proxy types.
+    .mstrmojo-ui-CheckList {
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .mstrmojo-vi-TwoColumnProp {
+        margin: 10px 0 0;
+        white-space: nowrap;
+
+        // Nested controls don't need the margin.
+        .mstrmojo-vi-TwoColumnProp {
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import '../../_global.scss';
+
+/** BEGIN: SubmenuEditor **/
+.mstrmojo-st-removeFilter .mstrmojo-Menu-content {
+    filter: none;
+}
+
+.mstrmojo-SubmenuEditor {
+    position: relative;
+
+    .mstrmojo-SubmenuItem-content {
+        width: 160px;
+        background-color: #FFFFFF;
+        right: auto;
+        left: 100%;
+        top: 0;
+        padding: 4px;
+        position: absolute;
+        border: 1px solid #acacac;
+        font-size: 8pt;
+        color: #656565;
+
+        .mstrmojo-HTMLButton {
+            min-width: 60px !important;
+            cursor: pointer;
+        }
+
+        .mstrmojo-Box {
+            margin-top: 10px;
+            padding-left: 9px;
+        }
+    }
+
+    .mstrmojo-SubmenuItem-content
+    .mstrmojo-SubmenuItem-content .item {
+        margin: 0;
+        line-height: 22px;
+        height: 22px;
+        border:none;
+        padding: 0 19px;
+    }
+
+}
+
+/** END: SubmenuEditor **/

@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.MobileDocBuilder");mstrmojo.InfoWindowDocBuilder=mstrmojo.declare(mstrmojo.MobileDocBuilder,null,{scriptClass:"mstrmojo.InfoWindowDocBuilder",createPortlet:function createPortlet(t,node,w){return mstrmojo.DocBuilder.prototype.createPortlet.call(this,t,node,w);}});}());

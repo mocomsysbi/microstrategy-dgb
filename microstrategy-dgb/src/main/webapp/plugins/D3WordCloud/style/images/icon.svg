@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 38</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="30" height="30"></rect>
+    </defs>
+    <g id="Dossier-Editor-Designer-Use" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="small-word" transform="translate(-8.000000, -8.000000)">
+            <g id="Group-38" transform="translate(8.000000, 8.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)">
+                    <g transform="translate(0.000000, 1.000000)">
+                        <text id="DATA" fill="none" font-family="SFUIDisplay-Heavy, SF UI Display" font-size="7" font-weight="600">
+                            <tspan x="1" y="7" fill="#8B95E4">DATA</tspan>
+                        </text>
+                        <text id="CLOUD" fill="none" font-family="SFUIDisplay-Heavy, SF UI Display" font-size="7" font-weight="600">
+                            <tspan x="6" y="14" fill="#1C91DC">CLOUD</tspan>
+                        </text>
+                        <rect id="Rectangle" fill="#85C836" fill-rule="evenodd" x="2" y="18" width="8" height="3"></rect>
+                        <rect id="Rectangle" fill="#85C836" fill-rule="evenodd" x="20" y="3" width="8" height="2"></rect>
+                        <rect id="Rectangle-Copy" fill="#FF915D" fill-rule="evenodd" x="0" y="13" width="5" height="3"></rect>
+                        <rect id="Rectangle-Copy-2" fill="#FF915D" fill-rule="evenodd" x="13" y="18" width="17" height="1"></rect>
+                        <rect id="Rectangle-Copy-2" fill="#8B95E4" fill-rule="evenodd" x="4" y="25" width="4" height="2"></rect>
+                        <polygon id="Rectangle-Copy" fill="#1C91DC" fill-rule="evenodd" transform="translate(18.000000, 25.000000) scale(1, -1) translate(-18.000000, -25.000000) " points="10 23 26 23 26 27 10 27"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

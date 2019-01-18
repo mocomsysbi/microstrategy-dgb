@@ -1,0 +1,115 @@
+.mstrmojo-di-tree-node-list {
+    list-style-position: outside;
+    list-style-type: none;
+    list-style-image: none;
+}
+
+.mstrmojo-di-tree-node-folder {
+  list-style-position: outside;
+  list-style-type: none;
+  list-style-image: none;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-top: 1px;
+}
+
+.mstrmojo-di-tree-node-folder.selected {
+  background-color: #cecece; }
+
+.mstrmojo-di-tree-node-folder:hover {
+  background-color: #dadada; }
+
+.mstrmojo-di-tree-node-file {
+  list-style-position: outside;
+  list-style-type: none;
+  list-style-image: none;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-top: 1px;
+}
+
+.mstrmojo-di-tree-node-file.selected {
+  background-color: $wsvi-selected-gray; }
+
+.mstrmojo-di-tree-node-file:hover {
+  background-color: $wsvi-hover-gray; }
+
+.mstrmojo-di-tree-node-icon.folder-closed {
+  background: url(images/DI/main_icons_sprite.png) no-repeat -60px -120px;
+}
+
+.mstrmojo-di-tree-node-icon.folder-open {
+  background: url(images/DI/main_icons_sprite.png) no-repeat -90px -120px;
+}
+
+.mstrmojo-di-tree-node-icon {
+  border: none;
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+  border: medium none;
+}
+
+.mstrmojo-di-tree-node-icon.csv-doc {
+  background-image: url(images/DI/icon_csv_doc.png); }
+
+.mstrmojo-di-tree-node-icon.excel-doc {
+  background-image: url(images/DI/icon_excel_doc.png); }
+
+
+
+.mstrmojo-di-tree-node-icon.google-spreadsheet {
+  background-image: url(images/DI/icon_google_spreadsheet.png); }
+
+.mstrmojo-di-tree-node-icon.text-doc {
+  background: url(images/DI/main_icons_sprite.png) no-repeat -120px -120px;
+}
+
+.mstrmojo-di-tree-node-icon.ga-document {
+  background-image: url(images/DI/ga_document_icon.png);
+}
+
+.mstrmojo-di-tree-node-icon.salesforce {
+  background-image: url(images/DI/iconSalesforceFile.png);
+}
+
+.mstrmojo-di-tree-node-text {
+  background-position: 3px center;
+  background-repeat: no-repeat;
+  cursor: default;
+  line-height: 26px;
+  padding: 0px 20px 0px 7px;
+}
+
+  .mstrmojo-di-tree-node-desc{
+    position: absolute;
+    left: 30%;
+    padding-left: 10px;
+    border-left: 1px solid #bbbbbb;
+    height: 19px;
+    width: 58%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mstrmojo-di-tree-node-itemsContainer {
+    margin: 0;
+    padding: 0;
+  }
+
+.workstation{
+  .mstrmojo-di-tree-node-icon.text-doc, .mstrmojo-di-tree-node-icon.salesforce {
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2100px -8px;
+  }
+  .mstrmojo-di-tree-node-icon.folder-closed{
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2150px -10px;
+  }
+
+  .mstrmojo-di-tree-node-icon.folder-open{
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2150px -40px;
+  }
+
+  .mstrmojo-di-tree-node-icon.ga-document {
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2100px -8px;
+  }
+}

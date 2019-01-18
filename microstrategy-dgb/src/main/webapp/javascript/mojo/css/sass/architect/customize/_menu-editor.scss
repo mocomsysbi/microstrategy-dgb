@@ -1,0 +1,25 @@
+/** BEGIN:  MenuEditor **/
+.mstrmojo-ui-MenuEditor {
+  z-index: 1;
+  color: #656565;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  padding: 0 1px 0 0;
+  .me-buttons {
+    height: 32px;
+    border-top: 1px dotted #BBB;
+    padding-top: 1px;
+    .mstrmojo-VIButton {
+      background-color: #f5f5f5;
+      border: 1px solid #AAA;
+      padding: 0;
+      min-width: 57px;
+      text-align: center;
+      -webkit-border-radius: 1px;
+    }
+    > .mstrmojo-VIButton {
+      float: left;
+    }
+  }
+}
+/** END: MenuEditor **/

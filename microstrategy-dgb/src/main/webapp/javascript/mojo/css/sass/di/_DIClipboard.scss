@@ -1,0 +1,24 @@
+@import "../di/DIClipboardImages";
+
+.mstrmojo-di-clipboard{
+  display: table;
+  margin: 0px 16px;
+}
+
+.mstrmojo-di-clipboard-label {
+  font-family: verdana;
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 0px 18px;
+  display: inherit;
+}
+
+.workstation .mstrmojo-di-view .mstrmojo-di-layout .mstrmojo-di-clipboard {
+  .mstrmojo-di-worksheet-main-container {
+    .mstrmojo-di-worksheet-table-container {
+      .mstrmojo-di-worksheet-table-scroller.mstrmojo-scrollNode {
+        height: 100%;
+      }
+    }
+  }
+}

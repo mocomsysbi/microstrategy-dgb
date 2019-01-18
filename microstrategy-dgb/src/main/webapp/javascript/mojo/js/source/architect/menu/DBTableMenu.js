@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.architect.menu._HasTableMenu","mstrmojo.architect.menu.ArchitectMenu");mstrmojo.architect.menu.DBTableMenu=mstrmojo.declare(mstrmojo.architect.menu.ArchitectMenu,[mstrmojo.architect.menu._HasTableMenu],{scriptClass:"mstrmojo.architect.menu.DBTableMenu"});}());

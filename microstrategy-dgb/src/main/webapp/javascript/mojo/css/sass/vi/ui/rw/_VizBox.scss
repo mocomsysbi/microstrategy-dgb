@@ -1,0 +1,195 @@
+@import '../../vi-global';
+@import '../../themes';
+@import '../viz-icon-mixins';
+@import '../viz-toolbar';
+
+// Light theme VF variables.
+$vi-img-path-vf-light: '#{$vi-img-path}/view_filter.png';
+$vi-img-path-vf-active-light: '#{$vi-img-path}/view_filter_active.png';
+$vi-img-path-vf-hover-light: '#{$vi-img-path}/view_filter_hover.png';
+$vi-animation-vf-initial-light: 'initial-vf-icon';
+$vi-animation-vf-blink-light: 'blink-vf-icon';
+
+// Dark  theme VF variables.
+$vi-img-path-vf-dark: '#{$vi-img-path}/view_filter_dark.png';
+$vi-img-path-vf-active-dark: '#{$vi-img-path}/view_filter_active_dark.png';
+$vi-img-path-vf-hover-dark: '#{$vi-img-path}/view_filter_hover_dark.png';
+$vi-animation-vf-initial-dark: 'initial-vf-icon-dark';
+$vi-animation-vf-blink-dark: 'blink-vf-icon-dark';
+
+
+@mixin vf-keyframes($vi-img-path-vf, $vi-img-path-vf-active, $vi-img-path-vf-hover, $animation-blink, $animation-initial) {
+    @include keyframes(#{$animation-blink}) {
+        0% {
+            background-image: url(#{$vi-img-path-vf});
+        }
+        2% {
+            background-image: url(#{$vi-img-path-vf-active});
+        }
+        10% {
+            background-image: url(#{$vi-img-path-vf});
+        }
+        20% {
+            background-image: url(#{$vi-img-path-vf-active});
+        }
+        30% {
+            background-image: url(#{$vi-img-path-vf});
+        }
+        100% {
+            background-image: url(#{$vi-img-path-vf});
+        }
+    }
+
+    @include keyframes(#{$animation-initial}) {
+        0% {
+            width: 0px;
+            background-position: 0 10px;
+            opacity: 0.7;
+        }
+
+        40% {
+            background-position: 0 -5px;
+            background-image: url(#{$vi-img-path-vf-active});
+        }
+
+        75% {
+            background-position: 0 2px;
+        }
+
+        100% {
+            width: 31px;
+            background-position: 0 0;
+            opacity: 1;
+            background-image: url(#{$vi-img-path-vf-active});
+        }
+    }
+}
+
+// Include the keyframes at the global level.
+@include vf-keyframes($vi-img-path-vf-light, $vi-img-path-vf-active-light, $vi-img-path-vf-hover-light, $vi-animation-vf-blink-light, $vi-animation-vf-initial-light);
+@include vf-keyframes($vi-img-path-vf-dark, $vi-img-path-vf-active-dark, $vi-img-path-vf-hover-dark, $vi-animation-vf-blink-dark, $vi-animation-vf-initial-dark);
+
+/** BEGIN: VizBox **/
+.mstrmojo-VIBox {
+
+    // The please drop unit label.
+    .ctrlOverlay .mstrmojo-Label.dropMsg {
+        background-image: url(#{$vi-img-path}/CanvasElements/icnVisualization.png);
+        background-position: 3px 50%;
+    }
+
+    // Add the CSS for the drag handles.
+    .hover-filter-btn {
+        opacity: 0;
+        @include single-transition(opacity);
+
+        &.hidden {
+            display: none;
+
+            &.open {
+                display: block;
+            }
+        }
+    }
+
+    &:hover .hover-filter-btn,
+    .hover-filter-btn.open {
+        @include border-radius(0 0 5px 0);
+        @include box-sizing(border-box);
+
+        height: 16px;
+        left: 5px;
+        opacity: 1;
+        position: absolute;
+        top: 2px;
+        width: 30px;
+        z-index: 5;
+    }
+}
+
+.formatting {
+    .mstrmojo-VIBox.selected {
+        @include box-shadow(#454545, 0, 0, 8px);
+    }
+}
+
+// Avatar that is dragged around when the visualization box is moved.
+.mstrmojo-VIUnit-avatar {
+    &.viz-avi {
+        background-image: url(#{$vi-img-path}/id_viz.png);
+    }
+}
+
+// The popup menu list for showing the view filter expression on the VizBox
+.mstrmojo-viz-fe-menu {
+  .item.mstrmojo-ui-Menu-item  {
+    cursor: pointer;
+    padding-left: 10px;
+  }
+}
+
+// Theme Specific VizBox CSS
+@mixin vf-mixin($vi-img-path-vf, $vi-img-path-vf-active, $vi-img-path-vf-hover, $animation-blink, $animation-initial) {
+    .mstrmojo-VIBox {
+        .hover-filter-btn.open,
+        &:hover .hover-filter-btn {
+            background-image: url(#{$vi-img-path-vf-hover});
+
+            // We will always blink the filter icon once.
+            -webkit-animation: #{$animation-blink} 3s;
+
+
+            &.open,
+            &:hover,
+            &:active {
+                background-image: url(#{$vi-img-path-vf-active});
+            }
+        }
+
+        $clsList: "vf-active" "#{$animation-blink} 3s infinite !important", "has-vf" "#{$animation-initial} 800ms 50ms !important";
+
+        @each $cls in $clsList {
+            // Grab the key value pairs of the class name and the animation str.
+            $cls-name: nth($cls, 1);
+            $animation-str: nth($cls, 2);
+
+            // Build the css macro for each of the classes
+            &.#{$cls-name} {
+                -webkit-animation: #{$animation-str};
+            }
+        }
+
+    }
+}
+
+.mojo-theme-light {
+    // Include the view filter mixin for the light theme.
+    @include vf-mixin($vi-img-path-vf-light, $vi-img-path-vf-active-light, $vi-img-path-vf-hover-light, $vi-animation-vf-blink-light, $vi-animation-vf-initial-light);
+
+    .mstrmojo-VIUnit-avatar {
+        &.viz-avi {
+            & > div {
+                & > div {
+                    @include viz-icon-middle-theme($theme-light-drop-box-border-color, $theme-light-drop-box-background-color);
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    // Include the view filter mixin for the dark theme.
+    @include vf-mixin($vi-img-path-vf-dark, $vi-img-path-vf-active-dark, $vi-img-path-vf-hover-dark, $vi-animation-vf-blink-dark, $vi-animation-vf-initial-dark);
+
+    .mstrmojo-VIUnit-avatar {
+        &.viz-avi {
+            & > div {
+                & > div {
+                    @include viz-icon-middle-theme($theme-dark-drop-box-border-color, $theme-dark-drop-box-background-color);
+                }
+            }
+        }
+    }
+}
+
+/** END: VizBox **/

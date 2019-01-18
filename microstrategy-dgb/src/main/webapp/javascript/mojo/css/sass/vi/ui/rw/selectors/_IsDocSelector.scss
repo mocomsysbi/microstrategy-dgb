@@ -1,0 +1,21 @@
+.mstrmojo-ui-Pulldown.selector {
+    .item {
+        padding-right: 35px;
+        text-overflow: inherit;
+    }
+}
+
+// Hack for webkit and mozilla browser to hide the scrollbar and show the full content of item, overwrites the css from _HasScroller.scss
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+    .mstrmojo-ui-Pulldown.selector {
+
+       //DE13094 this is no longer required. Its overriding the parents margin which is -30px
+      /*.mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+            margin-right: -16px;
+        }*/
+
+        .item {
+            padding-right: 21px;
+        }
+    }
+}

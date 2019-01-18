@@ -1,0 +1,64 @@
+.workstation {
+  /** BEGIN: MetricQualification **/
+  .mstrmojo-vi-metric-qual {
+    overflow: hidden;
+
+    .pulldown {
+      height: $wsvi-input-control-height;
+    }
+
+    .mstrmojo-TextBox {
+      height: $wsvi-input-control-height;
+      background: #FFFFFF;
+      border: 1px solid rgba(155, 155, 155, 0.6);
+      float: right;
+      margin: 0;
+      padding: 5px 2px;
+      line-height: normal;
+      text-align: right;
+      width: 100%;
+
+      &.mstrmojo-TextBox-ErrValidation {
+        background: #FFFFFF;
+        border-color: #F68E56;
+      }
+    }
+
+    .v1,
+    .v2 {
+      height: 26px;
+    }
+  }
+
+  // Filter Panel Metric Qualification
+  .mstrmojo-VIFilterPanel {
+    .mstrmojo-vi-metric-qual {
+      .pulldown {
+        margin-bottom: 1px;
+        float: left;
+      }
+
+      .v1,
+      .v2 {
+        float: right;
+      }
+
+      .v2 {
+        margin-top: 7px;//DE50678
+      }
+    }
+  }
+
+  .metric-qual-errPopup {
+    @include border-radius(3px);
+
+    background-color: #3F3F3F;
+
+    .mstrmojo-Label {
+      padding: 5px;
+      color: white;
+    }
+  }
+
+  /** END: MetricQualification **/
+}

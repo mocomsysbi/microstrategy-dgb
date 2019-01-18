@@ -1,0 +1,25 @@
+.mstrmojo-di-xs{
+  margin: 40px;
+  width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mstrmojo-di-xs-title{
+  color: black;
+  margin-right: 40px;
+}
+
+.mstrmojo-di-xs-title.required:after{
+  content: "*";
+  color: red;
+
+}
+.mstrmojo-di-xs-content{
+  text-align: right;
+  width: 401px;
+  height: 25px;
+
+}
+.mstrmojo-di-xs-TextBox{
+  width: 295px;
+}

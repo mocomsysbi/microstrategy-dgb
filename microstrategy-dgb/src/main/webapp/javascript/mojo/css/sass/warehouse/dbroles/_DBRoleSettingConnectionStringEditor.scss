@@ -1,0 +1,62 @@
+@import '../wh-global';
+
+.mstrmojo-wh-DBRoleSettingConnectionStringEditor {
+
+}
+
+.mstrmojo-wh-DBRoleConnection-ShowConnection {
+  text-align: right;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mstrmojo-TextArea.mstrmojo-wh-DBRoleConnection-ConnectionString {
+  display: block !important;
+  width: 100%;
+  height: 50px;
+  margin-top: 9px;
+  border: solid 1px #B7B7B7;
+  background-color: white;
+  resize: none;
+
+  &.disabled {
+    background-color: #FFF;
+    color: rgba(68,70,73,0.45);
+    border-color: #cbcbcb;
+    opacity: 0.35;
+  }
+}
+.mstrmojo-wh-DBRoleConnection-driverList {
+  .mstrmojo-PopupList {
+    width: 350px;
+  }
+}
+
+.workstation{
+  .mstrmojo-wh-DBRoleConnection-ConnectionString-Label{
+    display: inline-block !important;
+    height: 55px;
+    position: relative;
+    top: 10px;
+
+    &.disabled{
+      color: #a0a7ac;
+    }
+  }
+  .mstrmojo-TextArea.mstrmojo-wh-DBRoleConnection-ConnectionString {
+    display: inline-block !important;
+    width: 65%;
+    float: right;
+  }
+  .mstrmojo-wh-DBRoleConnection-ConnectionStringContents{
+    //overflow: hidden;
+    //clear float
+    &:after{
+      display: block;
+      clear: both;
+      content: '';
+      visibility: hidden;
+      height: 0;
+    }
+  }
+}

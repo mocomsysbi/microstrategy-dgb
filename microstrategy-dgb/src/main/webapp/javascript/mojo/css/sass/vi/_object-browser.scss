@@ -1,0 +1,29 @@
+@import 'vi-global';
+
+/** BEGIN: VI Object Browser **/
+
+.mstrmojo-OBList .mstrmojo-ListIcon {
+
+    // Icon area is 20x20. Use background-position for padding.
+    $unit-list-image-path: 'vi/images/unitList';
+
+    &.t4 {
+        background-image: url(#{$vi-img-path}/unitList/metric.png);
+        background-position: 4px 4px; // 12x12
+    }
+
+    &.t12 {
+        background-image: url(#{$vi-img-path}/unitList/attribute.png);
+        background-position: 4px 4px; // 12x12
+    }
+
+    &.t14 {
+        background-image: url(#{$vi-img-path}/unitList/hierarchy.png);
+        background-position: 4px 4px; // 12x11
+    }
+
+    // In VI unit lists, we use the same icon for OldDE/CG/Consolidation (11x12, custom-group.png).
+    // As the user may want to distinguish these types when browsing objects, we keep the old icons for now.}
+}
+
+/** END: VI Object Browser **/

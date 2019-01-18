@@ -1,0 +1,431 @@
+@import "_global";
+/* Beginning of Sharing Editor */
+
+.mstrmojo-SharingEditor {
+    width: 473px;
+    float: left;
+    .mstrmojo-Editor-title-container {
+        border-bottom: solid 1px rgba(68,70,73,0.2);
+        .mstrmojo-Editor-title {
+            /* Issue 758925: fixed IE8 Bug (incapable of max-width) */
+            /* max-width: 360px; */
+            width: 360px;
+        }
+    }
+    .mstrmojo-Editor-content {
+        box-shadow: inset #fff 0 1px 0 0px;
+    }
+    .mstrmojo-CheckListHoriz {
+        margin-left: 18px;
+        margin-top: 5px;
+        .mstrmojo-CheckListHoriz-item {
+            padding-right: 10px;
+            label {
+                padding-left: 5px;
+                line-height: 1.2;
+                position: relative;
+                top: 1px;
+            }
+            input {
+                float: left;
+                position: relative;
+                top: -2px;
+            }
+        }
+        td {
+            //for login string
+            display: inline-block;
+        }
+    }
+    .mstrmojo-Editor-buttons {
+        float: right;
+        padding: 12px 17px;
+    }
+    .mstrmojo-ObjectInputBox {
+        height: auto !important;
+        max-height: 100px;
+        width: 290px;
+        padding: 2px;
+        border-radius: 2px;
+        &.disabled {
+            padding: 23px 0 0 0; // set padding since height cannot be set (important)
+            background-color: #EEEEEE;
+        }
+
+    }
+    .mstrmojo-WebButton {
+        //no width for long string
+        &.action-button {
+            margin: 0px 3px;
+			float: right;
+        }
+        &.hot {
+            margin-right: 10px;
+        }
+    }
+}
+
+.sharingEditor-topSection {
+    border: 2px solid rgba(68, 70, 73, 0.2);
+    padding: 10px;
+    padding-bottom: 40px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.sharingEditor-tabDock {
+    min-width: 250px;
+    margin: auto;
+    // The following creates the effect of the 3 options being inline with the border
+    position: relative;
+    top: -19px;
+    background-color: #f3f3f4;
+}
+
+.SharingEditor-CopyLink,
+.SharingEditor-CopyHtmlLink {
+    background: url(#{$mojo-img-path}/sharingEditor/share-editor-sprite.png) no-repeat;
+    background-size: 15px;
+    background-position-y: -177px;
+    background-position-x: 3px;
+    background-color: white;
+    border: 1px solid #b5b5b5;
+    width: 20px;
+    height: 20px;
+    margin-left: -1px;
+    cursor: pointer;
+}
+
+// Changes specifically for Dossiers(previously dashboard/VI) that has the new reskinning
+.workstation .mstrmojo-SharingEditor {
+    .SharingEditor-CopyLink,
+    .SharingEditor-CopyHtmlLink {
+        border: 1px solid rgba(68,70,73,0.2);
+        width: 18px;
+        height: 24px;
+        margin-left: -1px;
+    }
+    .sharingEditor-tabDock {
+        background-color: #fff;
+    }
+    .mstrmojo-CheckListHoriz .mstrmojo-CheckListHoriz-item {
+        label {
+            top: -2px;
+            font-size: 12px;
+            font-family: Arial;
+        }
+        input {
+            top: 0px;
+        }
+    }
+    .mstrmojo-Editor-title-container .mstrmojo-Editor-title {
+        padding: 2px;
+    }
+}
+
+.SharingEditor-LaunchButtons {
+    float: right;
+}
+
+.sharingEditor-emailLink,
+.sharingEditor-launchLink {
+    text-decoration: none !important;
+    color: #3B92ED;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.SharingEditor-libraryLink,
+.SharingEditor-ShowLink,
+.SharingEditor-ShowHtml {
+    &.selected {
+        color: #3B92ED;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.SharingEditor-libraryLink,
+.SharingEditor-ShowHtml {
+    border-left: 1px solid rgba(68, 70, 73, 0.2);
+}
+
+.mstrmojo-SharingEditor .sharingEditor-tabDock .mstrmojo-Label {
+    font-size: 12px;
+    text-align: center;
+    padding: 0 15px 10px 15px;
+    height: 5px;
+}
+
+.SharingEditor-LinkRow {
+    margin: 0px auto;
+}
+
+.SharingEditor-Link {
+    width: 360px;
+}
+
+.SharingEditor-title {
+    font-size: 11px;
+    color: #7E7E7E;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+.mstrmojo-SharingEditor-html-panel {
+    margin: -15px 5px 5px 5px;
+    padding: 0px 10px;
+    .mstrmojo-TextBoxWithLabel {
+        .mstrmojo-TextBox {
+            width: 40px;
+            vertical-align: baseline;
+        }
+        .mstrmojo-TextBox-label {
+            margin-left: 30px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.SharingEditor-Html {
+    width: 350px !important;
+    display: block !important;
+    margin: 5px auto;
+}
+
+.SharingEditor-Html-Size,
+.SharingEditor-Html-Show {
+    display: inline !important;
+}
+
+/* start ACL portion */
+.sharingEditor-publicAccessSection {
+    width: 100%;
+    margin-top: auto;
+    height: 30px;
+    border-bottom: 1px solid rgba(68, 70, 73, 0.2);
+}
+
+.SharingEditor-Public {
+    label {
+        padding: 0px 10px 0px 44px !important;
+        font-size: 12px;
+        background: transparent url(#{$mojo-img-path}/sharingEditor/checked-group.png) 19px 0 no-repeat;
+    }
+    .label-disabled {
+        color: #7e7e7e;
+        background-image: url(#{$mojo-img-path}/sharingEditor/non-checked-group.png);
+    }
+}
+
+.sharingEditor-privilegeIcon {
+    background: url(#{$mojo-img-path}/sharingEditor/share-editor-sprite.png) no-repeat;
+    background-size: 15px;
+    width: 20px;
+    height: 20px;
+    float: right;
+
+    &.full {
+        background-position-y: -270px;
+    }
+    &.write {
+        background-position-y: -300px;
+    }
+    &.read {
+        background-position-y: -330px;
+    }
+    &.custom {
+        background-position-y: -360px;
+    }
+    &.deny {
+        background-position-y: -390px;
+    }
+}
+
+.sharingEditor-rightLabel {
+    font-size: 12px;
+    padding-right: 20px;
+    padding-top: 3px;
+    text-align: right;
+    min-width: 60px;
+    margin-right: 15px;
+    background: transparent url("vi/images/dropdown_arrow.svg") 100% 0 no-repeat;
+    float: right;
+}
+
+.sharingEditor-pulldown{
+    float: right;
+    margin-right: 20px;
+}
+
+.sharingEditor-pulldown-iconNode,
+.sharingEditor-datagridPulldown-iconNode {
+    min-width: 60px;
+    text-align: right;
+    font-size: 12px;
+    border: none;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    line-height: 16px;
+    background: transparent url(#{$mojo-img-path}/editor-button.png) no-repeat right -362px;
+    cursor: pointer;
+}
+
+.sharingEditor-datagridContainer  {
+    float:right;
+}
+
+/*Sharing Editor - DataGrid*/
+
+.mstrmojo-SharingEditor {
+    .hide {
+        display: none;
+    }
+    .mstrmojo-DataGrid-headerText {
+        display: none;
+    }
+    .mstrmojo-DataGrid {
+        border: none;
+        width: 430px; 
+        overflow: hidden;
+        padding-left: 10px;
+        &.aclList .mstrmojo-scrollNode {
+    		max-height: 200px;
+    	}
+    }
+    .u {
+        font-size: 12px;
+        padding-left: 25px;
+        background-image: url(#{$mojo-img-path}/sharingEditor/user.png);
+    }
+    .ug {
+        font-size: 12px;
+        padding-left: 26px;
+        background-image: url(#{$mojo-img-path}/sharingEditor/checked-group.png);
+    }
+    .mstrmojo-DataRow.even {
+        //background-color: #FAFAFA;
+        background-color: unset;
+        color: RGBA(44, 46, 49, 0.45);
+    }
+    .mstrmojo-DataRow:hover {
+        background-color: RGBA(44, 46, 49, 0.06);
+    }
+    .mstrmojo-DataRow.selected {
+        background-color: RGBA(44, 46, 49, 0.1);
+    }
+    .sharingEditor-datagridContainer td {
+        border-style: none;
+    }
+    .mstrmojo-Pulldown {
+        width: 85%;
+        margin: 12px auto;
+        padding: 4px 0px;
+    }
+    .mstrmojo-Pulldown-iconNode:hover {
+        background-position: right -362px;
+    }
+}
+
+/*cpsection*/
+
+.sharingEditor-CPSection {
+    width: 100%;
+
+    .mstrmojo-Editor-button {
+        min-width: 50px;
+        float: right;
+        margin-right: 0px;
+    }
+}
+
+.sharingEditor-ACLUserPanel {
+    padding-bottom: 10px;
+    .mstrmojo-ObjectItem-text {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 90px;
+      display: inline-block;
+    }
+    
+    //remove input border added by _ObjectInputBox-ws.scss
+    .mstrmojo-ObjectItem-editNode {
+        border: 0px solid green;
+    }
+
+    .u {
+      padding-top: 0px;
+      background-position: 3px 0px;
+    }
+
+    .ug {
+      padding-top: 0px;
+      background-position: 3px 0px;
+    }
+
+}
+.sharingEditorUserMessage {
+    color: #c80000;
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 12px;
+    background: url(#{$mojo-img-path}/Remove.png) no-repeat 90% center;
+}
+.mstrmojo-SharingEditor .hideMsg{
+    visibility: hidden;
+    height: 5px;
+}
+
+#shareReportPersonalView,
+#tbShareURL{
+    background-image:  url(#{$mojo-img-path}/sharingEditor/link.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sharingEditorID_WHController,#sharingEditorDIDialog {
+    .mstrmojo-SharingEditor {
+        .mstrmojo-Editor-content {
+            padding: 16px;
+            .sharingEditor-ACLUserPanel {
+                .mstrmojo-ObjectInputBox {
+                    .mstrmojo-ObjectItem-text.mstrmojo-ACLInputBox-user {
+                        background-position-y: 0;
+                        line-height: 12px;
+                    }
+                }
+                .mstrmojo-Button.mstrmojo-WebButton.action-button {
+                    height: 26px;
+                    width: unset;
+                    max-width: 90px;
+                    .mstrmojo-Button-text {
+                        height: 26px;
+                        line-height: 26px;
+                    }
+                }
+                .sharingEditor-privilegeIcon {
+                    margin-bottom: 0;
+                }
+            }
+            .sharingEditor-rightLabel {
+                margin-top: 3px;
+                margin-bottom: 2px;
+            }
+            .mstrmojo-DataGrid.aclList {
+                .sharingEditor-privilegeIcon {
+                    margin-top: 5px;
+                }
+            }
+            .mstrmojo-Editor-title {
+                padding: 12px 0px;
+            }
+            
+            
+        }
+    }
+}
+
+/* end of Sharing editor */

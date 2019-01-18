@@ -1,0 +1,156 @@
+/* QueryBuilder Condition Editor */
+.mstrmojo-qb-expr-tools {
+  margin: 3px 24px 1px 20px;
+  visibility: visible;
+  display: block;
+}
+
+/*
+.mstrmojo-qb-filterEditor .mstrmojo-Editor-content{
+  background-color:#dcdcdc;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dcdcdc));
+  background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+  background: -moz-linear-gradient(top, #ffffff, #dcdcdc);
+}
+*/
+
+.mstrmojo-CustomGroupEl.mstrmojo-qb-filterTreeBox {
+  position: relative;
+  top: 3px;
+  width: 410px;
+  height: 286px;
+  overflow: hidden; //ljing 940034
+  &:hover{
+    overflow: auto;
+  }
+  border: 1px solid #CCC;
+  background-color: white;
+  .mstrmojo-CGE-addCondition-button {
+    width: 16px;
+    height: 16px;
+    margin: 6px 0;
+    float: left;
+    background: url("images/DI/workstation/workstation.svg") no-repeat -1500px -100px;
+    &:hover {
+      background: url("images/DI/workstation/workstation.svg") no-repeat -1540px -100px;
+    }
+  }
+  .mstrmojo-CGE-addCondition {
+    float:left;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background: none;
+    padding-left: 4px;
+    .mstrmojo-Button-text {
+      color: $wsvi-link-blue;
+      font-weight: normal;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  .mstrmojo-qb-deleteAll {
+    float:right;
+    margin-top: 6px;
+    color: $wsvi-link-blue;
+    font-weight: normal;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .mstrmojo-del {
+    background: url(vi/images/menu_icons.png) no-repeat -29px 7px;
+    width: 10px;
+    height: 20px;
+  }
+  .mstrmojo-cond-contents {
+    line-height: 26px;
+    &.selected {
+      background-color: $wsvi-selected-gray;
+    }
+    &:hover {
+      background-color: $wsvi-hover-gray;
+    }
+  }
+
+}
+
+.mstrmojo-CustomGroupEl-expr.mstrmojo-qb-filterTreeBox {
+  clear:both;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mstrmojo-Editor.mstrmojo-CGE-andOrPopup.mstrmojo-ConditionWalk {
+  padding: 5px 16px;
+  background-color: #F4F4F4;
+  box-shadow: rgba(68,70,73,0.3) 0 1px 6px 3px;
+  .mstrmojo-Editor-content {
+    padding: 0;
+  }
+  .mstrmojo-Dial-itemsContainer {
+    .mstrmojo-itemwrap {
+      height: 22px;
+      .dial-item {
+        &:hover {
+          background-color: $wsvi-hover-gray;
+        }
+        font-size: 11px;
+        padding: 0 3px;
+        line-height: 22px;
+      }
+    }
+  }
+  .mstrmojo-Editor-buttons {
+    background-color: #F4F4F4;
+    margin: 0px;
+    display: none;
+  }
+}
+
+// DE11967: Group Conditions/Ungroup Conditions
+.mstrmojo-qb-filterEditor {
+  .mstrmojo-andor-tools {
+    .mstrmojo-outdent,
+    .mstrmojo-indent {
+      float: right;
+      width: auto;
+      background-image: none;
+      // color: #007EBE;
+      padding: 0 8px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .mstrmojo-andor-prefix,
+  .mstrmojo-cond-prefix {
+    white-space: normal; // Fix for Firefox bug: otherwise Group Conditions/Ungroup Conditions go to next line.
+  }
+
+  .mstrmojo-Editor-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .mstrmojo-ConditionNode {
+    .mstrmojo-topright {
+      margin-right: 10px;
+      margin-top: 2px;
+    }
+    .mstrmojo-cond-prefix {
+      &:hover {
+        background-color: $wsvi-hover-gray;
+      }
+      .mstrmojo-andor {
+        line-height: 16px;
+        font-size: 11px;
+        color: $wsvi-desc-gray;
+      }
+    }
+  }
+}
+/* END: Condition editor */

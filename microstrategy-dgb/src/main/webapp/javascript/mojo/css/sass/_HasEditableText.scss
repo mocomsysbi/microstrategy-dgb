@@ -1,0 +1,28 @@
+@import 'global';
+@import 'global-mixins';
+
+.hasEditableText::-moz-selection {
+    background-color: transparent;
+}
+
+.hasEditableText.editable {
+    color: #000000;
+    cursor: text;
+    @include user-select(text);
+    overflow: hidden;
+
+    &::selection {
+        background-color: #538DA9;
+        color: #FFFFFF;
+    }
+    &::-moz-selection {
+        background-color: #538DA9;
+        color: #FFFFFF;
+    }
+}
+
+.mojo-theme-dark {
+    .hasEditableText.editable {
+        color: #FFFFFF;
+    }
+}

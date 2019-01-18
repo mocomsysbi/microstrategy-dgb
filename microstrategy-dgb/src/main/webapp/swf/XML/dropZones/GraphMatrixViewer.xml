@@ -1,0 +1,30 @@
+<dzd version="2.0">
+    <dzs showMetricsUnit="true" showPropertiesEditor="true" useWidgetProps="false">
+        <dz id="Rows" nm="Rows" nmdesc="mstr.967" dztp="axis" ax="1" pmry="true" max="-1" />
+        <dz id="Columns" nm="Columns" nmdesc="mstr.966" dztp="axis" ax="2" pmry="true" max="-1" />
+        <dz id="XAxis" nm="X Axis" nmdesc="mstr.969" dztp="adaptive" ax="2" pmry="true" max="-1" />
+        <dz id="YAxis" nm="Y Axis" nmdesc="mstr.970" dztp="adaptive" ax="1" pmry="true" max="-1" />
+        <dz id="BreakBy" nm="Break By" nmdesc="mstr.964" dztp="axis" ax="1" pmry="true" max="-1" />
+        <dz id="ColorBy" nm="Color By" nmdesc="mstr.965" dztp="adaptive" ax="2" pmry="false" autoCreate="Slice,BreakBy,XAxis" max="-1" autoThresholds="true" />
+        <dz id="SizeBy" nm="Size By" nmdesc="mstr.968" dztp="metrics" pmry="false" max="1" />
+        <dz id="Slice" nm="Slice" nmdesc="mstr.1905" dztp="axis" ax="1" pmry="true" max="-1" pivotMetricsUnit="true"/>
+        <dz id="Angle" nm="Angle" nmdesc="mstr.1906" dztp="metrics" pmry="false" max="-1" />
+        <dz id="AdditionalMetrics" nm="Additional Metrics" nmdesc="mstr.963" dztp="metrics" pmry="false" max="-1" dragUnique="true" />
+    </dzs>
+    <dzsv>
+        <dzvg nm="Pie" nmdesc="mstr.1201" >
+	    <dzv id="Slice" />
+	    <dzv id="Angle" />
+        </dzvg>
+        <dzvg nm="Graph" nmdesc="mstr.1658" >
+            <dzv id="VerticalAxis" fqcn="com.microstrategy.flex.viewer.dropZonesViewerClasses.graphMatrixViewerClasses.GraphMatrixDropZoneAxisViewer" />
+            <dzv id="HorizontalAxis" fqcn="com.microstrategy.flex.viewer.dropZonesViewerClasses.graphMatrixViewerClasses.GraphMatrixDropZoneAxisViewer" />
+            <dzv id="ColorBy" />
+            <dzv id="BreakBy" />
+        </dzvg>
+        <dzvg nm="Options" nmdesc="mstr.1887" >
+            <dzv id="SizeBy" />
+            <dzv id="AdditionalMetrics" />
+        </dzvg>
+    </dzsv>
+</dzd>

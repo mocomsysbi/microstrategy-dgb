@@ -1,0 +1,6 @@
+// Include the CSS bundle for all the dynamically loaded JS bundles.
+@import 'sass/bundles/rw-css';
+
+// Only include the light theme for now
+$allow-import-theme-dark: false;
+@import 'sass/base-themes';

@@ -1,0 +1,121 @@
+.workstation {
+    %dots-for-overflow {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .mstrmojo-VIGroupDEList {
+        overflow: hidden;
+        border: 1px solid $wsvi-ui-border-gray;
+        border-top: none;
+
+        .list-content {
+            height: 311px;
+        }
+
+        .items-container {
+            width: 528px;
+        }
+
+        // overwrite the default z-index so it doesn't bleed through to Derived Elements Panel
+        .mstrmojo-scrolltrack {
+            z-index: 0;
+        }
+    }
+
+    .mstrmojo-VIGroupDERow.top {
+        border-top: solid 1px $wsvi-avatar-placeholder;
+    }
+
+    .mstrmojo-VIGroupDERow.bottom {
+        border-bottom-color: $wsvi-avatar-placeholder;
+    }
+
+    .mstrmojo-VIGroupDERow {
+        box-sizing: border-box;
+        border-bottom: solid 1px $wsvi-ui-border-gray;
+        line-height: $wsvi-panel-row-height;
+
+        > div > div {
+            float: left;
+        }
+
+        .group-column {
+            width: 240px;
+
+            .name {
+                @extend %dots-for-overflow;
+                float: left;
+                padding-top: 2px;
+                max-width: 200px;
+            }
+
+            .draggable-icon {
+                background: url(#{$wsvi-main-icons-sprite}) no-repeat -930px -60px;
+                @include wsvi-icon-size;
+                float: left;
+                margin: 5px $wsvi-element-padding;
+            }
+        }
+
+        .mstrmojo-group-list {
+            @extend %dots-for-overflow;
+            float: left;
+            padding: 2px 1px 1px 1px;
+            height: 31px;
+            width: 200px;
+        }
+
+        .mstrmojo-group-delete {
+            @include wsvi-icon-clear-cross;
+            @include wsvi-icon-size;
+            float: right;
+            margin: 8px $wsvi-element-padding 8px 0;
+
+            &:active {
+                @include wsvi-icon-position-clear-cross-active;
+            }
+        }
+    }
+
+    .mstrmojo-VIGroupDERow.others {
+        .mstrmojo-group-delete {
+            display: none;
+        }
+    }
+
+    .mstrmojo-VIGroupDERow.list, .mstrmojo-VIGroupDERow.calculation.ra {
+        .name {
+            color: #444649;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .mstrmojo-VIGroupDERow.calculation {
+        cursor: default;
+
+        .mstrmojo-group-list {
+            @extend %dots-for-overflow;
+             color: #a6a6a6;
+        }
+    }
+
+    .group-DE-drag-avatar {
+        border: 1px solid $wsvi-ui-border-gray;
+        background-color: $wsvi-primary-white;
+        z-index: 10000 !important;
+        overflow: hidden;
+        width: 429px;
+        opacity: 1;
+
+        .mstrmojo-group-list {
+            // reduce the width to match the overall width reduction (so we don't drop to the second line)
+            width: 150px;
+        }
+    }
+}

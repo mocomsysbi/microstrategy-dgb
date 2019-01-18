@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumMajorGraphType={MGT_AREA:0,MGT_BAR:1,MGT_LINE:2,MGT_PARETO:3};

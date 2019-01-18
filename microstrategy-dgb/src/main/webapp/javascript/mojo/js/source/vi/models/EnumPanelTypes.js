@@ -1,0 +1,1 @@
+mstrmojo.vi.models.EnumPanelTypes={FILTERS:1,VIS_CONTENT:2,PAGEBY:3,VISUALIZATION:4};

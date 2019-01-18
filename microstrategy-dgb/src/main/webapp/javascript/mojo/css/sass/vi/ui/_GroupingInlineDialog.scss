@@ -1,0 +1,160 @@
+$tab-editablelabel-background: #e7e7e7;
+
+.mstrmojo-grouping {
+  background-color: #224d6d;
+
+  > DIV {
+    float: left;
+  }
+
+  .content {
+    float: left;
+    height: 36px;
+    width: 100%;
+    box-sizing: border-box;
+
+    .mstrmojo-VITabStrip {
+      width: 100%;
+      height: 34px;
+      background: transparent;
+      border: none;
+
+      .mstrmojo-VITabStrip-tabs {
+        height: 34px;
+
+        > DIV {
+          position: relative;
+        }
+
+        .mstrmojo-VITab {
+          > DIV {
+            margin: 5px 0 0 10px;
+          }
+
+          .mstrmojo-EditableLabel {
+            color: #4a4a4a;
+            line-height: 24px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            border-radius: 2px;
+            background-color: $tab-editablelabel-background;
+            padding: 0 35px 0 15px;
+          }
+
+          .mstrmojo-VITab-menu {
+            display: block;
+            background: url(images/d1.png) no-repeat 4px 3px;
+
+            &:hover {
+              background: url(images/d2.png) no-repeat 4px 3px;
+            }
+          }
+
+          &:hover {
+            .mstrmojo-EditableLabel {
+              background: $tab-editablelabel-background;
+            }
+          }
+
+          &.selected {
+            > DIV {
+              background: transparent;
+            }
+
+            .mstrmojo-EditableLabel {
+              background-color: #e1f0ff;
+              font-weight: bold;
+            }
+
+            &:hover {
+              .mstrmojo-EditableLabel {
+                background-color: #e1f0ff;
+                font-weight: bold;
+              }
+            }
+          }
+
+          &.shine {
+            .mstrmojo-EditableLabel {
+              background-color: #3B92ED;
+            }
+          }
+
+          &.shine.animation-fade {
+            .mstrmojo-EditableLabel {
+              background-color: $tab-editablelabel-background;
+              transition: background-color 500ms linear;
+            }
+          }
+        }
+      }
+
+      .mstrmojo-VITabStrip-addBtn {
+        display: none;
+      }
+
+      .mstrmojo-VITabStrip-btnBar {
+        height: 36px;
+        float: left;
+
+        > DIV {
+          position: relative;
+          float: left;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    height: 36px;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+
+    .mstrmojo-Button {
+      float: right;
+      margin-top: 6px;
+      margin-right: 10px;
+
+      &.previewBtn {
+        background: transparent url(vi/images/toolbar_icons_new.svg) -420px -210px no-repeat;
+        min-width: 20px;
+        margin-top: 9px;
+        margin-right: 20px;
+        height: 20px;
+        border: none;
+
+        &:active {
+          background-position: -420px -240px;
+        }
+      }
+    }
+  }
+
+  .mstrmojo-Label {
+    color: white;
+    font-size: 12px;
+    padding: 6px 20px;
+    margin: 5px 10px;
+    border: 1px dashed white;
+    text-align:center;
+    float: left;
+  }
+}
+
+.previewMode .mstrmojo-grouping {
+  .content .item .btn {
+    display: none;
+  }
+
+  .buttons .mstrmojo-Button {
+    &.previewBtn {
+      background-position: -450px -210px;
+
+      &:active {
+        background-position: -450px -240px;
+      }
+    }
+  }
+}

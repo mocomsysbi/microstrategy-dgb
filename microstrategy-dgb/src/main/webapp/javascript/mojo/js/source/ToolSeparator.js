@@ -1,0 +1,1 @@
+mstrmojo.ToolSeparator=mstrmojo.declare(mstrmojo.Widget,null,{scriptClass:"mstrmojo.ToolSeparator",markupString:'<div class="mstrmojo-ToolSeparator {@cssClass}" style="{@cssText}"></div>',markupSlots:{},markupMethods:{}});

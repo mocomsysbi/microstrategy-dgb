@@ -1,0 +1,1 @@
+(function(){mstrmojo.chart.SeriesInfo=mstrmojo.provide("mstrmojo.chart.SeriesInfo",{});}());

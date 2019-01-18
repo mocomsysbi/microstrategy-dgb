@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Obj","mstrmojo._IsRptModel");mstrmojo.GraphModel=mstrmojo.declare(mstrmojo.Obj,[mstrmojo._IsRptModel],{scriptClass:"mstrmojo.GraphModel"});}());

@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.express.ui.SubtotalsWidget");mstrmojo.vi.ui.SubtotalsWidget=mstrmojo.declare(mstrmojo.express.ui.SubtotalsWidget,null,{scriptClass:"mstrmojo.vi.ui.SubtotalsWidget"});}());

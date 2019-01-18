@@ -1,0 +1,123 @@
+/* START: Base Panel */
+
+@import '../wh-global';
+@import '../wh-common'; // wh-common should be imported once and only once which contains the rest css not belonging to any warehouse widgets.
+
+.mstrmojo-wh-Panel {
+  border: 1px solid #aaa;
+  overflow: hidden;
+  background-color: #E5E5E5;
+  position: relative;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.mstrmojo-wh-pn-header {
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 0 #fff;
+  white-space: nowrap;
+  line-height: 35px;
+  height: 35px;
+  position: relative;
+}
+
+.mstrmojo-wh-pn-title {
+  height: 35px;
+  line-height: 35px;
+  font-weight: bold;
+  padding-left: 25px;
+  float: left;
+  text-transform: uppercase;
+  //background: transparent url(#{$wh-image-path}/object_icons.png) no-repeat 7px -66px;
+  background: transparent url("images/DI/vertical icons.svg") no-repeat 0px 0px;
+  display: block;
+  cursor: default; //mizhang TQMS 942676
+}
+
+.mstrmojo-wh-pn-instructions-text {
+  text-align: center;
+  width: 100%;
+  display: none;
+  font-size: 16pt;
+  color: darkgray;
+  font-style: italic;
+}
+
+.mstrmojo-wh-pn-title.hidden {
+  display: none;
+}
+
+.mstrmojo-wh-pn-ttl-icons {
+  float: right;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  display: block;
+  &.hidden {
+    display: none;
+  }
+  span {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 2px;
+    display: inline-block;
+    opacity: 0.8;
+    transition: opacity 200ms;
+    background: url(#{$wh-image-path}/panel_icons.png) no-repeat center center;
+    &:hover {
+      background-color: #eee !important;
+      opacity: 1;
+    }
+    &.mstrmojo-wh-refresh {
+      background-position: 8px 7px;
+      &.hidden {
+        display: none;
+      }
+    }
+    &.mstrmojo-wh-addDB {
+      background-position: 8px -53px;
+    }
+    &.mstrmojo-wh-catalogSQL {
+      background-position: 8px -562px;
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+.mstrmojo-wh-Panel.bigquery-projects {
+  background-color: #fafafa;
+  span.mstrmojo-wh-addDB {
+    display: none;
+  }
+}
+
+.mstrmojo-wh-info {
+  background: url(#{$wh-image-path}/info.png) #efefef no-repeat center center;
+  border: 0 !important;
+}
+
+// DE53699
+.workstation {
+  .mstrmojo-di-layout {
+    #QBContainer {
+      border-bottom: 1px solid #DEDEDE;
+      .mstrmojo-qb-layout {
+        .mstrmojo-Splitter.horizontal.mstrmojo-qb-es-whole-panel {
+          .mstrmojo-wh-pn-header {
+            background-color: unset;
+          }
+          .mstrmojo-wh-NameSpacePullDown[style*="none"] {
+            visibility: hidden;
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* END: Base Panel */

@@ -1,0 +1,519 @@
+// Image Path Locations relative to sass/bundles folder for WorkStation
+$wsvi-img-path: 'vi/images';
+$wsvi-coverpage-icons-sprite: '#{$wsvi-img-path}/coverpage.svg';
+$wsvi-main-icons-sprite: '#{$wsvi-img-path}/dataset.svg';
+$wsvi-editor-icons-sprite: '#{$wsvi-img-path}/editor.svg';
+$wsvi-alert-icons-sprite: '#{$wsvi-img-path}/notification.svg';
+$wsvi-number-formatting-icons-sprite: '#{$wsvi-img-path}/number_formatting_sprite.svg';
+$wsvi-target-selector-icons-sprite: '#{$wsvi-img-path}/target_selector.svg';
+$wsvi-toolbar-icons-sprite: '#{$wsvi-img-path}/toolbar_icons_new.svg';
+$wsvi-search-magnifier: '#{$wsvi-img-path}/search.svg';
+$wsvi-ghost-img: '#{$wsvi-img-path}/ghost-img.svg';
+$wsvi-bulb-tooltip: '#{$wsvi-img-path}/bulb-tooltip.svg';
+$wsvi-freezeVis-img: '#{$wsvi-img-path}/freezeVis-img.svg';
+
+// mixins have problems with interpolation - that is, this doesn't compile:
+//   @include wsvi-icon-#{$icon}
+// So we'll use a a switch to map them to the right place.
+@mixin wsvi-icon ($icon) {
+    @if $icon == 'attribute' {
+        @include wsvi-icon-attribute;
+    } @else if $icon == 'attribute-form' {
+        @include wsvi-icon-attribute-form;
+    } @else if $icon == 'collapse' {
+        @include wsvi-icon-collapse;
+    } @else if $icon == 'custom-group' {
+        @include wsvi-icon-custom-group;
+    } @else if $icon == 'derived-attribute' {
+        @include wsvi-icon-derived-attribute;
+    } @else if $icon == 'clear-cross' {
+        @include wsvi-icon-clear-cross;
+    } @else if $icon == 'derived-metric' {
+        @include wsvi-icon-derived-metric;
+    } @else if $icon == 'editor-add-more' {
+        @include wsvi-icon-editor-add-more;
+    } @else if $icon == 'editor-add-more-light' {
+        @include wsvi-icon-editor-add-more-light;
+    } @else if $icon == 'editor-nav-left' {
+        @include wsvi-icon-editor-nav-left;
+    } @else if $icon == 'editor-nav-right' {
+        @include wsvi-icon-editor-nav-right;
+    } @else if $icon == 'enter' {
+        @include wsvi-icon-hit-enter;
+    } @else if $icon == 'expand' {
+        @include wsvi-icon-expand;
+    } @else if $icon == 'function' {
+        @include wsvi-icon-function;
+    } @else if $icon == 'geographic-attribute' {
+        @include wsvi-icon-geographic-attribute;
+    } @else if $icon == 'info' {
+        @include wsvi-icon-info;
+    } @else if $icon == 'magnifier' {
+        @include wsvi-icon-magnifier;
+    } @else if $icon == 'time-attribute' {
+      @include wsvi-icon-time-attribute;
+    } @else if $icon == 'hierarchy' {
+        @include wsvi-icon-hierarchy;
+    } @else if $icon == 'metric' {
+        @include wsvi-icon-metric;
+    } @else if $icon == 'recursive-derived-attribute' {
+        @include wsvi-icon-recursive-attribute;
+    } @else if $icon == 'recursive-attribute' {
+        @include wsvi-icon-recursive-attribute;
+    } @else if $icon == 'toolbar-viz' {
+        @include wsvi-icon-toolbar-viz;
+    } @else if $icon == 'toolbar-selector' {
+        @include wsvi-icon-toolbar-selector;
+    } @else if $icon == 'warning-tooltip' {
+        @include wsvi-icon-warning-tooltip;
+    } @else {
+        @error "Please map #{$icon} to a mixin";
+    }
+    }
+
+@mixin wsvi-icon-size {
+    width: $wsvi-default-icon-width;
+    height: $wsvi-default-icon-height;
+}
+
+@mixin wsvi-icon-before($icon, $left: 0, $content: ' ') {
+    position: relative;
+    &:before {
+        @include wsvi-icon-size;
+        @include wsvi-icon($icon);
+        position: absolute;
+        left: $left;
+        content: $content;
+    }
+}
+
+// coverpage sprite
+@mixin wsvi-icon-coverpage-default {
+  @include background-image($wsvi-coverpage-icons-sprite, 0px 0px);
+}
+
+@mixin wsvi-icon-coverpage-error {
+  @include background-image($wsvi-coverpage-icons-sprite, -90px 0px);
+}
+
+
+// Main icons sprite
+@mixin wsvi-icon-dataset {
+  @include background-image($wsvi-main-icons-sprite, 0 -30px);
+}
+
+@mixin wsvi-icon-context-menu {
+  @include background-image($wsvi-main-icons-sprite, -60px -30px);
+}
+
+@mixin wsvi-icon-context-menu-16($background-color: transparent) {
+  @include background-image($wsvi-main-icons-sprite, -62px -32px, $background-color);
+}
+
+@mixin wsvi-icon-context-menu-hover {
+  @include background-image($wsvi-main-icons-sprite, -60px -60px);
+}
+
+@mixin wsvi-icon-context-menu-hover-16($background-color: transparent) {
+  @include background-image($wsvi-main-icons-sprite, -62px -62px, $background-color);
+}
+
+@mixin wsvi-icon-context-menu-disable {
+  @include background-image($wsvi-main-icons-sprite, -60px -90px);
+}
+
+@mixin wsvi-icon-magnifier {
+  @include background-image($wsvi-main-icons-sprite, -90px -30px);
+}
+
+@mixin wsvi-icon-attribute {
+  @include background-image($wsvi-main-icons-sprite, -120px -30px);
+}
+
+@mixin wsvi-icon-attribute-24 {
+  @include background-image($wsvi-main-icons-sprite, -117px -29px);
+}
+
+@mixin wsvi-icon-geographic-attribute {
+  @include background-image($wsvi-main-icons-sprite, -150px -30px);
+}
+
+@mixin wsvi-icon-geographic-attribute-24 {
+  @include background-image($wsvi-main-icons-sprite, -147px -29px);
+}
+
+@mixin wsvi-icon-time-attribute {
+  @include background-image($wsvi-main-icons-sprite, -180px -30px);
+}
+
+@mixin wsvi-icon-time-attribute-24 {
+  @include background-image($wsvi-main-icons-sprite, -177px -29px);
+}
+
+@mixin wsvi-icon-derived-attribute {
+  @include background-image($wsvi-main-icons-sprite, -210px -30px);
+}
+
+@mixin wsvi-icon-derived-attribute-24 {
+  @include background-image($wsvi-main-icons-sprite, -207px -29px);
+}
+
+@mixin wsvi-icon-consolidation {
+  @include background-image($wsvi-main-icons-sprite, -240px -30px);
+}
+
+@mixin wsvi-icon-consolidation-24 {
+  @include background-image($wsvi-main-icons-sprite, -237px -29px);
+}
+
+@mixin wsvi-icon-custom-group {
+  @include background-image($wsvi-main-icons-sprite, -240px -30px);
+}
+
+@mixin wsvi-icon-custom-group-24 {
+  @include background-image($wsvi-main-icons-sprite, -237px -29px);
+}
+
+@mixin wsvi-icon-hierarchy {
+  @include background-image($wsvi-main-icons-sprite, -270px -30px);
+}
+
+@mixin wsvi-icon-hierarchy-24 {
+  @include background-image($wsvi-main-icons-sprite, -267px -29px);
+}
+
+@mixin wsvi-icon-recursive-attribute {
+  @include background-image($wsvi-main-icons-sprite, -300px -30px);
+}
+
+@mixin wsvi-icon-recursive-attribute-24 {
+  @include background-image($wsvi-main-icons-sprite, -297px -29px);
+}
+
+@mixin wsvi-icon-recursive-derived-attribute  {
+  @include background-image($wsvi-main-icons-sprite, -300px -60px);
+}
+
+@mixin wsvi-icon-recursive-derived-attribute-24  {
+  @include background-image($wsvi-main-icons-sprite, -297px -59px);
+}
+
+@mixin wsvi-icon-function {
+  @include background-image($wsvi-main-icons-sprite, -330px -30px);
+}
+
+@mixin wsvi-icon-metric-header {
+  @include background-image($wsvi-main-icons-sprite, -360px -30px);
+}
+
+@mixin wsvi-icon-metric-header-24 {
+  @include background-image($wsvi-main-icons-sprite, -357px -29px);
+}
+
+@mixin wsvi-icon-metric {
+  @include background-image($wsvi-main-icons-sprite, -390px -30px);
+}
+
+@mixin wsvi-icon-pause {
+    @include background-image($wsvi-toolbar-icons-sprite, -210px -60px);
+}
+
+@mixin wsvi-icon-play {
+    @include background-image($wsvi-toolbar-icons-sprite, -240px -60px)
+}
+
+@mixin wsvi-icon-metric-24 {
+  @include background-image($wsvi-main-icons-sprite, -387px -29px);
+}
+
+@mixin wsvi-icon-derived-metric {
+  @include background-image($wsvi-main-icons-sprite, -420px -30px);
+}
+
+@mixin wsvi-icon-derived-metric-24 {
+  @include background-image($wsvi-main-icons-sprite, -417px -29px);
+}
+
+@mixin wsvi-icon-attribute-form {
+  @include background-image($wsvi-main-icons-sprite, -450px -30px);
+}
+
+@mixin wsvi-icon-attribute-form-24 {
+  @include background-image($wsvi-main-icons-sprite, -447px -29px);
+}
+
+@mixin wsvi-icon-collapse {
+    @include background-image($wsvi-main-icons-sprite, -510px -30px);
+}
+
+@mixin wsvi-icon-hit-enter {
+    @include background-image($wsvi-main-icons-sprite, -510px -210px);
+}
+
+@mixin wsvi-icon-expand {
+    @include background-image($wsvi-main-icons-sprite, -510px -60px);
+}
+
+@mixin wsvi-icon-checkmark {
+  @include background-image($wsvi-main-icons-sprite, -570px -27px);
+}
+
+@mixin wsvi-icon-checkmark-fix {
+  @include background-image($wsvi-main-icons-sprite, -575px -27px);
+}
+
+@mixin wsvi-icon-checkmark-color-picker {
+  @include background-image($wsvi-main-icons-sprite, -570px -90px);
+}
+
+@mixin wsvi-icon-primary-dataset {
+  @include background-image($wsvi-main-icons-sprite, -600px -30px);
+}
+
+@mixin wsvi-icon-clear-cross {
+  @include background-image($wsvi-main-icons-sprite, -720px -30px);
+}
+
+@mixin wsvi-icon-clear-cross-hover {
+  @include background-image($wsvi-main-icons-sprite, -720px -60px);
+}
+
+@mixin wsvi-icon-maximize($background-color: transparent) {
+  @include background-image($wsvi-main-icons-sprite, -842px -31px, $background-color);
+}
+
+@mixin wsvi-icon-maximize-toggleback($background-color: transparent) {
+  @include background-image($wsvi-main-icons-sprite, -962px -31px, $background-color);
+}
+
+@mixin wsvi-icon-layers {
+    @include background-image($wsvi-main-icons-sprite, -990px -30px);
+}
+
+@mixin wsvi-icon-warning-triangle {
+  @include background-image($wsvi-main-icons-sprite, -1080px -30px);
+}
+
+@mixin wsvi-icon-warning-triangle-small {
+  @include background-image($wsvi-main-icons-sprite, -1080px -60px);
+}
+
+@mixin wsvi-icon-warning-tooltip {
+    @include background-image($wsvi-main-icons-sprite, -1110px -30px);
+}
+
+@mixin wsvi-icon-datasets-editLabel-icon {
+    @include background-image($wsvi-main-icons-sprite, -1173px -31px);
+}
+
+@mixin wsvi-icon-toc-editLabel-icon {
+    @include background-image($wsvi-main-icons-sprite, -1202px -32px);
+}
+
+@mixin wsvi-icon-vizgallery-editLabel-icon {
+    @include background-image($wsvi-main-icons-sprite, -1141px -30px);
+}
+
+@mixin wsvi-icon-propertiesPanel-icon {
+    @include background-image($wsvi-main-icons-sprite,  -690px -60px);
+}
+
+@mixin wsvi-icon-filterPanel-icon {
+    @include background-image($wsvi-main-icons-sprite,  -660px -60px);
+}
+
+@mixin wsvi-icon-editPanel-icon {
+    @include background-image($wsvi-main-icons-sprite,  -630px -60px);
+}
+
+@mixin wsvi-icon-empty-filter {
+  @include background-image($wsvi-main-icons-sprite, -1230px -30px);
+}
+
+@mixin wsvi-icon-has-filter {
+  @include background-image($wsvi-main-icons-sprite, -1260px -30px);
+}
+
+@mixin wsvi-icon-browse-obj {
+  @include background-image($wsvi-main-icons-sprite, -1290px -30px);
+}
+
+@mixin wsvi-icon-attribute-clear {
+  @include background-image($wsvi-main-icons-sprite, -1320px -30px);
+}
+
+@mixin wsvi-icon-attribute-clear-hover {
+  @include background-image($wsvi-main-icons-sprite, -1320px -60px);
+}
+
+@mixin wsvi-icon-metric-clear {
+  @include background-image($wsvi-main-icons-sprite, -1350px -30px);
+}
+
+@mixin wsvi-icon-metric-clear-hover {
+  @include background-image($wsvi-main-icons-sprite, -1350px -60px);
+}
+
+@mixin wsvi-icon-sample-question {
+  @include background-image($wsvi-main-icons-sprite, -120px -61px);
+}
+
+@mixin wsvi-icon-sample-question-24 {
+  @include background-image($wsvi-main-icons-sprite, -117px -59px);
+}
+
+// main icon positions
+@mixin wsvi-icon-position-context-menu-active {
+    @include bg-pos(-60px -60px);
+}
+
+@mixin wsvi-icon-position-clear-cross-active {
+    @include bg-pos(-720px -60px);
+}
+
+@mixin wsvi-icon-position-checkmark {
+    @include bg-pos(-570px -30px);
+}
+
+@mixin wsvi-icon-bulb-tooltip {
+  @include background-image($wsvi-bulb-tooltip, 0 2px);
+}
+
+
+// editor sprite
+@mixin wsvi-icon-editor-nav-left {
+    @include background-image($wsvi-editor-icons-sprite, 0 -30px);
+}
+
+@mixin wsvi-icon-editor-nav-right {
+    @include background-image($wsvi-editor-icons-sprite, -30px -30px);
+}
+
+@mixin wsvi-icon-editor-add-more {
+    @include background-image($wsvi-editor-icons-sprite, -60px -30px);
+}
+
+@mixin wsvi-icon-editor-add-more-light {
+    @include background-image($wsvi-editor-icons-sprite, -60px -60px);
+}
+
+@mixin wsvi-icon-editor-calc-plus {
+    @include background-image($wsvi-editor-icons-sprite, -90px -30px);
+}
+
+@mixin wsvi-icon-info {
+  @include background-image($wsvi-main-icons-sprite, -1050px -30px);
+}
+
+@mixin wsvi-icon-green-checkmark {
+    @include background-image($wsvi-main-icons-sprite, -1440px -30px);
+}
+
+// editor sprite positions
+@mixin wsvi-icon-editor-position-nav-disabled {
+    background-position-y: -60px;
+}
+
+@mixin wsvi-icon-editor-position-nav-active {
+    background-position-y: -90px;
+}
+
+@mixin wsvi-icon-editor-position-add-more-active {
+    background-position-y: -90px;
+}
+
+@mixin wsvi-icon-editor-position-calc-active {
+    background-position-y: -90px;
+}
+
+@mixin wsvi-icon-editor-position-calc-minus {
+    @include bg-pos(-120px -30px);
+}
+
+@mixin wsvi-icon-editor-position-calc-multiply {
+    @include bg-pos(-150px -30px);
+}
+
+@mixin wsvi-icon-editor-position-calc-divide {
+    @include bg-pos(-180px -30px);
+}
+
+@mixin wsvi-icon-editor-position-calc-parenthesis {
+    @include bg-pos(-210px -30px);
+}
+
+@mixin wsvi-icon-editor-position-calc-bracket {
+    @include bg-pos(-240px -30px);
+}
+
+// target selector sprite
+@mixin wsvi-icon-source-selector-cfg {
+    @include background-image($wsvi-target-selector-icons-sprite, 0 -60px);
+}
+
+@mixin wsvi-icon-target-selector-cfg {
+    @include background-image($wsvi-target-selector-icons-sprite, -30px -60px);
+}
+
+@mixin wsvi-icon-source-selector-TOC {
+    @include background-image($wsvi-target-selector-icons-sprite, 0 -19px);
+}
+
+@mixin wsvi-icon-target-selector-TOC {
+    @include background-image($wsvi-target-selector-icons-sprite, -30px -19px);
+}
+
+@mixin wsvi-icon-source-selector-TAB {
+    @include background-image($wsvi-target-selector-icons-sprite, -20px -154px);
+}
+
+@mixin wsvi-icon-source-selector-TAB-layout {
+    @include background-image($wsvi-target-selector-icons-sprite, -40px -154px);
+}
+
+@mixin wsvi-icon-target-selector-TAB {
+    @include background-image($wsvi-target-selector-icons-sprite, 0 -154px);
+}
+
+@mixin wsvi-icon-source-selector($background-color: transparent) {
+    @include background-image($wsvi-target-selector-icons-sprite, 0 -111px, $background-color);
+}
+
+@mixin wsvi-icon-target-selector {
+    @include background-image($wsvi-target-selector-icons-sprite, -30px -111px);
+}
+
+@mixin wsvi-icon-source-link {
+    @include background-image($wsvi-target-selector-icons-sprite, -62px -110px);
+}
+
+@mixin wsvi-icon-selector-options {
+    @include background-image($wsvi-target-selector-icons-sprite, -90px -110px);
+}
+
+@mixin wsvi-icon-view-filter($background-color: transparent) {
+    @include background-image($wsvi-target-selector-icons-sprite, -30px -111px, $background-color);
+}
+
+// toolbar sprite
+@mixin wsvi-icon-toolbar-viz {
+    @include background-image($wsvi-toolbar-icons-sprite, -660px -30px);
+}
+
+@mixin wsvi-icon-toolbar-viz-dark {
+    @include background-image($wsvi-toolbar-icons-sprite, -660px -150px);
+}
+
+@mixin wsvi-icon-toolbar-selector {
+    @include background-image($wsvi-toolbar-icons-sprite, -150px -210px);
+}
+
+//US124229: Drilling options for MDX hierarchical attributes on Netviz.
+@mixin wsvi-icon-collapsed {
+    @include background-image($wsvi-main-icons-sprite, -510px -57px);
+}
+
+@mixin wsvi-icon-expanded {
+    @include background-image($wsvi-main-icons-sprite, -510px -27px);
+}
+

@@ -1,0 +1,20 @@
+@import "../../../vi/vi-global";
+
+.mstrmojo-upload-result {
+    width: 436px;
+    .mstr-upload-success {
+        padding-left: 30px;
+        padding-bottom: 16px;
+        background: url(#{$vi-img-path}/success.png) no-repeat 0px -3px;
+    }
+    .mstrmojo-Button.mstrmojo-WebButton {
+        margin: 0 0 0 10px;
+    }
+    .mstrmojo-Editor-content {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        .mstrmojo-Label {
+            line-height: 18px;
+        }
+    }
+}

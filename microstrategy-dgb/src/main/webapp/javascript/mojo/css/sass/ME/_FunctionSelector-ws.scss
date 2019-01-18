@@ -1,0 +1,143 @@
+@import '../vi/vi-global';
+@import '../theme-mixins-ws';
+
+%fs-pulldown-popup-box-max-size {
+    max-height: 350px;
+    max-width: 350px;
+}
+
+%fs-pulldown-popup-box-max-size-alternate {
+    max-height: 360px;
+}
+
+.workstation {
+    .mstrmojo-FunctionSelector {
+        width: 300px;
+
+        .mstrmojo-Editor-help,
+        .mstrmojo-Editor-close {
+            display: none
+        }
+
+        .mstrmojo-FunctionSelector-search {
+            margin: $wsvi-element-padding 0;
+            table-layout: fixed;
+            float: left;
+        }
+
+        .mstrmojo-Pulldown-Popup {
+            @extend %fs-pulldown-popup-box-max-size-alternate;
+            overflow-y: auto;
+        }
+    }
+
+    .mstrmojo-FunctionSelector-label.mstrmojo-Label {
+        margin-bottom: 0;
+        padding-left: 15px;
+
+        &:before {
+            background: transparent url(#{$vi-img-path}/dataset.svg) -330px -30px no-repeat;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -4px;
+            margin: 4px 0;
+            width: 18px;
+            height: 18px;
+
+        }
+    }
+
+    .mstrmojo-FunctionSelector-search .mstrmojo-SearchBox-input {
+        padding-top: 1px;
+    }
+
+    .mstrmojo-FunctionSelector-fctBox {
+        margin-top: 7px;
+        width: 115px;
+        float: left;
+        margin-right: -5px;
+        z-index: 2;
+
+        .mstrmojo-ME-Pulldown {
+            margin: 3px 5px 5px;
+            width: 115px;
+        }
+    }
+
+
+    /* start: metric editor pulldown & popup style (set by the function selector) */
+    .mstrmojo-ME-Pulldown {
+        &.bool {
+            width: 138px;
+        }
+    }
+
+    .mstrmojo-ME-Pulldown-Popup {
+        @extend %fs-pulldown-popup-box-max-size;
+    }
+
+    .mstrmojo-SME-funcs-pulldown {
+        &.mstrmojo-ME-Pulldown-popupNode {
+            display: block;
+        }
+
+        .mstrmojo-Pulldown-Popup{
+            @extend %fs-pulldown-popup-box-max-size-alternate;
+        }
+    }
+
+    .mstrmojo-ME-functionParameters .mstrmojo-ME-Pulldown-popupNode {
+        display: block;
+    }
+
+    // These aren't specific to the pulldown, but the settings are here so we'll set this here too (ported over from core.css).
+    .mstrmojo-ObjectInputBox-suggest.mstrmojo-ME-ObjectInputBox-suggest {
+        @extend %fs-pulldown-popup-box-max-size;
+    }
+
+    /*end: metric editor pulldown & popup style*/
+
+    .mstrmojo-FE-functionList {
+        &.mstrmojo-suggest-list  .mstrmojo-suggest-text {
+            @include wsvi-hover-select-bg;
+
+            .tbFunction {
+                height: 18px;
+                width: 36px;
+                min-width: 36px;
+                position: absolute;
+                top: 4px;
+                left: 175px;
+                visibility: hidden;
+                cursor: pointer;
+
+                .mstrmojo-Button-text {
+                    line-height: 16px;
+                    padding: 0 3px;
+                }
+            }
+        }
+
+        .mstrmojo-suggest-text {
+            height: 26px;
+            min-width: 39px;
+            line-height: 18px;
+            padding: 3px 2px;
+            position: relative;
+            border-radius: 2px;
+
+            em {
+                font-style: normal;
+                background-color: #7CD3F3;
+            }
+        }
+
+        /*Row Count - a hardcoded fake function item*/
+        .mstrmojo-suggest-text[did="-7"] {
+            display: none;
+        }
+    }
+
+}

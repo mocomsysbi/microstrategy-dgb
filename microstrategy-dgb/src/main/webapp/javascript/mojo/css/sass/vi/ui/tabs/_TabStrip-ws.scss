@@ -1,0 +1,252 @@
+@import '../../vi-global';
+@import '../../workstation-global';
+
+/** BEGIN: Document Layout Tabs **/
+.mstrmojo-VITabStrip {
+  background: rgb(217, 222, 225);
+  background: -moz-linear-gradient(top, rgba(220, 225, 227, 1) 0%, rgba(190, 194, 197, 1) 100%);
+  background: linear-gradient(to bottom, rgba(220, 225, 227, 1) 0%, rgba(190, 194, 197, 1) 100%);
+  border-top: 1px solid #b4b4b4;
+  border-bottom: 1px solid #c8cccf;
+  position: relative;
+}
+
+.mstrmojo-VITabStrip-tabs {
+  float: left;
+  height: 30px;
+  padding-right: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mstrmojo-VITabStrip-tabs > DIV {
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.mstrmojo-VITabStrip.alignLeft .mstrmojo-VITabStrip-tabs > DIV {
+  left: 0;
+  right: inherit;
+}
+
+.mstrmojo-VITabStrip-tabs > DIV.animate {
+  transition: right 200ms ease-out;
+  -moz-transition: right 200ms ease-out;
+  -webkit-transition: right 200ms ease-out;
+}
+.mstrmojo-VITabStrip.alignLeft .mstrmojo-VITabStrip-tabs > DIV.animate {
+  transition: left 200ms ease-out;
+  -moz-transition: left 200ms ease-out;
+  -webkit-transition: left 200ms ease-out;
+}
+
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab > DIV {
+  border-bottom-width: 0;
+  cursor: default;
+  margin: 6px 0 0 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab.selected  > DIV {
+  background: #fff;
+}
+
+.hasOwnAvatar .mstrmojo-VITab  > DIV {
+  background: none repeat scroll 0 0 rgba(200, 200, 200, 0.6);
+}
+
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab > DIV.animate {
+  transition: width 200ms ease-out;
+  -moz-transition: width 200ms ease-out;
+  -webkit-transition: width 200ms ease-out;
+}
+
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab .mstrmojo-EditableLabel,
+.hasOwnAvatar .mstrmojo-VITab .mstrmojo-EditableLabel {
+  background-color: transparent;
+  color: rgba($wsvi-primary-black, 0.75);
+  font-family: $wsvi-normal-font-family;
+  font-size: $wsvi-normal-font-size;
+  line-height: 28px;
+  max-width: 175px;
+  overflow: hidden;
+  padding: 0 25px 0 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab:hover .mstrmojo-EditableLabel {
+  background: transparent;
+  color: $wsvi-primary-black;
+  text-decoration: none;
+}
+
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab.selected .mstrmojo-EditableLabel {
+  background: transparent;
+  color: $wsvi-primary-black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab .mstrmojo-EditableLabel.editable {
+  text-overflow: clip;
+}
+
+.mstrmojo-VITab-menu {
+  background: transparent url(#{$vi-img-path}/glyphicons.png) -215px 0 no-repeat;
+  color: #656565;
+  display: none;
+  font-weight: normal;
+  height: 14px;
+  position: absolute;
+  right: 6px;
+  top: 5px;
+  width: 14px;
+}
+
+.hasOwnAvatar .mstrmojo-VITab-menu {
+  background-position: -216px -95px;
+  display: block;
+}
+
+.pivot .mstrmojo-VITab-menu {
+  background-position: -335px -95px;
+  display:block;
+}
+
+.mstrmojo-VITab-menu.active,
+.mstrmojo-VITabStrip-tabs .mstrmojo-VITab > DIV:hover .mstrmojo-VITab-menu {
+  display: block;
+}
+
+.mstrmojo-VITabStrip-buffer {
+    display: none;
+    width: 6px;
+    height: 24px;
+    float: left;
+    position: relative;
+}
+
+.mstrmojo-VITabStrip-addBtn > DIV {
+  float: left;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  top: 6px;
+  background: transparent url(#{$vi-img-path}/add-layout.png) 0 0 no-repeat;
+  cursor: default;
+  height: 24px;
+  width: 26px;
+}
+
+.mstrmojo-VITabStrip-leftBtn,
+.mstrmojo-VITabStrip-rightBtn {
+  background: transparent;
+  cursor: default;
+  display: none;
+  position: absolute;
+  height: 24px;
+  top: 6px;
+  width: 16px;
+}
+
+.mstrmojo-VITabStrip-leftBtn .navBtnIcon,
+.mstrmojo-VITabStrip-rightBtn .navBtnIcon {
+
+  @include vertical-align();
+
+  background:transparent 0 0 no-repeat;
+  height: 15px;
+  width: 15px;
+}
+
+.mstrmojo-VITabStrip-leftBtn .navBtnIcon {
+  background-position: 0px 0px;
+}
+
+.mstrmojo-VITabStrip-rightBtn .navBtnIcon {
+  background-position: -25px 0px;
+}
+
+.navBtnTooltip {
+    @include border-radius($wsvi-box-radius);
+    @include box-shadow($wsvi-panel-shadow, 1px, 2px, 8px);
+    @include box-sizing();
+
+    background-color: $wsvi-tooltip-bg-color;
+    border: 1px solid $wsvi-tooltip-border-color;
+    color: $wsvi-tooltip-color;
+
+    cursor: default;
+    display: block;
+    font-size: 11px;
+    line-height: 18px;
+    max-width: 300px;
+    max-height: 186px;
+    opacity: 1;
+    padding: 6px 8px;
+    position: absolute;
+    white-space: normal;
+    word-wrap: break-word; /*make sure not to generate horizontal scrollbar*/
+    z-index: 1001;
+}
+
+.navBtnTooltip:before,
+.navBtnTooltip:after {
+    content: " ";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    right: 10px;
+}
+
+.navBtnTooltip:before {
+    border-top: 8px solid $wsvi-tooltip-border-color;
+    bottom: -8px;
+}
+
+.navBtnTooltip:after {
+    border-top: 8px solid $wsvi-tooltip-bg-color;
+    bottom: -6px;
+}
+
+.mstrmojo-VITabStrip-menuHost {
+  display: none;
+  height: 14px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 14px;
+}
+
+.mstrmojo-VITabStrip-floater {
+    @include linear-gradient(rgba(249, 249, 249, 1), rgba(249, 249, 249, 0.1), true, none, true);
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 12px;
+    z-index: 2;
+}
+
+.mojo-theme-light {
+  .mstrmojo-VITabStrip-leftBtn .navBtnIcon,
+  .mstrmojo-VITabStrip-rightBtn .navBtnIcon {
+    background-image: url(#{$vi-img-path}/tab-btns.png);
+  }
+}
+.mojo-theme-dark {
+  .mstrmojo-VITabStrip-leftBtn .navBtnIcon,
+  .mstrmojo-VITabStrip-rightBtn .navBtnIcon {
+    background-image: url(#{$vi-img-path}/dark-tab-btns.png);
+  }
+}
+/** END: Document Layout Tabs **/

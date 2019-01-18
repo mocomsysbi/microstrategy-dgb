@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSGraphGaugeBorderStyle={DssGraphGaugeBorderStyleNone:0,DssGraphGaugeBorderStyleSimple:1,DssGraphGaugeBorderStyle3D:2,DssGraphGaugeBorderStyleEmboss:3,DssGraphGaugeBorderStyleDonut:4,DssGraphGaugeBorderStyleMetallic:5,DssGraphGaugeBorderStyleClipped:6};

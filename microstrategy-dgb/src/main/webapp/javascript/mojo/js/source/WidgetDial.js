@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.WidgetList","mstrmojo._IsDial");mstrmojo.WidgetDial=mstrmojo.declare(mstrmojo.WidgetList,[mstrmojo._IsDial],{scriptClass:"mstrmojo.WidgetDial"});})();

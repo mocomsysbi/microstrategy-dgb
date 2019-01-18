@@ -1,0 +1,22 @@
+@import 'theme-mixins-ws';
+
+.mstrmojo-Pulldown-Popup {
+    @include border-radius(3px);
+    @include wsvi-pulldown-popup;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 2px 0 0 0; // To make it looks like 2px to the bottom border of input node.
+
+    .mstrmojo-Pulldown-listItem {
+        @include wsvi-hover-select-bg();
+        line-height: 26px;
+        font-size: 11px;
+
+        .mstrmojo-text {
+            @include ellipsis-text();
+
+            padding-left: 6px;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+mstrmojo.vi.viz.EnumDSSDropZones={Reserved:0,Rows:1,Columns:2,XAxis:3,YAxis:4,BreakBy:5,SliceBy:6,ColorBy:7,SizeBy:8,AdditionalMetrics:9,Angle:10,Grouping:11,GeoAttribute:12,Layout:13,FromItem:14,ToItem:15,ItemSize:16,Latitude:17,Longitude:18,Metric:19,Trend:20};

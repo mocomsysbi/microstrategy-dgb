@@ -1,0 +1,103 @@
+.mstrmojo-qb-thirdParty-SourceInput{
+  margin: 12px auto;
+  width: 100%;
+  height: 360px;
+  padding-left:12px;
+  @include box-sizing(border-box);
+
+  .url-input {
+    margin:12px 0px;
+    .upload-url {
+      padding-left: 5px;
+      width: 70%;
+      width: calc(100% - 90px);
+      width: -moz-calc(100% - 90px);
+      width: -webkit-calc(100% - 90px);
+      width: -o-calc(100% - 90px);
+      border-radius: 5px;
+      margin: 0;
+    }
+    .mstrmojo-Button.mstrmojo-WebButton {
+      vertical-align: middle;
+      max-width: 80px;
+      min-width: 40px;
+      margin: 0;
+    }
+  }
+  .mstrmojo-empty{
+    color:#cccccc;
+  }
+  .connection-info-label {
+    font:11px Arial;
+  }
+  .mstrmojo-qb-thirdParty-url-holder{
+    height:350px;
+    background-color: #ffffff;
+    border: 1px solid #b5b5b5;
+    padding: 5px;
+    overflow: hidden; //ljing 940034
+    &:hover{
+      overflow-y: auto;
+    }
+    display:none;
+  }
+}
+
+.workstation {
+  .mstrmojo-qb-es-whole-panel.mstrmojo-bi-tools-main{
+    padding-right: 0;
+    
+  }
+  .mstrmojo-qb-thirdParty-SourceInput {
+    height: calc(100% - 24px); //margin: 12px 0;
+    @include flex();
+    flex-direction: column;
+    .url-input {
+      flex-grow: 0;
+      margin-top: 0;
+      .upload-url {
+        width: 85%;
+        height: 26px;
+        border-radius: 1px;
+      }
+      .mstrmojo-bi-tools-add{
+        min-width: 60px;
+        &.hot{
+          border: 1px solid #3b92ed !important;
+        }
+      }
+    }
+    .url-container{
+      flex-grow: 1;
+      @include flex();
+      flex-direction: column;
+      .mstrmojo-qb-thirdParty-url-holder{
+        height: auto;
+        flex-grow: 1;
+        border-color: rgba(68, 70, 73, 0.2);
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+#DIContainer.mstrmojo-di-popup .mstrmojo-di-view.mstrmojo-di-view-popup .mstrmojo-di-layout #QBContainer .mstrmojo-qb {
+  .mstrmojo-qb-layout .mstrmojo-qb-es-whole-panel.mstrmojo-bi-tools-main {
+    .mstrmojo-di-fileUpload.mstrmojo-di-fu.mstrmojo-qb-thirdParty-SourceInput {
+      .url-input {
+        @include flex();
+        .mstrmojo-TextBox.upload-url {
+          width: unset;
+          flex-grow: 1;
+          margin-right: 10px;
+        }
+        .mstrmojo-Button.mstrmojo-di-button.mstrmojo-WebButton.mstrmojo-bi-tools-add {
+          max-width: unset;
+        }
+      }
+    }
+    .mstrmojo-SplitterHandle+.mstrmojo-SplitterPanel {
+      right: 26px;
+    }
+  }
+}

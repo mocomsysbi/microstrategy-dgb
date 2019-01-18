@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumShowFace={SF_FRONT:1,SF_SIDE:2,SF_HIDDEN_SIDE:4};

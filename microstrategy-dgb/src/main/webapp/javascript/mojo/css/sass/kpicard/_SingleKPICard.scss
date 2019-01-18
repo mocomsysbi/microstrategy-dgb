@@ -1,0 +1,255 @@
+@import '../vi/workstation-global';
+@import '../global-mixins';
+
+@mixin layoutMix($width, $height, $left, $top, $txtAlign) {
+  width: $width;
+  max-width: $width;
+  height: $height;
+  left: $left;
+  top: $top;
+  text-align: $txtAlign;
+  @include transform(translate(0, -50%));
+}
+
+.kpicard-widget {
+  .lasso-selector {
+    z-index: 10;
+  }
+
+  &.one-card {
+    .single-kpicard-container {
+      border: 0 !important;
+
+      .selection-fill {
+        .hover-fill {
+          &.active {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.single-kpicard-container {
+  position: relative;
+
+  box-sizing: border-box !important;
+  border: 1px solid $wsvi-primary-white;
+
+  &.right-selected {
+    border: 1px dashed;
+  }
+
+  &.only-metric {
+    .metric-name {
+      @include layoutMix(80%, 15%, 10%, 25%, center);
+    }
+
+    .metric-value {
+      @include layoutMix(80%, 40%, 10%, 62%, center);
+    }
+
+    .chart, .previous-metric, .compare-to-previous {
+      display: none;
+    }
+
+    .align-center {
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+    }
+  }
+
+  &.metric-with-timeline {
+    &.horizontal {
+      .metric-name {
+        @include layoutMix(84%, 12%, 8%, 20%, left);
+      }
+
+      .metric-value {
+        @include layoutMix(58%, 26%, 8%, 48%, left);
+      }
+
+      .chart {
+        height: 24%;
+      }
+
+      .previous-metric {
+        @include layoutMix(84%, 9%, 8%, 72%, left);
+      }
+      .compare-to-previous {
+        @include layoutMix(24%, 20%, 68%, 48%, center);
+      }
+    }
+
+    &.vertical {
+      .metric-name {
+        @include layoutMix(84%, 10%, 8%, 19%, left);
+      }
+
+      .metric-value {
+        @include layoutMix(84%, 15%, 8%, 36%, left);
+      }
+
+      .chart {
+        height: 29%;
+      }
+
+      .previous-metric {
+        @include layoutMix(84%, 9%, 8%, 52%, left);
+      }
+
+      .compare-to-previous {
+        @include layoutMix(45%, 8%, 8%, 66%, center);
+        max-width: 84%;
+      }
+    }
+
+    .chart, .previous-metric, .compare-to-previous {
+      display: block;
+    }
+  }
+
+  .label {
+    white-space: nowrap;
+    position: absolute;
+    font-family: Arial;
+    color: $wsvi-primary-white;
+    z-index: 4;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 !important;
+  }
+
+  .metric-name {
+    font-weight: normal;
+    z-index: 4;
+  }
+
+  .metric-value {
+    font-weight: normal;
+    z-index: 4;
+  }
+
+  .chart {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .previous-metric {
+    font-style: italic;
+    font-weight: bold;
+    width: 58%;
+    height: 8%;
+    left: 8%;
+    top: 72%;
+    text-align: left;
+    z-index: 4;
+  }
+
+  .compare-to-previous {
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px !important;
+    box-sizing: border-box;
+    z-index: 4;
+  }
+
+  .selection-fill {
+    &.active {
+      background-color: rgba($wsvi-selected-blue, 0.2);
+    }
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    .hover-fill {
+      &.active {
+        background-color: rgba($wsvi-selected-blue, 0.2);
+      }
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 3;
+    }
+  }
+}
+
+.light-style .single-kpicard-container {
+  background-color: $wsvi-primary-white;
+
+  .label{
+    color: #444649;
+  }
+
+  &.only-metric .metric-name{
+    color: #747474;
+  }
+
+  .previous-metric {
+    color: #4E4E4E;
+  }
+
+  .compare-to-previous {
+    color: $wsvi-primary-white;
+  }
+}
+
+.night-style .single-kpicard-container {
+  background-color: #313855;
+  &.only-metric .metric-name{
+    color: #D8D8D8;
+  }
+}
+
+.desert-style .single-kpicard-container {
+  background-color: #606060;
+  &.only-metric .metric-name{
+    color: #D8D8D8;
+  }
+}
+
+.ocean-style .single-kpicard-container {
+  background-color: #5181D7;
+  &.only-metric .metric-name{
+    color: #CEDFFE;
+  }
+}
+
+.kpi-cth-delete-button {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  width: 18px;
+  height: 18px;
+  background: url("../css/vi/images/dataset.svg") -61px -119px;
+  &:active {
+    background-position: -61px -149px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.workstation {
+  .mojo-theme-light {
+    .mstrmojo-TextBox {
+      &.kpi-cth-TextBox {
+        text-align: right;
+        &.mstrmojo-TextBox-ErrValidation {
+          border-color: #fabd29;
+          background-image: none;
+          &:focus {
+            border-color: #fabd29;
+          }
+        }
+        &.mstrmojo-empty {
+          font-family: "vi_icons";
+          color: $wsvi-font-gray;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

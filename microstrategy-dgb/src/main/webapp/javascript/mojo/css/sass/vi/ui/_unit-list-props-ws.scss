@@ -1,0 +1,132 @@
+$color-unit-selected-border: #34abeb;
+
+// #VIRevamp
+
+$wsvi-font-green: #229c68; //attribute/custom group/NDE/DA/Hierachy label in capsule
+$wsvi-font-yellow: #D47A00; //metric/DM label in capsule
+
+$wsvi-dropzone-label-font-size: 10px;
+$wsvi-dropzone-label-font-color: #9A9A9A;
+
+$wsvi-dropzone-normal-fill: rgba($wsvi-dropzone-basegray, 0.15);
+$wsvi-dropzone-highlight-fill: rgba($wsvi-dropzone-basegray, 0);
+
+$wsvi-capsule-font-size: 12px;
+$wsvi-capsule-font-style: normal;
+
+$wsvi-attri-capsule-color: #229c68;
+$wsvi-metric-capsulecolor: #D47A00;
+
+$wsvi-normal-metric-header-icon-opacity: 0.60; //Metric header icon
+$wsvi-normal-icon-opacity: 0.70;
+$wsvi-focus-icon-opacity: 1.00;
+
+$wsvi-capsule-border-style: 1px solid;   //Outside Border
+$wsvi-capsule-border-select: $wsvi-capsule-border-style  $wsvi-primary-blue;
+$wsvi-capsule-rename-font-color: rgba($wsvi-primary-black, 1.0);
+
+//Attribute Capsule #Normal Stage
+$wsvi-attribute-capsule-normal-fill-color-light-theme: rgba($wsvi-attri-capsule-color, 0.05);
+$wsvi-attribute-capsule-normal-unselect-border: $wsvi-capsule-border-style rgba($wsvi-attri-capsule-color, 0.35); //inside border
+$wsvi-attribute-capsule-normal-font-color: rgba($wsvi-font-green, 0.65);
+$wsvi-attribute-capsule-maplayer-normal-font-color: rgba($wsvi-link-blue, 0.65);
+
+
+//Attribute Capsule #Focus Stage
+$wsvi-attribute-capsule-focus-fill-color-light-theme: rgba($wsvi-attri-capsule-color, 0.10);
+$wsvi-attribute-capsule-focus-unselect-border: $wsvi-capsule-border-style rgba($wsvi-attri-capsule-color, 0.70);  //inside border
+$wsvi-attribute-capsule-focus-font-color: rgba($wsvi-font-green, 1.0);
+$wsvi-attribute-capsule-maplayer-focus-font-color: rgba($wsvi-link-blue, 1.0);
+$wsvi-attribute-capsule-maplayer-focus-unselect-border: $wsvi-capsule-border-style rgba($wsvi-capsule-border-normal, 1.0);  //inside border
+
+//Metric Capsule #Normal Stage
+$wsvi-metric-capsule-normal-fill-color-light-theme: rgba($wsvi-metric-capsulecolor, 0.05);
+$wsvi-metric-capsule-normal-unselect-border: $wsvi-capsule-border-style rgba($wsvi-metric-capsulecolor, 0.35); //inside border
+$wsvi-metric-capsule-normal-font-color: rgba($wsvi-font-yellow, 0.65);
+$wsvi-attribute-capsule-maplayer-normal-unselect-border: $wsvi-capsule-border-style $wsvi-capsule-border-off;
+$wsvi-attribute-capsule-maplayer-normal-fill-color: $wsvi-capsule-fill-off;
+
+//Metric Capsule #Focus Stage
+$wsvi-metric-capsule-focus-fill-color-light-theme: rgba($wsvi-metric-capsulecolor, 0.10);
+$wsvi-metric-capsuleborder-focus-unselect-border: $wsvi-capsule-border-style rgba($wsvi-metric-capsulecolor, 0.70);  //inside border
+$wsvi-metric-capsule-focus-font-color: rgba($wsvi-font-yellow, 1.0);
+//$wsvi-metric-capsule-focus-font: $wsvi-capsule-font-size rgba($wsvi-font-yellow, $wsvi-focus-color-opacity);
+
+
+//Metric Header Capsule #Normal Stage
+$wsvi-metric-header-capsule-normal-fill-color-light-theme: rgba($wsvi-primary-black, 0.05);
+$wsvi-metric-header-capsule-normal-unselect-border: $wsvi-capsule-border-style rgba($wsvi-primary-black, 0.15); //inside border
+$wsvi-metric-header-capsule-normal-font-color: rgba($wsvi-primary-black, 0.35);
+
+//Metric Header Capsule #Focus Stage
+$wsvi-metric-header-capsule-focus-fill-color-light-theme: rgba($wsvi-primary-black, 0.10);
+$wsvi-metric-header-capsuleborder-focus-unselect-border: $wsvi-capsule-border-style rgba($wsvi-primary-black, 0.30);  //inside border
+$wsvi-metric-header-capsule-focus-font-color: rgba($wsvi-primary-black, 0.5);
+
+// Following are for light theme
+$light-color-bg-metric: #fdf4d3;
+$light-color-border-metric: #e8d097;
+$light-color-color-metric: #df7f02;
+$light-color-bg-metric-hover: #fffceb;
+
+$light-color-bg-attribute: #defbe6;
+$light-color-border-attribute: #93e3bc;
+$light-color-color-attribute: #00b392;
+$light-color-bg-attribute-hover: #f4fff6;
+
+$light-color-bg-template-metric: #f6f6f7;
+$light-color-border-template-metric: #d4d4d5;
+$light-color-color-template-metric: #737373;
+$light-color-bg-template-metric-hover: #ffffff;
+
+@mixin light-color-unit-metric {
+  background-color: $wsvi-metric-capsule-focus-fill-color-light-theme;
+  border: $wsvi-metric-capsuleborder-focus-unselect-border;
+  color: $wsvi-metric-capsule-focus-font-color;
+}
+
+@mixin light-color-unit-attribute {
+  background-color: $wsvi-attribute-capsule-focus-fill-color-light-theme;
+  border: $wsvi-attribute-capsule-focus-unselect-border;
+  color: $wsvi-attribute-capsule-focus-font-color;
+}
+
+@mixin light-color-unit-template-metric {
+  background-color: $light-color-bg-template-metric;
+  border: 1px solid $light-color-border-template-metric;
+  color: $light-color-color-template-metric;
+}
+
+// Following are for dark theme
+$dark-color-bg-metric: #412b1a;
+$dark-color-border-metric: #a65d15;
+$dark-color-color-metric: #df7f02;
+$dark-color-bg-metric-hover: #332115;
+
+$dark-color-bg-attribute: #233633;
+$dark-color-border-attribute: #219987;
+$dark-color-color-attribute: #00b392;
+$dark-color-bg-attribute-hover: #1b2a28;
+
+$dark-color-bg-template-metric: #343437;
+$dark-color-border-template-metric: #646469;
+$dark-color-color-template-metric: #737373;
+$dark-color-bg-template-metric-hover: #272727;
+
+@mixin dark-color-unit-metric {
+    background-color: $dark-color-bg-metric;
+    border: 1px solid $dark-color-border-metric;
+    color: $dark-color-color-metric;
+}
+
+@mixin dark-color-unit-attribute {
+    background-color: $dark-color-bg-attribute;
+    border: 1px solid $dark-color-border-attribute;
+    color: $dark-color-color-attribute;
+}
+
+@mixin dark-color-unit-template-metric {
+    background-color: $dark-color-bg-template-metric;
+    border: 1px solid $dark-color-border-template-metric;
+    color: $dark-color-color-template-metric;
+}

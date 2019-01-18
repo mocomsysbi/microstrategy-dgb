@@ -1,0 +1,62 @@
+{
+    samplefiles:{
+        file:[
+            {
+                display:'Airline Sample Data',
+                name:'airline-sample-data.xls',
+                desc:'On-time and delayed flights for airlines operating in the three main Washington, DC-area airports',
+                size:6.5,
+                iscrosstab:'false'
+            },
+            {
+                display:'Campaign Finance Data',
+                name:'campaign-finance-sample-data.xls',
+                desc:'Financial data about campaigns for Senate, House of Representatives, and President of the United States',
+                size:1,
+                iscrosstab:'false'
+            },
+            {
+                display:'Gaming Sample Data',
+                name:'gaming-sample-data.xls',
+                desc:'Slot machine data for casino floor analysis. Data available at the day and individual machine level',
+                size:15.1,
+                iscrosstab:'false'
+            },
+            {
+                display:'Global Migration Data',
+                name:'global-migration.xls',
+                desc:'2000 global bilateral migration data from the World Bank',
+                size:0.1,
+                iscrosstab:'false'
+            },
+            {
+                display:'Income Tax Return Data',
+                name:'income-tax-sample-data.xls',
+                desc:'2007 income tax return data items classified by state and county',
+                size:0.4,
+                iscrosstab:'false'
+            },
+            {
+                display:'Inventory Sample Data',
+                name:'Inventory-Sample-Data.xls',
+                desc:'Data for inventory analysis at standalone, mall and strip mall locations',
+                size:0.6,
+                iscrosstab:'false'
+            },
+            {
+                display:'Retail Sample Data',
+                name:'retail-sample-data.xls',
+                desc:'Retail data for category management analysis. Metrics include cost, revenue, unit cost, units sold',
+                size:2.3,
+                iscrosstab:'false'
+            },
+            {
+                display:'Worldwide CO2 Emissions',
+                name:'Worldwide-CO2-Emissions.xls',
+                desc:'Worldwide, energy-related carbon dioxide emissions for the 1990-2010 time period',
+                size:0.5,
+                iscrosstab:'false'
+            }
+        ]
+    }
+}

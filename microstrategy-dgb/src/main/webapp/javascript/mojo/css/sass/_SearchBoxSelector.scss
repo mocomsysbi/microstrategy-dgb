@@ -1,0 +1,13 @@
+/** START: SearchBox Selector **/
+.mojo-theme-dark {
+  .mstrmojo-SearchBoxSelector {
+    background: transparent;
+
+    .mstrmojo-SimpleObjectInputBox-container {
+      input {
+        background: transparent;
+      }
+    }
+  }
+}
+/** END: SearchBox Selector **/

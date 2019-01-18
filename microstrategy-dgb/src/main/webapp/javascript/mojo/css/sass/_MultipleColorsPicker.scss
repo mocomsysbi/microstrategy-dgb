@@ -1,0 +1,210 @@
+@import "global";
+
+/** Start: Palette Color Picker */
+.mstrmojo-MultipleColorsPicker.mstrmojo-Editor {
+    @mixin sizeAndPosition($width, $height, $top, $left) {
+        position: absolute;
+        width: $width;
+        height: $height;
+        top: $top;
+        left: $left;
+    }
+
+    @include user-select(none);
+    width: 178px;
+
+    .mstrmojo-Editor-title-container {
+        display: none;
+    }
+
+    .mstrmojo-Editor-content {
+        padding: 10px 0 0 0;
+
+        .paletteName {
+            display: flex;
+            padding: 0 5px;
+            height: 20px;
+            .mstrmojo-TextBox-label {
+                flex: 0 0 auto;
+                padding: 4px 0 0 5px;
+                margin-right: 7px;
+            }
+            .mstrmojo-TextBox {
+                width: 0;
+                flex: 1 1 auto;
+                margin-right: 5px;
+            }
+        }
+
+        .mstrmojo-ui-AdvColorPicker {
+            .acpToolbar {
+                @include box-shadow(rgba(0,0,0,0));
+                border-bottom: none;
+
+                .acpSwatchBtn,
+                .acpPaletteBtn {
+                    margin-bottom: 0;
+                }
+
+                .acpColor {
+                    display: none;
+                }
+            }
+
+            .acpContent {
+                // For color swatch
+                .mstrmojo-ui-ColorList {
+                    display: none !important;
+                    &:first-child {
+                        margin-top: 1px;
+                        display: block !important;
+                    }
+
+                    .item.noFill {
+                        display: none;
+                    }
+                }
+
+                // For color wheel
+                .mstrmojo-ui-Pulldown {
+                    display: none !important;
+                }
+
+                .mstrmojo-TextBoxWithLabel {
+                    margin-top: 2px;
+                }
+
+                .mstrmojo-ui-ColorWheel {
+                    margin-bottom: 9px;
+                    clear: both;
+                }
+            }
+
+            .acpButtons {
+                display: none !important;
+            }
+        }
+
+        .paletteColorsLabel {
+          padding: 15px 10px 5px 10px;
+        }
+
+        &.isPalettePickerMode {
+            .mstrmojo-ui-AdvColorPicker {
+                $preview-color-size: 19;
+                .acpToolbar {
+                    position: relative;
+                    .acpColor {
+                        display: block;
+                        @include sizeAndPosition(#{$preview-color-size}px, #{$preview-color-size}px, 41px, 104px);
+                        border: none;
+                        @include border-radius(2px 3px 3px 2px);
+                    }
+                }
+
+                .acpContent {
+                    .mstrmojo-TextBox {
+                        $text-gap: 5;
+                        padding: 0 #{$text-gap}px 0 #{$preview-color-size + $text-gap}px;
+                        @include box-sizing(content-box);
+                        width: #{64 - 2 * $text-gap - $preview-color-size}px;
+                        height: #{$preview-color-size}px;
+                    }
+                }
+            }
+
+            .mstrmojo-PaletteEditorControls {
+                display: none;
+            }
+        }
+
+        .mstrmojo-PaletteEditorControls {
+            margin: 14px 9px 11px 9px;
+
+            .addColorBtn,
+            .removeColorBtn {
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                width: 78px;
+                height: 19px;
+                line-height: 19px;
+                border: 1px solid #b5b5b5;
+                text-align: center;
+                @include linear-gradient(#eaebeb, #e4e4e4);
+                @include box-shadow(rgba(0,0,0,0.1), 0, 1px, 1px);
+
+                @include border-radius(0 3px 3px 0);
+                &:first-child {
+                    @include border-radius(3px 0 0 3px);
+                    border-right-width: 0;
+                }
+
+                position: relative;
+                &:after {
+                    content: "";
+                    @include sizeAndPosition(100%, 100%, 0, 0);
+                    @include box-shadow(#fff, 0, 0, 6px, true);
+                }
+            }
+        }
+
+        &.isAdding .mstrmojo-PaletteEditorControls .addColorBtn,
+        &.isRemoving .mstrmojo-PaletteEditorControls .removeColorBtn {
+            @include linear-gradient(#cfd1d3, #c6c8c9);
+
+            &:after {
+                @include box-shadow(rgba(255,255,255,0.6), 0, 0, 4px, true);
+            }
+        }
+
+        .mstrmojo-PaletteColorList {
+            margin: 0 10px 11px 9px;
+            background-color: #fff;
+            border: 1px solid #b5b5b5;
+            @include border-radius(3px);
+            @include box-shadow(rgba(0,0,0,0.1), 0, 1px, 1px);
+
+            .ColorsContainer {
+                @include box-shadow(rgba(0,0,0,0.2), 0, 1px, 1px, true);
+                $color-icon-size: 18;
+                $inner-gap: 1;
+                $row-cnt: 2;
+                $col-cnt: 8;
+                height: #{$row-cnt * $color-icon-size + $row-cnt * $inner-gap}px;
+                width: #{$col-cnt * $color-icon-size + $col-cnt * $inner-gap}px;
+                padding: 2px 3px 3px 2px; // Exlucde 1px edge item top/left margin (inner-gap), result in 3px space
+
+                .item {
+                    float: left;
+                    width: #{$color-icon-size}px;
+                    height: #{$color-icon-size}px;
+
+                    margin: 1px 0 0 1px;
+
+                    &:hover {
+                        position: relative;
+                        z-index: 1;
+                        outline: 2px solid #34abeb;
+                    }
+                }
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        padding: 9px 0;
+
+        .mstrmojo-HBox {
+            float: none !important;
+            margin: 0 auto;
+            .mstrmojo-Button {
+                margin: 0;
+                &.hot {
+                    margin-right: 9px;
+                }
+            }
+        }
+    }
+}
+/** End: Palette Color Picker */

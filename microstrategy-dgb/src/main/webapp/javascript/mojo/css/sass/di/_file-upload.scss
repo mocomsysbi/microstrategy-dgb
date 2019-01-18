@@ -1,0 +1,199 @@
+// -------- Data Import File upload page styles  -------------
+
+/* Style of the file upload page */
+.mstrmojo-di-fileUpload {
+  margin: 20px auto;
+  position: relative;
+  width: 700px;
+}
+
+
+.mstrmojo-di-fu,
+.mstrmojo-di-pre {
+  font-size: 12px
+}
+
+.mstrmojo-di-fu-title {
+  font: 14px arial;
+  font-weight: bold;
+  background: url(images/DI/excel_icon.png);
+  background-repeat: no-repeat;
+  padding-left: 24px;
+  height: 24px;
+  margin-right:10px;
+}
+
+.mstrmojo-onetier-browse {
+    float: right;
+    margin-top: -50px;
+    margin-right: 50px;
+}
+
+.mstrmojo-di-fu-url-supported {
+  font: 11px arial;
+  color: #a6a8a9;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+.mstrmojo-di-fu .content,
+.mstrmojo-di-pre .content{
+  padding: 10px 20px 0 20px;
+}
+
+
+.mstrmojo-di-fu .upload-file {
+  margin: 12px 0px 12px 0px;
+  padding: 0px;
+  width: 700px;
+}
+
+.mstrmojo-di-fu .upload-url {
+  margin: 12px 0px 12px 0px;
+  padding: 0px;
+  width: 698px;
+  border: 1px solid;
+  border-color: #aaa;
+  height: 22px;
+  font: 12px arial;
+}
+.mstrmojo-di-fu .upload-url:hover {
+  border-color: #666;
+}
+.mstrmojo-di-fu .upload-url:active {
+  border-color: #3579DC;
+}
+.mstrmojo-di-fu .upload-url:focus {
+  border-color: #3579DC;
+}
+
+.mstrmojo-di-add-url-button{
+  position: relative;
+  top: -30px;
+  left: 710px;
+  text-decoration: underline;
+}
+.mstrmojo-url-list{
+  margin: 10px;
+  height: auto;
+}
+
+.di-file-drop-zone {
+  border: 2px dashed #BBB;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  font: 16pt bold, "Arial";
+  color: #BBB;
+}
+
+.di-fu-progress-bar {
+  margin: 10px 0;
+  padding: 3px;
+  border: 1px solid #000;
+  font-size: 14px;
+  clear: both;
+  opacity: 0;
+  -moz-transition: opacity 1s linear;
+  -ms-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+}
+.di-fu-progress-bar.loading {
+  opacity: 1.0;
+}
+.di-fu-progress-bar .percent {
+  background-color: #99ccff;
+  height: auto;
+  width: 0;
+}
+
+.mstrmojo-di-fu .uploadFileText {
+  width: 590px;
+  border: 1px solid;
+  border-color: #aaa;
+  height: 20px;
+  font-family: Arial;
+  font-size: 12px;
+  color: #333333;
+}
+
+.mstrmojo-di-fu-buttonDiv {
+  position:absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  padding-left: 608px;
+}
+
+.mstrmojo-di-fileHolder { border: 1px dashed #ccc; margin: 20px auto;}
+.mstrmojo-di-fileHolder.hover { border: 1px dashed #333; }
+
+.mstrmojo-di-fu-imagenode {
+  border: 1px;
+  border-color: #c6e5fc;
+  background: #e5f3fe;
+  border-style: solid;
+  padding: 16px 22px 15px 22px;
+}
+
+.mstrmojo-di-fu-imagenode-bottom {
+  margin: 18px 28px 0px 28px;
+}
+
+.mstrmojo-di-fu-imagenode-bottom-left {
+  float:left;
+}
+
+.mstrmojo-di-fu-imagenode-bottom-right {
+  float:left;
+  margin-left: 16px;
+}
+
+.mstrmojo-di-fu-in-title {
+  display: block;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 18px;
+  color: #858585;
+  text-align: center;
+  /*margin-bottom: 12px;*/
+}
+
+.mstrmojo-di-fu-in-textbig {
+  display: block;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 18px;
+  color: #858585;
+}
+
+.mstrmojo-di-fu-in-text {
+  display: block;
+  font-family: Arial;
+  font-size: 14px;
+  color: #858585;
+}
+
+
+.mstrmojo-di-fu-link{
+  text-decoration: underline;
+  color: #06c;
+  /*margin-bottom: 12px;*/
+  cursor: pointer;
+  font-size: 14px;
+  font-family: arial;
+  position: absolute;
+  top: 0px;
+  left: 250px;
+}
+
+.mstrmojo-di-fu-link:before{
+  content:"|";
+  margin-bottom:20px;
+  margin-right: 16px;
+  text-decoration: none;
+  color: black;
+}

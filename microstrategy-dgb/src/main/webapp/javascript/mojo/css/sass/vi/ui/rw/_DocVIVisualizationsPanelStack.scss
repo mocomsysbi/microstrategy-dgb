@@ -1,0 +1,45 @@
+@import '../../themes';
+@import '../../vi-global';
+
+/** BEGIN: DocVIVisualizationsPanelStack **/
+.mstrmojo-VIVizPanel {
+    overflow: hidden;
+    @include border-radius(3px);
+
+    border: 1px solid transparent;
+    position: relative;
+
+    .mstrmojo-VIVizPanel-content {
+        position: relative;
+    }
+
+    .mstrmojo-DocPanel {
+        left: 4px;
+        position: absolute;
+        top: 4px;
+        transition: box-shadow .5s;
+
+        &.mstrmojo-scrollbar-host {
+            overflow: hidden;
+        }
+
+        // Selected unit container.
+        &.pulse {
+            box-shadow: #23A3D3 0 0 0 5px;
+        }
+    }
+}
+
+.mojo-theme-light {
+    .mstrmojo-VIVizPanel {
+        background-color: #fff;
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VIVizPanel {
+        background-color: $theme-dark-viz-panel-background-color;
+        @include box-shadow($theme-dark-panel-shadow-color, 0, 0, $theme-dark-panel-shadow-blur);
+    }
+}
+/** END: DocVIVisualizationsPanelStack **/

@@ -1,0 +1,24 @@
+@keyframes coverPageEditor-colorchange {
+    0% {
+        color: #000;
+        border-color: $wsvi-primary-blue;
+    }
+    100% {
+        color: $wsvi-primary-black;
+        border-color: $wsvi-ui-border-gray;
+    }
+}
+
+.mstrmojo-vi-ui-editors-CoverPageEditor {
+    .mstrmojo-TextBox.urlBox {
+        margin-bottom: $wsvi-verticalinput_padding_big;
+        &.changing {
+            animation: coverPageEditor-colorchange 2s;
+        }
+    }
+
+    //DE71892 reduce the default padding 18px to 12px to accommodate three columns
+    .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+        padding-right: 13px;
+    }
+}

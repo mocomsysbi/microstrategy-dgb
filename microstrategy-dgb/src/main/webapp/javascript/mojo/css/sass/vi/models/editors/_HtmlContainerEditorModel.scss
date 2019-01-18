@@ -1,0 +1,28 @@
+/** BEGIN: HtmlContainerEditorModel **/
+.mstrmojo-VIPanelContents {
+
+    .mstrmojo-ui-ButtonBar.htmlTypeBtn > div {
+        .item {
+            font: normal 8pt/11px Arial;
+            line-height: 20px;
+
+            &:first-child {
+                padding: 0px 5px;
+            }
+        }
+    }
+
+    .mstrmojo-ui-TextArea.htmlText {
+        height: 222px;
+        overflow: hidden;
+
+        .ta-sc {
+            textarea {
+                resize: none;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+/** END: HtmlContainerEditorModel **/

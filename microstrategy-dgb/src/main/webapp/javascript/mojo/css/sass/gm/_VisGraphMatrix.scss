@@ -1,0 +1,37 @@
+
+/** BEGIN: VisGraphMatrix Rules **/
+@mixin visMessage {
+  .gm-vis-msg-container {
+    visibility: visible;
+    display: table;
+    height: 100%;
+    width: 100%;
+    line-height: 16px;
+    .gm-vis-msg-vcenter {
+      display: table-cell;
+      text-align: left;
+      vertical-align: middle;
+      .gm-vis-msg-hcenter {
+        font-family: 'Arial';
+        font-size: 8pt;
+        color: #747474;
+        margin-left:auto;
+        margin-right:auto;
+        max-width: 360px;
+        text-align: center;
+        .gm-vis-msg-indent {
+          padding-left: 40px;
+        }
+      }
+    }
+  }
+}
+.mojo-theme-light {
+  @include visMessage;
+ }
+
+.mojo-theme-dark {
+  @include visMessage;
+}
+
+/** END: VisGraphMatrix Rules **/

@@ -1,0 +1,110 @@
+//-----------------------------------  source objects component Styles -------------------------------
+
+.show-preview {
+  float:right;
+  /*padding: 10px 20px 0 0;*/
+}
+
+.source-objects-browser{
+border: 1px solid #bbbbbb;
+  overflow: hidden; //ljing 940034
+  &:hover{
+    overflow-y: auto;
+  }
+}
+
+/*.source-objects-refresh {
+  padding: 10px 0px;
+}*/
+
+.source-objects-options {
+ /* padding: 0 20px 10px 0;*/
+  margin: 16px 18px 0;
+}
+
+.source-objects-username {
+  color: #333333;
+  font-family: Arial;
+  font-size: 12;
+  float:right;
+  max-width: 380px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.source-objects-subtitle {
+  float: left;
+  font: 12px arial;
+  /*font-weight: bold;
+padding-left: 30px;
+ padding-top: 7px;
+  height: 23px;*/
+}
+
+.source-objects-subtitle2 {
+  float: left;
+  font: 13px arial;
+  padding: 8px 5px;
+}
+
+.source-objects-subtitle2-hadoop {
+  float: left;
+  font: 13px arial;
+  padding: 8px 5px;
+  text-decoration : underline;
+}
+
+
+.source-objects-signout {
+  color: #007ebe;
+  font-family: Arial;
+  font-size: 12px;
+  padding-left:5px;
+  cursor: pointer;
+  float:right;
+
+}
+
+.mstrmojo-di-so-list-header {
+  border-bottom: 1px solid #bbbbbb;
+  font-family: Tahoma, Arial;
+  font-size: 10pt;
+  font-weight: bold;
+  padding: 5px 0px 5px 10px;
+  background-color: #efeff0;
+
+  .di-object-browser-header-left {
+    width: 100px;
+    float: left;
+  }
+  .di-object-browser-header-right {
+    float: right;
+    margin-right: 5px;
+  }
+}
+
+.mstrmojo-di-so-list-header.cf {
+border-right:1px solid #bbbbbb;
+}
+.mstrmojo-di-so-list-header-last {
+  background-color: #56a8ea;
+  border-bottom: 1px solid #bbbbbb;
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  border-top: 1px solid #bbbbbb;
+  color: #ffffff;
+  font-family: Tahoma, Arial;
+  font-size: 10pt;
+  font-weight: bold;
+  padding: 5px 0px 5px 10px;
+}
+
+.mojo-di-sourceobjectsga {
+  overflow: hidden;
+}
+
+.workstation{
+  .mstrmojo-di-view .mstrmojo-di-layout .mojo-di-sourceobjectsga .source-objects-browser{//google analytics
+    height: 319px!important;
+  }
+}

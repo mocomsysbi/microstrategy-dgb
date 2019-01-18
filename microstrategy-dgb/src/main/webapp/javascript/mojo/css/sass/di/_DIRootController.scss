@@ -1,0 +1,149 @@
+// --------------------  Refresh options dialog style --------------------------
+.mstrmojo-di-refresh-dialog {
+  .mstrmojo-RadioList {
+    background-image: url(images/DI/refresh-data-options.png);
+    background-repeat: no-repeat;
+    background-position: 255px 8px;
+  }
+}
+.mstrmojo-di-refresh-options {
+  margin: 30px 0;
+  padding-left:25px;
+}
+
+.mstrmojo-di-refresh-dialog {
+  background: white;
+  width: 460px;
+  height: 380px;
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  -moz-border-radius:5px;
+  -webkit-border-radius:10px;
+  border-radius:5px;
+}
+
+.mstrmojo-di-refresh-title {
+  padding:10px 10px 10px 20px;
+}
+
+.mstrmojo-di-refresh-subtitle {
+  padding:0 10px 20px 20px;
+  color: blue;
+}
+
+// Style for republish status dialog
+
+.mstrmojo-di-republish-status {
+  width:700px;
+  background: #D8EBFB url(images/gradient_bg_lightblue_short.png) repeat-x scroll 0 38px;
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:10px;
+
+  .mstrmojo-di-republish-status-button {
+    float: right;
+    margin: 15px;
+  }
+}
+
+//Style for sheets dialog
+
+.mstrmojo-di-sheetsDialog{
+  width: 400px;
+  height: 110px;
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #D0EAFF 100%);
+
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #D0EAFF 100%);
+
+  /* Opera */
+  background-image: -o-linear-gradient(top left, #FFFFFF 0%, #D0EAFF 100%);
+
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #D0EAFF));
+
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #D0EAFF 100%);
+
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to bottom, #FFFFFF 0%, #D0EAFF 100%);
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:10px;
+}
+
+.mstrmojo-di-sheetsDialog-pulldown{
+  width: 130px;
+  background: white;
+  border: solid 1px;
+  margin-left: 3px;
+}
+
+//Style for upload status box
+.mstsrmojo-di-upload-status{
+  width:280px;
+  .mstrmojo-Editor-title{
+    background-image: none;
+    color: #000000;
+  }
+  .mstrmojo-Editor-content {
+    width: 250px;
+    height:200px;
+    margin: 10px auto;
+    background-color: #FFFFFF;
+
+    .status-list {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+    }
+  }
+
+}
+.mstsrmojo-di-upload-status-item{
+  font-size: 9pt;
+  color: #000000;
+  margin: 10px;
+
+  .item-complete{
+    background-image: url(images/DI/checkmark.png);
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 200px;
+    top: -20px;
+  }
+  .item-error{
+    background-image: url(image/DI/error.png);
+    width: 12px;
+    height: 12px;
+    position: relative;
+    left: 200px;
+    top: -20px;
+  }
+
+  .mstrmojo-di-progress{
+    width:30px;
+    position: absolute;
+    left: 170px;
+    margin-top: 5px;
+
+  }
+}
+
+.workstation{
+  .CubeNameConflictDialog{
+    .mstrmojo-Editor-title-container{
+      .edt-title-btn.mstrmojo-Editor-close{
+        display: block;
+      }
+    }
+    .mstrmojo-Editor-content {
+      .alert-content:before {
+        background: url('images/DI/workstation/workstation.svg') no-repeat -1950px -310px;
+      }
+    }
+  }
+}

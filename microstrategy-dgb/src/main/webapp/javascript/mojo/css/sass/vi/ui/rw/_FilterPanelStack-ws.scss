@@ -1,0 +1,140 @@
+.workstation {
+
+    /** BEGIN: FilterPanelStack **/
+
+    //US112349; Pause Mode filter panel stack mask style
+    .pause {
+        .mstrmojo-VIFilterStack {
+            .mstrmojo-VIBoxPanel-mask {
+                background: transparent url(#{$mojo-img-path}/1ptrans.gif) top left repeat;
+                bottom: 0;
+                cursor: default;
+                display: none;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 10;
+                &.masked {
+                    background: $wsvi-primary-gray-light-theme;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-VIFilterStack {
+        //DE86957;position filter panel as relative
+        //In Web, filter panel stack, position was relative, due to .mstrmojo-scrollbar-host
+        //while for mac workstation, position was not set, as mac used mstrmojo-sb-host-show-default
+        //Add position:relative, as sometime we require this position type to display mask in filter stack
+        position: relative;
+        .fp-titlebar {
+            height: 22px;
+        }
+
+        .fp-title {
+            float: left;
+            font-family: $wsvi-normal-font-family; //#VIRevamp
+            font-size: 12px;
+            font-weight: bold;
+            height: 22px;
+            line-height: 22px;
+            margin: 0 0 3px 8px; //#VIRevamp
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 78%;
+            background: none;
+            border: 0;
+
+            &.editable {
+                text-overflow: clip;
+            }
+        }
+
+        .mstrmojo-VIBoxPanel-control {
+            & > div {
+                line-height: 22px;
+                height: 22px;
+            }
+
+            .fp-status{
+                float: left;
+                margin-left: 9px;
+                width: auto;
+                height: 22px;
+                font-size: 8pt;
+                font-weight: bold;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .fp-menu{
+                @include wsvi-icon-context-menu;
+                @include wsvi-icon-size;
+                float: right;
+                margin: 0 4px 0 0; //#VIRevamp
+            }
+        }
+
+        .mstrmojo-VIBoxPanel-content.mstrmojo-sb-show-default {
+            overflow-x: hidden; // Prevent horizontal native scrollbar
+        }
+
+        .fp-btnbar {
+            border-top: none;
+            box-shadow: none;
+            padding: 8px 0;
+
+            .mstrmojo-Button.mstrmojo-WebButton {
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
+
+        .subtitle {
+            @include ellipsis-text();
+            padding-top: 5px;
+            font-size: 11px;
+            width: 100%;
+            line-height: 18px;
+            margin-left: 5px;
+        }
+
+        .mstrmojo-SimpleObjectInputBox input {
+            width: 100%;
+        }
+    }
+
+    .mojo-theme-dark {
+        .mstrmojo-VIFilterStack {
+            .mstrmojo-VIBoxPanel-control {
+                .fp-menu {
+                    background-position: -60px -198px;
+                    &:hover {
+                        background-position: -60px -228px;
+                    }
+                    &:active {
+                        background-position: -60px -258px;
+                    }
+                }
+            }
+
+            .fp-btnbar {
+                border-color: $theme-dark-offset-highlight-color;
+                @include box-shadow($theme-dark-base-highlight-color, 0, -1px, 0);
+            }
+        }
+    }
+
+    //Alays hide 'Apply' button in Pause Mode
+    .pause {
+        .mstrmojo-VIFilterStack {
+            .fp-btnbar {
+                display: none !important;
+            }
+
+        }
+    }
+}

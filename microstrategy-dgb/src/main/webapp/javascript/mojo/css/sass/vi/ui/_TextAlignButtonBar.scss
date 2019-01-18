@@ -1,0 +1,63 @@
+@import '../vi-global';
+/** Start: Text Align Button Bar */
+.mstrmojo-ui-ButtonBar.txtAlign {
+    .item {
+        > div {
+            background: transparent url(#{$vi-img-path}/editor-sprite.png) center 0 no-repeat;
+        }
+    }
+}
+
+
+$edt-icon-txt-left: -275;
+$edt-icon-txt-center: -245;
+$edt-icon-txt-right: -305;
+$edt-icon-txt-justify: -215;
+
+// Offset for dark theme.
+$edt-icon-dark-offset: -420;
+
+.mojo-theme-light {
+    .mstrmojo-ui-ButtonBar.txtAlign {
+        .item {
+            &.left > div {
+                background-position: center #{$edt-icon-txt-left}px;
+            }
+
+            &.center > div {
+                background-position: center #{$edt-icon-txt-center}px;
+            }
+
+            &.right > div {
+                background-position: center #{$edt-icon-txt-right}px;
+            }
+
+            &.justify > div {
+                background-position: center #{$edt-icon-txt-justify}px;
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-ui-ButtonBar.txtAlign {
+        .item {
+            &.left > div {
+                background-position: center #{$edt-icon-dark-offset + $edt-icon-txt-left}px;
+            }
+
+            &.center > div {
+                background-position: center #{$edt-icon-dark-offset + $edt-icon-txt-center}px;
+            }
+
+            &.right > div {
+                background-position: center #{$edt-icon-dark-offset + $edt-icon-txt-right}px;
+            }
+
+            &.justify > div {
+                background-position: center #{$edt-icon-dark-offset + $edt-icon-txt-justify}px;
+            }
+        }
+    }
+}
+/** End: Text Align Button Bar */

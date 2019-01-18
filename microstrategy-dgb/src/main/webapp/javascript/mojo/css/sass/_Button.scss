@@ -1,0 +1,189 @@
+@import 'global';
+
+/** BEGIN: Web Buttons **/
+
+.mstrmojo-Button.mstrmojo-WebButton {
+    // Basic button style.
+    @include border-radius(2px);
+    @include box-shadow(#ffffff, 0, 1px, 1px, false);    // Bottom shadow.
+    @include linear-gradient(#e2e2e2, #d6d6d6);
+
+    // issue 922638
+    // for the ie9 and below, browser will create a filter which will overwrites the background color
+    border: 1px solid #b0b1b2;
+    cursor: default;
+    filter: none !important;
+    height: 22px;
+    min-width: 66px;
+
+    // Basic button text style.
+    .mstrmojo-Button-text {
+        @include box-shadow(#ffffff, 0, 0, 4px, true);
+        @include ellipsis-text();
+
+        color: #1a1a1a;
+        display: block;
+        font-family: arial;
+        font-weight: normal;
+        height: auto;
+        line-height: 22px;
+        padding: 0 8px;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+        width: auto;
+        text-align: center;
+    }
+
+    // On hover style
+    &:hover {
+        @include linear-gradient(#ececee, #dadadc);
+    }
+
+    // On pressed style
+    &:active {
+        @include linear-gradient(#dfdfdf, #cdcdce);
+
+        .mstrmojo-Button-text {
+            @include box-shadow(rgba(99, 99, 99, 0.5), 0, 0, 2px, true);
+        }
+    }
+
+    // Button is hot.
+    &.hot {
+        // Hot border color.
+        border-color: #0C84C4;
+
+        // Hot text background.
+        background: #7CC5EC none;
+
+        // On hover hot style
+        &:hover {
+            background: #92D2F4;
+        }
+
+        // On hover hot style
+        &:active {
+            background-color: #7ACBF6;
+
+            .mstrmojo-Button-text {
+                @include box-shadow(#17628b, 0, 0, 2px, true);
+            }
+
+        }
+    }
+
+    &.action-button {
+        height: 20px;
+        .mstrmojo-Button-text {
+            line-height: 20px;
+        }
+    }
+
+    // Disabled style
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:active{
+        border-color: #b0b1b2;
+        background: #d7d7d7 none;
+
+        .mstrmojo-Button-text {
+            @include box-shadow(#ffffff, 0, 0, 4px, true);
+
+            color: #9d9d9d;
+            display: block;
+            height: auto;
+            text-shadow: none;
+            width: auto;
+        }
+    }
+
+    // Clear out padding for editor buttons
+    &.mstrmojo-Editor-button {
+        padding: 0;
+    }
+}
+
+/** END: Web Buttons **/
+
+
+/** BEGIN: HoverButton - A button that only shows as button when hover **/
+.mstrmojo-Button {
+    &.mstrmojo-WebHoverButton {
+            // Basic button style.
+            @include border-radius(2px);
+
+            border: 1px solid transparent;
+            filter: none !important;
+            height: 20px;
+            min-width: 66px;
+
+            // Basic button text style.
+            .mstrmojo-Button-text {
+                @include ellipsis-text();
+
+            color: #444649;
+            display: block;
+                font-family: arial;
+                font-weight: normal;
+                height: auto;
+            line-height: 19px;
+                padding: 0 8px;
+            text-align: center;
+                text-shadow:0 1px 1px rgba(255, 255, 255, 0.3);
+                width: auto;
+            }
+
+            &:hover {
+                @include box-shadow(#ffffff, 0, 1px, 1px, false);
+
+            border-color: #b0b1b2;
+            background-color: #e4e4e5;
+
+            .mstrmojo-Button-text {
+                @include box-shadow(#eeeeef, 0, 0, 4px, true); //inner glow
+            }
+        }
+
+        &:active {
+            background-color: #dbdbdc;
+
+            .mstrmojo-Button-text {
+                @include box-shadow(#e4e4e5, 0, 0, 4px, true); //reset :hover inner glow
+
+                color: #007ebe;
+            }
+        }
+
+        &.hoverLink {
+            float: right;
+            cursor: pointer;
+            border: none;
+            text-shadow: none;
+            background-color: transparent;
+            padding-right: 0px;
+
+            &:hover {
+                box-shadow: none;
+                text-shadow: none;
+            }
+
+            &:active {
+                .mstrmojo-Button-text {
+                    box-shadow: none;
+                }
+            }
+
+            .mstrmojo-Button-text {
+                color: #007ebe;
+                padding: 2px 7px 0px 0px;
+                text-align: right;
+                float: right;
+                box-shadow: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+/** END: HoverButton **/

@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumGraphMatrixElementSizeMode={_AUTOMATIC:0,_PROPORTIONAL:1,_MANUAL:2};

@@ -1,0 +1,52 @@
+@mixin avatar-common-style {
+    &:before {
+        left: 3px;
+    }
+    padding: 4px 4px;
+    padding-left: 24px;
+    margin: 0;
+    width: 119px;
+    height: 16px;
+    line-height: 16px;
+    opacity: 0.75;
+    background-position-x: 5px;
+    border-radius: 3px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+
+    .txt {
+        padding-top: 1px;
+        width: 100%;
+    }
+}
+
+@mixin avatar-icon-common-style {
+    content: ' ';
+    height: 15px;
+    position: absolute;
+    left: -7px;
+    top: -7px;
+    width: 15px;
+    background: transparent url(#{$vi-img-path}/unitList/avatar_icons_set.svg) -331px -211px no-repeat;
+    opacity: 1;
+    transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+}
+
+@mixin icon-style($val) {
+    @if ($val == 'add') {
+        background-position: -301px -211px;
+    } @else if ($val == 'replace') {
+        background-position: -391px -211px;
+    } @else if ($val == 'move') {
+        background-position: -421px -211px;
+    } @else if ($val == 'remove') {
+        background-position: -361px -211px;
+    } @else {
+        background-position: -331px -211px;
+    }
+}

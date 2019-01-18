@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Base");mstrmojo.chart.DataSet=mstrmojo.declare(mstrmojo.Base,null,{scriptClass:"mstrmojo.chart.DataSet"});}());

@@ -1,0 +1,250 @@
+@mixin linear-gradient($fromColor, $toColor, $isHorizontal: false, $imgSrc: none, $isTransparent: false) {
+
+    // Assume vertical.
+    $orientation: 'top';
+    $ie-orientation: '0';
+
+    // Should gradient be horizontal?
+    @if $isHorizontal == true {
+        // Convert to horizontal.
+        $orientation: 'left';
+        $ie-orientation: '1';
+    }
+
+    // Should default background be transparent? This should be set to true if colors have alpha/opacity < 1.
+    $bgColor: $fromColor;
+    @if $isTransparent == true {
+        $bgColor: transparent;
+    }
+
+    // Was an image source NOT supplied?
+    @if $imgSrc != none {
+        // Wrap image source in url function.
+        $imgSrc: url($imgSrc);
+    }
+
+    background-color: $bgColor; // Fallback Color
+    background-image: $imgSrc;
+    background-image: $imgSrc, -webkit-linear-gradient(#{$orientation}, $fromColor, $toColor); // Chrome 10+, Saf5.1+, iOS 5+
+    background-image: $imgSrc,    -moz-linear-gradient(#{$orientation}, $fromColor, $toColor); // FF3.6
+    background-image: $imgSrc,     -ms-linear-gradient(#{$orientation}, $fromColor, $toColor); // IE10
+    background-image: $imgSrc,      -o-linear-gradient(#{$orientation}, $fromColor, $toColor); // Opera 11.10+
+    background-image: $imgSrc,         linear-gradient(to #{$orientation}, $toColor, $fromColor); // Updated syntax for default setting
+    // Apply IE9 gradient ONLY when no image, because IE9 gradient will override background-image
+    @if $imgSrc == none {
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=#{$ie-orientation}, StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}'); // IE 9
+    }
+}
+
+@mixin radial-gradient($fromColor, $toColor, $imgSrc: none) {
+    // Was an image source NOT supplied?
+    @if $imgSrc != none {
+        // Wrap image source in url function.
+        $imgSrc: url($imgSrc);
+    }
+
+    background: $fromColor;         // Old browsers
+    background-image: $imgSrc;      // Old browsers
+    background: $imgSrc,    -moz-radial-gradient(center, ellipse cover,  $fromColor 0%, $toColor 100%); // FF3.6+
+    background: $imgSrc,        -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $fromColor), color-stop(100%, $toColor)); // Chrome,Safari4+
+    background: $imgSrc, -webkit-radial-gradient(center, ellipse cover,  $fromColor 0%,$toColor 100%);    // Chrome10+,Safari5.1+
+    background: $imgSrc,      -o-radial-gradient(center, ellipse cover,  $fromColor 0%,$toColor 100%);    // Opera 12+
+    background: $imgSrc,     -ms-radial-gradient(center, ellipse cover,  $fromColor 0%,$toColor 100%);    // IE10+
+    background: $imgSrc,         radial-gradient(ellipse at center,  $fromColor 0%,$toColor 100%);        // W3C
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$fromColor', endColorstr='$toColor',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin background-image($image, $position: 0 0, $color: transparent, $repeat: no-repeat) {
+    background: $color url($image) $position $repeat;
+}
+
+@mixin bg-pos ($pos: 0 0) {
+    background-position: $pos;
+}
+
+@mixin background-color-rgba($r: 255, $g: 255, $b: 255, $a: 1) {
+    /* for IEGR8 */
+    background-color: rgb($r, $g, $b);
+    /* for modern browsers */
+    background-color: rgba($r, $g, $b, $a);
+}
+
+
+@mixin flex($content:null) {
+    display: -webkit-flex $content;
+    display: -moz-flex $content;
+    display: -ms-flexbox $content;
+    display: -o-flex $content;
+    display: flex $content;
+}
+
+
+@mixin single-transition($property: none, $duration: 200ms, $function: ease, $delay: 0ms) {
+    -webkit-transition: $property $duration $function $delay;
+    -moz-transition: $property $duration $function $delay;
+    -ms-transition: $property $duration $function $delay;
+    -o-transition: $property $duration $function $delay;
+    transition: $property $duration $function $delay;
+}
+
+@mixin vertical-align() {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin user-select($val) {
+  -webkit-touch-callout: $val;
+  -webkit-user-select: $val;
+  -khtml-user-select: $val;
+  -moz-user-select: $val;
+  -ms-user-select: $val;
+  user-select: $val;
+}
+
+@mixin disable-text-selection() {
+  @include user-select(none);
+}
+
+@mixin box-shadow($color: #000000, $h-offset: 1px, $v-offset: 1px, $blur: 1px, $isInset: false, $spread: 0px) {
+    // Assume it's NOT inset.
+    $inset: '';
+
+    // Should it be inset?
+    @if $isInset {
+        // Change to inset.
+        $inset: inset;
+    }
+
+    -webkit-box-shadow: $color $h-offset $v-offset $blur $spread #{$inset};
+    -moz-box-shadow: $color $h-offset $v-offset $blur $spread #{$inset};
+    box-shadow: $color $h-offset $v-offset $blur $spread #{$inset};
+}
+
+@mixin box-sizing($box-size: border-box) {
+    -webkit-box-sizing: $box-size;
+    -moz-box-sizing: $box-size;
+    box-sizing: $box-size;
+}
+
+@mixin border-radius($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin ellipsis-text() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+       -moz-transform: $transform;
+        -ms-transform: $transform;
+         -o-transform: $transform;
+            transform: $transform;
+}
+
+@mixin scale($scale-x: 1, $scale-y: $scale-x) {
+    @include transform(scale($scale-x, $scale-y));
+}
+
+@mixin filter($filter) {
+  -webkit-filter: $filter;
+     -moz-filter: $filter;
+      -ms-filter: $filter;
+       -o-filter: $filter;
+          filter: $filter;
+}
+
+@mixin css-arrow($width, $border, $color, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    border: $width solid transparent;
+    border-#{$border}-color: $color;
+    bottom: $bottom;
+    content: "";
+    height: 0;
+    left: $left;
+    position: absolute;
+    right: $right;
+    top: $top;
+    width: 0;
+}
+
+@mixin keyframes($name) {
+    @-ms-keyframes #{$name} { @content; }
+    @-webkit-keyframes #{$name} { @content; }
+    @-moz-keyframes #{$name} { @content; }
+    @-o-keyframes #{$name} { @content; }
+    @keyframes #{$name} { @content; }
+}
+
+@mixin animation($animation-value) {
+    -ms-animation-name: $animation-value;
+    -moz-animation: $animation-value;
+    -webkit-animation: $animation-value;
+    -o-animation: $animation-value;
+    animation: $animation-value;
+}
+
+@mixin animation-timing-function($animation-time-function-value){
+    -moz-animation-timing-function: $animation-time-function-value;//firefox
+    -o-animation-timing-function: $animation-time-function-value;
+    -ms-animation-timing-function: $animation-time-function-value;
+    -webkit-animation-timing-function: $animation-time-function-value;
+    animation-timing-function: $animation-time-function-value;
+}
+
+@mixin transform-origin($origin-value) {
+    -ms-transform-origin: $origin-value;
+    -webkit-transform-origin: $origin-value;
+    transform-origin: $origin-value;
+}
+
+@mixin dyn-link() {
+    color: #34abeb;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@mixin scrollBar() { //942676
+    &::-webkit-scrollbar,
+            //&::-webkit-scrollbar:horizontal,
+        {
+            width: 9px;
+        height: 9px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 20px;
+        -webkit-box-shadow: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+
+    &:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+    &::-webkit-scrollbar-thumb {
+        width: 5px;
+        min-height: 15px;
+        background: rgba(0, 0, 0, 0.25);
+        border: 2px solid transparent;
+        border-radius: 20px;
+        background-clip: content-box;
+        -webkit-box-shadow: none;
+        //  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+}
+
+@mixin backgroundSize($bgSize) {
+    -webkit-background-size: $bgSize;
+    -webkit-background-size: $bgSize;
+    -o-background-size: $bgSize;
+    background-size: $bgSize;
+}

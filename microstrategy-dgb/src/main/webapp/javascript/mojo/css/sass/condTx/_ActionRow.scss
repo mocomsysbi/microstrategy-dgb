@@ -1,0 +1,76 @@
+@import '../global';
+@import '../threshold/ThresholdRow';
+@import '../vi/menu';
+
+/** Start ActionRow **/
+.mstrmojo-ConditionTXN-ActionRow{
+    @extend .mstrmojo-thresholdRow;
+
+    border-bottom: 1px dotted #ccc;
+    clear: both;
+    overflow: hidden;
+
+    .reserved {
+        width: 30px;
+        height: 30px;
+    }
+    .order {
+      width: 20px;
+      line-height: 30px;
+    }
+
+    .target {
+      display: none;
+      width: 75px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 30px;
+    }
+
+    .action {
+        width: 90px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .mstrmojo-cond-text.mstrmojo-tx{
+        font-weight: bold;
+    }
+
+    .container {
+        width: 545px !important;
+    }
+
+  .mstrmojo-Editor.mstrmojo-ConditionTXN.templateUnit & {
+      .target {
+          display: block;
+          text-align: center;
+          width: 95px;
+      }
+
+      .container {
+          width: 450px !important;
+          overflow: hidden;
+      }
+  }
+}
+
+.mstrmojo-ConditionTXN-Menu.mstrmojo-ui-Menu {
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F43F3F3F, endColorstr=#F43F3F3F);
+
+  .mstrmojo-ui-Menu-item {
+      &:hover {
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AB0B0B0B, endColorstr=#AB0B0B0B);
+      }
+  }
+
+}
+
+/** End ActionRow**/
+

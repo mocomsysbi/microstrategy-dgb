@@ -1,0 +1,1 @@
+mstrmojo.qb.EnumQBAppType={EmmaSingleTable:368,QueryBuilder:352,FFSQL:304,BigQuery:341,BigQueryFFSQL:342,BigQuerySingleTable:345,BISource:400,MDX:2,NewConnector:500};

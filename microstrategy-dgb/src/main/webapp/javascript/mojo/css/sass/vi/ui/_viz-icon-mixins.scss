@@ -1,0 +1,38 @@
+@mixin viz-icon-avatar() {
+    background-color: #e4e4e4;
+    border-color: #b4b4b4;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+@mixin viz-icon-border-style() {
+    border-width: 1px;
+    border-style: solid;
+}
+
+@mixin viz-icon-outer-style() {
+    height: 36px;
+    width: 36px;
+}
+
+@mixin viz-icon-middle-common() {
+    border: 1px solid;
+    height: 34px;
+    width: 34px;
+}
+
+@mixin viz-icon-middle-theme($border-color, $background-color) {
+    background-color: $background-color;
+    border-color: $border-color;
+}
+
+@mixin viz-icon-inner-style() {
+    background-repeat: no-repeat;
+    margin: 3px;
+    height: 28px;
+    width: 28px;
+}
+
+@mixin viz-icon-margin() {
+    margin: 0 0 10px 8px; // Left margin has to be in sync with DEFAULT_LEFT_MARGIN in VizGallery.js
+}

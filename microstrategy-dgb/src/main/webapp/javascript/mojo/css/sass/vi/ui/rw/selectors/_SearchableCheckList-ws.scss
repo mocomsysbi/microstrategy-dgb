@@ -1,0 +1,45 @@
+.workstation {
+  /** BEGIN: SearchableCheckList **/
+  .mstrmojo-vi-sel-CheckList.searchable {
+    .mstrmojo-ui-SearchBox {
+      @include box-sizing();
+      @include border-radius($wsvi-box-radius);
+      border: 1px solid $wsvi-ui-border-gray;
+      margin: 4px 0 4px 0; //TODO: DE43931: Temp fix ( The bottom margin should be 10px according to spec)
+      padding: 0;
+
+      &.onInputFocus{
+        border-color: $wsvi-primary-blue;
+      }
+    }
+
+    .item {
+      // Hide items that are excluded by the filter.
+      &.excluded {
+        display: none;
+      }
+
+      // Emphasize the matched portion of the item.
+      em {
+        background-color: #7CD3F3;
+        font-style: normal;
+      }
+    }
+
+    &.horizontal {
+      white-space: nowrap;
+
+      .search,
+      .icn {
+        display: inline-block;
+      }
+
+      .search {
+        float: left;
+        padding-right: 17px;
+      }
+    }
+  }
+  /** END: SearchableCheckList **/
+
+}

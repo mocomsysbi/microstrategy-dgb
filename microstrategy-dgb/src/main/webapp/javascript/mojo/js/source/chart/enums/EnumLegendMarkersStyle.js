@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumLegendMarkersStyle={LMS_LeftOfText:0,LMS_RightOfText:1,LMS_CenterOnMarkers:2,LMS_AboveText:3,LMS_BelowText:4};

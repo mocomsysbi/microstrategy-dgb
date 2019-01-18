@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSAxisName={DssAxisReserved:0,DssAxisRows:1,DssAxisColumns:2,DssAxisPages:3,DssAxisChapters:4,DssAxisAll:5,DssAxisDropZoneIndexRoot:8,DssAxisDropZoneIndexEnd:8+255,DssAxisDynamicShortcutRoot:300,DssAxisDynamicShortcutEnd:300+255};

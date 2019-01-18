@@ -1,0 +1,1 @@
+mstrmojo.mstr.EnumNodeType={NodeReserved:0,NodeFormShortcut:1,NodeElementsObject:2,NodeConstant:3,NodeOperator:4,NodeShortcut:5,NodeTime:6,NodeRelationship:7,NodeResidue:8,NodeMe:9,NodeBigDecimal:10,NodeGroup:14,NodeRef:15};

@@ -1,0 +1,45 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+    /** BEGIN: VI Menu Editors **/
+    .mstrmojo-ui-MenuEditor {
+        .mstrmojo-ui-Pulldown {
+            .mstrmojo-ui-Pulldown-text {
+                padding-right: 18px;
+                padding-bottom: 4px;
+            }
+
+            .mstrmojo-PopupList {
+                .item {
+                    margin: 0;
+
+                    &.red {
+                        color: red;
+                    }
+
+                    &:hover {
+                        background-color: rgba(27, 27, 27, 0.42);
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-ui-CheckList.units .item {
+            @include ellipsis-text();
+        }
+    }
+
+    .mstrmojo-ToolSeparator {
+        @include box-shadow(transparent);
+
+        border-bottom: 1px solid $wsvi-splitline-gray;
+        border-left: none;
+        border-right: none;
+        height: 1px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    /** END: VI Menu Editors **/
+
+}
+/** END: Workstation Styles **/

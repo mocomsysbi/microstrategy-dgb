@@ -1,0 +1,74 @@
+.mstrmojo-di-appschema-refresh-file-editor {
+    .mstrmojo-DataGrid {
+        .mstrmojo-DataGrid-headerContainer {
+            .mstrmojo-DataGrid-headerTable {
+                td {
+                    border-right: none;
+                }
+                .mstrmojo-DataGrid-headerText {
+                    border: none;
+                }
+            }
+        }
+
+        .mstrmojo-DataGrid-itemsContainer {
+            .mstrmojo-itemwrap {
+                tr {
+                    background: transparent;
+                    td {
+                        vertical-align: middle;
+                        .icon {
+                            background-image: url("../../../app-schema-assets/dist/src/assets/icons/mbde-icons.svg");
+                            width: 20px;
+                            height: 16px;
+                            display: inline-block;
+                        }
+                        .subNode {
+                            margin-left: 30px;
+                            background-position: -900px -650px;
+                            width: 14px;
+                        }
+                        .tableIcon {
+                            background-position: -255px -230px;
+                        }
+                        .derivedTableIcon {
+                            background-position: -255px -270px;
+                        }
+        
+                        .mstrmojo-FileUploadBox {
+                            &.hidden {
+                                display: none;
+                            }
+                            width: 22px;
+                            margin-left: 37px;
+                            .mstrmojo-FileUploadBox-input {
+                                width: 0;
+                                border: none;
+                                padding: 0;
+                            }
+                            .mstrmojo-FileUploadBox-buttonDiv {
+                                width: 22px;
+                                left: 0;
+                                top: 0px;
+                                .mstrmojo-FileUploadBox-button {
+                                    background-image: url("../../../app-schema-assets/dist/src/assets/icons/mbde-icons.svg");
+                                    background-position: -485px -640px;
+                                    background-color: transparent;
+                                    height: 20px;
+                                    width: 20px;
+                                    border: none;
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                    
+                                .mstrmojo-FileUploadBox-FileSelected-button {
+                                    background-position: -485px -610px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

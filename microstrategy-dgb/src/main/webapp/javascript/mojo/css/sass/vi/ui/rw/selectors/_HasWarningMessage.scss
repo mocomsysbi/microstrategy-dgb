@@ -1,0 +1,94 @@
+/**Warning message tooltip for filter panel**/
+.mstrmojo-Tooltip .mstrmojo-Tooltip-content{
+  &.Warning-content {
+    margin-right: 0;
+    margin-left: 0;
+    min-width: 80px;
+    min-height: 15px;
+    border: 1px solid #787878;
+    background-color: #ededed;;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    box-shadow: 0px 0px 1px 0px #686767;
+    -moz-box-shadow: 0px 0px 1px 0px #686767;
+    -webkit-box-shadow: 0px 0px 1px 0px #686767;
+    opacity: 0.88;
+    pointer-events: none;
+    padding-left: 30px;
+    color: #56585b;
+    font-weight: normal;
+    .warning-icon{
+      background: url("vi/images/menu_icons.png") no-repeat scroll 32% 43% rgba(0, 0, 0, 0);
+      width: 20px;
+      height: 18px;
+      background-size: 1200% auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 10px;
+      margin: auto;
+    }
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      display: block;
+      border: 9px solid;
+    }
+    &.r {
+      &:before {
+        left: -17px;
+        top: 10px;
+        border-color: transparent #787878 transparent transparent;
+      }
+      &:after {
+        left: -16px;
+        top: 10px;
+        border-color: transparent #ededed transparent transparent;
+      }
+    }
+    &.l {
+      &:before {
+        right: -17px;
+        top: 10px;
+        border-color: transparent transparent transparent #787878;
+      }
+      &:after {
+        right: -16px;
+        top: 10px;
+        border-color: transparent transparent transparent #ededed;
+      }
+    }
+    &.t {
+      &:before {
+        bottom: -17px;
+        border-color: #787878 transparent transparent transparent;
+      }
+      &:after {
+        bottom: -16px;
+        border-color:  #ededed transparent transparent transparent;
+      }
+    }
+    &.b {
+      &:before {
+        top: -17px;
+        border-color: transparent transparent #787878 transparent;
+      }
+      &:after {
+        top: -16px;
+        border-color: transparent transparent #ededed transparent;
+      }
+    }
+  }
+}
+
+.mstrmojo-TextBox.mstrmojo-Warning,
+.mstrmojo-TextArea.mstrmojo-Warning,
+.mstrmojo-Warning {
+  box-shadow:0px 0px 0px 1px rgba(231, 184, 83, 0.60) inset;
+  -moz-box-shadow:0px 0px 0px 1px rgba(231, 184, 83, 0.60) inset;
+  -webkit-box-shadow:0px 0px 0px 1px rgba(231, 184, 83, 0.60)  inset;
+}

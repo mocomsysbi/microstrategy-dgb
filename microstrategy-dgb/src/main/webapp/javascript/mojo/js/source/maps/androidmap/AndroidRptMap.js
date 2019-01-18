@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.maps.androidmap.AndroidMap");mstrmojo.maps.androidmap.AndroidRptMap=mstrmojo.declare(mstrmojo.maps.androidmap.AndroidMap,null,{scriptClass:"mstrmojo.maps.androidmap.AndroidRptMap",setModel:function setModel(model){this._super(model);this.controller.getPageByTree(false);}});}());

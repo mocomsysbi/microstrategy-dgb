@@ -1,0 +1,243 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+    .mstrmojo-ViewDataDialog {
+
+        z-index: 9;
+
+        .mstrmojo-Editor-button {
+            margin: 0 !important;
+        }
+
+        .mstrmojo-toolBox {
+            position: relative;
+            height: $wsvi-panel-row-height;
+            margin-bottom: $wsvi-element-padding;
+
+            .mstrmojo-VIToolbar {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                .open {
+                    white-space: nowrap;
+                }
+            }
+
+            .mstrmojo-export-type,
+            .mstrmojo-addGridButton,
+            .mstrmojo-rowcount {
+                float: right;
+                margin-left: $wsvi-element-padding;
+            }
+
+            .mstrmojo-addGridButton {
+                .mstrmojo-Button-text {
+                    line-height: $wsvi-panel-row-height;
+                }
+            }
+
+            .mstrmojo-rowcount {
+                height: $wsvi-panel-row-height;
+                line-height: $wsvi-panel-row-height;
+            }
+        }
+
+        .mstrmojo-VIToolbar {
+            padding-left: 0px;
+
+            .add {
+                $add-size: $wsvi-panel-row-height;
+
+                @include wsvi-icon-before('editor-add-more');
+
+                position: relative;
+                width: $add-size;
+                height: $add-size;
+                min-width: $add-size;
+                overflow: visible;
+                font-size: 0px;
+
+                .me-content {
+                    max-height: 308px;
+                    overflow-y: auto;
+                    padding : 0 8px 5px 7px;
+                }
+
+                .mstrmojo-ui-MenuEditor {
+                    top: 25px !important;
+                    font-size: 11px;
+                }
+
+                &:not(.disabled):active:before {
+                    @include wsvi-icon-editor-position-add-more-active;
+                }
+                &:before {
+                    top: 3px;
+                    left: 3px;
+                }
+            }
+        }
+
+        .mstrmojo-Editor-button {
+            padding: 0 !important;
+        }
+
+        .mstrmojo-gridBox {
+            position: relative;
+            padding: 0 0 16px 0;
+            overflow: hidden;
+
+            .mstrmojo-Xtab {
+                position: relative;
+                background-color: white;
+                border: 1px solid $wsvi-ui-border-gray;
+                overflow: hidden;
+                min-width: 605px;
+
+                tr {
+                    height: 20px;
+                    line-height: 20px;
+                }
+
+                .hl {
+                    text-decoration: initial;
+                }
+
+                .cn-curtain {
+                    background: none;
+                    background-color: $wsvi-background-gray !important;
+                    font-family: arial;
+                    height: 24px;
+                    line-height: 24px;
+                    font-weight: normal;
+                    white-space: nowrap;
+                    border-top-width: 0;
+                }
+
+                .mstrmojo-XtabZone {
+                    table > tbody > tr td {
+                        border-width: 0 0 1px 0;
+                        padding: 1.0pt 5.0pt;
+                        vertical-align: middle;
+                        font-family: Arial, HelveticaNeue;
+                        font-size: 11px;
+                        border-color: $wsvi-ui-border-gray;
+                        border-style: solid;
+                        text-decoration: none;
+                        font-style: normal;
+                        font-weight: normal;
+                        white-space: nowrap;
+                        background-color: transparent;
+                    }
+
+                    table > tbody > tr > td:last-child {
+                        border-right-width: 1px;
+                    }
+
+                    table > tbody:not([n]) > tr:first-child td {
+                        @extend .cn-curtain;
+                    }
+
+                    .xtabSel {
+                        &.nie:after {//not IE, the pseudo :after element doesnt seem to use the whole height of a rowspan'd cell
+                            border: none;
+                        }
+                        &.ie {//just for IE
+                            border: none;
+                        }
+                    }
+                }
+
+                .mstrmojo-Xtab-content {
+                    border: none !important;
+                }
+            }
+
+            td[r='0'].asc {
+                background: rgba(243,243,244,0.95) url(#{$mojo-img-path}/arrow_blk_up_5x7.gif) 3px center no-repeat !important;
+                padding-left: 13px !important;
+            }
+
+            td[r='0'].desc {
+                background: rgba(243,243,244,0.95) url(#{$mojo-img-path}/arrow_blk_down_5x7.gif) 3px center no-repeat !important;
+                padding-left: 13px !important;
+            }
+
+            tr.selected {
+                background-color: $wsvi-selected-blue !important;
+            }
+        }
+
+        .hiddenArea {
+            opacity: 0;
+            position: absolute;
+        }
+        .exportPDFLabel,
+        .exportExcelLabel {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            cursor: pointer;
+        }
+        .exportPDFLabel:hover,
+        .exportExcelLabel:hover {
+            text-decoration: underline;
+        }
+
+        .exportPDFLabel {
+            bottom: 15px;
+        }
+
+        .mstrmojo-VIPanel-titlebar {
+            display: table;
+        }
+
+        .mstrmojo-VITitleBar.small {
+            display: table-row !important;
+
+            & > DIV {
+                float: none;
+            }
+
+            .left-toolbar {
+                display: table-cell;
+                width: auto;
+
+                .mstrmojo-Image {
+                    background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+                    background-position: -514px -30px;
+                    margin: 0;
+                }
+            }
+
+            &.collapsed {
+                .left-toolbar {
+                    .mstrmojo-Image {
+                        background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+                        background-position: -514px -60px;
+                    }
+                }
+            }
+
+            .title-text {
+                display: table-cell;
+                width: 100%;
+
+                .mstrmojo-EditableLabel {
+                    line-height : 22px;
+                }
+            }
+
+            .right-toolbar {
+                display: table-cell;
+                width: auto;
+
+                .mstrmojo-VITitleToolbar {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+/** END: Workstation Styles **/

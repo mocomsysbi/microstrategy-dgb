@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumDSSGraphOffScaleType={DssGraphOffScaleHide:0,DssGraphOffScaleClip:1,DssGraphOffScaleShow:2};

@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.vi.ui.tutorial.RegistrationView","mstrmojo._FillsBrowser");mstrmojo.onetier.vi.ui.tutorial.RegistrationView=mstrmojo.declare(mstrmojo.vi.ui.tutorial.RegistrationView,[mstrmojo._FillsBrowser],{scriptClass:"mstrmojo.onetier.vi.ui.tutorial.RegistrationView"});}());

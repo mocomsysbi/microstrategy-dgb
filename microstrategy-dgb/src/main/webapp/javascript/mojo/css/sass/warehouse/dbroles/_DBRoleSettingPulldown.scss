@@ -1,0 +1,42 @@
+@import '../wh-global';
+
+.mstrmojo-wh-DBRolePulldown {
+  height: 22px;
+  margin: 9px 0;
+  &:first-child{
+    margin-top: 2px;
+  }
+  &:last-child{
+    margin-bottom: 2px;
+  }
+  .mstrmojo-ui-Pulldown {
+    float: right;
+    width: 65%;
+  }
+
+  .mstrmojo-ui-Pulldown-text {
+    height: 14px;
+    line-height: 14px;
+    padding: 3px 20px 3px 5px;
+    max-width: 100%;
+    border-color: #a8a8a8;
+    background: white url(#{$image-path}/arrow-down.png) no-repeat 98% center;
+  }
+
+  .mstrmojo-ui-SearchablePulldown
+    .mstrmojo-ui-Pulldown-text:after {
+      background: transparent url(vi/images/dropdown_arrow-ws.svg) no-repeat !important;
+      background-position: 100% -2% !important;
+  }
+
+  .mstrmojo-PopupList {
+    z-index: 2;
+    overflow-y: auto;
+
+    .item {
+      max-width: 100%;
+    }
+
+  }
+
+}

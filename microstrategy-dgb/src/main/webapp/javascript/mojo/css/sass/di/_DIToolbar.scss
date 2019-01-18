@@ -1,0 +1,263 @@
+.mstrmojo-di-view .mstrmojo-di-header {
+  height: 35px;
+}
+.mstrmojo-DI-DIToolbar {
+  // expand to parent headerNode
+  background-color: #fafafa;
+  border-bottom: 1px solid #cecece;
+  height: 26px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  padding: 5px 0 5px 13px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #cecece;
+  .toolbar-item {
+    cursor: pointer;
+    margin-right: 26px;
+
+    // Toolbar items for dataSelection page
+    &.btn {
+      height: 26px;
+
+      .mstrmojo-Button-text {
+        height: 18px;
+        padding: 4px 8px;
+        //background: url(images/DI/di-toolbar.png) no-repeat center;
+        background-origin: content-box;
+      }
+
+      &.back {
+        margin-left: 13px;
+        .mstrmojo-Button-text {
+          width: 7px;
+          background-position: -131px -5px;
+        }
+        &:hover, &:active {
+          .mstrmojo-Button-text {
+            background-position: -148px -5px;
+          }
+        }
+        &.disabled {
+          .mstrmojo-Button-text {
+            background-position: -131px -5px;
+          }
+        }
+      }
+
+      &.forward {
+        .mstrmojo-Button-text {
+          width: 8px;
+          background-position: -227px -5px;
+        }
+        &:hover, &:active {
+          .mstrmojo-Button-text {
+            background-position: -245px -5px;
+          }
+        }
+        &.disabled {
+          .mstrmojo-Button-text {
+              background-position: -227px -5px;
+          }
+        }
+      }
+
+      &.grid {
+        margin-right: 8px;
+        //border-right: 1px solid #dedede; //here is the split line between icon view and list view
+        .mstrmojo-Button-text {
+          width: 15px;
+          //background-position: -281px -5px;
+          background: url("images/DI/workstation/workstation.svg") -5px -6px no-repeat;
+        }
+        &.on, &:hover, &:active {
+          .mstrmojo-Button-text {
+            background-position: -45px -6px;
+          }
+        }
+      }
+
+      &.list {
+        border-left: 1px solid #fff;
+        margin-right: 8px;
+        .mstrmojo-Button-text {
+          width: 18px;
+          //height: 13px;
+          //background-position: -331px -5px;
+          background: url("images/DI/workstation/workstation.svg") -3px -37px no-repeat;
+        }
+        &.on, &:hover, &:active {
+          .mstrmojo-Button-text {
+            background-position: -43px -37px;
+          }
+        }
+      }
+
+      &.dda {
+        margin-right: 10px;
+        .mstrmojo-Button-text {
+          width: 21px;
+          //height: 18px;
+          //background-position: -165px -5px;
+          background: url("images/DI/workstation/workstation.svg") -1px -195px no-repeat;
+        }
+        &.on, &:hover, &:active {
+          .mstrmojo-Button-text {
+            background-position: -41px -195px;
+          }
+        }
+      }
+
+      &.admin {
+        .mstrmojo-Button-text {
+          width: 18px;
+          //height: 18px;
+          //background-position: -5px -5px;
+          background: url("images/DI/workstation/workstation.svg") 0px -225px no-repeat;
+        }
+        &:hover, &:active {
+          .mstrmojo-Button-text {
+            background-position: -40px -225px;
+          }
+        }
+      }
+
+      &.advSearch {
+        float: right;
+        margin: 0;
+        .mstrmojo-Button-text {
+          width: 25px;
+          background: url("images/DI/workstation/workstation.svg") -1490px -35px no-repeat;
+        }
+        &:hover, &:active {
+          .mstrmojo-Button-text {
+            background-position-x: -1530px;
+          }
+        }
+      }
+    }
+
+    //&.searchBox, &.advSearch {
+    //  float: right;
+    //}
+    &.searchBox {
+      float: right;
+      width: 200px;
+      .mstrmojo-ui-sb-input {
+        height: 22px;
+        width: 170px;
+        &::-webkit-input-placeholder {
+          text-align: center;
+        }
+      }
+      .mstrmojo-ui-sb-btn {
+        margin-top: 2px;
+      }
+      input::-webkit-input-placeholder{
+        text-align: left;
+      }
+      input:-ms-input-placeholder{
+        text-align: left;
+      }
+      input::-ms-clear{
+        display: none;
+      }
+    }
+
+    // Toolbar items for preview page
+    &.mtdi-preview {
+      height: 24px;
+
+      .mstrmojo-Button-text {
+        color: $primary-black;
+        position: relative;
+        padding-left: 26px;
+        line-height: 24px;
+        &:after {
+        content: "";
+        position: absolute;
+        background: url(images/DI/workstation/workstation.svg) no-repeat;
+        background-position: -278px -69px;
+        width: 15px;
+        height: 15px;
+        top: 5px;
+        left: 5px;
+        }
+      }
+
+      &:hover, &:active {
+        .mstrmojo-Button-text {
+          color: $primary-blue;
+        }
+      }
+
+      &.objects {
+        .mstrmojo-Button-text:after {
+          background-position: -278px -69px;
+        }
+        &:hover, &:active {
+          .mstrmojo-Button-text:after {
+            background-position: -318px -69px;
+          }
+        }
+        &.disabled {
+          .mstrmojo-Button-text:after {
+            background-position: -278px -69px;
+            opacity: 0.5;
+          }
+        }
+      }
+
+      &.wrangle {
+        .mstrmojo-Button-text:after {
+          background-position: -277px -9px;
+        }
+        &:hover, &:active {
+          .mstrmojo-Button-text:after {
+            background-position: -317px -9px;
+          }
+        }
+        &.disabled {
+          .mstrmojo-Button-text:after {
+            background-position: -277px -9px;
+            opacity: 0.5;
+          }
+        }
+      }
+
+      &.aggregation{
+        .mstrmojo-Button-text:after{
+          background:url("images/DI/workstation/workstation.svg") no-repeat -280px -40px;
+        }
+        
+        &:hover{
+           .mstrmojo-Button-text:after{
+             background-position: -320px -40px;
+           }
+        }
+      }
+    }
+
+  }
+
+  .mstrmojo-di-DISearchTableBox {
+    float: right;
+    margin-right: 24px;
+
+    .mstrmojo-di-tb-inputBox {
+      height: 24px;
+    }
+    .mstrmojo-di-tb-clearBtn {
+      height: 22px;
+      box-shadow: rgba(0,0,0,0.1) 0 1px 1px 0;
+      background-position-x: -196px;
+    }
+
+    input::-webkit-input-placeholder {
+      text-align: center;
+    }
+    input:-ms-input-placeholder {
+      text-align: center;
+    }
+  }
+
+}

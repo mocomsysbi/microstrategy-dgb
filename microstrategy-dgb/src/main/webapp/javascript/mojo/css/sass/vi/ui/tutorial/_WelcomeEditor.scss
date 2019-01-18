@@ -1,0 +1,12 @@
+.mstrmojo-Editor.mstrmojo-vi-WelcomeEditor {
+    .mstrmojo-Editor-content {
+        padding: 1px 0 0 0;
+        border-radius: 4px;
+        &:after {
+            display: none;
+        }
+    }
+    .mstrmojo-Editor-buttons {
+        display: none;
+    }
+}

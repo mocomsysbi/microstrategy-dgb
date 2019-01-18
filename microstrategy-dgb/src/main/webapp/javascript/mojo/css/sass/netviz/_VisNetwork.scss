@@ -1,0 +1,531 @@
+$netviz-img-path: 'Network icons/viz_assets.png';
+
+@mixin box-shadow-net($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin box-radius($radius...) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin scale-button($x, $y, $fill, $inner-border) {
+  background: url($netviz-img-path) $x $y content-box, $fill;
+  @include box-shadow-net(inset 0 0 0 1px $inner-border);
+}
+
+@mixin scale-button-normal-d($x, $y) {
+  @include scale-button($x, $y, #313233, #404143);
+}
+
+@mixin scale-button-hover-d($x, $y) {
+  @include scale-button($x, $y, #3d3e3f, #404143);
+}
+
+@mixin scale-button-selected-d($x, $y) {
+  @include scale-button($x, $y, #2a2a2a, #0f0f10);
+}
+
+@mixin scale-button-normal-l($x, $y) {
+  @include scale-button($x, $y, #e2e2e2, #f4f4f4);
+}
+
+@mixin scale-button-hover-l($x, $y) {
+  @include scale-button($x, $y, #ececec, #f4f4f4)
+}
+
+@mixin scale-button-selected-l($x, $y) {
+  @include scale-button($x, $y, #d8d8d8, #bdbdbd);
+}
+
+@mixin base-container-d($height) {
+  width: 100%;
+  height: $height;
+  @include box-radius(2px);
+  background-color: #3b3b3b;
+  @include box-shadow-net(inset 0 0 0 1px #0f0f10);
+}
+
+@mixin scale-button-separator($clr) {
+  content: "";
+  display: block;
+  position: relative;
+  top: 21px;
+  left: -6px;
+  width: 25px;
+  border-top: solid 1px $clr;
+}
+
+.VisNetworkStageScaleBar {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.VisNetworkStageScaleBar ._label {
+  font: 9pt Arial;
+  color: white;
+  text-align: center;
+  opacity: 1;
+  height: 16px;
+  margin-bottom: 3px;
+}
+
+.network-light-theme .VisNetworkStageScaleBar ._label {
+  color: black;
+}
+
+/*.VisNetworkStageScaleBar ._fadeAway{
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: fadeAway;
+}
+
+@-webkit-keyframes fadeAway {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}*/
+
+.VisNetworkStageScaleBar ._zoomTool {
+  @include base-container-d(235px);
+}
+
+.network-light-theme .VisNetworkStageScaleBar ._zoomTool {
+  background-color: #e8e8e8;
+  @include box-shadow-net(inset 0 0 0 1px #bdbdbd);
+}
+
+.VisNetworkStageScaleBar ._scaleBar {
+  position: relative;
+  width: 7px;
+  height: 156px;
+  margin: 0 auto;
+}
+.VisNetworkStageScaleBar ._bar {
+  width: 100%;
+  height: 100%;
+  border: solid 1px #3f4042;
+  background: #252525;
+  position: absolute;
+  left: -1px;
+  @include box-radius(8px);
+  @include box-shadow-net(inset 0 0 0 1px #000000);
+}
+
+.network-light-theme .VisNetworkStageScaleBar ._bar {
+  border-color: #ffffff;
+  background-color: #b9b9b9;
+  @include box-shadow-net(inset 0 0 0 1px #909090);
+}
+
+.VisNetworkStageScaleBar ._slider {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -5px;
+  top: 0px;
+  @include box-radius(50%);
+  border: 1px solid #131314;
+  background-color: #414447;
+  @include box-shadow-net(inset 0 0 0 1px #585a5d);
+}
+.network-light-theme .VisNetworkStageScaleBar ._slider {
+  background-color: #bdbdbd;
+  border-color: #7c7c7c;
+  @include box-shadow-net(inset 0 0 0 1px #f4f4f4);
+}
+
+.VisNetworkStageScaleBar ._zoomInButton {
+  width: 15px;
+  height: 14px;
+  margin: 7px auto;
+  background: url($netviz-img-path) -359px -90px;
+}
+.network-light-theme .VisNetworkStageScaleBar ._zoomInButton {
+  background: url($netviz-img-path) -359px 0;
+}
+.VisNetworkStageScaleBar ._zoomInButton:hover,
+.VisNetworkStageScaleBar ._zoomInButton:active,
+.VisNetworkStageScaleBar ._zoomInButtonActive {
+  background: url($netviz-img-path) -359px -150px;;
+}
+.network-light-theme .VisNetworkStageScaleBar ._zoomInButton:hover,
+.network-light-theme .VisNetworkStageScaleBar ._zoomInButton:active,
+.network-light-theme .VisNetworkStageScaleBar ._zoomInButtonActive {
+  background: url($netviz-img-path) -359px -60px;
+}
+
+.VisNetworkStageScaleBar ._zoomOutButton {
+  width: 13px;
+  height: 14px;
+  margin: 5px auto;
+  background: url($netviz-img-path) -400px -90px;
+}
+.network-light-theme .VisNetworkStageScaleBar ._zoomOutButton {
+  background: url($netviz-img-path) -400px 0;
+}
+.VisNetworkStageScaleBar ._zoomOutButton:hover,
+.VisNetworkStageScaleBar ._zoomOutButton:active,
+.VisNetworkStageScaleBar ._zoomOutButtonActive {
+  background: url($netviz-img-path) -400px -150px;
+}
+.network-light-theme .VisNetworkStageScaleBar ._zoomOutButton:hover,
+.network-light-theme .VisNetworkStageScaleBar ._zoomOutButton:active,
+.network-light-theme .VisNetworkStageScaleBar ._zoomOutButtonActive {
+  background: url($netviz-img-path) -400px -60px;
+}
+
+.VisNetworkStageScaleBar ._FTWTrigger {
+  width: 13px;
+  height: 13px;
+  padding: 6px 5px 8px 5px;
+  position: relative;
+  top: 1px;
+  margin-left: 1px;
+  @include scale-button-normal-d(-240px, -90px);
+
+  &:after {
+    @include scale-button-separator(#0f0f10);
+  }
+}
+.network-light-theme .VisNetworkStageScaleBar ._FTWTrigger {
+  @include scale-button-normal-l(-240px, 0);
+
+  &:after {
+    border-top-color: #bdbdbd;
+  }
+}
+.VisNetworkStageScaleBar ._FTWTrigger:hover {
+  @include scale-button-hover-d(-240px, -90px);
+}
+.VisNetworkStageScaleBar ._FTWTrigger:active {
+  @include scale-button-selected-d(-240px, -90px);
+}
+.network-light-theme .VisNetworkStageScaleBar ._FTWTrigger:hover {
+  @include scale-button-hover-l(-240px, 0);
+}
+.network-light-theme .VisNetworkStageScaleBar ._FTWTrigger:active {
+  @include scale-button-selected-l(-240px, 0);
+}
+
+.VisNetworkStageScaleBar .pan-select-tool {
+  margin-top: 24px;
+  @include base-container-d(57px);
+
+  ._inputPan, ._inputSelect {
+    display: none;
+  }
+}
+.network-light-theme .VisNetworkStageScaleBar .pan-select-tool {
+  background-color: #e8e8e8;
+  @include box-shadow-net(inset 0 0 0 1px #bdbdbd);
+}
+
+.VisNetworkStageScaleBar ._panButton {
+  display: block;
+  width: 15px;
+  height: 15px;
+  padding: 6px 3px 6px 5px;
+  position: relative;
+  top: 1px;
+  margin-left: 1px;
+  @include scale-button-normal-d(-280px, -90px);
+
+  &:after {
+    @include scale-button-separator(#0f0f10);
+  }
+}
+.network-light-theme .VisNetworkStageScaleBar ._panButton {
+  @include scale-button-normal-l(-280px, 0);
+
+  &:after {
+    border-top-color: #bdbdbd;
+  }
+}
+
+.VisNetworkStageScaleBar ._panButton:hover {
+  @include scale-button-hover-d(-280px, -90px);
+}
+.VisNetworkStageScaleBar {
+  ._inputPan:checked + label, ._panButton:active {
+    @include scale-button-selected-d(-280px, -90px);
+  }
+}
+.network-light-theme .VisNetworkStageScaleBar ._panButton:hover {
+  @include scale-button-hover-l(-280px, 0);
+}
+.network-light-theme .VisNetworkStageScaleBar {
+  ._inputPan:checked + label, ._panButton:active {
+    @include scale-button-selected-l(-280px, 0);
+  }
+}
+
+.VisNetworkStageScaleBar ._selectButton {
+  display: block;
+  width: 15px;
+  height: 15px;
+  padding: 6px 3px 6px 5px;
+  margin-left: 1px;
+  margin-top: 2px;
+  @include scale-button-normal-d(-320px, -90px);
+}
+.network-light-theme .VisNetworkStageScaleBar ._selectButton {
+  @include scale-button-normal-l(-320px, 0);
+}
+.VisNetworkStageScaleBar ._selectButton:hover {
+  @include scale-button-hover-d(-320px, -90px);
+}
+.VisNetworkStageScaleBar {
+  ._inputSelect:checked + label, ._selectButton:active {
+    @include scale-button-selected-d(-320px, -90px);
+  }
+}
+.network-light-theme .VisNetworkStageScaleBar ._selectButton:hover {
+  @include scale-button-hover-l(-320px, 0);
+}
+.network-light-theme .VisNetworkStageScaleBar {
+  ._inputSelect:checked + label, ._selectButton:active {
+    @include scale-button-selected-l(-320px, 0);
+  }
+}
+
+.VisNetwork ._layoutIcons {
+  position: absolute;
+  border: solid 1px #4D4D4D;
+  @include box-radius(3px);
+  box-shadow: 0px 1px 2px 0px black inset;
+  background: rgba(51, 51, 51, 0.9);
+}
+.network-light-theme.VisNetwork ._layoutIcons {
+  border-color: white;
+  box-shadow: 0px 1px 2px 0px gray inset;
+  background: rgba(215, 215, 215, 0.8);
+}
+.VisNetwork ._forceDirectedIcon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url('Network icons/View Icons/View Icons/Force_Normal.png') center no-repeat;
+  margin: 5px 3px 5px 5px;
+}
+.network-light-theme.VisNetwork ._forceDirectedIcon {
+  background: url('Network icons/View Icons/View Icons/Force_Normal_light.png') center no-repeat;
+}
+.VisNetwork ._forceDirectedIcon:hover {
+  background: url('Network icons/View Icons/View Icons/Force_Hover.png') center no-repeat;
+}
+.VisNetwork ._inputForceDirectedIcon:checked + label {
+  background: url('Network icons/View Icons/View Icons/Force_Active.png') center no-repeat;
+}
+.network-light-theme.VisNetwork ._forceDirectedIcon:hover {
+  background: url('Network icons/View Icons/View Icons/Force_Hover_light.png') center no-repeat;
+}
+.network-light-theme.VisNetwork ._inputForceDirectedIcon:checked + label {
+  background: url('Network icons/View Icons/View Icons/Force_Active_light.png') center no-repeat;
+}
+.VisNetwork ._circularIcon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url('Network icons/View Icons/View Icons/Circular_Normal.png') center no-repeat;
+  margin: 5px 3px;
+}
+.network-light-theme.VisNetwork ._circularIcon {
+  background: url('Network icons/View Icons/View Icons/Circular_Normal_light.png') center no-repeat;
+}
+.VisNetwork ._circularIcon:hover {
+  background: url('Network icons/View Icons/View Icons/Circular_Hover.png') center no-repeat;
+}
+.VisNetwork ._inputCircularIcon:checked + label {
+  background: url('Network icons/View Icons/View Icons/Circular_Active.png') center no-repeat;
+}
+.network-light-theme.VisNetwork ._circularIcon:hover {
+  background: url('Network icons/View Icons/View Icons/Circular_Hover_light.png') center no-repeat;
+}
+.network-light-theme.VisNetwork ._inputCircularIcon:checked + label {
+  background: url('Network icons/View Icons/View Icons/Circular_Active_light.png') center no-repeat;
+}
+.VisNetwork ._linearIcon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url('Network icons/View Icons/View Icons/Linear_Normal.png') center no-repeat;
+  margin: 5px 5px 5px 3px;
+}
+.network-light-theme.VisNetwork ._linearIcon {
+  background: url('Network icons/View Icons/View Icons/Linear_Normal_light.png') center no-repeat;
+}
+.VisNetwork ._linearIcon:hover {
+  background: url('Network icons/View Icons/View Icons/Linear_Hover.png') center no-repeat;
+}
+.VisNetwork ._inputLinearIcon:checked + label {
+  background: url('Network icons/View Icons/View Icons/Linear_Active.png') center no-repeat;
+}
+.network-light-theme.VisNetwork ._linearIcon:hover {
+  background: url('Network icons/View Icons/View Icons/Linear_Hover_light.png') center no-repeat;
+}
+.network-light-theme.VisNetwork ._inputLinearIcon:checked + label {
+  background: url('Network icons/View Icons/View Icons/Linear_Active_light.png') center no-repeat;
+}
+.VisNetworkMenu {
+  opacity: 0;
+}
+.VisNetworkMenu:hover {
+  opacity: 1;
+}
+.VisNetwork ._menuContent {
+  font: 10pt Arial;
+  color: white;
+  display: none;
+  white-space: nowrap;
+  background: #4D4D4D;
+  border-radius: 5px;
+}
+.VisNetwork ._menuContent tr {
+  padding: 5px;
+}
+.VisNetwork ._menuContent tr:hover {
+  background: black;
+}
+
+.VisNetworkLegendContainerExpended .VisNetworkLegendUnitContainer > div {
+    margin: 10px 0px 10px 0px;
+}
+
+.VisNetworkLegendContainerExpended .VisNetworkLegendUnitContainer > div:first-child {
+    padding-top: 5px;
+    border-top: transparent solid 2px;
+}
+
+.VisNetworkLegendContainerExpended:hover .VisNetworkLegendUnitContainer > div:first-child {
+   border-top-color: #424242;
+ }
+.network-light-theme .VisNetworkLegendContainerExpended:hover .VisNetworkLegendUnitContainer > div:first-child {
+  border-top-color: #d6d6d6;
+}
+
+.VisNetworkLegendDeleteButton {
+    visibility: hidden;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    -webkit-transform: rotate(45deg);
+}
+
+.VisNetworkLegendDeleteButton:before, .VisNetworkLegendDeleteButton:after {
+    content: "";
+    position: absolute;
+    background: #b0b0b0;
+}
+.VisLegendContainer.light-theme .VisNetworkLegendDeleteButton:before, .VisNetworkLegendDeleteButton:after {
+  background: #b0b0b0;
+}
+
+.VisNetworkLegendDeleteButton:before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+
+.VisNetworkLegendDeleteButton:after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
+}
+
+.VisNetworkLegendContainerExpended:hover .VisNetworkLegendDeleteButton {
+    visibility: visible;
+}
+
+.VisNetworkMenu ._trigger {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    z-index: 100;
+    background-image: url("../css/images/ive/context.png");
+}
+
+.VisNetworkMenu ._trigger:hover {
+    background-image: url("../css/images/ive/contextHover.png");
+}
+
+.VisLegendContainer ._BorderContainer {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  //border-left: 1px solid rgba(26, 26, 26, 0.8);
+  padding: 5px;
+  border-radius: 5px 0px 0px 5px;
+  background-color: rgba(26, 26, 26, 0.8);
+}
+
+.light-theme.VisLegendContainer ._BorderContainer {
+  background-color: #ebebeb;
+}
+
+.VisNetwork:hover {
+  .VisNetworkStageScaleBar, ._layoutIcons {
+    visibility: visible;
+  }
+}
+
+.VisNetwork {
+    overflow: hidden;
+  .VisNetworkStageScaleBar, ._layoutIcons {
+    visibility: hidden;
+  }
+}
+
+.ctrlOverlay .error-msg {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  .error-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: arial;
+    font-size: 8pt;
+  }
+}
+
+.mojo-theme-dark .ctrlOverlay .error-msg {
+  background-color: #1f1f1f;
+
+  .error-content {
+    color: #606060;
+  }
+}
+
+.mojo-theme-light .ctrlOverlay .error-msg {
+
+  .error-content {
+    color: #b6b6b6;
+    padding: 25px;
+    line-height: 18px;
+
+    .warning-icon {
+      overflow: hidden;
+      width: 40px;
+      height: 33px;
+      margin-left: auto;
+      margin-right: auto;
+      background: url(vi/images/menu_icons.png) 300px 250px;
+    }
+
+    .text {
+      padding-top: 3px;
+      line-height: 18px;
+      color: #b6b6b6;
+    }
+  }
+}

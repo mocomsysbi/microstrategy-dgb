@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.ListBase2","mstrmojo.ListMapperHoriz","mstrmojo.ListBuilder");mstrmojo.ListHoriz=mstrmojo.declare(mstrmojo.ListBase2,null,{scriptClass:"mstrmojo.ListHoriz",renderOnScroll:true,listMapper:mstrmojo.ListMapperHoriz,listBuilder:mstrmojo.ListBuilder,itemField:"n",itemMarkup:null,itemMarkupFunction:null});})();

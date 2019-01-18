@@ -1,0 +1,7 @@
+@import '../vi/vi-global';
+
+.mstrmojo-tutorial-introcontent .intro-info {
+    .intro-title {
+        background: url(#{$vi-img-path}/welcome/desktop_logo.png) no-repeat 0px 0px;
+    }
+}

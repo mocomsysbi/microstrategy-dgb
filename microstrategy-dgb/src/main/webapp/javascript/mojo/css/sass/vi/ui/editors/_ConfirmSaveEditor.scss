@@ -1,0 +1,92 @@
+@import '../../vi-global';
+
+/** beginning of ConfirmSave Editor */
+.mstrmojo-ConfirmSave-Editor, .mstrmojo-ConfirmEditLink-Editor {
+    width: 376px;
+
+    .mstrmojo-Editor-content {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .mstrmojo-Warning-Box {
+        position: relative;
+
+        tr td:first-child {
+            width: 72px;
+        }
+        .icon {
+            width: 40px;
+            height: 36px;
+            background: url("#{$vi-img-path}/menu_icons.png") no-repeat scroll -150px -150px rgba(0, 0, 0, 0);
+            margin: 0 16px;
+        }
+        .message {
+            line-height: 18px;
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        .mstrmojo-Editor-buttonBar {
+            tr td:first-child {
+                width: 99%;
+            }
+
+            .mstrmojo-WebButton {
+                min-width: 66px;
+            }
+
+            .mstrmojo-WebButton.nosave {
+                width: 120px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.mstrmojo-ConfirmSave-Editor {
+
+    .mstrmojo-Warning-Box {
+        margin-bottom: 18px;
+    }
+
+    .mstrmojo-Prompt-CheckBox {
+        padding-left: 12px;
+    }
+}
+
+.mstrmojo-ConfirmEditLink-Editor {
+  width: 436px;
+
+  .mstrmojo-Editor-content {
+      padding-top: 16px;
+      padding-bottom: 16px;
+  }
+
+  .mstrmojo-Editor-title {
+      font-size: 12px;
+  }
+
+  .mstrmojo-Warning-Box {
+    min-height: 54px;
+    .message {
+      width: 310px;
+      padding-left: 18px;
+      word-wrap: break-word;
+      overflow: hidden;
+    }
+  }
+
+  .mstrmojo-Editor-buttons {
+    .mstrmojo-Editor-buttonBar {
+      .mstrmojo-WebButton {
+        .mstrmojo-Button-text {
+          vertical-align: middle;
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+/** end of ConfirmSave Editor */

@@ -1,0 +1,132 @@
+.mstrmojo-DBTableLinker {
+  width: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.mstrmojo-DBTableLinker > canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.mstrmojo-di-tableview {
+  position: relative;
+  top: 0;
+  -moz-user-select: none; //YGUO TQMS-966399 Set the table container selection to none for Mozilla browser.
+  overflow: hidden;
+  // DE97529: [GUI]Scroll bar on preview page not  visible on Safari
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.mstrmojo-di-DBTablePanel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  @include scrollBar();
+  padding: 0 18px;
+  .button-node {
+    float: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container-node {
+    @include scrollBar;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    &:hover {
+      overflow: auto;
+      .mstrmojo-di-tableview { //TQMS: 997666, for IE9
+        overflow: auto;
+      }
+    }
+  }
+
+  .button-label {
+    margin: 16px 0 16px 0;
+    width: 175px;
+    height: 260px;
+    line-height: 305px;
+    border: 1px dashed #A4A4A4;
+    text-align: center;
+    cursor: pointer;
+    background-color: #F0F0F0;
+    color: #ABAEB2;
+    font-size: 12px;
+  }
+
+  .button-label-hover {
+    margin: 16px 0 16px 0;
+    width: 175px;
+    height: 260px;
+    line-height: 305px;
+    border: 1px dashed #A4A4A4;
+    text-align: center;
+    cursor: pointer;
+    background-color: #F0F0F0;
+    font-size: 11px;
+    coler:#444649;
+  }
+
+  .plus-background {
+    background: url("images/DI/add_tables.svg") no-repeat;
+    //background-image: url("images/DI/workstation/workstation.svg");
+    //background-repeat: no-repeat;
+    //background-position: -980px -10px;
+    background-position: bottom;
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    cursor: pointer;
+    top: 80px;
+    left: 20px;
+  }
+
+  .plus-background-hover {
+    //background-image: url("images/DI/workstation/workstation.svg");
+    //background-repeat: no-repeat;
+    //background-position: -1180px -10px;
+    background: url("images/DI/add_tables.svg") no-repeat;
+    background-position: bottom;
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    cursor: pointer;
+    top: 80px;
+    left: 20px;
+  }
+
+  .disable-button {
+    cursor: not-allowed;
+  }
+}
+
+// Overrides for Workstation
+.workstation {
+  .mstrmojo-di-DBTablePanel {
+
+    .button-label, .button-label-hover {
+      background-color: $primary-white;
+    }
+
+    .plus-background, .plus-background-hover {
+      background: url("images/DI/workstation/workstation.svg") no-repeat -1000px -10px;
+      width: 120px;
+      height: 85px;
+      left: 43px;
+      top: 75px;
+    }
+
+    //.plus-background-hover {
+    //  background-position: -1200px -10px;
+    //}
+  }
+}

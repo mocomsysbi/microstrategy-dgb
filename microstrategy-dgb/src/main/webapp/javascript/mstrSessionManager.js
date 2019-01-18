@@ -1,0 +1,1 @@
+microstrategy.mojoLoader.loadWidget({bundle:"mojo-session-manager.js",callback:function(){mstrApp.sessionManager=microstrategy.sessionManager=mstrmojo.insert({scriptClass:"mstrmojo.SessionManager",timeBeforeSessionTimeoutWarning:mstrApp.timeBeforeSessionTimeoutWarning,maxSessionIdleTime:mstrApp.maxSessionIdleTime});mstrApp.sessionManager.start();}});

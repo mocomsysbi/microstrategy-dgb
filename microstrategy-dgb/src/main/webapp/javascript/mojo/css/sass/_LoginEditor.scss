@@ -1,0 +1,92 @@
+@import '_global';
+
+/** Begin Login Editor */
+.mstrmojo-LoginEditor {
+    width: 300px;
+    &.usher {width: 440px;}
+
+    .mstrmojo-Editor-title {
+        max-width: 220px;
+    }
+
+    &,
+    .mstrmojo-TextBox {
+        @include box-sizing;
+    }
+
+    .mstrmojo-TextBox {
+        font-size: 11px;
+        height: 25px;
+        width: 100%;
+        border: 1px solid #B5B5B5;
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0px 0px 1px 0 rgba(0, 0, 0, 0.2), 0px 1px 1px 0 rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: inset 0px 0px 1px 0 rgba(0, 0, 0, 0.2), 0px 1px 1px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0px 0px 1px 0 rgba(0, 0, 0, 0.2), 0px 1px 1px 0 rgba(0, 0, 0, 0.1);
+    }
+    .login-username {
+        margin: 0 0 10px;
+    }
+
+    .mstrmojo-Editor-content {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .mstrmojo-LoginEditor-authMode {
+        margin: 20px 0 0 5px;
+        padding: 0 0 0 20px;
+        background: url(#{$mojo-img-path}/checkbox_sprite.png) no-repeat -6px -415px transparent;
+    }
+
+    .mstrmojo-Editor-buttons .mstrmojo-WebButton {
+        min-width: 70px;
+    }
+
+    .login-tsvCode {
+      margin: 10px 0 0 0;
+    }
+
+    .mstrmojo-Button.mstrmojo-WebButton.login-button {
+        height: 30px;
+        width: 150px;
+        font-size: 1.2em;
+        background: white;
+        border: 1px solid #c0c0c0;
+        margin: 0px;
+        font-weight: bold;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        background: rgb(238,238,238) !important;
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#cccccc',GradientType=0 );
+        background: -webkit-linear-gradient(top, rgba(242,242,242,1) 0%,rgba(204,204,204,1) 100%) !important;
+        background: -moz-linear-gradient(top, rgba(242,242,242,1) 0%,rgba(204,204,204,1) 100%) !important;
+        background: linear-gradient(to bottom, rgba(242,242,242,1) 0%,rgba(204,204,204,1) 100%) !important;
+        color: #656565 !important;
+        cursor: pointer;
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+
+    .mstrmojo-Button.mstrmojo-WebButton.login-button .mstrmojo-Button-text {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #1a1a1a;
+        display: block;
+        font-family: arial;
+        font-weight: bold;
+        height: auto;
+        line-height: 22px;
+        padding: 0 8px;
+        text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+        width: auto;
+        text-align: center;
+    }
+}
+
+/** End Login Editor */

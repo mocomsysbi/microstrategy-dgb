@@ -1,0 +1,62 @@
+@import '../themes';
+@import '../../global-mixins';
+
+.mstrmojo-RootView-sharelinkbar {
+        .mstrmojo-ShareLinkBar {
+            height: 40px;
+            background-color: #3492ED;
+            text-align: center;
+
+            .indicate-content {
+                display: inline-block;
+                line-height: 40px;
+
+                .share-link-bar-content {
+                    height: 40px;
+
+                    .share-link-bar-content-text {
+                        font-size: 14px;
+                        color: white;
+                        display: inline-block !important;
+                        font-weight: lighter;
+                        background: url(vi/images/dossier_banner_sprite.svg) 6px 12px no-repeat;
+                        padding-left: 40px;
+                        background-size: 30px 50px;
+                        height: 40px;
+                    }
+                }
+            }
+
+            .button-panel {
+                float: right;
+                position: relative;
+                background-color: #3492ED;
+
+                .share-link-bar-button-box{
+                    height: 40px;
+
+                    .share-link-bar-launch-button {
+                        border: 1px solid white;
+                        cursor: pointer;
+                        line-height: 25px;
+                        padding: 0 15px;
+                        margin: 6px 10px;
+                        font-size: 14px;
+                        color: white;
+                        display: inline-block !important;
+                        border-radius: 3px;
+                    }   
+
+                    .share-link-bar-close-button {
+                        display: inline-block !important;
+                        background: url(vi/images/dossier_banner_sprite.svg) 5px -25px no-repeat;
+                        background-size: 50px 62px;
+                        height: 40px;
+                        width: 40px;
+                        cursor: pointer;
+                        vertical-align: top;
+                    }  
+                }
+            }
+        }
+    }

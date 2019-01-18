@@ -1,0 +1,54 @@
+#RwMenuModel_WEB-INFxmllayoutsblocksInsertDHTMLWidgetMenuLayoutxml #mnuInsertWgSequencesSunburst {
+    background:url(images/icon.svg)  no-repeat scroll 4px;
+    background-size: 16px;
+}
+
+#RwMenuModelEditor_WEB-INFxmllayoutsblocksInsertDHTMLWidgetMenuEditorLayoutxml #mnuInsertWgSequencesSunburst {
+    background:url(images/icon.svg)  no-repeat scroll 4px;
+    background-size: 16px;
+}
+
+.custom-vis-layout.sequencessunburst #main {
+ float: left;
+ width: 750px;
+ }
+
+.custom-vis-layout.sequencessunburst #sidebar {
+ float: right;
+ width: 100px;
+ }
+
+.custom-vis-layout.sequencessunburst #sequence {
+ height: 70px;
+ }
+
+.custom-vis-layout.sequencessunburst #legend {
+ padding: 10px 0px 0px 3px;
+ }
+
+.custom-vis-layout.sequencessunburst #sequence text, .custom-vis-layout.sequencessunburst #legend text {
+ font-weight: 600;
+ fill: rgb(255, 255, 255);
+ }
+
+.custom-vis-layout.sequencessunburst #chart {
+ position: relative;
+ }
+
+.custom-vis-layout.sequencessunburst #chart path {
+ stroke: rgb(255, 255, 255);
+ }
+
+.custom-vis-layout.sequencessunburst #explanation {
+ position: absolute;
+ width: 140px;
+ text-align: center;
+ vertical-align: middle;
+ color: rgb(102, 102, 102);
+ z-index: -1;
+ }
+
+.custom-vis-layout.sequencessunburst #percentage {
+ font-size: 2.5em;
+ }
+

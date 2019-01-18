@@ -1,0 +1,184 @@
+@import '../../ar-global';
+
+/** BEGIN:  TransformationEditor **/
+.mstrmojo-ar-trns-Editor {
+  background-color: #f6f6f6;
+  display: block !important;
+}
+
+.mstrmojo-ar-trns-content{
+  display: block !important;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+}
+
+.mstrmojo-architect-TransformationSettingMenu > td {
+  max-width: 150px;
+  white-space: pre-line;
+}
+
+.mstrmojo-ar-trns-expressionGroup, .mstrmojo-ar-trns-tableGroup {
+  margin: 10px;
+  width: 200px;
+}
+
+.mstrmojo-ar-trns-tablesContent {
+  margin: -5px;
+  font-family: Arial;
+  font-size: 9pt;
+  font-weight: normal;
+  vertical-align: top;
+  min-width: 160px;
+  padding: 7px 12px;
+}
+
+.mstrmojo-ar-trns-expGroupLabel, .mstrmojo-ar-trns-tableGroupLabel {
+  font-family: Arial;
+  font-size: 10pt;
+  font-weight: normal;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.mstrmojo-ar-trns-tableGroupPullDown {
+  width: 200px;
+  margin-bottom: 5px;
+  > .mstrmojo-ui-Pulldown-text {
+    background: white url(#{$image-path}/arrow-down.png) no-repeat 98% center;
+    height: 14px;
+    line-height: 14px;
+    padding: 5px 20px 5px 25px;
+    border: 1px solid #DDD;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:after {
+      content: '';
+      height: 18px;
+      width: 16px;
+      position: absolute;
+      background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/object_icons.png) no-repeat left -98px;
+      top: 2px;
+      left: 5px;
+    }
+  }
+}
+
+.mstrmojo-ar-trns-tablesContent > .mstrmojo-ui-Pulldown .mstrmojo-PopupList .item {
+  background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/object_icons.png) no-repeat 6px -98px;
+  padding: 5px 20px 5px 25px;
+  cursor: pointer;
+  cursor: pointer;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mstrmojo-Editor-button.mstrmojo-ar-trns-applybutton {
+  float: right;
+  margin: 0px 5px 10px 10px;
+}
+
+.mstrmojo-ar-trns-actionButtons {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.mstrmojo-ar-trns-exprEditBox {
+  margin: 0;
+}
+
+.mstrmojo-ar-trns-colList {
+  overflow: auto;
+  width: 200px;
+  border: solid 1px #ccc;
+  background-color: #FFFFFF;
+  .item {
+    padding: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .item-icn {
+    background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/object_icons.png) no-repeat 3px -125px;
+    padding: 1px 9px;
+    margin-right: 4px;
+    overflow: hidden;
+  }
+  .item:hover {
+    background-color: #fafafa;
+  }
+  &.hasOwnAvatar {
+    position: absolute;
+    border: 1px solid #AAA;
+    background: #EEE;
+    width: auto;
+    margin: 2px;
+  }
+}
+
+.mstrmojo-ar-trns-datarow {
+  height: 20px;
+}
+
+.mstrmojo-ar-trns-dataRow-header {
+  margin-left: 5px;
+}
+
+.mstrmojo-ar-trns-gridbox .mstrmojo-DataRow:hover .mstrmojo-ar-trns-datarow.delete {
+  background: url(#{$wh-image-path}/panel_icons.png) no-repeat 0px -118px;
+}
+
+.mstrmojo-ar-trns-datarow {
+  &.label {
+    float: left;
+    width: 100%;
+    line-height: 20px;
+    &.tp12 {
+      background: url(#{$wh-image-path}/object_icons.png) no-repeat left -326px;
+      padding-left: 18px;
+      margin-left: 5px;
+    }
+    &.tp15 {
+      background: url(#{$wh-image-path}/object_icons.png) no-repeat left -98px;
+      margin-left: 12px;
+      padding-left: 18px;
+    }
+    &.exp {
+      background: none;
+      width: 80%;
+      padding-left: 0;
+      margin-left: 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  &.delete {
+    float: right;
+    padding-right: 28px;
+    cursor: pointer;
+  }
+}
+
+.mstrmojo-ar-trns-gridbox .mstrmojo-DataRow:hover .mstrmojo-ar-trns-datarow.delete.hidden {
+  background: none;
+}
+
+.mstrmojo-ar-trns-datarow.hidden {
+  display: none !important;
+}
+
+div.mstrmojo-ar-trns-datarow.dropArea {
+  height: 50px;
+  font-size: 14pt;
+  font-style: italic;
+  white-space: normal;
+  padding-top: 20px;
+}
+/** END: TransformationEditor **/

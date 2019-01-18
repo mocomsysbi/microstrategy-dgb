@@ -1,0 +1,166 @@
+@import '_avatar_icon_common_style';
+
+.workstation{
+    /** BEGIN: TitleBar **/
+    .mstrmojo-VITitleBar {
+        & > DIV {
+            float: left;
+        }
+
+        .left-toolbar .mstrmojo-Image {
+            background: transparent url(#{$wsvi-main-icons-sprite}) 5000px 5000px no-repeat;
+            height: 18px;
+            margin: 7px 0 2px 0;
+            width: 18px;
+        }
+
+        .title-text {
+            overflow: hidden;
+        }
+
+        .mstrmojo-EditableLabel {
+            font-size: $wsvi-normal-font-size;
+            font-weight: bold;
+            line-height: 28px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &.editable {
+                text-overflow: clip;
+            }
+        }
+
+        &.small {
+            background: transparent;
+
+            .left-toolbar .mstrmojo-Image {
+                margin-top: 3px;
+            }
+
+            .title-text .mstrmojo-EditableLabel {
+                font-size: 11px;
+                font-weight: normal;
+                line-height: 18px;
+            }
+        }
+
+        .left-toolbar.hidden {
+            visibility: hidden;
+        }
+    }
+
+    .mstrmojo-filterportlet-avatar.hasOwnAvatar {
+        .mstrmojo-VIPanel-titlebar {
+            background: rgba(200, 200, 200, 0.6);
+            border: 2px solid transparent;
+            border-radius: 3px;
+            cursor: pointer;
+            display: block;
+            font-size: 11px;
+            font-weight: bold;
+            height: 20px;
+            line-height: 22px;
+            margin: 4px 3px;
+            overflow: hidden;
+            padding: 0 20px 0 5px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: auto !important;
+
+            .mstrmojo-VITitleBar {
+                width: auto !important;
+
+                .left-toolbar {
+                    display: none;
+                }
+                .title-text {
+                    width: auto !important;
+                }
+            }
+        }
+
+        &:after {
+            display: none;
+            @include avatar-icon-common-style;
+        }
+
+        &.remove:after {
+            @include icon-style('remove');
+            display: block;
+        }
+    }
+
+    .hasOwnAvatar .mstrmojo-VITitleBar.small .mstrmojo-VITitleToolbar .item > DIV.icn {
+        //background: transparent url(#{$vi-img-path}/glyphicons.png) -312px 0 no-repeat;
+        background: transparent none 0 50% no-repeat;
+    }
+
+    .mstrmojo-ui-MenuEditor .me-content {
+        .mstrmojo-VITitleBar .title-text .mstrmojo-EditableLabel {
+            color: $theme-light-panel-header;
+        }
+    }
+    /** END: TitleBar **/
+
+    /** BEGIN: TitleBar Themes **/
+    .mojo-theme-light {
+        .mstrmojo-VITitleBar {
+            .left-toolbar .mstrmojo-Image {
+                background-position: -510px -30px;
+            }
+
+            &.collapsed {
+                .left-toolbar .mstrmojo-Image {
+                    background-position: -510px -60px;
+                }
+            }
+
+            .mstrmojo-EditableLabel {
+                color: $theme-light-panel-header;
+            }
+        }
+    }
+
+    .mojo-theme-dark {
+        .mstrmojo-VITitleBar {
+            .left-toolbar .mstrmojo-Image {
+                background-position: 1px -199px;
+            }
+
+            &.collapsed {
+                .left-toolbar .mstrmojo-Image {
+                    background-position: 1px -228px;
+                }
+            }
+
+            .mstrmojo-EditableLabel {
+                color: $theme-dark-panel-header;
+            }
+        }
+    }
+    /** END: TitleBar Themes **/
+
+}
+
+//@if $env == 'web' {}
+//@else {
+//    .workstation.none-mac {
+//        // DE55869 hide help doc link on workstation
+//        // DE61010 only hide server based doc link on workstation
+//        .mstrmojo-Editor-title-container {
+//            .edt-title-btn.mstrmojo-Editor-help {
+//                visibility: hidden;
+//            }
+//        }
+//    }
+//}
+
+.workstation.none-mac.mstr-one-tier.user-select-none {
+    // DE61653 add help button in windows workstation
+    .mstrmojo-Editor-title-container {
+        .edt-title-btn.mstrmojo-Editor-help {
+            visibility: unset;
+        }
+    }
+}

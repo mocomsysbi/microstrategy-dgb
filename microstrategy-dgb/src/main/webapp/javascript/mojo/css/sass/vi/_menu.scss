@@ -1,0 +1,96 @@
+@import 'vi-global';
+@import 'themes';
+
+/** BEGIN: VI Menu **/
+// TODO: Shouldn't this be in the more specific widgets instead of the generic menu partial ?
+.mstrmojo-ui-Menu {
+    .mstrmojo-ui-Menu-item {
+        &.all, &.ds, &.attr, &.mx {
+            padding-left: 25px;
+            > .micn {
+                left: 6px;
+            }
+        }
+
+        &.ds > .micn {
+            background: url(#{$vi-img-path}/unitList/icon_dataset_sprite.png) 0 -240px;
+            top: 4px;
+        }
+        &.ds.grid-source:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            border: 0 solid transparent;
+            background: rgba(237, 237, 237, 0.96) url(#{$mojo-img-path}/checkbox_sprite.png) 50% -191px no-repeat;
+            height: 22px;
+            width: 19px;
+            right: 0;
+            top: 0;
+        }
+        &.ds.grid-source:hover:after{
+            @include single-transition($property: background-color, $duration: 400ms);
+            background-color: #dadada;
+        }
+
+        &.attr > .micn {
+            background-image: url(#{$vi-img-path}/unitList/attribute.png);
+            top: 2px;
+        }
+
+        &.mx > .micn {
+            background-image: url(#{$vi-img-path}/unitList/metric.png);
+            top: 2px;
+        }
+    }
+}
+
+.mstrmojo-ui-ToolbarEditor {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    @include box-shadow(rgba(0,0,0,0.85), 0, 0, 4px);
+    border: 1px solid rgba(80,80,80,0.6);
+    min-width: 145px;
+    max-width: 500px;
+    padding: 0;
+    z-index: 1000;
+
+    //to convert the pt from photoshop to pt in the css. Formula: 1 pt_in_PS = 72 * PPI / 9216 pt_in_CSS, takes PPI=96 here.
+    $factor:72/96;
+    .te-content {
+        padding: 9px 17px 9px 17px;
+        min-width: 120px;
+        max-width: 450px;
+        .mstrmojo-Label
+        {
+            font-size: 11pt * $factor;
+            font-family: Arial;
+        }
+    }
+}
+
+.mstrmojo-Tooltip.vi-regular.menuTooltip {
+    &.vi-tooltip-C,
+    &.vi-tooltip-D {
+        .mstrmojo-Tooltip-arrow {
+            top: 6px;
+        }
+    }
+    .mstrmojo-Tooltip-content {
+        max-width: none;
+    }
+}
+
+.mojo-theme-dark .mstrmojo-ui-ToolbarEditor {
+    color: #CDCDCD;
+    background-color: #3F3F3F;
+    border-color: #525252;
+}
+
+.mojo-theme-light .mstrmojo-ui-ToolbarEditor {
+    background-color:#E5E5E5;
+    color:#4A4A4A;
+    border-color: #F4F4F4;
+}
+/** END: VI Menu **/

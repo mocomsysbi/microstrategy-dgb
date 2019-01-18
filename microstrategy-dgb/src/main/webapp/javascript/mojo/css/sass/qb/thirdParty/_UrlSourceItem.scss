@@ -1,0 +1,38 @@
+.qb-bi-source-url-list{
+  margin-bottom: 7px;
+  width: 260px;
+  height: 26px;
+  background: #e5f3fe;
+  border: 1px solid #c6e5fc;
+  border-radius: 3px;
+  color: #515151;
+  line-height: 26px;
+
+  .urlItem-text-div{
+    width: 210px;
+    float: left;
+    margin-right: 0;
+  }
+  .mstrmojo-InlineEditBox-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 210px;
+  }
+  .mstrmojo-url-delete-button{
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2500px -42px;
+    height: 9px;
+    width: 9px;
+    float: right;
+    margin: 9px 9px 0px 0px;
+  }
+  .mstrmojo-di-url-icon{
+    width: 11px;
+    height: 15px;
+    display: inline-block;
+    margin: 6px 6px 6px 9px;
+    background: url(images/DI/workstation/workstation.svg) no-repeat -2102px -10px;
+    float:left;
+  }
+
+}

@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumDataMode={DM_GENERIC:0,DM_TEMPLATE:1,DM_AE_ADAPTER:2,DM_AE_ADAPTER_REFORMED:3,DM_DP:4};

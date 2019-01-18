@@ -1,0 +1,82 @@
+// sass path: ../../../../
+@import '../../../../vi/workstation-global';
+@import '../../../../vi/vi-icons';
+@import '../../../../theme-mixins-ws';
+@import '../../../../Button-ws';
+
+.workstation .mstrmojo-ParentPanel.mstrmojo-ui-vi-ElementsBrowser {
+	margin: 10px;
+	width: 242px;
+
+	.mstrmojo-Box {
+	    .mstrmojo-Label {
+	      font-weight: bold;
+	      overflow: hidden;
+	      white-space: nowrap;
+	      text-overflow: ellipsis;
+	      height: 18px;
+
+	      &:first-child {
+	        width: 50px;
+	      }
+
+	      &:last-child {
+	        width: 192px;
+
+	      }
+	    }
+	}
+
+	.disableMsg {
+		height: 153px;
+		padding: 117px 0 0 0;
+
+		div {
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			-ms-word-wrap: break-word;
+		}
+	}
+
+	.eb-box-search {
+	  background-color: transparent;
+	  width: 100%;
+	  margin: 0 0 5px 0;
+
+	  .eb-searchBox-clear {
+	  	left: auto;
+	  	right: 4px;
+	  }
+
+	  .eb-searchBox {
+	    background-color: white;
+	    width: 100%;
+
+	    &.mstrmojo-empty {
+	    	padding-left: 87px;
+	    	background-position-x: 60px;
+	    }
+	  }
+
+	  .mstrmojo-Button {
+	    margin: 0px;
+	  }
+	}
+
+	.mstrmojo-SearchBox-Wrapper {
+	  margin: 0 0 5px 0;
+
+	  .mstrmojo-SearchBox {
+	    width: 212px;
+
+	    .mstrmojo-SearchBox-input {
+	      border-width: 0;
+	      padding: 0;
+	    }
+	  }
+
+	  .mstrmojo-SearchBox-options {
+	    display: none;
+	  }
+	}
+}

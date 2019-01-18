@@ -1,0 +1,15 @@
+/** START: Editable Label **/
+@import 'global';
+@import 'global-mixins';
+
+.mstrmojo-EditableLabel {
+  &.unselectable {
+    cursor: default;
+    @include user-select(none);
+  }
+  &.editable {
+    @include user-select(text);
+  }
+}
+
+/** END: Editable Label **/

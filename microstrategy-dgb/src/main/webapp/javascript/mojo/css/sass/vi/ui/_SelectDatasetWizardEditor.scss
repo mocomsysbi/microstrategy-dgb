@@ -1,0 +1,32 @@
+/** BEGIN: Recon Editor **/
+.mstrmojo-SelectDatasetWizardEditor {
+  width:500px;
+  color: #000;
+}
+
+.SelectDatasetWizardEditor-h1 {
+  padding: 10px 0 0 10px;
+  font-size: 14px;
+}
+.SelectDatasetWizardEditor-h2 {
+  border-top: 1px solid #aaa;
+  padding-left: 10px;
+  font-size: 14px;
+  padding-top: 4px;
+  margin-top: 5px;
+}
+.SelectDatasetWizardEditor-entry {
+  padding: 5px 0 5px 40px;
+  cursor:pointer;
+}
+.SelectDatasetWizardEditor-entry:hover {
+  color: #0066CC;
+  text-decoration: underline;
+}
+
+.mstrmojo-SelectDatasetWizardEditor .mstrmojo-Editor-button {
+  float: right;
+  margin: 0 10px 10px 0;
+}
+
+/** END: Recon Editor**/

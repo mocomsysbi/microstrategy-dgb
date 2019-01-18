@@ -1,0 +1,75 @@
+.workstation{
+    .mstrmojo-ui-ButtonBar {
+        @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+
+        border: 1px solid #b5b5b5;
+        height: $wsvi-input-control-height;
+        @include box-sizing();
+
+        &.disabled {
+            @include border-radius(2px);
+            @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+
+            .item {
+              opacity: 0.35 !important; // #VIRevamp
+            }
+        }
+
+        .item {
+            cursor: default;
+            display: table-cell;
+            border-left: 1px solid $wsvi-ui-border-gray-light-theme;
+            height: 20px;
+            text-decoration: none;  // Overrides ".underline" class in core.css
+
+            &:first-child {
+                border-left-color: transparent;
+            }
+
+            & > div {
+                height: 100%;
+            }
+
+            &.bold,
+            &.italic,
+            &.underline,
+            &.strikeout {
+                width: 28px;
+                height: 25px;
+            }
+        }
+
+        &.btn-text {
+            .item {
+                line-height: 20px;
+                text-align: center;
+                font-size: 11px;
+                font-weight: normal;
+                color: $wsvi-primary-black;
+                // DE57599: middle alignment vertically
+                padding-top: 1px;
+            }
+        }
+    }
+
+    .mojo-theme-light .mstrmojo-ui-ButtonBar.spacing {
+        border: none; // Removes the outter border for the box
+        // https://stackoverflow.com/questions/44429380/spacing-between-columns-in-a-table
+        border-spacing: 6px 0;
+        box-shadow: none; // Removes the box-shadow for the box and put the box-shadow to each item.
+        background: transparent; // Overrides the background from ButtonBar
+        // Add styling (box-shadow and border) for each item
+        .item {
+            @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+            border: 1px solid $wsvi-ui-border-gray-light-theme; 
+            border-radius: 2px;
+            &:first-child {
+                border-left-color: $wsvi-ui-border-gray-light-theme; // Overrides the transparent left border for the first-child from ButtonBar
+            }
+        }
+        .item:not(.selected) {
+            background-color: #FFFFFF; // Set the background to white instead of transparent if the item is not selected.
+        }
+    }
+    
+}

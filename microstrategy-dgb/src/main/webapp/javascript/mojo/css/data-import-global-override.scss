@@ -1,0 +1,59 @@
+/*
+Since many pulldown list style is effected by global mixin or other global styles,
+which could not be modified in case it influence other places,
+and these styles is not consistent with the new styles,
+so use this file to override the global styles in DI,
+to avoid modifying them one by one.
+ */
+@import "sass/vi/workstation-global";
+
+ @import "sass/vi/workstation-global";
+
+.mstrmojo-Pulldown-Popup {
+  background-color: white !important;
+  border: 1px solid $wsvi-ui-border-gray !important;
+  .mstrmojo-Pulldown-listItem:hover {
+    background-color: $wsvi-hover-gray !important;
+  }
+  .mstrmojo-Pulldown-listItem.selected {
+    background-color: $wsvi-primary-blue !important;
+    color: white !important;
+  }
+}
+
+.mstrmojo-ui-Pulldown-text {
+  background-color: white !important;
+  background-image: url("vi/images/dropdown_arrow-ws.svg") !important;
+  background-position-y: 4px !important;
+}
+
+.mstrmojo-PopupList {
+  background-color: white !important;
+}
+
+.mstrmojo-Pulldown {
+  .mstrmojo-Pulldown-iconNode {
+    background-position-y: 3px !important;
+  }
+}
+
+.mstrmojo-DropDownButton-iconNode {
+  background-image: url("vi/images/dropdown_arrow-ws.svg") !important;
+  background-position: right 4px !important;
+}
+
+.mstrmojo-FormatEditor-DropDownButton{
+  .mstrmojo-Popup{
+    .mstrmojo-Popup-content.mstrmojo-OBNavigatorPopup {
+      border-color:rgba(68, 70, 73,0.2) !important;
+    }
+  }
+}
+
+.refine-menu-container {
+  .refine-cell-editor-text {
+    div {
+      background-color: white !important;
+    }
+  }
+}

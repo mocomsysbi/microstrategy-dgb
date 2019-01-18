@@ -1,0 +1,183 @@
+@import '../../../_global.scss';
+@import '../../_vi-icons.scss';
+@import '../../_workstation-global.scss';
+
+/** Start ExportOptionsEditor **/
+.mstrmojo-Editor.mstrmojo-ExportOptionsEditor {
+    width: 418px;
+    height: 442px;
+    .mstrmojo-Label {
+        margin-bottom: 0;
+        font-size: 12px;
+        height: 22px;
+        line-height: 26px;
+    }
+
+    .mstrmojo-Editor-content {
+        height: 339px;
+        padding: $wsvi-element-padding 16px 0 16px;
+        border-bottom: 1px solid #DEDEDE;
+
+        .tabBar {
+            .mstrmojo-ui-ButtonBar {
+                width: 270px;
+                height: 26px;
+                margin: 0 auto 16px auto;
+
+                .item {
+                    width: 33%;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-Label.ExportEditor-title {
+            font-weight: bold;
+            height: 26px;
+            line-height: 26px;
+
+            &.large-title {
+                padding: 0 0 $wsvi-element-text-padding 0;
+            }
+        }
+
+        .mstrmojo-IconLabel {
+            margin-bottom: 0;
+            font-size: 12px;
+            line-height: 26px;
+
+            .info-icon {
+                height: 18px;
+                width: 18px;
+                display: inline-block;
+                margin-bottom: -4px;
+                margin-left: $wsvi-verticalinput_padding_small;
+                @include wsvi-icon-info;
+            }
+        }
+
+        .mstrmojo-Box.general, .mstrmojo-Box.layout {
+            > .mstrmojo-Box {
+                padding: $wsvi-element-text-padding 0;
+                border-bottom: 1px solid #DEDEDE;
+                @include box-shadow(#fff, 0, 1px, 0, false);
+
+                &:first-child {
+                    padding: 0 0 $wsvi-element-text-padding 0;
+                }
+
+                &:last-child {
+                    padding: $wsvi-element-text-padding 0;
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        .mstrmojo-Box.time-setting {
+            height: 22px;
+            padding-top: $wsvi-element-text-padding;
+            padding-bottom: $wsvi-element-padding;
+
+            > div {
+                float: left;
+            }
+
+            .mstrmojo-Stepper {
+                width: 58px;
+
+                .text .mstrmojo-TextBox {
+                    padding: 0 5px;
+                    height: 25px;
+                    width: 100%;
+                }
+            }
+
+            .mstrmojo-Label.unit {
+                padding: 0 $wsvi-verticalinput_padding_big;
+            }
+        }
+
+        .mstrmojo-Box.paper-size {
+            height: 22px;
+            padding: 0 0 10px 0;
+
+            > div {
+                float: left;
+            }
+
+            > .mstrmojo-Label {
+                width: 60px;
+                padding-right: 16px;
+            }
+
+            .mstrmojo-ui-Pulldown {
+                width: 185px;
+                height: 22px;
+                @include box-shadow(none);
+            }
+        }
+
+        .mstrmojo-Box.page-orientation {
+            height: 66px;
+            padding-bottom: 10px; // i.e. 2 * $wsvi-element-text-padding
+
+            > div {
+                float: left;
+            }
+
+            > .mstrmojo-Label {
+                width: 60px;
+                padding-right: 16px;
+            }
+        }
+
+        .mstrmojo-Box.security {
+            .controlSwitch {
+                border: 0 solid;
+
+                .tips {
+                    margin-left: 18px;
+                }
+            }
+
+            table.mainContent {
+                td {
+                    padding: 4px 0;
+                }
+
+                .mstrmojo-Label {
+                    font-weight: bold;
+                    text-align: right;
+                    min-width: 120px;
+                    margin: 0 4px;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        padding: 16px;
+        margin-top: 1px;
+
+        .mstrmojo-Button {
+            float: right;
+            width: 69px;
+            height: 26px;
+            margin: 0 0 0 9px;
+        }
+    }
+
+    &.single-viz-export {
+        .mstrmojo-Editor-content {
+            height: 339px;
+        }
+
+        .general {
+            display: none !important;
+        }
+    }
+}
+/** End ExportOptionsEditor **/

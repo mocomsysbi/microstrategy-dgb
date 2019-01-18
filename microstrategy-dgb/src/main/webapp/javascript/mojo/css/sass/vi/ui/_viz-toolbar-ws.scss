@@ -1,0 +1,77 @@
+@import "./viz-toolbar-character-ws";
+
+%commonProperty {
+  border-collapse: separate;
+  width: 60px;
+  float: left;
+}
+
+%commonPropertyWithMargin {
+  @extend %commonProperty;
+  margin-left: 5px;
+}
+
+.mstrmojo-ui-ToolBarLineGroup {
+  height: 26px;
+
+  .mstrmojo-ui-PreviewButton {
+    @extend %commonProperty;
+    height: 24px;
+    width: 58px;
+
+    &.mstrmojo-ColorPickerBtn {
+      //DE103631 Shrinking the 4px for width and height for ColorPickerBtn.
+      .preview {
+        width:34px;
+        height: 20px;
+      }
+    }
+  }
+  .mstrmojo-ui-LineStyle{
+    width: 58px;
+    margin-left: 5px;
+  }
+  .btn {
+    width: 20px;
+  }
+  .preview{
+    width:38px;
+  }
+}
+
+.mstrmojo-ui-ToolBarFillGroup {
+  height: 26px;
+}
+
+.mstrmojo-ui-ToolBoxFontAndFill{
+  .mstrmojo-ui-rowContainer{
+    margin-bottom: 8px;
+  }
+  .mstrmojo-Label{
+    min-width: 23px;
+  }
+}
+
+.mstrmojo-ui-ToolbarBorderAndFill{
+  .mstrmojo-ui-rowContainer{
+    margin-top: 8px;
+  }
+  .mstrmojo-Label{
+    min-width: 33px;
+  }
+}
+
+.mstrmojo-ui-FillOpacityAndBorderStyleToolbar{
+  .mstrmojo-TextBox {
+    margin-left: 0px;
+  }
+  .mstrmojo-ui-rowContainer{
+    margin-top: 8px;
+  }
+  .mstrmojo-ui-LineStyle{
+    margin-left: 0px;
+  }
+  .mstrmojo-Label{
+    min-width: 61px;
+  }
+}

@@ -1,0 +1,63 @@
+@import "../global-mixins";
+
+// This is the CSS class that gets attached when the pulldown is hosted within the body.
+.mstrmojo-ui-Pulldown.multi {
+    @include box-shadow(0, 0, 0, 0);
+
+    margin-top: 2px;
+
+    .mstrmojo-ui-PopupWidget {
+        @include border-radius(3px);
+		@include box-sizing(border-box);
+        background: #FFF;
+        border: 1px solid;
+        min-width: 173px;
+        max-width: 350px;
+        position: absolute;
+
+        .scroll-container {
+            max-height: 350px;
+        }
+
+        .mstrmojo-Buttons {
+            margin: 0 auto;
+            width: auto;
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+
+    .mstrmojo-ui-CheckList {
+        overflow: hidden;
+        padding: 5px 9px;
+
+        .item {
+            @include box-sizing();
+            @include ellipsis-text();
+            padding: 0 4px 0 17px;
+            width: 100%;
+
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+
+    .mstrmojo-Button {
+        @include box-sizing;
+
+        margin: 9px 9px 9px 0px;
+        min-width: 72px;
+        max-width: 200px;
+
+        &.hot {
+            margin-left: 9px;
+        }
+    }
+
+    .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+        margin-right: -30px;
+        padding-right: 15px;
+    }
+}
+

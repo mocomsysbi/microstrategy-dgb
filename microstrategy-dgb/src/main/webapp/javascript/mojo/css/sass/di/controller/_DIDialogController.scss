@@ -1,0 +1,116 @@
+// Style for republish status dialog
+
+.mstrmojo-di-republish-status {
+  width:700px;
+  background: #D8EBFB url(images/gradient_bg_lightblue_short.png) repeat-x scroll 0 38px;
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:10px;
+
+  .mstrmojo-di-republish-status-button {
+    float: right;
+    margin: 15px;
+  }
+}
+
+// Style for schedule execution history dialog
+.mstrmojo-di-refreshHistory {
+  width: 450px;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:10px;
+
+  .mstrmojo-di-refreshHistory-title {
+    margin: 15px;
+    width: calc(100% - 30px);
+    width: -moz-calc(100% - 30px);
+    width: -webkit-calc(100% - 30px);
+    width: -o-calc(100% - 30px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .mstrmojo-di-refreshHistory-grid {
+    margin: 15px;
+    width: calc(100% - 30px);
+    width: -moz-calc(100% - 30px);
+    width: -webkit-calc(100% - 30px);
+    width: -o-calc(100% - 30px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    .mstrmojo-DataRow {
+      height: 18px;.mstrmojo-DataGrid-headerText {
+      font: Bold 12px Arial;
+      color: #333;
+      border-style: none;
+      padding: 5px 0 3px 9px;
+      line-height: 20px;
+    }
+
+      .grid-col {
+        height: 22px;
+        line-height: 22px;
+      }
+
+      .grid-col.timestamp {
+        padding-left: 10px;
+      }
+
+      .grid-col.error {
+        color: red;
+      }
+
+      .grid-col.status {
+        height: 12px;
+        width: 20px;
+        margin-left: 5px;
+        background: url(images/metric-editor.png) -123px -180px no-repeat transparent;
+      }
+
+      .grid-col.status.error {
+        background: url(images/metric-editor.png) -100px -180px no-repeat transparent;
+      }
+    }
+  }
+
+  .mstrmojo-di-refreshHistory-detail {
+    margin: 15px;
+    width: calc(100% - 30px);
+    width: -moz-calc(100% - 30px);
+    width: -webkit-calc(100% - 30px);
+    width: -o-calc(100% - 30px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 8pt;
+    line-height: 1.2;
+    max-height: 67pt; // set max height as 7 lines: 8 * 1.2 * 7
+    overflow: auto;
+    word-break: break-all;
+  }
+
+  .mstrmojo-di-button {
+    float: right;
+    margin: 15px;
+    padding: 0;
+  }
+}
+.mstrmojo-di-inputNameBox {
+
+  .mstrmojo-Editor-content {
+    font-family: arial;
+    font-size: 11px;
+    padding: 16px;
+    width: 400px;
+    line-height: 18px;
+  }
+
+}
+
+.mstrmojo-di-popup-dialog {
+  @include user-select(none);
+}

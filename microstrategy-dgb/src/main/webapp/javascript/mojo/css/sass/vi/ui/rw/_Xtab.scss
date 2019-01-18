@@ -1,0 +1,354 @@
+@import '../../vi-global';
+
+/** BEGIN: vi.Xtab **/
+.mstrXtabCellHoverPopup .mstrmojo-Button {
+    border: 0;
+    background: transparent url(#{$vi-menu-icons}) 0 0 no-repeat;
+    height: 14px;
+    width: 14px;
+}
+
+.mstrmojo-XtabZone {
+    td {
+        cursor: default;
+
+        &.xtabSel,
+        &.grpHlt {
+            position: relative;
+
+            &:after {
+                // The pseudo :after element doesn't seem to use the whole height of a cell with non single row span.
+                @include box-sizing();
+
+                border: 1pt solid $wsvi-primary-blue;
+                outline: 1pt solid $wsvi-primary-white;
+                outline-offset: -1.5pt;
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                pointer-events: none;
+            }
+
+            &.range:after {
+                border-color: transparent;
+            }
+
+            &.grpT:after {
+                border-style: solid solid none solid;
+            }
+
+            &.grpL:after {
+                border-style: solid none solid solid;
+            }
+
+            &.grpMidH:after {
+                border-style: solid none solid none;
+            }
+
+            &.grpMidV:after {
+                border-style: none solid none solid;
+            }
+
+            &.grpB:after {
+                border-style: none solid solid solid;
+            }
+
+            &.grpR:after {
+                border-style: solid solid solid none;
+            }
+            // DE33109
+            // Since after element doesn't use the whole height of cell(with multiple row span) in IE
+            // we should use outline instead of border
+            &.ie {
+                //DE13540 Change highlight method from border to outline.
+                //only support IE8+
+                outline-color: #34ABEB;
+                outline-style: solid;
+                outline-width: 1.2pt;
+                &:after {
+                    border-color: transparent;
+                }
+
+                &.range {
+                    outline-color: transparent;
+                }
+            }
+
+
+        }
+
+        // F8222;fnie;April 13, 2017;Add style for selected cells which are used for generating context menu.
+        &.XtabContextMenuSel {
+            position: relative;
+
+            &:after {
+                // The pseudo :after element doesn't seem to use the whole height of a cell with non single row span.
+                @include box-sizing();
+
+                border: 1pt solid $wsvi-primary-blue;
+                outline: 1pt solid $wsvi-primary-blue;
+                outline-offset: -1.5pt;
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                pointer-events: none;
+            }
+        }
+
+        &.ra {
+            div {
+                display: table-row;
+
+                span {
+                    display: table-cell;
+
+                    &:first-child {
+                        // DE95665; disable parent's text-decoration
+                        display: inline-block;
+                    }
+
+                    &.text {
+                        word-wrap: break-word;
+                    }
+                }
+            }
+        }
+
+        a {
+            color: #007EBE;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.mstrmojo-sort-rule-delete {
+    margin-right: 10px;
+}
+
+.mstrmojo-Xtab {
+    overflow: visible;
+    position: relative; // TQMS #975744
+
+    // xtab status bar style, now it's used as a curtain.
+    .mstrmojo-progress {
+        background: transparent;
+        border: none;
+        height: 100%;
+        left: 0;
+        opacity: 1;
+        top: 0;
+        width: 100%;
+        z-index: 5;
+
+        // The curtain.
+        &:before {
+            background-color: transparent;
+            content: ' ';
+            height: 100%;
+            left: 0;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        // The loading spinner.
+        &:after {
+            @include border-radius(13px);
+            @include transform(translate(-50%, -50%));
+
+            background: transparent none no-repeat center center;
+            content: ' ';
+            height: 26px;
+            left: 50%;
+            margin: 0;
+            opacity: 1;
+            position: absolute;
+            top: 50%;
+            width: 26px;
+        }
+
+        .mstrmojo-progress-barbg {
+            background: transparent;
+        }
+
+        .mstrmojo-progress-text {
+            display: none;
+        }
+    }
+
+    .xTabHiddenTextArea {
+        position: absolute;
+        //DE
+        //Setting display to none OR visibility to hidden OR padding/border to none did not work (probably because browser cannot focus it in such case)
+        //Only solution is to set the top to large value so that we dont see it
+        top: -1000px;
+        height: 0;
+        width: 0;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .mstrmojo-Xtab {
+        .mstrmojo-Xtab-content {
+            .mstrmojo-scrollNode.hasHorizontal {
+                padding-bottom: 7px;
+            }
+        }
+    }
+}
+
+.mstr-firefox,
+.mstr-ie11,
+.mstr-ie10 {
+    .mstrmojo-scrollNode.hasHorizontal {
+        .mstrmojo-XtabZone {
+            //DE59980
+            padding-bottom: 25px;
+        }
+    }
+}
+
+.unselectable {
+    .xrsz.hasOwnAvatar,
+    .mstrmojo-Xtab .xrsz {
+        cursor: default;
+    }
+}
+
+
+
+// Theme related style
+.mojo-theme-light {
+    .mstrmojo-Xtab {
+        .mstrmojo-XtabZone {
+            td {
+                &.xtab-td:hover {
+                    background-image: url(#{$vi-img-path}/grid_highlight_65_light.png);
+                }
+
+                &.xtabSel {
+                    background-image: url(#{$vi-img-path}/grid_highlight_40_light.png);
+                    color: #003B77;
+
+                    &:hover {
+                        background-image: url(#{$vi-img-path}/grid_highlight_65_light.png);
+                    }
+
+                    &.range {
+                        color: inherit;
+                    }
+                }
+
+                .raBtn {
+                    &.iconRA-expand:before {
+                        content: '\e800';
+                    }
+
+                    &.iconRA-collapse:before {
+                        content: '\e801';
+                    }
+
+                    width: 14px;
+                    color: #444649;
+
+                    &:hover {
+                        color: #007ebe;
+                    }
+                }
+            }
+        }
+        .mstrmojo-progress {
+            &:before {
+                background-color: white;
+            }
+
+            &:after {
+                background-image: url(#{$vi-img-path}/spinner_white.gif);
+                background-color: white;
+            }
+        }
+
+        &.viewData {
+            // Gray out recursive attribute button on view data xtab
+            .raBtn {
+                opacity: 0.45;
+
+                &:hover {
+                    color: #444649;
+                }
+            }
+        }
+    }
+
+    .mstrXtabCellHoverPopup .mstrmojo-Button {
+        background-position: -60px -30px;
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-Xtab {
+        .mstrmojo-XtabZone {
+            td {
+                &.xtab-td:hover {
+                    background-image: url(#{$vi-img-path}/grid_highlight_65_dark.png);
+                }
+                &.xtabSel {
+                    background-image: url(#{$vi-img-path}/grid_highlight_40_dark.png);
+                    color: #003B77;
+
+                    &:hover {
+                        background-image: url(#{$vi-img-path}/grid_highlight_65_dark.png);
+                    }
+
+                    &.range {
+                        color: inherit;
+                    }
+                }
+
+                .raBtn {
+                    &.iconRA-expand:before {
+                        content: '\e800';
+                    }
+
+                    &.iconRA-collapse:before {
+                        content: '\e801';
+                    }
+
+                    color: #CDCDCD;
+
+                    &:hover {
+                        color: #34ABEB;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-progress {
+            &:before {
+                background-color: black;
+            }
+
+            &:after {
+                background-image: url(#{$vi-img-path}/spinner_dark.gif);
+                background-color: #303030;
+            }
+        }
+    }
+
+    .mstrXtabCellHoverPopup .mstrmojo-Button {
+        background-position: -60px -230px;
+    }
+}
+// Theme related style
+/** END: vi.Xtab **/

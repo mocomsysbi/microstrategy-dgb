@@ -1,0 +1,16 @@
+@import 'global';
+
+/** BEGIN: TextBox **/
+.mstrmojo-TextBox {
+    @include box-sizing();
+
+    height: 22px;
+    line-height: normal; /*do not set line-height for input, IE&FF may not support it*/
+    padding: 0 3px;
+
+    // Make the empty text lighter.
+    &.mstrmojo-empty {
+        color: #878788;
+    }
+}
+/** END: TextBox **/

@@ -1,0 +1,179 @@
+@import "RefineVariables";
+
+.refine-history-list-box {
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.refine-history-box {
+  margin: 0px 0px 12px 12px;
+  background-color: #ffffff;
+  border: $widgetBorder;
+  overflow: hidden;
+  float: left;
+}
+
+.refine-history-header {
+  line-height: 16px;
+  padding: 16px 0 0 9px;
+
+  .mstrmojo-Button {
+    background: transparent;
+    margin-left: 10px;
+    .mstrmojo-Button-text {
+      margin: auto;
+      background: transparent url(images/DI/workstation/workstation.svg) 0 0 no-repeat;
+    }
+
+    &.refine-history-undo {
+      .mstrmojo-Button-text {
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        background-position: -603px -103px;
+      }
+      &.disabled, &.disabled:active, &.disabled:hover {
+        .mstrmojo-Button-text {
+          background-position: -603px -103px;
+        }
+      }
+      &:hover, &:active {
+        .mstrmojo-Button-text {
+          background-position: -643px -103px;
+        }
+      }
+    }
+
+    &.refine-history-redo {
+      .mstrmojo-Button-text {
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        background-position: -603px -133px;
+      }
+      &.disabled, &.disabled:active, &.disabled:hover {
+        .mstrmojo-Button-text {
+          background-position: -603px -133px;
+        }
+      }
+      &:hover, &:active {
+        .mstrmojo-Button-text {
+          background-position: -643px -133px;
+        }
+      }
+    }
+
+    &.refine-history-import {
+      .mstrmojo-Button-text {
+        width: 20px;
+        height: 20px;
+        background-position: -603px -43px
+      }
+      &.disabled, &.disabled:hover, &.disabled:active {
+        .mstrmojo-Button-text {
+          background-position: -603px -43px;
+        }
+      }
+      &:hover, &:active {
+        .mstrmojo-Button-text {
+          background-position: -643px -43px;
+        }
+      }
+    }
+
+    &.refine-history-export {
+      .mstrmojo-Button-text {
+        width: 20px;
+        height: 20px;
+        background-position: -602px -13px;
+      }
+      &.disabled, &.disabled:hover, &.disabled:active {
+        background-position: -602px -13px;
+      }
+      &:hover, &:active {
+        .mstrmojo-Button-text {
+          background-position: -642px -13px;
+        }
+      }
+    }
+
+  }
+
+  .refine-history-reset {
+    width: auto !important;
+    .mstrmojo-Button-text {
+      background: url(images/DI/workstation/workstation.svg) no-repeat -603px -73px;
+      width: 20px;
+      height: 20px;
+    }
+    &:hover, &:active {
+      .mstrmojo-Button-text {
+        background-position: -643px -73px;
+      }
+    }
+    &.disabled, &.disabled:hover, &.disabled:active {
+      .mstrmojo-Button-text {
+        background-position: -603px -73px;
+      }
+    }
+  }
+}
+
+.refine-history-label {
+  height: 28px;
+  font-weight: bolder;
+  vertical-align: top;
+  padding-top: 4px;
+  padding-right: 15px;
+  padding-left: 4px;
+}
+
+.refine-history-inner-box {
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+
+.refine-history-inner-box:hover {
+  overflow-y: auto;
+}
+
+.refine-history-box td {
+  vertical-align: top;
+}
+
+.refine-history-vs {
+  -webkit-appearance: slider-vertical;
+  -webkit-transform: rotate(180deg);
+  width: 20px;
+  margin: 5px 0px;
+}
+.refine-history-list {
+}
+
+.list-item {
+  display: block;
+  padding: 0px 3px;
+  margin: 0px 2px;
+  border-radius: 2px;
+  line-height: 22px;
+  cursor: default;
+  font-family: Arial;
+  font-size: $fontSizeNormal;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.list-item:hover {
+  background: #f6f6f6;
+}
+
+.list-item.future {
+  color: #aaa;
+}
+
+.list-item.selected {
+  background: #e5e5e5;
+}

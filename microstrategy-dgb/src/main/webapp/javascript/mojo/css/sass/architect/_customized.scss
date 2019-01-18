@@ -1,0 +1,67 @@
+@import 'ar-global';
+@import 'customize/_wait-box';
+@import 'customize/_data-grid';
+@import 'customize/_menu-editor';
+@import 'customize/_menu';
+@import 'customize/_splitter';
+
+
+/** BEGIN:  customize  **/
+.mstrmojo-suggest-text.selected, .mstrmojo-suggest-list .item.selected {
+  background-color: #D3E9FB;
+}
+
+.mstrmojo-radioButton-unselected {
+  background: url(#{$wh-image-path}/radio.gif) no-repeat;
+  height: 20px;
+}
+
+.mstrmojo-radioButton-selected {
+  background: url(#{$wh-image-path}/radioChecked.gif) no-repeat;
+  height: 20px;
+}
+
+.mstrmojo-FunctionSelector .mstrmojo-Button.mstrmojo-Button.mstrmojo-HTMLButton.mstrmojo-Editor-button {
+  visibility: hidden;
+}
+
+.invalid {
+  background: #FFECEC;
+}
+
+.mstrContent, .mstrWeb .mstrDockTop {
+  padding: 0;
+}
+
+.mstrDockTop {
+  display: none;
+}
+
+/* BEGIN: Extra Css used for token-inputbox editor for FFsql*/
+
+.mstrmojo-TokenInputBox-edit span {
+  &:hover {
+    background-color: #D3E1F1;
+  }
+  &.sql {
+    color: maroon;
+  }
+  &.apply {
+    color: green;
+  }
+}
+
+.mstrmojo-TokenInputBox-clipboard {
+  top: -10000px;
+  left: -10000px;
+}
+
+/* END: Extra Css used for token-inputbox editor for FFsql*/
+
+
+.mstrmojo-Editor-curtain {
+  background: rgba(255, 255, 255, 0.25) url(#{$image-path}/1ptrans.gif) left top repeat !important;
+  opacity: 1;
+}
+
+/** END: customize  **/

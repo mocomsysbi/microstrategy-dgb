@@ -1,0 +1,99 @@
+.refine-tag-box-container {
+  border: $widgetBorder;
+  border-radius: 3px;
+  margin: 8px 5px 3px 0px;
+  overflow: hidden;
+  max-height: 26px;
+  &.mstrmojo-scrollbar-host {
+    .mstrmojo-scrolltrack {
+      &.horizontal {
+        bottom: 1px;
+        &:hover {
+          height: 5px;
+        }
+      }
+    }
+    &.scrollingMode {
+      > .mstrmojo-scrolltrack {
+        &.horizontal {
+          height: 5px;
+        }
+      }
+    }
+  }
+}
+
+.short .refine-tag-box {
+  width: 136px;
+  height:24px;
+}
+
+.refine-tag-box {
+  width: 250px;
+  white-space: nowrap;
+  padding-left: 0px;
+  background: white;
+}
+
+.refine-tag-box-label {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #e5e5e5;
+  height: 16px;
+  margin: 2px 3px 1px 2px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-TextBox.refine-tag-box-new-input {
+  border: none;
+  margin: 2px 1px 0px 0px;
+  padding: 1px 0px 1px 2px;
+  height: 16px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  width: 250px;
+  &.short {
+    width: 100px;
+  }
+}
+
+.refine-transformations.short .refine-controls .mstrmojo-TextBox.refine-tag-box-new-input {
+  width: 136px;
+  height: 20px;;
+  text-overflow: ellipsis;
+  &.short {
+    width: 100px;
+  }
+}
+
+.refine-tag-box-new {
+  height: 24px;
+  vertical-align: top;
+}
+
+.refine-tag-box-label-text {
+  margin-left: 5px;
+  margin-right: 8px;
+}
+
+.refine-tag-box-close {
+  margin-right: 5px;
+}
+
+.workstation{
+  .refine-transformations.short .refine-controls .mstrmojo-TextBox.refine-tag-box-new-input {
+    margin-top: 2px;    //refine delete row press enter key
+  }
+
+  .refine-tag-box.mstrmojo-sb-show-default .mstrmojo-TextBox.refine-tag-box-new-input{
+    margin-top: 0px!important;
+    padding-bottom: 0px!important;
+  }
+
+  .refine-transformations .refine-tag-box-container{
+    height:24px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+  }
+}

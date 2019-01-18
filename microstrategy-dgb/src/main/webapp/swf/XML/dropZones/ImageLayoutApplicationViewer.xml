@@ -1,0 +1,20 @@
+<dzd version="2.0">
+    <dzs showMetricsUnit="false" showPropertiesEditor="true" useWidgetProps="true">
+        <dz id="PathToMap" nm="Path to Map" nmdesc="mstr.1813" dztp="axis" ax="1" pmry="true" max="1" widgetProp="PathToMap" showForms="false" />
+        <dz id="GeoAttr" nm="Geo Attribute" nmdesc="mstr.1615" dztp="axis" ax="1" pmry="true" max="1" widgetProp="ga" showForms="false" />
+        <dz id="ColorBy" nm="Color By" nmdesc="mstr.965" dztp="metrics" ax="1" pmry="false" max="1" widgetProp="ColorBy" autoThresholds="true" />
+        <dz id="SizeBy" nm="Size By" nmdesc="mstr.968" dztp="metrics" ax=">1?2:1" pmry="false" max="1" widgetProp="SizeBy"/>
+        <dz id="Tooltip" nm="Tooltip" nmdesc="mstr.1257" dztp="metrics" pmry="true" max="-1" dragUnique="true" widgetProp="Tooltip@@"/>
+    </dzs>
+    <dzsv>
+        <dzvg nm="MAP" nmdesc="mstr.1811" >
+            <dzv id="GeoAttr" />
+            <dzv id="ColorBy" />
+            <dzv id="SizeBy" />
+            <dzv id="Tooltip" />
+        </dzvg>
+        <dzvg nm="MAP'S LOCATION" nmdesc="mstr.1812" >
+            <dzv id="PathToMap" />
+        </dzvg>
+    </dzsv>
+</dzd>

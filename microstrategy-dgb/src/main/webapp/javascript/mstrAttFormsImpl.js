@@ -1,0 +1,1 @@
+mstrAttFormsImplScript=true;mstrAttFormsImpl.prototype=new mstrEditorImpl();mstrAttFormsImpl.prototype.onload=function(){try{this.initEditor();deselectRow();}catch(err){microstrategy.errors.log(err);}};function mstrAttFormsImpl(id){this.inherits=mstrEditorImpl;this.inherits(id);this.inherits=null;return this;}

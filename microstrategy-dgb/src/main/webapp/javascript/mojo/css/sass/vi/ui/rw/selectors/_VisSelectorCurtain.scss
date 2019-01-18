@@ -1,0 +1,21 @@
+.vis-filter-container{
+  display: block;
+  position:absolute;
+  background-color: #fff;
+  z-index: 20;
+  float: left;
+  margin: 3px 0px;
+}
+.workstation {
+  .vis-filter-container{
+    .mstrmojo-UnitContainer.selected{
+      box-shadow: none;
+    }
+  }
+}
+
+.vis-filter-curtain{
+  display: block;
+  position: absolute;
+  z-index: 19;
+}

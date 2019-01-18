@@ -1,0 +1,156 @@
+// @import 'vi/workstation-global';
+
+.workstation .mstrmojo-PassThroughOptions {
+	width: 331px;
+
+	&.mstrmojo-Editor>.mstrmojo-Editor-content {
+		min-height: 64px; // to make the total height to be 184px as UX Spec defined
+		padding: $wsvi-editor-content-padding;
+
+		&>.mstrmojo-HBox, &>.mstrmojo-Box {
+			padding: 0 0 $wsvi-editor-content-padding 0;
+
+			&:last-child {
+				padding: 0 0 8px 0;
+			}
+
+			td:first-child .mstrmojo-Label {
+				width: 114px;
+			}
+		}
+
+		.mstrmojo-PassThroughOptions-soBox {
+			height: $wsvi-panel-row-height;
+
+			.mstrmojo-PassThroughOptions-soTB {
+				width: 100px;
+			}
+
+			.mstrmojo-Label:first-child {
+				width: 114px;
+			}
+
+			&>* {
+				line-height: $wsvi-panel-row-height;
+				margin: 0;
+			}
+
+			.mstrmojo-ui-Checkbox {
+				padding-right: 2px;
+				margin-top: 3px;
+			}
+
+		}
+
+		.mstrmojo-PassThroughOptions-siBox {
+			.mstrmojo-PassThroughOptions-siDefaultCbBox {
+				td {
+					padding: 0 0 $wsvi-editor-content-padding 0;
+					margin: 0;
+
+					&>* {
+						height: $wsvi-default-icon-height;
+						line-height: $wsvi-default-icon-height;
+					}
+
+					.mstrmojo-ui-Checkbox {
+						width: $wsvi-normal-font-size;
+						height: $wsvi-normal-font-size;
+						background-position: -3px -28px;
+						padding-right: $wsvi-icon-padding;
+
+						&.checked {
+							background-position: -3px -3px;
+						}
+					}
+				}
+			}
+
+			.mstrmojo-PassThroughOptions-siClBox {
+				td {
+					padding: 0 0 0 114px;
+				}
+
+				.mstrmojo-ui-CheckList {
+					.item {
+						line-height: $wsvi-default-icon-height;
+
+						span {
+							line-height: $wsvi-default-icon-height;
+							height: $wsvi-default-icon-height;
+						}
+					}
+
+					&.radio .item {
+						padding: 0 0 0 22px;
+						min-width: initial;
+						margin: 0 17px 0 0;
+						background-position: -3px -150px !important;
+						&.selected {
+							background-position: -3px -125px !important;
+						}
+					}
+
+					&.disabled {
+						&.radio .item {
+							&.selected {
+								background-position: -3px -450px !important;
+							}
+
+						}
+					}
+				}
+			}
+		}
+
+		.mstrmojo-PassThroughOptions-fsBox {
+			height: 56px;
+
+			.mstrmojo-PassThroughOptions-fsPdBox {
+				margin: 0 0 4px 0;
+
+				.mstrmojo-ui-Pulldown {
+					width: 185px;
+				}
+			}
+
+			.mstrmojo-PassThroughOptions-fsTbBox {
+				td {
+					padding: 0 0 0 114px;
+				}
+
+				.mstrmojo-TextBox {
+					width: 185px;
+				}
+			}
+		}
+
+		.right {
+			float: right;
+		}
+	}
+
+	&.ess {
+		.mstrmojo-PassThroughOptions-siBox, .mstrmojo-PassThroughOptions-fsBox {
+			display: none !important;
+		}
+	}
+
+	.mstrmojo-Label {
+		margin: 0;
+		padding: 0;
+	}
+
+	.mstrmojo-TextBox.err {
+		border: solid 1px rgba(255, 165, 0, 0.2);
+
+		&:focus {
+			border-color: rgb(255, 165, 0);
+		}
+	}
+
+	.mstrmojo-Editor-buttons .mstrmojo-Editor-buttonBar .mstrmojo-WebButton {
+		width: 74px;
+		margin: 0 0 0 $wsvi-icon-padding;
+	}
+}

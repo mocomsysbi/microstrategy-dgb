@@ -1,0 +1,22 @@
+/** BEGIN:  ColumnDefinitionEditor **/
+.mstrmojo-ar-cde {
+  padding: 0 5px 3px;
+  min-width: 114px;
+  input {
+    padding: 2px;
+  }
+}
+
+.mstrmojo-ar-cde-dtp {
+  .mstrmojo-ui-Pulldown {
+    z-index: 2;
+  }
+  .mstrmojo-ui-Pulldown-text {
+    padding: 3px 20px 3px 2px;
+    border-color: #BBB;
+  }
+  .mstrmojo-ui-Pulldown .mstrmojo-PopupList .item {
+    padding: 0 3px;
+  }
+}
+/** END: ColumnDefinitionEditor **/

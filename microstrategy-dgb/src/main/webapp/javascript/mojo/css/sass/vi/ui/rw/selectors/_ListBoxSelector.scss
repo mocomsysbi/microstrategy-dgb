@@ -1,0 +1,19 @@
+/** BEGIN: ListBoxSelector **/
+.mstrmojo-vi-sel-ListBox {
+
+    .list-content {
+        height: 100%;
+    }
+
+    .item {
+        line-height: 1.850em;
+        padding-left: 6px;
+        cursor: default;
+
+        &.selected {
+            background-color: #34ABEB;
+            color: #FFFFFF;
+        }
+    }
+}
+/** END: ListBoxSelector **/

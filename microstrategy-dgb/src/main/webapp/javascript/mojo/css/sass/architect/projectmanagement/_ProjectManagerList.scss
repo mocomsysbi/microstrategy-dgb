@@ -1,0 +1,77 @@
+@import '../ar-global';
+
+/* list view*/
+
+.mstrmojo-ProjectManagerList {
+  .mstrmojo-DataGrid {
+    color: #757575;
+    border: 0;
+  }
+  .mstrmojo-DataGrid-headerText {
+    background: rgb(240, 240, 240);
+    border-bottom: 1px solid #e2e2e2;
+    height: 25px !important;
+    .mstrmojo-Label {
+      color: #656565 !important;
+      font-weight: bold;
+      font-size: 1.2em;
+      line-height: 25px !important;
+    }
+  }
+  .mstrmojo-DataRow {
+    height: 41px;
+    &:hover {
+      background-color: #EFEFEF !important;
+      color: #000;
+    }
+    &.even {
+      background-color: white;
+    }
+    &.odd {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+.mstrmojo-PMGrid {
+  font-family: Tahoma,Arial,Verdana;
+  width: 100%;
+}
+
+.mstrmojo-gridCell {
+  margin-left: 15px;
+  font-size: 9pt;
+  line-height: 20px;
+}
+
+.mstrmojo-projectCell {
+  padding-left: 25px;
+  background: url(#{$ar-image-path}/projectmanagement/project20x19.gif) no-repeat scroll 0 0 transparent;
+  cursor: pointer;
+  font-weight: bold;
+  &:hover {
+    color: #006ba0;
+  }
+}
+
+.mstrmojo-DataGrid-itemsContainer .mstrmojo-actionsCell td {
+  border: none;
+}
+
+.mstrmojo-lv-btnArchitect, .mstrmojo-lv-btnRename, .mstrmojo-lv-btnDelete {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.mstrmojo-lv-btnRename {
+  background-position: -200px -80px;
+}
+
+.mstrmojo-lv-btnArchitect {
+  background: url(#{$ar-image-path}/listView.png) no-repeat scroll 0 0 transparent;
+  background-position: -40px -160px;
+}
+
+/*end list view */

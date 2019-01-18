@@ -1,0 +1,17 @@
+@import 'global';
+
+.mstrmojo-Pulldown-Popup {
+    @include border-radius(3px);
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 2px 0 0 0; // To make it looks like 2px to the bottom border of input node.
+
+    .mstrmojo-Pulldown-listItem {
+        .mstrmojo-text {
+            @include ellipsis-text();
+
+            padding-left: 6px;
+        }
+    }
+}

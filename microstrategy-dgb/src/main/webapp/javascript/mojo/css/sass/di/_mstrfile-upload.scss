@@ -1,0 +1,214 @@
+#uploadBox {
+  width: 22px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#uploadBox input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.mstr-file-upload-editor {
+
+  min-width: 510px !important;
+  font-family: tohama;
+
+  .mstr_fu_fail_label {
+    width:280px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color:#555555;
+    font-weight: bold;
+    padding: 0px 0px 0px 25px;
+    background: transparent url(images/error_icon.png) center left no-repeat;
+    white-space: nowrap;
+  }
+
+  .mstr_fu_success_label {
+    font-size: 14px;
+    color:#555555;
+    font-weight: bold;
+    padding: 0px 0px 0px 25px;
+    background: transparent url(images/success_icon.png) center left no-repeat;
+    white-space: nowrap;
+  }
+
+
+
+  .mstrmojo-Editor-buttons {
+    background-color: #f3f3f3;
+    height:26px;
+  }
+
+  .mstr_fu_report_button{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #d9232e;
+    border-color: #8a1219;
+    height: 26px;
+    line-height: 26px;
+    margin-left: 22px;
+    text-justify: center;
+    color:#ffffff;
+    font-size: 11px;
+    white-space: nowrap;
+
+    &:hover {
+      background: #fc222f;
+      border-color: #a6171f;
+    }
+
+  }
+
+  .mstr_fu_report_button_disable{
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: transparent;
+    border-color: transparent;
+    border-width:0px;
+    height: 26px;
+    margin-left: 10px;
+    text-justify: center;
+    color:#000000;
+    font-size: 11px;
+    white-space: nowrap;
+
+    &:hover {
+      background: transparent;
+      border-color: transparent;
+    }
+    &:active {
+      background: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .mstr_fu_report_button_animation{
+    border-color: transparent;
+    border-width:0px;
+    height: 26px;
+    margin-left: 20px;
+    text-justify: center;
+    font-size: 11px;
+    width: 50px;
+    background: transparent url(images/processing_animation_world.gif) center center no-repeat;
+  }
+
+  .mstr_fu_cancel_button{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #4d4d4d;
+    border-color: #3f3f3f;
+    height: 26px;
+    line-height: 26px;
+    margin-left: 20px;
+    text-justify: center;
+    color:#ffffff;
+    font-size: 11px;
+    float: right;
+    &:hover {
+      background: #666;
+      border-color: #4f4f4f;
+    }
+  }
+
+  .mstr_fu_content {
+    padding: 30px 30px;
+    max-height: 360px;
+    overflow: auto;
+
+    .mstr_fu_dashboard_name_label {
+      font-size: 12px;
+      color:#555555;
+      margin-top: 5px;
+      height: 40px;
+      width: 320px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      display: -webkit-box;
+      line-height: 40px;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      margin-left: 25px;
+    }
+
+    .mstr_fu_collapse_label {
+      text-decoration: underline;
+      margin-left: 25px;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .mstr_fu_horizon_line{
+      border-bottom: solid 1px #d7d7d7;
+      overflow:visible;
+      height: 9px;
+      margin: 10px 0 20px 0;
+    }
+
+    .mstr_fu_fail_items{
+      width:400px;
+
+      .mstr_fu_err_msg_button_down {
+        background: transparent url(images/arrow_down_mstr_file.png) center right no-repeat;
+        margin-right:0;
+        width:14px;
+        height: 40px;
+        float: right;
+        left: 400px;
+        top: 0;
+        line-height: 40px;
+
+      }
+
+      .mstr_fu_err_msg_button_up {
+        background: transparent url(images/arrow_up_mstr_file.png) center right no-repeat;
+        margin-right:0;
+        width: 14px;
+        height: 40px;
+        line-height: 40px;
+        left: 400px;
+        top: 0;
+        float: right;
+      }
+
+
+    }
+
+    .mstr_fu_error_message{
+      font-size: 12px;
+      //background: #fcece8;
+      border: 1px solid #f8b6b8;
+      color: #ee2c49;
+      margin: 5px 0px 0px 0px;
+      padding: 4px;
+      text-align: justify;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+
+      margin-left: 25px;
+    }
+ }
+
+}
+
+.mstr_fu_summary_editor {
+  margin-bottom: 30px;
+}
+
+.mstr_fu_icon {
+  background: transparent url(images/upload_mstr.png) center right no-repeat;
+  background-color: #000000;
+  width: 18px;
+  height: 14px;
+}
+
+.mstr_fu_footer {
+  float: right;
+  margin-right: 30px;
+  height:26px;
+}

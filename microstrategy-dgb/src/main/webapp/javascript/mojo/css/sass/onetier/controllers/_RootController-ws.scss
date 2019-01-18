@@ -1,0 +1,45 @@
+.workstation {
+  .mstrmojo-Editor.mstrmojo-locale-resolute {
+    width: 510px;
+
+    .mstrmojo-Editor-close {
+      display: none;
+    }
+
+    .locale-resolute-error {
+      &:before {
+        width: 75px;
+        height: 75px;
+        background: url(#{$vi-img-path}/notification.svg) no-repeat scroll -31px -63px;
+        position: absolute;
+        left: 25px;
+        content: '';
+      }
+
+      padding: 16px 16px 16px 97px;
+      vertical-align: top;
+      max-height: 275px;
+      word-wrap: break-word;
+      overflow: hidden;
+    }
+
+    .mstrmojo-Editor-content {
+      border-bottom: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .mstrmojo-CheckBox.locale-resolute-chk {
+      border: none;
+      background: transparent;
+      position: absolute;
+      bottom: -32px;
+    }
+    .locale-resolute-help {
+      display: inline;
+      padding-left: 2px;
+      color: #0C84C4;
+    }
+  }
+}

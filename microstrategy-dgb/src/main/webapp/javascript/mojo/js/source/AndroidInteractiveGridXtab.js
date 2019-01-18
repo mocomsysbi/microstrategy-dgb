@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.NativeAndroidXtab","mstrmojo._IsInteractiveGrid");mstrmojo.AndroidInteractiveGridXtab=mstrmojo.declare(mstrmojo.NativeAndroidXtab,[mstrmojo._IsInteractiveGrid],{scriptClass:"mstrmojo.AndroidInteractiveGridXtab"});}());

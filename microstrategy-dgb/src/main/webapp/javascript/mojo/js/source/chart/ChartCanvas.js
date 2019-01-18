@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Base");mstrmojo.chart.ChartCanvas=mstrmojo.declare(mstrmojo.Base,null,{scriptClass:"mstrmojo.chart.ChartCanvas",chartContext:null});}());

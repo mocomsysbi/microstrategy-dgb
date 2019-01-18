@@ -1,0 +1,335 @@
+@import '../_global.scss';
+
+
+/** Start ConditionWalk **/
+%font-unselectable-walk {
+    padding: 6px;
+    font-size: 11px;
+    color: #858585;
+    &:hover {
+        background-color: transparent;
+        cursor: default;
+    }
+}
+
+%font-item-walk {
+    font-size: 8pt;
+    line-height: 12px;
+    color: black;
+    cursor: default;
+}
+
+.mstrmojo-rw-ConditionWalk {
+    $unit-list-image-path: 'vi/images/unitList';
+    $item-selected-color: #CECECE;
+    $item-hover-color: #DADADA;
+
+    @mixin item-background-image($url) {
+        background-image: url(#{$unit-list-image-path}/#{$url});
+        background-position: 9px center;
+        background-repeat: no-repeat;
+    }
+
+    border: 1px solid #CFCFCF;
+    overflow: hidden;
+
+    .condition {
+        background-color: #fff;
+        padding: 6px 4px;
+    }
+
+    .walk {
+        background-color: #fff;
+
+        .mstrmojo-ui-ColumnWalk {
+            border-left: 0;
+            border-right: 0;
+            color: black;
+
+            .mstrmojo-ui-ColumnContainer {
+              width: 148px;
+
+              &:last-child {
+                border-right-color: #CFCFCF;
+              }
+            }
+
+            .baseOn {
+                @extend %font-unselectable-walk;
+            }
+
+            .filterOn {
+                @extend %font-unselectable-walk;
+            }
+            .btwn {
+                @extend %font-unselectable-walk;
+                padding: 0;
+                padding-left: 20px;
+            }
+
+            .mstrmojo-DateTextBox {
+                width: 120px;
+
+                .mstrmojo-DateTextBox-input {
+                    width: 100px;
+                }
+                .mstrmojo-DateTextBox-icon {
+                    left: 102px;
+                }
+            }
+
+            .mstrmojo-ListBase,
+            .mstrmojo-Dial {
+                width: 148px;
+
+                .item,
+                .dial-item {
+                    @extend %font-item-walk;
+
+                    padding: 5px 3px 5px 9px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    position: relative;
+
+                    &.tdummy {
+                        @extend %font-unselectable-walk;
+                    }
+
+                    &.selected {
+                        background-color: $item-selected-color;
+                        border-radius: 2px;
+                        font-weight: normal;
+                    }
+
+                    &:hover {
+                        background-color: $item-hover-color;
+                    }
+                }
+
+                div {
+                    overflow: visible;
+                }
+
+                .mstrmojo-Dial-uparrow,
+                .mstrmojo-Dial-dnarrow {
+                    display: none;
+                }
+
+                .mstrmojo-Dial-scrollbox {
+                    overflow: visible;
+                }
+            }
+
+            // Show right arrow for selected item in non-last columns.
+            .hasNext {
+                .mstrmojo-ListBase,
+                .mstrmojo-Dial {
+                    .item,
+                    .dial-item {
+                        &.selected:after {
+                            background: transparent url(#{$mojo-img-path}/expandMenu.gif) right 1px no-repeat;
+                            content: '';
+                            position: absolute;
+                            height: 12px;
+                            width: 10px;
+                            right: 4px;
+                        }
+                    }
+                }
+            }
+
+            .mstrmojo-ui-CheckList{
+                width: 148px;
+
+                .item {
+                    padding-left: 26px;
+                    background-position: 3px -25px;
+
+                    &.selected {
+                        background-color: $item-selected-color;
+                        background-position: 3px -1px;
+                    }
+
+                    &:hover {
+                        background-color: $item-hover-color;
+                    }
+                }
+            }
+
+            .mstrmojo-target,
+            .mstrmojo-c0 {
+                .item,
+                .dial-item {
+                    padding-left: 23px;
+                    padding-right: 4px;
+                    text-overflow: ellipsis;
+
+                    &.t3 {
+                        @include item-background-image('report-20x20.png');
+                        background-position: 5px center;
+                    }
+
+                    &.t10 {
+                        @include item-background-image('../../../../../../images/prompt.png');
+                        background-position: 5px center;
+                    }
+
+                    &.t12 {
+                        @include item-background-image('attribute.png');
+                        &.st3076 {
+                            @include item-background-image('recursive-attribute.png');
+                        }
+                    }
+
+                    &.t12g {
+                        @include item-background-image('geo-attribute.png');
+                    }
+
+                    &.t12d {
+                      @include item-background-image('derived-attribute.png');
+                    }
+
+                    &.t4d {
+                      @include item-background-image('derived-metric.png');
+                    }
+
+                    &.t4 {
+                        @include item-background-image('metric.png');
+                    }
+
+                    &.t1,
+                    &.t47 {
+                        @include item-background-image('custom-group.png');
+                        &.st256 {
+                            @include item-background-image('filter-20x20.png');
+                            background-position: 5px center;
+                        }
+                        &.st12033 {
+                            @include item-background-image('derived-attribute.png');
+                            &.nde4ra {
+                                @include item-background-image('derived-recursive-attribute.png');
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mstrmojo-ui-CheckList {
+                .item {
+                    line-height: 22px;
+                }
+
+                .mstrmojo-scrolltrack {
+                    cursor: pointer;
+                    &:hover {
+                        background: none;
+                    }
+                    .mstrmojo-scrollbar {
+                        opacity: 0;
+                        &:hover {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                &.scrollingMode:hover,
+                &.scrollingMode {
+                    .mstrmojo-scrolltrack {
+                        background: none;
+
+                        .mstrmojo-scrollbar {
+                            &.scrolling {
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+
+                .scroll-container {
+                    width: 100%;
+                    overflow: visible;
+                }
+            }
+
+            .mstrmojo-TextBox {
+                margin-left: 9px;
+                width: 130px;
+            }
+        }
+    }
+
+    .apply {
+        height: 32px;
+        background-color: #F0F0F0;
+        border-top: 1px solid #FFF;
+        box-sizing: border-box;
+
+        .mstrmojo-Button {
+            position: relative;
+            float: right;
+            width: 40px;
+            height: 22px;
+            margin-top: 5px;
+            margin-right:6px;
+
+            &.okBtn {
+                background: transparent url(#{$mojo-img-path}/filter-editor-icons.png) no-repeat -1px -3px;
+            }
+
+            &.cancelBtn {
+                background: transparent url(#{$mojo-img-path}/filter-editor-icons.png) no-repeat -47px -3px;
+            }
+        }
+
+        .tip {
+            float: left;
+            line-height: 28px;
+            margin-left: 10px;
+        }
+    }
+    .tools {
+      position: relative;
+      height: 32px;
+        & > div{
+          line-height: 32px;
+          margin-left: 10px;
+        }
+      .mstrmojo-Label {
+        float: left;
+      }
+      &.unselectable {
+        .mstrmojo-ui-Pulldown {
+          .container {
+            display: none;
+          }
+        }
+        .mstrmojo-ui-Pulldown {
+          pointer-events: none;
+        }
+        .mstrmojo-ui-Pulldown-text {
+          color: #A0A7AC;
+        }
+      }
+      .mstrmojo-ui-Pulldown {
+        float: left;
+        margin-top: 5px;
+        min-width: 50px;
+        .mstrmojo-ui-Pulldown-text {
+          border: 1px solid #DDDDDD;
+          border-radius: 5px;
+        }
+      }
+      .mstrmojo-ui-Checkbox {
+        float: right;
+        padding-left: 20px;
+        background-position: -2px -20px;
+        width: auto;
+        height: auto;
+        margin-right: 10px;
+        &.checked {
+          background-position: -2px 4px;
+        }
+      }
+    }
+}
+/** End ConditionWalk **/

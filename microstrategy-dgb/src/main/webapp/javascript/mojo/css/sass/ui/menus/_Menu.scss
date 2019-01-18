@@ -1,0 +1,295 @@
+// TODO: Remove references to VI.
+@import '../../vi/vi-global';
+@import '../../vi/themes';
+
+/** BEGIN: Menu **/
+// Base menu styling.
+%menu-base {
+    @include border-radius(3px);
+    @include box-shadow(rgba(0, 0, 0, 0.55), 0, 0, 10px); /* #905852 */
+
+    @include background-color-rgba(63, 63, 63, 0.96);
+    border: 1px solid #525252;
+    color: #F0F0F0;
+    max-width: 350px;
+    min-width: 145px;
+    padding: 5px 0;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+
+    /*Add translateZ(0) to prevent fraction length issue when transition. */
+    -webkit-transform: translateZ(0);
+}
+
+// Base menu item styling.
+%menu-item-base {
+    border: none;
+    font-size: 11px;
+    line-height: 22px;
+    margin: 0;
+    padding: 0 27px 0 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 1px;
+    cursor: default;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    @include single-transition($property: background-color, $duration: 400ms);
+}
+
+// Adds a check mark.
+%menu-check-mark {
+    background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) 50% -408px no-repeat;
+    content: "";
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 19px;
+}
+
+// Clears the check mark, if applied.
+%menu-clear-check-mark {
+    content: "";
+    height: 0;
+    width: 0;
+}
+
+.mstrmojo-ui-Menu {
+    @extend %menu-base;
+
+    visibility: hidden;
+
+    &.visible {
+      visibility: visible;
+    }
+
+    &.mstrmojo-scrollbar-host {
+        overflow: hidden;
+    }
+
+    // Default styling for menu items.
+    %menu-item-default {
+        background-color: transparent;
+        color: #F0F0F0;
+    }
+
+    // Styling for selected menu items.
+    %menu-item-selected {
+        @include background-color-rgba(27, 27, 27, 0.42);
+    }
+
+    .mstrmojo-ui-Menu-item {
+        &.on {
+            @extend %menu-item-default;
+
+            &:before {
+                @extend %menu-check-mark;
+
+            }
+
+            &:hover {
+                @extend %menu-item-default;
+            }
+        }
+
+        &.selected {
+            position: relative; // Remove this hack after changing the style for xtab menus.
+        }
+
+        &.xt.checked {
+            background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) 0% -408px no-repeat;
+        }
+
+        &.open {
+            @extend %menu-item-selected;
+        }
+
+        &.txt {
+            padding: 0 10px;
+        }
+
+        &.separator {
+            border-bottom: 1px solid #303030;
+            margin-top: 3px;
+            margin-bottom: 4px;
+            -webkit-box-shadow: 0 1px 0 0 rgb(89, 89, 89);
+            -moz-box-shadow: 0 1px 0 0 rgb(89, 89, 89);
+            box-shadow: 0 1px 0 0 rgb(89, 89, 89);
+        }
+
+        // Clear check mark for sub menu items.
+        &.pop:before {
+            @extend %menu-clear-check-mark;
+        }
+
+        & > DIV {
+            &.check {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 17px;
+            }
+
+            &.micn,
+            &.arw {
+                cursor: default;
+                position: absolute;
+            }
+
+            &.arw {
+                border: 0 solid transparent;
+                background: transparent url(#{$vi-img-path}/arrow-contextMenu.png) 12px 8px no-repeat;
+                height: 22px;
+                right: 0;
+                top: 0;
+                width: 28px;
+                left: auto;
+
+                // Submenus.
+                .mstrmojo-ui-Menu {
+                    margin-top: -16px;
+                    margin-left: 10px;
+                }
+            }
+
+            &.micn {
+                border: none;
+                height: 19px;
+                top: 3px;
+                left: 2px;
+                right: auto;
+                width: 15px;
+            }
+        }
+
+        @extend %menu-item-base;
+
+        &.pop {
+            overflow: visible;
+        }
+
+        // CSS for an action popup menu item.
+        &.ax.pop {
+            $color-hover-background-arrow: #252525;
+
+            padding: 0 37px 0 17px;
+
+            // To highlight that it's a popup - show the pointer.
+            cursor: pointer;
+
+            // CSS for the mode that we need to highlight the arrow for the action item.
+            &.hlt-ax {
+                &:hover {
+                    .arw {
+                        background-color: $color-hover-background-arrow;
+                    }
+                }
+            }
+
+            .arw{
+                &:hover {
+                    background-color: $color-hover-background-arrow;
+                    cursor: default;
+                }
+
+                // The bar between text and arrow
+                &:after {
+                    content: " ";
+                    position: absolute;
+                    height: 11px;
+                    width: 1px;
+                    border-left: 1px #858585 solid;
+                    top: 6px;
+                }
+            }
+
+            // When open or hover, show another bar
+            &:hover,
+            &.open {
+                .arw {
+                    &:after {
+                      border-left: 1px #464646 solid;
+                      height: 22px;
+                      top: 0px;
+                    }
+                }
+            }
+        }
+
+        &.radio {
+            padding-left: 27px;
+
+            &:before {
+                background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) -7px -367px no-repeat;
+                content: "";
+                height: 11px;
+                left: 11px;
+                position: absolute;
+                top: 6px;
+                width: 10px;
+            }
+
+            &.on:before {
+                background-position: -7px -343px;
+            }
+        }
+
+        // CSS for non-interactive menu items.
+        &.non-int {
+            &:before {
+                @extend %menu-clear-check-mark;
+            }
+
+            // Non-interactive menu items don't highlight on hover.
+            &:hover {
+                background: none;
+            }
+
+            // Disabled menu items are a specialized non-interactive menu item with a different text color.
+            &.disabled {
+                color: #858585;
+            }
+        }
+
+        &:hover {
+            @extend %menu-item-default;
+            @include background-color-rgba(27, 27, 27, 0.42);
+        }
+
+        &.selected {
+            &:before {
+                @extend %menu-check-mark;
+            }
+        }
+
+        > DIV.micn {
+            background: transparent none 2px 2px no-repeat;
+            left: 2px;
+        }
+    }
+
+    .mstrmojo-ui-Pulldown .item {
+        &.selected:before,
+        &.on:before {
+            background: none;
+        }
+
+    }
+}
+
+// TODO: This needs to be moved to _MenuEditor.scss
+.mstrmojo-ui-MenuPopup {
+    @extend %menu-base;
+
+    margin-left: 0;
+}
+
+.mstrmojo-Menu .item.selected:before {
+    @extend %menu-check-mark;
+}
+/** END: Menu **/

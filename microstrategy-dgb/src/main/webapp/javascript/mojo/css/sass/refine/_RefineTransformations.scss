@@ -1,0 +1,191 @@
+@import "RefineVariables";
+
+.refine-transformations {
+  float: left;
+  border-right: 1px solid #cbcbcb;
+}
+
+.refine-transformations-top {
+  height: 44px;
+  position: relative;
+}
+
+.refine-transformations-columns {
+  float: left;
+}
+
+.refine-transformations-functions {
+  float: left;
+}
+
+.refine-transformations-control {
+  float: left;
+}
+
+.refine-transformations-suggestions {
+  margin: 0px 12px 12px 0px;
+  background-color: #ffffff;
+  border: $widgetBorder;
+}
+
+.refine-transformations.short .refine-transformations-top .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 126px;
+}
+
+.refine-transformations-top .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 226px;
+  margin: 16px 5px 6px 0px;
+  background-color: $containerFillColor;
+  .mstrmojo-ui-Pulldown-text {
+    background: url("vi/images/icons.png") no-repeat scroll right -20px $containerFillColor;
+    color: $fontColor;
+    max-width: 226px;
+    border-radius: 3px;
+    border: $widgetBorder;
+    padding: 3px 20px 3px 5px;
+    height: 14px;
+    line-height: 14px;
+  }
+  .mstrmojo-PopupList {
+    border-radius: 3px;
+    border: $widgetBorder;
+    margin-top: 2px;
+    z-index: 1001;
+    background: $popupContainerFillColor;
+    .item {
+      max-width: initial;
+    }
+  }
+}
+
+.refine-transformations-top .mstrmojo-ui-Pulldown.refine-pulldown.selected {
+  .mstrmojo-ui-Pulldown-text {
+    color: $fontColor;
+  }
+}
+
+.refine-transformations-top .mstrmojo-ui-Pulldown.refine-pulldown.mstrmojo-Refine-SearchablePulldown {
+  .mstrmojo-ui-Pulldown-text {
+    background-color: white;
+    height: 21px;
+  }
+  .mstrmojo-ui-Pulldown-label {
+    padding: 4px 5px 4px 20px;
+    width: 101px;
+    &.hidden {
+      color: transparent;
+      background: none;
+    }
+  }
+  .mstrmojo-PopupList {
+    .item {
+      &.refine-transformations-list-big {
+        height: 22px;
+        line-height: 22px;
+        font-weight: bold;
+        padding-left: 12px;
+      }
+      &.refine-transformations-list-small {
+        padding-right: 11px;
+        height: 22px;
+        line-height: 22px;
+        padding-left: 18px;
+      }
+      .sp-highlight {
+        background-color: yellow;
+      }
+    }
+  }
+}
+
+.refine-transformations-top .refine-transformations-functions .mstrmojo-ui-Pulldown.refine-pulldown {
+  .mstrmojo-PopupList {
+    width: auto;
+    max-width: initial;
+    background: #f3f3f4;
+    .item {
+      padding: 0px;
+      cursor: default;
+    }
+    .item.selected {
+      font-weight: normal;
+    }
+    .item:hover {
+      background-color: transparent;
+    }
+    .item.refine-transformations-list-small {
+      border-radius: 2px;
+    }
+    .item.refine-transformations-list-small:hover {
+      background-color: #dadada;
+    }
+    .item.refine-transformations-list-small.selected {
+      background-color: #cecece;
+    }
+    .item.refine-transformations-list-small.disable {
+      color: $fontColorDisable;
+    }
+    .item.refine-transformations-list-small.disable:hover {
+      background-color: transparent;
+    }
+    .item.refine-transformations-list-small.disable.selected {
+      background-color: transparent;
+    }
+  }
+}
+
+.refine-transformations-top .refine-transformations-functions .mstrmojo-ui-Pulldown.refine-pulldown.disable {
+  .mstrmojo-PopupList {
+    width: auto;
+    max-width: initial;
+    background: #f3f3f4;
+    color: $fontColorDisable;
+    .item.selected {
+      font-weight: normal;
+    }
+    .item:hover {
+      background-color: transparent;
+    }
+    .item.refine-transformations-list-small {
+      border-radius: 2px;
+      color: $fontColorDisable;
+    }
+    .item.refine-transformations-list-small:hover {
+      background-color: transparent;
+    }
+    .item.refine-transformations-list-small.selected {
+      background-color: transparent;
+    }
+    .item.refine-transformations-list-small.noColumn {
+      color: $fontColor;
+    }
+    .item.refine-transformations-list-small.noColumn:hover {
+      background-color: #dadada;
+    }
+    .item.refine-transformations-list-small.noColumn.selected {
+      background-color: #cecece;
+    }
+  }
+}
+
+.refine-transformations-list {
+  height: 22px;
+}
+
+.refine-transformations-list.top {
+  padding-top: 4px;
+}
+
+.refine-transformations-list.first {
+  padding-top: 2px;
+  border-top: $dataPreviewHighlightBorder;
+}
+
+.refine-transformations-list.bottom {
+  padding-bottom: 4px;
+}
+
+.refine-transformations-list.last {
+  padding-bottom: 2px;
+  border-bottom: $dataPreviewDarkBorder;
+}

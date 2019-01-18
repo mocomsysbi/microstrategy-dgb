@@ -1,0 +1,1417 @@
+.workstation {
+
+    /** BEGIN: Root Toolbar **/
+    // BEGIN: Container of Menubar and Toolbar
+    .mstrmojo-RootView-menutoolbar {
+        @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+        border-bottom: none;
+    }
+    // END: Container of Menubar and Toolbar
+
+    .printPreview {
+        border-bottom: none;
+    }
+
+    // BEGIN: Menubar
+    .mstrmojo-RootView-menubar {
+        @include box-sizing();
+
+
+        &.inline-dialog-mode {
+            border-bottom: 0;
+            line-height: 22px;
+        }
+
+        &.noItems {
+            display: none !important; // DE96925: Override 'enhanced' style when no items are present
+        }
+
+        background: #FAFAFA;
+        line-height: 21px;
+        border-bottom: 1px solid #D7D7D7;
+        padding: 0 0 0 7px;
+        position: relative;
+        z-index: 5;
+
+        .mstrmojo-VIToolbar {
+            > DIV > DIV.item {
+              height: 21px;
+            }
+
+            .btn {
+              position: relative;
+              height: 21px;
+            }
+
+            .item.mb {
+                color: $wsvi-primary-black;
+                font-size: 10px;
+                cursor: default;
+                //font-family: Arial, sans-serif;
+                position: relative;
+                &.disabledMenuItem {
+                    color: rgba(68, 70, 73, 0.45);
+                }
+
+                .btn {
+                    padding: 0 12px;
+                }
+                .text {
+                    text-transform: uppercase;
+                }
+
+                &.selected.open {
+                    color: $wsvi-primary-white;
+                    background-color: $wsvi-primary-blue;
+                }
+
+                &.style .mstrmojo-ui-Menu {
+                    width: 300px;
+                    .mstrmojo-ui-Menu-item {
+                        padding-left: 28px; //7px(left space) + 18px(check icon) +3px(right space)
+                        &.lbl {
+                            padding-left: $wsvi-element-padding;
+                        }
+                    }
+                }
+
+                //Apply opacity for Themes and Palettes
+                &.style .lbl .mtxt {
+                    opacity: 0.45;
+                }
+                //FORMAT FOR MENUBAR VIEW ITEMS
+                &.view.selected.open {
+                    .hasToggleItem {
+                        .mstrmojo-ui-Menu-item-container {
+                            .item.tg.mstrmojo-ui-Menu-item {
+                                padding-left: 25px;//6px(leftMargin for checkMark)+16px(width for checkMark)+3px(RightMargin for Panel Icon)
+
+                                &.on:before,
+                                &:before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    left: 25px;//6px(leftMargin for checkMark)+16px(width for checkMark)+3px(RightMargin for Panel Icon)
+                                    margin: 4px 6px 4px 0;
+                                    width: 18px;
+                                    height: 18px;
+                                }
+
+                                &.presentationMode.on,
+                                &.presentationMode {
+                                    &:before {
+                                        background-image: none;
+                                    }
+                                    .mtxt {
+                                        padding-left: 0;
+                                    }
+                                }
+
+                                &.tocPanel,
+                                &.tocPanel.on {
+                                    &:before {
+                                        @include wsvi-icon-toc-editLabel-icon;
+                                    }
+                                }
+
+                                &.datasetsPanel,
+                                &.datasetsPanel.on {
+                                    &:before {
+                                        @include wsvi-icon-datasets-editLabel-icon;
+                                    }
+                                }
+
+                                &.editPanel,
+                                &.editPanel.on {
+                                    &:before {
+                                        @include wsvi-icon-editPanel-icon;
+                                    }
+                                }
+
+                                &.filterPanel,
+                                &.filterPanel.on {
+                                    &:before {
+                                        @include wsvi-icon-filterPanel-icon;
+                                    }
+                                }
+
+                                &.propertiesPanel,
+                                &.propertiesPanel.on {
+                                    &:before {
+                                       @include wsvi-icon-propertiesPanel-icon;
+                                    }
+                                }
+
+                                &.galleryPanel,
+                                &.galleryPanel.on {
+                                    &:before {
+                                        @include wsvi-icon-vizgallery-editLabel-icon;
+                                    }
+                                }
+
+                                .micn {
+                                    background-image: none;
+                                    width: 16px;
+                                    height: 16px;
+                                    margin: 4px 3px 4px 6px;
+                                }
+                                .mtxt {
+                                    padding-left: 24px;//18px + 6px not use left, since width 100% won't calculate correctly
+                                }
+
+                                &.on {
+                                    .micn {
+                                        background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+                                        @include wsvi-icon-position-checkmark;
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .item.dlmt,
+            .item.dlmt:hover {
+                @include border-radius(0);
+
+                border-top: 1px solid #303030;
+                border-bottom: 1px solid #595959;
+                margin: 3px 0;
+            }
+
+            .mstrmojo-ui-Menu-item.lbl {
+                &:hover {
+                    background: transparent;
+                }
+                &:before {
+                    display: none; // avoid showing checkmark of selected item
+                }
+            }
+        }
+
+    }
+
+    //Palette format style
+    .SwitchCustomPalette,
+    .SwitchPalette {
+        &.hasPaletteColors {
+            //text-indent: -999px;
+            .palette-name {
+                max-width: 150px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            .paletteColors {
+                position: absolute;
+                width: 117px;
+                right: 10px;
+                top: 6px;
+
+                .colorIcon {
+                    float: left;
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+        }
+
+    }
+
+    .SwitchCustomPalette,
+    .SwitchCustomTheme {
+        &.mstrmojo-ui-Menu-item {
+            padding-left: 28px; //7px(left space) + 18px(check mark icon) +3px(right space)
+        }
+    }
+
+    //custom palette
+    .SwitchCustomPalette.mstrmojo-ui-Menu-item {
+        width: 252px; //300px(palette menu width) - 28px(left padding) -20px(right padding)
+    }
+
+    .mstrmojo-ui-Menu {
+        .SwitchCustomTheme, .SwitchPalette, .SwitchCustomPalette, .SwitchTheme {
+            &.mstrmojo-ui-Menu-item.on::before {
+                left: 10px;
+            }
+        }
+    }
+
+    // END: Menubar
+
+    // BEGIN: Toolbar
+    .mstrmojo-RootView-menutoolbar.hidden {
+        .mstrmojo-RootView-toolbar {
+            height: 0;
+        }
+        .mstrmojo-RootView-menubar {
+            border-width: 0;
+        }
+    }
+
+    .mstrmojo-RootView-toolbar {
+        background: $wsvi-primary-gray-light-theme;
+        @include box-shadow($wsvi-general-panel-shadow-color, 0, $wsvi-general-panel-shadow-y, $wsvi-general-panel-shadow-blur);
+        position: relative;
+        z-index: 4;
+        color: white;
+        box-sizing: border-box;
+        min-width: 750px;
+        // DE67697: When div contains inline-block without content, there will be one px more than the actual size. Fix the toolbar's height here to eliminate the extra 1 px.
+        height: 36px;
+        //white-space: nowrap; //commented out since it makes toolbar float:right wrapped
+
+        &.inline-dialog-mode {
+            display: none;
+        }
+
+
+        .mstrmojo-VIToolbar {
+            .item {
+                position: relative;
+                margin: 3px 12px 3px 3px;
+
+                .btn {
+                    cursor: default;
+                    font-family: Arial, sans-serif;
+                    font-size: 11px;
+                    height: 30px;
+                    position: relative;
+                }
+
+                .text {
+                    position: relative;
+                    display: none;
+                    float: left;
+                }
+                .icn {
+                    background: transparent url(#{$vi-img-path}/toolbar_icons_new.svg) 0 0 no-repeat;
+                    background-origin: content-box;
+                    height: 20px;
+                    width: 20px;
+                    display: inline-block;
+                    float: left;
+                    padding: 5px 5px 5px 5px;
+                }
+
+                .label {
+                    margin: 8px 12px 0;
+                }
+
+                &.rgt {
+                    /* for icons positioned at right end*/
+                    float: right;
+                }
+            }
+
+            /* BEGIN: Picker Button */
+            .item.pb {
+                .pdl {
+                    background: transparent url(#{$vi-img-path}/toolbar.png) -264px -20px no-repeat;
+                    border-left: 1px solid transparent;
+                    height: 100%;
+                    width: 14px;
+                    display: inline-block;
+                    float: left;
+                }
+
+                .btn:hover .pdl {
+                    border-left: 1px solid #ABACAC;
+                    color: #000000;
+                }
+            }
+            /* END: Picker Button */
+
+            /* BEGIN: Menu Button */
+            .item.mb .icn {
+                width: 38px /*30px*/;
+            }
+            /* END: Menu Button */
+
+            /* BEGIN: Toggle Button */
+            .item.tg .icn {
+                width: 30px;
+            }
+            /* END: Toggle Button */
+
+            /* BEGIN: Delimiter */
+            .item.dlmt {
+                margin-left: 0;
+                margin-right: 0;
+                .btn {
+                    margin: 0 12px 0 5px;
+                    height: 30px;
+                }
+
+                .btn:hover {
+                    background: none;
+                    border-color: transparent;
+                    box-shadow: none;
+                    cursor: default;
+                }
+
+                .icn {
+                    box-shadow: none;
+                    background: none;
+                    border-left: 1px solid $wsvi-font-gray;
+                    padding: 0;
+                    width: 0;
+                    height: 18px;
+                    margin-top: 6px;
+                }
+
+                &.reverse {
+                    float: right;
+                }
+            }
+            /* END: Delimiter */
+
+            .item.selected.open .btn {
+                background: transparent;
+            }
+
+            .filterPanel {
+                .icn {
+                    background-position: -559px -83px;
+                }
+                &:hover .icn {
+                    background-position: -559px -113px;
+                }
+                &:active .icn {
+                    background-position: -559px -143px;
+                }
+                &.on {
+                    .icn {
+                        background-position: -559px 7px;
+                    }
+                    &:hover .icn {
+                        background-position: -559px -23px;
+                    }
+                    &:active .icn {
+                        background-position: -559px -53px;
+                    }
+                }
+            }
+
+            .undo {
+                margin-left: 12px;
+                .icn {
+                    background-position: 0 -30px;
+                    // to fix defect https://connect.microsoft.com/IE/feedbackdetail/view/917034/ie-11-active-css-selector-blocked-by-child-elements-and-active-css-selector-siblings-are-not-selected
+                    &:active {
+                        background-position: 0px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: 0 -30px;
+                }
+                &:active .icn {
+                    background-position: 0px -150px;
+                }
+
+                // Set up icons for the disabled state
+                &.disabled {
+                    &,
+                    &:active,
+                    &:hover {
+                        .icn {
+                            background-position: 0 -270px;
+                        }
+                    }
+                }
+
+            }
+
+            .redo {
+                .icn {
+                    background-position: -30px -30px;
+                    &:active {
+                        background-position: -30px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -30px -30px;
+                }
+                &:active .icn {
+                    background-position: -30px -150px;
+                }
+
+                // Set up icons for the disabled state
+                &.disabled {
+                    &,
+                    &:active,
+                    &:hover {
+                        .icn {
+                            background-position: -30px -270px;
+                        }
+                    }
+                }
+            }
+
+            .save {
+                .icn {
+                    background-position: -60px -30px;
+                    &:active {
+                        background-position: -60px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -60px -30px;
+                }
+                &:active .icn {
+                    background-position: -60px -150px;
+                }
+                // Set up icons for the disabled state
+                &.disabled {
+                    &,
+                    &:active,
+                    &:hover {
+                        .icn {
+                            background-position: -60px -270px;
+                        }
+                    }
+                }
+            }
+
+            .refresh {
+                .icn {
+                    background-position: -90px -30px;
+                    &:active {
+                        background-position: -90px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -90px -30px;
+                }
+                &:active .icn {
+                    background-position: -90px -150px;
+                }
+
+                // Set up icons for the disabled state
+                &.disabled {
+                    &,
+                    &:active,
+                    &:hover {
+                        .icn {
+                            background-position: -90px -270px;
+                        }
+                    }
+                }
+            }
+
+            .pause {
+                .icn {
+                    background-position: -235px -58px;
+                    &:active {
+                        background-position: -235px -178px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -235px -58px;
+                }
+                &:active .icn {
+                    background-position: -235px -178px;
+                }
+
+                &.on {
+                    .icn {
+                        background-position: -205px -58px;
+                    }
+                }
+                &:active.on {
+                    .icn {
+                        background-position: -205px -178px;
+                    }
+                }
+                // Set up icons for the disabled state
+                &.disabled {
+                    &,
+                    &:active,
+                    &:hover {
+                        .icn {
+                            background-position: -235px -298px;
+                        }
+                    }
+                }
+            }
+
+            .reprompt {
+                .icn {
+                    background-position: -150px -60px;
+                }
+                &:hover .icn {
+                    background-position: -150px -60px;
+                }
+                &:active .icn {
+                    background-position: -150px -180px;
+                }
+                &.disabled .icn {
+                    background-position: -150px -300px;
+                }
+            }
+
+
+            .item.mb.contents {
+                .icn {
+                    width: 38px;
+                    background-position: 0 -90px;
+                }
+                &:active .icn {
+                    background-position: 0 -210px;
+                }
+            }
+
+            .importFile,
+            .addDS,
+            .newDS {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .separator {
+                margin-right: 3px;
+            }
+
+            .addDS {
+                &.mb {
+                  margin-left: 0;
+                  margin-right: 12px;
+                }
+                .icn {
+                    background-position: -60px -60px;
+                    &:active {
+                        background-position: -60px -180px;
+                    }
+                }
+                &:hover .icn {
+                    background-position:  -60px -60px;
+                }
+                &:active .icn {
+                    background-position: -60px -180px;
+                }
+            }
+
+            .addDS.selected.open .icn {
+                background-position: -60px -180px;
+            }
+
+            .addChapter {
+                .icn {
+                    background-position: -360px -30px;
+                    &:active {
+                        background-position: -360px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -360px -30px;
+                }
+                &:active .icn {
+                    background-position: -360px -150px;
+                }
+            }
+
+            .addPage {
+                .icn {
+                    background-position: -390px -30px;
+                    &:active {
+                        background-position: -390px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -390px -30px;
+                }
+                &:active .icn {
+                    background-position: -390px -150px;
+                }
+            }
+
+            .enterGroupingMode {
+                float: right;
+
+                .icn {
+                    background-position: -480px -30px;
+                    padding: 5px 7px 3px 1px;
+                    height: 22px;
+                    width: 22px;
+
+                    &:active {
+                        background-position: -480px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -480px -30px;
+                }
+                &:active .icn {
+                    background-position: -480px -150px;
+                }
+                &.disabled .icn {
+                    background-position: -480px -270px;
+                }
+            }
+
+            .insertVI {
+                .icn {
+                    background-position: -120px -30px;
+                    &:active {
+                        background-position: -120px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -120px -30px;
+                }
+                &:active .icn {
+                    background-position: -120px -150px;
+                }
+
+                &.disabled .icn {
+                    background-position: -120px -270px;
+                }
+            }
+
+            @media (min-width: 853px) {
+                .insertVI {
+                    margin-left: calc(50% - 419px);
+                }
+            }
+
+            .insertFlt {
+                .icn {
+                    background-position: -150px -30px;
+                    &:active {
+                        background-position: -150px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -150px -30px;
+                }
+                &:active .icn {
+                    background-position: -150px -150px;
+                }
+
+                &.disabled .icn {
+                    background-position: -150px -270px;
+                }
+            }
+
+            .insertText {
+                .icn {
+                    background-position: -180px -30px;
+                    &:active {
+                        background-position: -180px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -180px -30px;
+                }
+                &:active .icn {
+                    background-position: -180px -150px;
+                }
+                &.disabled .icn {
+                    background-position: -180px -270px;
+                }
+            }
+
+            .insertImage {
+                .icn {
+                    background-position: -210px -30px;
+                    &:active {
+                        background-position: -210px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -210px -30px;
+                }
+                &:active .icn {
+                    background-position: -210px -150px;
+                }
+                &.disabled .icn {
+                    background-position: -210px -270px;
+                }
+            }
+
+            .insertHtml {
+                .icn {
+                    background-position: -240px -30px;
+                    &:active {
+                        background-position: -240px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -240px -30px;
+                }
+                &:active .icn {
+                    background-position: -240px -150px;
+                }
+                &.disabled .icn {
+                    background-position: -240px -270px;
+                }
+            }
+
+            .insert {
+                .icn {
+                    background-position: -439px 5px;
+                }
+                &:hover .icn {
+                    background-position: -439px -25px;
+                }
+                &:active .icn {
+                    background-position: -439px -55px;
+                }
+            }
+
+            .insert.selected.open .icn {
+                background-position: -439px -55px;
+            }
+
+            .insert.open {
+                .mstrmojo-ui-Menu-item {
+                    padding-left: 32px !important;
+
+                    &.selected:before {
+                        background-image: none;
+                    }
+
+                    .micn {
+                        background-image: url(#{$vi-img-path}/toolbar_icons.png);
+                        left: 12px;
+                    }
+                }
+                .insertVI {
+                    .micn {
+                        background-position: -200px 5px;
+                    }
+                }
+                .insertFlt {
+                    .micn {
+                        background-position: -320px 5px;
+                    }
+                }
+                .insertText {
+                    .micn {
+                        background-position: -280px 5px;
+                    }
+                }
+                .insertImage {
+                    .micn {
+                        background-position: -240px 5px;
+                    }
+                }
+                .insertHtml {
+                    .micn {
+                        background-position: -360px 5px;
+                    }
+                }
+            }
+
+
+            .openNLP {
+                float: right;
+                .icn {
+                    background-position: -185px -59px;
+                    &:active {
+                        background-position: -185px -179px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -185px -59px;
+                }
+                &:active .icn {
+                    background-position: -185px -179px;
+                }
+                &.disabled .icn {
+                    background-position: -185px -299px;
+                }
+            }
+
+            .togglePreviewMode {
+                float: right;
+                .icn {
+                    background-position: -420px -30px;
+                }
+                &:hover .icn {
+                    background-position: -420px -30px;
+                }
+                &:active .icn {
+                    background-position: -420px -150px;
+                }
+
+                &.on {
+                  .icn {
+                    background-position: -450px -30px;
+                  }
+                }
+
+                &:active.on {
+                  .icn {
+                    background-position: -450px -150px;
+                  }
+                }
+
+                &.disabled .icn {
+                    background-position: -450px -270px;
+                }
+            }
+
+            .presentationMode {
+                float: right;
+                .icn {
+                    background-position: -300px -30px;
+                    &:active {
+                        background-position: -300px -150px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -300px -30px;
+                }
+                &:active .icn {
+                    background-position: -300px -150px;
+                }
+
+                &.disabled .icn {
+                    background-position: -300px -270px;
+                }
+            }
+
+            .refreshPulldown {
+                .icn {
+                    background-position: -810px -60px;
+                    &:active {
+                        background-position: -810px -60px;
+                    }
+                }
+                &:hover .icn {
+                    background-position: -810px -60px;
+                }
+                &:active .icn {
+                    background-position: -810px -180px;
+                }
+                &.item.mb.selected.open {
+                     .icn {
+                         background-position: -810px -180px;
+                     }
+                    .mstrmojo-ui-Menu {
+                        .autoRefresh.mstrmojo-ui-Menu-item.tg {
+                            &:before {
+                                content: none;
+                            }
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                    }
+                }
+                &.item.mb .icn {
+                    width: 38px;
+                }
+                .item.refreshPM {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+
+            .close {
+                float: right;
+
+                .icn {
+                    background-position: -330px -30px;
+                }
+                &:hover .icn {
+                    background-position: -330px -150px;
+                }
+                &:active .icn {
+                    background-position: -330px -150px;
+                }
+            }
+
+            .togglePathbar {
+                margin-right: 12px;
+                float: right;
+
+                .icn {
+                    background-position: 0 -60px;
+                    padding: 5px 0;
+                }
+                &:hover .icn {
+                    background-position: 0 -60px;
+                }
+                &:active .icn {
+                    background-position: 0 -180px;
+                }
+                &.on {
+                    .icn {
+                        background-position: -30px -60px;
+                    }
+                    &:hover .icn {
+                        background-position: -30px -60px;
+                    }
+                    &:active .icn {
+                        background-position: -30px -180px;
+                    }
+                }
+            }
+
+            .exitFormattingMode {
+                float: right;
+
+                .icn {
+                    @include linear-gradient(#3D3E3F, #373839);
+                    @include box-shadow(#47484B, 0, 1px, 1px, false);
+                    @include border-radius(2px);
+                    @include ellipsis-text();
+
+                    background: transparent;
+                    border: 1px solid #0F0F10;
+                    min-width: 66px;
+                    height: 22px;
+                    width: auto;
+                    margin: 8px 12px 0;
+
+                    line-height: 22px;
+                    text-align: center;
+                    padding: 0 8px;
+                    color: #EAEAEA;
+                    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+
+                    &:hover {
+                        @include linear-gradient(#313233, #2D2E2F);
+                    }
+
+                    &:active {
+                        @include linear-gradient(#3D3E3F, #373839);
+                        @include box-shadow(#1B1B1B, 0, 0, 17px, true);
+                    }
+                }
+            }
+
+        }
+    }
+
+    // END: Toolbar
+
+    // BEGIN: Presentation Mode
+    .mstrmojo-RootView.presentation {
+        .mstrmojo-VITabStrip-addBtn,
+        .mstrmojo-VITabStrip-menu,
+        .mstrmojo-VITabStrip-tabs .mstrmojo-VITab .mstrmojo-VITab-menu,
+        .mstrmojo-VITabStrip-tabs .mstrmojo-VITab > DIV:hover .mstrmojo-VITab-menu,
+        .mstrmojo-TextBox .hover-menu-btn,
+        .mstrmojo-ImageBox .hover-menu-btn {
+            display: none !important;
+        }
+
+        .mstrmojo-VIPanel.mstrmojo-VIBox .title-text .mstrmojo-EditableLabel,
+        .mstrmojo-VIBoxPanelContainer-header,
+        .mstrmojo-ImageBox .mstrmojo-VIPanel-content,
+        .mstrmojo-TextBox .mstrmojo-VIPanel-content,
+        .mstrmojo-UnitContainer .title-text .mstrmojo-EditableLabel {
+            cursor: default;
+        }
+
+        .mstrmojo-RootView-menubar {
+            display: none;
+        }
+
+        @mixin presentationModeTitleBarStyle {
+            $title-text-width: 60%; // Reduce this in the unlikely event that more than 40% of the toolbar gets filled up with icons
+            // DE72450: The below properties ensure that the text bar doesn't overflow below the toolbar and always remains centered
+            display: inline-block;
+            left: 50%;
+            position: absolute;
+            width: $title-text-width;
+            margin-left: calc(-#{$title-text-width}/2);
+            margin-right: 0px;
+        }
+
+        .undo {
+            float: left;
+            .icn {
+                background-position: -810px -30px;
+                // to fix defect https://connect.microsoft.com/IE/feedbackdetail/view/917034/ie-11-active-css-selector-blocked-by-child-elements-and-active-css-selector-siblings-are-not-selected
+                &:active {
+                    background-position: -810px -150px;
+                }
+            }
+            &:hover .icn {
+                background-position: -810px -30px;
+            }
+            &:active .icn {
+                background-position: -810px -150px;
+            }
+        }
+
+        .redo {
+            float: left;
+            .icn {
+                background-position: -840px -30px;
+                &:active {
+                  background-position: -840px -150px;
+                }
+            }
+            &:hover .icn {
+                background-position: -840px -30px;
+            }
+            &:active .icn {
+                background-position: -840px -150px;
+            }
+        }
+
+        .save {
+            .icn {
+                background-position: -898px -60px;
+                &:active {
+                    background-position: -898px -180px;
+                }
+            }
+            &:hover .icn {
+                background-position: -898px -60px;
+            }
+            &:active .icn {
+                background-position: -898px -180px;
+            }
+        }
+
+        .refresh {
+            .icn {
+                background-position: -990px -30px;
+                &:active {
+                    background-position: -990px -150px;
+                }
+            }
+            &:hover .icn {
+                background-position: -990px -30px;
+            }
+            &:active .icn {
+                background-position: -990px -150px;
+            }
+        }
+
+        .reprompt {
+            .icn {
+                background-position: -870px -60px;
+            }
+            &:hover .icn {
+                background-position: -870px -60px;
+            }
+            &:active .icn {
+                background-position: -870px -180px;
+            }
+        }
+
+        .close {
+            float: right;
+
+            .icn {
+                background-position: -1020px -30px;
+            }
+            &:hover .icn {
+                background-position: -1020px -150px;
+            }
+            &:active .icn {
+                background-position: -1020px -150px;
+            }
+        }
+
+        .share {
+            float: right;
+            .icn {
+                background-position: -960px -30px;
+                &:active {
+                    background-position: -960px -150px;
+                }
+            }
+            &:active .icn {
+                background-position: -960px -150px;
+            }
+        }
+
+        .presentationMode {
+            margin-right: 12px;
+            .icn {
+                background-position: -900px -30px;
+            }
+            &:hover .icn {
+                background-position: -900px -30px;
+            }
+            &:active .icn {
+                background-position: -900px -150px;
+            }
+        }
+
+        .togglePreviewMode {
+            display: none;
+        }
+
+        .toggleFilterPanel {
+            float: right;
+            .icn {
+                background-position: -930px -30px;
+            }
+            &:hover .icn {
+                background-position: -930px -30px;
+            }
+            &:active .icn {
+                background-position: -930px -150px;
+            }
+            &.selected .icn {
+                background-position: -930px -150px;
+            }
+            // Set up icons for the disabled state
+            &.disabled {
+                &,
+                &:active,
+                &:hover {
+                    .icn {
+                        background-position: -930px -270px;
+                    }
+                }
+            }
+        }
+
+        .togglePreContentsPanel {
+            .icn {
+                background-position: -870px -30px;
+            }
+            &:hover .icn {
+                background-position: -870px -30px;
+            }
+            &:active .icn {
+                background-position: -870px -150px;
+            }
+            &.selected .icn {
+                background-position: -870px -150px;
+            }
+            // Set up icons for the disabled state
+            &.disabled {
+                &,
+                &:active,
+                &:hover {
+                    .icn {
+                        background-position: -870px -270px;
+                    }
+                }
+            }
+        }
+
+        .chapterPageTitle {
+            @include presentationModeTitleBarStyle;
+            .icn {
+                background: none;
+                padding: 0;
+                width: 0;
+            }
+            .text {
+                $title-text-margin: 50px; // DE72450: To prevent text from overflowing over toolbar icons as window width shrinks
+                display: block !important;
+                color: $wsvi-primary-black;
+                font-family: $wsvi-normal-font-family;
+                font-size: 16px;
+                line-height: 30px;
+                max-height: 30px;
+                overflow: hidden;
+                text-align: center;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: calc(100% - #{$title-text-margin}*2);
+                margin: 0 $title-text-margin;
+            }
+        }
+
+        &.enhanced {
+            //Enhanced presentation mode
+            .mstrmojo-RootView-menubar {
+                display: block;
+                height: 22px;
+            }
+
+            .presentationMode {
+                .icn {
+                    background-position: -900px -30px;
+                }
+                &:hover .icn {
+                    background-position: -900px -30px;
+                }
+                &:active .icn {
+                    background-position: -900px -150px;
+                }
+            }
+        }
+    }
+
+    // END: Presentation Mode
+
+    // BEGIN: No web dashboard design
+    .mstrmojo-RootView.nowebdashdesign {
+        .mstrmojo-VITabStrip-addBtn,
+        .mstrmojo-VITabStrip-tabs .mstrmojo-VITab .mstrmojo-VITab-menu,
+        .mstrmojo-VITabStrip-tabs .mstrmojo-VITab > DIV:hover .mstrmojo-VITab-menu,
+        .mstrmojo-TextBox .hover-menu-btn,
+        .mstrmojo-ImageBox .hover-menu-btn {
+            display: none !important;
+        }
+
+        .mstrmojo-VIPanel.mstrmojo-VIBox .title-text .mstrmojo-EditableLabel,
+        .mstrmojo-VIBoxPanelContainer-header,
+        .mstrmojo-ImageBox .mstrmojo-VIPanel-content,
+        .mstrmojo-TextBox .mstrmojo-VIPanel-content,
+        .mstrmojo-UnitContainer .title-text .mstrmojo-EditableLabel {
+            cursor: default;
+        }
+    }
+
+    // END: No web dashboard design
+
+    // BEGIN: Root Toolbar Tooltip
+    .mstrmojo-Tooltip.vi-regular.vi-tooltip-A.A-center.root-toolbar-tooltip {
+        .mstrmojo-Tooltip-arrow {
+            &:before {
+                border-bottom-color: $wsvi-tooltip-border-color; //DE60490; change toolbar tooltip color the same with normal tooltip ; rgba(68,70,73,.45);
+                top: -7px;
+            }
+
+            &:after {
+                border-bottom-color: $wsvi-tooltip-bg-color; //DE60490; change toolbar tooltip color the same with normal tooltip ; #EDEDED;
+                top: -5px;
+            }
+        }
+
+        &.togglePathbar {
+            .mstrmojo-Tooltip-content {
+                white-space: nowrap;
+            }
+        }
+
+        /* DE4504 : Tooltip of refresh pull down is too long.
+         So to avoid mis-alignment of tool-tip arrow this is added*/
+        &.refreshPulldown {
+
+            //Over-ride the wrapping divs to fit the tool tip in one line
+            .mstrmojo-Tooltip-content,
+            .mstrmojo-Tooltip-contentWrapper {
+                max-width: none;
+            }
+        }
+        .mstrmojo-Tooltip-contentWrapper {
+
+            //TODO: to be removed, since it is duplicated with _HasTooltip.scss
+            @include border-radius($wsvi-box-radius); //DE60490;unify border-radius
+            @include box-shadow($wsvi-panel-shadow, 1px, 2px, 8px); //DE60490;unify panel-shadow
+
+            background-color: $wsvi-tooltip-bg-color; //DE60490;change root toolbar background color the same with normal; #EDEDED;
+            border: 1px solid $wsvi-tooltip-border-color;
+            cursor: default;
+            display: block;
+            padding: 6px 8px;
+
+            .mstrmojo-Tooltip-content {
+                //color: #E4E4E5;
+                color: #4a4a4a;
+                font-size: 11px;
+            }
+        }
+    }
+    // END: Root Toolbar Tooltip
+
+    /** BEGIN: Root Toolbar Save Disabled Tooltip **/
+    .mstrmojo-VIRootToolbar.mstrmojo-Tooltip.vi-warning.vi-tooltip-A {
+        width: 300px;
+
+        &.animated-tooltip {
+            @include animation(shake-tooltip 4s);
+        }
+
+        .mstrmojo-Tooltip-contentWrapper {
+            display: inline-block;
+            padding-bottom: 12px;
+            border-color: rgba(68, 69, 72, 0.15);
+            box-shadow: rgba(68, 70, 73, 0.1) 0 0 8px 0;
+        }
+
+        .mstrmojo-Popup-title.mstrmojo-Tooltip-arrow:before {
+            border-right-color: rgba(68, 69, 72, 0.1);
+        }
+
+        .mstrmojo-Label.help-link-label {
+            font-size: 11px;
+            color: $wsvi-link-blue;
+            cursor: pointer;
+            float: left;
+            padding-left: 28px;
+            padding-top: 8px;
+        }
+
+        .content {
+            line-height: $wsvi-panel-lineheight;
+            .help-link-label {
+                padding-top: 12px;
+                line-height: 1;
+            }
+        }
+
+        .mstrmojo-Label.save-warning-icon {
+            padding-bottom: 18px;
+            padding-left: 28px;
+            float: left;
+            @include wsvi-icon-warning-tooltip;
+        }
+
+        .mstrmojo-Label.save-description {
+            font-size: 12px;
+            line-height: $wsvi-panel-lineheight;
+            padding-bottom: 12px;
+            padding-left: 28px;
+        }
+
+        .mstrmojo-Button {
+            float: right;
+            font-size: 11px;
+        }
+    }
+    /** END: Root Toolbar Save Disabled Tooltip**/
+    /** END: Root Toolbar **/
+}
+/** START: Undo Apply theme tooltip*/
+.undoApplyTheme {
+    .mstrmojo-Editor {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        .mstrmojo-Editor-content.mstrmojo-Tooltip-contentWrapper {
+            width: 284px;
+            .mstrmojo-VBox {
+                width: 100%;
+                padding: 5px 5px 0 5px;
+            }
+        }
+    }
+    .name {
+        padding-left: 25px;
+        &.icn {
+            font-weight: bold;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 9px;
+                left: 15px;
+                margin: 4px 6px 4px 0;
+                @include wsvi-icon-size;
+                @include wsvi-icon-info;
+            }
+        }
+    }
+    .mstrmojo-btns {
+        float: right;
+        padding-top: 20px;
+        .mstrmojo-WebButton {
+            margin-left: 10px;
+        }
+    }
+    .mstrmojo-Editor-curtain {
+        display: block;
+        opacity: 0;
+    }
+}
+
+/** END: Undo Apply theme tooltip*/

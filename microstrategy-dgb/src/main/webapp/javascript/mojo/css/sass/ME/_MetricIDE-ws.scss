@@ -1,0 +1,434 @@
+@import '../_global.scss';
+
+.workstation {
+    .mstrmojo-ME-link-text {
+        color: $wsvi-link-blue;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .mstrmojo-MetricIDE {
+        top: 0;
+        height: 552px;
+        width: 750px;
+        margin-left: 0;
+        transition: width 200ms;
+
+        // begin DME dataset objects
+        &.hideFuncBrowser {
+            .mstrmojo-VIDatasetObjects {
+                border-left: none;
+                box-shadow: 0 0 0 0 #dedede;
+            }
+        }
+
+        .mstrmojo-VIDatasetObjects {
+            background: transparent;
+            border: 0 none;
+            border-left: 1px solid #fff;
+            box-shadow: -1px 0 0 0 #dedede;
+            margin-left: 3px;
+            padding-left: 3px;
+            width: 190px;
+
+            & > .mstrmojo-VIPanel-titlebar .mstrmojo-EditableLabel {
+                background: none transparent;
+                text-transform: none;
+                text-shadow: 1px 1px 1px #fff;
+                font-weight: normal;
+                font-size: $wsvi-normal-font-size;
+            }
+
+            .mstrmojo-scrollbar-host .mstrmojo-VIPanel-content {
+                margin-top: 0px;
+                width: auto;
+            }
+
+            /* Support horizontal scroller*/
+            .mstrmojo-VIPanelContents {
+                overflow: visible;
+            }
+            .mstrmojo-VIUnitList .unit {
+                overflow: visible;
+            }
+            .mstrmojo-VIUnitList .unit span {
+                /*It looks the horizontal scroller cannot get the scrollWidth to match actual unit content width,
+                   so add thsi workaround to make unit text fully visible when scrolling to left*/
+                margin-right: 17px;
+            }
+
+            /*Mac One-tier: avoid unnecessary horizontal scrollbar */
+            .mstrmojo-sb-show-default .mstrmojo-VIPanelContents,
+            .mstrmojo-sb-show-default .mstrmojo-VIPanel-titlebar,
+            .mstrmojo-sb-show-default .mstrmojo-VIPanel-content,
+            .mstrmojo-sb-show-default .mstrmojo-VIUnitList,
+            .mstrmojo-sb-show-default .docdataset-unitlist-portlet {
+                width: auto;
+            }
+
+            /* Make highlight fully cover item width */
+            .mstrmojo-VIUnitList .unit {
+                border: 0 none;
+                height: $wsvi-panel-row-height;
+                line-height: normal;
+                .txt {
+                    padding-top: $wsvi-normal-font-padding-top;
+                }
+            }
+            .mstrmojo-VIUnitList .unit span {
+                background-color: transparent;
+                display: inline-block;
+                height: inherit;
+            }
+
+            // Set the hardcoded height for the scroll-node when there's a default scrollbar or custom scrollbar.
+            .mstrmojo-sb-show-default.mstrmojo-VIPanel-content,
+            .mstrmojo-scrollNode.mstrmojo-VIPanel-content {
+                height: 290px;
+                margin-top: 10px;
+            }
+
+            .mstrmojo-SearchBox-input {
+                height: 19px;
+            }
+
+            .mstrmojo-VIPanel-search {
+                clear: both;
+                margin-top: 2px;
+            }
+
+            .mstrmojo-VIPanelPortlet {
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+
+            .mstrmojo-VIEditor-divider {
+                display: none;
+            }
+        }
+
+
+        .mstrmojo-ME-TokenInputBox-suggest,
+        .mstrmojo-scrollable-suggestlist {
+            .mstrmojo-suggest-text {
+                background-image: none;
+            }
+
+            .a {
+                @include wsvi-icon-before('attribute');
+            }
+
+            .m {
+                @include wsvi-icon-before('metric');
+            }
+
+            .a.da {
+                @include wsvi-icon-before('derived-attribute');
+            }
+
+            .m.dm {
+                @include wsvi-icon-before('derived-metric');
+            }
+
+            .a.g {
+                @include wsvi-icon-before('geographic-attribute');
+            }
+
+            .afm {
+                @include wsvi-icon-before('attribute-form');
+            }
+
+            .fx {
+                @include wsvi-icon-before('function');
+            }
+
+            .a.de {
+                @include wsvi-icon-before('custom-group');
+            }
+
+            .fc {
+                background-position: 0px center;
+            }
+        }
+        // end DME dataset objects
+
+        & > .mstrmojo-Editor-buttons {
+            // same style as _Editor mstrmojo-Editor
+            border-top: 1px solid $wsvi-ui-border-gray;
+            padding-top: $wsvi-element-padding;
+        }
+
+        &.exp {
+            width: 900px;
+
+            &.hideFuncBrowser .mstrmojo-MetricIDE-browsers-container{
+                width: auto;
+            }
+
+            .mstrmojo-MetricIDE-browsers-container {
+                width: 434px;
+            }
+        }
+
+        &.hideFuncBrowser{
+            height: 482px;
+        }
+
+        &.mstrmojo-Editor > .mstrmojo-Editor-content {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        &.simple {
+            width: 500px;
+
+            .mstrmojo-MetricIDE-browsers-container {
+                width: 0;
+                overflow: hidden;
+                display: none !important;
+            }
+
+            .mstrmojo-MetricIDE-editors-container {
+                padding-left: 0;
+            }
+        }
+
+        &.transition-left {
+            transition: left 200ms;
+        }
+
+        .mstrmojo-BookletPage {
+            box-sizing: border-box;
+        }
+
+        .mstrmojo-SearchBox-bg {
+            background: transparent none;
+            height: auto;
+        }
+
+        .mstrmojo-SearchBox-clear {
+            border-width: 0;
+        }
+
+        .mstrmojo-SearchBox-input,
+        .mstrmojo-SearchBox-search {
+            border: 0 none;
+        }
+
+        .mstrmojo-VITitleBar-text {
+            width: 135px;
+        }
+    }
+
+    .mstrmojo-MetricIDE-browsers-container {
+        display: inline-block;
+        float: left;
+        border-right: 1px solid $wsvi-ui-border-gray;
+        box-shadow: 1px 0 0 0 #fff;
+
+        & > DIV {
+            float: left;
+            height: 380px;
+        }
+
+        .mstrmojo-MetricIDE-editor,
+        .mstrmojo-MetricIDE-editor * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .mstrmojo-VIPanel-titlebar {
+            overflow: hidden;
+            &.top {
+                margin-top: $wsvi-element-padding;
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    .mstrmojo-MetricIDE-browsers-stackcontainer {
+        overflow: hidden;
+    }
+
+    .mstrmojo-MetricIDE-browsers-tabcontainer {
+        border-right: 1px solid green;
+        float: left;
+    }
+
+    .mstrmojo-MetricIDE-browsers-tabstrip {
+        position: absolute;
+        bottom: 0;
+
+        .mstrmojo-TabButton {
+            width: 50%;
+            border: 0 none;
+            display: inline-block !important;
+            height: 21px;
+            text-align: center;
+            color: #000;
+        }
+
+        .mstrmojo-TabButton:hover {
+            background-color: #eee;
+        }
+
+        .mstrmojo-TabButton.selected {
+            background-color: transparent;
+        }
+    }
+
+    .mstrmojo-MetricIDE-editor {
+        width: 100%;
+        height: 100%;
+
+        &.inline {
+            -webkit-animation: none;
+            -moz-animation: none;
+            animation: none;
+            display: inline-block;
+            border: 0;
+            border-radius: 0;
+            position: static !important; /*make display as embedded element*/
+            box-shadow: none;
+
+            /* metric editor-specific style for _HasScroller - inline */
+            &.mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrolltrack.vertical {
+                margin-top: 3px;
+            }
+
+            & > .mstrmojo-Editor-content {
+                border: 0 none;
+                padding: 5px 0;
+                box-shadow: none;
+            }
+
+            & > .mstrmojo-Editor-content:after {
+                display: none;
+            }
+
+            .mstrmojo-Editor-buttons {
+                /*make display at bottom of IDE*/
+                position: absolute;
+                top: 449px;
+                right: 0;
+                left: 0;
+            }
+        }
+
+        &.mstrmojo-FunctionSelector {
+            width: 231px;
+            padding: $wsvi-element-padding 0;
+        }
+
+        .mstrmojo-DataGrid.functionArgs {
+            margin-top: 6px;
+        }
+
+        .mstrmojo-ME-buttonBox {
+            width: auto;
+            float: right;
+
+            .mstrmojo-WebButton.hot {
+                margin-right: 10px;
+            }
+        }
+
+        .mstrmojo-ME-switch {
+            position: absolute;
+            left: $wsvi-editor-content-padding;
+            top: 30px;
+            margin-left: 0;
+        }
+    }
+
+    .mstrmojo-MetricIDE-editors-container {
+        min-height: 380px;
+        overflow: hidden;
+        padding-left: $wsvi-editor-content-padding;
+
+        &.wait {
+            background: url(images/preloader_balls.gif) 50% 50% no-repeat transparent;
+        }
+
+        .mstrmojo-MetricIDE-editor .mstrmojo-Editor-content {
+            height: 370px;
+            padding: $wsvi-element-padding 0 0 0;
+            overflow: hidden;
+            .mstrmojo-ME-nameEditBox.err {
+                .mstrmojo-TextBox.mstrmojo-ME-nameInput {
+                    border-color: #fabd29;
+                }
+            }
+            .functionArgs {
+                .funcParam .mstrmojo-ME-ObjectInputBox-param .mstrmojo-ObjectItem-displayNode {
+                    min-height: 28px;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-MetricIDE-editorsPanel {
+        width: 500px;
+        display: inline-block;
+        float: left;
+    }
+
+    .mstrmojo-MetricIDE-functionDesc {
+        clear: both;
+
+        a:link,
+        a:visited {
+            @extend .mstrmojo-ME-link-text
+        }
+    }
+
+    .mstrmojo-MetricIDE-ob {
+        padding-left: 5px;
+        width: 191px;
+        height: 100%;
+
+        &.mstrmojo-ObjectBrowser {
+            .mstrmojo-Booklet {
+                height: 298px;
+                max-width: 100%; /*DE17487*/
+                background: transparent;
+                border: 0 none;
+                margin-top: 0;
+                -webkit-box-shadow: 0 0 0 0 transparent;
+                -moz-box-shadow: 0 0 0 0 transparent;
+                box-shadow: 0 0 0 0 transparent;
+            }
+
+            .mstrmojo-OB-titleTable,
+            .mstrmojo-OBList .mstrmojo-ListBase2-itemsContainer {
+                width: 100%;
+            }
+
+            .mstrmojo-SearchBox-input {
+                width: 150px;
+            }
+        }
+    }
+
+    .mstrmojo-MetricIDE-obLabel {
+        margin: 10px 0 5px;
+    }
+
+    .mstrmojo-LE-Box {
+        padding-bottom: 25px;
+    }
+    .mstrmojo-LE-Label {
+        float: left;
+    }
+
+    /**Metric Editors IDE***/
+    .hideFuncBrowser .mstrmojo-MetricIDE-editor.inline .mstrmojo-Editor-buttons {
+        /*make display at bottom of IDE*/
+        position: absolute;
+        top: 378px;
+        right: 0;
+        left: 0;
+    }
+
+    /**End of Metric Editors IDE**/
+}

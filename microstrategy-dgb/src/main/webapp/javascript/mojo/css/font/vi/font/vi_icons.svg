@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2018 by original authors @ fontello.com</metadata>
+<defs>
+<font id="vi_icons" horiz-adv-x="1000" >
+<font-face font-family="vi_icons" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="arrowdown" unicode="&#xe80b;" d="M500-30l-480 660h960l-480-660z" horiz-adv-x="1000" />
+
+<glyph glyph-name="arrowup" unicode="&#xe80c;" d="M500 690l-480-660h960l-480 660z" horiz-adv-x="1000" />
+
+<glyph glyph-name="n-infinite" unicode="&#xe80d;" d="M912 348c0 30-8 54-24 74s-38 30-66 30-54-14-76-44-34-50-34-60c0-10 12-30 34-62s48-48 76-48 50 10 66 32 24 46 24 78z m-480-6c0-34 8-60 26-80s38-28 60-28c28 0 54 16 78 50s36 56 36 66c0 8-14 26-40 56s-54 46-80 46c-24 0-42-10-58-30s-22-46-22-80z m234-74c-16-26-32-46-46-60-30-26-64-40-102-40-46 0-84 16-114 50s-44 76-44 128c0 50 14 92 42 126s66 52 114 52c30 0 58-10 84-28s48-48 68-90c20 36 40 64 58 80 28 26 62 38 102 38 48 0 86-18 114-54s40-78 40-124c0-48-14-90-40-126-26-36-64-54-112-54-38 0-68 12-94 36-24 20-44 48-60 82l-10-16z m-646 122h200v-70h-200v70z" horiz-adv-x="1000" />
+
+<glyph glyph-name="p-infinite" unicode="&#xe80e;" d="M912 348c0 30-8 54-24 74s-38 30-66 30-54-14-76-44-34-50-34-60c0-10 12-30 34-62s48-48 76-48 50 10 66 32 24 46 24 78z m-480-6c0-34 8-60 26-80s38-28 60-28c28 0 54 16 78 50s36 56 36 66c0 8-14 26-40 56s-54 46-80 46c-24 0-42-10-58-30s-22-46-22-80z m234-74c-16-26-32-46-46-60-30-26-64-40-102-40-46 0-84 16-114 50s-44 76-44 128c0 50 14 92 42 126s66 52 114 52c30 0 58-10 84-28s48-48 68-90c20 36 40 64 58 80 28 26 62 38 102 38 48 0 86-18 114-54s40-78 40-124c0-48-14-90-40-126-26-36-64-54-112-54-38 0-68 12-94 36-24 20-44 48-60 82l-10-16z m-646 112h240v-60h-240v60z m150 90v-240h-60v240h60z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

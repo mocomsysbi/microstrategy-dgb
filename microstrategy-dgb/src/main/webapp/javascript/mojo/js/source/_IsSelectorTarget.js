@@ -1,0 +1,1 @@
+(function(){mstrmojo._IsSelectorTarget=mstrmojo.provide("mstrmojo._IsSelectorTarget",{_mixinName:"mstrmojo._IsSelectorTarget",setDirty:function setDirty(isDirty){var mth=(isDirty?"add":"remove")+"DirtyKey",parent=this.parent;if(parent&&parent[mth]){this.parent[mth](this.k);}}});}());

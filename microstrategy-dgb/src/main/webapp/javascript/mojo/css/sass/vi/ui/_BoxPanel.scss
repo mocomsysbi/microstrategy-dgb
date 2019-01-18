@@ -1,0 +1,61 @@
+@import "../vi-global";
+@import '../themes';
+/** BEGIN: VIBoxPanel **/
+.mstrmojo-VIBoxPanel {
+    .title-text {
+        // Editable target title within box panel.
+        .mstrmojo-EditableLabel {
+            height: 23px;
+            line-height: 24px;
+            padding: 0 6px;
+        }
+    }
+
+    .mstrmojo-VIBoxPanel-control {
+        position: relative;
+
+        .title-text {
+            .mstrmojo-EditableLabel {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    &.hasOwnAvatar {
+        overflow: hidden;
+        padding: 10px;
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
+}
+
+.mojo-theme-light {
+    .mstrmojo-VIBoxPanel {
+        &.hasOwnAvatar {
+            background-color: #e5e5e5;
+            border: 1px solid #c8c8c8;
+        }
+
+        .mstrmojo-VIBoxPanel-control {
+            border-bottom: 1px solid $theme-light-base-highlight-color;
+            @include box-shadow($theme-light-offset-highlight-color, 0, 1px, 0);
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VIBoxPanel {
+        &.hasOwnAvatar {
+            background-color: #38393b;
+            border: 1px solid #000;
+        }
+
+        .mstrmojo-VIBoxPanel-control {
+            border-bottom: 1px solid $theme-dark-base-highlight-color;
+            @include box-shadow($theme-dark-offset-highlight-color, 0, 1px, 0);
+        }
+    }
+}
+/** END: VIBoxPanel **/

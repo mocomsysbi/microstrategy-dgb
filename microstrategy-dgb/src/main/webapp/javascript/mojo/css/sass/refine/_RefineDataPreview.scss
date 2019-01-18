@@ -1,0 +1,192 @@
+@import "RefineVariables";
+
+.refine-data-preview {
+  background-color: $containerFillColor;
+  border: 1px solid $containerBorderColor;
+}
+
+.refine-table, .refine-cell, .refine-header {
+  border-right: $dataPreviewDarkBorder;
+  border-bottom: $dataPreviewDarkBorder;
+  border-collapse: collapse;
+}
+
+.refine-header {
+  border-top: $dataPreviewDarkBorder;
+}
+.refine-header:first-child {
+  border-left: $dataPreviewDarkBorder;
+}
+
+.refine-table {
+}
+
+.refine-cell {
+  vertical-align: top;
+  font-size: 8pt;
+  white-space: nowrap;
+  background-color: #ffffff;
+}
+
+.refine-cell.selected {
+  border-left: $dataPreviewSelectionBorder;
+  border-right: $dataPreviewSelectionBorder;
+}
+
+.refine-cell.selected.last {
+  border-bottom: $dataPreviewSelectionBorder;
+}
+
+.refine-cell.last-selected {
+  border-left: $dataPreviewSelectionBorder;
+  border-right: $dataPreviewSelectionBorder;
+}
+
+.refine-cell.last-selected.last {
+  border-bottom: $dataPreviewSelectionBorder;
+}
+
+.refine-header {
+  font-size: 9pt;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.refine-header.selected {
+  border-left: $dataPreviewSelectionBorder;
+  border-right: $dataPreviewSelectionBorder;
+  border-top: $dataPreviewSelectionBorder;
+}
+
+.refine-header.last-selected {
+  border-left: $dataPreviewSelectionBorder;
+  border-right: $dataPreviewSelectionBorder;
+  border-top: $dataPreviewLastSelectionBorder;
+}
+
+.fixed-width-preview-column-separator-outer {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  z-index: 100;
+  background: rgba(255,238,93,0.2);
+  padding: 0px 3px;
+  cursor: ew-resize;
+  overflow: visible;
+}
+
+.fixed-width-preview-column-separator-inner {
+  position: relative;
+  height: 100%;
+  width: 1px;
+  background: red;
+  overflow: visible;
+}
+
+.fixed-width-preview-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.fixed-width-preview-container-inner {
+  overflow: hidden;
+  &:hover{
+    overflow: auto;
+  }
+}
+
+@-moz-document url-prefix() {
+  .fixed-width-preview-container-inner {
+    overflow: auto;
+  }
+}
+
+.refine-viewpanel-header {
+  position: relative;
+  padding: 5px 8px 0px 8px;
+  overflow: hidden;
+  text-align: right;
+  height: $dataPreviewHeaderHeight;
+  line-height: $dataPreviewHeaderHeight;
+}
+
+.refine-viewpanel-pagesize {
+  position: absolute;
+}
+
+.refine-viewpanel-paging {
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.refine-viewPanel-pagingControls-page {
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.refine-viewPanel-pagingControls-page.selected {
+  color: #79c4ec;
+  font-weight: bold;
+  cursor: default;
+}
+
+.refine-a-inaction {
+  cursor: default;
+  color: $fontColorDisable;
+  margin: 0 20px;
+}
+
+.refine-a-action {
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.refine-datapreivew-title {
+  background-color: $popupContainerFillColor;
+  padding: 5px 5px;
+
+  .refine-title-label {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .mstrmojo.Refine.RefreshButton{
+    float: right;
+  }
+
+  .mstrmojo-refine-refresh-button {
+    float:right;
+    margin-right: 5px;
+    height: 22px;
+    width: 22px;
+    background: transparent url(images/Refine/refineRefreshButton.png) -10px -10px no-repeat;
+
+    &:hover, &:active{
+      background-position: -50px -10px;
+    }
+  }
+
+  .refine-title-sampleButton {
+    float: right;
+    margin-right: -5px !important;
+    .mstrmojo-Refine-RefineSampleButton-text {
+      padding: 0 5px 0 10px;
+      line-height: 20px;
+      width: auto;
+      &:hover{
+        background-color: #DBDBDB !important;
+        border-color: #cbcbcb !important;
+      }
+      &:after{
+        content: '0';
+        color: transparent;
+        background: transparent url(vi/images/dropdown_arrow.svg) -1px -30px no-repeat;
+        margin-left: 5px;
+        width: 12px;
+        display: inline-block;
+
+      }
+    }
+  }
+}

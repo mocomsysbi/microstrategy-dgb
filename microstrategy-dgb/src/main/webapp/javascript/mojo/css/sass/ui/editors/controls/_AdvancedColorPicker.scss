@@ -1,0 +1,261 @@
+@import '../../../global';
+
+/** BEGIN: AdvancedColorPicker **/
+.mstrmojo-ui-AdvColorPicker {
+    font-size: 8pt;
+    width: 178px;
+
+    $acp-gutter: 9px;
+    $acp-divider: 8px;
+
+    & > div {
+        padding: 0 $acp-gutter;
+
+        // Toolbar
+        &.acpToolbar {
+            @include box-shadow(#595959, 0, 1px);
+
+            border-bottom: 1px solid #303030;
+            height: 30px;
+            padding: 5px 9px 3px;
+
+            .acpBtn {
+                background: transparent url(#{$mojo-img-path}/ui/color-picker-sprite.png) 0 0 no-repeat;
+                cursor: pointer;
+                float: left;
+                height: 22px;
+                margin: 4px 0;
+                width: 26px;
+
+                &.on {
+                    cursor: default;
+                }
+            }
+
+            .acpColor {
+                @include border-radius(4px);
+
+                background: transparent;
+                border: 1px solid #000;
+                height: 20px;
+                position: absolute;
+                right: $acp-gutter;
+                top: 9px;
+                width: 75px;
+            }
+        }
+
+        // Content
+        &.acpContent {
+            %label-option {
+                height: 19px;
+                line-height: 19px;
+                text-align: center;
+                width: auto;
+            }
+
+            .AutomaticOption {
+                @extend %label-option;
+                border-width: 1px;
+                border-style: solid;
+                margin-top: $acp-gutter;
+            }
+
+            .mstrmojo-ui-ColorList {
+                margin-top: $acp-gutter;
+                width: 160px;
+
+                .item {
+                    border: 1px solid transparent;
+                    cursor: pointer;
+                    float: left;
+                    height: 18px;
+                    width: 18px;
+
+                    // The No Fill button.
+                    &.noFill {
+                        @extend %label-option;
+                        margin-bottom: $acp-divider;
+                        float: none;
+
+                        &:hover {
+                            @include box-shadow(transparent);
+                            @include scale();
+
+                        }
+                    }
+
+                    &:hover {
+                        @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 10px);
+                        @include scale(1.25);
+
+                        border-color: rgba(52, 171, 235, 0.25);
+                    }
+                }
+
+                // Clear after color lists.
+                &:after {
+                    clear: both;
+                    content: "";
+                    display: block;
+                    height: 0;
+                }
+
+                // Add bottom margin to last color list.
+                &:last-child:after {
+                    margin-bottom: 14px;
+                }
+            }
+
+            .mstrmojo-Label {
+                color:#b5b5b5;
+            }
+            .mstrmojo-ui-Checkbox {
+                padding:0 2px;
+                margin-top: $acp-divider;
+            }
+
+            .mstrmojo-ui-Pulldown {
+                margin-top: $acp-divider;
+            }
+
+            .mstrmojo-ui-ButtonBar {
+                float: left;
+                margin: $acp-divider 0;
+                width: 75px;
+                height: 20px;
+                .item {
+                    & > div {
+                        background: transparent url(#{$vi-img-path}/editor-sprite.png) center 0 no-repeat;
+                    }
+
+                    &.h > div {
+                        background-position: center -336px;
+                    }
+
+                    &.v > div {
+                        background-position: center -366px;
+                    }
+                }
+            }
+
+            .mstrmojo-Button {
+                border: 1px solid #b5b5b5;
+                float: right;
+                height: 21px;
+                line-height: 23px;
+                margin: $acp-divider 0;
+                padding: 0 12px;
+                text-align: center;
+
+                &:after {
+                    clear: both;
+                    content: "";
+                    display: block;
+                    height: $acp-divider;
+                }
+            }
+
+            .mstrmojo-TextBoxWithLabel {
+                clear: both;
+                margin-top: $acp-divider;
+
+                span {
+                    line-height: 23px;
+                    margin-left: 7px;
+                    float: left;
+                }
+
+                input {
+                    float: right;
+                    line-height: 21px;
+                    padding: 0 5px;
+                    text-align: center;
+                    width: 53px;
+                }
+
+                &:after {
+                    clear: both;
+                    content: "";
+                    display: block;
+                    height: 0;
+                }
+            }
+
+            // When gradient editing is active.
+            &.grad {
+                .mstrmojo-TextBoxWithLabel {
+                    &.on {
+                        input {
+                            border-color: #23A3D3;
+                        }
+                    }
+                }
+            }
+
+            .mstrmojo-ui-ColorWheel {
+                margin-top: 6px;
+            }
+        }
+
+        &.acpButtons {
+            @include box-shadow(#303030, 0, -1px);
+
+            border-top: 1px solid #595959;
+            margin-top: $acp-gutter;
+            padding: $acp-gutter 16px;
+            height: 25px;
+
+            .mstrmojo-WebButton {
+                &:last-child {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@mixin acp-btn-theme($background-offset) {
+    .mstrmojo-ui-AdvColorPicker {
+        & > div {
+            &.acpToolbar {
+                .acpBtn {
+                    &.acpSwatchBtn {
+                        background-position: 0 $background-offset;
+
+                        &:hover {
+                            background-position: -26px $background-offset;
+                        }
+
+                        &.on,
+                        &.on:hover {
+                            background-position: -52px  $background-offset;
+                        }
+                    }
+
+                    &.acpPaletteBtn {
+                        background-position: -78px  $background-offset;
+
+                        &:hover {
+                            background-position: -104px  $background-offset;
+                        }
+
+                        &.on,
+                        &.on:hover {
+                            background-position: -130px  $background-offset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-light {
+    @include acp-btn-theme(0);
+}
+
+.mojo-theme-dark {
+    @include acp-btn-theme(-22px);
+}
+/** END: AdvancedColorPicker **/

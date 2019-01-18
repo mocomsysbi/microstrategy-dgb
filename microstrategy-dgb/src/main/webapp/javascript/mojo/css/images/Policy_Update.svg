@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="83px" height="23px" viewBox="0 0 83 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Policy_Update</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="15" y="17" width="68" height="8"></rect>
+        <pattern id="pattern-2" width="14.2040816" height="14.2040816" x="0.795918367" y="2.79591837" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-3" transform="scale(0.295918367,0.295918367)"></use>
+        </pattern>
+        <image id="image-3" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAV9JREFUaAXt2O0NgjAQBmBrt4DoDiawEHEQB1F3MK7BHKxR+2oKQfnseXCX0B/SEr3zucZIz+R57nZ+OOfuZVmeMcWaOEyWZVdjTBHicMW3aZpekMQnOyVJcqiq6hmSUq6Ig3iIyxnf+iRH7iSc8e1SleJCWGyvZsQboBlRA7QiWgCNiB+ANkQnQBOiF6AFMQjQgBgFSEdMAkhGTAZIRcwCSETMBkhDRAEkIaIBUhAkgAQEGbA2AgCDL0Edax2KrO8e3JCcCsDn10CgK/HQ2I0IZ+w9KucXBfo4mGJNHA79JfSBQhzO+FtfKFS567rEb2LrC3VV/vse507Uf2ScSQDiil8DOJOEHeFAtAAaET8AbYhOgCZEL0ALYhCgATEKkI6YBJCMmAyQipgFkIiYDZCGiAJIQkQDpCBIAAkIMmBtBAD/OMizPe+jQBh9j+JbX+hTn+a1r1K437wrfvYd/wV+UgblD/bGFgAAAABJRU5ErkJggg=="></image>
+    </defs>
+    <g id="Specs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Policy_Update" transform="translate(0.000000, -2.000000)">
+            <g id="Rectangle-7-Copy-34">
+                <use fill="#67C630" xlink:href="#path-1"></use>
+                <use fill-opacity="0.132462687" fill="url(#pattern-2)" xlink:href="#path-1"></use>
+            </g>
+            <rect id="Rectangle-7-Copy-35" fill="#14B4E6" x="15" y="3" width="68" height="8"></rect>
+            <text id="A-Copy" font-family="SFUIDisplay-Regular, SF UI Display" font-size="12" font-weight="normal" fill="#14B4E6">
+                <tspan x="0" y="11">A</tspan>
+            </text>
+            <text id="B’-Copy-2" font-family="SFUIDisplay-Regular, SF UI Display" font-size="12" font-weight="normal" fill="#67C630">
+                <tspan x="0" y="25">B’</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

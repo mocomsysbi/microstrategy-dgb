@@ -1,0 +1,321 @@
+@mixin border-radius-one($border, $radius) {
+  -moz-border-#{$border}-radius: $radius;
+  -webkit-border-#{$border}-radius: $radius;
+  -ms-border-#{$border}-radius: $radius;
+  border-#{$border}-radius: $radius;
+}
+
+.mstrmojo-di-mapProjectAttribute-dialog {
+  width: 460px;
+  @include scrollBar;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .mstrmojo-Editor-buttons {
+    padding-top: 20px;
+    .mstrmojo-Button.mstrmojo-di-button.mstrmojo-WebButton.mstrmojo-Editor-button {
+      margin-left: 10px;
+    }
+  }
+
+  .mstrmojo-di-mapProjectAttribute-searchPulldown > .container > .mstrmojo-PopupList {
+    padding-bottom: 0;
+  }
+
+  .mstrmojo-di-mapProjectAttribute-searchPulldown ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .mstrmojo-Editor-content {
+    padding: 0px;
+    @include scrollBar;
+    max-height: 380px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .content-box {
+    @include box-sizing;
+    width: 100%;
+
+    &.top {
+      border-bottom: 1px solid #DEDEDE;
+      padding: 16px 16px;
+
+      .mstrmojo-di-mapProjectAttribute-searchPulldown {
+        float: left;
+        width: 328px;
+        margin-right: 5px;
+        box-shadow: none;
+
+        .mstrmojo-PopupList > .mstrmojo-scrollNode > div {
+          max-height: 250px;
+          overflow: scroll;
+          -ms-overflow-style: none;
+        }
+
+        .mstrmojo-ui-Pulldown-text {
+          height: 24px;
+        }
+
+        .mstrmojo-ui-Pulldown-text:after {
+          background: white url("images/wh/search_sprite.png") no-repeat 5px 4px;
+          border-left: none;
+        }
+        .mstrmojo-ui-Pulldown-text.clear:after {
+          // have to use important or add .workstation .mojo-theme-light to the selector
+          background: white url("vi/images/menu_icons.png") no-repeat -29px 7px !important;
+          margin-top: 1px;
+        }
+
+        &.wait {
+          .mstrmojo-ui-Pulldown-text:after {
+            background: white url("images/DI/search.gif") no-repeat;
+            // Override the "_SearchablePulldown-ws.scss line 18"
+            background-position: 0 0 !important;
+            margin-top: 3px;
+          }
+        }
+
+        .item {
+          padding-left: 11px;
+          &:before {
+            content: ' ';
+            //position: absolute;
+            //left: 9px;
+            width: 17px;
+            height: 15px;
+            background: url("images/DI/icon_att.png") no-repeat;
+            float: left;
+            margin-top: 7px;
+          }
+        }
+      }
+      .mstrmojo-di-mapProjectAttribute-browseButton {
+        width: 76px;
+        @if $env == web { // both win and mac workstation should not show this btn
+        display: inline-block !important;
+        }
+        margin-left: 10px;
+      }
+    }
+
+    &.bottom {
+      border-bottom: 1px solid #DEDEDE;
+
+      // general
+      .mstrmojo-di-mapProjectAttribute-label {
+        font-family: Arial;
+        font-size: 11px;
+        color: #444649;
+        @include ellipsis-text();
+      }
+      .mstrmojo-di-mapProjectAttribute-placeholder {
+        margin-top: 12px;
+        line-height: 22px;
+        font-family: Arial;
+        font-size: 11px;
+        color: #A0A7AC;
+      }
+
+      .mstrmojo-di-mapProjectAttribute-formMapItem {
+        margin-top: 12px;
+        margin-bottom: 9px;
+
+        .mstrmojo-ui-Pulldown-text {
+          // increase pulldown text padding
+          padding: 7px 14px 5px 6px;
+
+
+          .text.ipa {
+            font-style: italic;
+          }
+        }
+
+        //set scroll bar color when hover
+        .mstrmojo-scrollbar-host .mstrmojo-scrolltrack .mstrmojo-scrollbar {
+          background: rgba(0, 0, 0, 0.4);
+        }
+
+        // general icon class used both for pulldown icon and project form icon
+        .icon {
+          background-image: url("images/DI/icon_att.png");
+          background-repeat: no-repeat;
+          margin-left: 3px;
+          padding-left: 15px;
+          margin-right: 6px;
+          &.form {
+            background-image: url("images/DI/icon_att_form.png");
+          }
+          &.geo{
+            background: url("images/DI/vertical icons.svg") no-repeat -4px -333px;
+          }
+          &.time{
+            background: url("images/DI/vertical icons.svg") no-repeat -3px -364px;
+          }
+        }
+
+        &.caf {
+          margin-top: 0;
+          margin-bottom: 0;
+          .mstrmojo-ui-Pulldown-text {
+            border-top-width: 0;
+            @include border-radius(0);
+          }
+        }
+        &.caf.cafb {
+          margin-top: 12px;
+          .mstrmojo-ui-Pulldown-text {
+            border-top-width: 1px;
+            @include border-radius-one(top-left, 3px);
+            @include border-radius-one(top-right, 3px);
+          }
+        }
+        &.caf.cafe {
+          margin-bottom: 9px;
+          .mstrmojo-ui-Pulldown-text {
+            @include border-radius-one(bottom-left, 3px);
+            @include border-radius-one(bottom-right, 3px);
+          }
+        }
+
+        &.proj {
+
+          .proj-item-text {
+            @include ellipsis-text();
+            width: 192px;
+            padding-left: 6px;
+            height: 24px;
+            border: 1px solid rgba(68, 70, 73, 0.2);
+            background-color: #ffffff;
+            cursor: default;
+            border-radius: 2px;
+
+            span {
+              line-height: 22px;
+            }
+
+            .text {
+              @include ellipsis-text();
+              color: #4A4A4A;
+              max-width: none;
+            }
+
+            .icon {
+              background-image: url("images/DI/icon_att_form.png");
+            }
+            &.geo{
+              background: url("images/DI/vertical icons.svg") no-repeat -4px -333px;
+            }
+            &.time{
+              background: url("images/DI/vertical icons.svg") no-repeat -3px -364px;
+            }
+
+          }
+
+          &.caf {
+            margin-top: 0;
+            margin-bottom: 0;
+            .proj-item-text {
+              border-top-width: 0;
+              border-bottom-style: dashed;
+              @include border-radius(0);
+            }
+          }
+          &.caf.cafb {
+            margin-top: 12px;
+            .proj-item-text {
+              border-top-width: 1px;
+              @include border-radius-one(top-left, 3px);
+              @include border-radius-one(top-right, 3px);
+            }
+          }
+          &.caf.cafe {
+            margin-bottom: 9px;
+            .proj-item-text {
+              border-bottom-style: solid;
+              @include border-radius-one(bottom-left, 3px);
+              @include border-radius-one(bottom-right, 3px);
+            }
+          }
+        }
+      }
+
+      .content-bottom-box {
+        float: left;
+        @include box-sizing;
+        width: 50%;
+        height: 100%;
+        min-height: 250px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        .mstrmojo-di-mapProjectAttribute-formMapsList {
+          width: 198px;
+        }
+
+        &.left {
+          padding-left: 16px;
+          padding-right: 10px;
+          border-right: 1px solid #DEDEDE;
+        }
+        &.right {
+          padding-left: 12px;
+          padding-right: 18px;
+        }
+      }
+    }
+  }
+
+}
+
+.mstrmojo-di-mapProjectAttribute-formMapItem-popupList {
+  .item {
+    .icon {
+      background-image: url("images/DI/icon_att.png");
+      background-repeat: no-repeat;
+      margin-left: 3px;
+      padding-left: 15px;
+      margin-right: 6px;
+      &.form {
+        background-image: url("images/DI/icon_att_form.png");
+      }
+      &.geo{
+        background: url("images/DI/vertical icons.svg") no-repeat -4px -333px;
+      }
+      &.time{
+        background: url("images/DI/vertical icons.svg") no-repeat -3px -364px;
+      }
+    }
+
+    .text.ipa {
+      font-style: italic;
+    }
+  }
+}
+
+.workstation {
+  .mstrmojo-di-mapProjectAttribute-dialog {
+    .hasEditableText {
+      background-image: none !important;
+    }
+    .content-box.bottom {
+      .mstrmojo-di-mapProjectAttribute-formMapItem {
+        &.disabled {
+          .mstrmojo-ui-Pulldown-text {
+            border:1px solid rgba(68,70,73,0.3);
+            box-shadow: 0px 1px 2px $wsvi-input-shadow;
+            border-radius: $wsvi-box-radius;
+            color: $wsvi-font_gray;
+            opacity: 0.35;
+          }
+        }
+        box-shadow: none;
+        .mstrmojo-ui-Pulldown-text {
+          padding-bottom: 12px;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}

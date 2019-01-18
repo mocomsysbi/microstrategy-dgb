@@ -1,0 +1,204 @@
+@import '../_global.scss';
+
+// DE82087: Standardizing scrollbox height
+%scrollbox-height {
+    height: 312px;
+}
+
+/** Start AdvancedThresholdEditor **/
+.mstrmojo-Editor.adv-threshold {
+    .mstrmojo-Editor-content {
+        padding-top: 21px;
+        padding-bottom: 21px;
+        overflow: hidden;
+
+        .rulesTitles {
+            font-weight: bold;
+            line-height: 26px;
+            height: 26px;
+            border: 1px solid #AAA;
+            border-bottom: 0 none;
+
+            & > div {
+                position: relative;
+                float: left;
+
+                &.order {
+                    // DE20283, hide reusable thresholds GUI for 10.2
+                    //margin-left: 0px;
+                    margin-left: 10px;
+                }
+
+                &.condition {
+                    // DE20283, hide reusable thresholds GUI for 10.2
+                    //margin-left: 15px;
+                    margin-left: 16px;
+                }
+
+                &.format {
+                    margin-left: 417px;
+                }
+            }
+            // DE20283, hide reusable thresholds GUI for 10.2
+            /*.container > div.mstrmojo-ui-Checkbox {
+              margin-left: 25px;
+            }*/
+        }
+
+        .content {
+            @extend %scrollbox-height;
+            border: 1px solid #AAA;
+            background-color: #FFF;
+            overflow: hidden;
+            width: 750px;
+
+            &.no-overflow {
+                overflow: visible;
+            }
+
+            > .scroll-container {
+                @extend %scrollbox-height;
+
+                $dimension: 0;
+                &.mstrmojo-scrollNode.hasVertical {
+                    &::-webkit-scrollbar {
+                        width: $dimension;
+                        height: $dimension;
+                    }
+                    margin-right: $dimension;
+                    padding-right: $dimension;
+                }
+            }
+
+            .mstrmojo-rw-ConditionWalk {
+                border: 0;
+            }
+
+            .condition {
+                padding: 0px;
+
+                .mstrmojo-cond-contents {
+                    margin: 0px;
+
+                    &:hover {
+                        background-color: transparent;
+                        border-color: transparent;
+
+                        .mstrmojo-add-cond {
+                            display: none;
+                        }
+                    }
+                }
+
+                .mstrmojo-thresholdRow {
+                    border-bottom: 0px;
+                    .delete,
+                    .menu,
+                    .mstrmojo-onhoverparent:hover .mstrmojo-del{
+                        display:none;
+                    }
+                }
+            }
+
+            .walk {
+                .mstrmojo-ui-ColumnWalk {
+                    background-color: #e4e4e4;
+                }
+            }
+
+            .apply {
+                background-color: #e4e4e4;
+            }
+
+            .link {
+                line-height: 30px;
+                color: $wsvi-primary-blue;
+                padding-left: 9px;
+
+                &:hover {
+                    text-decoration:underline;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &:hover{
+            .mstrmojo-ui-ColumnContainer {
+                > .mstrmojo-scrolltrack {
+                    .mstrmojo-scrollbar {
+                        opacity: 0;
+                    }
+                }
+
+                &:hover {
+                    > .mstrmojo-scrolltrack {
+                        .mstrmojo-scrollbar {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        .mstrmojo-Button {
+            position: relative;
+            float: right;
+            height: 22px;
+            width: 65px;
+            margin: 0 0 0 10px;
+        }
+
+        .link {
+            float: left;
+            color: $wsvi-primary-blue;
+            line-height: 22px;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+/** End AdvancedThresholdEditor **/
+
+/** BEGIN AndOr Popup **/
+
+.mstrmojo-ListBase.mstrmojo-ui-Menu.andor-PopupList {
+    @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 10px);
+    background-color: rgba(237, 237, 237, 0.96);
+    border-color: #9b9b9b;
+    margin-top: 2px;
+    min-width: 80px;
+
+    .mstrmojo-ui-Menu-item {
+        padding-left: 5px;
+        padding-right: 5px;
+        color: #4a4a4a;
+
+        &:hover {
+            background: rgba(218, 218, 218, 0.96);
+        }
+
+        &.selected {
+            background: rgba(206, 206, 206, 0.96);
+        }
+    }
+}
+/** End AndOr Popup **/
+
+
+/** BEGIN Browse Element Editor **/
+
+.adv-threshold .mstrmojo-ElementsEditor {
+    .mstrmojo-ebIcons {
+        background: none;
+
+        .mstrmojo-text {
+            padding-left: 3px;
+        }
+    }
+}
+/** End Browse Element Editor **/

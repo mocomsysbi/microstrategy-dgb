@@ -1,0 +1,13 @@
+/** BEGIN: GMEditorModel */
+.mstrmojo-vi-PropEditor {
+    .mstrmojo-vi-EditorGroup.bem-dynamic-grp {
+        &.hilightGMTitle .bem-tc-title .mstrmojo-Label.edt-title,
+        &.hilightGMContainer .bem-tc-container .mstrmojo-Label.edt-title {
+            color: #007EBE;
+        }
+    }
+    .hiddenPP {
+        display: none !important;
+    }
+}
+/** END: GMEditorModel */

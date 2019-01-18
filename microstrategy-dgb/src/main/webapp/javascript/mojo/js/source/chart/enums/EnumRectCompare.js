@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumRectCompare={NONE:-1,ExpandX:0,ExpandY:1,ShrinkX:2,ShrinkY:3,KeepX:4,KeepY:5,KeepBoth:6};

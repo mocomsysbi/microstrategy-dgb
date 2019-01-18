@@ -1,0 +1,154 @@
+// sass path: ../../../
+@import '../../../vi/workstation-global';
+@import '../../../vi/vi-icons';
+@import '../../../theme-mixins-ws';
+@import '../../../Button-ws';
+
+.workstation .mstrmojo-CalculatedMemberPanel {
+    font-size: $wsvi-normal-font-size;
+
+    .mstrmojo-IncHierarchyList .list-content .items-container .item.selected:hover .btn {
+        // show 'Set Parent' button when selected item hovered
+        display: inline-block;
+    }
+
+    &.xsp {
+        .mstrmojo-IncHierarchyList .list-content .items-container .item.selected .btn {
+            // hide 'Set Parent' button if set parent is not allowed
+            display: none;
+        }
+
+        .mstrmojo-TokenInputBox.mstrmojo-CalculatedMemberExpressionInputBox {
+            height: 282px;
+        }
+    }
+
+    .mstrmojo-ExpressionToolbar {
+        margin: 10px 0 0 0;
+        border-radius: 3px;
+        background-color: white;
+        border: 1px solid rgba(68, 70, 73, .2);
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 5px 10px 5px 8px;
+        height: 18px;
+
+        // hide angle bracket in CM panel
+        .mstrmojo-item.bra {
+            display: none;
+        }
+
+        .mstrmojo-ListBase2-itemsContainer {
+            // ExpressionToolbar added incorrect width in dom style
+            width: auto !important;
+        }
+    }
+
+    .deNameBox {
+        display: none;
+    }
+
+    .definitionBox {
+        border-collapse: separate;
+
+        >tbody >tr >td {
+            &:first-child {
+                border-right: 1px solid $wsvi-border-gray;
+            }
+        }
+
+        .defn {
+            padding: 10px 16px 0 16px;
+
+            .parentBox {
+                height: 26px;
+            }
+
+            .mstrmojo-Label {
+                font-family: $wsvi-font-family;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 12px;
+                color: $wsvi-primary-black;
+                height: 26px;
+                line-height: 26px;
+
+                &:first-child {
+                    width: 52px;
+                }
+
+                &:last-child {
+                    width: 330px;
+                }
+
+                &.hint {
+                    font-size: 10px;
+                    color: $wsvi-font-gray;
+                    height: 14px;
+                    line-height: 14px;
+                    padding: 0 0 10px 52px;
+                }
+
+                &.blue {
+                    color: $wsvi-primary-blue;
+                    font-weight: $wsvi-bold-font-weight;
+                }
+            }
+        }
+    }
+
+    .applyBox {
+        margin: $wsvi-element-padding 0;
+        width: 100%;
+
+        td {
+            width: 44px;
+
+            &:first-child {
+                width: auto;
+            }
+        }
+
+        .apply-text {
+            padding: 0 0 0 16px;
+            font-size: 10px;
+            line-height: 14px;
+        }
+
+        .mstrmojo-Button {
+            @extend %base-button;
+            float: right;
+            margin: 0 $wsvi-element-padding 0 0;
+            min-width: 44px;
+            background-color: $wsvi-primary-white;
+
+            .mstrmojo-Button-text {
+                @include wsvi-icon-size;
+                margin: 3px 12px;
+                background: url(#{$wsvi-main-icons-sprite});
+                background-position: -900px -30px;
+            }
+
+            &.applyBtn {
+                border-color: $wsvi-primary-blue;
+                background-color: $wsvi-primary-blue;
+
+                &.disabled {
+                    border-color: $wsvi-inputborder-disable;
+                }
+
+                .mstrmojo-Button-text {
+                    @include wsvi-icon-position-checkmark;
+                }
+            }
+
+            &.cancelBtn {
+                margin: 0 16px 0 0;
+            }
+        }
+    }
+}

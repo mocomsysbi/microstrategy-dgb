@@ -1,0 +1,17 @@
+/** BEGIN:  _DataGrid **/
+.mstrmojo-DataRow {
+  .invalid {
+    background: #FFECEC;
+  }
+  td {
+    border: 0;
+  }
+  &.even {
+    background-color: #EEEEEE;
+  }
+  &.odd {
+    background-color: white;
+  }
+}
+
+/** END: _DataGrid **/

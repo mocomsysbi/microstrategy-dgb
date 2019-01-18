@@ -1,0 +1,21 @@
+@import '../../_vi-global';
+
+/** BEGIN: BaseEditorModel **/
+.mstrmojo-vi-PropEditor {
+    .ctrl-group {
+        .bem-dynamic-grp {
+            margin-top: 20px;
+
+        }
+
+        &.bem-tc-title {
+            .mstrmojo-Label {
+                &.edt-title {
+                    // Add extra padding to title labels in the title and container nested editor groups.
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+/** END: BaseEditorModel **/

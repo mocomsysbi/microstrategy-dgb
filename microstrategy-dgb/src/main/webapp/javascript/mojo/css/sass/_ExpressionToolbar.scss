@@ -1,0 +1,50 @@
+@import 'vi/vi-icons';
+
+/**Operators and validate/clear buttons*/
+.mstrmojo-ExpressionToolbar {
+    margin: 12px 0 8px 0;
+    height: 20px;
+
+    .mstrmojo-item {
+        @include wsvi-icon-size;
+        float: left;
+        cursor: pointer;
+        @include wsvi-icon-editor-calc-plus;
+        text-indent: -10000px;
+        margin-right: 8px;
+
+        &:active {
+            @include wsvi-icon-editor-position-calc-active;
+        }
+    }
+
+    /* .plus will use the default styles (calc-plus) */
+    .minus {
+        @include wsvi-icon-editor-position-calc-minus;
+    }
+
+    .multi {
+        @include wsvi-icon-editor-position-calc-multiply;
+    }
+
+    .divide {
+        @include wsvi-icon-editor-position-calc-divide;
+    }
+
+    .par {
+        @include wsvi-icon-editor-position-calc-parenthesis;
+    }
+
+    .bra {
+        @include wsvi-icon-editor-position-calc-bracket;
+    }
+
+    .right {
+        float: right;
+        margin-top: 1px;
+    }
+
+    .clear {
+        margin-left: 2px;
+    }
+}

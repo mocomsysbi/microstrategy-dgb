@@ -1,0 +1,213 @@
+html {
+    overflow: hidden;
+}
+
+.mstrContent,
+.mstrWeb .mstrDockTop {
+	padding: 0;
+}
+
+/*	ProjectNameInput Editor		*/
+.mstrmojo-ProjectNameInput .mstrmojo-Editor-close {
+    display: none;
+}
+.mstrmojo-ProjectNameInput .mstrmojo-Editor-help {
+    display: none;
+}
+.mstrmojo-ProjectNameInput{
+	width:250px;
+}
+.mstrmojo-ProjectNameInput-PNameLBL{
+	font-weight:bold;
+	width:100%;
+	padding: 5px;
+}
+.mstrmojo-ProjectNameInput-PDescTXT,
+.mstrmojo-ProjectNameInput-PNameTXT{
+	width:210px;
+	margin-left: 10px;
+}
+.mstrmojo-ProjectNameInput-PDescTXT{
+    height: 75px;
+}
+.mstrmojo-ProjectNameInput-OKBtn{
+	float:right;
+}
+/*	End ProjectNameInput Editor		*/
+
+/** Start Project Manager**/
+.mstrmojo-ProjectManager{
+    background-color: white;
+	overflow-y:auto;
+}
+.mstrmojo-ProjectManagerIcons{
+	margin-top:10px;
+	margin-left:10px;
+}
+
+.mstrmojo-PMIconView{
+	/*border: 2px solid blue;*/
+	padding-top:5px;
+	padding-left:5px;
+	margin-left:60px;
+	width: 43%;
+	position:absolute;
+}
+/* moved to global.css in the plugins folder to use the same css as standard web
+.mstrmojo-PMIconView:hover{
+}*/
+
+.mstrmojo-PM-ScrollBox{
+	position:relative;
+}
+.mstrmojo-PMIconView-Icon{
+	/*background: transparent url(images/iconView.png) no-repeat;*//* moved to global.css in the plugins folder to use the same css as standard web*/
+	background-position: 0 -152px;
+	width: 60px;
+	height: 77px;
+	cursor: pointer;
+}
+.mstrmojo-PMIconView-Info{
+	margin-left: 10px;
+	height: 76px;
+}
+
+.mstrmojo-PMIconView-Name{
+	/*color: #6d6d6d;*//* moved to global.css in the plugins folder to use the same css as standard web*/
+	line-height: 20px;
+}
+.mstrmojo-PMIconView-Name.name{
+	font-size: 11pt;
+	font-weight: bold;
+}
+.mstrmojo-PMIconView-Name.name:hover{
+	/*color: #006ba0;*/ /* moved to global.css in the plugins folder to use the same css as standard web*/
+	cursor: pointer;
+}
+.mstrmojo-PMIconView-Name.desc{
+    font-size: 8pt;
+    line-height: 20px;
+    height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.mstrmojo-PMIconView-Name.server{
+	font-size: 8pt;
+	font-weight: bold;
+}
+.mstrmojo-PMIconView-Name.servername{
+	font-size: 8pt;
+	padding-left: 10px;
+}
+.mstrmojo-PMIconView-Name.architect,
+.mstrmojo-PMIconView-Name.rename,
+.mstrmojo-PMIconView-Name.delete{
+	font-size: 8pt;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.mstrmojo-PMIconView-Name.rename,
+.mstrmojo-PMIconView-Name.delete{
+	padding-left: 15px;
+}
+
+
+/** End Project Manager**/
+
+/** Start Project Manager Toolbar **/
+/* Start Toolbar */
+.mstrToolbar{
+	height:26px;
+}
+.mstrmojo-PMToolbar-NewProject{
+	height:24px;
+	width:20px;
+}
+
+.mstrIcon-tb{
+	background: transparent url(../../../style/mstr/images/toolbar.gif) no-repeat;
+	background-repeat: no-repeat;
+}
+
+.mstrmojo-PMToolbar-NewProject{
+	background: url("images/architect/projectmanagement/project20x19.gif") no-repeat scroll 0 0 transparent;
+}
+
+/* End Toolbar */
+
+/* list view*/
+.mstrmojo-ProjectManagerList .mstrmojo-DataGrid{
+	color: #757575;
+	border: 0;
+}
+
+.mstrmojo-ProjectManagerList .mstrmojo-DataGrid-headerText{
+	background: rgb(240, 240, 240);
+	border-bottom: 1px solid #e2e2e2;
+	height: 25px !important;
+}
+
+.mstrmojo-ProjectManagerList .mstrmojo-DataGrid-headerText .mstrmojo-Label{
+	color: #656565 !important;
+	font-weight: bold;
+    font-size: 1.2em;
+    line-height: 25px !important;
+}
+.mstrmojo-ProjectManagerList .mstrmojo-DataRow{
+	height: 41px;
+}
+.mstrmojo-ProjectManagerList .mstrmojo-DataRow:hover{
+	background-color: #EFEFEF !important;
+	color: #000;
+}
+.mstrmojo-ProjectManagerList .mstrmojo-DataRow.even{
+	background-color: white;
+}
+.mstrmojo-ProjectManagerList .mstrmojo-DataRow.odd{
+	background-color: #f5f5f5;
+}
+.mstrmojo-PMGrid{
+	font-family: Tahoma,Arial,Verdana;
+	width: 100%;
+}
+.mstrmojo-gridCell{
+	margin-left:15px;
+	font-size: 9pt;
+	line-height: 20px;
+}
+
+.mstrmojo-projectCell{
+	padding-left: 25px;
+	background: url("images/architect/projectmanagement/project20x19.gif") no-repeat scroll 0 0 transparent;
+	cursor: pointer;
+	font-weight: bold;
+}
+.mstrmojo-projectCell:hover{
+	color: #006ba0;
+}
+
+.mstrmojo-actionsCell{
+}
+.mstrmojo-DataGrid-itemsContainer .mstrmojo-actionsCell td {
+    border: none;
+}
+
+.mstrmojo-lv-btnArchitect,
+.mstrmojo-lv-btnRename,
+.mstrmojo-lv-btnDelete{
+	height: 20px;
+	width: 20px;
+	cursor:pointer;
+	vertical-align: middle;
+}
+.mstrmojo-lv-btnRename{
+	background-position: -200px -80px;
+}
+
+.mstrmojo-lv-btnArchitect{
+    background: url('images/architect/listView.png') no-repeat scroll 0 0 transparent;
+    background-position: -40px -160px;
+}
+
+/*end list view */

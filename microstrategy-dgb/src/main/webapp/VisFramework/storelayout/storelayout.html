@@ -1,0 +1,49 @@
+<!--  
+	Store Layout Selector AJAX Visualization.
+	There are number of cases where customers would like to have the ability to highlight areas using image maps and make these areas 
+	clickable by sending a selector action. For example, customers may want to take a store layout and do the following:
+	  1. Enable a rollover on each region.
+	  2. Send out a selector action when that region is clicked.
+	The hot areas that are clickable are done using image maps and there are several tools out there that can accomplish that and the final output imported in to MicroStrategy.
+	This sample provide detailed information on:
+	  1. A sample rollover behavior.
+	  2. Selector action when clicked.
+	Customer can use this sample and extend it to their needs.
+-->
+<html>
+<head>
+	<script language="javascript" src="../javascript/URLManagement.js"><!-- --></script>
+	<script language="javascript" src="../javascript/ImageMap.js"><!-- --></script>
+   	<script type="text/javascript">
+   	
+		function onloadVis() {
+		    if(getGridBone()) {
+		        setDefaultSelection();
+		    } else {
+		        window.setTimeout("onloadVis();", 500);
+		    }
+		}
+		
+	</script>
+</head>
+<body onload="onloadVis();">
+<div>
+   	<!-- 
+		image map starts here... 
+		Each "area" tag must call "makeSelection(value)" passing the value that corresponds to the selection (i.e. 'Electronics'). 
+		On the onMouseOver event it calls "changeImgSrc" passing the name of the imagemap and the new selection. This is used to replace 
+		the existing map with one that shows the current area selected.
+		Note:"area" tags must not have an href
+	-->
+	<map name="ImageMap">
+		<area id="Electronics" onMouseOver="if (isSelectable()) changeImgSrc('Electronics')" onMouseOut="if (isSelectable()) changeImgSrc(curSelection)" onclick="makeSelection('Electronics')" shape="rect" coords="10,26,130,206"/>
+		<area id="Books" onMouseOver="if (isSelectable()) changeImgSrc('Books')" onMouseOut="if (isSelectable()) changeImgSrc(curSelection)" onclick="makeSelection('Books')" shape="rect" coords="2,61,378,85" />
+		<area id="Movies" onMouseOver="if (isSelectable()) changeImgSrc('Movies')" onMouseOut="if (isSelectable()) changeImgSrc(curSelection)" onclick="makeSelection('Movies')" shape="rect" coords="262,96,377,125" />
+		<area id="Music" onMouseOver="if (isSelectable()) changeImgSrc('Music')" onMouseOut="if (isSelectable()) changeImgSrc(curSelection)" onclick="makeSelection('Music')" shape="rect" coords="263,136,376,164" />
+	</map>
+	
+	<img id="imgmap" src="StoreLayout.png" usemap="#ImageMap" border="0" />
+	<!-- ...image map ends here -->
+</div>
+</body>
+</html>

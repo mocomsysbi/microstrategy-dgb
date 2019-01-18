@@ -1,0 +1,34 @@
+.mstrmojo-DI-DIResourceAdmin {
+  -moz-box-sizing: border-box;
+  box-sizing: content-box;
+  width: 100%;
+  max-width: 100% !important;
+  height: 100%;
+  overflow-y: auto;
+
+  .mstrmojo-DI-DIResourceAdmin-Label {
+    line-height: 24px;
+    font-weight: bold;
+    padding-left: 18px;
+  }
+
+  .mstrmojo-DI-DIResourceAdmin-Content {
+    margin-top: 12px;
+    margin-bottom: 16px;
+    min-height: 100px;
+  }
+
+  .mstrmojo-DI-DIResourceAdmin-Box {
+    position: relative;
+  }
+}
+
+.workstation {
+  .mstrmojo-DI-DIResourceAdmin {
+    box-sizing: content-box;
+    width: 100%;
+    max-width: 100% !important;
+    height: 100%;
+    overflow-y: auto;
+  }
+}

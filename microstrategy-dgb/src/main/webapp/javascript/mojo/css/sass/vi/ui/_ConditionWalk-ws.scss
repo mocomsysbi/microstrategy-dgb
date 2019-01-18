@@ -1,0 +1,434 @@
+@import '../workstation-global';
+@import '../../global-mixins';
+@import '../vi-icons';
+
+@mixin hasEditableTextBeforeBase {
+    @include background-image($wsvi-search-magnifier, -7px -8px);
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    width: 22px;
+    height: 18px;
+}
+
+.mstrmojo-vi-ui-ConditionWalk {
+
+
+    .walk {
+
+        $column-height: 368px;
+        $column-content-height: $column-height - 5px;// 5 pixel padding to top
+        .mstrmojo-fm {
+            &.forms {
+                .item {
+                    display: block;
+                    &.fn {
+                        display: none;
+                    }
+                    &.temp {
+                        display: block;
+                    }
+                }
+            }
+            .item {
+                display: none;
+                &.fn {
+                    display: block;
+                }
+            }
+        }
+
+        .mstrmojo-ui-ColumnWalk {
+            border: 1px solid $wsvi-border-gray;
+            border-left: 0;
+            border-right: 0;
+            color: black;
+
+
+            .mstrmojo-ui-ColumnContainer {
+                @include box-sizing();
+                $column-width: 200px;
+                $border-width: 1px;
+                border: solid $wsvi-border-gray;
+                border-width: 0 1px;
+                border-left-color: transparent;
+                padding: $wsvi-element-text-padding $wsvi-editor-content-padding 0 $wsvi-editor-content-padding;
+                width: $column-width;
+                overflow: hidden;
+
+                > .mstrmojo-sb-show-default {
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                &:last-child {
+                    border-right-color: $wsvi-border-gray;
+                }
+
+                &.lastStage {
+                    border-right-color: transparent;
+                }
+
+                &:nth-child(2).lastStage {
+                    width: $column-width * 2;
+                }
+
+            }
+        }
+
+        .mstrmojo-ui-Pulldown {
+            margin-bottom: $wsvi-element-padding;
+
+            .mstrmojo-PopupList .item.disabled {
+                color: #DEDFDF;
+            }
+
+            .item.unit {
+                position: relative;
+                padding-left: 24px;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    @include transform(translate(0, -50%));
+                    left: 3px;
+                    width: 18px;
+                    height: 18px;
+                    background: transparent url(#{$vi-img-path}/unitList/icon_dataset_sprite.png) 1000px 1000px no-repeat;
+                }
+
+                &.ic4 {
+                    &:before {
+                        @include wsvi-icon-metric;
+                    }
+                    &.is-mh:before {
+                        @include wsvi-icon-metric-header;
+                    }
+                }
+
+                &.ic4d:before {
+                    @include wsvi-icon-derived-metric;
+                }
+
+                &.ic12:before {
+                    @include wsvi-icon-attribute;
+                }
+
+                &.ic12.st3076:before {
+                    @include wsvi-icon-recursive-attribute;
+                }
+
+                &.ic12d,
+                &.ic47.st12033 {
+                    &:before {
+                        @include wsvi-icon-derived-attribute;
+                    }
+                }
+
+                &.ic47.st12033.nde4ra {
+                    &:before {
+                        @include wsvi-icon-recursive-derived-attribute;
+                    }
+                }
+
+                &.ic12g:before {
+                    @include wsvi-icon-geographic-attribute;
+                }
+
+                &.ic12t:before {
+                    @include wsvi-icon-time-attribute;
+                }
+
+                &.ic14:before {
+                    @include wsvi-icon-hierarchy;
+                }
+
+                &.ic1:before {
+                    @include wsvi-icon-custom-group;
+                }
+                &.ic47:before {
+                    @include wsvi-icon-custom-group;
+                }
+                &.ic12de:before {
+                    @include wsvi-icon-attribute;
+                }
+                &.ic21:before {
+                    @include wsvi-icon-attribute-form;
+                }
+                &.ic-1:before {
+                    @include wsvi-icon-browse-obj;
+                }
+            }
+
+            &.conditionWalk-attMxPd,
+            &.conditionWalk-target {
+                .mstrmojo-ui-Pulldown-text .item.unit {
+                    padding-left: 21px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &:before {
+                        left: 0;
+                    }
+                }
+            }
+
+            .mstrmojo-PopupList {
+                max-width: 166px;
+                .mstrmojo-popupList-scrollBar.mstrmojo-scrollNode {
+                    width: auto;
+                }
+
+                .item.invalid{
+                    color: rgba($wsvi-primary-black, 0.45);
+                    padding-right: 30px;
+                    &:before {
+                        opacity: 0.45;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 6px;
+                        right: 9px;
+                        width: 18px;
+                        height: 18px;
+                        @include wsvi-icon-warning-triangle-small;
+                        background-color: $wsvi-primary-white;
+                    }
+
+                    &:hover:after {
+                        background-color: #f4f4f4;
+                    }
+                }
+            }
+
+            &.conditionWalk-target {
+                .mstrmojo-PopupList {
+                    max-height: $column-content-height - 2 * $wsvi-input-control-height - 8px; // 8px for 3px margin from top and 5px margin to the bottom
+                    .mstrmojo-popupList-scrollBar {
+                        max-height: $column-content-height - 2 * $wsvi-input-control-height - 8px - 12px; //12px for padding and boarder
+                    }
+                }
+            }
+
+            &.conditionWalk-attMxPd {
+                .mstrmojo-ui-Pulldown-text {
+                    padding-left: 3px;
+                }
+                .mstrmojo-PopupList {
+                    max-height: $column-content-height - 4 * $wsvi-input-control-height - $wsvi-element-padding - 8px; // 8px for 3px margin from top and 5px margin to the bottom
+                    .mstrmojo-popupList-scrollBar {
+                        max-height: $column-content-height - 4 * $wsvi-input-control-height - $wsvi-element-padding - 8px - 12px; //12px for padding and boarder
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-ui-SearchablePulldown {
+            .mstrmojo-ui-Pulldown-text {
+                &.hasEditableText{
+                    &.editable{
+                        padding-left: 24px;
+                        &:before {
+                            @include hasEditableTextBeforeBase;
+                            display: block;
+                            content: '';
+                        }
+                    }
+                    &:empty{
+                        &:before {
+                            @include hasEditableTextBeforeBase;
+                            content: attr(placeholder);
+                            padding-left: 21px;
+                            color: #757575;
+                            line-height: 14px;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-Label.baseOn,
+        .mstrmojo-Label.attMxLabel {
+            margin: 0;
+            line-height: $wsvi-panel-row-height;
+            color: rgba($wsvi-primary-black, 0.75);
+        }
+
+        .mstrmojo-Label.attMxLabel {
+            padding-top: $wsvi-element-padding;
+        }
+
+        .mstrmojo-Label.btwn {
+            margin: 0;
+            padding: 0 7px;
+            line-height: $wsvi-panel-row-height;
+            color: rgba($wsvi-primary-black, 0.75);
+        }
+
+        .mstrmojo-DateTextBox {
+            width: 100%;
+            .mstrmojo-DateTextBox-input {
+                height: $wsvi-input-control-height - 2px;//2px border
+                width: 142px;
+                padding-top: 0;
+            }
+            .mstrmojo-DateTextBox-icon {
+                left: 148px;
+            }
+        }
+
+        .mstrmojo-ui-vi-ElementsBrowser {
+            margin-top: $wsvi-element-text-padding;
+        }
+    }
+
+    &.ObjectBrowserPopup {
+        padding: 10px 16px 16px 16px;
+        @include box-shadow(rgba($wsvi-primary-black, 0.20), 0, 0, 8px, false, 4px);
+        font-size: 12px;
+        height: 0;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: -10px;
+            left: 0;
+            height: 10px;
+            @include box-shadow(rgba(0, 0, 0, 0.2), 0, 2px, 4px);
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 540px;
+            top: -10px;
+            left: -10px;
+            height: 10px;
+            background: #EDEDED;
+        }
+
+        &.open {
+            height: 480px;
+            @include single-transition(height, 300ms);
+
+            .mstrmojo-VIAllObjectsBrowser {
+                height: 438px;
+                @include single-transition(height, 300ms);
+            }
+
+            .mstrmojo-Popup-shadow {
+                display: block;
+            }
+        }
+
+        .mstrmojo-Popup-shadow {
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .mstrmojo-VIAllObjectsBrowser {
+            padding: 0;
+            width: 486px;
+            background: none;
+            height: 0;
+            overflow: hidden;
+
+            .title-text {
+                float: left;
+                width: 152px;
+                .mstrmojo-EditableLabel {
+                    padding: 0;
+                    text-transform: none;
+                    font-size: 12px;
+                    font-weight: normal;
+                    line-height: 26px;
+                }
+            }
+            .right-toolbar {
+                display: none;
+            }
+            .filter,
+            .search-box {
+                float: left;
+                width: 160px;
+                margin-left: 7px;
+                margin-bottom: 10px;
+            }
+            .horizontal-line {
+                display: none;
+            }
+
+            .mstrmojo-VIPanel-contentContainer {
+                background: #fcfcfc;
+                border: 1px rgba($wsvi-primary-black, 0.15) solid;
+                position: relative;
+                margin-top: 36px;
+                padding: 6px 3px 6px 10px;
+                height: 388px;
+                overflow: hidden;
+
+                > .mstrmojo-scrollbar-host {
+                    height: 388px;
+                }
+            }
+
+            .mstrmojo-VIPanel-content {
+                height: 400px;
+            }
+
+            .mstrmojo-TreeBrowser {
+                color: $wsvi-primary-black;
+
+                &.loading:after {
+                    left: 220px;
+                }
+            }
+        }
+
+        .buttons {
+            margin-top: 16px;
+            position: relative;
+
+            .mstrmojo-Button {
+                width: 74px;
+                float: right;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.adv-threshold {
+    .mstrmojo-ui-ColumnContainer .mstrmojo-ui-CheckList .item {
+        background-position: 5px -23px !important;  //TODO we should remove the !important from CheckList-ws, too late to do in 10.9
+        &.selected {
+            background-position: 5px 2px !important;
+        }
+    }
+
+    .mstrmojo-threshold-PropertyPanel .format.mstrmojo-vi-PropEditor .mstrmojo-ui-Checkbox {
+        background-position: -2px -27px;
+
+        &.checked {
+            background-position: -2px -2px;
+        }
+    }
+}
+
+.mojo-theme-light.mstrmojo-Tooltip .mstrmojo-Tooltip-contentWrapper .mstrmojo-Tooltip-content .dsc.dataset {
+    padding-left: 18px;
+    &:before {
+        @include wsvi-icon-datasets-editLabel-icon;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 7px;
+        width: 18px;
+        height: 18px;
+        margin-top: -2px;
+    }
+}

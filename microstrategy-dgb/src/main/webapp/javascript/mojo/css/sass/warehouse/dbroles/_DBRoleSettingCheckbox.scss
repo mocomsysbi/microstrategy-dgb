@@ -1,0 +1,31 @@
+@import '../wh-global';
+@import '../../vi/vi-global';
+
+.mstrmojo-wh-DBRoleCheckBox {
+  width: 100%;
+
+  .mstrmojo-wh-DBRoleCheckBox-help {
+    background: url(#{$vi-img-path}/menu_icons.png) no-repeat -16px -84px;
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      background-position: -16px -114px;
+    }
+  }
+}
+
+.workstation {
+  .mstrmojo-wh-DBRolePulldown + div {
+    .mstrmojo-wh-DBRoleCheckBox {
+      span.mstrmojo-CheckBox {
+        position: relative;
+        top: 5px;
+        width: 474px;
+        display: block !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}

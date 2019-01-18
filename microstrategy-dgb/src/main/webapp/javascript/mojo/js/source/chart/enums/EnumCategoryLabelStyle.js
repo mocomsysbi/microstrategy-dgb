@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumCategoryLabelStyle={CLS_AUTOMATIC:0,CLS_NORMAL:1,CLS_STAGGER:2,CLS_MANUAL:3};

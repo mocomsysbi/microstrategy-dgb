@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumOrientation={OR_HORIZONTAL:0,OR_VERTICAL:1};

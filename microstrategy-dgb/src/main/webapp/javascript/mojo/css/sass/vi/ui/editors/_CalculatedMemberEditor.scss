@@ -1,0 +1,83 @@
+@import '../../../_global.scss';
+@import '../../workstation-global';
+
+.workstation .mstrmojo-Editor.mstrmojo-CalculatedMemberEditor {
+	>.mstrmojo-Editor-content {
+		padding: 0;
+
+		.definitionBox {
+			>tbody >tr >td {
+				border-bottom: 1px solid $wsvi-border-gray;
+			}
+		}
+	}
+
+	.mstrmojo-ui-vi-ElementsBrowser.mstrmojo-HierarchyElementsListPanel {
+		padding: 10px 16px;
+	}
+
+	.mstrmojo-CalculatedMemberPanel .definitionBox .defn {
+		padding: 10px 16px;
+
+		.deNameBox {
+			width: 100%;
+
+			td {
+				&:last-child {
+					float: right;
+					padding: 4px 0;
+				}
+			}
+		}
+
+		.deNameTB .mstrmojo-TextBox-label {
+			padding-right: 10px;
+		}
+
+		.deNameTB {
+			.mstrmojo-TextBox-label {
+				padding-right: 10px;
+			}
+
+			.mstrmojo-TextBox {
+				width: 183px;
+			}
+		}
+
+		.parentBox {
+			padding-top: 10px;
+		}
+
+		.mstrmojo-Label.hint {
+			padding-bottom: 3px;
+		}
+	}
+
+	.mstrmojo-IncHierarchyList {
+		border: none;
+	}
+
+	.mstrmojo-TokenInputBox.mstrmojo-CalculatedMemberExpressionInputBox {
+		height: 202px;
+	}
+
+	.mstrmojo-CalculatedMemberPanel.xsp .mstrmojo-TokenInputBox.mstrmojo-CalculatedMemberExpressionInputBox {
+		height: 245px;
+	}
+
+	.mstrmojo-CalculatedMemberPanel.xsp .definitionBox .defn .mstrmojo-Label.expr {
+		padding-top: 10px;
+	}
+
+	>.mstrmojo-Editor-buttons {
+		padding: 16px;
+
+		.mstrmojo-Button {
+			float: right;
+
+			&:last-child {
+				margin-right: 10px;
+			}
+		}			
+	}
+}

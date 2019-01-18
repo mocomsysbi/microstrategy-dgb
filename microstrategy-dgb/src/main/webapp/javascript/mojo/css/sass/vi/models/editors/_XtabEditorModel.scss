@@ -1,0 +1,81 @@
+@import '../../_vi-global';
+
+/** BEGIN: Xtab Editor **/
+.mstrmojo-VIPanelContents {
+    .mstrmojo-vi-EditorGroup {
+
+        .mstrmojo-ui-ButtonBar {
+            &.cellAlign {
+                .item {
+                    & > div {
+                        background: transparent url(#{$vi-img-path}/editor-sprite.png) center 0 no-repeat;
+                    }
+                }
+            }
+
+            &.cellPadding {
+                .item {
+                    font: bold 11pt/23px monospace;
+                }
+            }
+        }
+    }
+}
+
+// Icons.
+$edt-icon-xtab-align-top: -124;
+$edt-icon-xtab-align-middle: -155;
+$edt-icon-xtab-align-bottom: -185;
+
+// Offset for dark theme.
+$edt-icon-dark-offset: -420;
+
+.mojo-theme-light {
+    .mstrmojo-vi-PropEditor {
+        .mstrmojo-vi-EditorGroup {
+            .mstrmojo-ui-ButtonBar {
+                &.cellAlign {
+                    .item {
+                        &.top > div {
+                            background-position: center #{$edt-icon-xtab-align-top}px;
+                        }
+
+                        &.middle > div {
+                            background-position: center #{$edt-icon-xtab-align-middle}px;
+                        }
+
+                        &.bottom > div {
+                            background-position: center  #{$edt-icon-xtab-align-bottom}px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-vi-PropEditor {
+        .mstrmojo-vi-EditorGroup {
+            .mstrmojo-ui-ButtonBar {
+                &.cellAlign {
+                    .item {
+                        &.top > div {
+                            background-position: center #{$edt-icon-dark-offset + $edt-icon-xtab-align-top}px;
+                        }
+
+                        &.middle > div {
+                            background-position: center #{$edt-icon-dark-offset + $edt-icon-xtab-align-middle}px;
+                        }
+
+                        &.bottom > div {
+                            background-position: center  #{$edt-icon-dark-offset + $edt-icon-xtab-align-bottom}px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** END: Xtab Editor **/

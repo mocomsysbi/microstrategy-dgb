@@ -1,0 +1,73 @@
+@import '../../../../vi/workstation-global';
+
+.workstation .mstrmojo-TokenInputBox.mstrmojo-CalculatedMemberExpressionInputBox {
+    width: 360px;
+    height: 232px;
+    margin: 0;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid rgba(68, 70, 73, .2);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 5px 10px;
+    position: relative; // for dropCue
+
+    &.err {
+        border-color: rgb(255, 165, 0);
+    }
+
+    &.dragIn {
+        border: 1px solid $wsvi-primary-blue !important;
+    }
+
+    .mstrmojo-ListBase2-dropCue {
+        border: none;
+
+        .mstrmojo-ListBase2-dropCue-inner {
+            background-image: url(images/dropCueUp.png);
+            top: 12px;
+            left: 6px;
+        }
+    }
+
+    .mstrmojo-TokenInputBox-edit {
+        padding: 0;
+        caret-color: $wsvi-primary-black;
+    }
+
+    span {
+        &.mstrmojo-itemwrap:first-child {
+            margin-left: 2px;
+        }
+
+        &.mstrmojo-token {
+            font-family: $wsvi-normal-font-family;
+            font-size: $wsvi-normal-font-size;
+            color: $wsvi-primary-black;
+
+            &.mstr {
+                color: $wsvi-primary-blue;
+            }
+        }
+    }
+
+    &.empty {
+        span.mstrmojo-token.mstr {
+            color: $wsvi-font-gray;
+        }
+    }
+
+    &.empty.active {
+        span.mstrmojo-token.mstr {
+            color: $wsvi-primary-blue;
+        }
+    }
+
+    &.active {
+        border-color: $wsvi-primary-blue;
+    }
+
+    &.err {
+        border-color: rgb(255, 165, 0);
+    }
+}

@@ -1,0 +1,1 @@
+mstrmojo.qb.EnumDataChangeEvents={TABLES_SELECTED:"tablesSelected",TABLES_ADDED:"tablesAdded",TABLES_LOADED:"tablesLoaded",TABLE_CHANGED:"tableChanged",DBROLE_CHANGED:"dbRoleChanged",RENAME:"rename",REMOVE:"remove",JOIN_CHANGED:"joinChanged"};

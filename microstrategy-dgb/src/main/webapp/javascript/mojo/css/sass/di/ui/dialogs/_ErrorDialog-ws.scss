@@ -1,0 +1,73 @@
+.mstrmojo-di-ui-dialogs-ErrorDialog {
+  width: 440px;
+
+  .mstrmojo-Editor-title-container {
+    .edt-title-btn.mstrmojo-Editor-close {
+      display: none;
+    }
+  }
+
+  .mstrmojo-Editor-content {
+    margin-top: 16px;
+    line-height: 16px;
+    padding-top: 0px;
+
+    .mstrmojo-errorDialog-icon {
+      width: 74px;
+      height: 74px;
+      float: left;
+      background: url(#{$mojo-img-path}/DI/dataset-error.svg) no-repeat 0 0;
+      margin: 0px 16px;
+    }
+
+    .mstrmojo-errorDialog-errorSection {
+      max-height: 262px; // 262px = 400px(max) - 34px(height) - 52px(button) - 26px * 2(top and bottom margin)
+    }
+
+    .mstrmojo-errorDialog-summary {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .mstrmojo-errorDialog-description {
+      width: 286px;
+      font-size: 11px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 8px;
+    }
+
+    .mstrmojo-ui-Checkbox.mstrmojo-errorDialog-details-toggle {
+      float: left;
+      background: url(#{$mojo-img-path}/DI/nav-collapse.svg) no-repeat 0 0;
+      &.checked {
+        background: url(#{$mojo-img-path}/DI/nav-expand.svg) no-repeat 0 0;
+      }
+    }
+
+    .mstrmojo-errorDialog-details-header {
+      color: #1471d5;
+      margin-bottom: 10px;
+      width: 100px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .mstrmojo-errorDialog-details {
+      width: 286px;
+      font-size: 11px;overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0px;
+    }
+
+  }
+}
+
+
+.workstation{
+  .mstrmojo-Editor .mstrmojo-Label.mstrmojo-errorDialog-details {
+    overflow-y: auto;
+    max-height: 120px;
+  }
+}

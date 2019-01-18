@@ -1,0 +1,29 @@
+.mstrmojo-di-sources-admin {
+  height: 100%;
+  width: 100%;
+
+  .mstrmojo-di-source-headers {
+    padding: 12px 18px;
+
+    .mstrmojo-ui-ButtonBar.mstrmojo-di-source-menu {
+      .item {
+        padding: 0 12px;
+        min-width: 30px;
+        font-size: 8pt;
+        line-height: 22px;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .mstrmojo-di-source-content {
+    height: 395px;
+    overflow: hidden;
+
+    .mstrmojo-di-source-content-stack {
+      height: 100%;
+    }
+  }
+}

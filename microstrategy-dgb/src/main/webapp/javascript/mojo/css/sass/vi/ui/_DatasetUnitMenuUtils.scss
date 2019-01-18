@@ -1,0 +1,579 @@
+@import '../vi-global';
+
+/** Calculation Editor**/
+//DE53943;substract style for calculation pulldown list, since it is changed to non-hostedWith
+.Calculation-PullDown.mstrmojo-ui-Pulldown.mstrmojo-ui-SearchablePulldown {
+    width: 175px;
+    &.invalid {
+        .mstrmojo-ui-Pulldown-text {
+            border-color: #EB815C;
+        }
+    }
+}
+
+.Calculation-MenuEditor {
+    .mstrmojo-ButtonListHoriz .mstrmojo-ButtonItem {
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-image: url(#{$vi-img-path}/menu_icons.png);
+        background-clip: padding-box;
+        margin-top: 0;
+        font: 20pt "times new roman";
+        color: #F5F5F5;
+        border: 2px inset transparent;
+        padding: 0;
+
+        &.operator-plus {
+            background-position: -206px -195px;
+        }
+
+        &.operator-plus:hover {
+            background-position: -206px -225px;
+        }
+
+        &.operator-plus.selected {
+            background-position: -206px -255px;
+        }
+
+        &.operator-minus {
+            background-position: -236px -195px;
+        }
+
+        &.operator-minus:hover {
+            background-position: -236px -225px;
+        }
+
+        &.operator-minus.selected {
+            background-position: -236px -255px;
+        }
+
+        &.operator-multiply {
+            background-position: -266px -195px;
+        }
+
+        &.operator-multiply:hover {
+            background-position: -266px -225px;
+        }
+
+        &.operator-multiply.selected {
+            background-position: -266px -255px;
+        }
+
+        &.operator-divide {
+            background-position: -296px -195px;
+        }
+
+        &.operator-divide:hover {
+            background-position: -296px -225px;
+        }
+
+        &.operator-divide.selected {
+            background-position: -296px -255px;
+        }
+
+        &.operator-percent-diff {
+            // TODO: this is just place holder, once UED provides the icon, please replace the following
+            background: transparent;
+            color: rgb(183, 183, 183);
+            font-size: 20px;
+            text-shadow: black 0px 1px 1px;
+            line-height: 20px;
+            min-width: 0 !important;
+            width: 25px;
+            height: 22px;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            margin: 0px 6px;
+        }
+
+        &.operator-percent-diff:hover {
+            // TODO: this is just place holder, once UED provides the icon, please replace the following
+            background: rgb(53, 54, 57);
+            border-color: rgb(29, 29, 29);
+        }
+
+        &.operator-percent-diff.selected {
+            // TODO: this is just place holder, once UED provides the icon, please replace the following
+            background: transparent;
+            color: rgb(19, 170, 228);
+            border-color: transparent;
+        }
+    }
+}
+
+/**End Calculation Editor**/
+
+/**Rank/Moving/Running/PercentOf Editor**/
+//DE53943;substract style for NewRankMetric-MenuEditor, RelativeReference-MenuEditor, breakby pulldown for MovingTotal-MenuEditor, RunningTotal-MenuEditor
+.MovingTotalPullDown.BreakByBox,
+.RunningTotalPullDown.BreakByBox,
+.NewRankMetricPullDown,
+.RelativeReferencePullDown {
+    &.mstrmojo-ui-Pulldown {
+        position: absolute;
+        right: 0;
+        width: 100px;
+        margin: 0;
+    }
+}
+
+//DE53943;substract style for MovingTotal-MenuEditor, RunningTotal-MenuEditor
+.MovingTotalPullDown,
+.RunningTotalPullDown {
+    &.mstrmojo-ui-Pulldown {
+        margin-top: 4px;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+}
+
+.mstrmojo-ui-MenuEditor {
+    &.MovingTotal-MenuEditor,
+    &.RunningTotal-MenuEditor,
+    &.NewRankMetric-MenuEditor,
+    &.RelativeReference-MenuEditor {
+        .me-content {
+            .mstrmojo-Box {
+                height: 22px;
+                padding: 4px 0 4px 0;
+                position: relative;
+
+                .mstrmojo-Label {
+                    float: left;
+                    margin-right: 105px;
+                }
+
+            }
+        }
+    }
+}
+
+.MovingTotal-MenuEditor {
+
+    .mstrmojo-HBox {
+        height: 30px;
+        .mstrmojo-Label {
+            &.WinSzPrefix {
+                padding-right: 5px;
+            }
+
+            &.WinSzSuffix {
+                padding-left: 5px;
+            }
+        }
+        INPUT {
+            width: 30px;
+            margin: 0;
+        }
+    }
+}
+
+/**End Rank/Moving/Running/PercentOf Editor**/
+
+/** BEGIN: Object Picker **/
+.mstrmojo-ui-Menu.VIRadioGroupMenu, .ConfDataType-VIRadioGroupMenu {
+    & > DIV {
+        // Set Padding for the items within a menu that contains radio group
+        & > .mstrmojo-ui-Menu-item {
+            padding-left: 27px;
+        }
+    }
+
+    .item {
+        &.radio {
+            &.checkMark {
+                &::before {
+                    background: rgba(0, 0, 0, 0);
+                    background-position: 0px 0px;
+                }
+
+                &.on::before {
+                    background: rgba(0, 0, 0, 0) url(images/checkbox_sprite.png) -7px -414px no-repeat;
+                }
+            }
+
+            &.on {
+                .micn {
+                    // Clear micn icon
+                    background: transparent none 2px 2px no-repeat;
+                }
+            }
+        }
+    }
+}
+
+/** END: Object Picker **/
+
+/** BEGIN: Mark As GEO Role **/
+
+.MarkGeoRole-MenuEditor.mstrmojo-ui-MenuEditor {
+    .me-content {
+        padding: 0;
+        & > div {
+            width: 145px;
+            white-space: normal;
+            margin: 9px;
+        }
+        .mstrmojo-ToolSeparator {
+            width: 163px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+/** END: Mark As GEO Role **/
+
+/** BEGIN: Create Time Attribute **/
+
+.mstrmojo-ui-MenuEditor.CreateTimeAttribute-MenuEditor {
+    .me-content {
+        padding: 5px 9px;
+        .mstrmojo-ui-CheckList {
+            left: -1px;
+            .item {
+                height: 22px;
+                background-position: -6px -241px;
+            }
+
+            .selected.item {
+                background-position: -6px -217px;
+            }
+        }
+    }
+}
+
+/** END: Create Time Attribute **/
+
+/** BEGIN: Base On Calculation for NDE **/
+.mstrmojo-ui-MenuEditor.base-on-calculation-editor {
+    .me-content {
+        padding: 0;
+        > .mstrmojo-Label {
+            padding: 5px 9px 0 9px;
+        }
+        .mstrmojo-ui-Pulldown {
+            margin: 0 9px 0 9px;
+        }
+        .mstrmojo-ListBase {
+            // padding: 0 9px 0 9px;
+            margin-top: 9px;
+            border-top: solid 1px #4E4E4E;
+            @include box-shadow(#333333, 0, -1px, 0);
+        }
+    }
+
+    //DE63818;Added .mstrmojo-ui-Menu format, since base-on-calculation-editor is rendered non-hostedWithin, then some formats which should be inherited from parent menu were missing
+    .mstrmojo-ui-Menu-item {
+        &.on {
+            @extend %menu-item-default;
+
+            &:before {
+                @extend %menu-check-mark;
+
+            }
+
+            &:hover {
+                @extend %menu-item-default;
+            }
+        }
+
+        &.selected {
+            position: relative; // Remove this hack after changing the style for xtab menus.
+        }
+
+        &.xt.checked {
+            background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) 0% -408px no-repeat;
+        }
+
+        &.open {
+            @extend %menu-item-selected;
+        }
+
+        &.txt {
+            padding: 0 10px;
+        }
+
+        &.separator {
+            border-bottom: 1px solid #303030;
+            margin-top: 3px;
+            margin-bottom: 4px;
+            -webkit-box-shadow: 0 1px 0 0 rgb(89, 89, 89);
+            -moz-box-shadow: 0 1px 0 0 rgb(89, 89, 89);
+            box-shadow: 0 1px 0 0 rgb(89, 89, 89);
+        }
+
+        // Clear check mark for sub menu items.
+        &.pop:before {
+            @extend %menu-clear-check-mark;
+        }
+
+        & > DIV {
+            &.check {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 17px;
+            }
+
+            &.micn,
+            &.arw {
+                cursor: default;
+                position: absolute;
+            }
+
+            &.arw {
+                border: 0 solid transparent;
+                background: transparent url(#{$vi-img-path}/arrow-contextMenu.png) 12px 8px no-repeat;
+                height: 22px;
+                right: 0;
+                top: 0;
+                width: 28px;
+                left: auto;
+
+                // Submenus.
+                .mstrmojo-ui-Menu {
+                    margin-top: -16px;
+                    margin-left: 10px;
+                }
+            }
+
+            &.micn {
+                border: none;
+                height: 19px;
+                top: 3px;
+                left: 2px;
+                right: auto;
+                width: 15px;
+            }
+        }
+
+        @extend %menu-item-base;
+
+        &.pop {
+            overflow: visible;
+        }
+
+        // CSS for an action popup menu item.
+        &.ax.pop {
+            $color-hover-background-arrow: #252525;
+
+            padding: 0 37px 0 17px;
+
+            // To highlight that it's a popup - show the pointer.
+            cursor: pointer;
+
+            // CSS for the mode that we need to highlight the arrow for the action item.
+            &.hlt-ax {
+                &:hover {
+                    .arw {
+                        background-color: $color-hover-background-arrow;
+                    }
+                }
+            }
+
+            .arw{
+                &:hover {
+                    background-color: $color-hover-background-arrow;
+                    cursor: default;
+                }
+
+                // The bar between text and arrow
+                &:after {
+                    content: " ";
+                    position: absolute;
+                    height: 11px;
+                    width: 1px;
+                    border-left: 1px #858585 solid;
+                    top: 6px;
+                }
+            }
+
+            // When open or hover, show another bar
+            &:hover,
+            &.open {
+                .arw {
+                    &:after {
+                        border-left: 1px #464646 solid;
+                        height: 22px;
+                        top: 0px;
+                    }
+                }
+            }
+        }
+
+        &.radio {
+            padding-left: 27px;
+
+            &:before {
+                background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) -7px -367px no-repeat;
+                content: "";
+                height: 11px;
+                left: 11px;
+                position: absolute;
+                top: 6px;
+                width: 10px;
+            }
+
+            &.on:before {
+                background-position: -7px -343px;
+            }
+        }
+
+        // CSS for non-interactive menu items.
+        &.non-int {
+            &:before {
+                @extend %menu-clear-check-mark;
+            }
+
+            // Non-interactive menu items don't highlight on hover.
+            &:hover {
+                background: none;
+            }
+
+            // Disabled menu items are a specialized non-interactive menu item with a different text color.
+            &.disabled {
+                color: #858585;
+            }
+        }
+
+        &:hover {
+            @extend %menu-item-default;
+            @include background-color-rgba(27, 27, 27, 0.42);
+        }
+
+        &.selected {
+            &:before {
+                @extend %menu-check-mark;
+            }
+        }
+
+        > DIV.micn {
+            background: transparent none 2px 2px no-repeat;
+            left: 2px;
+        }
+    }
+}
+
+/** END: Base On Calculation for NDE **/
+
+/** BEGIN: Configure Data Type **/
+.ConfDataTypePullDown.MeContentPullDown {
+    &.mstrmojo-ui-Pulldown {
+        margin-top: 10px;
+    }
+    &.mstrmojo-ui-SearchablePulldown {
+        margin-top: 11px;
+    }
+    .ScrollableContainer-content {
+        height: 250px;
+    }
+}
+
+.ConfDataTypePullDown.MeContentPullDown.HBOXPullDown {
+    &.mstrmojo-ui-Pulldown,
+    &.mstrmojo-ui-SearchablePulldown {
+        width: 100px;
+    }
+}
+
+.mstrmojo-ui-MenuEditor.ConfDataType-MenuEditor .me-content {
+
+    .ScrollableContainer-content {
+        height: 250px;
+    }
+
+    .mstrmojo-HBox {
+        .mstrmojo-Label {
+            width: 70px;
+        }
+    }
+
+    .mstrmojo-HBox.func-input {
+        margin-top: 22px;
+    }
+
+    .mstrmojo-HBox.pattern-input {
+        margin-top: 11px;
+        .mstrmojo-Label {
+            color: #858585;
+        }
+    }
+
+    .mstrmojo-ui-SearchablePulldown .mstrmojo-ui-Pulldown-text:after {
+        display: none;
+    }
+    .advancedLabel {
+        span {
+            color: #cdcdcd;
+            float: right;
+            line-height: 8pt;
+            &:before {
+                content: "";
+                display: block;
+                height: 8pt;
+                width: 8pt;
+                float: left;
+                margin-right: 5px;
+                background: url(#{$vi-img-path}/arrow-right.png) no-repeat center center;
+            }
+        }
+        margin-top: 14px;
+        height: 8pt;
+    }
+    .advancedLabel.expanded span:before {
+        background: url(#{$vi-img-path}/arrow-up.png) no-repeat center center;
+    }
+}
+
+/** END: Configure Data Type **/
+
+.mstrmojo-ui-MenuEditor {
+    &.replaceReference,
+    &.mapAttribute, {
+        .me-content {
+            padding-left: 0;
+            padding-right: 0;
+            border: 0;
+
+            .mstrmojo-ui-ScrollableContainer {
+                overflow: hidden;
+                .ScrollableContainer-content {
+                    max-height: 350px;
+                    .mstrmojo-VIUnitList {
+                        .unit {
+                            color: #cdcdcd;
+
+                            margin-left: 0;
+                            border-left: none;
+                            padding-left: 25px;
+                            padding-right: 9px;
+
+                            &:before {
+                                left: 9px;
+                            }
+
+                            &:hover {
+                                background-color: rgba(27, 27, 27, 0.42);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .me-buttons {
+            display: none;
+        }
+    }
+
+    &.displayForms {
+        .mstrmojo-ui-CheckList {
+            .scroll-container {
+                max-height: 240px;
+            }
+        }
+    }
+}

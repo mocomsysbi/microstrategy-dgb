@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumPictureFormatType={JPEG:0,PNG:1,BMP:7,GIF:100,PDF:102,SVG:103,WIN32:104,INSTRUCTIONS:105};

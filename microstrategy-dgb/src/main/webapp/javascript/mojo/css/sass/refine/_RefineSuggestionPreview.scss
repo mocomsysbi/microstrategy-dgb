@@ -1,0 +1,109 @@
+.refine-suggestion-preview {
+  border: 1px solid transparent;
+  position: fixed;
+
+  .fixed-width-preview-container-inner {
+    overflow: hidden;
+  }
+
+  .refine-data-header-text {
+    margin-right: 0px;
+  }
+
+  .refine-cell{
+    background-color: #EAF9FF;
+    &.left {
+      border-left: $dataSuggestionPreviewBorder;
+    }
+    &.right {
+      border-right: $dataSuggestionPreviewBorder;
+    }
+    &.bottom {
+      border-bottom: $dataSuggestionPreviewBorder;
+    }
+  }
+
+  .refine-header {
+    font-size: 9pt;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .refine-header {
+    border-top: 2px solid #34abeb !important;
+    background-color: #fff;
+    &.left {
+      border-left: 2px solid #34abeb !important;
+      background-color: #f4f4f4;
+    }
+    &.center {
+      background-color: #f4f4f4;
+    }
+    &.right {
+      border-right: 2px solid #34abeb !important;
+      background-color: #f4f4f4;
+    }
+  }
+
+  .fixed-width-preview-container-inner {
+    &:hover{
+      overflow-y: hidden;
+    }
+  }
+  
+  &.left:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -14px;
+    top: 5px;
+    border: 8px solid;
+    border-color: transparent #34abeb transparent transparent;
+  }
+  
+  &.left:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -10px;
+    top: 7px;
+    border: 6px solid;
+    border-color: transparent #ffffff transparent transparent;
+  }
+
+  &.right:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -14px;
+    top: 5px;
+    border: 8px solid;
+    border-color: transparent transparent transparent #34abeb;
+  }
+
+  &.right:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -10px;
+    top: 7px;
+    border: 6px solid;
+    border-color: transparent transparent transparent #ffffff;
+  }
+}
+
+.workstation{
+  .refine-suggestion-preview {
+    .refine-header{
+      border-bottom: 1px solid #cacaca;
+      color: rgba(68,70,73,0.5);
+    }
+    .refine-cell{
+      background-color: #ffffff;
+    }
+  }
+}

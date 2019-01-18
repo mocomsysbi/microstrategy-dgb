@@ -1,0 +1,196 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+    /** BEGIN: Number Format Editor **/
+    .mstrmojo-ui-MenuEditor.NumberFormat-MenuEditor {
+        padding: 9px 0 0;
+        min-width: 160px;
+
+        .me-content {
+            padding: 0 9px;
+        }
+
+        .me-buttons {
+            padding-bottom: 9px;
+        }
+    }
+
+    //DE53943;Substract CSS from parent node to remove dependency, since pull down is changed to non-hostedwith
+    // Change the styling for the pulldown items to show the red color.
+    .nf-NegativePullDown.mstrmojo-ui-Pulldown {
+        width: 86px;
+        max-width: 86px;
+
+        .mstrmojo-ui-Pulldown-text.red {
+            color: red !important;
+        }
+
+        .mstrmojo-PopupList {
+            .item.red {
+                color: red !important;
+            }
+        }
+    }
+    .nf-category.mstrmojo-ui-Pulldown {
+        margin: 0 0 $wsvi-element-text-padding 0;
+
+        .mstrmojo-PopupList {
+            width: 100%;
+            max-height: none;
+
+            .mstrmojo-popupList-scrollBar {
+                max-height: none;
+            }
+        }
+    }
+    .NumberFormatter-content {
+        width: 100%;
+
+        .nf-MiddleRow {
+            height: 30px;
+            width: 100%;
+            margin-bottom: $wsvi-element-text-padding;
+            .align-right {
+                float: right;
+            }
+        }
+
+        .nf-shortcut {
+            > div {
+                float: left;
+            }
+            .mstrmojo-Button {
+                @include wsvi-icon-size;
+                margin: 5px;
+                background: transparent url(#{$wsvi-number-formatting-icons-sprite}) 0 0 no-repeat;
+
+                &.nf-shortcut-currency {
+                    background-position: 0px -30px;
+                    &:hover {
+                        background-position: 0px -60px;
+                    }
+                    &:active {
+                        background-position: 0px -60px;
+                    }
+                }
+
+                &.nf-shortcut-percentage {
+                    background-position: -30px -30px;
+                    &:hover {
+                        background-position: -30px -60px;
+                    }
+                    &:active {
+                        background-position: -30px -60px;
+                    }
+                }
+
+                &.nf-shortcut-fixed {
+                    background-position: -60px -30px;
+                    &:hover {
+                        background-position: -60px -60px;
+                    }
+                    &:active {
+                        background-position: -60px -60px;
+                    }
+                }
+
+                // BEGIN: Move Decimal Point
+                &.nf-MoveDecimalPoint {
+                    // Icons for hte right and left decimal point change.
+                    &.left {
+                        background-position: -90px -30px;
+                        &:hover {
+                            background-position: -90px -60px;
+                        }
+                        &:active {
+                            background-position: -90px -60px;
+                        }
+                    }
+                    &.right {
+                        background-position: -120px -30px;
+                        &:hover {
+                            background-position: -120px -60px;
+                        }
+                        &:active {
+                            background-position: -120px -60px;
+                        }
+                    }
+                }
+                //END: Move Decimal Point
+            }
+
+            .shortcut-border {
+                height: 21px;
+                border-left: 1px solid $wsvi-splitline-gray;
+                border-right: none;
+                margin-top: $wsvi-element-text-padding;
+            }
+        }
+
+        .nf-buttons {
+            margin-top: $wsvi-element-padding;
+            margin-bottom: $wsvi-element-padding;
+        }
+
+        .nf-HasWidget {
+            margin: 0 0 $wsvi-element-padding 0 !important;
+        }
+
+        .negative-label,
+        .preview_lable,
+        .preview-info-label {
+            font-size: $wsvi-menu-font-size;
+            margin-right: 12px;
+        }
+
+        .preview-info-label {
+            font-weight: bold;
+        }
+
+        .nf-CurrencySymbol {
+            width: 60px;
+            height: 27px;
+            margin-right: 6px;
+
+            .preview,
+            .preview input {
+                width: 40px;
+            }
+
+            .btn {
+                width: 20px;
+            }
+        }
+
+        .nf-CurrencyPosition {
+            width: 75px;
+        }
+
+        .nf-condense {
+            margin: $wsvi-element-text-padding 0;
+        }
+
+        .nf-custom {
+            margin: $wsvi-element-text-padding 0 0 0;
+            width: 100%;
+        }
+
+        .nf-border {
+            border-bottom: 1px solid $wsvi-splitline-gray;
+            border-top: none;
+            margin-bottom: $wsvi-element-text-padding;
+        }
+    }
+
+    .mstrmojo-popup-widget-hosted.mstrmojo-ui-PreviewButton.nf-CurrencySymbol {
+        z-index: 1001;
+    }
+    .mstrmojo-Label.align-right.preview-info-label {
+        max-width: 71px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /** END: Number Format Editor **/
+}
+
+/** END: Workstation Styles **/

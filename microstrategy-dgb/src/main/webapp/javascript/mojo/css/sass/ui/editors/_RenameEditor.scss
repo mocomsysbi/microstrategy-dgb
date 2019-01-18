@@ -1,0 +1,19 @@
+.mstrmojo-rename-editor {
+    .mstrmojo-Editor-content {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .mstrmojo-Button.mstrmojo-WebButton {
+        margin: 0;
+        &.hot {
+            margin-right: 10px;
+        }
+    }
+    .helpString {
+        margin-top: 10px;
+        color: #AAAAAA;
+    }
+    .setParentBox {
+        padding-top: 10px;
+    }
+}

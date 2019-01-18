@@ -1,0 +1,135 @@
+@import '../../../vi/vi-global';
+
+.mstrmojo-loginToProjectBox {
+    .projectBox {
+        display: none !important;
+        margin-top: 16px;
+        margin-bottom: 8px;
+        .projectLabel {
+            display: none !important;
+            line-height: 21px;
+            width: 70px;
+        }
+        .projectSelector {
+            display: none !important;
+            margin: 0;
+            width: 240px;
+            .item {
+                position: relative;
+                padding-left: 20px;
+                &.selected:after {
+                    content: " ";
+                    height: 100%;
+                    width: 15px;
+                    display: block;
+                    position: absolute;
+                    left: 5px;
+                    top: 0;
+                    background: url(#{$vi-menu-icons}) no-repeat -120px 5px rgba(206, 206, 206, 0.96);
+                }
+                &.selectProj.selected:after{
+                    background: none;
+                }
+                &.projectName:before {
+                    content: " ";
+                    height: 100%;
+                    width: 20px;
+                    display: inline-block;
+                    position: relative;
+                }
+            }
+        }
+        .logoutButton {
+            display: none !important;
+            clear: both;
+            float: left;
+            height: 21px;
+            cursor: pointer;
+            margin-left: 4px;
+            line-height: 21px;
+            text-align: center;
+            width: 53px;
+        }
+        .logoutButton:hover,
+        .logoutButton:active {
+            border: 1px solid rgb(176, 177, 178);
+            height: 19px;
+            width: 51px;
+            line-height: 19px;
+            background-color: rgb(228, 228, 228);
+            border-radius: 2px;
+        }
+        .logoutButton:active {
+            color: rgb(0, 126, 190);
+        }
+    }
+}
+
+.selectingProject,
+.login{
+    .mstrmojo-loginToProjectBox{
+        .projectBox {
+            display: block !important;
+            .projectSelector{
+                width: 264px;
+                margin-left:50px;
+                margin-top: 16px;
+                display: block !important;
+            }
+        }
+    }
+}
+
+.ready{
+    .mstrmojo-loginToProjectBox{
+        .projectBox {
+            display: block !important;
+            .projectLabel,
+            .projectSelector,
+            .logoutButton{
+                display: block !important;
+            }
+        }
+    }
+    .mstrmojo-loginBox{
+        display: none !important;
+    }
+}
+
+.selectingProject{
+    .mstrmojo-loginBox{
+        display: none !important;
+    }
+    .mstrmojo-loginToProjectBox{
+        .projectBox {
+            display: block !important;
+            .projectSelector{
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+.mstrmojo-onetier-loginToProjectDialog{
+    width: 400px;
+    .label{
+        margin: 9px 0;
+    }
+    .loadingBox{
+        display: none !important;
+        background: url(#{$vi-img-path}/spinner_white.gif) no-repeat center center;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        position: absolute;
+    }
+    &.selectingProject{
+        .mstrmojo-Editor-buttonBar {
+            .loginButton {
+                display: none !important;
+        }
+      }
+    }
+}

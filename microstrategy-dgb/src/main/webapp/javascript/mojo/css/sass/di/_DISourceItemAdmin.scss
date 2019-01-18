@@ -1,0 +1,69 @@
+@import 'DISourceItem';
+
+.mstrmojo-di-source-item.mstrmojo-di-source-item-admin {
+
+  cursor: default;
+  &:hover{
+    border: solid 1px transparent;
+    color: #000000;
+  }
+  &:hover .mstrmojo-di-Icons{
+    display: block;
+  }
+  &:hover .mstrmojo-di-source-link {
+    display: none;
+  }
+  &:hover .mstrmojo-di-source-desc {
+    display: none;
+  }
+
+  .mstrmojo-di-source-below {
+    position: relative;
+  }
+
+  .mstrmojo-di-Icons {
+    cursor: default;
+  }
+
+  .mstrmojo-di-source-cover {
+
+    // remove mode style
+    &.remove {
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      margin: -2px 20px;
+      top: 0px;
+      right: 0px;
+
+      .mstrmojo-di-source-cover-img {
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+        background: url("images/DI/delete.png") no-repeat;
+      }
+    }
+
+
+  }
+
+  &:hover {
+
+    // style for the cover layer
+    .mstrmojo-di-source-cover.add {
+      height: 73px;
+      width: 75px;
+      margin: 0 22px;
+
+      .mstrmojo-di-source-cover-img {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        background-image: url("images/DI/add.png");
+        background-repeat: no-repeat;
+      }
+
+    }
+
+  }
+}

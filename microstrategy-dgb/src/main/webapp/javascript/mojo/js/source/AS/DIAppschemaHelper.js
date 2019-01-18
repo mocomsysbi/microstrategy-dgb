@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Obj");mstrmojo.AS.DIAppschemaHelper=mstrmojo.declare(mstrmojo.Obj,null,null);}());

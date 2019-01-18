@@ -1,0 +1,1 @@
+mstrmojo.architect.EnumBaseFormTypes={DateTime:1,Number:2,Text:3,URL:5,Email:6,HTMLTag:7,Date:8,Time:9,Symbol:10,BigDecimal:11,PhoneNumber:12};

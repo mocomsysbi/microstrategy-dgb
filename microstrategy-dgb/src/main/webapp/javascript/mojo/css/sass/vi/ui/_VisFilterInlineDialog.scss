@@ -1,0 +1,56 @@
+$vi-visualizationFilter-icon: '#{$vi-img-path}/visualizationFilterToolbarI.svg';
+
+.mstrmojo-visfilter-dialog {
+  background-color: #224d6d;
+  position: relative;
+
+  .content {
+    @include flex();
+    justify-content: center;
+    color: $wsvi-primary-white;
+
+    .icn {
+      background: transparent url($vi-visualizationFilter-icon) 0 0 no-repeat;
+      margin: 11px 5px 11px 5px;
+      width: 16px;
+      height: 16px;
+      opacity: 0.4; //Change normal and hover to 0.4, clicked to 1
+
+      &:active {
+        opacity: 1;
+      }
+    }
+
+    .title {
+      padding: 13px 5px 11px 5px;
+    }
+
+    .mstrmojo-EditableLabel {
+      padding: 13px 10px 11px 0;
+      width: auto !important;
+      color: $wsvi-primary-white !important;
+      &::selection {
+        color: $wsvi-primary-white !important;
+      }
+    }
+
+  }
+
+  .buttons {
+    box-sizing: border-box;
+    position: absolute;
+    width: 240px !important;
+    top: 0;
+    right: 0;
+
+    .mstrmojo-Button {
+      float: right;
+      margin-top: 6px;
+      margin-right: 10px;
+
+      &.edit-mode {
+        display: none !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.WidgetListBase","mstrmojo.WidgetListMapperHoriz","mstrmojo.WidgetListBuilder");mstrmojo.WidgetListHoriz=mstrmojo.declare(mstrmojo.WidgetListBase,null,{scriptClass:"mstrmojo.WidgetListHoriz",renderOnScroll:true,listMapper:mstrmojo.WidgetListMapperHoriz,listBuilder:mstrmojo.WidgetListBuilder,itemConfig:null,itemFunction:null});})();

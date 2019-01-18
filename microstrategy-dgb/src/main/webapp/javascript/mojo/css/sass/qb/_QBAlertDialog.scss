@@ -1,0 +1,22 @@
+/* QueryBuilder Alert Dialog */
+.mstrmojo-Dialog.mstrmojo-qb-AlertDialog {
+  z-index: auto;
+
+  .mstrmojo-qb-alertdialog-expandbutton {
+    text-decoration: underline;
+    cursor: pointer;
+    display: none;
+  
+    &.on {
+      display: block;
+    }
+  }
+  
+  .mstrmojo-qb-alertdialog-detailedlabel {
+    display: none;
+  
+    &.on {
+      display: block;
+    }
+  }
+}

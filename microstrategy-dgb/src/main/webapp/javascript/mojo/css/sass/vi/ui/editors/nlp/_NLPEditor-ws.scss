@@ -1,0 +1,21 @@
+.workstation {
+  .mstrmojo-Editor.NLPEditor {
+
+    @include box-sizing();
+    @include border-radius(1);
+    @include box-shadow(rgba(68, 70, 73, 0.2), 0, 2px, 8px, false, 0);
+    border: 1px solid #CCCCCC;
+    width: 50%;
+    max-width: 1280px;
+    .mstrmojo-Editor-content {
+      padding: 0;
+      .searchBoxWithSuggest.mstrmojo-ui-SearchBox {
+        border: none;
+        width: 100%;
+      }
+    }
+    .mstrmojo-Editor-buttons {
+      display: none;
+    }
+  }
+}

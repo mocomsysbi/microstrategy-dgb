@@ -1,0 +1,121 @@
+// Style for DIRefreshControl
+
+.mstrmojo-di-refreshcontrol {
+  margin: 20px auto;
+  position:relative;
+  overflow: auto;
+  padding-top: 20px;
+  width: 700px;
+
+  border-top: 1px solid #c6e5fc;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #c6e5fc;
+}
+
+.mstrmojo-di-refresh-guide {
+  float: left;
+  width: 48%;
+}
+
+.mstrmojo-di-refresh-guide-title {
+  color: #0066cc;
+  font-size: 12pt;
+  font-family: Arial;
+
+  margin-left: 25px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mstrmojo-di-refresh-guide-body {
+  color: #333333;
+  font-family: Arial;
+  font-size: 9pt;
+
+  margin-right: 10px;
+}
+
+.mstrmojo-di-refresh-info {
+  float: left;
+  width: 48%;
+
+  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 1px solid #c6e5fc;
+}
+
+.mstrmojo-di-refresh-info-title {
+  color: #0066cc;
+  font-size: 12pt;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mstrmojo-di-refresh-info-sheet {
+  color: #333333;
+  font-size: 9pt;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mstrmojo-di-refresh-info-list {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.mstrmojo-di-refresh-info-warning {
+  color: #993333;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 11pt;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mstrmojo-di-refresh-info-list-item {
+}
+
+.mstrmojo-di-refresh-info-list-item-state {
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 11pt;
+  //background: url(../../../style/mstr/images/archlistView.png) no-repeat, linear-gradient(to bottom, #666666, #373737);
+  @include linear-gradient(#666666,#373737);
+}
+
+.mstrmojo-di-refresh-info-list-item-statemissing {
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 11pt;
+  font-weight: bold;
+
+  //background: url(../../../style/mstr/images/archlistView.png) no-repeat, linear-gradient(to bottom, #aa3221, #802010);
+  @include linear-gradient(#aa3221,#802010);
+}
+
+.mstrmojo-di-refresh-info-list-item-div {
+  padding-left: 35px;
+  padding-right: 11px;
+  line-height: 20px;
+  cursor: default;
+
+  width: 85%;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+// add 10px to the position-x of the standard icon style
+.mstrmojo-di-refresh-info-list-item-div.t12 {background-position: 9px -1196px; /*attribute*/}
+
+.mstrmojo-di-refresh-info-list-item-div.t4 {
+  //background: url(images/DI/icon_metric.png) no-repeat, linear-gradient(to bottom, #666666, #373737);
+  background-position: 12px 5px;; /*fact*/
+}
+.mstrmojo-di-refresh-info-list-item-div.t12.time  {background-position: 10px -1174px; /*time attribute*/}
+.mstrmojo-di-refresh-info-list-item-div.t12.geo  {background-position: 10px -1150px; /*geo attribute*/}

@@ -1,0 +1,262 @@
+/** beginning of SaveAs Editor */
+%input-panel-common {
+    tr td:first-child {
+        width: 66px;
+    }
+
+    .mstrmojo-TextBox,
+    .mstrmojo-TextArea {
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+        @include box-sizing(content-box);
+        height: 20px;
+        line-height: 20px !important;
+        padding: 0 3px;
+    }
+
+    .mstrmojo-TextBox.mstrmojo-SaveAsEditor-nameInput {
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+
+    .mstrmojo-TextArea.mstrmojo-SaveAsEditor-descInput {
+        margin-top: 4px;
+        margin-bottom: 0;
+        height: 38px;
+        resize: none;
+    }
+
+    .mstrmojo-Name-Label {
+        margin-bottom: 8px;
+        line-height: 22px;
+        width: 80px;
+    }
+
+    .mstrmojo-Desc-Label {
+        height: 50px;
+        line-height: 22px;
+    }
+}
+
+.mstrmojo-SaveAsEditor {        
+    width: 450px;
+	&.mstrmojo-ViProjectBrowser {
+		.mstrmojo-Editor-content {
+			.mstrmojo-ObjectBrowser {
+				.mstrmojo-OB-titleTable {
+					.msrmojo-save-label {
+						width: 70px;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+    .mstrmojo-SaveAs-OB .mstrmojo-OB-titleTable .mstrmojo-DropDownButton {
+        max-width: 330px !important;
+        width: 300px;
+    }
+
+    .mstrmojo-SaveAs-OB.mstrmojo-ObjectBrowser {
+        .mstrmojo-OBListItemIcon.up, .mstrmojo-OBListItemIcon.up.disabled{
+            background: url(images/DI/workstation/workstation.svg);
+            background-position: -2200px -40px;
+            background-repeat: no-repeat;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .mstrmojo-Editor-content {
+        margin-bottom: 0p !important;
+        width: 418px;
+        padding-bottom: 8px;
+        .mstrmojo-Label {
+            font-family: Arial;
+            margin-bottom: 0px !important;
+        }
+
+        .mstrmojo-ObjectBrowser {
+            padding-bottom: 0;
+            padding-top: 6px;
+
+            .mstrmojo-OB-titleTable {
+                width: 100%;
+
+              .msrmojo-save-label {
+                width: 72px;
+                text-align: left;
+                  padding-right: 10px;
+              }
+            }
+
+            .mstrmojo-DropDownButton-boxNode.mstrmojo-FormatEditor-DropDownButton-boxNode {
+                border: none;
+                padding-left: 1px;
+            }
+
+            .mstrmojo-Pulldown, .mstrmojo-FormatEditor-DropDownButton   {
+                max-width: 280px;
+                border: 1px solid rgba(68, 70, 73, 0.2);
+                box-shadow: none;
+                height: 26px;
+                .mstrmojo-DropDownButton-iconNode.mstrmojo-FormatEditor-DropDownButton-iconNode {
+                    padding-top: 2px;
+                }
+            }
+
+            .mstrmojo-SearchBox {
+                padding-left: 82px;
+
+                .mstrmojo-SearchBox-input {
+                    width: 274px;
+                    height: 25px;
+                    &::-webkit-input-placeholder, &::-moz-placeholder {
+                        padding-left: 6px;
+                    }
+                }
+            }
+
+            .mstrmojo-SearchBox-bg {
+                height: 27px;
+                .mstrmojo-SearchBox-search {
+                    height: 26px;
+                    background-position-y: 8px;
+                }
+                .mstrmojo-SearchBox-search.clear {
+                    background-position-x: -24px;
+                }
+            }
+
+            .mstrmojo-Booklet {
+                width: 100%;
+                height: 298px;
+                border-radius: 0;
+                box-shadow: none;
+                border-color: RGBA(44, 46, 49, 0.2);
+
+                .mstrmojo-ListBase2-itemsContainer {
+                    width: 410px;
+                    .mstrmojo-itemwrap {
+                        .mstrmojo-OBListItem:hover {
+                            background-color: RGBA(44, 46, 49, 0.08);
+                        }
+                    }
+                }
+            }
+
+            .recentLabel {
+                margin-left: 10px;
+                line-height: 22px;
+                color: #999999;
+            }
+            .recentList{
+                margin: 0px 5px;
+                .item {
+                    white-space: nowrap;
+                    padding-left: 19px;
+                    line-height: 22px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &:hover {
+                        background-color: #dadada;
+                    }
+                }
+            }
+        }
+        .mstrmojo-Input-Panel {
+            @extend %input-panel-common;
+
+            .mstrmojo-TextBox.mstrmojo-SaveAsEditor-nameInput {
+                box-sizing: border-box;
+                width: 333px;
+                border-radius: 0;
+                height: 26px;
+            }
+            .mstrmojo-TextArea.mstrmojo-SaveAsEditor-descInput {
+                width: 325px;
+                height: 58px;
+                border-radius: 0;
+                border-color: rgba(44,46,49,0.2);
+            }
+
+            margin-top: 6px;
+        }
+
+        .mstrmojo-createfolder {
+            padding: 10px 0;
+            color: #007EBE;
+            text-decoration: underline;
+        }
+    }
+    .mstrmojo-Editor-buttons {
+        width: auto !important;
+        //.mstrmojo-HBox.mstrmojo-Editor-buttonBar {
+            //width: 429px;
+        //}
+        //.mstrmojo-createfolder {
+        //    margin-right: 146px;
+        //}
+        .mstrmojo-createfolder {
+            position: absolute;
+            left: 5px;
+            bottom: 16px;
+        }
+    }
+
+    .mstrmojo-WebButton {
+        min-width: 66px;
+        font-weight: normal;
+    }
+
+  &.saveAsThemeEditor {
+    .mstrmojo-ObjectBrowser {
+      .mstrmojo-FormatEditor-DropDownButton {
+        max-width: 330px;
+        width: 325px;
+      }
+    }
+  }
+}
+
+.mstrmojo-NewFolderEditor {
+    .mstrmojo-Editor-content {
+        width: auto;
+        padding-top: 14px;
+        padding-bottom: 10px;
+
+        .mstrmojo-Input-Panel {
+            @extend %input-panel-common;
+
+            .mstrmojo-TextBox.mstrmojo-SaveAsEditor-nameInput {
+                width: 244px;
+                margin-right: 0;
+                border-radius: 0;
+            }
+            .mstrmojo-TextArea.mstrmojo-SaveAsEditor-descInput {
+                width: 236px;
+                height: 60px;
+                margin-right: 0;
+                border-radius: 0;
+                border-color: RGBA(44,46,49,0.2);
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        width: auto;
+
+        .mstrmojo-WebButton {
+            min-width: 66px;
+            font-weight: normal;
+        }
+    }
+}
+
+.mstrWeb .mstrmojo-di-popup-dialog .mstrmojo-SaveAsEditor .mstrmojo-Editor-buttons .mstrmojo-Editor-buttonBar .mstrmojo-createfolder {
+    margin-right: 100px;
+}
+
+/** end of SaveAs Editor */

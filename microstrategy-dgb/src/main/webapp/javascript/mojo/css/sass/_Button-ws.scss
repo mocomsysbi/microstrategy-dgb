@@ -1,0 +1,165 @@
+/*These style is common for all Buttons*/
+%base-button {
+  @include box-sizing();
+  @include box-shadow($wsvi-input-shadow, 0, 1px, 2px);
+  @include border-radius($wsvi-box-radius);
+  height: $wsvi-input-control-height;
+  font-size: 11px;
+  border: 1px solid $wsvi-ui-border-gray; //This Border-color is default
+  cursor: default;
+}
+
+/*These styles are common for all Button Texts'*/
+%base-button-text {
+  @include ellipsis-text();
+  display: block;
+  font-weight: normal;
+  height: auto;
+  line-height: 24px;
+  padding: 0px 8px;
+  width: auto;
+  text-align: center;
+  box-shadow: none;
+}
+
+/*Change the Button text background color and font color based on the required style*/
+@mixin button-text-colors($bgcolor: $wsvi-primary-white, $font-color: $wsvi-primary-black) {
+  background: $bgcolor;
+  color: $font-color;
+  box-shadow: unset !important;
+}
+
+.workstation {
+
+  /** BEGIN: Web Buttons **/
+  .mstrmojo-Button.mstrmojo-WebButton {
+
+    // Basic button style.
+    @extend %base-button;
+    min-width: 66px;
+    filter: none !important;
+    box-sizing: border-box;
+
+    &.kpi-icon {
+      background: #FFF;
+    }
+
+    &.kpi-icon:active {
+      background: #E4E5E5;
+    }
+
+    &.kpi-icon,
+    &.kpi-icon:active {
+      min-width: 0;
+      .mstrmojo-Button-text {
+        background: transparent url(vi/images/dataset.svg) 0 0 no-repeat;
+        width: 14px;
+        height: 26px;
+        padding: 0;
+        margin:0 auto;
+      }
+
+      &.reset {
+        .mstrmojo-Button-text {
+          background-position: -572px -207px;
+        }
+        &.inactive {
+          background: #FFF;
+          .mstrmojo-Button-text {
+            background-position: -572px -237px;
+          }
+        }
+      }
+
+      &.minus {
+        .mstrmojo-Button-text {
+          background-position: -542px -237px;
+        }
+      }
+
+      &.plus {
+        .mstrmojo-Button-text {
+          background-position: -542px -207px;
+        }
+      }
+    }
+
+    // Basic button text style.
+    .mstrmojo-Button-text {
+      @extend %base-button-text;
+      @include button-text-colors($wsvi-primary-white , $wsvi-primary-black !important);
+      text-shadow: unset !important;
+    }
+
+    // On pressed style
+    &:active {
+      .mstrmojo-Button-text {
+        @include button-text-colors($wsvi-background-pressed-button, $wsvi-primary-black);
+      }
+    }
+
+    // Button is hot.
+    &.hot {
+      border-color: $wsvi-primary-blue;
+      .mstrmojo-Button-text {
+        @include button-text-colors($wsvi-primary-blue, $wsvi-primary-white !important);
+      }
+      // Disabled style
+      &.disabled,
+      &.disabled:active{
+        //For disabled button everything is same as normal button except the border color
+        border-color: $wsvi-inputborder-disable;
+        .mstrmojo-Button-text {
+          background: $wsvi-disable-fill;
+          color: $wsvi-buttonfont-disable !important;
+        }
+      }
+    }
+
+    &.action-button {
+      height: 20px;
+      .mstrmojo-Button-text {
+        line-height: 20px;
+      }
+    }
+
+    // Disabled style
+    &.disabled,
+    &.disabled:active{
+      //For disabled button everything is same as normal button except the border color
+      border-color: $wsvi-inputborder-disable;
+    }
+
+    // Clear out padding for editor buttons
+    &.mstrmojo-Editor-button {
+      padding: 0;
+    }
+  }
+
+  /** END: Web Buttons **/
+
+  .mstrmojo-Editor-button {
+    margin: 0px 3px 0px 3px;
+  }
+
+      /** BEGIN: HoverButton - A button that only shows as button when hover
+      *  In workstation, this button is just a link.
+      * **/
+    .mstrmojo-Button {
+      &.mstrmojo-WebHoverButton {
+        color: $wsvi-link-blue;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .mstrmojo-Button-text:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+  }
+  /** END: HoverButton **/
+}

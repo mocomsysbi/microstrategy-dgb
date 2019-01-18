@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.android.medium.ViewFactory","mstrmojo.winphone.MobileDoc");mstrmojo.winphone.ViewFactory=mstrmojo.declare(mstrmojo.android.medium.ViewFactory,null,{scriptClass:"mstrmojo.winphone.ViewFactory",newRootView:function newRootView(params){return new mstrmojo.winphone.RootView(params);},mobileDoc:mstrmojo.winphone.MobileDoc});}());

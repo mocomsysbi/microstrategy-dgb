@@ -1,0 +1,32 @@
+@import '../../global-mixins';
+
+.mstrmojo-ColorRangeSelector {
+    height: 20px;
+    padding: 2px;
+
+    @include border-radius($wsvi-box-radius);
+
+    background-color: $wsvi-primary-white;
+    border: solid 1px $wsvi-ui-border-gray;
+
+    color: $wsvi-primary-black;
+
+    .children {
+        display: inline-block;
+        width: calc(100% - 20px); // Subtract the width of the wand icon and its margin
+        height: 100%;
+
+        .item {
+            display: inline-block;
+            height: 100%;
+        }
+    }
+
+    .icon {
+        display: inline-block;
+        width: $wsvi-default-icon-width;
+        height: $wsvi-default-icon-height;
+        margin-left: 2px;
+        @include background-image($wsvi-main-icons-sprite, 0 -240px);
+    }
+}

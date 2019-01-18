@@ -1,0 +1,112 @@
+.mstrmojo-WebHoverButton {
+    display: inline-block;
+}
+
+$line-height: 20px;
+$outer-padding: 10px;
+$inner-padding: 5px;
+
+.mstrmojo-AEBox-status {
+    background-color: #e8e7e7;
+    border: 1px solid #c5c5c5;
+    position: absolute;
+    bottom: 0;  
+    overflow: hidden;
+    width: calc(100% - 2px);
+    padding: $inner-padding 0;
+
+    .pulldownBox,
+    .infoBox {
+        max-height: $line-height;
+        line-height: $line-height;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: default;
+        display: inline-block;
+        float: left;
+    }
+    .pulldownBox {
+        padding-left: $outer-padding;
+    }
+    .infoBox {
+        float: right;
+        padding-right: $outer-padding;
+        line-height: $line-height;
+    }
+    .helpIcon {
+        height: $wsvi-default-icon-height;
+        width: $wsvi-default-icon-width;
+        display: inline-block;
+        margin-top: 1px;
+        margin-bottom: 0;
+        margin-left: 135px;
+        @include wsvi-icon-info;
+    }
+    .mstrmojo-WebHoverButton {
+        padding-right: $outer-padding;
+        line-height: $line-height;
+    }
+    .hidden {
+        display: none;
+    }
+    .right {
+        float: right;
+    }
+
+    > .pulldownBox {
+        display: inline-block !important;
+    }
+
+    .AEBox-item {
+        display: inline-block !important;
+        margin: 0 $inner-padding;
+        float: left;
+        &.right {
+            float: right;
+        }
+    }
+
+    .mstrmojo-AEBox-pulldown {
+        width: 124px;
+
+        // The below two styles ensure that pulldown menu is displayed outside AttributeEditBox.
+        // This workaround is necessary due to overflow property set to hidden at several levels 
+        // in the common MetricIDE editor beyond AttributeEditBox container.
+        position: fixed;
+        z-index: 10;
+    }
+
+    &.mstrmojo-ME-link {
+        padding-top: 0;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.mstrmojo-AEBox-infoIcon.AEBox-item {
+    background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+    display: block;
+    width: $wsvi-default-icon-width;
+    height: $wsvi-default-icon-height;
+    margin-top: 2px;
+
+    &.valid {
+        background-position: -1440px -30px;
+    }
+    &.error, &.ambiguity {
+        background-position: -1081px -31px;
+    }
+    &.unknown, &.validating {
+        display: none;
+    }
+}
+
+.AE-tooltip .mstrmojo-Tooltip-contentWrapper .mstrmojo-Tooltip-content.mstrmojo-scrollNode {
+    .help-link-label {
+        color: #007ebe;
+        cursor: pointer;
+        padding-top: 10px;
+    }
+}

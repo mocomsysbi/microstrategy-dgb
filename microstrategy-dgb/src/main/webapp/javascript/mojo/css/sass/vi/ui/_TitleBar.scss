@@ -1,0 +1,143 @@
+@import '../vi-global';
+@import '../themes';
+@import '_avatar_icon_common_style';
+
+/** BEGIN: TitleBar **/
+.mstrmojo-VITitleBar {
+    & > DIV {
+        float: left;
+    }
+
+    .left-toolbar .mstrmojo-Image {
+        background: transparent url($vi-menu-icons) 1px 1px no-repeat;
+        height: 15px;
+        margin: 7px 0 2px 0;
+        width: 13px;
+    }
+
+    .title-text {
+        overflow: hidden;
+    }
+
+    .mstrmojo-EditableLabel {
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 28px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &.editable {
+            text-overflow: clip;
+        }
+    }
+
+    &.small {
+        background: transparent;
+
+        .left-toolbar .mstrmojo-Image {
+            margin-top: 3px;
+        }
+
+        .title-text .mstrmojo-EditableLabel {
+            font-size: 11px;
+            font-weight: normal;
+            line-height: 18px;
+        }
+    }
+
+    .left-toolbar.hidden {
+        visibility: hidden;
+    }
+}
+
+.mstrmojo-filterportlet-avatar.hasOwnAvatar {
+    .mstrmojo-VIPanel-titlebar {
+        background: rgba(200, 200, 200, 0.6);
+        border: 2px solid transparent;
+        border-radius: 3px;
+        cursor: pointer;
+        display: block;
+        font-size: 11px;
+        font-weight: bold;
+        height: 20px;
+        line-height: 22px;
+        margin: 4px 3px;
+        overflow: hidden;
+        padding: 0 20px 0 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: auto !important;
+
+        .mstrmojo-VITitleBar {
+            width: auto !important;
+
+            .left-toolbar {
+                display: none;
+            }
+            .title-text {
+                width: auto !important;
+            }
+        }
+    }
+
+    &:after {
+      display: none;
+      @include avatar-icon-common-style;
+    }
+
+    &.remove:after {
+      @include icon-style('remove');
+      display: block;
+    }
+}
+
+.hasOwnAvatar .mstrmojo-VITitleBar.small .mstrmojo-VITitleToolbar .item > DIV.icn {
+    //background: transparent url(#{$vi-img-path}/glyphicons.png) -312px 0 no-repeat;
+    background: transparent none 0 50% no-repeat;
+}
+
+.mstrmojo-ui-MenuEditor .me-content {
+    .mstrmojo-VITitleBar .title-text .mstrmojo-EditableLabel {
+        color: #F0F0F0;
+    }
+}
+/** END: TitleBar **/
+
+/** BEGIN: TitleBar Themes **/
+.mojo-theme-light {
+    .mstrmojo-VITitleBar {
+        .left-toolbar .mstrmojo-Image {
+            background-position: 1px 1px;
+        }
+
+        &.collapsed {
+            .left-toolbar .mstrmojo-Image {
+                background-position: 1px -28px;
+            }
+        }
+
+        .mstrmojo-EditableLabel {
+            color: $theme-light-panel-header;
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VITitleBar {
+        .left-toolbar .mstrmojo-Image {
+            background-position: 1px -199px;
+        }
+
+        &.collapsed {
+            .left-toolbar .mstrmojo-Image {
+                background-position: 1px -228px;
+            }
+        }
+
+        .mstrmojo-EditableLabel {
+            color: $theme-dark-panel-header;
+        }
+    }
+}
+/** END: TitleBar Themes **/

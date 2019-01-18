@@ -1,0 +1,210 @@
+.mstrmojo-qb-mapping-title {
+//  white-space: normal;
+  padding-left: 10px;
+  padding-right: 9px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  border-bottom: 1px solid #d1d1d2;
+  .mstrmojo-ui-Pulldown-text {
+    border-color: rgba(68, 79, 73, 0.2) !important;
+  }
+}
+.mstrmojo-qb-mapping-georole {
+  border-bottom: 1px solid #333333;
+  border-top: 1px solid #4E4E4E;
+  white-space: normal;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+.mstrmojo-di-mapping-driveAttribute {
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  border-top: 1px solid #4E4E4E;
+  .mstrmojo-Label {
+    white-space: normal;
+  }
+}
+.geoRoleMenu.mstrmojo-ui-MenuEditor {
+  select{
+    width: 135px;
+  }
+}
+.mstrmojo-qb-geolist {
+  margin-top: 10px;
+}
+
+.mstrmojo-qb-georole-itemtext:hover {
+  background-color: rgba(27, 27, 27, 0.42);
+}
+
+.mstrmojo-qb-georole-itemtext {
+  white-space: nowrap;
+  line-height: 18px;
+  padding: 1px 0px;
+}
+
+.mstrmojo-qb-georole .mstrmojo-qb-georole-itemtext img{
+  width: 13px;
+  height: 13px;
+}
+
+.mstrmojo-qb-georole.selected .mstrmojo-qb-georole-itemtext img{
+  background: url("images/DI/geo-selection-dot.png") no-repeat 1px 3px scroll transparent;
+}
+
+.mstrmojo-qb-geolist .mstrmojo-itemwrap:first-child {
+  border-bottom: 1px solid gray;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+
+// DE26363
+.mstrmojo-qb-geolist {
+  .mstrmojo-PopupList.ctrl-popup-list {
+    width: auto;
+    min-width: 100%;
+  }
+}
+
+.mstrmojo-qb-geolist.showShapeKey{
+  max-height: 280px;
+  overflow:auto;
+}
+
+.mstrmojo-qb-georole.shapeKey,
+.mstrmojo-qb-georole-itemcontent {
+  display: none;
+}
+
+.mstrmojo-qb-georole-button {
+  width: 46px;
+  float:right;
+  margin-left:10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.mstrmojo-qb-georole-button .mstrmojo-Button-text {
+  text-align: center;
+}
+
+.showShapeKey .mstrmojo-qb-georole.shapeKey {
+  display: block;
+}
+
+.showShapeKey .mstrmojo-qb-georole.other {
+  display: none;
+}
+
+.mstrmojo-qb-georole.selected .mstrmojo-qb-georole-itemcontent{
+  display:block;
+}
+
+.mstrmojo-qb-georole-checkbox {
+  background: url("images/editor-button.png") no-repeat scroll 0 -280px transparent;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.mstrmojo-qb-georole-attribute.selected .mstrmojo-qb-georole-checkbox{
+  background: url("images/editor-button.png") no-repeat scroll 0 -299px transparent;
+}
+
+.mstrmojo-qb-georole-attribute-box {
+  border:1px solid gray;
+  margin:1px;
+  padding:2px 4px;
+}
+
+.workstation {
+  .mstrmojo-qb-mapping-georole {
+    border-bottom: none;  //WS
+    border-top: none;     //WS
+    white-space: normal;
+    padding-left: 10px;
+    padding-right: 9px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+  }
+
+  .mstrmojo-di-mapping-driveAttribute {
+    padding-left: 10px;
+    padding-right: 9px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(68, 70, 73, 0.2); //WS
+    .mstrmojo-Label {
+      white-space: normal;
+    }
+  }
+}
+
+.mstrmojo-ui-MenuEditor.mstrmojo-ui-MenuPopup.geoRoleMenu, .MarkGeoRole-MenuEditor { // DE58002 fix - items are missing in define geo role dropdown list
+  overflow: unset !important;
+  .scroll-container.mstrmojo-sb-show-default {
+    overflow: unset !important;
+  }
+  &>.scroll-container.mstrmojo-scrollNode {
+    overflow: unset !important;
+    -ms-overflow-y: visible !important;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+.mstrmojo-ui-MenuEditor.mstrmojo-ui-MenuPopup.geoRoleMenu {
+  .scroll-container .me-content {
+    .mstrmojo-qb-mapping-title, .mstrmojo-qb-mapping-georole {
+      .mstrmojo-ui-Pulldown {
+        .mstrmojo-ui-Pulldown-text {
+          //background-color: rgba(63,63,63,0.96);
+          //border-color: #4E4E4E;
+          background-color: #fff;
+          background-image: url('vi/images/pulldown-sprite.png');
+          background-position-y: 0px;
+          border: rgba(68, 70, 73, 0.2) 1px solid;
+          color: rgb(74, 74, 74);
+        }
+        .container .mstrmojo-PopupList {
+          //background-color: rgba(63,63,63,0.96);
+          //border-color: #4E4E4E;
+          background-color: #fff;
+          border: rgba(68, 70, 73, 0.2) 1px solid;
+          .item {
+            color: rgb(68, 70, 73);
+          }
+          .item:hover {
+            background-color: rgba(68, 70, 73, 0.06);
+          }
+          .item.selected {
+            background-color: rgb(59, 146, 237);
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+.workstation {
+  .mojo-theme-light .mstrmojo-ui-MenuEditor.mstrmojo-ui-MenuPopup.geoRoleMenu {
+    .scroll-container.mstrmojo-scrollNode .me-content .mstrmojo-qb-mapping-georole {
+      .mstrmojo-ui-Pulldown.mstrmojo-qb-geolist {
+        .mstrmojo-ui-Pulldown-text {
+          background-color: #fff;
+          border-color: rgba(68, 79, 73, 0.2);
+          background-position: 100% 3px;
+        }
+        .container .mstrmojo-PopupList {
+          background-color: #fff;
+          border-color: rgba(68, 79, 73, 0.2);
+        }
+      }
+    }
+  }
+}

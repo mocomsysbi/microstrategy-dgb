@@ -1,0 +1,128 @@
+/* QueryBuilder FFSQL view */
+.mstrmojo-qb-ffsqlview {
+  overflow: hidden;
+  display: none;
+
+  &.on {
+    display: block;
+  }
+}
+
+.mstrmojo-qb-ffsqlview-passlabel {
+  float: left;
+  width: 10px;
+  height: 100%;
+  position: relative;
+
+  .mstrmojo-Button {
+    position: absolute;
+    background-image: url(../../../style/mstr/images/archlistView.png);
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    background-position: -5px -572px;
+  }
+
+  .mstrmojo-Button.error {
+    background-position: -6px -1116px;
+  }
+
+}
+
+.mstrmojo-qb-ffsqlview-editnode {
+  float: left;
+  background-color:white;
+  overflow:auto;
+  border-width: 0px;
+  height:100%;
+  .mstrmojo-TokenInputBox-edit { //ljing 940034
+    overflow: hidden;
+    padding: 5px 10px;
+    &:hover{
+      overflow-y: auto;
+    }
+  }
+}
+
+.mstrmojo-qb-ffsqlview {
+  line-height: normal;
+}
+
+/*Alert error message for FFSQL view */
+.mstrmojo-qb-error-tooltip {
+  display: none;
+}
+
+.mstrmojo-Label:hover {
+  .mstrmojo-qb-error-tooltip {
+    display: block;
+    position: absolute;
+    width: 300px;
+    padding: 15px 10px;
+    z-index: 1000;
+    color: #DAA520;
+    background: #FEF5CA;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: left;
+    text-decoration: none;
+    -moz-box-shadow: 6px 6px 5px #888;
+    -webkit-box-shadow: 6px 6px 5px #888;
+    box-shadow: 6px 6px 5px #888;
+  }
+}
+
+/*Extra CSS used for token-inputbox editor for FFSQL */
+.mstrmojo-TokenInputBox-edit {
+  // TQMS 997237: Add user-select for firefox.
+  user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  //TQMS 950800:  The font of Query should be Arial, 11, bold, 007ebe, row height is 20px.
+  span.mstrmojo-token {
+    font-family: Arial;
+    font-size: 11px;
+    line-height: 20px;
+  }
+
+  span:hover {
+    background-color: #D3E1F1;
+  }
+
+  span.sql{
+    color: #007EBE;
+    font-weight: bold;
+  }
+
+  span.apply{
+    color: green;
+  }
+}
+
+.workstation{
+  @import '../global';
+  .mstrmojo-qb-ffsqlview-editnode {
+    @include box-sizing();
+    border: 1px solid #b4b4b4;
+    border-radius: 2px;
+    .mstrmojo-TokenInputBox-edit { //ljing 940034
+      padding: 15px 20px;
+      box-sizing: border-box;
+    }
+    span{
+      font-family: Courier reg;
+      font-size: 12px;
+      line-height: 26px;
+      padding-bottom: 5px;
+      .sql{
+        text-transform: uppercase;
+      }
+    }
+  }
+  .mstrmojo-qb-ffsqlview-passlabel{
+    background-color: #fafafa;
+  }
+}

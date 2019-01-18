@@ -1,0 +1,66 @@
+/**Start: metric editor Function Info **/
+.workstation {
+    .mstrmojo-FunctionInfo {
+        font-size: $wsvi-tips-font-size;
+        line-height: $wsvi-tips-line-height;
+        margin-bottom: $wsvi-element-padding;
+        margin-left: 0px;
+        overflow: hidden;
+        cursor: default;
+    }
+
+    .mstrmojo-FunctionInfo-container {
+        height: 60px;
+    }
+
+    .mstrmojo-FunctionInfo-desc {
+        clear: both;
+
+        a:link, .func-details,
+            a:visited {
+            color: $wsvi-link-blue;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline;
+        }
+    }
+
+    .mstrmojo-FunctionInfo-eg {
+        margin-top: 3px;
+        overflow: hidden;
+        height: 0;
+        transition: height 200ms;
+
+        .text {
+            line-height: 14px;
+            display: inline-block;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        .icon {
+            line-height: 14px;
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            background: url(images/metric-editor.png) no-repeat -120px -208px transparent;
+            vertical-align: middle;
+            margin-right: 3px;
+        }
+    }
+
+    .mstrmojo-FunctionInfo-syntax {
+        font-weight: $wsvi-tips-header-font-weight;
+        float: left;
+        margin-right: 8px;
+        padding-top: 2px;
+        line-height: 18px;
+    }
+
+    .mstrmojo-MetricIDE.exp .mstrmojo-FunctionInfo-eg {
+        height: 20px;
+    }
+}
+/*End: metric editor Function Info*/

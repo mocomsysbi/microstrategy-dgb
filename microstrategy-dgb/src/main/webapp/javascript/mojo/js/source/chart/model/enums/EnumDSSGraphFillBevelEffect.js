@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSGraphFillBevelEffect={DssGraphFillBevelNone:0,DssGraphFillBevelSmoothEdge:1,DssGraphFillBevelChiselEdge:2,DssGraphFillBevelDonut:3,DssGraphFillBevelSphere:4};

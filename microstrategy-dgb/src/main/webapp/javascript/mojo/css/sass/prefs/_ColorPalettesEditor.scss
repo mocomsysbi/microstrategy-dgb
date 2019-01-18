@@ -1,0 +1,298 @@
+@import "../global";
+// TODO: NS - remove image dependencies from VI folder.
+@import "../vi/vi-global";
+
+// Import basic UI
+// TODO: NS - Why do we need to include menu and buttons from VI.
+// If there's something missing in the base Menu and Button it should be included there.
+@import '../vi/button';
+@import '../base-themes';
+@import '../vi/menu';
+@import '../vi/waitBox';
+@import '../clearfix';
+
+%inline-block {
+    display: inline-block;
+    vertical-align: top;
+}
+$color-icon-size: 18;
+$palette-colors-max-width: $color-icon-size * 16;
+$palette-label-max-width: $color-icon-size * 8;
+$theme-marker-width: 60;
+$row-height: 26;
+$loading-indicator-size: 18;
+$left-padding: 11;
+$right-padding: 11;
+%base-row-size {
+    height: #{$row-height}px;
+    line-height: #{$row-height}px;
+}
+
+/**Start: Color Palettes Page */
+.mstrmojo-ColorPalettesEditor {
+    font-family: "Arial";
+    color: #000;
+    padding: 6px 0 0 17px;
+    background-color: transparent;
+
+    @mixin bold-font($size) {
+        font-size: $size;
+        font-weight: bold;
+    }
+    @mixin sizeAndPosition($width, $height, $top, $left) {
+        position: absolute;
+        width: $width;
+        height: $height;
+        top: $top;
+        left: $left;
+    }
+
+    .paletteColors {
+        height: #{$color-icon-size}px;
+        width: #{$palette-colors-max-width}px;
+
+        .colorIcon {
+            float: left;
+            height: #{$color-icon-size}px;
+            width: #{$color-icon-size}px;
+        }
+    }
+
+    .mstrmojo-StateIndicator {
+        display: none;
+        @include sizeAndPosition(#{$loading-indicator-size}px, #{$loading-indicator-size}px, 0, 100%);
+        background: transparent none 0 0 no-repeat;
+        background-size: 100% auto;
+    }
+    .showLoading .mstrmojo-StateIndicator {
+        display: block;
+        background-image: url(vi/images/spinner_white.gif);
+    }
+    .showError .mstrmojo-StateIndicator {
+        display: block;
+        background-image: url(vi/images/warning.png);
+    }
+
+    .mstrmojo-ErrorMessage {
+        top: 0;
+        left: 100%;
+        min-width: 300px;
+        margin-left: #{$loading-indicator-size + 18}px;
+        display: none;
+    }
+    .showError .mstrmojo-ErrorMessage {
+        display: block;
+    }
+
+    .EditingWarningText {
+        font: 11px Arial;
+        line-height: 36px;
+        color: #a8a8a8;
+
+        .icn {
+            width: 16px;
+            height: 16px;
+            margin: 10px 5px 0 0;
+            float: left;
+            background: transparent url(#{$vi-img-path}/toolbar.png) -120px -95px no-repeat;
+        }
+    }
+
+    .mstrmojo-Label.definePalette {
+        @extend %base-row-size;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    $palette-list-width: $palette-label-max-width + $palette-colors-max-width + $theme-marker-width;
+    .mstrmojo-Label.applyToTheme {
+        @extend %base-row-size;
+        width: #{$palette-list-width}px;
+        @include bold-font(11px);
+        text-align: right;
+    }
+    .mstrmojo-PaletteList {
+        width: #{$palette-list-width}px;
+
+        .item {
+            padding: #{($row-height - $color-icon-size) / 2}px 0;
+            position: relative;
+
+            &.creating,
+            &.deleting {
+                opacity: 0.5;
+            }
+            .paletteLabel {
+                width: #{$palette-label-max-width}px;
+                float: left;
+            }
+
+            .paletteColorsContainer {
+                width: #{$palette-colors-max-width}px;
+                float: left;
+                .paletteColors {
+                    float: left;
+                    cursor: pointer;
+                    width: auto;
+                }
+            }
+
+            &.hasMenuOpened .paletteColors,
+            &.hasEditorOpened .paletteColors,
+            .paletteColors:hover {
+                @include box-shadow(#007ebe, 0, 0, 0, false, 1px);
+            }
+
+            .themeMarker {
+                float: left;
+                position: relative;
+                $marker-total-width: 60;
+                $marker-padding-left: 33;
+                padding-left: #{$marker-padding-left}px;
+                width: #{$marker-total-width - $marker-padding-left}px;
+                line-height: #{$color-icon-size}px;
+            }
+
+            .lightToggler,
+            .darkToggler {
+                @include sizeAndPosition(17px, 17px, -1px, 12px);
+                cursor: pointer;
+                border: 1px dotted transparent;
+                background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) 1000px 1000px no-repeat;
+                background-position: 50% -27px;
+            }
+
+            &.belongLightTheme .lightToggler,
+            &.belongDarkTheme .darkToggler {
+                background-position: 50% -3px;
+            }
+
+            .mask {
+                @include sizeAndPosition(90%, 100%, 0, 0);
+            }
+            
+            &.paletteEditable {
+                .mask {
+                    display: none;
+                }
+                
+                &:hover {
+                    .paletteLabel {
+                    	text-decoration: underline;
+                    }
+                }
+                &.first {
+                	border-top-style: solid;
+                	border-width: 1px;
+                	margin-top: 5px;
+                	padding-top: 10px; 
+                	border-color: #bbb;
+                }
+            }
+
+            .mstrmojo-StateIndicator {
+                top: #{($row-height - $loading-indicator-size) / 2}px;
+                margin-left: 4px;
+            }
+        }
+    }
+
+    .mstrmojo-Label.newPalette {
+        @extend %base-row-size;
+        cursor: pointer;
+        color: #007ebe;
+        float: left;
+        padding-top: 10px;
+        @include bold-font(11px);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .mstrmojo-Label.selectDefaultPalette {
+        @extend %base-row-size;
+        margin-top: 52px;
+        @include bold-font(12px);
+    }
+
+    .mstrmojo-PaletteSelectorsContainer {
+        $prevBtn-width: 190;
+        $prevBtn-height: 24;
+        $prevBtn-gap: 35;
+        $prevBtn-border-size: 1;
+        $prevBtn-btn-width: 23; // Exclude 1px left border offset of icon
+        $prevBtn-preview-border-size: 2;
+        width: #{$prevBtn-width * 2 + $prevBtn-gap}px;
+        padding: 10px 0;
+
+        .mstrmojo-PaletteSelector {
+            float: left;
+
+            > .mstrmojo-Label {
+                @extend %base-row-size;
+            }
+
+            .mstrmojo-ui-PreviewButton {
+                margin: #{($row-height - $prevBtn-height) / 2}px 0;
+                position: relative;
+
+                .preview {
+                    overflow: hidden;
+                    border: #{$prevBtn-preview-border-size}px solid transparent;
+                    @include box-sizing(content-box);
+                    width: #{($prevBtn-width - 2 * $prevBtn-border-size) - ($prevBtn-btn-width + 1) - 2 * $prevBtn-preview-border-size}px;
+                    height: #{$prevBtn-height - 2 * $prevBtn-border-size - 2 * $prevBtn-preview-border-size}px;
+                }
+                .btn {
+                    @include box-sizing(content-box);
+                    width: #{$prevBtn-btn-width}px;
+                    height: #{$prevBtn-height - 2 * $prevBtn-border-size}px;
+                    background-position: 2px 2px;
+                }
+
+                .mstrmojo-PopupList {
+                	.item {
+                		padding: 5px 5px;
+                    }
+                }
+
+                .mstrmojo-StateIndicator {
+                    top: #{($prevBtn-height - $loading-indicator-size) / 2}px;
+                    margin-left: 7px;
+                }
+            }
+
+            &:first-child {
+                margin-right: #{$prevBtn-gap}px;
+            }
+        }
+    }
+}
+
+.mstrWeb {
+    &.mstr-ie7 {
+        .mstrmojo-Editor .mstrmojo-Editor-buttons {
+            .mstrmojo-Button {
+                width: 66px; // In IE7, min-width doesn't work well inside table
+            }
+        }
+    }
+
+    &.mstr-ie7,
+    &.mstr-ie8 {
+        .mstrmojo-ColorPalettesEditor .mstrmojo-PaletteSelectorsContainer .mstrmojo-PaletteSelector {
+            .mstrmojo-ui-PreviewButton {
+                .btn {
+                    background-image: url(#{$vi-img-path}//pulldown-sprite.png); // In IE7 and IE8 it'll be overwritten by invalid value with gradient image
+                }
+
+                .mstrmojo-PopupList {
+                    .item.selected {
+                        background-color: rgb(206, 206, 206); // IE7 and IE8 doesn't support "alpha" transparent
+                    }
+                }
+            }
+        }
+    }
+}
+/**End: Color Palettes Page */

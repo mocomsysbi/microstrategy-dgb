@@ -1,0 +1,1 @@
+(function(){mstrmojo.vi._MonitorsAppState=mstrmojo.provide("mstrmojo.vi._MonitorsAppState",{onAppStateChange:function(evt){if(this._super){this._super(evt);}},init:function init(props){this._super(props);if(mstrApp.attachEventListener){mstrApp.attachEventListener("appStateChange",this.id,"onAppStateChange");}}});}());

@@ -1,0 +1,78 @@
+@import '../../vi-global';
+@import '../../themes';
+
+.mstrmojo-ImageBoxOverlay {
+    width: 100%;
+    height: 100%;
+    color: #878788;
+
+    .container-scroll-host {
+        width: 100%;
+        height: 100%;
+
+        .container {
+            width: 100%;
+            height: 100%;
+            min-width: 160px;
+            min-height: 76px;
+            overflow: hidden;
+            display: flex;
+            .lbl {
+                width: 30px;
+                height: 30px;
+                .mstrmojo-Label {
+                    $dimension: 15px;
+                    width: 30px;
+                    height: 30px;
+                    background: transparent url(#{$vi-img-path}/id_pic.png) $dimension $dimension no-repeat;
+
+                    @include box-sizing(border-box);
+
+                    max-width: 30px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    padding-left: 5px;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .txt {
+                position: relative;
+                margin-left: 10px;
+                margin-top: 10px;
+                height: 22px;
+                .init-input {
+                    @include box-sizing(border-box);
+                    resize: none;
+                    overflow: hidden;
+                    font-size: 8pt;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.ctrlOverlay.or-v .mstrmojo-ImageBoxOverlay {
+    .container-scroll-host {
+        .container {
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            .txt {
+                flex-basis: calc(100% - 48px); // Subtract Image width + TextBox margins width
+                margin-right: 8px;
+            }
+            .btn {
+                .mstrmojo-WebButton {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            .buttons {
+                margin-top: 2px;
+            }
+        }
+    }
+}

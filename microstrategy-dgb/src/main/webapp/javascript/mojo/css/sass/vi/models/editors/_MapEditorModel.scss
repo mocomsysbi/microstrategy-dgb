@@ -1,0 +1,77 @@
+@import '../../_vi-global';
+
+/** BEGIN: MapEditorModel **/
+.mstrmojo-VIPanelContents {
+    .mstrmojo-vi-EditorGroup {
+        .mapTheme {
+            overflow: hidden;
+            img {
+                height: 13px;
+                width: 130px;
+            }
+        }
+
+      .mem-density-list {
+        .scroll-container{
+          position: relative;
+        }
+
+        .item {
+          height: 25px;
+          line-height: 25px;
+          min-width: 25px;
+          max-width: 25px;
+          border: 2px solid transparent;
+          border-radius: 2px;
+          padding: 0;
+          margin: 0 1.5px;
+          background: none;
+
+          @mixin bgImage($idx) {
+            $position-x: (27 * $idx + 1) * -1px;
+            background: transparent url(#{$mstr-style-img-path}/density_map_gradient_sprite.png) $position-x -1px no-repeat;
+          }
+
+          &:before {
+              width: 25px;
+              height: 25px;
+              content: '';
+              position: absolute;
+          }
+
+          &.rainbow{
+            margin-left: 0;
+            &:before {
+              @include bgImage(0);
+            }
+          }
+
+          &.fire:before { @include bgImage(1); }
+
+          &.sunrise:before { @include bgImage(2); }
+
+          &.desert:before { @include bgImage(3); }
+
+          &.brick:before { @include bgImage(4); }
+
+          &.selected {
+              border-color: #1e8ac4;
+              box-shadow: 1px 1px white;
+              -webkit-box-shadow: 1px 1px white;
+              -moz-box-shadow: 1px 1px white;
+          }
+
+          &:hover {
+              cursor: pointer;
+
+              -moz-transform: scale(1.1, 1.1);
+              -ms-transform: scale(1.1, 1.1);
+              -o-transform: scale(1.1, 1.1);
+              transform: scale(1.1, 1.1);
+          }
+
+        }
+      }
+    }
+}
+/** END: MapEditorModel **/

@@ -1,0 +1,575 @@
+.mstrmojo-di-tablestatuslist {
+  margin: 10px;
+  border-width: 0px;
+
+  .mstrmojo-di-tablestatuslist-title {
+    color: #333333;
+    font-family: Arial;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .mstrmojo-di-tablestatuslist-list {
+    width: 100%;
+    max-height: 240px;
+    overflow: hidden;
+    clear: right;
+
+    // whole data grid border
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+
+    .mstrmojo-DataGrid-headerText {
+      border: 0;
+      margin-left: 5px;
+    }
+
+    .mstrmojo-DataGrid-headerTable td:first-child {
+      border-right: 0;
+    }
+
+    .mstrmojo-DataGrid-headerTable td:last-child {
+      border-right: 0;
+    }
+
+    .mstrmojo-itemwrap-table {
+      border-collapse: collapse;
+    }
+
+    .mstrmojo-DataRow td {
+      //border-right: 2px solid #A9A9A9;
+    }
+
+    .mstrmojo-DataRow td:last-child {
+      border-right: 0px;
+    }
+
+
+    // height of each row
+    .mstrmojo-DataRow {
+      height: 28px;
+    }
+
+    .mstrmojo-DataRow.even {
+      background-color: white;
+    }
+
+    .mstrmojo-DataRow.odd {
+      background-color: white;
+    }
+
+    // remove default Data-Grid border
+    .tablestatus-header {
+      border-width: 0px;
+    }
+
+    .tablestatus-header.refresh {
+      width: 18px;
+      margin: auto;
+      padding: 0px;
+      cursor: pointer;
+    }
+
+    .tristate.tablestatus-header.refresh {
+      background: transparent url(images/checkbox_sprite.png) -2px -26px no-repeat;
+    }
+
+    .tristate.tablestatus-header.refresh.disabled {
+      background-position: right center;
+      cursor: default !important;
+      opacity: 0.25;
+    }
+
+    .tristate.tablestatus-header.refresh.grayed.checked {
+      background-position: -2px -170px;
+    }
+
+    .tristate.tablestatus-header.refresh.checked {
+      background-position: -2px -2px;
+    }
+
+    // all button
+    .tablestatus-header.checkbox {
+      text-decoration: underline;
+    }
+
+    .tablestatus-header.sourceFilter {
+      .filterLink {
+        float: left;
+        margin-right: 5px;
+        color: #469AD1;
+        cursor: pointer;
+        text-decoration: underline;
+        font-weight: normal;
+      }
+      .deleteFilter {
+        float: left;
+        width: 8px;
+        height: 8px;
+        margin: 5px 2px;
+        background: url(vi/images/menu_icons.png) no-repeat -29px 1px;
+      }
+    }
+
+    .tablestatus-col {
+      margin-left: 6px;
+      border-width: 0px;
+    }
+
+    .tablestatus-col.dataSourceBox {
+
+      .dataSourceBox-source {
+        float: left;
+        height: 21px;
+        line-height: 21px;
+      }
+
+      .dataSourceBox-stack {
+        float: right;
+        width: 50px;
+
+        .dataSourceBox-stack-edit {
+          width: 40px;
+          text-align: center;
+          font-size: 8pt;
+          cursor: pointer;
+          padding-bottom: 1px;
+          margin: 1px 5px;
+          /*to have consistent look in Firefox, IE */
+          padding-left: 4px;
+          padding-right: 1px;
+          border-color: #EEE #787878 #787878 #EEE;
+          border-style: solid;
+          background: #D5D6D8 url(images/buttonGradient.gif) repeat-x scroll left 0px;
+          height: auto;
+          line-height: 16px;
+          border-width: 1px;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px;
+        }
+
+        .dataSourceBox-stack-upload {
+          width: 40px;
+          text-align: center;
+          font-size: 8pt;
+          cursor: pointer;
+          padding-bottom: 1px;
+          margin: 1px 5px;
+          /*to have consistent look in Firefox, IE */
+          padding-left: 4px;
+          padding-right: 1px;
+          border-color: #EEE #787878 #787878 #EEE;
+          border-style: solid;
+          background: #D5D6D8 url(images/buttonGradient.gif) repeat-x scroll left 0px;
+          height: auto;
+          line-height: 16px;
+          border-width: 1px;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px;
+        }
+
+        .dataSourceBox-stack-filebox {
+          width: 60px;
+          .mstrmojo-FileUploadBox-input {
+            display: none;
+          }
+          .mstrmojo-FileUploadBox-buttonDiv {
+            position: inherit;
+
+            .mstrmojo-FileUploadBox-button {
+              width: 40px;
+              text-align: center;
+              cursor: pointer;
+            }
+
+            .mstrmojo-FileUploadBox-file {
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .tablestatus-col.tableNameBox {
+
+      margin-left: 3px;
+      margin-right: 5px;
+
+      .tableNameBox-name {
+        float: left;
+        height: 21px;
+        line-height: 21px;
+        width: 150px;
+        border-style: solid;
+        border-color: transparent;
+        border-width: 1px;
+        padding-left: 5px;
+        width: calc(100% - 90px);
+        width: -moz-calc(100% - 90px);
+        width: -webkit-calc(100% - 90px);
+        width: -o-calc(100% - 90px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .tableNameBox-name.disabled {
+        -moz-opacity: .5;
+        opacity: .5;
+        filter:alpha(opacity=50);
+      }
+      .tableNameBox-name.hasBrowse.selected {
+        border-color: lightgray;
+        color: lightgray;
+      }
+      .tableNameBox-name.hasBrowse.selected.hasSelectFile {
+        color: #000000;
+      }
+
+      .tableNameBox-stack {
+        float: right;
+        width: 80px;
+
+        .tableNameBox-stack-edit {
+          width: 40px;
+          text-align: center;
+          font-size: 8pt;
+          cursor: pointer;
+          padding-bottom: 1px;
+          margin: 1px 5px;
+          /*to have consistent look in Firefox, IE */
+          padding-left: 4px;
+          padding-right: 1px;
+          border-color: #EEE #787878 #787878 #EEE;
+          border-style: solid;
+          background: #D5D6D8 url(images/buttonGradient.gif) repeat-x scroll left 0px;
+          height: auto;
+          line-height: 16px;
+          border-width: 1px;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px;
+        }
+
+        .tableNameBox-stack-upload {
+          width: 70px;
+          text-align: center;
+          font-size: 8pt;
+          cursor: pointer;
+          padding-bottom: 1px;
+          margin: 1px 5px;
+          /*to have consistent look in Firefox, IE */
+          padding-left: 4px;
+          padding-right: 1px;
+          border-color: #EEE #787878 #787878 #EEE;
+          border-style: solid;
+          background: #D5D6D8 url(images/buttonGradient.gif) repeat-x scroll left 0px;
+          height: auto;
+          line-height: 16px;
+          border-width: 1px;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px;
+        }
+
+        .mstrmojo-FileUploadBox {
+          width: 70px;
+          .mstrmojo-FileUploadBox-input {
+            display: none;
+          }
+          .mstrmojo-FileUploadBox-buttonDiv {
+            position: inherit;
+            // Basic button style.
+            @include border-radius(2px);
+            @include box-shadow(#ffffff, 0, 1px, 1px, false);    // Bottom shadow.
+            @include linear-gradient(#e2e2e2, #d6d6d6);
+
+            // issue 922638
+            // for the ie9 and below, browser will create a filter which will overwrites the background color
+            border: 1px solid #b0b1b2;
+            cursor: default;
+            filter: none !important;
+            height: 22px;
+            min-width: 66px;
+            width: auto;
+
+            .mstrmojo-FileUploadBox-button {
+              // reset
+              background: none;
+              padding: 0;
+              margin: 0;
+              border: none;
+              @include box-shadow(#ffffff, 0, 0, 4px, true);
+              @include ellipsis-text();
+
+              color: #1a1a1a;
+              display: block;
+              font-family: arial;
+              font-weight: normal;
+              height: auto;
+              line-height: 22px;
+              padding: 0 8px;
+              text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+              width: auto;
+              text-align: center;
+            }
+
+            .mstrmojo-FileUploadBox-file {
+              height: 20px;
+            }
+
+            &:hover {
+              @include linear-gradient(#ececee, #dadadc);
+            }
+
+            &:active {
+              @include linear-gradient(#dfdfdf, #cdcdce);
+
+              .mstrmojo-FileUploadBox-button {
+                @include box-shadow(rgba(99, 99, 99, 0.5), 0, 0, 2px, true);
+              }
+            }
+          }
+        }
+        .mstrmojo-FileUploadBox.disabled {
+          .mstrmojo-FileUploadBox-buttonDiv {
+            .mstrmojo-FileUploadBox-file {
+              cursor: default;
+            }
+            .mstrmojo-FileUploadBox-button {
+              -moz-opacity: 0.5;
+              opacity: 0.5;
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+
+    .tablestatus-col.refreshBox {
+      .refreshTristateCheckbox {
+        padding-left: 25px;
+        height: 16px;
+        margin-left: 10px;
+      }
+
+      .refreshCheckbox {
+        margin: auto;
+      }
+
+    }
+
+    .tablestatus-col.sourceFilterBox {
+      .sourceFilterButton {
+        @extend .button;
+        width: 50px;
+      }
+    }
+
+    .tablestatus-col.alternateSourceBox {
+
+      .alternateSource {
+        float: left;
+        margin-right: 5px;
+      }
+
+      .alternateSource.active {
+        color: #469AD1;
+        cursor: pointer;
+        text-decoration: underline;
+        &.disabled {
+          text-decoration: none;
+          color: rgba(68, 70, 73, 0.45);
+        }
+      }
+
+      .deleteAltersource {
+        float: left;
+        width: 8px;
+        height: 8px;
+        margin: 3px 2px;
+        background: url(vi/images/menu_icons.png) no-repeat -29px 1px;
+      }
+    }
+
+    // center image in status column
+    .tablestatus-col.status {
+      margin: auto;
+      height: 22px;
+      width: 20px;
+
+      img {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .tablestatus-col.status.waiting {
+      //background: url("images/circle-loader.gif") no-repeat scroll center center;
+      background: url(vi/images/spinner_ws.gif) no-repeat scroll center center;
+      -webkit-background-size: 15px 15px;
+      -webkit-background-size: 15px 15px;
+      -o-background-size: 15px 15px;
+      background-size: 15px 15px;
+      width: 15px;
+      height: 15px;
+      // TQMS 955450: IE8 doesn't support background-size, use -ms-filter, path is relative to html.
+      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../javascript/mojo/css/vi/images/spinner_light.gif',sizingMethod='scale');
+      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../javascript/mojo/css/vi/images/spinner_light.gif',sizingMethod='scale')";
+    }
+
+    .tablestatus-col.status.finished {
+      //background: url("images/DI/checkmark.png") no-repeat scroll center center;
+      //background: url("../../../app-schema-assets/dist/src/assets/icons/mbde-icons.svg") -980px -1068px no-repeat;
+      background: url(images/DI/workstation/workstation.svg) -600px -280px no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+
+    .tablestatus-col.status.warning {
+      //background: url("images/warning.gif") no-repeat scroll center center;
+      background: url(images/metric-editor.png) -100px -180px no-repeat;
+      width: 15px;
+      height: 15px;
+    }
+
+    // center image in status column
+    .refreshBox-status {
+      margin: auto;
+      height: 22px;
+
+      img {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .refreshBox-status.status.waiting {
+      background: url(vi/images/spinner_ws.gif) no-repeat scroll center center;
+    }
+
+    .refreshBox-status.status.finished {
+      background: url("images/DI/checkmark.png") no-repeat scroll center center;
+      //background: url("../../../app-schema-assets/dist/src/assets/icons/mbde-icons.svg") -980px -1070px no-repeat;
+    }
+
+    .refreshBox-status.status.warning {
+      background: url("images/warning.gif") no-repeat scroll center center;
+    }
+
+    .tablestatus-col.stack.pulldown {
+      .mstrmojo-DropDownButton.mstrmojo-Pulldown {
+        border-color: white;
+      }
+    }
+
+    // style for the stack dataWidget
+    .tablestatus-col.stack.pulldown {
+      margin-left: 0px;
+    }
+    .tablestatus-col.stack {
+      .tablestatus-col.filebox {
+        width: 60px;
+        .mstrmojo-FileUploadBox-input {
+          display: none;
+        }
+        .mstrmojo-FileUploadBox-buttonDiv {
+          width: 40px;
+          padding-left: 0px;
+          position: inherit;
+
+          .mstrmojo-FileUploadBox-button {
+            margin: auto;
+            padding: 0px;
+            text-align: center;
+            cursor: pointer;
+          }
+
+          .mstrmojo-FileUploadBox-file {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mstrmojo-di-SelectAlternateSource-editor {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  &.mstrmojo-Editor > .mstrmojo-Editor-content {
+    padding: 0px;
+  }
+
+  .mstrmojo-Editor-buttonBox {
+    td:first-child {
+      width: auto;
+    }
+
+    .mstrmojo-WebButton {
+      margin: 0 5px;
+      min-width: 66px;
+      height: 22px;
+    }
+  }
+}
+
+.mstrmojo-di-SelectURLAlternateSource-editor.mstrmojo-Editor.modal {
+  //DE53552, the dialog has no shadow
+  //-webkit-box-shadow: none !important;
+  //-moz-box-shadow: none !important;
+  //box-shadow: none !important;
+  //border: 0;
+  .mstrmojo-di-view.mstrmojo-di-view-popup {
+    .mstrmojo-di-layout {
+      .mstrmojo-di-fileUpload.mstrmojo-di-fu {
+        .mstrmojo-di-URLUpload-urlInput {
+          .mstrmojo-TextBox.upload-url {
+            width: 400px;
+            height: 26px;
+            padding-left: 7px;
+            margin-left: 200px !important;
+          }
+          .mstrmojo-DI-DIAuthenticationButton.mstrmojo-ui-Pulldown.mstrmojo-di-add-authentication {
+            left: -210px !important;
+            .mstrmojo-DI-DIAuthenticationButton-text.mstrmojo-ui-Pulldown-text {
+              height: 17px;
+              width: 156px;
+            }
+          }
+        }
+        .mstrmojo-di-URLUpload-urlList {
+          .mstrmojo-Box.di-connector-panel {
+            .mstrmojo-VBox.di-connector-left-panel {
+              .di-object-browser {
+                overflow: unset;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  & > .mstrmojo-Editor-content {
+    padding: 0;
+    border: 0;
+    &:after {
+      border: 0;
+    }
+  }
+
+  & >.mstrmojo-Editor-buttons {
+    padding: 0;
+  }
+}
+
+.mstrmojo-IRRFilter-editor {
+  .mstrmojo-onhoverparent:hover .mstrmojo-create-set-text {
+    display: none;
+  }
+
+  .mstrmojo-FE-addCondition .menuButton {
+    display: none;
+  }
+}

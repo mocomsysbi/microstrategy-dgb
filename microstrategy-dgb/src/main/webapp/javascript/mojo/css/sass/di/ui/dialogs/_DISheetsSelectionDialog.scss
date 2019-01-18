@@ -1,0 +1,184 @@
+.mstrmojo-di-sheets-selection-dialog, .mstrmojo-di-refresh-dialog{
+  background: #f3f3f4;
+  .mstrmojo-Editor-titleCell{
+    background-color: #f3f3f4;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 1px solid $divider-line-dark;
+  }
+
+  .mstrmojo-Editor-content {
+    border-top: 1px solid white;
+    border-bottom: 1px solid $divider-line-dark;
+    padding: 0;
+  }
+  .mstrmojo-Editor-buttons {
+    padding:16px 13px 16px 18px;
+  }
+  .mstrmojo-Editor-title-container {
+    .edt-title-btn.mstrmojo-Editor-close {
+      display: none;
+    }
+  }
+}
+
+.mstrmojo-di-sheets-selection-dialog.mstrmojo-Editor{
+  .mstrmojo-HBox.mstrmojo-di-ssd-file-content{
+    width:100%;
+
+    .mstrmojo-di-ssd-right-panel.mstrmojo-VBox {
+      width:100%;
+      .mstrmojo-Button.select-all-button {
+        padding-left: 17px;
+        margin: 10px;
+        background: transparent url(images/checkbox.svg) no-repeat;
+        &.unselect-all {
+          background-position: -3px -25px;
+        }
+        &.select-all {
+          background-position: -3px 0px;
+        }
+        &.select-some {
+          background-position: -3px -175px;
+        }
+      }
+      // when the select all btn is not displayed
+      .mstrmojo-Button.select-all-button.none-display + input + .mstrmojo-StackContainer.mappingpage-bottom {
+        .mstrmojo-ui-CheckList.mstrmojo-di-ssd-sheets-list {
+          height: 229px;
+        }
+      }
+      .mstrmojo-StackContainer.mappingpage-bottom{
+        padding-right:10px;
+        .mstrmojo-ui-CheckList.mstrmojo-di-ssd-sheets-list {
+          &.mstrmojo-scrollbar-host {
+            width: 98%;
+          }
+          &.mstrmojo-sb-host-show-default {
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mstrmojo-di-ssd-file-content {
+  width: 440px;
+  height: 250px;
+}
+
+.mstrmojo-di-ssd-left-panel {
+  border-right: solid 1px $divider-line-dark;
+  width: 120px;
+  padding: 16px 0;
+}
+.mstrmojo-di-ssd-right-panel {
+  border-left: solid 1px $divider-line-light;
+  width: 240px;
+  padding: 10px;
+  padding-left: 0px;
+  .scroll-container.mstrmojo-scrollNode {
+    width: 95%;
+    padding-left: 10px;
+  }
+  .mstrmojo-Label {
+    width: 220px;
+    height: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 6px 0px 6px 10px;
+  }
+}
+.mstrmojo-di-ssd-title{
+}
+.mstrmojo-di-ssd-file-list {
+  height: 250px;
+  width: 170px;
+  overflow-y: auto;
+  margin: 0 16px;
+  .mstrmojo-Button {
+    width: 158px;
+    overflow-wrap: break-word; //YGUO TQMS-858507
+    height: 26px;
+    line-height: 26px;
+    padding-left: 10px;
+    white-space: nowrap;
+  }
+  .mstrmojo-Button:hover {
+    background-color: #dadada;
+  }
+  .mstrmojo-Button.selected {
+    background-color:#cecece;
+  }
+}
+
+.mstrmojo-di-ssd-sheets-list {
+  height: 220px;
+  padding: 10px 0 0 12px;
+  overflow: hidden;
+  width: 234px;
+  .mstrmojo-ListBox-table {
+    max-height: 150px;
+    .mstrmojo-CheckList-item input[type="checkbox"]{
+      margin: 3px 3px 3px 0px; //YGUO TQMS-947519
+    }
+  }
+  .item { // DE15284: prevent wrap to next line for each list item
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.mstrmojo-di-ssd-search {
+  width: 193px;
+  height: 20px;
+  margin: 10px 0;
+  border: 1px solid #B3B3B3;
+  background: url(images/DI/tool_search.png);
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-color: white;
+  padding-left: 30px;
+  border-radius: 5px;
+}
+
+.workstation {
+  .mstrmojo-di-sheets-selection-dialog, .mstrmojo-di-refresh-dialog{
+    .mstrmojo-Editor-content {
+      border-bottom: 1px solid $divider-line-dark;
+
+      .mstrmojo-di-ssd-file-content .mstrmojo-di-ssd-right-panel .mstrmojo-StackContainer.mappingpage-bottom .mstrmojo-di-ssd-sheets-list.hasHorizontal .mstrmojo-scrolltrack.horizontal{
+        visibility: hidden;
+      }
+    }
+    background: white;
+    width: 520px;
+    height: 386px;
+  }
+
+  .mstrmojo-di-ssd-file-list {
+    .mstrmojo-Button.selected {
+      background-color:RGBA(68,70,73,0.1);
+    }
+  }
+
+  .mstrmojo-di-ssd-sheets-list {
+    height: 190px;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+    width: 96%;
+
+    .item { // DE15284: prevent wrap to next line for each list item
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 15px;
+      width: 270px;
+      display: inline-block;
+    }
+  }
+
+}

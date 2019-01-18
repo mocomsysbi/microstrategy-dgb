@@ -1,0 +1,1 @@
+mstr.http.CrosstabRequestInputs=(function(){function CRIs(msgId,stateId,includeFlag,rowBlockBegin,columnBlockBegin,rowBlockCount,columnBlockCount){this.params={taskId:"retrieveReportData",msgID:msgId,stateID:stateId,includeFlag:"1",gridStartRow:rowBlockBegin,gridMaxRows:rowBlockCount,gridStartCol:columnBlockBegin,gridMaxCols:columnBlockCount};}return CRIs;})();

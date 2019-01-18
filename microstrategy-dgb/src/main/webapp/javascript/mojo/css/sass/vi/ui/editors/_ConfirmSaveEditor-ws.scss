@@ -1,0 +1,76 @@
+/** beginning of ConfirmSave Editor */
+.mstrmojo-ConfirmSave-Editor, .mstrmojo-ConfirmEditLink-Editor {
+    width: 438px;
+    max-height: 500px;
+
+    .edt-title-btn {
+        display: none;
+    }
+
+    .mstrmojo-Warning-Box {
+        position: relative;
+        margin: $wsvi-editor-content-padding;
+        cursor: default;
+
+        TBODY {
+            vertical-align: top;
+        }
+
+        .icon {
+            width: 75px;
+            height: 75px;
+            background: url("#{$wsvi-alert-icons-sprite}") no-repeat scroll -31px -63px;
+            margin: 0 $wsvi-editor-content-padding 0 0;
+        }
+
+        .message {
+            @include user-select(text);
+            line-height: $wsvi-tips-line-height;
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        .mstrmojo-Editor-buttonBar {
+            tr td:first-child {
+                width: 99%;
+            }
+
+            .mstrmojo-WebButton {
+                min-width: 66px;
+            }
+
+            .mstrmojo-WebButton.nosave {
+                width: 120px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.mstrmojo-ConfirmSave-Editor {
+    .mstrmojo-Prompt-CheckBox {
+        padding-left: 12px;
+    }
+}
+
+.mstrmojo-ConfirmEditLink-Editor {
+  .mstrmojo-Warning-Box {
+    .message {
+      word-wrap: break-word;
+      overflow: hidden;
+    }
+  }
+
+  .mstrmojo-Editor-buttons {
+    .mstrmojo-Editor-buttonBar {
+      .mstrmojo-WebButton {
+        .mstrmojo-Button-text {
+          vertical-align: middle;
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+/** end of ConfirmSave Editor */

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="336px" height="198px" viewBox="0 0 336 198" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Dark Theme_checkbox_radiobutton</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polyline id="path-1" points="3 6 5.5 8 9 4"></polyline>
+        <rect id="path-2" x="0" y="0" width="12" height="12" rx="2"></rect>
+        <filter x="-29.2%" y="-20.8%" width="158.3%" height="158.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.266666667   0 0 0 0 0.274509804   0 0 0 0 0.28627451  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M6,12 C9.3137085,12 12,9.3137085 12,6 C12,2.6862915 9.3137085,0 6,0 C2.6862915,0 0,2.6862915 0,6 C0,9.3137085 2.6862915,12 6,12 Z" id="path-4"></path>
+        <filter x="-29.2%" y="-20.8%" width="158.3%" height="158.3%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.266666667   0 0 0 0 0.274509804   0 0 0 0 0.28627451  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M6,12 C9.3137085,12 12,9.3137085 12,6 C12,2.6862915 9.3137085,0 6,0 C2.6862915,0 0,2.6862915 0,6 C0,9.3137085 2.6862915,12 6,12 Z" id="path-6"></path>
+        <filter x="-29.2%" y="-20.8%" width="158.3%" height="158.3%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.266666667   0 0 0 0 0.274509804   0 0 0 0 0.28627451  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Dark-Theme_checkbox_radiobutton" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="left-top-of-each-ico" font-family="HelveticaNeue, Helvetica Neue" font-size="9" font-weight="normal" fill="#444649">
+            <tspan x="0" y="11">left top of each icon(0+30(x-1), 0+30y), each icon 12*12px; x= #column, y=#row</tspan>
+        </text>
+        <g id="Checkbox-unselect" transform="translate(0.000000, 30.000000)" fill="#1F1F1F" stroke="#FFFFFF" stroke-opacity="0.7">
+            <rect id="Rectangle-3087" x="0.5" y="0.5" width="11" height="11" rx="2"></rect>
+        </g>
+        <g id="Checkbox-select" transform="translate(30.000000, 30.000000)">
+            <rect id="Rectangle-370" fill="#3B92ED" x="0" y="0" width="12" height="12" rx="2"></rect>
+            <g id="Path-390" stroke-linecap="square" stroke="#FFFFFF">
+                <use xlink:href="#path-1"></use>
+                <use xlink:href="#path-1"></use>
+            </g>
+        </g>
+        <g id="Checkbox-unselect-disable" transform="translate(60.000000, 30.000000)">
+            <g id="Rectangle-370-Copy">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <rect stroke-opacity="0.1" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="square" fill="#1F1F1F" fill-rule="evenodd" x="0.5" y="0.5" width="11" height="11" rx="2"></rect>
+            </g>
+        </g>
+        <g id="Checkbox-select-disable" transform="translate(90.000000, 30.000000)">
+            <rect id="Rectangle-370-Copy-2" stroke-opacity="0.1" stroke="#FFFFFF" fill="#1F1F1F" x="0.5" y="0.5" width="11" height="11" rx="2"></rect>
+            <polyline id="Path-390" stroke="#6D6D6D" stroke-linecap="square" points="3 6 5.5 8 9 4"></polyline>
+        </g>
+        <g id="radio-unselect-disable" transform="translate(60.000000, 60.000000)">
+            <g id="radio-deselect-disable">
+                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                <path stroke-opacity="0.1" stroke="#FFFFFF" stroke-width="1" d="M6,11.5 C9.03756612,11.5 11.5,9.03756612 11.5,6 C11.5,2.96243388 9.03756612,0.5 6,0.5 C2.96243388,0.5 0.5,2.96243388 0.5,6 C0.5,9.03756612 2.96243388,11.5 6,11.5 Z" stroke-linejoin="square" fill="#1F1F1F" fill-rule="evenodd"></path>
+            </g>
+        </g>
+        <g id="radio-select" transform="translate(30.000000, 60.000000)">
+            <circle id="Oval-223-Copy" fill="#3B92ED" cx="6" cy="6" r="6"></circle>
+            <path d="M6,8 C7.1045695,8 8,7.1045695 8,6 C8,4.8954305 7.1045695,4 6,4 C4.8954305,4 4,4.8954305 4,6 C4,7.1045695 4.8954305,8 6,8 Z" id="Oval-226" fill="#FFFFFF"></path>
+        </g>
+        <g id="radio-select-disable" transform="translate(90.000000, 60.000000)">
+            <circle id="Oval-223-Copy" stroke-opacity="0.1" stroke="#FFFFFF" fill="#1F1F1F" cx="6" cy="6" r="5.5"></circle>
+            <path d="M6,8 C7.1045695,8 8,7.1045695 8,6 C8,4.8954305 7.1045695,4 6,4 C4.8954305,4 4,4.8954305 4,6 C4,7.1045695 4.8954305,8 6,8 Z" id="Oval-226" fill="#6D6D6D"></path>
+        </g>
+        <g id="radio-unselect" transform="translate(0.000000, 60.000000)">
+            <g id="radio-deselect">
+                <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
+                <path stroke-opacity="0.7" stroke="#FFFFFF" stroke-width="1" d="M6,11.5 C9.03756612,11.5 11.5,9.03756612 11.5,6 C11.5,2.96243388 9.03756612,0.5 6,0.5 C2.96243388,0.5 0.5,2.96243388 0.5,6 C0.5,9.03756612 2.96243388,11.5 6,11.5 Z" stroke-linejoin="square" fill="#1F1F1F" fill-rule="evenodd"></path>
+            </g>
+        </g>
+    </g>
+</svg>

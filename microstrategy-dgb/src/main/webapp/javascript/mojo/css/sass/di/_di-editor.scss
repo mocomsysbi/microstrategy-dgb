@@ -1,0 +1,36 @@
+.mstrmojo-Editor {
+  > {
+    .mstrmojo-Editor-title-container {
+      // This is moved from _DIMultiformEditor.scss;
+      // Coz such a generic style definition should be put here instead of
+      // specific DI component.
+      box-sizing: border-box;
+
+      .mstrmojo-Editor-title {
+        padding: 4px;
+        height: auto;
+        line-height: inherit; // line-height is an inheritable property according to CSS3 standard.
+      }
+    }
+  }
+  .mstrmojo-Editor-title {
+    font-family: arial;
+    font-size: 11px; // YGUO TQMS-913004 Change to the IE and Firefox recognized syntax
+  }
+}
+
+.mstrWeb {
+  #ImportNameConflictDialog {
+    .mstrmojo-Editor{
+      &.mstrmojo-alert.modal {
+        .mstrmojo-Editor-content .alert-content {
+          width: inherit;
+        }
+      }
+      
+      .mstrmojo-Editor-title-container {
+        padding: 0px 16px
+      }
+    }
+  }
+}

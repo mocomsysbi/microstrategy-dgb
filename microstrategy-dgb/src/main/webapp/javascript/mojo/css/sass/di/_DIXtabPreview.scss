@@ -1,0 +1,100 @@
+//  -------- Data Import Crosstab preview styles -------*/
+
+/* xtab preview generic style. */
+.di-xtab {
+  border: thin solid #CCCCCC;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/* xtab cell generic style. */
+.di-xtab-cell {
+  height: 20px;
+  line-height: 20px;
+  padding-left: 10px;
+  border: thin solid #CCCCCC;
+}
+
+/* Style of the cell when it belongs to the data elements block region*/
+.di-xtab-cell-dataElement {
+  background-color: #defbe6;
+}
+
+/* Style of the cell when it belongs to the data block region*/
+.di-xtab-cell-data {
+  background-color: #FCF1D2;
+}
+
+//mizhang TQMS 947653
+.di-xtab-cell-data-top {
+  border-top: 2px solid #34abeb;
+}
+.di-xtab-cell-data-bottom {
+  border-bottom: 2px solid #34abeb;
+}
+.di-xtab-cell-data-left {
+  border-left: 2px solid #34abeb;
+}
+.di-xtab-cell-data-right {
+  border-right: 2px solid #34abeb;
+}
+.di-xtab {
+  .handler:before {
+    content: url("images/DI/blue-dot.png");
+    padding-left: 3px;
+    margin-left: -10px;
+    top: -9px;
+    position: relative;
+    left: -3px;
+  }
+}
+
+/* Style of the cell when it belongs to the metric header block region*/
+.di-xtab-cell-metricHeader {
+  background-color: #F6D57D;
+}
+
+//mizhang TQMS 947653
+.di-xtab-cell-metricHeader-left {
+  border-left: 2px solid #34abeb;
+}
+.di-xtab-cell-metricHeader-right {
+  border-right: 2px solid #34abeb;
+}
+.di-xtab-cell-metricHeader-bottom {
+  border-bottom: 2px solid #34abeb;
+}
+.di-xtab-cell-metricHeader-top {
+  border-top: 2px solid #34abeb;
+}
+.di-xtab {
+  .header-first-one:before {
+    content: url("images/DI/handler.png");
+    left: 0px;
+    top: 2px;
+    position: relative;
+    margin-left: -8px;
+    margin-right: 2px;
+    vertical-align: middle;
+  }
+}
+
+/* Style of the cell when it belongs to the undefined block region*/
+.di-xtab-cell-undefined {
+  background-color: #aeefc0;
+}
+
+.workstation{
+  .di-xtab-cell-undefined {
+    background-color: $xtabCellUndefined;
+  }
+  .di-xtab-cell-dataElement{
+    background-color: $xtabCellDataElement;
+  }
+  .di-xtab-cell-metricHeader{
+    background-color: $xtabCellMetricHeader;
+  }
+  .di-xtab-cell-data{
+    background-color: $xtabCellData;
+  }
+}

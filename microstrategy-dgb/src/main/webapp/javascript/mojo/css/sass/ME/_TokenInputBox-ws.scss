@@ -1,0 +1,68 @@
+.mstrmojo-TokenInputBox {
+    background-color: $wsvi-primary-white;
+    overflow: hidden;
+    font-size: $wsvi-tips-font-size;
+    line-height: $wsvi-tips-line-height;
+
+    &.unselectable {
+        ::selection {
+            background: transparent;
+        }
+
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    }
+}
+
+.mstrmojo-TokenInputBox-clipboard {
+    position:absolute;
+    top:-1000px;
+    left:-1000px;
+}
+
+.mstrmojo-TokenInputBox-edit{
+    height: 100%;
+    min-height: 50px;
+    letter-spacing: 1px;
+    outline: none;
+    word-wrap: break-word;
+    -ms-word-wrap: break-word;
+    word-break: break-all;
+    overflow-y: auto;
+    overflow-x: hidden;
+    letter-spacing: 1px;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+
+    .mstrmojo-itemwrap {}
+
+    span {
+        &.mstr {
+            color: blue;
+
+            &.nfn {
+                color: #444649;
+            }
+
+            &.embeddedFilter {
+                display: inline-block;
+                @include wsvi-icon-has-filter;
+                background-position-y: -29px;
+                text-indent: 15px;
+            }
+        }
+
+        &.active {
+            color:grey;
+        }
+
+        &.invalid {
+            color: red !important;
+        }
+    }
+}

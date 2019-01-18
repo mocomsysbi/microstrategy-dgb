@@ -1,0 +1,88 @@
+.mstrmojo-ar-UnitList {
+  z-index: 2;
+  width: 100%;
+  overflow-x: auto;
+  background: #f6f6f6;
+  .item {
+    background: url(images/wh/object_icons.png) no-repeat;
+    padding: 8px 19px;
+    margin-left: 2px;
+    border-bottom: 1px dotted #AAA;
+    cursor: pointer;
+    position: relative;
+    height: 14px;
+    &:hover {
+      background-color: #EEE;
+      color: #000;
+    }
+    &.selected {
+      font-weight: bold;
+    }
+  }
+  div.item {
+    &.tp151 {
+      background-position: left -580px;
+    }
+    &.tp14 {
+      background-position: left -528px;
+    }
+    &.tp43 {
+      background-position: left -632px;
+    }
+    &.tp70 {
+      background-position: left -475px;
+    }
+  }
+}
+
+.mstrmojo-ar-ulist-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 24px;
+}
+
+.mstrmojo-ar-ulist-icn-ren {
+  background: url(images/wh/panel_icons.png) no-repeat 2px -623px;
+  position: absolute;
+  padding: 8px;
+  opacity: 0.2;
+  right: 7px;
+  top: 7px;
+  transition: opacity 200ms;
+  border: 1px solid transparent;
+  margin-right: 20px;
+}
+
+.mstrmojo-ar-ulist-icn-del {
+  background: url(images/wh/panel_icons.png) no-repeat 2px -122px;
+  position: absolute;
+  padding: 8px;
+  opacity: 0.2;
+  right: 7px;
+  top: 7px;
+  transition: opacity 200ms;
+  border: 1px solid transparent;
+}
+
+.mstrmojo-ar-UnitList .item:hover {
+  .mstrmojo-ar-ulist-icn-ren, .mstrmojo-ar-ulist-icn-del {
+    opacity: 0.6;
+  }
+  .mstrmojo-ar-ulist-icn-ren:hover {
+    opacity: 1;
+    border: 1px solid #CCC;
+    background: url(images/wh/panel_icons.png) no-repeat 2px -623px, -webkit-linear-gradient(top, white 0%, #e8e8e8 100%);
+    background: url(images/wh/panel_icons.png) no-repeat 2px -623px, -moz-linear-gradient(top, white 0%, #e8e8e8 100%);
+    background: url(images/wh/panel_icons.png) no-repeat 2px -623px, linear-gradient(top, white 0%, #e8e8e8 100%);
+    border-radius: 2px;
+  }
+  .mstrmojo-ar-ulist-icn-del:hover {
+    opacity: 1;
+    border: 1px solid #CCC;
+    background: url(images/wh/panel_icons.png) no-repeat 2px -122px, -webkit-linear-gradient(top, white 0%, #e8e8e8 100%);
+    background: url(images/wh/panel_icons.png) no-repeat 2px -122px, -moz-linear-gradient(top, white 0%, #e8e8e8 100%);
+    background: url(images/wh/panel_icons.png) no-repeat 2px -122px, linear-gradient(top, white 0%, #e8e8e8 100%);
+    border-radius: 2px;
+  }
+}

@@ -1,0 +1,20 @@
+.workstation {
+    /** BEGIN: TextBox **/
+    .mstrmojo-TextBox {
+        @include box-sizing();
+
+        height: $wsvi-input-control-height;
+        line-height: normal; /*do not set line-height for input, IE&FF may not support it*/
+        padding: 0 6px;
+
+        // Make the empty text lighter.
+        &.mstrmojo-empty {
+            color: #878788;
+        }
+
+        &:focus {
+            border-color: $wsvi-primary-blue;
+        }
+    }
+    /** END: TextBox **/
+}

@@ -1,0 +1,435 @@
+@import '../vi/vi-global';
+@import '../global-mixins';
+
+$color-hot-threshold-editor: #0C83C4;
+$color-band-border: rgba(0, 0, 0, 0.33);
+$num-threshold-palettes: 20;
+
+.mstrmojo-SimpleThresholdEditor {
+    width: 500px;
+
+    // US126663
+    .mstrmojo-ui-Pulldown.color-pulldown {
+        .mstrmojo-ui-Pulldown-text {
+            white-space: normal; // Ensure float: right displays on same line in FF
+        }
+
+        .mstrmojo-ui-Pulldown-text:after,
+        .container .mstrmojo-PopupList .item:after {
+            content: '';
+            width: 75px;
+            height: 12px;
+            float: right;
+        }
+
+        .mstrmojo-ui-Pulldown-text:after {
+            margin-top: 6px;
+            margin-right: 8px;
+        }
+
+        .container .mstrmojo-PopupList .item:after {
+            margin-top: 8px;
+        }
+
+        @for $i from 0 through $num-threshold-palettes {
+            .mstrmojo-ui-Pulldown-text.C#{$i}:after,
+            .container .mstrmojo-PopupList .item.C#{$i}:after {
+                background: url(vi/images/threshold_palettes.svg) no-repeat 0 -#{$i * 22}px;
+            }
+        }
+
+        // US126663
+        .container {
+            .mstrmojo-PopupList {
+                .item {
+                    white-space: normal; // Ensure float: right displays on same line in FF
+
+                    padding-left: 22px;
+                    padding-right: 22px;
+
+                    &.title {
+                        font-size: 11px;
+                        font-family: Helvetica;
+                        color: rgba(68, 70, 73, 0.45);
+                
+                        text-transform: uppercase;
+                
+                        pointer-events: none;
+                        user-select: none;
+
+                        padding-left: 8px;
+                
+                        &:hover {
+                            background-color: inherit;
+                        }
+
+                        &:not(:first-child) {
+                            border-top: 1px solid rgba(#444649, 0.2);
+                        }
+                    }
+
+                    & > .text {
+                        display: inline-block;
+                        width: 100%;
+                        max-width: 100px;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        line-height: normal;
+                        vertical-align: middle;
+                    }
+
+                    &.selected {
+                        background-color: inherit;
+                        color: inherit;
+
+                        &:before {
+                            content: '';
+                            width: 9px;
+                            height: 6px;
+                            background: url(vi/images/check-mark.png) no-repeat 0 0;
+                            display: inline-block;
+                            margin-left: -14px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .row {
+        clear: both;
+        width: 80%;
+        margin: auto;
+        padding: 8px 0 0;
+        height: 30px;
+
+        .mstrmojo-Label {
+            float: left;
+            width: 30%;
+            line-height: 24px;
+        }
+        .mstrmojo-ui-Pulldown {
+            float: left;
+            width: 70%;
+            height: 24px;
+
+            &.color-pulldown,
+            &.image-pulldown {
+                width: calc(68% - 26px); // 70% - 2% - width of revese button
+                margin-right: 2%;
+            }
+        }
+        .mstrmojo-PopupList {
+            z-index: 1002;
+        }
+
+        .mstrmojo-ui-CheckList {
+            float: left;
+            width: 70%;
+            line-height: 24px;
+        }
+
+        .mstrmojo-ui-Checkbox {
+            float: left;
+            margin-top: 4px;
+            margin-left: 15px;
+        }
+
+        .left-pulldown {
+            width: 43%;
+            margin-right: 2%;
+        }
+
+        .right-pulldown {
+            width: 25%;
+        }
+
+        .reverse-btn {
+            min-width: 26px;
+            width: 26px;
+            height: 26px;
+            
+            .mstrmojo-Button-text,
+            &:active .mstrmojo-Button-text {
+                @include wsvi-icon-size;
+                padding: 3px;
+                background: transparent url(vi/images/dataset.svg) -720px -210px no-repeat;
+                background-origin: content-box;
+            }
+
+            &:active .mstrmojo-Button-text {
+                background-color: #7ACBF6;
+            }
+        }
+
+        .mstrmojo-ui-Pulldown-text {
+            $height-text-pulldown: 18px;
+            height: $height-text-pulldown;
+            line-height: $height-text-pulldown;
+            border-radius: 4px;
+            padding: 2px 7px;
+            border: solid 1px #E5E5E5;
+            cursor: default;
+        }
+
+    }
+
+    .hideImage .row:first-child {
+        visibility: hidden;
+        height: 0px;
+        position: absolute;
+    }
+
+    .image-pulldown {
+
+        .mstrmojo-PopupList {
+            @include box-sizing();
+            min-width: 175px;
+        }
+
+        .item{
+            position: relative;
+            padding: 2px 5px 2px 6px;
+
+            > div {
+                float: left;
+                padding: 3px 0;
+            }
+
+            .bc {
+                width: 60px;
+                height: 11px;
+                margin-top: 2px;
+            }
+
+            .text {
+                padding-left: 3px;
+                margin-top: -6px;
+            }
+        }
+    }
+
+    .editor-buttons {
+        float: right;
+        border-top: solid 1px #F0F0F0;
+
+        .mstrmojo-WebButton {
+            margin: 0 0 0 11px;
+            float: right;
+            padding: 0px;
+            width: 60px;
+        }
+    }
+
+    .link {
+        float: left;
+        color: #007EBE;
+        line-height: 22px;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .mstrmojo-color-slider {
+        width: 90%;
+        margin: auto;
+
+        $width-color-band: 30px;
+
+        .hidden-field {
+            opacity: 0;
+            position: absolute;
+            cursor: default;
+            width: 0;
+        }
+        .labels {
+            position: relative;
+            margin-top: 20px;
+            height: 20px;
+        }
+        .start-label,
+        .end-label {
+            height: 10px;
+            position: absolute;
+        }
+
+        .start-label {
+            left: 0;
+        }
+        .end-label {
+            right: 0;
+        }
+        .color-bands {
+            height: $width-color-band;
+            border: 1px solid #fff;
+
+            .host {
+                border: 0;
+                top: 100%;
+            }
+
+            .selected {
+                border: 2px solid $color-band-border;
+            }
+        }
+
+        &.image-mode {
+
+            .color-bands{
+                border: 1px solid hsla(0, 0%, 25%, 0.6);;
+                border-top-width: 0px;
+
+                height: 10px;
+                margin-top: 20px;
+            }
+        }
+
+        .color-band {
+            background-color: #FF670F;
+            border: 1px solid $color-band-border;
+            border-left: 0;
+            border-radius: 0;
+            position: absolute;
+            @include box-sizing();
+            height: $width-color-band;
+
+            &.no-border {
+                border: 0;
+            }
+
+            &:first-child {
+                border-left: 1px solid $color-band-border;
+                @include box-sizing();
+                height: $width-color-band;
+                z-index: 1001;
+                &.selected {
+                    border-left-width: 2px;
+                }
+            }
+        }
+
+        .mstrmojo-Image {
+            background-color: transparent;
+            position: absolute;
+            bottom: 26px;
+            height: 10px;
+            border: 0;
+            border-left: 1px solid hsla(0, 0%, 25%, 0.6);
+
+            &:first-child {
+                border-left: 0;
+            }
+
+            img {
+                position: absolute;
+                bottom: 0px;
+                width: 23px;
+                height: 28px;
+            }
+        }
+        .markers {
+            height: 20px;
+            position: relative;
+        }
+        .marker {
+            width: 15px;
+            height: 12px;
+            position: absolute;
+            margin-left: -6px;
+            background: url(#{$vi-img-path}/thresholds_handle.png) no-repeat -30px -1px;
+
+            &:active,
+            &.selected {
+                background-position: 0 -1px;
+            }
+        }
+
+        .editable-bubble {
+            position: absolute;
+            padding: 10px;
+            background: #EDEDED;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            border: #7E7F7F solid 1px;
+            bottom: 10px;
+            min-width: 60px;
+            margin-left: -30px;
+            @include box-sizing();
+            @include box-shadow(rgba(0,0,0,0.4),0,0,5px);
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                border-style: solid;
+                border-width: 8px 6px;
+                display: block;
+                width: 0;
+                left: 24px;
+                border-bottom: 0px;
+            }
+            &:before {
+                border-color: #747474 transparent;
+                z-index: 0;
+                bottom: -9px;
+            }
+            &:after {
+                border-color: #EDEDED transparent;
+                z-index: 1;
+                bottom: -7px;
+            }
+        }
+    }
+
+    &.add-cursor {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background: transparent url(#{$vi-img-path}/unitList/drag_cursor_assets.png) 0 0 no-repeat;
+        z-index: 11;
+    }
+}
+
+.marker-drag-avatar {
+    width: 15px;
+    height: 12px;
+    cursor: default;
+    margin-left: -6px;
+    background: url(#{$vi-img-path}/thresholds_handle.png) no-repeat -30px -1px;
+
+    .bar {
+        position: absolute;
+        height: 30px;
+        border-left: 1px solid rgba(64,64,64,0.6);
+        left: 7px;
+        top: -31px;
+    }
+}
+
+.mstrmojo-Editor.save-threshold-warning {
+
+    .mstrmojo-Editor-buttons {
+        table {
+            width: 100%;
+
+            tr {
+                td:first-child {
+                    float: left;
+                }
+
+                td:nth-child(2),
+                td:nth-child(3) {
+                    float: right;
+                }
+            }
+        }
+
+        .mstrmojo-WebButton.nosave {
+            width: 80px;
+            margin-left: 0;
+        }
+    }
+}

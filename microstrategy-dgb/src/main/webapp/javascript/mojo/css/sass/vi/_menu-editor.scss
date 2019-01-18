@@ -1,0 +1,46 @@
+@import 'vi-global';
+/** BEGIN: VI Menu Editors **/
+// TODO: Should these even be here or in their more specific files ?
+.mstrmojo-ui-MenuEditor {
+    .mstrmojo-ui-Pulldown {
+//        %menu-pulldown-base {
+//            background-color: rgba(63, 63, 63, 0.96);
+//            border: 1px solid rgba(51, 51, 51, 0.9);
+//        }
+
+        .mstrmojo-ui-Pulldown-text {
+//            @extend %menu-pulldown-base;
+
+            padding-right: 18px;
+            padding-bottom: 4px;
+        }
+
+        .mstrmojo-PopupList {
+//            @extend %menu-pulldown-base;
+
+            .item {
+                margin: 0;
+
+                &.red {
+                    color: red;
+                }
+
+                &:hover {
+                    background-color: rgba(27, 27, 27, 0.42);
+                }
+            }
+        }
+    }
+
+    .mstrmojo-ui-CheckList.units .item {
+        @include ellipsis-text();
+    }
+}
+
+.mstrmojo-ToolSeparator {
+    @include box-shadow(#595959, 0, 1px 0);
+
+    border-bottom: 1px solid #303030;
+    border-left: 1px solid #303030;
+}
+/** END: VI Menu Editors **/

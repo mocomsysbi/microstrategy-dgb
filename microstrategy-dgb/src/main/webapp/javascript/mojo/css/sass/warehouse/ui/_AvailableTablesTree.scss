@@ -1,0 +1,30 @@
+/* Available Tables Tree */
+
+.mstrmojo-wh-AvailableTablesTree {
+  background-color: #FAFAFA;
+  &.hasOwnAvatar {
+    z-index: 100000;
+  }
+  li {
+    &[level="0"] > ul {
+      padding-left: 10px;
+    }
+    &[level="1"] {
+      background: none !important;
+      cursor: pointer;
+    }
+  }
+  .item.tp0 .item-mn,
+  .item.tp26 .item-mn {
+    display: none;
+  }
+
+  .disabled {
+    .item.tp15, .item.tp26 {
+      background-position: left -41px;
+      .item-n {
+        color: #A9A9A9;
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+@import 'theme-mixins-ws';
+
+%oib {
+    width:16px;
+    height:16px;
+    vertical-align:top;
+    position: absolute;
+}
+
+%oib-item {
+    cursor: default;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/** CSS for ObjectInputBox **/
+.mstrmojo-ObjectInputBox {
+    border:1px solid #CCCCCC;
+    height:60px;
+    background-color:white;
+    overflow:auto;
+    overflow-x:hidden;/*for IE7*/
+    cursor: default;
+
+    &.singleObject {
+        height:24px;
+        overflow:hidden;
+        background-color: #F3F7FD;
+
+        .mstrmojo-itemwrap {
+            float: none;
+        }
+
+        .mstrmojo-ObjectItem {
+            &.EMPTY{
+                height: 24px;
+                background-color: white;
+            }
+
+            .mstrmojo-ObjectItem-displayNode {
+                background-color:transparent;
+                border-width:0px;
+            }
+        }
+
+        .mstrmojo-ObjectItem-del {
+            position:absolute;
+            right:0px;
+        }
+
+        .mstrmojo-ObjectItem-edit {
+            position:absolute;
+            right:20px;
+        }
+    }
+
+    .mstrmojo-itemwrap {
+        float:left;
+    }
+}
+
+.mstrmojo-ObjectItem {
+    position: relative;
+
+    &.EDITING .mstrmojo-ObjectItem-editNode,
+    &.ADDING .mstrmojo-ObjectItem-editNode,
+    &.UNDETERMINED .mstrmojo-ObjectItem-displayNode,
+    &.VALID .mstrmojo-ObjectItem-displayNode,
+    &.INVALID .mstrmojo-ObjectItem-displayNode {
+        display: block;
+    }
+
+    &.EDITING .mstrmojo-ObjectItem-displayNode,
+    &.ADDING .mstrmojo-ObjectItem-displayNode,
+    &.UNDETERMINED .mstrmojo-ObjectItem-editNode,
+    &.VALID .mstrmojo-ObjectItem-editNode,
+    &.INVALID .mstrmojo-ObjectItem-editNode {
+        display: none;
+    }
+
+    &.EDITING .mstrmojo-ObjectItem-input {
+        padding-left:5px;
+    }
+
+    &.INVALID {
+        .mstrmojo-ObjectItem-displayNode {
+            border:1px solid red;
+        }
+
+        .mstrmojo-ObjectItem-text {
+            background-image: url(images/invalid.png);
+        }
+    }
+
+    &.UNDETERMINED {
+        .mstrmojo-ObjectItem-displayNode {
+            border:1px solid yellow;
+        }
+
+        .mstrmojo-ObjectItem-text {
+            background-image: url("images/treeLoading16.gif");
+        }
+    }
+}
+
+.mstrmojo-ObjectItem-browse {
+    @extend %oib;
+
+    background: url(images/metric.png) no-repeat -60px 0px scroll;
+}
+
+.mstrmojo-ObjectItem-del {
+    @extend %oib;
+
+    background:url(images/DI/workstation/workstation.svg) no-repeat -2102px -128px;
+    right: 4px;
+    top: 2px;
+
+    &:hover {
+        background:url(images/DI/workstation/workstation.svg) no-repeat -2102px -128px;
+    }
+}
+
+.mstrmojo-ObjectItem-down {
+    @extend %oib;
+}
+
+.mstrmojo-ObjectItem-edit {
+    @extend %oib;
+
+    background:url(images/DI/workstation/workstation.svg) no-repeat -2352px -50px scroll;
+    right: 20px;
+    top: 2px;
+}
+
+.mstrmojo-ObjectItem-editNode {
+    background-color:white;
+    border:1px solid #CCC;
+}
+
+.mstrmojo-ObjectItem-emptyText {
+    padding: 5px;
+    color: #999;
+}
+
+.mstrmojo-ObjectItem-input {
+    border: 0px solid green;
+    padding: 3px 0;
+    line-height: 20px;
+    width: 80px;
+}
+
+.mstrmojo-ObjectInputBox-suggest {
+    @include wsvi-pulldown-popup;
+
+    .mstrmojo-Editor-content {
+        padding: 5px 0;
+    }
+    .mstrmojo-popup-content {
+        .mstrmojo-suggest-list {
+            max-height: 350px;
+            overflow-y: auto;
+            .mstrmojo-suggest-text.mstrmojo-qb-SuggestIcon.t26 {
+                height: 26px;
+                line-height: 26px;
+                background-image: url("images/DI/vertical icons.svg");
+                background-position-y: -295px;
+                padding-right: 7px;
+            }
+        }
+    }
+}
+
+.mstrmojo-ObjectItem-text {
+    background-position: 3px center;
+    background-repeat: no-repeat;
+    padding: 3px 34px 3px 22px;
+}
+
+.mstrmojo-HasSuggestions {
+    -moz-border-radius:0px;
+    -webkit-border-radius: 0px;
+    background-color: #fff;
+}
+
+.mstrmojo-suggest-list {
+    @include wsvi-ctrl-popup-list-item;
+
+    .item {
+        @extend %oib-item;
+    }
+}
+
+.mstrmojo-suggest-text {
+    @extend %oib-item;
+    @include wsvi-hover-select-bg();
+}
+
+.truncated {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mstrmojo-ACLEditor-inputBox .mstrmojo-ObjectItem,
+.mstrmojo-ACLEditor-inputBox .mstrmojo-itemwrap {
+    position: relative;
+}
+
+.noVerify .mstrmojo-ObjectItem {
+    &.INVALID .mstrmojo-ObjectItem-displayNode,
+    &.UNDETERMINED .mstrmojo-ObjectItem-displayNode {
+        border:1px solid #BBD8FB;
+    }
+
+    &.INVALID .mstrmojo-ObjectItem-text,
+    &.UNDETERMINED .mstrmojo-ObjectItem-text {
+        background-image: none;
+        padding-left: 3px;
+    }
+}
+
+/** end of CSS for ObjectInputBox **/

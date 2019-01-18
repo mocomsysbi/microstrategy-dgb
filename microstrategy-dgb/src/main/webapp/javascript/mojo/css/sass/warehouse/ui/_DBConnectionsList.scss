@@ -1,0 +1,46 @@
+/* START: DB Panel */
+
+.mstrmojo-wh-dbConnectionslist {
+  margin: 0 2px 0 0;
+  overflow: hidden;
+  padding-left: 1px;
+
+  &:hover{ //ljing 940034
+    overflow: auto;
+  }
+
+  .item {
+    padding: 4px 0px; //942676
+    border-bottom: 1px solid transparent;
+    -webkit-transition: all 300ms;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    line-height: 17.6px;
+
+    &.selected {
+      background-color: $wsvi-selected-gray;
+    }
+
+    &:hover {
+      background-color: $wsvi-hover-gray;
+    }
+
+    &.primary .item-n{
+      font-weight: normal;
+    }
+
+    &.hide-menu .item-mn {
+      display: none; // US7709: Hide context menu if user does not have the privilege.
+    }
+
+  }
+
+  .item-n {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+/* END: DB Panel */

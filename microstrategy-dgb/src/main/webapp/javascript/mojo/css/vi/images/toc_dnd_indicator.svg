@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="353px" height="75px" viewBox="0 0 353 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="7" cy="39" r="4"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="8" height="8" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy">
+            <g id="Group" transform="translate(0.000000, 30.000000)">
+                <rect id="Rectangle" fill="#7ED321" opacity="0" x="0" y="0" width="18" height="18"></rect>
+                <polygon id="Combined-Shape" fill="#3B92ED" points="18 10 18 8 10 8 10 10"></polygon>
+            </g>
+            <text id="left-top-of-each-ico" font-family=".AppleSystemUIFont" font-size="9" font-weight="normal" fill="#444649">
+                <tspan x="3" y="10">left top of each icon(0+30x, 0+30y), each icon 18*18px; x= #column, y=#row</tspan>
+            </text>
+            <use id="Oval" stroke="#3B92ED" mask="url(#mask-2)" stroke-width="4" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

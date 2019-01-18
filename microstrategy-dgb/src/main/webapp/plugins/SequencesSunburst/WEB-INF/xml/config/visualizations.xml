@@ -1,0 +1,5 @@
+<visualizations>
+  <visualization-list name="ajax" show-in-web="true" view-mode="51">
+    <visualization attribute-minimum="1" desc="Sequences Sunburst" drop-zones="plugins.SequencesSunburst.SequencesSunburstDropZones" editor-model="plugins.SequencesSunburst.SequencesSunburstEditorModel" is-mojo="true" metric-minimum="1" scope="19" style-name="SequencesSunburst" widget-type="7"/>
+  </visualization-list>
+</visualizations>

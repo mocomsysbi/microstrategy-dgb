@@ -1,0 +1,1 @@
+mstrObjSelProjectBrowserImplScript=true;mstrObjSelProjectBrowserImpl.prototype=new mstrProjectBrowserImpl();function mstrObjSelProjectBrowserImpl(id){this.inherits=mstrProjectBrowserImpl;this.inherits(id);delete this.inherits;return this;}

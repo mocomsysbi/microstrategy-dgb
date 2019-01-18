@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumDssGraphGridChartUniformColorMode={BYX:0,BYY:1,BYBOTH:2};

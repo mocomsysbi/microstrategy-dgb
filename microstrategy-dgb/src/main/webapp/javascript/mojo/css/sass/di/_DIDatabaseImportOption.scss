@@ -1,0 +1,30 @@
+.mstrmojo-di-database-import{
+    background-color: #ffffff;
+.mstrmojo-di-table-sources-icons.Database1, .mstrmojo-di-table-sources-icons.Database2, .mstrmojo-di-table-sources-icons.Database3{
+        width: 260px;
+        height: 60px;
+        margin: 0 50px;
+    .mstrmojo-Button-text {
+            position: relative;
+            left: 70px;
+            height: 40px;
+            width: 220px;
+            padding-top: 15px;
+        }
+    .mstrmojo-Button-text:hover{
+            background-color: #D3E9FB;
+        }
+    }
+}
+.mstrmojo-di-database-import-title{
+    color: black;
+    font-weight: bold;
+    font-size: 9pt;
+    position: absolute;
+    top: 40px;
+    left: 90px;
+}
+
+.mstrmojo-di-table-sources-icons.Database1{background-image:url(images/DI/db1.png);}
+.mstrmojo-di-table-sources-icons.Database2{background-image:url(images/DI/db2.png);}
+.mstrmojo-di-table-sources-icons.Database3{background-image:url(images/DI/db3.png);}

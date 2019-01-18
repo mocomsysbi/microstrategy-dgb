@@ -1,0 +1,135 @@
+.mstrmojo-Editor.mstrmojo-MissingColumnWarning {
+  //height: 380px;
+  width: 600px;
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:10px;
+
+  .mstrmojo-Editor-content {
+    padding: 16px 18px;
+  }
+
+  .edt-title-btn.mstrmojo-Editor-close {
+    display: none;
+  }
+
+
+  .mstrmojo-MissingColumnWarning-title {
+    line-height: 18px;
+    font-size: 12px;
+    float: left;
+  }
+
+  .mstrmojo-MissingColumnWarning-collapsed {
+    font-family: Arial;
+    font-size: 12px;
+    line-height: 18px;
+    //TQMS 960690: follow the spec in HTML5 VI
+    color: #007ebe;
+    cursor: pointer;
+    padding-left: 5px;
+
+    &.on {
+      color: #a0a7ac;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .mstrmojo-MissingColumnWarning-collapsedBox {
+    color: #333333;
+    font-family: Arial;
+    font-size: 12px;
+    max-height: 120px;
+    width: 95%; //mizhang TQMS 917728. The error msg of GA is not in good format.
+    margin: auto;
+    overflow: auto;
+    // TQMS# 927782 enable text selection for error message
+    @include user-select(text);
+  }
+
+  .mstrmojo-MissingColumnWarning-detailMsg {
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
+
+  .mstrmojo-MissingColumnWarningList-title {
+    margin-bottom: 5px;
+  }
+
+  .mstrmojo-MissingColumnWarning-list {
+    //max-height: 150px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    border:solid lightgray 1px;
+    border-bottom-width:0px;
+    margin-bottom: 10px;
+
+    .MissingColumnList-item {
+      height: 22px;
+      border: 0px lightgray solid;
+      border-bottom-width: 1px;
+      .MissingColumnList-item-icon {
+        float: left;
+        width: 12px;
+        height: 12px;
+        margin: 5px 5px 0px 5px;
+      }
+
+      .MissingColumnList-item-icon.tp12 {
+        background-image: url(images/DI/icon_att.png);
+      }
+
+      .MissingColumnList-item-icon.tp4 {
+        //background-image: url(images/DI/icon_metric.png);
+        background: url(images/DI/workstation/workstation.svg) no-repeat -3070px -10px ;/*fact*/ //DE45151
+      }
+
+      .MissingColumnList-item-text {
+        float: left;
+        line-height: 22px;
+        width: 150px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+
+      .MissingColumnList-item-text2 {
+        float: left;
+        line-height: 22px;
+        width: 160px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+
+      .MissingColumnList-item-text3 {
+        float: left;
+        line-height: 22px;
+        width: 160px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .MissingColumnList-item.header div {
+      font-weight: bold;
+    }
+  }
+}
+
+.mstrmojo-Tooltip.vi-regular.vi-tooltip-V {
+  &.missing-cloumns-tooltip {
+    .mstrmojo-Tooltip-content,
+    .mstrmojo-Tooltip-contentWrapper{
+      max-height: 100px;
+    }
+
+    &.right-column {
+      max-width: 140px;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSGraphLegendPosition={DssGraphLegendPositionFreeFloat:0,DssGraphLegendPositionRight:1,DssGraphLegendPositionLeft:2,DssGraphLegendPositionBottom:3};

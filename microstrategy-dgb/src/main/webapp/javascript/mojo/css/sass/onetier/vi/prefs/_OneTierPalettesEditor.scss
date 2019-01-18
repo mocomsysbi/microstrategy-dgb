@@ -1,0 +1,189 @@
+@import "../../../vi/vi-global";
+
+.mstrmojo-OneTierPalettesEditor {
+    .mstrmojo-Editor-content {
+        padding: 16px 18px;
+
+        .mstrmojo-Label {
+            margin-bottom: 0;
+        }
+
+        .mstrmojo-ColorPalettesEditor {
+            $border-color: #c5c5c5;
+            $left-padding: 11px;
+            $right-padding: 11px;
+            $content-width: 490px;
+            $content-height: 226px;
+            background-color: #fff;
+            padding: 0;
+
+            %bottom-border {
+                border-bottom: 1px solid $border-color;
+            }
+
+            .mstrmojo-Label.header,
+            .mstrmojo-Box.header {
+                @extend %bottom-border;
+                line-height: 24px;
+                padding: 7px 0 7px $left-padding;
+                border: 1px solid $border-color;
+                @include box-shadow(#f7f7f8, 0, 0, 1px, true);
+                font-weight: bold;
+            }
+
+            .mstrmojo-Box .headerTitle {
+                display: inline-block !important;
+            }
+
+            .mstrmojo-PaletteList {
+                width: $content-width;
+
+                .themeMarker,
+                .mstrmojo-StateIndicator {
+                    display: none;
+                }
+
+                .item {
+                    @extend %bottom-border;
+                    padding: 7px 0 6px $left-padding;
+
+                    .paletteLabel{
+                        position: relative;
+                        float: left;
+                        display: inline-block;
+                        margin-right: 8px;
+                        line-height: 18px;
+
+                        .mstrmojo-EditableLabel{
+                            width: 112px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+
+                            &.editable {
+                                text-overflow: clip;
+                            }
+                        }
+                    }
+                    .paletteColors {
+                        @include box-shadow(transparent);
+                        cursor: default;
+                    }
+                }
+            }
+
+            .BuiltinPalettesContainer {
+                // used for built-in color palettes
+                width: $content-width;
+                margin-bottom: 20px;
+                border: 1px solid $border-color;
+                border-top: 0;
+                overflow: hidden;
+
+                .ScrollableContainer-content {
+                    height: $content-height;
+                    width: $content-width;
+
+                    &.mstrmojo-sb-show-default {
+                        overflow-x: hidden; // Hide horizontal scrollbar in Mac OneTier
+                    }
+                }
+
+                .themeMarker,
+                .mstrmojo-StateIndicator {
+                    display: none;
+                }
+
+                .item {
+                    @extend %bottom-border;
+                    padding: 7px 0 7px $left-padding;
+
+                    .paletteLabel{
+                        position: relative;
+                        float: left;
+                        display: inline-block;
+                        margin-right: 8px;
+                        line-height: 18px;
+
+                        .mstrmojo-EditableLabel{
+                            width: 112px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+
+                            &.editable {
+                                text-overflow: clip;
+                            }
+                        }
+                    }
+                    .paletteColors {
+                        @include box-shadow(transparent);
+                        cursor: default;
+                    }
+                }
+            }
+
+            .CustomPalettesContainer {
+                width: $content-width;
+                border: 1px solid $border-color;
+                border-top: 0;
+                overflow: hidden;
+
+                .ScrollableContainer-content {
+                    height: 224px;
+                    width: $content-width;
+
+                    &.mstrmojo-sb-show-default {
+                        overflow-x: hidden; // Hide horizontal scrollbar in Mac OneTier
+                    }
+
+                    .mstrmojo-PaletteList .item:hover {
+                        .icons {
+                            float: right;
+                            height: 18px;
+
+                            %palette-item-icon {
+                                height: 100%;
+                                width: 14px;
+                                display: inline-block;
+                                background: transparent url(#{$vi-menu-icons}) 1000px 1000px no-repeat;
+                                cursor: pointer;
+                            }
+
+                            .edit {
+                                @extend %palette-item-icon;
+                                background-position: -330px 2px;
+                                padding-right: 9px;
+                            }
+
+                            .delete {
+                                @extend %palette-item-icon;
+                                background-position: -30px 5px;
+                                padding-right: 4px;
+                            }
+                        }
+                    }
+
+                    .mstrmojo-Label .newPalette {
+                        height: 30px;
+                        line-height: 30px;
+                        display: inline-block;
+                        float: right;
+                        padding-right: $right-padding;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.OneTierPltEditor {
+    .mstrmojo-Editor-wrapper {
+        position: absolute;
+
+        .mstrmojo-Editor.mstrmojo-MultipleColorsPicker {
+            position: relative;
+        }
+    }
+}

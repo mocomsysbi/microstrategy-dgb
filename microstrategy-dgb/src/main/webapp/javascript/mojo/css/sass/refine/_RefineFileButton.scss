@@ -1,0 +1,41 @@
+.refine-file-button input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+  z-index: -1;
+}
+
+.refine-file-button {
+  position: relative;
+  overflow: hidden;
+  background: #7CC5EC none;
+  cursor: pointer;
+  padding: 7px 12px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-top-style: none;
+  border-top-width: 0px;
+  //border: 1px solid transparent;
+}
+
+.workstation{
+  .refine-file-button{//Browse button's background color and text color is not correct in data wrangling/import page.
+    background: #3b92ed;
+    color: white;
+  }
+}

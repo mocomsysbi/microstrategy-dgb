@@ -1,0 +1,31 @@
+.viProgressBarDialog {
+  width: 436px;
+
+  .mstrmojo-Editor-close {
+    display: none;
+  }
+
+  .indicator {
+    background-image: -webkit-linear-gradient(bottom, #34abeb 0%, #66ccff 100%);
+    border-radius: 5px;
+    height: 10px;
+  }
+
+  .percentage {
+    margin-top: 20px;
+  }
+
+  .bar {
+    height: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px #000000;
+    opacity: .85;
+    margin: 20px 0px;
+  }
+
+  .mstrmojo-Editor-content {
+    height: 114px;
+    padding: 5px 36px;
+    box-shadow: #fff 0px;
+  }
+}

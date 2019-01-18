@@ -1,0 +1,186 @@
+// style for schedule EMMA editor
+
+@import "../ui/srEditor";
+
+.mstrmojo-di-scheduleEMMA {
+  //width:650px;
+
+  .mstrmojo-Editor-content {
+    border-bottom: 0px;
+  }
+
+  .mstrmojo-Editor-buttons {
+    padding-right: 14px;
+  }
+
+  .mstrmojo-DataGrid-headerContainer {
+      .mstrmojo-DataGrid-headerTable td {
+      background-color: $wsvi-tab-bar;
+    }
+  }
+
+  .mstrmojo-Label, .tablestatus-header.label  {
+    font-family: Arial;
+  }
+
+  .advanceOpsLink {
+    margin: 10px;
+    padding-left: 2px;
+    color: #469AD1;
+    cursor: pointer;
+    text-decoration: underline;
+    float: right;
+  }
+
+  .advanceOpsCheckbox {
+    margin: 10px;
+    padding-left: 2px;
+    display: table;
+    float: left;
+  }
+
+  .secondBox {
+    //border-bottom: 1px solid;
+    padding-bottom: 5px;
+    width: calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: -o-calc(100% - 20px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 10px;
+
+    .text {
+      height: 30px;
+      line-height: 30px;
+      float: left;
+    }
+
+    .inputName {
+      margin-left: 5px;
+      float: left;
+      width: 238px; // TQMS 947409: set default width
+      width: calc(60% - 110px);
+      width: -moz-calc(60% - 110px);
+      width: -webkit-calc(60% - 110px);
+      width: -o-calc(60% - 110px);
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .mstrmojo-di-button {
+    float: right;
+  }
+
+  .simpleProgress-label {
+    // Override _Editor-ws - line72
+    margin-bottom: 10px !important;
+    line-height: 20px;
+  }
+
+  .simpleProgress-progress {
+    margin: auto;
+    width: 100%;
+
+    .bar {
+      width: 100%;
+      height: 6px;
+      border: 1px solid #cecece;
+      background-color: #e5e5e5;
+      border-radius: 6px;
+
+      .indicator {
+        height: 6px;
+        border-radius: 6px;
+        background: #3B92ED;
+      }
+    }
+  }
+}
+
+.republish-success-label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.republish-success-label.color {
+  margin-left: 10px;
+  color: rgba(114, 187, 83, 1);
+}
+
+.mstrmojo-di-scheduleEMMA.createMode {
+  width: 450px;
+  .mstrmojo-Editor-content {
+    background-color: white;
+  }
+}
+
+.mstrmojo-di-scheduleEMMA.subscribeMode {
+  width: 700px;
+}
+
+.mstrmojo-di-scheduleEMMA-SREditor {
+  .mstrmojo-SREditor-note {
+  }
+  .mstrmojo-SREditor-tzPrev {
+    display: none; // no preview in platform
+    visibility: collapse;
+    padding: 0;
+    border: 0;
+
+    tbody {
+      display: none;
+    }
+  }
+
+  .mstrmojo-DayLightLabel {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mstrmojo-WebButton {
+    margin-left: 10px;
+    float: right;
+  }
+}
+
+.mstrmojo-di-republishSchedule-chooseSched-hosted {
+  .mstrmojo-PopupList {
+    width: 185px;
+  }
+}
+
+.mstrmojo-di-republishSchedule-chooseSched-hosted.mstrmojo-ui-Pulldown {
+  z-index: 9999;
+}
+
+.pub-create.mstrmojo-di-popup-dialog {
+  .mstrmojo-Editor.mstrmojo-di-scheduleEMMA.createMode {
+    .mstrmojo-Editor-content .mstrmojo-di-tablestatuslist .mstrmojo-DataGrid.mstrmojo-di-tablestatuslist-list {
+      .mstrmojo-DataGrid-itemsScrollBox.hasVertical.mstrmojo-scrollNode {
+        .mstrmojo-DataGrid-itemsContainer .mstrmojo-itemwrap-table {
+          width: 418px;
+        }
+      }
+    }
+  }
+}
+
+.mstrmojo-di-publishAppSchema {
+  .mstrmojo-di-scheduleEMMA {
+    left: 50% !important;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  }
+}
+
+.mstrmojo-hide-di-publishAppSchema {
+  display: none;
+}

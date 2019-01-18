@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumAggregationType={AGG_TYPE_AVG:0,AGG_TYPE_SUM:1,AGG_TYPE_MAX:2,AGG_TYPE_MIN:3,AGG_TYPE_CNT:4};

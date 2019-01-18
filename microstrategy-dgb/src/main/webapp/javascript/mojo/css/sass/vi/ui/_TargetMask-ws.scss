@@ -1,0 +1,133 @@
+.workstation {
+    .tgt-tt .mstrmojo-Tooltip-contentWrapper {
+        $left-icon-padding: 5px;
+        @include wsvi-icon-before('warning-tooltip', $left-icon-padding);
+
+        padding-left: 5px + $left-icon-padding + $wsvi-default-icon-width;
+    }
+
+    .mstrmojo-hasTgt {
+        $shadow: 1px 1px 1px rgba(68, 70, 73, 0.25);
+
+        background: transparent;
+        cursor: pointer;
+        display: none;
+
+        // make it full size
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        // place it in front of the domNode (and the titleBar toolbar (1000))
+        z-index: 1100;
+
+        &.disabled {
+            background-color: rgba($wsvi-primary-white, .40);
+            cursor: default;
+        }
+
+        &.sourced {
+            cursor: default;
+
+            // source tag
+            .src {
+                display: block;
+                background:$wsvi-primary-blue;
+                color: $wsvi-primary-white;
+
+                &:before {
+                    border-color: transparent transparent transparent $wsvi-primary-blue;
+                    border-width: 13px 0px 11px 8px;
+                }
+
+                DIV {
+                    @include wsvi-icon-source-selector-cfg;
+                }
+            }
+        }
+
+        // target/source tag
+        .tgt,
+        .src {
+            $height: 24px;
+            $leftPadding: 4px;
+            $imageWidth: 20px;
+            $rightPadding: 6px; // padding between icon and text
+
+            display: none;
+            text-transform: uppercase;
+            float: left;
+            width: auto;
+            height: $height;
+            line-height: $height;
+            margin-top: 6px;
+            padding-left: $leftPadding + $imageWidth + $rightPadding; // leave space for icon and padding
+            padding-right: 8px;
+            font-size: $wsvi-tips-font-size;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            box-shadow: $shadow;
+            position: relative;
+            border-bottom-left-radius: 1px;
+            border-top-left-radius: 1px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                filter: drop-shadow($shadow);
+            }
+
+            DIV {
+                position: absolute;
+                width: $imageWidth;
+                height: 12px;
+                top: 6px;
+                left: $leftPadding;
+            }
+        }
+    }
+
+    // target tag
+    .selected .mstrmojo-hasTgt .tgt {
+
+        display: block;
+        background: $wsvi-primary-white;
+        border: solid 1px $wsvi-primary-blue;
+        color: $wsvi-primary-blue;
+
+        &:before {
+            border-color: $wsvi-primary-blue transparent $wsvi-primary-blue $wsvi-primary-blue;
+            border-width: 13px 9px 13px 1px;
+            top: -1px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+
+            left: 99%;
+            top: 0;
+            border-color: $wsvi-primary-white transparent $wsvi-primary-white $wsvi-primary-white;
+            border-width: 12px 8px 12px 0px;
+        }
+
+        DIV {
+            @include wsvi-icon-target-selector-cfg;
+        }
+    }
+
+    .mstrmojo-UnitContainer.selected.targeted {
+        box-shadow: none; // disable standard highlighting
+    }
+}

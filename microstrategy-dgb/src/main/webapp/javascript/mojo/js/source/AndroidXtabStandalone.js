@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.AndroidXtab");mstrmojo.AndroidXtabStandalone=mstrmojo.declare(mstrmojo.AndroidXtab,null,{scriptClass:"mstrmojo.AndroidXtabStandalone"});}());

@@ -1,0 +1,112 @@
+@import '../vi-global';
+
+@mixin toolbar-tooltip() {
+    background-color: #282828;
+    border: 1px solid #C8C8C9;
+    @include border-radius(3px);
+    @include box-shadow(0px, 0px, 5px, rgba(0, 0, 0, 0.40));
+    color: #E4E4E5;
+    cursor: default;
+    display: block;
+    font-size: 11px;
+    padding: 6px 8px;
+
+    &.offset {
+        .arrow {
+            display: none;
+        }
+    }
+
+    .arrow {
+        height: 6px;
+        left: 0;
+        position: absolute;
+        top: -6px;
+        width: 100%;
+
+        .before,
+        .after {
+            content: '';
+            display: block;
+            height: 0;
+            margin: 0 auto;
+            width: 0;
+        }
+
+        .after {
+            border: 6px solid;
+            border-color: #C8C8C9 transparent;
+            border-top-width: 0;
+        }
+
+        .before {
+            border: 5px solid;
+            border-color: #282828 transparent;
+            border-top-width: 0;
+            position: relative;
+            top: -4px;
+        }
+    }
+}
+
+@mixin light-regular-tooltip() {
+    background-color: #EDEDED;
+    border: 1px solid #747474;
+    @include border-radius(3px);
+    @include box-shadow(0px, 0px, 5px, rgba(0, 0, 0, 0.40));
+    color: #000000;
+    cursor: default;
+    display: block;
+    font-size: 11px;
+    font-family: Arial;
+    line-height: 14px;
+    opacity: 1.0;
+    padding: 6px 8px;
+    max-width: 300px;
+    max-height: 200px;
+    overflow-x: hidden;
+    white-space: inherit;
+    word-wrap: normal;
+
+    &.offset {
+        .arrow {
+            display: block;
+        }
+    }
+
+    .arrow {
+        height: 6px;
+        left: 0;
+        position: absolute;
+        top: -8px;
+        width: 100%;
+
+        .before,
+        .after {
+            content: '';
+            display: block;
+            height: 0;
+            margin: 0 auto;
+            width: 0;
+        }
+
+        .after {
+            border: solid;
+            border-color: #747474 transparent;
+            border-width: 0px 6px 8px;
+        }
+
+        .before {
+            border: solid;
+            border-color: #EDEDED transparent;
+            border-width: 0px 5px 7px;
+            position: relative;
+            top: -6px;
+        }
+    }
+}
+
+/* To be added*/
+@mixin dark-regular-tooltip() {
+
+}

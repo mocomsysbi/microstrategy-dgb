@@ -1,0 +1,95 @@
+// sass path: ../../../../
+@import '../../../../vi/workstation-global';
+@import '../../../../vi/vi-icons';
+@import '../../../../theme-mixins-ws';
+@import '../../../../Button-ws';
+
+
+.workstation .mstrmojo-IncFetchElementList {
+	background: white;
+	overflow: hidden;
+	margin: 0;
+	border: solid 1px $wsvi-ui-border-gray;
+	border-radius: 3px;
+	padding: 1px;
+	box-shadow: none;
+
+	.list-content {
+	  display: block;
+	  background-color: $wsvi-primary-white;
+	  padding:2px 0 0 0;
+	  height: 234px;
+
+	  .items-container {
+	    .item {
+	      height: $wsvi-tips-line-height + 12px;
+	      line-height: $wsvi-tips-line-height + 12px;
+	      cursor: default;
+	      position: relative;
+	      padding: 0 3px 0 9px;
+
+	      @include wsvi-hover-select-bg;
+
+	      &.message {
+	        color: #a0a7ac;
+	        &:hover {
+	          background-color: transparent;
+	        }
+
+	        &.loading {
+	        	.item-content {
+	        		padding-left: 24px;
+					background: url(vi/images/spinner_ws.gif) no-repeat left;
+					width: auto;
+					@include backgroundSize(18px 18px)
+	        	}
+	        }
+	      }
+
+	      .item-content {
+	        padding: 5px 0;
+	        display: inline-block;
+	        width: 100%;
+	        height: $wsvi-tips-line-height + 2px;
+	        line-height: $wsvi-tips-line-height + 2px;
+	        overflow: hidden;
+	        white-space: nowrap;
+	        text-overflow: ellipsis;
+	        em {
+	          font-style: normal;
+	          background-color: #7CD3F3;
+	        }
+	      }
+
+	      .btn {
+	        border: solid 1px $wsvi-ui-border-gray;
+	        border-radius: 3px;
+	        background-color: white;
+	        display: none;
+	        height: $wsvi-tips-line-height;
+	        line-height: $wsvi-tips-line-height;
+	        width: auto;
+	        position: absolute;
+	        top: 5px;
+	        right: 5px;
+	        padding: 0 5px;
+	      }
+
+	      &:hover {
+	        .btn {
+	          display: inline-block;
+	          &:hover {
+	            cursor: pointer;
+	          }
+	        }
+
+	        &.selected {
+	          .btn {
+	            display: none;
+	          }
+	        }
+	      }
+	    }
+	  }
+	}
+}

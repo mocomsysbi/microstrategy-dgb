@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="web_fr_iconfont" horiz-adv-x="1000" >
+<font-face font-family="web_fr_iconfont" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="grid_expand" unicode="&#xe800;" d="M83 400v-92h367v-375h92v367h375v100h-367v367h-100v-367h-367z" horiz-adv-x="1000" />
+
+<glyph glyph-name="grid_collapse" unicode="&#xe801;" d="M917 400v-100h-834v100h834z" horiz-adv-x="1000" />
+
+<glyph glyph-name="filter_branch" unicode="&#xe802;" d="M83 167h267v83h-267v-83l0 0z m0 516v-83h767v83h-767l0 0z m0-300h584v84h-584v-84z m834-66l-317-300-200 191 67 67 133-125 250 233 67-66z" horiz-adv-x="1000" />
+
+<glyph glyph-name="filter_collapse" unicode="&#xe803;" d="M250-108l500 458-500 458v-916z" horiz-adv-x="1000" />
+
+<glyph glyph-name="filter_expand" unicode="&#xe804;" d="M958 558l-458-500-458 500h916z" horiz-adv-x="1000" />
+
+<glyph glyph-name="checkbox_check" unicode="&#xe805;" d="M767 83v534h-534v-534h534l0 0z m-525-66c-42 0-75 33-75 75v516c0 42 33 75 75 75h516c42 0 75-33 75-75v-516c0-42-33-75-75-75h-516z m25 325l50 41 116-116 250 241 50-41-300-284-166 159z" horiz-adv-x="1000" />
+
+<glyph glyph-name="checkbox_uncheck" unicode="&#xe806;" d="M767 83v534h-534v-534h534l0 0z m-525-66c-42 0-75 33-75 75v516c0 42 33 75 75 75h516c42 0 75-33 75-75v-516c0-42-33-75-75-75h-516z" horiz-adv-x="1000" />
+
+<glyph glyph-name="ics_selecteditems" unicode="&#xe807;" d="M83 642h125v125h-125v-125z m225 41h609v50h-609v-50z m-225-275h125v125h-125v-125z m225 34h609v50h-609v-50z m-225-275h125v125h-125v-125z m225 41h609v50h-609v-50z m-225-275h125v125h-125v-125z m225 34h609v50h-609v-50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="ics_expand" unicode="&#xe808;" d="M583 350l-250 258c0 9 0 17 9 25l41 42c9 8 17 8 25 0l300-317c0 0 9-8 9-8s0-8-9-8l-300-317c-8-8-16-8-25 0l-41 42c-9 8-9 16 0 25l241 258z" horiz-adv-x="1000" />
+
+<glyph glyph-name="na" unicode="&#xe809;" d="M500 830l-480-480 480-480 480 480-480 480z" horiz-adv-x="1000" />
+
+<glyph glyph-name="ra" unicode="&#xe80a;" d="M980 174l-304-304-304 304 304 304 304-304z m-352 352l-304 304-304-304 304-304 304 304z m129 32l-81 80v1h208v-256h64v288 32h-272l80 80-48 47-160-160 160-160 49 48z m-609-240h-64v-352-32h384v64h-320v320z" horiz-adv-x="1000" />
+
+<glyph glyph-name="fx" unicode="&#xe80b;" d="M532 623l-78 93c-13-30-24-59-33-88-9-29-16-58-22-86h118v-63h-126l-29-201c-8-53-21-100-38-141-18-40-42-77-72-110-25-27-50-46-75-60-25-13-51-20-78-20-23 0-42 7-57 20s-22 31-22 52c0 16 5 30 14 41s23 20 42 27l98-73c15 32 29 93 41 181l1 8 41 276-59-7v47l71 32c12 64 38 114 80 152s91 57 148 57c31 0 57-6 76-19 19-13 29-29 29-50 0-16-6-29-18-41s-29-21-52-27l0 0z m337-159c-16-11-31-24-44-38-13-14-25-29-36-46l41-126c8-24 18-41 31-51s31-15 54-15c7 0 14 0 21 1 7 1 14 1 22 2v-41c-35-8-65-13-90-17s-45-6-61-6c-32 0-57 10-74 29s-32 58-46 116c-39-59-70-98-91-117s-43-28-65-28c-18 0-33 6-45 19-12 13-18 28-18 47 0 20 6 37 19 51 13 14 31 26 57 35l36-53c17 14 33 28 47 44 14 16 27 33 39 51-10 28-19 55-29 80-9 26-19 51-28 75l-81 3v39l144 46h42c10-20 20-42 28-65s17-47 24-73c29 49 56 85 80 106 24 21 48 32 73 32 18 0 32-6 44-17 11-11 17-27 17-45 0-22-7-41-21-58-14-16-34-28-59-36l-31 56z" horiz-adv-x="1000" />
+
+<glyph glyph-name="ra_fx" unicode="&#xe80c;" d="M686 850l-157-157 157-157 50 50-79 71 207 0v-328h65v357 35h-272l79 79-50 50z m-379 0l-307-307 307-307 307 307-307 307z m-243-514v-350-29h243v64h-178v315h-65z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

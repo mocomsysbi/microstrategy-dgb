@@ -1,0 +1,255 @@
+.icon-undo, .hover-undo, .disabled-undo, .icon-redo, .hover-redo, .disabled-redo, .icon-comment, .hover-comment, .disabled-comment, .icon-text, .hover-text, .disabled-text, .icon-arrow, .hover-arrow, .disabled-arrow, .icon-free-form, .hover-free-form, .disabled-free-form, .icon-rectangle, .hover-rectangle, .disabled-rectangle, .icon-oval, .hover-oval, .disabled-oval, .icon-save-screenshot, .hover-save-screenshot, .disabled-save-screenshot, .icon-print-screenshot, .hover-print-screenshot, .disabled-print-screenshot, .icon-email-screenshot, .hover-email-screenshot, .disabled-email-screenshot, .icon-exit-annotation-mode, .hover-exit-annotation-mode, .annotations-divider{
+	background: transparent url(../mojo/css/vi/images/annotation_icons.png) 0 0 no-repeat;
+	border: none;
+	display: inline-block;
+	margin-right: 20px;
+	margin-top: 9px;
+	height: 20px;
+	width: 20px;
+}
+
+.radio_item{
+    display: none !important;
+}
+
+.label_item {
+    cursor: pointer;
+}
+
+.radio_item:checked + label {
+    opacity: 1;
+}
+
+.icon-undo{
+	background-position: -40px -40px ;
+	margin-left: 58px;
+}
+
+.icon-undo:hover{
+	background-position: -40px -90px ;
+	margin-left: 58px;
+}
+
+.icon-undo:disabled{
+	background-position: -40px -140px ;
+	margin-left: 58px;
+}
+
+.icon-redo{
+	background-position: -90px -40px ;
+}
+
+.icon-redo:hover{
+	background-position: -90px -90px ;
+}
+
+.icon-redo:disabled{
+	background-position: -90px -140px ;
+}
+
+.icon-comment{
+	background-position: -140px -40px ;
+}
+
+.icon-comment:hover{
+	background-position: -140px -90px ;
+}
+
+.icon-comment:disabled{
+	background-position: -140px -140px ;
+}
+
+.icon-text{
+	background-position: -190px -40px ;
+}
+
+.icon-text:hover{
+	background-position: -190px -90px ;
+}
+
+.icon-text:disabled{
+	background-position: -190px -140px ;
+}
+
+.icon-text:active{
+	background-position: -190px -90px ;
+}
+
+input:checked + label .icon-text{
+    background-position: -190px -190px ;
+}
+
+.icon-arrow{
+	background-position: -240px -40px ;
+}
+
+.icon-arrow:hover{
+	background-position: -240px -90px ;
+}
+
+.icon-arrow:disabled{
+	background-position: -240px -140px ;
+}
+
+.icon-arrow:active{
+	background-position: -240px -90px ;
+}
+
+input:checked + label .icon-arrow{
+    background-position: -240px -190px ;
+}
+
+.icon-free-form{
+	background-position: -290px -40px ;
+}
+
+.icon-free-form:hover{
+	background-position: -290px -90px ;
+}
+
+.icon-free-form:disabled{
+	background-position: -290px -140px ;
+}
+
+.icon-free-form:active{
+	background-position: -290px -90px ;
+}
+
+input:checked + label .icon-free-form{
+    background-position: -290px -190px ;
+}
+
+.icon-rectangle{
+	background-position: -340px -40px ;
+}
+
+.icon-rectangle:hover{
+	background-position: -340px -90px ;
+}
+
+.icon-rectangle:disabled{
+	background-position: -340px -140px ;
+}
+
+.icon-rectangle:active{
+	background-position: -340px -90px ;
+}
+
+input:checked + label .icon-rectangle{
+    background-position: -340px -190px ;
+}
+
+.icon-oval{
+	background-position: -390px -40px ;
+}
+
+.icon-oval:hover{
+	background-position: -390px -90px ;
+}
+
+.icon-oval:disabled{
+	background-position: -390px -140px ;
+}
+
+.icon-oval:active{
+	background-position: -390px -90px ;
+}
+
+.icon-save-screenshot{
+	background-position: -440px -40px ;
+}
+
+.icon-save-screenshot:hover{
+	background-position: -440px -90px ;
+}
+
+.icon-save-screenshot:disabled{
+	background-position: -440px -140px ;
+}
+
+.icon-print-screenshot{
+	background-position: -490px -40px ;
+}
+
+.icon-print-screenshot:hover{
+	background-position: -490px -90px ;
+}
+
+.icon-print-screenshot:disabled{
+	background-position: -490px -140px ;
+}
+
+.icon-email-screenshot{
+	background-position: -540px -40px ;
+	display: none;
+}
+
+.icon-email-screenshot:hover{
+	background-position: -540px -90px ;
+}
+
+.icon-email-screenshot:disabled{
+	background-position: -540px -140px ;
+}
+
+.icon-exit-annotation-mode{
+	background-position: -590px -37px ;
+	float: right;
+	margin-right: 18px;
+}
+
+.icon-exit-annotation-mode:hover{
+	background-position: -590px -87px ;
+	float: right;
+	margin-right: 18px;
+}
+
+.annotations-divider{
+	cursor: default;
+	background-position: -590px -138px ;
+	height: 24px;
+	margin-left: 10px;
+	margin-right: 30px;
+}
+
+.annotate_tools {
+	background-color: #2bacfe;
+	color: #333333;
+	display: inline-block;
+	height: 42px;
+	left: 50%;
+	min-width: 600px;
+	position: absolute;
+	text-align: center;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	z-index: 10;
+}
+
+.canvasOverlay {
+	overflow: visible;
+	position: absolute;
+	left: 50%;
+	top: 0px;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	z-index: 10;
+}
+
+.input_text{
+	background-color: rgba(255,255,102,0.90);
+	border: 1px solid #cccccc;
+	box-shadow: 2px 2px 2px 0px rgba(153,153,153,0.75);
+	color: #333333;
+	display: none;
+	font-size: 10pt;
+	font-family: arial;
+	line-height: 22px;
+	outline-width: 0;
+	overflow: hidden;
+	padding: 2px;
+	position: absolute;
+	resize: both;
+	word-wrap: break-word;
+	z-index: 100;
+}

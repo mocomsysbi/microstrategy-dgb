@@ -1,0 +1,199 @@
+.workstation {
+  .mstrmojo-ObjectBrowser {
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+    .mstrmojo-OB-titleTable {
+      width: 302px;
+      margin-bottom: 3px;
+    }
+
+    .mstrmojo-Pulldown, .mstrmojo-FormatEditor-DropDownButton {
+      height: 22px;
+      margin: 0 11px 0 0;
+      border: 1px solid #B5B5B5;
+      border-radius: 3px;
+      box-shadow: 0 0 6px 0 #FFFFFF inset, 0 1px 0 0 rgba(0, 0, 0, 0.1);
+      background: $wsvi-primary-white;
+
+      .mstrmojo-OBNavigatorPopup {
+        background: $wsvi-primary-white;
+        border-color: #9b9b9b;
+        margin-top: 2px;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px;
+        left: -1px;
+        max-width: 263px;
+
+        .mstrmojo-ListBase2 {
+          margin: 5px;
+        }
+
+        .mstrmojo-TreeNode-div {
+          line-height: 22px;
+          height: 22px;
+          &:hover {
+            background-color: #dadada;
+          }
+        }
+
+        .mstrmojo-TreeNode-text {
+          @include ellipsis-text();
+          position: absolute;
+          padding: 0 0 0 3px;
+        }
+
+        .mstrmojo-TreeNode-state {
+          &.opened {
+            background-position: -16px 1px;
+          }
+
+          &.closed {
+            background-position: 0px 1px;
+          }
+        }
+      }
+    }
+
+    .mstrmojo-DropDownButton-boxNode.mstrmojo-FormatEditor-DropDownButton-boxNode {
+      line-height: 20px;
+      padding: 0 4px 0 6px;
+    }
+
+    .mstrmojo-Pulldown-iconNode,
+    .mstrmojo-Pulldown-iconNode:hover,
+    .mstrmojo-FormatEditor-DropDownButton-iconNode,
+    .mstrmojo-FormatEditor-DropDownButton-iconNode:hover {
+      background-position: right 2px; /* disable the original hover highlight */
+      display: block;
+      @include ellipsis-text();
+    }
+
+    .mstrmojo-SearchBox-input {
+      width: 235px;
+      height: 18px;
+      padding-top: 0;
+      &::-ms-clear {
+        display: none;
+      }
+    }
+
+    .mstrmojo-Booklet {
+      width: calc(100% - 2px);
+      height: 224px;
+      margin-top: 7px;
+      border: 1px solid #B5B5B5;
+      border-radius: 3px;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+
+      .mstrmojo-BookletLoader {
+        background: none;
+
+        &:before {
+          content: ' ';
+          width: 24px;
+          height: 24px;
+          background: url(#{$vi-img-path}/spinner_white.gif) no-repeat center center;
+          @include transform(translate(-50%, -50%));
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          border: 1px solid white;
+          border-radius: 12px;
+          @include box-shadow(white, 0px, 0px, 1px, true);
+        }
+
+        &:after {
+          content: ' ';
+          width: 13px;
+          height: 13px;
+          @include transform(translate(-50%, -50%));
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          border-radius: 7px;
+          -webkit-box-shadow: 0px 0px 1px 1px white;
+          -moz-box-shadow: 0px 0px 1px 1px white;
+          box-shadow: 0px 0px 1px 1px white;
+        }
+      }
+      .mstrmojo-BookletPage {
+        padding: 4px 0 0 4px;
+      }
+    }
+
+    .mstrmojo-OBListItemIcon {
+      margin: 0 0 0 4px;
+    }
+
+    .mstrmojo-OBListItemIcon.up.disabled,
+    .mstrmojo-OBListItemIcon.up.disabled:hover {
+      background-position: -6px -38px;
+      opacity: 1;
+    }
+
+    .mstrmojo-OBListItemIcon.up:hover {
+      background-position: -91px -38px;
+    }
+
+    .mstrmojo-OBListItemIcon.up.click {
+      background-position: -130px -38px;
+    }
+
+    .mstrmojo-OBListItemIcon.up {
+      background: url("#{$vi-img-path}/file-open.png") no-repeat -49px -38px transparent;
+      width: 33px;
+      height: 25px;
+      border-radius: 3px;
+    }
+
+    .mstrmojo-OBList {
+      // Set the height on the scrollbox so that the scrollbars show up fine when we show default.
+      .scroll-box {
+        height: 100%;
+
+        &.hasHorizontal .mstrmojo-itemwrap:last-child {
+          margin-bottom: 15px;
+        }
+      }
+
+      .mstrmojo-scrolltrack {
+        &.horizontal {
+          bottom: 6px;
+        }
+      }
+      .mstrmojo-ListBase2-itemsContainer {
+        width: 292px;
+      }
+    }
+
+    div.mstrmojo-OBListItem {
+      border-radius: 2px;
+    }
+
+    div.mstrmojo-OBListItem table {
+      display: block;
+      padding-left: 7px;
+    }
+
+    div.mstrmojo-OBListItem.selected {
+      background-color: #CECECE;
+    }
+    div.mstrmojo-OBListItem:hover {
+      background-color: #DADADA;
+    }
+
+    .mstrmojo-OBListItemText {
+      padding-bottom: 6px;
+      padding-top: 5px;
+    }
+
+    .mstrmojo-ListIcon {
+      height: 22px;
+    }
+
+    .mstrmojo-ListIcon.t55.hvi {
+      background-position: -60px -100px;
+    }
+  }
+}

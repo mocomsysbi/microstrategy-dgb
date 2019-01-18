@@ -1,0 +1,140 @@
+@import "RefineVariables";
+
+.mojo-theme-light.refine-clustering-dialog {
+  position: absolute;
+  width: 1010px;
+  height: 536px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  color: $fontColor;
+  font-size: 9pt;
+  font-family: Arial;
+  border: 1px solid #9b9b9b;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.50);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.50);
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.50);
+}
+
+.refine-clustering-dialog .mstrmojo-Label.refine-label {
+  font-size: 9pt;
+  color: $fontColor;
+}
+
+.refine-clustering-dialog-header {
+  height: 40px;
+  line-height: 40px;
+  font-size: 11pt;
+  font-family: Arial;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.refine-clustering-dialog-body {
+  padding: 0px 18px 16px 18px;
+}
+
+.refine-clustering-dialog-body .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 100px;
+  margin: 6px 0px 6px 5px;
+}
+
+.refine-clustering-dialog-info {
+  height: 40px;
+}
+
+.refine-clustering-dialog-algorithm {
+  height: 38px;
+  padding-top: 2px;
+  float: left;
+}
+
+.refine-clustering-dialog-count {
+  float: right;
+  height: 38px;
+  line-height: 38px;
+}
+
+.refine-clustering-dialog-table {
+  height: 392px;
+  overflow: hidden; //ljing 940034
+  width: 100%;
+  &:hover{
+    overflow: auto;
+  }
+}
+
+.refine-clustering-dialog-table .mstrmojo-Table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.refine-clustering-dialog-footer {
+  height: 46px;
+  border-top: 1px solid #dfdfdf;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.refine-clustering-dialog-cancel {
+  float: right;
+  padding: 11px 11px 11px 0px;
+}
+
+.refine-clustering-dialog-merge {
+  float: right;
+  padding: 11px 11px 11px 0px;
+}
+
+.refine-clustering-dialog-mergeandredo {
+  float: right;
+  padding: 11px 11px 11px 0px;
+}
+
+.refine-clustering-dialog-selectall {
+  display: inline-block;
+  padding: 11px 0px 11px 11px;
+}
+
+.refine-clustering-dialog-unselectall {
+  display: inline-block;
+  padding: 11px 0px 11px 11px;
+}
+
+.refine-clustering-cell {
+  border: 1px solid #cbcbcb;
+  background-color: white;
+  padding: 6px;
+  vertical-align: top;
+}
+
+.refine-clustering-cell ul {
+  padding-left: 25px;
+  margin: 0px;
+  line-height:20px;
+}
+
+.refine-clustering-header {
+  border: 1px solid #cbcbcb;
+  padding: 6px;
+  white-space: nowrap;
+}
+
+.refine-clustering-cell .mstrmojo-TextBox {
+  width: 150px;
+}
+
+.refine-clustering-cell-rows {
+  float:right;
+  padding-right:10px;
+  color: $fontColorDisable;
+}
+
+.refine-clustering-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

@@ -1,0 +1,241 @@
+.workstation {
+  /** BEGIN: Xtab Editor **/
+  .mstrmojo-VIPanelContents {
+    .mstrmojo-vi-EditorGroup {
+
+      .mstrmojo-ui-ButtonBar {
+        &.cellAlign {
+          .item {
+            & > div {
+              background: transparent url(#{$vi-img-path}/editor-sprite.png) center 0 no-repeat;
+            }
+          }
+        }
+
+        &.cellPadding {
+          .item {
+            line-height: $wsvi-input-control-line-height; //Needed this, to override the style in classic VI
+            &.small, &.medium, &.large {  //#VIRevamp
+              font-size: $wsvi-normal-font-size;
+              font-weight: $wsvi-bold-font-weight;
+              font-family: $wsvi-font-family; //Needed this, to override the style in classic VI
+            }
+          }
+        }
+      }
+
+      //Styling for Grid Template Color Control
+      .mstrmojo-ui-CheckList.color {
+        .item {
+          min-width: 14px;
+          padding: 2px; //To display border
+          margin: 1px; //To display box-shadow
+          background-color: inherit;
+
+          .color {
+            width: 14px;
+            height: 14px;
+
+            border-radius: 1px;
+            box-shadow: 0 1px 4px 0 rgba(68, 70, 73, 0.25);
+          }
+          &.selected {
+            padding: 0;
+            .color {
+              border: 2px solid $wsvi-primary-white;
+            }
+
+            @mixin color_icon_shadow($x, $y, $blur, $spread-radius, $c) {
+              .color {
+                box-shadow: $x $y $blur $spread-radius $c;
+              }
+            }
+
+            &.gray {
+              @include color_icon_shadow(0, 0, 0, 1px, #d1d1d1);
+            }
+            &.blue {
+              @include color_icon_shadow(0, 0, 0, 1px, #1C8DD4);
+            }
+            &.navy {
+              @include color_icon_shadow(0, 0, 0, 1px, #193B67);
+            }
+            &.emerald {
+              @include color_icon_shadow(0, 0, 0, 1px, #38AE6F);
+            }
+            &.orange {
+              @include color_icon_shadow(0, 0, 0, 1px, #E69912);
+            }
+          }
+        }
+      }
+
+      //Styling for grid template setting control
+      .mstrmojo-Box.gt {
+        .mstrmojo-vi-TwoColumnProp {
+          .vi-col1 {
+            width: 30%;
+          }
+          &.gt-color {
+            .vi-col1 {
+              .mstrmojo-Label {
+                line-height: $wsvi-panel-row-height;
+              }
+            }
+
+            .vi-col2 {
+              .icn {
+                padding-top: 1px;
+                @include flex();
+                justify-content: space-between;
+              }
+            }
+          }
+
+          &.gt-style {
+            .vi-col1 {
+              vertical-align: top !important;
+              .mstrmojo-Label {
+                padding-top: 11px;
+                line-height: $wsvi-desc-lineheight;
+              }
+            }
+          }
+          .vi-col2 {
+            width: 70%;
+          }
+        }
+        //Styling for grid template Style setting
+        .mstrmojo-ui-CheckList.style {
+          .item {
+            min-width: 50px;//reduce min-width to avoid scrollbar
+            background: none; //Hide the default icon
+            padding-right: 36px;
+            line-height: 37px; //27+5+5
+            position: relative;
+            &:after {
+              box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+              margin: 5px 0 0 6px;
+              position: absolute;
+              content: '';
+              background: $wsvi-primary-white url("#{$vi-img-path}/illustration.svg") no-repeat;
+              width: 27px;
+              height: 27px;
+              right: 3px;//Keep right-aligned with color icon
+            }
+            &:before {
+              background: transparent url(images/checkbox.svg)  -3px -146px no-repeat;
+              margin-top: 5px;//move icon 1px up to align with text label
+              position: absolute;
+              content: '';
+              width: 12px;
+              height: 20px;
+              left: 0;
+            }
+
+            &.selected {
+              &:before {
+                background-position: -3px -121px;
+              }
+            }
+            .text {
+              word-wrap: break-word;
+              line-height: $wsvi-desc-lineheight;
+            }
+          }
+        }
+
+        @mixin color_style_icon_position($x, $y1, $y2) {
+          .mstrmojo-ui-CheckList.style {
+            .item {
+              &.flat {
+                &:after {
+                  background-position: $x $y1; //
+                }
+              }
+              &.classic {
+                &:after {
+                  background-position: $x $y2;
+                }
+              }
+            }
+          }
+        }
+
+        &.gray {
+          @include color_style_icon_position(-360px, -6px, -43px);
+        }
+        &.blue {
+          @include color_style_icon_position(-390px, -6px, -43px);
+        }
+        &.navy {
+          @include color_style_icon_position(-420px, -6px, -43px);
+        }
+        &.emerald {
+          @include color_style_icon_position(-450px, -6px, -43px);
+        }
+        &.orange {
+          @include color_style_icon_position(-480px, -6px, -43px);
+        }
+      }
+    }
+  }
+
+  // Icons.
+  $edt-icon-xtab-align-top: -124;
+  $edt-icon-xtab-align-middle: -155;
+  $edt-icon-xtab-align-bottom: -185;
+
+  // Offset for dark theme.
+  $edt-icon-dark-offset: -420;
+
+  .mojo-theme-light {
+    .mstrmojo-vi-PropEditor {
+      .mstrmojo-vi-EditorGroup {
+        .mstrmojo-ui-ButtonBar {
+          &.cellAlign {
+            .item {
+              &.top > div {
+                background-position: center #{$edt-icon-xtab-align-top}px;
+              }
+
+              &.middle > div {
+                background-position: center #{$edt-icon-xtab-align-middle}px;
+              }
+
+              &.bottom > div {
+                background-position: center #{$edt-icon-xtab-align-bottom}px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mojo-theme-dark {
+    .mstrmojo-vi-PropEditor {
+      .mstrmojo-vi-EditorGroup {
+        .mstrmojo-ui-ButtonBar {
+          &.cellAlign {
+            .item {
+              &.top > div {
+                background-position: center #{$edt-icon-dark-offset + $edt-icon-xtab-align-top}px;
+              }
+
+              &.middle > div {
+                background-position: center #{$edt-icon-dark-offset + $edt-icon-xtab-align-middle}px;
+              }
+
+              &.bottom > div {
+                background-position: center #{$edt-icon-dark-offset + $edt-icon-xtab-align-bottom}px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+  /** END: Xtab Editor **/

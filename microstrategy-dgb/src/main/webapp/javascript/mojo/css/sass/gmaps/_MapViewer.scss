@@ -1,0 +1,3 @@
+div[id$='graphicLayerDiv'] {
+    background: transparent url(#{$mojo-img-path}/1ptrans.gif) 0 0 repeat; // Fix event issue in IE10/9
+}

@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSDynamicShortcut={DssDynamicShortcutReserved:0,DssDynamicShortcutAuto:1,DssDynamicShortcutAcrossThenDown:2,DssDynamicShortcutDownThenAcross:3,DssDynamicShortcutColumns:4,DssDynamicShortcutRows:5,DssDynamicShortcutCell:6,DssDynamicShortcutShape:7,DssDynamicShortcutLastOne:8,DssDynamicShortcutRangeEnd:255};

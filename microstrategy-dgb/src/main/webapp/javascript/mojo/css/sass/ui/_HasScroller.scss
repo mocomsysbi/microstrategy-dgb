@@ -1,0 +1,259 @@
+@import '../global-mixins';
+
+/** Scrollers Start **/
+.mstrmojo-sb-show-default:hover,
+.mstrmojo-scrollNode {
+    overflow: auto;
+}
+
+// Show the native scrollbars on hover only.
+.mstrmojo-sb-show-default {
+    overflow: hidden;
+}
+
+.mstrmojo-scrollbar-host {
+    position: relative;
+
+    %scroller-base {
+        @include border-radius(5px);
+        @include disable-text-selection;
+        -webkit-transition: opacity 300ms 0, width 300ms 0, height 300ms 0;
+        -moz-transition: opacity 300ms 0, width 300ms 0, height 300ms 0;
+        transition: opacity 300ms 0, width 300ms 0, height 300ms 0;
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .mstrmojo-scrolltrack {
+        @extend %scroller-base;
+        @include box-sizing();
+        background: none;
+        overflow: hidden;
+        display: none;
+
+        &:hover {
+          background: rgb(0, 0, 0); /* Fallback color */
+          filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
+          background: rgba(0, 0, 0, 0.15);
+        }
+
+        &.horizontal {
+            height: 7px;
+            bottom: 0px;
+            left: 1px;
+            right: 1px;
+
+            &:hover {
+                height: 7px;
+            }
+        }
+
+        &.vertical {
+            width: 7px;
+            top: 1px;
+            right: 2px;
+            bottom: 1px;
+
+            &:hover {
+                width: 7px;
+            }
+        }
+
+        // Style the scrollbar.
+        .mstrmojo-scrollbar {
+            @extend %scroller-base;
+            -webkit-transition-delay: 500ms;
+
+          background: rgb(0, 0, 0); /* Fallback color */
+          filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+          background: rgba(0, 0, 0, 0.3);
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+
+            &.horizontal {
+                bottom: 0;
+                left: 0;
+                min-width: 35px;
+
+                &.animate {
+                    @include single-transition(left);
+                }
+            }
+
+            &.vertical {
+                top: 0;
+                right: 0;
+               min-height: 35px;
+
+                &.animate {
+                    @include single-transition(top);
+                }
+            }
+
+            &.scrolling {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    // Change the transition delay to 0 when hovering over the scrollbar so the scrollbar moves fluidly.
+    &:hover > .mstrmojo-scrolltrack .mstrmojo-scrollbar {
+        opacity: 0.5;
+        -webkit-transition-delay: 0.01ms;
+    }
+
+    $scrollbarSize: 18px; //Typical native scrollbar size is 17px. Use 18px to ensure it is fully hidden.
+    // Push the scrollbars to the right when showing vertical scrollbars
+    &.hasVertical {
+        .mstrmojo-scrollNode.hasVertical {
+            margin-right: -$scrollbarSize;
+            padding-right: $scrollbarSize;
+        }
+
+        > .mstrmojo-scrolltrack.vertical {
+            display: block;
+        }
+    }
+
+    // Push the scrollbars to the bottom when showing vertical scrollbars
+    &.hasHorizontal {
+        .mstrmojo-scrollNode.hasHorizontal {
+            margin-bottom: -$scrollbarSize;
+            padding-bottom: $scrollbarSize;
+        }
+
+        > .mstrmojo-scrolltrack.horizontal {
+            display: block;
+        }
+    }
+
+    // While in scrolling mode - hide scrollbars for other directions.
+    &.scrollingMode:hover,
+    &.scrollingMode {
+        > .mstrmojo-scrolltrack {
+            background: none;
+
+            &.horizontal {
+                height: 7px;
+            }
+
+            //DE121866;When updating vertical width, need update filterPortlet width accordingly to avoid space too small or large
+            &.vertical {
+                width: 7px;
+            }
+
+            .mstrmojo-scrollbar {
+                opacity: 0;
+
+                &.scrolling {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        > .mstrmojo-scrolltrack {
+            .mstrmojo-scrollbar:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+// Style Webkit Scrollbars to atleast look as close as possible to the spec in Mac since we use default scrollbars.
+::-webkit-scrollbar {
+    $dimension: 7px;
+    width: $dimension;
+    height: $dimension;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background: none;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.15);
+        background-clip: content-box;
+        border-radius: 20px;
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    min-width: 35px;
+    min-height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    background-clip: content-box;
+
+    &:hover{
+        background: rgba(0, 0, 0, 1);
+        background-clip: content-box;
+    }
+
+        //  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+// Hack to ensure margin and padding match scrollbar width (different across some browsers)
+// NOTE: This hack was originally intended to only apply to Chrome and Safari, however Edge
+// and Firefox have both granted support for this "Hack", so this needs to be taken into
+// account in the future when trying to do webkit only browser changes
+// See the following confluence page for advice:
+// https://microstrategy.atlassian.net/wiki/spaces/TECTOOLSDASHBOARDDESIGN/pages/644975415/How+to+target+specific+browsers+for+CSS+properties
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+        margin-right: -13px;
+        padding-right: 13px;
+        // DE117672; Account for Microsoft Edge and Windows Firefox as they now support this Hack and use
+        // a wider version of the scrollbar
+        &.firefox-on-windows, &.ms-edge {
+            padding-right: 18px;
+            margin-right: -18px;
+        }
+    }
+    .mstrmojo-scrollNode.hasHorizontal {
+        // DE117672; Account for Microsoft Edge and Windows Firefox as they now support this Hack and use
+        // a wider version of the scrollbar
+        &.firefox-on-windows, &.ms-edge {
+            padding-bottom: 18px !important;
+        }
+    }
+}
+
+//DE16139 In Dark Them, make the Scroll bar more visible (White)
+.mojo-theme-dark {
+    .mstrmojo-scrollbar-host {
+        .mstrmojo-scrolltrack {
+
+            &:hover {
+                background: rgb(255, 255, 255); /* Fallback color */
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .mstrmojo-scrollbar {
+                background: rgb(255, 255, 255); /* Fallback color */
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.7);
+
+        &:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+    }
+}
+/** Scrollers End **/

@@ -1,0 +1,117 @@
+@import '../../vi-global';
+@import '../../themes';
+/** BEGIN: FilterPanelStack **/
+.mstrmojo-VIFilterStack {
+    .fp-titlebar {
+        height: 22px;
+        padding: 1px 0;
+    }
+
+    .fp-title {
+        float: left;
+        font-family: Arial;
+        font-size: 11px;
+        font-weight: bold;
+        height: 22px;
+        line-height: 24px;
+        margin-bottom: 3px;
+        margin-left: 9px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 79%;
+        background: none;
+        border: 0;
+
+        &.editable {
+            text-overflow: clip;
+        }
+    }
+
+    .mstrmojo-VIBoxPanel-control {
+        & > div {
+            line-height: 22px;
+            height: 22px;
+        }
+
+        .fp-status{
+            float: left;
+            margin-left: 9px;
+            width: auto;
+            height: 22px;
+            font-size: 8pt;
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .fp-menu{
+            background: transparent url(#{$vi-menu-icons}) -60px 2px no-repeat;
+            float: right;
+            height: 15px;
+            margin: 3px 9px 0 0;
+            width: 15px;
+            &:hover{
+                background-position: -60px -28px;
+            }
+            &:active {
+                background-position: -60px -58px;
+            }
+        }
+    }
+
+    .mstrmojo-VIBoxPanel-content.mstrmojo-sb-show-default {
+        overflow-x: hidden; // Prevent horizontal native scrollbar
+    }
+
+    .fp-btnbar {
+        border-top: 1px solid $theme-light-offset-highlight-color;
+        @include box-shadow($theme-light-base-highlight-color, 0, -1px, 0);
+        padding: 8px 0;
+
+        & :first-child {
+            border-color: #d1d1d1 !important;
+            background: none !important;
+        }
+
+        .mstrmojo-Button.mstrmojo-WebButton {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+    }
+
+    .subtitle {
+        @include ellipsis-text();
+        padding-top: 5px;
+        font-size: 11px;
+        width: 100%;
+        line-height: 18px;
+    }
+
+    .mstrmojo-SimpleObjectInputBox input {
+    	width: 100%;
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VIFilterStack {
+        .mstrmojo-VIBoxPanel-control {
+            .fp-menu {
+                background-position: -60px -198px;
+                &:hover {
+                    background-position: -60px -228px;
+                }
+                &:active {
+                    background-position: -60px -258px;
+                }
+            }
+        }
+
+        .fp-btnbar {
+            border-color: $theme-dark-offset-highlight-color;
+            @include box-shadow($theme-dark-base-highlight-color, 0, -1px, 0);
+        }
+    }
+}
+/** BEGIN: FilterPanelStack **/

@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumLabelLevelOption={LLO_NORMAL:0,LLO_COMMON:1,LLO_SPECIFIC:2};

@@ -1,0 +1,290 @@
+@import 'wh-global';
+
+/* START: List and Tree Item Common CSS */
+
+@mixin background-position($horizontal-position, $vertical-position) {
+  background-position: $horizontal-position $vertical-position;
+}
+
+.mstrmojo-SplitterHandle {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.rightfloat {
+  float: right;
+}
+
+/*Items for trees*/
+.item-n {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-user-select: none;
+}
+
+.item-mn {
+  background: transparent url(#{$wh-image-path}/menu.png) no-repeat center center;
+  padding: 6px;
+  margin: 3px;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  -webkit-transition: opacity 300ms;
+  opacity: 0;
+  filter:alpha(opacity=0); //For Ie8
+  visibility: visible;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.item:hover .item-mn {
+  right: 3px;
+  opacity: 1;
+  filter:alpha(opacity=100); //For Ie8
+}
+
+.item-ic {
+  background: transparent url(#{$wh-image-path}/object_icons.png) no-repeat center center;
+  padding: 4px 9px;
+  overflow: hidden;
+}
+
+.item {
+  &.tp0 .item-ic { //loading
+    background: url(#{$tree-image-path}/loading.gif) no-repeat 3px 5px;
+    cursor: progress;
+  }
+  &.tp12 .item-ic {
+    background-position: 0 -324px;
+  }
+  &.tp13 .item-ic {
+    background-position: 0 -299px;
+  }
+  &.tp21 .item-ic {
+    background-position: 0 -351px;
+  }
+  &.tp26 .item-ic {
+    background-position: 1px -122px;
+  }
+  &.tp29 .item-ic {
+    //background: transparent url(images/DI/workstation/workstation.svg) no-repeat -2254px -9px !important;
+    background: transparent url("images/DI/vertical icons.svg") no-repeat 0px -29px;
+    &.shared {
+      //background: transparent url(images/DI/workstation/workstation.svg) no-repeat -2304px -9px !important;
+      background: transparent url("images/DI/vertical icons.svg") no-repeat 0px -49px;
+    }
+  }
+  &.tp1001 .item-ic {
+    background-position: 0 -350px;
+  }
+  &.tpnone {
+    .item-ic {
+      background: none;
+      padding: 4px 0 4px 1px;
+    }
+    .item-mn {
+      display: none;
+    }
+  }
+}
+/* END: List and Tree Item Common CSS */
+
+/* START: Menu */
+.mstrmojo-wh-Menu {
+  margin-left: -1px;
+
+  .item {
+    &.disabled {
+      opacity: .5;
+    }
+    margin: 1px;
+    border: 0;
+    padding-left: 25px;
+  }
+  a.item.sep {
+    &.disabled {
+      border-top: 1px dotted #CCC;
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+    }
+    &:first-child, &:last-child {
+      border: 0;
+    }
+  }
+  .item {
+    > DIV.arw {
+      background: url(#{$wh-image-path}/arrow-right.png) no-repeat center center;
+      top: 0;
+      right: -2px;
+      height: 25px;
+    }
+    &.on {
+      background: none;
+      color: #656565;
+      .micn {
+        background: url(#{$wh-image-path}/ok.png) no-repeat center center;
+      }
+    }
+    > DIV.micn {
+      left: 5px;
+    }
+  }
+}
+
+.mstrmojo-ui-MenuEditor {
+  background-color: #fff;
+  margin-left: -1px;
+}
+
+.mstrmojo-ui-MenuEditor-buttons {
+  height: 32px;
+  border-top: 1px dotted #BBB;
+  padding-top: 1px;
+  .mstrmojo-Button {
+    background-color: #f5f5f5;
+    border: 1px solid #AAA;
+    padding: 0;
+    min-width: 57px;
+    text-align: center;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    &:hover {
+      background-color: #EAEAEA;
+    }
+    .mstrmojo-Button-text {
+      line-height: 16px;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.item-mn-proxy {
+  background: transparent url(#{$wh-image-path}/menu.png) no-repeat center center;
+  overflow: visible;
+  height: auto !important;
+  width: auto !important;
+  padding: 6px;
+}
+
+.item-mn-proxy-pnlicns {
+  background: url(#{$wh-image-path}/panel_icons.png) no-repeat 0px -90px;
+  overflow: visible;
+  height: auto !important;
+  width: auto !important;
+  padding: 6px;
+}
+/* END: Menu */
+
+/* START: DB Role Editor */
+.mstrmojo-wh-DBRolePicker .mstrmojo-Editor-titlebar, .mstrmojo-wh-DBRoleEditor .mstrmojo-Editor-titlebar {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mstrmojo-wh-DBRolePicker .mstrmojo-Editor-close, .mstrmojo-wh-DBRoleEditor .mstrmojo-Editor-close, .mstrmojo-wh-DBRolePicker .mstrmojo-Editor-help, .mstrmojo-wh-DBRoleEditor .mstrmojo-Editor-help {
+  display: none;
+}
+
+.mstrmojo-wh-DSNSelector {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.mstrmojo-wh-DSNSelector-radio {
+  //font-weight: bold;
+  margin-left: -5px;
+  /*adjust for the radio button itself in the widget*/
+  margin-right: 45px;
+}
+
+.mstrmojo-wh-DBRoleEditor-info {
+  font-weight: bold;
+  padding: 10px 0 5px;
+}
+
+.mstrmojo-wh-DBRoleEditor-infoCheckbox {
+  //font-weight: bold;
+  //margin-left: -5px; // TQMS 980635: alignment
+  /*adjust for the radio button itself in the widget*/
+}
+
+.mstrmojo-wh-DBRoleSetting {
+  width: 100%;
+  height: 26px;
+}
+
+.mstrmojo-wh-DBRoleSetting-Label {
+  float: left;
+  line-height: 18px;
+}
+
+.mstrmojo-wh-DBRolePulldown .mstrmojo-ui-Pulldown, .mstrmojo-wh-DBRoleSetting-Info {
+  float: right;
+  width: 72%;
+}
+
+.mstrmojo-wh-DBRolePulldown {
+  height: 26px;
+  .mstrmojo-ui-Pulldown-text {
+    padding: 3px 20px 3px 5px;
+    max-width: 100%;
+    border-color: #a8a8a8;
+  }
+  .mstrmojo-PopupList {
+    z-index: 2;
+    .item {
+      max-width: 100%;
+    }
+  }
+}
+
+.mstrmojo-wh-DBRoleConnection-Box {
+  //border: 1px solid #bbbbbb;
+  //background-color: #FFFFFF;
+  padding: 3px 0px 2px 0px; // TQMS 980635: alignment
+  margin: 7px 0px 7px 0px;
+}
+
+.mstrmojo-wh-DBRoleRadioButton {
+  padding-top: 6px;
+  font-weight: bold;
+  display: block !important;
+}
+
+.mstrmojo-wh-DBRolePicker {
+  width: 315px;
+}
+
+.mstrmojo-wh-DBRolePickerLabel {
+  margin-left: 5px;
+  margin-top: 10px;
+  line-height: 20px;
+}
+
+.mstrmojo-wh-DBRolePickerList {
+  width: 250px;
+  .mstrmojo-ui-Pulldown-text {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 250px;
+    background: white url(#{$image-path}/arrow-down.png) no-repeat 98% center !important;
+  }
+}
+
+.mstrmojo-wh-DBRolePicker .mstrmojo-wh-addDB {
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin: 6px 10px;
+  cursor: pointer;
+  background: url(#{$wh-image-path}/panel_icons.png) no-repeat 8px -53px;
+}
+
+span.mstrmojo-wh-DBRoleCheckBox input {
+  height: 26px;
+}
+/* END: DB Role Editor */

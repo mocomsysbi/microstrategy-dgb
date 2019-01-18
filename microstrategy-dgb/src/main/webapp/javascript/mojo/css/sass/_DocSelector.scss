@@ -1,0 +1,39 @@
+.mstrmojo-OIVMPage.mojo-theme-light {
+    .mstrmojo-ui-Pulldown {
+        .mstrmojo-ui-Pulldown-text.express {
+            @include linear-gradient(#EAEBEB, #E4E4E4);
+        }
+        .mstrmojo-ui-Pulldown-arrow {
+            background: url(#{$vi-img-path}/pulldown-sprite.png) -5px -7px;
+            width: 9px;
+            height: 6px;
+            position: absolute;
+            top: 45%;
+            right: 5px;
+        }
+    }
+}
+
+.mstrmojo-OIVMPage.mojo-theme-dark {
+    .mstrmojo-ui-Pulldown {
+        .mstrmojo-ui-Pulldown-text.express {
+            background: #4c4d50;
+            filter: none;
+        }
+        .mstrmojo-ui-Pulldown-arrow {
+            background: url(#{$vi-img-path}/pulldown-sprite.png) -5px -29px;
+            width: 9px;
+            height: 6px;
+            position: absolute;
+            top: 45%;
+            right: 5px;
+        }
+    }
+}
+
+// clear searchablePulldown styles so the user's css settings can take effect
+.mstrmojo-DocSelector.vi-DocSelector .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown .mstrmojo-ui-Pulldown-text.hasEditableText {
+    color: inherit;
+    font-size: inherit;
+
+}

@@ -1,0 +1,64 @@
+.widget-inner-context-menu {
+  background: #E5E5E5;
+  box-shadow: inset 0 0 0 1px #F4F4F4, 0 0 4px rgba(0, 0, 0, 0.85);
+  padding: 9px 17px 9px 17px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 2px;
+  z-index: 10000;
+
+  .mstrmojo-Popup-content {
+    // add bottom margin for all but not the last row
+    > *:nth-last-child(n+2) {
+      margin-bottom: 8px;
+    }
+
+    .row-container {
+      white-space: nowrap;
+
+      // align all divs, or it will not work
+      > div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      // the space between each control is 5px
+      > div:nth-last-of-type(n+2) {
+        margin: 0 5px 0 0;
+      }
+      > div:last-of-type {
+        margin: 0;
+      }
+
+      // Styles have different specificity, in order to overwrite the previous style, we have to be more specific
+      > div.mstrmojo-Label:first-child {
+        margin-right: 9px;
+      }
+
+      // fix incorrect popup position when isHostedWithin is true
+      .host {
+        position: relative;
+      }
+
+      > div.mstrmojo-ui-ButtonBar.spacing {
+        margin-left: -6px;
+      }
+
+      .mstrmojo-ui-ToolbarCharacter .mstrmojo-ui-ButtonBar.spacing {
+        margin: 0 -6px 0 -1px
+      }
+      
+      .mstrmojo-ColorPickerBtn{
+        //DE103631 Shrinking the 4px for width and height for ColorPickerBtn.
+        .preview {
+          height: 20px;
+          }
+      }
+    }
+  }
+}
+
+.widget-inner-context-menu.mojo-theme-dark {
+  background: #3f3f3f;
+  box-shadow: inset 0 0 0 1px #525252, 0 0 4px rgba(0, 0, 0, 0.85);
+}

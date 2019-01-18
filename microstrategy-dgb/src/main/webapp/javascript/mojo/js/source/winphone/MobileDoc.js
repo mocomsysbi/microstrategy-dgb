@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.MobileDoc","mstrmojo.winphone._IsMobileBookletWinPhone");mstrmojo.winphone.MobileDoc=mstrmojo.declare(mstrmojo.MobileDoc,[mstrmojo.winphone._IsMobileBookletWinPhone],{scriptClass:"mstrmojo.winphone.RootView"});}());

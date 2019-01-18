@@ -1,0 +1,37 @@
+/**Searchable check list**/
+.mstrmojo-vi-sel-CheckList.searchable .Out,
+.mstrmojo-RadioList.searchable .mstrmojo-RadioList-item.Out{
+  display: none;
+}
+
+.mstrmojo-vi-sel-CheckList.searchable em,
+.mstrmojo-RadioList.searchable em{
+  background-color: #7cd3f3;
+  font-style: normal;
+}
+
+.mstrmojo-vi-sel-CheckList.searchable .mstrmojo-VIPanel-search table
+.mstrmojo-RadioList.searchable .mstrmojo-VIPanel-search table{
+  width: 100%;
+}
+.mstrmojo-vi-sel-CheckList.searchable .mstrmojo-VIPanel-search .mstrmojo-SearchBox-input,
+.mstrmojo-RadioList.searchable .mstrmojo-VIPanel-search .mstrmojo-SearchBox-input{
+  width: 98%;
+}
+/**Searchable radio list**/
+.mstrmojo-RadioList input[type=radio] {
+    display:none;
+}
+
+.mstrmojo-RadioList .mstrmojo-RadioList-item label{
+    background: transparent url(images/unchecked-radio.gif) 6px 50% no-repeat;
+    cursor: pointer;
+    display: block;
+    line-height: 18px;
+    padding: 0 4px 0 25px;
+    margin-left: -5px;
+}
+
+.mstrmojo-RadioList .mstrmojo-RadioList-item.selected label{
+    background-image: url(images/checked-radio.gif);
+}

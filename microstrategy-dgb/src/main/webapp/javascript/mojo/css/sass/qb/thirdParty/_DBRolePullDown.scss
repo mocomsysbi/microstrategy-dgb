@@ -1,0 +1,45 @@
+.mstrmojo-qb-thirdParty-DBRolePullDown{
+  padding: 0px;
+  width: 100%;
+  height: 22px;
+  .caption{
+    float:left;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 15px;
+    color: grey;
+  }
+  .mstrmojo-ME-Pulldown{
+    width: 375px;
+    margin-left:4px;
+    float: left;
+    position: relative;
+    .mstrmojo-ME-Pulldown-Popup{
+      position: relative;
+      left: -1px;
+    }
+
+  }
+  .qb-thirdParty-menu-btn{
+    background: transparent url(images/DI/main_icons_sprite.png) no-repeat -60px 1px;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    -webkit-transition: opacity 300ms;
+    float: right;
+  }
+  .qb-thirdParty-menu-btn:hover {
+    background-position: -60px -29px;
+  }
+
+
+  .mstrmojo-di-fu .upload-url {
+    margin: 12px 0px 12px 0px;
+    padding: 0px;
+    width: 650px;
+    border: 1px solid;
+    border-color: #aaa;
+    height: 22px;
+    font: 12px arial;
+  }
+}

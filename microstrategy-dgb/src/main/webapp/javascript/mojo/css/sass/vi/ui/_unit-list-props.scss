@@ -1,0 +1,71 @@
+@import '../vi-global';
+
+$color-unit-selected-border: #34abeb;
+
+// Following are for light theme
+$light-color-bg-metric: #fdf4d3;
+$light-color-border-metric: #e8d097;
+$light-color-color-metric: #df7f02;
+$light-color-bg-metric-hover: #fffceb;
+
+$light-color-bg-attribute: #defbe6;
+$light-color-border-attribute: #93e3bc;
+$light-color-color-attribute: #00b392;
+$light-color-bg-attribute-hover: #f4fff6;
+
+$light-color-bg-template-metric: #f6f6f7;
+$light-color-border-template-metric: #d4d4d5;
+$light-color-color-template-metric: #737373;
+$light-color-bg-template-metric-hover: #ffffff;
+
+%light-color-unit-metric {
+  background-color: $light-color-bg-metric;
+  border: 1px solid $light-color-border-metric;
+  color: $light-color-color-metric;
+}
+
+%light-color-unit-attribute {
+  background-color: $light-color-bg-attribute;
+  border: 1px solid $light-color-border-attribute;
+  color: $light-color-color-attribute;
+}
+
+%light-color-unit-template-metric {
+  background-color: $light-color-bg-template-metric;
+  border: 1px solid $light-color-border-template-metric;
+  color: $light-color-color-template-metric;
+}
+
+// Following are for dark theme
+$dark-color-bg-metric: #412b1a;
+$dark-color-border-metric: #a65d15;
+$dark-color-color-metric: #df7f02;
+$dark-color-bg-metric-hover: #332115;
+
+$dark-color-bg-attribute: #233633;
+$dark-color-border-attribute: #219987;
+$dark-color-color-attribute: #00b392;
+$dark-color-bg-attribute-hover: #1b2a28;
+
+$dark-color-bg-template-metric: #343437;
+$dark-color-border-template-metric: #646469;
+$dark-color-color-template-metric: #737373;
+$dark-color-bg-template-metric-hover: #272727;
+
+%dark-color-unit-metric {
+    background-color: $dark-color-bg-metric;
+    border: 1px solid $dark-color-border-metric;
+    color: $dark-color-color-metric;
+}
+
+%dark-color-unit-attribute {
+    background-color: $dark-color-bg-attribute;
+    border: 1px solid $dark-color-border-attribute;
+    color: $dark-color-color-attribute;
+}
+
+%dark-color-unit-template-metric {
+    background-color: $dark-color-bg-template-metric;
+    border: 1px solid $dark-color-border-template-metric;
+    color: $dark-color-color-template-metric;
+}

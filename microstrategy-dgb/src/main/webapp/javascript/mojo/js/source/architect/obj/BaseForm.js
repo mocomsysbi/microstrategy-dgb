@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Obj");mstrmojo.architect.obj.BaseForm=mstrmojo.declare(mstrmojo.Obj,null,{scriptClass:"mstrmojo.architect.obj.BaseForm",init:function init(props){this._super(props);},baseFormId:undefined,expression:undefined,columnId:undefined});}());

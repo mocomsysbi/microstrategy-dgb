@@ -1,0 +1,22 @@
+/** BEGIN:  RelationLinker **/
+.mstrmojo-RelationLinker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  opacity: 0.5;
+  > svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    line {
+      stroke: rgb(25, 25, 25);
+      stroke-width: 1;
+    }
+    g.hlt line {
+      stroke: blue;
+      stroke-width: 1;
+    }
+  }
+}
+/** END: RelationLinker **/

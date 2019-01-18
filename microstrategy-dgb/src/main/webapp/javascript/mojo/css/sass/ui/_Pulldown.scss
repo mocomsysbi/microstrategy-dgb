@@ -1,0 +1,65 @@
+@import '../global';
+
+/** START: Pulldown **/
+.mstrmojo-ui-Pulldown {
+    position: relative;
+
+    .mstrmojo-ui-Pulldown-text {
+        @include ellipsis-text();
+
+        border: 1px solid #DDD;
+        cursor: default;
+        height: 10px;
+        line-height: 10px;
+        max-width: none;
+        padding: 5px 14px 4px 6px;
+    }
+
+    &.disabled {
+        .mstrmojo-ui-Pulldown-text {
+            opacity: 0.5;
+        }
+    }
+
+    &.ctrl-contrast {
+        border: 1px solid transparent;
+    }
+
+    .mstrmojo-PopupList {
+        @include box-shadow(rgba(0, 0, 0, 0.25), 0, 0, 10px);	/* #905852 */
+        @include box-sizing();
+
+        background: #FFF;
+        border: 1px solid #9B9B9B;
+        margin-top: 2px;
+        overflow: hidden;
+        padding: 5px 0;
+        position: absolute;
+        width: 100%;
+        z-index: 3;
+
+        .item {
+            @include ellipsis-text();
+
+            cursor: default;
+            line-height: 12px;
+            padding: 5px 5px 5px 6px;
+
+            &.hidden {
+                display: none;
+            }
+        }
+
+        .item.separator {
+            @include box-shadow(rgb(247, 247, 247), 0, 1px, 0);
+
+            border-bottom: 1px solid #d1d1d1;
+            padding: 0px;
+            pointer-events: none;
+            cursor: default;
+            margin-top: 3px;
+            margin-bottom: 4px;
+        }
+    }
+}
+/** END: Pulldown **/

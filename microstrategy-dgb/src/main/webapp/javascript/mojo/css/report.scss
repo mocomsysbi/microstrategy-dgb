@@ -1,0 +1,13 @@
+// Include the CSS bundle for all the dynamically loaded JS bundles.
+@import 'sass/bundles/report-css';
+
+@import 'sass/vi/button';
+
+// Only include the light theme for now
+$allow-import-theme-dark: false;
+@import 'sass/base-themes';
+
+// 970421: Report page background should be white
+.mstr-page-report {
+  background-color: #fff;
+}

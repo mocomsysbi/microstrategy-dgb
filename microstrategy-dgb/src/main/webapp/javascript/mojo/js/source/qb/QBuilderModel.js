@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.qb._hasQBModel");mstrmojo.qb.QBuilderModel=mstrmojo.declare(mstrmojo.warehouse.WHModel,[mstrmojo.qb._hasQBModel],{scriptClass:"mstrmojo.qb.QBuilderModel"});})();

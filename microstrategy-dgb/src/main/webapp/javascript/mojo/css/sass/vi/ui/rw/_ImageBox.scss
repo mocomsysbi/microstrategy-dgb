@@ -1,0 +1,37 @@
+@import '../../../global';
+
+.mstrmojo-ImageBox {
+    .mstrmojo-DocImage {
+        &.hasLink .img-cntr {
+            cursor: pointer;
+        }
+
+        .img-cntr {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+            div {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.mstrmojo-VIUnit-avatar {
+    &.icn-avi {
+        &.imageAvatar {
+            background-image: url(#{$vi-img-path}/id_pic.png);
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.workstation {
+  /** START: VIDoc Selectors Checklist **/
+  .mstrmojo-vi-sel-CheckList {
+    // Style each item within the check-list.
+    .item {
+      position: relative;
+      white-space: nowrap;
+
+      // Style the span child elements which make up the markup for each checklist item.
+      span {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-left: 3px;
+        box-sizing: border-box;
+      }
+
+
+      // Style the only button.
+      .only {
+        color: #007ebe;
+        cursor: pointer;
+        display: none;
+        float: right;
+        margin-right: 5px;
+        opacity: 0.9;
+        padding: 0 3px;
+        position: relative;
+        z-index: 2;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+
+        // Make the button more prominent when hovering on the button.
+        &:hover {
+          text-decoration: underline;
+          opacity: 1;
+        }
+      }
+
+      &:hover .only {
+        display: inline-block;
+      }
+    }
+    // DE121315; Disables native safari tooltip on "item" class in addition to "text" class
+    &.safari-checklist .item {
+        &:after {
+            display: block;
+            content: '';
+        }
+    }
+    &.horizontal {
+      .icn {
+        .only {
+          display: none;
+        }
+      }
+    }
+
+    &.hasVertical {
+      .item {
+        .only {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  /** END: VI Doc Selectors Checklist **/
+}

@@ -1,0 +1,104 @@
+@import '../../../_global.scss';
+@import "../../workstation-global";
+
+.workstation .mstrmojo-Editor.mstrmojo-CustomSortDisplayPanel {
+	// start: mimic the titlebar and content node splitted
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	// end: mimic the titlebar and content node splitted
+
+	&>.mstrmojo-Editor-title-container {
+		background: $wsvi-configure-blue;
+		padding: 4px 13px;
+
+		.left {
+			float: left;
+		}
+
+		.mstrmojo-Label {
+			font-family: $wsvi-normal-font-family;
+			font-size: $wsvi-normal-font-size;
+			font-style: $wsvi-normal-font-style;
+			color: $wsvi-primary-white;
+			line-height: 20px;
+			padding: 3px 18px 3px 0;
+		}
+
+		.icn {
+			width: 20px;
+			height: 20px;
+			padding: 0;
+			background: transparent url(vi/images/toolbar_icons_new.svg) no-repeat;
+
+			&.undo {
+				background-position: 0 -360px;
+			}
+
+			&.redo {
+				background-position: -30px -360px;
+			}
+
+			&.disabled {
+				opacity: 0.5;
+			}
+		}
+
+		.icons {
+			td {
+				padding: 3px 25px 3px 0;
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+
+		.btnBox {
+			float: right;
+
+			td {
+				padding: 0 10px 0 0;
+
+				.mstrmojo-Button {
+					width: 74px;
+				}
+
+				&:last-child {
+					padding-right: 0;// TODO: why doesn't work?
+				}
+			}
+		}
+	}
+
+	&>.mstrmojo-Editor-content>.mstrmojo-Box {
+		// to ensure tr height is the same with the srcViz
+		line-height: 1;
+	}
+
+	// hide editor title btns
+	// disable menu btn display when hover
+	.edt-title-btn {
+		display: none !important;
+	}
+
+	.mstrmojo-VIBox {
+		.hover-menu-btn, .hover-selector-btn, .hover-filter-btn, .mstrmojo-hasTgt {
+			display: none !important;
+		}
+	}
+
+	.mstrmojo-UnitContainer.mstrmojo-VIBox {
+		box-shadow: $wsvi-primary-blue 0 0 0 2px; // set box shadow for vizBox in CS Panel no matter it's selected on not
+	}
+}
+
+.mstrmojo-vi-cs-cue {
+    position: absolute;
+    background: #34ABEB;
+    height: 1px;
+    width: 2px;
+    left: 0;
+    top: 0;
+    z-index: 15;
+}

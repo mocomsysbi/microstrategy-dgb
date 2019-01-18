@@ -1,0 +1,171 @@
+@import '../ar-global';
+
+/** BEGIN: AttributeLabel **/
+.mstrmojo-ar-AttributeLabel {
+  font-size: 10px;
+}
+
+.mstrmojo-ar-al-childdz {
+  line-height: 15px;
+  margin: 0 5px;
+  color: transparent;
+  background-color: transparent;
+  border: dashed 1px transparent;
+  cursor: default;
+  padding-left: 3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  visibility: hidden;
+  &.on {
+    color: #FFFFFF;
+    border-color: #CCCCCC;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: visible;
+  }
+}
+
+.mstrmojo-ar-al-parentdz {
+  line-height: 15px;
+  margin: 0 5px;
+  color: transparent;
+  background-color: transparent;
+  border: dashed 1px transparent;
+  cursor: default;
+  padding-left: 3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  visibility: hidden;
+  &.on {
+    color: #FFFFFF;
+    border-color: #CCCCCC;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: visible;
+  }
+}
+
+.mstrmojo-ar-al-content {
+  width: 100px;
+  height: 54px;
+  padding: 1px 1px;
+  border: 1px dotted rgba(170, 170, 170, 0.53);
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  background: rgba(246, 246, 246, 0.81);
+  transition: all 100ms 200ms;
+  -webkit-transition: all 100ms 200ms;
+  -ms-transition: all 100ms 200ms;
+  -moz-transition: all 100ms 200ms;
+  &.sysDim {
+    height: 20px;
+  }
+  .close-icon {
+    &.sysDim {
+      z-index: 1000;
+      display: none;
+    }
+    background: url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -30px;
+    padding-right: 23px;
+    margin-left: 81px;
+    display: inline-block;
+    height: 13px;
+    width: 15px;
+  }
+  .al-icon {
+    background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/object_icons.png) no-repeat 2px -329px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin-left: 6px;
+  }
+  .al-name {
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 73px;
+    margin-left: 3px;
+    overflow: hidden;
+    text-align: left;
+  }
+  .space-icon {
+    display: block;
+    height: 0px;
+    width: 0px;
+  }
+  .entry-icon {
+    background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -420px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin-top: 2px;
+    margin-left: 4px;
+    &.noEntry {
+      background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -450px;
+    }
+  }
+  .filter-icon {
+    background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -300px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin-top: 3px;
+    margin-left: 22px;
+    &.noFilter {
+      background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -480px;
+    }
+  }
+  .lock-icon {
+    background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -150px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin-top: 3px;
+    margin-left: 24px;
+    background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -150px;
+    &.unlocked {
+      background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -390px;
+    }
+    &.limit {
+      background: rgba(0, 0, 0, 0) url(#{$wh-image-path}/panel_icons.png) no-repeat 2px -150px;
+    }
+  }
+  &.hasOwnAvatar {
+    opacity: 0.5;
+    transition: none;
+    -webkit-transition: none;
+    -ms-transition: none;
+    -moz-transition: none;
+    margin: 2px;
+  }
+  .al-mn {
+    background: url(#{$image-path}/arrow-down.png) no-repeat center center;
+    padding: 0 6px;
+    margin: 1px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    position: relative;
+  }
+  &.open {
+    overflow: visible;
+    .al-mn {
+      overflow: visible;
+      border-color: #CACACA;
+    }
+  }
+  .mstrmojo-ui-Menu .item {
+    font-size: 10px;
+    padding-right: 5px;
+  }
+}
+
+.mstrmojo-ar-al-logicalSizeEditor {
+  &.modal {
+    .mstrmojo-Editor-content {
+      padding: 0;
+    }
+    .mstrmojo-Editor-buttons {
+      padding: 0;
+    }
+  }
+}
+
+/** END: AttributeLabel **/

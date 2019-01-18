@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumRadientGradientUsage={RG_PIESLICE:0,RG_RING:1,RG_BORDERRING:2};

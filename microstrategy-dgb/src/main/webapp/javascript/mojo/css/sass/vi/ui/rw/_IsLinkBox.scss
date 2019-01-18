@@ -1,0 +1,22 @@
+/** BEGIN: vi-ui-rw-_IsLinkBox **/
+.hover-link-btn {
+    @include wsvi-icon-source-link;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+
+    border: solid 1px $wsvi-ui-border-gray;
+    z-index: 15; // Must be > 11 for the image overlay control
+    @include border-radius(2px);
+    @include box-shadow($wsvi-panel-shadow-color, 0px, 1px, 2px);
+
+    &.hidden {
+        display: none;
+        &.open {
+            display: block;
+        }
+    }
+}
+/** END: vi-ui-rw-_IsLinkBox **/

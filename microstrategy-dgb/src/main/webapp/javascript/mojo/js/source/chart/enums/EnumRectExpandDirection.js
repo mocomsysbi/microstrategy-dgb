@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumRectExpandDirection={REC_EXP_INVALID:0,REC_EXP_HORIZONTAL:1,REC_EXP_VERTICAL:2,REC_EXP_BOTH:3};

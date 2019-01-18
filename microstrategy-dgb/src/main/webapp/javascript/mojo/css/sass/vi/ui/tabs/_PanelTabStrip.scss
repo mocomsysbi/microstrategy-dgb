@@ -1,0 +1,407 @@
+@import '../../vi-global';
+
+@mixin tab-splitter($is-highlight: false) {
+    &:before {
+        background-color: $wsvi-tab-border;
+        clear: both;
+        content: "";
+        display: block;
+        float: right;
+        height: 16px;
+        width: 1px;
+        margin-top: 7px;
+
+        @if $is-highlight == true {
+            border-right: 1px solid #fff;
+            height: 31px;
+            float: left;
+            margin-top: -2px;
+            margin-left: -1px;
+            width: 2px; // DE70317: Increase width to accommodate border-box sizing
+            @include box-sizing(); // DE77877: Add border-box sizing to the highlight box
+        }
+    }
+}
+
+$line-height-regular: 32px;
+$line-height-selected: 28px;
+
+/** BEGIN: PanelTabStrip **/
+.mstrmojo-PanelTabStrip {
+    background: none;
+    box-sizing: border-box;
+    border: none;
+    z-index: 0;
+    height: 31px;
+    border-top: 1px solid;
+
+    @mixin selector-icon ($isTarget) {
+        position: relative;
+        // divider bars are ::before, so we'll place this in ::after
+        &:after {
+            top: 12px;
+            width: 14px;
+            height: 8px;
+            position: absolute;
+            left: 2px;
+            content: ' ';
+
+            @if $isTarget {
+                @include wsvi-icon-target-selector-TAB;
+            } @else {
+                @include wsvi-icon-source-selector-TAB;
+            }
+        }
+    }
+
+    // tgt and src are linking-related classes
+    .tgt .mstrmojo-VITab-tab {
+        @include selector-icon(true);
+    }
+
+    .src .mstrmojo-VITab-tab {
+        @include selector-icon(false);
+    }
+
+    // Clear tab strip so we can use "auto" layout in DocumentView.
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+
+
+    .mstrmojo-VITabStrip-btnBar {
+        float: left;
+        position: relative;
+        z-index: 3;
+        .mstrmojo-VITabStrip-leftBtn,
+        .mstrmojo-VITabStrip-rightBtn {
+            height: 16px;
+            top: 0;
+            z-index: 2;
+        }
+
+        &.highlightBar {
+            background-color: $wsvi-tab-btn-bar-bk;
+            @include tab-splitter(true);
+        }
+
+        .mstrmojo-VITabStrip-addBtn {
+            cursor: default;
+            box-sizing: border-box;
+            float: left;
+            padding-left: 8px;
+            position: relative;
+            width: 90px;
+
+            .mstrmojo-VITabStrip-addBtn-Img {
+                position: relative;
+                float: left;
+                overflow: hidden;
+            }
+
+            .mstrmojo-VITabStrip-addBtn-Text {
+                background: transparent;
+                position: relative;
+                float: left;
+                overflow: hidden;
+                top: 0px;
+                width: calc(100% - 20px);
+                font-family: $wsvi-normal-font-family;
+                font-size: $wsvi-normal-font-size;
+                font-weight: $wsvi-normal-font-style;
+                color: $wsvi-primary-black;
+                line-height: $line-height-regular;
+            }
+        }
+    }
+
+    .mstrmojo-VITabStrip-tabs {
+        height: 31px;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+
+        & > DIV {
+            position: relative;
+            height: 31px;
+        }
+
+        .mstrmojo-VITab {
+            background: transparent none 0 0 no-repeat;
+            margin-left: -16px;
+            position: relative;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            & > DIV {
+                border: none;
+                margin: 0px;
+                overflow: visible;
+
+                .mstrmojo-VITab-tab {
+                    background: transparent none 0 0 repeat-x;
+                    padding: 0;
+
+                    .mstrmojo-EditableLabel {
+                        //Chrome fix - do not show ellipsis while editing
+                        &:not([class~='editable']) {
+                            @include ellipsis-text();
+                        }
+
+                        border: none;
+                        color: $wsvi-primary-black;
+                        font-family: $wsvi-normal-font-family;
+                        font-size: $wsvi-normal-font-size;
+                        height: 28px;
+                        letter-spacing: 0.1px;
+                        line-height: $line-height-regular;
+                        margin: 0 $wsvi-tab-lbl-margin;
+                        padding: 0;
+                        text-align: center;
+
+                        &.draggedTab {
+                            background-color: $wsvi-dragged-tab-lbl-bk;
+                            border-top: $wsvi-dragged-tab-lbl-height-margin solid $wsvi-canvas-bk; // emulate margin-top without its side effects
+                            height: $wsvi-dragged-tab-lbl-height;
+                            line-height: calc(#{$line-height-regular} - 2 * #{$wsvi-dragged-tab-lbl-height-margin}) !important;
+                            margin: 0 $wsvi-dragged-tab-lbl-margin;
+                            padding: 0 $wsvi-dragged-tab-lbl-padding;
+                        }
+                    }
+
+                    @include tab-splitter();
+                }
+
+                .mstrmojo-VITab-menu {
+                    background: transparent url(#{$vi-img-path}/dataset.svg) 0 0 no-repeat;
+                    display: none;
+                    top: 6px;
+                    right: 2px;
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+
+            &.selected {
+                & > DIV {
+                    background-color: $wsvi-canvas-bk;
+                    .mstrmojo-VITab-tab {
+                        .mstrmojo-EditableLabel {
+                            border-top: 2px solid $wsvi-primary-blue;
+                            border-bottom: 0px;
+                            color: $wsvi-primary-blue;
+                            font-weight: normal;
+                            line-height: $line-height-selected;
+                        }
+                    }
+                }
+
+                .mstrmojo-VITab-menu {
+                    display: block;
+                }
+            }
+
+            &:hover {
+                .mstrmojo-VITab-menu {
+                    display: block;
+                }
+
+                & > DIV {
+                    background-color: $wsvi-canvas-bk;
+                    .mstrmojo-VITab-tab {
+                        .mstrmojo-EditableLabel {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.alignTop {
+        border-bottom: 1px solid;
+        border-top: 0px;
+
+        .mstrmojo-VITabStrip-leftBtn,
+        .mstrmojo-VITabStrip-rightBtn {
+            bottom: 0;
+            top: auto;
+        }
+
+        .mstrmojo-VITabStrip-tabs {
+            .mstrmojo-VITab {
+                background-position: 0 1px;
+
+                & > DIV {
+                    background-position: 100% 100%;
+
+                    .mstrmojo-VITab-tab {
+                        background-position: 0 100%;
+
+                        .mstrmojo-EditableLabel {
+                            line-height: $line-height-regular;
+                        }
+                    }
+                }
+
+                &.selected {
+                    & > DIV {
+                        background-color: $wsvi-canvas-bk;
+                        .mstrmojo-VITab-tab {
+                            .mstrmojo-EditableLabel {
+                                border-bottom: 2px solid $wsvi-primary-blue;
+                                border-top: 0px;
+                                color: $wsvi-primary-blue;
+                            }
+                        }
+                        &:before {
+                            top: auto;
+                            bottom: -1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.disableMode {
+        .mstrmojo-VITabStrip-addBtn-Img {
+            opacity: 0.35;
+        }
+
+        .mstrmojo-VITabStrip-addBtn-Text {
+            opacity: 0.45;
+        }
+
+        .mstrmojo-VITabStrip-tabs .mstrmojo-VITab .mstrmojo-VITab-menu {
+            display: none;
+        }
+    }
+}
+
+@mixin panel-tap-strip($position, $use-dark-theme: false) {
+    $theme: light;
+    $menuPosition: -30px;
+    $menuHoverPosition: -60px;
+    $tabSelectedBackgroundColor: $wsvi-canvas-bk;
+    $borderColor: $wsvi-tab-border;
+
+    @if $use-dark-theme == true {
+        $theme: dark;
+        $tabSelectedBackgroundColor: #272729;
+        $borderColor: #616161;
+    }
+
+    border-color: $borderColor;
+    background-color: $wsvi-canvas-bk;
+
+    .mstrmojo-VITabStrip-addBtn-Img {
+        float: left;
+        right: 0;
+        top: 1px;
+        padding-top: 6px;
+        padding-right: 3px;
+        background: transparent url(#{$vi-img-path}/tabs.svg) -91px -25px no-repeat;
+        cursor: default;
+        height: 16px;
+        width: 16px;
+    }
+
+    .mstrmojo-VITabStrip-navBtns {
+        float: right;
+        width: 52px;
+    }
+
+    .mstrmojo-VITabStrip-leftBtn,
+    .mstrmojo-VITabStrip-rightBtn {
+        background: transparent;
+        cursor: default;
+        display: none;
+        float: right;
+        margin-top: 5px;
+        margin-right: 10px;
+        position: relative;
+        &.disable {
+            opacity: 0.45;
+        }
+    }
+
+    .mstrmojo-VITabStrip-leftBtn .navBtnIcon,
+    .mstrmojo-VITabStrip-rightBtn .navBtnIcon {
+        background-image: url(#{$vi-img-path}/tabs.svg);
+        height: 16px;
+        width: 16px;
+    }
+    .mstrmojo-VITabStrip-leftBtn .navBtnIcon {
+        background-position: -121px -31px;
+    }
+    .mstrmojo-VITabStrip-rightBtn .navBtnIcon {
+        background-position: -151px -31px;
+    }
+
+    .mstrmojo-VITabStrip-tabs {
+        .mstrmojo-VITab {
+            background: none;
+
+            & > DIV {
+                .mstrmojo-VITab-menu {
+                    background-position: -60px $menuPosition;
+
+                    &:hover {
+                        background-position: -60px $menuHoverPosition;
+                    }
+                }
+            }
+            &:last-child > DIV {
+                margin-right: 0;
+            }
+
+            &.selected > DIV:before {
+                background-color: $tabSelectedBackgroundColor;
+                border-color: $borderColor;
+            }
+        }
+    }
+}
+
+.mojo-theme-light {
+    .mstrmojo-PanelTabStrip {
+        @include panel-tap-strip(bottom, false);
+
+        &.alignTop {
+            @include panel-tap-strip(top, false);
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-PanelTabStrip {
+        @include panel-tap-strip(bottom, true);
+
+        &.alignTop {
+            @include panel-tap-strip(top, true);
+
+            .mstrmojo-VITabStrip-tabs .mstrmojo-VITab {
+                background-position: 0 2px;
+            }
+        }
+
+        .mstrmojo-VITabStrip-tabs .mstrmojo-VITab {
+            .mstrmojo-EditableLabel {
+                color: #a8a8ab;
+            }
+
+            &.selected {
+                .mstrmojo-EditableLabel {
+                    color: #cdcdcd;
+                }
+            }
+        }
+    }
+}
+
+/** END: PanelTabStrip **/

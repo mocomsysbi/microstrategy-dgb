@@ -1,0 +1,292 @@
+.mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog{
+
+    height:539px;
+    width:471px;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    &.common-user{
+      height: 385px;
+      .mstrmojo-Editor-content{
+        margin-top:16px;
+      }
+      .mstrmojo-VBox.mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-information>tbody:first-child>tr:first-child>td:first-child{
+        table.mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-box:nth-child(n+6),
+        table.mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-box:nth-child(5) .mstrmojo-VBox{
+          display: none !important;
+        }
+      }
+
+      .mstrmojo-di-button.mstrmojo-WebButton.hot.mstrmojo-Editor-button.disabled{
+        display: none !important;
+      }
+
+      .mstrmojo-Editor-buttons.edit{
+          right:16px;
+          bottom: 10px;
+          position: relative;
+      }
+    }
+
+    .mstrmojo-Editor-content{
+      padding: 0px 16px 16px 16px;
+      max-height: 439px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      border-bottom: 0;
+      box-shadow: none;
+
+
+      .mstrmojo-ui-Pulldown-text{
+          height:26px;
+      }
+
+      .mstrmojo-Label {
+        font-size: 8pt;
+      }
+
+      .mstrmojo-di-fileHolder{
+
+        margin-top: 62px !important;
+        box-sizing: border-box;
+
+        height: 242px;
+        overflow-y: hidden;
+
+        &.expanded{
+          height:90px;
+          width: 439px;
+          margin: 16px 0px 0px 0px !important;
+
+            &>div:first-child{
+
+              margin-top:31px;
+
+              &>table:first-child{
+                margin-left:81px;
+                margin-top:-20px;
+
+                &>tbody>tr:first-child{
+                  &>td:first-child{
+                    height: 60px;
+                    box-sizing: border-box;
+                    padding: 0;
+
+                    &>div{
+                      margin: 0px !important;
+                    }
+
+                  }
+                  &>td:nth(2){
+                      height: 60px;
+                      box-sizing: border-box;
+                      padding: 0;
+                  }
+                }
+            }
+          }
+
+        }
+
+        &>div:first-child{
+
+            margin-top:91px;
+
+            &>table:first-child{
+              margin-left:81px;
+
+              &>tbody>tr:first-child{
+                &>td:first-child{
+                  height: 60px;
+                  box-sizing: border-box;
+                  padding: 0;
+
+                  &>div{
+                    margin: 0px !important;
+                  }
+
+                }
+                &>td:nth(2){
+                    height: 60px;
+                    box-sizing: border-box;
+                    padding: 0;
+                }
+              }
+          }
+        }
+      }
+    }
+
+
+    .mstrmojo-Editor-buttons{
+
+
+
+          &>table::first-child{
+            float:none;
+          }
+
+          &.expanded{
+            position: relative;
+            margin-top: 16px;
+            bottom:10px;
+          }
+
+          &.edit{
+            right:16px;
+            bottom: 10px;
+            position: relative;
+          }
+
+          margin-top: 0px;
+          padding: 0;
+          right:16px;
+          bottom: 16px;
+          position: absolute;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-collapse{
+      &:before{
+        content: '0';
+        color: transparent;
+        background: url("images/DI/workstation/workstation.svg") -1998px -196px no-repeat;
+        width: 12px;
+        display: inline-block;
+      }
+      text-align:right;
+      margin-left:5px;
+    }
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-collapse.expanded:before{
+      background-position-y: -5px;
+    }
+
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-collapsednD{
+      height:246px;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-expanddnD{
+      height:126px;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-expend-box{
+      margin-top: 10px;
+      height: 26px;
+      width: 439px;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-box{
+      margin-top:10px;
+    }
+
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-box>tbody:first-child>tr:first-child>td:first-child>.mstrmojo-Label{
+          text-overflow: ellipsis;
+          overflow: hidden;
+    }
+
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-extraSetting{
+      display: table;
+      margin-top:10px
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-collapsefileIcon{
+      margin :90px 0px 90px 91px
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-expandfileIcon{
+      margin :30px 0px 30px 91px
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-information{
+      margin-bottom: 6px;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-label{
+      width:97px;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-text{
+      margin-left:10px;
+      width:332px;
+      &.normal{
+        height:24px;
+      }
+      &.Desc{
+        height:50px;
+        border:1px solid rgba(68,70,73,0.2);
+        box-sizing: border-box;
+      }
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-tbDesclabel{
+      width:97px;
+      height:50px
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-imageNode{
+      margin: 0px 10px 0px 10px;
+      &.bgtransparent {
+        background:transparent !important;
+      }
+      &.new{
+        background:url(images/DI/icons_all.svg) -1850px -510px no-repeat;
+      }
+      &.edit{
+        background: url("images/DI/icons_all.svg") -1850px -510px no-repeat;
+      }
+      &.Elastic_Connector  {
+        background: url("images/DI/originalConnector.png") -0px -5px no-repeat;
+      }
+      &.TapClicks_Connector  {
+        background-image: url("images/DI/tapClicks.png");
+        background-size: contain;
+      }
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-arrow{
+      width:9px;
+      height:6px;
+      margin-left: 267px;
+      background:url(../style/mstr/images/upArrow.png) no-repeat;
+      margin-left: 143px;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-imageNode-img{
+      width:75px;
+      height:75px
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-imageNode-arrow{
+      width:9px;
+      height:6px
+    }
+
+    .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-upload{
+      font-size:11px;
+      color:#444649;
+      line-height:16px;
+      width: 254px;
+      height: 49px;
+      opacity: 0.5
+    }
+
+  .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-btnDelete{
+      margin-right:120px;
+  }
+
+  .mstrmojo-di-ui-dialogs-DIAddCustomConnectorDialog-detailInfo-imagelabel{
+    color:#3B92ED
+  }
+
+  .mstrmojo-Editor-title-container .mstrmojo-Editor-title{
+    padding-left: 16px;
+  }
+}
+
+.mstrmojo-alert-hidden {
+  visibility: hidden;
+}
+

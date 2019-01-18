@@ -1,0 +1,319 @@
+@import 'theme-mixins-ws';
+$panel-lineheight : 18px;
+
+
+/** Begin Generic Editor Style */
+.mstrmojo-Editor {
+    @include border-radius($wsvi-box-radius);
+    @include box-shadow(rgba($wsvi-primary-black, 0.3), 0, 0, 8px, false, 4px);
+
+    background-color: $wsvi-primary-white;
+    border: solid 1px $wsvi-ui-border-gray;
+
+    color: $wsvi-primary-black;
+    font-size: $wsvi-normal-font-size;
+    line-height: $wsvi-tips-line-height;
+
+    position: absolute;
+    z-index: 1000;
+    -moz-user-select: none;
+
+    // Direct child so not apply to nested inline editor
+    > {
+        .mstrmojo-Editor-title-container {
+            $ed-title-top-padding: 8px;
+
+            font-weight: $wsvi-panel-header-font-weight;
+            padding: $ed-title-top-padding $wsvi-editor-content-padding;
+            background: #EDEDED;
+            @include box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 0px);
+            position: relative;
+            z-index: 1;
+
+            .mstrmojo-Editor-title {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 12px;
+                margin-right: $wsvi-editor-content-padding /* default right */ + $wsvi-default-icon-width /* close icon width */ + 10px;
+            }
+
+            .edt-title-btn {
+                @include wsvi-icon-size;
+                position: absolute;
+                top: $ed-title-top-padding;
+                right: $wsvi-editor-content-padding;
+                cursor: default;
+
+                &.mstrmojo-Editor-help {
+                    right: $wsvi-editor-content-padding /* default right */ + $wsvi-default-icon-width /* close icon width */ + 10px;
+                    //background: url(#{$wsvi-main-icons-sprite}) no-repeat -870px -30px;
+                    background: url("vi/images/dataset.svg") no-repeat -872px -33px;
+                    &:hover, &.active{
+                        background-position: -872px -63px;
+                    }
+                }
+
+                &.mstrmojo-Editor-close {
+                    background: url("vi/images/dataset.svg") no-repeat -902px -33px;
+                    &:hover, &.active{
+                        background-position: -902px -63px;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-Editor-content {
+            @include border-radius(0);
+            padding: $wsvi-element-padding $wsvi-editor-content-padding;
+            position: relative;
+
+            .mstrmojo-Label {
+                margin-bottom: $wsvi-element-text-padding;
+                font-size: $wsvi-normal-font-size;
+            }
+
+            .mstrmojo-Pulldown {
+                margin-bottom: $wsvi-element-padding;
+            }
+        }
+
+        .mstrmojo-Editor-buttons {
+            background-color: #FFF;
+            padding: $wsvi-element-padding $wsvi-editor-content-padding $wsvi-editor-content-padding $wsvi-editor-content-padding;
+            .mstrmojo-Editor-buttonBar {
+                margin: 0;
+                .mstrmojo-WebButton {
+                    margin: 0 0 0 11px;
+                    padding: 0 !important;
+                }
+                .mstrmojo-Button-text {
+                    @include box-sizing;
+                }
+            }
+
+            .mstrmojo-checkbox-inline {
+                margin-left: 16px;
+                font-size: $wsvi-normal-font-size;
+                display: inline;
+                line-height: 30px;
+                input {
+                    left: 1px;
+                    margin-right: 8px;
+                }
+            }
+
+            .mstrmojo-btnNotifier {
+
+                background: transparent;
+                line-height: $panel-lineheight;
+                height: $panel-lineheight;
+                border: none;
+                margin-bottom: 16px;
+
+                .vfNotifier {
+                    color: #444649;
+                    font-size: $wsvi-tips-font-size;
+                    display: block;
+                    position: relative;
+                    div {
+                        display: inline-block;
+                        &:first-child {
+                            height: 20px;
+                            width: 20px;
+                            background: url(#{$wsvi-main-icons-sprite}) no-repeat -958px -30px;
+                            position: absolute;
+                        }
+
+                        &:last-child {
+                            position: relative;
+                            left: 24px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+
+
+            // clearfix in case the actual buttons (rendered as child elements) are float.
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+    }
+
+    &.error-dialogue-in-dataset {
+        .mstrmojo-Editor-title-container {
+            padding: 0 $wsvi-editor-content-padding;
+        }
+        .mstrmojo-Editor-content {
+            .alert-content.mstrmojo-Label:before {
+                background: url("images/DI/workstation/workstation.svg") no-repeat scroll -1950px -410px;
+            }
+        }
+        .mstrmojo-error-content:before {
+            background: url("images/DI/workstation/workstation.svg") no-repeat scroll -1950px -410px;
+        }
+    }
+}
+
+.mstrmojo-Editor-curtain {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: $wsvi-primary-white;
+    opacity: 0.7;
+    display: none;
+}
+
+/** End Generic Editor Style */
+
+/** BEGIN Alert Dialog Style - Used for confirm, warn, alert, error and notify */
+.mstrmojo-Editor.mstrmojo-alert {
+    min-width: 440px;
+    max-height: 400px;
+
+    .mstrmojo-Editor-content {
+        padding-bottom: 0;
+    }
+
+    /**Begin Warning Dialog Style */
+    &.mstrmojo-warning {
+        .mstrmojo-Editor-content .alert-content {
+            @include wsvi-alert-content(0, 0);
+        }
+
+        //Save over Flash VI dialog
+        &.save-over .mstrmojo-Editor-buttons table td:first-child {
+            width: 90%; //Align Save Over button left
+        }
+    }
+
+    &.mstrmojo-warning.error-dialogue-in-dataset {
+        .mstrmojo-Editor-content {
+            .alert-content.mstrmojo-Label:before {
+                background: url("images/DI/workstation/workstation.svg") no-repeat scroll -1950px -410px;
+            }
+        }
+    }
+
+    /**End Warning Dialog Style */
+
+    .edt-title-btn {
+        display:none;
+    }
+
+    .mstrmojo-Editor-content {
+        @include user-select(text);
+        display: table;
+        display: -moz-grid;
+        table-layout: fixed;
+        line-height: $wsvi-tips-line-height;
+        max-width: 440px;
+
+        .alert-content {
+            @include wsvi-alert-content(-100px, 0);
+            padding-right: 0;
+            .mstrmojo-Label {
+                max-height: 250px;
+                overflow-y: scroll;
+            }
+        }
+
+        // Dynamic links in the notify, toast and error content text.
+        span.dyn-link {
+            @include dyn-link();
+            color: #3B92ED;
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        .mstrmojo-WebButton.hot {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    }
+
+    &.ed-toast,
+    &.ed-notify {
+        @include box-shadow(rgba(0, 0, 0, 0.55), 1px, 1px, 4px);
+        @include border-radius(3px);
+
+        border: none;
+        background-color: #EEEEEE;
+        color: $wsvi-primary-black;
+        max-width: 680px;
+        opacity: 0.96;
+        padding: 0 11px;
+        width: auto;
+
+        .mstrmojo-Editor-content {
+            width: auto;
+            min-height: initial;
+            max-height: 18px;
+            padding: initial;
+            box-shadow: none;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+    &.ed-toast {
+        .mstrmojo-Editor-buttons {
+            display: none;
+        }
+    }
+    &.ed-notify {
+        display: table;
+        @include single-transition(opacity, 300ms);
+
+        .mstrmojo-Editor-content {
+            float: left;
+            padding-right: 11px;
+            max-width: 606px;
+        }
+
+        .mstrmojo-Editor-buttons {
+            padding: initial;
+            vertical-align: middle;
+            display: table-cell;
+        }
+
+        &:hover {
+            opacity: 0.96 !important;
+        }
+    }
+    &.copyable-warning-on-close-editor {
+        .mstrmojo-Editor-help {
+            right: 16px;
+            cursor: pointer;
+        }
+        .warning-dialog-subject {
+            padding-bottom: 8px;
+            font-weight: bold;
+        }
+        .warning-dialog-description {
+            display: inline;
+        }
+    }
+}
+
+/** End Alert Dialog Style */
+
+// Add dark theme style for notify
+.mojo-theme-dark {
+    .mstrmojo-Editor.mstrmojo-alert {
+        &.ed-notify,
+        &.ed-toast {
+            background-color: #3F3F3F;
+            color: #E4E4E4;
+        }
+    }
+}

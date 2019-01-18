@@ -1,0 +1,18 @@
+@import '../ar-global';
+/** BEGIN:  _HasTableMenu **/
+.mstrmojo-ar-qmlist {
+  min-width: 124px;
+}
+
+.mstrmojo-ar-qmlist .item {
+  cursor: pointer;
+}
+
+.mstrmojo-ar-qmlist .item:hover {
+  background: #fff;
+}
+
+.mstrmojo-ar-qmlist .item.selected {
+  background: url(#{$wh-image-path}/ok.png) no-repeat 3px center;
+}
+/** END: _HasTableMenu **/

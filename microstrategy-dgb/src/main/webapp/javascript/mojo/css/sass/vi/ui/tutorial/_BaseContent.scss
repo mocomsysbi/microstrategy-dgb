@@ -1,0 +1,51 @@
+@import '../../vi-global';
+
+$welcome-img-path: "#{$vi-img-path}/welcome";
+
+//This is the default and shows the image for samples
+.mstrmojo-tutorial-basecontent {
+    height: 100%;
+    font-size: 11px;
+    padding: 0 18px 34px 18px;
+    box-sizing: border-box;
+    .item {
+        &:hover {
+            @include box-shadow(#d5d5d5, 0, 0, 0, true, 1px);
+        }
+        float: left;
+        width: 260px;
+        height: 196px;
+        cursor: pointer;
+        padding: 27px 30px;
+
+        $sample-list: "sample-afa", "sample-smp", "sample-tat", "sample-wwe", "sample-eso", "sample-icp", "sample-sd", "sample-spa", "sample-ts";
+        $sample-offset: 0;
+
+        .ic {
+            width: 260px;
+            height: 177px;
+            background: url(#{$welcome-img-path}/samples.png) no-repeat 0px 0px;
+            @each $sample in $sample-list {
+                $sample-offset: $sample-offset - 180;
+                &.#{$sample} {
+                    background-position: 0 #{$sample-offset}px;
+                }
+            }
+        }
+        .title {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-bottom: 8px;
+            overflow: hidden;
+            font-size: 12px;
+        }
+    }
+    .list-content {
+        height: 100%;
+        width: 850px;
+    }
+    .items-container {
+        height: auto;
+        padding: 12px 87px;
+    }
+}

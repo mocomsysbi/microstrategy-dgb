@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumBaseFormatType={BSFT_RESOLVED:-1,BSFT_DATETIME:1,BSFT_DATE:8,BSFT_TIME:9,BSFT_UNDEFINED:2};

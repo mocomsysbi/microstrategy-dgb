@@ -1,0 +1,1170 @@
+@import '../../_global.scss';
+
+// Create a variable for the themes images folder.
+$theme-img-path: $mstr-img-path + '/theme';
+
+.mojoPath {
+  height: 42px;
+  background: rgb(240, 240, 240);
+  border-bottom: 2px solid #2e2e2e;
+  border-width: 0 0 2px 0;
+  overflow: hidden;
+
+  .mojoPath-starburst,
+  .mojoPath-navigation,
+  .mojoPath-path,
+  .mojoPath-search,
+  .mojoPath-toolbar,
+  .mojoPath-create {
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
+  }
+
+  .mojoPath-toolbar {
+    height: 42px;
+
+    .mstrHamburgerButton {
+      margin-top: 8px;
+    }
+  }
+}
+
+.mojoPath .mojoPath-extraLinks {
+  display: inline-block;
+    float: right;
+  vertical-align: middle;
+}
+/*
+.mojoPath SPAN {
+  vertical-align: middle;
+}
+*/
+.mojoPath A:link,
+.mojoPath A:visited {
+  text-decoration: none;
+/*  vertical-align: middle; */
+  color: #2d2d2d;
+}
+
+.mojoPath A:hover {
+  text-decoration: underline;
+  /*vertical-align: middle;*/
+}
+
+/* StarBurst */
+
+.mojoPath .mstrLogo,
+.mojoPath .mstrLogo:hover {
+  display: block !important;
+    background: transparent url(#{$mstr-img-path}/logo_small.png) no-repeat scroll center;
+  height: 40px;
+  width: 52px;
+}
+
+.mojoPath .opened .mstrLogo,
+.mojoPath .opened .mstrLogo:hover {
+    background-image: url(#{$theme-img-path}/red/logo_opened_small.png);
+}
+
+.mstrLogoMenu {
+  background: url(#{$mstr-img-path}/downArrow.png) no-repeat 4px center;
+  padding: 15px 3px;
+  height: 9px;
+  position: absolute;
+  left: 36px;
+  top: 0px;
+  width: 9px;
+  visibility: hidden;
+  &:hover {
+  	background-size: 10px 9px;
+  }
+}
+
+.mojoPath .mojoPath-starburst:hover .mstrLogoMenu {
+  visibility: visible;
+}
+
+.opened .mstrLogoMenu{
+  visibility: visible !important;
+  background-image: url(#{$mstr-img-path}/downArrow_white.png);
+}
+
+.mstrShortcutsListPopup {
+  font-size: 8pt;
+  line-height: normal;
+}
+
+.mstrAccountMenu {
+    background: url(#{$mstr-img-path}/downArrow.png) no-repeat;
+	height: 9px;
+	position: absolute;
+	right: 8px;
+	top: 17px;
+	width: 9px;
+}
+
+.mstrAccountName {
+	margin-left: 10px;
+	margin-right: 22px !important;
+	max-width: 150px;
+	overflow: hidden;
+	text-align: right;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.mstrAccountSCListPopup {
+	left: auto !important;
+	right: 0px;
+}
+
+/* Path Section */
+
+.mojoPath .mojoPath-path {
+  overflow: hidden;
+  margin: 0;
+  white-space: nowrap;
+  color: #2d2d2d;
+}
+
+.mojoPath .pathText,
+.mojoPath .pathFirst,
+.mojoPath .pathAncestor,
+.mojoPath .pathLast,
+.mojoPath .pathBreadCrumbs,
+.mojoPath .mstrPath-pin {
+  display: inline-block;
+  float: left;
+  line-height: 42px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.mojoPath .pathCurrent {
+  cursor: default;
+  float: left;
+}
+
+.mojoPath .hidden
+{
+    display: none
+}
+
+.mojoPath .mstrPath-pin {
+  height: 42px;
+  width: 17px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.mojoPath .pathDelim { /* > */
+  margin-left: 0.5em;
+  margin-right: 0.3em;
+
+}
+
+.mojoPath .pathAncestor,
+.mojoPath .pathFirst {
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 5px;
+  font-size: 11px;
+}
+
+.mojoPath .pathAncestor,
+.mojoPath .pathFirst,
+.mojoPath .pathCurrent.animation {
+  -webkit-transition: margin 500ms, max-width 300ms;
+  -moz-transition: margin 500ms, max-width 300ms;
+  transition: margin 500ms, max-width 300ms;
+}
+
+.mojoPath .pathCurrent {
+  font-size: 11px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 23px;
+}
+
+.mojoPath .pathBreadCrumbsParent {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	float: left;
+}
+
+.mojoPath .pathBreadCrumbsIcon {
+	background: transparent url(#{$theme-img-path}/pathBarIcons.png) no-repeat 0 -378px;
+    width: 23px;
+    height: 23px !important;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.mojoPath .pathBreadCrumbsPullArrow {
+	background: transparent url(#{$theme-img-path}/pathBarIcons.png) no-repeat -1px -252px;
+	font-size: 14pt;
+	height: 23px !important;
+	width: 9px;
+	display: inline-block;
+	margin-left: 5px;
+	float: left;
+	position: relative;
+	top: 10px;
+}
+
+#mojoPathBreadCrumbs {
+	margin-top: 0px;
+}
+
+/*  Hamburger Toolbar Menu */
+
+#mstrToolbarList,
+#mstrExportPopup,
+#mstrZoomPopup {
+  &.mstrShortcutsListPopup {
+    min-width: 120px;
+    border-radius: 2px;
+    left: auto !important;
+  }
+}
+
+#mstrToolbarList,
+#mstrExportPopup,
+#mstrZoomPopup {
+  &.mstrShortcutsListPopup {
+    a {
+      color: #656565;
+      text-decoration: none;
+      display: block;
+    }
+  }
+}
+
+#mstrExportPopup,
+#mstrZoomPopup {
+  &.mstrShortcutsListPopup {
+    .item {
+      padding-top: 4px;
+      padding-bottom: 8px;
+
+      &.selected {
+        font-weight: normal;
+
+        .icon {
+          background: transparent center url(#{$mstr-img-path}/icon_check.png) no-repeat;
+        }
+      }
+
+      .icon {
+        background: none;
+        padding-right: 0px;
+      }
+
+    }
+  }
+}
+
+.mojoPath .mstrHamburger {
+  display: block !important;
+  background: transparent url(#{$mstr-img-path}/theme/pathBarIcons.png) no-repeat scroll center;
+  height: 30px;
+  width: 50px;
+  padding: 5px 0px 0px 0px;
+  background-position: 0px -555px;
+
+  &:hover {
+    background-position: 0px -582px;
+  }
+}
+
+.Carbon .mojoPath .mstrHamburger {
+  background-position: 0px -704px;
+}
+/* Create */
+
+.mojoPath .mojoPath-create {
+    height: 42px;
+
+    .mstrmojo-CreateButton {
+        height: 30px;
+        width: 36px;
+        margin-top: 8px;
+        margin-right: 13px;
+
+        .mstrMenuItemcreate {
+            display: inline-block;
+            height: inherit;
+            width: inherit;
+        }
+    }
+}
+
+.mojoPath .mojoPath-create .mscld-create-menu {
+    display: inline-block;
+    height: inherit;
+    width: inherit;
+    background: url(#{$mstr-img-path}/theme/pathBarIcons.png) no-repeat 0 -732px;
+    text-indent: -9999px;
+    line-height: 30px;
+    &:hover {
+        background-position: 0 -757px;
+    }
+}
+
+/* Search */
+
+.mojoPath .mojoPath-search {
+  height: 42px;
+  /* Width is set to 50px in PathBar.js but this pushes accounts menu out */
+  /* So reserve 50px but use only 49px */
+  width: 49px !important;
+  /*width: 200px;*/
+  .mstrmojo-SearchButton {
+  	margin-top: 8px;
+  }
+}
+
+/* Extra Links */
+
+.mojoPath .mojoPath-extraLinks {
+  line-height: 42px;
+  border-left: 1px;
+}
+
+.mojoPath .mojoPath-extraLinks span {
+  width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 11px;
+}
+
+.mojoPath .mojoPath-extraLinks .tbHelp {
+    background: url(#{$theme-img-path}/pathBarIcons.png) no-repeat -4px -345px;
+  height: 42px;
+  width: 0;
+  //width: 42px !ie7;
+  padding: 0 20px;
+  //padding: 0 !ie7;
+  margin-left: 9px;
+  position: relative;
+  float: left;
+}
+
+.mojoPath .mojoPath-extraLinks .tbHelp:hover {
+    background: url(#{$theme-img-path}/pathBarIcons.png) no-repeat -4px -385px;
+}
+
+.mojoPath .mojoPath-extraLinks .tbHelp A{
+  text-indent: -10000px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Navigation Button Icons */
+
+.mojoPath .mojoPath-navigation {
+  margin-top: 10px;
+  //max-width: 180px !ie7;
+  vertical-align: middle;
+  padding-left: 8px;
+}
+
+.mojoPath .mojoPath-navigation .pathNavigationRight {
+  margin-right: 13px;
+}
+
+.mojoPath .mojoPath-navigation span.tbBack,
+.mojoPath .mojoPath-navigation span.tbForward,
+.mojoPath .mojoPath-navigation A {
+  display: inline-block;
+  /*for IE and Safari, Firefox needs display:inline*/
+}
+
+.mojoPath .mojoPath-navigation span.tbReturn {
+    margin-left: 8px;
+}
+
+.mojoPath .mojoPath-navigation span.disabled {
+  opacity: 1;
+  filter: none; /*IE - remove filter*/
+}
+
+/* Navigation Icon Sizes */
+
+.mojoPath .mojoPath-navigation .mstrIcon-tb,
+.mojoPath .mojoPath-navigation .mstrPullArrow,
+.mojoPath .mojoPath-navigation .mstrPullArrow.disabled {
+    display: inline-block;
+    height: 23px;
+}
+
+.mojoPath .mojoPath-navigation .mstrCombodownSelected,
+.mojoPath .mojoPath-navigation .mstrCombodown {
+  vertical-align: top;
+  margin: 1px 0 1px 0;
+}
+
+.mojoPath .mojoPath-navigation A SPAN {
+  padding-left: 23px;
+  margin-left: 6px;
+  margin-right: 5px;
+}
+
+.mojoPath .mojoPath-navigation SPAN A {
+  padding-left: 23px;
+  margin-left: 7px;
+}
+.mojoPath .mojoPath-navigation SPAN SPAN {
+  padding-left: 12px;
+  margin-right: 3px;
+}
+
+/* Keep consistent with old path bar */
+.mojoPath .mojoPath-navigation .tbReturn {
+  margin-left: 3px;
+}
+
+/*-- Navigation Icon Images --*/
+
+.mojoPath .mojoPath-navigation .tbHome{ background: transparent url(#{$theme-img-path}/pathBarIcons.png) no-repeat 0 -323px; }
+.mojoPath .mojoPath-navigation .tbHome:hover { background-position: 0 -208px; }
+.mojoPath .mojoPath-navigation .tbHome.disabled {background-position: -431px -2px; }
+
+.mojoPath .mojoPath-navigation .tbBack0 {
+    background: transparent url(#{$theme-img-path}/pathBarIcons.png) no-repeat 0 -138px;
+}
+.mojoPath .mojoPath-navigation .tbBack:hover .tbBack0 { background-position: 0 -161px; }
+.mojoPath .mojoPath-navigation .tbBack0.disabled,
+.mojoPath .mojoPath-navigation .tbBack:hover .tbBack0.disabled { background-position: 0 -184px; }
+
+.mojoPath .mojoPath-navigation .tbForward0 {
+    background: transparent url(#{$theme-img-path}/pathBarIcons.png) no-repeat 0 -69px;
+}
+.mojoPath .mojoPath-navigation .tbForward:hover .tbForward0 { background-position: 0 -92px; }
+.mojoPath .mojoPath-navigation .tbForward0.disabled,
+.mojoPath .mojoPath-navigation .tbForward:hover .tbForward0.disabled { background-position: 0 -115px;}
+
+.mojoPath .mojoPath-navigation .tbForward1,
+.mojoPath .mojoPath-navigation .tbBack1 { background: transparent url(#{$theme-img-path}/pathBarIcons.png) no-repeat 0 -230px; }
+
+.mojoPath .mojoPath-navigation .tbForward:hover .tbForward1,
+.mojoPath .mojoPath-navigation .tbBack:hover .tbBack1 { background-position: 0 -253px; }
+
+.mojoPath .mojoPath-navigation .tbForward:hover .tbForward1:hover,
+.mojoPath .mojoPath-navigation .tbBack:hover .tbBack1:hover { background-position: 0 -299px; }
+
+.mojoPath .mojoPath-navigation .tbForward:hover .tbForward1.mstrPullArrow.disabled,
+.mojoPath .mojoPath-navigation .tbForward1.mstrPullArrow.disabled,
+.mojoPath .mojoPath-navigation .tbBack1.mstrPullArrow.disabled,
+.mojoPath .mojoPath-navigation .tbBack:hover .tbBack1.mstrPullArrow.disabled { background-position: 0 -276px; }
+
+.mojoPath .mojoPath-navigation .tbReturn { background: transparent url(#{$theme-img-path}/pathBarIcons.png) no-repeat 0 -1px; }
+.mojoPath .mojoPath-navigation .tbReturn:hover { background-position: 0 -24px; }
+.mojoPath .mojoPath-navigation .tbReturn.disabled { background-position: 0 -46px;; }
+
+.mojoPath .mojoPath-navigation .tbBack1,
+.mojoPath .mojoPath-navigation .tbBack:hover .tbBack1.disabled,
+.mojoPath .mojoPath-navigation .tbBack1.mstrPullArrow.disabled,
+.mojoPath .mojoPath-navigation .tbForward1,
+.mojoPath .mojoPath-navigation .tbForward:hover .tbForward1.disabled,
+.mojoPath .mojoPath-navigation .tbForward1.mstrPullArrow.disabled
+{
+	visibility: hidden;
+}
+
+.mojoPath .mojoPath-navigation .tbBack:hover .tbBack1,
+.mojoPath .mojoPath-navigation .tbBack.mstrComboDown.selected.opened .tbBack1,
+.mojoPath .mojoPath-navigation .tbForward:hover .tbForward1,
+.mojoPath .mojoPath-navigation .tbForward.mstrComboDown.selected.opened .tbForward1{
+	visibility: visible;
+}
+
+/* Pathbar Picker Button's Menu */
+
+.mojoPathPicker  {
+  width: auto;
+  min-width: 100px;
+  background: #fff none repeat scroll 0%;
+  padding: 6px 6px;
+  border: 1px solid #999;
+  border-top: 0;
+  -webkit-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  margin-top: 11px;
+  margin-left: 0;
+  z-index: 1000;
+  white-space: nowrap;
+  -webkit-animation: resetFade 50ms ease-in 0ms 1, fade-in 350ms ease-in 50ms 1;
+  -webkit-box-shadow: #B4B4B4 1px 1px 10px 0;
+  box-shadow: #B4B4B4 1px 1px 10px 0;
+  visibility: hidden;
+}
+
+.mojoPathPicker.open {
+  visibility: visible;
+}
+
+.mojoPathPicker SPAN {
+  display: block;
+  padding: 3px;
+  border-left: 4px solid #fff;
+  line-height: 21px;
+  white-space: nowrap;
+  font-size: 11px;
+  color: #000 !important;
+  cursor: pointer;
+}
+
+.mojoPathPicker SPAN:hover {
+  border-left-color: #2e2e2e;
+}
+
+.mojoPathPicker A {
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+/**
+* -----------------------Color Theme : Red ----------------------**
+*/
+
+/*--path bar--*/
+
+.mstrWeb.Red .mojoPath {
+  border-bottom: 2px solid #D9222D;
+}
+
+/* Path */
+
+.mstrWeb.Red .mojoPath .mstrPath-pin {
+}
+
+.mstrWeb.Red .pathLast:hover {
+  color: #e52f2f;
+}
+
+/* Pathbar Picker Button's Menu */
+
+.mstrWeb.Red .mojoPathPicker SPAN:hover {
+  border-left-color: #e52f2f;
+}
+
+/**
+* -----------------------Color Theme : Blue ----------------------**
+*/
+
+/* StarBurst */
+
+.mstrWeb.Blue .mojoPath {
+  border-bottom: 2px solid #006ba0 ;
+}
+
+/* Path */
+
+.mstrWeb.Blue .mojoPath .mstrPath-pin {
+}
+
+.mstrWeb.Blue .pathLast:hover {
+  color: #006ba0;
+}
+
+/* Pathbar Picker Button's Menu */
+
+.mstrWeb.Blue .mojoPathPicker SPAN:hover {
+  border-left-color: #006ba0;
+}
+
+/**
+* -----------------------Color Theme : Gray ----------------------**
+*/
+
+/* Path */
+
+.mojoPath .mstrPath-pin {
+}
+
+.mstrWeb.Gray .pathLast:hover {
+  color: #6d6d6d;
+}
+
+/* Pathbar Picker Button's Menu */
+
+.mstrWeb.Blue .mojoPathPicker SPAN:hover {
+  border-left-color: #6d6d6d;
+}
+
+/**
+* -----------------------Color Theme : Black ----------------------**
+*/
+
+/* Path */
+
+.mstrWeb.Black .mojoPath {
+  border-bottom: 2px solid #2f2f2f;
+}
+
+.mojoPath .mstrPath-pin {
+}
+
+/**
+* -----------------------Color Theme : Carbon ----------------------**
+*/
+
+
+.mstrWeb.Carbon .mojoPath {
+  background: #444;
+  border-bottom: 2px solid #989898;
+}
+
+.mstrWeb.Carbon .mojoPath span,
+.mstrWeb.Carbon .mojoPath span a:link,
+.mstrWeb.Carbon .mojoPath span a:visited,
+.mstrWeb.Carbon .mojoPath .pathLast:hover span{
+  color:#b7b7b7;
+}
+
+.mstrWeb.Carbon .mstrLogoMenu {background: url(#{$theme-img-path}/carbon/toolbar.png) no-repeat 3px -245px;}
+
+/* Navigation Buttons */
+
+.mstrWeb.Carbon .mojoPath .mojoPath-navigation .tbHome,
+.mstrWeb.Carbon .mojoPath .mojoPath-navigation .tbBack0,
+.mstrWeb.Carbon .mojoPath .mojoPath-navigation .tbForward0,
+.mstrWeb.Carbon .mojoPath .mojoPath-navigation .tbForward1,
+.mstrWeb.Carbon .mojoPath .mojoPath-navigation .tbBack1,
+.mstrWeb.Carbon .mojoPath .mojoPath-navigation .tbReturn { background-image: url(#{$theme-img-path}/carbon/toolbar.png); }
+
+/* Path */
+
+.mojoPath .mstrPath-pin {
+}
+
+.mstrWeb.Carbon .mojoPath .pathCurrent {
+  text-shadow: #222 1px 1px 1px;
+}
+
+.mstrWeb.Carbon .mojoPath .pathCurrent {
+}
+
+.mstrWeb.Carbon .mojoPath .pathBreadCrumbsPullArrow {
+    background: transparent url(#{$theme-img-path}/pathBarIcons.png) no-repeat -1px -275px;
+    font-size: 14pt;
+    height: 23px !important;
+    width: 9px;
+    display: inline-block;
+    margin-left: 5px;
+    float: left;
+    position: relative;
+    top: 10px;
+}
+
+/* Help */
+
+.mstrWeb.Carbon .mojoPath .mojoPath-extraLinks .tbHelp {
+    background: url(#{$theme-img-path}/carbon/toolbar.png) no-repeat -4px -345px;
+}
+
+.mstrWeb.Carbon .mojoPath .mojoPath-extraLinks .tbHelp:hover {
+    background: url(#{$theme-img-path}/carbon/toolbar.png) no-repeat -4px -385px;
+}
+
+/**Search Icon on Pathbar */
+.mstrWeb.Carbon .mstrmojo-SearchButton .mstrmojo-Button-text {
+    background: url(#{$theme-img-path}/carbon/toolbar.png) no-repeat 0 -560px;
+}
+.mstrWeb.Carbon .mstrmojo-SearchButton .mstrmojo-Button-text:hover {
+     background-position: 0 -587px;
+}
+
+/***(From _Interface::global.css) - This is duplicate of the same code in mstr.css*/
+/** Shortcuts List Popup **/
+#mstrSCListLoader,
+.mstrShortcutsListPopup {
+    position: fixed;
+    z-index: 1000 !important;
+    top: 42px;
+    left: 0px;
+    min-width: 179px;
+    /* Needed to prevent recents and projects popup from not behaving correctly when
+     * there is an element with a very long name. */
+    max-width: 500px;
+}
+
+#mstrSCListLoader {
+    overflow:hidden;
+}
+
+.mstrShortcutsListPopup a.queryBuilder,
+.mstrShortcutsListPopup a.importData,
+.mstrShortcutsListPopup a.folder,
+.mstrShortcutsListPopup a.metric,
+.mstrShortcutsListPopup a.filter,
+.mstrShortcutsListPopup a.customGroup,
+.mstrShortcutsListPopup a.prompt {
+    display:none !important;
+}
+
+#mstrSCListLoader.open,
+.mstrShortcutsListPopup.open {
+    margin-top: 0px !important;
+}
+.mstrSCListLoaderIcon,
+.mstrShortcutsListPopup .mstrmojo-Popup-content {
+    position: relative;
+    background: #fafafa;
+    color: #DDD;
+    padding: 6px 0px;
+    border-radius: 0px 0px 2px 2px;
+    border: 1px solid #cecece;
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.08);
+}
+
+.mstrSCListLoaderIcon {margin-top: -50px}
+.mstrShortcutsListPopup .mstrmojo-Popup-content {
+    margin-top: -599px;
+    /*-webkit-transition: margin-top 500ms;
+    -moz-transition: margin-top 500ms;
+    transition: margin-top 500ms;*/
+}
+#mstrSCListLoader.open .mstrSCListLoaderIcon,
+.mstrShortcutsListPopup.open .mstrmojo-Popup-content {
+    margin-top: 0;
+}
+
+.mstrSCListLoaderIcon {
+    background: url(#{$theme-img-path}/gray/progress-bar.gif) no-repeat center center #fafafa;
+    height: 30px;
+}
+
+.mstrShortcutsListPopup a:link,
+.mstrShortcutsListPopup a:visited {
+    color: #656565;
+    text-decoration: none;
+    display: block;
+}
+
+.mstrShortcutsListPopup .item:hover{
+	background-color: rgba(186, 186, 186, 0.42);
+}
+
+.mstrShortcutsListPopup .item {
+  padding: 11px 25px 11px 10px;
+}
+
+.mstrShortcutsListPopup .item.selected {
+    font-weight: bold;
+}
+
+.mstrShortcutsListPopup .item.grp {
+    border-top: 1px solid #e0e0e0;
+}
+
+.mstrShortcutsListPopup .item.dossierLibrary {
+	border-top: 1px solid #e0e0e0;
+	padding: 12px 25px 10px 13px; 
+}
+
+
+.mstrShortcutsListPopup .mstrmojo-Popup-shadow {
+    display: none;
+    border: 8px solid;
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    opacity: 0.9;
+    border-color: transparent transparent #ccc;
+}
+
+.mstrShortcutsListPopup .item .icon {
+    padding: 6px 17px;
+    margin-right: 10px;
+    background: transparent center url(#{$mstr-img-path}/shortcuts.png) no-repeat;
+}
+
+.mstrShortcutsListPopup .item.myPage .icon {
+  padding: 0px;
+  margin-right: 0px;
+  background: none;
+}
+
+.mstrShortcutsListPopup .item:hover .icon {
+    background-image:url(#{$mstr-img-path}/shortcuts.png);
+}
+
+.mstrShortcutsListPopup .item.dossierLibrary .icon {
+    padding: 9px 15px;
+    margin-right: 10px;
+    background: transparent center url(#{$mstr-img-path}/dossierLibrary.png) no-repeat;
+}
+
+.mstrShortcutsListPopup .item {
+  &.logout,
+  &.designViewMode,
+  &.zoom,
+  &.refresh,
+  &.dSave,
+  &.myPage{
+    border-top: 1px solid #e0e0e0;
+  }
+}
+
+/** 
+ *  Don't want the My Page header for Load Default Layout
+ *  and Publish Current layout to display as a clickable item.
+ *  This code strips away that css and makes it appear non-clickable.
+ */
+.mstrShortcutsListPopup .mstrmojo-ListBase {
+    .item.myPage {
+      &:hover,
+      &.selected {
+        color: #656565;
+        text-decoration: none;
+        display: block;
+        font-weight: normal;
+        background-color: #fafafa;
+        cursor: default;
+      }
+    }
+    .item.save.selected {
+        &:not(:hover) {
+           color: #656565;
+        }   
+        text-decoration: none;
+        display: block;
+        font-weight: normal;
+    }
+}
+
+
+  .mstrShortcutsListPopup .item.home .icon { background-position: center -48px;}
+  .mstrShortcutsListPopup .item.public .icon {background-position: center -368px;}
+  .mstrShortcutsListPopup .item.profile .icon {background-position: center -128px;}
+  .mstrShortcutsListPopup .item.history .icon {background-position: center -8px;}
+  .mstrShortcutsListPopup .item.subscriptions .icon {background-position: center -408px;}
+  .mstrShortcutsListPopup .item.template .icon {background-position: center -248px;}
+  .mstrShortcutsListPopup .item.templateDoc .icon {background-position: center -208px;}
+  .mstrShortcutsListPopup .item.preferences .icon {background-position: center -288px;}
+  .mstrShortcutsListPopup .item.logout .icon {background-position: center -88px;}
+  .mstrShortcutsListPopup .item.about .icon {background-position: center -770px;}
+  .mstrShortcutsListPopup .item.myPage .icon {background-position: center -48px;}
+  .mstrShortcutsListPopup .item.save .icon {background-position: center -845px;}
+  .mstrShortcutsListPopup .item.load .icon {background-position: center -808px;}
+  .mstrShortcutsListPopup .item.scNewIVE .icon {background-position: center -168px;}
+  .mstrShortcutsListPopup .item.html5vi .icon {background-position: center -168px;}
+  .mstrShortcutsListPopup .item.projects .icon {background-position: center -328px;}
+  .mstrShortcutsListPopup .item.feedback .icon {background-position: center -688px;}
+  .mstrShortcutsListPopup .item.help .icon {background-position: center -728px;}
+  .mstrShortcutsListPopup .item.recentObjects .icon {background-position: center -648px;}
+
+
+  /**** End ShortcutLists Popup ***/
+
+  .projects,
+  .recentObjects {
+    background: url(images/search-right-arrow.png) no-repeat right center;
+  }
+
+.mstrmojo-Popup.mstrShortcutsListPopup {
+
+  .export,
+  .zoom {
+    background-image: url(images/search-right-arrow.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+}
+
+  .img-preview {
+    visibility: hidden;
+  }
+
+  .mstr-recent-item:hover .img-preview {
+    visibility: visible;
+  }
+
+  /* The left: -600px moves the rendered popups out of the way off screen when they should not
+   * be shown. This is used with a max-width constraint of 500px on the mstrShortcutListPopup
+   * to ensure that the popup will not still be showing on the screen when it is supposed to be
+   * moved out of the way. */
+  #mstrRecentsPopup,
+  #mstrRecentsGenPopup,
+  #mstrProjectsPopup,
+  #mstrProjectsGenPopup {
+    position: fixed;
+    top: 25px;
+    left: -600px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  #mstrRecentsPopup,
+  #mstrRecentsGenPopup {
+    overflow: visible;
+  }
+  
+  #mstrRecentObjects.inactive,
+  #mstrRecentsGenPopup.inactive,
+  #mstrProjects.inactive,
+  #mstrProjectsGenPopup.inactive{
+    opacity: 0.3;
+  }
+  #mstrRecentsPopup .mstrMenuItem:hover,
+  #mstrRecentsGenPopup .mstrMenuItem:hover,
+  #mstrProjectsPopup .mstrMenuItem:hover,
+  #mstrProjectsGenPopup .mstrMenuItem:hover {
+    background-color: rgba(186, 186, 186, 0.42);
+  }
+  #mstrRecentsPopup .mstrMenuItem,
+  #mstrRecentsGenPopup .mstrMenuItem,
+  #mstrProjectsPopup .mstrMenuItem,
+  #mstrProjectsGenPopup .mstrMenuItem {
+    padding: 0;
+    display: block;
+    white-space: nowrap;
+    border-top: 0px;
+    border-bottom: 0px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border-left: 4px solid transparent;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    -webkit-transition: all 200ms;
+  }
+
+  #mstrProjectsPopup .mstrMenuItem,
+  #mstrProjectsGenPopup .mstrMenuItem {
+    padding-right: 7px;
+  }
+
+  #mstrRecentsPopup .mstrMenuItem a,
+  #mstrRecentsGenPopup .mstrMenuItem a,
+  #mstrProjectsPopup .mstrMenuItem a,
+  #mstrProjectsGenPopup .mstrMenuItem a{
+    padding: 7px 7px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #mstrProjectsPopup .mstrMenuItem a,
+  #mstrProjectsGenPopup .mstrMenuItem a{
+    padding: 7px 0px;
+  }
+
+  #mstrRecentsPopup .mstrIcon-lv,
+  #mstrRecentsGenPopup .mstrIcon-lv{
+    height: 20px;
+    width: 20px;
+    background-image: url(images/listView.png);
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  #mstrRecentsGenPopup .mstrMenuItem a div {
+    display: inline-block; 
+    width: 100%;
+    max-width: 460px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  #mstrProjectsGenPopup .mstrMenuItem a {
+    div {
+      display: inline;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 5px;
+    }
+    .projectName {
+      float: left;
+      max-width: 265px;
+    }
+    .serverName {
+      max-width: 175px;
+      opacity: 0.5;
+      float: right;
+    }
+  }
+
+  .mstrShortcutsListPopup #allProjectsItem {
+    border-bottom: 1px solid #e0e0e0;
+    padding-left: 5px;
+  }
+
+  #mstrProjectsGenPopup .mstrmojo-scrollNode {
+    max-height: 500px;
+  }
+
+  /* This is to make padding look ok when there is a scrollbar for IE and FF without affecting
+   * all scrollbars. */
+  #mstrProjectsGenPopup .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+    margin-right: -30px;
+  }
+
+
+  /* This is to make padding look ok when there is a scrollbar for chrome without affecting
+   * all scrollbars. */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    #mstrProjectsGenPopup .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+      margin-right: -16px;
+    }
+  }
+
+  .mstrMenuItem:hover a {
+    color:#2e2e2e;
+  }
+
+  .mstrIcon-lv.avm {
+	background-image: url(images/listView.png) !important;
+	background-position: -60px -100px;
+  }
+  .mstrIcon-lv-null {
+    background-position: -99999px -99999px;
+  } /*no icon to display*/
+  .mstrIcon-lv-a {
+    background-position: 0px 0px;
+  }  /*attribute*/
+  .mstrIcon-lv-ae {
+    background-position: -20px 0px;
+  }  /*attribute element*/
+  .mstrIcon-lv-b,
+  .mstrIcon-lv-be {
+    background-position: -40px 0px;
+  }  /*bulk export*/
+  .mstrIcon-lv-blank {
+    background-position: 0px -60px;
+  }  /*blank*/
+  .mstrIcon-lv-cb {
+    background-position: -60px 0px;
+  }  /*cube*/
+  .mstrIcon-lv-d {
+    background-position: 0px -20px;
+  }  /*document*/
+  .mstrIcon-lv-de {
+    background-position: -80px -60px;
+  }  /*derived element*/
+  .mstrIcon-lv-dm {
+    background-position: -80px 0px;
+  }  /*datamart*/
+  .mstrIcon-lv-f {
+    background-position: -40px -20px;
+  }  /*folder*/
+  .mstrIcon-lv-fi {
+    background-position: -20px -20px;
+  }  /*filter*/
+  .mstrIcon-lv-g {
+    background-position: 0px -40px;
+  }  /*grid*/
+  .mstrIcon-lv-ir {
+    background-position: -80px -100px;
+  }
+  .mstrIcon-lv-gflash {
+    background-position: 0 -140px;
+  }  /*grid flash vis*/
+  .mstrIcon-lv-gajax {
+    background-position: -20px -140px;
+  }  /*grid ajax vis*/
+  .mstrIcon-lv-gp {
+    background-position: -60px -20px;
+  }  /*graph*/
+  .mstrIcon-lv-gpgs {
+    background-position: -80px -20px;
+  }  /*graph grid*/
+  .mstrIcon-lv-hi {
+    background-position: -20px -40px;
+  }  /*hierachy*/
+  .mstrIcon-lv-m {
+    background-position: -40px -40px;
+  }  /*metric*/
+  .mstrIcon-lv-p {
+    background-position: -60px -40px;
+  }  /*project*/
+  .mstrIcon-lv-pr {
+    background-position: -80px -40px;
+  }  /*prompt*/
+  .mstrIcon-lv-rw,
+  .mstrIcon-lv-rw_xpdf {
+    background-position: -20px -60px;
+  }  /*rwdocument*/
+  .mstrIcon-lv-rwflash {
+    background-position: -40px -140px;
+  }  /*rwd flash vis*/
+  .mstrIcon-lv-rwajax {
+    background-position: -60px -140px;
+  }  /*rwd ajax vis*/
+  .mstrIcon-lv-srch {
+    background-position: -40px -60px;
+  }  /*search*/
+  .mstrIcon-lv-t {
+    background-position: -60px -60px;
+  }  /*template*/
+  .mstrIcon-lv-fDataSource {
+    background-position: -40px -80px;
+  }  /*MDXSource*/
+  .mstrIcon-lv-fCatalog {
+    background-position: -60px -80px;
+  }  /*MDXCatalog*/
+  .mstrIcon-lv-qc {
+    background-position: -0px -80px;
+  }  /*MDXCube*/
+  .mstrIcon-lv-ic {
+    background-position: -20px -80px;
+  }  /*MDXDimension*/
+  .mstrIcon-lv-fDimension,
+  .mstrIcon-lv-fHierarchy {
+    background-position: -20px -40px;
+  }  /*MDXDimension*/
+  .mstrIcon-lv-co {
+    background-position: -80px -80px;
+  }  /*Consolidation*/
+  .mstrIcon-lv-cg {
+    background-position: 0px -100px;
+  }  /*Custom Group*/
+  .mstrIcon-lv-checked {
+    background-image: url(images/lsCheck.gif);
+  }
+
+  .mstrIcon-lv-fetchPrevious {
+    background-position: -20px -100px;
+  }  /*Object Browser Incremental Fetch*/
+  .mstrIcon-lv-fetchMore {
+    background-position: -40px -100px;
+  }  /*Object Browser Incremental Fetch*/
+  .mstrIcon-lv-sc {
+    background-position: -40px -120px;
+  }  /*Object shortcut*/
+
+  .mstrIcon-lv-search {
+    background: url(images/btnSearch.png) no-repeat center center transparent;
+  }
+
+  /*shortcut and top icon in layered icon structure*/
+  .mstrIcon-lv span {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: scroll;
+  }
+
+  .mstrIcon-recover{
+    background-position: -60px -160px;
+  }
+
+  .mstrIcon-clearRecents{
+    background-position: -80px -159px;
+  }

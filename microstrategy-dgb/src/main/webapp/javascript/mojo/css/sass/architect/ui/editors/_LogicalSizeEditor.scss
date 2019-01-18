@@ -1,0 +1,42 @@
+@import '../../ar-global';
+
+/** BEGIN:  LogicalSizeEditor **/
+.mstrmojo-ar-lse {
+  padding: 2px 5px 3px 0px;
+}
+
+.mstrmojo-ar-lse-lock {
+  padding: 0px 0px;
+  margin-right: 0px;
+}
+
+.mstrmojo-ar-lse-size {
+  width: 60px;
+  .mstrmojo-TextBoxWithLabel {
+    margin-left: 20px;
+    &.inactive {
+      opacity: 0.5;
+    }
+    .mstrmojo-TextBox {
+      width: 75px;
+      background-color: #fff;
+      color: #666;
+      border: 2px inset;
+      padding: 0;
+      box-shadow: none;
+    }
+
+  }
+}
+
+.mstrmojo-ar-lse .mstrmojo-TextBox[readonly] {
+  opacity: 0.5;
+}
+
+.mstrmojo-ImageCheckBox.mstrmojo-ar-lse input {
+  background: transparent;
+  &.checked {
+    background: transparent url(#{$wh-image-path}/ok.png) no-repeat center center;
+  }
+}
+/** END: LogicalSizeEditor **/

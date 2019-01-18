@@ -1,0 +1,1 @@
+mstrmojo.qb.EnumDragActions={ADD_TABLE:"addTable",JOIN_COLUMN:"joinColumn"};

@@ -1,0 +1,234 @@
+// --------------------  Preview Page Styles --------------------------
+
+.mstrmojo-di-samplefiles {
+  padding: 16px 18px;
+  border: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  .mstrmojo-DataGrid-headerTable {
+      border-collapse: collapse;
+  }
+
+  .mstrmojo-DataGrid-itemsContainer .mstrmojo-itemwrap-table {
+      border-collapse: collapse;
+  }
+
+  .mstrmojo-DataGrid-itemsContainer td {
+    border-right: 1px solid #cbcbcb;
+    line-height: initial;
+  }
+
+  .mstrmojo-DataGrid-headerContainer {
+    border: 1px solid #cdcdcd;
+    border-right: 0;
+  }
+  .mstrmojo-DataGrid-itemsScrollBox {
+    border-left: 1px solid #cdcdcd;
+  }
+
+  .mstrmojo-di-sampleitem-desc{
+    display: inline;
+    line-height: 40px;
+    white-space: nowrap;
+
+    .sampleitem-desc-text{
+      float: left;
+      vertical-align: middle;
+      padding: 0 10px 0 12px;
+      max-width: calc(100% - 50px);
+
+      .mstrmojo-Label {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .sampleitem-desc-downloadbtn{
+      float: right;
+      vertical-align: middle;
+      padding-right: 10px;
+      display: none;
+    }
+  }
+
+  .mstrmojo-ImageCheckBox{
+    padding-left: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .mstrmojo-CheckBox > label:before{
+    display: none;
+  }
+  .mstrmojo-ImageCheckBox label{
+    padding-left: 4px;
+  }
+  .mstrmojo-DataRow .mstrmojo-ImageCheckBox label{
+    line-height: 13px;
+  }
+  .mstrmojo-ImageCheckBox input{
+    background: transparent url(images/checkbox_sprite.png) -2px -26px no-repeat;
+    margin-top:-8px;
+  }
+
+  .mstrmojo-ImageCheckBox input.checked{
+    background-position: -2px -2px;
+  }
+
+  .mstrmojo-ImageCheckBox input.select-all{
+    background-position: -2px -2px;
+  }
+
+  .mstrmojo-ImageCheckBox input.unselect-all{
+    background-position: -2px -26px;
+  }
+
+  .mstrmojo-ImageCheckBox input.select-some{
+    background-position: -2px -170px;
+  }
+}
+
+
+.mstrmojo-di-samplefiles .mstrmojo-DataGrid-headerTable td {
+  padding-right: 0;
+}
+
+.mstrmojo-di-samplefiles .mstrmojo-DataGrid-headerText{
+  font-size: 11px;
+  font-weight: normal;
+  color: #444649;
+  font-family: Arial;
+  background-color: #efeff0;
+  height: 30px;
+  line-height: 30px;
+  border: 0;
+  padding-left: 12px;
+
+  .mstrmojo-ImageCheckBox{
+    padding-left: 0px;
+    margin-left: -2px;
+  }
+}
+
+.mstrmojo-di-samplefiles-col1header{
+  margin-left: -4px;
+}
+
+.mstrmojo-di-samplefiles .mstrmojo-DataRow-text {
+  color: #333333;
+  font-family: Arial;
+  font-size: 11px;
+  padding: 10px;
+}
+.mstrmojo-di-samplefiles .mstrmojo-DataRow-text.download-icon {
+  display: none;
+}
+.mstrmojo-di-samplefiles .mstrmojo-DataRow:hover .download-icon {
+    display: block;
+}
+
+.mstrmojo-di-samplefiles .mstrmojo-DataRow:hover {
+  background-color: #f6f6f6;
+}
+
+.mstrmojo-di-samplefiles .mstrmojo-DataRow:hover .sampleitem-desc-downloadbtn{
+  display: block;
+}
+
+.mstrmojo-di-samplefiles .mstrmojo-DataRow {
+  background-color: #ffffff;
+}
+
+.mstrmojo-di-samplefiles .mstrmojo-DataRow.selected {
+  background-color: #e5e5e5;
+}
+
+.mstrmojo-di-samplefiles-col1 {
+  width: 25%;
+}
+
+.mstrmojo-di-samplefiles-col2 {
+  width: 75%;
+}
+
+.mstrmojo-di-download{
+  cursor: pointer;
+  background: transparent url(images/DI/main_icons_sprite.png) -300px 2px no-repeat;
+  width: 16px;
+  height: 18px;
+  margin-top:11px;
+}
+
+.mstrmojo-di-download:hover{
+  background-position: -300px -28px;
+}
+
+.workstation{
+  @import "color-variables";
+  .mstrmojo-di-samplefiles {
+    .mstrmojo-DataGrid-headerContainer, .mstrmojo-DataGrid-itemsScrollBox{
+      border-color: $primaryblackborder;
+    }
+    .mstrmojo-DataGrid-itemsContainer td {
+      border-color: #d6d6d6;
+    }
+    .mstrmojo-di-samplefiles-col1header{
+      .mstrmojo-ImageCheckBox{
+        padding-left: 4px;
+      }
+    }
+    .mstrmojo-DataRow{
+      .mstrmojo-ImageCheckBox{
+        label{
+          font-size: 12px;
+        }
+      }
+      .mstrmojo-di-sampleitem-desc{
+        .sampleitem-desc-text{
+          .mstrmojo-Label{
+            font-size: 12px;
+          }
+        }
+      }
+      &.selected {
+        background-color: #d8ebff;
+      }
+    }
+    .mstrmojo-ImageCheckBox input{
+      background: transparent url(images/checkbox.svg) -2px -22px no-repeat;
+      height: 18px;
+      &.checked{
+        background: transparent url('images/checkbox.svg') -2px 3px;
+      }
+
+      &.unselect-all{
+        background-position: -2px -22px;
+        height: 20px;
+      }
+      &.select-all{
+        background-position: -2px 4px;
+        height: 20px;
+      }
+      &.select-some{
+        background-position: -2px -171px;
+        height: 20px;
+      }
+    }
+    .mstrmojo-DataGrid-headerText{
+      font-size: 13px;
+      font-weight: bold;
+      height: 42px;
+      line-height: 42px;
+    }
+    .mstrmojo-ImageCheckBox{
+      padding-left: 10px;
+    }
+  }
+  .mstrmojo-di-download:hover{
+    background-position: -300px 2px;
+  }
+}

@@ -1,0 +1,568 @@
+@import '_color-variables';
+
+// -------- Data Import Buttons  -------------
+.mstrmojo-di-view{
+  background-color: #FAFAFA;
+}
+.mstrmojo-di-button {
+  min-width: 66px;
+  height: 22px;
+  margin-left: 10px;
+  float: right;
+  &.back{
+    margin-left: 0px;
+  }
+}
+.mstrmojo-di-button.select {
+  box-shadow: 0 0 1px 1px #7CC5EC;
+}
+.primary-button {
+  @include linear-gradient($primaryButtonStart, $primaryButtonEnd);
+  border:1px solid $footerButtonBorderColor;
+}
+.primary-button:hover{
+  @include linear-gradient($primaryButtonEnd, $primaryButtonStart);
+}
+.primary-button:active{
+  @include linear-gradient($primaryButtonStart, $primaryButtonStart);
+}
+
+.secondary-button{
+  @include linear-gradient($secondaryButtonStart, $secondaryButtonEnd);
+  border:1px solid $footerButtonBorderColor;
+}
+
+.secondary-button:hover{
+  @include linear-gradient($secondaryButtonEnd, $secondaryButtonStart);
+}
+.secondary-button:active{
+  @include linear-gradient($secondaryButtonStart, $secondaryButtonStart);
+}
+.mstrmojo-di-button[disabled], .mstrmojo-di-button[disabled]:active, .mstrmojo-di-button:disabled, .mstrmojo-di-button.disabled{
+  opacity: 0.5;
+}
+.mstrmojo-di-dialog-choice{
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(top, #8EC5F6 0%, #3C74C7 100%);
+
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(top, #8EC5F6 0%, #3C74C7 100%);
+
+  /* Opera */
+  background-image: -o-linear-gradient(top, #8EC5F6 0%, #3C74C7 100%);
+
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #8EC5F6), color-stop(1, #3C74C7));
+
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(top, #8EC5F6 0%, #3C74C7 100%);
+
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to bottom, #8EC5F6 0%, #3C74C7 100%);
+  color: white;
+  border: solid 1px #3c74c7;
+  border-radius: 10px;
+  width: 93px;
+}
+
+
+.mstrmojo-Editor.mstrmojo-di-progressBar.modal{
+  width: 270px;
+  height: 46px;
+  background-color: rgba(238, 238, 238, 0.96);
+  box-shadow: 0 0 4px 0 #ffffff !important; //Use important since mstrmojo-Editor has a !important there
+  position: fixed;
+
+  .mstrmojo-di-progress{
+    width: 200px;
+    height: 24px;
+    padding-left: 35px;
+    vertical-align: middle;
+    color: #444649;
+    display: table !important;
+    float: left;
+    position: fixed;
+
+    .text { //DEV DE6905
+    	display: table-cell;
+    	vertical-align: middle;
+    }
+  }
+
+  .mstrmojo-di-progress.stripes{
+
+    @extend .mstrmojo-di-progress;
+    background: url(vi/images/spinner_light.gif) no-repeat;
+  }
+  .mstrmojo-Editor-content{
+    padding: 11px 8px;
+  }
+  /* Turn off the default progress bar styling. For all HTML5 progress enabled browsers */
+//  progress,
+//
+//    /* Chrome */
+//  progress::-webkit-progress-value {
+//    background: #FFFFFF;
+//  }
+//  /* Firefox */
+//  progress::-moz-progress-bar {
+//    background: #FFFFFF;
+//  }
+//
+//  /* Chrome */
+//  progress::-webkit-progress-bar{
+//    background: #E6E6E6;
+//  }
+//  /* Chrome */
+//  progress:not([value])::-webkit-progress-bar {
+//    background: url(vi/images/spinner_light.gif) no-repeat;
+//  }
+//
+//
+//  /* Firefox */
+//  progress:not([value])::-moz-progress-bar {
+//    background: url(vi/images/spinner_light.gif) no-repeat;
+//  }
+
+
+}
+.modal.mstrmojo-di-progressBar.mstrmojo-Editor > .mstrmojo-Editor-content {
+  padding: 11px;
+  border-bottom: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+#progressBar .mstrmojo-Editor-curtain{
+  background: #ffffff;
+  opacity: 0.5;
+  filter:alpha(opacity=50); //For Ie8
+}
+
+// --------------------  Progress For IE8 --------------------------
+.mstrmojo-ProgressBar.mstrmojo-di-user-quota{
+  border: 1px solid #b5b5b5;
+  .bar{
+    height: 100%;
+  }
+  .indicator{
+    background-color: #CBCBCB;
+    height: 100%;
+  }
+}
+
+/* data import root view's generic style. */
+.mojo-theme-light.mstrmojo-di-view {
+  background-color: $applicationBackgroundStart;
+
+  &.mstrmojo-di-view-popup {
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    min-width: 500px;
+    background-color:#fff;
+  }
+
+  //959570 - Left padding in one tier for "W" to show correctly.
+  .mstrmojo-di-mappingRows .item .di-item-n,
+  .mstrmojo-di-TableView .item .di-item-n,
+  .mstrmojo-di-mappingitem .mstrmojo-InlineEditBox-text,
+  .mstrmojo-di-tableview .mstrmojo-di-tv-header .mstrmojo-di-tv-ttl,
+  .mstrmojo-label,
+  .mstrmojo-textbox {
+    padding-left:  1px;
+  }
+}
+
+.mstrmojo-di-popup {
+  position: absolute;
+  z-index: 14;
+  left: 40px;
+  top: 40px;
+  @include user-select(none);
+}
+
+/* data import container curtain style*/
+.mstrmojo-DIEditor-curtain {
+  position: fixed;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+  background: #fcfcfc url(images/1ptrans.gif) left top repeat;
+  opacity: 0.4;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+  display:none;
+}
+
+/* data import main title style */
+.mstrmojo-di-title {
+  font-family: 'Arial';
+  font-size: 11px;
+  font-weight: bold;
+  color: #444649;
+  margin-left: 18px;
+  margin-top: 4px;
+  float:left;
+  line-height: 14px;
+}
+
+/* data import sub title style */
+.mstrmojo-di-subtitle {
+  color: #aaaaaa;
+  margin-left: 2px;
+  font-weight: normal;
+  float: left;
+
+  &.saveVisual {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: rgba(114, 187, 83, 1);
+    font-weight: bold;
+    padding-left: 10px;
+  }
+}
+
+.di-title-btn {
+  cursor: pointer;
+  float: right;
+  width: 10px;
+  height: 20px;
+  margin-top: 4px;
+  margin-right: 12px;
+}
+
+.mstrmojo-di-customize {
+  width: 12px;
+  background: url("images/DI/customize_icon.png") no-repeat 0 1px;
+  &:hover {
+    background-position: 0 -20px;
+  }
+  &.hit {
+    background-position: 0 -40px;
+  }
+}
+
+/* data import help button style */
+.mstrmojo-di-help {
+  background: url("vi/images/dataset.svg") no-repeat -872px -33px;
+  &:hover{
+    background-position: -872px -63px;
+  }
+  &.hit{
+    background-position: -872px -63px;
+  }
+}
+
+.mstrmojo-di-close {
+  background: url("vi/images/dataset.svg") no-repeat -902px -33px;
+  margin-right: 18px;
+  &:hover{
+    background-position: -902px -63px;
+  }
+  &.hit{
+    background-position: -902px -63px;
+  }
+}
+
+/* data import usage status list button style */
+.mstrmojo-di-usage {
+  height: 14px;
+  width: 14px;
+  padding: 5px 10px;
+  background: url(images/DI/usage_status_list.png) no-repeat center;
+  float: right;
+  //border-right: 1px solid rgb(179, 177, 177);
+}
+/* data import usage refresh button style */
+.mstrmojo-di-usage-refresh {
+  height: 14px;
+  width: 14px;
+  margin: 6px 6px 0 0;
+  background: url(images/DI/usage_refresh.png) no-repeat left top;
+  cursor: pointer;
+  float: right;
+
+}
+/* data import usage user quota style */
+.mstrmojo-di-user-quota {
+  height: 7px;
+  width: 60px;
+  margin: 27px -16px;
+  float: left;
+  border-radius: 1px;
+  border: 1px solid #A8A7A7;
+  background-color: #FFF;
+}
+
+.mstrmojo-di-user-quota::-webkit-progress-value {
+  height: 7px;
+  background-image: -webkit-linear-gradient(bottom, #4c4c4c 0%, #8a8a8a 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4c4c4c), color-stop(1, #8a8a8a));
+  border-radius: 1px;
+}
+
+.mstrmojo-di-user-quota::-webkit-progress-bar {
+  background: url(images/DI/status_bar.png) no-repeat center;
+  border-radius: 1px;
+}
+/* Firefox */
+.mstrmojo-di-user-quota::-moz-progress-bar {
+  height: 7px;
+  background-image: -moz-linear-gradient(#8a8a8a, #4c4c4c);
+  border-radius: 1px;
+}
+
+
+.mstrmojo-di-user-quota-text{ //mizhang TQMS 910484
+  float: left;
+  margin-left: 21px;
+  margin-top: 25px;
+  margin-right: 5px;
+  position: relative;
+  font-family: Arial;
+  font-size: 11px;
+  color: #007ebe;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.mstrmojo-di-user-quota-text:before, .mstrmojo-di-user-quota-text:after {
+  content: attr(title);
+  color: rgba(255,255,255,0.2);
+  position: absolute;
+  width: 124.5px;
+}
+
+.mstrmojo-di-user-quota-text:before { top: -49px; left: -49px }
+.mstrmojo-di-user-quota-text:after  { top: -49.5px; left: -49.5px }
+
+/* data import full screen button style*/
+.mstrmojo-di-full-screen{
+  height: 14px;
+  width: 14px;
+  margin: 6px 6px 0 0;
+  background: url(images/DI/fullscreen.png) no-repeat left top;
+  cursor: pointer;
+  float: right;
+}
+
+.mstrmojo-di-toolbar{
+  position: static;
+  width: 100%;
+}
+
+/* data import main header style */
+.mstrmojo-di-header {
+  //width: 100%;
+  height: 32px;
+  padding-top: 10px;
+  background-color: #ededed;
+
+  /* table search box in DI header */
+  .mstrmojo-di-tableSearchbox.mstrmojo-ui-Pulldown {
+    width: 200px;
+    margin: 0 auto;
+    .mstrmojo-popupList-scrollBar{
+      max-height: 220px;
+    }
+  }
+  .all-objects-view-link{
+    float:right;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 11px;
+    line-height: 22px;
+    color: #3492ED;
+    margin-right: 9px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* data import full screen icon in titlebar */
+.fullscreen {
+  height: 21px;
+  width: 21px;
+  background: transparent url("images/DI/fullscreen.png") no-repeat scroll center center;
+  cursor: pointer;
+  float: right;
+  margin: 4px 0 4px 6px;
+}
+
+/* data import main content area style */
+.mstrmojo-di-layout {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: none;
+  background-color:$primary-gray;
+}
+
+.mstrmojo-di-layout-noborder {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid $primary-gray;
+  background-color: $primary-gray;
+}
+
+/* root view curtain style */
+.mstrmojo-di-curtain {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: black; //#fcfcfc url("images/1ptrans.gif") left top repeat;
+  opacity: 0.5;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+  display: none;
+}
+
+// -----------------------------  Data Import container reset  ----------------------------------*/
+
+.mstrContent,
+.mstrWeb .mstrDockTop {
+  padding: 0;
+}
+
+//------------------------Data Import application error dialog style ------------------------
+
+.mstrmojo-di-errorBox {
+  width:434px;
+  //max-height: 400px;
+  height: auto;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  @include user-select(none);
+
+  //TQMS 960690: follow the spec in HTML5 VI
+  & > .mstrmojo-Editor-content{
+    padding: 16px 18px;
+    line-height: 18px;
+    overflow: hidden;
+    display: table;
+    min-height: 54px;
+    width: 398px; //DE7369
+  }
+
+  .mstrmojo-di-error-link {
+    color: #007ebe;
+    font-weight: normal;
+    &:hover{
+      text-decoration: underline;
+    }
+    &.on {
+      color: #a0a7ac;
+    }
+  }
+}
+
+.mstrmojo-di-errorMessage {
+  //TQMS 960690: follow the spec in HTML5 VI
+  color: #333333;
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 18px;
+  word-wrap: break-word;
+  max-width: 398px;
+
+  &.off {
+    display: table-cell !important;
+    vertical-align: middle;
+  }
+
+  // TQMS# 927782 enable text selection for error message
+  @include user-select(text);
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #7CC5EC;
+  }
+}
+
+.mstrmojo-di-errorMessage-detail {
+  color: #333333;
+  font-family: Arial;
+  font-size: 12px;
+  max-height: 120px;
+  //max-width: 95%; //mizhang TQMS 917728. The error msg of GA is not in good format.
+  overflow: hidden;
+  overflow-y: auto;
+  max-width: 398px;
+  word-wrap: break-word;
+  // TQMS# 927782 enable text selection for error message
+  @include user-select(text);
+  // TQMS 1010131: break long word into next line.
+  ul > li {
+    word-wrap: break-word;
+  }
+}
+
+
+.mstrmojo-di-errorOK {
+  margin: 15px;
+  float: right;
+  background: url("images/DI/btn_blue_ok.png") no-repeat;
+  border: none;
+  margin-bottom: 10px;
+}
+.mstrmojo-di-errorOK:hover {
+  background: url("images/DI/btn_blue_ok_on.png") no-repeat;
+}
+
+.mstrmojo-di-post-refresh-dialog{
+  width: 220px;
+  height: 100px;
+  background: #d8ebfb url(images/gradient_bg_lightblue_short.png) repeat-x scroll 0 38px;
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+//  -------- Data Import images and icons -------*/
+.di-refresh-reports { background-image: url(images/DI/iconRefreshReports.png); background-color: transparent; background-repeat: no-repeat;display: inline-block; width: 14px; height: 16px;}
+
+/* Style of a clickable icon*/
+.icon-clickable {cursor:pointer;}
+
+// global css class to disable text selection
+.user-select-none {
+  @include user-select(none);
+}
+
+// DE67264 workstation preview page
+@if($env == workstation){
+  .workstation {
+    .mstrmojo-di-view {
+      .mstrmojo-di-header {
+        height: 37px;
+        padding: 0;
+      }
+      .mstrmojo-di-layout {
+        //height: calc(100% - 104px) !important;
+        .di-preview-container {
+          height: calc(100% - 34px) !important;
+          .mstrmojo-DataGrid.lockHeader.mstrmojo-di-mappingpreview {
+            height: calc(100% - 6px) !important;
+            .mstrmojo-DataGrid-itemsScrollBox {
+              height: calc(100% - 25px) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mstrWeb.mstr-firefox .mstrmojo-Editor.mstrmojo-alert.modal>.mstrmojo-Editor-content{
+    width:100%;
+    box-sizing: border-box;
+}

@@ -1,0 +1,127 @@
+/** beginning of DIOAuthParaEditor */
+%input-panel-common {
+  .mstrmojo-TextBox {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;//
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;//
+    height: 22px;//
+    line-height: normal;
+    padding: 0 3px;
+    width: 200px;
+  }
+
+  .mstrmojo-TextBox.mstrmojo-OAuthParaEditor-urlInput,
+  .mstrmojo-TextBox.mstrmojo-OAuthParaEditor-textInput {
+    margin-top: 0;//
+    margin-bottom: 9px;//
+    box-sizing: border-box;//
+    height: 24px;
+    width: 260px;
+  }
+
+  .mstrmojo-OAuthParaEditor-Label {
+    margin-top: 0;//
+    margin-bottom: 10px;//
+    line-height: 22px;//
+    width: 85px;
+    text-align: left;
+    padding-right: 20px;
+  }
+}
+
+.mstrmojo-di-DIOAuthParaEditor {
+
+  .mstrmojo-Editor-content {
+    width: 365px;
+    padding-top: 16px;
+    padding-bottom: 7px;
+
+    .mstrmojo-Input-Panel {
+      @extend %input-panel-common;
+      margin-top: 0px;//
+    }
+
+    .mstrmojo-OAuthParaEditor-setDefault {
+      margin: 10px 0 10px 280px;
+      color: #007ebe;
+    }
+  }
+  .mstrmojo-Editor-buttons {
+    width: auto !important;
+  }
+  .hot {
+      border-color: #0C84C4;
+      background: #7CC5EC none;
+    :hover {
+      background: #92D2F4;
+    }
+    :active {
+      background-color: #7ACBF6;
+      .mstrmojo-Button-text {
+        -webkit-box-shadow: #17628b 0 0 2px 0px inset;
+        -moz-box-shadow: #17628b 0 0 2px 0px inset;
+        box-shadow: #17628b 0 0 2px 0px inset;
+      }
+    }
+  }
+  .mstrmojo-VIButton {
+    min-width: 66px;
+    height: 22px;
+    font-weight: normal;
+    padding: 0px;
+    margin: 0px 0px 0px 10px;
+    font-family: arial;
+    line-height: 22px;
+  }
+}
+/** end of DIOAuthParaEditor */
+
+.workstation{
+  %input-panel-common {
+    .mstrmojo-TextBox {
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -ms-border-radius: 6px;
+      border-radius: 6px;//
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;//
+      height: 22px;//
+      line-height: normal;
+      padding: 0 3px;
+      width: 200px;
+    }
+
+    .mstrmojo-TextBox.mstrmojo-OAuthParaEditor-urlInput,
+    .mstrmojo-TextBox.mstrmojo-OAuthParaEditor-textInput {
+      width: 245px;
+    }
+
+    .mstrmojo-OAuthParaEditor-Label {
+      padding-right: 0;
+    }
+  }
+
+  .mstrmojo-di-DIOAuthParaEditor {
+    .mstrmojo-Editor-content {
+      //clear float
+      overflow: auto;
+      zoom: 1;
+      .mstrmojo-Input-Panel{
+        .mstrmojo-TextBox.mstrmojo-OAuthParaEditor-textInput {
+          width: 280px;
+          border-radius: 3px;
+          height: 26px;
+        }
+      }
+      .mstrmojo-OAuthParaEditor-setDefault {
+        float: right;
+        margin: 10px 10px 0 10px;
+      }
+    }
+  }
+}

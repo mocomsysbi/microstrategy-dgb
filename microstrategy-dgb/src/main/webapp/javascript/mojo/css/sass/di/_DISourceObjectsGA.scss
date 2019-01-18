@@ -1,0 +1,257 @@
+.workstation {
+  // DE52070; Google Analytics
+  // below for calendar style
+  .mojo-di-sourceobjectsga {
+    .mstrmojo-di-ga-options {
+      .mstrmojo-DateTextBox-icon {
+        height: 21px;
+        width: 17px;
+        //margin-top: 4px;
+        //top: unset;
+      }
+      .mstrmojo-DateTextBox-icon.selected:hover {
+        background-position: -2050px -86px;
+      }
+      .mstrmojo-Popup.mstrmojo-DateTextBox-calendar {
+        height: auto;
+        width: 440px;
+        position: absolute;
+        left: 100px;
+        top: 30px;
+
+        .mstrmojo-Calendar.mstrmojo-di-calendar.mstrmojo-Calendar-left {
+        //  visibility: hidden;
+        //  position: absolute;
+          .mstrmojo-Calendar-decrease {
+        //    visibility: visible;
+            margin-top: 3px;
+          }
+        //  .mstrmojo-Calendar-increase {
+        //    display: inline;
+        //  }
+        }
+        .mstrmojo-Calendar.mstrmojo-di-calendar.mstrmojo-Calendar-right {
+          z-index: -1;
+          left: unset;
+          .mstrmojo-Calendar-decrease {
+            display: inline;
+            visibility: hidden;
+          }
+          .mstrmojo-Calendar-increase {
+            display: inline;
+          }
+          .mstrmojo-Calendar-increase.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+          }
+        }
+        .mstrmojo-Calendar.mstrmojo-di-calendar {
+          padding: 10px;
+          //height: 200px;
+          margin: 0;
+          .mstrmojo-Calendar-header {
+            line-height: 26px;
+            height: 26px;
+            width: unset;
+            //border: 1px solid RGBA(68,70,73,0.2);
+            .mstrmojo-Calendar-title {
+              background-color: #fafafa;
+              color: #444649;
+              font-weight: normal;
+              height: 26px;
+              text-align: center;
+              padding-top: 1px;
+              //padding-right: 14px;
+              border: 1px solid #dadadb;
+              border-bottom-width: 0;
+            }
+          }
+          .mstrmojo-Calendar-body {
+            //height: auto;
+            height: 201px;
+            padding-bottom: 1px;
+            .mstrmojo-Calendar-dayView {
+              top: unset;
+              //position: relative;
+            }
+            .mstrmojo-Calendar-dayView > table {
+              border-collapse: collapse;
+            }
+            thead {
+              .mstrmojo-di-Calendar-thead {
+                td {
+                  line-height: 26px;
+                  height: 26px;
+                  border: 1px solid #dadadb;
+                  font-size: 11px;
+                }
+              }
+            }
+            tbody {
+              td {
+                border: 1px solid #dadadb;
+              }
+              td > div {
+                line-height: 26px;
+                //height: 26px;
+                height: 100%;
+                background-color: unset;
+                font-size: 11px;
+                width: 100%;
+                text-align: center;
+              }
+              .mstrmojo-Calendar-day-cur {
+                color: #444649;
+              }
+              .mstrmojo-Calendar-day-cur.disabled {
+                color: RGBA(68, 70, 73, 0.2);
+              }
+              .mstrmojo-Calendar-day-cur.selected {
+                color: #fff;
+                background-color: #3B92ED;
+                width: unset;
+                border-radius: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // dropdown list style
+  #DIContainer .mstrmojo-di-view.mojo-theme-light.mstrmojo-di-view-popup {
+    .mstrmojo-di-layout .mojo-di-sourceobjectsga .mstrmojo-di-ga .mstrmojo-DropDownList {
+      .mstrmojo-DropDownList-select.mstrmojo-di-ga-dropDownList-select {
+        box-sizing: border-box;
+        width: 110px !important;
+        border-radius: 3px;
+        border: 1px solid #d4d4d4;
+        -webkit-appearance: none;
+        padding: 0 10px;
+        height: 22px !important;
+        //background: #fff url("vi/images/pulldown-sprite.png") no-repeat scroll right top;
+        background: #fff url(vi/images/dropdown_arrow-ws.svg) no-repeat scroll right top;
+      }
+    }
+  }
+  //radio button style
+.mstrmojo-di-view.mojo-theme-light.mstrmojo-di-view-popup {
+    .mstrmojo-di-layout .mojo-di-sourceobjectsga .mstrmojo-di-ga .mstrmojo-ListBase.upload-options {
+      height: 20px;
+      margin-bottom: 10px;
+      .mstrojo-di-ga-upload-options-item > input {
+        -webkit-appearance: none;
+        width: 18px;
+        height: 16px;
+        margin-top: 2px;
+        margin-right: 4px;
+        background: transparent url(images/checkbox.svg) no-repeat;
+        background-position: -3px -151px;
+        float: left;
+        text-align: center;
+      }
+      .mstrojo-di-ga-upload-options-item.selected > input {
+        background-position: -3px -126px;
+      }
+    }
+  }
+  // GA align
+  #DIContainer .mstrmojo-di-view.mojo-theme-light.mstrmojo-di-view-popup {
+    .mstrmojo-di-layout {
+      .mojo-di-sourceobjectsga > div:nth-child(2) {
+        .mstrmojo-Label.mstrmojo-di-ga-collapsed {
+          color: #3B92ED;
+        }
+        .mstrmojo-di-ga {
+          //height: 170px;
+        }
+        .mstrmojo-di-ga div:nth-child(5) {
+          div:nth-child(3) { //Query Explorer
+            float: left;
+            &:before {
+              content: "___";
+              color: transparent;
+              background: transparent url("images/DI/workstation/workstation.svg") no-repeat -2000px -131px;
+            }
+          }
+          div:nth-child(2) { //Update Query
+            float: left;
+            margin-left: 15px;
+            &:before {
+              content: "___";
+              color: transparent;
+              background: transparent url("images/DI/workstation/workstation.svg") no-repeat -2000px -51px;
+            }
+          }
+        }
+      }
+      .mojo-di-sourceobjectsga > div:nth-child(4) {
+        padding: 0 16px 0 16px !important;
+        height: 100%;
+        width: calc(100% - 32px) !important;
+        .source-objects-browser {
+          height: 67% !important;
+          width: 100% !important;
+          .mstrmojo-di-so-list-header, .mstrmojo-di-so-list-header {
+            font-size: 12px;
+          }
+          .mstrmojo-ListBase2-itemsContainer .mstrmojo-itemwrap  .mstrmojo-di-tree-node-list .mstrmojo-di-tree-node-folder:hover {
+            background-color: RGBA(68, 70, 73, 0.06);
+          }
+        }
+        .source-objects-browser > div {
+          width: 100% !important;
+          .mstrmojo-ListBase2 {
+            width: 100% !important;
+          }
+        }
+        .source-objects-browser + textarea {
+          padding: 10px 10px 0 10px;
+          margin: 0;
+          height: calc(100% - 180px) !important;
+          width: 100% !important;
+          border-color: RGBA(68,70,73,0.2);
+          font-size: 12px;
+          font-family: Arial;
+        }
+      }
+    }
+    //.mstrmojo-di-footer {
+    //  padding: 0 26px 0 16px;
+    //  height: 10%;
+    //}
+  }
+}
+
+//Select your file from Google Analytics, show in web and one-tier, hidden in other situations
+//.mstrWeb .mstrmojo-di-popup .mstrmojo-di-view .mstrmojo-di-layout .mojo-di-sourceobjectsga {
+//  .mstrmojo-Label.source-objects-subtitle.extrasmall-googleanalytics {
+//    display: block !important;
+//  }
+//}
+//.workstation.mac .mstrmojo-di-view .mstrmojo-di-layout .mojo-di-sourceobjectsga {
+//  .mstrmojo-Label.source-objects-subtitle.extrasmall-googleanalytics {
+//    display: none !important;
+//  }
+//}
+
+.mojo-di-sourceobjectsga {
+  .source-objects-browser {
+    .mstrmojo-di-ga-table {
+      .mstrmojo-di-tree-node-list {
+        .mstrmojo-di-tree-node-itemsContainer {
+          .mstrmojo-di-tree-node-file {
+            span.mstrmojo-di-tree-node-desc {
+              padding-left: 10px;
+              padding-top: 7px;
+            }
+            span.mstrmojo-di-ga-tree-node-edit-icon {
+              margin-top: 5px;
+              padding: 5px 0 0 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

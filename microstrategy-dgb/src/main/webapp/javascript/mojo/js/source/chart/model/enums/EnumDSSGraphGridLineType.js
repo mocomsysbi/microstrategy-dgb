@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSGraphGridLineType={DssGraphGridNone:0,DssGraphGridRegular:1,DssGraphGridBoth:2,DssGraphGridInnerTicks:3,DssGraphGridOuterTicks:4,DssGraphGridSpanningTicks:5};

@@ -1,0 +1,12 @@
+.mstrmojo-inline-dialog {
+    &.filter-box-dialog {
+        .mstrmojo-Label > SPAN {
+            @include wsvi-icon-before('toolbar-selector');
+            
+            &:before {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

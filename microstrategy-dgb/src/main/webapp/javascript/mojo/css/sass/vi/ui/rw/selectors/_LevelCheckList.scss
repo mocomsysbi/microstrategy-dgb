@@ -1,0 +1,116 @@
+@import '../../../vi-global';
+
+/** BEGIN: LevelCheckList **/
+.mstrmojo-vi-sel-LevelCheckList {
+    .level-control {
+        .mstrmojo-ui-Pulldown.level {
+            max-width: none;
+            font-size: 8pt;
+
+            .mstrmojo-ui-Pulldown-text {
+                background-image: url(vi/images/pulldown-sprite.png);
+
+                &:after {
+                    background: none;
+                }
+            }
+        }
+    }
+
+    .level-container {
+        .mstrmojo-vi-sel-CheckList {
+            &.showSelected {
+                .item {
+                    display: none;
+
+                    &.selected {
+                        display: block;
+                    }
+                }
+            }
+
+            .item {
+                background: transparent;
+                padding: 0;
+
+                .iconRA-checkbox {
+                    display: inline;
+
+                    &:before {
+                        content: '\e806';
+                        padding-right: 2px;
+                    }
+                }
+
+                &.selected {
+                    .iconRA-checkbox {
+                        &:before {
+                            content: '\e805';
+                        }
+                    }
+                }
+
+                &.noOnly .only {
+                    display: none;
+                }
+            }
+
+            .text {
+                display: inline;
+            }
+        }
+    }
+
+    .level-buttonBar {
+        padding-top: 9px;
+
+        .mstrmojo-Box .mstrmojo-Button {
+            width: 47%;
+            min-width: 0;
+
+            &:first-child {
+                float: left;
+            }
+
+            &:last-child {
+                float: right;
+            }
+
+            .mstrmojo-Button-text {
+                color: inherit;
+                font-size: 8pt;
+            }
+        }
+    }
+
+    &.noApply {
+        .level-buttonBar {
+            display: none;
+
+            .mstrmojo-Button:first-child {
+                opacity: 0.5;
+            }
+        }
+    }
+}
+.mojo-theme-light {
+    .mstrmojo-vi-sel-LevelCheckList {
+        .level-buttonBar {
+            @include box-shadow(#F7F7F7, 0, -1px, 0);
+
+            border-top: 1px solid #D1D1D1;
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-vi-sel-LevelCheckList {
+        .level-buttonBar {
+            @include box-shadow(#303030, 0, -1px, 0);
+
+            border-top: 1px solid #595959;
+        }
+    }
+}
+/** END: LevelCheckList **/
+

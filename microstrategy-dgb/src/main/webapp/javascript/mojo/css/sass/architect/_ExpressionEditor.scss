@@ -1,0 +1,45 @@
+/** BEGIN:  ExpressionEditor **/
+.mstrmojo-architect-ExpressionEditor {
+  .tbInsert, .tbValidate, .tbClear {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.mstrmojo-Editor-toolBox {
+  &.toolbar {
+    line-height: 20px;
+  }
+  &.expLabel {
+    font-size: 10pt;
+    width: 445px;
+  }
+}
+
+.mstrmojo-architect-ExpressionEditBox-bottombox {
+  border-collapse: separate;
+  width: 500px;
+}
+
+.mstrmojo-architect-ExpressionEditBox-optionsbox {
+  width: 180px;
+}
+
+.mstrmojo-architect-ExpressionEditBox-dt {
+  font-size: 8pt;
+  width: 65px;
+}
+
+.mstrmojo-architect-ExpressionEditBox-dtlist {
+  width: 92px;
+}
+
+.mstrmojo-architect-ExpressionEditBox-option {
+  margin: 0 4px 0 4px;
+  text-align: right;
+}
+
+.mstrmojo-architect-ExpressionEditBox-optiontxt {
+  width: 40px;
+}
+/** END: ExpressionEditor **/

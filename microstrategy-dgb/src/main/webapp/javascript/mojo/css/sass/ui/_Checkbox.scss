@@ -1,0 +1,13 @@
+@import '../global';
+
+/** BEGIN: ui-Checkbox **/
+.mstrmojo-ui-Checkbox {
+    background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) -2px -27px no-repeat;
+    height: 20px;
+    width: 20px;
+
+    &.checked {
+        background-position: -2px -3px;
+    }
+}
+/** END: ui-Checkbox **/

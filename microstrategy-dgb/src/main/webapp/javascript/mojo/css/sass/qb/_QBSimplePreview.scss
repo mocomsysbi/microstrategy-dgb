@@ -1,0 +1,124 @@
+/* QueryBuilder Mapping Preview */
+@mixin qb-preview-menu($opacity) {
+  background-image: url(../../../style/mstr/images/archlistView.png);
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  display: block;
+  vertical-align: middle;
+  background-position: 2px -256px;
+  right: 5px;
+  padding-left: 0px;
+  opacity: $opacity;
+  position: absolute;
+  -webkit-transition: opacity 300ms;
+  visibility: visible;
+  top: 0;
+}
+
+.mstrmojo-qb-preview-info {
+  padding-top: 12px;
+  padding-left: 12px;
+  height: 26px;
+
+  .mstrmojo-qb-preview-text {
+    font-weight: bold;
+  }
+
+  .mstrmojo-qb-preview-menu{
+    @include qb-preview-menu(1);
+  }
+}
+
+.mstrmojo-di-datapreview .warnLabel {
+  position: absolute;
+  left: 44%;
+  top: 45%;
+}
+
+
+//mizhang TQMS 942676
+.mstrmojo-DataGrid.lockHeader .mstrmojo-DataGrid-itemsScrollBox {
+  @include scrollBar();
+}
+
+.mstrmojo-qb-simplepreview.mstrmojo-DataGrid.lockHeader {
+    .mstrmojo-DataGrid-itemsScrollBox.mstrmojo-scrollNode.hasVertical.isIEOrEdge {
+        padding-right: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+.mstrmojo-qb-simplegrid-header {
+  height: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+
+  .mstrmojo-qb-simplegrid-headertext {
+    padding-left: 25px;
+    line-height: 20px;
+
+    div {
+      position:absolute;
+    }
+  }
+
+  .mstrmojo-qb-simplegrid-itemmenu {
+    @include qb-preview-menu(0);
+  }
+
+  &:hover .mstrmojo-qb-simplegrid-itemmenu {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.mstrmojo-qb-simplepreview {
+  .mstrmojo-DataGrid-headerTable td {
+    padding-right: 0;
+  }
+}
+
+/* END: Data row of data preview */
+
+.workstation{
+  @mixin qb-preview-arrow(){
+    position: static;
+    display: inline-block !important;
+    background-image: url("vi/images/dropdown_arrow.svg");
+    background-position: 0;
+  }
+  .mstrmojo-qb-preview-info {
+    .mstrmojo-qb-preview-menu{
+      @include qb-preview-arrow();
+    }
+  }
+  .mstrmojo-qb-simplegrid-header{
+    .mstrmojo-qb-simplegrid-headertext{
+      padding-left: 5px;
+    }
+    .mstrmojo-qb-simplegrid-itemmenu{
+      display: inline-block !important;
+      background-image: url("vi/images/dropdown_arrow.svg");
+      background-position: 0;
+      float: right;
+      margin-right: -12px;
+      margin-top: 2px;
+    }
+  }
+  .mstrmojo-qb-simplepreview{
+    .mstrmojo-DataGrid-headerContainer{
+      .mstrmojo-DataGrid-headerTable {
+        border-bottom: 1px solid rgba(68,70,73, 0.2);
+      }
+    }
+    .mstrmojo-DataGrid-itemsContainer td {
+      // DE72118; retore border line in datapreview page in build query.
+      // border-color: transparent;
+    }
+  }
+}

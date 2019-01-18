@@ -1,0 +1,19 @@
+@import '../../_vi-global';
+
+/** BEGIN: ImageEditorModel **/
+.mstrmojo-VIPanelContents {
+    .mstrmojo-vi-TwoColumnProp {
+        &.dim-input {
+            & > .vi-col1 {
+                vertical-align: middle;
+                text-align: right;
+            }
+
+            &.y > .vi-col1 {
+                text-align: right;
+            }
+        }
+    }
+}
+
+/** END: ImageEditorModel **/

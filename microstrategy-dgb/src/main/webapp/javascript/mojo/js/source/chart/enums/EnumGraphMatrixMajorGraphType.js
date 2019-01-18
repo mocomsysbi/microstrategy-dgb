@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumGraphMatrixMajorGraphType={_UNDEFINED:0,_AREA:1,_BAR:2,_LINE:3,_SCATTER:4,_BUBBLE:5,_PIE:6,_GRID:7};

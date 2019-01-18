@@ -1,0 +1,52 @@
+// -------- Data Import Intro page Styles  -------------
+
+.mstrmojo-di-bullet {   
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+
+.mstrmojo-di-bullet .tip{   
+    border: #c0c0c0 1px dotted;
+    padding: 4px;
+    width: 300px;
+    height: 50px;
+    position:relative;
+    top:-60px;
+    left:60px;
+    color: #FFA500;
+    font-weight: bold;
+    background-color: #FAFAD2;
+} 
+    
+.mstrmojo-di-bullet-tip{    
+    border: #c0c0c0 1px dotted;
+    padding: 4px;
+    width: 300px;
+    height: 50px;
+    color: #FFA500;
+    font-weight: bold;
+    background-color: #FAFAD2;
+}
+
+.mstrmojo-di-Quota-bullet {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+} 
+
+.mstrmojo-di-Quota-bullet:hover{
+    background-color: #daedf7;
+}
+ 
+.mstrmojo-di-Quota-bullet .qspan{
+    padding-right:10px;
+    font:11px arial;
+    text-decoration : underline; 
+    color:#0066cc;
+}
+
+.mstrmojo-di-Quota-bullet .qspan2{
+    font: 12px arial;
+    color:#333333;
+}

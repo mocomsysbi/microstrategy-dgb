@@ -1,0 +1,86 @@
+/* QueryBuilder Menu Buttons*/
+.mstrmojo-qb-ListIcon  {
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  height:20px;
+  width:20px;
+  cursor:pointer;
+  vertical-align: middle;
+
+  /*attribute*/
+  &.t12 {
+    background-position: -1px -1196px;
+  }
+  /*attribute form*/
+  &.t21 {
+    background-position: -2px -1287px;
+  }
+  /*table*/
+  &.t15 {
+    background-position: -2px -70px;
+  }
+  /*column*/
+  &.t26 {
+    background-position: -2px -93px;
+  }
+  /*add*/
+  &.addbtn {
+    background-position: 0px -163px;
+  }
+  /*refresh*/
+  &.refresh {
+    background-position: 0px -800px;
+  }
+  /*info*/
+  &.info {
+    background-position: -2px -1096px;
+  }
+  /*divmenu*/
+  &.div {
+    background-position: 0px -256px;
+  }
+}
+
+
+.mstrmojo-qb-SuggestIcon {
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  padding:3px 0px 1px 22px;
+  cursor:pointer;
+  vertical-align: middle;
+
+  /*funtion*/
+  &.t11 {
+    background-position: -1px -1050px;
+  }
+  /*table*/
+  &.t15 {
+    background-position: 0px -70px;
+  }
+  /*column*/
+  &.t26 {
+    background-position: 0px -94px;
+  }
+}
+
+/* TQMS 958819: specail style for error msg in exr editor*/
+.mstrmojo-qb-ExpressionEditor {
+
+  .mstrmojo-MEBox-status {
+    overflow-x: auto;
+
+    .mstrmojo-MEBox-iStatus {
+      text-overflow: clip;
+      padding-right: 10px;
+      max-width: none;
+    }
+  }
+
+  .mstrmojo-MEBox .mstrmojo-TokenInputBox {
+    height: 100px;
+  }
+
+  .mstrmojo-TokenInputBox-edit {
+      overflow-y: scroll;
+  }
+}

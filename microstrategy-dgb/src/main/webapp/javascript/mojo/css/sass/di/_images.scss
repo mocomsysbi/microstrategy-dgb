@@ -1,0 +1,48 @@
+//  -------- Data Import images and icons -------*/
+
+
+.di-question-mark { background-image: url(images/DI/question-mark.png); background-color: transparent; background-repeat: no-repeat;display: inline-block; width: 16px; height: 16px;}
+
+.exit { width: 72px; height: 73px; background-position: 0 -34px; }
+
+.mstrmojo-ArchitectListIconBlock  {
+    background-image:url(images/DI/archlistView.png);
+    background-repeat:no-repeat;
+    height:20px;
+    width:20px;
+    cursor:pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+.mstrmojo-ArchitectListIconBlock.redirect {width:22px; background-position: 0px -548px; /*redirect*/}
+
+/* Style of sample data image used in file upload page*/
+.image-di-sampledata{ background-position: 0 -61px; width: 760px; height: 290px; }
+/* Style of the icon used to indicate exiting from flat preview of the xtab structure*/
+.icon-exit-flat-view{ background-position: 0 -401px; width: 15px; height: 15px; }
+/* Style of the icon used to indicate exiting from flat preview of the xtab structure (when hovered)*/
+.icon-exit-flat-view-hover{ background-position: 0 -466px; width: 15px; height: 15px; }
+/* Style of the icon used to indicate converting to tabular structure for xtab*/
+.icon-flat-view{ background-position: 0 -531px; width: 15px; height: 15px; }
+/* Style of the icon used to indicate converting to tabular structure for xtab when hovered*/
+.icon-flat-view-hover{ background-position: 0 -596px; width: 15px; height: 15px; }
+/* Style of the icon used to indicate exiting from flat preview of the xtab structure (when hovered)*/
+.icon-refresh-options{ background-position: 0 -725px; width: 15px; height: 15px; }
+
+
+
+.image-di-analyticsIntro {background-image:url(images/DI/analyticsIntro.png);width:700px;height:200px;}
+
+
+
+.mstrmojo-di-Icons.rightarrow{background-position: 0 0;}
+
+.mstrmojo-di-Icons.leftarrow{background-position: 0 -33px;}
+
+.mstrmojo-di-Icons.hadoop{background-image:url(images/DI/hadoop.png); }
+
+.mstrmojo-di-Icons.Database{background-image:url(images/DI/freeform.png);}
+
+.mstrmojo-di-Icons.SFA{background-image:url(images/DI/sales_disabled.png);}
+
+.mstrmojo-di-Icons.msDynamics{background-image:url(images/DI/ms-dynamics.png);}

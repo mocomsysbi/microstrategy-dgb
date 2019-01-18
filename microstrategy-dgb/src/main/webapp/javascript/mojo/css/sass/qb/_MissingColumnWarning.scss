@@ -1,0 +1,51 @@
+/* QueryBuilder Missing Column Warning Dialog */
+.mstrmojo-qb-MissingColumns-list {
+  margin-left:20px;
+  max-height: 105px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  width: 300px;
+  border:solid lightgray 1px;
+  border-bottom-width:0px;
+}
+
+.mstrmojo-qb-MissingColumns-title {
+  margin:10px 0px 20px 20px;
+}
+
+.mstrmojo-qb-MissingColumns-instruction {
+  margin:10px 20px 0px;
+}
+
+.mstrmojo-qb-MissingColumns-Icon {
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  height:20px;
+
+  &.t12 {
+    background-position: 0px -1195px;
+  }
+
+  &.t4 {
+    background-position: -1px -1219px;
+  }
+}
+
+.mstrmojo-qb-MissingColumns-bullet {
+  border: 0px lightgray solid;
+  border-bottom-width: 1px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  line-height: 22px;
+  cursor:default;
+  padding-left: 25px;
+
+  span {
+    margin:0px 10px;
+  }
+}
+
+.mstrmojo-qb-MissingColumns-buttonBox td:first-child {
+  width: auto;
+}

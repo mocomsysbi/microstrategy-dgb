@@ -1,0 +1,207 @@
+.mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog {
+  width: 973px;
+
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-addBtn {
+    position: absolute;
+    width: 66px;
+    height: 25px;
+    right: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    .mstrmojo-Button-text {
+      line-height: 25px;
+    }
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid {
+    margin-top: 45px;
+    border: none;
+
+    .mstrmojo-DataRow {
+      line-height: 30px;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .hintTitle {
+      margin-top: 60px;
+      text-align: center;
+      color: rgba(68,70,73,.5);
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .hintContent {
+      margin-top: 20px;
+      text-align: center;
+      color: #444649;
+      font-size: 12px;
+    }
+
+    .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-col {
+      &.name {
+        cursor: pointer;
+        color: #007ebe;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &.statusRunning{
+        color: #40C141;
+      }
+      &.statusStopped {
+        color: #F15354;
+      }
+      &.statusUndeployed {
+        color: #F5A623;
+      }
+      &.statusDeploying {
+        color: #3B92ED;
+      }
+      &.action {
+        .mstrmojo-Button {
+          line-height: 20px;
+          cursor: pointer;
+          display: inline-block;
+          margin-left: 3px;
+          box-shadow: #FDFDFD 0 1px 1px 0px;
+          border: 1px solid #DEDEDE;
+          -webkit-border-radius: 70px;
+          -moz-border-radius: 70px;
+          border-radius: 70px;
+          text-align: center;
+        }
+        float: left;
+      }
+    }
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .nameCol {
+      width: 150px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .hostCol {
+    width: 120px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .portCol {
+    width: 60px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .namenodeAddrCol {
+    width: 120px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .hdfsRpcPortCol {
+    width: 74px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .hdfsHttpPortCol {
+    width: 100px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .statusCol {
+    width: 100px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .actionCol {
+    width: 150px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .logsCol {
+    width: 60px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-undelpoy,.mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-delpoy {
+    width: 76px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-start, .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-stop {
+    width: 60px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-undelpoy:hover, .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-stop:hover {
+    background-color: #F15354;
+    color: #FFFFFF;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-delpoy:hover, .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-start:hover {
+    background-color: #40C141;
+    color: #FFFFFF;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-stop:active {
+    background-color: #CD0B0D;
+    color: #FFFFFF;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-action-start:active {
+    background-color: #0E8A0F;
+    color: #FFFFFF;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid-logs {
+    width: 14px;
+    height: 16px;
+    margin: auto;
+    cursor: pointer;
+    &.normal {
+      background: url("images/DI/logs_icon.png") no-repeat -10px -10px;
+    }
+    &.normal:hover, &.normal:active {
+      background: url("images/DI/logs_icon.png") no-repeat -10px -70px;
+    }
+    &.disable {
+      background: url("images/DI/logs_icon.png") no-repeat -10px -40px;
+    }
+  }
+  // Style from _DICubesList
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid {
+    overflow: hidden;
+    tbody.mstrmojo-itemwrap > tr {
+      height: 28px;
+    }
+    tbody.mstrmojo-itemwrap td{
+      border-right: 1px solid #CBCBCB;
+    }
+    .mstrmojo-itemwrap-table {
+      border-collapse: collapse;
+      border-left: 1px solid #CBCBCB;
+      background-color: #FFFFFF;
+    }
+    .mstrmojo-DataGrid-headerContainer {
+      border-top: 1px solid #CBCBCB;
+      border-left: 1px solid #CBCBCB;
+    }
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .mstrmojo-DataGrid-headerText {
+    font: bold 12px Arial;
+    color: #333333;
+    border-style: none;
+    line-height: 24px;
+    height: 24px;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .mstrmojo-DataGrid-headerContainer td{
+    padding-right: 0;
+  }
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .mstrmojo-DataGrid-headerContainer td,
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .mstrmojo-DataRow {
+    background-color: transparent;
+    &.even {
+      background-color: #F6F6F6;
+    }
+    &.odd {
+      background-color: #FFFFFF;
+    }
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid .mstrmojo-DataRow:hover {
+    background-color: #F6F6F6;
+  }
+
+  .mstrmojo-di-ui-dialogs-DIHadoopGatewayManagerDialog-grid {
+    width: 100%;
+    min-width: 640px;
+    margin-bottom: 11px; //mizhang TQMS 947539
+    .mstrmojo-DataGrid-itemsScrollBox {
+      overflow-y: auto;
+      height: 354px; //mizhang TQMS 948954
+    }
+    .mstrmojo-DataGrid-headerContainer {
+      border-bottom: 1px solid $divider-line-dark;
+      background-color: #EFEFF0;
+    }
+    .mstrmojo-DataRow:hover .cubeList-menu-button {
+      border-top: 5px solid #000000;
+    }
+  }
+
+}

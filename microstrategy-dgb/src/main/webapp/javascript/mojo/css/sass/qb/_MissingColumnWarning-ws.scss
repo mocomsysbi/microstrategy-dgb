@@ -1,0 +1,28 @@
+.workstation{
+  .mstrmojo-MissingColumnWarning-image{
+    width: 74px;
+    height: 74px;
+    background: url(#{$mojo-img-path}/DI/dataset-error.svg) no-repeat 0 0;
+    position: absolute;
+  }
+
+  .warningContent {
+    margin-left: 90px;
+    width: 286px;
+  }
+
+  .margin-left-90 {
+    margin-left: 90px;
+  }
+
+  .left-float{
+    float: left;
+  }
+
+  .resize.mstrmojo-di-popup-dialog{
+    .mstrmojo-Editor.mstrmojo-MissingColumnWarning{
+      width: 440px;
+      max-height: 400px;
+    }
+  }
+}

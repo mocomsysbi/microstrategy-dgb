@@ -1,0 +1,152 @@
+@import '../../../_global.scss';
+
+/** Start MoreOptionsEditor **/
+.mstrmojo-Editor.mstrmojo-MoreOptions-Editor {
+    .mstrmojo-Editor-content {
+        padding: 16px 18px;
+    }
+
+    .headers {
+        .title {
+            font-weight: bold;
+            padding-bottom: 22px;
+        }
+
+        .mstrmojo-ui-CheckList {
+            .scroll-container {
+                min-height: 0px;
+            }
+
+            .item {
+                min-width: 0px;
+            }
+        }
+    }
+
+    .view {
+        .title {
+            font-weight: bold;
+            padding-bottom: 30px;
+        }
+
+        .vi-col2 .mstrmojo-Box {
+            height: 22px;
+            padding-top: 8px;
+
+            & > DIV {
+                position: relative;
+                float: left;
+
+                &.mstrmojo-Label {
+                    line-height: 22px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .filtering {
+        .vi-col2 .mstrmojo-Box {
+            padding-top: 8px;
+        }
+
+        .title {
+            padding-bottom: 30px;
+            font-weight: bold;
+        }
+        .dropdownLabel{
+            line-height: 16px;
+        }
+    }
+
+    .joinbehavior {
+        padding-top: 10px;
+
+        .vi-col1 {
+            vertical-align: top !important;
+            font-weight: bold;
+        }
+
+        .mstrmojo-DataGrid {
+            .mstrmojo-DataGrid-headerTable td {
+                background-color: #F3F3F4;
+                padding: 0;
+                border-width: 0 0 1px;
+                border-color: transparent transparent #CCCCCC;
+                border-style: solid;
+                overflow: hidden;
+            }
+
+            .mstrmojo-DataGrid-headerText {
+                height: 21px;
+                border-width: 0;
+
+                &.objects-hd {
+                    text-align: left;
+                    padding-left: 28px;
+                }
+                &.jointype-hd {
+                    text-align: right;
+                    padding-right: 25px;
+                }
+            }
+            .mstrmojo-DataGrid-itemsContainer td {
+                background-color: #FFFFFF;
+            }
+
+            .mstrmojo-DataRow-text {
+                border-style: none;
+                padding-left: 18px;
+                margin-left: 10px;
+            }
+
+            .jt-metric .mstrmojo-DataRow-text {
+                background: url(vi/images/unitList/metric.png) no-repeat left;
+            }
+
+            .jt-allattr .mstrmojo-DataRow-text {
+                background: url(vi/images/unitList/attribute.png) no-repeat left;
+            }
+
+        }
+
+        .jt-col {
+            float: right;
+        }
+
+        .jt-value {
+            float: left;
+            line-height: 21px;
+            height: 21px;
+            padding-right: 4px;
+        }
+
+        .jt-menu {
+            background: transparent url(#{$vi-menu-icons}) -60px 2px no-repeat;
+            display: inline-block;
+            cursor: pointer;
+            float: left;
+            height: 15px;
+            margin: 3px 7px 0 0;
+            width: 15px;
+            &:hover {
+                background-position: -60px -28px;
+            }
+            &:active {
+                background-position: -60px -58px;
+            }
+        }
+
+    }
+
+    .mstrmojo-Editor-buttons {
+        .mstrmojo-Button {
+            position: relative;
+            float: right;
+            height: 22px;
+            width: 65px;
+            margin: 10px 10px 10px 0px;
+        }
+    }
+}
+/** End MoreOptionsEditor **/

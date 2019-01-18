@@ -1,0 +1,26 @@
+.workstation {
+  .mstrmojo-qb-simplegrid-menu,
+  .mstrmojo-qb-DBTableRowMenu,
+  .mstrmojo-qb-DBTableRowMenu .mstrmojo-ui-Menu,
+  .mstrmojo-di-AlternateSourceMenu {
+    min-width: 145px;
+    max-width: 350px;
+    padding: 5px 0;
+    z-index: 1000;
+    .mstrmojo-ui-Menu-item {
+      padding: 0 13px;
+    }
+  }
+  .mstrmojo-qb-DBTableRowMenu {
+    .mstrmojo-ui-Menu .mstrmojo-ui-Menu-item {
+      padding-right: 20px;
+    }
+    .mstrmojo-ui-Menu-item.separator {
+      margin: 3px 0;
+    }
+    .mstrmojo-ui-Menu-item.pop.depth1> .mstrmojo-ui-Menu {
+      max-height: 300px;
+      overflow: auto;
+    }
+  }
+}

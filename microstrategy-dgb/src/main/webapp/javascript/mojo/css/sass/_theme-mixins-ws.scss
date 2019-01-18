@@ -1,0 +1,902 @@
+@import 'theme-mixins';
+
+// Inner glow.
+@mixin wsvi-ctrl-inner-glow {
+  @include box-shadow($ctrl-inner-glow-color, 0, 0, 5px, true);
+}
+
+// Contrast Inner glow.
+@mixin wsvi-ctrl-inner-glow-contrast {
+  @include box-shadow($ctrl-inner-glow-color-contrast, 0, 0, 5px, true);
+}
+
+// For when the divider is shown below the item.
+@mixin wsvi-ctrl-bottom-highlight {
+  @include box-shadow($ctrl-base-highlight-color, 0, 1px, 0);
+
+  border-bottom: 1px solid $ctrl-offset-highlight-color;
+}
+
+// For when the divider is shown above the item.
+@mixin wsvi-ctrl-top-highlight {
+  @include box-shadow($ctrl-offset-highlight-color, 0, -1px, 0);
+
+  border-top: 1px solid $ctrl-base-highlight-color;
+}
+
+// Popup styling.
+@mixin wsvi-ctrl-popup {
+  @include box-shadow($popup-box-shadow, 0, 0, 10px);
+
+  color: $popup-font-color;
+  background: $popup-background;
+  border-color: $ctrl-border;
+}
+
+// Popup styling.
+@mixin wsvi-ctrl-popup-contrast {
+  @include box-shadow($popup-box-shadow-contrast, 0, 0, 10px);
+
+  color: $popup-font-color-contrast;
+  background: $popup-background-contrast;
+  border-color: $ctrl-border-contrast;
+}
+
+// Pulldown popuplist styling. Used for Pulldown and SearchablePulldown
+@mixin wsvi-pulldown-popup {
+  @include box-shadow($wsvi-panel-shadow, 0, 0, 2px);
+
+  color: $wsvi-primary-black;
+  background-color: $wsvi-primary-white;
+  border-color: $wsvi-ui-border-gray;
+}
+
+@mixin wsvi-select-bg {
+    background-color: $wsvi-primary-blue;
+    color: $wsvi-primary-white;
+}
+
+@mixin wsvi-hover-select-bg {
+    color: $wsvi-primary-black;
+
+    &:hover {
+        background-color: $wsvi-hover-gray;
+    }
+
+    &.selected {
+        @include wsvi-select-bg;
+    }
+}
+
+@mixin wsvi-ctrl-popup-list-item {
+    .item {
+        @include wsvi-hover-select-bg();
+    }
+}
+
+// Popuplist styling.
+@mixin wsvi-ctrl-popup-list {
+    @include ctrl-popup;
+    @include ctrl-popup-list-item;
+}
+
+// Popup list stlying.
+@mixin wsvi-ctrl-popup-list-contrast {
+  @include ctrl-popup-contrast;
+
+  .item {
+    color: $ctrl-font-color-contrast;
+
+    &:hover {
+      background: $popuplist-background-hover-contrast;
+    }
+
+    &.selected {
+      background: $popuplist-background-selected-contrast;
+    }
+  }
+}
+
+// shared pulldown settings
+@mixin wsvi-dropdown-icon {
+    @include linear-gradient(transparent, transparent, false, $vi-img-path + '/pulldown-sprite.png');
+    background: transparent url(#{$vi-img-path}/dropdown_arrow.svg) 100% 0 no-repeat;
+
+    &:active {
+        background: transparent url(#{$vi-img-path}/dropdown_arrow.svg) 100% -30px no-repeat;
+    }
+}
+
+@mixin wsvi-dropdown-text ($ht: $wsvi-input-control-height, $ln-ht: 18px) {
+    @include ellipsis-text();
+
+    border: 1px solid $wsvi-ui-border-gray;
+    cursor: default;
+    height: $ht;
+    line-height: $ln-ht;
+    max-width: none;
+    border-radius: $wsvi-box-radius;
+}
+
+@mixin wsvi-dropdown-text-disabled {
+    opacity: 0.35;
+    border-color: $wsvi-inputborder-disable-light-theme;
+    color: $wsvi-font-gray-dark;
+}
+
+@mixin wsvi-alert-content($imgLeft, $imgTop, $left: 22px) {
+    @include user-select(text);
+    display: table-cell !important;
+    padding: $wsvi-editor-content-padding;
+    vertical-align: top;
+    height: 75px;
+    padding-left: 97px; // 75 + 22;
+    word-wrap: break-word; // First try to break on word boundaries. If not possible, break inside words to avoid overflow.
+
+    &:before {
+        width: 75px;
+        height: 75px;
+        background: url(#{$vi-img-path}/notification.svg) no-repeat scroll -31px -63px;
+        position: absolute;
+        left: $left; // 16 px + 6px (6px needed to line up with title)
+        content: '';
+    }
+}
+
+/** Start ControlBase **/
+// The basic styles for all controls on the VI page controlled for themes using variables.
+@mixin wsvi-control-base {
+  background-color: $ctrl-background;
+  color: $ctrl-font-color;
+
+  &.mstrmojo-ui-Menu {
+    background-color: $menu-background;
+  }
+
+  .mstrmojo-vi-EditorGroup.divide:nth-child(n+2) {  //do not add divider to the first editor group
+    @include ctrl-top-highlight;
+
+  }
+
+  // Pulldown
+  &.mstrmojo-ui-Pulldown,
+  .mstrmojo-ui-Pulldown {
+    color: $ctrl-font-color;
+    background-color: transparent;
+    .mstrmojo-ui-Pulldown-text {
+      @include ctrl-inner-glow;
+      @include box-shadow(transparent, 0, 0, 0, true, 0);
+
+      border-color: $ctrl-border-strong;
+      background-color: $wsvi-primary-white;
+    }
+
+    &.disabled {
+      background-color: $wsvi-primary-white; // d3d3d3 (opacity 0.5) === dddddd
+      .mstrmojo-ui-Pulldown-text {
+        @include wsvi-dropdown-text-disabled;
+      }
+    }
+
+    &.multi {
+      .mstrmojo-ui-PopupWidget {
+        .mstrmojo-Buttons {
+          @include ctrl-top-highlight;
+        }
+      }
+    }
+
+    .mstrmojo-ui-PopupWidget  {
+      @include wsvi-pulldown-popup;
+      margin-top: 3px;
+    }
+
+    .mstrmojo-PopupList {
+      @include wsvi-pulldown-popup;
+      @include wsvi-ctrl-popup-list-item;
+    }
+
+
+    &.ctrl-contrast {
+      border-color: $pulldown-border-contrast;
+
+      .mstrmojo-ui-Pulldown-text {
+        @include ctrl-inner-glow-contrast;
+
+        border-color: $ctrl-border-contrast;
+        color: $ctrl-font-color-contrast;
+      }
+
+      .mstrmojo-PopupList {
+        @include ctrl-popup-list-contrast;
+      }
+    }
+  }
+  // End Pulldown
+
+  .mstrmojo-ui-SearchablePulldown.mstrmojo-ui-Pulldown {
+    .mstrmojo-ui-Pulldown-text {
+      background-image: none;
+      background-color: $searchable-pulldown-text-bg;
+      color: $ctrl-font-color;
+
+      &:after {
+        @include box-shadow($ctrl-inner-glow-color, 0, 0, 5px, true);
+      }
+    }
+
+    &.disabled {
+      .mstrmojo-ui-Pulldown-text {
+        color: $ctrl-font-color-disabled;
+        border-color: $searchable-pulldown-disabled-text-border-color;
+      }
+    }
+  }
+
+  // SearchablePulldown base
+  .mstrmojo-SearchablePulldown {
+    .mstrmojo-SearchablePulldown-inputNode {
+      background-color: $searchable-pulldown-input-bg-color;
+      color: $searchable-pulldown-input-color;
+    }
+
+    .mstrmojo-SearchablePulldown-boxNode {
+      border-color: $searchable-pulldown-box-border-color;
+      color: $ctrl-font-color;
+
+      .mstrmojo-SearchablePulldown-iconNode {
+        @include box-shadow($ctrl-inner-glow-color, 0, 0, 5px, true);
+      }
+    }
+
+    .mstrmojo-SearchablePulldown-iconNode {
+      &::after {
+        background-position: $searchable-pulldown-icon-position;
+      }
+    }
+
+    &.disabled {
+      border-color: $searchable-pulldown-disabled-border-color;
+
+      .mstrmojo-SearchablePulldown-inputNode {
+        color: $ctrl-font-color-disabled;
+      }
+    }
+  }
+  // End SearchablePulldown base
+
+  // Pulldown popup
+  // TODO: Nikhil says don't use this!!!
+  .mstrmojo-Pulldown-Popup {
+    @include wsvi-pulldown-popup;
+
+    .mstrmojo-Pulldown-listItem {
+        @include wsvi-hover-select-bg;
+    }
+  }
+
+  // Button Bar
+  .mstrmojo-ui-ButtonBar {
+    @include box-shadow($wsvi-input-shadow-light-theme, 0px, 1px, 2px);
+    // @include linear-gradient($button-gradient-top-color, $button-gradient-bottom-color, false); #VIRevamp
+    background-image: none; //#VIRevamp
+    background-color: $wsvi-primary-white-light-theme;
+
+    border-color: $ctrl-border-strong;
+
+    .item {
+      border-left-color: $ctrl-border-strong;
+      opacity: 0.70;
+
+      &:first-child {
+        border-left-color: transparent;
+      }
+
+      &.selected {
+        background-image: none; //#VIRevamp
+        background-color: $wsvi-selected-button;
+
+      }
+    }
+  }
+
+  // Buttons
+  .mstrmojo-Button.simpleButton {
+    @include ctrl-inner-glow;
+    @include linear-gradient($button-gradient-top-color, $button-gradient-bottom-color, false);
+
+    border-color: $ctrl-border;
+  }
+
+  // Preview Button
+  &.mstrmojo-ui-PreviewButton,
+  .mstrmojo-ui-PreviewButton {
+    border-color: $ctrl-border;
+
+    .btn {
+      @include box-shadow($prvbtn-box-shadow, 0, 0, 6px, true);
+    }
+
+    .mstrmojo-PopupList {
+      @include wsvi-pulldown-popup;
+      @include wsvi-ctrl-popup-list-item;
+    }
+
+    &.mstrmojo-ui-ComboBox {
+      .preview {
+        @include box-shadow(transparent, 0, 0, 1px, true);
+
+        background: $combobox-background;
+      }
+
+      .mstrmojo-PopupList {
+        @include ctrl-popup-list;
+      }
+    }
+
+    &.mstrmojo-ColorPickerBtn {
+      .preview {
+        border-color: $colorpicker-border;
+      }
+
+      .mstrmojo-ui-AdvColorPicker {
+        @include ctrl-popup;
+      }
+    }
+  }
+
+  .mstrmojo-ui-AdvColorPicker {
+    color: $popup-font-color;
+
+    & > div {
+      // Toolbar
+      &.acpToolbar {
+        @include ctrl-bottom-highlight;
+
+        .acpColor {
+          border-color: $ctrl-border-strong;
+        }
+      }
+
+      // Content
+      &.acpContent {
+        %label-option {
+          @include linear-gradient($colorpicker-nofill-gradient-top, $colorpicker-nofill-gradient-bottom);
+          border-color: $colorpicker-nofill-border;
+          color: $colorpicker-nofill-color;
+          text-shadow: 0px 1px 1px $colorpicker-nofill-textshadow;
+
+          -webkit-box-shadow: $colorpicker-nofill-shadow-outer 0 1px 1px, $colorpicker-nofill-shadow-inner 0 0 $colorpicker-nofill-shadow-inner-spread inset;
+          -moz-box-shadow: $colorpicker-nofill-shadow-outer 0 1px 1px, $colorpicker-nofill-shadow-inner 0 0 $colorpicker-nofill-shadow-inner-spread inset;
+          box-shadow: $colorpicker-nofill-shadow-outer 0 1px 1px, $colorpicker-nofill-shadow-inner 0 0 $colorpicker-nofill-shadow-inner-spread inset;
+
+          &:hover {
+            @include linear-gradient($colorpicker-nofill-hover-gradient-top,$colorpicker-nofill-hover-gradient-bottom);
+          }
+        }
+
+        // The Automatic Button
+        .AutomaticOption {
+          @extend %label-option;
+        }
+
+        .mstrmojo-ui-ColorList {
+          .item {
+            border-color: $popup-background;
+            //DE103631: Selected color should display with check mark inside.
+            &.selected {
+             @include wsvi-icon-checkmark-color-picker;
+            }
+
+            // The No Fill button.
+            &.noFill {
+              @extend %label-option;
+
+              &:hover {
+                border-color: $colorpicker-nofill-border;
+
+              }
+            }
+
+            &:hover {
+              border-color: #34ABEB;  // Need to reset this so it will override theme color.
+            }
+          }
+        }
+
+        .mstrmojo-ui-ButtonBar {
+          .item {
+            &.h > div {
+              background-position: $colorpicker-buttonbar-icon-position-h;
+            }
+
+            &.v > div {
+              background-position: $colorpicker-buttonbar-icon-position-v;
+            }
+          }
+        }
+
+        .mstrmojo-Button.simpleButton {
+          border-color: $ctrl-border-strong;
+        }
+      }
+
+      &.acpButtons {
+        @include ctrl-top-highlight;
+      }
+    }
+  }
+
+  // Checkbox
+  .mstrmojo-ui-Checkbox {
+    background-position: $check-box-bg-position;
+
+    &.disabled {
+      background-position: $check-box-disabled-bg-position;
+    }
+
+    &.checked {
+      background-position: $check-box-checked-bg-position;
+
+      &.disabled {
+        background-position: $check-box-checked-disabled-bg-position;
+      }
+
+    }
+  }
+
+  .mstrmojo-CheckBox {
+    > input[type="checkbox"]:not(:checked) + label:before {
+      background-position: $check-box-bg-position;
+    }
+
+    > input[type="checkbox"]:checked + label:before {
+      background-position: $check-box-checked-bg-position;
+    }
+
+    > input[type="checkbox"]:disabled + label:before {
+      background-position: $check-box-disabled-bg-position;
+    }
+
+    > input[type="checkbox"]:checked:disabled + label:before {
+      background-position: $check-box-checked-disabled-bg-position;
+    }
+  }
+
+  // CheckList
+  .mstrmojo-ui-CheckList {
+    .item {
+      background-position: $check-list-bg-position;
+
+      &.selected {
+        background-position: $check-list-checked-bg-position;
+      }
+    }
+
+    &.radio .item {
+      background-position: $check-list-radio-bg-position;
+
+      &.selected {
+        background-position: $check-list-radio-selected-bg-position;
+      }
+    }
+
+    &.disabled .item {
+      background-position: $check-list-disabled-bg-position;
+      color: $check-list-disabled-item-font-color;
+
+      &.selected {
+        background-position: $check-list-checked-disabled-bg-position;
+      }
+    }
+
+  }
+
+  // TextBox
+  .mstrmojo-TextBox, .mstrmojo-DateTextBox-input {
+    background: $text-background-color;
+    border: 1px solid $ctrl-border;
+    color: $ctrl-font-color;
+
+    &.disabled {
+      border-color: $wsvi-inputborder-disable-light-theme;
+      color: $wsvi-font-gray;
+      background-color: $wsvi-primary-white;
+    }
+
+    &.mstrmojo-TextBox-ErrValidation {
+      border-color: #fabd29;      // Need to reset this so it will override theme color.
+      background-image: none;
+    }
+
+    // Set the empty text color.
+    &.mstrmojo-empty {
+      color: $text-hint-color;
+    }
+
+    &:focus {
+      border-color: $wsvi-primary-blue;
+    }
+  }
+
+  .mstrmojo-ui-TextArea {
+    background: $text-background-color;
+  }
+
+  // Label
+  .mstrmojo-Label {
+    &.disabled {
+      color: $ctrl-font-color-disabled;
+    }
+  }
+
+  // Highlights
+  .vibase-top-highlight {
+    @include ctrl-top-highlight;
+  }
+
+  .vibase-bottom-highlight {
+    @include ctrl-bottom-highlight;
+  }
+
+  // Stepper
+  .mstrmojo-ui-ctrl-Stepper {
+    @include border-radius($ctrl-border-radius);
+
+    border-color: $ctrl-border;
+
+    .text {
+      @include box-shadow($combobox-box-shadow, 0, 0, 1px, true);
+
+      background: $text-background-color;
+    }
+
+    .title {
+      background-color: $ctrl-border;
+    }
+
+    %ctrl-base-stepper-button {
+      @include box-shadow($wsvi-input-shadow-light-theme, 0, 1px, 1px, true);
+      @include linear-gradient(transparent, transparent, true);
+      border: 1px solid;
+      border-color: $wsvi-ui-border-gray-light-theme;
+    }
+
+    .prev, .next{
+      @extend %ctrl-base-stepper-button;
+      background: transparent url(#{$vi-img-path}/dropdown_arrow.svg) -3px -3px no-repeat;
+      border-top: none;
+      border-radius:  0 0 6px 6px;
+      &:before {
+        border-top-color: transparent;
+      }
+    }
+
+    .next {
+      @include scale(-1);
+      &:before {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+  // Wait Box
+  .mstrmojo-Editor.mstrWaitBox {
+    background-color: $wait-box-bgcolor;
+    color: $wait-box-fontcolor;
+
+    .mstrmojo-Editor-content {
+      .mstrIcon-wait {
+        background-image: $wait-box-bgimg;
+      }
+    }
+  }
+
+  // Character Group
+  .mstrmojo-ui-EditCharacter,
+  .mstrmojo-vi-EditorGroup,
+  .mstrmojo-popup-content {
+    // Font Style
+    .mstrmojo-ui-ButtonBar {
+      .item {
+        &.bold > div {
+          background-position: center $char-bold-bg-y;
+        }
+
+        &.italic > div {
+          background-position: center $char-italic-bg-y;
+        }
+
+        &.underline > div {
+          background-position: center $char-underline-bg-y;
+        }
+
+        &.strikeout > div {
+          background-position: center $char-strikeout-bg-y;
+        }
+      }
+    }
+  }
+
+  .mstrmojo-ui-ToolbarPopup {
+    background-color: $ctrl-background;
+    border-color: $wsvi-ui-border-gray;
+  }
+
+  // Calendar for datetext box
+  &.mstrmojo-DateTextBox-calendar {
+
+    .mstrmojo-Calendar {
+      background-color: $calendar-bgcolor;
+      color: $ctrl-font-color;
+
+      @include box-shadow(rgba(0,0,0,$calendar-boxshadow-opacity), 0, 0, 6px, false);
+
+      border: $calendar-border;
+
+      .mstrmojo-Calendar-header,
+      .mstrmojo-Calendar-timePart {
+        background-color: $calendar-bgcolor;
+        background-image: none;
+        color: $calendar-fontcolor;
+        font-weight: bold;
+      }
+
+      .mstrmojo-Calendar-timePart,
+      .mstrmojo-Calendar-header,
+      .mstrmojo-Calendar-body {
+        border-bottom: $calendar-split-darkline-color 1px solid;
+        @include box-shadow($calendar-split-highlightline-color, 0, 1px, 0);
+      }
+
+      .mstrmojo-Calendar-buttons {
+        border-top: $calendar-split-highlightline-color 1px solid;
+        @include box-shadow($calendar-split-darkline-color, 0, -1px, 0);
+      }
+
+      .mstrmojo-Calendar-body {
+
+        .mstrmojo-Calendar-thead td {
+          background: transparent;
+        }
+      }
+
+      .mstrmojo-Calendar-decrease,
+      .mstrmojo-Calendar-increase {
+        background: transparent url(vi/images/menu_icons.png) $calendar-arrow-bg-position no-repeat;
+        &:hover {
+          background-position: $calendar-arrow-hovor-bg-position;
+        }
+      }
+
+      .mstrmojo-Calendar-day-pre,
+      .mstrmojo-Calendar-day-cur,
+      .mstrmojo-Calendar-day-next {
+        background-color: $calendar-bgcolor;
+        background-image: none;
+        color: $calendar-fontcolor;
+        border-color: $calendar-bgcolor;
+
+        &.selected {
+          background-color: #34abeb;
+          color: #ffffff;
+
+          &.disabled{
+            color: #4a4a4a;
+          }
+        }
+
+        &:hover {
+          background-color: $calendar-hover-color;
+          border: $calendar-hover-border;
+        }
+      }
+    }
+  }
+
+  .mstrmojo-ui-MenuEditor {
+    .mstrmojo-ui-Pulldown {
+      %menu-pulldown-base {
+        background-color: $wsvi-primary-white;
+        border: 1px solid $wsvi-ui-border-gray;
+      }
+
+      .mstrmojo-ui-Pulldown-text {
+        @extend %menu-pulldown-base;
+      }
+
+      .mstrmojo-PopupList {
+        @extend %menu-pulldown-base;
+      }
+    }
+  }
+
+}
+
+@mixin wsvi-ctrl-tooltip {
+  &.mstrmojo-Tooltip {
+    &.vi-regular,
+    &.vi-warning,
+    &.vi-info {
+      .mstrmojo-Tooltip-arrow {
+        &:before,
+        &:after {
+          opacity: $ctrl-tooltip-arrow-opacity;
+        }
+      }
+
+      &.vi-tooltip-A .mstrmojo-Tooltip-arrow {
+        &:before {
+          border-bottom-color: $ctrl-tooltip-border-color;
+        }
+        &:after {
+          border-bottom-color: $ctrl-tooltip-bg-color;
+        }
+      }
+
+      &.vi-tooltip-V .mstrmojo-Tooltip-arrow {
+        &:before {
+          border-top-color: $ctrl-tooltip-border-color;
+        }
+        &:after {
+          border-top-color: $ctrl-tooltip-bg-color;
+        }
+      }
+
+      &.vi-tooltip-C .mstrmojo-Tooltip-arrow {
+        &:before {
+          border-right-color: $ctrl-tooltip-border-color;
+        }
+        &:after {
+          border-right-color: $ctrl-tooltip-bg-color;
+        }
+      }
+
+      &.vi-tooltip-D .mstrmojo-Tooltip-arrow {
+        &:before {
+          border-left-color: $ctrl-tooltip-border-color;
+        }
+        &:after {
+          border-left-color: $ctrl-tooltip-bg-color;
+        }
+      }
+
+      .mstrmojo-Tooltip-contentWrapper {
+        background-color: $ctrl-tooltip-bg-color;
+        border-color: $ctrl-tooltip-border-color;
+
+        .mstrmojo-Tooltip-content {
+          color: $ctrl-tooltip-color;
+        }
+      }
+    }
+  }
+}
+
+@mixin wsvi-ctrl-gallery-tooltip {
+  &.viGallery-tooltip {
+    .vi-tooltip-icn {
+      background-color: $ctrl-gallery-tooltip-icn-bg;
+      border-color: $ctrl-gallery-tooltip-icn-border-color;
+      background-image: $ctrl-gallery-tooltip-icn-bgimg;
+    }
+  }
+}
+
+@mixin  ctrl-unitContainer-titlebar{
+  .mstrmojo-UnitContainer{
+    .mstrmojo-VITitleBar{
+      border-bottom: $uc-titlebar-border-bottom;
+
+      .title-text{
+        .mstrmojo-EditableLabel{
+          line-height: $uc-titlebar-editable-label-lineheight;
+          padding: $uc-titlebar-editable-label-padding ;
+        }
+      }
+    }
+  }
+}
+
+@mixin ctrl-vizPanel{
+  .mstrmojo-VIVizPanel{
+    .mstrmojo-DocPanel{
+      left: $vizPanel-docPanel-position-left;
+      top: $vizPanel-docPanel-position-top;
+      padding: $vizPanel-docPanel-padding;
+    }
+  }
+}
+
+//DocLayoutView, top/left setting for simulating margin
+@mixin  ctrl-docLayoutView{
+  .mstrmojo-VIDocLayoutViewer {
+    left: $docLayoutViewer-position-left;
+    top: $docLayoutViewer-position-top;
+  }
+}
+
+
+//DocLayout Splitter
+@mixin  ctrl-docLayoutViewer-splitter{
+  .mstrmojo-VIDocLayoutViewer{
+    &>.splitter{
+      z-index: 2;
+    }
+    .splitter{
+      &:not(.v),
+      &:not(.v).active{
+        height: 6px !important;
+      }
+      &.v,
+      &.v.active{
+        width: 6px !important;
+      }
+    }
+  }
+}
+
+@mixin ctrl-boxPanelContainer{
+  .mstrmojo-VIBoxPanelContainer{
+    border-color: $boxPanelContainer-border-color;
+  }
+}
+
+// radius 2px
+// box-shadow
+@mixin ctrl-unitContainer{
+  //keep unit container radius as 2px
+  .mstrmojo-UnitContainer-titlebar{
+    border-top-left-radius: $unitContainer-titlebar-border-top-radius;
+    border-top-right-radius: $unitContainer-titlebar-border-top-radius;
+  }
+  // define box-shadow in normal/hover status
+  // boxshadow in selected status
+  .mstrmojo-UnitContainer {
+    line-height: $unitContainer-lineheight;
+    box-shadow: $unitContainer-boxShadow-normal;
+    transition: $unitContainer-transition;
+    @if $unitContainer-boxShadow-normal == none {
+      &.selected {
+        box-shadow: $unitContainer-boxShadow-selected;
+      }
+    }
+    @else {
+      &.selected {
+      box-shadow: $unitContainer-boxShadow-normal, $unitContainer-boxShadow-selected;
+      }
+    }
+
+    &:hover {
+      box-shadow: $unitContainer-boxShadow-hover;
+      &.selected {
+        box-shadow: $unitContainer-boxShadow-hover, $unitContainer-boxShadow-selected;
+      }
+    }
+  }
+}
+
+//Hide the right-most border lines for grid cells, applied to NEW LIGHT THEME .spatial.mojo-theme-light
+@mixin ctrl-mstrmojo-Xtab{
+  .mstrmojo-XtabZone{
+      td.xtab-td:last-child{
+        border-right-style: none;
+      }
+  }
+}
+
+@mixin ctrl-texBox{
+  .mstrmojo-VITextBox{
+      .mstrmojo-DocTextfield-valueNode {
+        .vi-doc-tf-value-text{
+          top: $textBox-padding-top;
+          bottom: $textBox-padding-bottom;
+          left: $textBox-padding-left;
+          right: $textBox-padding-right;
+          line-height: $textBox-value-lineheight;
+        }
+      }
+    }
+}
+
+/** End ControlBase **/

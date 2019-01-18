@@ -1,0 +1,64 @@
+/** BEGIN:  mstrWaitBox **/
+.mstrmojo-Editor.mstrWaitBox {
+  width: 0px;
+  height: 0px;
+  padding: 0px;
+  border: 0px;
+  border-bottom:0;
+  -webkit-box-shadow: #000000 0 0px 0px;
+  -moz-box-shadow: #000000 0 0px 0px;
+  box-shadow: #000000 0 0px 0px;
+  color: #e4e4e4;
+  margin: 0 auto;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=65);
+
+  .mstrmojo-Editor-content {
+
+    border: 0px;
+    border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 90px;
+    margin-left: -118px;
+    margin-top: -47px;
+
+    clear: both;
+    display: block;
+    padding: 7px;
+
+    &::after {
+      content: none;
+    }
+
+    .mstrIcon-wait {
+      margin: 0 auto;
+      opacity: 0.85;
+      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=85);
+      position: relative;
+      height: 75px;
+      width: 75px;
+      border: 1px solid #fff;
+      -webkit-border-radius: 75px;
+      -moz-border-radius: 75px;
+      border-radius: 75px;
+      -webkit-box-shadow: #B4B4B4 0px 3px 6px 0px;
+      -moz-box-shadow: #B4B4B4 0px 3px 6px 0px;
+      box-shadow: #B4B4B4 0px 3px 6px 0px;
+      background: #eee url(images/architect/loader.gif) no-repeat scroll 50% 60%;
+    }
+
+    .mstrWaitMsg {
+      display:none !important;
+    }
+
+  }
+
+  // Make the curtain transparent
+  &+.mstrmojo-Editor-curtain {
+    background: transparent;
+  }
+}
+/** END: mstrWaitBox **/

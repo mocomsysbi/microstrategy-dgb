@@ -1,0 +1,31 @@
+@import '../../../global';
+
+.mstrmojo-ot-PreferencesEditorPanel.ot-general-prefs {
+  .mstrmojo-vi-TwoColumnProp {
+    margin: 15px 0 0;
+
+    // Nested controls don't need the margin.
+    .mstrmojo-vi-TwoColumnProp {
+      margin: 0;
+    }
+
+    .mstrmojo-Button.mstrmojo-WebButton,
+    .mstrmojo-ui-Pulldown {
+      max-width: 160px;
+    }
+  }
+  .mstrmojo-vi-ThreeColumnProp {
+    margin: 15px 0 0;
+
+    // Nested controls don't need the margin.
+    .mstrmojo-vi-ThreeColumnProp {
+      margin: 0;
+    }
+
+    .mstrmojo-Button.mstrmojo-WebButton,
+    .mstrmojo-ui-Pulldown {
+      max-width: 160px;
+    }
+  }
+
+}

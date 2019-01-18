@@ -1,0 +1,99 @@
+.mstrmojo-qb-ValidateAlternateSource-dialog {
+  width: 650px;
+  .validation-table {
+    overflow: hidden;
+    width: 612px;
+    //height: 214px;
+    max-height: 260px;
+    margin: 10px 0px 16px 0px;
+    .mstrmojo-DataGrid-headerTable {
+      tbody > tr > td {
+        padding: 0px;
+      }
+      tbody > tr > td:last-child {
+          border-right: 0px;
+      }
+      .mstrmojo-DataGrid-headerText {
+        padding: 1px 10px 1px 10px;
+        border: 0px;
+        font-size: 11px;
+        font-weight: bold;
+        height: 28px;
+        line-height: 28px;
+        border-bottom: 1px solid #CBCBCB;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .mstrmojo-DataGrid-itemsScrollBox {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .mstrmojo-DataGrid-itemsContainer {
+      //height: 189px;
+      max-height: 260px;
+      .mstrmojo-itemwrap-table {
+         border-spacing: 0px;
+        tbody:last-child td {
+            border-bottom: 0px;
+        }
+        .mstrmojo-DataRow {
+          background-color: white;
+          font-size: 11px;
+          td {
+            border-right: 1px solid #CBCBCB;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 26px;
+          }
+          td:first-child {
+            padding-left: 0;
+            padding-right: 0;
+            text-align:  center;
+          }
+          td:last-child {
+            border-right: 0px;
+          }
+          .matched-item {
+            background: url("images/DI/workstation/workstation.svg") no-repeat -1260px -39px;
+            margin-right: auto;
+            margin-left: auto;
+            height: 16px;
+            width: 16px;
+          }
+          .unmatched-item {
+            background: url("images/DI/workstation/workstation.svg") no-repeat -1260px -9px;
+            margin-right: auto;
+            margin-left: auto;
+            height: 16px;
+            width: 16px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.workstation {
+  .mstrmojo-qb-ValidateAlternateSource-dialog {
+    max-height: 500px;
+    .mstrmojo-Editor-content {
+      padding: 16px;
+      .validation-table {
+        .mstrmojo-DataRow:hover {
+          background-color: RGBA(68, 70, 73, 0.06);
+        }
+        .mstrmojo-DataRow.selected {
+          background-color: RGBA(68, 70, 73, 0.1);
+        }
+      }
+      .validation-note2 {
+        padding: 0;
+      }
+    }
+    .mstrmojo-Editor-buttons {
+      padding: 4px 16px 16px;
+    }
+  }
+}

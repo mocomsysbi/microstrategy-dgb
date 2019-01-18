@@ -1,0 +1,129 @@
+.mstrmojo-vi-ui-ConditionEditor.mstrmojo-Editor {
+  .mstrmojo-Editor-content{
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    height: 404px;
+
+    .conditionBar {
+      @include box-sizing();
+      border: 1px solid #F4F4F4;
+      border-radius: 2px;
+      line-height: 22px;
+      margin-left: 16px;
+      margin-right: 16px;
+      margin-bottom: $wsvi-element-padding;
+      width: 568px;
+      color: $wsvi-primary-black;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      background-color: #F4F4F4;
+      &.mstrmojo-elems {
+        margin-left: 5px;
+      }
+      .mstrmojo-text {
+        position: relative;
+        padding: 0;
+        margin-left: 12px;
+        font-size: $wsvi-normal-font-size;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 6px;
+          @include transform(translate(0, -50%));
+          left: 0px;
+          width: 18px;
+          height: 18px;
+        }
+        &.mstrmojo-attr,
+        &.mstrmojo-attr2,
+        &.mstrmojo-attr3 {
+          font-weight: bold;
+          padding-left: 21px;
+          &:before {
+            @include wsvi-icon-attribute;
+          }
+          &.recursive:before {
+            @include wsvi-icon-recursive-attribute;
+          }
+          &.recursive.derived:before {
+            @include wsvi-icon-recursive-derived-attribute;
+          }
+        }
+
+        &.mstrmojo-attr{
+          margin-left: 7px;
+        }
+        &.mstrmojo-metric,
+        &.mstrmojo-m2,
+        &.mstrmojo-m3 {
+          font-weight: bold;
+          padding-left: 21px;
+          &:before {
+            @include wsvi-icon-metric;
+          }
+        }
+
+        &.mstrmojo-metric {
+          margin-left: 7px;
+        }
+
+        &.mstrmojo-fn {
+          color: rgba($wsvi-primary-black, 0.75);
+        }
+
+        &.mstrmojo-elem {
+          margin-left: 7px;
+        }
+
+        &.empty-cond {
+          color: $wsvi-desc-gray;
+        }
+      }
+
+      .mstrmojo-elem {
+        &.single, &.level {
+          padding-left: 18px;
+
+          &:before {
+            background: transparent url(#{$vi-img-path}/financial_report.svg) 5000px 5000px no-repeat;
+            content: '';
+          }
+        }
+
+        &.single:before {
+          background-position: -240px -29px;
+        }
+
+        &.level:before {
+          background-position: -120px -149px;
+        }
+
+        &.not {
+          &.single:before {
+            background-position: -210px -29px;
+          }
+          &.level:before {
+            background-position: -180px -149px;
+          }
+        }
+      }
+
+      .not {
+          color: $wsvi-font-gray;
+          text-decoration: line-through;
+      }
+
+      .spliter:before {
+        content: ',';
+      }
+    }
+
+    .mstrmojo-vi-ui-ConditionWalk {
+      position: absolute;
+      top: 44px;
+    }
+  }
+}

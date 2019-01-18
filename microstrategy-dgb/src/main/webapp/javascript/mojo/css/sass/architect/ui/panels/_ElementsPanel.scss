@@ -1,0 +1,21 @@
+/** BEGIN:  ElementsPanel **/
+.mstrmojo-wh-Panel {
+  &.elementsPanel {
+    width: 200px;
+    height: 290px;
+    margin: 12px 8px 0px 8px;
+    background-color: #f6f6f6;
+  }
+  &.selected {
+    border-color: #DDD;
+    background: #FFF;
+    border-radius: 4px;
+  }
+  &.elementsPanel {
+    .mstrmojo-ar-elementsPanel-searchBox {
+      background-color: #f6f6f6;
+      border: 0;
+    }
+  }
+}
+/** END: ElementsPanel **/

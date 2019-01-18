@@ -1,0 +1,57 @@
+/*Filtering options dialog (Visualization as filter)*/
+.mstrmojo-vis-as-filter {
+    &.mstrmojo-Editor {
+        min-width: 475px;
+        max-width: 600px;
+    }
+
+    .mstrmojo-title-label {
+        margin-bottom: $wsvi-element-text-padding;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    // visualization name list
+    .mstrmojo-scrollable-container {
+      .ScrollableContainer-content {
+        max-height: 350px;
+      }
+    }
+
+    // Filter type pulldown
+    .mstrmojo-filter-type {
+        float: left;
+        width: 100px;
+        margin-bottom: $wsvi-element-padding;
+    }
+
+    // Filter "for" pulldown
+    .mstrmojo-for-type {
+        width: 150px;
+    }
+
+    .mstrmojo-ui-Pulldown.disabled {
+        opacity: 0.6;
+    }
+
+    // Label for filter type
+    .mstrmojo-type-label {
+        padding: 0 $wsvi-element-padding;
+        line-height: 22px;
+    }
+
+    // Editor separator line
+    .mstrmojo-ToolSeparator {
+        display: block;
+        margin: $wsvi-element-padding 0px;
+        border-bottom: 1px solid $wsvi-ui-border-gray;
+    }
+
+    // Clear all checkbox
+    .mstrmojo-clear-check {
+        clear: both;
+    }
+
+}

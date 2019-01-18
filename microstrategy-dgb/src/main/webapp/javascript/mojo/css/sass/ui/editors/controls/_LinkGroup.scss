@@ -1,0 +1,213 @@
+@import '../../../vi/workstation-global';
+
+/** BEGIN: LinkGroup **/
+.link-selection-editor {
+    $text-hint-color: $wsvi-font-gray;
+
+    min-width: 350px;
+    border: solid 1px $wsvi-ui-border-gray;
+    border-radius: $wsvi-box-radius;
+    box-shadow: rgba($wsvi-primary-black, .3) 0 0 8px 4px;
+    font-size: $wsvi-normal-font-size;
+    padding-bottom: $wsvi-editor-content-padding;
+
+    .mstrmojo-TabStrip {
+        background-color: $wsvi-background-gray;
+        border-bottom: solid 1px $wsvi-border-gray;
+        padding: 0 $wsvi-editor-content-padding;
+        line-height: $wsvi-panel-row-height;
+        text-align: center;
+    }
+
+    .mstrmojo-TabButton {
+        font-size:  $wsvi-normal-font-size;
+        background-color: $wsvi-background-gray;
+        color: $wsvi-font-gray-dark;
+        border: 0 none;
+        max-width: 120px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 36px;
+        padding-bottom: 9px;
+        margin: 0 20px;
+
+        &:hover {
+            background-color: $wsvi-hover-gray;
+        }
+
+        &.selected {
+            color: $wsvi-primary-blue;
+            border-bottom: solid 3px $wsvi-primary-blue;
+        }
+    }
+
+    .linkGroup {
+        padding-top: $wsvi-element-padding;
+
+        INPUT {
+            width: 100%;
+            font-size: $wsvi-normal-font-size;
+
+            &:-webkit-autofill {
+                // Setting the background color should be enough to override the user-agent autofill settings.
+                // It is not. This has been a problem since 2008, see https://bugs.chromium.org/p/chromium/issues/detail?id=46543
+                // as a workaround, we'll use an inset box-shadow to cover the background color.
+                background-color: $wsvi-primary-white !important;
+                box-shadow: 0 0 0 20px $wsvi-primary-white inset;
+            }
+
+            &.mstrmojo-TextBox.mstrmojo-empty {
+                &::placeholder {
+                    color: $text-hint-color;
+                }
+                &::-webkit-input-placeholder {
+                    color: $text-hint-color;
+                }
+                &::-moz-placeholder {
+                    color: $text-hint-color;
+                }
+                &:-ms-input-placeholder {
+                    color: $text-hint-color;
+                }
+
+                color: $text-hint-color;
+            }
+        }
+    }
+
+    .mstrmojo-vi-TwoColumnProp {
+        padding: $wsvi-element-padding $wsvi-editor-content-padding 0;
+    }
+
+    .linkPage {
+        .item {
+            &.chap {
+                color: $text-hint-color;
+            }
+
+            &.curr_pg SPAN {
+                padding-left: 1em;
+            }
+
+            > DIV {
+                display: inline-block;
+                width: 10px;
+            }
+        }
+
+        // need the extra selector to override the default 11px
+        .mstrmojo-PopupList .item {
+            font-size: $wsvi-normal-font-size;
+        }
+    }
+
+    // chapter items on hover need more selectors to overwrite the default handling
+    .mstrmojo-ui-Pulldown.linkPage {
+        &.mstrmojo-empty {
+            color: $text-hint-color;
+        }
+
+        .mstrmojo-PopupList {
+            .item.chap,
+            .item.curr_pg {
+                color: $text-hint-color;
+
+                &:hover {
+                    background-color: $wsvi-primary-white;
+                }
+            }
+        }
+    }
+
+    .vi-col1 {
+        width: 20%;
+    }
+
+    .divider {
+        width: $wsvi-element-padding;
+    }
+
+    .vi-col2 {
+        width: 75%;
+
+    }
+
+    .mstrmojo-Label {
+        font-size: $wsvi-normal-font-size;
+    }
+
+    .linkDoss {
+        position: relative;
+
+        INPUT.rwselector {
+            cursor: default;
+            border-color: $wsvi-inputborder-disable;
+            padding-right: 34px; // 18 width + 8px left + 8px right + 4px in between
+            color: rgba($wsvi-primary-black, 0.6);
+
+            &:focus {
+                border-color: $wsvi-inputborder-disable;
+            }
+        }
+
+        .icon {
+            @include wsvi-icon-size;
+            @include wsvi-icon-browse-obj;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            background-position: -1282px -27px;
+            border: solid 1px $wsvi-ui-border-gray;
+            padding: 3px 8px;
+            cursor: pointer;
+        }
+    }
+
+    .linkNewWindow {
+        margin: $wsvi-element-padding $wsvi-editor-content-padding 0;
+        float: right;
+    }
+
+    .buttonBox {
+        padding: $wsvi-editor-content-padding $wsvi-editor-content-padding 0;
+        clear: both;
+
+        &> .mstrmojo-Box {
+            padding-top: $wsvi-element-padding;
+        }
+    }
+
+    .buttonBoxRt {
+        float: right;
+    }
+
+    .mstrmojo-WebButton {
+        max-width: 110px;
+
+        &:not(:first-child) {
+            margin-left: $wsvi-element-padding;
+        }
+    }
+}
+
+.link-action-cfg {
+    .mstrmojo-Label {
+        font-size: $wsvi-normal-font-size;
+        padding: 5px;
+        float: none; // overwrite mstrmojo-ui-ToolbarPopup float
+    }
+
+    .link {
+        color: $wsvi-link-blue;
+        cursor: pointer;
+    }
+
+    .nav {
+        max-width: 125px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+/** END: LinkGroup **/

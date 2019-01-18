@@ -1,0 +1,303 @@
+.mstrmojo-di-appschema-tablestatuslist {
+  height: auto;
+  .mstrmojo-di-tablestatuslist-list {
+    max-height: 529px;
+    border-bottom-width: 1px;
+    .mstrmojo-DataGrid-headerContainer {
+      .mstrmojo-DataGrid-headerText.tablestatus-header.label {
+        font-size: 12px;
+      }
+    }
+    .mstrmojo-DataGrid-itemsScrollBox.mstrmojo-scrollNode {
+      height: inherit !important;
+      max-height: 329px;
+      box-sizing: border-box;
+      padding-right: 0 !important;
+      overflow-y: overlay !important;
+    }
+    .mstrmojo-DataGrid-itemsScrollBox.mstrmojo-scrollNode + .mstrmojo-scrolltrack.vertical {
+      display: none;
+    }
+  }
+  .mstrmojo-di-tablestatuslist-list.edit {
+    max-height: 386px;
+    .mstrmojo-DataGrid-itemsScrollBox.mstrmojo-scrollNode {
+      padding-right: 0;
+    }
+  }
+  .mstrmojo-di-tablestatuslist-list.create {
+    max-height: 386px;
+  }
+  .mstrmojo-DataGrid-headerTable {
+    height: 36px;
+  }
+  .mstrmojo-DataGrid-itemsScrollBox.mstrmojo-scrollNode .mstrmojo-itemwrap tr{
+    height: 46px;
+    background-color: transparent;
+    &:hover {
+      background-color: $wsvi-hover-gray;
+    }
+  }
+  .mstrmojo-itemwrap tr{
+      vertical-align: top;
+  }
+  .mstrmojo-Box.tablestatus-col.tableNameBox.cf {
+      margin-top: 0px;
+      margin-bottom: 0px;
+  }
+  .mstrmojo-StackContainer.tablestatus-col.refreshBox {
+      margin-top: 12px;
+  }
+  .mstrmojo-Box.tablestatus-col.tableNameBox.cf {
+      margin-top: 11px;
+  }
+  .mstrmojo-StackContainer.tablestatus-col.stack.pulldown {
+      margin-top: 10px !important;
+      margin: 0 0 0 6px;
+  }
+  .mstrmojo-di-tablestatuslist-list {
+    /* need further enhancement.
+    .mstrmojo-DataGrid-itemsContainer {
+      table.mstrmojo-itemwrap-table {
+        td {
+          &:nth-child(3) {
+            border-left: 1px solid lightgray;
+          }
+        }
+      }
+    }
+    */
+    .mstrmojo-StackContainer.tablestatus-col.refreshBox {
+      margin-top: 15px;
+    }
+    .mstrmojo-Box.tablestatus-col.tableNameBox.cf {
+      margin-top: 0;
+      margin-left: 0;
+      .mstrmojo-TreeNode-itemsContainer {
+        .mstrmojo-itemwrap {
+          .cf.dataset-table {
+            &.multipleTable {
+              height: 46px;
+              &.last {
+                height: auto;
+              }
+            }
+          }
+          .multipleTable {
+            .mstrmojo-FileUploadBox {
+              margin-left: 19px;
+            }
+            .item.icon{
+              margin-left: 18px;
+            }
+          }
+        }
+      }
+      .mstrmojo-DIPublishSimpleTree {
+        &.hidePipeline {
+          li.mstrmojo-TreeNode.leaf {
+            .mstrmojo-TreeNode-div {
+              display: none;
+            }
+            .mstrmojo-TreeNode-itemsContainer {
+              padding: 0;
+            }
+          }
+        }
+        .mstrmojo-FileUploadBox {
+          width: 22px;
+          margin-left: 37px;
+          .mstrmojo-FileUploadBox-input {
+            width: 0;
+            border: none;
+            padding: 0;
+          }
+          .mstrmojo-FileUploadBox-buttonDiv {
+            width: 22px;
+            left: 0;
+            top: -6px;
+            .mstrmojo-FileUploadBox-button {
+              background-image: url("../../../app-schema-assets/dist/src/assets/icons/mbde-icons.svg");
+              background-position: -485px -640px;
+              background-color: transparent;
+              height: 20px;
+              width: 20px;
+              border: none;
+              margin: 0;
+              padding: 0;
+            }
+
+            .mstrmojo-FileUploadBox-FileSelected-button {
+              background-position: -485px -610px;
+            }
+          }
+        }
+        .mstrmojo-buttonMenu {
+          background-image: url("../../../app-schema/dist/src/assets/icons/mbde-icons.svg");
+          background-position: -557px -480px;
+          height: 17px;
+          width: 17px;
+          margin-left: -4px;
+          cursor: pointer;
+        }
+        & > ul > li {
+          background-position: 4px 20px;
+          & > ul {
+            padding: 0;
+          }
+          & > div.item {
+            height: 46px;
+            line-height: 46px;
+            padding-left: 5px;
+          }
+        }
+        li.leaf {
+          .tableNode {
+            div {
+              margin: 0;
+              text-overflow: ellipsis;
+              width: 270px;
+              overflow: hidden;
+              white-space: nowrap;
+            }
+          }
+          // height: 46px;
+          min-height: 46px;
+          padding-top: 13px;
+          padding-left: 2px;
+          box-sizing: border-box;
+          .mstrmojo-TreeNode-div {
+            .mstrmojo-TreeNode-state {
+              background-image: url("../../../app-schema-assets/dist/src/assets/icons/mbde-icons.svg");
+              &.opened {
+                background-position: -555px -597px;
+              }
+              &.closed {
+                background-position: -618px -597px;
+              }
+            }
+
+            .mstrmojo-TreeNode-text {
+              // Override treenode's style definition in core.css
+              padding-left: 5px;
+              width: 95%;
+              display: inline-block;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              padding-top: 0px;
+            }
+          }
+          &  > div {
+            display: inline-block;
+            // padding-left: 5px;
+            height: 30.5px;
+            width: 100%;
+            //padding-left: 18px;
+          }
+          & > ul {
+            height: auto;
+            padding: 12px 0;
+          }
+          span.item.icon {
+            display: inline-block;
+            width: 18px;
+            background-image: url("../../../app-schema/dist/src/assets/icons/mbde-icons.svg");
+            background-position: -780px -647px; // show database icon by default
+            margin-right: 2px;
+          }
+          span.item.genericJdbc {
+            background-position: -780px -647px;
+          }
+          span.item.googleBigQuery {
+            background-position: -1060px -447px;
+          }
+          span.item.googleAnalytics {
+            background-position: -1020px -447px;
+          }
+          span.item.googleDrive {
+            background-position: -700px -487px;
+          }
+          span.item.dropbox {
+            background-position: -900px -447px;
+          }
+          span.item.salesforce {
+            background-position: -1020px -487px;
+          }
+          span.item.facebook {
+            background-position: -980px -447px;
+          }
+          span.item.twitter {
+            background-position: -740px -527px;
+          }
+          span.item.elasticsearch {
+            background-position: -980px -567px;
+          }
+          span.item.mongodb {
+            background-position: -900px -487px;
+          }
+          span.item.file {
+            background-position: -980px -646px;
+          }
+          span.item.fileUrl {
+            background-position: -940px -647px;
+          }
+          span.item.fileLocal {
+            background-position: -900px -649px;
+          }
+          .extra-action {
+            position: absolute;
+            right: 0;
+            //position: relative;
+            //top: 50%;
+            //transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.oauth-log-info-for-publish {
+  .mstrmojo-ui-MenuEditor.mstrmojo-ui-MenuPopup {
+    padding-bottom: 0;
+    .me-content {
+      .oauth-log-info-box {
+        .mstrmojo-Label.login-icon {
+          width: 40px;
+          height: 40px;
+          margin: 9px;
+          border: 1px lightgrey solid;
+        }
+      }
+    }
+    .me-buttons {
+      padding: 9px 0 0 0;
+      .mstrmojo-Button.mstrmojo-WebButton.hot {
+        width: 100%;
+        height: 44px;
+        .mstrmojo-Button-text {
+          height: 44px;
+          line-height: 44px;
+        }
+      }
+    }
+  }
+}
+
+.mstrmojo-di-tablestatuslist .mstrmojo-di-tablestatuslist-list .tablestatus-col.status.finished.reuse-check {
+  background-position-y: -177px;
+}
+
+.mstrmojo-di-tablestatuslist .mstrmojo-di-tablestatuslist-list.edit .tablestatus-col.refreshBox {
+  visibility: hidden;
+  .tablestatus-col.status {
+    visibility: visible;
+  }
+}
+.mstrmojo-di-tablestatuslist .mstrmojo-di-tablestatuslist-list.edit .tablestatus-col.status.reuse-check {
+  visibility: visible;
+}
+
+.refreshMode .mstrmojo-di-tablestatuslist.mstrmojo-di-appschema-tablestatuslist .mstrmojo-di-tablestatuslist-list.lockHeader.hasVertical.mstrmojo-scrollbar-host .mstrmojo-DataGrid-itemsScrollBox.mstrmojo-scrollNode .mstrmojo-DataGrid-itemsContainer {
+  width: 100%;
+}

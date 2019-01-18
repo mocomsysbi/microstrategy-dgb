@@ -1,0 +1,53 @@
+@import '../../global';
+
+/** BEGIN: ui-editors-ToolbarPopup **/
+.mstrmojo-ui-ToolbarPopup {
+    @include border-radius(2px);
+    @include box-shadow(rgba(0, 0, 0, 0.85), 0, 0, 4px, false, 0);
+
+    border: 1px solid rgba(0, 0, 0, 0.85);
+    left: 0;
+    padding: 9px 17px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    z-index: 5;
+
+    & > * {
+        float: left;
+        margin-right: 5px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+
+    .mstrmojo-ui-Pulldown {
+        .mstrmojo-ui-Pulldown-text {
+            height: 14px;
+            line-height: 14px;
+        }
+    }
+
+    .mstrmojo-ui-ButtonBar {
+        .item {
+            div {
+                width: 28px;
+            }
+        }
+    }
+
+    .mstrmojo-ui-PreviewButton {
+        .preview,
+        .btn {
+            height: 23px;
+        }
+    }
+}
+/** END: ui-editors-ToolbarPopup **/

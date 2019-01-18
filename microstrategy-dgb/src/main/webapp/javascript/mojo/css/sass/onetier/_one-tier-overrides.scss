@@ -1,0 +1,2722 @@
+@import '../vi/vi-global';
+@import '../vi/workstation-global';
+
+/* Start: OneTier Overrides */
+
+/* Start: scroller */
+.none-mac {
+    $dimension: 0; //avoid scrolling by dragging
+    .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+        &::-webkit-scrollbar {
+            width: $dimension;
+            height: $dimension;
+        }
+        // IE
+        -ms-overflow-style: none;
+
+        margin-right: $dimension;
+        padding-right: $dimension;
+    }
+}
+
+//DE78755;only display scrollbar when hovering over scroll node for mac workstation
+.mstrmojo-sb-host-show-default {
+    ::-webkit-scrollbar-thumb {
+        opacity: 0;
+    }
+    &:hover {
+        ::-webkit-scrollbar-thumb {
+            opacity: 0.3;
+        }
+    }
+}
+/* End: scroller */
+
+/* Start: curtain for shutdown */
+#ShutDownWait .mstrmojo-Editor-curtain {
+    opacity: 0.9;
+    background: gray;
+}
+/* End: curtain for shutdown */
+
+
+
+/*  DE91564 reset font-family */
+.mstrWeb {
+    font-family: $wsvi-font-family;
+}
+
+
+/* Start: prompt editors */
+
+//override image path from dossier library
+$dossier-image-path: './images/';
+
+.mstrPromptEditorSwitchSummary label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+/* end override dossier */
+
+
+$view-large-breakpoint: 1048px;
+$view-small-breakpoint: 500px;
+
+$main-color: $wsvi-primary-blue;//overwritten in ws
+$text-color: $wsvi-primary-black;//overwritten in ws
+$line-on-light: $wsvi-ui-border-gray;//overwritten in ws
+$certify-orange: #FF5B32;//overwritten in ws
+$warning-orange: #F1AB16;
+$background-gray: $wsvi-hover-gray;
+$dark-panel: #444a50; //not used and already replaced in ws
+$border-on-light: $wsvi-splitline-gray;//overwritten in ws
+$icon-on-white: #808080;
+
+$helveticaNeueLightFont: Helvetica, Arial, 'Sans-serif';
+$helveticaNeueMediumFont: Helvetica, Arial, 'Sans-serif';
+$helveticaNeueBoldFont: Helvetica, Arial, 'Sans-serif';
+$wsvi-prompt-fontsize: 12px;
+$wsvi-prompt-fontsize-medium: 11px;
+
+$zIndex: 1001; //Higher than Filter Panel
+
+// Padding-left and padding-right of main editor when browser width is between $view-small-breakpoint and $view-large-breakpoint
+$editorPadding: 24px;
+$tocWidth: 200px; // The width of TOC menu
+$questionMargin: 20px; // Margin-left and margin-right of prompt question // overwritten in ws
+
+.mstrdossierPromptEditor {
+    z-index: $zIndex;
+    color: $text-color;
+    font-family: $helveticaNeueLightFont;
+    position: absolute;
+    top: 68px; //nav bar height + top margin
+    left: 50%;
+    right: 0;
+    bottom: 68px;
+    width: 1024px;
+    margin-left: -512px; // Set the PromptEditor in vertical center
+    background: #f2f2f2; // to match platform prompt editor bg
+
+    //&-textarea {
+    //    display: none;
+    //}
+
+    input::-webkit-input-placeholder,
+    input::-moz-placeholder,
+    input::-ms-input-placeholder {
+        opacity: .8;
+    }
+}
+
+.mstrPromptEditor,
+.mstrPromptEditor * {
+    box-sizing: content-box !important;
+}
+.mstrPromptEditor {
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin: 3px .5ex; //match default user-agent style
+    }
+
+    /* hide img alt text which is visible but unexpected, where 1ptrans.gif is not available due to resource path is not correct in dossier context*/
+    // .mstrListCart .mstrToolButtonRounded,
+    img {
+        text-indent: -9999px;
+    }
+
+    .mstrFetchControl img {
+        margin-bottom: 0; //overwrite AppContainer img
+    }
+}
+
+.mstrPromptEditorCellSummary,
+.mstrPromptEditorCellNavToolbar {
+    background-color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.promptEditor-overlay {
+    z-index: $zIndex - 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: .5;
+}
+
+/****** Editor Header ******/
+.promptEditor-header {
+    $headerHeight: 40px;
+    height: $headerHeight;
+    background: $dark-panel;
+
+    .promptEditor-header-text {
+        color: white;
+        font-size: 14px;
+        font-family: $helveticaNeueMediumFont;
+        text-align: center;
+        line-height: $headerHeight;
+    }
+
+    .icon-close {
+        position: absolute;
+        display: inline-block;
+        width: 40px;
+        height: $headerHeight;
+        cursor: pointer;
+        color: white;
+        opacity: .8;
+        top: 0;
+        right: 0;
+        padding: 12px 8.8px;
+
+        &::before {
+            font-size: 14px;
+        }
+
+        &:hover {
+            opacity: .6;
+        }
+
+        &:focus {
+            opacity: 1;
+        }
+
+        &:disabled {
+            opacity: .2;
+        }
+    }
+}
+/****** End of Editor Header ******/
+
+/****** Editor TOC ******/
+.mstrPromptEditorCellTOC {
+    font-size: $wsvi-prompt-fontsize; // overwritten in ws !!
+
+    .mstrPromptTOC {
+        border: none;
+        border-right: 1px solid #ECECEC; // overwritten in ws !!
+        padding: 8px 0 7px 0;  // added in ws !!
+    }
+
+    .mstrPromptTOCHeader {
+        font-family: $helveticaNeueBoldFont;
+        font-style: bold; // added in ws
+        text-transform: none;
+        color: $text-color !important;
+
+        .mstrPromptTOCHeaderCellLeft {
+            padding-left: 16px; // overwritten in ws !!
+        }
+    }
+
+    .mstrPromptTOCListTable {
+        tr {
+            box-shadow: none;
+            border-bottom: none;
+            height: $wsvi-tips-line-height; //overwritten in ws !!
+            line-height: $wsvi-editor-content-padding; //overwritten in ws !!
+            font-size: $wsvi-prompt-fontsize; //overwritten in ws
+            font-family: helvetica; //overwritten in ws
+            letter-spacing: 0.2px;
+        }
+
+        td {
+            border-bottom: none;
+            padding-top: 8px; //overwritten in ws !!
+            padding-bottom: 6px; //overwritten in ws !!
+        }
+
+        .mstrPromptTOCListItemTitleRequiredLabel {
+            padding: 12px 1px 0 6px; //overwritten in ws !!
+            color: $certify-orange;
+            font-size: 16px;  //overwritten in ws !!
+            font-weight: bold;  //add in ws !!
+            font-family: $helveticaNeueMediumFont;
+            vertical-align: unset;
+        }
+
+        .mstrPromptTOCListItemIndex {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .mstrPromptTOCListItemTitle span {
+            overflow: hidden;
+            display: block;
+        }
+    }
+}
+/****** End of Editor TOC ******/
+
+/****** View Summary ******/
+.mstrPromptEditorViewSummary {
+    font-size: $wsvi-prompt-fontsize; //overwritten in ws !!
+    height: $wsvi-panel-row-height; // overwritten in ws !!
+    line-height: $wsvi-panel-row-height; // overwritten in ws !!
+    float: right;
+    padding: 10px 68px 0 0; // overwritten in ws !!
+}
+
+.mstrPromptEditorSwitchSummary {
+    display: inline-block;
+    padding-left: 6px;
+    margin-top: 4px; // overwritten in ws
+    position: absolute;
+
+    input {
+        display: none;
+    }
+
+    label {
+        cursor: pointer;
+        border: 1px solid $wsvi-ui-border-gray; //overwritten in ws
+        border-radius: 10px;
+        background-color: $wsvi-selected-button; //overwritten in ws
+        transition: background-color .2s ease-in; //overwritten in ws
+        width: 34px; //overwritten in ws
+        height:18px; //add in ws
+
+        &:before {
+            content: '';
+            display: block;
+            width: 16px; //overwritten in ws
+            height: 16px; //overwritten in ws
+            background: $wsvi-primary-white; //overwritten in ws
+            border-radius: 10px;
+            margin-left: 1px; //add in ws !!
+            margin-top: 1px; //add in ws !!
+            transition: all .2s ease-in 0s; //overwritten in ws
+            box-shadow: 0 0 1px 0 rgba($wsvi-primary-black,0.15); //add in ws !!
+        }
+    }
+
+    input:checked + label {
+        background-color: $main-color;
+
+        &:before {
+            /*border-color: $main-color;*/ //removed in ws
+            margin-left: 17px; //overwritten in ws
+        }
+    }
+}
+/****** End of View Summary ******/
+
+/****** Prompt Question ******/
+.mstrPromptEditorCellBook {
+    border: none;
+
+    .mstrPromptSummaryBook {
+        margin-left: 10px;
+
+        .mstrPromptQuestionSummary {
+            margin-right: 12px;
+        }
+
+        .mstrPromptQuestionSummaryHIERARCHY,
+        .mstrPromptQuestionSummaryOBJECT,
+        .mstrPromptQuestionSummaryELEMENT,
+        .mstrPromptQuestionSummaryATTRIBUTEQUAL,
+        .mstrPromptQuestionSummaryMETRICQUAL,
+        .mstrPromptQuestionSummaryCONSTANT {
+            margin-left: 12px;
+        }
+
+    }
+
+    .mstrPromptEditorBookContainer .mstrViewRoll {
+        margin-left: 10px;
+        .mstrPlaceholder .mstrPromptQuestion {
+            background-color: white;
+        }
+    }
+
+    .mstrPromptQuestion {
+        border-bottom: 1px solid $line-on-light;
+        padding: 12px 0;
+        margin-right: 12px;                //overwritten in ws
+        font-family: $helveticaNeueLightFont;
+        font-size: $wsvi-prompt-fontsize; //overwritten in ws!!
+        color: $text-color;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .mstrListBlock.mstrAsPopup {
+            .mstrListBlockContents {
+                width: auto !important;
+                height: auto !important;
+                max-height: 200px;  //DE87484 have to define the max height to support the incremental rendering
+                box-shadow: rgba(68, 70, 73, 0.2) 0px 1px 8px 0px; //added in ws for pop up list only
+                border-radius: 3px;
+            }
+        }
+
+        .mstrPromptQuestionInfoTable,
+        .mstrPromptQuestionContents {
+            margin-left: 26px;                  //overwritten in ws
+        }
+    }
+
+    .mstrPromptQuestionTitleBarRequiredContainer,
+    .mstrPromptQuestionSummaryTitleBarRequiredContainer {
+        width: 12px;
+    }
+
+    .mstrPromptQuestionRequired,
+    .mstrPromptQuestionSummaryRequired {
+        .mstrPromptQuestionTitleBarRequired,
+        .mstrPromptQuestionSummaryTitleBarRequired {
+            opacity: 1;                                   // for alignment in question roll
+        }
+
+    }
+
+    .mstrPromptQuestionTitleBarRequired,
+    .mstrPromptQuestionSummaryTitleBarRequired {
+        display: inline-block;
+        vertical-align: bottom;
+        padding: 0 3px 0 0;
+        color: $certify-orange;
+        opacity: 0;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: $helveticaNeueMediumFont;
+        height: 21px;                               // for alignment in question roll
+    }
+
+
+    .mstrPromptQuestionSummaryRemove,
+    .mstrExprEditorRemove {
+        padding: 0 13px;
+        width: 10px;
+        height: 34px;
+
+        .icon-close {
+            font-size: 7px;
+            color: $main-color;
+            display: none;
+        }
+
+        &:hover {
+            .icon-close {
+                display: block;
+            }
+        }
+    }
+
+    .mstrListBlockItemSelectedHover,
+    .mstrListBlockTabTreeItemSelectedHover {
+        background-color: $wsvi-selected-gray; //overwritten in ws
+    }
+
+    .mstrListBlockContents {
+        border: 1px solid $wsvi-ui-border-gray;
+        box-shadow: 0 1px 2px 0 rgba($wsvi-primary-black, 0.1);
+        border-radius: 3px;
+    }
+
+    .mstrListBlockItemSelected,
+    .mstrListBlockItemSelectedHover {
+        .mstrListBlockItemName {
+            background-color: rgba($wsvi-primary-black, 0); //overwritten in ws
+            color: $text-color;
+        }
+    }
+
+    .mstrListBlockItemHover,
+    .mstrTileViewItemHover,
+    .mstrListBlockTabTreeItemHover {
+        background-color: $wsvi-hover-gray; //overwritten in ws
+    }
+
+    .mstrListBlockItemSelected,
+    .mstrListBlockItemSelectedHover,
+    .mstrTileViewItemSelected,
+    .mstrListBlockTabTreeItemSelected,
+    .mstrListBlockTabTreeItemSelectedHover {
+        background-color: rgba($wsvi-selected-blue,0.75); //overwritten in ws
+    }
+
+    .mstrListPulldownTable {
+        .mstrListBlockItemHover,
+        .mstrListBlockItemSelected,
+        .mstrListBlockItemSelectedHover {
+            background-color: $wsvi-primary-white; //overwritten in ws
+        }
+    }
+
+    .mstrListCartCellFetchView,
+    .mstrListBrowserCellFetchView {
+        font-size: $wsvi-prompt-fontsize;  //overwritten in ws!!
+        padding-top: 5px;
+    }
+
+    .mstrFetchControl {
+        span {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+    }
+
+    .mstrTreeViewFetchControl {
+        margin-left: 15px;
+    }
+
+    .mstrBGIcon_fetchFirstDisabled,
+    .mstrBGIcon_fetchPreviousDisabled,
+    .mstrBGIcon_fetchNextDisabled,
+    .mstrBGIcon_fetchLastDisabled {
+        opacity: .4;
+    }
+
+    .mstrExprEditorBranchQual {
+        .mstrExprEditorBranchQualContent {
+            .mstrExprEditorBranchQualContent {
+                .mstrExprEditorConditionContainer,
+                .mstrExprEditorConditionContainerHover,
+                .mstrExprEditorConditionContainerSelected,
+                .mstrExprEditorConditionContainerSelectedHover {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.mstrPromptQuestionContents .mstrQualifierTable {
+    .mstrListPulldownCaption {
+        display: none;
+    }
+
+    .mstrQualifierCellFunction {
+        padding: 4px 0;
+        vertical-align: top;
+    }
+
+    .mstrQualifierCellLeft,
+    .mstrQualifierCellMiddle,
+    .mstrQualifierCellRight .mstrListPulldown,
+    .mstrCalendarAndTimePickerCellTextBox {
+        padding: 4px 0;
+    }
+
+    .mstrQualifierCellLeft {
+        padding-right: 16px;
+    }
+
+    .mstrListPulldownEmptyText {
+        line-height: $wsvi-panel-row-height; //overwritten in ws!!
+    }
+
+    .mstrCheckListTable {
+        line-height: $wsvi-panel-row-height; //overwritten in ws!!
+        text-align: center;
+
+        tr {
+            display: inline-block;
+        }
+
+        .mstrRadioListItem,
+        .mstrRadioListItemHover,
+        .mstrRadioListItemSelected,
+        .mstrRadioListItemSelectedHover {
+            height: 28px;
+            background-image: none !important;
+            background-color: white;
+            padding: 0;
+            margin: 0;
+        }
+
+        tr:first-child .mstrRadioListItemName {
+            width: 99px;
+            height: $wsvi-panel-row-height; //overwritten in ws!!
+            line-height: $wsvi-panel-row-height; //overwritten in ws!!
+            padding: 0;
+            border: 1px solid $line-on-light;
+            border-right: none;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        tr:last-child .mstrRadioListItemName {
+            width: 99px;
+            height: $wsvi-panel-row-height; //overwritten in ws!!
+            line-height: $wsvi-panel-row-height; //overwritten in ws!!
+            padding: 0;
+            border: 1px solid $line-on-light;
+            border-left: none;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .mstrRadioListItemSelected,
+        .mstrRadioListItemSelectedHover {
+            .mstrRadioListItemName {
+                color: white;
+                background-color: $wsvi-primary-blue; //overwritten in ws!!
+            }
+        }
+    }
+
+    .mstrCalendarAndTimePicker{
+        .mstrCalendarAndTimePickerCaption {
+            height: 28px;
+            line-height: 28px;
+            label {
+                display: inline;
+                font-weight: normal;
+                margin: 0;
+            }
+        }
+
+        .mstrCalendarAndTimePickerCellTextBox {
+            input {
+                width: 182px;
+            }
+        }
+    }
+
+    .mstrQualifierContainerButtons,
+    .mstrQualifierContainerLink {
+        .mstrTextLink {
+            padding-top: 28px;
+            padding-left: 10px;
+
+            a {
+                color: $wsvi-link-blue;  //overwritten in ws
+                font-size: 12px;
+            }
+
+            .mstrTextLinkAnchorDisabled {
+                opacity: .4;
+            }
+        }
+    }
+
+    .mstrQualifierContainerButtons {
+        .mstrTextLink {
+            text-align: right;
+            padding: 0 20px 8px 0;
+            border: 1px solid $line-on-light;
+            border-top: none;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+    }
+
+    .mstrQualifierContainerElementsView .mstrListBlockCell {
+        width: 416px;
+        padding-top: 6px;
+
+        .mstrListBlockContents {
+            padding: 8px 0 0 0;
+            border-bottom: none;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+
+            .mstrListBlockItem,
+            .mstrListBlockItemHover {
+                padding: 2px 0;
+            }
+        }
+
+        .mstrDisabled {
+            opacity: 1;
+            .mstrListBlockContents {
+                background-color: white;
+            }
+        }
+    }
+
+    .mstrQualifierContainerLevelView {
+        padding-top: 28px;
+    }
+}
+
+.mstrWeb .mstrPromptQuestionTitleBar {
+    height: auto !important;
+    background-color: transparent;
+    font-family: $helveticaNeueMediumFont;
+    font-size: $wsvi-prompt-fontsize;
+    font-weight: bold; //overwritten in ws
+    color: $text-color !important;
+    padding-left: 0;
+    padding-right: 0;
+
+    img {
+        margin-bottom: 0;
+    }
+}
+
+.mstrPromptQuestionInfoTable {
+    font-size: $wsvi-prompt-fontsize-medium;
+    color: rgba($wsvi-primary-black,0.65); //overwritten in ws
+
+    .mstrPromptQuestionInfoCellLeft {
+        line-height: 20px; //overwritten in ws
+
+        .mstrPromptQuestionInstructions {
+            margin: 0 12px 0 1px;
+        }
+
+        .mstrPromptQuestionMessage {
+            background: none;
+            padding: 0;
+            margin: 0;
+            color: $certify-orange;
+
+            &::before {
+              color: $warning-orange;
+              font-size: 13px;
+              margin-right: 8px;
+            }
+        }
+    }
+
+    .mstrPromptQuestionMeaning {
+        /*font-size: 13px;
+        opacity: .8;*/
+        height: 14px;
+        line-height: 14px;
+        margin: 0 12px 0 0;
+    }
+}
+
+.mstrSearchField {
+    font-size: $wsvi-prompt-fontsize-medium; //overwritten in ws
+    padding: 4px 0;
+}
+.mstrTextBoxWithIconCaption {
+    display: none;
+}
+
+.mstrTextBoxWithIconCellInput {
+    input {
+        width: 194px;                         //overwritten in ws
+        height: 22px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 25px;                     //overwritten in ws
+        border: 1px solid $line-on-light;
+        border-radius: $wsvi-box-radius;    //overwritten in ws
+    }
+}
+
+.mstrToolButtonRoundedRight {
+    margin-left: -226px;                    //overwritten in ws
+    background-image: none;
+    padding-top: 8px;
+    padding-left: 6px;
+
+    input {
+        padding-left: 0;
+        padding-right: 0;
+        background-image: none;
+        margin-top: -2px;                                        // overwritten in ws search icon
+        background: transparent url("./vi/images/dataset.svg"); // added in ws search icon also line below
+        background-position: -90px -30px !important;
+    }
+}
+
+.mstrSearchFieldMatchCaseBox {
+    .mstrCheckBox {
+        margin-left: 11px;              //overwritten in ws
+
+        label {
+            margin-left: 3px;
+            margin-bottom: 8px;
+            font-weight: normal;
+        }
+    }
+}
+
+.mstrPromptQuestionContents {
+    margin: 10px 0 0 0;
+    font-size: $wsvi-prompt-fontsize; //overwritten in ws
+
+    .mstrListBrowserContainerAvailableView {
+        margin-top: 6px;
+        max-height: 312px;                      // overwritten in ws with 15rows, previous only 7
+        overflow: auto;
+        max-width: 764px;
+
+        .mstrListBlockContents {
+            padding: 4px 0;
+            box-sizing: border-box !important;
+        }
+    }
+
+    .mstrPromptQuestionSimpleAnswerView,
+    .mstrPromptQuestionComplexAnswerView {
+        max-width: calc(80vw - #{$tocWidth} - #{$questionMargin} * 2);
+    }
+
+    .mstrCheckListItem,
+    .mstrCheckListItemDisabled,
+    .mstrCheckListItemHover,
+    .mstrCheckListItemDisabledHover,
+    .mstrCheckListItemSelected,
+    .mstrCheckListItemSelectedHover,
+    .mstrCheckListItemDisabledSelected,
+    .mstrCheckListItemf,
+    .mstrCheckListItemDisabledSelectedHover,
+    .mstrRadioListItem,
+    .mstrRadioListItemDisabled,
+    .mstrRadioListItemHover,
+    .mstrRadioListItemDisabledHover,
+    .mstrRadioListItemSelected,
+    .mstrRadioListItemDisabledSelected,
+    .mstrRadioListItemSelectedHover,
+    .mstrRadioListItemDisabledSelectedHover {
+        height: $wsvi-panel-row-height; //overwritten in ws
+        padding-left: 19px;
+    }
+
+    .mstrCheckListItemHover,
+    .mstrRadioListItemHover {
+        background-color: $wsvi-hover-gray;
+    }
+
+    .mstrCheckListItemSelectedHover,
+    .mstrRadioListItemSelectedHover {
+        background-color: $wsvi-selected-blue; //overwritten in ws
+    }
+
+    .mstrCheckListItemName,
+    .mstrCheckListItemDisabledName,
+    .mstrRadioListItemName,
+    .mstrRadioListItemDisabledName {
+        height: $wsvi-panel-row-height; //overwritten in ws
+        line-height: $wsvi-panel-row-height; //overwritten in ws
+    }
+
+    .mstrCheckListTable { // horizontal
+        .mstrCheckListItem,
+        .mstrCheckListItemDisabled,
+        .mstrCheckListItemHover,
+        .mstrCheckListItemDisabledHover,
+        .mstrCheckListItemSelected,
+        .mstrCheckListItemSelectedHover,
+        .mstrCheckListItemDisabledSelected,
+        .mstrCheckListItemf,
+        .mstrCheckListItemDisabledSelectedHover,
+        .mstrRadioListItem,
+        .mstrRadioListItemDisabled,
+        .mstrRadioListItemHover,
+        .mstrRadioListItemDisabledHover,
+        .mstrRadioListItemSelected,
+        .mstrRadioListItemDisabledSelected,
+        .mstrRadioListItemSelectedHover,
+        .mstrRadioListItemDisabledSelectedHover {
+            margin-right: 37px;
+        }
+    }
+
+    .mstrExprEditorANDORContainer,
+    .mstrExprEditorANDORContainerHover,
+    .mstrExprEditorANDORContainerSelected,
+    .mstrExprEditorANDORContainerSelectedHover {
+        height: 26px;
+        line-height: 26px;
+        padding: 0 0 0 8px;
+        margin: 4px 0;
+        line-height: 28px;                                //added in ws
+    }
+
+    .mstrExprEditorANDORContainerHover {
+        background-color: white;  //overwritten in ws
+    }
+
+    .mstrExprEditorANDORContainerSelected,
+    .mstrExprEditorANDORContainerSelectedHover {
+        background-color: white; //overwritten in ws
+    }
+
+    .mstrListCartCellSelectedView,
+    .mstrListCartCellAvailableView,
+    .mstrQualifierContainerElementsView {
+        .mstrListBlockMessageSection .mstrListBlockMessage {
+            text-align: center;
+            padding-top: 62px;
+        }
+    }
+}
+
+.mstrListBlockContents  {
+    padding: 4px 0;
+}
+
+.mstrExprEditorContents {
+    padding: 4px;
+}
+
+
+.mstrListPulldownCellContent {
+    border: 1px solid $line-on-light;
+    border-right-width: 0;
+    border-radius: 3px;
+}
+
+.mstrListPulldownContent {
+    width: 171px;
+}
+
+.mstrExprEditorConditionContainer,
+.mstrExprEditorConditionContainerHover,
+.mstrExprEditorConditionContainerSelected,
+.mstrExprEditorConditionContainerSelectedHover {
+    /*line-height: 30px; */ //overwritten in ws
+    height: auto; //overwritten in ws
+    padding: 6px 0 6px 8px;
+    margin: 0 0 4px 0;
+    border-radius: $wsvi-box-radius;  //added in ws
+}
+
+.mstrListBlockItemName {  //overwritten in ws
+    height: 26px;
+    line-height: 26px;
+    margin: 0 2px 0 6px;
+}
+
+.mstrListPulldownButton,
+.mstrListPulldownButtonPushed {
+    height: auto;
+
+    div {
+        background-image: none;
+        background-color: transparent;
+        height: 18px;
+        width: 18px;
+        background: transparent url('./vi/images/dropdown_arrow-ws.svg');
+        background-position: 0 0;
+        margin: auto;
+    }
+}
+
+.mstrListPulldownCellButton {
+    border: 1px solid $line-on-light;
+    border-left-width: 0;
+    border-radius: 3px;
+}
+
+.mstrListCartCellSelectedView .mstrExprEditorContents {
+    border: 1px solid $line-on-light;
+    box-shadow: 0 1px 2px 0 rgba(68, 70, 73, 0.1);
+    border-radius: 3px;
+}
+
+.mstrToolButtonRounded {
+    margin-bottom: 6px;
+}
+
+.mstrListCartCellAvailableHeader {
+    width: 357px;
+
+    .mstrListCartCellPathView {
+        .mstrListPulldown {
+            padding: 4px 0;
+        }
+
+        .mstrListPulldownCaption {
+            display: none;
+        }
+
+        .mstrTreeViewNodeConnector {
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .mstrListPulldownContent {
+            width: 340px;
+        }
+
+        .mstrTreeViewContents {
+            border-radius: 3px;
+            width: 355px !important;
+            padding: 4px;                 //overwritten in ws
+        }
+    }
+}
+
+.mstrListCartCellPathView,
+.mstrTreeViewNode {
+    .mstrBGIcon_treeLeafOrphan {
+        display: inline-block;
+        background-color: transparent;
+        background-image: url(./vi/images/dataset.svg);
+        background-position: -271px -209px;
+    }
+
+}
+
+.mstrListCartCellSelectedHeader {
+    width: 357px;
+    text-align: left;
+
+    .mstrCheckListCell {
+        width: 357px;
+    }
+
+    .mstrCheckListCaption {
+        float: left;
+        height: 24px;
+        line-height: 24px;
+        padding-top: 2px;
+    }
+
+    .mstrCheckListContents {
+        display: inline-block;
+        height: 24px;
+        line-height: 24px;
+
+        tr {
+            display: inline-block;
+        }
+
+        .mstrRadioListItem,
+        .mstrRadioListItemHover,
+        .mstrRadioListItemSelected,
+        .mstrRadioListItemSelectedHover {
+            height: 24px;
+            margin: 0 3px 0 6px;
+            background: transparent url('./images/checkbox.svg') no-repeat;
+            background-position: -3px -146px;
+
+            .mstrRadioListItemName {
+                height: 24px;
+                line-height: 24px;
+                padding: 0;
+            }
+        }
+
+        .mstrRadioListItemSelected,
+        .mstrRadioListItemSelectedHover {
+            background-position: -3px -121px;
+        }
+    }
+    .mstrListCartTableExprButtons {
+        td:first-child {
+            padding-right: 6px;
+            width: 24px;
+            height: 24px;
+            margin: 0 0 6px 0;
+        }
+        .mstrToolButtonRounded {
+            border: 1px solid $line-on-light;
+            .mstrBGIcon_tbGroupConditions,
+            .mstrBGIcon_tbUngroupConditions {
+                display: block;
+                height: 18px;
+                width: 18px;
+                margin: 3px;
+            }
+        }
+    }
+}
+
+.mstrListCartCellAvailableView,
+.mstrListCartCellSelectedView {
+    width: 357px;
+
+    .mstrListBlockCaption,
+    .mstrTreeViewCaption,
+    .mstrExprEditorCaption {
+        display: none !important;
+    }
+
+    .mstrTreeViewContents {
+        padding: 4px 0;
+    }
+
+    .mstrTreeViewNodeShortDisplay {
+        span {
+            height: 26px;
+            line-height: 26px;
+            margin-left: 24px;         //added in ws
+
+            &.Hover {
+                background-color: $wsvi-hover-gray;
+                color: $text-color;
+            }
+
+            &.Selected,
+            &.SelectedHover {
+                background-color: $wsvi-selected-blue;
+                color: $text-color;
+            }
+        }
+    }
+
+    .mstrListBlockItemSelected,
+    .mstrListBlockItemSelectedHover {
+        a {
+            color: $text-color;
+        }
+    }
+}
+
+.mstrListCartCellAddRemoveButtons {
+    padding-top: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.mstrTreeViewContents {
+    border: 1px solid $line-on-light;
+    border-radius: 3px;
+    height: 204px !important;
+    box-shadow: 0 1px 2px 0 rgba(68, 70, 73, 0.1);
+}
+
+.mstrTreeViewSearch.mstrSearchEnabledInput {
+    color: $text-color;
+    font-size: $wsvi-prompt-fontsize;
+    font-family: $helveticaNeueLightFont;
+    width: 178px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom-color: $main-color;
+    border-bottom-width: 1px;
+
+    &::placeholder {
+        color: $main-color;
+    }
+}
+
+.icon-search.mstrSearchEnabledIcon {
+    color: $main-color;
+}
+
+.mstrListBlockCell {
+    width: 200px;
+}
+
+.mstrQualifierCellRight .mstrCalendarAndTimePickerCellTextBox input {
+    border: 1px solid $line-on-light;
+    border-radius: $wsvi-box-radius;
+    line-height: 18px;
+    font-size: 12px;
+}
+
+.mstrQualifierContainerLevelView {
+    .mstrPopup {
+        margin-top: 4px;
+        border: 1px solid $line-on-light;
+        border-radius: 3px;
+        box-shadow: none;
+
+        .mstrListBlock {
+            .mstrListBlockContents {
+                width: auto !important;
+                height: auto !important;
+                border: none;
+            }
+        }
+
+        a {
+            padding: 0 0 6px 15px;
+        }
+    }
+}
+
+.mstrExprEditorContents a,
+.mstrWeb .mstrExprEditorContents a {
+    color: $wsvi-link-blue;
+}
+
+.mstrExprEditorContents a.mstrUndefined {
+    color: #F9602B;
+}
+
+.mstrTextBoxCaption label {
+    font-weight: normal;
+    font-family: $helveticaNeueLightFont;
+}
+
+.mstrCalendarAndTimePickerCellTextBox input {
+    border: 1px solid $line-on-light;
+    border-radius: $wsvi-box-radius;
+    height: 26px;
+    line-height: 14px;
+    padding: 0 8px;
+    width: 122px;
+    font-family: $helveticaNeueLightFont;
+    font-size: $wsvi-prompt-fontsize;
+    color: $text-color;
+}
+
+.mstrListBlockReadyState,
+.mstrListBlockMessageSection {
+    padding-left: 0;
+}
+
+.mstrListBlockReadyStateMessage,
+.mstrListBlockMessageSection .mstrListBlockMessage {
+    color: $background-gray;
+    line-height: 26px;
+    margin: 0 12px;
+}
+
+.mstrBGIcon_tbDelete.icon-clearsearch {
+    display: none;
+}
+
+.mstrExprEditorConditionContainer {
+    background-color: rgba($wsvi-selected-blue, .7);
+}
+
+.mstrExprEditorConditionContainerHover {
+    background-color: rgba($wsvi-selected-blue, .5); //overwritten in ws
+}
+
+.mstrExprEditorConditionContainerSelected,
+.mstrExprEditorConditionContainerSelectedHover {
+    background-color: rgba($wsvi-selected-blue, .7);  //overwritten in ws
+    border: 1px solid $wsvi-primary-blue; // added in ws
+}
+
+.mstrExprEditorConditionContainerSelected,
+.mstrExprEditorConditionContainerSelectedHover,
+.mstrExprEditorConditionContainerHover {
+    .mstrBGIcon_tbDelete.icon-clearsearch {
+        display: inline-block;                                    //overwritten in ws for element wrapping issue
+        width: 22px;
+        height: 18px;
+        vertical-align: middle;
+        float: right;
+        background: transparent url('./vi/images/dataset.svg');  //remove x in condition row-ws
+        background-position: -1020px -29px;
+        /*background-image: none !important;*/                   // show close button in ws
+        cursor: pointer;
+
+      /*  &:before {
+            position: relative;
+            right: -7px;
+        }*/
+    }
+}
+
+.mstrExprEditorContents .mstrExprEditorConditionContainerSelected a.mstrUndefined {
+    color: #f57d54;
+}
+
+//expression list cart popup
+.mstrPopupCellContents {
+    padding-top: 8px;
+}
+.mstrPopup .mstrTextLink a.mstrTextLinkAnchor {
+    display: inline-block;
+    height: 14px;
+    font-size: $wsvi-prompt-fontsize-medium; //overwritten in ws
+    height: 20px;
+    color: $wsvi-link-blue;
+}
+#ExpressionLevelPopup1 {
+    .mstrTextLink a.mstrTextLinkAnchor {
+        padding-left: 8px;
+    }
+    .mstrListBlockContents {
+        border: none !important;
+    }
+}
+.mstrPopupCellButtonBar {
+    height: 22px;
+    input.mstrButton {
+        font-size: $wsvi-prompt-fontsize-medium; //overwritten in ws
+        color: $main-color;
+        background: none;
+        border: none;
+        margin: 0;
+    }
+}
+
+.mstrPopup {
+    box-shadow: none;
+    background-color: white;
+    border: 1px solid $line-on-light;
+
+    label {
+        font-weight: normal;
+    }
+}
+
+.mstrCalendar {
+    color: $text-color;
+    width: 238px;
+    border: 1px solid $line-on-light;
+    border-radius: 3px;
+    background-color: white;
+    padding: 0 16px;
+    left: initial !important;
+    &.mstrAsPopup {
+      margin-top: 6px;
+      min-width: 238px;
+    }
+
+    .mstrCalendarLastYear.icon-last_year,
+    .mstrCalendarMovePrev.icon-chevron-left,
+    .mstrCalendarMoveNext.icon-chevron-right,
+    .mstrCalendarNextYear.icon-last_year {                            //calendar pop up header alignment -- ws
+        display: table-cell;
+        width: 30px;
+        height: 40px;
+        background-image: url(./vi/images/dataset.svg);
+        color: $main-color;
+
+    /*    &::before {
+            padding-top: 13px;
+            margin: 0 8px;
+        }*/
+    }
+
+    .mstrCalendarLastYear {
+        background-position: -150px -199px;
+    }
+
+    .mstrCalendarNextYear {
+        background-position: -228px -199px;
+    }
+
+    .mstrCalendarMovePrev {
+        background-position: -180px -199px;
+    }
+
+    .mstrCalendarMoveNext {
+        background-position: -198px -199px;
+    }
+
+    /*.mstrCalendarNextYear {
+        &::before {
+            transform: rotate(180deg);
+            padding-bottom: 13px;
+        }
+    }*/
+
+    .mstrCalendarMonth {
+        display: inline-block;
+        width: 59px;
+        text-align: center;
+        vertical-align: middle;
+
+        ul {
+            position: absolute;
+            display: none;
+            background-color: white;
+            border: 1px solid $line-on-light;
+            padding: 0;
+            margin: 0;
+            width: 59px;
+            border-radius: 3px;
+
+            &.showlist {
+                display: block;
+            }
+        }
+
+        li {
+            height: 24px;
+            line-height: 24px;
+            list-style: none;
+
+            &:hover {
+                background-color: rgba($main-color, .8);
+                color: white;
+            }
+            &.selected {
+                background-color: $main-color;
+                color: white;
+            }
+        }
+    }
+
+    input {
+        width: 59px;
+        padding: 0;
+        border: none;
+        font-size: $wsvi-prompt-fontsize;
+        text-align: center;
+        font-family: $helveticaNeueLightFont;
+    }
+
+    .cal_table {
+        font-size: 12px;
+        border-top: 1px solid $line-on-light;
+
+        th {
+            font-weight: normal;
+            text-align: center;
+            width: 34px;
+            height: 44px;
+        }
+
+        td {
+            height: 27px;
+            border: 1px solid $line-on-light;
+
+            &:hover,
+            &.selected {
+                color: white;
+                background-color: $main-color;
+            }
+
+            &.prevEmpty {
+                border: none;
+
+                &:hover {
+                    color: $text-color;
+                    background-color: white;
+                }
+            }
+
+            &.postEmpty {
+                display: none;
+            }
+        }
+    }
+
+    .mstrCalendarFooter {
+        margin: 12px 0;
+
+        .mstrCalendarToday {
+            display: inline-block;
+            padding-left: 23px;
+            background: transparent url('./images/prompt-icon.svg') no-repeat;
+            background-position: 0 -541px;
+
+            &.selected {
+                background-position: 0 -571px;
+            }
+        }
+
+        .mstrCalendarClose {
+             color: $main-color;
+             float: right;
+        }
+    }
+}
+
+.mstrCalendarAndTimePicker {
+    .mstrTime {
+        vertical-align: top;
+        border: 1px solid $line-on-light;
+        border-radius: 3px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+
+        .mstrHour,
+        .mstrMinute,
+        .mstrSecond {
+            border: none;
+            width: 20px;
+            line-height: 26px;
+            height: 26px;
+            padding: 0;
+            font-size: 14px;
+            text-align: center;
+            font-family: $helveticaNeueLightFont;
+        }
+
+        .mstrHour {
+            padding-left: 8px;
+        }
+
+        .mstrSecond {
+            padding-right: 8px;
+        }
+
+        label {
+            width: 8px;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+    }
+
+    .mstrAMPM {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 6px;
+
+        .mstrValue {
+            border: 1px solid $line-on-light;
+            border-radius: 3px;
+            width: 44px;
+            height: 26px;
+            margin: 0;
+            padding-left: 8px;
+            line-height: 26px;
+            font-weight: normal;
+
+            &::before {
+                font-size: 6px;
+                float: right;
+                margin: 10px 9px 0 0;
+            }
+        }
+
+        ul {
+            position: absolute;
+            display: none;
+            background-color: white;
+            border: 1px solid $line-on-light;
+            padding: 0;
+            margin: 0;
+            width: 52px;
+            border-radius: 3px;
+
+            &.showlist {
+                display: block;
+            }
+        }
+
+        li {
+            padding-left: 8px;
+            height: 26px;
+            line-height: 26px;
+
+            &:hover {
+                background-color: rgba($main-color, .8);
+            }
+
+            &.selected {
+                background-color: $main-color;
+                color: white;
+            }
+        }
+    }
+}
+
+.mstrExprEditorAttribute,
+.mstrExprEditorMetric {
+    display: inline-block;
+    color: $text-color;
+    background-repeat: no-repeat;
+    /*height: 26px;*/                       //overwritten in ws
+    line-height: 18px;                     //overwritten in ws
+    padding-left: 23px;
+    max-width: 177px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;               //overwritten in ws
+}
+
+.mstrExprEditorFunc,
+.mstrExprEditorLevel {
+    display: inline-block;
+    font-family: $helveticaNeueMediumFont;
+    /*height: 26px;*/                   //overwritten in ws
+    line-height: 18px;                  //overwritten in ws
+    padding-left: 10px;
+    max-width: 190px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;             //overwritten in ws
+}
+
+.mstrExprEditorLevel .mstrExprEditorLevelDesc {
+    padding-right: 10px;
+    color: #555555;
+}
+
+.mstrExprEditorElements,
+.mstrExprEditorConstants {
+    line-height: 18px;                   //overwritten in ws
+    padding-left: 10px;
+    vertical-align: top;
+
+    a {
+        vertical-align: top;
+    }
+}
+
+.mstrPromptQuestionBackToTopImg,
+.mstrPromptQuestionSummaryBackToTopImg {
+    display: none !important;
+}
+
+.mstrListBlockItemDesc {
+    display: none;
+}
+
+.mstrAsPopup {
+    margin-top: 4px;
+    box-shadow: rgba(68, 70, 73, 0.2) 0px 1px 8px 0px; //added in ws for pop up list only
+    border-radius: 3px;
+}
+
+.mstrListPulldownTable {
+    border-collapse: separate;
+
+    tr td:nth-child(2) {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    tr td:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}
+/****** End of Prompt Question ******/
+
+/****** Prompt Summary ******/
+.mstrPromptQuestionSummary {
+    border-bottom: 1px solid $line-on-light;
+    margin-right: 10px; //added in ws
+    padding: 12px 0;
+    font-family: $helveticaNeueLightFont;
+    font-size: $wsvi-prompt-fontsize;
+    color: $text-color;
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .mstrExprEditorConditionContainer {
+        line-height: 10px;
+        padding: 4px 0 4px 10px;
+        margin: 2px 0;
+        height: auto;
+        max-height: 85px;
+        overflow-y: auto;
+        border: 1px solid $wsvi-border-gray;
+        border-radius: 2px;
+        background-color: $wsvi-hover-gray; //overwritten in ws
+    }
+
+    .mstrPromptQuestionSummarySimpleAnswerView {
+        padding: 0;
+
+        .mstrExprEditorContents {
+            border: none;
+            height: auto !important;
+        }
+    }
+
+    .mstrExprEditorANDORContainer,
+    .mstrExprEditorANDORContainerHover {
+        background-color: white;
+        font-family: $helveticaNeueMediumFont;
+        padding: 12px 0;
+    }
+
+    .mstrExprEditorFunc,
+    .mstrExprEditorLevel {
+        font-family: $helveticaNeueMediumFont;
+    }
+}
+
+.mstrPromptQuestionSummaryTitleBar {
+    font-size: $wsvi-prompt-fontsize;
+    font-family: $helveticaNeueMediumFont;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.mstrPromptQuestionSummaryOBJECT,
+.mstrPromptQuestionSummaryELEMENT,
+.mstrPromptQuestionSummaryCONSTANT {
+    .mstrPromptQuestionSummarySimpleAnswerView,
+    .mstrPromptQuestionSummaryComplexAnswerView {
+        line-height: 34px;
+        margin: 2px 0;
+        border: 1px solid $wsvi-border-gray;
+        border-radius: 2px;
+        background-color: $wsvi-hover-gray; //overwritten in ws
+        padding-right: 0;
+
+        .mstrTextDiv,
+        .mstrListTextDiv {
+            padding-left: 10px;
+        }
+
+        .mstrExprEditorConditionContainer {
+            border: none;
+            background: none;
+            margin: 0;
+        }
+    }
+}
+
+.mstrPromptQuestionSummaryEmptyAnswerView {
+    color: $text-color;
+}
+/****** End of Prompt Summary ******/
+
+/****** Navigation Toolbar ******/
+.mstrPromptEditorCellNavToolbar {
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+
+    .mstrPromptEditorButtons {
+        height: 24px;
+        line-height: 24px;
+        font-family: $helveticaNeueLightFont;
+        font-size: 14px;
+        float: right;
+        padding-top: 13px;
+        padding-right: 26px;
+
+        label {
+            min-width: 82px;
+            border-radius: 3px;
+            margin: 0 4px;
+            text-align: center;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .mstrPromptEditorButtonRun {
+            color: white;
+            background-color: $main-color;
+        }
+
+        .mstrPromptEditorButtonCancel {
+            color: $main-color;
+        }
+    }
+}
+/****** End of Navigation Toolbar ******/
+
+/*-------------------------prompt icon--------------------*/
+.mstrRadioListItem,
+.mstrRadioListItemHover,
+.mstrRadioListItemSelected,
+.mstrRadioListItemSelectedHover,
+.mstrCheckListItem,
+.mstrCheckListItemHover,
+.mstrCheckListItemSelected,
+.mstrCheckListItemSelectedHover {
+    background-image: url('./images/checkbox.svg') !important;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+.mstrBGIcon_a,
+.mstrBGIcon_a_sc,
+.mstrExprEditorAttribute,
+.mstrBGIcon_ae,
+.mstrBGIcon_m,
+.mstrBGIcon_m_sc,
+.mstrExprEditorMetric,
+.mstrBGIcon_cg,
+.mstrBGIcon_cg_sc,
+.mstrBGIcon_co,
+.mstrBGIcon_co_sc,
+.mstrBGIcon_hi,
+.mstrBGIcon_dm,
+.mstrBGIcon_dm_sc,
+.mstrBGIcon_hi_sc,
+.mstrBGIcon_f,
+.mstrBGIcon_f_sc,
+.mstrBGIcon_p,
+.mstrBGIcon_g,
+.mstrBGIcon_g_sc,
+.mstrBGIcon_gp,
+.mstrBGIcon_gp_sc,
+.mstrBGIcon_gpgs,
+.mstrBGIcon_gpgs_sc,
+.mstrBGIcon_t,
+.mstrBGIcon_t_sc,
+.mstrBGIcon_pr,
+.mstrBGIcon_pr_sc,
+.mstrBGIcon_trans,
+.mstrBGIcon_fa,
+.mstrBGIcon_fun,
+.mstrBGIcon_tbAdd,
+.mstrBGIcon_tbAddAll,
+.mstrBGIcon_tbRemove,
+.mstrBGIcon_tbRemoveAll,
+.mstrBGIcon_tbUp,
+.mstrBGIcon_tbDown,
+.mstrBGIcon_cb,
+.mstrBGIcon_cb_sc,
+.mstrBGIcon_fetchFirst,
+.mstrBGIcon_fetchFirstDisabled,
+.mstrBGIcon_fetchPrevious,
+.mstrBGIcon_fetchPreviousDisabled,
+.mstrBGIcon_fetchNext,
+.mstrBGIcon_fetchNextDisabled,
+.mstrBGIcon_fetchLast,
+.mstrBGIcon_fetchLastDisabled,
+//.mstrBGIcon_fi,  comment out for ws
+//.mstrBGIcon_fi_sc, comment out for ws
+.mstrBGIcon_a_locked,
+.mstrBGIcon_a_sc_locked,
+.mstrBGIcon_tbGroupConditions,
+.mstrBGIcon_tbUngroupConditions,
+.mstrBGIcon_ta,
+.mstrBGIcon_rwd,
+.mstrBGIcon_rw,
+.mstrBGIcon_rw_sc,
+.mstrBGIcon_d,
+.mstrBGIcon_tbAddInclude >.mstrToolButtonRounded >span,
+.mstrBGIcon_tbRemoveInclude >.mstrToolButtonRounded >span,
+.mstrBGIcon_tbAddExclude >.mstrToolButtonRounded >span,
+.mstrBGIcon_tbRemoveExclude >.mstrToolButtonRounded >span {
+    background-image: url('./images/prompt-icon.svg') !important;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.mstrToolButtonRounded {
+    background-image: none;
+}
+
+//Attribute
+.mstrBGIcon_a {
+    background-position: 0 8px !important;
+}
+
+//Attribute element
+.mstrBGIcon_ae {
+    background-position: 0 -26px !important;  //DE89718 adjust the icon position
+}
+
+//Metric
+.mstrBGIcon_m {
+    background-position: 0 -52px !important;
+}
+
+//Metric Shortcut
+.mstrBGIcon_m_sc {
+    background-position: 0 -1216px !important;
+}
+
+//Custom Group / Consolidate
+.mstrBGIcon_cg,
+.mstrBGIcon_co {
+    background-position: 0 -86px !important;
+}
+
+//Custom Group / Consolidate shortcut
+.mstrBGIcon_cg_sc,
+.mstrBGIcon_co_sc {
+    background-position: 0 -1096px !important;
+}
+
+//Hierarchy
+.mstrBGIcon_hi {
+    background-position: 0 -113px !important;
+}
+
+//Hierarchy shortcut
+.mstrBGIcon_hi_sc {
+    background-position: 0 -1066px !important;
+}
+
+//Datamart
+.mstrBGIcon_dm {
+    background-position: 0 -177px !important;
+}
+
+//Datamart shortcut
+.mstrBGIcon_dm_sc {
+    background-position: 0 -1156px !important;
+}
+
+//Folder
+.mstrBGIcon_f {
+    background-position: 0 -203px !important;
+}
+
+//Folder shortcut
+.mstrBGIcon_f_sc {
+    background-position: 0 -1036px !important;
+}
+
+//Application/Project
+.mstrBGIcon_p {
+    background-position: 0 -233px !important;
+}
+
+//Template
+.mstrBGIcon_t {
+    background-position: 0 -293px !important;
+}
+
+//Template shortcut
+.mstrBGIcon_t_sc {
+    background-position: 0 -1186px !important;
+}
+
+//Prompt
+.mstrBGIcon_pr {
+    background-position: 0 -323px !important;
+}
+
+//Prompt shortcut
+.mstrBGIcon_pr_sc {
+    background-position: 0 -1126px !important;
+}
+
+//Transformation
+.mstrBGIcon_trans {
+    background-position: 0 -353px !important;
+}
+
+//Cube shortcut
+.mstrBGIcon_cb_sc {
+    background-position: 0 -1006px !important;
+}
+
+//Fact
+.mstrBGIcon_fa {
+    background-position: 0 -382px !important;
+}
+
+//Function
+.mstrBGIcon_fun {
+    background-position: 0 -412px !important;
+}
+
+//Cube
+.mstrBGIcon_cb {
+    background-position: 0 -718px !important;
+}
+
+.mstrBGIcon_tbGroupConditions {
+    background-position: -2px -632px !important;
+}
+
+.mstrBGIcon_tbUngroupConditions {
+    background-position: -2px -602px !important;
+}
+
+.mstrBGIcon_fetchPrevious,
+.mstrBGIcon_fetchPreviousDisabled {
+    background-position: 0 -756px !important;
+}
+
+.mstrBGIcon_fetchNext,
+.mstrBGIcon_fetchNextDisabled {
+    background-position: 0 -756px !important;
+    transform: rotate(180deg);
+}
+
+.mstrBGIcon_fetchFirst,
+.mstrBGIcon_fetchFirstDisabled {
+    background-position: 0 -786px !important;
+}
+
+.mstrBGIcon_fetchLast,
+.mstrBGIcon_fetchLastDisabled {
+    background-position: 0 -786px !important;
+    transform: rotate(180deg);
+}
+
+//Attribute locked element
+.mstrBGIcon_a_locked {
+    background-position: 0 -843px !important;
+}
+
+//Attribute locked shortcut element
+.mstrBGIcon_a_sc_locked {
+    background-position: 0 -976px !important;
+}
+
+//Table
+.mstrBGIcon_ta {
+    background-position: 0 -1246px !important;
+}
+
+//RWD
+.mstrBGIcon_rwd {
+    background-position: 0 -1276px !important;
+}
+
+//RW
+.mstrBGIcon_rw {
+    background-position: 0 -1276px !important;
+}
+
+//RW_AVM old dashbord map to dossier icon
+.mstrBGIcon_rw.avm {
+    background-position: 0 -1426px !important;
+}
+
+//RWD_shorcut
+.mstrBGIcon_rw_sc {
+    background-position: 0 -1306px !important;
+}
+
+//HtmlDoc
+.mstrBGIcon_d {
+    background-position: 0 -1336px !important;
+}
+
+//Attribute_shortcut
+.mstrBGIcon_a_sc {
+    background-position: 0 -1396px !important;
+}
+
+//Report Graph
+.mstrBGIcon_gp {
+    background-position: 0 -1456px !important;
+}
+
+//Report Graph shortcut
+.mstrBGIcon_gp_sc {
+    background-position: 0 -1486px !important;
+}
+
+//Report Grid
+.mstrBGIcon_g {
+    background-position: 0 -1516px !important;
+}
+
+//Report Grid shortcut
+.mstrBGIcon_g_sc {
+    background-position: 0 -1546px !important;
+}
+
+//Report Grid Graph
+.mstrBGIcon_gpgs {
+    background-position: 0 -1576px !important;
+}
+
+//Report Grid Graph shortcut
+.mstrBGIcon_gpgs_sc {
+    background-position: 0 -1606px !important;
+}
+
+.mstrTreeViewFetchButton {
+    height: 10px;
+
+    &.mstrBGIcon_fetchPrevious,
+    &.mstrBGIcon_fetchPreviousDisabled,
+    &.mstrBGIcon_fetchNext,
+    &.mstrBGIcon_fetchNextDisabled {
+        width: 10px;
+        background-position-y: -760px !important;
+    }
+
+    &.mstrBGIcon_fetchFirst,
+    &.mstrBGIcon_fetchFirstDisabled,
+    &.mstrBGIcon_fetchLast,
+    &.mstrBGIcon_fetchLastDisabled {
+        width: 12px;
+        background-position-y: -790px !important;
+    }
+}
+
+
+.mstrListBlockItem,
+.mstrListBlockItemHover,
+.mstrListBlockItemSelected,
+.mstrListBlockItemSelectedHover,
+.mstrTreeViewNodeShortDisplay,
+.mstrExprEditorConditionContainer,
+.mstrExprEditorConditionContainerHover,
+.mstrExprEditorConditionContainerSelected,
+.mstrExprEditorConditionContainerSelectedHover {
+    //Attribute
+
+    .mstrBGIcon_a,
+    &.mstrBGIcon_a {
+        background-position-y: 4px !important;
+    }
+    .mstrExprEditorAttribute {
+        background-position-y: 0 !important;              //overwritte in ws
+    }
+    //Attribute element
+    .mstrBGIcon_ae,
+    &.mstrBGIcon_ae {
+        background-position-y: -26px !important;
+    }
+
+    //Metric
+    .mstrBGIcon_m,
+    &.mstrBGIcon_m {
+        background-position-y: -56px !important;
+    }
+
+    .mstrExprEditorMetric {
+        background-position-y: -60px !important;          //overwritte in ws
+    }
+
+    //Custom Group
+    .mstrBGIcon_cg
+    &.mstrBGIcon_cg {
+        background-position-y: -84px !important;
+    }
+
+    //Hierarchy
+    .mstrBGIcon_hi,
+    &.mstrBGIcon_hi {
+        background-position-y: -117px !important;
+    }
+
+    //Folder
+    .mstrBGIcon_f,
+    &.mstrBGIcon_f {
+        background-position-y: -207px !important;
+    }
+
+    //Application/Project
+    .mstrBGIcon_p,
+    &.mstrBGIcon_p {
+        background-position-y: -237px !important;
+    }
+
+    //Report
+    .mstrBGIcon_g,
+    &.mstrBGIcon_g {
+        background-position-y: -267px !important;
+    }
+
+    //Template
+    .mstrBGIcon_t,
+    &.mstrBGIcon_t {
+        background-position-y: -294px !important;
+    }
+
+    //Prompt
+    .mstrBGIcon_pr,
+    &.mstrBGIcon_pr {
+        background-position-y: -324px !important;
+    }
+
+    //Transformation
+    .mstrBGIcon_trans,
+    &.mstrBGIcon_trans {
+        background-position-y: -354px !important;
+    }
+
+    //Fact
+    .mstrBGIcon_fa,
+    &.mstrBGIcon_fa {
+        background-position-y: -384px !important;
+    }
+
+    //Function
+    .mstrBGIcon_fun,
+    &.mstrBGIcon_fun {
+        background-position-y: -414px !important;
+    }
+
+    //Cube
+    .mstrBGIcon_cb,
+    &.mstrBGIcon_cb {
+        background-position-y: -714px !important;
+    }
+}
+
+//Checkbox
+.mstrCheckListListContainer {
+    .mstrCheckListItem,
+    .mstrCheckListItemHover {
+        background-position: -3px -21px; //overwritten in ws
+    }
+
+    .mstrCheckListItemSelected,
+    .mstrCheckListItemSelectedHover {
+        background-position: -3px 4px; //overwritten in ws
+    }
+}
+
+// calender
+.mstrCalendarAndTimePickerCellCalendarButton {
+    span {
+        display: inline-block;
+        height: 24px;
+        width: 20px;
+        margin-left: -24px;
+        background: transparent url('./vi/images/dataset.svg') no-repeat;
+        background-position: -90px -118px !important;
+        opacity: .8;
+        background-color: white;
+    }
+}
+
+// checkbox
+.mstrSearchField .mstrSearchFieldMatchCaseBox .mstrCheckBox {
+    input[type='checkbox'] {
+        visibility: hidden;
+    }
+
+    label {
+        background: transparent url('./images/checkbox.svg') no-repeat;
+        margin-left: -20px;
+        padding: 1px 0 1px 20px; //DE89440 add top and bottom padding to display the checkbox image properly in windows workstation
+        background-position: -3px -28px !important;
+    }
+
+    input[type='checkbox']:checked + label {
+        background-position: -3px -3px !important;
+    }
+}
+
+//up down button
+.mstrListCartCellUpDownButtons {
+    .mstrToolButtonRounded span{
+        &.mstrBGIcon_tbUp,
+        &.mstrBGIcon_tbDown {
+            display: inline-block;
+            height: 21px;
+            width: 21px;
+            border: none;
+            margin-left: 10px;
+            background-position: -2px -662px !important;
+            &:hover,
+            &:focus {
+                background-position: -2px -878px !important;
+            }
+        }
+        &.mstrBGIcon_tbUp {
+            transform: rotate(270deg);
+        }
+        &.mstrBGIcon_tbDown {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+//Radio Button for match: 'all selections' or 'any selection'
+.mstrPromptQuestionSimpleAnswerView {
+
+    .mstrRadioListItemSelected,
+    .mstrRadioListItemSelectedHover {
+        background-position: -3px -121px;
+    }
+
+    .mstrRadioListItem,
+    .mstrRadioListItemHover {
+        background-position: -3px -146px;
+    }
+}
+//Radio Button for 'qualify' or 'select'
+.mstrQualifierContainerExprTypeView {
+
+    .mstrRadioListItemSelected,
+    .mstrRadioListItemSelectedHover {
+        background-position: -3px -121px;
+    }
+
+    .mstrRadioListItem,
+    .mstrRadioListItemHover {
+        background-position: -3px -146px;
+    }
+}
+
+//List Cart Cell Add Remove Buttons
+.mstrListCart .mstrListCartCellAddRemoveButtons {
+    .mstrToolButtonRounded {
+        span {
+            display: inline-block;
+            height: 21px;
+            width: 21px;
+        }
+        .mstrBGIcon_tbAdd,
+        .mstrBGIcon_tbRemove {
+            background-position: -2px -662px !important;
+            &:hover,
+            &:focus {
+                background-position: -2px -878px !important;
+            }
+        }
+        .mstrBGIcon_tbAddAll,
+        .mstrBGIcon_tbRemoveAll {
+            background-position: -2px -695px !important;
+            &:hover,
+            &:focus {
+                background-position: -2px -915px !important;
+            }
+        }
+        .mstrBGIcon_tbRemove {
+            transform: rotate(180deg);
+        }
+        .mstrBGIcon_tbRemoveAll {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.mstrDualListCart .mstrDualListCartCellAddRemoveButtons {
+    padding-top: 20px;
+    margin-right: 5px;
+    display: block;
+
+    .mstrToolButtonRounded {
+        span {
+            display: inline-block;
+            height: 21px;
+            width: 21px;
+        }
+    }
+    .mstrBGIcon_tbAddInclude > .mstrToolButtonRounded > span,
+    .mstrBGIcon_tbAddExclude > .mstrToolButtonRounded > span {
+        background-position: -2px -662px !important;
+
+        &:hover,
+        &:focus {
+            background-position: -2px -878px !important;
+        }
+    }
+    .mstrBGIcon_tbRemoveInclude > .mstrToolButtonRounded > span,
+    .mstrBGIcon_tbRemoveExclude > .mstrToolButtonRounded > span {
+        background-position: -2px -662px !important;
+        transform: rotate(180deg);
+
+        &:hover,
+        &:focus {
+            background-position: -2px -878px !important;
+        }
+    }
+}
+
+.mstrDualListCart {
+    table,
+    tbody {
+        display: block;
+    }
+
+    > tbody {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mstrDualListCartCellGroupContainer {
+        display: flex;
+        flex-direction: row;
+
+        .mstrDualListCartCellAvailableView {
+            width: auto;
+            width: 50%;
+            margin-right: 5px;
+
+            > table {
+                display: block !important;
+
+                > tbody,
+                > tbody > tr,
+                > tbody > tr > td {
+                    width: auto;
+                    display: block;
+                }
+            }
+
+            .mstrListBlockContents {
+                height: 226px !important;
+            }
+        }
+
+        .mstrDualListCartCellSelectedGroupContainer {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+            .mstrDualListCartCellIncludeBtnsGroupContainer,
+            .mstrDualListCartCellExcludeBtnsGroupContainer {
+                display: flex;
+
+                .mstrDualListCartCellAddRemoveButtons {
+                    flex-grow: 0;
+                    align-self: center;
+                }
+
+                .mstrDualListCartCellSelectedView {
+                    flex-grow: 1;
+
+                    .mstrExprEditorContents {
+                        height: 91px !important;
+                    }
+                }
+            }
+
+            .mstrDualListCartCellExcludeBtnsGroupContainer {
+                padding-top: 10px;
+            }
+        }
+    }
+
+    .mstrExprOperation {
+        height: 26px;
+    }
+
+    .mstrListBlockCaption,
+    .mstrExprEditorCaption {
+        line-height: 24px;
+    }
+
+    .mstrExprEditorContents {
+        border: 1px solid #d2d2d2;
+    }
+}
+
+//expand collapse icon
+.mstrBGIcon_treeNodeOpenedOrphan.mstrTreeViewNodeConnector.icon-submenu_arrow,
+.mstrBGIcon_treeNodeClosedOrphan.mstrTreeViewNodeConnector.icon-submenu_arrow {
+    display: inline-block;
+    background-image: url('./vi/images/dataset.svg');
+    background-position: -510px -61px;
+
+    &::before {
+        position: relative;
+        top: -1px;
+        margin-left: 4px;
+    }
+}
+
+.mstrBGIcon_treeNodeOpenedOrphan.mstrTreeViewNodeConnector.icon-submenu_arrow {
+    background-position: -510px -31px;
+
+}
+
+//tree view node short display
+//this part need to be put in the end of style of prompt icon
+.mstrTreeViewNodeShortDisplay {
+    background-position-x: 20px !important;
+}
+
+.mstrListCartCellSelectedView .mstrListCartCellSelectedView .mstrListBlockContents .mstrListBlockListContainer {
+    max-width: 190px;
+}
+
+.mstrCheckListItemDesc,
+.mstrRadioListItemDesc {
+    display: none;
+}
+
+/*-------------------------prompt icon end --------------------*/
+.mstrdossierPromptEditor{
+    .mstr-LoadingIcon-wrapper .mstr-LoadingIcon {
+        &.fixed{
+            width: 100%;
+            position: absolute;
+        }
+    }
+}
+
+.mstrPromptEditorCellBook {
+    .mstrViewRoll {
+        width: calc(100% - 10px); //overwritten in ws bz left padding changed to 20px
+    }
+}
+
+@media screen and (min-width: $view-small-breakpoint) and (max-width: $view-large-breakpoint) {
+    .mstrdossierPromptEditor {
+        width: calc(100% - #{$editorPadding} * 2);
+        margin-left: calc((#{$editorPadding} * 2 - 100%) / 2);
+    }
+
+    .mstrPromptQuestionContents {
+        .mstrPromptQuestionSimpleAnswerView,
+        .mstrPromptQuestionComplexAnswerView {
+            max-width: calc(100vw - #{$editorPadding} * 2 - #{$tocWidth} - #{$questionMargin} * 2);
+        }
+    }
+
+}
+
+@media screen and (max-width: $view-small-breakpoint) {
+    .mstrdossierPromptEditor {
+        width: 100%;
+        margin-left: -50%;
+    }
+
+    .mstrPromptQuestionContents {
+        .mstrPromptQuestionSimpleAnswerView,
+        .mstrPromptQuestionComplexAnswerView {
+            max-width: calc(100vw - #{$tocWidth} - #{$questionMargin} * 2);
+        }
+    }
+}
+/*  end of dossier library overrides */
+
+
+//override dossier stylings
+.mstrmojo-Editor.wsprompteditor>.mstrmojo-Editor-content {
+    padding: 0 5px 0 0;
+}
+
+.mstrmojo-Editor.wsprompteditor.noCancel {
+    .mstrPromptEditorButtonReset,
+    .edt-title-btn.mstrmojo-Editor-close {
+        display: none;
+    }
+}
+
+.mstrmojo-Editor.wsprompteditor>.mstrmojo-Editor-buttons {   // newly added 1.27
+    padding: 0;
+}
+
+.mstrPromptTOCHeaderCellRight {
+    display: none; // overwritten in ws !!
+}
+
+.mstrPromptEditorCellTOC .mstrPromptTOCSummaryButton,
+.mstrPromptEditorCellTOC .mstrPromptTOCSummaryButtonSelected {
+    display: none !important;
+}
+
+.mstrListCartCellAvailableView,
+.mstrListCartCellSelectedView {
+  width: 430px;
+  max-width: 430px;                                        //prevent shopping cart bump but still not finally fixed
+}
+
+.mstrPromptQuestionInfoTable .mstrPromptQuestionMeaning {
+    height: auto;
+}
+
+.mstrPromptEditorCellNavToolbar {
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+
+    .mstrPromptEditorButtons {
+        height: 26px;
+        line-height: 26px;
+        font-family: $helveticaNeueLightFont;
+        font-size: $wsvi-prompt-fontsize; //overwritten in ws
+        padding-top: 16px;
+        padding-right: 16px;
+
+        label {
+            min-width: 66px;
+            border-radius: $wsvi-box-radius; //overwritten in ws
+            margin: 0 0 0 10px;
+            padding: 0 8px;
+            text-align: center;
+            font-weight: normal;
+            cursor: pointer;
+            display: inline-block;
+            line-height: 26px;
+            border: 1px solid $wsvi-ui-border-gray; //overwritten in ws
+        }
+
+        .mstrPromptEditorButtonRun {
+            color: white;
+            background-color: $main-color;
+            border:none;
+            box-shadow: 0 1px 2px 0 $wsvi-input-shadow; //overwritten in ws
+        }
+
+        .mstrPromptEditorButtonReset {
+            color: $wsvi-primary-black;
+            box-shadow: 0 1px 2px 0 $wsvi-input-shadow; //overwritten in ws
+        }
+    }
+}
+
+.mstrPromptEditorCellTOC {
+    background-color: $wsvi-primary-gray;
+}
+
+.mstrPromptTOCHeader {
+    background-color: $wsvi-primary-gray;
+}
+
+.mstrPromptTOCListItemSelected,
+.mstrPromptTOCListItemSelectedHover,
+.mstrPromptTOCListItemRequiredSelected,
+.mstrPromptTOCListItemRequiredSelectedHover {   // added in ws for TOC row colors
+    background-color: $wsvi-selected-blue;
+    color: $wsvi-primary-black;
+}
+
+.mstrPromptTOCListItemHover,
+.mstrPromptTOCListItemRequiredHover {   // overwritten in ws for TOC row colors
+    background-color: $wsvi-hover-gray;
+    color: $wsvi-primary-black;
+}
+
+.mstrBGIcon_fi_sc,
+.mstrBGIcon_fi {
+    padding-left: 3px !important;
+    &::before {
+        background: transparent url('./vi/images/dataset.svg');  //filter- web issue html does not match css
+        background-position: -665px -57px;
+        width: 14px;
+        height: 18px;
+        content: " ";
+        display: block;
+        float: left;
+        padding-right: 3px;
+    }
+}
+
+//Filter shortcut
+.mstrBGIcon_fi_sc {
+    &::before {
+        background-position: -662px -86px !important;
+    }
+}
+
+.mstrPromptTOCListItemSelected .mstrPromptTOCListItemTitleRequiredLabel,
+.mstrPromptTOCListItemSelectedHover .mstrPromptTOCListItemTitleRequiredLabel,
+.mstrPromptTOCListItem .mstrPromptTOCListItemTitleRequiredLabel,
+.mstrPromptTOCListItemHover .mstrPromptTOCListItemTitleRequiredLabel {  // for taking space and alignment
+    &::before {
+        content: "*";
+        opacity: 0;
+    }
+}
+
+.mstrPromptTOCListItemIndex {
+    padding-right: 4px;
+}
+
+.mstrListPulldownButton,
+.mstrListPulldownButtonPushed {
+    width: 27px;
+    height: 18px;
+}
+
+.mstrCalendarTitlebar {
+    display: table;
+}
+
+.mstrCalendarTitle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.mstrSearchFieldSearchBox, .mstrSearchFieldMatchCaseBox {
+    vertical-align: middle;
+}
+
+.mstrPromptQuestionInfoCellLeft {
+    .mstrPromptQuestionMessage {                                                // error message
+        margin-left: 0;
+        margin-right: 4px;
+        padding: 3px 3px 3px 0;
+        height: auto;
+        overflow: visible;
+        color: $certify-orange;
+        background: none;
+
+        &::before {
+            display: inline-block;
+            vertical-align: middle;
+            background: transparent url(./vi/images/dataset.svg) no-repeat;
+            background-position: -1083px -61px;
+            width: 18px;
+            height: 18px;
+            content: " ";
+        }
+    }
+}
+.mstrBGIcon_treeLeafOrphan.icon-submenu_arrow.mstrTreeViewNodeConnector,
+.mstrBGIcon_treeNodeOpenedOrphan.icon-submenu_arrow.mstrTreeViewNodeConnector,
+.mstrBGIcon_treeNodeClosedOrphan.icon-submenu_arrow.mstrTreeViewNodeConnector {   // all hierarchies - shopping cart- folder structure
+    vertical-align: middle;
+}
+
+.mstrBGIcon_treeViewChildConnectorLast.mstrTreeViewNode {
+    .mstrTreeViewNodeShortDisplay {
+        span {
+            height: 26px;
+            line-height: 26px;
+            margin-left: 24px;         //added in ws
+
+            &.Hover {
+                background-color: $wsvi-hover-gray;
+                color: $text-color;
+            }
+
+            &.Selected,
+            &.SelectedHover {
+                background-color: $wsvi-selected-blue;
+                color: $text-color;
+            }
+        }
+    }
+}
+
+.mstrFetchControlText,
+.mstrFetchControlTextHover {
+    padding-left: 14px;
+    color: $wsvi-link-blue;
+}
+
+.mstrQualifier .mstrListBlockContents {
+    box-shadow: 0 0 0 0 rgba(white,0);            // remove pulldown style qualification select type box shadow
+}
+
+// DE84276: Overriding preview styles from newly linked mstr.css stylesheet
+div.preview {
+    border-color: initial;
+    border-style: initial;
+    border-width: initial;
+    height: initial;
+    width: initial;
+    overflow: initial;
+}
+
+// DE83404: Override button padding for different fonts
+.mstrmojo-vaf .mstrmojo-bar-content {
+    .truncMore,
+    .tgtItem {
+        padding-bottom: 5px;
+    }
+
+}
+
+//DE88511 fix the UIWeb view rendering issue
+#ExpressionBranchQualPopup1.mstrListBlock.mstrAsPopup {
+    z-index: 999 !important;  //override the styling .mstrAsPopup in pagePrompts.css
+    box-sizing: content-box !important;
+
+    .mstrListBlockContents {
+        width: auto !important;
+        height: auto !important;
+        max-height: 200px;  //DE87484 have to define the max height to support the incremental rendering
+        box-shadow: rgba(68, 70, 73, 0.2) 0px 1px 8px 0px; //added in ws for pop up list only
+        border-radius: 3px;
+        border: 0;
+
+        .mstrListBlockItemSelected,
+        .mstrListBlockItemSelectedHover,
+        .mstrTileViewItemSelected,
+        .mstrTileViewItemSelectedHover,
+        .mstrListBlockTabTreeItemSelected,
+        .mstrListBlockTabTreeItemSelectedHover {
+            background-color: rgba(216, 235, 255, 0.75);
+
+            .mstrListBlockItemName {
+                background-color: rgba(216, 235, 255, 0.75);
+                color: $text-color;
+            }
+        }
+
+        .mstrListBlockItemHover,
+        .mstrTileViewItemHover,
+        .mstrListBlockTabTreeItemHover {
+            background-color: rgba(68, 70, 73, 0.06);
+        }
+    }
+
+}
+
+/* End: OneTier Overrides */

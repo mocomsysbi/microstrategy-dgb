@@ -1,0 +1,139 @@
+/** END: Workstation Style **/
+@import '../vi-icons';
+.workstation {
+
+    /** BEGIN: TOGGLEVIEW Bar **/
+    .mstrmojo-RootView-togglebar {
+        background-color: $wsvi-navigation-bar-color;
+        border: none;
+        width: $wsvi-navigation-bar-width !important;
+
+        .mstrmojo-VIToolbar {
+            height: 100% !important;
+
+            .item {
+                height: $wsvi-toggle-view-bar-item-height;
+                width: $wsvi-toggle-view-bar-item-width;
+                cursor: pointer;
+                float: left;
+                margin: 3px 4px;
+
+
+                // Middle DIV element.
+                & > div {
+                    width: $wsvi-toggle-view-bar-btn-wrap-width;
+                    height: $wsvi-toggle-view-bar-btn-wrap-height;
+                }
+
+                .btn {
+                    background-color: $wsvi-navigation-bar-color;
+                    border: none;
+                    height: $wsvi-toggle-view-bar-btn-height;
+                    width: $wsvi-toggle-view-bar-btn-width;
+                    margin: 1px;
+                }
+
+                .icn {
+                    background: transparent url($wsvi-toolbar-icons-sprite) 0 0 no-repeat;
+                    margin: 5px 5px; //18+5+5= 28
+                    position: absolute;
+                    height: 18px;
+                    width: 18px;
+                }
+
+
+                .item:first-child {
+                    margin-top: 4px;
+                }
+
+                //Open btn
+                &.on{
+                    // Middle DIV element.
+                    .btn {
+                        background-color: $wsvi-primary-black;
+                        border: solid 1px $wsvi-toggle-view-bar-border;
+                        border-radius: 2px;
+                        height: $wsvi-toggle-view-bar-exclude-border-btn-height;
+                        width: $wsvi-toggle-view-bar-exclude-border-btn-width;
+                        margin: 1px;
+                    }
+                    .icn{
+                        margin: 4px; //4+4+18+1+1(border) = 28px
+                    }
+                }
+
+                &.tocPanel {
+                    .icn {
+                        background-position: -511px -31px;
+                    }
+                    &.on {
+                        .icn {
+                            background-position: -511px -151px;
+                        }
+                    }
+                }
+
+                &.datasetsPanel {
+                    .icn {
+                        background-position: -541px -31px;
+                    }
+                    &.on {
+                        .icn {
+                            background-position: -541px -151px;
+                        }
+
+                    }
+                }
+
+                &.editPanel {
+                    .icn {
+                        background-position: -571px -31px;
+                    }
+                    &.on {
+                        .icn {
+                            background-position: -571px -151px;
+                        }
+
+                    }
+                }
+
+                &.filterPanel {
+                    .icn {
+                        background-position: -601px -31px;
+                    }
+                    &.on {
+                        .icn {
+                            background-position: -601px -151px;
+                        }
+                    }
+                }
+
+                &.propertiesPanel {
+                    .icn {
+                        background-position: -631px -31px;
+                    }
+                    &.on {
+                        .icn {
+                            background-position: -631px -151px;
+                        }
+                    }
+                }
+
+                &.galleryPanel {
+                    .icn {
+                        background-position: -661px -31px;
+                    }
+                    &.on {
+                        .icn {
+                            background-position: -661px -151px;
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+    }
+    /** END: TOGGLEVIEW Bar **/
+}

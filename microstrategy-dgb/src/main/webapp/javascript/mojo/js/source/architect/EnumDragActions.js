@@ -1,0 +1,1 @@
+mstrmojo.architect.EnumDragActions={ADD_TABLE:"addTable",ADD_COLUMN:"addColumn",TABLE_VIEW_ATTR:"tableViewItemAttr",TABLE_VIEW_METRIC:"tableViewItemMetric",PROJECT_TABLE:"projectTable",PROJECT_TABLE_COLUMN:"projectTableColumn",LINKER_ATTR:"linkerAttr",COMPOUND_FORM:"compoundForm"};

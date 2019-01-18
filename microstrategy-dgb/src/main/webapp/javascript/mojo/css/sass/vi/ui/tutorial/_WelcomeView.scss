@@ -1,0 +1,62 @@
+@import '../../vi-global';
+
+.mstrmojo-vi-welcome {
+    background-color: #F3F3F4;
+    color: #444649;
+    font-size: 10pt;
+    overflow: hidden;
+
+    &.no-samples {
+        .vi-wel-content {
+            .intro-content {
+                margin-top: -188px;
+                position: relative;
+                top: 50%;
+            }
+
+            .samples-content {
+                display: none;
+            }
+        }
+    }
+
+    .vi-wel-footer {
+        @include box-sizing(border-box);
+        @include box-shadow(#FFFFFF, 0, 1px, 0, true);
+
+        border-top: 1px solid #DEDEDE;
+        bottom: 0;
+        padding: 16px 18px;
+        position: absolute;
+
+        .vi-footer-close,
+        .mstrmojo-tutorial-helpbar {
+            position: absolute;
+            right: 18px;
+            top: 16px;
+        }
+
+        label {
+            cursor: default;
+            line-height: 1.25em;
+            padding-left: 21px;
+            position: relative;
+            white-space: nowrap;
+
+            &:before {
+                background: transparent no-repeat url(#{$vi-img-path}/welcome/welcome_screen.png) -96px -22px;
+                content: '';
+                height: 1.25em;
+                left: 0;
+                position: absolute;
+                width: 21px;
+            }
+        }
+
+        &.selected {
+            label:before {
+                background-position: -96px -61px;
+            }
+        }
+    }
+}

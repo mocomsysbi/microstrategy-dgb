@@ -1,0 +1,16 @@
+@import "../../../vi-global";
+@import "../../../workstation-global";
+@import "../../../../global-mixins";
+
+
+@include keyframes(visFitlerHighlight) {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+
+.visSelector-Animation {
+  background-color: #D8EBFF;
+  @include animation-timing-function(cubic-bezier(0.445, 0.050, 0.550, 0.950));
+  @include animation(visFitlerHighlight 2s);
+}

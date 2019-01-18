@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumCategoryAxisOidItem={OID_LABEL:0,OID_MAJOR_TICKS:1,OID_MINOR_TICKS:2};

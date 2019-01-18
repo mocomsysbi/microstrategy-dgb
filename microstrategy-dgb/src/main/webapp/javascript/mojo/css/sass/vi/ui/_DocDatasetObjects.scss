@@ -1,0 +1,240 @@
+@import '../vi-global';
+@import './_DatasetEditor';
+
+
+/** BEGIN: DocDatasetObjects **/
+.mstrmojo-VIDatasetObjects.mstrmojo-VIDocDatasetObjects {
+    .mstrmojo-VIPanel-titlebar {
+        .mstrmojo-VITitleBar {
+            .mstrmojo-VITitleToolbar {
+                margin-left: 3px;
+                margin-top:3px;
+            }
+        }
+    }
+    .mstrmojo-VIPanel-content.mstrmojo-sb-show-default {
+        // Prevent horizontal native scrollbar
+        overflow: hidden;
+        &:hover {
+            overflow-y: auto;
+        }
+    }
+    .mstrmojo-VIPanelPortlet {
+        .mstrmojo-VIPanel-content {
+            .mstrmojo-VIUnitList {
+                .unit {
+                    padding-right: 24px;
+
+                    &.isAttrLink {
+                        div.mark {
+                            right: 2px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-VITitleBar {
+            .mstrmojo-EditableLabel {
+                line-height: 22px;
+            }
+
+            .left-toolbar {
+                .mstrmojo-Image {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+/** END: DocDatasetObjects **/
+
+/** BEGIN: Reconsiliation Menu**/
+.reconsoliationMenu.mstrmojo-ui-Menu {
+  .mstrmojo-ui-Menu-item-container {
+    max-height: 514px; // Allow 20 datasets;
+  }
+}
+/** END: Reconsiliation Menu**/
+
+/** BEGIN: Units CheckList **/
+.mstrmojo-ui-CheckList.units .item span {
+  background: transparent url(#{$vi-img-path}/unitList/attribute.png) 1px 50% no-repeat;
+  padding-left: 20px;
+  white-space: nowrap;
+}
+
+.mstrmojo-ui-CheckList.units .item.ic1 span,
+.mstrmojo-ui-CheckList.units .item.ic47 span {
+  background-image: url(#{$vi-img-path}/unitList/custom-group.png);
+}
+
+.mstrmojo-ui-CheckList.units .item.ic47.st12033 {
+    span {
+        background-image: url(#{$vi-img-path}/unitList/derived-attribute.png);
+    }
+
+    &.nde4ra span {
+        background-image: url(#{$vi-img-path}/unitList/derived-recursive-attribute.png);
+    }
+}
+
+.mstrmojo-ui-MenuEditor {
+    .mstrmojo-ui-CheckList.units .item.ic47.st12033.nde4ra span {
+        background-image: url(#{$vi-img-path}/unitList/derived-recursive-attribute_dark.png);
+    }
+}
+
+.mstrmojo-ui-CheckList.units .item.ic4 span {
+  background-image: url(#{$vi-img-path}/unitList/metric.png);
+}
+
+.mstrmojo-ui-CheckList.units .item.ic4d span {
+  background-image: url(#{$vi-img-path}/unitList/derived-metric.png);
+}
+
+.mstrmojo-ui-CheckList.units .item.ic12d span {
+    background-image: url(#{$vi-img-path}/unitList/derived-attribute.png);
+}
+
+.mstrmojo-ui-CheckList.units .item.ic12t span {
+    background-image: url(#{$vi-img-path}/unitList/attribute.png);
+}
+
+.mstrmojo-ui-CheckList.units .item.ic12g span {
+    background-image: url(#{$vi-img-path}/unitList/geo-attribute.png);
+}
+
+.mstrmojo-ui-CheckList.units .item.ic12.st3076 span {
+    background-image: url(#{$vi-img-path}/unitList/recursive-attribute.png);
+}
+
+.mstrmojo-ui-CheckList.units .item.ic14 span {
+    background-image: url(#{$vi-img-path}/unitList/hierarchy.png);
+}
+
+.mstrmojo-ui-CheckList.units .item.icAll span {
+    padding-left: 0;
+    background: none;
+}
+
+.mstrmojo-ui-CheckList.units .item.hidden {
+  display: none;
+}
+
+.mstrmojo-GeoAttrEditor .mstrmojo-Editor-content .mstrmojo-Label {
+  margin: 15px 22px 15px 22px;
+}
+
+.mstrmojo-GeoAttrEditor .mstrmojo-Editor-content .mstrmojo-ui-CheckList .item {
+  margin-left: 17px;
+  margin-bottom: 6px;
+}
+
+/** END: Units CheckList **/
+
+/** BEGIN: ShowHiddenEditor TitleBar **/
+/* When the filter's titlebar is invisible meanwhile it is called doLayout(), the width of text can't be calculated correctly.
+   Thus use css instead of mixin mstrmojo._HasLayout to fix the layout. */
+/* copied from FilterPanel TitleBar in _FilterPanel.scss  */
+.mstrmojo-ShowHiddenEditor {
+    .units {
+        overflow: hidden;
+
+        .scroll-container {
+            max-height: 260px;
+        }
+
+        &.hasVertical {
+            .item {
+                padding-right: 24px;
+                margin-right: -10px;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-VIPanelPortlet {
+        .mstrmojo-VIPanel-titlebar {
+            display: table;
+
+            .mstrmojo-VITitleBar.small {
+                display: table-row;
+
+                & > DIV {
+                    float: none;
+                }
+                .left-toolbar {
+                    display: table-cell;
+                    width: auto;
+                }
+
+                .title-text {
+                    display: table-cell;
+                    width: 100%;
+                    cursor: pointer;
+                    vertical-align: top;
+
+                    .mstrmojo-EditableLabel {
+                        padding: 0 6px;
+                        line-height: 22px;
+                    }
+                }
+                .right-toolbar {
+                    display: table-cell;
+                    width: auto;
+                }
+
+            }
+        }
+    }
+
+    .me-content {
+        padding: 5px 9px;
+    }
+}
+
+
+/** BEGIN: Dataset Panel Unit List Tooltip **/
+.mstrmojo-Tooltip.vi-regular.vi-tooltip-V {
+  .mstrmojo-Tooltip-content.regular-unitlist-tooltips {
+    font-weight: normal;
+  }
+}
+/** END: Dataset Panel Unit List Tooltip **/
+
+@mixin hilight-keyframes($keyframes-name, $highlight-color) {
+    @include keyframes($keyframes-name) {
+        0% {
+            background-color: transparent;
+        }
+        50% {
+            background-color: $highlight-color;
+        }
+        100% {
+            background-color: transparent;
+        }
+    }
+}
+
+@include hilight-keyframes(light-hilight, #cfcfcf);
+@include hilight-keyframes(dark-hilight, #252525);
+
+.mojo-theme-light {
+    .mstrmojo-RootView-datasets .docdataset-unitlist-portlet .item.hilight {
+        @include animation(light-hilight 1.5s);
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-RootView-datasets .docdataset-unitlist-portlet .item.hilight {
+        @include animation(dark-hilight 1.5s);
+    }
+
+    .mstrmojo-ui-CheckList.units .nde4ra span {
+        background-image: url(#{$vi-img-path}/unitList/derived-recursive-attribute_dark.png);
+    }
+}

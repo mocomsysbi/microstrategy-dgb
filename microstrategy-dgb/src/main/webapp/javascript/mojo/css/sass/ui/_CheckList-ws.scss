@@ -1,0 +1,161 @@
+@import '../vi/vi-icons';
+@import '../vi/workstation-global';
+
+.workstation {
+  /** BEGIN: CheckList **/
+  .mstrmojo-ui-CheckList {
+    overflow: hidden;
+
+    .scroll-container {
+      height: 100%;
+      overflow: auto;
+
+      .none-mac {
+        .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+          padding-right: 4px;
+        }
+      }
+    }
+
+
+
+    .item {
+      background: transparent url(#{$mojo-img-path}/checkbox.svg) -3px -21px no-repeat; //#VIRevamp
+      cursor: default;
+      display: block;
+      line-height: 26px;
+      padding: 0 4px 0 17px;
+      min-width: 65px;
+      background-position: -3px -21px !important;
+
+      &.selected {
+        background-position: -3px 4px !important; //#VIRevamp //Values also defined in _base-themes-ws: $check-box-checked-bg-position but cant use because of the way bundles are generated
+
+        &.disabled {
+          background-position-x: -3px !important;
+          background-position-y: -71px !important;
+          pointer-events: none !important;
+        }
+      }
+
+      &:last-child{
+        margin-bottom: 0 !important;
+      }
+
+      &:first-child{
+        margin-top: 0 !important;
+      }
+
+      //DE56481;when spans are empty, inject non-breaking space character, to keep span height consistent.
+      //So no matter what font size and line-height you have set, everything around that <span> will fall into line, just as if you had text present in that <span>.
+      //Also rather than using \00a0 non-breaking space, use \200b, which is also a non-breaking space, but with zero width.
+      //And not using min-height, because it is vulnerable where font sizes change and the text baseline is not in the correct place.
+      span.text:empty:before {
+        content: '\200b';
+      }
+
+      .info-icon {
+        height: 18px;
+        width: 18px;
+        display: inline-block;
+        margin-bottom: -3px;
+        margin-left: $wsvi-verticalinput_padding_small;
+        @include wsvi-icon-info;
+      }
+    }
+
+    .disableSelected .item.selected{
+      background-position: -3px -74px;
+    }
+
+    &.radio .item {
+      background-position: -3px -146px !important;
+
+      &:hover .only {
+        display: none;
+      }
+
+      &.selected {
+        background-position: -3px -121px !important;
+      }
+    }
+
+    &.hideCheckMark {
+      .item {
+        background: none;
+        padding: 0 7px 0 7px;
+        &.selected {
+          background-color: $wsvi-selected-gray;
+        }
+      }
+
+      &.radio .item {
+        background: none;
+        padding: 0 7px 0 7px;
+        &.selected {
+          background-color: $wsvi-selected-gray;
+        }
+      }
+    }
+
+    &.horizontal {
+      .icn {
+        white-space: nowrap;
+
+        .item {
+          display: inline-block;
+          margin-right: 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .scroll-container.hasHorizontal {
+        min-height: 35px;
+      }
+    }
+  }
+
+  /** END: CheckList **/
+}
+
+.mstrmojo-ui-CheckListWithDesc {
+
+  .item {
+    .text-title {
+      display: inline-block;
+      margin-left: 8px;
+      line-height: 24px;
+      font-weight: bold;
+    }
+    .text-desc {
+      display: block;
+      margin-left: 20px;
+      line-height: 22px;
+    }
+  }
+
+  .item:before {
+    content: ' ';
+    position: relative;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background: transparent url(images/DI/workstation/workstation.svg) -2650px -70px no-repeat;
+  }
+  .item.selected:before {
+    background-position: -2600px -70px;
+  }
+
+  &.radio {
+    .item:before {
+      background-position: -2550px -70px;
+    }
+    .item.selected:before {
+      background-position: -2500px -70px;
+    }
+  }
+}

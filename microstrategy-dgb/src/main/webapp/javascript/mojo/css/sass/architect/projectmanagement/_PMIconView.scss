@@ -1,0 +1,75 @@
+$bones-image-path: '../../../style/mstr/images';
+
+.mstrmojo-PMIconView {
+  /*border: 2px solid blue;*/
+  padding-top: 5px;
+  padding-left: 5px;
+  margin-left: 60px;
+  width: 43%;
+  position: absolute;
+}
+
+/* moved to global.css in the plugins folder to use the same css as standard web
+.mstrmojo-PMIconView:hover{
+}*/
+
+.mstrmojo-PM-ScrollBox {
+  position: relative;
+}
+
+.mstrmojo-PMIconView-Icon {
+  background: transparent url(#{$bones-image-path}/iconView.png) no-repeat;
+  /* moved to global.css in the plugins folder to use the same css as standard web*/
+  background-position: 0 -152px;
+  width: 60px;
+  height: 77px;
+  cursor: pointer;
+}
+
+.mstrmojo-PMIconView-Info {
+  margin-left: 10px;
+  height: 76px;
+}
+
+.mstrmojo-PMIconView-Name {
+  color: #6d6d6d;
+  /* moved to global.css in the plugins folder to use the same css as standard web*/
+  line-height: 20px;
+  &.name {
+    font-size: 11pt;
+    font-weight: bold;
+    &:hover {
+      color: #006ba0 !important;
+      /* moved to global.css in the plugins folder to use the same css as standard web*/
+      cursor: pointer;
+    }
+  }
+  &.desc {
+    font-size: 8pt;
+    line-height: 20px;
+    height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &.server {
+    font-size: 8pt;
+    font-weight: bold;
+  }
+  &.servername {
+    font-size: 8pt;
+    padding-left: 10px;
+  }
+  &.architect, &.rename, &.delete {
+    font-size: 8pt;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: #006ba0 !important;
+      /* moved to global.css in the plugins folder to use the same css as standard web*/
+    }
+  }
+  &.rename, &.delete {
+    padding-left: 15px;
+  }
+}

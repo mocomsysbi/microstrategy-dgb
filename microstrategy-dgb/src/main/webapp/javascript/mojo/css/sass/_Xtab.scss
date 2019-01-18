@@ -1,0 +1,98 @@
+.outlineMode {
+    .hl {
+        text-decoration: none;
+        cursor: default;
+
+        .icon-outline-span {
+            text-decoration: none;
+            cursor: default;
+        }
+
+        span {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    /* rrule below is to not support vertical text at all*/
+    td {
+        writing-mode: lr-tb !important;
+    }
+
+    &.hiddenRow {
+        display: none;
+    }
+}
+
+.icon-outline-span {
+    padding-right: 1em;
+    position: relative;
+    cursor: pointer;
+    display: inline;
+    margin-right: 5px;
+
+    &:before {
+        font-family: 'web_fr_iconfont';
+        position: absolute;
+        top: 0;
+    }
+
+    &.outline-expand {
+        &:before {
+            content: '\e800';
+            cursor: pointer;
+        }
+    }
+
+    &.outline-collapse {
+        &:before {
+            content: '\e801';
+            cursor: pointer;
+        }
+    }
+
+    &:hover {
+        &:before {
+            opacity: .7;
+        }
+    }
+}
+
+.mstrmojo-Xtab {
+    &.outlineBusyCursor {
+
+        cursor: progress;
+
+        .mstrmojo-XtabZone td {
+            cursor: progress;
+        }
+
+        .icon-outline-span {
+
+            cursor: progress;
+
+            &.outline-expand {
+                &:before {
+                    cursor: progress;
+                }
+            }
+
+            &.outline-collapse {
+                &:before {
+                    cursor: progress;
+                }
+            }
+        }
+    }
+}
+
+/* overwrite dossier specific properties*/
+.dossier {
+    .icon-outline-span{
+        &:before {
+            font-family: 'web_fr_iconfont';
+            padding-top: 0.2em;
+            margin: 0;
+        }
+    }
+}

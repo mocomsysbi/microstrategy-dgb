@@ -1,0 +1,233 @@
+@import '../vi-global';
+
+$text-color:    #d9d9d9;
+$content-horizontal-padding: 10px;
+
+.mstrmojo-VIAllObjectsBrowser {
+  background:#37383a;
+  padding: 0 9px;
+
+  .mstrmojo-VIPanel-header {
+    @include box-sizing;
+//    padding: 2px $content-horizontal-padding;
+  }
+
+  .title-text {//This layer is just for selector specificity to overwrite the base class
+    .mstrmojo-EditableLabel {
+      color: $text-color;
+      padding-left: 16px;
+      text-transform: uppercase;
+      font-size: 10px;
+      padding-top: 3px;
+      &:before {
+        content: '';
+        height: 13px;
+        width: 13px;
+        display: inline-block;
+        margin-left: -15px;
+        margin-right: 6px;
+        position: relative;
+        top: 3px;
+        background: transparent url(#{$vi-img-path}/menu_icons.png) -25px -290px no-repeat;
+      }
+    }
+  }
+
+    .mstrmojo-VIPanel-titlebar .mstrmojo-VITitleBar.vi-allObjects-tb .right-toolbar .mstrmojo-VITitleToolbar {
+        margin-top: 8px;
+    }
+
+  .mstrmojo-VIAllObjectsBrowser .mstrmojo-VITitleToolbar .item.cls>.icn {
+    background: transparent url(#{$vi-img-path}/Expand_Collapse_dark.png) -2px 0px no-repeat;
+  }
+
+
+  .mstrmojo-ui-SearchBox {
+    box-sizing: border-box;
+    .mstrmojo-ui-sb-input {
+      padding: 0;
+    }
+  }
+
+  .mstrmojo-Pulldown {
+    box-sizing: border-box;
+    margin: 0px;
+  }
+
+  .mstrmojo-PopupList {
+    background-color: #222;
+    color: #ccc;
+    border: 1px solid #333;
+    box-shadow: none;
+    margin-top: 3px;
+    border-radius: 3px;
+    .item:hover {
+      background-color: #444;
+      color: #ccc;
+    }
+  }
+  .horizontal-line {
+    height: 2px;
+    box-sizing:border-box;
+    border-top: 1px #000 solid;
+    border-bottom: 1px #404040 solid;
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+  .mstrmojo-TreeBrowser {
+    overflow: visible;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    border:none;
+//    box-sizing: border-box;
+    color: $text-color;
+    min-height:200px;
+//    padding-left: $content-horizontal-padding;
+    padding-top:2px;
+
+    &.loading {
+      background-image: url(#{$vi-img-path}/spinner_dark.gif);
+    }
+
+    ul {
+      display: block;
+      white-space: nowrap;
+    }
+    li {
+      display: inline-block;
+    }
+    .mstrmojo-TreeNode-div {
+
+      margin:4px 0px;
+      cursor: default;
+
+      &:hover,&.selected{
+        background-color: #777;
+      }
+    }
+    .mstrmojo-TreeNode-state {
+      width: 13px;
+      height: 15px;
+      background: transparent url(#{$vi-img-path}/menu_icons.png) 1px 1px no-repeat;
+      margin-left: 3px;
+      margin-top: 6px;
+    }
+    .mstrmojo-TreeNode-state.leaf {
+      display:none;
+    }
+    .mstrmojo-TreeNode-state.closed {
+      background-position: 1px -229px;
+      margin-top: 4px;
+    }
+
+    .mstrmojo-TreeNode-state.opened {
+      background-position: 1px -200px;
+      margin-top: 4px;
+    }
+
+    .mstrmojo-TreeNode-text {
+//      font-weight:bold;
+      padding-left: 21px;
+      background: transparent; // this line is going to clear the hover status defined in vi.css
+      background-repeat: no-repeat;
+      &.folder {
+        padding:0px 0px 0px 5px;
+        background-image:none;
+      }
+      &.report {
+        background-image:url(../../../../style/mstr/images/listView.png);
+        background-position: 0 -40px;
+      }
+      &.attribute {
+        background-image: url(vi/images/unitList/attribute.png);
+        background-position: 0 3px;
+      }
+      &.metric {
+        background-image: url(vi/images/unitList/metric.png);
+        background-position: 0 4px;
+      }
+      &.consolidation{
+        background-image: url(vi/images/unitList/consolidation.png);
+        background-position: 0 1px;
+      }
+      &.custom-group {
+        background-image: url(vi/images/unitList/custom-group.png);
+        background-position: 0 4px;
+      }
+    }
+  }
+}
+
+
+.mojo-theme-light {
+  .mstrmojo-VIAllObjectsBrowser{
+    background-color: #f2f2f2;
+
+    .title-text .mstrmojo-EditableLabel,
+    .mstrmojo-TreeBrowser{
+      color: #444649;
+    }
+
+    .mstrmojo-VITitleToolbar .item.cls>.icn {
+      background: transparent url(#{$vi-img-path}/Expand_Collapse_new.png) -3px -3px no-repeat;
+    }
+    .opened.mstrmojo-VITitleToolbar .item.cls>.icn {
+      background-position: -43px -0px;
+    }
+
+    .horizontal-line{
+      border-top-color: #d1d1d1;
+      border-bottom-color: #f0f0f0;
+    }
+
+    .title-text .mstrmojo-EditableLabel{
+      &:before {
+        content: '';
+        height: 13px;
+        width: 13px;
+        display: inline-block;
+        margin-left: -15px;
+        margin-right: 6px;
+        background: transparent url(#{$vi-img-path}/menu_icons.png) -25px -318px no-repeat;
+      }
+    }
+
+    .mstrmojo-TreeBrowser{
+      &.loading {
+        background-image: url(#{$vi-img-path}/spinner_light.gif);
+      }
+      .mstrmojo-TreeNode-state {
+        &.closed{
+          background-position: 1px -29px;
+        }
+        &.opened{
+          background-position: 1px 0px;
+        }
+      }
+      .mstrmojo-TreeNode-div:hover,.mstrmojo-TreeNode-div.selected {
+        background-color: #dadada;
+      }
+    }
+  }
+}
+
+.mstr-one-tier{
+  .mstrmojo-VIAllObjectsBrowser{
+    .title-text .mstrmojo-EditableLabel{
+      &:before {
+        background-position:  -25px -376px ;
+      }
+    }
+  }
+  .mojo-theme-light {
+    .mstrmojo-VIAllObjectsBrowser{
+      .title-text .mstrmojo-EditableLabel{
+        &:before {
+          background-position:  -25px -348px ;
+        }
+      }
+    }
+  }
+}

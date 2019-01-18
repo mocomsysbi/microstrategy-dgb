@@ -1,0 +1,585 @@
+/**
+ **/
+
+// Import the global variables
+@import '../../../sass/global';
+@import '../../../sass/vi/waitBox';
+@import '../../../sass/vi/workstation-global';
+
+/****Search ***/
+$results-height: 436px;
+$results-width: 800px;
+
+#mstrSearchSuggest {
+  width: 30px;
+}
+
+/**SearchButton**/
+.mstrmojo-SearchButton {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+
+  .mstrmojo-Button-text {
+    height: inherit;
+    background: url(#{$mstr-img-path}/theme/pathBarIcons.png) no-repeat 0 -610px;
+
+    &:hover {
+      background-position: 0 -637px;
+    }
+  }
+}
+/**End: SearchButton**/
+
+
+/**Search Editor **/
+.mstrmojo-Search-editor {
+  opacity: 0.96;
+
+  .mstrmojo-Editor-title {
+    max-width: $results-width - 100px;
+    height: 18px;
+  }
+}
+/**End Search Editor **/
+
+.mstrmojo-Search-nonbreakable {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**Search Widget **/
+.mstrmojo-Search {
+  cursor: default;
+  margin-top: 3px;
+  padding: 10px 0;
+  width: $results-width;
+  text-align: center;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .mstrmojo-ui-Pulldown {
+    text-align: left;
+  }
+
+  &.resultsOnly > div {
+    display: none;
+
+    &.mstrmojo-Search-result {
+      display: block;
+    }
+  }
+}
+
+.mstrmojo-Search-settings1 {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+
+  .mstrmojo-ui-Pulldown {
+    max-width: 300px;
+
+    .mstrmojo-ui-Pulldown-text { /*Adjust height to match search inputbox*/
+      border-right: 0 none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &.searchType  .mstrmojo-ui-Pulldown-text {
+      border-radius: 0;
+    }
+  }
+}
+
+.mstrmojo-Search-container {
+  display: inline-block;
+  background-color: #FFF;
+  border: 1px solid $wsvi-ui-border-gray;
+  border-radius: 0 $wsvi-box-radius $wsvi-box-radius 0;
+  padding: 0 3px;
+  position: relative;
+}
+.mstrmojo-Search-input {
+  float: left;
+
+  input {
+    font-size: 1.2em;
+    line-height: 22px;
+    border: 0 none;
+    cursor: text;
+    background: transparent;
+
+    height: 24px; //IE11
+  }
+  .searchPattern {
+    position: relative;
+    z-index: 3;
+    width: 220px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    &:focus {
+      outline: 0 none;
+    }
+    &::-webkit-input-placeholder {
+      font-size: 0.8em;
+    }
+    &::-moz-placeholder {
+      font-size: 0.8em;
+    }
+    &:-ms-input-placeholder {
+      font-size: 0.8em;
+    }
+  }
+  .suggestPattern {
+    border-color: transparent;
+    color: silver;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 220px;
+  }
+
+}
+
+.mstrmojo-Search-btns {
+  float: left;
+  padding-top: 2px;
+  position: relative;
+
+  > div {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 24px;
+    background: #999999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    float: left;
+    margin-left: 5px;
+    transition: opacity .1s ease-out;
+
+    &.mstrmojo-Search-btnClear {
+      opacity: 0;
+      filter: alpha(opacity=0) \9;
+      background: url(#{$mstr-img-path}/tbDeleteAccD.gif) no-repeat -2px 1px transparent;
+      &:hover {
+        background-image: url(#{$mstr-img-path}/tbDeleteAcc.gif);
+      }
+    }
+    &.mstrmojo-Search-btnSpinner {
+      opacity: 0;
+      filter: alpha(opacity=0) \9;
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      background: url(#{$mstr-img-path}/searchbox-spinner-gray.gif) no-repeat center center transparent;
+    }
+    &.mstrmojo-Search-btnSearch {
+      background: url(#{$mstr-img-path}/theme/pathBarIcons.png) no-repeat -3px -615px;
+      &:hover {
+        background-position: -3px -642px;
+      }
+    }
+  }
+
+  &.clear .mstrmojo-Search-btnClear {opacity: 1; filter: alpha(opacity=100) \9;}
+  &.spinner .mstrmojo-Search-btnClear {opacity: 0; filter: alpha(opacity=00) \9;}
+  &.spinner .mstrmojo-Search-btnSpinner {opacity: 1; filter: alpha(opacity=100) \9; z-index: 1;}
+
+}
+
+.mstrmojo-Search-btnSettings {
+  margin-left: 10px;
+  line-height: 28px;
+  vertical-align: top;
+  display: inline-block;
+  text-decoration: underline;
+}
+.mstrmojo-Search-infoIcon {
+  display: inline;
+  .mstrmojo-Label {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+    background: url(#{$mstr-img-path}/info.png) no-repeat center center transparent;
+  }
+}
+.mstrmojo-SearchSettings {
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+
+  .mstrmojo-SearchSettings-container {
+    padding: 20px 10px;
+  }
+
+  .mstrmojo-SearchSettings-panel {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    padding: 0 10px;
+
+    > .mstrmojo-Label {
+      line-height: 22px;
+    }
+
+    .mstrmojo-ui-Pulldown {
+      margin-top: 0;
+    }
+
+    .mstrmojo-TextArea {
+      border-color: $wsvi-ui-border-gray;
+      height: $wsvi-input-control-height;
+      overflow: auto;
+      resize: none;
+    }
+
+    &.datepanel {
+      position: relative;
+    }
+
+    .mstrmojo-SearchSettings-date-pulldown {
+      width: 86%;
+      float: left;
+    }
+    .mstrmjo-SearchSettings-calendar {
+      width: 20px;
+      height: 20px;
+      float: left;
+      background: url(#{$mstr-img-path}/buttons.png) no-repeat -60px -150px transparent;
+      &.on,
+      &:hover {
+        background-position: -40px -150px;
+      }
+    }
+    .mstrmojo-SearchSettings-dates {
+      position: relative;
+      margin-top: 10px;
+
+      .vi-col1,
+      .vi-col2 {
+        vertical-align: top !important;
+      }
+
+      .intervalValue {float: left;}
+      .intervalUnit {margin-left: 3px;}
+      .startDate {
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      .mstrmojo-DateTextBox-input {
+        padding-left: 3px;
+        height: $wsvi-input-control-height;
+      }
+    }
+    .mstrmojo-SearchSettings-dates-popupWidget {
+      top: 56px;
+      padding: 10px;
+
+      .mstrmojo-Buttons {
+        text-align: right;
+        margin-top: 20px;
+
+        .mstrmojo-WebButton.hot {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+/* Search Results: */
+.mstrmojo-Search-suggestion {
+  width: 220px;
+  margin-top: 3px;
+  margin-left: -3px;
+
+  .mstrmojo-suggest-list {
+    line-height: $wsvi-input-control-line-height;
+    padding: 2px 0;
+
+    .item {
+      padding: 1px 5px;
+    }
+  }
+}
+.mstrmojo-Search-result {
+  margin-top: 30px;
+}
+.resultsOnly .mstrmojo-Search-result {
+  margin-top: 0;
+}
+.resultsOnly.searching .mstrmojo-Search-result {
+  min-height: 100px;
+  background: url(#{$mstr-img-path}/loader_round.gif) no-repeat center center transparent;
+}
+
+.mstrmojo-SearchResults {
+  border: 1px solid #EEE;
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+
+}
+.mstrmojo-SearchResults-list {
+  height: $results-height;
+  transition: height .2s cubic-bezier(1, -0.12, 0, 1.04);
+}
+
+.mstrmojo-SearchIconView {
+  overflow: hidden;
+  text-align: left;
+
+  .mstrmojo-itemwrap {
+    width: 50%;
+    display: inline-block;
+  }
+}
+.mstrmojo-SearchIconItem {
+  float: left;
+  width: 100%;
+  padding: 5px;
+
+  i {
+    float: left;
+    margin-right: 5px;
+  }
+  .ttl {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 350px;
+  }
+  .desc {
+    max-height: 2.5em;
+    overflow: hidden;
+  }
+  i, .ttl {
+    cursor: pointer;
+  }
+}
+
+.mstrmojo-Search-GridView.mstrmojo-DataGrid {
+  width: 100%;
+  background: #fff;
+
+  /* DE22818 change width of columns in search windows */
+  col.name {width: 258px;}
+  col.owner {width: 118px;}
+  col.mdt {width: 148px;}
+  col.anc { }
+
+  td {
+    background: transparent;
+    padding: 4px;
+    height: 40px;
+  }
+
+  /* DE22818 change background color of the header in dataGrid*/
+  .mstrmojo-DataGrid-headerContainer {
+    background-color: #fafafa;
+
+    td:not(:last-child) {
+      border-right: thin solid #d3d3d3;
+    }
+  }
+
+  .mstrmojo-DataGrid-headerText {
+    border: 0 none;
+    font-weight: bold;
+    color: #4A4A4A;
+  }
+
+  .mstrmojo-DataGrid-itemsScrollBox {
+    overflow: hidden;
+  }
+
+  .mstrmojo-DataGrid-itemsContainer {
+    height: $results-height - 35px;
+
+    .mstrmojo-itemwrap-table {
+      border-collapse: collapse;
+
+      td {
+        border-color: #ddd;
+        border-width: 1px 0 0;
+      }
+
+      .mstrmojo-DataRow.selected {
+        background: transparent;
+      }
+    }
+  }
+
+  .mstrmojo-Search-Ancester {
+    overflow: hidden;
+    white-space: nowrap;
+    height: 2em;
+    line-height: 2em;
+    transition: all .2s ease-out;
+
+    &.full {
+      line-height: 1.2em;
+      height: 2.5em;
+      white-space: normal;
+    }
+
+    .toggle {
+      float: left;
+      margin-top: 3px;
+      margin-right: 3px;
+      width: 20px;
+      height: 20px;
+      background: url(#{$mstr-img-path}/buttons.gif) no-repeat -100px -95px;
+
+      &:hover {
+        background-position: -80px -95px;
+        &.disabled {
+          background-position: -100px -95px;
+        }
+      }
+    }
+
+    &.full .toggle {
+      background-position: -140px -115px;
+      &:hover {
+        background-position: -120px -115px;
+      }
+    }
+
+    .mstrmojo-ListBase {
+      > div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .item {
+        display: inline;
+        position: relative;
+        cursor: pointer;
+        &:before {
+          content: '>';
+          padding: 0 2px;
+        }
+        &:first-child:before {
+          visibility: hidden;
+          display: none;
+        }
+      }
+    }
+  }
+
+  .mstrmojo-Search-nonbreakable {
+    width: 100%;
+  }
+}
+
+.mstrmojo-Search-GridViewItem {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+
+  .mstrmojo-ListIcon.isc {
+    background-image: url(#{$mstr-img-path}/listView.png) !important;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      bottom: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background: url(#{$mstr-img-path}/lsShortcut.gif) no-repeat -2px 2px;
+    }
+  }
+}
+/** End Search Results **/
+
+/**ViewModes toolbar */
+.mstrmojo-SearchResults-toolbar {
+  display: inline-block;
+  float: left;
+  margin-top: 15px;
+  width: 50px;
+
+  .viewModesButtonBar {
+    .item,
+    .item.selected {
+      background: none no-repeat 0 0 transparent;
+      background-image: url(#{$mstr-img-path}/leftPane/toolbar.png) !important; //override buttonbar default
+      filter: none !important;
+      color: transparent;
+      padding: 18px 30px 0 0;
+      height: 31px;
+
+      &.iconView {
+        background-position: 1px -60px;
+        &:hover {
+          background-position: 1px -90px;
+        }
+      }
+      &.gridView {
+        background-position: 1px 0;
+        &:hover {
+          background-position: 1px -30px;
+        }
+      }
+    }
+  }
+}
+
+/**End: ViewModes toolbar */
+
+
+/** Search IncFetch */
+.mstrmojo-SearchResults-if {
+  margin-top: 20px;
+  text-align: center;
+
+  .mstrmojo-IncFetch {
+    display: inline-block;
+    opacity: 0;
+    filter: alpha(opacity=0) \9;    //IE8
+    height: 0;
+    transition: all .2s ease-out;
+
+    &.show {
+      opacity: 1;
+      filter: alpha(opacity=100) \9;    //IE8
+      height: 20px;
+    }
+  }
+}
+/** End Search IncFetch */
+
+/**IE8 specific */
+.mstr-ie8 .mstrmojo-SearchResults .mstrmojo-SearchResults-toolbar {
+  .viewModesButtonBar.mstrmojo-ui-ButtonBar,
+  .viewModesButtonBar.mstrmojo-ui-ButtonBar DIV {
+    display: inline-block ;
+  }
+  .viewModesButtonBar.mstrmojo-ui-ButtonBar > DIV {
+    display: inline-block !important;
+  }
+  .viewModesButtonBar {
+    height: 32px !important;
+    > DIV {
+      width: 68px;
+    }
+  }
+}
+/**End IE8*/

@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.vi.controllers.DocumentControllerBase");mstrmojo.vi.controllers.DocumentController4Library=mstrmojo.declare(mstrmojo.vi.controllers.DocumentControllerBase,[],{scriptClass:"mstrmojo.vi.controllers.DocumentController4Library",});mstrmojo.vi.controllers.DocumentController=mstrmojo.vi.controllers.DocumentController4Library;}());

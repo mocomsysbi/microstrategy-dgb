@@ -1,0 +1,109 @@
+<!--
+    Map Region Selector AJAX Visualization.
+    There are number of cases where customers would like to have the ability to highlight areas using image maps and display specific metrics on those areas and also make these areas
+    clickable by sending a selector action. For example, customers may want to take a image of a USA regional map and do the following:
+      1. Place metrics on each region so that it shows the metric value for that region.
+      2. Enable a rollover on each region.
+      3. Send out a selector action when that region is clicked.
+    The hot areas that are clickable are done using image maps and there are several tools out there that can accomplish that and the final output imported in to MicroStrategy.
+    The same concept can be applicable to store layout or any image of customer's choice.
+    This sample provide detailed information on:
+      1. How to insert metric in a hot area.
+      2. A sample rollover behavior.
+      3. Selector action when clicked.
+    Customer can use this sample and extend it to their needs.
+-->
+<html>
+<head>
+    <!-- CSS class used for the map labels -->
+    <style type="text/css">
+        #map div {
+            font-family: Tahoma,Arial,Verdana,Helvetica,sans-serif;
+            position: absolute;
+            color:#FFFFFF;
+            font-size:11px;
+            font-weight:bold;
+        }
+    </style>
+    
+    <script type="text/javascript">
+		mstrApp = {
+			jsRoot: '../../javascript/',
+			jsMojoRoot: '../../javascript/mojo/js/source/'
+			};
+
+		//set global mstrConfig to be referenced by xhr request
+		mstrConfig = window.parent.mstrConfig;
+	</script>
+	
+    <script language="javascript" src="../javascript/URLManagement.js"><!-- --></script>
+    <script language="javascript" src="../javascript/ImageMap.js"><!-- --></script>
+    <script type="text/javascript">
+        /**
+         * Changes the DIV's style to highlite the label. Used on the onMouseOver event for the labels
+         */
+        function highlite(div) {
+            if (!isSelectable()) {
+                return;
+            }
+            div.style.fontSize = '13px';
+            div.style.color = '#FFFF00';
+        }
+
+        /**
+         * Changes the DIV's style to un-highlite by resetting the style properties. Used on the onMouseOut event for the labels
+         */
+        function unHighlite(div) {
+            if (!isSelectable()){
+                return;
+            }
+            div.style.fontSize = '';
+            div.style.color = '';
+        }
+
+        function onloadVis() {
+            setDefaultSelection();
+        }
+    </script>
+</head>
+<body onload="onloadVis();">
+<div>
+       <!--
+        image map starts here...
+        Each "area" tag must call "makeSelection(value)" passing the value that corresponds to the selection (i.e. 'northeast').
+        Additionally, it may call changeImgSrc passing the name of the imagemap and the new image source. This is used to replace
+        the existing map with one that shows the current area selected.
+        We assume that the image for each selected area is named as the attribute value with a PNG extension (i.e. Central.png)
+        Note:"area" tags must not have an href
+    -->
+    <map name="ImageMap">
+        <area id="South" onclick="makeSelection('South')" shape="rect" coords="109,116,245,226"/>
+        <area id="Central" onclick="makeSelection('Central')" shape="rect" coords="154,6,199,109" />
+        <area id="Mid-Atlantic" onclick="makeSelection('Mid-Atlantic')" shape="rect" coords="199,3,307,118" />
+        <area id="Southeast" onclick="makeSelection('Southeast')" shape="rect" coords="253,119,356,233" />
+        <area id="Northwest" onclick="makeSelection('Northwest')" shape="rect" coords="30,1,157,76" />
+        <area id="Northeast" onclick="makeSelection('Northeast')" shape="rect" coords="305,8,396,116" />
+        <area id="Southwest" onclick="makeSelection('Southwest')" shape="rect" coords="7,77,105,177" />
+    </map>
+
+    <div id="map" style="position: relative;">
+        <img id="imgmap" src="USARegions.png" usemap="#ImageMap" border="0"/>
+
+        <!--
+            The following optional DIVs show labels on top of the image. There must be one defined for each area on the map.
+            Each DIV calls javascript methods highilite() on the onMouseOver event and unhilite() on the onMouseOut event.
+            These events are used to change the look and feel of the text on the DIV when the user hovers over the label.
+            To allow the label to be clickable, the DIV must have the same onclick event as the corresponding area.
+        -->
+        <div id="South" name="mapLabel" style="left:129px;top:126px" onMouseOver="highlite(this)" onMouseOut="unHighlite(this)" onclick="makeSelection('South')">South</div>
+        <div id="Central" name="mapLabel" style="left:134px;top:82px" onMouseOver="highlite(this)" onMouseOut="unHighlite(this)" onclick="makeSelection('Central')">Central</div>
+        <div id="Mid-Atlantic" name="mapLabel" style="left:210px;top:63px" onMouseOver="highlite(this)" onMouseOut="unHighlite(this)" onclick="makeSelection('Mid-Atlantic')">Mid-Atlantic</div>
+        <div id="Southeast" name="mapLabel" style="left:263px;top:139px" onMouseOver="highlite(this)" onMouseOut="unHighlite(this)" onclick="makeSelection('Southeast')">Southeast</div>
+        <div id="Northwest" name="mapLabel" style="left:40px;top:21px" onMouseOver="highlite(this)" onMouseOut="unHighlite(this)" onclick="makeSelection('Northwest')">Northwest</div>
+        <div id="Northeast" name="mapLabel" style="left:285px;top:78px" onMouseOver="highlite(this)" onMouseOut="unHighlite(this)" onclick="makeSelection('Northeast')">Northeast</div>
+        <div id="Southwest" name="mapLabel" style="left:27px;top:97px" onMouseOver="highlite(this)" onMouseOut="unHighlite(this)" onclick="makeSelection('Southwest')">Southwest</div>
+    </div>
+    <!-- ...image map ends here -->
+</div>
+</body>
+</html>

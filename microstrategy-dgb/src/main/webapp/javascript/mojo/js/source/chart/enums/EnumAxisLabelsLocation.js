@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumAxisLabelsLocation={ALL_LEFT:0,ALL_RIGHT:1,ALL_LEFT_RIGHT:2,ALL_BOTTOM:3,ALL_TOP:4,ALL_BOTTOM_TOP:5};

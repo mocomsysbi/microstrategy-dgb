@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumLineJoinType={LJT_MITER:0,LJT_BEVEL:1,LJT_ROUND:2};

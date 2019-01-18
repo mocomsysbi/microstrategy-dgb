@@ -1,0 +1,470 @@
+
+
+.di-preview-container {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+
+.di-preview-options-left {
+  float: left;
+}
+.di-preview-options-left .mstrmojo-Pulldown.disabled{
+  background: grey;
+  color: lightgrey;
+}
+
+.di-preview-options-right {
+  float: right;
+}
+
+
+
+.di-preview-question-mark-button {
+  margin-left: 5px;
+}
+
+.di-preview-legend-text {
+  padding-left: 25px;
+  padding-top: 3px;
+}
+
+.di-preview-legend-text2 {
+  margin: 3px;
+}
+
+
+
+
+.mstrmojo-di-datapreview-cxtmenu{
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  height:20px;
+  width:20px;
+  cursor:pointer;
+  vertical-align: middle;
+  background-position: 0px -202px;
+}
+.mstrmojo-di-datapreview-popmenu .mstrmojo-ContextMenu,
+.mstrmojo-di-datapreview-popmenu{
+  -moz-border-radius:7px;
+  -webkit-border-radius:7px;
+  border-radius:7px;
+}
+
+.mstrmojo-di-datapreview-popmenu .mstrmojo-ContextMenuItem{
+  line-height:22px;
+}
+
+.mstrmojo-di-datapreview-popmenu .mstrmojo-CMI-text{
+  padding-left:4px;
+}
+
+.mstrmojo-ContextMenuItem.cmdQBMetric .mstrmojo-CMI-left{
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  background-position: -2px -1218px;
+}
+
+.mstrmojo-ContextMenuItem.cmdQBMetric.disabled .mstrmojo-CMI-left{
+  background-position: -2px -1263px;
+}
+
+.mstrmojo-ContextMenuItem.cmdQBAttribute .mstrmojo-CMI-left{
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  background-position: -1px -1195px;
+}
+
+.mstrmojo-ContextMenuItem.cmdQBAttribute.disabled .mstrmojo-CMI-left{
+  background-position: -1px -1240px;
+}
+
+.mstrmojo-ContextMenuItem.cmdQBNone .mstrmojo-CMI-left,
+.mstrmojo-ContextMenuItem.cmdQBRemove .mstrmojo-CMI-left{
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  background-position: -2px -986px;
+}
+
+.mstrmojo-ContextMenuItem.cmdQBEdit .mstrmojo-CMI-left{
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  background-position: -3px -900px;
+}
+
+.mstrmojo-ContextMenuItem.cmdQBTime:hover,
+.mstrmojo-ContextMenuItem.cmdQBGeo:hover{
+  background-color:transparent;
+}
+
+.mstrmojo-di-datapreview-header {
+  height: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.mstrmojo-di-datapreview-header .mstrmojo-Label{
+  padding-left: 25px;
+  line-height: 20px;
+}
+
+.mstrmojo-di-datapreview-header div {
+  position:absolute;
+}
+
+.mstrmojo-di-datapreview-header .menu {
+  background-image: url(../../../style/mstr/images/archlistView.png);
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  display: none;
+  vertical-align: middle;
+  background-position: 2px -256px;
+  right: 5px;
+  padding-left: 0px;
+}
+
+.mstrmojo-di-datapreview-header:hover .menu{
+  display: block;
+}
+
+.mstrmojo-di-datapreview-header.highlight {
+  color:white;
+  background-color:darkblue;
+}
+
+.mstrmojo-di-datapreview-headerIcon{
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  height:20px;
+  cursor:pointer;
+  display: inline-block;
+  vertical-align: middle;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.mstrmojo-di-datapreview-headerIcon.t0 {
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-position: 0px 0px;
+}
+.mstrmojo-di-datapreview-headerIcon.t12 {background-position: -1px -1196px; /*attribute*/}
+.mstrmojo-di-datapreview-headerIcon.t4 {
+  background-image: url(images/DI/icon_metric.png);
+  background-position: 0 5px;/*Metrics*/}
+.mstrmojo-di-datapreview-headerIcon.t12.time  {background-position: 0px -1174px; /*time attribute*/}
+.mstrmojo-di-datapreview-headerIcon.t12.geo  {background-position: 0px -1150px; /*geo attribute*/}
+.mstrmojo-di-datapreview-headerIcon.trs { background-image: url(images/DI/listView.png);
+  background-position: -20px -40px;}
+
+.mstrmojo-di-datapreview-DataRow-text {
+  height:20px;
+  line-height:20px;
+  padding-left :10px;
+  background-color: #dedfe1
+}
+
+.mstrmojo-di-datapreview-DataRow-text.even {
+  background-color: #e8e8e8
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Attribute {
+  height:20px;
+  line-height:20px;
+  padding-left :10px;
+  background-color:#d4e7f7;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Attribute.even{
+  padding-left :10px;
+  background-color:#e4f1fb;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Attribute.even.selected{
+  background-color:#A9A9A9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Attribute.odd.selected{
+  background-color:#A9A9A9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Metric {
+  height:20px;
+  line-height:20px;
+  padding-left :10px;
+  background-color:#fff4e2;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Metric.even {
+  padding-left :10px;
+  background-color:#fffdf0;
+}
+.mstrmojo-di-datapreview-DataRow-text.Metric.even.selected{
+  background-color:#A9A9A9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Metric.odd.selected{
+  background-color:#A9A9A9;
+}
+
+.mstrmojo-di-datapreview-DataRow-text.Form {
+  height:20px;
+  line-height:20px;
+  padding-left :10px;
+  background-color:white;
+}
+.mstrmojo-di-datapreview-DataRow-text.Form.selected{
+  background-color:#A9A9A9;
+}
+
+/* Missing Column Warning style*/
+.mstrmojo-MissingColumnWarning {
+  background: #D8EBFB url(images/gradient_bg_lightblue.png) repeat-x scroll 0 0;
+}
+.mstrmojo-MissingColumnWarning .mstrmojo-Editor-content{
+  background: none;
+}
+.mstrmojo-qb-MissingColumns-buttonBox .mstrmojo-Editor-button-Yes,.mstrmojo-Editor-button-No,.mstrmojo-Editor-button-OK{
+  //font-size: 0px;
+}
+
+.mstrmojo-qb-MissingColumns-list {
+  margin-left:20px;
+  max-height: 105px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  width: 300px;
+  border:solid lightgray 1px;
+  border-bottom-width:0px;
+}
+
+.mstrmojo-qb-MissingColumns-title {
+  margin:10px 0px 20px 20px;
+}
+
+.mstrmojo-qb-MissingColumns-instruction {
+  margin:10px 20px 0px;
+}
+
+.mstrmojo-qb-MissingColumns-Icon {
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-repeat:no-repeat;
+  height:20px;
+}
+
+.mstrmojo-qb-MissingColumns-Icon.t12 {background-position: 0px -1196px; /*attribute*/}
+.mstrmojo-qb-MissingColumns-Icon.t4 {background-position: -1px -1220px; /*fact*/}
+
+.mstrmojo-qb-MissingColumns-bullet {
+  border: 0px lightgray solid;
+  border-bottom-width: 1px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  line-height: 22px;
+  cursor:default;
+  padding-left: 25px;
+}
+
+.mstrmojo-qb-MissingColumns-bullet span {
+  margin:0px 10px;
+}
+
+.mstrmojo-qb-MissingColumns-buttonBox td:first-child {
+  width: auto;
+}
+
+/** start of preview panel **/
+.mstrmojo-qb-mapping-editor {
+  width: 250px;
+  border-width: 1px 2px 1px 2px;
+  cursor: default;
+}
+
+.mstrmojo-qb-mapping-searchbox{
+  border-width: 0px;
+  border-color: gray;
+  border-style: solid;
+  border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;
+}
+
+.mstrmojo-qb-mapping-searchinput{
+  width: 227px;
+  padding-left: 20px;
+  border-width: 0px;
+  border-style: solid;
+  background:url("images/search.png") no-repeat 2px 2px;
+  background-color: white;
+  border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;
+}
+
+.mstrmojo-qb-mapping-spinnerbox {
+  position: absolute;
+  left: 220px;
+}
+
+.mstrmojo-qb-mapping-buttonbox {
+  float: right;
+  margin: 5px 0px;
+}
+
+.mstrmojo-qb-mapping-search-status {
+  height: 15px;
+}
+
+.mstrmojo-qb-mapping-buttons {
+  height: 25px;
+}
+
+.mstrmojo-qb-attributelink-button{
+  width: 46px;
+  float: right;
+  margin:5px 15px 5px 5px;
+  height: 15px;
+  padding-top: 2px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.mstrmojo-qb-attributelink-button .mstrmojo-Button-text{
+  text-align: center;
+}
+
+.mstrmojo-qb-mapping-title {
+  white-space: normal;
+}
+
+.mstrmojo-qb-mapping-status {
+  float: right;
+  margin: 0px 10px;
+}
+
+.mstrmojo-qb-mapping-status {
+  float: right;
+  margin: 0px 10px;
+}
+
+.mstrmojo-qb-mapping-status.error {
+  color: red;
+}
+
+
+.mstrmojo-qb-mapping-buttonbox td {
+  background-color: transparent;
+}
+
+.mstrmojo-qb-mapping-search-content {
+  width:100%;
+  height:95px;
+  overflow-y: auto;
+}
+
+.mstrmojo-qb-mapping-buttonbox td:first-child{
+  width: 90%;
+}
+
+.mstrmojo-qb-mapping-time {
+  margin-top: 10px;
+}
+
+.mstrmojo-qb-mapping-time .mstrmojo-TreeNode-state.leaf {
+  display: none;
+}
+
+.mstrmojo-qb-mapping-time .mstrmojo-TreeNode-text{
+  padding: 3px 0px 3px 5px;
+}
+
+.mstrmojo-qb-geolist {
+  margin-top: 10px;
+}
+
+.mstrmojo-qb-georole-itemtext:hover {
+  background-color:lightgray;
+}
+
+.mstrmojo-qb-georole-itemtext {
+  white-space: nowrap;
+  line-height: 18px;
+  padding: 1px 0px;
+}
+
+.mstrmojo-qb-georole .mstrmojo-qb-georole-itemtext img{
+  width: 13px;
+  height: 13px;
+}
+
+.mstrmojo-qb-georole.selected .mstrmojo-qb-georole-itemtext img{
+  background: url("images/DI/geo-selection-dot.png") no-repeat 1px 3px scroll transparent;
+}
+
+.mstrmojo-qb-mapping-time .mstrmojo-itemwrap:first-child,
+.mstrmojo-qb-geolist .mstrmojo-itemwrap:first-child {
+  border-bottom: 1px solid gray;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+
+.mstrmojo-qb-georole.shapeKey,
+.mstrmojo-qb-georole-itemcontent {
+  display: none;
+}
+
+.mstrmojo-qb-georole-button {
+  width: 46px;
+  float:right;
+  margin-left:10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.mstrmojo-qb-georole-button .mstrmojo-Button-text {
+  text-align: center;
+}
+
+.showShapeKey .mstrmojo-qb-georole.shapeKey {
+  display: block;
+}
+
+.showShapeKey .mstrmojo-qb-georole.other {
+  display: none;
+}
+
+.mstrmojo-qb-georole.selected .mstrmojo-qb-georole-itemcontent{
+  display:block;
+}
+
+.mstrmojo-qb-georole-checkbox {
+  background: url("images/editor-button.png") no-repeat scroll 0 -280px transparent;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.mstrmojo-qb-georole-attribute.selected .mstrmojo-qb-georole-checkbox{
+  background: url("images/editor-button.png") no-repeat scroll 0 -299px transparent;
+}
+
+.mstrmojo-qb-georole-attribute-box {
+  border:1px solid gray;
+  margin:1px;
+  padding:2px 4px;
+}
+
+.workstation{
+  .mstrmojo-di-datapreview-headerIcon.t12 {background-position: -1px -1196px; /*attribute*/}
+  .mstrmojo-di-datapreview-headerIcon.t4 {
+    background-image: url(images/DI/icon_metric.png);
+    background-position: 0 5px;/*Metrics*/}
+  .mstrmojo-di-datapreview-headerIcon.t12.time  {background-position: 0px -1174px; /*time attribute*/}
+  .mstrmojo-di-datapreview-headerIcon.t12.geo  {background-position: 0px -1150px; /*geo attribute*/}
+}

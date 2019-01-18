@@ -1,0 +1,1 @@
+mstrmojo.vi.models.EnumFieldTypes={TEXT:3,IMAGE:2,HTML_CONTAINER:10};

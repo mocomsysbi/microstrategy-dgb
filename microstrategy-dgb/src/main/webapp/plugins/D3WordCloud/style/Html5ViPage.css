@@ -1,0 +1,8 @@
+.mstrmojo-VIGallery .mstrmojo-VIGalleryList .item.ic-D3WordCloud > div > div {
+   	background: url(images/icon.svg) no-repeat scroll;
+    background-size: 30px;
+}
+.mojo-theme-dark .mstrmojo-VIGallery .mstrmojo-VIGalleryList .item.ic-D3WordCloud > div > div {
+    background: url(images/icon.svg) no-repeat scroll;
+    background-size: 30px;
+ }

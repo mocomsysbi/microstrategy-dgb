@@ -1,0 +1,1 @@
+mstrmojo.chart.model.enums.EnumDSSGraphPictureFormat={DssGraphPictureJPEG:0,DssGraphPictureGIF:1,DssGraphPicturePNG:2,DssGraphPictureWMF:3,DssGraphPictureBMP:4};

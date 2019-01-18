@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.DocTextfield","mstrmojo.ui._HasScroller");mstrmojo.vi.ui.ScrollableDocTextfield=mstrmojo.declare(mstrmojo.DocTextfield,[mstrmojo.ui._HasScroller],{scriptClass:"mstrmojo.vi.ui.ScrollableDocTextfield",setupScrollNodes:function setupScrollNodes(){this.scrollNode=this.valueNode;}});}());

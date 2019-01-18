@@ -1,0 +1,133 @@
+.mstrmojo-di-partitiongroup-dialog {
+  width: 400px;
+  .partitiongroup-list {
+    margin-left: 40px;
+    max-height: 317px;
+    //overflow: auto;
+  }
+  .mstrmojo-Editor-content {
+    padding: 15px 18px;
+    font-family: Arial;
+  }
+  .mstrmojo-Editor-buttons {
+    .mstrmojo-Button.hot.mstrmojo-Editor-button {
+      margin-right: 0;
+    }
+  }
+  .mstrmojo-Label {
+    color: #444649;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.workstation {
+  .mstrmojo-di-partitiongroup-dialog {
+    width: 440px;
+    //height: 300px;
+    max-height: 500px;
+    .partitiongroup-list {
+      width:100%;
+      margin-left: 0px;
+      //max-height: 46px;
+      overflow: auto;
+
+      color: #444649;
+      font-size: 11px;
+      line-height: 16px;
+      border: solid 1px #e3e3e4;
+      .mstrmojo-Label {
+        height: 16px;
+        margin: 10px 0;
+        padding-left: 10px;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .mstrmojo-itemwrap:not(:first-child) {
+        .mstrmojo-ui-CheckList {
+          border-top: solid 1px #e3e3e4;
+        }
+      }
+      .mstrmojo-itemwrap {
+        .mstrmojo-ui-CheckList {
+          padding: 5px 10px 0;
+          font-weight: bold;
+        }
+        .mstrmojo-Label {
+          margin-left: 16px;
+        }
+      }
+    }
+    .mstrmojo-Editor-buttons {
+      padding-top: 1px;
+    }
+    .mstrmojo-Editor-content {
+      padding: 16px 16px 15px 16px;
+      //height: 180px;
+      max-height: 380px;
+      //overflow: scroll;
+      -ms-overflow-style: none;
+
+      .mstrmojo-Label.mstrmojo-di-pg-label1 {
+        font-family: Helvetica;
+        font-weight: bold;
+        color: #444649;
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 2px;
+      }
+      .mstrmojo-Label.mstrmojo-di-pg-label2 {
+        font-family: Helvetica;
+        font-weight: normal;
+        color: #444649;
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 2px;
+
+      }
+      .mstrmojo-Label {
+        font-family: Helvetica;
+        color: #444649;
+        font-size: 11px;
+        line-height: 16px;
+      }
+
+      .webTitle {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .webTitle2 {
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// checklist with desc part, for create and edit mode
+.mstrmojo-Editor.mstrmojo-di-partitiongroup-dialog.modal {
+  .mstrmojo-Editor-content {
+    .mstrmojo-ui-CheckListWithDesc {
+      border: solid 1px #e3e3e4;
+      width: 406px;
+      overflow:hidden;
+      .scroll-container{
+        max-height: 300px;
+      }
+      .mstrmojo-scrollNode.hasVertical{
+        margin-right: -20px;
+        padding-right: 20px;
+      }
+      .icn {
+        .item:not(:first-child) {
+          border-top: solid 1px #e3e3e4;
+        }
+        .item {
+          padding: 8px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.mstrmojo-di-sheets-selection-dialog, .mstrmojo-di-refresh-dialog{
+  background: #f3f3f4;
+  .mstrmojo-Editor-titleCell{
+    background-color: #f3f3f4;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 1px solid $divider-line-dark;
+  }
+
+  .mstrmojo-Editor-content {
+    border-top: 1px solid white;
+    border-bottom: 1px solid $divider-line-dark;
+    padding: 0;
+  }
+  .mstrmojo-Editor-buttons {
+    padding:16px 13px 16px 18px;
+  }
+}
+.mstrmojo-di-ssd-file-content {
+  width: 440px;
+  height: 250px;
+  margin-left: 18px;
+}
+
+.mstrmojo-di-ssd-left-panel {
+  border-right: solid 1px $divider-line-dark;
+  width: 120px;
+  padding: 16px 0;
+}
+.mstrmojo-di-ssd-right-panel {
+  border-left: solid 1px $divider-line-light;
+  width: 240px;
+  padding: 10px;
+  .mstrmojo-Label {
+    width: 220px;
+    height: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 6px 0;
+  }
+}
+.mstrmojo-di-ssd-title{
+}
+.mstrmojo-di-ssd-file-list {
+  height: 250px;
+  width: 170px;
+  overflow-y: auto;
+
+  .mstrmojo-Button {
+    width: 158px;
+    overflow-wrap: break-word; //YGUO TQMS-858507
+    height: 22px;
+    line-height: 22px;
+    border-radius: 3px;
+    padding-left: 10px;
+  }
+  .mstrmojo-Button:hover {
+    background-color: #dadada;
+  }
+  .mstrmojo-Button.selected {
+    background-color:#cecece;
+  }
+}
+
+.mstrmojo-di-ssd-sheets-list {
+  height: 220px;
+  padding: 10px 0 0 12px;
+  overflow: auto;
+  width: 234px;
+  .mstrmojo-ListBox-table {
+    max-height: 150px;
+    .mstrmojo-CheckList-item input[type="checkbox"]{
+      margin: 3px 3px 3px 0px; //YGUO TQMS-947519
+    }
+  }
+}
+
+.mstrmojo-di-ssd-search {
+  width: 193px;
+  height: 20px;
+  margin: 10px 0;
+  border: 1px solid #B3B3B3;
+  background: url(images/DI/tool_search.png);
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-color: white;
+  padding-left: 30px;
+  border-radius: 5px;
+}
+
+
+.workstation {
+  .mstrmojo-di-sheets-selection-dialog, .mstrmojo-di-refresh-dialog{
+    background: white;
+  }
+
+  .mstrmojo-di-ssd-left-panel {
+    border-right: solid 1px $divider-line-dark;
+    width: 120px;
+    padding: 16px 0 20px 0;
+  }
+  .mstrmojo-di-ssd-right-panel {
+    border-left: solid 1px $divider-line-light;
+    width: 240px;
+    padding: 16px 0 20px 0;
+    .mstrmojo-Label {
+      width: 220px;
+      height: 15px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      //padding: 6px 0;
+    }
+  }
+
+  .mstrmojo-di-ssd-sheets-list {
+    height: 220px;
+    padding: 14px 0 0 0;
+    overflow: auto;
+    width: 234px;
+    .mstrmojo-ListBox-table {
+      max-height: 150px;
+      .mstrmojo-CheckList-item input[type="checkbox"]{
+        margin: 3px 3px 15px 0px; //YGUO TQMS-947519
+      }
+    }
+  }
+
+}

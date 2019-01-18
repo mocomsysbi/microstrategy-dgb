@@ -1,0 +1,284 @@
+.mstrmojo-di-worksheet-main-container {
+  display: table;
+  position:relative;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  *[contenteditable=true] {
+    -webkit-user-select: auto;
+    -ms-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -o-user-select: auto;
+    user-select: auto;
+  }
+}
+
+.mstrmojo-di-worksheet-table-container {
+  width: 975px; //DE8095, show the right border
+  height: 394px;
+  overflow: hidden; //ljing 940034
+  .mstrmojo-di-worksheet-table-scroller {
+    height: 394px;
+  }
+}
+
+.mstrmojo-di-worksheet-table-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.mstrmojo-di-worksheet-main-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.mstrmojo-di-worksheet-main-table:focus {
+  outline: 0;
+}
+
+.mstrmojo-di-worksheet-main-container *::-moz-selection{
+  background:transparent;
+}
+
+.mstrmojo-di-worksheet-add-button{
+  background: url(images/DI/tool_suggest.png);
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  padding-left: 10px;
+  margin-left:2px;
+  cursor: pointer;
+}
+
+.mstrmojo-di-worksheet-table-row-cell {
+  max-width: 150px;
+  width: 92px;
+  min-width: 92px;
+  border: 1px solid lightgray;
+  height: 17px;
+  font-family: verdana;
+  overflow-wrap: break-word;
+  word-wrap: break-word;}
+
+.mstrmojo-di-worksheet-table-rowHeader-cell {
+  border: 1px solid #CBCBCB;
+  background: #efeff0;
+  font-size: 10pt;
+  text-align: center;
+  padding: 1px 3px;
+  box-sizing: border-box;
+  min-width: 24px;
+  min-height: 26px;
+  }
+
+.mstrmojo-di-worksheet-table-rowHeader-cell.selectedHeader {
+  background-color: #DADADA;
+  border-color: #CBCBCB; }
+
+.mstrmojo-di-worksheet-table-rowHeader-cell.selected {
+  border: 1px double #DADADA;
+  background-color: #DADADA; }
+
+.mstrmojo-di-worksheet-table-row-cell.selected {
+  //border: 1px double #aeddf7;
+  border: 1px double lightgrey;
+  background-color: #dff1fc; }
+
+.mstrmojo-di-worksheet-table-row-cell.super-selected {
+  border: 1px double #26B0FC;
+  background-color: #dff1fc; }
+
+
+.mstrmojo-di-worksheet-table-row-cell.header {
+  width: 92px;
+  border: 1px solid #CBCBCB;
+  background: #efeff0;
+  font-size: 12pt;
+  height: 23px;
+}
+
+.mstrmojo-di-worksheet-table-row-cell.header.selected {
+  border: 1px double #dadada;
+  background-color: #dadada; }
+
+.mstrmojo-di-worksheet-table-row-cell.header.selectedHeader {
+  background-color: #DADADA;
+  border-color: #CBCBCB; }
+
+.mstrmojo-di-worksheet-table-row-cell.header.super-selectedHeader {
+  border: 1px double #26B0FC;
+  background-color: #dff1fc;
+}
+
+.mstrmojo-di-worksheet-navigationMenu{
+  margin-bottom: 10px;
+  margin-top: 16px;
+
+  .active{
+    height: 24px;
+    width: 24px;
+    box-sizing: border-box;
+    opacity: 1;
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+  }
+
+  .inactive{
+    opacity: 0.2;
+    cursor: not-allowed;
+    margin-right: 10px;
+    display: inline-block;
+  }
+}
+
+.testDragDiv{
+  height: 24px;
+  width: 24px;
+  box-sizing: border-box;
+  z-index: 100;
+  position:absolute;
+  opacity: .50;
+  filter: alpha(opacity=50);
+  height: 200px;
+  width: 100px;
+}
+
+// This animation code is used from a third party library under the MIT license.
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:0.5s;-moz-animation-duration:0.5s;-ms-animation-duration:0.5s;-o-animation-duration:0.5s;animation-duration:0.5s;}.animated.hinge{-webkit-animation-duration:0.5s;-moz-animation-duration:0.5s;-ms-animation-duration:0.5s;-o-animation-duration:0.5s;animation-duration:0.5s;}
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(.95);
+  }
+  50% {
+    opacity: 0.5;
+    -webkit-transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1);
+  }
+}
+
+@-moz-keyframes bounceOut {
+  0% {
+    -moz-transform: scale(1);
+  }
+
+  25% {
+    -moz-transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -moz-transform: scale(.1);
+  }
+}
+
+@-o-keyframes bounceOut {
+  0% {
+    -o-transform: scale(1);
+  }
+
+  25% {
+    -o-transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -o-transform: scale(.1);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+}
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  -moz-animation-name: bounceOut;
+  -o-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
+
+.mstrmojo-di-worksheet-copyTextBox{
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.mstrmojo-di-worksheet-nonHighlightDiv{
+  min-height: 16px;
+  min-width: 17px;
+  width: 100%;
+}
+
+.workstation{
+  .mstrmojo-di-worksheet-table-row-cell{
+    &.flexible{
+      width: 10000px;
+    }
+    height: 26px;
+    max-width: 200px;
+  }
+
+  .mstrmojo-di-worksheet-table-container{
+    height: 434px;
+    & .mstrmojo-di-worksheet-table-scroller{
+      height: 434px;
+    }
+  }
+
+  .modal,.mstrmojo-di-popup{
+    .mstrmojo-di-worksheet-table-container{
+      height: 408px;
+      & .mstrmojo-di-worksheet-table-scroller{
+        height: 408px;
+      }
+    }
+  }
+
+  .mstrmojo-di-worksheet-nonHighlightDiv{
+   font-size: 12px;
+   line-height: 15px;
+   width: auto;
+   padding: 0 4px;
+ }
+}

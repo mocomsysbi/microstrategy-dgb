@@ -1,0 +1,45 @@
+@import '../../../global';
+
+.mstrmojo-Editor.onetier-preferences {
+    $height-tab: 35px;
+    $color-tab-bg: #E8E8E8;
+    $color-list-prefs-tabs: #C5C5C5;
+
+    > {
+        // Hide the divider line
+        .mstrmojo-Editor-title-container {
+            &:after {
+                border-top-color: $color-tab-bg;
+            }
+        }
+    }
+
+    .mstrmojo-Editor-content {
+        padding: 0;
+
+        .mstrmojo-ListBase.preferences-tabs {
+            height: $height-tab;
+            background: $color-tab-bg;
+            color: #444649;
+            padding: 1px 6px 0;
+            border-bottom: 1px solid $color-list-prefs-tabs;
+
+            .item {
+                float: left;
+                line-height: $height-tab;
+                padding: 0 12px;
+                text-align: center;
+                cursor: pointer;
+                border: 1px solid rgba(0, 0, 0, 0);
+                border-bottom: 0;
+
+                &.selected {
+                    @include border-radius(2px 2px 0 0);
+                    color: #000000;
+                    background-color: #F3F3F4;
+                    border-color: $color-list-prefs-tabs;
+                }
+            }
+        }
+    }
+}

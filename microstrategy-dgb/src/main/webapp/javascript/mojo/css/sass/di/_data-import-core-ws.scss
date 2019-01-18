@@ -1,0 +1,16 @@
+// Core CSS Style specific for workstation
+
+//  CSS Styles for all the basic/core UI components used in data import application by both Microstrategy Express and the web platform.
+@import 'sass/vi/vi-global-ws';
+@import "sass/di/workstation-variables";
+@import "sass/clearfix";
+@import "sass/linear-gradient";
+@import "sass/di/sprites";
+@import "sass/di/diSprites";
+@import "sass/di/di-tooltip";
+@import "sass/refine/RefineVariables-ws";
+@import "sass/di/DIRootView-ws";
+@import "sass/qb/JoinOptions";
+@import "sass/qb/InputBoxSuggest";
+@import "sass/di/DIFiletypeExtension";
+@import "sass/di/DIWhiteListEditor";

@@ -1,0 +1,8 @@
+<visualizations>
+  <visualization-list name="ajax" show-in-web="true" view-mode="51">
+    <visualization attribute-minimum="4" desc="Google Timeline" drop-zones="plugins.GoogleTimeline.GoogleTimelineDropZones" editor-model="plugins.GoogleTimeline.GoogleTimelineEditorModel" is-mojo="true" metric-minimum="0" scope="19" style-name="GoogleTimeline" widget-type="7"/>
+  </visualization-list>
+  <visualization-list name="ipad" view-mode="71" show-in-web="false">
+    <visualization id="GoogleTimeline" desc="Google Timeline" scope="19" projects="" style-name="GoogleTimeline" drop-zones="plugins.GoogleTimeline.GoogleTimelineDropZones" editor-model="plugins.GoogleTimeline.GoogleTimelineEditorModel" attribute-minimum="4" metric-minimum="0" widget-type="7"/>
+  </visualization-list>
+</visualizations>

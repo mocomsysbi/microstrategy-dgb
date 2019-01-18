@@ -1,0 +1,9 @@
+.mstrmojo-Label {
+
+    font-size: 8pt;
+    cursor:default;
+
+    &.disabled {
+        opacity: 0.5;
+    }
+}

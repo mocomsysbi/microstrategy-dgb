@@ -1,0 +1,8 @@
+.mstrmojo-wh-DBRoleRadioButton {
+	padding-top: 6px;
+	font-weight: bold;
+	display: block !important;
+  	input[type="radio"]{
+		margin: 1px 5px 2px 2px; //DE119702, align radio button with following lines
+	}
+}

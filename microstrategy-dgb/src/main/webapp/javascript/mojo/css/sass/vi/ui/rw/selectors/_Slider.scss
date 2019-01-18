@@ -1,0 +1,226 @@
+@import "../../../vi-global";
+
+/** VI start of Slider**/
+.mstrmojo-VISlider.sc {
+    height: auto;
+}
+.mstrmojo-VISlider .subscript{
+    margin-top:5px;
+}
+.subscript.left {
+    float: left;
+}
+.subscript.right {
+    float: right;
+}
+
+.knob {
+    height: 18px;
+    width: 18px;
+    top: -5px;
+    background: url(#{$vi-img-path}/dataset.svg) -479px -210px no-repeat;
+    z-index: 10;
+}
+
+.mstrmojo-VISlider {
+  &.sc-h {
+    .bk{
+      height: 5px;
+      border: 1px solid #cecece;
+      border-radius:5px;
+      background: #fff;
+      margin-top:7px;
+      &.left{
+        border-right: 0px;
+        border-radius: 5px 0px 0px 5px;
+        margin-top: 0px;
+      }
+      &.middle{
+        border-width: 1px 0px;
+        border-radius: 0px;
+        margin-top: 0px;
+        background: #34ABEB;
+      }
+      &.right {
+        border-left: 0px;
+        border-radius: 0px 5px 5px 0px;
+        margin-top: 0px;
+      }
+    }
+    &.sc1 {
+      .bk.middle {
+        border-width: 1px 0px 1px 1px;
+        border-radius: 5px 0px 0px 5px;
+        background: transparent url(images/scroller/bg-h.gif) 0 0 repeat-x;  //support IE9
+        background: #fff;
+      }
+      &.rank .bk.middle {
+        background: #34abeb;
+      }
+      .sd {
+        .bk.left,
+        .t1 {
+          display: none;
+        }
+        .t3 {
+          display: block;
+          @extend .knob;
+        }
+      }
+    }
+    &.scm {
+      .bk.middle {
+        margin-left: -1px;
+        padding: 0px 1px;
+      }
+      .sd {
+        .t1,
+        .t3{
+          display: block;
+          @extend .knob;
+        }
+      }
+    }
+  }
+}
+
+.strikeout {
+  .mstrmojo-VISlider {
+    &.sc-h {
+      &.scm,
+      &.sc1 {
+        .bk {
+          background: #fff;
+          &.left,
+          &.right {
+            background: #34abeb;
+          }
+        }
+        &.invalid {
+          .t1,
+          .t3 {
+            @extend .knob;
+          }
+          .sd {
+            .t1,
+            .t3 {
+              @extend .knob;
+            }
+          }
+        }
+        .t1,
+        .t3 {
+          &:hover {
+            @extend .knob;
+          }
+        }
+      }
+      &.scm,
+      &.sc1.rank {
+        .bk.middle {
+          background: transparent url(images/scroller/bg-h.gif) 0 0 repeat-x;  //support IE9
+          background: #fff;
+        }
+      }
+      &.sc1 {
+        .bk.middle {
+          background: #34abeb;
+        }
+      }
+    }
+  }
+}
+
+.mstrmojo-VISlider {
+  .sl-control {
+    position: relative;
+    height: 25px;
+    .mstrmojo-ui-Pulldown {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: 2.5px 0;
+      left: 5%;
+    }
+    .mstrmojo-Label {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 5%;
+      left: 5%;
+      line-height: 25px;
+      margin: auto;
+      vertical-align: middle;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &.rank {
+    .sl-control .mstrmojo-Label {
+      left: auto;
+      width: 40%;
+      line-height: 30px;
+    }
+  }
+}
+.mstrmojo-VISlider {
+  &.mstrmojo-Tooltip,
+  &.mstrmojo-Popup {
+    margin: -8px 0 0 -8px;
+  }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-VISlider {
+        &.sc-h {
+            .bk {
+                border-color: #000000;
+                @include box-shadow(rgba(72,74,75,0.83), 0, 0, 0, false, 1px);
+
+                &.left,
+                &.right {
+                    background-color: #28282a;
+                }
+            }
+
+            &.sc1 {
+                .sd {
+                    .bk {
+                        &.middle,
+                        &.right {
+                          background-color: #28282a;
+                        }
+                    }
+                }
+                &.rank .bk.middle {
+                  background: #34abeb;
+                }
+            }
+        }
+    }
+
+    .strikeout {
+        .mstrmojo-VISlider {
+            &.sc-h {
+                .bk{
+                    &.middle{
+                        background-color: #28282a;
+                    }
+                }
+            }
+        }
+    }
+
+    &.mstrmojo-VISlider.vi-regular {
+        &.edvl .mstrmojo-Popup-content,
+        .mstrmojo-Tooltip-contentWrapper .scm-tooltip {
+            background-color: #56585b !important;
+            color: #e4e4e5;
+        }
+    }
+
+}
+/** VI end of Slider**/

@@ -1,0 +1,114 @@
+.mstrmojo-di-url-options {
+  margin: 20px auto;
+  width: 260px;
+}
+
+.mstrmojo-di-DIWhiteListEditor {
+  .upload-url {
+    @include box-sizing(content-box);
+    margin: 12px 0 12px 0px;
+    padding: 0px;
+    width: 434px;
+    height: 22px;
+    line-height: 20px !important;
+    font: 12px arial;
+    border: 1px solid #B5B5B5;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    padding-left: 6px;
+  }
+
+  .drag-drop-box-hadoop {
+    width: 480px;
+    height: 406px;
+    border: 1px solid #CCCCCC;
+  }
+
+  .mstrmojo-di-add-url-button {
+    position: relative;
+    top: 12px;
+    left: 0px;
+  }
+
+  @mixin url-capsule-font-style() {
+    font: 11px Arial;
+    color: #444649;
+    height: 24px;
+  }
+  .mstrmojo-url-list {
+    margin-bottom: 5px;
+    margin-left: 11px;
+    width: 260px;
+    height: 26px;
+    background-color: #DFF1FC;
+    border: 1px solid #AEDDF7;
+    border-radius: 2px;
+    .urlItem-text-div {
+      width: 205px;
+      line-height: 24px;
+      @include url-capsule-font-style();
+      input {
+        @include url-capsule-font-style();
+      }
+    }
+  }
+
+  .mstrmojo-url-list.fake {
+    background: #DDDDDD;
+    border: 1px solid #CDCDCD;
+
+  }
+
+  .mstrmojo-di-url-box.mstrmojo-di-fileHolder {
+    border: 1px solid #B5B5B5;
+    width: 520px;
+    height: 175px;
+    padding: 11px 0;
+    margin: 12px 0 12px 0px;
+    .mstrmojo-FileDragDropBox-content {
+      overflow: hidden;
+      max-height: 175px;
+      @include scrollBar();
+      &:hover {
+        overflow-y: auto;
+      }
+    }
+  }
+  .mstrmojo-Editor-buttons {
+    width: auto !important;
+  }
+  .mstrmojo-VIButton {
+    min-width: 66px;
+    height: 22px;
+    font-weight: normal;
+    padding: 0px;
+    margin: 0px 0px 0px 10px;
+    font-family: arial;
+    line-height: 22px;
+  }
+}
+
+.workstation {
+  .mstrmojo-di-DIWhiteListEditor {
+    .mstrmojo-url-list {
+      .mstrmojo-InlineEditBox.urlItem-text-div {
+        margin-top: -5px;
+      }
+    }
+    .mstrmojo-di-url-box.mstrmojo-di-fileHolder {
+      .mstrmojo-FileDragDropBox-count {
+        right: 40px;
+      }
+    }
+
+    .mstrmojo-Button.mstrmojo-url-delete-button{
+        margin-left: 0px;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        float: right;
+    }    
+  }
+}

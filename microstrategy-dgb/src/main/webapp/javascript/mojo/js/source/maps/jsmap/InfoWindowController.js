@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Obj","mstrmojo.maps.jsmap.InfoWindow");mstrmojo.maps.jsmap.InfoWindowController=mstrmojo.declare(mstrmojo.Obj,null,{scriptClass:"mstrmojo.maps.jsmap.InfoWindowController",start:function start(params){params=params||{};var win=this.infoWindow=new mstrmojo.maps.jsmap.InfoWindow(params);win.start();}});})();

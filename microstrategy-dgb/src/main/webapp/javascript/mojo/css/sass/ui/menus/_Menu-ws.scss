@@ -1,0 +1,380 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+
+    /** BEGIN: Menu **/
+    // Base menu styling.
+    %menu-base {
+        @include border-radius(3px);
+        @include box-shadow($wsvi-menu-shadow-color, $wsvi-menu-shadow-x, $wsvi-menu-shadow-y, $wsvi-menu-shadow-blur, false, $wsvi-menu-shadow-spread);
+
+        background-color: $wsvi-menu-background-color !important;
+        border: 1px solid $wsvi-menu-border-color;
+        color: $wsvi-menu-font-color !important;
+        max-width: 350px;
+        min-width: 140px;
+        padding: 5px 0px;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        z-index: 1000;
+
+        /*Add translateZ(0) to prevent fraction length issue when transition. */
+        -webkit-transform: translateZ(0);
+    }
+
+    // Base menu item styling.
+    %menu-item-base {
+        border: none;
+        font-family: $wsvi-menu-font-family;
+        font-size: $wsvi-menu-font-size;
+        font-style: $wsvi-menu-font-style;
+        line-height: $wsvi-menu-item-row-height;
+        margin: 0;
+        padding: 0 24px 0 18px;
+        overflow: visible;
+        text-overflow: ellipsis;
+        border-radius: 1px;
+        cursor: default;
+        position: relative;
+        white-space: nowrap;
+        @include single-transition($property: background-color, $duration: 400ms);
+    }
+
+    //US124229: Drilling options for MDX hierarchical attributes on Netviz.
+    // Adds a collapse mark.
+    %wsvi-menu-collapsed-mark {
+        @include wsvi-icon-collapsed;
+        content: "";
+        height: 22px;
+        left: 7px;
+        position: absolute;
+        width: 18px;
+    }
+
+    // Adds a expanded mark.
+    %wsvi-menu-expanded-mark {
+        @include wsvi-icon-expanded;
+        content: "";
+        height: 22px;
+        left: 7px;
+        position: absolute;
+        width: 18px;
+    }
+
+    // Adds a check mark.
+    %wsvi-menu-check-mark {
+        @include wsvi-icon-checkmark-fix;
+        content: "";
+        height: 22px;
+        left: 7px;
+        position: absolute;
+        width: 18px;
+    }
+
+    // Adds a placeholder mark.
+    %wsvi-menu-placeholder-mark {
+        content: "";
+        height: 22px;
+        left: 7px;
+        position: absolute;
+        width: 18px;
+        //DE106312 [MDX drill][Netviz][Library]The drill menu is displayed tricky.
+        opacity: 0;
+    }
+
+    // Clears the check mark, if applied.
+    %menu-clear-check-mark {
+        content: "";
+        height: 0;
+        width: 0;
+    }
+
+    .mstrmojo-ui-Menu {
+        @extend %menu-base;
+
+        visibility: hidden;
+
+        &.visible {
+          visibility: visible;
+        }
+
+        &.mstrmojo-scrollbar-host {
+            overflow: hidden;
+        }
+
+        // Default styling for menu items.
+        %menu-item-default {
+            background-color: transparent;
+            color: $wsvi-menu-font-color;
+        }
+
+        // Styling for selected + open menu items.
+        %menu-item-open {
+            background-color: $wsvi-menu-item-selected-color !important;
+            color: $wsvi-menu-font-selected-color !important;
+            & > DIV {
+                &.arw {
+                    background-position: -540px -56px;
+                }
+            }
+        }
+
+        .menu-info-text {
+            @extend %menu-item-base;
+            padding: 0;
+        }
+
+        .mstrmojo-ui-Menu-item {
+            &.checkMarkPadding {
+                padding-left: 30px;
+            }
+            &.on {
+                @extend %menu-item-default;
+
+                &:before {
+                    @extend %wsvi-menu-check-mark;
+                }
+
+                &:hover {
+                    @extend %menu-item-default;
+                    background-color: $wsvi-menu-item-hover-color;
+                }
+            }
+
+            &.selected {
+                position: relative; // Remove this hack after changing the style for xtab menus.
+            }
+
+            &.xt.checked:before {
+                @extend %wsvi-menu-check-mark;
+                left: 0;
+            }
+
+            &.open {
+                @extend %menu-item-open;
+            }
+
+            &.txt {
+                padding: 0 10px;
+            }
+
+            &.separator {
+                background-color: transparent !important;
+                border-bottom: 1px solid $wsvi-splitline-gray !important;
+                height: 1px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                -webkit-box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                box-shadow: none !important;
+                &:before {
+                    @extend %menu-clear-check-mark;
+                }
+            }
+
+            // Clear check mark for sub menu items.
+            &.pop:before {
+                @extend %menu-clear-check-mark;
+            }
+
+            & > DIV {
+                &.check {
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 17px;
+                }
+
+                &.micn,
+                &.arw,
+                &.mtxt {
+                    cursor: default;
+                    position: relative;
+                }
+
+                &.arw {
+                    border: 0 solid transparent;
+                    background: transparent url(#{$wsvi-main-icons-sprite}) 0 0 no-repeat;
+                    background-position: -540px -26px;
+                    display: inline-block;
+                    float: right;
+                    height: 26px;
+                    right: 0px;
+                    top: 0;
+                    width: 20px;
+                    left: auto;
+                    position: absolute;
+
+                    // Submenus.
+                    .mstrmojo-ui-Menu {
+                        margin-top: -16px;
+                        margin-left: 10px;
+                    }
+                }
+
+                &.micn {
+                    border: none;
+                    height: 19px;
+                    top: 3px;
+                    left: 2px;
+                    right: auto;
+                    width: 15px;
+                }
+            }
+
+            @extend %menu-item-base;
+            @include flex(!important);
+            //display: flex !important; // Detach display from menu-item-base as it should be overridden by display = none wherever applicable.
+
+            &.pop {
+                overflow: visible;
+            }
+
+            // CSS for an action popup menu item.
+            &.ax.pop {
+                // To highlight that it's a popup - show the pointer.
+                cursor: pointer;
+
+                // CSS for the mode that we need to highlight the arrow for the action item.
+                &.hlt-ax {
+                    &:hover {
+                        .arw {
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+                .arw{
+                    &:hover {
+                        background-color: transparent;
+                        cursor: default;
+                    }
+
+                    // The bar between text and arrow
+                    &:after {
+                        content: " ";
+                        position: absolute;
+                        height: 11px;
+                        width: 1px;
+                        border-left: 1px $wsvi-primary-white solid;
+                        top: 6px;
+                    }
+                }
+
+                // When open or hover, show another bar
+                &:hover,
+                &.open {
+                    .arw {
+                        &:after {
+                          border-left: 1px $wsvi-primary-white solid;
+                          height: 26px;
+                          top: 0px;
+                        }
+                    }
+                }
+            }
+
+            &.radio {
+                padding-left: 30px;
+
+                &:before {
+                    @extend %menu-clear-check-mark;
+                }
+
+                &.on:before {
+                    @extend %wsvi-menu-check-mark;
+                }
+            }
+
+            // CSS for non-interactive menu items.
+            &.non-int {
+                &:before {
+                    @extend %menu-clear-check-mark;
+                }
+
+                // Non-interactive menu items don't highlight on hover.
+                &:hover {
+                    background: none;
+                }
+
+                // Disabled menu items are a specialized non-interactive menu item with a different text color.
+                &.disabled {
+                    color: $wsvi-menu-font-disabled-color;
+                }
+            }
+
+            &:hover {
+                @extend %menu-item-default;
+                background-color: $wsvi-menu-item-hover-color;
+                color: $wsvi-menu-font-hover-color;
+            }
+
+            &.selected {
+                &:before {
+                    @extend %wsvi-menu-check-mark;
+                }
+            }
+
+            > DIV.micn {
+                background: transparent none 2px 2px no-repeat;
+                display: inline-block;
+                float: left;
+                height: 26px;
+                left: 0px;
+                position: absolute;
+                top: 0px;
+            }
+
+            >DIV.mtxt {
+                display: inline-block;
+                float: left;
+                height: 26px;
+                overflow: hidden;
+                position: inherit;
+                width: 100%;
+                text-overflow: ellipsis;
+                top: 0px;
+            }
+        }
+
+        .mstrmojo-ui-Pulldown .item {
+            &.selected:before,
+            &.on:before {
+                background: none;
+            }
+
+        }
+    }
+
+    .hasToggleItem {
+        .mstrmojo-ui-Menu-item {
+            padding-left: 30px;
+        }
+        .mstrmojo-ui-Menu-item.menu-item-title  {
+            padding-left: $wsvi-element-padding;
+            pointer-events: none;
+            .mtxt {
+                opacity: 0.45;
+            }
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    // TODO: This needs to be moved to _MenuEditor.scss
+    .mstrmojo-ui-MenuPopup {
+        @extend %menu-base;
+
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+    .mstrmojo-Menu .item.selected:before {
+        @extend %wsvi-menu-check-mark;
+    }
+    /** END: Menu **/
+
+}
+/** END: Workstation Styles **/

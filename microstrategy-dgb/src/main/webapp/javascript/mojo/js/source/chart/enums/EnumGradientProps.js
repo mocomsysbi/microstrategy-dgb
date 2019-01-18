@@ -1,0 +1,1 @@
+mstrmojo.chart.enums.EnumGradientProps={GType:0,GStartColor:1,GEndColor:2,GAngle:3,GHOffset:4,GVOffset:5,GLastProp:6};

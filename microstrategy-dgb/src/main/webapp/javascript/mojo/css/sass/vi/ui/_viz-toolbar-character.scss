@@ -1,0 +1,81 @@
+.mstrmojo-ui-ToolbarCharacter{
+  border-collapse: separate;
+
+  .mstrmojo-ui-Pulldown{
+    width: 120px;
+    height: 22px;
+    float: left;
+    font-size: 8pt;
+    .mstrmojo-ui-Pulldown-text{
+      height: 11px;
+    }
+    .container {
+      .mstrmojo-PopupList {
+        max-width: 250px;
+        min-width: 120px;
+        width: auto;
+      }
+    }
+  }
+  .mstrmojo-ui-ButtonBar {
+    margin-left: 5px;
+    width: 120px;
+    height: 20px;
+    float: left;
+
+    .item {
+      & > div {
+        background: transparent url(#{$mojo-img-path}/editor-sprite.png) center 0 no-repeat;
+      }
+
+      &.bold > div {
+        background-position: center -4px;
+      }
+
+      &.italic > div {
+        background-position: center -34px;
+      }
+
+      &.underline {
+        text-decoration: none;
+
+        & > div {
+          background-position: center -62px;
+        }
+      }
+
+      &.strikeout > div {
+        background-position: center -94px;
+      }
+    }
+  }
+
+  .mstrmojo-ui-ComboBox{
+    color:#4a4a4a;
+    margin-left: 5px;
+    width:60px;
+    float: left;
+
+    .mstrmojo-TextBox {
+      width: 100%;
+    }
+  }
+
+  .mstrmojo-ColorPickerBtn{
+    margin-left: 5px;
+    width:60px;
+    float: left;
+    //DE103631 Shrinking the 4px for width and height for ColorPickerBtn.
+    .preview {
+      width:36px;
+      height: 20px;
+    }
+  }
+
+  .preview{
+    width:40px;
+  }
+  .btn{
+    width:20px;
+  }
+}

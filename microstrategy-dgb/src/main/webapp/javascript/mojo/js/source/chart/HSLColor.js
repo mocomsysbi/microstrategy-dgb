@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Base");mstrmojo.chart.HSLColor=mstrmojo.declare(mstrmojo.Base,null,{scriptClass:"mstrmojo.chart.HSLColor",h:0,s:0,l:0});}());

@@ -1,0 +1,71 @@
+@import '../../../vi-global';
+
+/** BEGIN: PageByButtonBar **/
+.mstrmojo-pb-ButtonBar {
+    margin: 0;
+    @include box-sizing(border-box);
+    overflow: hidden;
+
+    .list-content {
+        .items-container {
+            white-space: nowrap;
+        }
+
+        // When showing the default scrollbars, we want to style the button bar so that it allows the native scrollbars to show up.
+        &.mstrmojo-sb-show-default {
+            height: 100%;
+            overflow: hidden;
+
+            // Only show the x-axis scrollbar when hovering on the page-by panel.
+            &:hover {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+        }
+    }
+
+    .item {
+        cursor: pointer;
+        display: inline-block;
+        background-color: #EEEEEE;
+
+        &:first-child {
+            div {
+                @include border-radius(3px 0 0 3px);
+            }
+
+        }
+
+        &:last-child {
+            div {
+                @include border-radius(0 3px 3px 0);
+                border-right: 1px solid #b5b5b5;
+            }
+        }
+
+        div {
+            border: 1px solid #b5b5b5;
+            border-right: 0;
+            line-height: 24px;
+            padding: 0 10px;
+        }
+
+        &.selected {
+            div {
+                color: #fff;
+                background: #2F9AD3;
+                @include box-shadow(rgba(0, 0, 0, 0.45), 0, 0, 1.5em, inset);
+            }
+        }
+    }
+}
+
+.mojo-theme-dark {
+    .mstrmojo-pb-ButtonBar {
+        .item {
+            @include linear-gradient(#3d3e3f, #373839, false);
+        }
+    }
+}
+
+/** END: PageByButtonBar **/

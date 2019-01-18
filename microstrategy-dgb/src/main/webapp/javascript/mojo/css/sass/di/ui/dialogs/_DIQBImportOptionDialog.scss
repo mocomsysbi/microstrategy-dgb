@@ -1,0 +1,67 @@
+.mstrmojo-di-import-option {
+
+  .mstrmojo-di-io-radio-list {
+    font-family: arial;
+    .import-options {
+      margin-left: 42px;
+      margin-top: 33px;
+      margin-bottom: 55px;
+      width: 420px;
+      .item{
+        position: relative;
+        padding: 0 0 0 29px;
+        height: 23px;
+        margin-bottom: 56px;
+      }
+
+      .mstrmojo-ListBox-cell {
+        padding-top: 38px;
+      }
+    }
+  }
+
+  .left-button-container{
+    float: left;
+    padding-top: 3px;
+    .back{
+      margin-left: 0;
+    }
+  }
+}
+
+
+.mstrmojo-Editor.mstrmojo-di-import-option.modal{
+   &>.mstrmojo-Editor-content{
+      padding:50px 40px 40px 50px;
+
+      .mstrmojo-ui-CheckList.mstrmojo-di-io-radio-list.radio.mstrmojo-scrollbar-host{
+          .import-options{
+              margin:0px;
+              &>div.item{
+                background: none;
+                height: auto;
+                margin: 0 0 20px 0px;
+
+                &:before{
+                  content:'0';
+                  background:transparent url(images/checkbox.svg) -3px -146px no-repeat;
+                  display:inline-block;
+                  width:24px;
+                  height:24px;
+                  margin-left: -24px;
+                  color: transparent;
+                }
+
+                &.selected:before{
+                  background:transparent url(images/checkbox.svg) -3px -122px no-repeat;
+                }
+                
+                .text .subtitle{
+                  margin-top: 6px;
+                }
+              }
+          }
+
+      }
+   }
+}

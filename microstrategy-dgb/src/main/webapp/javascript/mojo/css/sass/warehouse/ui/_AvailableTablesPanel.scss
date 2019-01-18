@@ -1,0 +1,58 @@
+@import '../wh-global';
+
+/* AvailableTablesPanel */
+
+.mstrmojo-popup-widget-hosted {
+  .mstrmojo-PopupList {
+    overflow-y: auto;
+  }
+}
+
+.mstrmojo-wh-Panel.AvailableTables {
+  background-color: #FAFAFA;
+
+  .mstrmojo-ui-Pulldown {
+    .mstrmojo-PopupList .item {
+      max-width: 100%;
+    }
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+  .mstrmojo-ui-Pulldown-text {
+    height: 20px;
+    line-height: 10px;
+    max-width: 100%;
+    margin-top: 2px;
+    border: 1px solid #AAA;
+    outline: none;
+    background: white url(#{$image-path}/arrow-down.png) no-repeat 98% center;
+  }
+  .mstrmojo-ui-Pulldown.locked div.mstrmojo-ui-Pulldown-text {
+    background: none;
+  }
+  .mstrmojo-InlineEditBox {
+    font-style: italic;
+  }
+}
+
+.workstation {
+  @import "../../vi/_workstation-global";
+  .mstrmojo-ui-Pulldown {
+    &.mstrmojo-ui-SearchablePulldown {
+      .mstrmojo-PopupList .item {
+        &.selected{
+          background-color: $wsvi-primary-blue;
+          color: $wsvi-primary-white;
+        }
+      }
+    }
+  }
+}
+
+.btnRefreshNS-show{
+  visibility: visible;
+}
+
+.btnRefreshNS-hide{
+  visibility: hidden;
+}

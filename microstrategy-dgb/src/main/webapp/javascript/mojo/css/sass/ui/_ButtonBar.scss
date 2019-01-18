@@ -1,0 +1,40 @@
+@import '../global';
+
+/** BEGIN: ui-ButtonBar **/
+.mstrmojo-ui-ButtonBar {
+    @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+
+    border: 1px solid #b5b5b5;
+    height: 23px;
+
+    &.disabled {
+        @include border-radius(2px);
+        @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+
+        opacity: 0.5;
+    }
+
+    .item {
+        cursor: default;
+        display: table-cell;
+        border-left: 1px solid #b5b5b5;
+        height: 20px;
+        text-decoration: none;  // Overrides ".underline" class in core.css
+
+        &:first-child {
+            border-left-color: transparent;
+        }
+
+        & > div {
+            height: 100%;
+        }
+    }
+
+    &.btn-text {
+        .item {
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+}
+/** END: ui-ButtonBar **/

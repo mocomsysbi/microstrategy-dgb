@@ -1,0 +1,625 @@
+/** BEGIN: Workstation Styles **/
+.workstation {
+    /** BEGIN: FilterBox **/
+    .selector.mstrmojo-ui-Pulldown .mstrmojo-PopupList {
+        // max-width has to be set on the popup list for the truncation to work.
+        max-width: 350px;
+        // min-width needs to match mstrmojo-ui-Pulldown max-width
+        min-width: 200px;
+
+        .item {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    .mstrmojo-FilterBox {
+        background: #EEEEEE;
+        overflow: hidden;
+
+        & > div {
+            .mstrmojo-Button.mstrmojo-WebButton.btn-select-targets {
+                $button-max-width: 150px;
+
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 8px 8px 8px 8px;
+                max-width: $button-max-width;
+                border: none;
+
+                .mstrmojo-Button-text {
+                    max-width: $button-max-width;
+                }
+
+                &.disabled {
+                    .mstrmojo-Button-text {
+                        max-width: $button-max-width;
+                    }
+
+                    &.hot {
+                        .mstrmojo-Button-text {
+                            max-width: $button-max-width;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.invalid {
+            .ctrlOverlay {
+                .mstrmojo-Label.invalidMsg {
+                    background: transparent none 2px 50% no-repeat;
+                    margin: 10px;
+                    line-height: 18px;
+                    padding-left: 24px;
+                    color: #878788;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 11px;
+                        left: 12px;
+                        width: 18px;
+                        height: 18px;
+                        @include wsvi-icon-warning-triangle-small;
+                    }
+
+                }
+            }
+            .mstrmojo-DocSelector.vi-DocSelector {
+                .content {
+                    display: none;
+                }
+            }
+            .hover-menu-btn {
+                display: none !important;
+            }
+            .mstrmojo-VITitleBar {
+                .right-toolbar {
+                    display: none;
+                }
+            }
+        }
+
+        // The please drop unit label.
+        .ctrlOverlay {
+            .mstrmojo-Label.dropMsg {
+                background-image: url(#{$vi-img-path}/CanvasElements/icnFilter.png);
+            }
+            &.editOverLay {
+                //OVER LAY style for edit button overCtrl in pause mode
+                background: $wsvi-primary-white;
+                opacity: 0.95;
+                .filterBoxEdit {
+                    //button style for edit button overCtrl in pause mode
+                    display: inline-block;
+                    float: right;
+                    margin: 8px;
+                    max-width: 150px;
+                }
+            }
+        }
+
+        &.overlay {
+            .vi-DocSelector {
+                opacity: 0.3;
+            }
+        }
+
+        .vi-DocSelector {
+            $TextLineHeight: 1.9em;
+            .mstrmojo-ui-Pulldown {
+                @include box-shadow(transparent, 0, 0, 0); // issue #944039
+
+                // if we don't set a max-width it will expand to fill the entire filter box.
+                max-width: 200px;
+                min-width: 132px;
+
+                .mstrmojo-ui-Pulldown-text {
+                    background-image: none;
+                    height: auto;
+                    line-height: $TextLineHeight;
+                    position: relative;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    min-height: 20px;
+
+                    &:after {
+                        width: 13px;
+                        height: 13px;
+                        content: " ";
+                        position: absolute;
+                        right: 0px;
+                        @extend %ctrl-light-pulldown-arrow;
+                        background-position: -3px -3px;
+                        display: inline-block;
+                        margin: auto;
+                        top: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+
+            .mstrmojo-VISlider {
+                .sl-control .mstrmojo-Label {
+                    line-height: 1.3; //overwrite the fixed line-height in filter panel slider to change according to font
+                    margin-bottom: 2px;
+                }
+                &.rank {
+                    .sl-control .mstrmojo-Label {
+                        line-height: $TextLineHeight; //make it the same height with pull down text
+                        margin: 2.5px 5%; //keep margin top/bottom consistent with pull down text as above
+                    }
+                }
+            }
+        }
+
+        // Filter Box (selector) Metric Qualification
+        .mstrmojo-vi-metric-qual {
+            .mstrmojo-TextBox,
+            .pulldown {
+                min-width: 130px;
+                max-width: 200px;
+            }
+
+            .v1,
+            .v2 {
+                width: 130px;
+                margin-top: 5px;
+            }
+            .pulldown, .v1, .v2 {
+                height: auto;
+            }
+            input {
+                height: auto;
+                line-height: 1.9em;
+                min-height: 1.9em;
+                padding-top: 0;
+                padding-bottom: 0;
+                font-size: inherit;
+                text-decoration: inherit;
+                color: inherit;
+            }
+        }
+
+        &.horizontal {
+            .mstrmojo-vi-metric-qual {
+                .pulldown,
+                .v1,
+                .v2 {
+                    float: left;
+                    margin: 4px 0 4px 5px;
+                }
+            }
+        }
+
+        .mstrmojo-vi-sel-LinkList {
+            .mstrmojo-scrollNode.hasHorizontal {
+                height: 100%;
+            }
+        }
+
+        .mstrmojo-vi-sel-CheckList {
+            &.horizontal .item{
+                .text{
+                    line-height: 1.3;
+                }
+            }
+            .item {
+                line-height: normal;
+                vertical-align: middle;
+                background-image: none;
+                span.only {
+                    line-height: 1.9em;
+                }
+                .text {
+                    line-height: 1.9em;
+                    min-width: 30px;
+                    display: inline;
+                    text-decoration: inherit;
+                }
+                &.selected {
+                    .icon{
+                        background-position: -3px 4px;
+                    }
+                    &.disabled{
+                        background-position-x: -3px;
+                        background-position-y: -71px;
+                        pointer-events: none;
+                    }
+                }
+                .icon {
+                    background: transparent url(#{$mojo-img-path}/checkbox.svg) -3px -21px no-repeat;
+                    cursor: default;
+                    display: inline-block;
+                    height: 26px;
+                    width: 17px;
+                    vertical-align: middle;
+                }
+            }
+
+            &.radio .item {
+                .icon {
+                    background-position: -3px -146px;
+                }
+                &:hover span.only {
+                    display: none;
+                }
+                &.selected {
+                    .icon {
+                        background-position: -3px -121px;
+                    }
+                }
+            }
+        }
+
+        .Attr-Qual-InputBox {
+            .mstrmojo-Box {
+                margin:0 9px 9px 0;
+                padding-top: 0;
+                padding-bottom: 0;
+              }
+
+              .input-label {
+                padding-left: 5px;
+                padding-right: 1px;
+                width: 20%;
+                //DE112034 For "two rows" condition: From should have a distance with the box vertically.
+                margin-bottom: 5px;
+                margin-top: 3px;
+              }
+
+              .mstrmojo-DateTextBox {
+                margin-left: 5px;
+                width: auto;
+                .mstrmojo-DateTextBox-input {
+                    padding: 6px 0 6px 8px;
+                    height: auto;
+                    box-shadow: none;
+                    border-right: none;
+                }
+                .mstrmojo-DateTextBox-icon {
+                    margin-bottom: 3px;
+                    margin-top: 0;
+                    margin-left: 0;
+                    display: inline-block;
+                    vertical-align: middle;
+                    //to override the core-ws setting
+                    position: static;
+                }
+              }
+
+              .mstrmojo-Box.onerow {
+                .input-label {
+                  width: auto;
+                  padding-left: 5px;
+                  padding-right:1px;
+                }
+                .mstrmojo-DateTextBox {
+                  padding-right: 8px;
+                }
+              }
+              .mstrmojo-Box.onerow.to-box {
+                  padding-left: 0;
+              }
+        }
+
+        &.mstrmojo-UnitContainer {
+            .mstrmojo-DocSelector {
+                div,
+                .item.selected {
+                    text-decoration: inherit;
+                    color: inherit;
+                }
+
+                &.strikeout {
+                    div {
+                        text-decoration: inherit;
+                    }
+
+                    .item.selected {
+                        text-decoration: line-through;
+                    }
+                }
+
+                .mstrmojo-vi-sel-CheckList {
+                    &.horizontal {
+                        .item {
+                            margin-right: 20px;
+                            background: none; //DE104924: to override the background.
+                            padding-left: 0; //already have "icon" span to take the left padding.
+
+                            &.selected {
+                                .icon{
+                                    background-position: -3px 4px;
+                                }
+                                &.disabled{
+                                    background-position-x: -3px;
+                                    background-position-y: -71px;
+                                    pointer-events: none;
+                                }
+                            }
+                            .icon {
+                                background: transparent url(#{$mojo-img-path}/checkbox.svg) -3px -21px no-repeat; //#VIRevamp
+                                cursor: default;
+                                display: inline-block;
+                                height: 26px;
+                                width: 17px;
+                                background-position: -3px -21px;
+                                vertical-align: middle;
+                            }
+                            .text{
+                                vertical-align: middle;
+                                display: inline-block;
+                                min-width: 65px;
+                                width: calc(100% - 21px);
+                                width: -moz-calc(100% - 21px);
+                                width: -webkit-calc(100% - 21px);
+                                width: -o-calc(100% - 21px);
+                                max-width: 220px;
+                            }
+                            &:hover span.only {
+                                display: none;
+                            }
+                        }
+
+                        &.radio .item {
+                            .icon{
+                                background-position: -3px -146px;
+                               }
+
+                            &:hover span.only {
+                                display: none;
+                            }
+
+                            &.selected {
+                                .icon{
+                                background-position: -3px -121px;
+                                }
+                            }
+                        }
+                    }
+
+                    .item {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        padding: 0 4px 0 0;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-SimpleObjectInputBox input {
+            width: 100%;
+        }
+
+        &.items-fit-content {
+            .mstrmojo-vi-sel-CheckList {
+                .item {
+                    min-width: 0;
+                }
+            }
+        }
+    }
+
+
+    //US112349;pause mode filter box, mask style
+    .pause{
+        .mstrmojo-FilterBox{
+            .mstrmojo-VIDND-mask.masked{
+                background: $wsvi-primary-gray-light-theme;
+                opacity: 0.5;
+            }
+        }
+    }
+    /** END: FilterBox **/
+
+    .mstrmojo-VIUnit-avatar {
+        &.icn-avi {
+            &.filterAvatar {
+                background-image: url(#{$vi-img-path}/id_sel.png);
+            }
+        }
+    }
+
+    .mstrmojo-ui-MenuEditor.mstrmojo-vi-FilterBox-targets {
+
+        .me-content {
+            padding: 0;
+        }
+
+        .mstrmojo-Label {
+            @include box-shadow(none);
+
+            padding: 0 8px 4px 8px;
+            border-bottom: 1px solid $wsvi-splitline-gray !important;
+            border-top: none;
+            color: $wsvi-menu-font-color;
+            font-size: $wsvi-menu-font-size;
+            line-height: 1.5em;
+            max-height: 3em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .mstrmojo-ui-CheckList {
+            padding: 4px 8px;
+
+            .scroll-container {
+                max-height: 200px;
+            }
+        }
+    }
+
+    // FilterBox Themes
+    .mojo-theme-light {
+        .mstrmojo-FilterBox {
+            background-color: $theme-light-panel-background-color;
+
+
+        }
+    }
+
+    // DE71404
+    .mojo-theme-dark {
+
+        //US112349;pause mode filter box, mask style
+        &.pause {
+            .mstrmojo-FilterBox {
+                .mstrmojo-VIDND-mask.masked {
+                    background: $theme-dark-panel-background-color;
+                }
+            }
+        }
+
+        .mstrmojo-FilterBox {
+            background-color: $theme-dark-panel-background-color;
+
+            .mstrmojo-DateTextBox {
+                background-color: $wsvi-darktheme-fill;
+            }
+
+            .mstrmojo-vi-sel-LinkList {
+                .item {
+                    background-color: $wsvi-darktheme-button;
+                    border: none;
+                    color: rgba($wsvi-darktheme-white, 0.7);
+
+                    &.selected {
+                        background-color: $wsvi-primary-blue;
+                        color: $wsvi-darktheme-white;
+                    }
+                }
+
+                &.buttons {
+                    .item {
+                        background: none;
+                        @include border-radius($wsvi-box-radius);
+
+                        div {
+                            background-color: $wsvi-darktheme-button;
+                            border: rgba($wsvi-primary-white, 0.15) solid 1px;
+                            color: rgba($wsvi-darktheme-white, 0.7);
+                        }
+
+                        &.selected div {
+                            background-color: $wsvi-darktheme-fill;
+                            color: $wsvi-darktheme-white;
+                        }
+                    }
+                }
+            }
+
+            .mstrmojo-vi-sel-ListBox {
+                .item {
+                    color: $wsvi-darktheme-white;
+
+                    &.selected {
+                        color: $wsvi-darktheme-white;
+                        background-color: $wsvi-primary-blue;
+                    }
+                }
+            }
+
+            .mstrmojo-vi-sel-CheckList {
+                .mstrmojo-ui-SearchBox {
+                    background: $wsvi-darktheme-fill;
+
+                    .mstrmojo-ui-sb-btn {
+                        background: transparent url($vi-img-path + '/dark_theme_icons.svg') -60px -60px no-repeat;
+                    }
+                }
+            }
+
+            .vi-DocSelector {
+                .mstrmojo-ui-Pulldown {
+                    .mstrmojo-ui-Pulldown-text {
+                        background: $wsvi-darktheme-fill;
+                        color: $wsvi-darktheme-white;
+                        border: rgba($wsvi-primary-white, 0.15) solid 1px;
+                        @include border-radius($wsvi-box-radius);
+
+                        &:after {
+                            background: transparent url($vi-img-path + '/dark_theme_icons.svg') 0 -30px no-repeat;
+                            opacity: 0.7;
+                            box-shadow: none;
+                            width: 17px;
+                            height: 17px;
+                        }
+
+                        &.editable {
+                            color: $wsvi-darktheme-white;
+
+                            &:after {
+                                background-position: -30px -30px !important;
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+
+                .mstrmojo-vi-metric-qual {
+                    input {
+                        background: $wsvi-darktheme-fill;
+                        border: 1px solid rgba($wsvi-primary-white, 0.15);
+                        color: $wsvi-darktheme-white;
+                    }
+                }
+            }
+
+            .mstrmojo-vi-sel-CheckList {
+                .item {
+                    .icon {
+                        background: transparent url($vi-img-path + '/dark_theme_checkbox_radiobutton.svg') 0px -23px no-repeat !important;
+                    }
+
+                    &.selected {
+                        .icon {
+                            background: transparent url($vi-img-path + '/dark_theme_checkbox_radiobutton.svg') -30px -23px no-repeat !important;
+                        }
+                    }
+                }
+
+                &.radio {
+                    .item {
+                        .icon {
+                            background: transparent url($vi-img-path + '/dark_theme_checkbox_radiobutton.svg') 0px -53px no-repeat !important;
+                        }
+
+                        &.selected {
+                            .icon {
+                                background: transparent url($vi-img-path + '/dark_theme_checkbox_radiobutton.svg') -30px -53px no-repeat !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mstrmojo-SimpleObjectInputBox-empty {
+                div:before {
+                    background: transparent url($vi-img-path + '/dark_theme_icons.svg') -30px -60px no-repeat;
+                }
+            }
+        }
+    }
+
+    //for dark theme 992298
+    .mojo-theme-dark .mstrmojo-FilterBox.mstrmojo-UnitContainer
+    .mstrmojo-DocSelector .mstrmojo-SimpleObjectInputBox .item {
+        .elem {
+            border-color: #0c75ad;
+            background: #2a4251;
+            color: #24a2e7;
+            &:hover {
+                color: #34abeb;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    /** END: FilterBox **/
+
+}
+/** END: Workstation Styles **/
