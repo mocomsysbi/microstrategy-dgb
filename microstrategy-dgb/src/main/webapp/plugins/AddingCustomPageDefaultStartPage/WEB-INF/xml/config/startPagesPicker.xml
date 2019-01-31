@@ -1,0 +1,7 @@
+<shortcut-list name="startPagesPicker">
+  <shortcut desc="Custom Home" name="customdesktoppage">
+    <event XMLmerge_id="1" event-id="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPage">
+      <argument name="com.microstrategy.web.app.beans.EnumServletEvents.WebEventArgumentTarget" value="customdesktoppage"/>
+    </event>
+  </shortcut>
+</shortcut-list>

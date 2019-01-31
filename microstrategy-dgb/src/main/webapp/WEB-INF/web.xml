@@ -1,12 +1,343 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-	<display-name>microstrategy-dgb</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <display-name>Web Tier</display-name>
+  <context-param>
+  	<!--
+  		This value is only used if you meet all of the following deployment criteria:
+  		1) J2EE
+  		2) unexploded deployments
+  		3) more than one deployment
+
+  		Each deployment must have a unique contextPath. Required
+  		as an interim measure until our baseline is Servlet API 2.5.
+  	-->
+  	<param-name>contextPath</param-name>
+  	<param-value/>
+  </context-param>
+    <!-- Uncomment fragment below to enable SAML Authentication mode
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:resources/SAML/SpringSAMLConfig.xml</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>contextInitializerClasses</param-name>
+        <param-value>com.microstrategy.auth.saml.config.ConfigApplicationContextInitializer</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/servlet/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/saml/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+     -->
+  <!-- SAML Config GUI -->
+    <servlet>
+        <servlet-name>samlConfig</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>samlConfig</servlet-name>
+        <url-pattern>/saml/*</url-pattern>
+    </servlet-mapping>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>samlConfig</web-resource-name>
+      <url-pattern>/saml/config/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <!-- End SAML Config GUI -->
+
+  <!-- filter>
+    <display-name>SpnegoFilter</display-name>
+    <filter-name>SpnegoFilter</filter-name>
+    <filter-class>com.microstrategy.web.filter.SpnegoFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>SpnegoFilter</filter-name>
+  	<servlet-name>mstrWeb</servlet-name>
+	<servlet-name>MobileServlet</servlet-name>
+    <servlet-name>TaskProcessorServlet</servlet-name>
+  </filter-mapping-->
+  <filter>
+      <filter-name>ExpireHeader</filter-name>
+      <filter-class>com.microstrategy.web.filter.ExpireHeaderFilter</filter-class>
+  </filter>
+  <filter-mapping>
+      <filter-name>ExpireHeader</filter-name>
+      <url-pattern>*.js</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>ExpireHeader</filter-name>
+      <url-pattern>*.css</url-pattern>
+  </filter-mapping>
+  <filter>
+      <filter-name>GlobalHeaders</filter-name>
+      <filter-class>com.microstrategy.web.filter.GlobalHeadersFilter</filter-class>
+      <!-- US112207: Stop using properties file for configuring HTTP headers -->
+	  <init-param>
+      	<param-name>headerConfig</param-name>
+		<!-- param-value should be a comma-separated list of headers and 
+		their respective values. If a header value contains a comma, escape
+		the header name and value within quotes. Example:
+		h1 : v1,
+		h2 : v2,
+		"h3 : v3a, v3b, v3c",
+		h4 : v4
+		-->
+      	<param-value>
+		X-XSS-Protection:1; mode=block,
+		X-Content-Type-Options : nosniff
+      	</param-value>
+      </init-param>
+  </filter>
+  <filter-mapping>
+      <filter-name>GlobalHeaders</filter-name>
+      <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>mstrDocumentImages</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.DocumentImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>Main Servlet</display-name>
+    <servlet-name>mstrWeb</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.MainServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>mstrWeb72GraphLoader</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.OldLinksServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>mstrWeb72RebuildReport</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.OldLinksServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>Web Administration Servlet</display-name>
+    <servlet-name>mstrWebAdmin</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.MainServlet</servlet-class>
+    <security-role-ref>
+      <role-name>ADMIN</role-name>
+      <role-link>admin</role-link>
+    </security-role-ref>
+  </servlet>
+  <servlet>
+    <display-name>Intelligence-Server Administration Servlet</display-name>
+    <servlet-name>mstrServerAdmin</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.MainServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the Servlet that handles all AJAX-style requests from browser clients.</description>
+    <display-name>TaskProcessorServlet</display-name>
+    <servlet-name>TaskProcessorServlet</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.TaskProcessorServlet</servlet-class>
+    <load-on-startup>10</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>This is the Servlet that provides tool interface for task developers to discover and test tasks.</description>
+    <display-name>TaskViewerServlet</display-name>
+    <servlet-name>TaskViewerServlet</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.TaskViewerServlet</servlet-class>
+    <load-on-startup>20</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>This is the Servlet that handles administrative tasks.</description>
+    <display-name>TaskAdminServlet</display-name>
+    <servlet-name>TaskAdminServlet</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.TaskAdminServlet</servlet-class>
+    <load-on-startup>30</load-on-startup>
+  </servlet>
+  <servlet>
+    <display-name>ResourceFeed</display-name>
+    <servlet-name>ResourceFeed</servlet-name>
+    <servlet-class>com.microstrategy.web.servlets.ResourceFeed</servlet-class>
+    <load-on-startup>11</load-on-startup>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>mocoServlet</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	 <init-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/servlet-context.xml</param-value>
+	 </init-param>
+	<load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+	<servlet-name>mocoServlet</servlet-name>
+	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>TaskProcessorServlet</servlet-name>
+    <url-pattern>/servlet/taskProc</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TaskAdminServlet</servlet-name>
+    <url-pattern>/servlet/taskAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TaskViewerServlet</servlet-name>
+    <url-pattern>/servlet/taskViewer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrDocumentImages</servlet-name>
+    <url-pattern>/servlet/Images/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrDocumentImages</servlet-name>
+    <url-pattern>/servlet/savedImages/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrWeb72GraphLoader</servlet-name>
+    <url-pattern>/servlet/MSIGraphLoader.asp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrWeb72RebuildReport</servlet-name>
+    <url-pattern>/servlet/RebuildReport.asp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrDocumentImages</servlet-name>
+    <url-pattern>/servlet/images/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrWeb</servlet-name>
+    <url-pattern>/servlet/mstrWeb</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrWeb</servlet-name>
+    <url-pattern>/export/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrWebAdmin</servlet-name>
+    <url-pattern>/servlet/mstrWebAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResourceFeed</servlet-name>
+    <url-pattern>/servlet/resourceFeed</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mstrServerAdmin</servlet-name>
+    <url-pattern>/servlet/mstrServerAdmin</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  <mime-mapping>
+    <extension>css</extension>
+    <mime-type>text/css</mime-type>
+  </mime-mapping>
+  <jsp-config>
+  <taglib>
+    <taglib-uri>/webUtilTL.tld</taglib-uri>
+    <taglib-location>/WEB-INF/tlds/webUtilTL.tld</taglib-location>
+  </taglib>
+  </jsp-config>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Administrator</web-resource-name>
+      <url-pattern>/servlet/mstrWebAdmin</url-pattern>
+      <!-- TQMS 245539: The following url-patterns are to prevent IBM WebSphere 6.0.2 security hole being exploited.  -->
+      <url-pattern>/servlet/mstrWebAdmin/*</url-pattern>
+      <url-pattern>/servlet/mstrWeb/mstrWebAdmin</url-pattern>
+      <url-pattern>/servlet/mstrWeb/mstrWebAdmin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>TaskAdministrator</web-resource-name>
+      <url-pattern>/servlet/taskAdmin</url-pattern>
+      <url-pattern>/servlet/taskAdmin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>TaskDeveloper</web-resource-name>
+      <url-pattern>/servlet/taskViewer</url-pattern>
+      <url-pattern>/servlet/taskViewer/*</url-pattern>
+    </web-resource-collection>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <!-- TQMS #859156 -->
+  <security-constraint>
+		<web-resource-collection>
+			<web-resource-name>No HTTP access</web-resource-name>
+			<url-pattern>/jsp/*</url-pattern>
+			<url-pattern>/plugins/_Interface/jsp/*</url-pattern>
+			<url-pattern>/plugins/_Interface/WEB-INF/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint/>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>esri access</web-resource-name>
+            <url-pattern>/jsp/esriproxy.jsp</url-pattern>
+        </web-resource-collection>
+         <auth-constraint>
+        <role-name>*</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>restricted methods</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>HEAD</http-method>
+			<http-method>OPTIONS</http-method>
+		</web-resource-collection>
+		<auth-constraint/>
+	</security-constraint>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Administrator Authentication Area</realm-name>
+  </login-config>
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
+  <security-role>
+    <role-name>taskDeveloper</role-name>
+  </security-role>
+  <listener>
+    <listener-class>
+    com.microstrategy.utils.log.SessionListener
+    </listener-class>
+  </listener>
 </web-app>

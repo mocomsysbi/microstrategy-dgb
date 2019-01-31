@@ -1,0 +1,29 @@
+<framework>
+  <system-pickers/>
+  <pages>
+    <!-- <page desc="Custom Desktop" name="customdesktoppage" prototype="desktop" >
+      <templates>
+        <template>
+          <page-sections>
+			<page-section file-name="/jsp/Empty.jsp" name="header" />
+			<page-section file-name="/jsp/Empty.jsp" name="path" />
+			<page-section file-name="/jsp/Empty.jsp" name="dockTop" />
+			<page-section file-name="/jsp/Empty.jsp" name="dockLeft" />
+			<page-section file-name="/jsp/Empty.jsp" name="dockRight" />
+			<page-section file-name="/jsp/Empty.jsp" name="dockBottom" />
+			<page-section file-name="/jsp/Empty.jsp" name="error" />
+            <page-section file-name="@AddingCustomPageDefaultStartPage:/jsp/Desktop_Content.jsp" name="content"/>
+			<page-section file-name="/jsp/Empty.jsp" name="footer" />
+			<page-section file-name="/jsp/Empty.jsp" name="links" />          
+          </page-sections>
+        </template>
+      </templates>
+    </page> -->
+    <page desc="Custom Desktop" name="customdesktoppage" prototype="desktop">
+		<templates>
+			<template file-name="@AddingCustomPageDefaultStartPage:/jsp/Desktop_Content.jsp">
+			</template>
+		</templates>
+	</page>
+  </pages>
+</framework>

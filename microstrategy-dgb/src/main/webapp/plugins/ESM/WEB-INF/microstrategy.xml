@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<application>
+	<controllers>
+		<controller name="mstrWeb">
+			<parameters>
+				<!-- <parameter name="externalSecurityClass" value="com.microstrategy.web.app.DefaultExternalSecurity"/> -->
+				<parameter name="externalSecurityClass" value="com.mocomsys.microstrategy.custom.esm.SSOESM" />
+			</parameters>
+		</controller>
+		<controller name="mstrWebAdmin">
+			<parameters>
+				<!-- <parameter name="externalSecurityClass" value="com.microstrategy.web.app.DefaultExternalSecurity"/> -->
+				<parameter name="externalSecurityClass" value="com.mocomsys.microstrategy.custom.esm.SSOESM" />
+			</parameters>
+		</controller>
+		<controller name="mstrServerAdmin">
+			<parameters>
+				<!-- <parameter name="externalSecurityClass" value="com.microstrategy.web.app.DefaultExternalSecurity"/> -->
+				<parameter name="externalSecurityClass" value="com.mocomsys.microstrategy.custom.esm.SSOESM" />
+			</parameters>
+		</controller>
+	</controllers>
+</application>
