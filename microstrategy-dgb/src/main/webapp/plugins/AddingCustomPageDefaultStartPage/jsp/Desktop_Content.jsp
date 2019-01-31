@@ -24,7 +24,7 @@
 	List<Map<String, Object>> list = MstrFolderBrowseUtil.getFolderTree(
 			isession, 
 			"D3C7D461F69C4610AA6BAA5EF51F4125", 
-			1, 
+			4, 
 			Arrays.asList(EnumDSSXMLObjectTypes.DssXmlTypeFolder, EnumDSSXMLObjectTypes.DssXmlTypeReportDefinition, EnumDSSXMLObjectTypes.DssXmlTypeDocumentDefinition)
 	);
 	
@@ -61,7 +61,7 @@
 	#tree_ftb_FolderTreeView .mstrIcon-lv-f.report, #tree_ftb_FolderTreeView li.open .mstrIcon-lv-f.dashboard { background-position:0 -171px !important; }
 </style>
 <script src="${pageContext.request.contextPath}/_custom/javascript/jquery/jquery-1.11.0.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/plugins/AddingCustomPageDefaultStartPage/jsp/test-data.js" type="text/javascript"></script>
+<%-- <script src="${pageContext.request.contextPath}/plugins/AddingCustomPageDefaultStartPage/jsp/test-data.js" type="text/javascript"></script> --%>
 <script type="text/javascript">
 
 var defaultTreeDataJson = <%= writer.toString() %>;
@@ -162,17 +162,15 @@ function reportLinkClick(e) {
 	
 	if (tp == "8") {
 		//폴더
+		//getFolderTreeList(oid);
 		
-		getFolderTreeList(oid);
-		
-		/*
 		var $elem = $("ul[parentid='" + oid + "']");
 		if ($elem.is(":visible")) {
 			$elem.hide();
 		} else {
 			$elem.show();
 		}
-		*/
+		
 	} else if(tp == "3") {
 		//리포트
 		var $elem = $("ul[parentid='" + oid + "']");
@@ -336,7 +334,7 @@ function createTreeData(rootData, childTreeData) {
 						if (ref.type == 55 || ref.type == 3) {
 							$node = $(
 								"<div nowrap=''><li class='open'>" + 
-									"<span class='itemContainer'><span class='iconContainer mstrIcon-lv mstrIcon-lv-f report'><span></span></span>" + 
+									"<span class='itemContainer'><span class='iconContainer mstrIcon-lv mstrIcon-lv-f "+ styleIcon +"'><span></span></span>" + 
 										"<a title='" + ref.name + "' oid='" + ref.id + "' tp='" + ref.type + "' subType='" + ref.subType + "' isvi='" + ref.isVI + "' path='" + ref.path + "'><span>" + ref.name + "</span></a>" + 
 									"</span>" + 
 								"</li></div>"
