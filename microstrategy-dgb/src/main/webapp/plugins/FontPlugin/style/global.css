@@ -1,0 +1,36 @@
+@charset "utf-8"
+
+@font-face {
+  font-family: "나눔고딕", "NanumGothic";
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/nanum/NanumGothic.woff) format('woff'),
+  	   url(fonts/nanum/NanumGothic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: "Rix고딕 L", "RixGothic L";
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/rix/RIXGOL.woff) format('woff'),
+  	   url(fonts/rix/RIXGOL.ttf) format('truetype');
+}
+
+/* 영문 서체 */
+@font-face {
+  font-family: 'Calibre Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/calibre/calibre-regular.woff) format('woff'),
+  	   url(fonts/calibre/calibre-regular.ttf) format('opentype');
+}
+
+/* 한글서체 */
+@font-face {
+  font-family: 'Noto Sans Korean Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/NotoSansKR/NotoSansKR-Regular.woff) format('woff'),
+  	   url(fonts/NotoSansKR/NotoSansKR-Regular.otf) format('opentype');
+}
+

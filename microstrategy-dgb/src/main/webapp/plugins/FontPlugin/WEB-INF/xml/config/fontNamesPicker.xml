@@ -1,0 +1,39 @@
+<shortcut-list name="fontPicker">
+	
+	<!-- 나눔고딕 -->
+	<shortcut desc="&#45208;&#45588;&#44256;&#46357;" name="&#45208;&#45588;&#44256;&#46357;" feature-id="NanumGothic">
+		<attributes>
+			<attribute name="style" value="font-family:&#45208;&#45588;&#44256;&#46357;"/>
+			<attribute name="value" value="&#45208;&#45588;&#44256;&#46357;"/>
+		</attributes>
+	</shortcut>
+	
+	<!-- Rix고딕 -->
+	<shortcut desc="&#82;&#105;&#120;&#44256;&#46357;&#32;&#76;" name="&#82;&#105;&#120;&#44256;&#46357;&#32;&#76;" feature-id="RixGothic L">
+		<attributes>
+			<attribute name="style" value="font-family:&#82;&#105;&#120;&#44256;&#46357;&#32;&#76;"/>
+			<attribute name="value" value="&#82;&#105;&#120;&#44256;&#46357;&#32;&#76;"/>
+		</attributes>
+	</shortcut>
+	
+	<!-- 영문서체 -->
+	<!--  
+	<shortcut desc="Calibre Regular" name="Calibre Regular"  feature-id="Calibre Regular">
+		<attributes>
+			<attribute name="style" value="font-family:Calibre Regular"/>
+			<attribute name="value" value="Calibre Regular"/>
+		</attributes>
+	</shortcut>
+	-->
+	
+	<!-- 한글서체 -->
+	<!--  
+	<shortcut desc="Noto Sans Korean Regular" name="Noto Sans Korean Regular"  feature-id="Noto Sans Korean Regular">
+		<attributes>
+			<attribute name="style" value="font-family:Noto Sans Korean Regular"/>
+			<attribute name="value" value="Noto Sans Korean Regular"/>
+		</attributes>
+	</shortcut>
+	-->
+	
+</shortcut-list>
